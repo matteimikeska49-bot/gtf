@@ -82,9 +82,12 @@ export const ToolsSection = () => {
   ];
 
   return (
-    <section className="py-32 md:py-40 px-6 relative z-10 w-full overflow-hidden border-t border-zinc-200 dark:border-white/5 bg-white dark:bg-[#0a0a0a]">
-      {/* Легкое розово-оранжевое свечение сверху для решения */}
-      <div className="absolute top-0 inset-x-0 h-[600px] w-full bg-[radial-gradient(ellipse_at_top_center,rgba(236,72,153,0.08),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_top_center,rgba(236,72,153,0.1),transparent_70%)] pointer-events-none" />
+    <section className="py-32 md:py-40 px-6 relative z-10 w-full overflow-hidden">
+      {/* Тонкие линии разделители */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-white/10 to-transparent" />
+      
+      {/* Огромное мягкое свечение-бренд в центре секции */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-pink-500/10 dark:bg-pink-900/20 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 

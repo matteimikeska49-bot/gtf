@@ -12,10 +12,10 @@ export const MainLayout = ({ children }) => {
   }, [isDark]);
 
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${isDark ? 'dark bg-[#0a0a0a]' : 'bg-zinc-50'}`}>
+    <div className={`min-h-screen transition-colors duration-500 ${isDark ? 'dark bg-[#050505]' : 'bg-zinc-50'}`}>
       <div className="dark:text-zinc-100 text-zinc-900 min-h-screen relative overflow-hidden font-sans">
-        {/* Премиальный background grid (Сетка) */}
-        <div className="absolute top-0 inset-x-0 h-[120vh] dark:bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none [mask-image:linear-gradient(to_bottom,black_20%,transparent_100%)]"></div>
+        {/* Премиальный background grid (Сетка) на весь сайт */}
+        <div className="absolute inset-0 dark:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]"></div>
         {/* Рассеянный свет сверху */}
         <div className="absolute top-0 inset-x-0 h-[500px] w-full bg-gradient-to-b from-pink-500/10 dark:from-pink-500/5 to-transparent pointer-events-none"></div>
 
