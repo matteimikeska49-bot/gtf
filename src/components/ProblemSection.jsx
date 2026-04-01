@@ -27,8 +27,11 @@ export const ProblemSection = () => {
   ];
 
   return (
-    <section className="py-24 px-6 relative z-10 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-32 md:py-40 px-6 relative z-10 overflow-hidden border-t border-zinc-200 dark:border-white/5 bg-zinc-50 dark:bg-black">
+      {/* Огромное слабое радиальное свечение для "боли" */}
+      <div className="absolute top-0 inset-x-0 h-[800px] w-full bg-[radial-gradient(ellipse_at_top,rgba(220,38,38,0.06),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(153,27,27,0.15),transparent_60%)] pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
