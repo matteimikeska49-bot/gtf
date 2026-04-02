@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MainLayout } from './components/MainLayout';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
@@ -11,10 +11,12 @@ import { FinalCTASection } from './components/FinalCTASection';
 import { Footer } from './components/Footer';
 
 function App() {
+  const [lang, setLang] = useState('RU');
+
   return (
     <MainLayout>
-      <Header />
-      <HeroSection />
+      <Header lang={lang} setLang={setLang} />
+      <HeroSection lang={lang} />
       <ProblemSection />
       <ToolsSection />
       <HowItWorksSection />
