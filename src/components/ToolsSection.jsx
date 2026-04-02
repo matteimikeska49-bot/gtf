@@ -6,19 +6,30 @@ export const ToolsSection = () => {
   const tools = [
     {
       title: "Из вирального тренда — в готовый пост",
-      desc: "Увидели крутую идею? Просто вставьте ссылку. GoToFlow адаптирует структуру и подачу под вашу нишу.",
+      desc: "Увидели крутую идею? Просто вставьте ссылку. GoToFlow безупречно адаптирует структуру и подачу под вашу нишу.",
       icon: Zap,
       spanClass: "md:col-span-2",
       visual: (
-        <div className="flex-1 flex items-center justify-center p-2 mt-6 md:mt-0 md:pl-8">
-           <div className="w-full max-w-sm rounded-[1.25rem] border border-zinc-200 dark:border-white/10 p-4 bg-white/60 dark:bg-black/40 backdrop-blur-md shadow-lg group-hover:border-pink-500/30 transition-colors">
-              <div className="flex items-center gap-3 mb-4 rounded-lg bg-zinc-100 dark:bg-white/5 p-2">
-                 <Link2 className="w-4 h-4 text-zinc-400 ml-1 shrink-0"/>
-                 <div className="h-2 w-full bg-zinc-200 dark:bg-zinc-700 rounded-full"/>
-                 <div className="h-2 w-12 bg-zinc-200 dark:bg-zinc-700 rounded-full mr-2"/>
+        <div className="flex-1 flex flex-col items-center justify-center p-4 mt-6 md:mt-0 md:pl-8 relative z-10 w-full">
+           <div className="w-full max-w-md rounded-2xl border border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md shadow-2xl overflow-hidden group-hover:border-indigo-500/30 transition-colors">
+              <div className="flex items-center gap-3 border-b border-white/5 bg-white/[0.02] p-3">
+                 <div className="flex gap-1.5 ml-1">
+                    <div className="w-2.5 h-2.5 rounded-full bg-zinc-700/50" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-zinc-700/50" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-zinc-700/50" />
+                 </div>
               </div>
-              <div className="flex items-center justify-center py-2.5 w-full rounded-xl bg-gradient-to-r from-pink-500 to-orange-400 font-bold text-white text-sm shadow-[0_0_15px_rgba(236,72,153,0.4)]">
-                 Сгенерировать магию
+              <div className="p-5 flex flex-col gap-4 relative">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-indigo-500/20 blur-[40px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                
+                <div className="flex items-center gap-3 rounded-xl bg-white/[0.03] border border-white/5 p-3 relative z-10">
+                   <Link2 className="w-4 h-4 text-zinc-500 shrink-0"/>
+                   <div className="h-1.5 w-full bg-zinc-800 rounded-full"/>
+                   <div className="h-1.5 w-12 bg-zinc-700/50 rounded-full shrink-0"/>
+                </div>
+                <div className="flex items-center justify-center py-3 w-full rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 font-semibold text-indigo-300 text-sm border border-indigo-500/30 transition-all cursor-pointer shadow-[0_0_20px_rgba(99,102,241,0.15)] relative z-10">
+                   Сгенерировать
+                </div>
               </div>
            </div>
         </div>
@@ -26,49 +37,84 @@ export const ToolsSection = () => {
     },
     {
       title: "Радар шпиона",
-      desc: "Анализируйте, что залетает у конкурентов, и создавайте улучшенные форматы.",
+      desc: "Анализируйте, что залетает у конкурентов, и создавайте улучшенные форматы быстрее.",
       icon: Radar,
-      spanClass: "md:col-span-1"
+      spanClass: "md:col-span-1",
+      visual: (
+        <div className="flex-1 flex flex-col justify-end p-4 mt-auto">
+           <div className="flex items-end gap-1.5 h-24 w-full opacity-50 group-hover:opacity-100 transition-opacity duration-700">
+              {[30, 50, 40, 80, 60, 100, 70].map((h, i) => (
+                <div key={i} className={`flex-1 rounded-t border-t border-white/10 ${i === 5 ? 'bg-indigo-500/80 shadow-[0_0_15px_rgba(99,102,241,0.5)] border-indigo-400' : 'bg-white/5'}`} style={{ height: `${h}%` }} />
+              ))}
+           </div>
+        </div>
+      )
     },
     {
       title: "Из видео в Карусель",
       desc: "Превращайте YouTube-ролики или подкасты в сочные карточки для Instagram.",
       icon: Layers,
-      spanClass: "md:col-span-1"
+      spanClass: "md:col-span-1",
+      visual: (
+        <div className="flex-1 flex items-center justify-center p-4 mt-auto relative">
+           <div className="absolute inset-0 bg-indigo-500/0 blur-[30px] rounded-full group-hover:bg-indigo-500/20 transition-colors duration-700" />
+           <div className="relative z-10 flex gap-[-20px] w-full max-w-[140px] items-center justify-center">
+             <div className="w-16 h-20 rounded-xl bg-white/[0.03] border border-white/10 shrink-0 transform -rotate-12 translate-x-4 shadow-xl" />
+             <div className="w-16 h-20 rounded-xl bg-indigo-500/20 border border-indigo-500/30 shrink-0 z-10 group-hover:-translate-y-4 transition-transform shadow-[0_10px_20px_rgba(99,102,241,0.2)]" />
+           </div>
+        </div>
+      )
     },
     {
       title: "Сценарии Reels и Хуки",
-      desc: "Генератор динамичных структур и хуков, которые цепляют с первой секунды.",
+      desc: "Генератор динамичных структур и хуков, которые цепляют внимание с первой секунды.",
       icon: Video,
       spanClass: "md:col-span-2",
       visual: (
-        <div className="flex-1 flex flex-col gap-3 p-2 mt-6 md:mt-0 md:pl-8 justify-center">
-           <div className="h-12 w-full max-w-[90%] rounded-xl bg-white border border-zinc-200 dark:bg-[#111] dark:border-white/10 flex items-center px-4 gap-4 shadow-sm relative group-hover:translate-x-2 transition-transform">
-              <Play className="w-4 h-4 text-pink-500 fill-pink-500/20" />
-              <div className="h-2 w-[60%] bg-zinc-200 dark:bg-zinc-800 rounded-full"/>
+        <div className="flex-1 flex flex-col gap-4 p-4 mt-6 md:mt-0 md:pl-8 justify-center relative w-full">
+           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-48 h-48 bg-indigo-500/10 blur-[50px] rounded-full pointer-events-none group-hover:bg-indigo-500/20 transition-colors duration-700" />
+           
+           <div className="h-16 w-full max-w-[90%] rounded-2xl bg-[#0a0a0a] border border-white/5 flex items-center px-5 gap-4 shadow-xl relative group-hover:translate-x-3 transition-transform duration-500 z-10">
+              <Play className="w-5 h-5 text-indigo-400 fill-indigo-400/20" />
+              <div className="space-y-2 flex-1">
+                 <div className="h-1.5 w-[70%] bg-zinc-700/80 rounded-full"/>
+                 <div className="h-1.5 w-[40%] bg-zinc-800 rounded-full"/>
+              </div>
            </div>
-           <div className="h-12 w-full max-w-[80%] rounded-xl bg-white border border-zinc-200 dark:bg-[#111] dark:border-white/10 flex items-center px-4 gap-4 shadow-sm ml-auto relative group-hover:-translate-x-2 transition-transform">
-              <div className="h-2 w-[70%] bg-zinc-200 dark:bg-zinc-800 rounded-full"/>
-              <Sparkles className="w-4 h-4 text-orange-400 ml-auto" />
+           <div className="h-16 w-full max-w-[85%] rounded-2xl bg-white/[0.02] border border-indigo-500/20 flex items-center px-5 gap-4 shadow-xl ml-auto relative group-hover:-translate-x-3 transition-transform duration-500 z-10 backdrop-blur-md">
+              <div className="space-y-2 flex-1">
+                 <div className="h-1.5 w-[80%] bg-indigo-400/50 rounded-full"/>
+                 <div className="h-1.5 w-[50%] bg-indigo-400/20 rounded-full"/>
+              </div>
+              <Sparkles className="w-4 h-4 text-indigo-300 ml-auto" />
            </div>
         </div>
       )
     },
     {
       title: "Клонирование голоса",
-      desc: "AI запоминает ваш Tone of Voice, любимые слова и визуальный стиль.",
+      desc: "AI запоминает ваш Tone of Voice, любимые словесные обороты и уникальный визуальный стиль.",
       icon: Fingerprint,
       spanClass: "md:col-span-2",
       visual: (
-        <div className="flex-1 flex gap-5 p-2 mt-6 md:mt-0 md:pl-8 items-center justify-center">
-           <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 to-orange-400 flex items-center justify-center shrink-0 shadow-lg">
-              <Fingerprint className="w-8 h-8 text-white relative z-10" />
-              <div className="absolute inset-0 bg-white/20 rounded-2xl animate-ping opacity-20" />
+        <div className="flex-1 flex gap-6 p-4 mt-6 md:mt-0 md:pl-8 items-center justify-center relative w-full">
+           <div className="relative w-20 h-20 rounded-3xl bg-[#050505] border border-white/5 flex items-center justify-center shrink-0 shadow-2xl group-hover:border-indigo-500/30 transition-colors duration-500 z-10 overflow-hidden">
+              <div className="absolute inset-0 bg-indigo-500/10 rounded-3xl animate-pulse" />
+              <Fingerprint className="w-8 h-8 text-indigo-400 relative z-10" />
            </div>
-           <div className="space-y-3 w-full max-w-[160px]">
-              <div className="h-2.5 w-full bg-gradient-to-r from-pink-500/80 to-orange-400/80 rounded-full"/>
-              <div className="h-2 w-[85%] bg-zinc-200 dark:bg-zinc-700 rounded-full"/>
-              <div className="h-2 w-[65%] bg-zinc-200 dark:bg-zinc-700 rounded-full"/>
+           
+           <div className="space-y-4 w-full max-w-[200px] z-10 p-5 rounded-3xl bg-white/[0.01] border border-white/5 backdrop-blur-md">
+              <div className="flex items-center gap-3 mb-2">
+                 <div className="w-6 h-6 rounded-full bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center shrink-0">
+                    <div className="w-2 h-2 rounded-full bg-indigo-400/80" />
+                 </div>
+                 <div className="h-1.5 w-[60%] bg-zinc-600 rounded-full"/>
+              </div>
+              <div className="space-y-2">
+                 <div className="h-1.5 w-full bg-zinc-800 rounded-full"/>
+                 <div className="h-1.5 w-[85%] bg-zinc-800 rounded-full"/>
+                 <div className="h-1.5 w-[70%] bg-zinc-800 rounded-full"/>
+              </div>
            </div>
         </div>
       )
@@ -77,64 +123,75 @@ export const ToolsSection = () => {
       title: "Автопилот контента",
       desc: "Искусственный интеллект сам распишет контент-план на месяц вперед.",
       icon: CalendarDays,
-      spanClass: "md:col-span-1"
+      spanClass: "md:col-span-1",
+      visual: (
+         <div className="flex-1 flex items-center justify-center p-4 mt-auto">
+            <div className="grid grid-cols-3 gap-1.5 w-full max-w-[120px] opacity-40 group-hover:opacity-100 transition-opacity duration-700">
+               {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, i) => (
+                 <div key={i} className={`aspect-square rounded-md border border-white/5 ${i === 4 || i === 7 ? 'bg-indigo-500/80 shadow-[0_0_15px_rgba(99,102,241,0.4)] border-indigo-400' : 'bg-white/5'}`} />
+               ))}
+            </div>
+         </div>
+      )
     }
   ];
 
   return (
-    <section className="py-32 md:py-40 px-6 relative z-10 w-full overflow-hidden">
-      {/* Тонкие линии разделители */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-white/10 to-transparent" />
-      
-      {/* Огромное мягкое свечение-бренд в центре секции */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-pink-500/10 dark:bg-pink-900/20 blur-[120px] rounded-full pointer-events-none" />
+    <section className="py-32 md:py-48 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+      {/* Глубокое многослойное свечение фона */}
+      <div className="absolute left-[20%] top-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-950/20 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute right-0 top-0 w-[600px] h-[600px] bg-indigo-900/10 blur-[150px] rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16 md:mb-20"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-24 flex flex-col items-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-pink-500/20 bg-pink-500/5 text-pink-600 dark:text-pink-400 text-sm font-semibold mb-6">
-            <Layers className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 text-indigo-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
+            <Layers className="w-3.5 h-3.5" />
             <span>Workflow, а не чат-бот</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-            Единая экосистема.<br className="hidden md:block"/> Никаких «костылей».
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight max-w-3xl">
+            Единая экосистема. <br className="hidden md:block"/>Никаких «костылей».
           </h2>
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto font-medium">
-            Больше не нужно жонглировать десятком вкладок. Мы собрали все профессиональные инструменты в одном премиальном пространстве.
+          <p className="text-lg md:text-xl text-zinc-400 max-w-xl mx-auto font-medium leading-relaxed">
+            Больше не нужно жонглировать десятком вкладок. Все профессиональные инструменты в одном премиальном пространстве.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 auto-rows-fr">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
           {tools.map((t, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`p-7 rounded-[2rem] border border-zinc-200/80 dark:border-white/5 bg-white/40 dark:bg-white/[0.02] backdrop-blur-xl group hover:-translate-y-1.5 transition-all duration-500 relative overflow-hidden flex flex-col hover:shadow-2xl hover:shadow-pink-500/5 ${t.spanClass}`}
+              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className={`p-px rounded-[2.5rem] bg-gradient-to-b from-white/10 to-white/0 relative group overflow-hidden ${t.spanClass}`}
             >
-               <div className="absolute inset-0 bg-gradient-to-br from-pink-500/0 to-orange-400/0 group-hover:from-pink-500/5 group-hover:to-orange-400/5 transition-colors duration-500 pointer-events-none" />
-               <div className={`relative z-10 flex h-full ${t.visual ? 'flex-col md:flex-row' : 'flex-col'}`}>
-                 <div className={`flex flex-col ${t.visual ? 'md:w-[55%] lg:w-1/2 justify-center' : 'w-full'}`}>
-                   <div className="relative w-12 h-12 flex items-center justify-center rounded-xl border border-white/5 mb-6 group-hover:scale-110 transition-transform duration-300">
-                     <div className="absolute inset-0 bg-pink-500 blur-xl opacity-30 rounded-full group-hover:opacity-50 transition-opacity" />
-                     <t.icon className="w-6 h-6 text-pink-400 relative z-10" />
-                   </div>
-                   <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-3 tracking-tight">
-                     {t.title}
-                   </h3>
-                   <p className="text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed">
-                     {t.desc}
-                   </p>
-                 </div>
-                 {t.visual && t.visual}
-               </div>
+              {/* Inner wrapper for card to create the very thin gradient border effect */}
+              <div className="relative z-10 h-full bg-[#0a0a0a]/80 p-8 rounded-[2.5rem] group-hover:bg-[#0a0a0a] transition-colors duration-700 flex flex-col overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 via-transparent to-transparent group-hover:from-indigo-500/5 transition-colors duration-700 pointer-events-none" />
+                
+                <div className={`relative z-10 flex h-full ${t.visual ? 'flex-col md:flex-row gap-8 lg:gap-12' : 'flex-col'}`}>
+                  <div className={`flex flex-col ${t.visual ? 'md:w-1/2 lg:w-5/12 justify-center' : 'w-full'}`}>
+                    <div className="relative w-14 h-14 flex items-center justify-center rounded-2xl border border-white/5 bg-[#050505] mb-8 group-hover:scale-110 transition-transform duration-500 shadow-2xl">
+                      <div className="absolute inset-0 bg-indigo-500 blur-xl opacity-20 group-hover:opacity-50 transition-opacity duration-500" />
+                      <t.icon className="w-6 h-6 text-indigo-300 relative z-10" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-indigo-100 transition-colors duration-500">
+                      {t.title}
+                    </h3>
+                    <p className="text-zinc-400 font-medium leading-relaxed max-w-sm">
+                      {t.desc}
+                    </p>
+                  </div>
+                  {t.visual && t.visual}
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

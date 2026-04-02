@@ -17,4 +17,6 @@ html, body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  background-color: #050505;
+  color: #ffffff;
 }

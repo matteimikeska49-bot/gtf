@@ -6,69 +6,90 @@ export const HowItWorksSection = () => {
   const steps = [
     {
       icon: Download,
-      title: "1. Ввод (Input)",
-      desc: "Загружаете сырую идею, голос, ссылку на статью или запись вебинара. Платформа принимает любой формат для старта."
+      title: "Ввод (Input)",
+      desc: "Загрузите сырую идею, надиктуйте голос, вставьте ссылку на статью конкурента или запись вебинара."
     },
     {
       icon: Sparkles,
-      title: "2. Генерация (Generation)",
-      desc: "AI собирает готовый черновик поста или карусели, идеально адаптируясь под ваш tone of voice и структуру ниши."
+      title: "Генерация",
+      desc: "AI собирает готовый черновик поста или карусели, идеально адаптируясь под ваш tone of voice и эстетику."
     },
     {
       icon: CheckCircle2,
-      title: "3. Полировка (Refinement)",
-      desc: "Легкая и прозрачная доработка в удобном визуальном редакторе. После этого — мгновенный экспорт в ваши соцсети."
+      title: "Полировка",
+      desc: "Легкая и прозрачная доработка в удобном встроенном визуальном редакторе перед экспортом."
     }
   ];
 
   return (
-    <section className="py-32 md:py-40 px-6 relative z-10 w-full overflow-hidden">
-      {/* Тонкие линии разделители */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-white/10 to-transparent" />
+    <section className="py-32 md:py-48 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+      
+      {/* Background ambient light */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-zinc-900/40 blur-[150px] rounded-[100%] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20 md:mb-28"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-24 flex flex-col items-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-pink-500/20 bg-pink-500/5 text-pink-500 text-sm font-semibold mb-6">
-            <Sparkles className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
+            <Sparkles className="w-3.5 h-3.5" />
             <span>Чистый Workflow</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-            От идеи до публикации <br className="hidden md:block"/> за 3 простых шага
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight max-w-3xl">
+            От сырой идеи до публикации <br className="hidden md:block"/> за 3 простых шага
           </h2>
+          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed">
+            Мы спроектировали процесс так, чтобы искусственный интеллект выполнял черновую работу, а вы принимали финальные креативные решения.
+          </p>
         </motion.div>
 
-        <div className="relative">
+        <div className="relative mt-16 max-w-5xl mx-auto">
           {/* Сетка соединяющих линий навигации */}
-          <div className="hidden md:block absolute top-6 left-[15%] right-[15%] h-px bg-gradient-to-r from-pink-500/0 via-pink-500/30 to-orange-400/0" />
-          <div className="md:hidden absolute left-[3.25rem] top-[10%] bottom-[10%] w-px bg-gradient-to-b from-pink-500/0 via-pink-500/30 to-orange-400/0" />
+          <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-zinc-500/50 to-transparent" />
+          
+          {/* Анимированная бегущая линия (Neon effect) */}
+          <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px overflow-hidden">
+             <motion.div 
+               animate={{ x: ["-100%", "200%"] }}
+               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+               className="w-1/3 h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-80 shadow-[0_0_15px_#ffffff]"
+             />
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          <div className="md:hidden absolute left-[3.25rem] top-[10%] bottom-[10%] w-px bg-gradient-to-b from-transparent via-zinc-600/50 to-transparent" />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-6 relative z-10">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="relative group flex flex-row md:flex-col items-start md:items-center text-left md:text-center gap-6 md:gap-0"
+                transition={{ duration: 0.7, delay: i * 0.2, ease: "easeOut" }}
+                className="relative group flex flex-col md:items-center text-left md:text-center mt-0 md:mt-0"
               >
-                {/* Обертка для неон-иконки */}
-                <div className="relative w-12 h-12 flex items-center justify-center rounded-xl border border-white/5 shrink-0 md:mb-8 group-hover:scale-110 transition-transform duration-300 bg-[#0a0a0a] z-10 shadow-lg">
-                  <div className="absolute inset-0 bg-pink-500 blur-xl opacity-30 rounded-full group-hover:opacity-50 transition-opacity" />
-                  <step.icon className="w-5 h-5 text-pink-400 relative z-10" />
+                {/* Обертка для неон-иконки, позиционируется на линии */}
+                <div className="relative w-16 h-16 flex items-center justify-center rounded-2xl border border-white/10 bg-[#0a0a0a] shrink-0 mb-8 z-20 shadow-2xl group-hover:scale-110 group-hover:border-white/30 transition-all duration-500 mx-0 md:mx-auto">
+                  <div className="absolute inset-0 bg-white blur-xl opacity-10 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl" />
+                  <step.icon className="w-6 h-6 text-zinc-100 relative z-10" />
+                  
+                  {/* Circle number indicator */}
+                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#050505] border border-white/10 flex items-center justify-center text-xs font-bold text-zinc-400">
+                    {i + 1}
+                  </div>
                 </div>
                 
-                <div>
-                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-3 tracking-tight">
+                {/* Стеклянная карточка-подложка для контента */}
+                <div className="w-full bg-[#0a0a0a]/80 backdrop-blur-xl p-8 rounded-[2rem] border border-white/5 group-hover:border-white/10 transition-colors duration-500 shadow-xl relative overflow-hidden flex-1 md:hover:-translate-y-2 transform">
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none" />
+                  <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">
                     {step.title}
                   </h3>
-                  <p className="text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed max-w-sm mx-auto">
+                  <p className="text-zinc-400 font-medium leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
