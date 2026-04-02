@@ -6,6 +6,9 @@ import { ProblemSection } from './components/ProblemSection';
 import { ToolsSection } from './components/ToolsSection';
 import { HowItWorksSection } from './components/HowItWorksSection';
 import { DifferentiationSection } from './components/DifferentiationSection';
+import { FAQSection } from './components/FAQSection';
+import { FinalCTASection } from './components/FinalCTASection';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
           <ToolsSection />
           <HowItWorksSection />
           <DifferentiationSection />
+          <FAQSection />
+          <FinalCTASection />
+          <Footer />
         </>
       )}
     </MainLayout>
