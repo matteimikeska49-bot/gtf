@@ -12,6 +12,14 @@
   100% { transform: translateX(100%); }
 }
 
+/* Gradient text helper for accented headings */
+.text-gradient-brand {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #f472b6, #fb923c);
+}
+
 html, body {
   margin: 0;
   padding: 0;

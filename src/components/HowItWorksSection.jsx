@@ -22,11 +22,12 @@ export const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
       
       {/* Background ambient light */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] md:w-[1000px] h-[800px] bg-zinc-800/10 blur-[150px] opacity-30 rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] md:w-[1000px] h-[800px] bg-pink-600/15 blur-[120px] opacity-20 rounded-full pointer-events-none" />
       
+      {/* ─── Стеклянная подложка-контейнер ─── */}
       <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
@@ -41,17 +42,17 @@ export const HowItWorksSection = () => {
           </div>
           
           <div className="max-w-3xl mx-auto w-full">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">
-              От сырой идеи до публикации <br className="hidden md:block"/> за 3 простых шага
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">
+              От сырой идеи до публикации <br className="hidden md:block"/> за <span className="text-gradient-brand">3 простых шага</span>
             </h2>
           </div>
           
-          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed text-balance">
+          <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed text-balance">
             Мы спроектировали процесс так, чтобы искусственный интеллект выполнял черновую работу, а вы принимали финальные креативные решения.
           </p>
         </motion.div>
 
-        <div className="relative mt-20 max-w-5xl mx-auto">
+        <div className="relative mt-12 max-w-5xl mx-auto">
           {/* Сетка соединяющих линий навигации */}
           <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-zinc-500/50 to-transparent" />
           

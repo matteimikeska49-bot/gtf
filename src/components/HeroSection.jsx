@@ -1,6 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, LayoutDashboard, Search, PenTool, Play, CheckCircle2, Zap, ArrowRight, BarChart3, Settings } from 'lucide-react';
+import { Sparkles, LayoutDashboard, Search, PenTool, Play, Zap, ArrowRight, BarChart3, Settings } from 'lucide-react';
+
+/* ─── Subtle isometric grid (SVG pattern, 5-8% opacity) ─── */
+const IsometricGrid = () => (
+  <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    <svg className="w-full h-full opacity-[0.06]" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="iso-grid" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+          <line x1="0" y1="0" x2="60" y2="0" stroke="white" strokeWidth="0.5" />
+          <line x1="0" y1="0" x2="0" y2="60" stroke="white" strokeWidth="0.5" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#iso-grid)" />
+    </svg>
+    {/* Fade-out mask so grid disappears at edges */}
+    <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]" />
+    <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505]" />
+  </div>
+);
 
 const AbstractUIMockup = () => {
   return (
@@ -10,8 +28,9 @@ const AbstractUIMockup = () => {
       transition={{ duration: 0.9, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
       className="w-full max-w-5xl mt-20 relative mx-auto perspective-1000"
     >
-      {/* Мягкое свечение сзади карточки в стилистике темного интерфейса */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[80%] bg-gradient-to-tr from-pink-900/30 via-purple-900/20 to-indigo-900/30 blur-[120px] rounded-[100%] pointer-events-none mix-blend-screen" />
+      {/* Огромное свечение за дашбордом — эффект «парения» */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[90%] bg-[#ec4899]/[0.08] blur-[140px] rounded-[100%] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[70%] bg-gradient-to-tr from-pink-900/25 via-purple-900/15 to-indigo-900/25 blur-[100px] rounded-[100%] pointer-events-none" />
 
       <div className="relative rounded-[2rem] md:rounded-[2.5rem] border border-white/5 bg-[#0a0a0a]/80 backdrop-blur-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row text-left ring-1 ring-white/5 group">
         
@@ -111,9 +130,13 @@ const AbstractUIMockup = () => {
 
 export const HeroSection = () => {
   return (
-    <section className="pt-32 pb-20 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
-      {/* Deep Ambient Glow for Hero */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] md:w-[1000px] h-[600px] md:h-[800px] bg-pink-600/15 blur-[120px] opacity-20 rounded-full pointer-events-none" />
+    <section className="pt-32 pb-16 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
+      {/* Isometric grid background layer */}
+      <IsometricGrid />
+      
+      {/* Deep Ambient Glow for Hero — magenta/purple, very low opacity */}
+      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] md:w-[1200px] h-[700px] md:h-[900px] bg-[#ec4899]/[0.07] blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10 w-full">
         <motion.div 
@@ -132,8 +155,8 @@ export const HeroSection = () => {
            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
            className="max-w-3xl mx-auto w-full"
         >
-          <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight mb-8 text-white leading-[1.1] text-balance">
-            Перестаньте быть нянькой <br className="hidden md:block"/> у своего AI.
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-white leading-[1.1] text-balance">
+            Перестаньте быть нянькой <br className="hidden md:block"/> у своего <span className="text-gradient-brand">AI.</span>
           </h1>
         </motion.div>
 
@@ -152,11 +175,11 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto"
         >
-          <button className="w-full sm:w-auto px-8 py-4.5 md:py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-lg md:text-base border border-pink-400/20 z-20 relative">
+          <button className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
             Запустить workflow
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
-          <button className="w-full sm:w-auto px-8 py-4.5 md:py-4 rounded-full font-semibold text-white border border-white/10 hover:bg-white/10 transition-colors flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md text-lg md:text-base z-20 relative">
+          <button className="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-white border border-white/10 hover:bg-white/10 transition-colors flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md text-base z-20 relative">
             <Play className="w-5 h-5 fill-white/20" />
             Смотреть демо
           </button>

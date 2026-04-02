@@ -138,7 +138,7 @@ export const ToolsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
       {/* Background radial glow */}
       <div className="absolute left-[20%] top-[40%] -translate-y-1/2 w-[800px] h-[800px] bg-indigo-950/20 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
       
@@ -156,12 +156,12 @@ export const ToolsSection = () => {
           </div>
           
           <div className="max-w-3xl mx-auto w-full">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">
-              Единая экосистема. <br className="hidden md:block"/>Никаких «костылей».
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">
+              <span className="text-gradient-brand">Единая экосистема.</span> <br className="hidden md:block"/>Никаких «костылей».
             </h2>
           </div>
           
-          <p className="text-lg md:text-xl text-zinc-400 max-w-xl mx-auto font-medium leading-relaxed text-balance">
+          <p className="text-base md:text-lg text-zinc-400 max-w-xl mx-auto font-medium leading-relaxed text-balance">
             Больше не нужно жонглировать десятком вкладок. Все профессиональные инструменты в одном премиальном пространстве.
           </p>
         </motion.div>

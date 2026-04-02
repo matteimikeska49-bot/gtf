@@ -22,7 +22,7 @@ export const DifferentiationSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
       
       {/* Агрессивное свечение для заполнения пустоты */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[800px] md:w-[1000px] h-[800px] bg-blue-600/15 blur-[120px] opacity-20 rounded-full pointer-events-none" />
@@ -39,8 +39,8 @@ export const DifferentiationSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.15] text-balance">
-              AI подстраивается под вас, <br className="hidden lg:block"/> а не наоборот
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.15] text-balance">
+              AI подстраивается <span className="text-gradient-brand">под вас,</span> <br className="hidden lg:block"/> а не наоборот
             </h2>
             <p className="text-lg text-zinc-400 font-medium leading-relaxed text-balance">
               Мы не загоняем вас в рамки бездушных шаблонов. GoToFlow — это продолжение вашего бренда, дающее вам креативную суперсилу, а не заменяющее вас на конвейер.
