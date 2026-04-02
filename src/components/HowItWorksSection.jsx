@@ -22,32 +22,36 @@ export const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="py-32 md:py-48 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+    <section className="py-20 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
       
       {/* Background ambient light */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-zinc-900/40 blur-[150px] rounded-[100%] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] md:w-[1000px] h-[800px] bg-zinc-800/10 blur-[150px] opacity-30 rounded-full pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-24 flex flex-col items-center"
+          className="text-center mb-16 flex flex-col items-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Чистый Workflow</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight max-w-3xl">
-            От сырой идеи до публикации <br className="hidden md:block"/> за 3 простых шага
-          </h2>
-          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed">
+          
+          <div className="max-w-3xl mx-auto w-full">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">
+              От сырой идеи до публикации <br className="hidden md:block"/> за 3 простых шага
+            </h2>
+          </div>
+          
+          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed text-balance">
             Мы спроектировали процесс так, чтобы искусственный интеллект выполнял черновую работу, а вы принимали финальные креативные решения.
           </p>
         </motion.div>
 
-        <div className="relative mt-16 max-w-5xl mx-auto">
+        <div className="relative mt-20 max-w-5xl mx-auto">
           {/* Сетка соединяющих линий навигации */}
           <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-zinc-500/50 to-transparent" />
           
@@ -73,7 +77,7 @@ export const HowItWorksSection = () => {
                 className="relative group flex flex-col md:items-center text-left md:text-center mt-0 md:mt-0"
               >
                 {/* Обертка для неон-иконки, позиционируется на линии */}
-                <div className="relative w-16 h-16 flex items-center justify-center rounded-2xl border border-white/10 bg-[#0a0a0a] shrink-0 mb-8 z-20 shadow-2xl group-hover:scale-110 group-hover:border-white/30 transition-all duration-500 mx-0 md:mx-auto">
+                <div className="relative w-16 h-16 flex items-center justify-center rounded-2xl border border-white/10 bg-[#0a0a0a] shrink-0 mb-10 z-20 shadow-2xl group-hover:scale-110 group-hover:border-white/30 transition-all duration-500 mx-0 md:mx-auto">
                   <div className="absolute inset-0 bg-white blur-xl opacity-10 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl" />
                   <step.icon className="w-6 h-6 text-zinc-100 relative z-10" />
                   

@@ -22,27 +22,32 @@ export const DifferentiationSection = () => {
   ];
 
   return (
-    <section className="py-32 md:py-48 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+    <section className="py-20 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+      
+      {/* Агрессивное свечение для заполнения пустоты */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[800px] md:w-[1000px] h-[800px] bg-blue-600/15 blur-[120px] opacity-20 rounded-full pointer-events-none" />
+      <div className="absolute bottom-[-20%] right-[-10%] w-[800px] h-[800px] bg-cyan-600/15 blur-[120px] opacity-20 rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         
         {/* Left Side: Typography & Points */}
-        <div className="flex-1 flex flex-col gap-14 w-full">
+        <div className="flex-1 flex flex-col gap-12 w-full">
           <motion.div 
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-2xl"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.15] max-w-xl">
-              AI подстраивается под вас, <br className="hidden md:block"/> а не наоборот
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.15] text-balance">
+              AI подстраивается под вас, <br className="hidden lg:block"/> а не наоборот
             </h2>
-            <p className="text-lg text-zinc-400 font-medium max-w-xl leading-relaxed">
+            <p className="text-lg text-zinc-400 font-medium leading-relaxed text-balance">
               Мы не загоняем вас в рамки бездушных шаблонов. GoToFlow — это продолжение вашего бренда, дающее вам креативную суперсилу, а не заменяющее вас на конвейер.
             </p>
           </motion.div>
 
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-8">
             {points.map((point, i) => (
               <motion.div
                 key={i}
@@ -58,7 +63,7 @@ export const DifferentiationSection = () => {
                   <point.icon className="w-6 h-6 text-blue-400 relative z-10" />
                 </div>
                 <div className="max-w-sm">
-                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight group-hover:text-blue-100 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-blue-100 transition-colors">
                     {point.title}
                   </h3>
                   <p className="text-zinc-400 leading-relaxed font-medium">
@@ -76,14 +81,10 @@ export const DifferentiationSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex-1 relative w-full min-h-[500px] md:h-[700px] flex items-center justify-center"
+          className="flex-1 relative w-full flex items-center justify-center lg:justify-end"
         >
-           {/* Огромное мягкое свечение-бренд позади графики (Чистый синий) */}
-           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-950/20 blur-[150px] rounded-full pointer-events-none" />
-           <div className="absolute right-0 bottom-0 w-[400px] h-[400px] bg-cyan-900/10 blur-[100px] rounded-full pointer-events-none" />
-           
            {/* Glassmorphism Abstract Interface */}
-           <div className="relative w-full max-w-lg aspect-[4/5] rounded-[3rem] border border-white/5 bg-[#0a0a0a]/80 backdrop-blur-2xl shadow-2xl p-8 flex flex-col justify-between overflow-hidden group">
+           <div className="relative w-full max-w-lg aspect-[4/5] rounded-[2.5rem] border border-white/5 bg-[#0a0a0a]/80 backdrop-blur-2xl shadow-2xl p-8 flex flex-col justify-between overflow-hidden group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[80px] rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-500/20 transition-colors duration-700 pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/10 blur-[80px] rounded-full translate-y-1/2 -translate-x-1/2 group-hover:bg-cyan-500/20 transition-colors duration-700 pointer-events-none" />
               

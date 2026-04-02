@@ -27,7 +27,8 @@ export const ToolsSection = () => {
                    <div className="h-1.5 w-full bg-zinc-800 rounded-full"/>
                    <div className="h-1.5 w-12 bg-zinc-700/50 rounded-full shrink-0"/>
                 </div>
-                <div className="flex items-center justify-center py-3 w-full rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 font-semibold text-indigo-300 text-sm border border-indigo-500/30 transition-all cursor-pointer shadow-[0_0_20px_rgba(99,102,241,0.15)] relative z-10">
+                {/* CTA Button */}
+                <div className="flex items-center justify-center py-3 w-full rounded-xl bg-gradient-to-r from-pink-500 to-orange-500 shadow-[0_0_40px_rgba(236,72,153,0.4)] hover:scale-105 font-bold text-white text-sm border border-pink-400/20 transition-all cursor-pointer relative z-10">
                    Сгенерировать
                 </div>
               </div>
@@ -93,7 +94,7 @@ export const ToolsSection = () => {
     },
     {
       title: "Клонирование голоса",
-      desc: "AI запоминает ваш Tone of Voice, любимые словесные обороты и уникальный визуальный стиль.",
+      desc: "AI запоминает ваш Tone of Voice, словесные обороты и уникальный визуальный стиль.",
       icon: Fingerprint,
       spanClass: "md:col-span-2",
       visual: (
@@ -137,27 +138,30 @@ export const ToolsSection = () => {
   ];
 
   return (
-    <section className="py-32 md:py-48 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
-      {/* Глубокое многослойное свечение фона */}
-      <div className="absolute left-[20%] top-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-950/20 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute right-0 top-0 w-[600px] h-[600px] bg-indigo-900/10 blur-[150px] rounded-full pointer-events-none" />
+    <section className="py-20 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+      {/* Background radial glow */}
+      <div className="absolute left-[20%] top-[40%] -translate-y-1/2 w-[800px] h-[800px] bg-indigo-950/20 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-24 flex flex-col items-center"
+          className="text-center mb-16 flex flex-col items-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 text-indigo-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
             <Layers className="w-3.5 h-3.5" />
             <span>Workflow, а не чат-бот</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight max-w-3xl">
-            Единая экосистема. <br className="hidden md:block"/>Никаких «костылей».
-          </h2>
-          <p className="text-lg md:text-xl text-zinc-400 max-w-xl mx-auto font-medium leading-relaxed">
+          
+          <div className="max-w-3xl mx-auto w-full">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">
+              Единая экосистема. <br className="hidden md:block"/>Никаких «костылей».
+            </h2>
+          </div>
+          
+          <p className="text-lg md:text-xl text-zinc-400 max-w-xl mx-auto font-medium leading-relaxed text-balance">
             Больше не нужно жонглировать десятком вкладок. Все профессиональные инструменты в одном премиальном пространстве.
           </p>
         </motion.div>
@@ -172,7 +176,7 @@ export const ToolsSection = () => {
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
               className={`p-px rounded-[2.5rem] bg-gradient-to-b from-white/10 to-white/0 relative group overflow-hidden ${t.spanClass}`}
             >
-              {/* Inner wrapper for card to create the very thin gradient border effect */}
+              {/* Inner wrapper for card */}
               <div className="relative z-10 h-full bg-[#0a0a0a]/80 p-8 rounded-[2.5rem] group-hover:bg-[#0a0a0a] transition-colors duration-700 flex flex-col overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 via-transparent to-transparent group-hover:from-indigo-500/5 transition-colors duration-700 pointer-events-none" />
                 

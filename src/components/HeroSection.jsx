@@ -8,7 +8,7 @@ const AbstractUIMockup = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className="w-full max-w-5xl mt-24 relative mx-auto perspective-1000"
+      className="w-full max-w-5xl mt-20 relative mx-auto perspective-1000"
     >
       {/* Мягкое свечение сзади карточки в стилистике темного интерфейса */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[80%] bg-gradient-to-tr from-pink-900/30 via-purple-900/20 to-indigo-900/30 blur-[120px] rounded-[100%] pointer-events-none mix-blend-screen" />
@@ -26,7 +26,7 @@ const AbstractUIMockup = () => {
           </div>
           
           <div className="space-y-3 mt-4 relative z-10">
-            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20 text-pink-300 font-semibold text-sm shadow-inner cursor-pointer hover:border-pink-500/40 transition-colors">
+            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-pink-500/10 to-orange-500/10 border border-pink-500/20 text-pink-300 font-semibold text-sm shadow-inner cursor-pointer hover:border-pink-500/40 transition-colors">
               <Zap className="w-4 h-4 text-pink-400 group-hover:scale-110 transition-transform" /> Создать контент
             </div>
             <div className="flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-400 hover:text-zinc-200 transition-colors text-sm cursor-pointer hover:bg-white/5 border border-transparent">
@@ -71,10 +71,10 @@ const AbstractUIMockup = () => {
                  <div className="h-2 w-[60%] bg-zinc-800 rounded-full" />
               </div>
 
-              <div className="mt-8 p-4 rounded-xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-purple-500/5 flex items-center gap-3 relative overflow-hidden">
+              <div className="mt-8 p-4 rounded-xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-orange-500/5 flex items-center gap-3 relative overflow-hidden">
                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
                  <Sparkles className="w-5 h-5 text-pink-400" />
-                 <div className="h-2 w-32 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full opacity-80" />
+                 <div className="h-2 w-32 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full opacity-80" />
               </div>
             </div>
 
@@ -97,7 +97,7 @@ const AbstractUIMockup = () => {
                      initial={{ height: 0 }}
                      animate={{ height: `${h}%` }}
                      transition={{ duration: 1.2, delay: 0.8 + i * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-                     className={`flex-1 rounded-sm border-t ${i === 5 ? 'bg-gradient-to-t from-pink-500 to-purple-500 shadow-[0_0_15px_rgba(236,72,153,0.4)] border-pink-400' : 'bg-zinc-800 border-zinc-700'}`}
+                     className={`flex-1 rounded-sm border-t ${i === 5 ? 'bg-gradient-to-t from-pink-500 to-orange-500 shadow-[0_0_15px_rgba(236,72,153,0.4)] border-pink-400' : 'bg-zinc-800 border-zinc-700'}`}
                    />
                  ))}
               </div>
@@ -111,9 +111,9 @@ const AbstractUIMockup = () => {
 
 export const HeroSection = () => {
   return (
-    <section className="pt-40 pb-24 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
+    <section className="pt-32 pb-20 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
       {/* Deep Ambient Glow for Hero */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-pink-900/20 via-purple-900/10 to-transparent blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] md:w-[1000px] h-[600px] md:h-[800px] bg-pink-600/15 blur-[120px] opacity-20 rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10 w-full">
         <motion.div 
@@ -126,20 +126,22 @@ export const HeroSection = () => {
           <span>Новая эра создания контента</span>
         </motion.div>
 
-        <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight mb-8 max-w-4xl text-white leading-[1.1]"
+        <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+           className="max-w-3xl mx-auto w-full"
         >
-          Перестаньте быть нянькой <br className="hidden md:block"/> у своего AI.
-        </motion.h1>
+          <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight mb-8 text-white leading-[1.1] text-balance">
+            Перестаньте быть нянькой <br className="hidden md:block"/> у своего AI.
+          </h1>
+        </motion.div>
 
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed font-medium"
+          className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed font-medium text-balance"
         >
           Устали собирать посты по кускам из разных нейросетей и переписывать «пластиковый» текст? GoToFlow — это чистый workflow. От первой идеи до готовой публикации.
         </motion.p>
@@ -150,11 +152,11 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto"
         >
-          <button className="w-full sm:w-auto px-8 py-4.5 md:py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-purple-600 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_30px_rgba(236,72,153,0.3)] flex items-center justify-center gap-2 group text-lg md:text-base border border-pink-400/20">
+          <button className="w-full sm:w-auto px-8 py-4.5 md:py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-lg md:text-base border border-pink-400/20 z-20 relative">
             Запустить workflow
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
-          <button className="w-full sm:w-auto px-8 py-4.5 md:py-4 rounded-full font-semibold text-white border border-white/10 hover:bg-white/10 transition-colors flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md text-lg md:text-base">
+          <button className="w-full sm:w-auto px-8 py-4.5 md:py-4 rounded-full font-semibold text-white border border-white/10 hover:bg-white/10 transition-colors flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md text-lg md:text-base z-20 relative">
             <Play className="w-5 h-5 fill-white/20" />
             Смотреть демо
           </button>

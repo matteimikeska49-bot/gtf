@@ -12,7 +12,7 @@ export const ProblemSection = () => {
     {
       icon: Clock,
       title: "Часы ручной доработки",
-      desc: "AI выдает водянистую простыню, и вы тратите часы, вычищая из текста неестественный восторг и академические стилистические штампы."
+      desc: "AI выдает водянистую простыню, и вы тратите часы, вычищая из текста неестественный восторг и стилистические штампы."
     },
     {
       icon: Bot,
@@ -22,33 +22,36 @@ export const ProblemSection = () => {
     {
       icon: Flame,
       title: "Потеря консистентности",
-      desc: "Цвета скачут от поста к посту, tone of voice постоянно меняется. Ваш личный бренд растворяется в бесконечном потоке случайных результатов."
+      desc: "Цвета скачут от поста к посту, tone of voice постоянно меняется. Ваш личный бренд растворяется в потоке случайных результатов."
     }
   ];
 
   return (
-    <section className="py-32 md:py-48 px-6 relative z-10 overflow-hidden bg-[#050505]">
+    <section className="py-20 px-6 relative z-10 overflow-hidden bg-[#050505]">
       
-      {/* Огромное мягкое свечение-боль в центре секции */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#4a0404]/20 blur-[150px] rounded-[100%] pointer-events-none mix-blend-screen" />
-      <div className="absolute left-0 bottom-0 w-[500px] h-[500px] bg-rose-900/10 blur-[120px] rounded-full pointer-events-none" />
+      {/* Огромное мягкое свечение фона */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] md:w-[1000px] h-[800px] bg-[#4a0404]/20 blur-[150px] rounded-[100%] pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-24 flex flex-col items-center"
+          className="text-center mb-16 flex flex-col items-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-rose-500/20 bg-rose-500/10 text-rose-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
             <Flame className="w-3.5 h-3.5" />
             <span>Знакомая ситуация?</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight max-w-3xl">
-            Создание контента <br className="hidden md:block"/> превратилось в хаос?
-          </h2>
-          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed">
+          
+          <div className="max-w-3xl mx-auto w-full">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">
+              Создание контента <br className="hidden md:block"/> превратилось в хаос?
+            </h2>
+          </div>
+          
+          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed text-balance">
             Вы тратите больше времени на борьбу с промптами и перенос текста из одного сервиса в другой, чем на само творчество и бизнес.
           </p>
         </motion.div>
