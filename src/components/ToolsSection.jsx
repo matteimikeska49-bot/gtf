@@ -122,8 +122,9 @@ export const ToolsSection = () => {
                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/0 to-orange-400/0 group-hover:from-pink-500/5 group-hover:to-orange-400/5 transition-colors duration-500 pointer-events-none" />
                <div className={`relative z-10 flex h-full ${t.visual ? 'flex-col md:flex-row' : 'flex-col'}`}>
                  <div className={`flex flex-col ${t.visual ? 'md:w-[55%] lg:w-1/2 justify-center' : 'w-full'}`}>
-                   <div className="w-12 h-12 rounded-xl bg-zinc-100 dark:bg-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-pink-500/10 transition-transform duration-300">
-                     <t.icon className="w-6 h-6 text-zinc-900 dark:text-white group-hover:text-pink-500 transition-colors" />
+                   <div className="relative w-12 h-12 flex items-center justify-center rounded-xl border border-white/5 mb-6 group-hover:scale-110 transition-transform duration-300">
+                     <div className="absolute inset-0 bg-pink-500 blur-xl opacity-30 rounded-full group-hover:opacity-50 transition-opacity" />
+                     <t.icon className="w-6 h-6 text-pink-400 relative z-10" />
                    </div>
                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-3 tracking-tight">
                      {t.title}

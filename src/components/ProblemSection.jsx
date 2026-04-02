@@ -67,8 +67,9 @@ export const ProblemSection = () => {
               <div className="absolute -right-8 -top-8 w-32 h-32 bg-red-500/10 dark:bg-red-500/20 blur-[50px] rounded-full group-hover:scale-150 transition-transform duration-700" />
               
               <div className="flex items-start gap-5 relative z-10">
-                <div className="p-3.5 rounded-2xl bg-red-50 dark:bg-red-950/40 text-red-500 dark:text-red-400 border border-red-100 dark:border-red-900/50 shadow-sm shrink-0">
-                  <p.icon className="w-6 h-6" />
+                <div className="relative w-12 h-12 flex items-center justify-center rounded-xl border border-white/5 shrink-0">
+                  <div className="absolute inset-0 bg-red-500 blur-xl opacity-30 rounded-full group-hover:opacity-50 transition-opacity" />
+                  <p.icon className="w-6 h-6 text-red-500 relative z-10" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-2.5 tracking-tight group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
