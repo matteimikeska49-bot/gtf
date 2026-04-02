@@ -54,11 +54,11 @@ export const FinalCTASection = () => {
           <button className="w-full sm:w-auto px-10 py-5 rounded-full font-bold text-white text-lg bg-gradient-to-r from-pink-500 to-orange-500 shadow-[0_0_50px_rgba(236,72,153,0.45)] hover:shadow-[0_0_80px_rgba(236,72,153,0.6)] hover:scale-105 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 group border border-pink-400/20 relative overflow-hidden">
             {/* Inner shine */}
             <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none rounded-full" />
-            <span className="relative z-10">Попробовать бесплатно</span>
+            <span className="relative z-10">Запустить бесплатно</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
           </button>
           <p className="text-sm text-zinc-500 font-medium">
-            7 дней бесплатно · Без карты
+            Бесплатно · Без карты
           </p>
         </motion.div>
 

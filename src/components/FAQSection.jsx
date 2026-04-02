@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Есть ли бесплатный период?",
-    a: "Да. После регистрации вы получаете 7 дней полного доступа без привязки карты. Все инструменты доступны без ограничений, чтобы вы могли убедиться в ценности платформы до принятия решения."
+    a: "Да. После регистрации вы получаете полный доступ без привязки карты. Все инструменты доступны без ограничений, чтобы вы могли убедиться в ценности платформы до принятия решения."
   },
   {
     q: "Моя контентная стратегия и тексты в безопасности?",
@@ -75,7 +75,7 @@ export const FAQSection = () => {
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-purple-900/15 blur-[140px] rounded-full pointer-events-none opacity-40" />
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,24 +96,22 @@ export const FAQSection = () => {
           </p>
         </motion.div>
 
-        {/* Accordion wrapper — стеклянная подложка */}
+        {/* Accordion wrapper */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-          className="bg-white/[0.02] border border-white/[0.05] rounded-3xl p-6 md:p-8 backdrop-blur-md"
+          className="flex flex-col gap-3"
         >
-          <div className="flex flex-col gap-3">
-            {faqs.map((item, i) => (
-              <FAQItem
-                key={i}
-                item={item}
-                isOpen={openIndex === i}
-                onClick={() => toggle(i)}
-              />
-            ))}
-          </div>
+          {faqs.map((item, i) => (
+            <FAQItem
+              key={i}
+              item={item}
+              isOpen={openIndex === i}
+              onClick={() => toggle(i)}
+            />
+          ))}
         </motion.div>
       </div>
     </section>

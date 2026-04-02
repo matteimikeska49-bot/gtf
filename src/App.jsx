@@ -13,19 +13,15 @@ import { Footer } from './components/Footer';
 function App() {
   return (
     <MainLayout>
-      {(isDark, setIsDark) => (
-        <>
-          <Header isDark={isDark} setIsDark={setIsDark} />
-          <HeroSection />
-          <ProblemSection />
-          <ToolsSection />
-          <HowItWorksSection />
-          <DifferentiationSection />
-          <FAQSection />
-          <FinalCTASection />
-          <Footer />
-        </>
-      )}
+      <Header />
+      <HeroSection />
+      <ProblemSection />
+      <ToolsSection />
+      <HowItWorksSection />
+      <DifferentiationSection />
+      <FAQSection />
+      <FinalCTASection />
+      <Footer />
     </MainLayout>
   );
 }
