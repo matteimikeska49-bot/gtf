@@ -5,16 +5,16 @@ import { CornerDownLeft, Sparkles, Download } from 'lucide-react';
 /* ─── Микро-UI: Имитация поля ввода (Шаг 1) ─── */
 const InputMockup = () => (
   <div className="mt-6 flex flex-col gap-2 w-full max-w-xs">
-    <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-black/50 border border-white/10">
-      <span className="text-xs text-zinc-600 flex-1 truncate font-mono">https://youtube.com/watch?v=...</span>
-      <div className="shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-        <CornerDownLeft className="w-3 h-3 text-zinc-500" />
+    <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/[0.05] border border-white/20">
+      <span className="text-xs text-zinc-500 flex-1 truncate font-mono">https://youtube.com/watch?v=...</span>
+      <div className="shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center">
+        <CornerDownLeft className="w-3 h-3 text-zinc-400" />
       </div>
     </div>
-    <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-black/50 border border-white/10">
-      <span className="text-xs text-zinc-600 flex-1 truncate font-mono">Тема: Продвижение SaaS</span>
-      <div className="shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-        <CornerDownLeft className="w-3 h-3 text-zinc-500" />
+    <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/[0.05] border border-white/20">
+      <span className="text-xs text-zinc-500 flex-1 truncate font-mono">Тема: Продвижение SaaS</span>
+      <div className="shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center">
+        <CornerDownLeft className="w-3 h-3 text-zinc-400" />
       </div>
     </div>
   </div>
@@ -47,9 +47,9 @@ const ProgressMockup = () => {
         <span className="text-[11px] text-zinc-500 font-medium tracking-wide">Генерация</span>
         <span className="text-[11px] text-zinc-400 font-bold tabular-nums">{pct}%</span>
       </div>
-      <div className="w-full h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+      <div className="w-full h-2 rounded-full bg-white/[0.08] overflow-hidden">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-pink-500 to-orange-400 transition-[width] duration-[16ms] ease-linear shadow-[0_0_8px_rgba(236,72,153,0.5)]"
+          className="h-full rounded-full bg-gradient-to-r from-pink-500 to-orange-400 transition-[width] duration-[16ms] ease-linear shadow-[0_0_20px_rgba(236,72,153,0.6)]"
           style={{ width: `${pct}%` }}
         />
       </div>
@@ -60,7 +60,7 @@ const ProgressMockup = () => {
 /* ─── Микро-UI: Кнопка экспорта (Шаг 3) ─── */
 const ExportMockup = () => (
   <div className="mt-6">
-    <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-pink-500/30 bg-pink-500/10 shadow-[0_0_20px_rgba(236,72,153,0.12)] text-pink-300 text-xs font-semibold tracking-wide transition-all hover:shadow-[0_0_30px_rgba(236,72,153,0.2)] hover:bg-pink-500/15 hover:border-pink-500/50 group">
+    <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-pink-500/50 bg-pink-500/10 shadow-[0_0_20px_rgba(236,72,153,0.2)] text-pink-300 text-xs font-semibold tracking-wide transition-all hover:shadow-[0_0_28px_rgba(236,72,153,0.4)] hover:bg-pink-500/15 hover:border-pink-500/70 group">
       <Download className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
       Скачать результат
     </button>
@@ -136,6 +136,9 @@ export const HowItWorksSection = () => {
           {/* Вертикальная линия — mobile */}
           <div className="md:hidden absolute left-[3.25rem] top-[10%] bottom-[10%] w-px bg-gradient-to-b from-transparent via-zinc-600/50 to-transparent" />
 
+          {/* ─── Фоновое свечение за карточками ─── */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[120%] bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-orange-500/20 blur-[100px] -z-10 pointer-events-none rounded-full" />
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-6 relative z-10">
             {steps.map((step, i) => (
               <motion.div
@@ -144,20 +147,39 @@ export const HowItWorksSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.2, ease: "easeOut" }}
-                className="relative group flex flex-col md:items-center text-left md:text-center"
+                className={`relative group flex flex-col md:items-center text-left md:text-center ${
+                  i === 1 ? 'lg:scale-105' : ''
+                }`}
               >
-                {/* Иконка с номером — на соединяющей линии */}
-                <div className="relative w-16 h-16 flex items-center justify-center rounded-2xl border border-white/10 bg-[#0a0a0a] shrink-0 mb-10 z-20 shadow-2xl group-hover:scale-110 group-hover:border-white/30 transition-all duration-500 mx-0 md:mx-auto">
-                  <div className="absolute inset-0 bg-white blur-xl opacity-10 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl" />
-                  <step.icon className="w-6 h-6 text-zinc-100 relative z-10" />
+                {/* Иконка с номером */}
+                <div className={`relative w-16 h-16 flex items-center justify-center rounded-2xl border shrink-0 mb-10 z-20 shadow-2xl group-hover:scale-110 transition-all duration-500 mx-0 md:mx-auto ${
+                  i === 1
+                    ? 'border-pink-500/50 bg-[#0a0a0a] shadow-[0_0_15px_rgba(236,72,153,0.3)]'
+                    : 'border-white/10 bg-[#0a0a0a] group-hover:border-pink-500/40 group-hover:shadow-[0_0_15px_rgba(236,72,153,0.2)]'
+                }`}>
+                  <div className={`absolute inset-0 blur-xl opacity-10 group-hover:opacity-25 transition-opacity duration-500 rounded-2xl ${
+                    i === 1 ? 'bg-pink-500' : 'bg-white'
+                  }`} />
+                  <step.icon className={`w-6 h-6 relative z-10 ${
+                    i === 1 ? 'text-pink-300' : 'text-zinc-100'
+                  }`} />
                   <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#050505] border border-white/10 flex items-center justify-center text-xs font-bold text-zinc-400">
                     {step.number}
                   </div>
                 </div>
 
                 {/* Карточка с микро-UI */}
-                <div className="w-full bg-[#0a0a0a]/80 backdrop-blur-xl p-8 rounded-[2rem] border border-white/5 group-hover:border-white/10 transition-colors duration-500 shadow-xl relative overflow-hidden flex-1 md:hover:-translate-y-2 transform">
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none" />
+                <div className={`w-full backdrop-blur-xl p-8 rounded-3xl border transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.5)] relative overflow-hidden flex-1 md:hover:-translate-y-2 transform bg-gradient-to-b from-white/[0.08] to-white/[0.02] ${
+                  i === 1
+                    ? 'border-pink-500/40 hover:border-pink-500/60'
+                    : 'border-white/[0.15] hover:border-white/25'
+                }`}>
+                  {/* Общий блик */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none" />
+                  {/* Акцентный блик для центральной карточки */}
+                  {i === 1 && (
+                    <div className="absolute inset-0 bg-gradient-to-b from-pink-500/5 to-transparent pointer-events-none" />
+                  )}
 
                   <h3 className="text-2xl font-bold text-white mb-3 tracking-tight relative z-10">
                     {step.title}
