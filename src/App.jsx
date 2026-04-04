@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MainLayout } from './components/MainLayout';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
+import { ShowcaseSlider } from './components/ShowcaseSlider';
 import { ProblemSection } from './components/ProblemSection';
 import { ToolsSection } from './components/ToolsSection';
 import { HowItWorksSection } from './components/HowItWorksSection';
@@ -17,6 +18,7 @@ function App() {
     <MainLayout>
       <Header lang={lang} setLang={setLang} />
       <HeroSection lang={lang} />
+      <ShowcaseSlider />
       <ProblemSection />
       <ToolsSection />
       <HowItWorksSection />
