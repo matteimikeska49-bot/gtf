@@ -4,27 +4,25 @@ import { Heart, Star } from 'lucide-react';
 /* ─── Данные табов ─── */
 const TABS = ['Маркетинг', 'Личный бренд', 'E-commerce', 'Бьюти', 'Образование'];
 
-/* ─── Карточки-плейсхолдеры ─── */
-// format: 'reel' (9:16), 'square' (1:1), 'portrait' (4:5)
+/* ─── Карточки-плейсхолдеры: чередующий ритм Reels + Post ─── */
 const cards = [
-  { id: 1,  format: 'reel',     tag: 'Reels',    likes: '4.2K', label: 'Продвижение SaaS' },
-  { id: 2,  format: 'square',   tag: 'Пост',      likes: '1.8K', label: 'Личный бренд' },
-  { id: 3,  format: 'portrait', tag: 'Карусель',  likes: '3.1K', label: 'E-commerce' },
-  { id: 4,  format: 'reel',     tag: 'Reels',    likes: '6.7K', label: 'Бьюти-блог' },
-  { id: 5,  format: 'square',   tag: 'Пост',      likes: '2.4K', label: 'Образование' },
-  { id: 6,  format: 'portrait', tag: 'Карусель',  likes: '1.2K', label: 'Маркетинг' },
-  { id: 7,  format: 'reel',     tag: 'Reels',    likes: '5.9K', label: 'Фитнес' },
-  { id: 8,  format: 'square',   tag: 'Пост',      likes: '980',  label: 'Путешествия' },
+  { id: 1, format: 'reel',   tag: 'Reels',   likes: '4.2K', label: 'Продвижение SaaS' },
+  { id: 2, format: 'square', tag: 'Пост',    likes: '1.8K', label: 'Личный бренд' },
+  { id: 3, format: 'reel',   tag: 'Reels',   likes: '6.7K', label: 'Бьюти-блог' },
+  { id: 4, format: 'square', tag: 'Карусель', likes: '3.1K', label: 'E-commerce' },
+  { id: 5, format: 'reel',   tag: 'Reels',   likes: '5.9K', label: 'Фитнес' },
+  { id: 6, format: 'square', tag: 'Пост',    likes: '2.4K', label: 'Образование' },
+  { id: 7, format: 'reel',   tag: 'Reels',   likes: '8.1K', label: 'Маркетинг' },
+  { id: 8, format: 'square', tag: 'Карусель', likes: '980',  label: 'Путешествия' },
 ];
 
-/* Высоты плейсхолдеров */
-const formatClass = {
-  reel:     'h-64',   // 9:16 — вертикальный
-  square:   'h-44',   // 1:1
-  portrait: 'h-56',   // 4:5
+/* Пропорции плейсхолдеров (aspect-ratio) */
+const formatAspect = {
+  reel:   'aspect-[9/16]',  // высокий / Stories / Reels
+  square: 'aspect-square',  // 1:1 Пост / Карусель
 };
 
-/* Accent цвет bg для иконки-тега */
+/* Accent цвет bg для тега */
 const tagColor = {
   Reels:    'bg-pink-500/20 text-pink-300',
   Пост:     'bg-indigo-500/20 text-indigo-300',
@@ -33,38 +31,36 @@ const tagColor = {
 
 /* ─── Одна карточка ─── */
 const SlideCard = ({ card }) => (
-  <div className="shrink-0 w-44 bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
+  <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
     {/* Плейсхолдер изображения */}
-    <div className={`relative w-full ${formatClass[card.format]} rounded-xl bg-[#111] overflow-hidden`}>
+    <div className={`relative w-full ${formatAspect[card.format]} rounded-xl bg-[#111] overflow-hidden`}>
       <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02]" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:14px_14px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:18px_18px]" />
       {/* Тег формата */}
-      <span className={`absolute top-2 left-2 text-[9px] font-bold px-2 py-0.5 rounded-full ${tagColor[card.tag]}`}>
+      <span className={`absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full ${tagColor[card.tag]}`}>
         {card.tag}
       </span>
     </div>
 
     {/* Соц. интерфейс снизу */}
-    <div className="flex flex-col gap-2">
-      {/* Скелетон подписи */}
-      <div className="h-2 w-3/4 rounded-full bg-white/[0.06]" />
-      <div className="h-1.5 w-1/2 rounded-full bg-white/[0.04]" />
-      {/* Лайки */}
-      <div className="flex items-center gap-1.5 mt-1">
-        <Heart className="w-3 h-3 text-pink-500/70" />
-        <span className="text-[10px] text-zinc-600 font-medium">{card.likes}</span>
-        <span className="ml-auto text-[9px] text-zinc-700 truncate max-w-[60px]">{card.label}</span>
+    <div className="flex flex-col gap-2 px-1">
+      <div className="h-2.5 w-3/4 rounded-full bg-white/[0.06]" />
+      <div className="h-2 w-1/2 rounded-full bg-white/[0.04]" />
+      <div className="flex items-center gap-2 mt-1">
+        <Heart className="w-3.5 h-3.5 text-pink-500/70" />
+        <span className="text-xs text-zinc-500 font-medium">{card.likes}</span>
+        <span className="ml-auto text-[11px] text-zinc-600 truncate">{card.label}</span>
       </div>
     </div>
   </div>
 );
 
-/* ─── Трек слайдера (дублируется для бесконечности) ─── */
-const MarqueeTrack = ({ speed = 35, reverse = false }) => (
+/* ─── Трек слайдера ─── */
+const MarqueeTrack = ({ speed = 40 }) => (
   <div
-    className="flex gap-4"
+    className="flex items-center gap-5"
     style={{
-      animation: `marquee-scroll ${speed}s linear infinite${reverse ? ' reverse' : ''}`,
+      animation: `marquee-scroll ${speed}s linear infinite`,
       width: 'max-content',
     }}
   >
@@ -131,22 +127,15 @@ export const ShowcaseSlider = () => {
           ))}
         </div>
 
-        {/* ─── Слайдер (Marquee) ─── */}
+        {/* ─── Слайдер (Marquee) — один ряд ─── */}
         <div
           className="relative overflow-hidden"
           style={{
-            maskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+            maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
           }}
         >
-          {/* Первый трек */}
-          <div className="overflow-hidden pb-4">
-            <MarqueeTrack speed={38} />
-          </div>
-          {/* Второй трек (обратный) */}
-          <div className="overflow-hidden pt-2">
-            <MarqueeTrack speed={45} reverse />
-          </div>
+          <MarqueeTrack speed={40} />
         </div>
       </div>
 
