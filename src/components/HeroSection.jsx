@@ -1,6 +1,48 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, LayoutDashboard, Search, PenTool, Play, Zap, ArrowRight, BarChart3, Settings } from 'lucide-react';
+
+const BADGE_TEXTS = [
+  "Для креаторов, экспертов и контент-команд",
+  "Создавайте контент, даже если нет идей",
+];
+
+const RotatingBadge = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % BADGE_TEXTS.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm overflow-hidden">
+      {/* Мерцающая точка активности */}
+      <span className="relative flex h-2 w-2 shrink-0">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-60" />
+        <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500" />
+      </span>
+
+      {/* Обертка фиксированной высоты */}
+      <div className="relative h-[1.2em] overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={index}
+            initial={{ y: '100%', opacity: 0 }}
+            animate={{ y: '0%', opacity: 1 }}
+            exit={{ y: '-100%', opacity: 0 }}
+            transition={{ duration: 0.45, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="block text-sm text-zinc-300 whitespace-nowrap"
+          >
+            {BADGE_TEXTS[index]}
+          </motion.span>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
 
 /* ─── Subtle isometric grid (SVG pattern, 5-8% opacity) ─── */
 const IsometricGrid = () => (
@@ -143,17 +185,9 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="flex flex-col items-center gap-3 mt-4 md:mt-0 mb-8"
+          className="mt-4 md:mt-0 mb-8"
         >
-          {/* Аудиторный бейдж */}
-          <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-zinc-300 backdrop-blur-sm">
-            Для креаторов, экспертов и команд
-          </span>
-          {/* Продуктовый бейдж */}
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.03] px-4 py-1.5 text-xs text-zinc-500 tracking-widest uppercase font-bold backdrop-blur-sm">
-            <Sparkles className="w-3 h-3 text-pink-400" />
-            Новая эра создания контента
-          </span>
+          <RotatingBadge />
         </motion.div>
 
         <motion.div
@@ -171,10 +205,10 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-lg md:text-xl max-w-2xl mb-12 leading-relaxed font-medium text-balance"
+          className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed font-medium text-balance"
         >
-          <span className="text-zinc-400">Устали собирать контент по кускам из разных нейросетей и переписывать «пластиковый» текст? </span>
-          <span className="text-zinc-300">GoToFlow — это единая платформа. Пост, карусель, сценарии Reels и контент-план в одном месте.</span>
+          GoToFlow помогает собирать посты, карусели, сценарии Reels и контент-планы в одном месте,{' '}
+          <span className="text-zinc-300">избавляя вас от хаоса вкладок и десятков разных сервисов.</span>
         </motion.p>
 
         <motion.div 
