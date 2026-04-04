@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 export const FinalCTASection = () => {
   return (
-    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-zinc-950 border-t border-white/[0.04]">
 
       {/* ─── Огромное радиальное свечение — розово-оранжевый взрыв ─── */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px] bg-gradient-radial from-pink-600/20 via-orange-600/10 to-transparent blur-[130px] rounded-full pointer-events-none" />

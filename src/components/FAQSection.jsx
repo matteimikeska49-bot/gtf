@@ -83,9 +83,7 @@ export const FAQSection = () => {
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-purple-900/15 blur-[140px] rounded-full pointer-events-none opacity-40" />
+    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505] border-t border-white/[0.04]">
 
       <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
         <motion.div

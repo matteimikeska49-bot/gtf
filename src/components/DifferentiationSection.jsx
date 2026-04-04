@@ -47,7 +47,7 @@ const points = [
 
 export const DifferentiationSection = () => {
   return (
-    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-zinc-950 border-t border-white/[0.04]">
 
       {/* Background ambient */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[700px] h-[700px] bg-indigo-900/15 blur-[130px] opacity-25 rounded-full pointer-events-none" />

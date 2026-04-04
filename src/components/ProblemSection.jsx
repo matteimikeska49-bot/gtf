@@ -27,7 +27,7 @@ export const ProblemSection = () => {
   ];
 
   return (
-    <section className="py-24 md:py-32 px-6 relative z-10 overflow-hidden bg-[#050505]">
+    <section className="py-24 md:py-32 px-6 relative z-10 overflow-hidden bg-[#050505] border-t border-white/[0.04]">
       
       {/* Огромное мягкое свечение фона */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] md:w-[1000px] h-[800px] bg-[#4a0404]/20 blur-[150px] rounded-[100%] pointer-events-none" />

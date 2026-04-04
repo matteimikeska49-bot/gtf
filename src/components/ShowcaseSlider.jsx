@@ -75,7 +75,7 @@ export const ShowcaseSlider = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className="py-24 md:py-32 relative z-10 w-full overflow-hidden bg-[#050505]">
+    <section className="py-24 md:py-32 relative z-10 w-full overflow-hidden bg-zinc-950 border-t border-white/[0.04]">
 
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-pink-600/8 blur-[140px] rounded-full pointer-events-none" />
