@@ -1,122 +1,131 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { X, ArrowRight, Zap } from 'lucide-react';
+import { X, Check, CreditCard, Rocket } from 'lucide-react';
 
-const cards = [
+/* ─── Данные сравнения ─── */
+const rows = [
   {
-    title: 'Viral Reels и идеи',
-    icon: '🎬',
+    label:   'Viral Reels и идеи',
     problem: 'поиск вручную или отдельный сервис',
-    solution: 'нашли → адаптировали → сделали контент',
+    solution:'нашли → адаптировали → сделали контент',
   },
   {
-    title: 'Анализ конкурентов',
-    icon: '🔍',
+    label:   'Анализ конкурентов',
     problem: 'отдельный spy-tool',
-    solution: 'увидели, что работает → использовали в своей подаче',
+    solution:'увидели, что работает → использовали в своей подаче',
   },
   {
-    title: 'Карусели',
-    icon: '🎠',
+    label:   'Карусели',
     problem: 'текст + дизайн + сборка в разных местах',
-    solution: 'всё в одном процессе',
+    solution:'всё в одном процессе',
   },
   {
-    title: 'Тексты и структура',
-    icon: '✍️',
+    label:   'Тексты и структура',
     problem: 'сырой AI-черновик',
-    solution: 'готовый результат под формат и задачу',
+    solution:'готовый результат под формат и задачу',
   },
 ];
-
-const Card = ({ card, index }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 32 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-    className="bg-white/[0.02] border border-white/[0.05] rounded-3xl p-6 lg:p-8 group hover:border-white/10 hover:bg-white/[0.03] transition-all duration-300"
-  >
-    {/* Заголовок карточки */}
-    <div className="flex items-center gap-3 mb-5">
-      <span className="text-2xl">{card.icon}</span>
-      <h3 className="text-lg font-bold text-white tracking-tight">{card.title}</h3>
-    </div>
-
-    {/* Старый подход */}
-    <div className="flex items-start gap-2.5 mb-4">
-      <div className="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center">
-        <X className="w-2.5 h-2.5 text-zinc-600" />
-      </div>
-      <div>
-        <span className="text-[11px] uppercase tracking-widest font-bold text-zinc-600 block mb-0.5">
-          Обычно
-        </span>
-        <p className="text-sm text-zinc-500 leading-relaxed">{card.problem}</p>
-      </div>
-    </div>
-
-    {/* Стрелка-разделитель */}
-    <div className="flex items-center gap-2 mb-4 pl-6">
-      <ArrowRight className="w-3.5 h-3.5 text-pink-500/60" />
-    </div>
-
-    {/* Новый подход — выделенный блок */}
-    <div className="bg-white/[0.05] border border-white/10 rounded-xl p-4 relative overflow-hidden">
-      {/* Лёгкий блик */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent pointer-events-none" />
-      <div className="flex items-start gap-2.5 relative z-10">
-        <div className="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-pink-500/20 border border-pink-500/30 flex items-center justify-center">
-          <Zap className="w-2.5 h-2.5 text-pink-400" />
-        </div>
-        <div>
-          <span className="text-[11px] uppercase tracking-widest font-bold text-pink-400/80 block mb-0.5">
-            В GoToFlow
-          </span>
-          <p className="text-sm text-zinc-200 font-medium leading-relaxed">{card.solution}</p>
-        </div>
-      </div>
-    </div>
-  </motion.div>
-);
 
 export const UnifiedSystem = () => (
   <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
 
-    {/* Фоновый ambient */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-indigo-600/5 blur-[140px] rounded-full pointer-events-none" />
+    <div className="max-w-5xl mx-auto relative">
 
-    <div className="max-w-5xl mx-auto relative z-10">
+      {/* ─── Фоновое свечение позади монолита ─── */}
+      <div className="absolute -inset-12 bg-pink-600/10 blur-[120px] opacity-20 rounded-[4rem] pointer-events-none -z-10" />
 
-      {/* Заголовок */}
+      {/* ─── Монолит ─── */}
       <motion.div
-        initial={{ opacity: 0, y: 32 }}
+        initial={{ opacity: 0, y: 48 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-        className="text-center mb-14"
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="bg-white/[0.01] backdrop-blur-3xl border border-white/[0.05] rounded-[3rem] p-10 md:p-16 relative z-10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] overflow-hidden"
       >
-        {/* Бейдж */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] text-zinc-400 text-xs tracking-widest uppercase font-bold mb-6 backdrop-blur-md">
-          <Zap className="w-3 h-3 text-pink-400" />
-          <span>Единый workflow</span>
+        {/* Внутренний шум-блик */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none" />
+
+        {/* ─── Заголовок ─── */}
+        <div className="text-center mb-14 relative z-10">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-5">
+            4 задачи.{' '}
+            <span className="text-gradient-brand">1 система.</span>
+          </h2>
+          <p className="text-base md:text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed font-medium text-balance">
+            Шпион, viral Reels, карусели и тексты обычно живут в разных сервисах.
+            В GoToFlow это работает как один связанный процесс.
+          </p>
         </div>
 
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5">
-          4 задачи.{' '}
-          <span className="text-gradient-brand">1 система.</span>
-        </h2>
-        <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed font-medium text-balance">
-          Шпион, viral Reels, карусели и тексты обычно живут в разных сервисах. В GoToFlow это работает как один связанный процесс.
-        </p>
-      </motion.div>
+        {/* ─── Две колонки сравнения ─── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative z-10 mb-14">
 
-      {/* Сетка карточек */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {cards.map((card, i) => (
-          <Card key={card.title} card={card} index={i} />
-        ))}
-      </div>
+          {/* Левая — «Обычно» */}
+          <div>
+            <p className="text-xs uppercase tracking-widest font-bold text-zinc-600 mb-6">
+              Обычно
+            </p>
+            <div className="flex flex-col gap-6">
+              {rows.map((row) => (
+                <div key={row.label} className="flex items-start gap-4">
+                  <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full border border-zinc-700 bg-zinc-900 flex items-center justify-center">
+                    <X className="w-3 h-3 text-zinc-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-zinc-500 mb-0.5">{row.label}</p>
+                    <p className="text-sm text-zinc-600 leading-relaxed">{row.problem}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Правая — «В GoToFlow» */}
+          <div>
+            <p className="text-xs uppercase tracking-widest font-bold text-pink-400/80 mb-6">
+              В GoToFlow
+            </p>
+            <div className="flex flex-col gap-6">
+              {rows.map((row) => (
+                <div key={row.label} className="flex items-start gap-4">
+                  <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full border border-pink-500/40 bg-pink-500/10 flex items-center justify-center">
+                    <Check className="w-3 h-3 text-pink-400" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-zinc-300 mb-0.5">{row.label}</p>
+                    <p className="text-sm text-zinc-400 font-medium leading-relaxed">{row.solution}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ─── Разделитель ─── */}
+        <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mb-10 relative z-10" />
+
+        {/* ─── Кнопки ─── */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+
+          {/* Кнопка Демо */}
+          <button className="group flex flex-col items-center gap-1 px-7 py-4 rounded-2xl border border-white/10 bg-white/[0.03] text-white font-semibold text-base hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 min-w-[200px]">
+            <span>Посмотреть демо</span>
+            <span className="flex items-center gap-1.5 text-[11px] font-normal text-zinc-600">
+              <CreditCard className="w-3 h-3" />
+              Без привязки карты
+            </span>
+          </button>
+
+          {/* Кнопка CTA */}
+          <button className="group flex flex-col items-center gap-1 px-7 py-4 rounded-2xl border border-pink-500/40 bg-pink-500/10 text-white font-semibold text-base shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:shadow-[0_0_36px_rgba(236,72,153,0.45)] hover:bg-pink-500/15 hover:border-pink-500/60 transition-all duration-300 min-w-[200px]">
+            <span>Запустить бесплатно</span>
+            <span className="flex items-center gap-1.5 text-[11px] font-normal text-pink-400/60">
+              <Rocket className="w-3 h-3" />
+              Первый результат за 60 секунд
+            </span>
+          </button>
+        </div>
+      </motion.div>
     </div>
   </section>
 );
