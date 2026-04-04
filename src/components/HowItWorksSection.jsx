@@ -1,33 +1,68 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CornerDownLeft, Sparkles, Download } from 'lucide-react';
 
 /* ─── Микро-UI: Имитация поля ввода (Шаг 1) ─── */
 const InputMockup = () => (
-  <div className="mt-6 flex items-center gap-2 px-4 py-3 rounded-xl bg-black/50 border border-white/10 w-full max-w-xs">
-    <span className="text-xs text-zinc-600 flex-1 truncate font-mono">https://youtube.com/watch?v=...</span>
-    <div className="shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-      <CornerDownLeft className="w-3 h-3 text-zinc-500" />
+  <div className="mt-6 flex flex-col gap-2 w-full max-w-xs">
+    <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-black/50 border border-white/10">
+      <span className="text-xs text-zinc-600 flex-1 truncate font-mono">https://youtube.com/watch?v=...</span>
+      <div className="shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+        <CornerDownLeft className="w-3 h-3 text-zinc-500" />
+      </div>
+    </div>
+    <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-black/50 border border-white/10">
+      <span className="text-xs text-zinc-600 flex-1 truncate font-mono">Тема: Продвижение SaaS</span>
+      <div className="shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+        <CornerDownLeft className="w-3 h-3 text-zinc-500" />
+      </div>
     </div>
   </div>
 );
 
-/* ─── Микро-UI: Скелетон генерации (Шаг 2) ─── */
-const SkeletonMockup = () => (
-  <div className="mt-6 flex flex-col gap-2.5 w-full max-w-xs">
-    <div className="h-3 w-2/5 rounded-full bg-white/10 animate-pulse" />
-    <div className="h-2.5 w-full rounded-full bg-white/[0.07] animate-pulse [animation-delay:150ms]" />
-    <div className="h-2.5 w-[85%] rounded-full bg-white/[0.07] animate-pulse [animation-delay:300ms]" />
-    <div className="h-2.5 w-3/4 rounded-full bg-white/[0.05] animate-pulse [animation-delay:450ms]" />
-  </div>
-);
+/* ─── Микро-UI: Анимированный прогресс-бар генерации (Шаг 2) ─── */
+const ProgressMockup = () => {
+  const [pct, setPct] = useState(0);
+
+  useEffect(() => {
+    const DURATION = 2800; // ms for 0 -> 100
+    const STEP = 16;       // ~60fps
+    let current = 0;
+    const tick = () => {
+      current = (current + (100 * STEP) / DURATION);
+      if (current >= 100) {
+        setPct(100);
+        setTimeout(() => { current = 0; setPct(0); }, 600);
+      } else {
+        setPct(Math.floor(current));
+      }
+    };
+    const id = setInterval(tick, STEP);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="mt-6 w-full max-w-xs flex flex-col gap-2">
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] text-zinc-500 font-medium tracking-wide">Генерация</span>
+        <span className="text-[11px] text-zinc-400 font-bold tabular-nums">{pct}%</span>
+      </div>
+      <div className="w-full h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+        <div
+          className="h-full rounded-full bg-gradient-to-r from-pink-500 to-orange-400 transition-[width] duration-[16ms] ease-linear shadow-[0_0_8px_rgba(236,72,153,0.5)]"
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+    </div>
+  );
+};
 
 /* ─── Микро-UI: Кнопка экспорта (Шаг 3) ─── */
 const ExportMockup = () => (
   <div className="mt-6">
     <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-pink-500/30 bg-pink-500/10 shadow-[0_0_20px_rgba(236,72,153,0.12)] text-pink-300 text-xs font-semibold tracking-wide transition-all hover:shadow-[0_0_30px_rgba(236,72,153,0.2)] hover:bg-pink-500/15 hover:border-pink-500/50 group">
       <Download className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-      Скачать PDF
+      Скачать результат
     </button>
   </div>
 );
@@ -37,7 +72,7 @@ const steps = [
     icon: CornerDownLeft,
     number: 1,
     title: "Ввод",
-    desc: "Загрузите ссылку, видео или сырую идею.",
+    desc: "Вставьте ссылку, тему, видео или сырую идею.",
     micro: <InputMockup />,
   },
   {
@@ -45,13 +80,13 @@ const steps = [
     number: 2,
     title: "Генерация",
     desc: "ИИ мгновенно собирает готовую структуру и текст под ваш формат.",
-    micro: <SkeletonMockup />,
+    micro: <ProgressMockup />,
   },
   {
     icon: Download,
     number: 3,
     title: "Полировка и Экспорт",
-    desc: "Лёгкая редактура во встроенном редакторе и скачивание готовой карусели или поста.",
+    desc: "Лёгкая редактура во встроенном редакторе и скачивание готовой карусели, поста и видео.",
     micro: <ExportMockup />,
   },
 ];
