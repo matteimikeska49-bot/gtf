@@ -32,24 +32,27 @@ const coreTools = [
     iconGlow: "bg-pink-500",
     iconColor: "text-pink-300",
     borderHover: "group-hover:border-pink-500/20",
-  },
-  {
-    icon: Search,
-    title: "Поиск сильных Reels",
-    desc: "Находите популярные видео по вашей теме, забирайте сильные механики и в один клик создавайте на их основе карусели или посты.",
-    accentColor: "from-violet-500/10 to-violet-500/0",
-    iconGlow: "bg-violet-500",
-    iconColor: "text-violet-300",
-    borderHover: "group-hover:border-violet-500/20",
+    featured: false,
   },
   {
     icon: Layers,
     title: "Из идеи — в карусель",
-    desc: "В один клик генерируйте структурированную карусель под вашу нишу: из простой темы, сырой идеи, ссылки или видео.",
-    accentColor: "from-indigo-500/10 to-indigo-500/0",
-    iconGlow: "bg-indigo-500",
-    iconColor: "text-indigo-300",
-    borderHover: "group-hover:border-indigo-500/20",
+    desc: "Собирайте готовую карусель из темы, идеи, pdf, ссылки или видео — за 60 секунд.",
+    accentColor: "from-pink-500/15 to-orange-500/10",
+    iconGlow: "bg-gradient-to-r from-pink-500 to-orange-500",
+    iconColor: "text-orange-300",
+    borderHover: "group-hover:border-pink-500/30",
+    featured: true,
+  },
+  {
+    icon: Search,
+    title: "Поиск сильных Reels",
+    desc: "Ищите сильные Reels по своей теме, забирайте сильные механики и в один клик превращайте их в карусели, посты, видео.",
+    accentColor: "from-violet-500/10 to-violet-500/0",
+    iconGlow: "bg-violet-500",
+    iconColor: "text-violet-300",
+    borderHover: "group-hover:border-violet-500/20",
+    featured: false,
   },
 ];
 
@@ -114,7 +117,7 @@ export const ToolsSection = () => {
               </h2>
             </div>
             <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">
-              Находите идеи, изучайте конкурентов и создавайте готовый контент — без прыганья по вкладкам.
+              Находите идеи, анализируйте конкурентов и превращайте это в готовый контент — в один клик
             </p>
           </motion.div>
 
@@ -128,9 +131,25 @@ export const ToolsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: i * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  className={`group p-px rounded-[2rem] bg-gradient-to-b from-white/10 to-white/0 relative overflow-hidden`}
+                  className={`group p-px rounded-[2rem] relative overflow-hidden ${
+                    tool.featured
+                      ? 'bg-gradient-to-b from-pink-500/30 to-orange-500/10 shadow-[0_0_40px_rgba(236,72,153,0.12)]'
+                      : 'bg-gradient-to-b from-white/10 to-white/0'
+                  }`}
                 >
-                  <div className={`h-full bg-[#0a0a0a]/90 rounded-[2rem] p-7 flex flex-col gap-6 border border-white/[0.03] ${tool.borderHover} transition-colors duration-500 overflow-hidden relative`}>
+                  <div className={`h-full rounded-[2rem] p-7 flex flex-col gap-6 border transition-colors duration-500 overflow-hidden relative ${
+                    tool.featured
+                      ? 'bg-[#0f0a0c] border-pink-500/25 group-hover:border-pink-500/40'
+                      : `bg-[#0a0a0a]/90 border-white/[0.03] ${tool.borderHover}`
+                  }`}>
+                    {/* Featured label */}
+                    {tool.featured && (
+                      <div className="absolute top-5 right-5 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gradient-to-r from-pink-500/20 to-orange-500/20 border border-pink-500/30 backdrop-blur-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
+                        <span className="text-[10px] font-bold text-pink-300 tracking-widest uppercase">Популярное</span>
+                      </div>
+                    )}
+
                     {/* Hover accent gradient */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${tool.accentColor} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
 
@@ -144,7 +163,9 @@ export const ToolsSection = () => {
                         <tool.icon className={`w-5 h-5 ${tool.iconColor} relative z-10`} />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
+                        <h3 className={`text-xl font-bold mb-2 tracking-tight ${
+                          tool.featured ? 'text-white' : 'text-white'
+                        }`}>
                           {tool.title}
                         </h3>
                         <p className="text-zinc-400 text-sm leading-relaxed font-medium">
@@ -187,10 +208,10 @@ export const ToolsSection = () => {
                 <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center">
                   <item.icon className="w-4 h-4 text-zinc-600 group-hover:text-zinc-400 transition-colors" />
                 </div>
-                <span className="text-sm text-zinc-500 font-medium leading-snug group-hover:text-zinc-400 transition-colors">
+                <span className="text-sm text-zinc-400 font-medium leading-snug group-hover:text-zinc-300 transition-colors">
                   {item.label}
                 </span>
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase border border-zinc-700/50 text-zinc-600 bg-zinc-900/50">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase border border-zinc-700/60 text-zinc-500 bg-zinc-900/60">
                   Скоро
                 </span>
               </motion.div>
