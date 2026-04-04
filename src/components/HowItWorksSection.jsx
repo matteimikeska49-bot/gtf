@@ -122,28 +122,25 @@ export const HowItWorksSection = () => {
 
         <div className="relative mt-12 max-w-5xl mx-auto">
 
-          {/* ─── Фоновое свечение — позади стеклянной панели ─── */}
-          <div className="absolute -inset-8 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-orange-500/20 blur-[100px] -z-10 pointer-events-none rounded-[3rem]" />
+          {/* ─── Фоновое свечение за карточками ─── */}
+          <div className="absolute -inset-4 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-orange-500/20 blur-[100px] -z-10 pointer-events-none rounded-[3rem]" />
 
-          {/* ─── Стеклянная парящая панель ─── */}
-          <div className="bg-white/[0.02] backdrop-blur-3xl border border-white/[0.05] rounded-[2.5rem] p-6 md:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)] relative z-10 overflow-hidden">
+          {/* Соединяющая линия — desktop */}
+          <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-zinc-500/50 to-transparent" />
 
-            {/* Соединяющая линия — desktop */}
-            <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-zinc-500/50 to-transparent" />
+          {/* Анимированная бегущая неон-линия */}
+          <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px overflow-hidden">
+            <motion.div
+              animate={{ x: ["-100%", "200%"] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              className="w-1/3 h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-80 shadow-[0_0_15px_#ffffff]"
+            />
+          </div>
 
-            {/* Анимированная бегущая неон-линия */}
-            <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px overflow-hidden">
-              <motion.div
-                animate={{ x: ["-100%", "200%"] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                className="w-1/3 h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-80 shadow-[0_0_15px_#ffffff]"
-              />
-            </div>
+          {/* Вертикальная линия — mobile */}
+          <div className="md:hidden absolute left-[3.25rem] top-[10%] bottom-[10%] w-px bg-gradient-to-b from-transparent via-zinc-600/50 to-transparent" />
 
-            {/* Вертикальная линия — mobile */}
-            <div className="md:hidden absolute left-[3.25rem] top-[10%] bottom-[10%] w-px bg-gradient-to-b from-transparent via-zinc-600/50 to-transparent" />
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-6 relative z-10">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
@@ -199,8 +196,7 @@ export const HowItWorksSection = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
-          </div>{/* /glass panel */}
+          </div>{/* /grid */}
         </div>{/* /relative mt-12 */}
       </div>{/* /outer island */}
     </section>
