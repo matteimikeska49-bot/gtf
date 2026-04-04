@@ -7,7 +7,7 @@ export const FinalCTASection = () => {
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#090909] to-[#050505]">
 
       {/* Приглушённое свечение — глаз отдыхает в конце страницы */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-pink-600/8 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-pink-700 opacity-[0.06] blur-[160px] rounded-full pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center gap-8">
         <motion.div

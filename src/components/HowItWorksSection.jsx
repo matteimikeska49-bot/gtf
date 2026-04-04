@@ -93,7 +93,7 @@ const steps = [
 
 export const HowItWorksSection = () => {
   return (
-    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-black">
 
       {/* ─── Стеклянная подложка-контейнер ─── */}
       <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
