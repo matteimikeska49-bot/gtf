@@ -139,14 +139,21 @@ export const HeroSection = () => {
       <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10 w-full">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 px-4 py-2 mt-4 md:mt-0 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-10 shadow-lg backdrop-blur-md"
+          className="flex flex-col items-center gap-3 mt-4 md:mt-0 mb-8"
         >
-          <Sparkles className="w-3.5 h-3.5 text-pink-400" />
-          <span>Новая эра создания контента</span>
+          {/* Аудиторный бейдж */}
+          <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-zinc-300 backdrop-blur-sm">
+            Для креаторов, экспертов и команд
+          </span>
+          {/* Продуктовый бейдж */}
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.03] px-4 py-1.5 text-xs text-zinc-500 tracking-widest uppercase font-bold backdrop-blur-sm">
+            <Sparkles className="w-3 h-3 text-pink-400" />
+            Новая эра создания контента
+          </span>
         </motion.div>
 
         <motion.div
@@ -164,25 +171,34 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed font-medium text-balance"
+          className="text-lg md:text-xl max-w-2xl mb-12 leading-relaxed font-medium text-balance"
         >
-          Устали собирать посты по кускам из разных нейросетей и переписывать «пластиковый» текст? GoToFlow — это чистый workflow. От первой идеи до готовой публикации.
+          <span className="text-zinc-400">Устали собирать контент по кускам из разных нейросетей и переписывать «пластиковый» текст? </span>
+          <span className="text-zinc-300">GoToFlow — это единая платформа. Пост, карусель, сценарии Reels и контент-план в одном месте.</span>
         </motion.p>
 
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto"
+          className="flex flex-col items-center gap-4 w-full sm:w-auto"
         >
-          <button className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
-            Запустить бесплатно
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button className="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-white border border-white/10 hover:bg-white/10 transition-colors flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md text-base z-20 relative">
-            <Play className="w-5 h-5 fill-white/20" />
-            Смотреть демо
-          </button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto">
+            <button className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
+              Запустить бесплатно
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button className="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-white border border-white/10 hover:bg-white/10 transition-colors flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md text-base z-20 relative">
+              <Play className="w-5 h-5 fill-white/20" />
+              Смотреть демо
+            </button>
+          </div>
+          {/* Trust signals */}
+          <p className="text-sm text-zinc-500 flex flex-wrap justify-center gap-x-3 gap-y-1">
+            <span>✓ Без привязки карты</span>
+            <span className="text-zinc-700">•</span>
+            <span>✓ Первый результат за 60 секунд</span>
+          </p>
         </motion.div>
 
         <AbstractUIMockup />
