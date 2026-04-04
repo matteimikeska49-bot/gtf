@@ -9,7 +9,7 @@ const ScreenshotPlaceholder = ({ delay = 0 }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.7, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-    className="relative w-full aspect-[4/3] rounded-3xl border border-white/10 bg-[#0a0a0a] overflow-hidden group"
+    className="relative w-full aspect-video rounded-3xl border border-white/10 bg-[#0a0a0a] overflow-hidden group shadow-[0_8px_40px_rgba(0,0,0,0.5)]"
   >
     {/* Animated inner glow */}
     <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-indigo-500/5 animate-pulse" />
@@ -106,14 +106,21 @@ export const DifferentiationSection = () => {
           </div>
         </div>
 
-        {/* ─── Колонка 2: Блок скриншотов ─── */}
-        <div className="relative flex flex-col gap-5">
-          {/* Радиальное неоновое свечение — «парящий» эффект */}
-          <div className="absolute -inset-8 bg-pink-500/8 blur-[80px] rounded-[3rem] pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-indigo-500/5 blur-[100px] rounded-full pointer-events-none" />
+        {/* ─── Колонка 2: Каскад скриншотов ─── */}
+        <div className="relative self-center w-full">
+          {/* Радиальное неоновое свечение */}
+          <div className="absolute -inset-10 bg-pink-500/8 blur-[80px] rounded-[3rem] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-indigo-500/5 blur-[90px] rounded-full pointer-events-none" />
 
-          <ScreenshotPlaceholder delay={0.2} />
-          <ScreenshotPlaceholder delay={0.35} />
+          {/* Верхний скриншот */}
+          <div className="relative z-10 w-[88%]">
+            <ScreenshotPlaceholder delay={0.2} />
+          </div>
+
+          {/* Нижний скриншот — каскадом поверх и вправо */}
+          <div className="relative z-20 w-[88%] ml-auto -mt-[22%] shadow-[0_-4px_30px_rgba(0,0,0,0.6)]">
+            <ScreenshotPlaceholder delay={0.35} />
+          </div>
         </div>
 
       </div>
