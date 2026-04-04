@@ -95,8 +95,11 @@ export const HowItWorksSection = () => {
   return (
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-black">
 
-      {/* ─── Стеклянная подложка-контейнер ─── */}
-      <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
+      {/* Фоновый свет под весь блок */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-orange-500/15 blur-[120px] -z-10 pointer-events-none rounded-full" />
+
+      {/* ─── Парящий стеклянный контейнер ─── */}
+      <div className="max-w-7xl mx-auto bg-[#050505]/60 border border-white/[0.08] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-2xl relative z-10 shadow-[0_30px_100px_-15px_rgba(0,0,0,1),0_0_40px_rgba(236,72,153,0.15)]">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
