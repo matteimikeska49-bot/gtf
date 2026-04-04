@@ -47,11 +47,10 @@ const points = [
 
 export const DifferentiationSection = () => {
   return (
-    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-zinc-950 border-t border-white/[0.04]">
+    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#0a0808] to-[#050505]">
 
-      {/* Background ambient */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[700px] h-[700px] bg-indigo-900/15 blur-[130px] opacity-25 rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-pink-900/15 blur-[120px] opacity-20 rounded-full pointer-events-none" />
+      {/* Усиленное розовое/маджента свечение — эмоции */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px] bg-pink-600/10 blur-[160px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 

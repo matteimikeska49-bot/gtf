@@ -4,14 +4,10 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 export const FinalCTASection = () => {
   return (
-    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-zinc-950 border-t border-white/[0.04]">
+    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#090909] to-[#050505]">
 
-      {/* ─── Огромное радиальное свечение — розово-оранжевый взрыв ─── */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px] bg-gradient-radial from-pink-600/20 via-orange-600/10 to-transparent blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-pink-500/10 blur-[80px] rounded-full pointer-events-none" />
-
-      {/* Subtle top divider */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+      {/* Приглушённое свечение — глаз отдыхает в конце страницы */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-pink-600/8 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center gap-8">
         <motion.div

@@ -85,11 +85,7 @@ const personalizePoints = [
 
 export const ToolsSection = () => {
   return (
-    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-zinc-950 border-t border-white/[0.04]">
-
-      {/* Background ambient */}
-      <div className="absolute left-[10%] top-1/3 w-[800px] h-[800px] bg-indigo-950/20 blur-[160px] rounded-full pointer-events-none" />
-      <div className="absolute right-[5%] bottom-1/3 w-[600px] h-[600px] bg-pink-950/15 blur-[140px] rounded-full pointer-events-none" />
+    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#090909] to-[#050505]">
 
       <div className="max-w-7xl mx-auto flex flex-col gap-24 relative z-10">
 
