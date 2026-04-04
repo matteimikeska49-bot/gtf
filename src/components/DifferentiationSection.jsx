@@ -2,28 +2,28 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Fingerprint, Settings2, Zap, ImageIcon } from 'lucide-react';
 
-/* ─── Screenshot placeholder ─── */
-const ScreenshotPlaceholder = ({ delay = 0 }) => (
+/* ─── Screenshot placeholder (compact, fixed height) ─── */
+const ScreenshotPlaceholder = ({ delay = 0, className = '' }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 16 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.7, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-    className="relative w-full aspect-video rounded-3xl border border-white/10 bg-[#0a0a0a] overflow-hidden group shadow-[0_8px_40px_rgba(0,0,0,0.5)]"
+    className={`relative w-full h-48 rounded-2xl border border-white/10 bg-[#0c0c0c] overflow-hidden group shadow-[0_12px_40px_rgba(0,0,0,0.55)] ${className}`}
   >
-    {/* Animated inner glow */}
+    {/* Subtle inner gradient */}
     <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-indigo-500/5 animate-pulse" />
-    {/* Subtle grid */}
-    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:20px_20px]" />
-    {/* Placeholder center */}
-    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-      <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
-        <ImageIcon className="w-5 h-5 text-zinc-600" />
+    {/* Grid */}
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:18px_18px]" />
+    {/* Center icon */}
+    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5">
+      <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
+        <ImageIcon className="w-4 h-4 text-zinc-600" />
       </div>
-      <span className="text-xs text-zinc-600 font-medium tracking-wide">Скриншот интерфейса</span>
+      <span className="text-[11px] text-zinc-600 font-medium tracking-wide">Скриншот интерфейса</span>
     </div>
     {/* Hover shimmer */}
-    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/[0.02] to-transparent" />
+    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/[0.025] to-transparent" />
   </motion.div>
 );
 
@@ -50,12 +50,12 @@ export const DifferentiationSection = () => {
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
 
       {/* Background ambient */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/15 blur-[130px] opacity-25 rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[700px] h-[700px] bg-indigo-900/15 blur-[130px] opacity-25 rounded-full pointer-events-none" />
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-pink-900/15 blur-[120px] opacity-20 rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
-        {/* ─── Колонка 1: Текст + список пунктов ─── */}
+        {/* ─── Колонка 1: Текст + список ─── */}
         <div className="flex flex-col">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -78,23 +78,22 @@ export const DifferentiationSection = () => {
             </p>
           </motion.div>
 
-          {/* Вертикальный список пунктов */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-4">
             {points.map((point, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.14, ease: "easeOut" }}
+                transition={{ duration: 0.6, delay: i * 0.13, ease: "easeOut" }}
                 className="flex items-start gap-5 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] group hover:border-white/10 hover:bg-white/[0.03] transition-all duration-300"
               >
-                <div className="relative w-12 h-12 flex items-center justify-center rounded-2xl border border-white/5 bg-[#050505] shrink-0 group-hover:scale-110 transition-transform duration-500">
+                <div className="relative w-11 h-11 flex items-center justify-center rounded-2xl border border-white/5 bg-[#050505] shrink-0 group-hover:scale-110 transition-transform duration-500">
                   <div className="absolute inset-0 bg-pink-500 blur-xl opacity-15 group-hover:opacity-40 transition-opacity duration-500 rounded-2xl" />
                   <point.icon className="w-5 h-5 text-pink-300 relative z-10" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-white mb-1 tracking-tight group-hover:text-pink-100 transition-colors">
+                  <h3 className="text-sm font-bold text-white mb-1 tracking-tight group-hover:text-pink-100 transition-colors">
                     {point.title}
                   </h3>
                   <p className="text-zinc-500 text-sm leading-relaxed font-medium">
@@ -106,19 +105,19 @@ export const DifferentiationSection = () => {
           </div>
         </div>
 
-        {/* ─── Колонка 2: Каскад скриншотов ─── */}
-        <div className="relative self-center w-full">
-          {/* Радиальное неоновое свечение */}
-          <div className="absolute -inset-10 bg-pink-500/8 blur-[80px] rounded-[3rem] pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-indigo-500/5 blur-[90px] rounded-full pointer-events-none" />
+        {/* ─── Колонка 2: Каскад скриншотов (компактный) ─── */}
+        <div className="relative self-center w-full pt-6 pb-8">
+          {/* Неоновое свечение вокруг блока */}
+          <div className="absolute -inset-6 bg-pink-500/8 blur-[70px] rounded-[2.5rem] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] bg-indigo-500/5 blur-[80px] rounded-full pointer-events-none" />
 
           {/* Верхний скриншот */}
-          <div className="relative z-10 w-[88%]">
+          <div className="relative z-10">
             <ScreenshotPlaceholder delay={0.2} />
           </div>
 
-          {/* Нижний скриншот — каскадом поверх и вправо */}
-          <div className="relative z-20 w-[88%] ml-auto -mt-[22%] shadow-[0_-4px_30px_rgba(0,0,0,0.6)]">
+          {/* Нижний скриншот — поверх и вправо */}
+          <div className="relative z-20 -mt-8 ml-8">
             <ScreenshotPlaceholder delay={0.35} />
           </div>
         </div>
