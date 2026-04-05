@@ -42,7 +42,7 @@ export const UnifiedSystem = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="bg-[#050505]/80 backdrop-blur-3xl border border-white/[0.05] rounded-[3rem] p-8 md:p-12 relative z-10 shadow-[0_40px_100px_-20px_rgba(0,0,0,1)] overflow-hidden flex flex-col"
+        className="bg-[#050505]/90 backdrop-blur-[120px] border border-white/[0.05] rounded-[3rem] p-8 md:p-12 relative z-10 shadow-[0_40px_100px_-20px_rgba(0,0,0,1)] overflow-hidden flex flex-col"
       >
         {/* Внутренний шум-блик для карточки */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none" />
@@ -68,7 +68,7 @@ export const UnifiedSystem = () => (
                   <div className={`p-2.5 rounded-xl border mb-3 ${m.ring}`}>
                     <span className={m.color}>{m.icon}</span>
                   </div>
-                  <p className="text-zinc-200 font-semibold text-sm leading-snug">{m.text}</p>
+                  <p className="text-white font-semibold text-lg leading-snug">{m.text}</p>
                 </div>
               ))}
             </div>
@@ -87,7 +87,7 @@ export const UnifiedSystem = () => (
                       <div className="shrink-0 mt-0.5 w-6 h-6 rounded-full bg-white/5 flex items-center justify-center">
                         <X className="w-3 h-3 text-zinc-400" />
                       </div>
-                      <p className="text-sm text-zinc-100 font-medium leading-relaxed">{text}</p>
+                      <p className="text-lg text-zinc-400 font-medium leading-relaxed">{text}</p>
                     </div>
                   ))}
                 </div>
@@ -110,7 +110,7 @@ export const UnifiedSystem = () => (
                           <div className="shrink-0 mt-0.5 w-6 h-6 rounded-full border border-fuchsia-500/40 bg-fuchsia-500/10 flex items-center justify-center shadow-[0_0_10px_rgba(217,70,239,0.4)]">
                             <Check className="w-4 h-4 text-fuchsia-400" strokeWidth={3} />
                           </div>
-                          <p className="text-sm text-zinc-100 font-semibold leading-relaxed">{text}</p>
+                          <p className="text-lg text-zinc-300 font-semibold leading-relaxed">{text}</p>
                         </div>
                       ))}
                     </div>
