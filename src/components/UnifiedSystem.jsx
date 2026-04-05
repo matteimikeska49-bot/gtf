@@ -77,7 +77,7 @@ export const UnifiedSystem = () => (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-12">
 
               {/* Левая — «Обычный путь» */}
-              <div className="bg-black/40 border border-white/[0.05] rounded-2xl p-6 flex flex-col h-full">
+              <div className="bg-[#0a0a0a] backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col h-full">
                 <p className="text-sm uppercase tracking-widest font-bold text-zinc-100 mb-8 text-center">
                   Обычный путь
                 </p>
@@ -94,7 +94,7 @@ export const UnifiedSystem = () => (
               </div>
 
               {/* Правая — «GoToFlow» (ПОБЕДИТЕЛЬ) */}
-              <div className="bg-white/[0.02] border border-transparent rounded-2xl p-6 relative overflow-hidden flex flex-col h-full md:scale-[1.02] transition-transform"
+              <div className="bg-[#12080e] border border-transparent rounded-2xl p-6 relative overflow-hidden flex flex-col h-full md:scale-[1.02] transition-transform"
                 style={{ boxShadow: '0 0 0 1px rgba(217,70,239,0.35), 0 0 50px -10px rgba(139,92,246,0.25)' }}>
                  {/* Тонкое внутреннее свечение — от верхнего левого угла */}
                  <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600/[0.08] via-violet-600/[0.04] to-transparent pointer-events-none" />
@@ -131,7 +131,7 @@ export const UnifiedSystem = () => (
                 </button>
 
                 {/* Кнопка CTA — градиентная заливка */}
-                <button className="group flex flex-col items-center gap-1 px-7 py-4 rounded-2xl text-white font-semibold text-base transition-all duration-300 min-w-[200px] shadow-[0_0_30px_rgba(217,70,239,0.35)] hover:shadow-[0_0_45px_rgba(217,70,239,0.5)] hover:scale-[1.02]"
+                <button className="group flex flex-col items-center gap-1 py-5 px-10 rounded-2xl text-white font-bold text-xl transition-all duration-300 min-w-[220px] shadow-[0_0_30px_rgba(217,70,239,0.35)] hover:shadow-[0_0_45px_rgba(217,70,239,0.5)] hover:scale-[1.02]"
                   style={{ background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 100%)' }}>
                   <span>Запустить бесплатно</span>
                   <span className="flex items-center gap-1.5 text-[11px] font-normal text-white/60">
