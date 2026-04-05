@@ -78,16 +78,16 @@ export const UnifiedSystem = () => (
 
               {/* Левая — «Обычный путь» */}
               <div className="bg-black/40 border border-white/[0.05] rounded-2xl p-6 flex flex-col h-full">
-                <p className="text-sm uppercase tracking-widest font-bold text-zinc-500 mb-8 text-center">
+                <p className="text-sm uppercase tracking-widest font-bold text-zinc-100 mb-8 text-center">
                   Обычный путь
                 </p>
                 <div className="flex flex-col gap-6 flex-1">
                   {oldWay.map((text, idx) => (
                     <div key={idx} className="flex items-start gap-4">
                       <div className="shrink-0 mt-0.5 w-6 h-6 rounded-full bg-white/5 flex items-center justify-center">
-                        <X className="w-3 h-3 text-zinc-500" />
+                        <X className="w-3 h-3 text-zinc-400" />
                       </div>
-                      <p className="text-sm text-zinc-500 font-medium leading-relaxed">{text}</p>
+                      <p className="text-sm text-zinc-100 font-medium leading-relaxed">{text}</p>
                     </div>
                   ))}
                 </div>
