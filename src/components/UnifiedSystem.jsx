@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { X, Check, Clock, Zap, Target, CreditCard, Rocket } from 'lucide-react';
 
 const metrics = [
-  { icon: <Clock className="w-5 h-5 text-zinc-400 mb-2" />, text: "До 10 часов экономии в неделю" },
-  { icon: <Zap className="w-5 h-5 text-zinc-400 mb-2" />, text: "Готовая карусель за ~60 секунд" },
-  { icon: <Target className="w-5 h-5 text-zinc-400 mb-2" />, text: "Один процесс вместо 5 сервисов" },
+  { icon: <Clock className="w-5 h-5" />, color: 'text-amber-400', ring: 'bg-amber-500/10 border-amber-500/20 shadow-[0_0_12px_rgba(251,191,36,0.15)]', text: "До 10 часов экономии в неделю" },
+  { icon: <Zap className="w-5 h-5" />,   color: 'text-violet-400', ring: 'bg-violet-500/10 border-violet-500/20 shadow-[0_0_12px_rgba(139,92,246,0.2)]',  text: "Готовая карусель за ~60 секунд" },
+  { icon: <Target className="w-5 h-5" />, color: 'text-rose-400',  ring: 'bg-rose-500/10 border-rose-500/20 shadow-[0_0_12px_rgba(244,63,94,0.15)]',    text: "Один процесс вместо 5 сервисов" },
 ];
 
 const oldWay = [
@@ -28,8 +28,13 @@ export const UnifiedSystem = () => (
   <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
     <div className="max-w-5xl mx-auto relative z-10">
 
-      {/* ─── Фоновое свечение позади монолита (Вне его) ─── */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-transparent blur-[120px] -z-10 pointer-events-none" />
+      {/* ─── Уникальное «космическое» свечение позади монолита ─── */}
+      {/* Слой 1: глубокий индиго-фиолетовый эллипс */}
+      <div className="absolute top-1/2 left-[30%] -translate-x-1/2 -translate-y-1/2 w-[70%] h-[80%] bg-indigo-600/20 blur-[130px] -z-10 pointer-events-none rounded-full" />
+      {/* Слой 2: правый акцент — персик/маджента */}
+      <div className="absolute top-[40%] right-[5%] w-[45%] h-[60%] bg-fuchsia-600/15 blur-[100px] -z-10 pointer-events-none rounded-full" />
+      {/* Слой 3: нижний якорь — тёмный синий */}
+      <div className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[60%] h-[40%] bg-blue-900/25 blur-[90px] -z-10 pointer-events-none rounded-full" />
 
       {/* ─── Главная обертка (Монолит) ─── */}
       <motion.div
@@ -58,10 +63,12 @@ export const UnifiedSystem = () => (
               {metrics.map((m, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center justify-center bg-white/[0.03] border border-white/10 rounded-2xl p-4 text-center hover:bg-white/[0.05] transition-colors"
+                  className="flex flex-col items-center justify-center bg-white/[0.02] border border-white/[0.07] rounded-2xl p-5 text-center hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300"
                 >
-                  {m.icon}
-                  <p className="text-zinc-300 font-semibold text-sm leading-snug">{m.text}</p>
+                  <div className={`p-2.5 rounded-xl border mb-3 ${m.ring}`}>
+                    <span className={m.color}>{m.icon}</span>
+                  </div>
+                  <p className="text-zinc-200 font-semibold text-sm leading-snug">{m.text}</p>
                 </div>
               ))}
             </div>
@@ -87,19 +94,21 @@ export const UnifiedSystem = () => (
               </div>
 
               {/* Правая — «GoToFlow» (ПОБЕДИТЕЛЬ) */}
-              <div className="bg-white/[0.02] border border-pink-500/40 rounded-2xl p-6 relative overflow-hidden flex flex-col h-full transform transition-transform md:scale-[1.02]">
-                 {/* Легкий градиент внутри */}
-                 <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-transparent pointer-events-none" />
+              <div className="bg-white/[0.02] border border-transparent rounded-2xl p-6 relative overflow-hidden flex flex-col h-full md:scale-[1.02] transition-transform"
+                style={{ boxShadow: '0 0 0 1px rgba(217,70,239,0.35), 0 0 50px -10px rgba(139,92,246,0.25)' }}>
+                 {/* Тонкое внутреннее свечение — от верхнего левого угла */}
+                 <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600/[0.08] via-violet-600/[0.04] to-transparent pointer-events-none" />
 
                  <div className="relative z-10 flex flex-col h-full">
-                    <p className="text-sm uppercase tracking-widest font-bold text-pink-400 mb-8 text-center drop-shadow-sm">
+                    {/* Градиентный заголовок */}
+                    <p className="text-sm uppercase tracking-widest font-bold mb-8 text-center bg-gradient-to-r from-pink-400 via-fuchsia-300 to-violet-400 bg-clip-text text-transparent">
                       GoToFlow
                     </p>
-                    <div className="flex flex-col gap-6 flex-1 text-zinc-100">
+                    <div className="flex flex-col gap-6 flex-1">
                       {newWay.map((text, idx) => (
                         <div key={idx} className="flex items-start gap-4">
-                          <div className="shrink-0 mt-0.5 w-6 h-6 rounded-full border border-pink-500/20 bg-pink-500/10 flex items-center justify-center">
-                            <Check className="w-4 h-4 text-pink-500" strokeWidth={3} />
+                          <div className="shrink-0 mt-0.5 w-6 h-6 rounded-full border border-fuchsia-500/40 bg-fuchsia-500/10 flex items-center justify-center shadow-[0_0_10px_rgba(217,70,239,0.4)]">
+                            <Check className="w-4 h-4 text-fuchsia-400" strokeWidth={3} />
                           </div>
                           <p className="text-sm text-zinc-100 font-semibold leading-relaxed">{text}</p>
                         </div>
@@ -121,10 +130,11 @@ export const UnifiedSystem = () => (
                   </span>
                 </button>
 
-                {/* Кнопка CTA */}
-                <button className="group flex flex-col items-center gap-1 px-7 py-4 rounded-2xl border border-pink-500/50 bg-pink-500/5 text-white font-semibold text-base shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:shadow-[0_0_30px_rgba(236,72,153,0.4)] hover:bg-pink-500/10 transition-all duration-300 min-w-[200px]">
+                {/* Кнопка CTA — градиентная заливка */}
+                <button className="group flex flex-col items-center gap-1 px-7 py-4 rounded-2xl text-white font-semibold text-base transition-all duration-300 min-w-[200px] shadow-[0_0_30px_rgba(217,70,239,0.35)] hover:shadow-[0_0_45px_rgba(217,70,239,0.5)] hover:scale-[1.02]"
+                  style={{ background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 100%)' }}>
                   <span>Запустить бесплатно</span>
-                  <span className="flex items-center gap-1.5 text-[11px] font-normal text-pink-400/80">
+                  <span className="flex items-center gap-1.5 text-[11px] font-normal text-white/60">
                     <Rocket className="w-3 h-3" />
                     Первый результат за 60 секунд
                   </span>
