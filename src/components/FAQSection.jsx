@@ -112,7 +112,7 @@ export const FAQSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-          className="flex flex-col gap-3"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-8 lg:gap-y-4 items-start"
         >
           {faqs.map((item, i) => (
             <FAQItem
