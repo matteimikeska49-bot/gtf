@@ -6,8 +6,8 @@ export const FinalCTASection = () => {
   return (
     <section className="py-24 md:py-32 px-6 relative w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#090909] to-[#050505]">
       
-      {/* ─── Мощный широкий Glow позади капсулы ─── */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[110%] h-[120%] bg-gradient-to-r from-red-600/50 via-orange-500/40 to-purple-600/50 blur-[100px] md:blur-[140px] pointer-events-none -z-10 rounded-full" />
+      {/* ─── Мягкое фоновое свечение в стиле сайта ─── */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[110%] h-[120%] bg-gradient-to-r from-violet-700/30 via-fuchsia-700/25 to-violet-700/30 blur-[120px] md:blur-[160px] pointer-events-none -z-10 rounded-full" />
 
       {/* ─── Главная стеклянная капсула ─── */}
       <motion.div
@@ -15,10 +15,40 @@ export const FinalCTASection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="relative z-10 w-full max-w-5xl mx-auto bg-[#050505]/60 backdrop-blur-3xl border border-white/10 p-10 md:p-16 lg:py-20 flex flex-col items-center justify-center text-center overflow-hidden rounded-[2.5rem] md:rounded-[4rem] shadow-2xl"
+        className="relative z-10 w-full max-w-5xl mx-auto bg-[#06020e] backdrop-blur-3xl border border-white/[0.08] p-10 md:p-16 lg:py-20 flex flex-col items-center justify-center text-center overflow-hidden rounded-[2.5rem] md:rounded-[4rem] shadow-[0_30px_80px_-10px_rgba(0,0,0,0.9)]"
       >
-        {/* Легкий белый блик сверху капсулы */}
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        {/* ─── Подложка: диагональные лучи-крылья ─── */}
+        {/* Тёмная база */}
+        <div className="absolute inset-0 bg-[#06020e]" />
+
+        {/* Левый луч-крыло */}
+        <div
+          className="absolute bottom-0 left-0 w-[60%] h-[85%] pointer-events-none"
+          style={{
+            background: 'linear-gradient(50deg, rgba(109,40,217,0.55) 0%, rgba(192,38,211,0.2) 35%, transparent 65%)',
+            filter: 'blur(32px)',
+            transformOrigin: 'bottom left',
+          }}
+        />
+
+        {/* Правый луч-крыло */}
+        <div
+          className="absolute bottom-0 right-0 w-[60%] h-[85%] pointer-events-none"
+          style={{
+            background: 'linear-gradient(-50deg, rgba(109,40,217,0.55) 0%, rgba(192,38,211,0.2) 35%, transparent 65%)',
+            filter: 'blur(32px)',
+            transformOrigin: 'bottom right',
+          }}
+        />
+
+        {/* Центральный звёздный туман у основания */}
+        <div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[50%] h-[40%] pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 50% 100%, rgba(139,92,246,0.3) 0%, transparent 70%)' }}
+        />
+
+        {/* Верхний блик */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-violet-400/30 to-transparent" />
 
         <div className="flex flex-col items-center gap-8 relative z-10 w-full">
           
