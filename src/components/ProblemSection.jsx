@@ -27,7 +27,7 @@ export const ProblemSection = () => {
       {/* ─── Атмосферное мягкое свечение ─── */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[70%] h-[80%] bg-indigo-900/10 blur-[150px] md:blur-[180px] pointer-events-none -z-10 rounded-[100%]" />
       
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10 bg-[#06030c]/40 backdrop-blur-3xl border border-white/[0.05] rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-14 lg:p-20 shadow-[0_0_100px_rgba(0,0,0,0.8)]">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
