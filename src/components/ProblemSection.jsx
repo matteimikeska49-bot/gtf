@@ -36,7 +36,7 @@ export const ProblemSection = () => {
           className="text-center flex flex-col items-center mb-16 md:mb-24"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/[0.08] bg-white/[0.03] text-zinc-400 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]">
+          <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/[0.04] bg-transparent text-zinc-500 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-bold mb-8">
             <span>Знакомая ситуация?</span>
           </div>
           
@@ -63,27 +63,13 @@ export const ProblemSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.15, ease: "easeOut" }}
-              className="group relative p-8 md:p-12 rounded-[2rem] overflow-hidden flex flex-col justify-center min-h-[240px] hover:-translate-y-1 transition-transform duration-500"
-              style={{
-                 background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)',
-                 backgroundBlendMode: 'overlay',
-                 boxShadow: '0 30px 60px -15px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.3)',
-                 backdropFilter: 'blur(30px)'
-              }}
+              className="group p-8 md:p-10 lg:p-12 rounded-[2rem] flex flex-col justify-center min-h-[240px] bg-[#0c0814] border border-[#1a1423] hover:border-[#2a1d3d] hover:bg-[#0f091a] transition-all duration-300"
             >
-              {/* Рамка и блики прозрачности (Glass lines) */}
-              <div className="absolute inset-0 rounded-[2rem] border border-white/[0.05] group-hover:border-white/[0.12] transition-colors duration-500" />
-              <div className="absolute top-0 inset-x-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-30 group-hover:opacity-100 transition-opacity duration-700" />
-              
-              {/* Мягкий hover свет внутри */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              
-              {/* Контент карточки */}
-              <div className="relative z-10 flex flex-col">
-                <h3 className="text-xl md:text-2xl font-semibold text-zinc-100 mb-5 tracking-tight leading-snug">
+              <div className="flex flex-col">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight leading-snug">
                   {p.title}
                 </h3>
-                <p className="text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300 leading-relaxed text-base font-medium">
+                <p className="text-zinc-400/90 group-hover:text-zinc-300 transition-colors duration-300 leading-relaxed text-[15px] md:text-base font-medium">
                   {p.desc}
                 </p>
               </div>
