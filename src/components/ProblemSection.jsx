@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ChaosSection = () => {
+export const ProblemSection = () => {
   const cards = [
     {
       title: "тратишь 3 часа → получаешь мусор",
@@ -53,5 +53,5 @@ const ChaosSection = () => {
   );
 };
 
-export default ChaosSection;
+
 
