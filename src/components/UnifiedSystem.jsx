@@ -110,42 +110,19 @@ export const UnifiedSystem = () => (
             {/* ─── Сравнительная таблица ─── */}
             <div className="relative w-full mb-12">
               
-              {/* Рассеянное свечение за пределами карточек */}
-              <div 
-                className="absolute -z-10 pointer-events-none"
-                style={{
-                  inset: '-180px',
-                  background: 'radial-gradient(circle at 70% 50%, rgba(255, 120, 60, 0.18), transparent 60%), radial-gradient(circle at 30% 40%, rgba(255, 80, 120, 0.12), transparent 65%)',
-                  filter: 'blur(110px)',
-                  opacity: 0.6
-                }}
-              />
-
-              {/* Мягкие исчезновения (Fade) */}
-              <div 
-                className="absolute z-10 pointer-events-none"
-                style={{
-                  top: 0,
-                  bottom: 0,
-                  left: 0,
-                  width: '120px',
-                  background: 'linear-gradient(to right, rgba(10,10,12,1), rgba(10,10,12,0))'
-                }}
-              />
-              <div 
-                className="absolute z-10 pointer-events-none"
-                style={{
-                  top: 0,
-                  bottom: 0,
-                  right: 0,
-                  width: '120px',
-                  background: 'linear-gradient(to left, rgba(10,10,12,1), rgba(10,10,12,0))'
-                }}
-              />
+              {/* === SaaS Glow Layer === */}
+              {/* Абсолютное свечение далеко за пределами карточек, без жестких границ */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[150%] -z-10 pointer-events-none flex items-center justify-center opacity-70">
+                <div className="absolute right-[10%] top-[20%] w-[400px] h-[400px] bg-pink-500/10 blur-[130px] rounded-full mix-blend-screen" />
+                <div className="absolute right-[30%] bottom-[10%] w-[350px] h-[350px] bg-orange-500/10 blur-[120px] rounded-full mix-blend-screen" />
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full relative z-20">
-                {/* Левая — Обычный путь */}
-                <div className="bg-black/40 border border-white/[0.04] rounded-2xl p-6 md:p-8 flex flex-col h-full relative z-10">
+                {/* Левая — Обычный путь (Углублённая, темная) */}
+                <div 
+                  className="bg-[#050505]/60 border border-white/[0.03] rounded-2xl p-6 md:p-8 flex flex-col h-full relative z-10"
+                  style={{ boxShadow: 'inset 0 4px 24px rgba(0,0,0,0.4)' }}
+                >
                   <p className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-600 mb-8 text-center">
                     Обычный путь
                   </p>
@@ -161,15 +138,11 @@ export const UnifiedSystem = () => (
                   </div>
                 </div>
 
-                {/* Правая — С GoToFlow (Nested Glassmorphism RESTORED) */}
+                {/* Правая — С GoToFlow (Как 3 преимущества, с тонким SaaS бликом) */}
                 <div 
-                  className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-all duration-500"
+                  className="bg-white/[0.04] border border-white/10 backdrop-blur-3xl rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-all duration-500"
                   style={{
-                    background: 'rgba(255, 255, 255, 0.04)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    backdropFilter: 'blur(16px)',
-                    WebkitBackdropFilter: 'blur(16px)',
-                    boxShadow: '0 10px 30px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)'
+                    boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06)'
                   }}
                 >
                   <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-20">
