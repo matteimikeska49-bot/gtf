@@ -109,19 +109,16 @@ export const UnifiedSystem = () => (
 
             {/* ─── Сравнительная таблица ─── */}
             <div className="relative w-full mb-12">
-              
-              {/* === SaaS Glow Layer === */}
-              {/* Абсолютное свечение далеко за пределами карточек, без жестких границ */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[150%] -z-10 pointer-events-none flex items-center justify-center opacity-70">
-                <div className="absolute right-[10%] top-[20%] w-[400px] h-[400px] bg-pink-500/10 blur-[130px] rounded-full mix-blend-screen" />
-                <div className="absolute right-[30%] bottom-[10%] w-[350px] h-[350px] bg-orange-500/10 blur-[120px] rounded-full mix-blend-screen" />
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full relative z-20">
-                {/* Левая — Обычный путь (Углублённая, темная) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full relative">
+                {/* Левая — Обычный путь */}
                 <div 
-                  className="bg-[#050505]/60 border border-white/[0.03] rounded-2xl p-6 md:p-8 flex flex-col h-full relative z-10"
-                  style={{ boxShadow: 'inset 0 4px 24px rgba(0,0,0,0.4)' }}
+                  className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative overflow-hidden"
+                  style={{
+                    background: 'rgba(8, 8, 10, 0.7)',
+                    border: '1px solid rgba(255,255,255,0.03)',
+                    boxShadow: 'inset 0 2px 20px rgba(0,0,0,0.5)'
+                  }}
                 >
                   <p className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-600 mb-8 text-center">
                     Обычный путь
@@ -138,17 +135,35 @@ export const UnifiedSystem = () => (
                   </div>
                 </div>
 
-                {/* Правая — С GoToFlow (Как 3 преимущества, с тонким SaaS бликом) */}
+                {/* Правая — GoToFlow */}
                 <div 
-                  className="bg-white/[0.04] border border-white/10 backdrop-blur-3xl rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-all duration-500"
+                  className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative overflow-hidden"
                   style={{
-                    boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06)'
+                    background: 'rgba(255,255,255,0.03)',
+                    border: '1px solid rgba(255,255,255,0.07)',
+                    boxShadow: '0 16px 48px -8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)'
                   }}
                 >
-                  <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-20">
+                  {/* Тёплый прожектор внутри правой карточки — мягкий, не обрезается, не пересвечивает */}
+                  <div 
+                    className="absolute top-[-40%] right-[-20%] w-[70%] h-[80%] rounded-full pointer-events-none"
+                    style={{
+                      background: 'radial-gradient(circle, rgba(251,146,60,0.06) 0%, transparent 70%)',
+                      filter: 'blur(40px)'
+                    }}
+                  />
+                  <div 
+                    className="absolute bottom-[-30%] left-[-10%] w-[60%] h-[70%] rounded-full pointer-events-none"
+                    style={{
+                      background: 'radial-gradient(circle, rgba(236,72,153,0.05) 0%, transparent 70%)',
+                      filter: 'blur(50px)'
+                    }}
+                  />
+
+                  <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-10">
                     GoToFlow
                   </p>
-                  <div className="flex flex-col gap-5 flex-1 relative z-20">
+                  <div className="flex flex-col gap-5 flex-1 relative z-10">
                     {newWay.map((text, idx) => (
                       <div key={idx} className="flex items-start gap-4">
                         <div className="shrink-0 mt-1 w-5 h-5 rounded-full border border-pink-500/30 bg-[rgba(244,63,94,0.1)] flex items-center justify-center">
