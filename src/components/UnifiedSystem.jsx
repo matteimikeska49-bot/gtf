@@ -126,16 +126,24 @@ export const UnifiedSystem = () => (
                 </div>
               </div>
 
-              {/* Правая — С GoToFlow (Nested Glassmorphism) */}
-              <div className="bg-white/[0.01] backdrop-blur-md border border-white/5 shadow-2xl rounded-2xl p-6 md:p-8 relative overflow-hidden flex flex-col h-full">
+              {/* Правая — С GoToFlow (Floating in dark space) */}
+              <div className="p-6 md:p-8 relative flex flex-col h-full z-10 w-full">
                 
-                {/* Мягкий угловой глоу */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-[40px] rounded-full pointer-events-none" />
+                {/* Мягкий, плавающий радиальный пул света */}
+                <motion.div 
+                  animate={{ 
+                    x: ["-15px", "15px", "-15px"], 
+                    y: ["-10px", "10px", "-10px"], 
+                    opacity: [0.1, 0.2, 0.1] 
+                  }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] -z-10 rounded-full blur-[150px] pointer-events-none bg-[radial-gradient(circle,rgba(236,72,153,1)_0%,rgba(249,115,22,0.8)_50%,transparent_100%)]"
+                />
 
-                <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-10">
+                <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-20">
                   GoToFlow
                 </p>
-                <div className="flex flex-col gap-5 flex-1 relative z-10">
+                <div className="flex flex-col gap-5 flex-1 relative z-20">
                   {newWay.map((text, idx) => (
                     <div key={idx} className="flex items-start gap-4">
                       <div className="shrink-0 mt-1 w-5 h-5 rounded-full border border-pink-500/30 bg-pink-500/10 flex items-center justify-center">
