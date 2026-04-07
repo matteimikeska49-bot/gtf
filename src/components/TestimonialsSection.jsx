@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
 
 export const TestimonialsSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const testimonials = [
     {
       name: "Анна Смирнова",
@@ -57,12 +54,37 @@ export const TestimonialsSection = () => {
     }
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slideDelta, setSlideDelta] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(3);
+  const trackRef = useRef(null);
+
+  // Вычисление ширины сдвига и количества карточек
+  useEffect(() => {
+    const calcDelta = () => {
+      if (trackRef.current && trackRef.current.children.length > 0) {
+        const child = trackRef.current.children[0];
+        setSlideDelta(child.offsetWidth + 24); // 24px = gap-6
+      }
+      setItemsPerView(window.innerWidth >= 768 ? 3 : 1);
+    };
+
+    calcDelta();
+    window.addEventListener('resize', calcDelta);
+    return () => window.removeEventListener('resize', calcDelta);
+  }, []);
+
+  // Автопрокрутка слайдера
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 4000); // 4 секунды автосмены
+      setCurrentIndex((prev) => {
+        const max = testimonials.length - itemsPerView;
+        return prev >= max ? 0 : prev + 1;
+      });
+    }, 3500); // 3.5 секунды
+
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, [itemsPerView, testimonials.length]);
 
   const StarIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 w-5 h-5">
@@ -72,47 +94,49 @@ export const TestimonialsSection = () => {
 
   return (
     <section className="relative z-10 py-16 md:py-20 w-full flex flex-col items-center overflow-hidden">
-      {/* Фоновое свечение */}
+      {/* Фоновое свечение (Подложка блока) */}
       <div className="bg-gradient-to-r from-blue-600/10 via-purple-600/15 to-rose-500/10 blur-[120px] w-[70%] h-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none"></div>
 
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center tracking-tight relative z-20">
         Что говорят креаторы
       </h2>
 
-      <div className="relative w-full max-w-7xl mx-auto px-4 h-auto min-h-[400px] md:min-h-[320px] flex items-center justify-center">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, filter: "blur(10px)", scale: 0.95 }}
-            animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-            exit={{ opacity: 0, filter: "blur(10px)", scale: 1.05 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-[2rem] p-8 md:p-10 w-full max-w-3xl mx-auto shadow-[0_0_40px_rgba(0,0,0,0.5)] relative z-20"
-          >
-            <div className="flex gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <StarIcon key={i} />
-              ))}
-            </div>
-
-            <p className="text-zinc-300 text-lg md:text-xl leading-relaxed font-light italic mb-8">
-              "{testimonials[currentIndex].text}"
-            </p>
-
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-white/10 shrink-0 border border-white/[0.05]"></div>
+      {/* Скрытый overflow-hidden контейнер */}
+      <div className="max-w-7xl mx-auto px-4 overflow-hidden w-full relative z-20">
+        {/* Внутренний трек */}
+        <div 
+          ref={trackRef}
+          className="flex transition-transform duration-700 ease-in-out gap-6"
+          style={{ transform: `translateX(-${currentIndex * slideDelta}px)` }}
+        >
+          {testimonials.map((t, idx) => (
+            <div 
+              key={idx}
+              className="min-w-[calc(100%-1.5rem)] md:min-w-[calc(33.333333%-1rem)] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl p-6 rounded-2xl flex flex-col justify-between h-full shrink-0"
+            >
               <div>
-                <div className="text-white font-medium">{testimonials[currentIndex].name}</div>
-                <div className="text-zinc-500 text-sm">{testimonials[currentIndex].role}</div>
+                {/* Звезды */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
+                </div>
+                {/* Текст отзыва */}
+                <p className="text-zinc-300 text-base leading-relaxed italic mb-6">
+                  "{t.text}"
+                </p>
+              </div>
+              {/* Автор (Без аватарок) */}
+              <div>
+                <div className="text-white font-medium">{t.name}</div>
+                <div className="text-zinc-500 text-sm">{t.role}</div>
               </div>
             </div>
-          </motion.div>
-        </AnimatePresence>
+          ))}
+        </div>
       </div>
 
       {/* Навигационные точки */}
-      <div className="flex justify-center gap-3 mt-8 relative z-20">
-        {testimonials.map((_, idx) => (
+      <div className="flex justify-center gap-2 mt-10 relative z-20 flex-wrap px-4">
+        {[...Array(testimonials.length - itemsPerView + 1)].map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentIndex(idx)}
