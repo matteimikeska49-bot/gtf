@@ -4,73 +4,57 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 export const FinalCTASection = () => {
   return (
-    <section className="py-24 md:py-32 px-6 relative w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#0b080a] to-[#050505]">
+    <section className="py-24 md:py-32 px-6 relative w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#090608] to-[#050505]">
 
-      {/* ─── Внешнее яркое свечение секции (Делает блок заметным) ─── */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(244,63,94,0.12)_0%,rgba(249,115,22,0.06)_50%,transparent_70%)] pointer-events-none -z-10" />
+      {/* ─── Внешнее сильное свечение ─── */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(244,63,94,0.1)_0%,transparent_70%)] pointer-events-none -z-10" />
 
-      {/* ─── Главная стеклянная капсула (Светлее, богаче, объёмнее) ─── */}
+      {/* ─── Главная стеклянная капсула (Пространственная глубина) ─── */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="relative z-10 w-full max-w-[1100px] mx-auto bg-white/[0.01] backdrop-blur-3xl border border-white/[0.15] p-10 md:p-14 lg:p-16 xl:py-24 flex flex-col items-center justify-center text-center overflow-hidden rounded-[2.5rem] md:rounded-[4rem] shadow-[0_40px_100px_-20px_rgba(244,63,94,0.25),inset_0_2px_10px_rgba(255,255,255,0.1)]"
+        className="relative z-10 w-full max-w-[1100px] mx-auto bg-[#14060b]/40 backdrop-blur-2xl border border-white/10 p-10 md:p-14 lg:p-16 xl:py-24 flex flex-col items-center justify-center text-center rounded-[2.5rem] md:rounded-[4rem] shadow-[0_40px_100px_-20px_rgba(244,63,94,0.2),inset_0_2px_15px_rgba(255,255,255,0.05),inset_0_-10px_60px_rgba(0,0,0,0.6)] overflow-hidden"
       >
-        {/* === МНОГОСЛОЙНЫЙ АТМОСФЕРНЫЙ ФОН === */}
-        {/* Базовая глубина (Тёплый винный/рубиновый премиум) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1c0d16] via-[#14060c] to-[#120509] opacity-90 -z-20" />
+        {/* === БАЗОВАЯ ГЛУБИНА И АТМОСФЕРА САМОЙ КАПСУЛЫ === */}
         
-        {/* Ambient Top Glow (Мощный базовый свет из центра) */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100%] h-[100%] bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.3)_0%,rgba(249,115,22,0.1)_60%,transparent_100%)] pointer-events-none -z-10" />
+        {/* 1. Vignette: затемнение по краям, центр чуть светлее */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(30,10,20,0.4)_0%,rgba(5,2,3,0.95)_100%)] -z-20" />
+        
+        {/* 2. Тонкий шум (Premium Noise Effect) для избавления от 'окрашенности' */}
+        <div className="absolute inset-0 opacity-[0.25] mix-blend-overlay pointer-events-none -z-20" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }} />
 
-        {/* Сверкающая деликатная сетка для ощущения масштаба */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px] opacity-50 -z-20" />
-
-        {/* ─── Мощные анимированные источники света (Глубина) ─── */}
-        {/* Левое крыло: Насыщенный Rose/Pink */}
-        <motion.div 
-          animate={{ opacity: [0.3, 0.7, 0.3], scale: [1, 1.15, 1] }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-[-10%] left-[-15%] w-[60%] h-[80%] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.5)_0%,transparent_70%)] blur-[60px] mix-blend-screen pointer-events-none -z-10" 
-        />
-        {/* Правое крыло: Теплый Orange/Coral */}
-        <motion.div 
-          animate={{ opacity: [0.2, 0.6, 0.2], scale: [1, 1.15, 1] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-          className="absolute top-[-10%] right-[-15%] w-[60%] h-[80%] bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.4)_0%,transparent_70%)] blur-[60px] mix-blend-screen pointer-events-none -z-10" 
+        {/* 3. Ограниченная сетка в центре (Исчезает к краям) */}
+        <div 
+          className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:40px_40px] opacity-70 -z-20 pointer-events-none" 
+          style={{ WebkitMaskImage: 'radial-gradient(ellipse at center, black 20%, transparent 80%)', maskImage: 'radial-gradient(ellipse at center, black 20%, transparent 80%)' }}
         />
 
-        {/* Тонкие световые акценты (High-fidelity border reflections) */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-px bg-gradient-to-r from-transparent via-rose-400/90 to-transparent shadow-[0_-10px_40px_rgba(244,63,94,1)] -z-10" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[30%] h-[2px] bg-gradient-to-r from-transparent via-orange-300 to-transparent blur-[2px] -z-10" />
-        <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-rose-300/40 to-transparent -z-10" />
+        {/* === ИСТОЧНИКИ СВЕТА (GLOW СЛОИ) === */}
 
-        {/* ─── Плавающие частицы энергии ─── */}
-        <motion.svg 
-          animate={{ y: [-15, 15, -15], x: [-5, 5, -5] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute inset-0 w-full h-full opacity-60 mix-blend-lighten pointer-events-none -z-10" 
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g fill="#FFF">
-            <circle cx="15%" cy="30%" r="1" opacity="0.4" />
-            <circle cx="85%" cy="20%" r="2" opacity="0.6" fill="#f43f5e" />
-            <circle cx="75%" cy="65%" r="1.5" fill="#f97316" opacity="0.5" className="animate-pulse" />
-            <circle cx="20%" cy="80%" r="1" opacity="0.3" />
-            <circle cx="50%" cy="10%" r="1.5" fill="#ec4899" opacity="0.6" />
-            <circle cx="10%" cy="50%" r="1" opacity="0.3" />
-            <circle cx="88%" cy="75%" r="1.5" opacity="0.5" className="animate-pulse" />
-            <circle cx="45%" cy="85%" r="2" fill="#f43f5e" opacity="0.4" className="animate-[pulse_3s_ease-in-out_infinite]" />
-            <circle cx="30%" cy="40%" r="1" opacity="0.6" />
-          </g>
-        </motion.svg>
+        {/* Central Core Light (Непосредственно за текстом и кнопкой) */}
+        <motion.div 
+          animate={{ opacity: [0.4, 0.6, 0.4], scale: [0.95, 1.05, 0.95] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.18)_0%,rgba(249,115,22,0.05)_50%,transparent_80%)] blur-[40px] mix-blend-screen pointer-events-none -z-10" 
+        />
+
+        {/* Soft Top Ambient Spotlight */}
+        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_top,rgba(225,29,72,0.25)_0%,transparent_70%)] blur-[50px] pointer-events-none -z-10" />
+        
+        {/* Subtle Bottom Ambient Spotlight */}
+        <div className="absolute bottom-[-15%] left-1/2 -translate-x-1/2 w-[70%] h-[50%] bg-[radial-gradient(ellipse_at_bottom,rgba(249,115,22,0.2)_0%,transparent_70%)] blur-[50px] pointer-events-none -z-10" />
+
+        {/* Тонкие световые отражения по рамке */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-px bg-gradient-to-r from-transparent via-rose-400/60 to-transparent shadow-[0_-5px_20px_rgba(244,63,94,0.8)] -z-10" />
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-rose-300/30 to-transparent -z-10" />
 
         {/* === КОНТЕНТ === */}
         <div className="flex flex-col items-center gap-7 relative z-20 w-full">
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/[0.2] bg-white/10 text-white text-xs tracking-[0.15em] uppercase font-bold backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-[#ffffff06] text-white text-xs tracking-[0.15em] uppercase font-bold backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.02)]">
             <Sparkles className="w-3.5 h-3.5 text-rose-300" />
             <span>Начните бесплатно сегодня</span>
           </div>
@@ -92,42 +76,49 @@ export const FinalCTASection = () => {
             Присоединяйтесь к создателям контента нового поколения, которые уже экономят часы и создают контент, звучащий как они сами.
           </p>
 
-          {/* CTA Button & Note */}
-          <div className="flex flex-col items-center gap-5 mt-10 relative">
-            <button className="relative flex items-center justify-center gap-3 px-10 py-5 rounded-full font-bold text-white text-[1.1rem] overflow-hidden group transition-transform duration-500 ease-out hover:scale-[1.05] active:scale-[0.98]">
+          {/* === КОНВЕРСИОННАЯ КНОПКА (CTA) === */}
+          <div className="flex flex-col items-center gap-4 mt-8 relative">
+            <div className="relative group">
               
-              {/* Premium breathing aura (пульсация света за кнопкой) */}
+              {/* Breeding Glow (Пульсирует вокруг кнопки, привлекая взгляд) */}
               <motion.div 
-                animate={{ opacity: [0.6, 1, 0.6], scale: [0.95, 1.15, 0.95] }}
+                animate={{ opacity: [0.6, 0.9, 0.6], scale: [0.95, 1.1, 0.95] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute inset-[2px] bg-gradient-to-r from-rose-500 to-orange-500 rounded-full blur-[24px] z-0" 
+                className="absolute -inset-1 bg-gradient-to-r from-rose-500 to-orange-500 rounded-full blur-[18px] z-0 opacity-80 group-hover:opacity-100 group-hover:scale-[1.15] group-hover:blur-2xl transition-all duration-500 pointer-events-none" 
               />
 
-              {/* Фоновое свечение, реагирующее на Hover */}
-              <div className="absolute -inset-6 bg-gradient-to-r from-rose-500 to-orange-500 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out z-0 pointer-events-none" />
-              
-              {/* ЖИВАЯ поверхность кнопки (Постоянно бегущий градиент) */}
-              <motion.div 
-                animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-0 rounded-full border border-white/30 z-10 shadow-[inset_0_2px_15px_rgba(255,255,255,0.4)]"
-                style={{
-                  background: "linear-gradient(90deg, #f43f5e, #f97316, #ec4899, #f43f5e)",
-                  backgroundSize: "200% 200%"
-                }}
-              />
-              
-              {/* Постоянный элегантный Shimmer, пролетающий сам по себе */}
-              <motion.div
-                 animate={{ x: ["-200%", "200%"] }}
-                 transition={{ duration: 4, repeat: Infinity, ease: "linear", repeatDelay: 3 }}
-                 className="absolute inset-0 z-20 w-1/2 h-full skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none mix-blend-overlay"
-              />
+              {/* Физический объем кнопки и hover-лифт */}
+              <button className="relative flex items-center justify-center gap-3 px-10 py-[1.125rem] rounded-full font-bold text-white text-[1.1rem] overflow-hidden transition-all duration-300 ease-out transform group-hover:-translate-y-1 group-hover:scale-[1.02] active:scale-[0.98] active:translate-y-0 shadow-[0_8px_20px_rgba(244,63,94,0.4)] group-hover:shadow-[0_20px_40px_rgba(249,115,22,0.5)] border border-white/20 group-hover:border-white/40 z-10 bg-gradient-to-r from-rose-500 via-[#ff4b72] to-orange-500">
+                
+                {/* Внутренняя структура (Выпуклость/Глубина) */}
+                <div className="absolute inset-0 rounded-full shadow-[inset_0_2px_5px_rgba(255,255,255,0.4),inset_0_-2px_10px_rgba(0,0,0,0.15)] pointer-events-none" />
 
-              <span className="relative z-30 tracking-wide drop-shadow-md">Запустить бесплатно</span>
-              <ArrowRight className="relative z-30 w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
-            </button>
-            <p className="text-sm text-zinc-400 font-medium mt-1">
+                {/* Еле заметное мягкое движение внутреннего градиента */}
+                <motion.div 
+                  animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute inset-0 rounded-full z-10 mix-blend-overlay opacity-30 group-hover:opacity-70 transition-opacity duration-300"
+                  style={{
+                    background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent)",
+                    backgroundSize: "200% 100%"
+                  }}
+                />
+
+                {/* Регулярный Shimmer/Блик, привлекающий внимание */}
+                <motion.div
+                   animate={{ x: ["-200%", "300%"] }}
+                   transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", repeatDelay: 3.5 }}
+                   className="absolute inset-0 z-20 w-full h-full pointer-events-none"
+                >
+                  <div className="w-1/2 h-full skew-x-[-25deg] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-60" />
+                </motion.div>
+
+                <span className="relative z-30 drop-shadow-md tracking-wide">Запустить бесплатно</span>
+                <ArrowRight className="relative z-30 w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300 drop-shadow-md" />
+              </button>
+            </div>
+            
+            <p className="text-sm text-zinc-400 font-medium mt-2">
               Бесплатно · Без карты
             </p>
           </div>
