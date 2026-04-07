@@ -2,49 +2,48 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Fingerprint, Settings2, Zap, ImageIcon } from 'lucide-react';
 
-/* ─── Flexible Screenshot Component ─── */
+/* ─── Premium Bento Screenshot Component ─── */
 const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
   const [imgError, setImgError] = React.useState(false);
   const imageSrc = `/images/screens/screen-${imageId}.png`;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={`relative rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.55)] group transition-all duration-500 hover:scale-[1.02] flex ${className}`}
-      style={{
-        background: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,255,255,0.08)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-      }}
+      transition={{ duration: 0.7, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      className={`relative group transition-all duration-500 hover:-translate-y-1 ${className}`}
     >
-      {/* Если картинка не сломалась, пробуем её загрузить */}
-      {!imgError ? (
-        <img
-          src={imageSrc}
-          alt={`Screenshot ${imageId}`}
-          className="w-full h-full object-cover block relative z-10"
-          onError={() => setImgError(true)}
-        />
-      ) : (
-        /* Placeholder fallback (если файла пока нет) */
-        <div className="w-full h-full flex flex-col items-center justify-center relative z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-indigo-500/5 animate-pulse" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:18px_18px]" />
-          <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center mb-2">
-            <ImageIcon className="w-4 h-4 md:w-5 md:h-5 text-zinc-600" />
-          </div>
-          <span className="text-[10px] md:text-[11px] text-zinc-500 font-medium tracking-wide font-mono px-2 text-center text-balance leading-tight">
-            /images/screens/screen-{imageId}.png
-          </span>
-        </div>
-      )}
+      {/* Деликатный внешний Ambient Glow от карточки */}
+      <div className="absolute -inset-2 bg-gradient-to-br from-pink-500/20 via-rose-400/10 to-orange-500/15 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2rem] z-0 pointer-events-none" />
       
-      {/* Свечение при наведении */}
-      <div className="absolute inset-0 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/[0.05] to-transparent" />
+      {/* Premium Капсула (Рамка вокруг скриншота) */}
+      <div className="relative z-10 p-2 md:p-3 bg-[#ffffff03] backdrop-blur-2xl border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-[1.25rem] flex flex-col justify-center h-full group-hover:border-white/[0.14] group-hover:bg-[#ffffff05] transition-colors duration-500">
+        
+        {/* Внутреннее аккуратное свечение (Inner Highlight) */}
+        <div className="absolute inset-0 shadow-[inset_0_2px_15px_rgba(255,255,255,0.06)] rounded-[1.25rem] pointer-events-none" />
+        
+        {/* Контейнер самого контента (Изображение) */}
+        <div className="relative rounded-[0.75rem] overflow-hidden border border-white/[0.03] bg-[#0c0508] shadow-[inset_0_2px_10px_rgba(0,0,0,0.3)] flex-grow flex items-center justify-center">
+          {!imgError ? (
+            <img
+              src={imageSrc}
+              alt={`Product Screen ${imageId}`}
+              // w-full и h-auto: картинка сама задаёт пропорции, мы её не сжимаем и не обрезаем! 
+              className="w-full h-auto block object-contain transition-transform duration-700 ease-[0.21,0.47,0.32,0.98] group-hover:scale-[1.02] transform-gpu origin-center"
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <div className="w-full aspect-[4/3] flex flex-col items-center justify-center relative z-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-orange-500/5 animate-pulse" />
+              <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center mb-2">
+                <ImageIcon className="w-5 h-5 text-zinc-600" />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </motion.div>
   );
 };
@@ -127,19 +126,21 @@ export const DifferentiationSection = () => {
         </div>
 
         {/* ─── Колонка 2: Компактный Bento Grid ─── */}
-        <div className="relative self-center w-full max-w-[500px] lg:max-w-none mx-auto lg:ml-auto lg:mr-0 pt-0">
-          {/* Умеренное свечение (без пересвета) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-pink-500/5 blur-[80px] rounded-full pointer-events-none z-0" />
-          <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-indigo-500/5 blur-[80px] rounded-full pointer-events-none z-0" />
+        <div className="relative self-center w-full max-w-[550px] lg:max-w-none mx-auto lg:ml-auto lg:mr-0 pt-0">
+          
+          {/* Глубокая подсветка (Premium Depth Glow) под самим Grid-ом */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[radial-gradient(ellipse_at_center,rgba(244,63,94,0.12)_0%,transparent_60%)] blur-[70px] rounded-full pointer-events-none z-0" />
+          <div className="absolute top-[30%] left-[20%] w-[60%] h-[60%] bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.08)_0%,transparent_60%)] blur-[50px] pointer-events-none z-0" />
 
-          {/* Bento-компоновка (2 сверху, 1 широкий снизу) */}
-          <div className="grid grid-cols-2 gap-3 md:gap-4 w-full relative z-10">
+          {/* Bento-компоновка (Сетка растягивает элементы равномерно без обрезки) */}
+          <div className="grid grid-cols-2 gap-4 md:gap-5 w-full relative z-10 items-stretch">
             {/* Левый верхний */}
             <div className="col-span-1">
+              {/* className h-full заставляет карточку дотянуться до высоты соседней, если та выше */}
               <ScreenshotCard 
                 imageId="1" 
                 delay={0.2} 
-                className="w-full aspect-[4/3] sm:aspect-[16/10]" 
+                className="w-full h-full" 
               />
             </div>
             {/* Правый верхний */}
@@ -147,7 +148,7 @@ export const DifferentiationSection = () => {
               <ScreenshotCard 
                 imageId="2" 
                 delay={0.3} 
-                className="w-full aspect-[4/3] sm:aspect-[16/10]" 
+                className="w-full h-full" 
               />
             </div>
             {/* Нижний широкий */}
@@ -155,7 +156,7 @@ export const DifferentiationSection = () => {
               <ScreenshotCard 
                 imageId="3" 
                 delay={0.4} 
-                className="w-full aspect-[21/9] sm:aspect-[24/9]" 
+                className="w-full" 
               />
             </div>
           </div>
