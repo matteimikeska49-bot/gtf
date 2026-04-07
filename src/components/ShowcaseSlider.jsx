@@ -84,13 +84,20 @@ export const ShowcaseSlider = () => {
 
         {/* ─── Траст-бейдж ─── */}
         <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md">
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-lg shadow-black/20">
             {/* Аватарки */}
             <div className="flex -space-x-2">
-              {[...Array(4)].map((_, i) => (
-                <div
+              {[
+                "https://randomuser.me/api/portraits/men/32.jpg",
+                "https://randomuser.me/api/portraits/women/44.jpg",
+                "https://randomuser.me/api/portraits/men/46.jpg",
+                "https://randomuser.me/api/portraits/women/68.jpg"
+              ].map((src, i) => (
+                <img
                   key={i}
-                  className="w-6 h-6 rounded-full border border-white/20 bg-gradient-to-br from-white/20 to-white/5"
+                  src={src}
+                  alt={`User ${i + 1}`}
+                  className="w-6 h-6 rounded-full border-2 border-[#121212] object-cover bg-zinc-800"
                   style={{ zIndex: 4 - i }}
                 />
               ))}
@@ -98,10 +105,12 @@ export const ShowcaseSlider = () => {
             {/* Звёзды */}
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                <Star key={i} className="w-3.5 h-3.5 fill-yellow-500 text-yellow-500 drop-shadow-sm" />
               ))}
             </div>
-            <span className="text-xs text-zinc-400 font-medium">Уже генерируют контент в GoToFlow</span>
+            <span className="text-sm text-zinc-300 font-medium tracking-tight">
+              <span className="text-white font-semibold">+10k</span> Уже генерируют контент в GoToFlow
+            </span>
           </div>
         </div>
 
