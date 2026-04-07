@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { X, Check, Clock, Zap, Target, CreditCard, Rocket } from 'lucide-react';
+import { X, Check, Clock, Zap, Target, CreditCard, Rocket, ArrowRight } from 'lucide-react';
 
 const metrics = [
   { icon: <Clock className="w-6 h-6" />, color: 'text-amber-400', ring: 'bg-amber-500/10 border-amber-500/20', text: "До 10 часов экономии в неделю" },
@@ -110,22 +110,36 @@ export const UnifiedSystem = () => (
             {/* ─── Сравнительная таблица ─── */}
             <div className="relative w-full mb-12">
               
-              {/* === SEAMLESS LIGHT POOL FIXED HERE === */}
-              {/* 
-                  Instead of being trapped in the right column, we put the glow behind the entire grid.
-                  It is centered towards the right side.
-                  Massive blur + huge scaling ensures NO cutoff edges anywhere.
-              */}
-              <motion.div 
-                animate={{ 
-                  x: ["0%", "-3%", "0%"], 
-                  y: ["-2%", "2%", "-2%"], 
-                  opacity: [0.35, 0.5, 0.35] 
-                }}
-                transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 w-[150%] md:w-[120%] h-[150%] -z-10 rounded-full blur-[180px] md:blur-[250px] pointer-events-none"
+              {/* Рассеянное свечение за пределами карточек */}
+              <div 
+                className="absolute -z-10 pointer-events-none"
                 style={{
-                  background: 'radial-gradient(circle, rgba(225,29,72,0.1) 0%, rgba(249,115,22,0.06) 50%, transparent 100%)'
+                  inset: '-180px',
+                  background: 'radial-gradient(circle at 70% 50%, rgba(255, 120, 60, 0.18), transparent 60%), radial-gradient(circle at 30% 40%, rgba(255, 80, 120, 0.12), transparent 65%)',
+                  filter: 'blur(110px)',
+                  opacity: 0.6
+                }}
+              />
+
+              {/* Мягкие исчезновения (Fade) */}
+              <div 
+                className="absolute z-10 pointer-events-none"
+                style={{
+                  top: 0,
+                  bottom: 0,
+                  left: 0,
+                  width: '120px',
+                  background: 'linear-gradient(to right, rgba(10,10,12,1), rgba(10,10,12,0))'
+                }}
+              />
+              <div 
+                className="absolute z-10 pointer-events-none"
+                style={{
+                  top: 0,
+                  bottom: 0,
+                  right: 0,
+                  width: '120px',
+                  background: 'linear-gradient(to left, rgba(10,10,12,1), rgba(10,10,12,0))'
                 }}
               />
 
@@ -149,8 +163,14 @@ export const UnifiedSystem = () => (
 
                 {/* Правая — С GoToFlow (Nested Glassmorphism RESTORED) */}
                 <div 
-                  className="bg-white/[0.03] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-shadow duration-500"
-                  style={{ boxShadow: '0 0 40px rgba(244,63,94,0.05), inset 0 0 20px rgba(255,255,255,0.02)' }}
+                  className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-all duration-500"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.04)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)'
+                  }}
                 >
                   <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-20">
                     GoToFlow
@@ -169,31 +189,15 @@ export const UnifiedSystem = () => (
               </div>
             </div>
 
-            {/* ─── Кнопки ─── */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              {/* Левая — темная */}
-              <button className="flex flex-col items-center gap-1 px-8 py-4 rounded-2xl border border-white/10 bg-white/[0.03] text-white font-semibold text-base hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 min-w-[210px]">
-                <span>Посмотреть демо</span>
-                <span className="flex items-center gap-1.5 text-[11px] font-normal text-zinc-500">
-                  <CreditCard className="w-3 h-3" />
-                  Без привязки карты
-                </span>
+            {/* ─── Кнопка ─── */}
+            <div className="flex flex-col items-center justify-center gap-3 w-full">
+              <button className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
+                Запустить бесплатно
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-
-              {/* Правая — Градиентная кнопка (от Image_1) */}
-              <button
-                className="flex flex-col items-center gap-1 py-4 px-8 rounded-2xl text-white font-bold text-lg min-w-[210px] transition-all duration-300 hover:scale-[1.02]"
-                style={{
-                  background: 'linear-gradient(to right, #ec4899, #f43f5e, #fb923c)',
-                  boxShadow: '0 0 30px rgba(249,115,22,0.25), 0 0 60px rgba(236,72,153,0.15)',
-                }}
-              >
-                <span className="flex items-center gap-2">
-                  Создать контент с GoToFlow
-                  <Rocket className="w-5 h-5" />
-                </span>
-                <span className="text-[11px] font-normal text-white/80">Первый результат за 60 секунд</span>
-              </button>
+              <p className="text-sm text-zinc-500 text-center">
+                Первый результат за 60 секунд
+              </p>
             </div>
 
           </div>
