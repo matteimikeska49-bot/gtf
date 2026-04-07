@@ -3,55 +3,80 @@ import React, { useState, useEffect, useRef } from 'react';
 export const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Анна Смирнова",
-      role: "Маркетолог",
-      text: "Раньше мне казалось, что любой сгенерированный текст — это бездушный пластик. Главной болью было то, что AI убивал мой авторский стиль. Здесь же система подстраивается под мой Tone of Voice настолько точно, что даже преданные читатели не замечают разницы. Карусели получаются живыми, с моими словечками и структурой."
+      name: "Marina K.",
+      role: "Эксперт по питанию",
+      text: "Я реально ненавидела этап «сесть и написать пост». Идея есть, а пока сформулируешь, пока оформишь — проходит два часа. Сейчас закидываю тему — получаю структуру, текст, визуал. И он звучит как я, а не как робот.",
+      result: "С 2 постов в неделю → 5, без увеличения времени"
     },
     {
-      name: "Михаил Дорохов",
-      role: "Эксперт по продажам",
-      text: "До внедрения системы я мог убить целый выходной на написание пяти постов на неделю вперед. Сейчас я могу собрать мощную контент-линейку менее чем за час. Структура, смыслы, вовлечение — всё расписывается четко и по делу. Это освободило мне десятки часов в месяц для работы с клиентами."
+      name: "Daniel R.",
+      role: "Marketing Lead, London",
+      text: "I used to spend half my Sunday batching content for the week. Different tabs for AI text, another for design, another for competitor research. Now it's one flow — idea to carousel in minutes. The tone actually sounds like me, not like a chatbot wrote it.",
+      result: "Content production time cut by 70%"
     },
     {
-      name: "Елена Карпова",
-      role: "Предприниматель",
-      text: "Больше всего выматывала необходимость прыгать между пятью разными нейросетями: в одной ищешь идеи, в другой пишешь текст, в третьей проверяешь. Это приводило к дикому выгоранию. Сейчас у меня единый слаженный процесс: от идеи до готовой карусели всё происходит в одном окне. Я снова полюбила создавать контент."
+      name: "Artem N.",
+      role: "Основатель студии интерьеров",
+      text: "Контент — это то, что я откладываю каждый день. Я не копирайтер и не дизайнер. Но клиенты приходят из Instagram, и без постов просто нет заявок. За первую неделю сделал 6 каруселей. Две принесли заявки — впервые за два месяца.",
+      result: "6 каруселей за неделю → 2 входящие заявки"
     },
     {
-      name: "Дмитрий Власов",
-      role: "Founder",
-      text: "Я выкладывал посты каждый день на интуиции, но это не приносило целевых заявок. Тратил уйму времени на пустые охваты. Система помогла выстроить логику контента так, что каждый пост стал шагом в воронке. Как итог — целевые лиды начали писать в директ уже после второй выложенной карусели. Это магия структуры, а не просто текст."
+      type: "stat",
+      value: "~60 сек",
+      label: "Среднее время создания карусели"
     },
     {
-      name: "Виктория Новикова",
-      role: "Автор каруселей",
-      text: "Обожаю функцию 'Шпион'! Раньше я боялась, что буду просто копировать конкурентов, пытаясь повторить их успех, либо сидела в ступоре перед чистым листом. Теперь инструмент анализирует тренды и вытаскивает лучшие смыслы и упаковку из ниши, предлагая мне свежий угол обзора. Мои карусели стали выглядеть на миллион."
+      name: "Alina V.",
+      role: "Блогер, лайфстайл",
+      text: "Я перепробовала штук пять AI-сервисов. Везде одно и то же — текст, который надо полностью переписывать. Смысл тогда? Тут я первый раз получила текст и подумала «о, это прям можно выложить». Не всегда, но в 8 случаях из 10.",
+      result: "8 из 10 текстов — сразу в публикацию"
     },
     {
-      name: "Алексей Макаров",
-      role: "Блогер",
-      text: "Главная беда с типовым AI — это когда ты пишешь промпт, а потом еще два часа правишь получившийся бред. Здесь алгоритмы настроены так, что на выходе получается практически готовый, фактурный текст. Максимум 5 минут на легкую редактуру, и пост отправляется в ленту. Настоящий спасательный круг для тех, кто ценит свое время."
+      name: "Sophie van D.",
+      role: "Content Strategist, Amsterdam",
+      text: "We manage content for 6 clients. Before GoToFlow, each one needed 3–4 hours a week just for copy and carousels. Now the team handles the same volume in a fraction of the time. The Spy feature alone saves us hours of competitor research.",
+      result: "~15 hours saved per week across the team"
     },
     {
-      name: "Ольга Лебедева",
-      role: "SMM-стратег",
-      text: "Вечная проблема моих клиентов — отсутствие системности. Никто не знает, о чем писать завтра. Платформа полностью закрыла эту боль: генерация логичного и продуманного контент-плана занимает минуты. Больше никакого стресса 'что же сегодня выложить', публикации идут регулярно и бьют точно в цель."
+      name: "Natalia G.",
+      role: "Психолог, частная практика",
+      text: "Мне важно, чтобы контент звучал как я, а не как «топ-5 способов справиться с тревогой». Все AI до этого выдавали именно такое. Здесь я настроила подачу под себя — и подписчики стали писать в личку чаще. Это лучшая метрика.",
+      result: "Рост входящих сообщений на 40%"
     },
     {
-      name: "Игорь Тихонов",
-      role: "Креатор",
-      text: "Раньше мои текстовые посты набирали минимум реакций, несмотря на экспертность. Я боялся, что сложные темы просто не заходят аудитории. С помощью платформы я начал переупаковывать свои знания в структурированные карусели. Результат феноменальный: сохранения и репосты выросли кратно, контент наконец-то начал 'работать'."
+      type: "stat",
+      value: "3 000+",
+      label: "Пользователей за первые 3 месяца"
     },
     {
-      name: "София Мельникова",
-      role: "PR Менеджер",
-      text: "Функция 'Шпион' — это просто легальный чит-код. Я устала от заезженных заголовков, которые никто не читает. Инструмент анализирует, за что цепляется глаз аудитории сейчас, и генерирует для меня мощные хуки и нестандартные заходы. Мои посты снова начали пробивать баннерную слепоту читателей."
+      name: "Sasha L.",
+      role: "Контент-менеджер, фриланс",
+      text: "Самое бесячее — жонглировать ChatGPT, Canva, заметки, потом собирать всё вручную. К концу дня голова квадратная, а сделал три поста. Здесь весь процесс в одном окне. Идея → структура → текст → карусель. Просто стал успевать больше.",
+      result: "×2 к объёму контента при том же рабочем дне"
     },
     {
-      name: "Павел Костин",
-      role: "Контент-продюсер",
-      text: "Для меня критически важна стабильность. У меня был жуткий страх, что каждая новая генерация будет звучать как другой человек, и придется всё сшивать руками. Но система держит Tone of Voice железно. От первого до пятого поста в цепочке стиль остается узнаваемым и полностью 'моим'. Это невероятное облегчение."
-    }
+      name: "James T.",
+      role: "Founder, DTC Brand, NYC",
+      text: "I was paying a freelance SMM $800/mo for templated posts that didn't convert. Decided to try doing it myself. Got the hang of GoToFlow in about 10 minutes. Now I post 4 times a week — nothing fancy, but real and on-brand. Saves me a fortune.",
+      result: "Replaced freelance SMM → saving $800/mo"
+    },
+    {
+      name: "Igor M.",
+      role: "Владелец барбершопа, 2 точки",
+      text: "Честно — я вообще не понимаю в контенте. Нанимал SMM, но 25 тысяч в месяц за шаблонные посты — было больно. Разобрался за 10 минут. Делаю 3–4 поста в неделю. Не шедевры, но живые и про нас.",
+      result: "Заменил SMM-щика → экономия 25 000 ₽/мес"
+    },
+    {
+      type: "stat",
+      value: "84%",
+      label: "Публикуют контент без правок"
+    },
+    {
+      name: "Dmitry V.",
+      role: "Founder, EdTech-стартап",
+      text: "Выкладывал посты каждый день на интуиции, но заявок не было. Тратил уйму времени на пустые охваты. Система помогла выстроить логику контента — каждый пост стал шагом в воронке. Лиды начали писать в директ после второй карусели.",
+      result: "Первые целевые лиды после 2-й карусели"
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -104,25 +129,50 @@ export const TestimonialsSection = () => {
           className="flex flex-nowrap items-stretch gap-6 transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * slideDelta}px)` }}
         >
-          {testimonials.map((t, idx) => (
-            <div 
-              key={idx}
-              className="flex-shrink-0 w-full md:w-[calc(33.333333%-1rem)] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 flex flex-col justify-between h-auto min-h-[250px]"
-            >
-              <div>
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
+          {testimonials.map((t, idx) => {
+            /* ── Stat accent card ── */
+            if (t.type === 'stat') {
+              return (
+                <div 
+                  key={idx}
+                  className="flex-shrink-0 w-full md:w-[calc(33.333333%-1rem)] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 flex flex-col items-center justify-center h-auto min-h-[250px]"
+                >
+                  <span className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-3 tracking-tight">
+                    {t.value}
+                  </span>
+                  <span className="text-zinc-400 text-sm md:text-base text-center font-medium leading-snug">
+                    {t.label}
+                  </span>
                 </div>
-                <p className="whitespace-normal break-words text-zinc-300 text-base leading-relaxed italic mb-6">
-                  "{t.text}"
-                </p>
+              );
+            }
+
+            /* ── Testimonial card ── */
+            return (
+              <div 
+                key={idx}
+                className="flex-shrink-0 w-full md:w-[calc(33.333333%-1rem)] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 flex flex-col justify-between h-auto min-h-[250px]"
+              >
+                <div>
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
+                  </div>
+                  <p className="whitespace-normal break-words text-zinc-300 text-base leading-relaxed italic mb-4">
+                    "{t.text}"
+                  </p>
+                  {t.result && (
+                    <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-6">
+                      {t.result}
+                    </p>
+                  )}
+                </div>
+                <div className="flex flex-col">
+                  <div className="text-white font-medium">{t.name}</div>
+                  <div className="text-zinc-500 text-sm">{t.role}</div>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <div className="text-white font-medium">{t.name}</div>
-                <div className="text-zinc-500 text-sm">{t.role}</div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
