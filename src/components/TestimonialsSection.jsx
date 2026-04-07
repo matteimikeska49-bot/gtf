@@ -59,7 +59,6 @@ export const TestimonialsSection = () => {
   const [itemsPerView, setItemsPerView] = useState(3);
   const trackRef = useRef(null);
 
-  // Вычисление ширины сдвига и количества карточек
   useEffect(() => {
     const calcDelta = () => {
       if (trackRef.current && trackRef.current.children.length > 0) {
@@ -74,14 +73,13 @@ export const TestimonialsSection = () => {
     return () => window.removeEventListener('resize', calcDelta);
   }, []);
 
-  // Автопрокрутка слайдера
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => {
         const max = testimonials.length - itemsPerView;
         return prev >= max ? 0 : prev + 1;
       });
-    }, 3500); // 3.5 секунды
+    }, 3500);
 
     return () => clearInterval(interval);
   }, [itemsPerView, testimonials.length]);
@@ -93,39 +91,33 @@ export const TestimonialsSection = () => {
   );
 
   return (
-    <section className="relative z-10 py-16 md:py-20 w-full flex flex-col items-center overflow-hidden">
-      {/* Фоновое свечение (Подложка блока) */}
-      <div className="bg-gradient-to-r from-blue-600/10 via-purple-600/15 to-rose-500/10 blur-[120px] w-[70%] h-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none"></div>
+    <section className="relative z-10 py-16 md:py-24 w-full flex flex-col items-center overflow-hidden">
+      <div className="bg-gradient-to-r from-rose-500/10 via-orange-500/5 to-rose-500/10 blur-[120px] w-[70%] h-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none"></div>
 
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center tracking-tight relative z-20">
         Что говорят креаторы
       </h2>
 
-      {/* Скрытый overflow-hidden контейнер */}
-      <div className="max-w-7xl mx-auto px-4 overflow-hidden w-full relative z-20">
-        {/* Внутренний трек */}
+      <div className="w-full max-w-7xl mx-auto px-4 overflow-hidden relative z-20">
         <div 
           ref={trackRef}
-          className="flex transition-transform duration-700 ease-in-out gap-6"
+          className="flex flex-nowrap items-stretch gap-6 transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * slideDelta}px)` }}
         >
           {testimonials.map((t, idx) => (
             <div 
               key={idx}
-              className="min-w-[calc(100%-1.5rem)] md:min-w-[calc(33.333333%-1rem)] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl p-6 rounded-2xl flex flex-col justify-between h-full shrink-0"
+              className="flex-shrink-0 w-full md:w-[calc(33.333333%-1rem)] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 flex flex-col justify-between h-auto min-h-[250px]"
             >
               <div>
-                {/* Звезды */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
                 </div>
-                {/* Текст отзыва */}
-                <p className="text-zinc-300 text-base leading-relaxed italic mb-6">
+                <p className="whitespace-normal break-words text-zinc-300 text-base leading-relaxed italic mb-6">
                   "{t.text}"
                 </p>
               </div>
-              {/* Автор (Без аватарок) */}
-              <div>
+              <div className="flex flex-col">
                 <div className="text-white font-medium">{t.name}</div>
                 <div className="text-zinc-500 text-sm">{t.role}</div>
               </div>
@@ -134,7 +126,6 @@ export const TestimonialsSection = () => {
         </div>
       </div>
 
-      {/* Навигационные точки */}
       <div className="flex justify-center gap-2 mt-10 relative z-20 flex-wrap px-4">
         {[...Array(testimonials.length - itemsPerView + 1)].map((_, idx) => (
           <button
