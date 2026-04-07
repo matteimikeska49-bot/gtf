@@ -13,7 +13,7 @@ const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={`relative rounded-[20px] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.55)] group transition-all duration-500 hover:scale-[1.02] ${className}`}
+      className={`relative rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.55)] group transition-all duration-500 hover:scale-[1.02] flex ${className}`}
       style={{
         background: 'rgba(255,255,255,0.04)',
         border: '1px solid rgba(255,255,255,0.08)',
@@ -26,18 +26,18 @@ const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
         <img
           src={imageSrc}
           alt={`Screenshot ${imageId}`}
-          className="w-full h-auto object-cover block relative z-10"
+          className="w-full h-full object-cover block relative z-10"
           onError={() => setImgError(true)}
         />
       ) : (
         /* Placeholder fallback (если файла пока нет) */
-        <div className="w-full aspect-[16/10] flex flex-col items-center justify-center relative z-10 bg-[#0c0c0c]/50">
+        <div className="w-full h-full flex flex-col items-center justify-center relative z-10">
           <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-indigo-500/5 animate-pulse" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:18px_18px]" />
-          <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center mb-3">
-            <ImageIcon className="w-5 h-5 text-zinc-600" />
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center mb-2">
+            <ImageIcon className="w-4 h-4 md:w-5 md:h-5 text-zinc-600" />
           </div>
-          <span className="text-[11px] text-zinc-500 font-medium tracking-wide font-mono">
+          <span className="text-[10px] md:text-[11px] text-zinc-500 font-medium tracking-wide font-mono px-2 text-center text-balance leading-tight">
             /images/screens/screen-{imageId}.png
           </span>
         </div>
@@ -126,29 +126,38 @@ export const DifferentiationSection = () => {
           </div>
         </div>
 
-        {/* ─── Колонка 2: 3 скриншота без пересечений ─── */}
-        <div className="relative self-start w-full pt-4 md:pt-10">
+        {/* ─── Колонка 2: Компактный Bento Grid ─── */}
+        <div className="relative self-center w-full max-w-[500px] lg:max-w-none mx-auto lg:ml-auto lg:mr-0 pt-0">
           {/* Умеренное свечение (без пересвета) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-pink-500/5 blur-[100px] rounded-full pointer-events-none" />
-          <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-indigo-500/5 blur-[80px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-pink-500/5 blur-[80px] rounded-full pointer-events-none z-0" />
+          <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-indigo-500/5 blur-[80px] rounded-full pointer-events-none z-0" />
 
-          {/* Stagger-компоновка (лесенка) */}
-          <div className="flex flex-col gap-6 md:gap-8 w-full relative z-10 pb-4">
-            <ScreenshotCard 
-              imageId="1" 
-              delay={0.2} 
-              className="w-full md:w-[90%] md:self-start" 
-            />
-            <ScreenshotCard 
-              imageId="2" 
-              delay={0.35} 
-              className="w-full md:w-[90%] md:self-center" 
-            />
-            <ScreenshotCard 
-              imageId="3" 
-              delay={0.5} 
-              className="w-full md:w-[90%] md:self-end" 
-            />
+          {/* Bento-компоновка (2 сверху, 1 широкий снизу) */}
+          <div className="grid grid-cols-2 gap-3 md:gap-4 w-full relative z-10">
+            {/* Левый верхний */}
+            <div className="col-span-1">
+              <ScreenshotCard 
+                imageId="1" 
+                delay={0.2} 
+                className="w-full aspect-[4/3] sm:aspect-[16/10]" 
+              />
+            </div>
+            {/* Правый верхний */}
+            <div className="col-span-1">
+              <ScreenshotCard 
+                imageId="2" 
+                delay={0.3} 
+                className="w-full aspect-[4/3] sm:aspect-[16/10]" 
+              />
+            </div>
+            {/* Нижний широкий */}
+            <div className="col-span-2">
+              <ScreenshotCard 
+                imageId="3" 
+                delay={0.4} 
+                className="w-full aspect-[21/9] sm:aspect-[24/9]" 
+              />
+            </div>
           </div>
         </div>
 
