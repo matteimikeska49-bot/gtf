@@ -151,25 +151,25 @@ export const ToolsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: i * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  className={`group p-px rounded-[2rem] relative overflow-hidden ${
+                  className={`group p-px rounded-[2rem] relative ${
                     tool.featured
-                      ? 'bg-gradient-to-b from-pink-500/30 to-orange-500/10 shadow-[0_0_40px_rgba(236,72,153,0.12)]'
-                      : 'bg-gradient-to-b from-white/10 to-white/0'
+                      ? 'bg-gradient-to-b from-rose-500/30 to-orange-500/10 shadow-[0_0_30px_rgba(244,63,94,0.06)] z-20'
+                      : 'bg-gradient-to-b from-white/10 to-white/0 z-10 overflow-hidden'
                   }`}
                 >
+                  {/* Featured label (Moved outside overflow-hidden inner card to break out of bounds) */}
+                  {tool.featured && (
+                    <div className="absolute -top-3 right-6 z-30 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#12080a] bg-gradient-to-r from-rose-500/10 to-orange-500/10 border border-rose-500/30 shadow-[0_4px_15px_rgba(244,63,94,0.15)] backdrop-blur-md">
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-400 shadow-[0_0_8px_rgba(244,63,94,0.6)] animate-pulse" />
+                      <span className="text-[10px] font-bold text-rose-300 tracking-widest uppercase">Популярное</span>
+                    </div>
+                  )}
+
                   <div className={`h-full rounded-[2rem] p-7 flex flex-col gap-6 border transition-colors duration-500 overflow-hidden relative ${
                     tool.featured
-                      ? 'bg-[#0f0a0c] border-pink-500/25 group-hover:border-pink-500/40'
+                      ? 'bg-[#0f0a0c] border-transparent group-hover:border-rose-500/10'
                       : `bg-[#0a0a0a]/90 border-white/[0.03] ${tool.borderHover}`
                   }`}>
-                    {/* Featured label */}
-                    {tool.featured && (
-                      <div className="absolute top-5 right-5 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gradient-to-r from-pink-500/20 to-orange-500/20 border border-pink-500/30 backdrop-blur-sm">
-                        <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
-                        <span className="text-[10px] font-bold text-pink-300 tracking-widest uppercase">Популярное</span>
-                      </div>
-                    )}
-
                     {/* Hover accent gradient */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${tool.accentColor} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
 
