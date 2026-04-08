@@ -2,25 +2,46 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Play, Radar, Search, Layers, Fingerprint, CalendarDays, Rss, Clock, Zap, Sparkles } from 'lucide-react';
 
-/* ─── Gif Placeholder ─── */
-const GifPlaceholder = ({ icon: Icon }) => (
-  <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 flex items-center justify-center group-hover:border-white/10 transition-colors duration-500">
-    {/* Subtle grid */}
-    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:24px_24px]" />
-    {/* Glow */}
-    <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-indigo-500/5 animate-pulse" />
-    {/* Center icon */}
-    <div className="relative z-10 flex flex-col items-center gap-3">
-      <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-        <Icon className="w-6 h-6 text-zinc-500" />
-      </div>
-      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
-        <Play className="w-3 h-3 text-zinc-500" />
-        <span className="text-xs text-zinc-500 font-medium">GIF preview</span>
-      </div>
+/* ─── Video Preview (с фоллбэком) ─── */
+const VideoPreview = ({ icon: Icon, videoSrc }) => {
+  const [videoError, setVideoError] = React.useState(false);
+
+  return (
+    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 flex items-center justify-center group-hover:border-white/10 transition-colors duration-500">
+      {/* Subtle grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:24px_24px]" />
+      {/* Glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-indigo-500/5 animate-pulse" />
+      
+      {/* Center icon / Fallback */}
+      {(!videoSrc || videoError) && (
+        <div className="relative z-10 flex flex-col items-center gap-3">
+          <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+            <Icon className="w-6 h-6 text-zinc-500" />
+          </div>
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+            <Play className="w-3 h-3 text-zinc-500" />
+            <span className="text-xs text-zinc-500 font-medium">GIF preview</span>
+          </div>
+        </div>
+      )}
+
+      {/* Video */}
+      {videoSrc && !videoError && (
+        <video
+          src={videoSrc}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          onError={() => setVideoError(true)}
+          className="absolute inset-0 w-full h-full object-cover z-20 pointer-events-none"
+        />
+      )}
     </div>
-  </div>
-);
+  );
+};
 
 /* ─── БЛОК 1: Главные инструменты ─── */
 const coreTools = [
@@ -33,6 +54,7 @@ const coreTools = [
     iconColor: "text-pink-300",
     borderHover: "group-hover:border-pink-500/20",
     featured: false,
+    videoSrc: "/videos/tools/tool-1.mp4",
   },
   {
     icon: Layers,
@@ -43,6 +65,7 @@ const coreTools = [
     iconColor: "text-orange-300",
     borderHover: "group-hover:border-pink-500/30",
     featured: true,
+    videoSrc: "/videos/tools/tool-2.mp4",
   },
   {
     icon: Search,
@@ -53,6 +76,7 @@ const coreTools = [
     iconColor: "text-violet-300",
     borderHover: "group-hover:border-violet-500/20",
     featured: false,
+    videoSrc: "/videos/tools/tool-3.mp4",
   },
 ];
 
@@ -149,8 +173,8 @@ export const ToolsSection = () => {
                     {/* Hover accent gradient */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${tool.accentColor} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
 
-                    {/* GIF placeholder */}
-                    <GifPlaceholder icon={tool.icon} />
+                    {/* Video / Fallback */}
+                    <VideoPreview icon={tool.icon} videoSrc={tool.videoSrc} />
 
                     {/* Content */}
                     <div className="flex flex-col gap-4 relative z-10">
