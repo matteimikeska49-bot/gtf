@@ -8,16 +8,16 @@ const Logo = () => {
     <div className="flex items-center gap-2.5 cursor-pointer transition-transform hover:scale-105">
       <div className="relative w-9 h-9 flex items-center justify-center">
          <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg blur-[6px] opacity-70" />
-         <div className="relative w-full h-full bg-[#0a0a0a] border border-white/10 rounded-xl flex items-center justify-center p-1.5 overflow-hidden">
+         <div className="relative w-full h-full bg-[#0a0a0a] border border-white/10 rounded-xl flex items-center justify-center overflow-hidden">
             {!imgError ? (
               <img 
                 src="/images/logo.png" 
                 alt="Logo" 
                 onError={() => setImgError(true)}
-                className="w-[85%] h-[85%] object-contain"
+                className="w-[95%] h-[95%] object-contain"
               />
             ) : (
-              <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+              <svg viewBox="0 0 24 24" fill="none" className="w-[65%] h-[65%]">
                 <path d="M18.36 5.64A9 9 0 1 0 18.36 18.36" stroke="url(#logo-grad-h)" strokeWidth="3.5" strokeLinecap="round" />
                 <defs>
                   <linearGradient id="logo-grad-h" x1="0" y1="0" x2="24" y2="24">
