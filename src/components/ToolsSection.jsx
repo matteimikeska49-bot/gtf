@@ -88,25 +88,6 @@ const comingSoon = [
   { icon: Play,         label: "Короткие Reels (5–10 с)" },
 ];
 
-/* ─── БЛОК 3: Персонализация ─── */
-const personalizePoints = [
-  {
-    icon: Fingerprint,
-    title: "Ваш Tone of Voice",
-    desc: "Система запоминает ваш стиль письма, любимые обороты и манеру подачи — контент звучит как вы, а не как робот.",
-  },
-  {
-    icon: Zap,
-    title: "Визуальная подача",
-    desc: "Настройте эстетику раз и забудьте. GoToFlow адаптирует структуру карточек под ваш бренд.",
-  },
-  {
-    icon: Sparkles,
-    title: "Свои темы и промпты",
-    desc: "Добавляйте собственные тематики, стоп-слова и правила. Система обучается вашему подходу со временем.",
-  },
-];
-
 export const ToolsSection = () => {
   return (
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#090909] to-[#050505]">
@@ -239,64 +220,7 @@ export const ToolsSection = () => {
           </div>
         </motion.div>
 
-        {/* ═══════════════════════════════
-            БЛОК 3 — Персонализация
-        ═══════════════════════════════ */}
-        <div className="bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 relative overflow-hidden">
-          {/* Background glow */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/5 blur-[100px] rounded-full pointer-events-none -translate-y-1/3 translate-x-1/3" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-            {/* Left: typography */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
-                <Fingerprint className="w-3.5 h-3.5" />
-                <span>Персонализация</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 tracking-tight leading-tight text-balance">
-                Работает в{' '}
-                <span className="text-gradient-brand">вашем стиле,</span>
-                <br />а не по шаблонам
-              </h2>
-              <p className="text-zinc-400 leading-relaxed font-medium max-w-lg">
-                GoToFlow — не очередной генератор текста. Это система, которая запоминает вас: ваш голос, подачу, темы и правила. С каждым использованием — точнее.
-              </p>
-            </motion.div>
-
-            {/* Right: feature list */}
-            <div className="flex flex-col gap-5">
-              {personalizePoints.map((point, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.12, ease: 'easeOut' }}
-                  className="flex items-start gap-5 group"
-                >
-                  <div className="relative w-12 h-12 flex items-center justify-center rounded-2xl border border-white/5 bg-[#050505] shrink-0 group-hover:scale-110 transition-transform duration-500">
-                    <div className="absolute inset-0 bg-indigo-500 blur-xl opacity-15 group-hover:opacity-40 transition-opacity duration-500 rounded-2xl" />
-                    <point.icon className="w-5 h-5 text-indigo-300 relative z-10" />
-                  </div>
-                  <div>
-                    <h3 className="text-base font-bold text-white mb-1 tracking-tight group-hover:text-indigo-100 transition-colors">
-                      {point.title}
-                    </h3>
-                    <p className="text-zinc-500 text-sm leading-relaxed font-medium">
-                      {point.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
 
       </div>
     </section>
