@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 
-const Logo = () => (
-  <div className="flex items-center gap-2.5 cursor-pointer transition-transform hover:scale-105">
-    <div className="relative w-9 h-9 flex items-center justify-center">
-       <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg blur-[6px] opacity-70" />
-       <div className="relative w-full h-full bg-[#0a0a0a] border border-white/10 rounded-xl flex items-center justify-center p-1.5">
-          <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-            <path d="M18.36 5.64A9 9 0 1 0 18.36 18.36" stroke="url(#logo-grad-h)" strokeWidth="3.5" strokeLinecap="round" />
-            <defs>
-              <linearGradient id="logo-grad-h" x1="0" y1="0" x2="24" y2="24">
-                <stop offset="0%" stopColor="#ec4899" />
-                <stop offset="100%" stopColor="#f97316" />
-              </linearGradient>
-            </defs>
-          </svg>
-       </div>
+const Logo = () => {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <div className="flex items-center gap-2.5 cursor-pointer transition-transform hover:scale-105">
+      <div className="relative w-9 h-9 flex items-center justify-center">
+         <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg blur-[6px] opacity-70" />
+         <div className="relative w-full h-full bg-[#0a0a0a] border border-white/10 rounded-xl flex items-center justify-center p-1.5 overflow-hidden">
+            {!imgError ? (
+              <img 
+                src="/images/logo.png" 
+                alt="Logo" 
+                onError={() => setImgError(true)}
+                className="w-[65%] h-[65%] object-contain"
+              />
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+                <path d="M18.36 5.64A9 9 0 1 0 18.36 18.36" stroke="url(#logo-grad-h)" strokeWidth="3.5" strokeLinecap="round" />
+                <defs>
+                  <linearGradient id="logo-grad-h" x1="0" y1="0" x2="24" y2="24">
+                    <stop offset="0%" stopColor="#ec4899" />
+                    <stop offset="100%" stopColor="#f97316" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            )}
+         </div>
+      </div>
+      <span className="text-xl font-extrabold tracking-tight text-white">GoToFlow</span>
     </div>
-    <span className="text-xl font-extrabold tracking-tight text-white">GoToFlow</span>
-  </div>
-);
+  );
+};
 
 export const Header = ({ lang, setLang }) => {
   return (
