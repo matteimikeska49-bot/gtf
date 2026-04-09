@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 
-const Logo = () => {
+export const Logo = () => {
   const [imgError, setImgError] = useState(false);
 
   return (

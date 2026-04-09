@@ -3,6 +3,7 @@ import { Sparkles } from 'lucide-react';
 import { PrivacyPolicy } from './PrivacyPolicy';
 import { TermsOfService } from './TermsOfService';
 import { UserConsent } from './UserConsent';
+import { Logo } from './Header';
 
 export const Footer = () => {
   const [modal, setModal] = useState(null); // 'privacy' | 'terms' | 'consent' | null
@@ -21,13 +22,7 @@ export const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
 
           {/* Logo */}
-          <div className="flex items-center gap-2.5 group">
-            <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-pink-500/20 to-orange-500/20 border border-white/10 flex items-center justify-center">
-              <div className="absolute inset-0 bg-pink-500/10 blur-md rounded-xl group-hover:bg-pink-500/20 transition-colors duration-500" />
-              <Sparkles className="w-4 h-4 text-pink-400 relative z-10" />
-            </div>
-            <span className="font-bold text-white text-lg tracking-tight">GoToFlow</span>
-          </div>
+          <Logo />
 
           {/* Legal doc links — tiny and muted */}
           <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
