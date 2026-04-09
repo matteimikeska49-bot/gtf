@@ -9,7 +9,6 @@ import { ToolsSection } from './components/ToolsSection';
 import { HowItWorksSection } from './components/HowItWorksSection';
 import { DifferentiationSection } from './components/DifferentiationSection';
 import { FAQSection } from './components/FAQSection';
-import { FinalCTASection } from './components/FinalCTASection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { PricingSection } from './components/PricingSection';
 import { Footer } from './components/Footer';
@@ -30,7 +29,6 @@ function App() {
       <FAQSection />
       <TestimonialsSection />
       <PricingSection />
-      <FinalCTASection />
       <Footer />
     </MainLayout>
   );
