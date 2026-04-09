@@ -14,7 +14,7 @@ const Logo = () => {
                 src="/images/logo.png" 
                 alt="Logo" 
                 onError={() => setImgError(true)}
-                className="w-[65%] h-[65%] object-contain"
+                className="w-[85%] h-[85%] object-contain"
               />
             ) : (
               <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
