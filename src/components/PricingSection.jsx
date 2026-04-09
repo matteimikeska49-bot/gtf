@@ -42,7 +42,7 @@ const plans = [
   {
     id: 'power',
     name: 'POWER',
-    tagline: 'Для масштаба и команд',
+    tagline: 'Для команд и масштабирования контента',
     icon: Rocket,
     monthlyPrice: 6990,
     tokens: '4 000 токенов',
@@ -54,6 +54,7 @@ const plans = [
       'Все стили',
       'Максимальная скорость генерации',
       'Приоритетная поддержка',
+      'Ранний доступ ко всем новым функциям',
       'Безлимитное скачивание',
     ],
     featured: false,
@@ -164,7 +165,7 @@ const PlanCard = ({ plan, isYearly, index }) => {
       {/* Outer gradient border wrapper */}
       <div className={`p-px rounded-[1.5rem] ${
         plan.featured
-          ? 'bg-gradient-to-b from-pink-500/25 via-orange-500/10 to-transparent shadow-[0_0_40px_rgba(236,72,153,0.06)]'
+          ? 'bg-gradient-to-b from-pink-500/30 via-orange-500/15 to-pink-500/5 shadow-[0_4px_60px_rgba(236,72,153,0.10),0_0_100px_rgba(236,72,153,0.05)]'
           : plan.accent === 'violet'
             ? 'bg-gradient-to-b from-violet-500/15 via-white/[0.05] to-transparent shadow-[0_2px_30px_rgba(0,0,0,0.4)]'
             : 'bg-gradient-to-b from-white/[0.1] via-white/[0.05] to-transparent shadow-[0_2px_30px_rgba(0,0,0,0.4)]'
@@ -172,20 +173,20 @@ const PlanCard = ({ plan, isYearly, index }) => {
         {/* Card body */}
         <div className={`rounded-[calc(1.5rem-1px)] p-8 md:p-9 flex flex-col relative overflow-hidden transition-all duration-500 ${
           plan.featured
-            ? 'bg-[#0c0a0e] group-hover:shadow-[0_0_50px_rgba(236,72,153,0.06)]'
+            ? 'bg-[#0c0a0e] border border-pink-500/[0.12] group-hover:border-pink-500/20 group-hover:shadow-[0_8px_60px_rgba(236,72,153,0.08)]'
             : plan.accent === 'violet'
               ? 'bg-[#0b0a0e]/95 group-hover:bg-[#0d0b10]/95 group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.5)]'
               : 'bg-[#0a0a0b]/95 group-hover:bg-[#0d0d0e]/95 group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.5)]'
         }`}
           style={{
-            transform: plan.featured ? 'scale(1.03)' : 'scale(1)',
+            transform: plan.featured ? 'scale(1.02)' : 'scale(1)',
             transition: 'transform 0.4s cubic-bezier(0.21, 0.47, 0.32, 0.98)',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.transform = plan.featured ? 'scale(1.05) translateY(-4px)' : 'translateY(-4px)';
+            e.currentTarget.style.transform = plan.featured ? 'scale(1.04) translateY(-4px)' : 'translateY(-4px)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.transform = plan.featured ? 'scale(1.03)' : 'scale(1)';
+            e.currentTarget.style.transform = plan.featured ? 'scale(1.02)' : 'scale(1)';
           }}
         >
           {/* Subtle inner gradient for all cards */}
