@@ -75,50 +75,55 @@ const formatPrice = (price) => {
 
 /* ─── Billing Toggle ─── */
 const BillingToggle = ({ isYearly, setIsYearly }) => (
-  <div className="flex items-center justify-center gap-1 p-1 rounded-full border border-white/[0.06] bg-white/[0.02] backdrop-blur-md w-fit mx-auto">
-    <button
-      onClick={() => setIsYearly(false)}
-      className={`relative px-5 py-2 rounded-full text-sm font-semibold transition-all duration-250 ${
-        !isYearly
-          ? 'text-white'
-          : 'text-zinc-500 hover:text-zinc-300'
-      }`}
-    >
-      {!isYearly && (
-        <motion.div
-          layoutId="billing-pill"
-          className="absolute inset-0 rounded-full bg-white/[0.08] border border-white/[0.08]"
-          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-        />
-      )}
-      <span className="relative z-10">Месяц</span>
-    </button>
-    <button
-      onClick={() => setIsYearly(true)}
-      className={`relative px-5 py-2 rounded-full text-sm font-semibold transition-all duration-250 ${
-        isYearly
-          ? 'text-white'
-          : 'text-zinc-500 hover:text-zinc-300'
-      }`}
-    >
-      {isYearly && (
-        <motion.div
-          layoutId="billing-pill"
-          className="absolute inset-0 rounded-full bg-white/[0.08] border border-white/[0.08]"
-          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-        />
-      )}
-      <span className="relative z-10 flex items-center gap-2">
-        Год
-        <span className="text-[10px] font-bold tracking-wider uppercase text-pink-400">−45%</span>
-      </span>
-    </button>
+  <div className="flex flex-col items-center gap-3">
+    <div className="flex items-center justify-center gap-1 p-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur-md w-fit mx-auto shadow-[0_2px_20px_rgba(0,0,0,0.3)]">
+      <button
+        onClick={() => setIsYearly(false)}
+        className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+          !isYearly
+            ? 'text-white'
+            : 'text-zinc-500 hover:text-zinc-300'
+        }`}
+      >
+        {!isYearly && (
+          <motion.div
+            layoutId="billing-pill"
+            className="absolute inset-0 rounded-full bg-white/[0.1] border border-white/[0.12] shadow-[0_0_12px_rgba(255,255,255,0.04)]"
+            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+          />
+        )}
+        <span className="relative z-10">Месяц</span>
+      </button>
+      <button
+        onClick={() => setIsYearly(true)}
+        className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+          isYearly
+            ? 'text-white'
+            : 'text-zinc-500 hover:text-zinc-300'
+        }`}
+      >
+        {isYearly && (
+          <motion.div
+            layoutId="billing-pill"
+            className="absolute inset-0 rounded-full bg-white/[0.1] border border-white/[0.12] shadow-[0_0_12px_rgba(255,255,255,0.04)]"
+            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+          />
+        )}
+        <span className="relative z-10 flex items-center gap-2">
+          Год
+          <span className="text-[10px] font-bold tracking-wider uppercase text-pink-400">−45%</span>
+        </span>
+      </button>
+    </div>
+    <p className="text-xs text-zinc-600 font-medium">
+      Экономия 45% при оплате за год
+    </p>
   </div>
 );
 
 /* ─── Price Display with animation ─── */
 const PriceDisplay = ({ price, isYearly }) => (
-  <div className="flex items-baseline gap-1.5">
+  <div className="flex items-baseline gap-2">
     <AnimatePresence mode="wait">
       <motion.span
         key={price}
@@ -126,7 +131,7 @@ const PriceDisplay = ({ price, isYearly }) => (
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.25 }}
-        className="text-4xl md:text-5xl font-bold text-white tracking-tight"
+        className="text-4xl md:text-[2.75rem] font-bold text-white tracking-tight leading-none"
       >
         {formatPrice(price)} ₽
       </motion.span>
@@ -160,17 +165,21 @@ const PlanCard = ({ plan, isYearly, index }) => {
       <div className={`p-px rounded-[1.5rem] ${
         plan.featured
           ? 'bg-gradient-to-b from-pink-500/25 via-orange-500/10 to-transparent shadow-[0_0_40px_rgba(236,72,153,0.06)]'
-          : 'bg-gradient-to-b from-white/[0.08] to-transparent'
+          : plan.accent === 'violet'
+            ? 'bg-gradient-to-b from-violet-500/15 via-white/[0.05] to-transparent shadow-[0_2px_30px_rgba(0,0,0,0.4)]'
+            : 'bg-gradient-to-b from-white/[0.1] via-white/[0.05] to-transparent shadow-[0_2px_30px_rgba(0,0,0,0.4)]'
       }`}>
         {/* Card body */}
-        <div className={`rounded-[calc(1.5rem-1px)] p-7 md:p-8 flex flex-col gap-7 relative overflow-hidden transition-all duration-500 ${
+        <div className={`rounded-[calc(1.5rem-1px)] p-8 md:p-9 flex flex-col relative overflow-hidden transition-all duration-500 ${
           plan.featured
             ? 'bg-[#0c0a0e] group-hover:shadow-[0_0_50px_rgba(236,72,153,0.06)]'
-            : 'bg-[#0a0a0a]/90 group-hover:bg-[#0c0c0c]/90'
+            : plan.accent === 'violet'
+              ? 'bg-[#0b0a0e]/95 group-hover:bg-[#0d0b10]/95 group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.5)]'
+              : 'bg-[#0a0a0b]/95 group-hover:bg-[#0d0d0e]/95 group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.5)]'
         }`}
           style={{
             transform: plan.featured ? 'scale(1.03)' : 'scale(1)',
-            transition: 'transform 0.5s ease',
+            transition: 'transform 0.4s cubic-bezier(0.21, 0.47, 0.32, 0.98)',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = plan.featured ? 'scale(1.05) translateY(-4px)' : 'translateY(-4px)';
@@ -179,22 +188,26 @@ const PlanCard = ({ plan, isYearly, index }) => {
             e.currentTarget.style.transform = plan.featured ? 'scale(1.03)' : 'scale(1)';
           }}
         >
-          {/* Subtle background gradient */}
-          {plan.featured && (
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-500/[0.04] via-transparent to-orange-500/[0.03] pointer-events-none" />
-          )}
+          {/* Subtle inner gradient for all cards */}
+          <div className={`absolute inset-0 pointer-events-none ${
+            plan.featured
+              ? 'bg-gradient-to-br from-pink-500/[0.04] via-transparent to-orange-500/[0.03]'
+              : plan.accent === 'violet'
+                ? 'bg-gradient-to-br from-violet-500/[0.03] via-transparent to-indigo-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500'
+                : 'bg-gradient-to-br from-white/[0.02] via-transparent to-white/[0.01] opacity-0 group-hover:opacity-100 transition-opacity duration-500'
+          }`} />
 
-          {/* Plan Header */}
-          <div className="relative z-10">
-            <div className="flex items-center gap-3 mb-3">
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${
+          {/* ── Plan Header ── */}
+          <div className="relative z-10 mb-7">
+            <div className="flex items-center gap-3.5 mb-1">
+              <div className={`w-11 h-11 rounded-xl flex items-center justify-center border ${
                 plan.featured
                   ? 'bg-gradient-to-br from-pink-500/10 to-orange-500/10 border-pink-500/20'
                   : plan.accent === 'violet'
-                    ? 'bg-violet-500/10 border-violet-500/15'
-                    : 'bg-white/[0.03] border-white/[0.06]'
+                    ? 'bg-violet-500/[0.08] border-violet-500/15 group-hover:border-violet-500/25 transition-colors duration-300'
+                    : 'bg-white/[0.04] border-white/[0.07] group-hover:border-white/[0.12] transition-colors duration-300'
               }`}>
-                <Icon className={`w-4.5 h-4.5 ${
+                <Icon className={`w-[18px] h-[18px] ${
                   plan.featured
                     ? 'text-pink-400'
                     : plan.accent === 'violet'
@@ -203,45 +216,51 @@ const PlanCard = ({ plan, isYearly, index }) => {
                 }`} />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white tracking-tight">{plan.name}</h3>
-                <p className="text-xs text-zinc-500 font-medium">{plan.tagline}</p>
+                <h3 className="text-lg font-bold text-white tracking-tight leading-tight">{plan.name}</h3>
+                <p className="text-xs text-zinc-500 font-medium mt-0.5">{plan.tagline}</p>
               </div>
             </div>
           </div>
 
-          {/* Price */}
-          <div className="relative z-10">
+          {/* ── Price ── */}
+          <div className="relative z-10 mb-6">
             <PriceDisplay price={price} isYearly={isYearly} />
             {isYearly && (
               <motion.p
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
-                className="text-xs text-pink-400/80 font-medium mt-2"
+                className="text-xs text-pink-400/80 font-medium mt-2.5"
               >
                 Экономия 45% при оплате за год
               </motion.p>
             )}
           </div>
 
-          {/* Tokens */}
-          <div className={`relative z-10 px-4 py-3 rounded-xl border ${
+          {/* ── Tokens ── */}
+          <div className={`relative z-10 px-4 py-4 rounded-xl border mb-6 ${
             plan.featured
               ? 'bg-gradient-to-r from-pink-500/[0.06] to-orange-500/[0.04] border-pink-500/15'
               : plan.accent === 'violet'
-                ? 'bg-violet-500/[0.04] border-violet-500/10'
-                : 'bg-white/[0.02] border-white/[0.04]'
+                ? 'bg-violet-500/[0.03] border-violet-500/[0.08] group-hover:border-violet-500/15 transition-colors duration-300'
+                : 'bg-white/[0.02] border-white/[0.05] group-hover:border-white/[0.08] transition-colors duration-300'
           }`}>
-            <p className="text-sm font-bold text-white">{plan.tokens}</p>
+            <p className={`text-base font-bold tracking-tight ${
+              plan.featured ? 'text-white' : 'text-zinc-200'
+            }`}>{plan.tokens}</p>
             {plan.tokenNote && (
-              <p className="text-[11px] text-zinc-500 mt-0.5 font-medium">{plan.tokenNote}</p>
+              <p className="text-[11px] text-zinc-500 mt-1 font-medium leading-snug">{plan.tokenNote}</p>
             )}
           </div>
 
-          {/* Divider */}
-          <div className="h-px bg-white/[0.04]" />
+          {/* ── Divider ── */}
+          <div className={`h-px mb-6 ${
+            plan.featured
+              ? 'bg-white/[0.06]'
+              : 'bg-white/[0.04]'
+          }`} />
 
-          {/* Features */}
-          <ul className="flex flex-col gap-3 relative z-10 flex-1">
+          {/* ── Features ── */}
+          <ul className="flex flex-col gap-3.5 relative z-10 flex-1 mb-8">
             {plan.features.map((feature, i) => (
               <li key={i} className="flex items-start gap-3">
                 <div className={`w-5 h-5 rounded-md flex items-center justify-center shrink-0 mt-0.5 ${
@@ -249,29 +268,29 @@ const PlanCard = ({ plan, isYearly, index }) => {
                     ? 'bg-pink-500/15'
                     : plan.accent === 'violet'
                       ? 'bg-violet-500/10'
-                      : 'bg-white/[0.04]'
+                      : 'bg-white/[0.05]'
                 }`}>
                   <Check className={`w-3 h-3 ${
                     plan.featured
                       ? 'text-pink-400'
                       : plan.accent === 'violet'
                         ? 'text-violet-400'
-                        : 'text-zinc-500'
+                        : 'text-zinc-400'
                   }`} />
                 </div>
-                <span className="text-sm text-zinc-400 font-medium leading-snug">{feature}</span>
+                <span className="text-sm text-zinc-400 font-medium leading-relaxed">{feature}</span>
               </li>
             ))}
           </ul>
 
-          {/* CTA Button */}
+          {/* ── CTA Button ── */}
           <button
-            className={`w-full py-3.5 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 relative overflow-hidden group/btn ${
+            className={`w-full py-4 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 relative overflow-hidden group/btn ${
               plan.featured
                 ? 'bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow-[0_0_25px_rgba(236,72,153,0.2)] hover:shadow-[0_0_40px_rgba(236,72,153,0.35)] hover:scale-[1.02] active:scale-[0.98]'
                 : plan.accent === 'violet'
-                  ? 'bg-white/[0.06] border border-violet-500/15 text-white hover:bg-violet-500/10 hover:border-violet-500/25 hover:scale-[1.02] active:scale-[0.98]'
-                  : 'bg-white/[0.06] border border-white/[0.08] text-white hover:bg-white/[0.1] hover:border-white/[0.15] hover:scale-[1.02] active:scale-[0.98]'
+                  ? 'bg-white/[0.06] border border-violet-500/20 text-zinc-200 hover:text-white hover:bg-violet-500/[0.08] hover:border-violet-500/35 hover:shadow-[0_0_20px_rgba(139,92,246,0.08)] hover:scale-[1.02] active:scale-[0.98]'
+                  : 'bg-white/[0.06] border border-white/[0.1] text-zinc-200 hover:text-white hover:bg-white/[0.1] hover:border-white/[0.18] hover:shadow-[0_0_20px_rgba(255,255,255,0.03)] hover:scale-[1.02] active:scale-[0.98]'
             }`}
           >
             {plan.featured && (
@@ -301,7 +320,7 @@ export const PricingSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-center mb-12 flex flex-col items-center gap-6"
+          className="text-center mb-14 flex flex-col items-center gap-6"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-pink-500/15 bg-pink-500/[0.06] text-pink-300 text-xs tracking-widest uppercase font-bold backdrop-blur-md">
             <Crown className="w-3.5 h-3.5" />
@@ -327,6 +346,17 @@ export const PricingSection = () => {
             <PlanCard key={plan.id} plan={plan} isYearly={isYearly} index={i} />
           ))}
         </div>
+
+        {/* Trust note */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-center text-xs text-zinc-600 font-medium mt-10"
+        >
+          Вы можете изменить тариф в любой момент
+        </motion.p>
       </div>
     </section>
   );
