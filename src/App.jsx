@@ -11,6 +11,7 @@ import { DifferentiationSection } from './components/DifferentiationSection';
 import { FAQSection } from './components/FAQSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { PricingSection } from './components/PricingSection';
+import { BottomCTA } from './components/BottomCTA';
 import { Footer } from './components/Footer';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <FAQSection />
       <TestimonialsSection />
       <PricingSection />
+      <BottomCTA />
       <Footer />
     </MainLayout>
   );
