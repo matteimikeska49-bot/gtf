@@ -196,8 +196,10 @@ export const HeroSection = () => {
            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
            className="max-w-3xl mx-auto w-full"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-white leading-[1.1] text-balance">
-            Находите вирусные идеи и превращайте их в карусели <span className="text-gradient-brand">за 60 секунд</span>
+          <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
+            Находите вирусные идеи <br className="hidden md:block" /> 
+            и превращайте их в карусели <br className="hidden md:block" /> 
+            <span className="text-gradient-brand">за 60 секунд</span>
           </h1>
         </motion.div>
 
@@ -205,7 +207,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed font-medium text-balance"
+          className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance"
         >
           Анализируйте конкурентов, находите тренды <br className="hidden md:block"/> и создавайте контент в один клик — в вашем стиле
         </motion.p>
