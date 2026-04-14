@@ -43,6 +43,11 @@ export const BottomCTA = () => {
         }}
       />
 
+      {/* Deep ambient light pool — large diffused pink→orange nebula behind everything */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[150%] h-[150%] rounded-full pointer-events-none blur-[150px] md:blur-[250px] opacity-60 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-pink-600/15 via-rose-500/10 to-transparent"
+      />
+
       {/* Orb A — upper-left: warm rose */}
       <motion.div
         animate={{
