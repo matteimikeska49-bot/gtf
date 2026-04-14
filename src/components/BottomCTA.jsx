@@ -102,78 +102,23 @@ export const BottomCTA = () => {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="relative"
         >
-          {/* Card ambient glow — warm float effect */}
-          <motion.div
-            animate={{
-              opacity: [0.5, 0.8, 0.5],
-              scale: [0.97, 1.03, 0.97],
-            }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -inset-8 md:-inset-12 rounded-[3rem] pointer-events-none"
-            style={{
-              background: 'radial-gradient(ellipse 75% 60% at 50% 52%, rgba(236,72,153,0.07) 0%, rgba(251,146,60,0.04) 40%, transparent 70%)',
-              filter: 'blur(55px)',
-            }}
-          />
+          {/* 2. Massive Background Halo (Anchor Glow) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[130%] h-[130%] rounded-[100%] pointer-events-none bg-gradient-to-r from-pink-600/15 via-rose-500/10 to-orange-500/15 blur-[150px] md:blur-[250px]" />
 
-          {/* Card surface */}
+          {/* Card surface - Premium Glow Container */}
           <div
-            className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden"
+            className="group relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-gradient-to-b from-white/[0.04] to-transparent border border-white/10 hover:border-white/20 transition-colors duration-500 shadow-[inset_0_0_80px_rgba(236,72,153,0.06),inset_0_-20px_100px_rgba(249,115,22,0.05),0_50px_100px_-25px_rgba(0,0,0,0.5)]"
             style={{
-              background: 'linear-gradient(175deg, rgba(18,16,16,0.95) 0%, rgba(12,10,10,0.97) 50%, rgba(10,8,9,0.98) 100%)',
               backdropFilter: 'blur(60px) saturate(1.2)',
               WebkitBackdropFilter: 'blur(60px) saturate(1.2)',
-              border: '1px solid rgba(255,255,255,0.055)',
-              boxShadow: `
-                0 0 0 0.5px rgba(255,255,255,0.025),
-                0 50px 100px -25px rgba(0,0,0,0.55),
-                0 20px 50px -15px rgba(0,0,0,0.35),
-                inset 0 1px 0 rgba(255,255,255,0.04)
-              `,
             }}
           >
-            {/* ── Top-light refraction line ── */}
-            <div className="absolute top-0 inset-x-[12%] h-px bg-gradient-to-r from-transparent via-white/[0.1] to-transparent" />
+            {/* Added focal glows pooling to look illuminated from within */}
+            <div className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[70%] h-[70%] bg-orange-500/10 blur-[100px] rounded-full pointer-events-none z-[1]" />
+            <div className="absolute top-[10%] left-[10%] w-[50%] h-[50%] bg-pink-500/10 blur-[120px] rounded-full pointer-events-none z-[1]" />
 
-            {/* ── Animated border light sweep ── */}
-            <motion.div
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-              className="absolute -inset-[1px] rounded-[inherit] pointer-events-none overflow-hidden"
-              style={{ zIndex: 0 }}
-            >
-              <div
-                className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  background: 'conic-gradient(from 0deg, transparent 0%, transparent 75%, rgba(236,72,153,0.12) 82%, rgba(251,146,60,0.1) 88%, transparent 95%, transparent 100%)',
-                }}
-              />
-            </motion.div>
-
-            {/* Re-fill interior so rotating border only shows at edge */}
-            <div
-              className="absolute inset-[1px] rounded-[calc(1.5rem-1px)] md:rounded-[calc(2rem-1px)] pointer-events-none"
-              style={{
-                background: 'linear-gradient(175deg, rgba(18,16,16,0.99) 0%, rgba(12,10,10,1) 50%, rgba(10,8,9,1) 100%)',
-              }}
-            />
-
-            {/* Subtle top-down light wash */}
-            <div
-              className="absolute inset-0 pointer-events-none z-[1]"
-              style={{
-                background: 'linear-gradient(180deg, rgba(255,255,255,0.025) 0%, transparent 30%)',
-              }}
-            />
-
-            {/* Inner warm focal glow — draws eye toward button */}
-            <div
-              className="absolute bottom-[18%] left-1/2 -translate-x-1/2 w-[45%] h-[35%] pointer-events-none z-[1]"
-              style={{
-                background: 'radial-gradient(ellipse, rgba(236,72,153,0.035) 0%, rgba(251,146,60,0.015) 40%, transparent 70%)',
-                filter: 'blur(50px)',
-              }}
-            />
+            {/* Top refraction glass edge */}
+            <div className="absolute top-0 inset-x-[15%] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent z-[1] opacity-50" />
 
             {/* ─── CONTENT ─── */}
             <div className="relative z-10 px-8 py-16 sm:px-12 sm:py-20 md:px-20 md:py-24 lg:px-28 lg:py-28 flex flex-col items-center text-center">
