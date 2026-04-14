@@ -24,22 +24,40 @@ const newWay = [
   "Контент в вашем стиле: свои фото, свои промпты, своя подача",
 ];
 
-/* ─── Анимированная дымка (Haze) ─── */
-const DriftHaze = () => (
-  <div className="absolute inset-[-10%] pointer-events-none -z-10 overflow-hidden">
-    {/* Левый свет */}
+/* ─── Ambient radial orbs (free-floating, no bounding box) ─── */
+const AmbientOrbs = () => (
+  <>
+    {/* Upper-left pink orb */}
     <motion.div
-      animate={{ y: [-10, 10, -10] }}
-      transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-      className="absolute -left-[10%] top-[20%] w-[55%] h-[60%] bg-pink-500/10 blur-[150px] rounded-full"
+      animate={{ opacity: [0.3, 0.5, 0.3], y: [-8, 8, -8] }}
+      transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+      className="absolute -top-[15%] -left-[8%] w-[500px] h-[500px] rounded-full pointer-events-none"
+      style={{
+        background: 'radial-gradient(circle, rgba(236,72,153,0.12) 0%, transparent 65%)',
+        filter: 'blur(80px)',
+      }}
     />
-    {/* Правый свет */}
+    {/* Lower-right orange orb */}
     <motion.div
-      animate={{ y: [10, -10, 10] }}
-      transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-      className="absolute -right-[10%] bottom-[20%] w-[55%] h-[60%] bg-orange-500/10 blur-[150px] rounded-full"
+      animate={{ opacity: [0.25, 0.45, 0.25], y: [6, -6, 6] }}
+      transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+      className="absolute -bottom-[18%] -right-[8%] w-[550px] h-[500px] rounded-full pointer-events-none"
+      style={{
+        background: 'radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 65%)',
+        filter: 'blur(80px)',
+      }}
     />
-  </div>
+    {/* Center warm halo — ties the two together */}
+    <motion.div
+      animate={{ opacity: [0.15, 0.3, 0.15], scale: [0.97, 1.04, 0.97] }}
+      transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] rounded-full pointer-events-none"
+      style={{
+        background: 'radial-gradient(ellipse, rgba(236,72,153,0.07) 0%, rgba(249,115,22,0.04) 40%, transparent 70%)',
+        filter: 'blur(100px)',
+      }}
+    />
+  </>
 );
 
 export const UnifiedSystem = () => (
@@ -47,19 +65,7 @@ export const UnifiedSystem = () => (
     {/* АРХИТЕКТУРНЫЙ ФИКС: Убрано overflow-hidden/clip с секции, чтобы свет мог свободно смешиваться с фоном страницы */}
     <section className="py-24 md:py-32 px-6 relative z-10 w-full bg-[#050505]">
       
-      {/* ИСТИННЫЙ ФОНОВЫЙ СВЕТ БЛОКА СРАВНЕНИЯ */}
-      {/* ТЕХНИЧЕСКОЕ РЕШЕНИЕ: Отказ от filter: blur.
-          Filter: blur(150px) заставляет GPU резать рендер по хитбоксу.
-          Мы используем 200vw контейнер и чистый radial-gradient. 
-          Он математически затухает до 0% (transparent), не оставляя обрубленных краев. */}
-      <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[250vw] max-w-[2000px] h-[1200px] pointer-events-none -z-0 opacity-100 flex justify-center">
-        <div 
-          className="absolute inset-0 mix-blend-screen"
-          style={{
-            background: 'radial-gradient(circle at 60% 50%, rgba(251, 146, 60, 0.15) 0%, transparent 35%), radial-gradient(circle at 40% 50%, rgba(236, 72, 153, 0.12) 0%, transparent 35%)'
-          }}
-        />
-      </div>
+
 
       <div className="max-w-6xl mx-auto relative z-10">
 
@@ -89,8 +95,8 @@ export const UnifiedSystem = () => (
           transition={{ duration: 0.9, ease: 'easeOut' }}
           className="relative"
         >
-          {/* Плавный теплый фон */}
-          <DriftHaze />
+          {/* Ambient orbs — free-floating, extend beyond card boundaries */}
+          <AmbientOrbs />
 
           {/* Стеклянная подложка. АРХИТЕКТУРНЫЙ ФИКС: */}
           {/* Выносим фон в абсолютный слой, чтобы backdrop-blur не создавал bounding box для свечения */}
