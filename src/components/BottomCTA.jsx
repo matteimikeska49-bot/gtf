@@ -49,28 +49,30 @@ export const BottomCTA = () => {
           className="relative"
         >
 
-          {/* Floating glow — warm halo behind card for levitation feel */}
+          {/* Floating glow — subtle warm halo behind card */}
           <div className="absolute -inset-6 md:-inset-10 rounded-[3rem] pointer-events-none -z-10"
             style={{
-              background: 'radial-gradient(ellipse 70% 55% at 50% 50%, rgba(236,72,153,0.08) 0%, rgba(249,115,22,0.05) 40%, transparent 70%)',
+              background: 'radial-gradient(ellipse 70% 55% at 50% 50%, rgba(236,72,153,0.05) 0%, rgba(249,115,22,0.03) 40%, transparent 70%)',
               filter: 'blur(60px)',
             }}
           />
 
           {/* Card surface - Precision Premium Container */}
           <div
-            className="group relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-gradient-to-b from-white/[0.03] to-transparent border border-white/5 hover:border-white/10 transition-colors duration-500 shadow-[0_0_20px_rgba(236,72,153,0.05),0_0_20px_rgba(249,115,22,0.05),0_40px_80px_-25px_rgba(0,0,0,0.8)]"
+            className="group relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border border-white/[0.08] hover:border-white/[0.12] transition-colors duration-500"
             style={{
+              background: 'linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%)',
               backdropFilter: 'blur(40px) saturate(1.2)',
               WebkitBackdropFilter: 'blur(40px) saturate(1.2)',
+              boxShadow: '0 0 30px rgba(236,72,153,0.04), 0 0 30px rgba(249,115,22,0.03), 0 1px 0 inset rgba(255,255,255,0.06), 0 40px 80px -25px rgba(0,0,0,0.8)',
             }}
           >
 
             {/* ─── CONTENT ─── */}
             <div className="relative z-10 px-8 py-16 sm:px-12 sm:py-20 md:px-20 md:py-24 lg:px-28 lg:py-28 flex flex-col items-center text-center">
 
-              {/* Text Block Halo (Strictly contained precision glow) */}
-              <div className="absolute top-[25%] left-1/2 -translate-x-1/2 w-[400px] h-[150px] bg-gradient-to-r from-pink-500/15 to-orange-500/10 blur-[50px] rounded-[100%] pointer-events-none -z-10" />
+              {/* Text Block Halo (Subtle precision glow) */}
+              <div className="absolute top-[25%] left-1/2 -translate-x-1/2 w-[400px] h-[150px] bg-gradient-to-r from-pink-500/8 to-orange-500/5 blur-[50px] rounded-[100%] pointer-events-none -z-10" />
 
               {/* 1 — Pill */}
               <motion.div
