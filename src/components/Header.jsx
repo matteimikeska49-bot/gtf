@@ -34,7 +34,11 @@ export const Logo = () => {
   );
 };
 
-export const Header = ({ lang, setLang }) => {
+import { useLanguage } from '../context/LanguageContext';
+
+export const Header = () => {
+  const { lang, setLang, t } = useLanguage();
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.05] bg-[#050505]/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
@@ -48,7 +52,7 @@ export const Header = ({ lang, setLang }) => {
             {['RU', 'EN'].map((l) => (
               <button
                 key={l}
-                onClick={() => setLang && setLang(l)}
+                onClick={() => setLang(l)}
                 className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider transition-all duration-200 ${
                   lang === l
                     ? 'bg-white/10 text-white shadow-sm'
@@ -62,13 +66,13 @@ export const Header = ({ lang, setLang }) => {
 
           {/* CTA — desktop */}
           <button className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm text-white bg-gradient-to-r from-pink-500 to-orange-500 shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:shadow-[0_0_35px_rgba(236,72,153,0.5)] hover:scale-105 active:scale-[0.98] transition-all duration-300 border border-pink-400/20">
-            Начать бесплатно
+            {t('common.startFree')}
             <ChevronRight className="w-4 h-4" />
           </button>
 
           {/* CTA — mobile */}
           <button className="md:hidden flex items-center gap-1.5 px-4 py-2 rounded-full font-bold text-xs text-white bg-gradient-to-r from-pink-500 to-orange-500 shadow-[0_0_15px_rgba(236,72,153,0.3)]">
-            Начать
+            {t('common.start')}
           </button>
         </div>
       </div>

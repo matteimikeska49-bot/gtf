@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, LayoutDashboard, Search, PenTool, Play, Zap, ArrowRight, BarChart3, Settings } from 'lucide-react';
-
-const BADGE_TEXTS = [
-  "Для креаторов, экспертов и контент-команд",
-  "Создавайте контент, даже если нет идей",
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const RotatingBadge = () => {
   const [index, setIndex] = useState(0);
+  const { t } = useLanguage();
+  const badges = t('hero.badges') || [];
 
   useEffect(() => {
+    if (!badges || badges.length === 0) return;
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % BADGE_TEXTS.length);
+      setIndex((prev) => (prev + 1) % badges.length);
     }, 3500);
     return () => clearInterval(timer);
-  }, []);
+  }, [badges.length]);
 
   return (
     <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm overflow-hidden">
@@ -36,7 +35,7 @@ const RotatingBadge = () => {
             transition={{ duration: 0.45, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="block text-sm text-zinc-300 whitespace-nowrap"
           >
-            {BADGE_TEXTS[index]}
+            {badges[index]}
           </motion.span>
         </AnimatePresence>
       </div>
@@ -63,6 +62,7 @@ const IsometricGrid = () => (
 );
 
 const AbstractUIMockup = () => {
+  const { t } = useLanguage();
   return (
     <motion.div 
       initial={{ opacity: 0, y: 50 }}
@@ -88,18 +88,18 @@ const AbstractUIMockup = () => {
           
           <div className="space-y-3 mt-4 relative z-10">
             <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-pink-500/10 to-orange-500/10 border border-pink-500/20 text-pink-300 font-semibold text-sm shadow-inner cursor-pointer hover:border-pink-500/40 transition-colors">
-              <Zap className="w-4 h-4 text-pink-400 group-hover:scale-110 transition-transform" /> Создать контент
+              <Zap className="w-4 h-4 text-pink-400 group-hover:scale-110 transition-transform" /> {t('hero.mockup.createContent')}
             </div>
             <div className="flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-400 hover:text-zinc-200 transition-colors text-sm cursor-pointer hover:bg-white/5 border border-transparent">
-              <LayoutDashboard className="w-4 h-4" /> Мои Проекты
+              <LayoutDashboard className="w-4 h-4" /> {t('hero.mockup.myProjects')}
             </div>
             <div className="flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-400 hover:text-zinc-200 transition-colors text-sm cursor-pointer hover:bg-white/5 border border-transparent">
-              <Search className="w-4 h-4" /> Анализ конкурентов
+              <Search className="w-4 h-4" /> {t('hero.mockup.competitorAnalysis')}
             </div>
           </div>
 
           <div className="mt-auto px-4 py-4 border-t border-white/5 flex items-center gap-3 text-sm text-zinc-500 hover:text-zinc-300 cursor-pointer transition-colors relative z-10">
-             <Settings className="w-4 h-4" /> Настройки
+             <Settings className="w-4 h-4" /> {t('hero.mockup.settings')}
           </div>
         </div>
 
@@ -108,10 +108,10 @@ const AbstractUIMockup = () => {
           <div className="absolute right-0 top-0 w-64 h-64 bg-purple-500/10 blur-[80px] rounded-full pointer-events-none" />
 
           <div className="flex items-center justify-between relative z-10">
-            <h3 className="text-2xl font-bold text-white tracking-tight">Post Generation Flow</h3>
+            <h3 className="text-2xl font-bold text-white tracking-tight">{t('hero.mockup.postGenerationFlow')}</h3>
             <div className="px-4 py-2 rounded-full border border-white/10 bg-[#050505] text-xs font-semibold text-zinc-300 flex items-center gap-2 shadow-lg backdrop-blur-md">
                <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse shadow-[0_0_10px_#ec4899]" />
-               AI Активен
+               {t('hero.mockup.aiActive')}
             </div>
           </div>
 
@@ -171,6 +171,7 @@ const AbstractUIMockup = () => {
 };
 
 export const HeroSection = () => {
+  const { t } = useLanguage();
   return (
     <section className="pt-32 pb-16 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
       {/* Isometric grid background layer */}
@@ -197,9 +198,9 @@ export const HeroSection = () => {
            className="max-w-3xl mx-auto w-full"
         >
           <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
-            Находите вирусные идеи <br className="hidden md:block" /> 
-            и превращайте их в карусели <br className="hidden md:block" /> 
-            <span className="text-gradient-brand">за 60 секунд</span>
+            {t('hero.titlePart1')} <br className="hidden md:block" /> 
+            {t('hero.titlePart2')} <br className="hidden md:block" /> 
+            <span className="text-gradient-brand">{t('hero.titleHighlight')}</span>
           </h1>
         </motion.div>
 
@@ -209,7 +210,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance"
         >
-          Анализируйте конкурентов, находите тренды <br className="hidden md:block"/> и создавайте контент в один клик — в вашем стиле
+          {t('hero.subtitlePart1')} <br className="hidden md:block"/> {t('hero.subtitlePart2')}
         </motion.p>
 
         <motion.div 
@@ -220,15 +221,15 @@ export const HeroSection = () => {
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto">
             <button className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
-              Запустить бесплатно
+              {t('common.started')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
           {/* Trust signals */}
           <p className="text-sm text-zinc-500 flex flex-wrap justify-center gap-x-3 gap-y-1">
-            <span>✓ Без привязки карты</span>
+            <span>✓ {t('common.noCardRequired')}</span>
             <span className="text-zinc-700">•</span>
-            <span>✓ Первый результат за 60 секунд</span>
+            <span>✓ {t('common.firstResult60s')}</span>
           </p>
         </motion.div>
 

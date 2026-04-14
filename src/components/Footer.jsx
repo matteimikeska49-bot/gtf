@@ -3,9 +3,11 @@ import { PrivacyPolicy } from './PrivacyPolicy';
 import { TermsOfService } from './TermsOfService';
 import { UserConsent } from './UserConsent';
 import { Logo } from './Header';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Footer = () => {
   const [modal, setModal] = useState(null); // 'privacy' | 'terms' | 'consent' | null
+  const { t } = useLanguage();
 
   return (
     <>
@@ -23,7 +25,7 @@ export const Footer = () => {
             <div className="flex flex-col items-center md:items-start gap-4">
               <Logo />
               <p className="text-[11px] text-zinc-500 font-medium">
-                © 2026 GoToFlow. Все права защищены.
+                {t('footer.copyright')}
               </p>
             </div>
 
@@ -34,19 +36,19 @@ export const Footer = () => {
                   onClick={() => setModal('privacy')}
                   className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
                 >
-                  Политика конфиденциальности
+                  {t('footer.privacy')}
                 </button>
                 <button
                   onClick={() => setModal('terms')}
                   className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
                 >
-                  Оферта
+                  {t('footer.terms')}
                 </button>
                 <button
                   onClick={() => setModal('consent')}
                   className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
                 >
-                  Согласие на обработку данных
+                  {t('footer.consent')}
                 </button>
                 <a
                   href="mailto:hello@gotoflow.com"

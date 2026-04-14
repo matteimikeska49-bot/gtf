@@ -1,48 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { X, Check, Clock, Zap, Target, CreditCard, Rocket, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
-const metrics = [
-  { icon: <Clock className="w-6 h-6" />, color: 'text-amber-400', ring: 'bg-amber-500/10 border-amber-500/20', text: "До 10 часов экономии в неделю" },
-  { icon: <Zap className="w-6 h-6" />,   color: 'text-violet-400', ring: 'bg-violet-500/10 border-violet-500/20', text: "Готовая карусель за ~60 секунд" },
-  { icon: <Target className="w-6 h-6" />, color: 'text-rose-400',  ring: 'bg-rose-500/10 border-rose-500/20',   text: "Один процесс вместо 5 сервисов" },
-];
+export const UnifiedSystem = () => {
+  const { t } = useLanguage();
+  const metricsTexts = t('unified.metrics') || [];
+  const oldWay = t('unified.oldWay') || [];
+  const newWay = t('unified.newWay') || [];
 
-const oldWay = [
-  "Ищете Viral Reels вручную или в отдельном сервисе",
-  "Анализируете конкурентов в отдельном инструменте",
-  "Собираете карусель по кускам",
-  "Получаете сырой AI-текст и допиливаете его вручную",
-  "Шаблонный дизайн и «пластиковый» текст",
-];
+  const metrics = [
+    { icon: <Clock className="w-6 h-6" />, color: 'text-amber-400', ring: 'bg-amber-500/10 border-amber-500/20', text: metricsTexts[0] },
+    { icon: <Zap className="w-6 h-6" />,   color: 'text-violet-400', ring: 'bg-violet-500/10 border-violet-500/20', text: metricsTexts[1] },
+    { icon: <Target className="w-6 h-6" />, color: 'text-rose-400',  ring: 'bg-rose-500/10 border-rose-500/20',   text: metricsTexts[2] },
+  ];
 
-const newWay = [
-  "Находите идеи за минуты и сразу превращаете их в контент",
-  "Сразу видите, что работает, и используете это в своей подаче",
-  "Получаете готовую карусель в одном процессе за ~60 секунд",
-  "Сразу получаете структуру и текст под формат",
-  "Контент в вашем стиле: свои фото, свои промпты, своя подача",
-];
-
-/* ─── Анимированная дымка (Haze) ─── */
-const DriftHaze = () => (
-  <div className="absolute inset-[-25%] pointer-events-none -z-10">
-    {/* Левый свет */}
-    <motion.div
-      animate={{ y: [-10, 10, -10] }}
-      transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-      className="absolute -left-[5%] top-[25%] w-[50%] h-[55%] bg-pink-500/10 blur-[150px] rounded-full"
-    />
-    {/* Правый свет */}
-    <motion.div
-      animate={{ y: [10, -10, 10] }}
-      transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-      className="absolute -right-[5%] bottom-[25%] w-[50%] h-[55%] bg-orange-500/10 blur-[150px] rounded-full"
-    />
-  </div>
-);
-
-export const UnifiedSystem = () => (
+  return (
   <>
     {/* АРХИТЕКТУРНЫЙ ФИКС: Убрано overflow-hidden/clip с секции, чтобы свет мог свободно смешиваться с фоном страницы */}
     <section className="py-24 md:py-32 px-6 relative z-10 w-full bg-[#050505]">
@@ -72,12 +45,11 @@ export const UnifiedSystem = () => (
           className="text-center mb-14"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-5">
-            4 задачи -{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">1 система</span>
+            {t('unified.titlePart1')}{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">{t('unified.titleHighlight')}</span>
           </h2>
           <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-medium">
-            Шпион, viral Reels, карусели и тексты обычно живут в разных сервисах.
-            В GoToFlow это работает как один связанный процесс.
+            {t('unified.subtitle')}
           </p>
         </motion.div>
 
@@ -89,8 +61,7 @@ export const UnifiedSystem = () => (
           transition={{ duration: 0.9, ease: 'easeOut' }}
           className="relative"
         >
-          {/* Плавный теплый фон */}
-          <DriftHaze />
+          {/* Плавный теплый фон убран */}
 
           {/* Стеклянная подложка. АРХИТЕКТУРНЫЙ ФИКС: */}
           {/* Выносим фон в абсолютный слой, чтобы backdrop-blur не создавал bounding box для свечения */}
@@ -139,7 +110,7 @@ export const UnifiedSystem = () => (
                     }}
                   >
                     <p className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-600 mb-8 text-center">
-                      Обычный путь
+                      {t('unified.oldWayTitle')}
                     </p>
                     <div className="flex flex-col gap-5 flex-1">
                       {oldWay.map((text, idx) => (
@@ -167,7 +138,7 @@ export const UnifiedSystem = () => (
                     {/* Тёплый прожектор был полностью удалён по требованию (он мог пересвечивать карточку изнутри) */}
 
                     <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-10">
-                      GoToFlow
+                      {t('unified.newWayTitle')}
                     </p>
                     <div className="flex flex-col gap-5 flex-1 relative z-10">
                       {newWay.map((text, idx) => (
@@ -186,11 +157,11 @@ export const UnifiedSystem = () => (
               {/* ─── Кнопка ─── */}
               <div className="flex flex-col items-center justify-center gap-3 w-full">
                 <button className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
-                  Запустить бесплатно
+                  {t('common.started')}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <p className="text-sm text-zinc-500 text-center">
-                  Первый результат за 60 секунд
+                  {t('common.firstResult60s')}
                 </p>
               </div>
 
@@ -200,4 +171,5 @@ export const UnifiedSystem = () => (
       </div>
     </section>
   </>
-);
+  );
+};

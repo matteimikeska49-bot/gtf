@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Play, Radar, Search, Layers, Fingerprint, CalendarDays, Rss, Clock, Zap, Sparkles } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 /* ─── Video Preview (с фоллбэком) ─── */
 const VideoPreview = ({ icon: Icon, videoSrc }) => {
@@ -43,52 +44,55 @@ const VideoPreview = ({ icon: Icon, videoSrc }) => {
   );
 };
 
-/* ─── БЛОК 1: Главные инструменты ─── */
-const coreTools = [
-  {
-    icon: Radar,
-    title: "Радар конкурентов",
-    desc: "Анализируйте, что залетает у конкурентов, находите вирусные форматы и в один клик превращайте их в готовый контент.",
-    accentColor: "from-pink-500/10 to-pink-500/0",
-    iconGlow: "bg-pink-500",
-    iconColor: "text-pink-300",
-    borderHover: "group-hover:border-pink-500/20",
-    featured: false,
-    videoSrc: "/videos/tools/tool-1.mp4",
-  },
-  {
-    icon: Layers,
-    title: "Из идеи — в карусель",
-    desc: "Собирайте готовую карусель из темы, идеи, pdf, ссылки или видео — за 60 секунд.",
-    accentColor: "from-pink-500/15 to-orange-500/10",
-    iconGlow: "bg-gradient-to-r from-pink-500 to-orange-500",
-    iconColor: "text-orange-300",
-    borderHover: "group-hover:border-pink-500/30",
-    featured: true,
-    videoSrc: "/videos/tools/tool-2.mp4",
-  },
-  {
-    icon: Search,
-    title: "Поиск сильных Reels",
-    desc: "Ищите сильные Reels по своей теме, забирайте сильные механики и в один клик превращайте их в карусели, посты, видео.",
-    accentColor: "from-violet-500/10 to-violet-500/0",
-    iconGlow: "bg-violet-500",
-    iconColor: "text-violet-300",
-    borderHover: "group-hover:border-violet-500/20",
-    featured: false,
-    videoSrc: "/videos/tools/tool-3.mp4",
-  },
-];
-
-/* ─── БЛОК 2: Coming Soon ─── */
-const comingSoon = [
-  { icon: CalendarDays, label: "Автопилот контента" },
-  { icon: Rss,          label: "Контент-план" },
-  { icon: Clock,        label: "Автопостинг" },
-  { icon: Play,         label: "Короткие Reels (5–10 с)" },
-];
-
 export const ToolsSection = () => {
+  const { t } = useLanguage();
+  const coreToolsTexts = t('tools.core') || [];
+  const comingSoonTexts = t('tools.comingSoon') || [];
+
+  const coreTools = [
+    {
+      icon: Radar,
+      title: coreToolsTexts[0]?.title || "",
+      desc: coreToolsTexts[0]?.desc || "",
+      accentColor: "from-pink-500/10 to-pink-500/0",
+      iconGlow: "bg-pink-500",
+      iconColor: "text-pink-300",
+      borderHover: "group-hover:border-pink-500/20",
+      featured: false,
+      videoSrc: "/videos/tools/tool-1.mp4",
+    },
+    {
+      icon: Layers,
+      title: coreToolsTexts[1]?.title || "",
+      desc: coreToolsTexts[1]?.desc || "",
+      accentColor: "from-pink-500/15 to-orange-500/10",
+      iconGlow: "bg-gradient-to-r from-pink-500 to-orange-500",
+      iconColor: "text-orange-300",
+      borderHover: "group-hover:border-pink-500/30",
+      featured: true,
+      videoSrc: "/videos/tools/tool-2.mp4",
+    },
+    {
+      icon: Search,
+      title: coreToolsTexts[2]?.title || "",
+      desc: coreToolsTexts[2]?.desc || "",
+      accentColor: "from-violet-500/10 to-violet-500/0",
+      iconGlow: "bg-violet-500",
+      iconColor: "text-violet-300",
+      borderHover: "group-hover:border-violet-500/20",
+      featured: false,
+      videoSrc: "/videos/tools/tool-3.mp4",
+    },
+  ];
+
+  /* ─── БЛОК 2: Coming Soon ─── */
+  const comingSoon = [
+    { icon: CalendarDays, label: comingSoonTexts[0] || "" },
+    { icon: Rss,          label: comingSoonTexts[1] || "" },
+    { icon: Clock,        label: comingSoonTexts[2] || "" },
+    { icon: Play,         label: comingSoonTexts[3] || "" },
+  ];
+
   return (
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#090909] to-[#050505]">
 
@@ -108,17 +112,17 @@ export const ToolsSection = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 text-indigo-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
               <Layers className="w-3.5 h-3.5" />
-              <span>Ядро продукта</span>
+              <span>{t('tools.coreBadge')}</span>
             </div>
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight leading-tight text-balance">
-                <span className="text-gradient-brand">Три инструмента</span> — всё,{' '}
+                <span className="text-gradient-brand">{t('tools.titleHighlight')}</span> {t('tools.titlePart1')}{' '}
                 <br className="hidden md:block" />
-                что нужно для роста
+                {t('tools.titlePart2')}
               </h2>
             </div>
             <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">
-              Находите идеи, анализируйте конкурентов и превращайте это в готовый контент — в один клик
+              {t('tools.subtitle')}
             </p>
           </motion.div>
 
@@ -142,7 +146,7 @@ export const ToolsSection = () => {
                   {tool.featured && (
                     <div className="absolute -top-3 right-6 z-30 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#12080a] bg-gradient-to-r from-rose-500/10 to-orange-500/10 border border-rose-500/30 shadow-[0_4px_15px_rgba(244,63,94,0.15)] backdrop-blur-md">
                       <span className="w-1.5 h-1.5 rounded-full bg-rose-400 shadow-[0_0_8px_rgba(244,63,94,0.6)] animate-pulse" />
-                      <span className="text-[10px] font-bold text-rose-300 tracking-widest uppercase">Популярное</span>
+                      <span className="text-[10px] font-bold text-rose-300 tracking-widest uppercase">{t('tools.popularBadge')}</span>
                     </div>
                   )}
 
@@ -192,8 +196,8 @@ export const ToolsSection = () => {
           className="flex flex-col items-center gap-8"
         >
           <div className="text-center">
-            <p className="text-xs uppercase tracking-widest text-zinc-600 font-bold mb-2">В разработке</p>
-            <h3 className="text-2xl font-bold text-zinc-300 tracking-tight">Что появится скоро</h3>
+            <p className="text-xs uppercase tracking-widest text-zinc-600 font-bold mb-2">{t('tools.comingSoonBadge')}</p>
+            <h3 className="text-2xl font-bold text-zinc-300 tracking-tight">{t('tools.comingSoonTitle')}</h3>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl">
@@ -213,7 +217,7 @@ export const ToolsSection = () => {
                   {item.label}
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase border border-zinc-700/60 text-zinc-500 bg-zinc-900/60">
-                  Скоро
+                  {t('tools.comingSoonTag')}
                 </span>
               </motion.div>
             ))}

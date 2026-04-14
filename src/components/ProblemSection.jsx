@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 /* ── Stagger animation preset ── */
 const cardVariants = {
@@ -18,25 +19,8 @@ const cardVariants = {
 export const ProblemSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
-
-  const cards = [
-    {
-      title: "Тратишь 3 часа → получаешь мусор",
-      text: "AI вроде помогает, но на выходе всё равно сырой результат, который приходится переписывать и переделывать вручную."
-    },
-    {
-      title: "Контент выглядит как у всех",
-      text: "Шаблонные тексты, одинаковая подача, безликий результат — выкладываешь, но нет отклика и смысла."
-    },
-    {
-      title: "Каждый раз всё по новой",
-      text: "Нет цельного процесса, стиль плывёт, и каждый новый контент приходится собирать почти с нуля."
-    },
-    {
-      title: "Лишние действия",
-      text: "Регистрации, подписки, оплаты, переключения между сервисами — время и деньги уходят не на контент, а на постоянную возню с инструментами."
-    }
-  ];
+  const { t } = useLanguage();
+  const cards = t('problem.cards') || [];
 
   return (
     <section ref={ref} className="relative z-10 py-24 md:py-32 w-full flex flex-col items-center bg-[#050505]">
@@ -70,7 +54,7 @@ export const ProblemSection = () => {
         transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
         className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight text-center relative z-20 px-6"
       >
-        Создание контента превратилось в <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">хаос?</span>
+        {t('problem.titlePart1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">{t('problem.titleHighlight')}</span>
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 12 }}
@@ -78,7 +62,7 @@ export const ProblemSection = () => {
         transition={{ duration: 0.7, delay: 0.08, ease: [0.25, 1, 0.5, 1] }}
         className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto text-center mb-16 relative z-20 px-6"
       >
-        Тратите часы на правки, а результат всё равно выглядит как AI
+        {t('problem.subtitle')}
       </motion.p>
 
       {/* Outer Glass Container */}

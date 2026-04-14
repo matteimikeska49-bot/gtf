@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { LanguageProvider } from './context/LanguageContext';
 import { MainLayout } from './components/MainLayout';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
@@ -15,24 +16,24 @@ import { BottomCTA } from './components/BottomCTA';
 import { Footer } from './components/Footer';
 
 function App() {
-  const [lang, setLang] = useState('RU');
-
   return (
-    <MainLayout>
-      <Header lang={lang} setLang={setLang} />
-      <HeroSection lang={lang} />
-      <ShowcaseSlider />
-      <ProblemSection />
-      <UnifiedSystem />
-      <ToolsSection />
-      <HowItWorksSection />
-      <DifferentiationSection />
-      <FAQSection />
-      <TestimonialsSection />
-      <PricingSection />
-      <BottomCTA />
-      <Footer />
-    </MainLayout>
+    <LanguageProvider>
+      <MainLayout>
+        <Header />
+        <HeroSection />
+        <ShowcaseSlider />
+        <ProblemSection />
+        <UnifiedSystem />
+        <ToolsSection />
+        <HowItWorksSection />
+        <DifferentiationSection />
+        <FAQSection />
+        <TestimonialsSection />
+        <PricingSection />
+        <BottomCTA />
+        <Footer />
+      </MainLayout>
+    </LanguageProvider>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Fingerprint, Settings2, Zap, ImageIcon } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 /* ─── Premium Bento Screenshot Component ─── */
 const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
@@ -48,25 +49,28 @@ const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
   );
 };
 
-const points = [
-  {
-    icon: Fingerprint,
-    title: "Ваш стиль, а не типовой AI-текст",
-    desc: "Сохраняйте tone of voice, визуальную подачу и структуру, чтобы контент выглядел как ваш, а не как шаблонная генерация.",
-  },
-  {
-    icon: Settings2,
-    title: "Контроль на каждом этапе",
-    desc: "Задавайте темы, идеи и вводные, направляйте результат и редактируйте детали так, как нужно именно вам.",
-  },
-  {
-    icon: Zap,
-    title: "Меньше ручной доработки",
-    desc: "GoToFlow берёт на себя черновую работу, чтобы вы не переписывали каждый текст с нуля и не собирали контент по кускам.",
-  },
-];
-
 export const DifferentiationSection = () => {
+  const { t } = useLanguage();
+  const rawPoints = t('differentiation.points') || [];
+
+  const points = [
+    {
+      icon: Fingerprint,
+      title: rawPoints[0]?.title || "",
+      desc: rawPoints[0]?.desc || "",
+    },
+    {
+      icon: Settings2,
+      title: rawPoints[1]?.title || "",
+      desc: rawPoints[1]?.desc || "",
+    },
+    {
+      icon: Zap,
+      title: rawPoints[2]?.title || "",
+      desc: rawPoints[2]?.desc || "",
+    },
+  ];
+
   return (
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#0a0808] to-[#050505]">
 
@@ -85,16 +89,16 @@ export const DifferentiationSection = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
               <Fingerprint className="w-3.5 h-3.5" />
-              <span>Персонализация</span>
+              <span>{t('differentiation.badge')}</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-[1.15] text-balance">
-              GoToFlow <span className="text-gradient-brand">подстраивается</span>
-              <br className="hidden lg:block" /> под вас, а не наоборот
+              {t('differentiation.titlePart1')} <span className="text-gradient-brand">{t('differentiation.titleHighlight')}</span>
+              <br className="hidden lg:block" /> {t('differentiation.titlePart2')}
             </h2>
 
             <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed text-balance mb-12">
-              Пока другие чаты пишут как маркетологи, а сервисы предлагают жёсткие шаблоны — GoToFlow запоминает вашу подачу, чтобы контент звучал так, будто его написали вы, а не машина.
+              {t('differentiation.subtitle')}
             </p>
           </motion.div>
 

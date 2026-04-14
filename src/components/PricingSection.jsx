@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Zap, Crown, Rocket } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 /* ─── Pricing Data ─── */
 const plans = [
@@ -123,26 +124,29 @@ const BillingToggle = ({ isYearly, setIsYearly }) => (
 );
 
 /* ─── Price Display with animation ─── */
-const PriceDisplay = ({ price, isYearly }) => (
-  <div className="flex items-baseline gap-2">
-    <AnimatePresence mode="wait">
-      <motion.span
-        key={price}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.25 }}
-        className="text-4xl md:text-[2.75rem] font-bold text-white tracking-tight leading-none"
-      >
-        {formatPrice(price)} ₽
-      </motion.span>
-    </AnimatePresence>
-    <span className="text-sm text-zinc-500 font-medium">/мес</span>
-  </div>
-);
+const PriceDisplay = ({ price, isYearly }) => {
+  const { t } = useLanguage();
+  return (
+    <div className="flex items-baseline gap-2">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={price}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.25 }}
+          className="text-4xl md:text-[2.75rem] font-bold text-white tracking-tight leading-none"
+        >
+          {formatPrice(price)} ₽
+        </motion.span>
+      </AnimatePresence>
+      <span className="text-sm text-zinc-500 font-medium">{t('pricing.perMonth')}</span>
+    </div>
+  );
+};
 
 /* ─── Plan Card ─── */
-const PlanCard = ({ plan, isYearly, index }) => {
+const PlanCard = ({ plan, isYearly, index, t }) => {
   const price = isYearly ? calcYearly(plan.monthlyPrice) : plan.monthlyPrice;
   const Icon = plan.icon;
 
@@ -158,7 +162,7 @@ const PlanCard = ({ plan, isYearly, index }) => {
       {plan.featured && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#0c0a0e]/90 border border-pink-500/25 shadow-[0_4px_20px_rgba(236,72,153,0.12)] backdrop-blur-md">
           <span className="w-1.5 h-1.5 rounded-full bg-pink-400 shadow-[0_0_6px_rgba(236,72,153,0.6)] animate-pulse" />
-          <span className="text-[10px] font-bold text-pink-300 tracking-widest uppercase">Популярный</span>
+          <span className="text-[10px] font-bold text-pink-300 tracking-widest uppercase">{t('pricing.popularBadge')}</span>
         </div>
       )}
 
@@ -232,7 +236,7 @@ const PlanCard = ({ plan, isYearly, index }) => {
                 animate={{ opacity: 1, height: 'auto' }}
                 className="text-xs text-pink-400/80 font-medium mt-2.5"
               >
-                Экономия 45% при оплате за год
+                {t('pricing.savingNote')}
               </motion.p>
             )}
           </div>
@@ -297,7 +301,7 @@ const PlanCard = ({ plan, isYearly, index }) => {
             {plan.featured && (
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
             )}
-            <span className="relative z-10">Начать бесплатно</span>
+            <span className="relative z-10">{t('pricing.cta')}</span>
           </button>
         </div>
       </div>
@@ -308,6 +312,95 @@ const PlanCard = ({ plan, isYearly, index }) => {
 /* ─── Main Pricing Section ─── */
 export const PricingSection = () => {
   const [isYearly, setIsYearly] = useState(false);
+  const { t } = useLanguage();
+  const rawPlans = t('pricing.plans') || [];
+
+  const plans = [
+    {
+      id: 'lite',
+      name: 'LITE',
+      tagline: rawPlans[0]?.tagline || "",
+      icon: Zap,
+      monthlyPrice: 1500,
+      tokens: rawPlans[0]?.tokens || "",
+      tokenNote: rawPlans[0]?.tokenNote || null,
+      features: rawPlans[0]?.features || [],
+      featured: false,
+      accent: 'zinc',
+    },
+    {
+      id: 'pro',
+      name: 'PRO',
+      tagline: rawPlans[1]?.tagline || "",
+      icon: Crown,
+      monthlyPrice: 3500,
+      tokens: rawPlans[1]?.tokens || "",
+      tokenNote: rawPlans[1]?.tokenNote || null,
+      features: rawPlans[1]?.features || [],
+      featured: true,
+      accent: 'brand',
+    },
+    {
+      id: 'power',
+      name: 'POWER',
+      tagline: rawPlans[2]?.tagline || "",
+      icon: Rocket,
+      monthlyPrice: 6990,
+      tokens: rawPlans[2]?.tokens || "",
+      tokenNote: rawPlans[2]?.tokenNote || null,
+      features: rawPlans[2]?.features || [],
+      featured: false,
+      accent: 'violet',
+    },
+  ];
+
+  /* ─── Billing Toggle ─── */
+  const BillingToggle = ({ isYearly, setIsYearly }) => (
+    <div className="flex flex-col items-center gap-3">
+      <div className="flex items-center justify-center gap-1 p-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur-md w-fit mx-auto shadow-[0_2px_20px_rgba(0,0,0,0.3)]">
+        <button
+          onClick={() => setIsYearly(false)}
+          className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+            !isYearly
+              ? 'text-white'
+              : 'text-zinc-500 hover:text-zinc-300'
+          }`}
+        >
+          {!isYearly && (
+            <motion.div
+              layoutId="billing-pill"
+              className="absolute inset-0 rounded-full bg-white/[0.1] border border-white/[0.12] shadow-[0_0_12px_rgba(255,255,255,0.04)]"
+              transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+            />
+          )}
+          <span className="relative z-10">{t('pricing.billingMonth')}</span>
+        </button>
+        <button
+          onClick={() => setIsYearly(true)}
+          className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+            isYearly
+              ? 'text-white'
+              : 'text-zinc-500 hover:text-zinc-300'
+          }`}
+        >
+          {isYearly && (
+            <motion.div
+              layoutId="billing-pill"
+              className="absolute inset-0 rounded-full bg-white/[0.1] border border-white/[0.12] shadow-[0_0_12px_rgba(255,255,255,0.04)]"
+              transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+            />
+          )}
+          <span className="relative z-10 flex items-center gap-2">
+            {t('pricing.billingYear')}
+            <span className="text-[10px] font-bold tracking-wider uppercase text-pink-400">{t('pricing.discountBadge')}</span>
+          </span>
+        </button>
+      </div>
+      <p className="text-xs text-zinc-600 font-medium">
+        {t('pricing.savingNote')}
+      </p>
+    </div>
+  );
 
   return (
     <section id="pricing" className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#080808] to-[#050505]">
@@ -325,15 +418,15 @@ export const PricingSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-pink-500/15 bg-pink-500/[0.06] text-pink-300 text-xs tracking-widest uppercase font-bold backdrop-blur-md">
             <Crown className="w-3.5 h-3.5" />
-            <span>Тарифы</span>
+            <span>{t('pricing.badge')}</span>
           </div>
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight leading-tight text-balance">
-              Выберите свой{' '}
-              <span className="text-gradient-brand">тариф</span>
+              {t('pricing.titlePart1')}{' '}
+              <span className="text-gradient-brand">{t('pricing.titleHighlight')}</span>
             </h2>
             <p className="text-base md:text-lg text-zinc-400 max-w-xl mx-auto leading-relaxed text-balance font-medium">
-              Начните бесплатно и масштабируйте по мере роста
+              {t('pricing.subtitle')}
             </p>
           </div>
 
@@ -344,7 +437,7 @@ export const PricingSection = () => {
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-start md:items-center">
           {plans.map((plan, i) => (
-            <PlanCard key={plan.id} plan={plan} isYearly={isYearly} index={i} />
+            <PlanCard key={plan.id} plan={plan} isYearly={isYearly} index={i} t={t} />
           ))}
         </div>
 
@@ -356,7 +449,7 @@ export const PricingSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center text-xs text-zinc-600 font-medium mt-10"
         >
-          Вы можете изменить тариф в любой момент
+          {t('pricing.bottomNote')}
         </motion.p>
       </div>
     </section>

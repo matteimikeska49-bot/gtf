@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import { Heart, Star, Eye } from 'lucide-react';
-
-/* ─── Данные табов ─── */
-const TABS = ['Маркетинг', 'Личный бренд', 'E-commerce', 'Бьюти', 'Образование'];
+import { useLanguage } from '../context/LanguageContext';
 
 /* ─── Карточки-плейсхолдеры: чередующий ритм Reels + Post ─── */
 const cards = [
-  { id: 1, format: 'square', tag: 'Пост',     likes: '4.2K', views: '12K', label: 'Личный бренд' },
-  { id: 2, format: 'reel',   tag: 'Карусель', likes: '8.1K', views: '20K', label: 'Маркетинг' },
-  { id: 3, format: 'square', tag: 'Карусель', likes: '1.8K', views: '5K',  label: 'Продвижение' },
-  { id: 4, format: 'square', tag: 'Пост',     likes: '3.1K', views: '9K',  label: 'E-commerce' },
-  { id: 5, format: 'reel',   tag: 'Карусель', likes: '6.7K', views: '18K', label: 'Бьюти-блог' },
-  { id: 6, format: 'square', tag: 'Карусель', likes: '5.9K', views: '14K', label: 'Фитнес' },
-  { id: 7, format: 'square', tag: 'Карусель', likes: '2.4K', views: '7K',  label: 'Образование' },
-  { id: 8, format: 'square', tag: 'Карусель', likes: '980',  views: '3.2K',label: 'Путешествия' },
-  { id: 9, format: 'reel',   tag: 'Карусель', likes: '10K',  views: '25K', label: 'Lifestyle' },
-  { id: 10, format: 'square', tag: 'Карусель', likes: '7.2K', views: '15K', label: 'IT-услуги' },
-  { id: 11, format: 'square', tag: 'Карусель', likes: '4.5K', views: '11K', label: 'Эксперт' },
+  { id: 1, format: 'square', tag: 'post',     likes: '4.2K', views: '12K', labelKey: 'personalBrand' },
+  { id: 2, format: 'reel',   tag: 'carousel', likes: '8.1K', views: '20K', labelKey: 'marketing' },
+  { id: 3, format: 'square', tag: 'carousel', likes: '1.8K', views: '5K',  labelKey: 'promotion' },
+  { id: 4, format: 'square', tag: 'post',     likes: '3.1K', views: '9K',  labelKey: 'ecommerce' },
+  { id: 5, format: 'reel',   tag: 'carousel', likes: '6.7K', views: '18K', labelKey: 'beauty' },
+  { id: 6, format: 'square', tag: 'carousel', likes: '5.9K', views: '14K', labelKey: 'fitness' },
+  { id: 7, format: 'square', tag: 'carousel', likes: '2.4K', views: '7K',  labelKey: 'education' },
+  { id: 8, format: 'square', tag: 'carousel', likes: '980',  views: '3.2K',labelKey: 'travel' },
+  { id: 9, format: 'reel',   tag: 'carousel', likes: '10K',  views: '25K', labelKey: 'lifestyle' },
+  { id: 10, format: 'square', tag: 'carousel', likes: '7.2K', views: '15K', labelKey: 'it' },
+  { id: 11, format: 'square', tag: 'carousel', likes: '4.5K', views: '11K', labelKey: 'expert' },
 ];
 
 /* Пропорции плейсхолдеров (aspect-ratio) */
@@ -27,42 +25,45 @@ const formatAspect = {
 
 /* Accent цвет bg для тега */
 const tagColor = {
-  Reels:    'bg-pink-500/20 text-pink-300',
-  Пост:     'bg-indigo-500/20 text-indigo-300',
-  Карусель: 'bg-violet-500/20 text-violet-300',
+  reels:    'bg-pink-500/20 text-pink-300',
+  post:     'bg-indigo-500/20 text-indigo-300',
+  carousel: 'bg-violet-500/20 text-violet-300',
 };
 
 /* ─── Одна карточка ─── */
-const SlideCard = ({ card }) => (
-  <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
-    {/* Плейсхолдер изображения */}
-    <div className={`relative w-full ${formatAspect[card.format]} rounded-xl bg-[#111] overflow-hidden`}>
-      <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02]" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:18px_18px]" />
-      {/* Тег формата */}
-      <span className={`absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full ${tagColor[card.tag]}`}>
-        {card.tag}
-      </span>
-    </div>
+const SlideCard = ({ card }) => {
+  const { t } = useLanguage();
+  return (
+    <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
+      {/* Плейсхолдер изображения */}
+      <div className={`relative w-full ${formatAspect[card.format]} rounded-xl bg-[#111] overflow-hidden`}>
+        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:18px_18px]" />
+        {/* Тег формата */}
+        <span className={`absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full ${tagColor[card.tag]}`}>
+          {t(`showcase.tags.${card.tag}`)}
+        </span>
+      </div>
 
-    {/* Соц. интерфейс снизу */}
-    <div className="flex flex-col gap-2 px-1">
-      <div className="h-2.5 w-3/4 rounded-full bg-white/[0.06]" />
-      <div className="h-2 w-1/2 rounded-full bg-white/[0.04]" />
-      <div className="flex items-center gap-3 mt-1">
-        <div className="flex items-center gap-1.5">
-          <Heart className="w-3.5 h-3.5 text-pink-500/70" />
-          <span className="text-xs text-zinc-500 font-medium">{card.likes}</span>
+      {/* Соц. интерфейс снизу */}
+      <div className="flex flex-col gap-2 px-1">
+        <div className="h-2.5 w-3/4 rounded-full bg-white/[0.06]" />
+        <div className="h-2 w-1/2 rounded-full bg-white/[0.04]" />
+        <div className="flex items-center gap-3 mt-1">
+          <div className="flex items-center gap-1.5">
+            <Heart className="w-3.5 h-3.5 text-pink-500/70" />
+            <span className="text-xs text-zinc-500 font-medium">{card.likes}</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Eye className="w-3.5 h-3.5 text-zinc-400/50" />
+            <span className="text-xs text-zinc-500 font-medium">{card.views}</span>
+          </div>
+          <span className="ml-auto text-[11px] text-zinc-600 truncate">{t(`showcase.labels.${card.labelKey}`)}</span>
         </div>
-        <div className="flex items-center gap-1.5">
-          <Eye className="w-3.5 h-3.5 text-zinc-400/50" />
-          <span className="text-xs text-zinc-500 font-medium">{card.views}</span>
-        </div>
-        <span className="ml-auto text-[11px] text-zinc-600 truncate">{card.label}</span>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 /* ─── Трек слайдера ─── */
 const MarqueeTrack = ({ speed = 40 }) => (
@@ -82,6 +83,8 @@ const MarqueeTrack = ({ speed = 40 }) => (
 /* ─── Главный экспортируемый компонент ─── */
 export const ShowcaseSlider = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const { t } = useLanguage();
+  const tabs = t('showcase.tabs') || [];
 
   return (
     <section className="py-24 md:py-32 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#0a0a0a] to-[#050505]">
@@ -118,19 +121,19 @@ export const ShowcaseSlider = () => {
               ))}
             </div>
             <span className="text-sm text-zinc-300 font-medium tracking-tight">
-              <span className="text-white font-semibold">+10k</span> Уже генерируют контент в GoToFlow
+              <span className="text-white font-semibold">{t('showcase.trustBadgePart1')}</span> {t('showcase.trustBadgePart2')}
             </span>
           </div>
         </div>
 
         {/* ─── H2 ─── */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-8 px-6">
-          Создавайте контент для <span className="text-gradient-brand">любой ниши</span>
+          {t('showcase.titlePart1')} <span className="text-gradient-brand">{t('showcase.titleHighlight')}</span>
         </h2>
 
         {/* ─── Табы-фильтры ─── */}
         <div className="flex flex-wrap justify-center gap-2 px-6 mb-12">
-          {TABS.map((tab, i) => (
+          {tabs.map((tab, i) => (
             <button
               key={tab}
               onClick={() => setActiveTab(i)}

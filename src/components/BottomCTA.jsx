@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    BottomCTA — Final conversion block
@@ -24,6 +25,8 @@ export const BottomCTA = () => {
   const [btnHover, setBtnHover] = useState(false);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
+  const { t } = useLanguage();
+  const trustList = t('cta.trustList') || [];
 
   return (
     <section
@@ -86,7 +89,7 @@ export const BottomCTA = () => {
                   <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-gradient-to-r from-pink-500 to-orange-400" />
                 </span>
                 <span className="text-[10px] font-semibold text-zinc-500 tracking-[0.1em] uppercase">
-                  Начните бесплатно
+                  {t('cta.badge')}
                 </span>
               </motion.div>
 
@@ -97,13 +100,13 @@ export const BottomCTA = () => {
                 transition={stagger(1).transition}
                 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-6 max-w-2xl"
               >
-                Хватит работать нянькой
+                {t('cta.titlePart1')}
                 <br />
-                у своего{' '}
-                <span className="text-gradient-brand">AI.</span>
+                {t('cta.titlePart2')}{' '}
+                <span className="text-gradient-brand">{t('cta.titleHighlight')}</span>
                 <br />
                 <span className="text-zinc-400 font-semibold" style={{ fontSize: '0.78em' }}>
-                  Начните создавать.
+                  {t('cta.titleSub')}
                 </span>
               </motion.h2>
 
@@ -114,8 +117,7 @@ export const BottomCTA = () => {
                 transition={stagger(2).transition}
                 className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg leading-[1.75] font-medium mb-12"
               >
-                Присоединяйтесь к тысячам креаторов и предпринимателей,
-                которые уже делают контент быстрее и без лишней рутины.
+                {t('cta.subtitle')}
               </motion.p>
 
               {/* 4 — BUTTON (main focus) */}
@@ -167,7 +169,7 @@ export const BottomCTA = () => {
                     <div className="w-[15%] h-full skew-x-[-16deg] bg-gradient-to-r from-transparent via-white/[0.2] to-transparent" />
                   </motion.div>
 
-                  <span className="relative z-30 tracking-[0.01em]">Создать карусель</span>
+                  <span className="relative z-30 tracking-[0.01em]">{t('cta.button')}</span>
                   <ArrowRight
                     className="relative z-30 w-[17px] h-[17px] transition-all duration-300"
                     style={{
@@ -185,7 +187,7 @@ export const BottomCTA = () => {
                 transition={stagger(4).transition}
                 className="text-xs text-zinc-500 font-medium tracking-[0.06em] mb-12"
               >
-                Бесплатно • Без привязки карты
+                {t('cta.microTrust')}
               </motion.p>
 
               {/* 6 — Trust pills */}
@@ -195,7 +197,7 @@ export const BottomCTA = () => {
                 transition={stagger(5).transition}
                 className="flex flex-wrap justify-center gap-2.5"
               >
-                {TRUST.map((text) => (
+                {trustList.map((text) => (
                   <div
                     key={text}
                     className="group/pill flex items-center gap-1.5 px-3.5 py-[6px] rounded-full border border-white/[0.05] bg-white/[0.02] hover:border-pink-500/15 hover:bg-white/[0.03] transition-all duration-300 cursor-default"
