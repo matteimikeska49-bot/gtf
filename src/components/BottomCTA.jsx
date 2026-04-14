@@ -48,12 +48,12 @@ export const BottomCTA = () => {
         animate={{
           x: [0, 22, -10, 16, 0],
           y: [0, -16, 10, -12, 0],
-          opacity: [0.4, 0.55, 0.35, 0.5, 0.4],
+          opacity: [0.5, 0.7, 0.45, 0.65, 0.5],
         }}
         transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute -top-[5%] left-[8%] w-[480px] h-[480px] rounded-full pointer-events-none"
+        className="absolute -top-[5%] left-[8%] w-[550px] h-[550px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(236,72,153,0.1) 0%, rgba(236,72,153,0.02) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(236,72,153,0.14) 0%, rgba(236,72,153,0.04) 50%, transparent 70%)',
           filter: 'blur(140px)',
         }}
       />
@@ -63,27 +63,27 @@ export const BottomCTA = () => {
         animate={{
           x: [0, -16, 20, -8, 0],
           y: [0, 14, -15, 8, 0],
-          opacity: [0.35, 0.5, 0.28, 0.42, 0.35],
+          opacity: [0.45, 0.65, 0.38, 0.55, 0.45],
         }}
         transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-        className="absolute -bottom-[8%] right-[5%] w-[420px] h-[420px] rounded-full pointer-events-none"
+        className="absolute -bottom-[8%] right-[5%] w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(251,146,60,0.09) 0%, rgba(249,115,22,0.02) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(251,146,60,0.13) 0%, rgba(249,115,22,0.04) 50%, transparent 70%)',
           filter: 'blur(150px)',
         }}
       />
 
-      {/* Orb C — center: very soft warm pink glow */}
+      {/* Orb C — center: warm pink-orange halo (key ambient glow) */}
       <motion.div
         animate={{
-          scale: [1, 1.05, 0.97, 1.03, 1],
-          opacity: [0.2, 0.32, 0.18, 0.28, 0.2],
+          scale: [1, 1.06, 0.97, 1.04, 1],
+          opacity: [0.3, 0.48, 0.25, 0.4, 0.3],
         }}
-        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] rounded-full pointer-events-none"
+        transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse, rgba(236,72,153,0.05) 0%, rgba(251,146,60,0.02) 40%, transparent 65%)',
-          filter: 'blur(120px)',
+          background: 'radial-gradient(ellipse, rgba(236,72,153,0.08) 0%, rgba(251,146,60,0.04) 35%, transparent 65%)',
+          filter: 'blur(130px)',
         }}
       />
 
@@ -100,14 +100,14 @@ export const BottomCTA = () => {
           {/* Card ambient glow — warm float effect */}
           <motion.div
             animate={{
-              opacity: [0.4, 0.65, 0.4],
-              scale: [0.98, 1.02, 0.98],
+              opacity: [0.5, 0.8, 0.5],
+              scale: [0.97, 1.03, 0.97],
             }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -inset-5 md:-inset-8 rounded-[2.5rem] pointer-events-none"
+            className="absolute -inset-8 md:-inset-12 rounded-[3rem] pointer-events-none"
             style={{
-              background: 'radial-gradient(ellipse 70% 55% at 50% 55%, rgba(236,72,153,0.045) 0%, rgba(251,146,60,0.025) 40%, transparent 70%)',
-              filter: 'blur(50px)',
+              background: 'radial-gradient(ellipse 75% 60% at 50% 52%, rgba(236,72,153,0.07) 0%, rgba(251,146,60,0.04) 40%, transparent 70%)',
+              filter: 'blur(55px)',
             }}
           />
 
@@ -248,11 +248,11 @@ export const BottomCTA = () => {
                   onMouseLeave={() => setBtnHover(false)}
                   className="relative z-10 flex items-center justify-center gap-2.5 px-9 py-3.5 rounded-[14px] font-semibold text-white text-[15px] overflow-hidden cursor-pointer"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(236,72,153,0.94) 0%, rgba(249,115,22,0.9) 100%)',
-                    border: '1px solid rgba(255,255,255,0.14)',
+                    background: 'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',
+                    border: '1px solid rgba(255,255,255,0.18)',
                     boxShadow: btnHover
-                      ? '0 14px 50px rgba(236,72,153,0.4), 0 6px 20px rgba(249,115,22,0.22), inset 0 1px 0 rgba(255,255,255,0.22)'
-                      : '0 6px 30px rgba(236,72,153,0.18), 0 2px 10px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.12)',
+                      ? '0 14px 55px rgba(236,72,153,0.5), 0 6px 24px rgba(249,115,22,0.3), inset 0 1px 0 rgba(255,255,255,0.25)'
+                      : '0 8px 35px rgba(236,72,153,0.25), 0 3px 12px rgba(249,115,22,0.1), inset 0 1px 0 rgba(255,255,255,0.15)',
                     transform: btnHover ? 'translateY(-2px) scale(1.04)' : 'translateY(0) scale(1)',
                     transition: 'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)',
                   }}
