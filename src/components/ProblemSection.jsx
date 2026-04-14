@@ -41,20 +41,24 @@ export const ProblemSection = () => {
   return (
     <section ref={ref} className="relative z-10 py-24 md:py-32 w-full flex flex-col items-center bg-[#050505]">
 
-      {/* Clean warm ambient glow — pink-orange, no violet */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] rounded-full -z-10 pointer-events-none opacity-40"
+      {/* Primary ambient glow — breathing, warm pink */}
+      <motion.div
+        animate={{ opacity: [0.35, 0.55, 0.35], scale: [1, 1.05, 1] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[450px] rounded-full -z-10 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse, rgba(236,72,153,0.12) 0%, rgba(249,115,22,0.06) 50%, transparent 75%)',
+          background: 'radial-gradient(ellipse, rgba(236,72,153,0.14) 0%, rgba(249,115,22,0.07) 50%, transparent 75%)',
           filter: 'blur(100px)',
         }}
       />
 
-      {/* Secondary depth glow — lower, warm orange accent for "warm floor" feel */}
-      <div
-        className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[350px] h-[250px] rounded-full -z-10 pointer-events-none opacity-25"
+      {/* Secondary depth glow — warm orange floor, breathing offset */}
+      <motion.div
+        animate={{ opacity: [0.2, 0.35, 0.2], scale: [0.97, 1.03, 0.97] }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        className="absolute bottom-[8%] left-[45%] -translate-x-1/2 w-[400px] h-[280px] rounded-full -z-10 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse, rgba(249,115,22,0.15) 0%, rgba(236,72,153,0.05) 60%, transparent 80%)',
+          background: 'radial-gradient(ellipse, rgba(249,115,22,0.16) 0%, rgba(236,72,153,0.06) 55%, transparent 80%)',
           filter: 'blur(90px)',
         }}
       />
@@ -100,10 +104,23 @@ export const ProblemSection = () => {
                 variants={cardVariants}
                 initial="hidden"
                 animate={inView ? 'visible' : 'hidden'}
-                className="group relative bg-white/[0.03] border border-white/[0.07] backdrop-blur-2xl rounded-2xl p-7 md:p-8 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-1 hover:bg-white/[0.05] hover:border-white/[0.12] hover:shadow-[0_8px_30px_-8px_rgba(236,72,153,0.08),0_4px_20px_-6px_rgba(249,115,22,0.06)]"
+                className="group relative bg-white/[0.03] border border-white/[0.07] backdrop-blur-2xl rounded-2xl p-7 md:p-8 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-1.5 hover:bg-white/[0.06] hover:border-white/[0.14] hover:shadow-[0_12px_40px_-8px_rgba(236,72,153,0.12),0_6px_24px_-6px_rgba(249,115,22,0.08)]"
               >
-                {/* Subtle inner glow on hover — warm pink-orange tint */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pink-500/0 to-orange-500/0 group-hover:from-pink-500/[0.03] group-hover:to-orange-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                {/* Inner glow on hover — warm pink-orange tint */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pink-500/0 to-orange-500/0 group-hover:from-pink-500/[0.04] group-hover:to-orange-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+                {/* Visual hierarchy — top-row cards get a faint always-on warm accent */}
+                {index < 2 && (
+                  <div
+                    className="absolute -top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full pointer-events-none opacity-60"
+                    style={{
+                      background: index === 0
+                        ? 'radial-gradient(circle, rgba(236,72,153,0.04) 0%, transparent 70%)'
+                        : 'radial-gradient(circle, rgba(249,115,22,0.04) 0%, transparent 70%)',
+                      filter: 'blur(40px)',
+                    }}
+                  />
+                )}
 
                 <h3 className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-3 tracking-tight leading-snug relative z-10">
                   {card.title}
