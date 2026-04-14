@@ -50,6 +50,15 @@ export const ProblemSection = () => {
         }}
       />
 
+      {/* Secondary depth glow — lower, warm orange accent for "warm floor" feel */}
+      <div
+        className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[350px] h-[250px] rounded-full -z-10 pointer-events-none opacity-25"
+        style={{
+          background: 'radial-gradient(ellipse, rgba(249,115,22,0.15) 0%, rgba(236,72,153,0.05) 60%, transparent 80%)',
+          filter: 'blur(90px)',
+        }}
+      />
+
       {/* Заголовки */}
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
@@ -74,6 +83,14 @@ export const ProblemSection = () => {
 
           {/* Ultra-subtle top edge refraction */}
           <div className="absolute top-0 inset-x-[15%] h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent pointer-events-none" />
+
+          {/* Soft vertical light wash — adds depth without noise */}
+          <div
+            className="absolute inset-0 pointer-events-none z-[1]"
+            style={{
+              background: 'linear-gradient(180deg, rgba(255,255,255,0.015) 0%, transparent 25%, transparent 75%, rgba(236,72,153,0.015) 100%)',
+            }}
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 relative z-20">
             {cards.map((card, index) => (
