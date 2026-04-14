@@ -82,7 +82,12 @@ export const ProblemSection = () => {
       </motion.p>
 
       {/* Outer Glass Container */}
-      <div className="relative w-full max-w-6xl mx-auto px-4 z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1], delay: 0.15 }}
+        className="relative w-full max-w-6xl mx-auto px-4 z-10"
+      >
         <div className="relative bg-white/[0.02] border border-white/[0.05] backdrop-blur-xl rounded-[2rem] p-6 md:p-10 lg:p-12 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden">
 
           {/* Ultra-subtle top edge refraction */}
@@ -132,7 +137,7 @@ export const ProblemSection = () => {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
