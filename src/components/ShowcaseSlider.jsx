@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
-import { Heart, Star } from 'lucide-react';
+import { Heart, Star, Eye } from 'lucide-react';
 
 /* ─── Данные табов ─── */
 const TABS = ['Маркетинг', 'Личный бренд', 'E-commerce', 'Бьюти', 'Образование'];
 
 /* ─── Карточки-плейсхолдеры: чередующий ритм Reels + Post ─── */
 const cards = [
-  { id: 1, format: 'reel',   tag: 'Reels',   likes: '4.2K', label: 'Продвижение SaaS' },
-  { id: 2, format: 'square', tag: 'Пост',    likes: '1.8K', label: 'Личный бренд' },
-  { id: 3, format: 'reel',   tag: 'Reels',   likes: '6.7K', label: 'Бьюти-блог' },
-  { id: 4, format: 'square', tag: 'Карусель', likes: '3.1K', label: 'E-commerce' },
-  { id: 5, format: 'reel',   tag: 'Reels',   likes: '5.9K', label: 'Фитнес' },
-  { id: 6, format: 'square', tag: 'Пост',    likes: '2.4K', label: 'Образование' },
-  { id: 7, format: 'reel',   tag: 'Reels',   likes: '8.1K', label: 'Маркетинг' },
-  { id: 8, format: 'square', tag: 'Карусель', likes: '980',  label: 'Путешествия' },
+  { id: 1, format: 'square', tag: 'Пост',     likes: '4.2K', views: '12K', label: 'Личный бренд' },
+  { id: 2, format: 'reel',   tag: 'Reels',    likes: '8.1K', views: '20K', label: 'Маркетинг' },
+  { id: 3, format: 'square', tag: 'Карусель', likes: '1.8K', views: '5K',  label: 'Продвижение' },
+  { id: 4, format: 'square', tag: 'Пост',     likes: '3.1K', views: '9K',  label: 'E-commerce' },
+  { id: 5, format: 'reel',   tag: 'Reels',    likes: '6.7K', views: '18K', label: 'Бьюти-блог' },
+  { id: 6, format: 'square', tag: 'Карусель', likes: '5.9K', views: '14K', label: 'Фитнес' },
+  { id: 7, format: 'square', tag: 'Карусель', likes: '2.4K', views: '7K',  label: 'Образование' },
+  { id: 8, format: 'square', tag: 'Карусель', likes: '980',  views: '3.2K',label: 'Путешествия' },
+  { id: 9, format: 'reel',   tag: 'Reels',    likes: '10K',  views: '25K', label: 'Lifestyle' },
+  { id: 10, format: 'square', tag: 'Карусель', likes: '7.2K', views: '15K', label: 'IT-услуги' },
+  { id: 11, format: 'square', tag: 'Карусель', likes: '4.5K', views: '11K', label: 'Эксперт' },
 ];
 
 /* Пропорции плейсхолдеров (aspect-ratio) */
@@ -46,9 +49,15 @@ const SlideCard = ({ card }) => (
     <div className="flex flex-col gap-2 px-1">
       <div className="h-2.5 w-3/4 rounded-full bg-white/[0.06]" />
       <div className="h-2 w-1/2 rounded-full bg-white/[0.04]" />
-      <div className="flex items-center gap-2 mt-1">
-        <Heart className="w-3.5 h-3.5 text-pink-500/70" />
-        <span className="text-xs text-zinc-500 font-medium">{card.likes}</span>
+      <div className="flex items-center gap-3 mt-1">
+        <div className="flex items-center gap-1.5">
+          <Heart className="w-3.5 h-3.5 text-pink-500/70" />
+          <span className="text-xs text-zinc-500 font-medium">{card.likes}</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <Eye className="w-3.5 h-3.5 text-zinc-400/50" />
+          <span className="text-xs text-zinc-500 font-medium">{card.views}</span>
+        </div>
         <span className="ml-auto text-[11px] text-zinc-600 truncate">{card.label}</span>
       </div>
     </div>
