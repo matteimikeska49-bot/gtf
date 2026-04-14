@@ -17,13 +17,17 @@ export const Footer = () => {
       <footer className="relative z-10 w-full bg-[#050505] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
 
-          {/* Top row: Logo left, links right */}
-          <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 md:gap-12">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-center gap-8 md:gap-12">
+            
+            {/* Left Hand: Logo and Copyright */}
+            <div className="flex flex-col items-center md:items-start gap-4">
+              <Logo />
+              <p className="text-[11px] text-zinc-500 font-medium">
+                © 2026 GoToFlow. Все права защищены.
+              </p>
+            </div>
 
-            {/* Logo */}
-            <Logo />
-
-            {/* Legal links */}
+            {/* Right Hand: Legal Links */}
             <nav className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-3">
               <button
                 onClick={() => setModal('privacy')}
@@ -50,13 +54,7 @@ export const Footer = () => {
                 Контакты
               </a>
             </nav>
-          </div>
-
-          {/* Bottom copyright — centered on mobile, left-aligned on desktop */}
-          <div className="mt-10 md:mt-14 pt-6 border-t border-white/[0.04]">
-            <p className="text-[11px] text-zinc-500 font-medium text-center md:text-left">
-              © 2026 GoToFlow. Все права защищены.
-            </p>
+            
           </div>
 
         </div>
