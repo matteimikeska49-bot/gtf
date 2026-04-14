@@ -197,7 +197,7 @@ export const HeroSection = () => {
            className="max-w-3xl mx-auto w-full"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-white leading-[1.1] text-balance">
-            Перестаньте быть нянькой <br className="hidden md:block"/> у своего <span className="text-gradient-brand">AI.</span>
+            Находите вирусные идеи и превращайте их в карусели <span className="text-gradient-brand">за 60 секунд</span>
           </h1>
         </motion.div>
 
@@ -207,8 +207,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed font-medium text-balance"
         >
-          GoToFlow помогает собирать посты, карусели, сценарии Reels и контент-планы в одном месте,{' '}
-          <span className="text-zinc-300">избавляя вас от хаоса вкладок и десятков разных сервисов.</span>
+          Анализируйте конкурентов, находите тренды <br className="hidden md:block"/> и создавайте контент в один клик — в вашем стиле
         </motion.p>
 
         <motion.div 
@@ -221,10 +220,6 @@ export const HeroSection = () => {
             <button className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
               Запустить бесплатно
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-white border border-white/10 hover:bg-white/10 transition-colors flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md text-base z-20 relative">
-              <Play className="w-5 h-5 fill-white/20" />
-              Смотреть демо
             </button>
           </div>
           {/* Trust signals */}
