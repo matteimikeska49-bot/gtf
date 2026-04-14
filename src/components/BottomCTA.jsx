@@ -49,6 +49,14 @@ export const BottomCTA = () => {
           className="relative"
         >
 
+          {/* Floating glow — warm halo behind card for levitation feel */}
+          <div className="absolute -inset-6 md:-inset-10 rounded-[3rem] pointer-events-none -z-10"
+            style={{
+              background: 'radial-gradient(ellipse 70% 55% at 50% 50%, rgba(236,72,153,0.08) 0%, rgba(249,115,22,0.05) 40%, transparent 70%)',
+              filter: 'blur(60px)',
+            }}
+          />
+
           {/* Card surface - Precision Premium Container */}
           <div
             className="group relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-gradient-to-b from-white/[0.03] to-transparent border border-white/5 hover:border-white/10 transition-colors duration-500 shadow-[0_0_20px_rgba(236,72,153,0.05),0_0_20px_rgba(249,115,22,0.05),0_40px_80px_-25px_rgba(0,0,0,0.8)]"
