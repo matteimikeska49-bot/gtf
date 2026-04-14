@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Sparkles } from 'lucide-react';
 import { PrivacyPolicy } from './PrivacyPolicy';
 import { TermsOfService } from './TermsOfService';
 import { UserConsent } from './UserConsent';
@@ -15,44 +14,51 @@ export const Footer = () => {
       {modal === 'terms'   && <TermsOfService onClose={() => setModal(null)} />}
       {modal === 'consent' && <UserConsent onClose={() => setModal(null)} />}
 
-      <footer className="relative z-10 w-full bg-[#050505] border-t border-white/[0.05]">
-        {/* Subtle top glow line */}
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-pink-500/20 to-transparent pointer-events-none" />
+      <footer className="relative z-10 w-full bg-[#050505] border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
 
-        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Top row: Logo left, links right */}
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 md:gap-12">
 
-          {/* Logo */}
-          <Logo />
+            {/* Logo */}
+            <Logo />
 
-          {/* Legal doc links — tiny and muted */}
-          <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-            <button
-              onClick={() => setModal('privacy')}
-              className="text-[10px] text-zinc-500 hover:text-zinc-300 transition-colors font-medium"
-            >
-              Политика конфиденциальности
-            </button>
-            <button
-              onClick={() => setModal('terms')}
-              className="text-[10px] text-zinc-500 hover:text-zinc-300 transition-colors font-medium"
-            >
-              Оферта
-            </button>
-            <button
-              onClick={() => setModal('consent')}
-              className="text-[10px] text-zinc-500 hover:text-zinc-300 transition-colors font-medium"
-            >
-              Согласие на обработку данных
-            </button>
-            <a href="mailto:gotoflow.io@gmail.com" className="text-[10px] text-zinc-500 hover:text-zinc-300 transition-colors font-medium">
-              Контакты
-            </a>
-          </nav>
+            {/* Legal links */}
+            <nav className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-3">
+              <button
+                onClick={() => setModal('privacy')}
+                className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
+              >
+                Политика конфиденциальности
+              </button>
+              <button
+                onClick={() => setModal('terms')}
+                className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
+              >
+                Оферта
+              </button>
+              <button
+                onClick={() => setModal('consent')}
+                className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
+              >
+                Согласие на обработку данных
+              </button>
+              <a
+                href="mailto:gotoflow.io@gmail.com"
+                className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
+              >
+                Контакты
+              </a>
+            </nav>
+          </div>
 
-          {/* Copyright */}
-          <p className="text-[10px] text-zinc-600 font-medium whitespace-nowrap">
-            © 2026 GoToFlow · ИП Черенок А.А.
-          </p>
+          {/* Bottom copyright — centered on mobile, left-aligned on desktop */}
+          <div className="mt-10 md:mt-14 pt-6 border-t border-white/[0.04]">
+            <p className="text-[11px] text-zinc-500 font-medium text-center md:text-left">
+              © 2026 GoToFlow. Все права защищены.
+            </p>
+          </div>
+
         </div>
       </footer>
     </>
