@@ -7,14 +7,14 @@ const TABS = ['Маркетинг', 'Личный бренд', 'E-commerce', 'Б
 /* ─── Карточки-плейсхолдеры: чередующий ритм Reels + Post ─── */
 const cards = [
   { id: 1, format: 'square', tag: 'Пост',     likes: '4.2K', views: '12K', label: 'Личный бренд' },
-  { id: 2, format: 'reel',   tag: 'Reels',    likes: '8.1K', views: '20K', label: 'Маркетинг' },
+  { id: 2, format: 'reel',   tag: 'Карусель', likes: '8.1K', views: '20K', label: 'Маркетинг' },
   { id: 3, format: 'square', tag: 'Карусель', likes: '1.8K', views: '5K',  label: 'Продвижение' },
   { id: 4, format: 'square', tag: 'Пост',     likes: '3.1K', views: '9K',  label: 'E-commerce' },
-  { id: 5, format: 'reel',   tag: 'Reels',    likes: '6.7K', views: '18K', label: 'Бьюти-блог' },
+  { id: 5, format: 'reel',   tag: 'Карусель', likes: '6.7K', views: '18K', label: 'Бьюти-блог' },
   { id: 6, format: 'square', tag: 'Карусель', likes: '5.9K', views: '14K', label: 'Фитнес' },
   { id: 7, format: 'square', tag: 'Карусель', likes: '2.4K', views: '7K',  label: 'Образование' },
   { id: 8, format: 'square', tag: 'Карусель', likes: '980',  views: '3.2K',label: 'Путешествия' },
-  { id: 9, format: 'reel',   tag: 'Reels',    likes: '10K',  views: '25K', label: 'Lifestyle' },
+  { id: 9, format: 'reel',   tag: 'Карусель', likes: '10K',  views: '25K', label: 'Lifestyle' },
   { id: 10, format: 'square', tag: 'Карусель', likes: '7.2K', views: '15K', label: 'IT-услуги' },
   { id: 11, format: 'square', tag: 'Карусель', likes: '4.5K', views: '11K', label: 'Эксперт' },
 ];
@@ -125,7 +125,7 @@ export const ShowcaseSlider = () => {
 
         {/* ─── H2 ─── */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-8 px-6">
-          Готовый контент для <span className="text-gradient-brand">любой ниши</span>
+          Создавайте контент для <span className="text-gradient-brand">любой ниши</span>
         </h2>
 
         {/* ─── Табы-фильтры ─── */}
