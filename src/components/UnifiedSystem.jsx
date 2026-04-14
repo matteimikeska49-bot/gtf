@@ -26,18 +26,18 @@ const newWay = [
 
 /* ─── Анимированная дымка (Haze) ─── */
 const DriftHaze = () => (
-  <div className="absolute inset-[-10%] pointer-events-none -z-10 overflow-hidden">
+  <div className="absolute inset-[-25%] pointer-events-none -z-10">
     {/* Левый свет */}
     <motion.div
       animate={{ y: [-10, 10, -10] }}
       transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-      className="absolute -left-[10%] top-[20%] w-[55%] h-[60%] bg-pink-500/10 blur-[150px] rounded-full"
+      className="absolute -left-[5%] top-[25%] w-[50%] h-[55%] bg-pink-500/10 blur-[150px] rounded-full"
     />
     {/* Правый свет */}
     <motion.div
       animate={{ y: [10, -10, 10] }}
       transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-      className="absolute -right-[10%] bottom-[20%] w-[55%] h-[60%] bg-orange-500/10 blur-[150px] rounded-full"
+      className="absolute -right-[5%] bottom-[25%] w-[50%] h-[55%] bg-orange-500/10 blur-[150px] rounded-full"
     />
   </div>
 );
