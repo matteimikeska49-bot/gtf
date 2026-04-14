@@ -40,12 +40,7 @@ export const Header = ({ lang, setLang }) => {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
         <Logo />
 
-        {/* Nav links — desktop */}
-        <nav className="hidden lg:flex items-center gap-8">
-          <a href="#" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Возможности</a>
-          <a href="#" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Как это работает</a>
-          <a href="#" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">FAQ</a>
-        </nav>
+
 
         <div className="flex items-center gap-3">
           {/* Language switcher */}
