@@ -68,16 +68,16 @@ const AbstractUIMockup = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className="hidden md:block w-full max-w-5xl mt-20 relative mx-auto perspective-1000"
+      className="block w-full max-w-[380px] md:max-w-5xl mt-8 md:mt-20 relative mx-auto perspective-1000"
     >
       {/* Огромное свечение за дашбордом — эффект «парения» */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[90%] bg-[#ec4899]/[0.08] blur-[140px] rounded-[100%] pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[70%] bg-gradient-to-tr from-pink-900/25 via-purple-900/15 to-indigo-900/25 blur-[100px] rounded-[100%] pointer-events-none" />
 
-      <div className="relative rounded-[2rem] md:rounded-[2.5rem] border border-white/5 bg-[#0a0a0a]/80 backdrop-blur-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row text-left ring-1 ring-white/5 group">
+      <div className="relative rounded-2xl md:rounded-[2.5rem] border border-white/5 bg-[#0a0a0a]/80 backdrop-blur-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row text-left ring-1 ring-white/5 group aspect-[4/3] md:aspect-auto">
         
-        {/* Sidebar */}
-        <div className="w-full md:w-72 border-b md:border-b-0 md:border-r border-white/5 p-6 flex flex-col gap-8 bg-[#050505]/50 relative overflow-hidden">
+        {/* Sidebar (скрыт на мобиле) */}
+        <div className="hidden md:flex w-full md:w-72 border-b md:border-b-0 md:border-r border-white/5 p-6 flex-col gap-8 bg-[#050505]/50 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none" />
           
           <div className="flex items-center gap-2 px-1 relative z-10">
@@ -104,42 +104,46 @@ const AbstractUIMockup = () => {
         </div>
 
         {/* Main Area */}
-        <div className="flex-1 p-8 md:p-10 flex flex-col gap-10 relative z-10 bg-[#0a0a0a]/30">
+        <div className="flex-1 p-5 md:p-10 flex flex-col gap-5 md:gap-10 relative z-10 bg-[#0a0a0a]/30 h-full overflow-hidden">
           <div className="absolute right-0 top-0 w-64 h-64 bg-purple-500/10 blur-[80px] rounded-full pointer-events-none" />
 
+          {/* Оверлей-затемнение на мобиле */}
+          <div className="md:hidden absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.95)] via-transparent to-transparent z-20 pointer-events-none" />
+
           <div className="flex items-center justify-between relative z-10">
-            <h3 className="text-2xl font-bold text-white tracking-tight">{t('hero.mockup.postGenerationFlow')}</h3>
-            <div className="px-4 py-2 rounded-full border border-white/10 bg-[#050505] text-xs font-semibold text-zinc-300 flex items-center gap-2 shadow-lg backdrop-blur-md">
-               <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse shadow-[0_0_10px_#ec4899]" />
+            <h3 className="text-lg md:text-2xl font-bold text-white tracking-tight truncate pr-2">{t('hero.mockup.postGenerationFlow')}</h3>
+            <div className="shrink-0 px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/10 bg-[#050505] text-[10px] md:text-xs font-semibold text-zinc-300 flex items-center gap-2 shadow-lg backdrop-blur-md">
+               <div className="w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse shadow-[0_0_10px_#ec4899]" />
                {t('hero.mockup.aiActive')}
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-            <div className="md:col-span-2 p-6 rounded-[1.5rem] border border-white/5 bg-[#050505]/80 shadow-xl relative overflow-hidden flex flex-col">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 relative z-10">
+            <div className="md:col-span-2 p-5 md:p-6 rounded-2xl md:rounded-[1.5rem] border border-white/5 bg-[#050505]/80 shadow-xl relative overflow-hidden flex flex-col">
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
               
-              <div className="flex items-center gap-4 mb-8">
-                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                    <PenTool className="w-5 h-5 text-zinc-400" />
+              <div className="flex items-center gap-4 mb-6 md:mb-8">
+                 <div className="w-8 md:w-10 h-8 md:h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <PenTool className="w-4 md:w-5 h-4 md:h-5 text-zinc-400" />
                  </div>
-                 <div className="h-2.5 w-40 bg-zinc-800 rounded-full" />
+                 <div className="h-2 md:h-2.5 w-32 md:w-40 bg-zinc-800 rounded-full" />
               </div>
               
-              <div className="space-y-4 flex-1">
-                 <div className="h-2 w-[90%] bg-zinc-800 rounded-full" />
-                 <div className="h-2 w-[80%] bg-zinc-800 rounded-full" />
-                 <div className="h-2 w-[60%] bg-zinc-800 rounded-full" />
+              <div className="space-y-3 md:space-y-4 flex-1">
+                 <div className="h-1.5 md:h-2 w-[90%] bg-zinc-800 rounded-full" />
+                 <div className="h-1.5 md:h-2 w-[80%] bg-zinc-800 rounded-full" />
+                 <div className="h-1.5 md:h-2 w-[60%] bg-zinc-800 rounded-full" />
               </div>
 
-              <div className="mt-8 p-4 rounded-xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-orange-500/5 flex items-center gap-3 relative overflow-hidden">
+              <div className="mt-6 md:mt-8 p-3 md:p-4 rounded-xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-orange-500/5 flex items-center gap-3 relative overflow-hidden">
                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
-                 <Sparkles className="w-5 h-5 text-pink-400" />
-                 <div className="h-2 w-32 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full opacity-80" />
+                 <Sparkles className="w-4 md:w-5 h-4 md:h-5 text-pink-400 shrink-0" />
+                 <div className="h-1.5 md:h-2 w-24 md:w-32 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full opacity-80" />
               </div>
             </div>
 
-            <div className="p-6 rounded-[1.5rem] border border-white/5 bg-[#050505]/80 shadow-xl flex flex-col justify-between overflow-hidden relative">
+            {/* Вторая карточка скрыта на мобиле */}
+            <div className="hidden md:flex p-6 rounded-[1.5rem] border border-white/5 bg-[#050505]/80 shadow-xl flex-col justify-between overflow-hidden relative">
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
               
               <div className="relative z-10">
