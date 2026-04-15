@@ -158,13 +158,17 @@ const PlanCard = ({ plan, isYearly, index, t, lang }) => {
   const price = isYearly ? pricing.yearly : pricing.monthly;
   const Icon = plan.icon;
 
+  const orderClass = plan.id === 'pro' ? 'order-1 md:order-2' 
+                   : plan.id === 'lite' ? 'order-2 md:order-1' 
+                   : 'order-3 md:order-3';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={`relative group ${plan.featured ? 'md:-mt-4 md:mb-4 z-20' : 'z-10'}`}
+      className={`relative group ${plan.featured ? 'md:-mt-4 md:mb-4 z-20' : 'z-10'} ${orderClass}`}
     >
       {/* Featured badge */}
       {plan.featured && (
