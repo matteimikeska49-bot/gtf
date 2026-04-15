@@ -193,36 +193,36 @@ export const en = {
     subtitle: 'We\'ve gathered answers to the most common questions. If you can\'t find yours, message us directly.',
     items: [
       {
-        q: "Can I edit the result to fit my style?",
-        a: "Yes. GoToFlow doesn't lock you into a rigid template. You can guide the generation, tweak the result in the built-in editor, and export a polished final version."
+        q: "Can I edit the result to fit my needs?",
+        a: "Yes. You're in full control — from the initial idea to the final slide. You can adjust structure, refine the style, edit individual slides, and polish everything before exporting."
       },
       {
-        q: "Is this just another text generator?",
-        a: "No, GoToFlow doesn't just write texts; it builds ready-made content paired with visuals. You get structured posts, carousel slides, or Reels storyboards. Since you set your own topics, tone of voice, and visual style, the output is a complete content piece with your author's touch."
+        q: "Is this just another AI text generator?",
+        a: "No. GoToFlow doesn't just generate text — it builds complete content. You get structured posts and carousels with visuals, flow, and tone of voice — not raw drafts you still have to fix."
       },
       {
-        q: "How is this better than using multiple separate tools?",
-        a: "Our platform eliminates the chaos of jumping between tabs. Usually, you hunt for ideas in one place, generate text in another, and assemble visuals in a third. In GoToFlow, you work in a unified system: drop an idea or link and instantly get a cohesive, formatted result."
+        q: "How is this better than using multiple tools?",
+        a: "Instead of juggling 3–5 tools, everything happens in one flow. Idea → generation → layout — all in one place. No switching tabs, no wasted time. Just finished content."
       },
       {
-        q: "Do I need to know how to write complex prompts?",
-        a: "No. The platform is designed so you don't have to explain everything from scratch every time. Just provide a topic, idea, link, or video, and the AI helps assemble the final result in the format you need."
+        q: "Do I need to write complex prompts?",
+        a: "No. The system is designed to work without complicated inputs. Just provide a topic, idea, link, or video — and the AI handles the rest. If needed, you can guide the process with your own structure."
       },
       {
-        q: "What niches and formats does this work for?",
-        a: "The system is highly flexible. You can generate engaging Reels for an expert blog, build sales offers for a business, or quickly format clean price lists for Stories."
+        q: "What niches and formats does it support?",
+        a: "Almost any. From personal brands to e-commerce, education, and marketing — you can create posts, carousels, and visual content for different use cases."
       },
       {
-        q: "What languages are supported?",
-        a: "The AI fluently understands and generates content in several languages, including English and Russian. You can easily take a competitor's video in one language and adapt it for your target audience in one click."
+        q: "What languages does it support?",
+        a: "GoToFlow supports multiple languages, including English and Russian. You can take content from other markets and quickly adapt it for your own audience."
       },
       {
-        q: "What can I do in GoToFlow right now?",
-        a: "Core tools are available now: Competitor Radar, Strong Reels Search, and Carousel/Post creation from ideas, links, or videos. Autopilot, Content Plan, and Autoposting are in active development."
+        q: "What can I do with GoToFlow right now?",
+        a: "You can already discover ideas, analyze competitors, and generate posts or carousels from a link, idea, or video. Features like autopilot, content planning, and auto-posting are currently in development."
       },
       {
-        q: "What's included for free? Do I need a credit card?",
-        a: "You can start for free without linking a credit card. You get a basic generation limit right away to safely test the tools and see your first results."
+        q: "Is there a free plan? Do I need a credit card?",
+        a: "You can get started for free — no credit card required. You'll receive a set of free generations to test the product and get your first results risk-free."
       }
     ]
   },
