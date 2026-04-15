@@ -19,7 +19,7 @@ const cards = [
 
 /* Пропорции плейсхолдеров (aspect-ratio) */
 const formatAspect = {
-  reel:   'aspect-[9/16]',  // высокий / Stories / Reels
+  reel:   'aspect-[4/5]',   // вертикальный 4:5 (Instagram)
   square: 'aspect-square',  // 1:1 Пост / Карусель
 };
 
@@ -82,9 +82,7 @@ const MarqueeTrack = ({ speed = 40 }) => (
 
 /* ─── Главный экспортируемый компонент ─── */
 export const ShowcaseSlider = () => {
-  const [activeTab, setActiveTab] = useState(0);
   const { t } = useLanguage();
-  const tabs = t('showcase.tabs') || [];
 
   return (
     <section className="py-24 md:py-32 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#0a0a0a] to-[#050505]">
@@ -127,26 +125,9 @@ export const ShowcaseSlider = () => {
         </div>
 
         {/* ─── H2 ─── */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-8 px-6">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-16 px-6">
           {t('showcase.titlePart1')} <span className="text-gradient-brand">{t('showcase.titleHighlight')}</span>
         </h2>
-
-        {/* ─── Табы-фильтры ─── */}
-        <div className="flex flex-wrap justify-center gap-2 px-6 mb-12">
-          {tabs.map((tab, i) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(i)}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-300 ${
-                activeTab === i
-                  ? 'border-pink-500/40 bg-pink-500/10 text-white shadow-[0_0_16px_rgba(236,72,153,0.15)]'
-                  : 'border-white/10 bg-white/[0.02] text-zinc-400 hover:border-white/20 hover:text-zinc-300'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
 
         {/* ─── Слайдер (Marquee) — один ряд ─── */}
         <div

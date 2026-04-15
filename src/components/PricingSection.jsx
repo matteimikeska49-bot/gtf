@@ -63,16 +63,23 @@ const plans = [
   },
 ];
 
-const DISCOUNT = 0.45;
-
-const calcYearly = (monthly) => {
-  const raw = monthly * (1 - DISCOUNT);
-  // Round to nearest 10 for clean display
-  return Math.round(raw / 10) * 10;
+const pricingConfig = {
+  lite: {
+    RU: { monthly: 1500, yearly: 825 },
+    EN: { monthly: 19, yearly: 10 }
+  },
+  pro: {
+    RU: { monthly: 3500, yearly: 1925 },
+    EN: { monthly: 45, yearly: 25 }
+  },
+  power: {
+    RU: { monthly: 6990, yearly: 3845 },
+    EN: { monthly: 89, yearly: 49 }
+  }
 };
 
-const formatPrice = (price) => {
-  return price.toLocaleString('ru-RU');
+const formatPrice = (price, lang) => {
+  return price.toLocaleString(lang === 'EN' ? 'en-US' : 'ru-RU');
 };
 
 /* ─── Billing Toggle ─── */
@@ -125,7 +132,7 @@ const BillingToggle = ({ isYearly, setIsYearly }) => (
 
 /* ─── Price Display with animation ─── */
 const PriceDisplay = ({ price, isYearly }) => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   return (
     <div className="flex items-baseline gap-2">
       <AnimatePresence mode="wait">
@@ -137,7 +144,7 @@ const PriceDisplay = ({ price, isYearly }) => {
           transition={{ duration: 0.25 }}
           className="text-4xl md:text-[2.75rem] font-bold text-white tracking-tight leading-none"
         >
-          {formatPrice(price)} ₽
+          {lang === 'EN' ? '$' : ''}{formatPrice(price, lang)}{lang === 'RU' ? ' ₽' : ''}
         </motion.span>
       </AnimatePresence>
       <span className="text-sm text-zinc-500 font-medium">{t('pricing.perMonth')}</span>
@@ -146,8 +153,9 @@ const PriceDisplay = ({ price, isYearly }) => {
 };
 
 /* ─── Plan Card ─── */
-const PlanCard = ({ plan, isYearly, index, t }) => {
-  const price = isYearly ? calcYearly(plan.monthlyPrice) : plan.monthlyPrice;
+const PlanCard = ({ plan, isYearly, index, t, lang }) => {
+  const pricing = pricingConfig[plan.id][lang] || pricingConfig[plan.id]['RU'];
+  const price = isYearly ? pricing.yearly : pricing.monthly;
   const Icon = plan.icon;
 
   return (
@@ -312,7 +320,7 @@ const PlanCard = ({ plan, isYearly, index, t }) => {
 /* ─── Main Pricing Section ─── */
 export const PricingSection = () => {
   const [isYearly, setIsYearly] = useState(false);
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const rawPlans = t('pricing.plans') || [];
 
   const plans = [
@@ -437,7 +445,7 @@ export const PricingSection = () => {
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-start md:items-center">
           {plans.map((plan, i) => (
-            <PlanCard key={plan.id} plan={plan} isYearly={isYearly} index={i} t={t} />
+            <PlanCard key={plan.id} plan={plan} isYearly={isYearly} index={i} t={t} lang={lang} />
           ))}
         </div>
 
