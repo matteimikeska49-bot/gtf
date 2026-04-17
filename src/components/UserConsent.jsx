@@ -1,92 +1,12 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
-
-const sections = [
-  {
-    title: "Оператор персональных данных",
-    items: [
-      "Индивидуальный предприниматель Черенок Андрей Александрович",
-      "ИНН: 524706758400",
-      "ОГРНИП: 318527500118742",
-      "E-mail: gotoflow.io@gmail.com",
-      "Дата публикации: «19» февраля 2026 г.",
-    ]
-  },
-  {
-    title: "1. Перечень персональных данных",
-    items: [
-      "e-mail и имя (если указано).",
-      "Данные авторизации: Google, Яндекс, Telegram, MAX и др.",
-      "IP-адрес, данные устройства и браузера, cookie, время доступа.",
-      "Действия в сервисе и данные о платежах (без карт).",
-      "Иные добровольно предоставленные данные.",
-    ]
-  },
-  {
-    title: "2. Цели обработки",
-    items: [
-      "Регистрация и авторизация; доступ к функционалу.",
-      "Исполнение оферты, управление подпиской, обработка платежей.",
-      "Техническая поддержка, безопасность, предотвращение мошенничества.",
-      "Ведение бухгалтерии, направление уведомлений.",
-      "Маркетинг (при наличии согласия), улучшение сервиса.",
-    ]
-  },
-  {
-    title: "3. Обработка данных",
-    items: [
-      "Оператор вправе: собирать, хранить, изменять, использовать, передавать, обезличивать и удалять данные.",
-      "Обработка осуществляется автоматизированно и/или вручную.",
-    ]
-  },
-  {
-    title: "4. Передача третьим лицам",
-    items: [
-      "Данные передаются только при необходимости для работы сервиса.",
-      "Получатели: платёжные системы, хостинг и облако, техподдержка, сервисы авторизации, бухгалтерия и юристы.",
-      "Государственным органам — в случаях, предусмотренных законодательством РФ.",
-    ]
-  },
-  {
-    title: "5. Трансграничная передача",
-    items: [
-      "Данные могут передаваться за пределы РФ при использовании международных сервисов.",
-      "Пользователь выражает на это своё согласие.",
-    ]
-  },
-  {
-    title: "6. Срок хранения",
-    items: [
-      "Данные хранятся в течение срока использования сервиса.",
-      "После окончания — в сроки, установленные законодательством РФ.",
-    ]
-  },
-  {
-    title: "7. Отзыв согласия",
-    items: [
-      "Согласие можно отозвать, направив заявление на: gotoflow.io@gmail.com",
-      "Отзыв прекращает обработку данных, кроме обязательных случаев по закону.",
-    ]
-  },
-  {
-    title: "8. Подтверждение",
-    items: [
-      "Согласие предоставляется добровольно.",
-      "Пользователь подтверждает достоверность предоставленных данных.",
-      "Пользователь ознакомлен с Политикой конфиденциальности.",
-    ]
-  },
-  {
-    title: "9. Заключение",
-    items: [
-      "Настоящее Согласие является частью условий использования сервиса GoToFlow.",
-      "В случае расхождений между языковыми версиями приоритет имеет русский текст.",
-    ]
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 export const UserConsent = ({ onClose }) => {
+  const { t } = useLanguage();
+  const sections = t('legal.consent.sections');
+
   return (
     <AnimatePresence>
       <motion.div
@@ -109,7 +29,7 @@ export const UserConsent = ({ onClose }) => {
           {/* Header */}
           <div className="flex items-center justify-between px-8 py-6 border-b border-white/[0.06] bg-[#050505]/60 backdrop-blur-sm shrink-0">
             <div>
-              <h2 className="text-xl font-bold text-white tracking-tight">Согласие на обработку персональных данных</h2>
+              <h2 className="text-xl font-bold text-white tracking-tight">{t('legal.consent.title')}</h2>
               <p className="text-xs text-zinc-500 mt-1">GoToFlow · https://gotoflow.io</p>
             </div>
             <button
@@ -123,10 +43,10 @@ export const UserConsent = ({ onClose }) => {
           {/* Content */}
           <div className="overflow-y-auto px-8 py-7 flex flex-col gap-8">
             <p className="text-zinc-400 text-sm leading-relaxed border-l-2 border-pink-500/40 pl-4">
-              Я, регистрируясь, авторизуясь и/или используя онлайн-сервис GoToFlow (https://gotoflow.io), свободно, своей волей и в своём интересе выражаю согласие Оператору на обработку моих персональных данных в соответствии со ст. 23, 24 Конституции РФ и Федеральным законом № 152-ФЗ «О персональных данных».
+              {t('legal.consent.intro')}
             </p>
 
-            {sections.map((sec, i) => (
+            {Array.isArray(sections) && sections.map((sec, i) => (
               <div key={i}>
                 <h3 className="text-sm font-bold text-white mb-3 tracking-tight">{sec.title}</h3>
                 <ul className="flex flex-col gap-2">
@@ -147,7 +67,7 @@ export const UserConsent = ({ onClose }) => {
               onClick={onClose}
               className="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-semibold text-zinc-300 hover:bg-white/10 hover:text-white transition-all"
             >
-              Закрыть
+              {t('legal.close')}
             </button>
           </div>
         </motion.div>

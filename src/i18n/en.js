@@ -400,5 +400,61 @@ export const en = {
     message: 'We use cookies to improve the website, analyze traffic, and make the service more useful.',
     accept: 'Accept',
     learnMore: 'Learn more'
+  },
+
+  legal: {
+    close: 'Close',
+    privacy: {
+      title: 'Privacy Policy',
+      sections: [
+        { title: "Data Controller", items: ["Andrey Cherenok, Individual Entrepreneur", "Email: gotoflow.io@gmail.com", "Effective Date: February 19, 2026"] },
+        { title: "1. Information We Collect", items: ["Account Data: email address, name (if provided), authentication identifiers (Google, Telegram, etc.).", "Usage Data: IP address, browser type, device info, operating system, activity logs, and timestamps.", "Payment Data: transaction status and identifiers. We do not store full card details.", "Communication Data: support requests and correspondence."] },
+        { title: "2. How We Use Data", items: ["Provide and operate the Service.", "Manage accounts and subscriptions.", "Process payments.", "Provide support.", "Improve product performance.", "Prevent fraud and abuse.", "Send service-related messages.", "Send marketing communications where permitted."] },
+        { title: "3. Legal Basis", items: ["Performance of a contract.", "Legitimate interests.", "Compliance with legal obligations.", "User consent."] },
+        { title: "4. Data Sharing", items: ["Payment providers.", "Hosting and cloud infrastructure providers.", "Analytics and support tools.", "Authentication providers.", "Professional advisors.", "Competent authorities when required by law."] },
+        { title: "5. International Transfers", items: ["Your personal data may be transferred outside your country of residence where required for the operation of the Service.", "We apply appropriate safeguards where required."] },
+        { title: "6. Data Retention", items: ["For as long as your account remains active.", "As necessary to provide the Service.", "As required by applicable law."] },
+        { title: "7. Your Rights", items: ["Access your data.", "Correct inaccurate data.", "Request deletion.", "Withdraw consent.", "Object to certain processing activities.", "To exercise your rights, contact: gotoflow.io@gmail.com"] },
+        { title: "8. Cookies and Analytics", items: ["We use cookies and similar technologies to operate the Service, analyze traffic, and improve user experience."] },
+        { title: "9. Security", items: ["We apply reasonable technical and organizational measures to protect personal data."] },
+        { title: "10. Changes", items: ["We may update this Privacy Policy from time to time.", "The latest version will always be available on the website."] },
+        { title: "Contact", items: ["gotoflow.io@gmail.com"] },
+      ]
+    },
+    terms: {
+      title: 'Terms of Service',
+      sections: [
+        { title: "1. Service", items: ["GoToFlow provides access to a SaaS platform for AI-assisted content generation and related tools."] },
+        { title: "2. Eligibility and Account", items: ["You must be at least 18 years old to use the Service.", "You are responsible for maintaining the confidentiality of your account and for all activity under it."] },
+        { title: "3. Access and Subscription", items: ["The Service may be offered through free access, paid subscriptions, token-based usage, or a combination of these.", "Subscriptions renew automatically unless canceled before the next billing date.", "You are responsible for managing your subscription and renewal settings."] },
+        { title: "4. Payments and Refunds", items: ["Payments are billed according to the pricing displayed at checkout.", "Except where required by applicable law, fees are non-refundable once access to the digital service has been provided.", "Unused features, tokens, or time remaining in a billing period do not create a right to a refund."] },
+        { title: "5. Tokens", items: ["Tokens may be used for content generation and related actions.", "Tokens do not constitute money, electronic money, or stored value.", "Tokens may expire according to the applicable plan terms."] },
+        { title: "6. Acceptable Use", items: ["Do not violate any law or third-party rights.", "Do not use the Service to generate unlawful, infringing, abusive, or harmful content.", "Do not attempt to reverse engineer, scrape, or abuse the Service.", "Do not interfere with security, stability, or performance.", "Do not use bots or automation in unauthorized ways."] },
+        { title: "7. Intellectual Property", items: ["All rights, title, and interest in the Service, including software, branding, design, and underlying technology, belong to GoToFlow and its owner.", "These Terms grant you a limited, non-exclusive, non-transferable right to use the Service in accordance with your plan."] },
+        { title: "8. User Content", items: ["You are responsible for the content you upload, input, generate, or export using the Service.", "You represent that you have the rights necessary to use such content.", "We do not guarantee that generated content is accurate, unique, lawful, or suitable for any specific purpose."] },
+        { title: "9. Suspension and Termination", items: ["You violate these Terms.", "Fraud, abuse, or misuse is detected.", "There is a security or compliance risk.", "Continued access could harm the Service or other users."] },
+        { title: "10. Service Availability", items: ["The Service is provided on an \"as is\" and \"as available\" basis.", "We do not guarantee uninterrupted operation, error-free performance, or any specific business result."] },
+        { title: "11. Limitation of Liability", items: ["To the maximum extent permitted by law, GoToFlow will not be liable for indirect, incidental, special, consequential, or lost profit damages.", "Our total liability for any claim relating to the Service will not exceed the amount paid by you for the Service during the last billing period."] },
+        { title: "12. Changes to the Service or Terms", items: ["We may change the Service, pricing, features, or these Terms at any time.", "Continued use of the Service after such changes means you accept the updated Terms."] },
+        { title: "13. Governing Law", items: ["These Terms are governed by the laws applicable to the Service operator, unless otherwise required by mandatory law in your jurisdiction."] },
+        { title: "14. Contact", items: ["For any questions regarding these Terms, contact: gotoflow.io@gmail.com", "Effective Date: February 19, 2026"] },
+      ]
+    },
+    consent: {
+      title: 'Data Processing Consent',
+      intro: 'By registering, authorizing, or using GoToFlow, you consent to the processing of your personal data as described below.',
+      sections: [
+        { title: "Data Controller", items: ["Andrey Cherenok, Individual Entrepreneur", "Email: gotoflow.io@gmail.com", "Effective Date: February 19, 2026"] },
+        { title: "1. Data We May Process", items: ["Email address and name, if provided.", "Authentication identifiers from third-party login providers.", "IP address, browser, device, and operating system data.", "Cookies and technical usage data.", "Activity within the Service and payment-related metadata.", "Support communications and other data voluntarily provided."] },
+        { title: "2. Purposes of Processing", items: ["Register and authenticate users; provide access to Service functionality.", "Manage subscriptions and token balances; process payments.", "Provide support; maintain security; prevent fraud and abuse.", "Send service messages; improve the Service.", "Send marketing communications where consent is given or otherwise permitted."] },
+        { title: "3. Processing Methods", items: ["Personal data may be processed with or without automated means, including collection, storage, use, transfer, anonymization, deletion, and destruction."] },
+        { title: "4. Third-Party Recipients", items: ["Data may be shared with third-party providers where necessary for operation of the Service.", "Recipients: infrastructure providers, payment processors, analytics tools, support providers, authentication services.", "Legal or governmental recipients where required by law."] },
+        { title: "5. International Transfers", items: ["Where necessary, personal data may be transferred to other countries for the operation of the Service."] },
+        { title: "6. Retention", items: ["Your data may be retained for the duration of your use of the Service.", "Thereafter as required by law or legitimate business needs."] },
+        { title: "7. Withdrawal", items: ["You may withdraw consent by contacting: gotoflow.io@gmail.com", "Withdrawal does not affect processing already carried out lawfully before withdrawal and may limit continued use of the Service."] },
+        { title: "8. Confirmation", items: ["You act voluntarily.", "The data you provide is accurate.", "You understand the scope of this consent.", "You have reviewed the applicable privacy terms."] },
+        { title: "Contact", items: ["gotoflow.io@gmail.com"] },
+      ]
+    }
   }
 };
