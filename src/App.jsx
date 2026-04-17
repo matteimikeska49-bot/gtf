@@ -14,6 +14,7 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { PricingSection } from './components/PricingSection';
 import { BottomCTA } from './components/BottomCTA';
 import { Footer } from './components/Footer';
+import { CookieBanner } from './components/CookieBanner';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <PricingSection />
         <BottomCTA />
         <Footer />
+        <CookieBanner />
       </MainLayout>
     </LanguageProvider>
   );

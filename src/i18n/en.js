@@ -394,5 +394,11 @@ export const en = {
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
     consent: 'Data Processing Consent'
+  },
+
+  cookie: {
+    message: 'We use cookies to improve the website, analyze traffic, and make the service more useful.',
+    accept: 'Accept',
+    learnMore: 'Learn more'
   }
 };
