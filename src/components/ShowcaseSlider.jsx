@@ -4,17 +4,17 @@ import { useLanguage } from '../context/LanguageContext';
 
 /* ─── Карточки-плейсхолдеры: чередующий ритм Reels + Post ─── */
 const cards = [
-  { id: 1, format: 'square', tag: 'post',     likes: '4.2K', views: '12K', labelKey: 'personalBrand' },
-  { id: 2, format: 'reel',   tag: 'carousel', likes: '8.1K', views: '20K', labelKey: 'marketing' },
-  { id: 3, format: 'square', tag: 'carousel', likes: '1.8K', views: '5K',  labelKey: 'promotion' },
-  { id: 4, format: 'square', tag: 'post',     likes: '3.1K', views: '9K',  labelKey: 'ecommerce' },
-  { id: 5, format: 'reel',   tag: 'carousel', likes: '6.7K', views: '18K', labelKey: 'beauty' },
-  { id: 6, format: 'square', tag: 'carousel', likes: '5.9K', views: '14K', labelKey: 'fitness' },
-  { id: 7, format: 'square', tag: 'carousel', likes: '2.4K', views: '7K',  labelKey: 'education' },
-  { id: 8, format: 'square', tag: 'carousel', likes: '980',  views: '3.2K',labelKey: 'travel' },
-  { id: 9, format: 'reel',   tag: 'carousel', likes: '10K',  views: '25K', labelKey: 'lifestyle' },
-  { id: 10, format: 'square', tag: 'carousel', likes: '7.2K', views: '15K', labelKey: 'it' },
-  { id: 11, format: 'square', tag: 'carousel', likes: '4.5K', views: '11K', labelKey: 'expert' },
+  { id: 1, format: 'square', tag: 'post',     likes: '4.2K', views: '12K', labelKey: 'personalBrand', image: '/images/niches/image_1.png.jpg' },
+  { id: 2, format: 'reel',   tag: 'carousel', likes: '8.1K', views: '20K', labelKey: 'marketing', image: '/images/niches/image_2.png.jpg' },
+  { id: 3, format: 'square', tag: 'carousel', likes: '1.8K', views: '5K',  labelKey: 'promotion', image: '/images/niches/image_3.png.jpg' },
+  { id: 4, format: 'square', tag: 'post',     likes: '3.1K', views: '9K',  labelKey: 'ecommerce', image: '/images/niches/image_4.png.jpg' },
+  { id: 5, format: 'reel',   tag: 'carousel', likes: '6.7K', views: '18K', labelKey: 'beauty', image: '/images/niches/image_5.png.jpg' },
+  { id: 6, format: 'square', tag: 'carousel', likes: '5.9K', views: '14K', labelKey: 'fitness', image: '/images/niches/image_6.png.jpg' },
+  { id: 7, format: 'square', tag: 'carousel', likes: '2.4K', views: '7K',  labelKey: 'education', image: '/images/niches/image_7.png.jpg' },
+  { id: 8, format: 'square', tag: 'carousel', likes: '980',  views: '3.2K',labelKey: 'travel', image: '/images/niches/image_8.png.jpg' },
+  { id: 9, format: 'reel',   tag: 'carousel', likes: '10K',  views: '25K', labelKey: 'lifestyle', image: '/images/niches/image_9.png.jpg' },
+  { id: 10, format: 'square', tag: 'carousel', likes: '7.2K', views: '15K', labelKey: 'it', image: '/images/niches/image_10.png' },
+  { id: 11, format: 'square', tag: 'carousel', likes: '4.5K', views: '11K', labelKey: 'expert', image: '/images/niches/image_1.png.jpg' },
 ];
 
 /* Пропорции плейсхолдеров (aspect-ratio) */
@@ -37,10 +37,17 @@ const SlideCard = ({ card }) => {
     <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
       {/* Плейсхолдер изображения */}
       <div className={`relative w-full ${formatAspect[card.format]} rounded-xl bg-[#111] overflow-hidden`}>
-        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:18px_18px]" />
+        {/* Изображение (нижний слой) */}
+        <img
+          src={card.image}
+          alt={t(`showcase.labels.${card.labelKey}`)}
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+        {/* Эффекты/overlay поверх */}
+        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02] z-[1]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:18px_18px] z-[1]" />
         {/* Тег формата */}
-        <span className={`absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full ${tagColor[card.tag]}`}>
+        <span className={`absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full z-[2] ${tagColor[card.tag]}`}>
           {t(`showcase.tags.${card.tag}`)}
         </span>
       </div>
