@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Heart, Star, Eye } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
