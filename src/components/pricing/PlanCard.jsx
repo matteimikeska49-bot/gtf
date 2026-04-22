@@ -167,6 +167,7 @@ export const PlanCard = ({ plan, isYearly, index, t, lang }) => {
 
           {/* ── CTA Button ── */}
           <button
+            onClick={() => window.location.href = 'https://app.gotoflow.io'}
             className={`w-full py-4 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 relative overflow-hidden group/btn ${
               plan.featured
                 ? 'bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow-[0_0_25px_rgba(236,72,153,0.2)] hover:shadow-[0_0_40px_rgba(236,72,153,0.35)] hover:scale-[1.02] active:scale-[0.98]'

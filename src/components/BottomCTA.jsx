@@ -147,6 +147,7 @@ export const BottomCTA = () => {
                 />
 
                 <button
+                  onClick={() => window.location.href = 'https://app.gotoflow.io'}
                   onMouseEnter={() => setBtnHover(true)}
                   onMouseLeave={() => setBtnHover(false)}
                   className="relative z-10 flex items-center justify-center gap-2.5 px-9 py-3.5 rounded-[14px] font-semibold text-white text-[15px] overflow-hidden cursor-pointer"
