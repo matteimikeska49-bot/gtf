@@ -14,11 +14,11 @@ export const en = {
       "For creators, experts, and content teams",
       "Create content even without ideas",
     ],
-    titlePart1: 'Find viral ideas',
-    titlePart2: 'and turn them into carousels',
-    titleHighlight: 'in 60 seconds',
-    subtitlePart1: 'Analyze competitors, find trends',
-    subtitlePart2: 'and generate content in one click — in your own style',
+    titlePart1: 'AI Content Generator for Social Media',
+    titlePart2: 'That Drives',
+    titleHighlight: 'Real Growth',
+    subtitlePart1: 'Create social media content and carousels with AI.',
+    subtitlePart2: 'Analyze competitors and automate content creation in your own style.',
     mockup: {
       createContent: 'Create content',
       myProjects: 'My Projects',
@@ -100,7 +100,7 @@ export const en = {
     ],
     titlePart1: '4 tasks -',
     titleHighlight: '1 system',
-    subtitle: 'Spy tools, viral Reels, carousels, and copywriting usually live in different apps. In GoToFlow, it works as one seamlessly connected process.',
+    subtitle: 'Spy tools, viral Reels, AI carousel maker, and copywriting usually live in different apps. In GoToFlow, the ultimate AI for social media, it works as one seamlessly connected process.',
     oldWayTitle: 'The old way',
     newWayTitle: 'GoToFlow'
   },
@@ -110,7 +110,7 @@ export const en = {
     titleHighlight: 'Three tools',
     titlePart1: '— everything',
     titlePart2: 'you need for growth',
-    subtitle: 'Find ideas, analyze competitors, and turn them into ready-to-post content — in one click',
+    subtitle: 'Content automation made easy: find ideas, analyze competitors, and turn them into ready-to-post content — in one click',
     popularBadge: 'Popular',
     core: [
       {
@@ -192,6 +192,18 @@ export const en = {
     titleHighlight: 'questions?',
     subtitle: 'We\'ve gathered answers to the most common questions. If you can\'t find yours, message us directly.',
     items: [
+      {
+        q: "What is an AI content generator?",
+        a: "An AI content generator is a software tool that uses artificial intelligence to automatically create texts, images, and full posts for social media, saving time on content creation."
+      },
+      {
+        q: "How to create social media posts with AI?",
+        a: "With GoToFlow, you simply describe your topic or paste a link, and our AI content generator instantly crafts engaging social media content tailored for Instagram, LinkedIn, or Twitter."
+      },
+      {
+        q: "Can AI create Instagram carousels?",
+        a: "Yes, GoToFlow features an advanced AI carousel maker that generates both the text and visual structure for high-converting Instagram and LinkedIn carousels."
+      },
       {
         q: "Can I edit the result to fit my needs?",
         a: "Yes. You're in full control — from the initial idea to the final slide. You can adjust structure, refine the style, edit individual slides, and polish everything before exporting."

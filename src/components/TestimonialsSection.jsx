@@ -91,7 +91,7 @@ export const TestimonialsSection = () => {
                   )}
                 </div>
                 <div className="flex items-center gap-3 mt-4">
-                  <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover border border-white/10" loading="lazy" />
+                  <img src={t.avatar} alt={`${t.name} - GoToFlow AI content generator user`} className="w-10 h-10 rounded-full object-cover border border-white/10" loading="lazy" />
                   <div className="flex flex-col">
                     <div className="text-white font-medium">{t.name}</div>
                     <div className="text-zinc-500 text-sm">{t.role}</div>

@@ -30,7 +30,7 @@ const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
           {!imgError ? (
             <img
               src={imageSrc}
-              alt={`Product Screen ${imageId}`}
+              alt={`GoToFlow AI social media content generator interface screen ${imageId}`}
               // w-full и h-auto: картинка сама задаёт пропорции, мы её не сжимаем и не обрезаем! 
               className="w-full h-auto block object-contain transition-transform duration-700 ease-[0.21,0.47,0.32,0.98] group-hover:scale-[1.02] transform-gpu origin-center"
               onError={() => setImgError(true)}

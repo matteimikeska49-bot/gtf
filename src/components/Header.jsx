@@ -12,7 +12,7 @@ export const Logo = () => {
             {!imgError ? (
               <img 
                 src="/images/logo.png" 
-                alt="Logo" 
+                alt="GoToFlow AI social media content generator logo" 
                 onError={() => setImgError(true)}
                 className="w-[95%] h-[95%] object-contain"
               />
