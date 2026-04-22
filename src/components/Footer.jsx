@@ -50,12 +50,6 @@ export const Footer = () => {
                 >
                   {t('footer.consent')}
                 </button>
-                <a
-                  href="mailto:hello@gotoflow.com"
-                  className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                >
-                  hello@gotoflow.com
-                </a>
               </nav>
 
               {/* Separator line for larger screens */}
