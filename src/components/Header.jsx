@@ -49,7 +49,7 @@ export const Header = () => {
         <div className="flex items-center gap-3">
           {/* Language switcher */}
           <div className="flex items-center rounded-full border border-white/10 bg-white/[0.04] overflow-hidden p-0.5">
-            {['RU', 'EN'].map((l) => (
+            {['EN', 'RU'].map((l) => (
               <button
                 key={l}
                 onClick={() => setLang(l)}
