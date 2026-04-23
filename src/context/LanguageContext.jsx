@@ -43,9 +43,16 @@ export const LanguageProvider = ({ children }) => {
 
   // On first mount: handle redirect for auto-detection (only if no saved lang)
   useEffect(() => {
+    const isRootRoute = location.pathname === '/' || location.pathname === '' || location.pathname === '/ru' || location.pathname === '/ru/';
+    
+    // Do not redirect SEO pages or any other non-root pages
+    if (!isRootRoute) {
+      return;
+    }
+
     const saved = localStorage.getItem('lang');
     if (saved) {
-      // Saved preference exists — enforce correct URL
+      // Saved preference exists — enforce correct URL on root pages
       if (saved === 'ru' && location.pathname !== '/ru') {
         navigate('/ru', { replace: true });
       } else if (saved === 'en' && location.pathname !== '/') {
@@ -54,7 +61,7 @@ export const LanguageProvider = ({ children }) => {
       return;
     }
 
-    // No saved preference — auto-detect
+    // No saved preference — auto-detect for root visitors
     const detectedLang = getInitialLang(location.pathname);
     if (detectedLang === 'RU' && location.pathname !== '/ru') {
       navigate('/ru', { replace: true });
@@ -75,27 +82,31 @@ export const LanguageProvider = ({ children }) => {
   useEffect(() => {
     document.documentElement.lang = lang === 'RU' ? 'ru' : 'en';
 
-    // Update canonical
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.href = lang === 'RU' ? 'https://gotoflow.io/ru' : 'https://gotoflow.io/';
-    }
+    const isRootRoute = location.pathname === '/' || location.pathname === '' || location.pathname === '/ru' || location.pathname === '/ru/';
+    
+    if (isRootRoute) {
+      // Update canonical
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) {
+        canonical.href = lang === 'RU' ? 'https://gotoflow.io/ru' : 'https://gotoflow.io/';
+      }
 
-    // Update title and meta description based on language
-    if (lang === 'RU') {
-      document.title = 'AI-генератор контента для соцсетей — Создавайте посты, карусели и Reels | GoToFlow';
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.content = 'Создавайте конвертирующий контент для соцсетей с помощью ИИ. Генерируйте карусели, посты, сценарии Reels и контент-планы за секунды с GoToFlow.';
-      const metaTitle = document.querySelector('meta[name="title"]');
-      if (metaTitle) metaTitle.content = 'AI-генератор контента для соцсетей — Создавайте посты, карусели и Reels | GoToFlow';
-    } else {
-      document.title = 'AI Content Generator for Social Media — Create Posts, Carousels & Reels Fast | GoToFlow';
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.content = 'Create high-converting social media content with AI. Generate carousels, posts, reels scripts and content plans in seconds with GoToFlow.';
-      const metaTitle = document.querySelector('meta[name="title"]');
-      if (metaTitle) metaTitle.content = 'AI Content Generator for Social Media — Create Posts, Carousels & Reels Fast | GoToFlow';
+      // Update title and meta description based on language
+      if (lang === 'RU') {
+        document.title = 'AI-генератор контента для соцсетей — Создавайте посты, карусели и Reels | GoToFlow';
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.content = 'Создавайте конвертирующий контент для соцсетей с помощью ИИ. Генерируйте карусели, посты, сценарии Reels и контент-планы за секунды с GoToFlow.';
+        const metaTitle = document.querySelector('meta[name="title"]');
+        if (metaTitle) metaTitle.content = 'AI-генератор контента для соцсетей — Создавайте посты, карусели и Reels | GoToFlow';
+      } else {
+        document.title = 'AI Content Generator for Social Media — Create Posts, Carousels & Reels Fast | GoToFlow';
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.content = 'Create high-converting social media content with AI. Generate carousels, posts, reels scripts and content plans in seconds with GoToFlow.';
+        const metaTitle = document.querySelector('meta[name="title"]');
+        if (metaTitle) metaTitle.content = 'AI Content Generator for Social Media — Create Posts, Carousels & Reels Fast | GoToFlow';
+      }
     }
-  }, [lang]);
+  }, [lang, location.pathname]);
 
   const changeLang = (newLang) => {
     setLangState(newLang);
