@@ -11,7 +11,7 @@ const CTA_URL = 'https://app.gotoflow.io';
 
 const BlogSEOHeadRu = () => {
   useEffect(() => {
-    document.title = 'Блог | GoToFlow';
+    document.title = 'Идеи, хуки и примеры контента для соцсетей | GoToFlow';
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let el = document.querySelector(sel);
@@ -19,7 +19,7 @@ const BlogSEOHeadRu = () => {
       el.setAttribute(prop ? 'property' : 'name', name);
       el.setAttribute('content', content);
     };
-    setMeta('description', 'Идеи, примеры и шаблоны для быстрого создания контента');
+    setMeta('description', 'Готовые идеи, подписи и шаблоны, которые можно сразу превратить в пост или карусель.');
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.href = 'https://gotoflow.io/ru/blog';
     return () => { document.title = 'GoToFlow'; };
@@ -28,7 +28,7 @@ const BlogSEOHeadRu = () => {
 };
 
 const BlogHeroRu = () => (
-  <section className="pt-32 pb-16 px-6 relative z-10 w-full bg-[#050505] flex flex-col items-center justify-center">
+  <section className="pt-32 pb-8 px-6 relative z-10 w-full bg-[#050505] flex flex-col items-center justify-center">
     <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] md:w-[1200px] h-[700px] md:h-[900px] bg-[#ec4899]/[0.07] blur-[150px] rounded-full pointer-events-none" />
     <div className="max-w-4xl mx-auto flex flex-col items-center text-center relative z-10 w-full">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mt-4 mb-8">
@@ -37,11 +37,11 @@ const BlogHeroRu = () => (
           <span className="text-sm text-zinc-300">Hub</span>
         </div>
       </motion.div>
-      <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="text-5xl md:text-6xl font-bold text-white tracking-tight mb-6">
-        Блог
+      <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 leading-tight">
+        Идеи, хуки и примеры контента для соцсетей
       </motion.h1>
       <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-lg text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Идеи, примеры и шаблоны для быстрого создания контента
+        Готовые идеи, подписи и шаблоны, которые можно сразу превратить в пост или карусель.
       </motion.p>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
         <button onClick={() => window.location.href = CTA_URL} className="px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.3)] flex items-center gap-2 group text-base border border-pink-400/20">
@@ -52,30 +52,43 @@ const BlogHeroRu = () => (
   </section>
 );
 
+const PopularBlockRu = () => (
+  <section className="pb-16 px-6 relative z-10 w-full bg-[#050505] flex justify-center">
+    <div className="text-center">
+      <h3 className="text-zinc-500 text-sm font-medium mb-3">Популярное:</h3>
+      <ul className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm md:text-base justify-center items-center">
+        <li><Link to="/blog/idei-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 100 идей контента</Link></li>
+        <li><Link to="/ru/ai-generator-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 идей каруселей</Link></li>
+        <li><Link to="/ru/generator-karuselej-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 идей каруселей для LinkedIn</Link></li>
+      </ul>
+    </div>
+  </section>
+);
+
 const categoriesRu = [
   {
     title: 'Идеи',
     links: [
-      { to: '/blog/idei-karuselej', title: 'Идеи каруселей', desc: '50 готовых идей для ваших постов' },
-      { to: '/blog/idei-kontenta', title: 'Идеи контента', desc: 'Темы, которые приносят охваты' }
+      { to: '/blog/idei-karuselej', title: '50 идей каруселей', desc: 'готовые темы и примеры' },
+      { to: '/blog/idei-kontenta', title: '100 идей контента', desc: 'темы, которые приносят охваты' }
     ]
   },
   {
     title: 'Хуки',
     links: [
-      { to: '/blog/huki-dlya-postov', title: 'Хуки для постов', desc: 'Заголовки, которые останавливают скролл' }
+      { to: '/blog/huki-dlya-postov', title: '50 хуков для постов', desc: 'заголовки, которые останавливают скролл' }
     ]
   },
   {
     title: 'Подписи',
     links: [
-      { to: '/blog/podpisi-instagram', title: 'Подписи Instagram', desc: 'Тексты, которые конвертируют' }
+      { to: '/blog/podpisi-instagram', title: '100 подписей Instagram', desc: 'тексты для постов' }
     ]
   },
   {
     title: 'Шаблоны',
     links: [
-      { to: '/blog/primery-karuselej', title: 'Примеры каруселей', desc: 'Эффективные визуальные форматы' }
+      { to: '/blog/primery-karuselej', title: '50 примеров каруселей', desc: 'эффективные визуальные форматы' }
     ]
   }
 ];
@@ -104,11 +117,27 @@ const BlogInternalLinksRu = () => (
   <section className="py-16 px-6 relative z-10 w-full bg-[#050505] flex justify-center">
     <div className="max-w-3xl w-full p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
       <h3 className="text-white font-medium mb-4 text-base md:text-lg">Инструменты:</h3>
-      <ul className="space-y-3 text-sm md:text-base">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8 text-sm md:text-base">
         <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ai-generator-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор каруселей</Link></li>
+        <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ai-generator-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор каруселей для Instagram</Link></li>
+        <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-karuselej-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор каруселей для LinkedIn</Link></li>
         <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор контента</Link></li>
         <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-postov-instagram" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор постов</Link></li>
+        <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор постов для Threads</Link></li>
       </ul>
+    </div>
+  </section>
+);
+
+const BlogSEOTextRu = () => (
+  <section className="py-8 px-6 relative z-10 w-full bg-[#050505] text-center">
+    <div className="max-w-2xl mx-auto">
+      <p className="text-zinc-500 text-sm leading-relaxed mb-4">
+        Этот раздел содержит идеи контента, хуки, подписи и шаблоны для соцсетей.
+      </p>
+      <p className="text-zinc-500 text-sm leading-relaxed">
+        Используйте их, чтобы быстрее создавать посты и карусели с помощью ИИ.
+      </p>
     </div>
   </section>
 );
@@ -118,8 +147,10 @@ export const BlogPageRu = () => (
     <BlogSEOHeadRu />
     <Header />
     <BlogHeroRu />
+    <PopularBlockRu />
     <BlogCategoriesRu />
     <BlogInternalLinksRu />
+    <BlogSEOTextRu />
     <Footer />
     <CookieBanner />
   </MainLayout>
