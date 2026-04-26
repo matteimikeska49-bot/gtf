@@ -41,17 +41,39 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "GoToFlow",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "description": "AI content generator for social media. Create posts, carousels, and reels in seconds.",
-      "url": "https://gotoflow.io",
-      "image": "https://gotoflow.io/favicon-96x96.png",
-      "brand": {
-        "@type": "Brand",
-        "name": "GoToFlow"
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://gotoflow.io/#organization",
+          "name": "GoToFlow",
+          "url": "https://gotoflow.io/",
+          "logo": "https://gotoflow.io/favicon-96x96.png",
+          "sameAs": []
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://gotoflow.io/#website",
+          "url": "https://gotoflow.io/",
+          "name": "GoToFlow",
+          "publisher": {
+            "@id": "https://gotoflow.io/#organization"
+          },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://gotoflow.io/#software",
+          "name": "GoToFlow",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://gotoflow.io/",
+          "image": "https://gotoflow.io/favicon-96x96.png",
+          "description": "AI content generator for social media. Create posts, carousels, and reels in seconds.",
+          "brand": {
+            "@id": "https://gotoflow.io/#organization"
+          }
+        }
+      ]
     }
     </script>
 
