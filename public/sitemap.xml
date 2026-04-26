@@ -35,4 +35,36 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-carousel-maker" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/ai-generator-karuselej" />
   </url>
+  <url>
+    <loc>https://gotoflow.io/ai-content-generator</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-content-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/generator-kontenta" />
+  </url>
+  <url>
+    <loc>https://gotoflow.io/ru/generator-kontenta</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-content-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/generator-kontenta" />
+  </url>
+  <url>
+    <loc>https://gotoflow.io/ai-instagram-post-generator</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-instagram-post-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/generator-postov-instagram" />
+  </url>
+  <url>
+    <loc>https://gotoflow.io/ru/generator-postov-instagram</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-instagram-post-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/generator-postov-instagram" />
+  </url>
 </urlset>

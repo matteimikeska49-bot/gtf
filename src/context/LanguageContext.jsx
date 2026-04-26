@@ -18,8 +18,8 @@ const translations = {
  */
 function getInitialLang(pathname) {
   // 1. Explicit SEO pages strictly follow URL
-  if (pathname === '/ru/ai-generator-karuselej') return 'RU';
-  if (pathname === '/ai-carousel-maker') return 'EN';
+  if (pathname === '/ru/ai-generator-karuselej' || pathname === '/ru/generator-kontenta' || pathname === '/ru/generator-postov-instagram') return 'RU';
+  if (pathname === '/ai-carousel-maker' || pathname === '/ai-content-generator' || pathname === '/ai-instagram-post-generator') return 'EN';
 
   // 2. Check saved preference
   const saved = localStorage.getItem('lang');
@@ -75,9 +75,9 @@ export const LanguageProvider = ({ children }) => {
 
   // Sync lang state when URL changes (e.g., browser back/forward)
   useEffect(() => {
-    if (location.pathname === '/ai-carousel-maker') {
+    if (location.pathname === '/ai-carousel-maker' || location.pathname === '/ai-content-generator' || location.pathname === '/ai-instagram-post-generator') {
       setLangState('EN');
-    } else if (location.pathname === '/ru/ai-generator-karuselej') {
+    } else if (location.pathname === '/ru/ai-generator-karuselej' || location.pathname === '/ru/generator-kontenta' || location.pathname === '/ru/generator-postov-instagram') {
       setLangState('RU');
     } else if (location.pathname === '/ru' || location.pathname === '/ru/') {
       setLangState('RU');
@@ -125,6 +125,14 @@ export const LanguageProvider = ({ children }) => {
       navigate('/ru/ai-generator-karuselej');
     } else if (location.pathname === '/ru/ai-generator-karuselej' && newLang === 'EN') {
       navigate('/ai-carousel-maker');
+    } else if (location.pathname === '/ai-content-generator' && newLang === 'RU') {
+      navigate('/ru/generator-kontenta');
+    } else if (location.pathname === '/ru/generator-kontenta' && newLang === 'EN') {
+      navigate('/ai-content-generator');
+    } else if (location.pathname === '/ai-instagram-post-generator' && newLang === 'RU') {
+      navigate('/ru/generator-postov-instagram');
+    } else if (location.pathname === '/ru/generator-postov-instagram' && newLang === 'EN') {
+      navigate('/ai-instagram-post-generator');
     } else if (newLang === 'RU') {
       navigate('/ru');
     } else {
