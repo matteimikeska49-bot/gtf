@@ -376,7 +376,7 @@ export const LICarouselSEOBlock = () => (
         <p>The benefits of <strong className="text-zinc-200">AI content</strong> generation for carousels are significant: faster production, consistent quality, and the ability to test multiple angles without extra effort. Whether you're a creator, marketer, or founder, an AI carousel maker removes the hardest part of social media — knowing what to say.</p>
       </div>
     </div>
-  <div className="mt-8 pt-8 border-t border-white/10 text-center"><p className="text-zinc-500 text-sm">You can also use our <Link to="/ai-carousel-maker" className="text-pink-400 hover:text-pink-300 underline underline-offset-4">AI carousel maker</Link> or <Link to="/ai-content-generator" className="text-pink-400 hover:text-pink-300 underline underline-offset-4">content generator</Link>.</p></div>
+  
     </section>
 );
 
@@ -477,6 +477,15 @@ export const LinkedInCarouselPage = () => (
     <LICarouselDifferentiation />
     <LICarouselShowcase />
     <LICarouselSEOBlock />
+    <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
+      <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
+        <h3 className="text-white font-medium mb-4 text-base md:text-lg">Create more than just LinkedIn carousels:</h3>
+        <ul className="space-y-3 text-sm md:text-base">
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ai-content-generator" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Generate full content with our AI content generator</Link></li>
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ai-instagram-post-generator" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Create Instagram posts for other platforms</Link></li>
+        </ul>
+      </div>
+    </section>
     <LICarouselFAQ />
     <LICarouselBottomCTA />
     <Footer />

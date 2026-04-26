@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Sparkles, CornerDownLeft, Download, ChevronDown, Heart, Eye, Star, X, Check, Clock, Zap, Target, Fingerprint, Settings2, Layers, ImageIcon } from 'lucide-react';
@@ -471,6 +472,15 @@ export const AIContentPage = () => (
     <ContentHowItWorks />
     <ContentDifferentiation />
     <ContentSEOBlock />
+    <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
+      <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
+        <h3 className="text-white font-medium mb-4 text-base md:text-lg">Turn ideas into structured content:</h3>
+        <ul className="space-y-3 text-sm md:text-base">
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ai-carousel-maker" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Create carousels</Link></li>
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/linkedin-carousel-maker" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Generate LinkedIn content</Link></li>
+        </ul>
+      </div>
+    </section>
     <ContentFAQ />
     <ContentBottomCTA />
     <Footer />

@@ -18,8 +18,8 @@ const translations = {
  */
 function getInitialLang(pathname) {
   // 1. Explicit SEO pages strictly follow URL
-  if (pathname === '/ru/ai-generator-karuselej' || pathname === '/ru/generator-kontenta' || pathname === '/ru/generator-postov-instagram' || pathname === '/ru/generator-karuselej-linkedin') return 'RU';
-  if (pathname === '/ai-carousel-maker' || pathname === '/ai-content-generator' || pathname === '/ai-instagram-post-generator' || pathname === '/linkedin-carousel-maker') return 'EN';
+  if (pathname === '/ru/ai-generator-karuselej' || pathname === '/ru/generator-kontenta' || pathname === '/ru/generator-postov-instagram' || pathname === '/ru/generator-karuselej-linkedin' || pathname === '/ru/blog') return 'RU';
+  if (pathname === '/ai-carousel-maker' || pathname === '/ai-content-generator' || pathname === '/ai-instagram-post-generator' || pathname === '/linkedin-carousel-maker' || pathname === '/blog') return 'EN';
 
   // 2. Check saved preference
   const saved = localStorage.getItem('lang');
@@ -75,9 +75,9 @@ export const LanguageProvider = ({ children }) => {
 
   // Sync lang state when URL changes (e.g., browser back/forward)
   useEffect(() => {
-    if (location.pathname === '/ai-carousel-maker' || location.pathname === '/ai-content-generator' || location.pathname === '/ai-instagram-post-generator' || location.pathname === '/linkedin-carousel-maker') {
+    if (location.pathname === '/ai-carousel-maker' || location.pathname === '/ai-content-generator' || location.pathname === '/ai-instagram-post-generator' || location.pathname === '/linkedin-carousel-maker' || location.pathname === '/blog') {
       setLangState('EN');
-    } else if (location.pathname === '/ru/ai-generator-karuselej' || location.pathname === '/ru/generator-kontenta' || location.pathname === '/ru/generator-postov-instagram' || location.pathname === '/ru/generator-karuselej-linkedin') {
+    } else if (location.pathname === '/ru/ai-generator-karuselej' || location.pathname === '/ru/generator-kontenta' || location.pathname === '/ru/generator-postov-instagram' || location.pathname === '/ru/generator-karuselej-linkedin' || location.pathname === '/ru/blog') {
       setLangState('RU');
     } else if (location.pathname === '/ru' || location.pathname === '/ru/') {
       setLangState('RU');
@@ -137,6 +137,10 @@ export const LanguageProvider = ({ children }) => {
       navigate('/ru/generator-karuselej-linkedin');
     } else if (location.pathname === '/ru/generator-karuselej-linkedin' && newLang === 'EN') {
       navigate('/linkedin-carousel-maker');
+    } else if (location.pathname === '/blog' && newLang === 'RU') {
+      navigate('/ru/blog');
+    } else if (location.pathname === '/ru/blog' && newLang === 'EN') {
+      navigate('/blog');
     } else if (newLang === 'RU') {
       navigate('/ru');
     } else {

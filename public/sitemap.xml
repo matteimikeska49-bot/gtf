@@ -83,4 +83,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/linkedin-carousel-maker" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/generator-karuselej-linkedin" />
   </url>
+  <url>
+    <loc>https://gotoflow.io/blog</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/blog" />
+  </url>
+  <url>
+    <loc>https://gotoflow.io/ru/blog</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/blog" />
+  </url>
 </urlset>

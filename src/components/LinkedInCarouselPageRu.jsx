@@ -377,7 +377,7 @@ export const LICarouselSEOBlockRu = () => (
         <p>Создать карусель с помощью ИИ — значит ускорить производство контента, получить стабильное качество и возможность тестировать разные подходы. Будь вы эксперт или фаундер, генератор забирает на себя самую сложную часть работы.</p>
       </div>
     </div>
-  <div className="mt-8 pt-8 border-t border-white/10 text-center"><p className="text-zinc-500 text-sm">Вы также можете использовать <Link to="/ru/ai-generator-karuselej" className="text-pink-400 hover:text-pink-300 underline underline-offset-4">генератор каруселей</Link> или <Link to="/ru/generator-kontenta" className="text-pink-400 hover:text-pink-300 underline underline-offset-4">генератор контента</Link>.</p></div>
+  
     </section>
 );
 
@@ -477,6 +477,15 @@ export const LinkedInCarouselPageRu = () => (
     <LICarouselDifferentiationRu />
     <LICarouselShowcaseRu />
     <LICarouselSEOBlockRu />
+    <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
+      <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
+        <h3 className="text-white font-medium mb-4 text-base md:text-lg">Создавайте не только карусели для LinkedIn:</h3>
+        <ul className="space-y-3 text-sm md:text-base">
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор полного контента</Link></li>
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-postov-instagram" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор постов для Instagram</Link></li>
+        </ul>
+      </div>
+    </section>
     <LICarouselFAQRu />
     <LICarouselBottomCTARu />
     <Footer />
