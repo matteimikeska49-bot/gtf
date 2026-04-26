@@ -16,28 +16,21 @@ const translations = {
  * 2. Current URL path (/ru → RU, / → EN)
  * 3. Browser language auto-detection (first visit only)
  */
-/**
- * Returns true if the pathname belongs to a page that must always render in EN,
- * regardless of saved preference or browser language.
- */
-function isEnOnlyPage(pathname) {
-  return pathname === '/ai-carousel-maker';
-}
-
 function getInitialLang(pathname) {
-  // EN-only pages always return EN
-  if (isEnOnlyPage(pathname)) return 'EN';
+  // 1. Explicit SEO pages strictly follow URL
+  if (pathname === '/ru/ai-generator-karuselej') return 'RU';
+  if (pathname === '/ai-carousel-maker') return 'EN';
 
-  // 1. Check saved preference
+  // 2. Check saved preference
   const saved = localStorage.getItem('lang');
   if (saved === 'ru') return 'RU';
   if (saved === 'en') return 'EN';
 
-  // 2. Check URL
+  // 3. Check URL
   if (pathname === '/ru' || pathname === '/ru/') return 'RU';
   if (pathname === '/' || pathname === '') return 'EN';
 
-  // 3. Auto-detect from browser (first visit only)
+  // 4. Auto-detect from browser (first visit only)
   const browserLang = (navigator.language || '').toLowerCase();
   const slavicPrefixes = ['ru', 'be', 'uk', 'kk'];
   if (slavicPrefixes.some((prefix) => browserLang.startsWith(prefix))) {
@@ -82,8 +75,10 @@ export const LanguageProvider = ({ children }) => {
 
   // Sync lang state when URL changes (e.g., browser back/forward)
   useEffect(() => {
-    if (isEnOnlyPage(location.pathname)) {
+    if (location.pathname === '/ai-carousel-maker') {
       setLangState('EN');
+    } else if (location.pathname === '/ru/ai-generator-karuselej') {
+      setLangState('RU');
     } else if (location.pathname === '/ru' || location.pathname === '/ru/') {
       setLangState('RU');
     } else if (location.pathname === '/' || location.pathname === '') {
@@ -126,7 +121,11 @@ export const LanguageProvider = ({ children }) => {
     localStorage.setItem('lang', newLang === 'RU' ? 'ru' : 'en');
 
     // Navigate to the correct URL
-    if (newLang === 'RU') {
+    if (location.pathname === '/ai-carousel-maker' && newLang === 'RU') {
+      navigate('/ru/ai-generator-karuselej');
+    } else if (location.pathname === '/ru/ai-generator-karuselej' && newLang === 'EN') {
+      navigate('/ai-carousel-maker');
+    } else if (newLang === 'RU') {
       navigate('/ru');
     } else {
       navigate('/');

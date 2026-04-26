@@ -17,6 +17,7 @@ import { BottomCTA } from './components/BottomCTA';
 import { Footer } from './components/Footer';
 import { CookieBanner } from './components/CookieBanner';
 import { CarouselPage } from './components/CarouselPage';
+import { CarouselPageRu } from './components/CarouselPageRu';
 
 const LandingPage = () => (
   <MainLayout>
@@ -44,6 +45,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/ru" element={<LandingPage />} />
         <Route path="/ai-carousel-maker" element={<CarouselPage />} />
+        <Route path="/ru/ai-generator-karuselej" element={<CarouselPageRu />} />
       </Routes>
     </LanguageProvider>
   );
