@@ -22,6 +22,8 @@ import { AIContentPage } from './components/AIContentPage';
 import { InstagramPostPage } from './components/InstagramPostPage';
 import { AIContentPageRu } from './components/AIContentPageRu';
 import { InstagramPostPageRu } from './components/InstagramPostPageRu';
+import { LinkedInCarouselPage } from './components/LinkedInCarouselPage';
+import { LinkedInCarouselPageRu } from './components/LinkedInCarouselPageRu';
 const LandingPage = () => (
   <MainLayout>
     <Header />
@@ -53,6 +55,8 @@ function App() {
         <Route path="/ai-instagram-post-generator" element={<InstagramPostPage />} />
         <Route path="/ru/generator-kontenta" element={<AIContentPageRu />} />
         <Route path="/ru/generator-postov-instagram" element={<InstagramPostPageRu />} />
+        <Route path="/linkedin-carousel-maker" element={<LinkedInCarouselPage />} />
+        <Route path="/ru/generator-karuselej-linkedin" element={<LinkedInCarouselPageRu />} />
       </Routes>
     </LanguageProvider>
   );
