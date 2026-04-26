@@ -16,7 +16,18 @@ const translations = {
  * 2. Current URL path (/ru → RU, / → EN)
  * 3. Browser language auto-detection (first visit only)
  */
+/**
+ * Returns true if the pathname belongs to a page that must always render in EN,
+ * regardless of saved preference or browser language.
+ */
+function isEnOnlyPage(pathname) {
+  return pathname === '/ai-carousel-maker';
+}
+
 function getInitialLang(pathname) {
+  // EN-only pages always return EN
+  if (isEnOnlyPage(pathname)) return 'EN';
+
   // 1. Check saved preference
   const saved = localStorage.getItem('lang');
   if (saved === 'ru') return 'RU';
@@ -71,7 +82,9 @@ export const LanguageProvider = ({ children }) => {
 
   // Sync lang state when URL changes (e.g., browser back/forward)
   useEffect(() => {
-    if (location.pathname === '/ru' || location.pathname === '/ru/') {
+    if (isEnOnlyPage(location.pathname)) {
+      setLangState('EN');
+    } else if (location.pathname === '/ru' || location.pathname === '/ru/') {
       setLangState('RU');
     } else if (location.pathname === '/' || location.pathname === '') {
       setLangState('EN');

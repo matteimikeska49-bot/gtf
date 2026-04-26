@@ -409,8 +409,8 @@ export const en = {
   },
 
   cookie: {
-    message: 'We use cookies to improve the website, analyze traffic, and make the service more useful.',
-    accept: 'Accept',
+    message: 'We use cookies to improve your experience and analyze site traffic.',
+    accept: 'Got it',
     learnMore: 'Learn more'
   },
 

@@ -7,7 +7,7 @@ const CTA_URL = 'https://app.gotoflow.io';
 /* ── SEO Head ── */
 export const SEOHead = () => {
   useEffect(() => {
-    document.title = 'AI Carousel Maker — Create Instagram & LinkedIn Carousels with AI | GoToFlow';
+    document.title = 'AI Carousel Maker — Create Ready-to-Publish Carousels in 60 Seconds | GoToFlow';
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let el = document.querySelector(sel);
@@ -22,7 +22,7 @@ export const SEOHead = () => {
       el.setAttribute('rel', rel); el.setAttribute('href', href);
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
-    setMeta('description', 'Create high-converting Instagram and LinkedIn carousels with AI. Generate hooks, structure and slide content in seconds.');
+    setMeta('description', 'Create a ready-to-publish Instagram or LinkedIn carousel in 60 seconds with AI. From idea to final slides — no design skills, no team, no templates.');
     setLink('canonical', 'https://gotoflow.io/ai-carousel-maker');
     setLink('alternate', 'https://gotoflow.io/ai-carousel-maker', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/ai-generator-karuselej', { hreflang: 'ru' });
@@ -48,7 +48,7 @@ export const CarouselHero = () => (
         </h1>
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance">
-        Generate a complete carousel (hook → slides → CTA) in seconds.<br className="hidden md:block" /> No design skills, no team, no templates.
+        Generate a complete Instagram or LinkedIn carousel in seconds — from idea to final slides.<br className="hidden md:block" /> No design skills, no team, no templates.
       </motion.p>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-col items-center gap-4 w-full sm:w-auto">
         <button onClick={() => window.location.href = CTA_URL} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
