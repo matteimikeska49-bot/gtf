@@ -58,8 +58,8 @@ const PopularBlock = () => (
       <h3 className="text-zinc-500 text-sm font-medium mb-3">Popular:</h3>
       <ul className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm md:text-base justify-center items-center">
         <li><Link to="/blog/content-ideas-for-social-media" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 100 Content Ideas</Link></li>
-        <li><Link to="/ai-carousel-maker" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 Carousel Ideas</Link></li>
-        <li><Link to="/linkedin-carousel-maker" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 LinkedIn Carousel Ideas</Link></li>
+        <li><Link to="/blog/carousel-ideas" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 Carousel Ideas</Link></li>
+        <li><Link to="/blog/linkedin-carousel-ideas" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 LinkedIn Carousel Ideas</Link></li>
       </ul>
     </div>
   </section>

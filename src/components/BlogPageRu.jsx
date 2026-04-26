@@ -58,8 +58,8 @@ const PopularBlockRu = () => (
       <h3 className="text-zinc-500 text-sm font-medium mb-3">Популярное:</h3>
       <ul className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm md:text-base justify-center items-center">
         <li><Link to="/blog/idei-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 100 идей контента</Link></li>
-        <li><Link to="/ru/ai-generator-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 идей каруселей</Link></li>
-        <li><Link to="/ru/generator-karuselej-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 идей каруселей для LinkedIn</Link></li>
+        <li><Link to="/blog/idei-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 идей каруселей</Link></li>
+        <li><Link to="/blog/idei-karuselej-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 идей каруселей для LinkedIn</Link></li>
       </ul>
     </div>
   </section>
