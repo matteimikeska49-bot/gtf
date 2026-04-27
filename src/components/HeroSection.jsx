@@ -63,8 +63,9 @@ const IsometricGrid = () => (
 );
 
 const AbstractUIMockup = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const isMobile = useIsMobile();
+  const isRu = lang === 'RU';
 
   /* ── Mobile-only: animated tab index ── */
   const [activeTab, setActiveTab] = useState(0);
@@ -123,10 +124,10 @@ const AbstractUIMockup = () => {
           <div className="absolute right-0 top-0 w-64 h-64 bg-purple-500/10 blur-[80px] rounded-full pointer-events-none" />
 
           <div className="flex items-center justify-between relative z-10">
-            <h3 className="text-2xl font-bold text-white tracking-tight truncate pr-2">{t('hero.mockup.postGenerationFlow')}</h3>
+            <h3 className="text-2xl font-bold text-white tracking-tight truncate pr-2">Post Generation Flow</h3>
             <div className="shrink-0 px-4 py-2 rounded-full border border-white/10 bg-[#050505] text-xs font-semibold text-zinc-300 flex items-center gap-2 shadow-lg backdrop-blur-md">
                <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse shadow-[0_0_10px_#ec4899]" />
-               {t('hero.mockup.aiActive')}
+               {isRu ? 'ИИ активен' : 'AI Active'}
             </div>
           </div>
 
@@ -185,10 +186,10 @@ const AbstractUIMockup = () => {
 
           {/* Header row */}
           <div className="flex items-center justify-between relative z-10">
-            <h3 className="text-[15px] font-bold text-white tracking-tight">{t('hero.mockup.postGenerationFlow')}</h3>
+            <h3 className="text-[15px] font-bold text-white tracking-tight">Post Generation Flow</h3>
             <div className="shrink-0 px-2.5 py-1 rounded-full border border-white/10 bg-[#050505] text-[9px] font-semibold text-zinc-300 flex items-center gap-1.5 shadow-lg backdrop-blur-md">
                <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse shadow-[0_0_8px_#ec4899]" />
-               {t('hero.mockup.aiActive')}
+               {isRu ? 'ИИ активен' : 'AI Active'}
             </div>
           </div>
 
@@ -214,11 +215,11 @@ const AbstractUIMockup = () => {
 
             {/* Input section */}
             <div className="relative z-10">
-              <div className="text-[9px] uppercase tracking-[0.14em] text-zinc-600 font-bold mb-1.5">Input</div>
+              <div className="text-[9px] uppercase tracking-[0.14em] text-zinc-600 font-bold mb-1.5">{isRu ? "Запрос" : "Input"}</div>
               <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08]">
                 <PenTool className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
                 <span className="text-[11px] text-zinc-400 font-medium truncate">
-                  {activeTab === 0 ? '"5 growth hacks for SaaS"' : activeTab === 1 ? '"LinkedIn carousel on branding"' : '"3 hooks for product launch"'}
+                  {activeTab === 0 ? (isRu ? '"5 хаков для роста SaaS"' : '"5 growth hacks for SaaS"') : activeTab === 1 ? (isRu ? '"Карусель LinkedIn про брендинг"' : '"LinkedIn carousel on branding"') : (isRu ? '"3 хука для запуска продукта"' : '"3 hooks for product launch"')}
                 </span>
               </div>
             </div>
@@ -232,7 +233,7 @@ const AbstractUIMockup = () => {
 
             {/* Output section */}
             <div className="relative z-10">
-              <div className="text-[9px] uppercase tracking-[0.14em] text-zinc-600 font-bold mb-1.5">Generated</div>
+              <div className="text-[9px] uppercase tracking-[0.14em] text-zinc-600 font-bold mb-1.5">{isRu ? "Результат" : "Generated"}</div>
               <div className="flex flex-col gap-2 px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08]">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -245,20 +246,20 @@ const AbstractUIMockup = () => {
                   >
                     {activeTab === 0 && (
                       <>
-                        <span className="text-[11px] text-zinc-300 font-medium">✓ Hook + 3 content blocks</span>
-                        <span className="text-[11px] text-zinc-500">Post structure + CTA ready</span>
+                        <span className="text-[11px] text-zinc-300 font-medium">{isRu ? "✓ Хук + 3 контентных блока" : "✓ Hook + 3 content blocks"}</span>
+                        <span className="text-[11px] text-zinc-500">{isRu ? "Структура поста + призыв к действию готовы" : "Post structure + CTA ready"}</span>
                       </>
                     )}
                     {activeTab === 1 && (
                       <>
-                        <span className="text-[11px] text-zinc-300 font-medium">✓ 8 slides + cover design</span>
-                        <span className="text-[11px] text-zinc-500">Carousel copy + visual layout</span>
+                        <span className="text-[11px] text-zinc-300 font-medium">{isRu ? "✓ 8 слайдов + дизайн обложки" : "✓ 8 slides + cover design"}</span>
+                        <span className="text-[11px] text-zinc-500">{isRu ? "Текст карусели + визуальный макет" : "Carousel copy + visual layout"}</span>
                       </>
                     )}
                     {activeTab === 2 && (
                       <>
-                        <span className="text-[11px] text-zinc-300 font-medium">✓ 3 hooks + script outline</span>
-                        <span className="text-[11px] text-zinc-500">Reel structure + captions</span>
+                        <span className="text-[11px] text-zinc-300 font-medium">{isRu ? "✓ 3 хука + структура сценария" : "✓ 3 hooks + script outline"}</span>
+                        <span className="text-[11px] text-zinc-500">{isRu ? "Структура Reels + подписи" : "Reel structure + captions"}</span>
                       </>
                     )}
                   </motion.div>
