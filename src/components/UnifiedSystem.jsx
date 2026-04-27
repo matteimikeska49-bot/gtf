@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { X, Check, Clock, Zap, Target, CreditCard, Rocket, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 export const UnifiedSystem = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
   const metricsTexts = t('unified.metrics') || [];
   const oldWay = t('unified.oldWay') || [];
   const newWay = t('unified.newWay') || [];
@@ -58,7 +60,7 @@ export const UnifiedSystem = () => {
           initial={{ opacity: 0, y: 56 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.9, ease: 'easeOut' }}
+          transition={{ duration: isMobile ? 0.6 : 0.9, ease: 'easeOut' }}
           className="relative"
         >
           {/* Плавный теплый фон убран */}

@@ -4,11 +4,13 @@ import { Crown, Zap, Rocket } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { BillingToggle } from './pricing/BillingToggle';
 import { PlanCard } from './pricing/PlanCard';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 /* ─── Main Pricing Section ─── */
 export const PricingSection = () => {
   const [isYearly, setIsYearly] = useState(false);
   const { t, lang } = useLanguage();
+  const isMobile = useIsMobile();
   const rawPlans = t('pricing.plans') || [];
 
   const plans = [
@@ -61,7 +63,7 @@ export const PricingSection = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, ease: 'easeOut' }}
+          transition={{ duration: isMobile ? 0.6 : 0.8, ease: 'easeOut' }}
           className="text-center mb-14 flex flex-col items-center gap-6"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-pink-500/15 bg-pink-500/[0.06] text-pink-300 text-xs tracking-widest uppercase font-bold backdrop-blur-md">

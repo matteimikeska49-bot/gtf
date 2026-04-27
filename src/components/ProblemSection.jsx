@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 /* ── Stagger animation preset ── */
 const cardVariants = {
@@ -18,7 +19,8 @@ const cardVariants = {
 
 export const ProblemSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: typeof window !== 'undefined' && window.innerWidth < 768 ? '0px' : '-80px' });
+  const isMobile = useIsMobile();
+  const inView = useInView(ref, { once: true, margin: isMobile ? '0px' : '-80px' });
   const { t } = useLanguage();
   const cards = t('problem.cards') || [];
 
@@ -69,7 +71,7 @@ export const ProblemSection = () => {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, ease: [0.25, 1, 0.5, 1], delay: 0.15 }}
+        transition={{ duration: isMobile ? 0.6 : 0.8, ease: [0.25, 1, 0.5, 1], delay: 0.15 }}
         className="relative w-full max-w-6xl mx-auto px-4 z-10"
       >
         <div className="relative bg-white/[0.02] border border-white/[0.05] backdrop-blur-xl rounded-[2rem] p-6 md:p-10 lg:p-12 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden">

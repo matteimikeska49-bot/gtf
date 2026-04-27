@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, LayoutDashboard, Search, PenTool, Play, Zap, ArrowRight, BarChart3, Settings } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const RotatingBadge = () => {
   const [index, setIndex] = useState(0);
@@ -63,11 +64,12 @@ const IsometricGrid = () => (
 
 const AbstractUIMockup = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
   return (
     <motion.div 
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.9, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: isMobile ? 0.6 : 0.9, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
       className="block w-full max-w-[380px] md:max-w-5xl mt-8 md:mt-20 relative mx-auto perspective-1000"
     >
       {/* Огромное свечение за дашбордом — эффект «парения» */}
@@ -176,6 +178,7 @@ const AbstractUIMockup = () => {
 
 export const HeroSection = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
   return (
     <section className="pt-32 pb-16 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
       {/* Isometric grid background layer */}
@@ -198,7 +201,7 @@ export const HeroSection = () => {
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, delay: 0.1, ease: "easeOut" }}
+           transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1, ease: "easeOut" }}
            className="max-w-3xl mx-auto w-full"
         >
           <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
@@ -211,7 +214,7 @@ export const HeroSection = () => {
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance"
         >
           {t('hero.subtitlePart1')} <br className="hidden md:block"/> {t('hero.subtitlePart2')}
@@ -220,7 +223,7 @@ export const HeroSection = () => {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3, ease: "easeOut" }}
           className="flex flex-col items-center gap-4 w-full sm:w-auto"
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto">

@@ -6,6 +6,7 @@ import { Footer } from './Footer';
 import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
 import { Link } from 'react-router-dom';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 
 
@@ -42,7 +43,9 @@ export const SEOHeadRu = () => {
 };
 
 /* ── Hero (RU) ── */
-export const LICarouselHeroRu = () => (
+export const LICarouselHeroRu = () => {
+  const isMobile = useIsMobile();
+  return (
   <section className="pt-32 pb-16 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
     <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] md:w-[1200px] h-[700px] md:h-[900px] bg-[#ec4899]/[0.07] blur-[150px] rounded-full pointer-events-none" />
     <div className="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10 w-full">
@@ -52,15 +55,15 @@ export const LICarouselHeroRu = () => (
           <span className="text-sm text-zinc-300 whitespace-nowrap">Генератор каруселей для LinkedIn</span>
         </div>
       </motion.div>
-      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, delay: 0.1 }} className="max-w-3xl mx-auto w-full">
+      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="max-w-3xl mx-auto w-full">
         <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
           Генератор каруселей для LinkedIn —<br className="hidden md:block" /> <span className="text-gradient-brand">готовая карусель за 60 секунд</span>
         </h1>
       </motion.div>
-      <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, delay: 0.2 }} className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance">
+      <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance">
         От идеи до готовых слайдов — структура, текст и логика карусели генерируются автоматически.<br className="hidden md:block" /> Без навыков дизайна, без команды, без шаблонов.
       </motion.p>
-      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, delay: 0.3 }} className="flex flex-col items-center gap-4 w-full sm:w-auto">
+      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }} className="flex flex-col items-center gap-4 w-full sm:w-auto">
         <button onClick={() => window.location.href = CTA_URL} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
           Создать карусель <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
@@ -69,6 +72,7 @@ export const LICarouselHeroRu = () => (
     </div>
   </section>
 );
+};
 
 /* ── Showcase (RU) ── */
 const carouselCards = [
@@ -139,7 +143,8 @@ const problemCards = [
 
 export const LICarouselProblemRu = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: typeof window !== 'undefined' && window.innerWidth < 768 ? '0px' : '-80px' });
+  const isMobile = useIsMobile();
+  const inView = useInView(ref, { once: true, margin: isMobile ? '0px' : '-80px' });
   return (
     <section ref={ref} className="relative z-10 py-24 md:py-32 w-full flex flex-col items-center bg-[#050505]">
       <motion.div animate={{ opacity: [0.35,0.55,0.35], scale: [1,1.05,1] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }} className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[450px] rounded-full -z-10 pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(236,72,153,0.14) 0%, rgba(249,115,22,0.07) 50%, transparent 75%)', filter: 'blur(100px)' }} />
@@ -149,7 +154,7 @@ export const LICarouselProblemRu = () => {
       <motion.p initial={{ opacity:0,y:12 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.7,delay:0.08 }} className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto text-center mb-16 relative z-20 px-6">
         Вы тратите часы на слайды, но результат всё равно не конвертирует
       </motion.p>
-      <motion.div initial={{ opacity:0,y:30 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8,delay:0.15 }} className="relative w-full max-w-6xl mx-auto px-4 z-10">
+      <motion.div initial={{ opacity:0,y:30 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration: isMobile ? 0.6 : 0.8,delay:0.15 }} className="relative w-full max-w-6xl mx-auto px-4 z-10">
         <div className="relative bg-white/[0.02] border border-white/[0.05] backdrop-blur-xl rounded-[2rem] p-6 md:p-10 lg:p-12 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden">
           <div className="absolute top-0 inset-x-[15%] h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent pointer-events-none" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 relative z-20">
@@ -167,7 +172,9 @@ export const LICarouselProblemRu = () => {
 };
 
 /* ── Comparison (RU) ── */
-export const LICarouselComparisonRu = () => (
+export const LICarouselComparisonRu = () => {
+  const isMobile = useIsMobile();
+  return (
   <section className="py-24 md:py-32 px-6 relative z-10 w-full bg-[#050505]">
     <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[250vw] max-w-[2000px] h-[1200px] pointer-events-none -z-0 opacity-100 flex justify-center">
       <div className="absolute inset-0 mix-blend-screen" style={{ background: 'radial-gradient(circle at 60% 50%, rgba(251,146,60,0.15) 0%, transparent 35%), radial-gradient(circle at 40% 50%, rgba(236,72,153,0.12) 0%, transparent 35%)' }} />
@@ -179,7 +186,7 @@ export const LICarouselComparisonRu = () => (
         </h2>
         <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-medium">Поиск идей, написание хуков, структура слайдов и копирайтинг обычно живут в 4+ разных инструментах. В GoToFlow это один процесс создания карусели.</p>
       </motion.div>
-      <motion.div initial={{ opacity:0,y:56 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.9 }} className="relative">
+      <motion.div initial={{ opacity:0,y:56 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ duration: isMobile ? 0.6 : 0.9 }} className="relative">
         <div className="relative rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 lg:p-14">
           <div className="absolute inset-0 bg-zinc-950/40 backdrop-blur-3xl rounded-[2rem] md:rounded-[2.5rem] border border-white/[0.05] pointer-events-none -z-30" style={{ boxShadow:'0 50px 100px -20px rgba(0,0,0,1)' }} />
           <div className="relative z-10 flex flex-col">
@@ -224,6 +231,7 @@ export const LICarouselComparisonRu = () => (
     </div>
   </section>
 );
+};
 
 
 
@@ -274,11 +282,13 @@ const hiwSteps = [
   { icon: Download, number: 3, title: 'Получите готовые слайды', desc: 'Проверьте, отредактируйте при необходимости и скачайте готовую карусель.', micro: <ExportMockup/> },
 ];
 
-export const LICarouselHowItWorksRu = () => (
+export const LICarouselHowItWorksRu = () => {
+  const isMobile = useIsMobile();
+  return (
   <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-black">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-orange-500/15 blur-[120px] -z-10 pointer-events-none rounded-full"/>
     <div className="max-w-7xl mx-auto bg-[#050505]/60 border border-white/[0.08] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-2xl relative z-10 shadow-[0_30px_100px_-15px_rgba(0,0,0,1),0_0_40px_rgba(236,72,153,0.15)]">
-      <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8}} className="text-center mb-16 flex flex-col items-center">
+      <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}} className="text-center mb-16 flex flex-col items-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Sparkles className="w-3.5 h-3.5"/>Как это работает</div>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">От идеи до готовой карусели за <span className="text-gradient-brand">3 простых шага</span></h2>
         <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed text-balance">ИИ делает всю тяжёлую работу — вы принимаете финальное решение.</p>
@@ -309,6 +319,7 @@ export const LICarouselHowItWorksRu = () => (
     </div>
   </section>
 );
+};
 
 /* ── Differentiation (RU) ── */
 const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
@@ -332,19 +343,21 @@ const diffPoints = [
   { icon: Zap, title: 'Готовая карусель, а не просто текст', desc: 'Получите готовую структурированную карусель — а не блок текста, который нужно вручную разбивать на слайды.' },
 ];
 
-export const LICarouselDifferentiationRu = () => (
+export const LICarouselDifferentiationRu = () => {
+  const isMobile = useIsMobile();
+  return (
   <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#0a0808] to-[#050505]">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[550px] bg-pink-600 opacity-[0.08] blur-[170px] rounded-full pointer-events-none"/>
     <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
       <div className="flex flex-col">
-        <motion.div initial={{opacity:0,x: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : -40, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 24 : 0}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8}}>
+        <motion.div initial={{opacity:0,x: isMobile ? 0 : -40, y: isMobile ? 24 : 0}} whileInView={{opacity:1,x:0,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Fingerprint className="w-3.5 h-3.5"/>Почему GoToFlow</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-[1.15] text-balance">GoToFlow <span className="text-gradient-brand">создаёт контент</span><br className="hidden lg:block"/> а не просто дизайн</h2>
           <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed text-balance mb-12">Пока другие сервисы дают вам пустой холст, GoToFlow генерирует полную карусель — структуру слайдов, тексты и логику — используя ИИ.</p>
         </motion.div>
         <div className="flex flex-col gap-4">
           {diffPoints.map((p,i) => (
-            <motion.div key={i} initial={{opacity:0,x: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : -30, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 20 : 0}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.6,delay:i*0.13}} className="flex items-start gap-5 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] group hover:border-white/10 hover:bg-white/[0.03] transition-all duration-300">
+            <motion.div key={i} initial={{opacity:0,x: isMobile ? 0 : -30, y: isMobile ? 20 : 0}} whileInView={{opacity:1,x:0,y:0}} viewport={{once:true}} transition={{duration:0.6,delay:i*0.13}} className="flex items-start gap-5 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] group hover:border-white/10 hover:bg-white/[0.03] transition-all duration-300">
               <div className="relative w-11 h-11 flex items-center justify-center rounded-2xl border border-white/5 bg-[#050505] shrink-0 group-hover:scale-110 transition-transform duration-500">
                 <div className="absolute inset-0 bg-pink-500 blur-xl opacity-15 group-hover:opacity-40 transition-opacity duration-500 rounded-2xl"/>
                 <p.icon className="w-5 h-5 text-pink-300 relative z-10"/>
@@ -365,6 +378,7 @@ export const LICarouselDifferentiationRu = () => (
     </div>
   </section>
 );
+};
 
 /* ── SEO Text Block (RU) ── */
 export const LICarouselSEOBlockRu = () => (
@@ -403,10 +417,11 @@ const FAQItem = ({ item, isOpen, onClick }) => (
 
 export const LICarouselFAQRu = () => {
   const [openIdx, setOpenIdx] = useState(null);
+  const isMobile = useIsMobile();
   return (
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
       <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
-        <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8}} className="text-center mb-14 flex flex-col items-center">
+        <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}} className="text-center mb-14 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">FAQ</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight text-balance">Частые <span className="text-gradient-brand">вопросы</span></h2>
           <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">Всё, что нужно знать про генерацию каруселей</p>
@@ -423,12 +438,13 @@ export const LICarouselFAQRu = () => {
 export const LICarouselBottomCTARu = () => {
   const [hover, setHover] = useState(false);
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: typeof window !== 'undefined' && window.innerWidth < 768 ? '0px' : '-100px' });
+  const isMobile = useIsMobile();
+  const inView = useInView(ref, { once: true, margin: isMobile ? '0px' : '-100px' });
   return (
     <section ref={ref} className="relative w-full overflow-hidden isolate" style={{background:'#050505'}}>
       <div className="absolute inset-0 pointer-events-none bg-[#050505]"/>
       <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-24 md:py-32">
-        <motion.div initial={{opacity:0,y:35}} animate={inView?{opacity:1,y:0}:{}} transition={{duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.9}} className="relative">
+        <motion.div initial={{opacity:0,y:35}} animate={inView?{opacity:1,y:0}:{}} transition={{duration: isMobile ? 0.6 : 0.9}} className="relative">
           <div className="absolute -inset-6 md:-inset-10 rounded-[3rem] pointer-events-none -z-10" style={{background:'radial-gradient(ellipse 70% 55% at 50% 50%, rgba(236,72,153,0.05) 0%, rgba(249,115,22,0.03) 40%, transparent 70%)',filter:'blur(60px)'}}/>
           <div className="group relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border border-white/[0.08] hover:border-white/[0.12] transition-colors duration-500" style={{background:'linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%)',backdropFilter:'blur(40px) saturate(1.2)',boxShadow:'0 0 30px rgba(236,72,153,0.04), 0 40px 80px -25px rgba(0,0,0,0.8)'}}>
             <div className="relative z-10 px-8 py-16 sm:px-12 sm:py-20 md:px-20 md:py-24 lg:px-28 lg:py-28 flex flex-col items-center text-center">

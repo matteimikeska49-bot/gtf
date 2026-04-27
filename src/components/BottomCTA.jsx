@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    BottomCTA — Final conversion block
@@ -24,8 +25,9 @@ const stagger = (i) => ({
 export const BottomCTA = () => {
   const [btnHover, setBtnHover] = useState(false);
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: typeof window !== 'undefined' && window.innerWidth < 768 ? '0px' : '-100px' });
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
+  const inView = useInView(ref, { once: true, margin: isMobile ? '0px' : '-100px' });
   const trustList = t('cta.trustList') || [];
 
   return (
@@ -48,7 +50,7 @@ export const BottomCTA = () => {
         <motion.div
           initial={{ opacity: 0, y: 35 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: isMobile ? 0.6 : 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="relative"
         >
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Fingerprint, Settings2, Zap, ImageIcon } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 /* ─── Premium Bento Screenshot Component ─── */
 const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
@@ -51,6 +52,7 @@ const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
 
 export const DifferentiationSection = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
   const rawPoints = t('differentiation.points') || [];
 
   const points = [
@@ -82,10 +84,10 @@ export const DifferentiationSection = () => {
         {/* ─── Колонка 1: Текст + список ─── */}
         <div className="flex flex-col">
           <motion.div
-            initial={{ opacity: 0, x: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : -40, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 24 : 0 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: isMobile ? 0 : -40, y: isMobile ? 24 : 0 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, ease: "easeOut" }}
+            transition={{ duration: isMobile ? 0.6 : 0.8, ease: "easeOut" }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
               <Fingerprint className="w-3.5 h-3.5" />
@@ -106,8 +108,8 @@ export const DifferentiationSection = () => {
             {points.map((point, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : -30, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 20 : 0 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: isMobile ? 0 : -30, y: isMobile ? 20 : 0 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.13, ease: "easeOut" }}
                 className="flex items-start gap-5 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] group hover:border-white/10 hover:bg-white/[0.03] transition-all duration-300"
