@@ -51,7 +51,7 @@ export const CarouselHowItWorksRu = () => (
   <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-black">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-orange-500/15 blur-[120px] -z-10 pointer-events-none rounded-full"/>
     <div className="max-w-7xl mx-auto bg-[#050505]/60 border border-white/[0.08] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-2xl relative z-10 shadow-[0_30px_100px_-15px_rgba(0,0,0,1),0_0_40px_rgba(236,72,153,0.15)]">
-      <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.8}} className="text-center mb-16 flex flex-col items-center">
+      <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8}} className="text-center mb-16 flex flex-col items-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Sparkles className="w-3.5 h-3.5"/>Как это работает</div>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">От идеи до готовой карусели за <span className="text-gradient-brand">3 простых шага</span></h2>
         <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed text-balance">ИИ делает всю тяжёлую работу — вы принимаете финальное решение.</p>
@@ -110,14 +110,14 @@ export const CarouselDifferentiationRu = () => (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[550px] bg-pink-600 opacity-[0.08] blur-[170px] rounded-full pointer-events-none"/>
     <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
       <div className="flex flex-col">
-        <motion.div initial={{opacity:0,x:-40}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.8}}>
+        <motion.div initial={{opacity:0,x: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : -40, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 24 : 0}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8}}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Fingerprint className="w-3.5 h-3.5"/>Почему GoToFlow</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-[1.15] text-balance">GoToFlow <span className="text-gradient-brand">создаёт контент</span><br className="hidden lg:block"/> а не просто дизайн</h2>
           <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed text-balance mb-12">Пока другие сервисы дают вам пустой холст, GoToFlow генерирует полную карусель — структуру слайдов, тексты и логику — используя ИИ.</p>
         </motion.div>
         <div className="flex flex-col gap-4">
           {diffPoints.map((p,i) => (
-            <motion.div key={i} initial={{opacity:0,x:-30}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.6,delay:i*0.13}} className="flex items-start gap-5 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] group hover:border-white/10 hover:bg-white/[0.03] transition-all duration-300">
+            <motion.div key={i} initial={{opacity:0,x: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : -30, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 20 : 0}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.6,delay:i*0.13}} className="flex items-start gap-5 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] group hover:border-white/10 hover:bg-white/[0.03] transition-all duration-300">
               <div className="relative w-11 h-11 flex items-center justify-center rounded-2xl border border-white/5 bg-[#050505] shrink-0 group-hover:scale-110 transition-transform duration-500">
                 <div className="absolute inset-0 bg-pink-500 blur-xl opacity-15 group-hover:opacity-40 transition-opacity duration-500 rounded-2xl"/>
                 <p.icon className="w-5 h-5 text-pink-300 relative z-10"/>
@@ -178,7 +178,7 @@ export const CarouselFAQRu = () => {
   return (
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
       <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
-        <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.8}} className="text-center mb-14 flex flex-col items-center">
+        <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8}} className="text-center mb-14 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">FAQ</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight text-balance">Частые <span className="text-gradient-brand">вопросы</span></h2>
           <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">Всё, что нужно знать про генерацию каруселей</p>
@@ -195,12 +195,12 @@ export const CarouselFAQRu = () => {
 export const CarouselBottomCTARu = () => {
   const [hover, setHover] = useState(false);
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-100px' });
+  const inView = useInView(ref, { once: true, margin: typeof window !== 'undefined' && window.innerWidth < 768 ? '0px' : '-100px' });
   return (
     <section ref={ref} className="relative w-full overflow-hidden isolate" style={{background:'#050505'}}>
       <div className="absolute inset-0 pointer-events-none bg-[#050505]"/>
       <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-24 md:py-32">
-        <motion.div initial={{opacity:0,y:35}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.9}} className="relative">
+        <motion.div initial={{opacity:0,y:35}} animate={inView?{opacity:1,y:0}:{}} transition={{duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.9}} className="relative">
           <div className="absolute -inset-6 md:-inset-10 rounded-[3rem] pointer-events-none -z-10" style={{background:'radial-gradient(ellipse 70% 55% at 50% 50%, rgba(236,72,153,0.05) 0%, rgba(249,115,22,0.03) 40%, transparent 70%)',filter:'blur(60px)'}}/>
           <div className="group relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border border-white/[0.08] hover:border-white/[0.12] transition-colors duration-500" style={{background:'linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%)',backdropFilter:'blur(40px) saturate(1.2)',boxShadow:'0 0 30px rgba(236,72,153,0.04), 0 40px 80px -25px rgba(0,0,0,0.8)'}}>
             <div className="relative z-10 px-8 py-16 sm:px-12 sm:py-20 md:px-20 md:py-24 lg:px-28 lg:py-28 flex flex-col items-center text-center">

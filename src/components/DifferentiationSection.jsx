@@ -82,10 +82,10 @@ export const DifferentiationSection = () => {
         {/* ─── Колонка 1: Текст + список ─── */}
         <div className="flex flex-col">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : -40, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 24 : 0 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, ease: "easeOut" }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
               <Fingerprint className="w-3.5 h-3.5" />
@@ -106,7 +106,7 @@ export const DifferentiationSection = () => {
             {points.map((point, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : -30, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 20 : 0 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.13, ease: "easeOut" }}

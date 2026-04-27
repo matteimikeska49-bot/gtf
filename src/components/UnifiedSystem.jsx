@@ -58,7 +58,7 @@ export const UnifiedSystem = () => {
           initial={{ opacity: 0, y: 56 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
+          transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.9, ease: 'easeOut' }}
           className="relative"
         >
           {/* Плавный теплый фон убран */}

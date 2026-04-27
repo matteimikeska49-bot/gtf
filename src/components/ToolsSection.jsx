@@ -107,7 +107,7 @@ export const ToolsSection = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, ease: 'easeOut' }}
             className="text-center mb-14 flex flex-col items-center"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 text-indigo-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
@@ -192,7 +192,7 @@ export const ToolsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, ease: 'easeOut' }}
           className="flex flex-col items-center gap-8"
         >
           <div className="text-center">

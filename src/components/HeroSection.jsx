@@ -67,7 +67,7 @@ const AbstractUIMockup = () => {
     <motion.div 
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.9, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
       className="block w-full max-w-[380px] md:max-w-5xl mt-8 md:mt-20 relative mx-auto perspective-1000"
     >
       {/* Огромное свечение за дашбордом — эффект «парения» */}
@@ -198,7 +198,7 @@ export const HeroSection = () => {
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+           transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, delay: 0.1, ease: "easeOut" }}
            className="max-w-3xl mx-auto w-full"
         >
           <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
@@ -211,7 +211,7 @@ export const HeroSection = () => {
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance"
         >
           {t('hero.subtitlePart1')} <br className="hidden md:block"/> {t('hero.subtitlePart2')}
@@ -220,7 +220,7 @@ export const HeroSection = () => {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.6 : 0.8, delay: 0.3, ease: "easeOut" }}
           className="flex flex-col items-center gap-4 w-full sm:w-auto"
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto">
