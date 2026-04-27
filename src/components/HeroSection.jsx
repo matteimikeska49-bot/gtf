@@ -65,6 +65,17 @@ const IsometricGrid = () => (
 const AbstractUIMockup = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
+
+  /* ── Mobile-only: animated tab index ── */
+  const [activeTab, setActiveTab] = useState(0);
+  const tabLabels = ['Post', 'Carousel', 'Reels'];
+
+  useEffect(() => {
+    if (!isMobile) return;
+    const id = setInterval(() => setActiveTab(prev => (prev + 1) % 3), 3000);
+    return () => clearInterval(id);
+  }, [isMobile]);
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 50 }}
@@ -76,7 +87,7 @@ const AbstractUIMockup = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[90%] bg-[#ec4899]/[0.08] blur-[140px] rounded-[100%] pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[70%] bg-gradient-to-tr from-pink-900/25 via-purple-900/15 to-indigo-900/25 blur-[100px] rounded-[100%] pointer-events-none" />
 
-      <div className="relative rounded-2xl md:rounded-[2.5rem] border border-white/5 bg-[#0a0a0a]/80 backdrop-blur-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row text-left ring-1 ring-white/5 group aspect-[4/3] md:aspect-auto">
+      <div className="relative rounded-2xl md:rounded-[2.5rem] border border-white/5 bg-[#0a0a0a]/80 backdrop-blur-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row text-left ring-1 ring-white/5 group md:aspect-auto">
         
         {/* Sidebar (скрыт на мобиле) */}
         <div className="hidden md:flex w-full md:w-72 border-b md:border-b-0 md:border-r border-white/5 p-6 flex-col gap-8 bg-[#050505]/50 relative overflow-hidden">
@@ -105,49 +116,44 @@ const AbstractUIMockup = () => {
           </div>
         </div>
 
-        {/* Main Area */}
-        <div className="flex-1 p-5 md:p-10 flex flex-col gap-5 md:gap-10 relative z-10 bg-[#0a0a0a]/30 h-full overflow-hidden">
+        {/* ═══════════════════════════════════════════ */}
+        {/* Main Area — DESKTOP (hidden on mobile)     */}
+        {/* ═══════════════════════════════════════════ */}
+        <div className="hidden md:flex flex-1 p-10 flex-col gap-10 relative z-10 bg-[#0a0a0a]/30 overflow-hidden">
           <div className="absolute right-0 top-0 w-64 h-64 bg-purple-500/10 blur-[80px] rounded-full pointer-events-none" />
 
-          {/* Оверлей-затемнение на мобиле */}
-          <div className="md:hidden absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.95)] via-transparent to-transparent z-20 pointer-events-none" />
-
           <div className="flex items-center justify-between relative z-10">
-            <h3 className="text-lg md:text-2xl font-bold text-white tracking-tight truncate pr-2">{t('hero.mockup.postGenerationFlow')}</h3>
-            <div className="shrink-0 px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/10 bg-[#050505] text-[10px] md:text-xs font-semibold text-zinc-300 flex items-center gap-2 shadow-lg backdrop-blur-md">
-               <div className="w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse shadow-[0_0_10px_#ec4899]" />
+            <h3 className="text-2xl font-bold text-white tracking-tight truncate pr-2">{t('hero.mockup.postGenerationFlow')}</h3>
+            <div className="shrink-0 px-4 py-2 rounded-full border border-white/10 bg-[#050505] text-xs font-semibold text-zinc-300 flex items-center gap-2 shadow-lg backdrop-blur-md">
+               <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse shadow-[0_0_10px_#ec4899]" />
                {t('hero.mockup.aiActive')}
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 relative z-10">
-            <div className="md:col-span-2 p-5 md:p-6 rounded-2xl md:rounded-[1.5rem] border border-white/5 bg-[#050505]/80 shadow-xl relative overflow-hidden flex flex-col">
+          <div className="grid grid-cols-3 gap-6 relative z-10">
+            <div className="col-span-2 p-6 rounded-[1.5rem] border border-white/5 bg-[#050505]/80 shadow-xl relative overflow-hidden flex flex-col">
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
-              
-              <div className="flex items-center gap-4 mb-6 md:mb-8">
-                 <div className="w-8 md:w-10 h-8 md:h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                    <PenTool className="w-4 md:w-5 h-4 md:h-5 text-zinc-400" />
+              <div className="flex items-center gap-4 mb-8">
+                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <PenTool className="w-5 h-5 text-zinc-400" />
                  </div>
-                 <div className="h-2 md:h-2.5 w-32 md:w-40 bg-zinc-800 rounded-full" />
+                 <div className="h-2.5 w-40 bg-zinc-800 rounded-full" />
               </div>
-              
-              <div className="space-y-3 md:space-y-4 flex-1">
-                 <div className="h-1.5 md:h-2 w-[90%] bg-zinc-800 rounded-full" />
-                 <div className="h-1.5 md:h-2 w-[80%] bg-zinc-800 rounded-full" />
-                 <div className="h-1.5 md:h-2 w-[60%] bg-zinc-800 rounded-full" />
+              <div className="space-y-4 flex-1">
+                 <div className="h-2 w-[90%] bg-zinc-800 rounded-full" />
+                 <div className="h-2 w-[80%] bg-zinc-800 rounded-full" />
+                 <div className="h-2 w-[60%] bg-zinc-800 rounded-full" />
               </div>
-
-              <div className="mt-6 md:mt-8 p-3 md:p-4 rounded-xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-orange-500/5 flex items-center gap-3 relative overflow-hidden">
+              <div className="mt-8 p-4 rounded-xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-orange-500/5 flex items-center gap-3 relative overflow-hidden">
                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
-                 <Sparkles className="w-4 md:w-5 h-4 md:h-5 text-pink-400 shrink-0" />
-                 <div className="h-1.5 md:h-2 w-24 md:w-32 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full opacity-80" />
+                 <Sparkles className="w-5 h-5 text-pink-400 shrink-0" />
+                 <div className="h-2 w-32 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full opacity-80" />
               </div>
             </div>
 
-            {/* Вторая карточка скрыта на мобиле */}
-            <div className="hidden md:flex p-6 rounded-[1.5rem] border border-white/5 bg-[#050505]/80 shadow-xl flex-col justify-between overflow-hidden relative">
+            {/* Desktop: analytics card */}
+            <div className="flex p-6 rounded-[1.5rem] border border-white/5 bg-[#050505]/80 shadow-xl flex-col justify-between overflow-hidden relative">
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
-              
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <BarChart3 className="w-5 h-5 text-zinc-500" />
@@ -156,7 +162,6 @@ const AbstractUIMockup = () => {
                 <div className="text-4xl font-light text-white tracking-tighter">84.2%</div>
                 <div className="h-1.5 w-16 bg-emerald-400/80 rounded-full mt-3 shadow-[0_0_10px_rgba(52,211,153,0.3)]" />
               </div>
-              
               <div className="flex items-end gap-2 w-full h-20 mt-8 relative z-10">
                  {[40, 70, 45, 90, 65, 100, 80].map((h, i) => (
                    <motion.div 
@@ -168,6 +173,111 @@ const AbstractUIMockup = () => {
                    />
                  ))}
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ═══════════════════════════════════════════ */}
+        {/* Main Area — MOBILE ONLY                    */}
+        {/* ═══════════════════════════════════════════ */}
+        <div className="flex md:hidden flex-1 p-5 pb-6 flex-col gap-4 relative z-10 bg-[#0a0a0a]/30 overflow-hidden">
+          <div className="absolute right-0 top-0 w-48 h-48 bg-purple-500/10 blur-[60px] rounded-full pointer-events-none" />
+
+          {/* Header row */}
+          <div className="flex items-center justify-between relative z-10">
+            <h3 className="text-[15px] font-bold text-white tracking-tight">{t('hero.mockup.postGenerationFlow')}</h3>
+            <div className="shrink-0 px-2.5 py-1 rounded-full border border-white/10 bg-[#050505] text-[9px] font-semibold text-zinc-300 flex items-center gap-1.5 shadow-lg backdrop-blur-md">
+               <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse shadow-[0_0_8px_#ec4899]" />
+               {t('hero.mockup.aiActive')}
+            </div>
+          </div>
+
+          {/* Format tabs — cycling */}
+          <div className="flex gap-2 relative z-10">
+            {tabLabels.map((label, i) => (
+              <div
+                key={label}
+                className={`px-3.5 py-1.5 rounded-lg text-[11px] font-semibold tracking-wide transition-all duration-500 border ${
+                  activeTab === i
+                    ? 'bg-gradient-to-r from-pink-500/15 to-orange-500/10 border-pink-500/30 text-pink-300 shadow-[0_0_12px_rgba(236,72,153,0.15)]'
+                    : 'bg-white/[0.03] border-white/[0.06] text-zinc-500'
+                }`}
+              >
+                {label}
+              </div>
+            ))}
+          </div>
+
+          {/* Main card — generation preview */}
+          <div className="relative z-10 p-4 rounded-2xl border border-white/[0.06] bg-[#050505]/80 shadow-xl flex flex-col gap-3.5 flex-1">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.015] to-transparent pointer-events-none rounded-2xl" />
+
+            {/* Input section */}
+            <div className="relative z-10">
+              <div className="text-[9px] uppercase tracking-[0.14em] text-zinc-600 font-bold mb-1.5">Input</div>
+              <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+                <PenTool className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
+                <span className="text-[11px] text-zinc-400 font-medium truncate">
+                  {activeTab === 0 ? '"5 growth hacks for SaaS"' : activeTab === 1 ? '"LinkedIn carousel on branding"' : '"3 hooks for product launch"'}
+                </span>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="relative z-10 flex items-center gap-2.5 px-1">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+              <Sparkles className="w-3 h-3 text-pink-400/60 animate-pulse" />
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+            </div>
+
+            {/* Output section */}
+            <div className="relative z-10">
+              <div className="text-[9px] uppercase tracking-[0.14em] text-zinc-600 font-bold mb-1.5">Generated</div>
+              <div className="flex flex-col gap-2 px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeTab}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.35 }}
+                    className="flex flex-col gap-1.5"
+                  >
+                    {activeTab === 0 && (
+                      <>
+                        <span className="text-[11px] text-zinc-300 font-medium">✓ Hook + 3 content blocks</span>
+                        <span className="text-[11px] text-zinc-500">Post structure + CTA ready</span>
+                      </>
+                    )}
+                    {activeTab === 1 && (
+                      <>
+                        <span className="text-[11px] text-zinc-300 font-medium">✓ 8 slides + cover design</span>
+                        <span className="text-[11px] text-zinc-500">Carousel copy + visual layout</span>
+                      </>
+                    )}
+                    {activeTab === 2 && (
+                      <>
+                        <span className="text-[11px] text-zinc-300 font-medium">✓ 3 hooks + script outline</span>
+                        <span className="text-[11px] text-zinc-500">Reel structure + captions</span>
+                      </>
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* AI generation bar */}
+            <div className="mt-auto relative z-10 p-2.5 rounded-xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-orange-500/5 flex items-center gap-2.5 overflow-hidden">
+               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+               <Sparkles className="w-3.5 h-3.5 text-pink-400 shrink-0 relative z-10" />
+               <div className="h-1.5 flex-1 bg-zinc-800/60 rounded-full overflow-hidden relative z-10">
+                 <motion.div
+                   className="h-full rounded-full bg-gradient-to-r from-pink-500 to-orange-500"
+                   initial={{ width: '0%' }}
+                   animate={{ width: ['0%', '100%', '0%'] }}
+                   transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                 />
+               </div>
             </div>
           </div>
         </div>
