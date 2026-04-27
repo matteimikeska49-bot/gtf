@@ -45,9 +45,12 @@ const LandingPage = () => (
   </MainLayout>
 );
 
+import { ScrollToTop } from './components/ScrollToTop';
+
 function App() {
   return (
     <LanguageProvider>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/ru" element={<LandingPage />} />
