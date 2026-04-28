@@ -13,7 +13,7 @@ const CTA_URL = 'https://gotoflow.io/linkedin-carousel-maker';
 /* ── SEO Head ── */
 const ArticleSEOHead = () => {
   useEffect(() => {
-    document.title = 'LinkedIn Carousel Ideas That Actually Get Engagement (2026)';
+    document.title = '50 LinkedIn Carousel Ideas That Actually Get Engagement (2026) | GoToFlow';
 
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
@@ -29,9 +29,10 @@ const ArticleSEOHead = () => {
       el.setAttribute('href', href);
     };
 
-    setMeta('description', '20+ LinkedIn carousel ideas that get real engagement. Learn how to create high-performing carousels and grow your reach faster.');
-    setMeta('og:title', 'LinkedIn Carousel Ideas That Actually Get Engagement (2026)', true);
-    setMeta('og:description', '20+ LinkedIn carousel ideas that get real engagement. Learn how to create high-performing carousels and grow your reach faster.', true);
+    const desc = 'Explore 50 LinkedIn carousel ideas with examples, hooks, and structures. Learn how to create high-performing carousels faster using AI.';
+    setMeta('description', desc);
+    setMeta('og:title', '50 LinkedIn Carousel Ideas That Actually Get Engagement (2026) | GoToFlow', true);
+    setMeta('og:description', desc, true);
     setMeta('og:type', 'article', true);
     setMeta('og:url', 'https://gotoflow.io/blog/linkedin-carousel-ideas', true);
     setLink('canonical', 'https://gotoflow.io/blog/linkedin-carousel-ideas');
@@ -45,8 +46,8 @@ const ArticleSEOHead = () => {
       script.textContent = JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Article',
-        headline: 'LinkedIn Carousel Ideas That Actually Get Engagement',
-        description: '20+ LinkedIn carousel ideas that get real engagement. Learn how to create high-performing carousels and grow your reach faster.',
+        headline: '50 LinkedIn Carousel Ideas That Actually Get Engagement',
+        description: desc,
         author: { '@type': 'Organization', name: 'GoToFlow' },
         publisher: { '@type': 'Organization', name: 'GoToFlow', url: 'https://gotoflow.io' },
         mainEntityOfPage: 'https://gotoflow.io/blog/linkedin-carousel-ideas',
@@ -82,20 +83,20 @@ const Breadcrumbs = () => (
 const ArticleHero = () => {
   const isMobile = useIsMobile();
   return (
-    <section className="pb-12 px-6 relative z-10 w-full bg-[#050505]">
+    <section className="pb-14 px-6 relative z-10 w-full bg-[#050505]">
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[700px] md:w-[1000px] h-[500px] md:h-[700px] bg-[#ec4899]/[0.06] blur-[140px] rounded-full pointer-events-none" />
       <div className="max-w-3xl mx-auto relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm">
             <Sparkles className="w-3.5 h-3.5 text-pink-400" />
-            <span className="text-xs text-zinc-300 font-medium">LinkedIn Content Ideas</span>
+            <span className="text-xs text-zinc-300 font-medium">LinkedIn Content Guide</span>
           </div>
         </motion.div>
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.15]">
-          LinkedIn Carousel Ideas That Actually Get Engagement
+          50 LinkedIn Carousel Ideas That Actually Get Engagement
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-base md:text-lg text-zinc-400 leading-relaxed mb-10 max-w-2xl">
-          Struggling with what to post? Here are proven carousel ideas — organized by category — that drive saves, shares, and profile visits on LinkedIn.
+          Get 50 ready-to-use LinkedIn carousel ideas and turn them into high-performing slides in minutes.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }}>
           <a href={CTA_URL} className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_35px_rgba(236,72,153,0.3)] text-sm border border-pink-400/20 group">
@@ -109,7 +110,7 @@ const ArticleHero = () => {
 
 /* ── Inline Product Block ── */
 const InlineProductBlock = ({ text, to }) => (
-  <div className="my-12 p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+  <div className="my-14 p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
     <div className="flex items-center gap-3">
       <div className="shrink-0 w-9 h-9 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
         <Sparkles className="w-4 h-4 text-pink-400" />
@@ -122,72 +123,81 @@ const InlineProductBlock = ({ text, to }) => (
   </div>
 );
 
-/* ── Article Section Helper ── */
-const Section = ({ title, children }) => (
-  <div className="mb-10">
-    <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 leading-snug">{title}</h2>
+/* ── Section heading ── */
+const Section = ({ title, children, count }) => (
+  <div className="mb-12">
+    <div className="flex items-baseline gap-3 mb-5">
+      <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-snug">{title}</h2>
+      {count && <span className="text-xs text-zinc-600 font-medium tracking-wide">{count} ideas</span>}
+    </div>
     {children}
   </div>
 );
 
-const IdeaList = ({ items }) => (
-  <ol className="space-y-3 list-decimal list-inside marker:text-pink-500/70 marker:font-semibold">
+/* ── Idea card (numbered, visually separated) ── */
+const IdeaList = ({ items, startNum = 1 }) => (
+  <div className="space-y-4">
     {items.map((item, i) => (
-      <li key={i} className="text-zinc-300 text-[15px] leading-relaxed pl-1">
-        <span className="font-medium text-zinc-200">{item.title}</span>
-        {item.desc && <span className="text-zinc-500"> — {item.desc}</span>}
-      </li>
+      <div key={i} className="flex gap-4 p-4 rounded-xl border border-white/[0.04] bg-white/[0.01] hover:bg-white/[0.025] transition-colors">
+        <span className="shrink-0 w-7 h-7 rounded-lg bg-pink-500/10 border border-pink-500/15 flex items-center justify-center text-[11px] font-bold text-pink-400/80 tabular-nums mt-0.5">
+          {startNum + i}
+        </span>
+        <div className="min-w-0">
+          <p className="text-zinc-200 font-medium text-[15px] leading-snug">{item.title}</p>
+          {item.desc && <p className="text-zinc-500 text-[13px] mt-1 leading-relaxed">{item.desc}</p>}
+        </div>
+      </div>
     ))}
-  </ol>
+  </div>
 );
 
 /* ── Article Body ── */
 const ArticleBody = () => (
   <article className="py-8 px-6 relative z-10 w-full bg-[#050505]">
-    <div className="max-w-3xl mx-auto prose-invert">
+    <div className="max-w-3xl mx-auto">
 
-      <p className="text-zinc-400 text-[15px] leading-[1.8] mb-8">
-        LinkedIn carousels are one of the highest-performing formats on the platform. They drive 3–5× more engagement than text-only posts, boost dwell time, and position you as a thought leader. But the biggest challenge isn't design — it's knowing <strong className="text-zinc-200">what to post</strong>.
+      <p className="text-zinc-400 text-[15px] leading-[1.8] mb-6">
+        LinkedIn carousels drive 3-5x more engagement than text-only posts. They boost dwell time, increase saves, and position you as a thought leader. But the biggest challenge isn't design — it's knowing <strong className="text-zinc-200">what to post</strong>.
       </p>
-      <p className="text-zinc-400 text-[15px] leading-[1.8] mb-10">
-        Below are 50+ carousel ideas, organized into categories, that you can use right now. Each one is designed to drive saves, shares, and profile visits.
+      <p className="text-zinc-400 text-[15px] leading-[1.8] mb-12">
+        Here are 50 carousel ideas, organized into 8 categories, that you can use right now. Each one is built to drive saves, shares, and profile visits.
       </p>
 
-      {/* ── Category 1 ── */}
-      <Section title="🎯 Thought Leadership & Industry Insights">
-        <IdeaList items={[
-          { title: '"5 trends reshaping [your industry] in 2026"', desc: 'position yourself as a forward thinker' },
-          { title: '"What I learned from 10 years in [field]"', desc: 'personal experience carousel' },
-          { title: '"Unpopular opinions about [topic]"', desc: 'drive comments with controversy' },
-          { title: '"The future of [industry] — my predictions"', desc: 'data-backed forecast slides' },
-          { title: '"3 myths about [topic] that need to die"', desc: 'myth-busting format' },
-          { title: '"Lessons from [famous company]\'s strategy"', desc: 'case study breakdown' },
-          { title: '"How [new technology] will change [field]"', desc: 'tech trend analysis' },
+      {/* ── 1. Thought Leadership (7 ideas) ── */}
+      <Section title="Thought Leadership and Industry Insights" count="7">
+        <IdeaList startNum={1} items={[
+          { title: '"5 trends reshaping [your industry] in 2026"', desc: 'Position yourself as a forward thinker with data-backed predictions.' },
+          { title: '"What I learned from 10 years in [field]"', desc: 'Reflective carousel that builds trust through experience.' },
+          { title: '"Unpopular opinions about [topic]"', desc: 'Drives comments and debate — high engagement format.' },
+          { title: '"The future of [industry] — my predictions"', desc: 'Forecast slides with supporting data or observations.' },
+          { title: '"3 myths about [topic] that need to die"', desc: 'Myth-busting format that educates and entertains.' },
+          { title: '"Lessons from [famous company]\'s strategy"', desc: 'Case study breakdown — borrow authority from known brands.' },
+          { title: '"How [new technology] will change [field]"', desc: 'Tech trend analysis — timely and shareable.' },
         ]} />
       </Section>
 
-      {/* ── Category 2 ── */}
-      <Section title="📚 How-To & Educational">
-        <IdeaList items={[
-          { title: '"Step-by-step guide to [skill/process]"', desc: 'actionable tutorial carousel' },
-          { title: '"The beginner\'s roadmap to [topic]"', desc: 'onboarding-style content' },
-          { title: '"How to [achieve result] without [common tool]"', desc: 'alternative approach' },
-          { title: '"5 frameworks every [role] should know"', desc: 'framework carousel' },
-          { title: '"How I went from [A] to [B] in [timeframe]"', desc: 'transformation story' },
-          { title: '"The exact process I use to [result]"', desc: 'behind-the-scenes reveal' },
-          { title: '"Mistakes I made so you don\'t have to"', desc: 'learn-from-failure format' },
-          { title: '"A complete checklist for [task]"', desc: 'save-worthy reference' },
+      {/* ── 2. How-To & Educational (8 ideas) ── */}
+      <Section title="How-To and Educational" count="8">
+        <IdeaList startNum={8} items={[
+          { title: '"Step-by-step guide to [skill or process]"', desc: 'Actionable tutorial format — one step per slide.' },
+          { title: '"The beginner\'s roadmap to [topic]"', desc: 'Visual onboarding for people new to your field.' },
+          { title: '"How to [achieve result] without [common tool]"', desc: 'Contrarian alternative approach that sparks curiosity.' },
+          { title: '"5 frameworks every [role] should know"', desc: 'Framework carousel — high save rate.' },
+          { title: '"How I went from [A] to [B] in [timeframe]"', desc: 'Transformation story with clear before/after.' },
+          { title: '"The exact process I use to [result]"', desc: 'Behind-the-scenes reveal of your workflow.' },
+          { title: '"Mistakes I made so you don\'t have to"', desc: 'Learn-from-failure format — relatable and useful.' },
+          { title: '"A complete checklist for [task]"', desc: 'Reference-style content people save and revisit.' },
         ]} />
       </Section>
 
-      {/* ── Category 3 ── */}
-      <Section title="📊 Data & Stats">
-        <IdeaList items={[
-          { title: '"10 stats that prove [point]"', desc: 'data-driven authority' },
-          { title: '"Before vs After: [metric] results"', desc: 'visual comparison format' },
-          { title: '"What the data says about [topic]"', desc: 'research summary carousel' },
-          { title: '"ROI breakdown: [strategy/tool]"', desc: 'numbers-first content' },
-          { title: '"Industry benchmarks for [metric] in 2026"', desc: 'reference guide' },
+      {/* ── 3. Data & Statistics (5 ideas) ── */}
+      <Section title="Data and Statistics" count="5">
+        <IdeaList startNum={16} items={[
+          { title: '"10 stats that prove [point]"', desc: 'Data-driven authority — one stat per slide.' },
+          { title: '"Before vs After: [metric] results"', desc: 'Visual comparison format with concrete numbers.' },
+          { title: '"What the data says about [topic]"', desc: 'Research summary carousel — cite your sources.' },
+          { title: '"ROI breakdown: [strategy or tool]"', desc: 'Numbers-first content that appeals to decision-makers.' },
+          { title: '"Industry benchmarks for [metric] in 2026"', desc: 'Reference guide people will save and share.' },
         ]} />
       </Section>
 
@@ -196,93 +206,95 @@ const ArticleBody = () => (
         to="/linkedin-carousel-maker"
       />
 
-      {/* ── Category 4 ── */}
-      <Section title="🧠 Personal Branding">
-        <IdeaList items={[
-          { title: '"My morning routine as a [role]"', desc: 'day-in-the-life format' },
-          { title: '"Things I wish I knew before starting [career]"', desc: 'reflective storytelling' },
-          { title: '"What nobody tells you about [role/industry]"', desc: 'insider perspective' },
-          { title: '"The tools I use daily as a [role]"', desc: 'tool stack carousel' },
-          { title: '"My biggest failure and what I learned"', desc: 'vulnerability-driven engagement' },
-          { title: '"5 books that changed how I [work/think]"', desc: 'curated recommendation' },
-          { title: '"Behind the scenes of my [project/company]"', desc: 'transparency content' },
+      {/* ── 4. Personal Branding (7 ideas) ── */}
+      <Section title="Personal Branding" count="7">
+        <IdeaList startNum={21} items={[
+          { title: '"My morning routine as a [role]"', desc: 'Day-in-the-life format — builds personal connection.' },
+          { title: '"Things I wish I knew before starting [career]"', desc: 'Reflective storytelling that resonates with peers.' },
+          { title: '"What nobody tells you about [role or industry]"', desc: 'Insider perspective — feels exclusive and honest.' },
+          { title: '"The tools I use daily as a [role]"', desc: 'Tool stack carousel — practical and save-worthy.' },
+          { title: '"My biggest failure and what I learned"', desc: 'Vulnerability-driven engagement — humanizes your brand.' },
+          { title: '"5 books that changed how I work"', desc: 'Curated recommendation list with brief takeaways.' },
+          { title: '"Behind the scenes of my [project or company]"', desc: 'Transparency content that builds trust.' },
         ]} />
       </Section>
 
-      {/* ── Category 5 ── */}
-      <Section title="⚡ Listicles & Quick Wins">
-        <IdeaList items={[
-          { title: '"7 free tools every [role] needs"', desc: 'resource roundup' },
-          { title: '"10 LinkedIn tips that actually work"', desc: 'platform-specific advice' },
-          { title: '"5 prompts for better AI content"', desc: 'prompt engineering guide' },
-          { title: '"8 habits of successful [role]s"', desc: 'aspirational list' },
-          { title: '"3 things to stop doing on LinkedIn"', desc: 'contrarian advice' },
-          { title: '"6 newsletters worth subscribing to"', desc: 'curated discovery' },
+      {/* ── 5. Listicles & Quick Wins (6 ideas) ── */}
+      <Section title="Listicles and Quick Wins" count="6">
+        <IdeaList startNum={28} items={[
+          { title: '"7 free tools every [role] needs"', desc: 'Resource roundup — consistently high engagement.' },
+          { title: '"10 LinkedIn tips that actually work"', desc: 'Platform-specific advice from personal experience.' },
+          { title: '"5 prompts for better AI content"', desc: 'Prompt engineering guide — practical and timely.' },
+          { title: '"8 habits of successful [role]s"', desc: 'Aspirational list backed by real observations.' },
+          { title: '"3 things to stop doing on LinkedIn"', desc: 'Contrarian advice that sparks conversation.' },
+          { title: '"6 newsletters worth subscribing to"', desc: 'Curated discovery — positions you as a connector.' },
         ]} />
       </Section>
 
-      {/* ── Category 6 ── */}
-      <Section title="🔥 Engagement Drivers">
-        <IdeaList items={[
-          { title: '"Agree or disagree? [bold statement]"', desc: 'debate-starter format' },
-          { title: '"Rate these [options] from best to worst"', desc: 'interactive ranking' },
-          { title: '"Which one would you choose?"', desc: 'A/B comparison carousel' },
-          { title: '"Fill in the blank: The best [tool/strategy] is ___"', desc: 'comment magnet' },
-          { title: '"Tag someone who needs to see this"', desc: 'shareability hook' },
+      {/* ── 6. Engagement Drivers (5 ideas) ── */}
+      <Section title="Engagement Drivers" count="5">
+        <IdeaList startNum={34} items={[
+          { title: '"Agree or disagree? [bold statement]"', desc: 'Debate-starter format — drives comments fast.' },
+          { title: '"Rate these [options] from best to worst"', desc: 'Interactive ranking that invites participation.' },
+          { title: '"Which one would you choose?"', desc: 'A/B comparison carousel — simple and effective.' },
+          { title: '"Fill in the blank: The best [strategy] is ___"', desc: 'Comment magnet — boosts algorithmic reach.' },
+          { title: '"Tag someone who needs to see this"', desc: 'Shareability hook — expands your audience.' },
         ]} />
       </Section>
 
-      {/* ── Category 7 ── */}
-      <Section title="💡 Content Creation & Strategy">
-        <IdeaList items={[
-          { title: '"My content strategy in one carousel"', desc: 'meta content about content' },
-          { title: '"How to repurpose 1 piece of content into 10"', desc: 'content multiplication' },
-          { title: '"The anatomy of a viral LinkedIn post"', desc: 'format deconstruction' },
-          { title: '"Content calendar template for [month]"', desc: 'planning resource' },
-          { title: '"How to write hooks that stop the scroll"', desc: 'copywriting technique' },
+      {/* ── 7. Content Creation & Strategy (6 ideas) ── */}
+      <Section title="Content Creation and Strategy" count="6">
+        <IdeaList startNum={39} items={[
+          { title: '"My content strategy in one carousel"', desc: 'Meta content about content — creators love this.' },
+          { title: '"How to repurpose 1 piece of content into 10"', desc: 'Content multiplication framework.' },
+          { title: '"The anatomy of a viral LinkedIn post"', desc: 'Format deconstruction — educational and actionable.' },
+          { title: '"Content calendar template for [month]"', desc: 'Planning resource people bookmark immediately.' },
+          { title: '"How to write hooks that stop the scroll"', desc: 'Copywriting technique with real examples.' },
+          { title: '"What I post vs what performs best"', desc: 'Honest analysis that builds credibility.' },
         ]} />
       </Section>
 
       <InlineProductBlock
-        text="Turn your ideas into slides in seconds"
+        text="Turn any idea into a ready-to-post carousel in seconds"
         to="/ai-content-generator"
       />
 
-      {/* ── Category 8 ── */}
-      <Section title="🛠 Career & Professional Growth">
-        <IdeaList items={[
-          { title: '"Skills that will be in demand by 2027"', desc: 'future-proof career advice' },
-          { title: '"How to negotiate your salary — step by step"', desc: 'practical career guidance' },
-          { title: '"Red flags in job descriptions"', desc: 'job seeker content' },
-          { title: '"How to transition into [new role]"', desc: 'career pivot guide' },
-          { title: '"5 side projects that can boost your career"', desc: 'actionable growth tips' },
+      {/* ── 8. Career & Professional Growth (6 ideas) ── */}
+      <Section title="Career and Professional Growth" count="6">
+        <IdeaList startNum={45} items={[
+          { title: '"Skills that will be in demand by 2027"', desc: 'Future-proof career advice with a clear takeaway.' },
+          { title: '"How to negotiate your salary — step by step"', desc: 'Practical career guidance in a visual format.' },
+          { title: '"Red flags in job descriptions"', desc: 'Job seeker content — massively shareable.' },
+          { title: '"How to transition into [new role]"', desc: 'Career pivot guide — structured and clear.' },
+          { title: '"5 side projects that can boost your career"', desc: 'Actionable growth tips beyond the 9-to-5.' },
+          { title: '"What hiring managers actually look for"', desc: 'Insider knowledge that helps job seekers stand out.' },
         ]} />
       </Section>
 
-      {/* ── How to create section ── */}
-      <Section title="How to Actually Create These Carousels">
+      {/* ── How to create ── */}
+      <Section title="How to Create These Carousels">
         <div className="space-y-4">
           <p className="text-zinc-400 text-[15px] leading-[1.8]">
-            Having ideas is one thing — turning them into polished, multi-slide carousels is another. The traditional process involves writing copy, designing each slide in Canva or Figma, and formatting everything manually. That's 1–3 hours per carousel.
+            The traditional carousel process — writing copy, designing slides in Canva, formatting everything — takes 1 to 3 hours per carousel. Most creators don't have that time.
           </p>
           <p className="text-zinc-400 text-[15px] leading-[1.8]">
-            With an AI carousel generator like <strong className="text-zinc-200">GoToFlow</strong>, you can skip the grunt work. Just enter your topic or paste a link, and the AI builds a complete carousel — hook, slide copy, structure, and visual layout — in under 60 seconds.
+            With <strong className="text-zinc-200">GoToFlow</strong>, you enter a topic or paste a link. The AI builds a complete carousel — hook, slide copy, structure, and layout — in under 60 seconds.
           </p>
           <p className="text-zinc-400 text-[15px] leading-[1.8]">
-            You stay in control of the tone of voice, the structure, and the final result. It's not about replacing creativity — it's about removing the bottleneck between having an idea and publishing it.
+            You control the tone of voice, structure, and final result. It removes the bottleneck between having an idea and publishing it.
           </p>
         </div>
       </Section>
 
-      {/* ── Tips section ── */}
+      {/* ── Tips ── */}
       <Section title="Tips for High-Performing LinkedIn Carousels">
         <ul className="space-y-3">
           {[
             'Start with a bold, specific hook on slide 1 — the scroll-stopper matters most',
-            'Keep each slide to one clear idea, 2–4 short lines max',
+            'Keep each slide to one clear idea, 2 to 4 short lines max',
             'Use a consistent visual style so people recognize your carousels instantly',
             'End with a CTA: ask a question, invite a comment, or link to a resource',
-            'Post between 8–10am on Tuesday through Thursday for maximum reach',
+            'Post between 8-10am on Tuesday through Thursday for maximum reach',
             'Repurpose: turn one carousel into a text post, a newsletter excerpt, and a video script',
           ].map((tip, i) => (
             <li key={i} className="flex items-start gap-3 text-zinc-400 text-[15px] leading-relaxed">
@@ -302,8 +314,8 @@ const faqItems = [
   { q: 'What makes a good LinkedIn carousel?', a: 'A strong hook on slide 1, one idea per slide, clean visuals, and a clear CTA at the end. The best carousels teach something valuable in a skimmable format.' },
   { q: 'How many slides should a LinkedIn carousel have?', a: 'Between 6 and 12 slides is the sweet spot. Enough to deliver value, not so many that people drop off.' },
   { q: 'Can AI generate LinkedIn carousel ideas?', a: 'Yes. Tools like GoToFlow can generate carousel ideas, write slide copy, and build the full structure from a single topic or link — in under 60 seconds.' },
-  { q: 'How often should I post carousels on LinkedIn?', a: '2–3 times per week is ideal for most creators. Consistency matters more than volume.' },
-  { q: 'What size should LinkedIn carousels be?', a: 'The recommended size is 1080×1350px (4:5 ratio). This takes up the most screen real estate in the feed.' },
+  { q: 'How often should I post carousels on LinkedIn?', a: '2-3 times per week is ideal for most creators. Consistency matters more than volume.' },
+  { q: 'What size should LinkedIn carousels be?', a: 'The recommended size is 1080x1350px (4:5 ratio). This takes up the most screen real estate in the feed.' },
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
@@ -341,15 +353,15 @@ const ArticleCTA = () => {
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: isMobile ? 0.6 : 0.8 }} className="max-w-2xl mx-auto text-center relative z-10">
         <div className="p-8 md:p-12 rounded-[2rem] border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm">
           <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-4 leading-snug">
-            Generate LinkedIn Carousels in Seconds
+            Create LinkedIn Carousels in Minutes
           </h2>
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-8 max-w-lg mx-auto">
-            Stop spending hours on slides. Enter a topic, and GoToFlow's AI builds a complete carousel — hook, copy, structure — ready to publish.
+            Stop spending hours designing slides. Generate structured, branded carousels instantly with GoToFlow.
           </p>
           <a href={CTA_URL} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.35)] text-base border border-pink-400/20 group">
             Try GoToFlow <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
-          <p className="text-xs text-zinc-500 mt-4">Free • No credit card required</p>
+          <p className="text-xs text-zinc-500 mt-4">Free — No credit card required</p>
         </div>
       </motion.div>
     </section>
@@ -360,7 +372,7 @@ const ArticleCTA = () => {
 const BackToBlog = () => (
   <section className="pb-16 px-6 relative z-10 w-full bg-[#050505] flex justify-center">
     <Link to="/blog" className="group inline-flex items-center gap-2 text-zinc-400 hover:text-pink-400 transition-colors text-sm font-medium">
-      Explore more content ideas <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      Explore more ideas <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
     </Link>
   </section>
 );
