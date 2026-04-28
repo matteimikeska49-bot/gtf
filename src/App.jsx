@@ -26,6 +26,7 @@ import { LinkedInCarouselPage } from './components/LinkedInCarouselPage';
 import { LinkedInCarouselPageRu } from './components/LinkedInCarouselPageRu';
 import { BlogPage } from './components/BlogPage';
 import { BlogPageRu } from './components/BlogPageRu';
+import { LinkedInCarouselIdeasPage } from './components/blog/LinkedInCarouselIdeasPage';
 const LandingPage = () => (
   <MainLayout>
     <Header />
@@ -63,6 +64,7 @@ function App() {
         <Route path="/linkedin-carousel-maker" element={<LinkedInCarouselPage />} />
         <Route path="/ru/generator-karuselej-linkedin" element={<LinkedInCarouselPageRu />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/linkedin-carousel-ideas" element={<LinkedInCarouselIdeasPage />} />
         <Route path="/ru/blog" element={<BlogPageRu />} />
       </Routes>
     </LanguageProvider>
