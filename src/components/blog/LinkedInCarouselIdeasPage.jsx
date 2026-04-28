@@ -103,7 +103,7 @@ const ArticleHero = () => {
           </div>
         </motion.div>
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.15]">
-          50 LinkedIn Carousel Ideas That Actually Get Engagement
+          50 LinkedIn Carousel Ideas That Actually <span className="text-gradient-brand">Get Engagement</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-base md:text-lg text-zinc-400 leading-[1.7] mb-10 max-w-2xl">
           Get 50 ready-to-use LinkedIn carousel ideas and turn them into high-performing slides in minutes.
@@ -289,7 +289,7 @@ const ArticleBody = () => (
       </Section>
 
       {/* ── How to create ── */}
-      <Section title="How to Create These Carousels">
+      <Section title={<>How to Create These <span className="text-gradient-brand">Carousels</span></>}>
         <div className="p-6 md:p-8 rounded-2xl border border-white/[0.08] bg-white/[0.04]">
           <div className="space-y-5">
             <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
@@ -306,7 +306,7 @@ const ArticleBody = () => (
       </Section>
 
       {/* ── Tips ── */}
-      <Section title="Tips for High-Performing LinkedIn Carousels">
+      <Section title={<>Tips for <span className="text-gradient-brand">High-Performing</span> LinkedIn Carousels</>}>
         <div className="p-6 md:p-8 rounded-2xl border border-white/[0.08] bg-white/[0.04]">
           <ul className="space-y-5">
             {[
@@ -358,7 +358,7 @@ const ArticleFAQ = () => {
       {/* Ambient glow — FAQ */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-pink-500/[0.03] blur-[160px] rounded-full pointer-events-none" />
       <div className="max-w-3xl mx-auto relative z-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-8">Frequently Asked Questions</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-8">Frequently Asked <span className="text-gradient-brand">Questions</span></h2>
         <div className="space-y-3">
           {faqItems.map((item, i) => <FAQItem key={i} item={item} isOpen={openIdx === i} onClick={() => setOpenIdx(openIdx === i ? null : i)} />)}
         </div>
@@ -376,7 +376,7 @@ const ArticleCTA = () => {
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: isMobile ? 0.6 : 0.8 }} className="max-w-2xl mx-auto text-center relative z-10">
         <div className="p-8 md:p-12 rounded-[2rem] border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm">
           <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-4 leading-snug">
-            Create LinkedIn Carousels in Minutes
+            Create LinkedIn Carousels <span className="text-gradient-brand">in Minutes</span>
           </h2>
           <p className="text-zinc-300 text-sm md:text-base leading-[1.7] mb-8 max-w-lg mx-auto">
             Stop spending hours designing slides. Generate structured, branded carousels instantly with GoToFlow.
