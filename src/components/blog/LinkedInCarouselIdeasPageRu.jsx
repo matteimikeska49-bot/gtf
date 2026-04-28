@@ -93,7 +93,7 @@ const Breadcrumbs = () => (
 const ArticleHero = () => {
   const isMobile = useIsMobile();
   return (
-    <section className="pb-14 px-6 relative z-10 w-full bg-[#050505]">
+    <section className="pb-16 md:pb-20 px-6 relative z-10 w-full bg-[#050505]">
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[700px] md:w-[1000px] h-[500px] md:h-[700px] bg-[#ec4899]/[0.06] blur-[140px] rounded-full pointer-events-none" />
       <div className="max-w-3xl mx-auto relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-6">
@@ -105,7 +105,7 @@ const ArticleHero = () => {
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.15]">
           50 идей каруселей для LinkedIn, которые реально дают охваты и заявки
         </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-base md:text-lg text-zinc-400 leading-relaxed mb-10 max-w-2xl">
+        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-base md:text-lg text-zinc-400 leading-[1.7] mb-10 max-w-2xl">
           Забирайте 50 готовых идей для LinkedIn каруселей и превращайте их в конверсионные посты за считанные минуты.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }}>
@@ -120,7 +120,7 @@ const ArticleHero = () => {
 
 /* ── Inline Product Block ── */
 const InlineProductBlock = ({ text, to, btnText = "Попробовать бесплатно" }) => (
-  <div className="my-14 p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+  <div className="my-16 md:my-20 p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
     <div className="flex items-center gap-3">
       <div className="shrink-0 w-9 h-9 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
         <Sparkles className="w-4 h-4 text-pink-400" />
@@ -135,10 +135,10 @@ const InlineProductBlock = ({ text, to, btnText = "Попробовать бес
 
 /* ── Section heading ── */
 const Section = ({ title, children, count }) => (
-  <div className="mb-12">
-    <div className="flex items-baseline gap-3 mb-5">
+  <div className="mb-16 md:mb-20">
+    <div className="flex items-baseline gap-3 mb-6">
       <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-snug">{title}</h2>
-      {count && <span className="text-xs text-zinc-600 font-medium tracking-wide">{count} идей</span>}
+      {count && <span className="text-xs text-zinc-500 font-medium tracking-wide">{count} идей</span>}
     </div>
     {children}
   </div>
@@ -146,15 +146,15 @@ const Section = ({ title, children, count }) => (
 
 /* ── Idea card (numbered, visually separated) ── */
 const IdeaList = ({ items, startNum = 1 }) => (
-  <div className="space-y-4">
+  <div className="space-y-3">
     {items.map((item, i) => (
-      <div key={i} className="flex gap-4 p-4 rounded-xl border border-white/[0.04] bg-white/[0.01] hover:bg-white/[0.025] transition-colors">
-        <span className="shrink-0 w-7 h-7 rounded-lg bg-pink-500/10 border border-pink-500/15 flex items-center justify-center text-[11px] font-bold text-pink-400/80 tabular-nums mt-0.5">
+      <div key={i} className="flex gap-4 py-4 px-4 md:px-5 rounded-xl border border-white/[0.04] bg-white/[0.015] hover:bg-white/[0.035] transition-colors">
+        <span className="shrink-0 w-7 h-7 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 tabular-nums mt-0.5">
           {startNum + i}
         </span>
         <div className="min-w-0">
-          <p className="text-zinc-200 font-medium text-[15px] leading-snug">{item.title}</p>
-          {item.desc && <p className="text-zinc-500 text-[13px] mt-1 leading-relaxed">{item.desc}</p>}
+          <p className="text-zinc-100 font-medium text-[15px] leading-[1.5]">{item.title}</p>
+          {item.desc && <p className="text-zinc-400 text-[13px] mt-1.5 leading-[1.6]">{item.desc}</p>}
         </div>
       </div>
     ))}
@@ -163,16 +163,16 @@ const IdeaList = ({ items, startNum = 1 }) => (
 
 /* ── Article Body ── */
 const ArticleBody = () => (
-  <article className="py-8 px-6 relative z-10 w-full bg-[#050505]">
+  <article className="pt-4 pb-8 px-6 relative z-10 w-full bg-[#050505]">
     <div className="max-w-3xl mx-auto">
 
-      <p className="text-zinc-400 text-[15px] leading-[1.8] mb-6">
+      <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Карусели в LinkedIn сейчас рвут охваты. Они дают в 3–5 раз больше просмотров, чем обычный текст. Отлично задерживают внимание. И главное — приносят лиды.
       </p>
-      <p className="text-zinc-400 text-[15px] leading-[1.8] mb-6">
-        Сверстать слайды — не проблема. Главный затык — <strong className="text-zinc-200">о чем вообще писать?</strong>
+      <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
+        Сверстать слайды — не проблема. Главный затык — <strong className="text-white">о чем вообще писать?</strong>
       </p>
-      <p className="text-zinc-400 text-[15px] leading-[1.8] mb-12">
+      <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
         Держите 50 готовых идей для LinkedIn каруселей. Берите и делайте посты прямо сейчас. Для удобства я разбил их на понятные категории.
       </p>
 
@@ -287,14 +287,14 @@ const ArticleBody = () => (
 
       {/* ── How to create ── */}
       <Section title="Как делать такие карусели быстро">
-        <div className="space-y-4">
-          <p className="text-zinc-400 text-[15px] leading-[1.8]">
+        <div className="space-y-5">
+          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
             Идеи — это круто. Но делать их долго. Нужно написать текст, собрать структуру, зайти в Figma, сверстать 10 слайдов, сохранить PDF. Это часа два на один пост.
           </p>
-          <p className="text-zinc-400 text-[15px] leading-[1.8]">
-            С ИИ-генератором <strong className="text-zinc-200">GoToFlow</strong> рутины нет. Вы берете идею, пишете пару слов (или даете ссылку на статью). ИИ сам пишет текст, разбивает на слайды и делает PDF в вашем дизайне.
+          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
+            С ИИ-генератором <strong className="text-white">GoToFlow</strong> рутины нет. Вы берете идею, пишете пару слов (или даете ссылку на статью). ИИ сам пишет текст, разбивает на слайды и делает PDF в вашем дизайне.
           </p>
-          <p className="text-zinc-400 text-[15px] leading-[1.8]">
+          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
             Все занимает около минуты. Вы просто проверяете и постите. Так можно вести LinkedIn регулярно и не тратить на это полдня.
           </p>
         </div>
@@ -302,7 +302,7 @@ const ArticleBody = () => (
 
       {/* ── Tips ── */}
       <Section title="Чек-лист успешной карусели">
-        <ul className="space-y-3">
+        <ul className="space-y-4">
           {[
             'Первый слайд решает все. Делайте заголовок крупным и цепким.',
             'Один слайд = одна мысль. Никаких полотен текста. Максимум 3–4 строки.',
@@ -311,8 +311,8 @@ const ArticleBody = () => (
             'Постите со вторника по четверг утром (8:00 - 11:00). Это лучшее время.',
             'Переиспользуйте контент. Удачная карусель — это готовая статья или сценарий для Reels.',
           ].map((tip, i) => (
-            <li key={i} className="flex items-start gap-3 text-zinc-400 text-[15px] leading-relaxed">
-              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pink-500/60 shrink-0" />
+            <li key={i} className="flex items-start gap-3 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-500/70 shrink-0" />
               {tip}
             </li>
           ))}
@@ -340,7 +340,7 @@ const FAQItem = ({ item, isOpen, onClick }) => (
         <ChevronRight className={`w-3.5 h-3.5 rotate-90 transition-colors ${isOpen ? 'text-pink-400' : 'text-zinc-500'}`} />
       </motion.div>
     </div>
-    {isOpen && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} transition={{ duration: 0.35 }}><p className="px-5 md:px-6 pb-5 md:pb-6 text-zinc-400 leading-relaxed text-sm md:text-base">{item.a}</p></motion.div>}
+    {isOpen && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} transition={{ duration: 0.35 }}><p className="px-5 md:px-6 pb-5 md:pb-6 text-zinc-300 leading-[1.7] text-sm md:text-base">{item.a}</p></motion.div>}
   </div>
 );
 
@@ -369,7 +369,7 @@ const ArticleCTA = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-4 leading-snug">
             Делайте карусели за пару минут
           </h2>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-8 max-w-lg mx-auto">
+          <p className="text-zinc-300 text-sm md:text-base leading-[1.7] mb-8 max-w-lg mx-auto">
             Хватит тратить часы на дизайн и верстку. Напишите тему, а ИИ GoToFlow сам соберет тексты и слайды.
           </p>
           <a href={CTA_URL} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.35)] text-base border border-pink-400/20 group">

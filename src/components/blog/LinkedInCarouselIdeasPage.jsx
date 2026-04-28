@@ -93,7 +93,7 @@ const Breadcrumbs = () => (
 const ArticleHero = () => {
   const isMobile = useIsMobile();
   return (
-    <section className="pb-14 px-6 relative z-10 w-full bg-[#050505]">
+    <section className="pb-16 md:pb-20 px-6 relative z-10 w-full bg-[#050505]">
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[700px] md:w-[1000px] h-[500px] md:h-[700px] bg-[#ec4899]/[0.06] blur-[140px] rounded-full pointer-events-none" />
       <div className="max-w-3xl mx-auto relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-6">
@@ -105,7 +105,7 @@ const ArticleHero = () => {
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.15]">
           50 LinkedIn Carousel Ideas That Actually Get Engagement
         </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-base md:text-lg text-zinc-400 leading-relaxed mb-10 max-w-2xl">
+        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-base md:text-lg text-zinc-400 leading-[1.7] mb-10 max-w-2xl">
           Get 50 ready-to-use LinkedIn carousel ideas and turn them into high-performing slides in minutes.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }}>
@@ -120,7 +120,7 @@ const ArticleHero = () => {
 
 /* ── Inline Product Block ── */
 const InlineProductBlock = ({ text, to }) => (
-  <div className="my-14 p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+  <div className="my-16 md:my-20 p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
     <div className="flex items-center gap-3">
       <div className="shrink-0 w-9 h-9 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
         <Sparkles className="w-4 h-4 text-pink-400" />
@@ -135,10 +135,10 @@ const InlineProductBlock = ({ text, to }) => (
 
 /* ── Section heading ── */
 const Section = ({ title, children, count }) => (
-  <div className="mb-12">
-    <div className="flex items-baseline gap-3 mb-5">
+  <div className="mb-16 md:mb-20">
+    <div className="flex items-baseline gap-3 mb-6">
       <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-snug">{title}</h2>
-      {count && <span className="text-xs text-zinc-600 font-medium tracking-wide">{count} ideas</span>}
+      {count && <span className="text-xs text-zinc-500 font-medium tracking-wide">{count} ideas</span>}
     </div>
     {children}
   </div>
@@ -146,15 +146,15 @@ const Section = ({ title, children, count }) => (
 
 /* ── Idea card (numbered, visually separated) ── */
 const IdeaList = ({ items, startNum = 1 }) => (
-  <div className="space-y-4">
+  <div className="space-y-3">
     {items.map((item, i) => (
-      <div key={i} className="flex gap-4 p-4 rounded-xl border border-white/[0.04] bg-white/[0.01] hover:bg-white/[0.025] transition-colors">
-        <span className="shrink-0 w-7 h-7 rounded-lg bg-pink-500/10 border border-pink-500/15 flex items-center justify-center text-[11px] font-bold text-pink-400/80 tabular-nums mt-0.5">
+      <div key={i} className="flex gap-4 py-4 px-4 md:px-5 rounded-xl border border-white/[0.04] bg-white/[0.015] hover:bg-white/[0.035] transition-colors">
+        <span className="shrink-0 w-7 h-7 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 tabular-nums mt-0.5">
           {startNum + i}
         </span>
         <div className="min-w-0">
-          <p className="text-zinc-200 font-medium text-[15px] leading-snug">{item.title}</p>
-          {item.desc && <p className="text-zinc-500 text-[13px] mt-1 leading-relaxed">{item.desc}</p>}
+          <p className="text-zinc-100 font-medium text-[15px] leading-[1.5]">{item.title}</p>
+          {item.desc && <p className="text-zinc-400 text-[13px] mt-1.5 leading-[1.6]">{item.desc}</p>}
         </div>
       </div>
     ))}
@@ -163,13 +163,13 @@ const IdeaList = ({ items, startNum = 1 }) => (
 
 /* ── Article Body ── */
 const ArticleBody = () => (
-  <article className="py-8 px-6 relative z-10 w-full bg-[#050505]">
+  <article className="pt-4 pb-8 px-6 relative z-10 w-full bg-[#050505]">
     <div className="max-w-3xl mx-auto">
 
-      <p className="text-zinc-400 text-[15px] leading-[1.8] mb-6">
-        LinkedIn carousels drive 3-5x more engagement than text-only posts. They boost dwell time, increase saves, and position you as a thought leader. But the biggest challenge isn't design — it's knowing <strong className="text-zinc-200">what to post</strong>.
+      <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
+        LinkedIn carousels drive 3-5x more engagement than text-only posts. They boost dwell time, increase saves, and position you as a thought leader. But the biggest challenge isn't design — it's knowing <strong className="text-white">what to post</strong>.
       </p>
-      <p className="text-zinc-400 text-[15px] leading-[1.8] mb-12">
+      <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
         Here are 50 carousel ideas, organized into 8 categories, that you can use right now. Each one is built to drive saves, shares, and profile visits.
       </p>
 
@@ -283,14 +283,14 @@ const ArticleBody = () => (
 
       {/* ── How to create ── */}
       <Section title="How to Create These Carousels">
-        <div className="space-y-4">
-          <p className="text-zinc-400 text-[15px] leading-[1.8]">
+        <div className="space-y-5">
+          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
             The traditional carousel process — writing copy, designing slides in Canva, formatting everything — takes 1 to 3 hours per carousel. Most creators don't have that time.
           </p>
-          <p className="text-zinc-400 text-[15px] leading-[1.8]">
-            With <strong className="text-zinc-200">GoToFlow</strong>, you enter a topic or paste a link. The AI builds a complete carousel — hook, slide copy, structure, and layout — in under 60 seconds.
+          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
+            With <strong className="text-white">GoToFlow</strong>, you enter a topic or paste a link. The AI builds a complete carousel — hook, slide copy, structure, and layout — in under 60 seconds.
           </p>
-          <p className="text-zinc-400 text-[15px] leading-[1.8]">
+          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
             You control the tone of voice, structure, and final result. It removes the bottleneck between having an idea and publishing it.
           </p>
         </div>
@@ -298,7 +298,7 @@ const ArticleBody = () => (
 
       {/* ── Tips ── */}
       <Section title="Tips for High-Performing LinkedIn Carousels">
-        <ul className="space-y-3">
+        <ul className="space-y-4">
           {[
             'Start with a bold, specific hook on slide 1 — the scroll-stopper matters most',
             'Keep each slide to one clear idea, 2 to 4 short lines max',
@@ -307,8 +307,8 @@ const ArticleBody = () => (
             'Post between 8-10am on Tuesday through Thursday for maximum reach',
             'Repurpose: turn one carousel into a text post, a newsletter excerpt, and a video script',
           ].map((tip, i) => (
-            <li key={i} className="flex items-start gap-3 text-zinc-400 text-[15px] leading-relaxed">
-              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pink-500/60 shrink-0" />
+            <li key={i} className="flex items-start gap-3 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-500/70 shrink-0" />
               {tip}
             </li>
           ))}
@@ -336,7 +336,7 @@ const FAQItem = ({ item, isOpen, onClick }) => (
         <ChevronRight className={`w-3.5 h-3.5 rotate-90 transition-colors ${isOpen ? 'text-pink-400' : 'text-zinc-500'}`} />
       </motion.div>
     </div>
-    {isOpen && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} transition={{ duration: 0.35 }}><p className="px-5 md:px-6 pb-5 md:pb-6 text-zinc-400 leading-relaxed text-sm md:text-base">{item.a}</p></motion.div>}
+    {isOpen && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} transition={{ duration: 0.35 }}><p className="px-5 md:px-6 pb-5 md:pb-6 text-zinc-300 leading-[1.7] text-sm md:text-base">{item.a}</p></motion.div>}
   </div>
 );
 
@@ -365,7 +365,7 @@ const ArticleCTA = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-4 leading-snug">
             Create LinkedIn Carousels in Minutes
           </h2>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-8 max-w-lg mx-auto">
+          <p className="text-zinc-300 text-sm md:text-base leading-[1.7] mb-8 max-w-lg mx-auto">
             Stop spending hours designing slides. Generate structured, branded carousels instantly with GoToFlow.
           </p>
           <a href={CTA_URL} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.35)] text-base border border-pink-400/20 group">
