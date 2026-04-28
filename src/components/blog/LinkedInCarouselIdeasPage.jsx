@@ -120,8 +120,8 @@ const ArticleHero = () => {
 
 /* ── Inline Product Block ── */
 const InlineProductBlock = ({ text, to }) => (
-  <div className="relative my-16 md:my-20 p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-    <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-pink-500/[0.04] via-transparent to-orange-500/[0.03] blur-xl" />
+  <div className="relative my-16 md:my-20 p-6 md:p-8 rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+    <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-pink-500/[0.03] via-transparent to-orange-500/[0.02] blur-xl" />
     <div className="flex items-center gap-3">
       <div className="shrink-0 w-9 h-9 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
         <Sparkles className="w-4 h-4 text-pink-400" />
@@ -290,9 +290,8 @@ const ArticleBody = () => (
 
       {/* ── How to create ── */}
       <Section title="How to Create These Carousels">
-        <div className="relative p-5 md:p-7 rounded-2xl border border-white/[0.07] bg-white/[0.025] backdrop-blur-sm overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/[0.04] via-transparent to-orange-500/[0.03] pointer-events-none" />
-          <div className="relative z-10 space-y-5">
+        <div className="p-6 md:p-8 rounded-2xl border border-white/[0.08] bg-white/[0.04]">
+          <div className="space-y-5">
             <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
               The traditional carousel process — writing copy, designing slides in Canva, formatting everything — takes 1 to 3 hours per carousel. Most creators don't have that time.
             </p>
@@ -308,9 +307,8 @@ const ArticleBody = () => (
 
       {/* ── Tips ── */}
       <Section title="Tips for High-Performing LinkedIn Carousels">
-        <div className="relative p-5 md:p-7 rounded-2xl border border-white/[0.07] bg-white/[0.025] backdrop-blur-sm overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-bl from-purple-500/[0.03] via-transparent to-pink-500/[0.03] pointer-events-none" />
-          <ul className="relative z-10 space-y-4">
+        <div className="p-6 md:p-8 rounded-2xl border border-white/[0.08] bg-white/[0.04]">
+          <ul className="space-y-5">
             {[
               'Start with a bold, specific hook on slide 1 — the scroll-stopper matters most',
               'Keep each slide to one clear idea, 2 to 4 short lines max',
@@ -319,8 +317,8 @@ const ArticleBody = () => (
               'Post between 8-10am on Tuesday through Thursday for maximum reach',
               'Repurpose: turn one carousel into a text post, a newsletter excerpt, and a video script',
             ].map((tip, i) => (
-              <li key={i} className="flex items-start gap-3 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-500/70 shrink-0" />
+              <li key={i} className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />
                 {tip}
               </li>
             ))}
