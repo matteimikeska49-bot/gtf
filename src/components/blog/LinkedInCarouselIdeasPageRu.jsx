@@ -294,36 +294,42 @@ const ArticleBody = () => (
 
       {/* ── How to create ── */}
       <Section title="Как делать такие карусели быстро">
-        <div className="space-y-5">
-          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
-            Идеи — это круто. Но делать их долго. Нужно написать текст, собрать структуру, зайти в Figma, сверстать 10 слайдов, сохранить PDF. Это часа два на один пост.
-          </p>
-          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
-            С ИИ-генератором <strong className="text-white">GoToFlow</strong> рутины нет. Вы берете идею, пишете пару слов (или даете ссылку на статью). ИИ сам пишет текст, разбивает на слайды и делает PDF в вашем дизайне.
-          </p>
-          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
-            Все занимает около минуты. Вы просто проверяете и постите. Так можно вести LinkedIn регулярно и не тратить на это полдня.
-          </p>
+        <div className="relative p-5 md:p-7 rounded-2xl border border-white/[0.07] bg-white/[0.025] backdrop-blur-sm overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/[0.04] via-transparent to-orange-500/[0.03] pointer-events-none" />
+          <div className="relative z-10 space-y-5">
+            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
+              Идеи — это круто. Но делать их долго. Нужно написать текст, собрать структуру, зайти в Figma, сверстать 10 слайдов, сохранить PDF. Это часа два на один пост.
+            </p>
+            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
+              С ИИ-генератором <strong className="text-white">GoToFlow</strong> рутины нет. Вы берете идею, пишете пару слов (или даете ссылку на статью). ИИ сам пишет текст, разбивает на слайды и делает PDF в вашем дизайне.
+            </p>
+            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
+              Все занимает около минуты. Вы просто проверяете и постите. Так можно вести LinkedIn регулярно и не тратить на это полдня.
+            </p>
+          </div>
         </div>
       </Section>
 
       {/* ── Tips ── */}
       <Section title="Чек-лист успешной карусели">
-        <ul className="space-y-4">
-          {[
-            'Первый слайд решает все. Делайте заголовок крупным и цепким.',
-            'Один слайд = одна мысль. Никаких полотен текста. Максимум 3–4 строки.',
-            'Держите один стиль. Люди должны узнавать ваши цвета и шрифты в ленте.',
-            'Последний слайд — всегда призыв (CTA). Задайте вопрос или попросите репост.',
-            'Постите со вторника по четверг утром (8:00 - 11:00). Это лучшее время.',
-            'Переиспользуйте контент. Удачная карусель — это готовая статья или сценарий для Reels.',
-          ].map((tip, i) => (
-            <li key={i} className="flex items-start gap-3 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
-              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-500/70 shrink-0" />
-              {tip}
-            </li>
-          ))}
-        </ul>
+        <div className="relative p-5 md:p-7 rounded-2xl border border-white/[0.07] bg-white/[0.025] backdrop-blur-sm overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-bl from-purple-500/[0.03] via-transparent to-pink-500/[0.03] pointer-events-none" />
+          <ul className="relative z-10 space-y-4">
+            {[
+              'Первый слайд решает все. Делайте заголовок крупным и цепким.',
+              'Один слайд = одна мысль. Никаких полотен текста. Максимум 3–4 строки.',
+              'Держите один стиль. Люди должны узнавать ваши цвета и шрифты в ленте.',
+              'Последний слайд — всегда призыв (CTA). Задайте вопрос или попросите репост.',
+              'Постите со вторника по четверг утром (8:00 - 11:00). Это лучшее время.',
+              'Переиспользуйте контент. Удачная карусель — это готовая статья или сценарий для Reels.',
+            ].map((tip, i) => (
+              <li key={i} className="flex items-start gap-3 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-500/70 shrink-0" />
+                {tip}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
     </div>

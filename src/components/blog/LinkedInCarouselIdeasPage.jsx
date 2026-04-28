@@ -290,36 +290,42 @@ const ArticleBody = () => (
 
       {/* ── How to create ── */}
       <Section title="How to Create These Carousels">
-        <div className="space-y-5">
-          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
-            The traditional carousel process — writing copy, designing slides in Canva, formatting everything — takes 1 to 3 hours per carousel. Most creators don't have that time.
-          </p>
-          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
-            With <strong className="text-white">GoToFlow</strong>, you enter a topic or paste a link. The AI builds a complete carousel — hook, slide copy, structure, and layout — in under 60 seconds.
-          </p>
-          <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
-            You control the tone of voice, structure, and final result. It removes the bottleneck between having an idea and publishing it.
-          </p>
+        <div className="relative p-5 md:p-7 rounded-2xl border border-white/[0.07] bg-white/[0.025] backdrop-blur-sm overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/[0.04] via-transparent to-orange-500/[0.03] pointer-events-none" />
+          <div className="relative z-10 space-y-5">
+            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
+              The traditional carousel process — writing copy, designing slides in Canva, formatting everything — takes 1 to 3 hours per carousel. Most creators don't have that time.
+            </p>
+            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
+              With <strong className="text-white">GoToFlow</strong>, you enter a topic or paste a link. The AI builds a complete carousel — hook, slide copy, structure, and layout — in under 60 seconds.
+            </p>
+            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
+              You control the tone of voice, structure, and final result. It removes the bottleneck between having an idea and publishing it.
+            </p>
+          </div>
         </div>
       </Section>
 
       {/* ── Tips ── */}
       <Section title="Tips for High-Performing LinkedIn Carousels">
-        <ul className="space-y-4">
-          {[
-            'Start with a bold, specific hook on slide 1 — the scroll-stopper matters most',
-            'Keep each slide to one clear idea, 2 to 4 short lines max',
-            'Use a consistent visual style so people recognize your carousels instantly',
-            'End with a CTA: ask a question, invite a comment, or link to a resource',
-            'Post between 8-10am on Tuesday through Thursday for maximum reach',
-            'Repurpose: turn one carousel into a text post, a newsletter excerpt, and a video script',
-          ].map((tip, i) => (
-            <li key={i} className="flex items-start gap-3 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
-              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-500/70 shrink-0" />
-              {tip}
-            </li>
-          ))}
-        </ul>
+        <div className="relative p-5 md:p-7 rounded-2xl border border-white/[0.07] bg-white/[0.025] backdrop-blur-sm overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-bl from-purple-500/[0.03] via-transparent to-pink-500/[0.03] pointer-events-none" />
+          <ul className="relative z-10 space-y-4">
+            {[
+              'Start with a bold, specific hook on slide 1 — the scroll-stopper matters most',
+              'Keep each slide to one clear idea, 2 to 4 short lines max',
+              'Use a consistent visual style so people recognize your carousels instantly',
+              'End with a CTA: ask a question, invite a comment, or link to a resource',
+              'Post between 8-10am on Tuesday through Thursday for maximum reach',
+              'Repurpose: turn one carousel into a text post, a newsletter excerpt, and a video script',
+            ].map((tip, i) => (
+              <li key={i} className="flex items-start gap-3 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-500/70 shrink-0" />
+                {tip}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
     </div>
