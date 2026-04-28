@@ -37,7 +37,7 @@ export const Logo = () => {
 import { useLanguage } from '../context/LanguageContext';
 
 export const Header = () => {
-  const { lang, setLang, t } = useLanguage();
+  const { lang, setLang, t, hasTranslation } = useLanguage();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.05] bg-[#050505]/80 backdrop-blur-xl">
@@ -49,19 +49,26 @@ export const Header = () => {
         <div className="flex items-center gap-3">
           {/* Language switcher */}
           <div className="flex items-center rounded-full border border-white/10 bg-white/[0.04] overflow-hidden p-0.5">
-            {['EN', 'RU'].map((l) => (
-              <button
-                key={l}
-                onClick={() => setLang(l)}
-                className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider transition-all duration-200 ${
-                  lang === l
-                    ? 'bg-white/10 text-white shadow-sm'
-                    : 'text-zinc-500 hover:text-zinc-300'
-                }`}
-              >
-                {l}
-              </button>
-            ))}
+            {['EN', 'RU'].map((l) => {
+              const isActive = lang === l;
+              const isDisabled = !hasTranslation && lang !== l;
+              return (
+                <button
+                  key={l}
+                  onClick={() => !isDisabled && setLang(l)}
+                  disabled={isDisabled}
+                  className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider transition-all duration-200 ${
+                    isActive
+                      ? 'bg-white/10 text-white shadow-sm'
+                      : isDisabled
+                        ? 'text-zinc-700 cursor-not-allowed'
+                        : 'text-zinc-500 hover:text-zinc-300'
+                  }`}
+                >
+                  {l}
+                </button>
+              );
+            })}
           </div>
 
           {/* CTA — desktop */}

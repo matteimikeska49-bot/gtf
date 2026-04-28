@@ -116,36 +116,41 @@ export const LanguageProvider = ({ children }) => {
     }
   }, [lang, location.pathname]);
 
+  /* ── Route pair map (EN ↔ RU) ── */
+  const routePairs = [
+    ['/', '/ru'],
+    ['/ai-carousel-maker', '/ru/ai-generator-karuselej'],
+    ['/ai-content-generator', '/ru/generator-kontenta'],
+    ['/ai-instagram-post-generator', '/ru/generator-postov-instagram'],
+    ['/linkedin-carousel-maker', '/ru/generator-karuselej-linkedin'],
+    ['/blog', '/ru/blog'],
+  ];
+
+  const getPairedRoute = (pathname, targetLang) => {
+    for (const [en, ru] of routePairs) {
+      if (targetLang === 'RU' && pathname === en) return ru;
+      if (targetLang === 'EN' && pathname === ru) return en;
+    }
+    return null;
+  };
+
+  const hasTranslation = (() => {
+    const p = location.pathname;
+    for (const [en, ru] of routePairs) {
+      if (p === en || p === ru) return true;
+    }
+    return false;
+  })();
+
   const changeLang = (newLang) => {
+    const paired = getPairedRoute(location.pathname, newLang);
+
+    // If no paired route exists, do nothing (page has no translation)
+    if (!paired) return;
+
     setLangState(newLang);
     localStorage.setItem('lang', newLang === 'RU' ? 'ru' : 'en');
-
-    // Navigate to the correct URL
-    if (location.pathname === '/ai-carousel-maker' && newLang === 'RU') {
-      navigate('/ru/ai-generator-karuselej');
-    } else if (location.pathname === '/ru/ai-generator-karuselej' && newLang === 'EN') {
-      navigate('/ai-carousel-maker');
-    } else if (location.pathname === '/ai-content-generator' && newLang === 'RU') {
-      navigate('/ru/generator-kontenta');
-    } else if (location.pathname === '/ru/generator-kontenta' && newLang === 'EN') {
-      navigate('/ai-content-generator');
-    } else if (location.pathname === '/ai-instagram-post-generator' && newLang === 'RU') {
-      navigate('/ru/generator-postov-instagram');
-    } else if (location.pathname === '/ru/generator-postov-instagram' && newLang === 'EN') {
-      navigate('/ai-instagram-post-generator');
-    } else if (location.pathname === '/linkedin-carousel-maker' && newLang === 'RU') {
-      navigate('/ru/generator-karuselej-linkedin');
-    } else if (location.pathname === '/ru/generator-karuselej-linkedin' && newLang === 'EN') {
-      navigate('/linkedin-carousel-maker');
-    } else if (location.pathname === '/blog' && newLang === 'RU') {
-      navigate('/ru/blog');
-    } else if (location.pathname === '/ru/blog' && newLang === 'EN') {
-      navigate('/blog');
-    } else if (newLang === 'RU') {
-      navigate('/ru');
-    } else {
-      navigate('/');
-    }
+    navigate(paired);
   };
 
   const t = useCallback((path) => {
@@ -165,7 +170,7 @@ export const LanguageProvider = ({ children }) => {
   }, [lang]);
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang: changeLang, t }}>
+    <LanguageContext.Provider value={{ lang, setLang: changeLang, t, hasTranslation }}>
       {children}
     </LanguageContext.Provider>
   );
