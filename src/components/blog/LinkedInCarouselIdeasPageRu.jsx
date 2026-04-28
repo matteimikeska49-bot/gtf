@@ -120,7 +120,8 @@ const ArticleHero = () => {
 
 /* ── Inline Product Block ── */
 const InlineProductBlock = ({ text, to, btnText = "Попробовать бесплатно" }) => (
-  <div className="my-16 md:my-20 p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+  <div className="relative my-16 md:my-20 p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+    <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-pink-500/[0.04] via-transparent to-orange-500/[0.03] blur-xl" />
     <div className="flex items-center gap-3">
       <div className="shrink-0 w-9 h-9 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
         <Sparkles className="w-4 h-4 text-pink-400" />
@@ -163,8 +164,14 @@ const IdeaList = ({ items, startNum = 1 }) => (
 
 /* ── Article Body ── */
 const ArticleBody = () => (
-  <article className="pt-4 pb-8 px-6 relative z-10 w-full bg-[#050505]">
-    <div className="max-w-3xl mx-auto">
+  <article className="pt-4 pb-8 px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
+    {/* Ambient glow — top of article */}
+    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[600px] md:w-[800px] h-[400px] md:h-[500px] bg-pink-500/[0.035] blur-[160px] rounded-full pointer-events-none" />
+    {/* Ambient glow — mid article */}
+    <div className="absolute top-[35%] right-[-10%] w-[500px] h-[500px] bg-purple-500/[0.025] blur-[180px] rounded-full pointer-events-none" />
+    {/* Ambient glow — lower article */}
+    <div className="absolute top-[65%] left-[-10%] w-[500px] h-[400px] bg-orange-500/[0.025] blur-[180px] rounded-full pointer-events-none" />
+    <div className="max-w-3xl mx-auto relative z-10">
 
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Карусели в LinkedIn сейчас рвут охваты. Они дают в 3–5 раз больше просмотров, чем обычный текст. Отлично задерживают внимание. И главное — приносят лиды.
@@ -347,8 +354,10 @@ const FAQItem = ({ item, isOpen, onClick }) => (
 const ArticleFAQ = () => {
   const [openIdx, setOpenIdx] = React.useState(null);
   return (
-    <section className="py-16 md:py-20 px-6 relative z-10 w-full bg-[#050505]">
-      <div className="max-w-3xl mx-auto">
+    <section className="py-16 md:py-20 px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
+      {/* Ambient glow — FAQ */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-pink-500/[0.03] blur-[160px] rounded-full pointer-events-none" />
+      <div className="max-w-3xl mx-auto relative z-10">
         <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-8">Частые вопросы</h2>
         <div className="space-y-3">
           {faqItems.map((item, i) => <FAQItem key={i} item={item} isOpen={openIdx === i} onClick={() => setOpenIdx(openIdx === i ? null : i)} />)}
