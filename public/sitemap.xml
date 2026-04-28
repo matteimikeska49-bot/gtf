@@ -31,6 +31,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-carousel-maker" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/ai-generator-karuselej" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/ai-carousel-maker" />
   </url>
 
   <url>
@@ -40,6 +41,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-content-generator" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/generator-kontenta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/ai-content-generator" />
   </url>
 
   <url>
@@ -49,6 +51,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-instagram-post-generator" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/generator-postov-instagram" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/ai-instagram-post-generator" />
   </url>
 
   <url>
@@ -58,6 +61,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/linkedin-carousel-maker" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/generator-karuselej-linkedin" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/linkedin-carousel-maker" />
   </url>
 
   <!-- RU TOOLS -->
@@ -68,6 +72,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-carousel-maker" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/ai-generator-karuselej" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/ai-carousel-maker" />
   </url>
 
   <url>
@@ -77,6 +82,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-content-generator" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/generator-kontenta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/ai-content-generator" />
   </url>
 
   <url>
@@ -86,6 +92,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-instagram-post-generator" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/generator-postov-instagram" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/ai-instagram-post-generator" />
   </url>
 
   <url>
@@ -95,6 +102,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/linkedin-carousel-maker" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/generator-karuselej-linkedin" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/linkedin-carousel-maker" />
   </url>
 
   <!-- BLOG -->
@@ -105,6 +113,7 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/blog" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/blog" />
   </url>
 
   <url>
@@ -114,6 +123,7 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/blog" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/blog" />
   </url>
 
   <url>
@@ -123,6 +133,7 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/blog/linkedin-carousel-ideas" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/blog/idei-karuselej-linkedin" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/blog/linkedin-carousel-ideas" />
   </url>
 
   <url>
@@ -132,6 +143,7 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/blog/linkedin-carousel-ideas" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/blog/idei-karuselej-linkedin" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/blog/linkedin-carousel-ideas" />
   </url>
 
 </urlset>

@@ -8,7 +8,7 @@ const CTA_URL = 'https://app.gotoflow.io';
 /* ── SEO Head ── */
 export const SEOHead = () => {
   useEffect(() => {
-    document.title = 'AI Carousel Maker — Create Ready-to-Publish Carousels in 60 Seconds | GoToFlow';
+    document.title = 'AI Carousel Maker — Create Carousels with AI | GoToFlow';
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let el = document.querySelector(sel);
@@ -27,7 +27,8 @@ export const SEOHead = () => {
     setLink('canonical', 'https://gotoflow.io/ai-carousel-maker');
     setLink('alternate', 'https://gotoflow.io/ai-carousel-maker', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/ai-generator-karuselej', { hreflang: 'ru' });
-    return () => { document.title = 'AI Content Generator for Social Media — Create Posts, Carousels & Reels Fast | GoToFlow'; };
+    setLink('alternate', 'https://gotoflow.io/ai-carousel-maker', { hreflang: 'x-default' });
+    return () => { document.title = 'GoToFlow'; };
   }, []);
   return null;
 };

@@ -36,7 +36,8 @@ export const SEOHead = () => {
     setLink('canonical', 'https://gotoflow.io/linkedin-carousel-maker');
     setLink('alternate', 'https://gotoflow.io/linkedin-carousel-maker', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/generator-karuselej-linkedin', { hreflang: 'ru' });
-    return () => { document.title = 'AI Content Generator for Social Media — Create Posts, Carousels & Reels Fast | GoToFlow'; };
+    setLink('alternate', 'https://gotoflow.io/linkedin-carousel-maker', { hreflang: 'x-default' });
+    return () => { document.title = 'GoToFlow'; };
   }, []);
   return null;
 };

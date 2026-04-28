@@ -13,7 +13,7 @@ const CTA_URL = 'https://gotoflow.io/linkedin-carousel-maker';
 /* ── SEO Head ── */
 const ArticleSEOHead = () => {
   useEffect(() => {
-    document.title = '50 LinkedIn Carousel Ideas That Actually Get Engagement (2026) | GoToFlow';
+    document.title = '50 LinkedIn Carousel Ideas That Get Engagement | GoToFlow';
 
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;

@@ -33,10 +33,11 @@ export const SEOHead = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     setMeta('description', 'Generate posts, captions, and content ideas with AI in seconds.');
-    setLink('canonical', 'https://gotoflow.io/ai-content-maker');
-    setLink('alternate', 'https://gotoflow.io/ai-content-maker', { hreflang: 'en' });
+    setLink('canonical', 'https://gotoflow.io/ai-content-generator');
+    setLink('alternate', 'https://gotoflow.io/ai-content-generator', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/generator-kontenta', { hreflang: 'ru' });
-    return () => { document.title = 'AI Content Generator for Social Media — Create Posts, Content & Reels Fast | GoToFlow'; };
+    setLink('alternate', 'https://gotoflow.io/ai-content-generator', { hreflang: 'x-default' });
+    return () => { document.title = 'GoToFlow'; };
   }, []);
   return null;
 };

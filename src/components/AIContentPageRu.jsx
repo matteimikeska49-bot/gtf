@@ -36,8 +36,9 @@ export const SEOHeadRu = () => {
     setLink('canonical', 'https://gotoflow.io/ru/generator-kontenta');
     setLink('alternate', 'https://gotoflow.io/ai-content-generator', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/generator-kontenta', { hreflang: 'ru' });
+    setLink('alternate', 'https://gotoflow.io/ai-content-generator', { hreflang: 'x-default' });
     document.documentElement.lang = 'ru';
-    return () => { document.title = 'AI-генератор контента для соцсетей — Создавайте посты, контент и Reels | GoToFlow'; document.documentElement.lang = 'en'; };
+    return () => { document.title = 'GoToFlow'; document.documentElement.lang = 'en'; };
   }, []);
   return null;
 };

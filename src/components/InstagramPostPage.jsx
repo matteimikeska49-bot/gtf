@@ -17,7 +17,7 @@ const CTA_URL = 'https://app.gotoflow.io';
 /* ── SEO Head ── */
 export const SEOHead = () => {
   useEffect(() => {
-    document.title = 'AI Instagram Post Generator | Create Posts Fast';
+    document.title = 'AI Instagram Post Generator | GoToFlow';
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let el = document.querySelector(sel);
@@ -33,10 +33,11 @@ export const SEOHead = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     setMeta('description', 'Generate Instagram posts, captions, and ideas instantly with AI.');
-    setLink('canonical', 'https://gotoflow.io/ai-post-maker');
-    setLink('alternate', 'https://gotoflow.io/ai-post-maker', { hreflang: 'en' });
+    setLink('canonical', 'https://gotoflow.io/ai-instagram-post-generator');
+    setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/generator-postov-instagram', { hreflang: 'ru' });
-    return () => { document.title = 'AI Content Generator for Social Media — Create Posts, Posts & Reels Fast | GoToFlow'; };
+    setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'x-default' });
+    return () => { document.title = 'GoToFlow'; };
   }, []);
   return null;
 };

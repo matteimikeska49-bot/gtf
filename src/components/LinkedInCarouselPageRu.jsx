@@ -36,8 +36,9 @@ export const SEOHeadRu = () => {
     setLink('canonical', 'https://gotoflow.io/ru/generator-karuselej-linkedin');
     setLink('alternate', 'https://gotoflow.io/linkedin-carousel-maker', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/generator-karuselej-linkedin', { hreflang: 'ru' });
+    setLink('alternate', 'https://gotoflow.io/linkedin-carousel-maker', { hreflang: 'x-default' });
     document.documentElement.lang = 'ru';
-    return () => { document.title = 'AI-генератор контента для соцсетей — Создавайте посты, карусели и Reels | GoToFlow'; document.documentElement.lang = 'en'; };
+    return () => { document.title = 'GoToFlow'; document.documentElement.lang = 'en'; };
   }, []);
   return null;
 };

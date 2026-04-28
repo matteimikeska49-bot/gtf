@@ -20,10 +20,20 @@ const BlogSEOHeadRu = () => {
       el.setAttribute(prop ? 'property' : 'name', name);
       el.setAttribute('content', content);
     };
+    const setLink = (rel, href, extra = {}) => {
+      const sel = extra.hreflang ? `link[rel="${rel}"][hreflang="${extra.hreflang}"]` : `link[rel="${rel}"]`;
+      let el = document.querySelector(sel);
+      if (!el) { el = document.createElement('link'); document.head.appendChild(el); }
+      el.setAttribute('rel', rel); el.setAttribute('href', href);
+      Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
+    };
     setMeta('description', 'Готовые идеи, подписи и шаблоны, которые можно сразу превратить в пост или карусель.');
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.href = 'https://gotoflow.io/ru/blog';
-    return () => { document.title = 'GoToFlow'; };
+    setLink('canonical', 'https://gotoflow.io/ru/blog');
+    setLink('alternate', 'https://gotoflow.io/blog', { hreflang: 'en' });
+    setLink('alternate', 'https://gotoflow.io/ru/blog', { hreflang: 'ru' });
+    setLink('alternate', 'https://gotoflow.io/blog', { hreflang: 'x-default' });
+    document.documentElement.lang = 'ru';
+    return () => { document.title = 'GoToFlow'; document.documentElement.lang = 'en'; };
   }, []);
   return null;
 };

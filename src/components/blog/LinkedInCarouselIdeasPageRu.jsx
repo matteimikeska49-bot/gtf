@@ -13,7 +13,7 @@ const CTA_URL = '/ru/generator-karuselej-linkedin';
 /* ── SEO Head ── */
 const ArticleSEOHead = () => {
   useEffect(() => {
-    document.title = '50 идей каруселей для LinkedIn, которые реально дают охваты и заявки | GoToFlow';
+    document.title = '50 идей каруселей для LinkedIn (Охваты и Заявки) | GoToFlow';
 
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;

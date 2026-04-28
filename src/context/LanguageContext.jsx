@@ -101,13 +101,13 @@ export const LanguageProvider = ({ children }) => {
 
       // Update title and meta description based on language
       if (lang === 'RU') {
-        document.title = 'AI-генератор контента для соцсетей — Создавайте посты, карусели и Reels | GoToFlow';
+        document.title = 'AI-генератор контента — Посты и Карусели | GoToFlow';
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) metaDesc.content = 'Создавайте конвертирующий контент для соцсетей с помощью ИИ. Генерируйте карусели, посты, сценарии Reels и контент-планы за секунды с GoToFlow.';
         const metaTitle = document.querySelector('meta[name="title"]');
         if (metaTitle) metaTitle.content = 'AI-генератор контента для соцсетей — Создавайте посты, карусели и Reels | GoToFlow';
       } else {
-        document.title = 'AI Content Generator for Social Media — Create Posts, Carousels & Reels Fast | GoToFlow';
+        document.title = 'AI Content Generator — Create Posts & Carousels | GoToFlow';
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) metaDesc.content = 'Create high-converting social media content with AI. Generate carousels, posts, reels scripts and content plans in seconds with GoToFlow.';
         const metaTitle = document.querySelector('meta[name="title"]');
