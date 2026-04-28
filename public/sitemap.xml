@@ -116,4 +116,22 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/blog" />
   </url>
 
+  <url>
+    <loc>https://gotoflow.io/blog/linkedin-carousel-ideas</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/blog/linkedin-carousel-ideas" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/blog/idei-karuselej-linkedin" />
+  </url>
+
+  <url>
+    <loc>https://gotoflow.io/ru/blog/idei-karuselej-linkedin</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/blog/linkedin-carousel-ideas" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/blog/idei-karuselej-linkedin" />
+  </url>
+
 </urlset>

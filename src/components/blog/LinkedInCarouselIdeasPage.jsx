@@ -22,11 +22,14 @@ const ArticleSEOHead = () => {
       el.setAttribute(prop ? 'property' : 'name', name);
       el.setAttribute('content', content);
     };
-    const setLink = (rel, href) => {
-      let el = document.querySelector(`link[rel="${rel}"]`);
+    const setLink = (rel, href, hreflang = null) => {
+      let sel = `link[rel="${rel}"]`;
+      if (hreflang) sel += `[hreflang="${hreflang}"]`;
+      let el = document.querySelector(sel);
       if (!el) { el = document.createElement('link'); document.head.appendChild(el); }
       el.setAttribute('rel', rel);
       el.setAttribute('href', href);
+      if (hreflang) el.setAttribute('hreflang', hreflang);
     };
 
     const desc = 'Explore 50 LinkedIn carousel ideas with examples, hooks, and structures. Learn how to create high-performing carousels faster using AI.';
@@ -36,6 +39,10 @@ const ArticleSEOHead = () => {
     setMeta('og:type', 'article', true);
     setMeta('og:url', 'https://gotoflow.io/blog/linkedin-carousel-ideas', true);
     setLink('canonical', 'https://gotoflow.io/blog/linkedin-carousel-ideas');
+
+    /* Hreflang */
+    setLink('alternate', 'https://gotoflow.io/blog/linkedin-carousel-ideas', 'en');
+    setLink('alternate', 'https://gotoflow.io/ru/blog/idei-karuselej-linkedin', 'ru');
 
     /* JSON-LD Schema */
     const schemaId = 'linkedin-carousel-ideas-schema';
@@ -61,6 +68,9 @@ const ArticleSEOHead = () => {
       document.title = 'GoToFlow';
       const s = document.getElementById(schemaId);
       if (s) s.remove();
+      
+      // Cleanup hreflangs on unmount
+      document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
     };
   }, []);
   return null;

@@ -13,7 +13,7 @@ const CTA_URL = '/ru/generator-karuselej-linkedin';
 /* ── SEO Head ── */
 const ArticleSEOHead = () => {
   useEffect(() => {
-    document.title = '50 идей каруселей для LinkedIn, которые реально дают охваты и заявки';
+    document.title = '50 идей каруселей для LinkedIn, которые реально дают охваты и заявки | GoToFlow';
 
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
@@ -22,20 +22,27 @@ const ArticleSEOHead = () => {
       el.setAttribute(prop ? 'property' : 'name', name);
       el.setAttribute('content', content);
     };
-    const setLink = (rel, href) => {
-      let el = document.querySelector(`link[rel="${rel}"]`);
+    const setLink = (rel, href, hreflang = null) => {
+      let sel = `link[rel="${rel}"]`;
+      if (hreflang) sel += `[hreflang="${hreflang}"]`;
+      let el = document.querySelector(sel);
       if (!el) { el = document.createElement('link'); document.head.appendChild(el); }
       el.setAttribute('rel', rel);
       el.setAttribute('href', href);
+      if (hreflang) el.setAttribute('hreflang', hreflang);
     };
 
-    const desc = '50 идей каруселей для LinkedIn: примеры, структура, ошибки и как делать посты, которые получают охваты и клиентов.';
+    const desc = '50 идей каруселей для LinkedIn: примеры, структура, ошибки и как создавать посты, которые получают охваты и заявки';
     setMeta('description', desc);
-    setMeta('og:title', '50 идей каруселей для LinkedIn, которые реально дают охваты и заявки', true);
+    setMeta('og:title', '50 идей каруселей для LinkedIn, которые реально дают охваты и заявки | GoToFlow', true);
     setMeta('og:description', desc, true);
     setMeta('og:type', 'article', true);
     setMeta('og:url', 'https://gotoflow.io/ru/blog/idei-karuselej-linkedin', true);
     setLink('canonical', 'https://gotoflow.io/ru/blog/idei-karuselej-linkedin');
+    
+    /* Hreflang */
+    setLink('alternate', 'https://gotoflow.io/blog/linkedin-carousel-ideas', 'en');
+    setLink('alternate', 'https://gotoflow.io/ru/blog/idei-karuselej-linkedin', 'ru');
 
     /* JSON-LD Schema */
     const schemaId = 'linkedin-carousel-ideas-schema-ru';
@@ -61,6 +68,9 @@ const ArticleSEOHead = () => {
       document.title = 'GoToFlow';
       const s = document.getElementById(schemaId);
       if (s) s.remove();
+      
+      // Cleanup hreflangs on unmount
+      document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
     };
   }, []);
   return null;
