@@ -123,6 +123,7 @@ export const LanguageProvider = ({ children }) => {
     ['/ai-content-generator', '/ru/generator-kontenta'],
     ['/ai-instagram-post-generator', '/ru/generator-postov-instagram'],
     ['/linkedin-carousel-maker', '/ru/generator-karuselej-linkedin'],
+    ['/blog/linkedin-carousel-ideas', '/ru/blog/idei-karuselej-linkedin'],
     ['/blog', '/ru/blog'],
   ];
 
