@@ -43,7 +43,7 @@ export const Header = () => {
   const isArticlePage = location.pathname.startsWith('/blog/') || location.pathname.startsWith('/ru/blog/');
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.05] bg-[#050505]/80 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.05] bg-[#050505]/95">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
         <Logo />
 
