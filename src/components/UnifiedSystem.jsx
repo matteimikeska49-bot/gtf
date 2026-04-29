@@ -61,7 +61,7 @@ export const UnifiedSystem = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: isMobile ? 0.6 : 0.9, ease: 'easeOut' }}
-          className="relative"
+          className="relative transform-gpu"
         >
           {/* Плавный теплый фон убран */}
 
@@ -89,7 +89,7 @@ export const UnifiedSystem = () => {
                 {metrics.map((m, i) => (
                   <div
                     key={i}
-                    className="flex flex-col items-center justify-center bg-white/[0.04] border border-white/10 backdrop-blur-3xl rounded-2xl py-4 px-6 text-center hover:bg-white/[0.06] transition-all duration-300"
+                    className="flex flex-col items-center justify-center bg-white/[0.04] border border-white/10 backdrop-blur-3xl rounded-2xl py-4 px-6 text-center hover:bg-white/[0.06] transition-colors duration-300"
                   >
                     <div className={`p-2.5 rounded-xl border mb-3 ${m.ring}`}>
                       <span className={m.color}>{m.icon}</span>
@@ -128,7 +128,7 @@ export const UnifiedSystem = () => {
 
                   {/* Правая — GoToFlow */}
                   <div 
-                    className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-all duration-500"
+                    className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-colors duration-500"
                     style={{
                       background: 'rgba(255,255,255,0.04)',
                       border: '1px solid rgba(255,255,255,0.08)',

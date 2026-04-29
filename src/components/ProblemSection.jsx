@@ -72,7 +72,7 @@ export const ProblemSection = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: isMobile ? 0.6 : 0.8, ease: [0.25, 1, 0.5, 1], delay: 0.15 }}
-        className="relative w-full max-w-6xl mx-auto px-4 z-10"
+        className="relative w-full max-w-6xl mx-auto px-4 z-10 transform-gpu"
       >
         <div className="relative bg-white/[0.02] border border-white/[0.05] backdrop-blur-xl rounded-[2rem] p-6 md:p-10 lg:p-12 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden">
 
@@ -95,7 +95,7 @@ export const ProblemSection = () => {
                 variants={cardVariants}
                 initial="hidden"
                 animate={inView ? 'visible' : 'hidden'}
-                className="group relative bg-white/[0.03] border border-white/[0.07] backdrop-blur-2xl rounded-2xl p-7 md:p-8 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-1.5 hover:bg-white/[0.06] hover:border-white/[0.14] hover:shadow-[0_12px_40px_-8px_rgba(236,72,153,0.12),0_6px_24px_-6px_rgba(249,115,22,0.08)]"
+                className="group relative bg-white/[0.03] border border-white/[0.07] backdrop-blur-2xl rounded-2xl p-7 md:p-8 overflow-hidden transition-[transform,background-color,border-color,box-shadow] duration-500 ease-out hover:-translate-y-1.5 hover:bg-white/[0.06] hover:border-white/[0.14] hover:shadow-[0_12px_40px_-8px_rgba(236,72,153,0.12),0_6px_24px_-6px_rgba(249,115,22,0.08)] transform-gpu"
               >
                 {/* Inner glow on hover — warm pink-orange tint */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pink-500/0 to-orange-500/0 group-hover:from-pink-500/[0.04] group-hover:to-orange-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />

@@ -67,11 +67,11 @@ export const CarouselHowItWorksRu = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-6 relative z-10">
           {hiwSteps.map((step,i) => (
             <motion.div key={i} initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7,delay:i*0.2}} className={`relative group flex flex-col md:items-center text-left md:text-center ${i===1?'lg:scale-105':''}`}>
-              <div className={`relative w-16 h-16 flex items-center justify-center rounded-2xl border shrink-0 mb-10 z-20 shadow-2xl group-hover:scale-110 transition-all duration-500 mx-0 md:mx-auto ${i===1?'border-pink-500/50 bg-[#0a0a0a] shadow-[0_0_15px_rgba(236,72,153,0.3)]':'border-white/10 bg-[#0a0a0a] group-hover:border-pink-500/40'}`}>
+              <div className={`relative w-16 h-16 flex items-center justify-center rounded-2xl border shrink-0 mb-10 z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500 mx-0 md:mx-auto ${i===1?'border-pink-500/50 bg-[#0a0a0a] shadow-[0_0_15px_rgba(236,72,153,0.3)]':'border-white/10 bg-[#0a0a0a] group-hover:border-pink-500/40'}`}>
                 <step.icon className={`w-6 h-6 relative z-10 ${i===1?'text-pink-300':'text-zinc-100'}`}/>
                 <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#050505] border border-white/10 flex items-center justify-center text-xs font-bold text-zinc-400">{step.number}</div>
               </div>
-              <div className={`w-full backdrop-blur-xl p-8 rounded-3xl border transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.5)] relative overflow-hidden flex-1 md:hover:-translate-y-2 transform bg-gradient-to-b from-white/[0.08] to-white/[0.02] ${i===1?'border-pink-500/40 hover:border-pink-500/60':'border-white/[0.15] hover:border-white/25'}`}>
+              <div className={`w-full backdrop-blur-xl p-8 rounded-3xl border transition-[transform,border-color] duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.5)] relative overflow-hidden flex-1 md:hover:-translate-y-2 transform-gpu bg-gradient-to-b from-white/[0.08] to-white/[0.02] ${i===1?'border-pink-500/40 hover:border-pink-500/60':'border-white/[0.15] hover:border-white/25'}`}>
                 <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none"/>
                 {i===1&&<div className="absolute inset-0 bg-gradient-to-b from-pink-500/5 to-transparent pointer-events-none"/>}
                 <h3 className="text-2xl font-bold text-white mb-3 tracking-tight relative z-10">{step.title}</h3>
@@ -91,7 +91,7 @@ export const CarouselHowItWorksRu = () => {
 const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
   const [err, setErr] = React.useState(false);
   return (
-    <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7,delay}} className={`relative group transition-all duration-500 hover:-translate-y-1 ${className}`}>
+    <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7,delay}} className={`relative group transition-transform duration-500 hover:-translate-y-1 transform-gpu ${className}`}>
       <div className="absolute -inset-2 bg-gradient-to-br from-pink-500/20 via-rose-400/10 to-orange-500/15 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2rem] z-0 pointer-events-none"/>
       <div className="relative z-10 p-2 md:p-3 bg-[#ffffff03] backdrop-blur-2xl border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-[1.25rem] flex flex-col justify-center h-full group-hover:border-white/[0.14] transition-colors duration-500">
         <div className="relative rounded-[0.75rem] overflow-hidden border border-white/[0.03] bg-[#0c0508] flex-grow flex items-center justify-center">
@@ -123,7 +123,7 @@ export const CarouselDifferentiationRu = () => {
         </motion.div>
         <div className="flex flex-col gap-4">
           {diffPoints.map((p,i) => (
-            <motion.div key={i} initial={{opacity:0,x: isMobile ? 0 : -30, y: isMobile ? 20 : 0}} whileInView={{opacity:1,x:0,y:0}} viewport={{once:true}} transition={{duration:0.6,delay:i*0.13}} className="flex items-start gap-5 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] group hover:border-white/10 hover:bg-white/[0.03] transition-all duration-300">
+            <motion.div key={i} initial={{opacity:0,x: isMobile ? 0 : -30, y: isMobile ? 20 : 0}} whileInView={{opacity:1,x:0,y:0}} viewport={{once:true}} transition={{duration:0.6,delay:i*0.13}} className="flex items-start gap-5 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] group hover:border-white/10 hover:bg-white/[0.03] transition-colors duration-300 transform-gpu">
               <div className="relative w-11 h-11 flex items-center justify-center rounded-2xl border border-white/5 bg-[#050505] shrink-0 group-hover:scale-110 transition-transform duration-500">
                 <div className="absolute inset-0 bg-pink-500 blur-xl opacity-15 group-hover:opacity-40 transition-opacity duration-500 rounded-2xl"/>
                 <p.icon className="w-5 h-5 text-pink-300 relative z-10"/>
@@ -169,7 +169,7 @@ const faqItems = [
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
-  <div className={`rounded-2xl border transition-all duration-300 overflow-hidden cursor-pointer ${isOpen?'border-pink-500/30 bg-white/[0.03]':'border-white/[0.05] bg-white/[0.01] hover:border-white/10'}`} onClick={onClick}>
+  <div className={`rounded-2xl border transition-colors duration-300 overflow-hidden cursor-pointer ${isOpen?'border-pink-500/30 bg-white/[0.03]':'border-white/[0.05] bg-white/[0.01] hover:border-white/10'}`} onClick={onClick}>
     <div className="flex items-center justify-between gap-4 p-6">
       <span className={`font-semibold text-base leading-snug transition-colors ${isOpen?'text-white':'text-zinc-200'}`}>{item.q}</span>
       <motion.div animate={{rotate:isOpen?180:0}} transition={{duration:0.3}} className="shrink-0 w-8 h-8 rounded-full border border-white/10 flex items-center justify-center bg-white/[0.03]">

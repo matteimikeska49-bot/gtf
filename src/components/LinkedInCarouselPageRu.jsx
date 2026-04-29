@@ -125,7 +125,7 @@ export const LICarouselShowcaseRu = () => (
         Примеры каруселей, <span className="text-gradient-brand">созданных с помощью ИИ</span>
       </h2>
       <div className="relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}>
-        <div className="flex items-center gap-5" style={{ animation: 'marquee-scroll 35s linear infinite', width: 'max-content' }}>
+        <div className="flex items-center gap-5" style={{ animation: 'marquee-scroll 35s linear infinite', width: 'max-content', willChange: 'transform' }}>
           {[...carouselCards, ...carouselCards].map((card, i) => <SlideCard key={`${card.id}-${i}`} card={card} />)}
         </div>
       </div>
@@ -160,7 +160,7 @@ export const LICarouselProblemRu = () => {
           <div className="absolute top-0 inset-x-[15%] h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent pointer-events-none" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 relative z-20">
             {problemCards.map((card, i) => (
-              <motion.div key={i} initial={{ opacity:0,y:14 }} animate={inView?{ opacity:1,y:0,transition:{duration:0.7,delay:i*0.12} }:{}} className="group relative bg-white/[0.03] border border-white/[0.07] backdrop-blur-2xl rounded-2xl p-7 md:p-8 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-1.5 hover:bg-white/[0.06] hover:border-white/[0.14]">
+              <motion.div key={i} initial={{ opacity:0,y:14 }} animate={inView?{ opacity:1,y:0,transition:{duration:0.7,delay:i*0.12} }:{}} className="group relative bg-white/[0.03] border border-white/[0.07] backdrop-blur-2xl rounded-2xl p-7 md:p-8 overflow-hidden transition-[transform,background-color,border-color] duration-500 ease-out hover:-translate-y-1.5 hover:bg-white/[0.06] hover:border-white/[0.14] transform-gpu">
                 <h3 className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-3 tracking-tight leading-snug relative z-10">{card.title}</h3>
                 <p className="text-zinc-400 leading-relaxed text-[0.95rem] relative z-10 transition-colors duration-300 group-hover:text-zinc-300">{card.text}</p>
               </motion.div>
@@ -196,7 +196,7 @@ export const LICarouselComparisonRu = () => {
                 { icon:<Zap className="w-6 h-6"/>, color:'text-violet-400', ring:'bg-violet-500/10 border-violet-500/20', text:'Готовая карусель за ~60 секунд' },
                 { icon:<Target className="w-6 h-6"/>, color:'text-rose-400', ring:'bg-rose-500/10 border-rose-500/20', text:'Один процесс вместо 4 инструментов' }
               ].map((m,i)=>(
-                <div key={i} className="flex flex-col items-center justify-center bg-white/[0.04] border border-white/10 backdrop-blur-3xl rounded-2xl py-4 px-6 text-center hover:bg-white/[0.06] transition-all duration-300">
+                <div key={i} className="flex flex-col items-center justify-center bg-white/[0.04] border border-white/10 backdrop-blur-3xl rounded-2xl py-4 px-6 text-center hover:bg-white/[0.06] transition-colors duration-300">
                   <div className={`p-2.5 rounded-xl border mb-3 ${m.ring}`}><span className={m.color}>{m.icon}</span></div>
                   <p className="text-zinc-400 font-medium text-sm leading-snug">{m.text}</p>
                 </div>
@@ -211,7 +211,7 @@ export const LICarouselComparisonRu = () => {
                   ))}
                 </div>
               </div>
-              <div className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-all duration-500" style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', boxShadow:'0 20px 40px -10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)', backdropFilter:'blur(16px)' }}>
+              <div className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-colors duration-500" style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', boxShadow:'0 20px 40px -10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)', backdropFilter:'blur(16px)' }}>
                 <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-10">GoToFlow</p>
                 <div className="flex flex-col gap-5 flex-1 relative z-10">
                   {['Введите тему или вставьте ссылку — получите готовую карусель','ИИ пишет хук, структурирует слайды и заполняет текст','Получите готовую к публикации карусель в один клик','Мгновенно генерируйте несколько вариантов','Ваш tone of voice сохраняется в каждом слайде'].map((t,i)=>(
@@ -302,11 +302,11 @@ export const LICarouselHowItWorksRu = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-6 relative z-10">
           {hiwSteps.map((step,i) => (
             <motion.div key={i} initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7,delay:i*0.2}} className={`relative group flex flex-col md:items-center text-left md:text-center ${i===1?'lg:scale-105':''}`}>
-              <div className={`relative w-16 h-16 flex items-center justify-center rounded-2xl border shrink-0 mb-10 z-20 shadow-2xl group-hover:scale-110 transition-all duration-500 mx-0 md:mx-auto ${i===1?'border-pink-500/50 bg-[#0a0a0a] shadow-[0_0_15px_rgba(236,72,153,0.3)]':'border-white/10 bg-[#0a0a0a] group-hover:border-pink-500/40'}`}>
+              <div className={`relative w-16 h-16 flex items-center justify-center rounded-2xl border shrink-0 mb-10 z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500 mx-0 md:mx-auto ${i===1?'border-pink-500/50 bg-[#0a0a0a] shadow-[0_0_15px_rgba(236,72,153,0.3)]':'border-white/10 bg-[#0a0a0a] group-hover:border-pink-500/40'}`}>
                 <step.icon className={`w-6 h-6 relative z-10 ${i===1?'text-pink-300':'text-zinc-100'}`}/>
                 <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#050505] border border-white/10 flex items-center justify-center text-xs font-bold text-zinc-400">{step.number}</div>
               </div>
-              <div className={`w-full backdrop-blur-xl p-8 rounded-3xl border transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.5)] relative overflow-hidden flex-1 md:hover:-translate-y-2 transform bg-gradient-to-b from-white/[0.08] to-white/[0.02] ${i===1?'border-pink-500/40 hover:border-pink-500/60':'border-white/[0.15] hover:border-white/25'}`}>
+              <div className={`w-full backdrop-blur-xl p-8 rounded-3xl border transition-[transform,border-color] duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.5)] relative overflow-hidden flex-1 md:hover:-translate-y-2 transform-gpu bg-gradient-to-b from-white/[0.08] to-white/[0.02] ${i===1?'border-pink-500/40 hover:border-pink-500/60':'border-white/[0.15] hover:border-white/25'}`}>
                 <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none"/>
                 {i===1&&<div className="absolute inset-0 bg-gradient-to-b from-pink-500/5 to-transparent pointer-events-none"/>}
                 <h3 className="text-2xl font-bold text-white mb-3 tracking-tight relative z-10">{step.title}</h3>
@@ -326,7 +326,7 @@ export const LICarouselHowItWorksRu = () => {
 const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
   const [err, setErr] = React.useState(false);
   return (
-    <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7,delay}} className={`relative group transition-all duration-500 hover:-translate-y-1 ${className}`}>
+    <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7,delay}} className={`relative group transition-transform duration-500 hover:-translate-y-1 transform-gpu ${className}`}>
       <div className="absolute -inset-2 bg-gradient-to-br from-pink-500/20 via-rose-400/10 to-orange-500/15 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2rem] z-0 pointer-events-none"/>
       <div className="relative z-10 p-2 md:p-3 bg-[#ffffff03] backdrop-blur-2xl border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-[1.25rem] flex flex-col justify-center h-full group-hover:border-white/[0.14] transition-colors duration-500">
         <div className="relative rounded-[0.75rem] overflow-hidden border border-white/[0.03] bg-[#0c0508] flex-grow flex items-center justify-center">
@@ -358,7 +358,7 @@ export const LICarouselDifferentiationRu = () => {
         </motion.div>
         <div className="flex flex-col gap-4">
           {diffPoints.map((p,i) => (
-            <motion.div key={i} initial={{opacity:0,x: isMobile ? 0 : -30, y: isMobile ? 20 : 0}} whileInView={{opacity:1,x:0,y:0}} viewport={{once:true}} transition={{duration:0.6,delay:i*0.13}} className="flex items-start gap-5 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] group hover:border-white/10 hover:bg-white/[0.03] transition-all duration-300">
+            <motion.div key={i} initial={{opacity:0,x: isMobile ? 0 : -30, y: isMobile ? 20 : 0}} whileInView={{opacity:1,x:0,y:0}} viewport={{once:true}} transition={{duration:0.6,delay:i*0.13}} className="flex items-start gap-5 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] group hover:border-white/10 hover:bg-white/[0.03] transition-colors duration-300 transform-gpu">
               <div className="relative w-11 h-11 flex items-center justify-center rounded-2xl border border-white/5 bg-[#050505] shrink-0 group-hover:scale-110 transition-transform duration-500">
                 <div className="absolute inset-0 bg-pink-500 blur-xl opacity-15 group-hover:opacity-40 transition-opacity duration-500 rounded-2xl"/>
                 <p.icon className="w-5 h-5 text-pink-300 relative z-10"/>
@@ -405,7 +405,7 @@ const faqItems = [
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
-  <div className={`rounded-2xl border transition-all duration-300 overflow-hidden cursor-pointer ${isOpen?'border-pink-500/30 bg-white/[0.03]':'border-white/[0.05] bg-white/[0.01] hover:border-white/10'}`} onClick={onClick}>
+  <div className={`rounded-2xl border transition-colors duration-300 overflow-hidden cursor-pointer ${isOpen?'border-pink-500/30 bg-white/[0.03]':'border-white/[0.05] bg-white/[0.01] hover:border-white/10'}`} onClick={onClick}>
     <div className="flex items-center justify-between gap-4 p-6">
       <span className={`font-semibold text-base leading-snug transition-colors ${isOpen?'text-white':'text-zinc-200'}`}>{item.q}</span>
       <motion.div animate={{rotate:isOpen?180:0}} transition={{duration:0.3}} className="shrink-0 w-8 h-8 rounded-full border border-white/10 flex items-center justify-center bg-white/[0.03]">

@@ -119,7 +119,7 @@ export const HowItWorksSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: isMobile ? 0.6 : 0.8, ease: "easeOut" }}
-          className="text-center mb-16 flex flex-col items-center"
+          className="text-center mb-16 flex flex-col items-center transform-gpu"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5" />
@@ -165,12 +165,12 @@ export const HowItWorksSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.2, ease: "easeOut" }}
-                className={`relative group flex flex-col md:items-center text-left md:text-center ${
+                className={`relative group flex flex-col md:items-center text-left md:text-center transform-gpu ${
                   i === 1 ? 'lg:scale-105' : ''
                 }`}
               >
                 {/* Иконка с номером */}
-                <div className={`relative w-16 h-16 flex items-center justify-center rounded-2xl border shrink-0 mb-10 z-20 shadow-2xl group-hover:scale-110 transition-all duration-500 mx-0 md:mx-auto ${
+                <div className={`relative w-16 h-16 flex items-center justify-center rounded-2xl border shrink-0 mb-10 z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500 mx-0 md:mx-auto ${
                   i === 1
                     ? 'border-pink-500/50 bg-[#0a0a0a] shadow-[0_0_15px_rgba(236,72,153,0.3)]'
                     : 'border-white/10 bg-[#0a0a0a] group-hover:border-pink-500/40 group-hover:shadow-[0_0_15px_rgba(236,72,153,0.2)]'
@@ -187,7 +187,7 @@ export const HowItWorksSection = () => {
                 </div>
 
                 {/* Карточка с микро-UI */}
-                <div className={`w-full backdrop-blur-xl p-8 rounded-3xl border transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.5)] relative overflow-hidden flex-1 md:hover:-translate-y-2 transform bg-gradient-to-b from-white/[0.08] to-white/[0.02] ${
+                <div className={`w-full backdrop-blur-xl p-8 rounded-3xl border transition-[transform,border-color] duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.5)] relative overflow-hidden flex-1 md:hover:-translate-y-2 transform-gpu bg-gradient-to-b from-white/[0.08] to-white/[0.02] ${
                   i === 1
                     ? 'border-pink-500/40 hover:border-pink-500/60'
                     : 'border-white/[0.15] hover:border-white/25'

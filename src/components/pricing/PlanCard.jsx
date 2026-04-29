@@ -33,7 +33,7 @@ export const PlanCard = ({ plan, isYearly, index, t, lang }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={`relative group ${plan.featured ? 'md:-mt-4 md:mb-4 z-20' : 'z-10'} ${orderClass}`}
+      className={`relative group transform-gpu ${plan.featured ? 'md:-mt-4 md:mb-4 z-20' : 'z-10'} ${orderClass}`}
     >
       {/* Featured badge */}
       {plan.featured && (
@@ -52,7 +52,7 @@ export const PlanCard = ({ plan, isYearly, index, t, lang }) => {
             : 'bg-gradient-to-b from-white/[0.1] via-white/[0.05] to-transparent shadow-[0_2px_30px_rgba(0,0,0,0.4)]'
       }`}>
         {/* Card body */}
-        <div className={`rounded-[calc(1.5rem-1px)] p-8 md:p-9 flex flex-col relative overflow-hidden transition-all duration-500 ${
+        <div className={`rounded-[calc(1.5rem-1px)] p-8 md:p-9 flex flex-col relative overflow-hidden transition-[background-color,border-color,box-shadow] duration-500 ${
           plan.featured
             ? 'bg-[#0c0a0e] border border-pink-500/[0.12] group-hover:border-pink-500/20 group-hover:shadow-[0_8px_60px_rgba(236,72,153,0.08)]'
             : plan.accent === 'violet'
@@ -168,7 +168,7 @@ export const PlanCard = ({ plan, isYearly, index, t, lang }) => {
           {/* ── CTA Button ── */}
           <button
             onClick={() => window.location.href = 'https://app.gotoflow.io'}
-            className={`w-full py-4 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 relative overflow-hidden group/btn ${
+            className={`w-full py-4 rounded-xl font-bold text-sm tracking-wide transition-[transform,box-shadow,background-color,border-color,color] duration-300 relative overflow-hidden group/btn ${
               plan.featured
                 ? 'bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow-[0_0_25px_rgba(236,72,153,0.2)] hover:shadow-[0_0_40px_rgba(236,72,153,0.35)] hover:scale-[1.02] active:scale-[0.98]'
                 : plan.accent === 'violet'

@@ -80,6 +80,7 @@ const MarqueeTrack = ({ speed = 40 }) => (
     style={{
       animation: `marquee-scroll ${speed}s linear infinite`,
       width: 'max-content',
+      willChange: 'transform',
     }}
   >
     {[...cards, ...cards].map((card, i) => (

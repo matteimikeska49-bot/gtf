@@ -6,7 +6,7 @@ import { useIsMobile } from '../hooks/useIsMobile';
 
 const FAQItem = ({ item, isOpen, onClick }) => (
   <div
-    className={`rounded-2xl border transition-all duration-300 overflow-hidden cursor-pointer ${
+    className={`rounded-2xl border transition-colors duration-300 overflow-hidden cursor-pointer ${
       isOpen
         ? 'border-pink-500/30 bg-white/[0.03]'
         : 'border-white/[0.05] bg-white/[0.01] hover:border-white/10'
@@ -61,7 +61,7 @@ export const FAQSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: isMobile ? 0.6 : 0.8, ease: 'easeOut' }}
-          className="text-center mb-14 flex flex-col items-center"
+          className="text-center mb-14 flex flex-col items-center transform-gpu"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">
             <span>{t('faq.badge')}</span>
@@ -82,7 +82,7 @@ export const FAQSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1, ease: 'easeOut' }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-8 lg:gap-y-4 items-start"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-8 lg:gap-y-4 items-start transform-gpu"
         >
           {faqs.map((item, i) => (
             <FAQItem
