@@ -373,43 +373,23 @@ export const HeroSection = () => {
       <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-purple-900/10 blur-[60px] md:blur-[60px] md:blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10 w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mt-4 md:mt-0 mb-8"
-        >
+        <div className="mt-4 md:mt-0 mb-8">
           <RotatingBadge />
-        </motion.div>
+        </div>
 
-        <motion.div
-           initial={{ opacity: 0, y: 30 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1, ease: "easeOut" }}
-           className="max-w-3xl mx-auto w-full"
-        >
+        <div className="max-w-3xl mx-auto w-full">
           <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
             {t('hero.titlePart1')} <br className="hidden md:block" /> 
             {t('hero.titlePart2')} <br className="hidden md:block" /> 
             <span className="text-gradient-brand">{t('hero.titleHighlight')}</span>
           </h1>
-        </motion.div>
+        </div>
 
-        <motion.p 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance"
-        >
+        <p className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance">
           {t('hero.subtitlePart1')} <br className="hidden md:block"/> {t('hero.subtitlePart2')}
-        </motion.p>
+        </p>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3, ease: "easeOut" }}
-          className="flex flex-col items-center gap-4 w-full sm:w-auto"
-        >
+        <div className="flex flex-col items-center gap-4 w-full sm:w-auto">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto">
             <button 
               onClick={() => window.location.href = 'https://app.gotoflow.io'}
@@ -424,7 +404,7 @@ export const HeroSection = () => {
             <span className="text-zinc-700">•</span>
             <span>✓ {t('common.firstResult60s')}</span>
           </p>
-        </motion.div>
+        </div>
 
         <AbstractUIMockup />
       </div>

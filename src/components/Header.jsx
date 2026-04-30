@@ -16,6 +16,11 @@ export const Logo = () => {
                 alt="GoToFlow AI social media content generator logo" 
                 onError={() => setImgError(true)}
                 className="w-[95%] h-[95%] object-contain"
+                width="34"
+                height="34"
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
               />
             ) : (
               <svg viewBox="0 0 24 24" fill="none" className="w-[65%] h-[65%]">
