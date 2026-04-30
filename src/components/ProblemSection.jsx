@@ -34,18 +34,18 @@ export const ProblemSection = () => {
         className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[450px] rounded-full -z-10 pointer-events-none"
         style={{
           background: 'radial-gradient(ellipse, rgba(236,72,153,0.14) 0%, rgba(249,115,22,0.07) 50%, transparent 75%)',
-          filter: isMobile ? 'blur(60px)' : 'blur(100px)',
+          filter: 'blur(100px)',
         }}
       />
 
       {/* Secondary depth glow — warm orange floor, breathing offset */}
       <motion.div
-        animate={isMobile ? { opacity: 0.2, scale: 1 } : { opacity: [0.2, 0.35, 0.2], scale: [0.97, 1.03, 0.97] }}
+        animate={{ opacity: [0.2, 0.35, 0.2], scale: [0.97, 1.03, 0.97] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
         className="absolute bottom-[8%] left-[45%] -translate-x-1/2 w-[400px] h-[280px] rounded-full -z-10 pointer-events-none"
         style={{
           background: 'radial-gradient(ellipse, rgba(249,115,22,0.16) 0%, rgba(236,72,153,0.06) 55%, transparent 80%)',
-          filter: isMobile ? 'blur(50px)' : 'blur(90px)',
+          filter: 'blur(90px)',
         }}
       />
 
