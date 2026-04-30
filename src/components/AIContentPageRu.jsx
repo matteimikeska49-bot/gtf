@@ -33,12 +33,14 @@ export const SEOHeadRu = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     
+    setMeta('title', 'AI-генератор контента для соцсетей — посты, карусели и Reels | GoToFlow');
     setMeta('description', 'Создавайте посты, карусели, сценарии Reels и идеи для соцсетей с помощью AI. GoToFlow помогает быстро делать контент под ваш стиль.');
     setMeta('og:title', 'AI-генератор контента для соцсетей — посты, карусели и Reels | GoToFlow', true);
     setMeta('og:description', 'Создавайте посты, карусели, сценарии Reels и идеи для соцсетей с помощью AI. GoToFlow помогает быстро делать контент под ваш стиль.', true);
     setMeta('og:url', 'https://gotoflow.io/ru/generator-kontenta', true);
-    setMeta('twitter:title', 'AI-генератор контента для соцсетей — посты, карусели и Reels | GoToFlow');
-    setMeta('twitter:description', 'Создавайте посты, карусели, сценарии Reels и идеи для соцсетей с помощью AI. GoToFlow помогает быстро делать контент под ваш стиль.');
+    setMeta('twitter:title', 'AI-генератор контента для соцсетей — посты, карусели и Reels | GoToFlow', true);
+    setMeta('twitter:description', 'Создавайте посты, карусели, сценарии Reels и идеи для соцсетей с помощью AI. GoToFlow помогает быстро делать контент под ваш стиль.', true);
+    setMeta('twitter:url', 'https://gotoflow.io/ru/generator-kontenta', true);
     
     setLink('canonical', 'https://gotoflow.io/ru/generator-kontenta');
     setLink('alternate', 'https://gotoflow.io/ai-content-generator', { hreflang: 'en' });

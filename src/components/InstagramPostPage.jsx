@@ -33,12 +33,14 @@ export const SEOHead = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     
+    setMeta('title', 'AI Instagram Post Generator | GoToFlow');
     setMeta('description', 'Generate Instagram posts, captions, and ideas instantly with AI.');
     setMeta('og:title', 'AI Instagram Post Generator | GoToFlow', true);
     setMeta('og:description', 'Generate Instagram posts, captions, and ideas instantly with AI.', true);
     setMeta('og:url', 'https://gotoflow.io/ai-instagram-post-generator', true);
-    setMeta('twitter:title', 'AI Instagram Post Generator | GoToFlow');
-    setMeta('twitter:description', 'Generate Instagram posts, captions, and ideas instantly with AI.');
+    setMeta('twitter:title', 'AI Instagram Post Generator | GoToFlow', true);
+    setMeta('twitter:description', 'Generate Instagram posts, captions, and ideas instantly with AI.', true);
+    setMeta('twitter:url', 'https://gotoflow.io/ai-instagram-post-generator', true);
     
     setLink('canonical', 'https://gotoflow.io/ai-instagram-post-generator');
     setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'en' });

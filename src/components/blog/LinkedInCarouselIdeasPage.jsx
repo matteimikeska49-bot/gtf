@@ -29,12 +29,14 @@ const ArticleSEOHead = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     
+    setMeta('title', '50 LinkedIn Carousel Ideas That Actually Get Engagement | GoToFlow');
     setMeta('description', 'Explore 50 LinkedIn carousel ideas with examples, hooks, and structures. Learn how to create high-performing carousels faster using AI.');
     setMeta('og:title', '50 LinkedIn Carousel Ideas That Actually Get Engagement | GoToFlow', true);
     setMeta('og:description', 'Explore 50 LinkedIn carousel ideas with examples, hooks, and structures. Learn how to create high-performing carousels faster using AI.', true);
     setMeta('og:url', 'https://gotoflow.io/blog/linkedin-carousel-ideas', true);
-    setMeta('twitter:title', '50 LinkedIn Carousel Ideas That Actually Get Engagement | GoToFlow');
-    setMeta('twitter:description', 'Explore 50 LinkedIn carousel ideas with examples, hooks, and structures. Learn how to create high-performing carousels faster using AI.');
+    setMeta('twitter:title', '50 LinkedIn Carousel Ideas That Actually Get Engagement | GoToFlow', true);
+    setMeta('twitter:description', 'Explore 50 LinkedIn carousel ideas with examples, hooks, and structures. Learn how to create high-performing carousels faster using AI.', true);
+    setMeta('twitter:url', 'https://gotoflow.io/blog/linkedin-carousel-ideas', true);
     
     setLink('canonical', 'https://gotoflow.io/blog/linkedin-carousel-ideas');
     setLink('alternate', 'https://gotoflow.io/blog/linkedin-carousel-ideas', { hreflang: 'en' });

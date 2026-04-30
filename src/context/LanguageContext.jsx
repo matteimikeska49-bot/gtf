@@ -119,9 +119,10 @@ export const LanguageProvider = ({ children }) => {
         setMeta('description', desc);
         setMeta('og:title', title, true);
         setMeta('og:description', desc, true);
-        setMeta('twitter:title', title);
-        setMeta('twitter:description', desc);
         setMeta('og:url', url, true);
+        setMeta('twitter:title', title, true);
+        setMeta('twitter:description', desc, true);
+        setMeta('twitter:url', url, true);
         
         setLink('canonical', url);
         setLink('alternate', 'https://gotoflow.io/', { hreflang: 'en' });
@@ -137,9 +138,10 @@ export const LanguageProvider = ({ children }) => {
         setMeta('description', desc);
         setMeta('og:title', title, true);
         setMeta('og:description', desc, true);
-        setMeta('twitter:title', title);
-        setMeta('twitter:description', desc);
         setMeta('og:url', url, true);
+        setMeta('twitter:title', title, true);
+        setMeta('twitter:description', desc, true);
+        setMeta('twitter:url', url, true);
         
         setLink('canonical', url);
         setLink('alternate', 'https://gotoflow.io/', { hreflang: 'en' });

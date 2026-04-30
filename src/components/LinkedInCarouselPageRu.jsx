@@ -33,12 +33,14 @@ export const SEOHeadRu = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     
+    setMeta('title', 'Генератор каруселей LinkedIn с AI — идеи и структура постов | GoToFlow');
     setMeta('description', 'Создавайте карусели для LinkedIn с помощью AI: темы, структура слайдов, хуки, тексты и CTA для экспертного контента.');
     setMeta('og:title', 'Генератор каруселей LinkedIn с AI — идеи и структура постов | GoToFlow', true);
     setMeta('og:description', 'Создавайте карусели для LinkedIn с помощью AI: темы, структура слайдов, хуки, тексты и CTA для экспертного контента.', true);
     setMeta('og:url', 'https://gotoflow.io/ru/generator-karuselej-linkedin', true);
-    setMeta('twitter:title', 'Генератор каруселей LinkedIn с AI — идеи и структура постов | GoToFlow');
-    setMeta('twitter:description', 'Создавайте карусели для LinkedIn с помощью AI: темы, структура слайдов, хуки, тексты и CTA для экспертного контента.');
+    setMeta('twitter:title', 'Генератор каруселей LinkedIn с AI — идеи и структура постов | GoToFlow', true);
+    setMeta('twitter:description', 'Создавайте карусели для LinkedIn с помощью AI: темы, структура слайдов, хуки, тексты и CTA для экспертного контента.', true);
+    setMeta('twitter:url', 'https://gotoflow.io/ru/generator-karuselej-linkedin', true);
     
     setLink('canonical', 'https://gotoflow.io/ru/generator-karuselej-linkedin');
     setLink('alternate', 'https://gotoflow.io/linkedin-carousel-maker', { hreflang: 'en' });

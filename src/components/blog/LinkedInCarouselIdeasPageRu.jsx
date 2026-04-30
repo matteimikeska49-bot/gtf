@@ -29,12 +29,14 @@ const ArticleSEOHead = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     
+    setMeta('title', '50 идей каруселей для LinkedIn, которые реально дают охваты и заявки | GoToFlow');
     setMeta('description', '50 идей каруселей для LinkedIn: примеры, структура, ошибки и как создавать посты, которые получают охваты и заявки.');
     setMeta('og:title', '50 идей каруселей для LinkedIn, которые реально дают охваты и заявки | GoToFlow', true);
     setMeta('og:description', '50 идей каруселей для LinkedIn: примеры, структура, ошибки и как создавать посты, которые получают охваты и заявки.', true);
     setMeta('og:url', 'https://gotoflow.io/ru/blog/idei-karuselej-linkedin', true);
-    setMeta('twitter:title', '50 идей каруселей для LinkedIn, которые реально дают охваты и заявки | GoToFlow');
-    setMeta('twitter:description', '50 идей каруселей для LinkedIn: примеры, структура, ошибки и как создавать посты, которые получают охваты и заявки.');
+    setMeta('twitter:title', '50 идей каруселей для LinkedIn, которые реально дают охваты и заявки | GoToFlow', true);
+    setMeta('twitter:description', '50 идей каруселей для LinkedIn: примеры, структура, ошибки и как создавать посты, которые получают охваты и заявки.', true);
+    setMeta('twitter:url', 'https://gotoflow.io/ru/blog/idei-karuselej-linkedin', true);
     
     setLink('canonical', 'https://gotoflow.io/ru/blog/idei-karuselej-linkedin');
     setLink('alternate', 'https://gotoflow.io/blog/linkedin-carousel-ideas', { hreflang: 'en' });

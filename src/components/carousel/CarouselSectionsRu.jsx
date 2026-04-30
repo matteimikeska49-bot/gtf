@@ -24,12 +24,14 @@ export const SEOHeadRu = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     
+    setMeta('title', 'AI-генератор каруселей — создать карусель за 60 секунд | GoToFlow');
     setMeta('description', 'Создавайте карусели для Instagram, LinkedIn и других соцсетей с помощью AI: идеи, структура слайдов, текст и CTA.');
     setMeta('og:title', 'AI-генератор каруселей — создать карусель за 60 секунд | GoToFlow', true);
     setMeta('og:description', 'Создавайте карусели для Instagram, LinkedIn и других соцсетей с помощью AI: идеи, структура слайдов, текст и CTA.', true);
     setMeta('og:url', 'https://gotoflow.io/ru/ai-generator-karuselej', true);
-    setMeta('twitter:title', 'AI-генератор каруселей — создать карусель за 60 секунд | GoToFlow');
-    setMeta('twitter:description', 'Создавайте карусели для Instagram, LinkedIn и других соцсетей с помощью AI: идеи, структура слайдов, текст и CTA.');
+    setMeta('twitter:title', 'AI-генератор каруселей — создать карусель за 60 секунд | GoToFlow', true);
+    setMeta('twitter:description', 'Создавайте карусели для Instagram, LinkedIn и других соцсетей с помощью AI: идеи, структура слайдов, текст и CTA.', true);
+    setMeta('twitter:url', 'https://gotoflow.io/ru/ai-generator-karuselej', true);
     
     setLink('canonical', 'https://gotoflow.io/ru/ai-generator-karuselej');
     setLink('alternate', 'https://gotoflow.io/ai-carousel-maker', { hreflang: 'en' });

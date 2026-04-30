@@ -28,12 +28,14 @@ const BlogSEOHeadRu = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     
+    setMeta('title', 'Блог GoToFlow — AI, контент и карусели для соцсетей');
     setMeta('description', 'Практические статьи о создании контента, каруселей, постов и контент-стратегии с помощью AI.');
     setMeta('og:title', 'Блог GoToFlow — AI, контент и карусели для соцсетей', true);
     setMeta('og:description', 'Практические статьи о создании контента, каруселей, постов и контент-стратегии с помощью AI.', true);
     setMeta('og:url', 'https://gotoflow.io/ru/blog', true);
-    setMeta('twitter:title', 'Блог GoToFlow — AI, контент и карусели для соцсетей');
-    setMeta('twitter:description', 'Практические статьи о создании контента, каруселей, постов и контент-стратегии с помощью AI.');
+    setMeta('twitter:title', 'Блог GoToFlow — AI, контент и карусели для соцсетей', true);
+    setMeta('twitter:description', 'Практические статьи о создании контента, каруселей, постов и контент-стратегии с помощью AI.', true);
+    setMeta('twitter:url', 'https://gotoflow.io/ru/blog', true);
     
     setLink('canonical', 'https://gotoflow.io/ru/blog');
     setLink('alternate', 'https://gotoflow.io/blog', { hreflang: 'en' });

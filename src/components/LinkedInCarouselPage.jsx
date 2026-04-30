@@ -33,12 +33,14 @@ export const SEOHead = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     
+    setMeta('title', 'LinkedIn Carousel Maker | Create LinkedIn Carousels with AI');
     setMeta('description', 'Create LinkedIn carousels with AI in seconds. Turn ideas into ready-to-publish slides for thought leadership and content marketing.');
     setMeta('og:title', 'LinkedIn Carousel Maker | Create LinkedIn Carousels with AI', true);
     setMeta('og:description', 'Create LinkedIn carousels with AI in seconds. Turn ideas into ready-to-publish slides for thought leadership and content marketing.', true);
     setMeta('og:url', 'https://gotoflow.io/linkedin-carousel-maker', true);
-    setMeta('twitter:title', 'LinkedIn Carousel Maker | Create LinkedIn Carousels with AI');
-    setMeta('twitter:description', 'Create LinkedIn carousels with AI in seconds. Turn ideas into ready-to-publish slides for thought leadership and content marketing.');
+    setMeta('twitter:title', 'LinkedIn Carousel Maker | Create LinkedIn Carousels with AI', true);
+    setMeta('twitter:description', 'Create LinkedIn carousels with AI in seconds. Turn ideas into ready-to-publish slides for thought leadership and content marketing.', true);
+    setMeta('twitter:url', 'https://gotoflow.io/linkedin-carousel-maker', true);
     
     setLink('canonical', 'https://gotoflow.io/linkedin-carousel-maker');
     setLink('alternate', 'https://gotoflow.io/linkedin-carousel-maker', { hreflang: 'en' });
