@@ -110,7 +110,7 @@ export const HowItWorksSection = () => {
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-black">
 
       {/* Фоновый свет под весь блок */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-orange-500/15 blur-[120px] -z-10 pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-orange-500/15 blur-[60px] md:blur-[60px] md:blur-[120px] -z-10 pointer-events-none rounded-full" />
 
       {/* ─── Парящий стеклянный контейнер ─── */}
       <div className="max-w-7xl mx-auto bg-[#050505]/60 border border-white/[0.08] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-2xl relative z-10 shadow-[0_30px_100px_-15px_rgba(0,0,0,1),0_0_40px_rgba(236,72,153,0.15)]">
@@ -140,7 +140,7 @@ export const HowItWorksSection = () => {
         <div className="relative mt-12 max-w-5xl mx-auto">
 
           {/* ─── Фоновое свечение за карточками ─── */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-orange-500/20 blur-[100px] -z-10 pointer-events-none rounded-[3rem]" />
+          <div className="absolute -inset-4 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-orange-500/20 blur-[30px] md:blur-[50px] md:blur-[30px] md:blur-[50px] md:blur-[100px] -z-10 pointer-events-none rounded-[3rem]" />
 
           {/* Соединяющая линия — desktop */}
           <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-zinc-500/50 to-transparent" />

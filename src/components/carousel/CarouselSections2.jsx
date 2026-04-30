@@ -52,7 +52,7 @@ export const CarouselHowItWorks = () => {
   const isMobile = useIsMobile();
   return (
   <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-black">
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-orange-500/15 blur-[120px] -z-10 pointer-events-none rounded-full"/>
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-orange-500/15 blur-[60px] md:blur-[120px] -z-10 pointer-events-none rounded-full"/>
     <div className="max-w-7xl mx-auto bg-[#050505]/60 border border-white/[0.08] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-2xl relative z-10 shadow-[0_30px_100px_-15px_rgba(0,0,0,1),0_0_40px_rgba(236,72,153,0.15)]">
       <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}} className="text-center mb-16 flex flex-col items-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Sparkles className="w-3.5 h-3.5"/>How It Works</div>
@@ -60,7 +60,7 @@ export const CarouselHowItWorks = () => {
         <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed text-balance">AI does the heavy lifting — you make the final call.</p>
       </motion.div>
       <div className="relative mt-12 max-w-5xl mx-auto">
-        <div className="absolute -inset-4 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-orange-500/20 blur-[100px] -z-10 pointer-events-none rounded-[3rem]"/>
+        <div className="absolute -inset-4 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-orange-500/20 blur-[30px] md:blur-[50px] md:blur-[100px] -z-10 pointer-events-none rounded-[3rem]"/>
         <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-zinc-500/50 to-transparent"/>
         <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px overflow-hidden"><motion.div animate={{x:['-100%','200%']}} transition={{duration:3,repeat:Infinity,ease:'linear'}} className="w-1/3 h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-80 shadow-[0_0_15px_#ffffff]"/></div>
         <div className="md:hidden absolute left-[3.25rem] top-[10%] bottom-[10%] w-px bg-gradient-to-b from-transparent via-zinc-600/50 to-transparent"/>
@@ -113,7 +113,7 @@ export const CarouselDifferentiation = () => {
   const isMobile = useIsMobile();
   return (
   <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#0a0808] to-[#050505]">
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[550px] bg-pink-600 opacity-[0.08] blur-[170px] rounded-full pointer-events-none"/>
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[550px] bg-pink-600 opacity-[0.08] blur-[80px] md:blur-[170px] rounded-full pointer-events-none"/>
     <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
       <div className="flex flex-col">
         <motion.div initial={{opacity:0,x: isMobile ? 0 : -40, y: isMobile ? 24 : 0}} whileInView={{opacity:1,x:0,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}}>
@@ -134,7 +134,7 @@ export const CarouselDifferentiation = () => {
         </div>
       </div>
       <div className="relative self-center w-full max-w-[550px] lg:max-w-none mx-auto">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[radial-gradient(ellipse_at_center,rgba(244,63,94,0.12)_0%,transparent_60%)] blur-[70px] rounded-full pointer-events-none z-0"/>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[radial-gradient(ellipse_at_center,rgba(244,63,94,0.12)_0%,transparent_60%)] blur-[40px] md:blur-[70px] rounded-full pointer-events-none z-0"/>
         <div className="grid grid-cols-2 gap-4 md:gap-5 w-full relative z-10 items-stretch">
           <div className="col-span-1"><ScreenshotCard imageId="1" delay={0.2} className="w-full h-full"/></div>
           <div className="col-span-1"><ScreenshotCard imageId="2" delay={0.3} className="w-full h-full"/></div>
@@ -215,7 +215,7 @@ export const CarouselBottomCTA = () => {
           <div className="group relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border border-white/[0.08] hover:border-white/[0.12] transition-colors duration-500" style={{background:'linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%)',backdropFilter:'blur(40px) saturate(1.2)',boxShadow:'0 0 30px rgba(236,72,153,0.04), 0 40px 80px -25px rgba(0,0,0,0.8)'}}>
             <div className="relative z-10 px-8 py-16 sm:px-12 sm:py-20 md:px-20 md:py-24 lg:px-28 lg:py-28 flex flex-col items-center text-center">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/[0.07] bg-white/[0.03] mb-8">
-                <span className="relative flex h-1.5 w-1.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400/60"/><span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-gradient-to-r from-pink-500 to-orange-400"/></span>
+                <span className="relative flex h-1.5 w-1.5"><span className="md:animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400/60"/><span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-gradient-to-r from-pink-500 to-orange-400"/></span>
                 <span className="text-[10px] font-semibold text-zinc-500 tracking-[0.1em] uppercase">Start for free</span>
               </div>
               <h2 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-6 max-w-2xl">

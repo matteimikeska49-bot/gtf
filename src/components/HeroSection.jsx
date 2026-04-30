@@ -21,7 +21,7 @@ const RotatingBadge = () => {
     <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm overflow-hidden">
       {/* Мерцающая точка активности */}
       <span className="relative flex h-2 w-2 shrink-0">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-60" />
+        <span className="md:animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-60" />
         <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500" />
       </span>
 
@@ -84,8 +84,8 @@ const AbstractUIMockup = () => {
       className="block w-full max-w-[380px] md:max-w-5xl mt-8 md:mt-20 relative mx-auto perspective-1000"
     >
       {/* Огромное свечение за дашбордом — эффект «парения» */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[90%] bg-[#ec4899]/[0.08] blur-[140px] rounded-[100%] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[70%] bg-gradient-to-tr from-pink-900/25 via-purple-900/15 to-indigo-900/25 blur-[100px] rounded-[100%] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[90%] bg-[#ec4899]/[0.08] blur-[60px] md:blur-[60px] md:blur-[140px] rounded-[100%] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[70%] bg-gradient-to-tr from-pink-900/25 via-purple-900/15 to-indigo-900/25 blur-[30px] md:blur-[50px] md:blur-[30px] md:blur-[50px] md:blur-[100px] rounded-[100%] pointer-events-none" />
 
       <div className="relative rounded-2xl md:rounded-[2.5rem] border border-white/5 bg-[#0a0a0a]/80 backdrop-blur-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row text-left ring-1 ring-white/5 group md:aspect-auto">
         
@@ -215,8 +215,9 @@ const AbstractUIMockup = () => {
                  <div className="h-1.5 flex-1 bg-zinc-800/60 rounded-full overflow-hidden relative z-10">
                    <motion.div
                      className="h-full rounded-full bg-gradient-to-r from-pink-500 to-orange-500"
-                     initial={{ width: '0%' }}
-                     animate={{ width: ['0%', '100%', '0%'] }}
+                     style={{ transformOrigin: 'left' }}
+                     initial={{ scaleX: 0 }}
+                     animate={{ scaleX: [0, 1, 0] }}
                      transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                    />
                  </div>
@@ -253,13 +254,13 @@ const AbstractUIMockup = () => {
         {/* Main Area — MOBILE ONLY                    */}
         {/* ═══════════════════════════════════════════ */}
         <div className="flex md:hidden flex-1 p-5 pb-6 flex-col gap-4 relative z-10 bg-[#0a0a0a]/30 overflow-hidden">
-          <div className="absolute right-0 top-0 w-48 h-48 bg-purple-500/10 blur-[60px] rounded-full pointer-events-none" />
+          <div className="absolute right-0 top-0 w-48 h-48 bg-purple-500/10 blur-[40px] rounded-full pointer-events-none" />
 
           {/* Header row */}
           <div className="flex items-center justify-between relative z-10">
             <h3 className="text-[15px] font-bold text-white tracking-tight">Post Generation Flow</h3>
             <div className="shrink-0 px-2.5 py-1 rounded-full border border-white/10 bg-[#050505] text-[9px] font-semibold text-zinc-300 flex items-center gap-1.5 shadow-lg backdrop-blur-md">
-               <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse shadow-[0_0_8px_#ec4899]" />
+               <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 shadow-[0_0_8px_#ec4899]" />
                {isRu ? 'ИИ активен' : 'AI Active'}
             </div>
           </div>
@@ -298,7 +299,7 @@ const AbstractUIMockup = () => {
             {/* Divider */}
             <div className="relative z-10 flex items-center gap-2.5 px-1">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-              <Sparkles className="w-3 h-3 text-pink-400/60 animate-pulse" />
+              <Sparkles className="w-3 h-3 text-pink-400/60" />
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
             </div>
 
@@ -340,13 +341,14 @@ const AbstractUIMockup = () => {
 
             {/* AI generation bar */}
             <div className="mt-auto relative z-10 p-2.5 rounded-xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-orange-500/5 flex items-center gap-2.5 overflow-hidden">
-               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full" />
                <Sparkles className="w-3.5 h-3.5 text-pink-400 shrink-0 relative z-10" />
                <div className="h-1.5 flex-1 bg-zinc-800/60 rounded-full overflow-hidden relative z-10">
                  <motion.div
                    className="h-full rounded-full bg-gradient-to-r from-pink-500 to-orange-500"
-                   initial={{ width: '0%' }}
-                   animate={{ width: ['0%', '100%', '0%'] }}
+                   style={{ transformOrigin: 'left' }}
+                   initial={{ scaleX: 0 }}
+                   animate={{ scaleX: [0, 1, 0] }}
                    transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                  />
                </div>
@@ -367,8 +369,8 @@ export const HeroSection = () => {
       <IsometricGrid />
       
       {/* Deep Ambient Glow for Hero — magenta/purple, very low opacity */}
-      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] md:w-[1200px] h-[700px] md:h-[900px] bg-[#ec4899]/[0.07] blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] md:w-[1200px] h-[700px] md:h-[900px] bg-[#ec4899]/[0.07] blur-[80px] md:blur-[80px] md:blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-purple-900/10 blur-[60px] md:blur-[60px] md:blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10 w-full">
         <motion.div

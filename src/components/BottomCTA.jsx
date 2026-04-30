@@ -77,7 +77,7 @@ export const BottomCTA = () => {
             <div className="relative z-10 px-8 py-16 sm:px-12 sm:py-20 md:px-20 md:py-24 lg:px-28 lg:py-28 flex flex-col items-center text-center">
 
               {/* Text Block Halo (Subtle precision glow) */}
-              <div className="absolute top-[25%] left-1/2 -translate-x-1/2 w-[400px] h-[150px] bg-gradient-to-r from-pink-500/8 to-orange-500/5 blur-[50px] rounded-[100%] pointer-events-none -z-10" />
+              <div className="absolute top-[25%] left-1/2 -translate-x-1/2 w-[400px] h-[150px] bg-gradient-to-r from-pink-500/8 to-orange-500/5 blur-[30px] md:blur-[50px] rounded-[100%] pointer-events-none -z-10" />
 
               {/* 1 — Pill */}
               <motion.div
@@ -87,7 +87,7 @@ export const BottomCTA = () => {
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/[0.07] bg-white/[0.03] mb-8"
               >
                 <span className="relative flex h-1.5 w-1.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400/60" />
+                  <span className="md:animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400/60" />
                   <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-gradient-to-r from-pink-500 to-orange-400" />
                 </span>
                 <span className="text-[10px] font-semibold text-zinc-500 tracking-[0.1em] uppercase">
