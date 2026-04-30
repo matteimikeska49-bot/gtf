@@ -8,7 +8,7 @@ const CTA_URL = 'https://app.gotoflow.io';
 /* ── SEO Head (RU) ── */
 export const SEOHeadRu = () => {
   useEffect(() => {
-    document.title = 'Генератор каруселей — создать карусель с ИИ | GoToFlow';
+    document.title = 'AI-генератор каруселей — создать карусель за 60 секунд | GoToFlow';
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let el = document.querySelector(sel);
@@ -23,7 +23,14 @@ export const SEOHeadRu = () => {
       el.setAttribute('rel', rel); el.setAttribute('href', href);
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
-    setMeta('description', 'Создайте готовую карусель для Instagram с помощью ИИ за 60 секунд. Генерация структуры, текста и слайдов — без дизайна и команды.');
+    
+    setMeta('description', 'Создавайте карусели для Instagram, LinkedIn и других соцсетей с помощью AI: идеи, структура слайдов, текст и CTA.');
+    setMeta('og:title', 'AI-генератор каруселей — создать карусель за 60 секунд | GoToFlow', true);
+    setMeta('og:description', 'Создавайте карусели для Instagram, LinkedIn и других соцсетей с помощью AI: идеи, структура слайдов, текст и CTA.', true);
+    setMeta('og:url', 'https://gotoflow.io/ru/ai-generator-karuselej', true);
+    setMeta('twitter:title', 'AI-генератор каруселей — создать карусель за 60 секунд | GoToFlow');
+    setMeta('twitter:description', 'Создавайте карусели для Instagram, LinkedIn и других соцсетей с помощью AI: идеи, структура слайдов, текст и CTA.');
+    
     setLink('canonical', 'https://gotoflow.io/ru/ai-generator-karuselej');
     setLink('alternate', 'https://gotoflow.io/ai-carousel-maker', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/ai-generator-karuselej', { hreflang: 'ru' });

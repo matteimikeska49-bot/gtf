@@ -17,7 +17,7 @@ const CTA_URL = 'https://app.gotoflow.io';
 /* ── SEO Head (RU) ── */
 export const SEOHeadRu = () => {
   useEffect(() => {
-    document.title = 'Генератор постов Instagram с ИИ | GoToFlow';
+    document.title = 'Генератор постов Instagram с AI — идеи, подписи и карусели | GoToFlow';
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let el = document.querySelector(sel);
@@ -32,7 +32,14 @@ export const SEOHeadRu = () => {
       el.setAttribute('rel', rel); el.setAttribute('href', href);
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
-    setMeta('description', 'Создавайте посты и тексты для Instagram автоматически с помощью ИИ.');
+    
+    setMeta('description', 'Создавайте посты, подписи, идеи и карусели для Instagram с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.');
+    setMeta('og:title', 'Генератор постов Instagram с AI — идеи, подписи и карусели | GoToFlow', true);
+    setMeta('og:description', 'Создавайте посты, подписи, идеи и карусели для Instagram с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.', true);
+    setMeta('og:url', 'https://gotoflow.io/ru/generator-postov-instagram', true);
+    setMeta('twitter:title', 'Генератор постов Instagram с AI — идеи, подписи и карусели | GoToFlow');
+    setMeta('twitter:description', 'Создавайте посты, подписи, идеи и карусели для Instagram с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.');
+    
     setLink('canonical', 'https://gotoflow.io/ru/generator-postov-instagram');
     setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/generator-postov-instagram', { hreflang: 'ru' });

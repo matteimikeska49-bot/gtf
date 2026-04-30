@@ -12,7 +12,7 @@ const CTA_URL = 'https://app.gotoflow.io';
 
 const BlogSEOHeadRu = () => {
   useEffect(() => {
-    document.title = 'Идеи, хуки и примеры контента для соцсетей | GoToFlow';
+    document.title = 'Блог GoToFlow — AI, контент и карусели для соцсетей';
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let el = document.querySelector(sel);
@@ -27,7 +27,14 @@ const BlogSEOHeadRu = () => {
       el.setAttribute('rel', rel); el.setAttribute('href', href);
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
-    setMeta('description', 'Готовые идеи, подписи и шаблоны, которые можно сразу превратить в пост или карусель.');
+    
+    setMeta('description', 'Практические статьи о создании контента, каруселей, постов и контент-стратегии с помощью AI.');
+    setMeta('og:title', 'Блог GoToFlow — AI, контент и карусели для соцсетей', true);
+    setMeta('og:description', 'Практические статьи о создании контента, каруселей, постов и контент-стратегии с помощью AI.', true);
+    setMeta('og:url', 'https://gotoflow.io/ru/blog', true);
+    setMeta('twitter:title', 'Блог GoToFlow — AI, контент и карусели для соцсетей');
+    setMeta('twitter:description', 'Практические статьи о создании контента, каруселей, постов и контент-стратегии с помощью AI.');
+    
     setLink('canonical', 'https://gotoflow.io/ru/blog');
     setLink('alternate', 'https://gotoflow.io/blog', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/blog', { hreflang: 'ru' });

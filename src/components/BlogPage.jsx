@@ -27,11 +27,19 @@ const BlogSEOHead = () => {
       el.setAttribute('rel', rel); el.setAttribute('href', href);
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
+    
     setMeta('description', 'Ready-to-use ideas, captions and templates you can turn into posts or carousels in seconds.');
+    setMeta('og:title', 'Content Ideas, Hooks and Examples for Social Media | GoToFlow', true);
+    setMeta('og:description', 'Ready-to-use ideas, captions and templates you can turn into posts or carousels in seconds.', true);
+    setMeta('og:url', 'https://gotoflow.io/blog', true);
+    setMeta('twitter:title', 'Content Ideas, Hooks and Examples for Social Media | GoToFlow');
+    setMeta('twitter:description', 'Ready-to-use ideas, captions and templates you can turn into posts or carousels in seconds.');
+    
     setLink('canonical', 'https://gotoflow.io/blog');
     setLink('alternate', 'https://gotoflow.io/blog', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/blog', { hreflang: 'ru' });
     setLink('alternate', 'https://gotoflow.io/blog', { hreflang: 'x-default' });
+    document.documentElement.lang = 'en';
     return () => { document.title = 'GoToFlow'; };
   }, []);
   return null;

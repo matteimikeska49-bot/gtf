@@ -32,11 +32,19 @@ export const SEOHead = () => {
       el.setAttribute('rel', rel); el.setAttribute('href', href);
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
+    
     setMeta('description', 'Generate Instagram posts, captions, and ideas instantly with AI.');
+    setMeta('og:title', 'AI Instagram Post Generator | GoToFlow', true);
+    setMeta('og:description', 'Generate Instagram posts, captions, and ideas instantly with AI.', true);
+    setMeta('og:url', 'https://gotoflow.io/ai-instagram-post-generator', true);
+    setMeta('twitter:title', 'AI Instagram Post Generator | GoToFlow');
+    setMeta('twitter:description', 'Generate Instagram posts, captions, and ideas instantly with AI.');
+    
     setLink('canonical', 'https://gotoflow.io/ai-instagram-post-generator');
     setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/generator-postov-instagram', { hreflang: 'ru' });
     setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'x-default' });
+    document.documentElement.lang = 'en';
     return () => { document.title = 'GoToFlow'; };
   }, []);
   return null;

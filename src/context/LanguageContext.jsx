@@ -93,25 +93,58 @@ export const LanguageProvider = ({ children }) => {
     const isRootRoute = location.pathname === '/' || location.pathname === '' || location.pathname === '/ru' || location.pathname === '/ru/';
     
     if (isRootRoute) {
-      // Update canonical
-      const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) {
-        canonical.href = lang === 'RU' ? 'https://gotoflow.io/ru' : 'https://gotoflow.io/';
-      }
+      const setMeta = (name, content, prop = false) => {
+        const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
+        let el = document.querySelector(sel);
+        if (!el) { el = document.createElement('meta'); document.head.appendChild(el); }
+        el.setAttribute(prop ? 'property' : 'name', name);
+        el.setAttribute('content', content);
+      };
 
-      // Update title and meta description based on language
+      const setLink = (rel, href, extra = {}) => {
+        const sel = extra.hreflang ? `link[rel="${rel}"][hreflang="${extra.hreflang}"]` : `link[rel="${rel}"]`;
+        let el = document.querySelector(sel);
+        if (!el) { el = document.createElement('link'); document.head.appendChild(el); }
+        el.setAttribute('rel', rel); el.setAttribute('href', href);
+        Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
+      };
+
       if (lang === 'RU') {
-        document.title = 'AI-генератор контента — Посты и Карусели | GoToFlow';
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.content = 'Создавайте конвертирующий контент для соцсетей с помощью ИИ. Генерируйте карусели, посты, сценарии Reels и контент-планы за секунды с GoToFlow.';
-        const metaTitle = document.querySelector('meta[name="title"]');
-        if (metaTitle) metaTitle.content = 'AI-генератор контента для соцсетей — Создавайте посты, карусели и Reels | GoToFlow';
+        const title = 'GoToFlow — AI-генератор контента для соцсетей';
+        const desc = 'Создавайте посты, карусели, сценарии Reels и идеи для соцсетей с помощью AI. GoToFlow помогает быстро упаковывать контент под ваш стиль.';
+        const url = 'https://gotoflow.io/ru';
+        
+        document.title = title;
+        setMeta('title', title);
+        setMeta('description', desc);
+        setMeta('og:title', title, true);
+        setMeta('og:description', desc, true);
+        setMeta('twitter:title', title);
+        setMeta('twitter:description', desc);
+        setMeta('og:url', url, true);
+        
+        setLink('canonical', url);
+        setLink('alternate', 'https://gotoflow.io/', { hreflang: 'en' });
+        setLink('alternate', 'https://gotoflow.io/ru', { hreflang: 'ru' });
+        setLink('alternate', 'https://gotoflow.io/', { hreflang: 'x-default' });
       } else {
-        document.title = 'AI Content Generator — Create Posts & Carousels | GoToFlow';
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.content = 'Create high-converting social media content with AI. Generate carousels, posts, reels scripts and content plans in seconds with GoToFlow.';
-        const metaTitle = document.querySelector('meta[name="title"]');
-        if (metaTitle) metaTitle.content = 'AI Content Generator for Social Media — Create Posts, Carousels & Reels Fast | GoToFlow';
+        const title = 'AI Content Generator for Social Media — Create Posts, Carousels & Reels Fast | GoToFlow';
+        const desc = 'Create high-converting social media content with AI. Generate carousels, posts, reels scripts and content plans in seconds with GoToFlow.';
+        const url = 'https://gotoflow.io/';
+        
+        document.title = title;
+        setMeta('title', title);
+        setMeta('description', desc);
+        setMeta('og:title', title, true);
+        setMeta('og:description', desc, true);
+        setMeta('twitter:title', title);
+        setMeta('twitter:description', desc);
+        setMeta('og:url', url, true);
+        
+        setLink('canonical', url);
+        setLink('alternate', 'https://gotoflow.io/', { hreflang: 'en' });
+        setLink('alternate', 'https://gotoflow.io/ru', { hreflang: 'ru' });
+        setLink('alternate', 'https://gotoflow.io/', { hreflang: 'x-default' });
       }
     }
   }, [lang, location.pathname]);

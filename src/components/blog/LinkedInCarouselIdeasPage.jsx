@@ -13,8 +13,7 @@ const CTA_URL = 'https://gotoflow.io/linkedin-carousel-maker';
 /* ── SEO Head ── */
 const ArticleSEOHead = () => {
   useEffect(() => {
-    document.title = '50 LinkedIn Carousel Ideas That Get Engagement | GoToFlow';
-
+    document.title = '50 LinkedIn Carousel Ideas That Actually Get Engagement | GoToFlow';
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let el = document.querySelector(sel);
@@ -22,48 +21,26 @@ const ArticleSEOHead = () => {
       el.setAttribute(prop ? 'property' : 'name', name);
       el.setAttribute('content', content);
     };
-    const setLink = (rel, href, hreflang = null) => {
-      let sel = `link[rel="${rel}"]`;
-      if (hreflang) sel += `[hreflang="${hreflang}"]`;
+    const setLink = (rel, href, extra = {}) => {
+      const sel = extra.hreflang ? `link[rel="${rel}"][hreflang="${extra.hreflang}"]` : `link[rel="${rel}"]`;
       let el = document.querySelector(sel);
       if (!el) { el = document.createElement('link'); document.head.appendChild(el); }
-      el.setAttribute('rel', rel);
-      el.setAttribute('href', href);
-      if (hreflang) el.setAttribute('hreflang', hreflang);
+      el.setAttribute('rel', rel); el.setAttribute('href', href);
+      Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
-
-    const desc = 'Explore 50 LinkedIn carousel ideas with examples, hooks, and structures. Learn how to create high-performing carousels faster using AI.';
-    setMeta('description', desc);
-    setMeta('og:title', '50 LinkedIn Carousel Ideas That Actually Get Engagement (2026) | GoToFlow', true);
-    setMeta('og:description', desc, true);
-    setMeta('og:type', 'article', true);
+    
+    setMeta('description', 'Explore 50 LinkedIn carousel ideas with examples, hooks, and structures. Learn how to create high-performing carousels faster using AI.');
+    setMeta('og:title', '50 LinkedIn Carousel Ideas That Actually Get Engagement | GoToFlow', true);
+    setMeta('og:description', 'Explore 50 LinkedIn carousel ideas with examples, hooks, and structures. Learn how to create high-performing carousels faster using AI.', true);
     setMeta('og:url', 'https://gotoflow.io/blog/linkedin-carousel-ideas', true);
+    setMeta('twitter:title', '50 LinkedIn Carousel Ideas That Actually Get Engagement | GoToFlow');
+    setMeta('twitter:description', 'Explore 50 LinkedIn carousel ideas with examples, hooks, and structures. Learn how to create high-performing carousels faster using AI.');
+    
     setLink('canonical', 'https://gotoflow.io/blog/linkedin-carousel-ideas');
-
-    /* Hreflang */
-    setLink('alternate', 'https://gotoflow.io/blog/linkedin-carousel-ideas', 'en');
-    setLink('alternate', 'https://gotoflow.io/ru/blog/idei-karuselej-linkedin', 'ru');
-
-    /* JSON-LD Schema */
-    const schemaId = 'linkedin-carousel-ideas-schema';
-    if (!document.getElementById(schemaId)) {
-      const script = document.createElement('script');
-      script.id = schemaId;
-      script.type = 'application/ld+json';
-      script.textContent = JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: '50 LinkedIn Carousel Ideas That Actually Get Engagement',
-        description: desc,
-        author: { '@type': 'Organization', name: 'GoToFlow' },
-        publisher: { '@type': 'Organization', name: 'GoToFlow', url: 'https://gotoflow.io' },
-        mainEntityOfPage: 'https://gotoflow.io/blog/linkedin-carousel-ideas',
-        datePublished: '2026-04-28',
-        dateModified: '2026-04-28',
-      });
-      document.head.appendChild(script);
-    }
-
+    setLink('alternate', 'https://gotoflow.io/blog/linkedin-carousel-ideas', { hreflang: 'en' });
+    setLink('alternate', 'https://gotoflow.io/ru/blog/idei-karuselej-linkedin', { hreflang: 'ru' });
+    setLink('alternate', 'https://gotoflow.io/blog/linkedin-carousel-ideas', { hreflang: 'x-default' });
+    document.documentElement.lang = 'en';
     return () => {
       document.title = 'GoToFlow';
       const s = document.getElementById(schemaId);
