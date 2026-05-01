@@ -13,19 +13,19 @@ Brands, marketing experts, thought leaders, and businesses looking to scale thei
 ## Important URLs
 
 ### English (EN)
-- Homepage: [https://gotoflow.io/](https://gotoflow.io/)
-- AI Content Generator: [https://gotoflow.io/ai-content-generator](https://gotoflow.io/ai-content-generator)
-- AI Carousel Maker: [https://gotoflow.io/ai-carousel-maker](https://gotoflow.io/ai-carousel-maker)
-- AI Instagram Post Generator: [https://gotoflow.io/ai-instagram-post-generator](https://gotoflow.io/ai-instagram-post-generator)
-- LinkedIn Carousel Maker: [https://gotoflow.io/linkedin-carousel-maker](https://gotoflow.io/linkedin-carousel-maker)
-- Blog: [https://gotoflow.io/blog](https://gotoflow.io/blog)
-- Blog Post (LinkedIn Carousel Ideas): [https://gotoflow.io/blog/linkedin-carousel-ideas](https://gotoflow.io/blog/linkedin-carousel-ideas)
+- Homepage: https://gotoflow.io/
+- AI Content Generator: https://gotoflow.io/ai-content-generator
+- AI Carousel Maker: https://gotoflow.io/ai-carousel-maker
+- AI Instagram Post Generator: https://gotoflow.io/ai-instagram-post-generator
+- LinkedIn Carousel Maker: https://gotoflow.io/linkedin-carousel-maker
+- Blog: https://gotoflow.io/blog
+- Blog Post (LinkedIn Carousel Ideas): https://gotoflow.io/blog/linkedin-carousel-ideas
 
 ### Russian (RU)
-- Главная страница: [https://gotoflow.io/ru](https://gotoflow.io/ru)
-- AI Генератор контента: [https://gotoflow.io/ru/generator-kontenta](https://gotoflow.io/ru/generator-kontenta)
-- AI Генератор каруселей: [https://gotoflow.io/ru/ai-generator-karuselej](https://gotoflow.io/ru/ai-generator-karuselej)
-- AI Генератор постов Instagram: [https://gotoflow.io/ru/generator-postov-instagram](https://gotoflow.io/ru/generator-postov-instagram)
-- AI Генератор каруселей LinkedIn: [https://gotoflow.io/ru/generator-karuselej-linkedin](https://gotoflow.io/ru/generator-karuselej-linkedin)
-- Блог: [https://gotoflow.io/ru/blog](https://gotoflow.io/ru/blog)
-- Статья блога (Идеи каруселей LinkedIn): [https://gotoflow.io/ru/blog/idei-karuselej-linkedin](https://gotoflow.io/ru/blog/idei-karuselej-linkedin)
+- Главная страница: https://gotoflow.io/ru
+- AI-генератор контента: https://gotoflow.io/ru/generator-kontenta
+- Генератор каруселей: https://gotoflow.io/ru/ai-generator-karuselej
+- Генератор постов Instagram: https://gotoflow.io/ru/generator-postov-instagram
+- Генератор каруселей LinkedIn: https://gotoflow.io/ru/generator-karuselej-linkedin
+- Блог: https://gotoflow.io/ru/blog
+- Идеи каруселей LinkedIn: https://gotoflow.io/ru/blog/idei-karuselej-linkedin

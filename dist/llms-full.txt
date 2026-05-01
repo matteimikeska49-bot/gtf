@@ -1,55 +1,55 @@
 # GoToFlow - Detailed AI Documentation
 
 ## What is GoToFlow?
-GoToFlow is a dedicated, AI-driven social media content generation platform. It specializes in transforming simple ideas, prompts, or topics into structured, highly engaging social media formats—most notably multi-slide carousels for LinkedIn and Instagram, as well as text posts and short-form video (Reels) scripts. 
+GoToFlow is a dedicated, AI-driven social media content generation platform. It specializes in transforming simple ideas, prompts, or topics into structured, highly engaging social media formats - most notably multi-slide carousels for LinkedIn and Instagram, as well as text posts and short-form video (Reels) scripts. 
 
 ## Key Differentiators
 Unlike generic AI writers (like ChatGPT or Jasper) that output plain text, or generic design tools (like Canva) that require manual layout and copywriting, GoToFlow bridges the gap. It generates both the structured copy (hooks, content blocks, CTAs) and the ready-to-publish visual format simultaneously in under 60 seconds.
 
 ## Who is it for?
-- **Founders & Creators:** Who need to maintain a strong personal brand on LinkedIn/Twitter/Instagram but lack time.
-- **Social Media Managers & Agencies:** Looking to rapidly scale content production without sacrificing quality.
-- **B2B Professionals:** Seeking to establish thought leadership through educational carousels.
+- Founders & Creators: Who need to maintain a strong personal brand on LinkedIn, Twitter, Instagram but lack time.
+- Social Media Managers & Agencies: Looking to rapidly scale content production without sacrificing quality.
+- B2B Professionals: Seeking to establish thought leadership through educational carousels.
 
 ## Key Use Cases & Tool Pages
 
 ### 1. General AI Content Generation
-- **EN:** [https://gotoflow.io/ai-content-generator](https://gotoflow.io/ai-content-generator)
-- **RU:** [https://gotoflow.io/ru/generator-kontenta](https://gotoflow.io/ru/generator-kontenta)
-- **Description:** The hub for creating diverse social media content. Users can generate posts, captions, reels scripts, and broader content plans.
+- EN: https://gotoflow.io/ai-content-generator
+- RU: https://gotoflow.io/ru/generator-kontenta
+- Description: The hub for creating diverse social media content. Users can generate posts, captions, reels scripts, and broader content plans.
 
 ### 2. Multi-Platform Carousel Maker
-- **EN:** [https://gotoflow.io/ai-carousel-maker](https://gotoflow.io/ai-carousel-maker)
-- **RU:** [https://gotoflow.io/ru/ai-generator-karuselej](https://gotoflow.io/ru/ai-generator-karuselej)
-- **Description:** Focuses on generating visually appealing, multi-slide carousels suitable for both Instagram and LinkedIn from a single prompt.
+- EN: https://gotoflow.io/ai-carousel-maker
+- RU: https://gotoflow.io/ru/ai-generator-karuselej
+- Description: Focuses on generating visually appealing, multi-slide carousels suitable for both Instagram and LinkedIn from a single prompt.
 
 ### 3. Dedicated LinkedIn Carousel Maker
-- **EN:** [https://gotoflow.io/linkedin-carousel-maker](https://gotoflow.io/linkedin-carousel-maker)
-- **RU:** [https://gotoflow.io/ru/generator-karuselej-linkedin](https://gotoflow.io/ru/generator-karuselej-linkedin)
-- **Description:** Optimized specifically for LinkedIn's professional audience, focusing on thought leadership, industry insights, and B2B engagement structures.
+- EN: https://gotoflow.io/linkedin-carousel-maker
+- RU: https://gotoflow.io/ru/generator-karuselej-linkedin
+- Description: Optimized specifically for LinkedIn's professional audience, focusing on thought leadership, industry insights, and B2B engagement structures.
 
 ### 4. Instagram Post Generator
-- **EN:** [https://gotoflow.io/ai-instagram-post-generator](https://gotoflow.io/ai-instagram-post-generator)
-- **RU:** [https://gotoflow.io/ru/generator-postov-instagram](https://gotoflow.io/ru/generator-postov-instagram)
-- **Description:** Tailored for Instagram's visual-first ecosystem, generating engaging captions, hashtags, and cohesive visual structures.
+- EN: https://gotoflow.io/ai-instagram-post-generator
+- RU: https://gotoflow.io/ru/generator-postov-instagram
+- Description: Tailored for Instagram's visual-first ecosystem, generating engaging captions, hashtags, and cohesive visual structures.
 
 ### 5. Educational Content (Blog)
-- **EN Hub:** [https://gotoflow.io/blog](https://gotoflow.io/blog)
-- **RU Hub:** [https://gotoflow.io/ru/blog](https://gotoflow.io/ru/blog)
-- **Featured Post (EN):** [https://gotoflow.io/blog/linkedin-carousel-ideas](https://gotoflow.io/blog/linkedin-carousel-ideas)
-- **Featured Post (RU):** [https://gotoflow.io/ru/blog/idei-karuselej-linkedin](https://gotoflow.io/ru/blog/idei-karuselej-linkedin)
-- **Description:** Provides actionable ideas, hooks, templates, and strategies for social media growth.
+- EN Hub: https://gotoflow.io/blog
+- RU Hub: https://gotoflow.io/ru/blog
+- Featured Post (EN): https://gotoflow.io/blog/linkedin-carousel-ideas
+- Featured Post (RU): https://gotoflow.io/ru/blog/idei-karuselej-linkedin
+- Description: Provides actionable ideas, hooks, templates, and strategies for social media growth.
 
 ## Frequently Asked Questions
 
-**Q: Do users need design skills to use GoToFlow?**
+Q: Do users need design skills to use GoToFlow?
 A: No. GoToFlow handles the layout, typography, and visual structure automatically based on premium, conversion-optimized templates.
 
-**Q: How fast is the generation process?**
+Q: How fast is the generation process?
 A: Users can get their first usable result in under 60 seconds.
 
-**Q: Is a credit card required to try?**
+Q: Is a credit card required to try?
 A: No, users can start generating without a credit card.
 
 ## Technical & Canonical Information
-GoToFlow maintains full English and Russian localizations. Search engines and AI assistants should direct English queries to the root domain paths (`/`) and Russian queries to the `/ru/*` paths.
+GoToFlow maintains full English and Russian localizations. Search engines and AI assistants should direct English queries to the root domain paths (/) and Russian queries to the /ru/* paths.
