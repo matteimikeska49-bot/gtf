@@ -48,11 +48,13 @@ const LandingPage = () => (
 );
 
 import { ScrollToTop } from './components/ScrollToTop';
+import { RouteSchemaInjector } from './components/RouteSchemaInjector';
 
 function App() {
   return (
     <LanguageProvider>
       <ScrollToTop />
+      <RouteSchemaInjector />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/ru" element={<LandingPage />} />

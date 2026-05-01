@@ -45,8 +45,6 @@ const ArticleSEOHead = () => {
     document.documentElement.lang = 'ru';
     return () => {
       document.title = 'GoToFlow';
-      const s = document.getElementById(schemaId);
-      if (s) s.remove();
       
       // Cleanup hreflangs on unmount
       document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
