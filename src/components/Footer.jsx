@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   const [modal, setModal] = useState(null); // 'privacy' | 'terms' | 'consent' | null
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <>
@@ -31,7 +31,7 @@ export const Footer = () => {
               
               {/* Internal SEO Links */}
               <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4">
-                {lang === 'ru' ? (
+                {lang === 'RU' ? (
                   <>
                     <Link to="/ru/generator-kontenta" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Генератор контента</Link>
                     <Link to="/ru/ai-generator-karuselej" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Карусели</Link>
