@@ -510,6 +510,7 @@ export const LinkedInCarouselPage = () => (
         <ul className="space-y-3 text-sm md:text-base">
             <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ai-content-generator" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Generate full content with our AI content generator</Link></li>
             <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ai-instagram-post-generator" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Create Instagram posts for other platforms</Link></li>
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/blog/linkedin-carousel-ideas" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">LinkedIn carousel ideas</Link></li>
         </ul>
       </div>
     </section>

@@ -80,9 +80,9 @@ const PopularBlockRu = () => (
     <div className="text-center">
       <h3 className="text-zinc-500 text-sm font-medium mb-3">Популярное:</h3>
       <ul className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm md:text-base justify-center items-center">
-        <li><Link to="/blog/idei-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 100 идей контента</Link></li>
-        <li><Link to="/blog/idei-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 идей каруселей</Link></li>
-        <li><Link to="/blog/idei-karuselej-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 идей каруселей для LinkedIn</Link></li>
+        <li><Link to="/ru/blog/idei-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 100 идей контента</Link></li>
+        <li><Link to="/ru/blog/idei-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 идей каруселей</Link></li>
+        <li><Link to="/ru/blog/idei-karuselej-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors flex items-center gap-2"><span className="text-pink-500">•</span> 50 идей каруселей для LinkedIn</Link></li>
       </ul>
     </div>
   </section>
@@ -92,26 +92,26 @@ const categoriesRu = [
   {
     title: 'Идеи',
     links: [
-      { to: '/blog/idei-karuselej', title: '50 идей каруселей', desc: 'готовые темы и примеры' },
-      { to: '/blog/idei-kontenta', title: '100 идей контента', desc: 'темы, которые приносят охваты' }
+      { to: '/ru/blog/idei-karuselej', title: '50 идей каруселей', desc: 'готовые темы и примеры' },
+      { to: '/ru/blog/idei-kontenta', title: '100 идей контента', desc: 'темы, которые приносят охваты' }
     ]
   },
   {
     title: 'Хуки',
     links: [
-      { to: '/blog/huki-dlya-postov', title: '50 хуков для постов', desc: 'заголовки, которые останавливают скролл' }
+      { to: '/ru/blog/huki-dlya-postov', title: '50 хуков для постов', desc: 'заголовки, которые останавливают скролл' }
     ]
   },
   {
     title: 'Подписи',
     links: [
-      { to: '/blog/podpisi-instagram', title: '100 подписей Instagram', desc: 'тексты для постов' }
+      { to: '/ru/blog/podpisi-instagram', title: '100 подписей Instagram', desc: 'тексты для постов' }
     ]
   },
   {
     title: 'Шаблоны',
     links: [
-      { to: '/blog/primery-karuselej', title: '50 примеров каруселей', desc: 'эффективные визуальные форматы' }
+      { to: '/ru/blog/primery-karuselej', title: '50 примеров каруселей', desc: 'эффективные визуальные форматы' }
     ]
   }
 ];

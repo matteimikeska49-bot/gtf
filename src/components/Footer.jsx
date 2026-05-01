@@ -4,6 +4,7 @@ import { TermsOfService } from './TermsOfService';
 import { UserConsent } from './UserConsent';
 import { Logo } from './Header';
 import { useLanguage } from '../context/LanguageContext';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   const [modal, setModal] = useState(null); // 'privacy' | 'terms' | 'consent' | null
@@ -27,6 +28,27 @@ export const Footer = () => {
               <p className="text-[11px] text-zinc-500 font-medium">
                 {t('footer.copyright')}
               </p>
+              
+              {/* Internal SEO Links */}
+              <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4">
+                {lang === 'ru' ? (
+                  <>
+                    <Link to="/ru/generator-kontenta" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Генератор контента</Link>
+                    <Link to="/ru/ai-generator-karuselej" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Карусели</Link>
+                    <Link to="/ru/generator-karuselej-linkedin" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Карусели LinkedIn</Link>
+                    <Link to="/ru/generator-postov-instagram" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Посты Instagram</Link>
+                    <Link to="/ru/blog" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Блог</Link>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/ai-content-generator" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Content Generator</Link>
+                    <Link to="/ai-carousel-maker" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Carousel Maker</Link>
+                    <Link to="/linkedin-carousel-maker" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">LinkedIn Carousels</Link>
+                    <Link to="/ai-instagram-post-generator" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Instagram Posts</Link>
+                    <Link to="/blog" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Blog</Link>
+                  </>
+                )}
+              </nav>
             </div>
 
             {/* Right Hand: Legal Links & Socials */}
