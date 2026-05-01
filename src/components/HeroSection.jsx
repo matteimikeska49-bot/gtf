@@ -368,9 +368,15 @@ export const HeroSection = () => {
       {/* Isometric grid background layer */}
       <IsometricGrid />
       
-      {/* Deep Ambient Glow for Hero — magenta/purple, very low opacity */}
-      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] md:w-[1200px] h-[700px] md:h-[900px] bg-[#ec4899]/[0.07] blur-[80px] md:blur-[80px] md:blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-purple-900/10 blur-[60px] md:blur-[60px] md:blur-[120px] rounded-full pointer-events-none" />
+      {/* Deep Ambient Glow for Hero — magenta/orange, subtle premium depth */}
+      <div
+        aria-hidden="true"
+        className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[520px] md:w-[860px] h-[320px] md:h-[500px] rounded-full bg-[radial-gradient(circle,rgba(236,72,153,0.14)_0%,rgba(249,115,22,0.07)_40%,transparent_70%)] blur-[55px] md:blur-[90px] pointer-events-none"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 w-[420px] md:w-[720px] h-[220px] md:h-[340px] rounded-full bg-[radial-gradient(circle,rgba(168,85,247,0.08)_0%,rgba(236,72,153,0.05)_45%,transparent_72%)] blur-[45px] md:blur-[75px] pointer-events-none"
+      />
       
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10 w-full">
         <div className="mt-4 md:mt-0 mb-8">
