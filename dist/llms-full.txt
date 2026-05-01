@@ -54,4 +54,3 @@ A: No, users can start generating without a credit card.
 ## Technical & Canonical Information
 GoToFlow maintains full English and Russian localizations. Search engines and AI assistants should direct English queries to the root domain paths (/) and Russian queries to the /ru/* paths.
 
-DEPLOY_PROOF_MARKER: 8ffb860-20260501-1550
