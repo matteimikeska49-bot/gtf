@@ -176,7 +176,7 @@ const FAQItem = ({ item, isOpen, onClick }) => (
         <ChevronDown className={`w-4 h-4 transition-colors ${isOpen?'text-pink-400':'text-zinc-500'}`}/>
       </motion.div>
     </div>
-    {isOpen && <motion.div initial={{height:0,opacity:0}} animate={{height:'auto',opacity:1}} transition={{duration:0.35}}><p className="px-6 pb-6 text-zinc-400 leading-relaxed font-medium text-sm md:text-base">{item.a}</p></motion.div>}
+    <motion.div initial={false} animate={{height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0}} className="overflow-hidden" transition={{duration:0.35}}><p className="px-6 pb-6 text-zinc-400 leading-relaxed font-medium text-sm md:text-base">{item.a}</p></motion.div>
   </div>
 );
 
