@@ -29,3 +29,5 @@ Brands, marketing experts, thought leaders, and businesses looking to scale thei
 - Генератор каруселей LinkedIn: https://gotoflow.io/ru/generator-karuselej-linkedin
 - Блог: https://gotoflow.io/ru/blog
 - Идеи каруселей LinkedIn: https://gotoflow.io/ru/blog/idei-karuselej-linkedin
+
+DEPLOY_PROOF_MARKER: 8ffb860-20260501-1550
