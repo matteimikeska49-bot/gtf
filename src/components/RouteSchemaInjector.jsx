@@ -134,7 +134,7 @@ export const RouteSchemaInjector = () => {
     }
 
     if (config.crumbs && config.crumbs.length > 0) {
-      items.push(getBreadcrumbSchema(config.crumbs));
+      items.push(getBreadcrumbSchema(config.crumbs, path));
     }
 
     const schema = buildSchema(items);

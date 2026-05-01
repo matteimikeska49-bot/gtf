@@ -49,9 +49,9 @@ export const getArticleSchema = (path, title, desc, lang = 'en') => ({
   "publisher": { "@id": "https://gotoflow.io/#organization" }
 });
 
-export const getBreadcrumbSchema = (crumbs) => ({
+export const getBreadcrumbSchema = (crumbs, path) => ({
   "@type": "BreadcrumbList",
-  "@id": "https://gotoflow.io/#breadcrumb",
+  "@id": `https://gotoflow.io${path}#breadcrumb`,
   "itemListElement": crumbs.map((c, i) => ({
     "@type": "ListItem",
     "position": i + 1,
