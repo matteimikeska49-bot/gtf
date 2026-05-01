@@ -7,8 +7,10 @@ import {
   getSoftwareSchema,
   getArticleSchema,
   getBreadcrumbSchema,
+  getFAQPageSchema,
   buildSchema
 } from '../utils/schemaGenerator';
+import { faqSchemaData } from '../data/faqSchemaData';
 
 const ROUTES_CONFIG = {
   '/': {
@@ -135,6 +137,10 @@ export const RouteSchemaInjector = () => {
 
     if (config.crumbs && config.crumbs.length > 0) {
       items.push(getBreadcrumbSchema(config.crumbs, path));
+    }
+
+    if (faqSchemaData[path] && faqSchemaData[path].length > 0) {
+      items.push(getFAQPageSchema(faqSchemaData[path], path));
     }
 
     const schema = buildSchema(items);

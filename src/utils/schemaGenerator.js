@@ -60,6 +60,19 @@ export const getBreadcrumbSchema = (crumbs, path) => ({
   }))
 });
 
+export const getFAQPageSchema = (faqItems, path) => ({
+  "@type": "FAQPage",
+  "@id": `https://gotoflow.io${path}#faq`,
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+});
+
 export const buildSchema = (items) => ({
   "@context": "https://schema.org",
   "@graph": items
