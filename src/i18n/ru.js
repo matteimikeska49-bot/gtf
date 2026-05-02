@@ -231,25 +231,25 @@ export const ru = {
     title: 'Что говорят креаторы',
     items: [
       {
-        name: "Marina K.",
-        role: "Эксперт по питанию",
-        text: "Я реально ненавидела этап «сесть и написать пост». Идея есть, а пока сформулируешь, пока оформишь — проходит два часа. Сейчас закидываю тему — получаю структуру, текст, визуал. И он звучит как я, а не как робот.",
-        result: "С 2 постов в неделю → 5, без увеличения времени",
-        avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+        name: "Алина",
+        role: "smm",
+        text: "с ии всегда одна и та же фигня, текст вроде норм, но читается как иишный\nи ты понимаешь что люди это тоже чувствуют, поэтому в итоге сидишь и всё переделываешь\nздесь впервые просто сделал и выложил без этой бесконечной правки",
+        result: "Избавилась от постоянных правок и иишного текста",
+        avatar: "/images/avatars/ru/alina.png"
       },
       {
-        name: "Daniel R.",
-        role: "Marketing Lead, London",
-        text: "I used to spend half my Sunday batching content for the week. Different tabs for AI text, another for design, another for competitor research. Now it's one flow — idea to carousel in minutes. The tone actually sounds like me, not like a chatbot wrote it.",
-        result: "Content production time cut by 70%",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+        name: "Илья",
+        role: "блогер",
+        text: "Раньше вообще не понимал что постить\nмог неделю ничего не выкладывать\nсейчас просто беру тему или смотрю конкурентов и сразу собираю карусель",
+        result: "с 0–1 поста в неделю до 10 стабильно",
+        avatar: "/images/avatars/ru/ilya.png"
       },
       {
-        name: "Artem N.",
-        role: "Основатель студии интерьеров",
-        text: "Контент — это то, что я откладываю каждый день. Я не копирайтер и не дизайнер. Но клиенты приходят из Instagram, и без постов просто нет заявок. За первую неделю сделал 6 каруселей. Две принесли заявки — впервые за два месяца.",
-        result: "6 каруселей за неделю → 2 входящие заявки",
-        avatar: "https://randomuser.me/api/portraits/men/45.jpg"
+        name: "Мария",
+        role: "эксперт",
+        text: "Раньше на одну карусель уходил почти весь вечер и всё равно не нравилось\nсейчас за несколько минут есть норм основа, дальше чуть поправил и всё",
+        result: "с 2–3 часов до пары минут в моем стиле",
+        avatar: "/images/avatars/ru/maria1.png"
       },
       {
         type: "stat",
@@ -257,25 +257,25 @@ export const ru = {
         label: "Среднее время создания карусели"
       },
       {
-        name: "Alina V.",
-        role: "Блогер, лайфстайл",
-        text: "Я перепробовала штук пять AI-сервисов. Везде одно и то же — текст, который надо полностью переписывать. Смысл тогда? Тут я первый раз получила текст и подумала «о, это прям можно выложить». Не всегда, но в 8 случаях из 10.",
-        result: "8 из 10 текстов — сразу в публикацию",
-        avatar: "https://randomuser.me/api/portraits/women/68.jpg"
+        name: "Андрей",
+        role: "агентство",
+        text: "Было 3–4 сервиса на один пост\nидеи отдельно, текст отдельно, дизайн отдельно\nпока всё соберёшь уже ничего не хочется\nздесь это один процесс",
+        result: "убрали 3 сервиса из работы, оптимизировали расходы на 60%",
+        avatar: "/images/avatars/ru/andrey.png"
       },
       {
-        name: "Sophie van D.",
-        role: "Content Strategist, Amsterdam",
-        text: "We manage content for 6 clients. Before GoToFlow, each one needed 3–4 hours a week just for copy and carousels. Now the team handles the same volume in a fraction of the time. The Spy feature alone saves us hours of competitor research.",
-        result: "~15 hours saved per week across the team",
-        avatar: "https://randomuser.me/api/portraits/women/33.jpg"
+        name: "Олег",
+        role: "предприниматель",
+        text: "Контент делал как попало, то есть то нет\nпросто потому что долго и лень начинать\nсейчас делаю стабильно потому что это быстро",
+        result: "с 2 постов в неделю до 3 каждый день",
+        avatar: "/images/avatars/ru/oleg.png"
       },
       {
-        name: "Natalia G.",
-        role: "Психолог, частная практика",
-        text: "Мне важно, чтобы контент звучал как я, а не как «топ-5 способов справиться с тревогой». Все AI до этого выдавали именно такое. Здесь я настроила подачу под себя — и подписчики стали писать в личку чаще. Это лучшая метрика.",
-        result: "Рост входящих сообщений на 40%",
-        avatar: "https://randomuser.me/api/portraits/women/22.jpg"
+        name: "Екатерина",
+        role: "контент",
+        text: "Самое тупое это сидеть и не понимать с чего начать\nздесь хотя бы есть структура и ты не зависаешь. Легко делать контент даже если нет идей",
+        result: "время на старт с 30–40 минут до 5–10",
+        avatar: "/images/avatars/ru/ekaterina.png"
       },
       {
         type: "stat",
@@ -283,25 +283,25 @@ export const ru = {
         label: "Пользователей за первые 3 месяца"
       },
       {
-        name: "Sasha L.",
-        role: "Контент-менеджер, фриланс",
-        text: "Самое бесячее — жонглировать ChatGPT, Canva, заметки, потом собирать всё вручную. К концу дня голова квадратная, а сделал три поста. Здесь весь процесс в одном окне. Идея → структура → текст → карусель. Просто стал успевать больше.",
-        result: "×2 к объёму контента при том же рабочий дне",
-        avatar: "https://randomuser.me/api/portraits/men/55.jpg"
+        name: "Дмитрий",
+        role: "маркетинг",
+        text: "Раньше просто смотрел конкурентов и залипал\nсейчас беру идею и сразу делаю свой пост который набирает охваты",
+        result: "из одной идеи получается несколько постов",
+        avatar: "/images/avatars/ru/dmitry.png"
       },
       {
-        name: "James T.",
-        role: "Founder, DTC Brand, NYC",
-        text: "I was paying a freelance SMM $800/mo for templated posts that didn't convert. Decided to try doing it myself. Got the hang of GoToFlow in about 10 minutes. Now I post 4 times a week — nothing fancy, but real and on-brand. Saves me a fortune.",
-        result: "Replaced freelance SMM → saving $800/mo",
-        avatar: "https://randomuser.me/api/portraits/men/21.jpg"
+        name: "Анна",
+        role: "фрилансер",
+        text: "Только недавно делала максимум 2 поста в неделю и выгорала,\nсейчас делаю больше и не устаю от этого",
+        result: "с 2 до 5–6 постов в неделю",
+        avatar: "/images/avatars/ru/anna.png"
       },
       {
-        name: "Igor M.",
-        role: "Владелец барбершопа, 2 точки",
-        text: "Честно — я вообще не понимаю в контенте. Нанимал SMM, но 25 тысяч в месяц за шаблонные посты — было больно. Разобрался за 10 минут. Делаю 3–4 поста в неделю. Не шедевры, но живые и про нас.",
-        result: "Заменил SMM-щика → экономия 25 000 ₽/мес",
-        avatar: "https://randomuser.me/api/portraits/men/60.jpg"
+        name: "Никита",
+        role: "блогер",
+        text: "Раньше писал обычные посты, их почти не читали\nС каруселями люди реально листают и дочитывают",
+        result: "вовлечёнка выросла примерно в 4.5 раза",
+        avatar: "/images/avatars/ru/nikita.png"
       },
       {
         type: "stat",
@@ -309,11 +309,11 @@ export const ru = {
         label: "Публикуют контент без правок"
       },
       {
-        name: "Dmitry V.",
-        role: "Founder, EdTech-стартап",
-        text: "Выкладывал посты каждый день на интуиции, но заявок не было. Тратил уйму времени на пустые охваты. Система помогла выстроить логику контента — каждый пост стал шагом в воронке. Лиды начали писать в директ после второй карусели.",
-        result: "Первые целевые лиды после 2-й карусели",
-        avatar: "https://randomuser.me/api/portraits/men/11.jpg"
+        name: "Мария",
+        role: "эксперт",
+        text: "у меня проблема была не в тексте, а в том что каждый раз всё с нуля\nи потом ещё долго правишь потому что получается какой то иишный текст\n\nЗдесь хотя бы сразу есть норм база берёшь идею, получаешь структуру и просто доводишь до финала\n\nиз за этого перестала откладывать контент",
+        result: "Ушла от бесконечных правок ии, создание в удовольствие",
+        avatar: "/images/avatars/ru/maria2.png"
       }
     ]
   },
