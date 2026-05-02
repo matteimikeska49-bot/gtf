@@ -46,16 +46,24 @@ export const TestimonialsSection = () => {
 
   /* ── Card size classes: compact for RU, original for EN ── */
   const statCardClass = isRu
-    ? "flex-shrink-0 w-[260px] md:w-[320px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 py-8 flex flex-col items-center justify-center h-auto min-h-[250px]"
+    ? "flex-shrink-0 w-[260px] md:w-[300px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl px-5 py-6 flex flex-col items-center justify-center"
     : "flex-shrink-0 w-[280px] md:w-[350px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 flex flex-col items-center justify-center h-auto min-h-[250px]";
 
   const testimonialCardClass = isRu
-    ? "flex-shrink-0 w-[300px] md:w-[340px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl px-5 py-7 flex flex-col justify-between h-auto min-h-[250px]"
+    ? "flex-shrink-0 w-[300px] md:w-[340px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl px-5 py-5 flex flex-col"
     : "flex-shrink-0 w-[300px] md:w-[400px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 flex flex-col justify-between h-auto min-h-[250px]";
 
   const textClass = isRu
-    ? "whitespace-normal break-words text-zinc-300 text-base leading-relaxed italic mb-4 max-w-[270px]"
+    ? "whitespace-normal break-words text-zinc-300 text-sm leading-relaxed italic mb-3"
     : "whitespace-normal break-words text-zinc-300 text-base leading-relaxed italic mb-4";
+
+  const resultClass = isRu
+    ? "text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-3"
+    : "text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-6";
+
+  const authorClass = isRu
+    ? "flex items-center gap-3 mt-auto pt-2"
+    : "flex items-center gap-3 mt-4";
 
   return (
     <section className="relative z-10 py-16 md:py-24 w-full flex flex-col items-center overflow-hidden">
@@ -91,7 +99,7 @@ export const TestimonialsSection = () => {
 
         <div
           ref={sliderRef}
-          className="flex flex-nowrap items-stretch gap-6 animate-slide w-max px-6"
+          className={`flex flex-nowrap ${isRu ? 'items-start' : 'items-stretch'} gap-6 animate-slide w-max px-6`}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -122,19 +130,19 @@ export const TestimonialsSection = () => {
                 onMouseLeave={resumeSlider}
               >
                 <div>
-                  <div className="flex gap-1 mb-4">
+                  <div className={`flex gap-1 ${isRu ? 'mb-3' : 'mb-4'}`}>
                     {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
                   </div>
                   <p className={textClass}>
                     "{t.text}"
                   </p>
                   {t.result && (
-                    <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-6">
+                    <p className={resultClass}>
                       {t.result}
                     </p>
                   )}
                 </div>
-                <div className="flex items-center gap-3 mt-4">
+                <div className={authorClass}>
                   <img src={t.avatar} alt={`${t.name} - GoToFlow AI content generator user`} className="w-10 h-10 rounded-full object-cover border border-white/10" loading="lazy" />
                   <div className="flex flex-col">
                     <div className="text-white font-medium">{t.name}</div>
