@@ -245,21 +245,21 @@ export const en = {
       {
         name: "Sarah",
         role: "Social Media Manager",
-        text: "I used to look at AI drafts and think, okay, this is technically fine, but I'd still feel weird posting it.\nToo smooth, too generic, like people had already seen the same thing everywhere.\n\nNow I get a starting point that doesn't need to be rewritten from zero.",
+        text: "I didn't need more AI text. I needed something I could actually post.\nMost drafts looked fine at first, but still felt too smooth and generic once I read them back.\n\nNow I spend less time cleaning up the \"AI voice\" and more time shaping the final post.",
         result: "Less editing, less AI-sludge in my posts",
         avatar: "/images/avatars/en/sarah.png"
       },
       {
         name: "Jake",
         role: "Content Creator",
-        text: "I usually had the topic, but not the angle.\nSo I'd open a blank doc and just sit there.\n\nNow I can take an idea, choose a direction, and turn it into a carousel much faster.",
-        result: "Ideas stopped getting stuck in my notes",
+        text: "The blank page was the real bottleneck.\nI usually had a topic, but not the angle or structure.\n\nNow I can turn a rough idea into a carousel direction much faster.",
+        result: "More saved ideas turn into published content",
         avatar: "/images/avatars/en/jake.png"
       },
       {
         name: "Emma",
         role: "Marketing Consultant",
-        text: "The most annoying part of AI tools is that they promise to save time, then make you clean everything up.\nYou remove the fluff, rewrite the first slides, fix the structure, and make it sound less generic.\n\nNow the draft is closer to something I can actually publish.",
+        text: "AI tools were supposed to save time, but I kept spending that time fixing the output.\nToo much fluff, weak openings, and generic structure.\n\nNow the first draft is closer to something I can actually use.",
         result: "Shorter edits, more drafts reaching the finish line",
         avatar: "/images/avatars/en/emma.png"
       },
@@ -271,22 +271,22 @@ export const en = {
       {
         name: "Mark",
         role: "Agency Owner",
-        text: "We had too many tabs for one post.\nIdeas in one tool, copy in another, design somewhere else, then everything had to be moved around.\n\nNow the process feels lighter with less manual assembly and fewer tool switches.",
-        result: "The team gets content into production faster",
+        text: "Our workflow had too many moving parts.\nIdeas in one tool, copy in another, design somewhere else, and then manual cleanup at the end.\n\nNow the team gets to a usable content draft faster.",
+        result: "Fewer tool switches, faster content production",
         avatar: "/images/avatars/en/mark.png"
       },
       {
         name: "Lina",
         role: "Founder",
-        text: "I didn't have a problem with ideas.\nI had a problem with every post feeling like a half-day task.\n\nOnce the start became easier, I stopped pushing content aside.",
-        result: "A more consistent publishing rhythm without the constant drag",
+        text: "I wasn't out of ideas.\nI was tired of every post feeling like a half-day task.\n\nOnce the starting point got easier, publishing stopped feeling like such a drag.",
+        result: "From random posting to a more consistent weekly workflow",
         avatar: "/images/avatars/en/lina.png"
       },
       {
         name: "Noah",
         role: "LinkedIn Creator",
-        text: "I didn't want my posts to sound like they came out of a generator.\nPeople can feel that fast, especially when you write for a personal brand.\n\nNow AI helps with the structure, but the final post still feels like mine.",
-        result: "Using AI more often without feeling fake",
+        text: "My biggest fear was sounding fake.\nIf a post feels like it came straight from a generator, people notice.\n\nNow AI helps me shape the structure without taking over my voice.",
+        result: "More posts shipped without sounding like generic AI",
         avatar: "/images/avatars/en/noah.png"
       },
       {
@@ -297,21 +297,21 @@ export const en = {
       {
         name: "Sophia",
         role: "Growth Marketer",
-        text: "I saved strong competitor posts all the time, but rarely turned them into anything useful.\nThe hard part was not copying, but understanding the logic and making my own version.\n\nNow one idea can quickly become several usable post angles.",
+        text: "Competitor research used to stop at screenshots.\nI'd save strong posts, but rarely turn them into my own content.\n\nNow one good idea can become several usable post angles.",
         result: "Competitor research finally turns into content",
         avatar: "/images/avatars/en/sophia.png"
       },
       {
         name: "Daniel",
         role: "Freelance Designer",
-        text: "Every post used to feel like a separate project.\nFind the idea, build the structure, write the copy, then clean it all up.\n\nNow the hardest part is shorter, and I get to a draft I can refine faster.",
+        text: "Every post used to feel like a separate project.\nIdea, structure, copy, cleanup — all before I could even publish.\n\nNow the hardest part is shorter, and I can get to a draft faster.",
         result: "More posts without content taking over the whole day",
         avatar: "/images/avatars/en/daniel.png"
       },
       {
         name: "Mia",
         role: "Creator",
-        text: "My regular text posts were easy to scroll past.\nWith carousels, people actually swipe, save, and reply.\n\nThe biggest change is that I'm not inventing every slide from scratch anymore.",
+        text: "My regular text posts were easy to scroll past.\nWith carousels, people actually swipe, save, and reply.\n\nI'm not inventing every slide from scratch anymore.",
         result: "Carousels started bringing more saves and replies",
         avatar: "/images/avatars/en/mia.png"
       },
@@ -323,7 +323,7 @@ export const en = {
       {
         name: "Oliver",
         role: "Solo Founder",
-        text: "The hardest part was figuring out the hook, structure, and CTA every single time.\nGood ideas would sit in my notes for weeks because I didn't know how to shape them.\n\nNow I see the frame of the post much faster and know what to do next.",
+        text: "Good ideas used to sit in my notes for weeks.\nThe hard part was shaping the hook, structure, and CTA every single time.\n\nNow I see the frame of the post faster and know what to do next.",
         result: "Less blank-page time, more ideas actually published",
         avatar: "/images/avatars/en/oliver.png"
       }
