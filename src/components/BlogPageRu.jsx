@@ -6,6 +6,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
+import { TestimonialsSection } from './TestimonialsSection';
 import { useIsMobile } from '../hooks/useIsMobile';
 
 const CTA_URL = 'https://app.gotoflow.io';
@@ -173,6 +174,7 @@ export const BlogPageRu = () => (
     <PopularBlockRu />
     <BlogCategoriesRu />
     <BlogInternalLinksRu />
+    <TestimonialsSection />
     <BlogSEOTextRu />
     <Footer />
     <CookieBanner />

@@ -6,6 +6,7 @@ import { Header } from '../Header';
 import { Footer } from '../Footer';
 import { MainLayout } from '../MainLayout';
 import { CookieBanner } from '../CookieBanner';
+import { TestimonialsSection } from '../TestimonialsSection';
 import { useIsMobile } from '../../hooks/useIsMobile';
 
 const CTA_URL = '/ru/generator-karuselej-linkedin';
@@ -390,6 +391,7 @@ export const LinkedInCarouselIdeasPageRu = () => (
     <ArticleHero />
     <ArticleBody />
     <ArticleFAQ />
+    <TestimonialsSection />
     <ArticleCTA />
     <BackToBlog />
     <Footer />
