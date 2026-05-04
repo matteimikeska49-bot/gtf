@@ -50,7 +50,7 @@ export const TestimonialsSection = () => {
     : "flex-shrink-0 w-[280px] md:w-[350px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 flex flex-col items-center justify-center h-auto min-h-[250px]";
 
   const testimonialCardClass = isRu
-    ? "flex-shrink-0 w-[300px] md:w-[340px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl px-5 py-5 flex flex-col"
+    ? "flex-shrink-0 w-[300px] md:w-[340px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl px-5 py-5 flex flex-col justify-between"
     : "flex-shrink-0 w-[300px] md:w-[400px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 flex flex-col justify-between h-auto min-h-[250px]";
 
   const textClass = isRu
@@ -99,7 +99,7 @@ export const TestimonialsSection = () => {
 
         <div
           ref={sliderRef}
-          className={`flex flex-nowrap ${isRu ? 'items-start' : 'items-stretch'} gap-6 animate-slide w-max px-6`}
+          className="flex flex-nowrap items-stretch gap-6 animate-slide w-max px-6"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
