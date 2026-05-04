@@ -243,25 +243,25 @@ export const en = {
     title: 'What creators say',
     items: [
       {
-        name: "Marina K.",
-        role: "Nutrition Expert",
-        text: "I genuinely hated the 'sit down and write a post' phase. I have an idea, but formulating and formatting takes two hours. Now I drop a topic and get a structure, text, and visuals. And it sounds like me, not a robot.",
-        result: "From 2 posts a week → 5, with no extra time spent",
-        avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+        name: "Sarah",
+        role: "Social Media Manager",
+        text: "I used to look at AI drafts and think, okay, this is technically fine, but I'd still feel weird posting it.\nToo smooth, too generic, like people had already seen the same thing everywhere.\n\nNow I get a starting point that doesn't need to be rewritten from zero.",
+        result: "Less editing, less AI-sludge in my posts",
+        avatar: "/images/avatars/en/sarah.png"
       },
       {
-        name: "Daniel R.",
-        role: "Marketing Lead, London",
-        text: "I used to spend half my Sunday batching content for the week. Different tabs for AI text, another for design, another for competitor research. Now it's one flow — idea to carousel in minutes. The tone actually sounds like me, not like a chatbot wrote it.",
-        result: "Content production time cut by 70%",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+        name: "Jake",
+        role: "Content Creator",
+        text: "I usually had the topic, but not the angle.\nSo I'd open a blank doc and just sit there.\n\nNow I can take an idea, choose a direction, and turn it into a carousel much faster.",
+        result: "Ideas stopped getting stuck in my notes",
+        avatar: "/images/avatars/en/jake.png"
       },
       {
-        name: "Artem N.",
-        role: "Interior Design Studio Founder",
-        text: "Content is what I put off every day. I'm not a copywriter or designer. But clients come from Instagram, and without posts, there are no leads. In my first week, I made 6 carousels. Two brought in leads — the first in two months.",
-        result: "6 carousels in a week → 2 inbound leads",
-        avatar: "https://randomuser.me/api/portraits/men/45.jpg"
+        name: "Emma",
+        role: "Marketing Consultant",
+        text: "The most annoying part of AI tools is that they promise to save time, then make you clean everything up.\nYou remove the fluff, rewrite the first slides, fix the structure, and make it sound less generic.\n\nNow the draft is closer to something I can actually publish.",
+        result: "Shorter edits, more drafts reaching the finish line",
+        avatar: "/images/avatars/en/emma.png"
       },
       {
         type: "stat",
@@ -269,25 +269,25 @@ export const en = {
         label: "Average carousel creation time"
       },
       {
-        name: "Alina V.",
-        role: "Lifestyle Blogger",
-        text: "I've tried about five AI tools. They all give the same thing — text you have to completely rewrite. What's the point? Here, for the first time, I got text and thought 'wow, I can actually post this.' Not always, but 8 times out of 10.",
-        result: "8 out of 10 texts go straight to publishing",
-        avatar: "https://randomuser.me/api/portraits/women/68.jpg"
+        name: "Mark",
+        role: "Agency Owner",
+        text: "We had too many tabs for one post.\nIdeas in one tool, copy in another, design somewhere else, then everything had to be moved around.\n\nNow the process feels lighter with less manual assembly and fewer tool switches.",
+        result: "The team gets content into production faster",
+        avatar: "/images/avatars/en/mark.png"
       },
       {
-        name: "Sophie van D.",
-        role: "Content Strategist, Amsterdam",
-        text: "We manage content for 6 clients. Before GoToFlow, each one needed 3–4 hours a week just for copy and carousels. Now the team handles the same volume in a fraction of the time. The Spy feature alone saves us hours of competitor research.",
-        result: "~15 hours saved per week across the team",
-        avatar: "https://randomuser.me/api/portraits/women/33.jpg"
+        name: "Lina",
+        role: "Founder",
+        text: "I didn't have a problem with ideas.\nI had a problem with every post feeling like a half-day task.\n\nOnce the start became easier, I stopped pushing content aside.",
+        result: "A more consistent publishing rhythm without the constant drag",
+        avatar: "/images/avatars/en/lina.png"
       },
       {
-        name: "Natalia G.",
-        role: "Psychologist, Private Practice",
-        text: "It's important that my content sounds like me, not like 'top 5 ways to deal with anxiety.' All AIs before gave me exactly that. Here I set up my own tone — and followers have started messaging me more often. That's the best metric.",
-        result: "Inbound messages increased by 40%",
-        avatar: "https://randomuser.me/api/portraits/women/22.jpg"
+        name: "Noah",
+        role: "LinkedIn Creator",
+        text: "I didn't want my posts to sound like they came out of a generator.\nPeople can feel that fast, especially when you write for a personal brand.\n\nNow AI helps with the structure, but the final post still feels like mine.",
+        result: "Using AI more often without feeling fake",
+        avatar: "/images/avatars/en/noah.png"
       },
       {
         type: "stat",
@@ -295,25 +295,25 @@ export const en = {
         label: "Users in the first 3 months"
       },
       {
-        name: "Sasha L.",
-        role: "Freelance Content Manager",
-        text: "The most annoying part is juggling ChatGPT, Canva, and notes, then assembling it all manually. By the end of the day, my brain is fried and I've made three posts. Here, the whole process is in one window. Idea → structure → text → carousel. I just get more done.",
-        result: "2x content volume with the same workday",
-        avatar: "https://randomuser.me/api/portraits/men/55.jpg"
+        name: "Sophia",
+        role: "Growth Marketer",
+        text: "I saved strong competitor posts all the time, but rarely turned them into anything useful.\nThe hard part was not copying, but understanding the logic and making my own version.\n\nNow one idea can quickly become several usable post angles.",
+        result: "Competitor research finally turns into content",
+        avatar: "/images/avatars/en/sophia.png"
       },
       {
-        name: "James T.",
-        role: "Founder, DTC Brand, NYC",
-        text: "I was paying a freelance SMM $800/mo for templated posts that didn't convert. Decided to try doing it myself. Got the hang of GoToFlow in about 10 minutes. Now I post 4 times a week — nothing fancy, but real and on-brand. Saves me a fortune.",
-        result: "Replaced freelance SMM → saving $800/mo",
-        avatar: "https://randomuser.me/api/portraits/men/21.jpg"
+        name: "Daniel",
+        role: "Freelance Designer",
+        text: "Every post used to feel like a separate project.\nFind the idea, build the structure, write the copy, then clean it all up.\n\nNow the hardest part is shorter, and I get to a draft I can refine faster.",
+        result: "More posts without content taking over the whole day",
+        avatar: "/images/avatars/en/daniel.png"
       },
       {
-        name: "Igor M.",
-        role: "Barbershop Owner, 2 locations",
-        text: "Honestly, I don't understand content at all. I hired an SMM, but paying $250 a month for templated posts hurt. I figured this out in 10 minutes. I make 3-4 posts a week. Not masterpieces, but they're authentic and about us.",
-        result: "Replaced SMM → saving $250/mo",
-        avatar: "https://randomuser.me/api/portraits/men/60.jpg"
+        name: "Mia",
+        role: "Creator",
+        text: "My regular text posts were easy to scroll past.\nWith carousels, people actually swipe, save, and reply.\n\nThe biggest change is that I'm not inventing every slide from scratch anymore.",
+        result: "Carousels started bringing more saves and replies",
+        avatar: "/images/avatars/en/mia.png"
       },
       {
         type: "stat",
@@ -321,11 +321,11 @@ export const en = {
         label: "Publish content without edits"
       },
       {
-        name: "Dmitry V.",
-        role: "EdTech Startup Founder",
-        text: "I posted every day on intuition, but there were no leads. I wasted so much time on empty reach. The system helped me build content logic — every post became a step in the funnel. Leads started DMing me after the second carousel.",
-        result: "First targeted leads after the 2nd carousel",
-        avatar: "https://randomuser.me/api/portraits/men/11.jpg"
+        name: "Oliver",
+        role: "Solo Founder",
+        text: "The hardest part was figuring out the hook, structure, and CTA every single time.\nGood ideas would sit in my notes for weeks because I didn't know how to shape them.\n\nNow I see the frame of the post much faster and know what to do next.",
+        result: "Less blank-page time, more ideas actually published",
+        avatar: "/images/avatars/en/oliver.png"
       }
     ]
   },
