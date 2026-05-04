@@ -5,6 +5,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
+import { TestimonialsSection } from './TestimonialsSection';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '../hooks/useIsMobile';
 
@@ -514,6 +515,7 @@ export const LinkedInCarouselPage = () => (
         </ul>
       </div>
     </section>
+    <TestimonialsSection />
     <LICarouselFAQ />
     <LICarouselBottomCTA />
     <Footer />

@@ -4,6 +4,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
+import { TestimonialsSection } from './TestimonialsSection';
 import { SEOHead, CarouselHero, CarouselShowcase, CarouselProblem, CarouselComparison } from './carousel/CarouselSections';
 import { CarouselHowItWorks, CarouselDifferentiation, CarouselSEOBlock, CarouselFAQ, CarouselBottomCTA } from './carousel/CarouselSections2';
 
@@ -28,6 +29,7 @@ export const CarouselPage = () => (
         </ul>
       </div>
     </section>
+    <TestimonialsSection />
     <CarouselFAQ />
     <CarouselBottomCTA />
     <Footer />

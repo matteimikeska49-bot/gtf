@@ -6,6 +6,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
+import { TestimonialsSection } from './TestimonialsSection';
 import { useIsMobile } from '../hooks/useIsMobile';
 
 
@@ -508,6 +509,7 @@ export const AIContentPage = () => (
         </ul>
       </div>
     </section>
+    <TestimonialsSection />
     <ContentFAQ />
     <ContentBottomCTA />
     <Footer />
