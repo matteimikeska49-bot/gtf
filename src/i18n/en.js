@@ -245,7 +245,7 @@ export const en = {
       {
         name: "Sarah",
         role: "Social Media Manager",
-        text: "I didn't need more AI text. I needed something I could actually post.\nMost drafts looked fine at first, but still felt too smooth and generic once I read them back.\n\nNow I spend less time cleaning up the \"AI voice\" and more time shaping the final post.",
+        text: "I didn't need more AI text. I needed something I could actually post.\nMost drafts looked fine at first, but still felt too smooth and generic.\n\nNow I spend less time cleaning up the \"AI voice\".",
         result: "Less editing, less AI-sludge in my posts",
         avatar: "/images/avatars/en/sarah.png"
       },
@@ -259,7 +259,7 @@ export const en = {
       {
         name: "Emma",
         role: "Marketing Consultant",
-        text: "AI tools were supposed to save time, but I kept spending that time fixing the output.\nToo much fluff, weak openings, and generic structure.\n\nNow the first draft is closer to something I can actually use.",
+        text: "AI tools were supposed to save time, but I kept fixing the output.\nToo much fluff, weak openings, and generic structure.\n\nNow the first draft is closer to something I can actually use.",
         result: "Shorter edits, more drafts reaching the finish line",
         avatar: "/images/avatars/en/emma.png"
       },
@@ -271,7 +271,7 @@ export const en = {
       {
         name: "Mark",
         role: "Agency Owner",
-        text: "Our workflow had too many moving parts.\nIdeas in one tool, copy in another, design somewhere else, and then manual cleanup at the end.\n\nNow the team gets to a usable content draft faster.",
+        text: "Our workflow had too many moving parts.\nIdeas in one tool, copy in another, design somewhere else.\n\nNow the team gets to a usable content draft faster.",
         result: "Fewer tool switches, faster content production",
         avatar: "/images/avatars/en/mark.png"
       },
@@ -304,7 +304,7 @@ export const en = {
       {
         name: "Daniel",
         role: "Freelance Designer",
-        text: "Every post used to feel like a separate project.\nIdea, structure, copy, cleanup — all before I could even publish.\n\nNow the hardest part is shorter, and I can get to a draft faster.",
+        text: "Every post used to feel like a separate project.\nIdea, structure, copy, cleanup — all before I could publish.\n\nNow I get to a draft faster.",
         result: "More posts without content taking over the whole day",
         avatar: "/images/avatars/en/daniel.png"
       },
@@ -323,7 +323,7 @@ export const en = {
       {
         name: "Oliver",
         role: "Solo Founder",
-        text: "Good ideas used to sit in my notes for weeks.\nThe hard part was shaping the hook, structure, and CTA every single time.\n\nNow I see the frame of the post faster and know what to do next.",
+        text: "Good ideas used to sit in my notes for weeks.\nThe hard part was shaping the hook, structure, and CTA.\n\nNow I see the frame of the post faster.",
         result: "Less blank-page time, more ideas actually published",
         avatar: "/images/avatars/en/oliver.png"
       }
