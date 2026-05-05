@@ -4,17 +4,17 @@ import { useLanguage } from '../context/LanguageContext';
 
 /* ─── Карточки-плейсхолдеры: чередующий ритм Reels + Post ─── */
 const cards = [
-  { id: 1, format: 'square', tag: 'post',     likes: '4.2K', views: '12K', labelKey: 'personalBrand', image: '/images/niches/image_1.png.jpg' },
-  { id: 2, format: 'reel',   tag: 'carousel', likes: '8.1K', views: '20K', labelKey: 'marketing', image: '/images/niches/image_2.png.jpg' },
-  { id: 3, format: 'square', tag: 'carousel', likes: '1.8K', views: '5K',  labelKey: 'promotion', image: '/images/niches/image_3.png.jpg' },
-  { id: 4, format: 'square', tag: 'post',     likes: '3.1K', views: '9K',  labelKey: 'ecommerce', image: '/images/niches/image_4.png.jpg' },
-  { id: 5, format: 'reel',   tag: 'carousel', likes: '6.7K', views: '18K', labelKey: 'beauty', image: '/images/niches/image_5.png.jpg' },
-  { id: 6, format: 'square', tag: 'carousel', likes: '5.9K', views: '14K', labelKey: 'fitness', image: '/images/niches/image_6.png.jpg' },
-  { id: 7, format: 'square', tag: 'carousel', likes: '2.4K', views: '7K',  labelKey: 'education', image: '/images/niches/image_7.png.jpg' },
-  { id: 8, format: 'square', tag: 'carousel', likes: '980',  views: '3.2K',labelKey: 'travel', image: '/images/niches/image_8.png.jpg' },
-  { id: 9, format: 'reel',   tag: 'carousel', likes: '10K',  views: '25K', labelKey: 'lifestyle', image: '/images/niches/image_9.png.jpg' },
-  { id: 10, format: 'square', tag: 'carousel', likes: '7.2K', views: '15K', labelKey: 'it', image: '/images/niches/image_10.png' },
-  { id: 11, format: 'square', tag: 'carousel', likes: '4.5K', views: '11K', labelKey: 'expert', image: '/images/niches/image_1.png.jpg' },
+  { id: 1, format: 'square', tag: 'post',     likes: '4.2K', views: '12K', labelKey: 'personalBrand', microLabelKey: 'speed', image: '/images/niches/image_1.png.jpg' },
+  { id: 2, format: 'reel',   tag: 'carousel', likes: '8.1K', views: '20K', labelKey: 'marketing', microLabelKey: 'trend', image: '/images/niches/image_2.png.jpg' },
+  { id: 3, format: 'square', tag: 'carousel', likes: '1.8K', views: '5K',  labelKey: 'promotion', microLabelKey: 'ready', image: '/images/niches/image_3.png.jpg' },
+  { id: 4, format: 'square', tag: 'post',     likes: '3.1K', views: '9K',  labelKey: 'ecommerce', microLabelKey: 'style', image: '/images/niches/image_4.png.jpg' },
+  { id: 5, format: 'reel',   tag: 'carousel', likes: '6.7K', views: '18K', labelKey: 'beauty', microLabelKey: 'speed', image: '/images/niches/image_5.png.jpg' },
+  { id: 6, format: 'square', tag: 'carousel', likes: '5.9K', views: '14K', labelKey: 'fitness', microLabelKey: 'trend', image: '/images/niches/image_6.png.jpg' },
+  { id: 7, format: 'square', tag: 'carousel', likes: '2.4K', views: '7K',  labelKey: 'education', microLabelKey: 'ready', image: '/images/niches/image_7.png.jpg' },
+  { id: 8, format: 'square', tag: 'carousel', likes: '980',  views: '3.2K',labelKey: 'travel', microLabelKey: 'style', image: '/images/niches/image_8.png.jpg' },
+  { id: 9, format: 'reel',   tag: 'carousel', likes: '10K',  views: '25K', labelKey: 'lifestyle', microLabelKey: 'speed', image: '/images/niches/image_9.png.jpg' },
+  { id: 10, format: 'square', tag: 'carousel', likes: '7.2K', views: '15K', labelKey: 'it', microLabelKey: 'trend', image: '/images/niches/image_10.png' },
+  { id: 11, format: 'square', tag: 'carousel', likes: '4.5K', views: '11K', labelKey: 'expert', microLabelKey: 'style', image: '/images/niches/image_1.png.jpg' },
 ];
 
 /* Пропорции плейсхолдеров (aspect-ratio) */
@@ -32,7 +32,7 @@ const tagColor = {
 
 /* ─── Одна карточка ─── */
 const SlideCard = ({ card }) => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   return (
     <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
       {/* Плейсхолдер изображения */}
@@ -51,6 +51,12 @@ const SlideCard = ({ card }) => {
         <span className={`absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full z-[2] ${tagColor[card.tag]}`}>
           {t(`showcase.tags.${card.tag}`)}
         </span>
+        {/* Микро-лейбл (только для RU) */}
+        {card.microLabelKey && lang === 'RU' && (
+          <span className="absolute bottom-2.5 right-2.5 text-[9px] font-medium px-2 py-1 rounded-md z-[2] bg-black/60 backdrop-blur-md text-white/90 border border-white/10 flex items-center gap-1 shadow-lg">
+            {t(`showcase.microLabels.${card.microLabelKey}`)}
+          </span>
+        )}
       </div>
 
       {/* Соц. интерфейс снизу */}

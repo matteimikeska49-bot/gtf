@@ -51,12 +51,18 @@ export const ru = {
       lifestyle: 'Lifestyle',
       it: 'IT-услуги',
       expert: 'Эксперт'
+    },
+    microLabels: {
+      speed: 'создано за 60 секунд',
+      trend: 'на основе тренда',
+      ready: 'готово к публикации',
+      style: 'в стиле автора'
     }
   },
   
   problem: {
-    titlePart1: 'Создание контента превратилось в ',
-    titleHighlight: 'хаос?',
+    titlePart1: 'Тратишь часы на контент — ',
+    titleHighlight: 'и всё равно приходится переделывать',
     subtitle: 'Тратите часы на правки, а результат всё равно выглядит как AI',
     cards: [
       {
@@ -107,9 +113,9 @@ export const ru = {
   
   tools: {
     coreBadge: 'Ядро продукта',
-    titleHighlight: 'Три инструмента',
-    titlePart1: '— всё,',
-    titlePart2: 'что нужно для роста',
+    titleHighlight: 'Главные инструменты',
+    titlePart1: 'для роста',
+    titlePart2: 'контента',
     subtitle: 'Находите идеи, анализируйте конкурентов и превращайте это в готовый контент — в один клик',
     popularBadge: 'Популярное',
     core: [
@@ -375,10 +381,10 @@ export const ru = {
   
   cta: {
     badge: 'Начните бесплатно',
-    titlePart1: 'Хватит работать нянькой',
-    titlePart2: 'у своего',
-    titleHighlight: 'AI.',
-    titleSub: 'Начните создавать.',
+    titlePart1: 'Перестаньте тратить часы',
+    titlePart2: 'на контент.',
+    titleHighlight: 'Создавайте быстрее с GoToFlow.',
+    titleSub: '',
     subtitle: 'Присоединяйтесь к тысячам креаторов и предпринимателей, которые уже делают контент быстрее и без лишней рутины.',
     button: 'Создать карусель',
     microTrust: 'Бесплатно • Без привязки карты',

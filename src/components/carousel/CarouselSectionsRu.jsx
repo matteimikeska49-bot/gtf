@@ -77,14 +77,14 @@ export const CarouselHeroRu = () => {
 
 /* ── Showcase (RU) ── */
 const carouselCards = [
-  { id: 2, likes: '8.1K', views: '20K', label: 'Карусель про маркетинг', image: '/images/niches/image_2.png.jpg' },
-  { id: 3, likes: '1.8K', views: '5K', label: 'Карусель для продвижения', image: '/images/niches/image_3.png.jpg' },
-  { id: 5, likes: '6.7K', views: '18K', label: 'Карусель для бьюти', image: '/images/niches/image_5.png.jpg' },
-  { id: 6, likes: '5.9K', views: '14K', label: 'Карусель для фитнеса', image: '/images/niches/image_6.png.jpg' },
-  { id: 7, likes: '2.4K', views: '7K', label: 'Обучающая карусель', image: '/images/niches/image_7.png.jpg' },
-  { id: 8, likes: '980', views: '3.2K', label: 'Карусель для путешествий', image: '/images/niches/image_8.png.jpg' },
-  { id: 9, likes: '10K', views: '25K', label: 'Карусель для лайфстайл', image: '/images/niches/image_9.png.jpg' },
-  { id: 10, likes: '7.2K', views: '15K', label: 'Карусель для IT-услуг', image: '/images/niches/image_10.png' },
+  { id: 2, likes: '8.1K', views: '20K', label: 'Карусель про маркетинг', microLabel: 'создано за 60 секунд', image: '/images/niches/image_2.png.jpg' },
+  { id: 3, likes: '1.8K', views: '5K', label: 'Карусель для продвижения', microLabel: 'на основе тренда', image: '/images/niches/image_3.png.jpg' },
+  { id: 5, likes: '6.7K', views: '18K', label: 'Карусель для бьюти', microLabel: 'готово к публикации', image: '/images/niches/image_5.png.jpg' },
+  { id: 6, likes: '5.9K', views: '14K', label: 'Карусель для фитнеса', microLabel: 'в стиле автора', image: '/images/niches/image_6.png.jpg' },
+  { id: 7, likes: '2.4K', views: '7K', label: 'Обучающая карусель', microLabel: 'создано за 60 секунд', image: '/images/niches/image_7.png.jpg' },
+  { id: 8, likes: '980', views: '3.2K', label: 'Карусель для путешествий', microLabel: 'на основе тренда', image: '/images/niches/image_8.png.jpg' },
+  { id: 9, likes: '10K', views: '25K', label: 'Карусель для лайфстайл', microLabel: 'готово к публикации', image: '/images/niches/image_9.png.jpg' },
+  { id: 10, likes: '7.2K', views: '15K', label: 'Карусель для IT-услуг', microLabel: 'в стиле автора', image: '/images/niches/image_10.png' },
 ];
 
 const SlideCard = ({ card }) => (
@@ -93,6 +93,11 @@ const SlideCard = ({ card }) => (
       <img src={card.image} alt={`Карусель Instagram: ${card.label}`} className="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
       <div className="absolute inset-0 md:animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02] z-[1]" />
       <span className="absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full z-[2] bg-violet-500/20 text-violet-300">Карусель</span>
+      {card.microLabel && (
+        <span className="absolute bottom-2.5 right-2.5 text-[9px] font-medium px-2 py-1 rounded-md z-[2] bg-black/60 backdrop-blur-md text-white/90 border border-white/10 flex items-center gap-1 shadow-lg">
+          {card.microLabel}
+        </span>
+      )}
     </div>
     <div className="flex flex-col gap-2 px-1">
       <div className="h-2.5 w-3/4 rounded-full bg-white/[0.06]" />
