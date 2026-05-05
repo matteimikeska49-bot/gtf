@@ -436,7 +436,7 @@ export const LICarouselFAQ = () => {
         <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}} className="text-center mb-14 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">FAQ</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight text-balance">Common <span className="text-gradient-brand">questions</span></h2>
-          <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">Everything you need to know about AI carousel creation</p>
+          <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">Everything you need to know about LinkedIn carousel creation</p>
         </motion.div>
         <div className="max-w-3xl mx-auto space-y-4">
           {faqItems.map((item,i) => <FAQItem key={i} item={item} isOpen={openIdx===i} onClick={()=>setOpenIdx(openIdx===i?null:i)}/>)}
