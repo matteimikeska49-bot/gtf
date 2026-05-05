@@ -104,7 +104,8 @@ export const BottomCTA = () => {
               >
                 {t('cta.titlePart1')}
                 <br />
-                {t('cta.titlePart2')}{' '}
+                {t('cta.titlePart2')}
+                {t('cta.titlePart2') && <br className="hidden md:block" />}
                 <span className="text-gradient-brand">{t('cta.titleHighlight')}</span>
                 <br />
                 <span className="text-zinc-400 font-semibold" style={{ fontSize: '0.78em' }}>

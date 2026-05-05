@@ -21,7 +21,7 @@ export const ProblemSection = () => {
   const ref = useRef(null);
   const isMobile = useIsMobile();
   const inView = useInView(ref, { once: true, margin: isMobile ? '0px' : '-80px' });
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const cards = t('problem.cards') || [];
 
   return (
@@ -56,7 +56,9 @@ export const ProblemSection = () => {
         transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
         className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight text-center relative z-20 px-6"
       >
-        {t('problem.titlePart1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">{t('problem.titleHighlight')}</span>
+        {t('problem.titlePart1')}
+        {lang === 'RU' && <br className="hidden md:block" />}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">{t('problem.titleHighlight')}</span>
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 12 }}

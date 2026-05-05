@@ -114,8 +114,8 @@ export const ru = {
   tools: {
     coreBadge: 'Ядро продукта',
     titleHighlight: 'Главные инструменты',
-    titlePart1: 'для роста',
-    titlePart2: 'контента',
+    titlePart1: 'для роста контента',
+    titlePart2: '',
     subtitle: 'Находите идеи, анализируйте конкурентов и превращайте это в готовый контент — в один клик',
     popularBadge: 'Популярное',
     core: [
