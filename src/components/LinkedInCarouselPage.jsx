@@ -395,9 +395,9 @@ export const LICarouselDifferentiation = () => {
 export const LICarouselSEOBlock = () => (
   <section className="py-20 md:py-28 px-6 relative z-10 w-full bg-[#050505]">
     <div className="max-w-3xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">What is an LinkedIn Carousel Maker?</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">What is a LinkedIn Carousel Maker?</h2>
       <div className="text-zinc-400 leading-relaxed space-y-4 text-base">
-        <p>An <strong className="text-zinc-200">AI carousel maker</strong> is a tool that uses artificial intelligence to automatically generate multi-slide social media posts — commonly known as carousels — for platforms like LinkedIn, LinkedIn, and Telegram. Instead of writing each slide manually, you provide a topic or idea, and the AI produces a structured, hook-led carousel ready to publish.</p>
+        <p>An <strong className="text-zinc-200">AI carousel maker</strong> is a tool that uses artificial intelligence to automatically generate multi-slide social media posts — commonly known as carousels — for platforms like LinkedIn, Instagram, and Telegram. Instead of writing each slide manually, you provide a topic or idea, and the AI produces a structured, hook-led carousel ready to publish.</p>
         <p>GoToFlow's <strong className="text-zinc-200">LinkedIn carousel</strong> generator goes beyond simple templates. It understands context, applies proven content frameworks, and crafts each slide with a clear purpose — from a scroll-stopping opener to a closing call-to-action.</p>
         <p>The benefits of <strong className="text-zinc-200">AI content</strong> generation for carousels are significant: faster production, consistent quality, and the ability to test multiple angles without extra effort. Whether you're a creator, marketer, or founder, an AI carousel maker removes the hardest part of social media — knowing what to say.</p>
       </div>
@@ -409,7 +409,7 @@ export const LICarouselSEOBlock = () => (
 /* ── FAQ ── */
 const faqItems = [
   { q: 'What is an AI carousel maker?', a: 'An AI carousel maker is a tool that automatically generates multi-slide social media posts using artificial intelligence. You provide a topic, and the AI writes the hook, structures the slides, and fills each one with content — in seconds.' },
-  { q: 'Can AI create LinkedIn carousels?', a: 'Yes. GoToFlow generates carousel content optimized for LinkedIn, LinkedIn, and Telegram. The AI writes hook-led copy, structures the slides logically, and ensures each carousel is built to drive saves and shares.' },
+  { q: 'Can AI create LinkedIn carousels?', a: 'Yes. GoToFlow generates carousel content optimized for LinkedIn, Instagram, and Telegram. The AI writes hook-led copy, structures the slides logically, and ensures each carousel is built to drive saves and shares.' },
   { q: 'Is GoToFlow better than Canva for carousels?', a: 'They solve different problems. Canva helps you design; GoToFlow writes the content. GoToFlow generates the ideas, hooks, and copy — then you can use any design tool to format it. Many users combine both.' },
   { q: 'How long does it take to generate a carousel?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full carousel structure with copy for every slide.' },
   { q: 'Do I need to be a good writer to use GoToFlow?', a: 'No. GoToFlow is designed for people who want great carousel content without being professional copywriters. Just describe your topic and the AI handles the rest.' },

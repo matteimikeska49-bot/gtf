@@ -364,7 +364,7 @@ export const ContentDifferentiation = () => {
         <motion.div initial={{opacity:0,x: isMobile ? 0 : -40, y: isMobile ? 24 : 0}} whileInView={{opacity:1,x:0,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Fingerprint className="w-3.5 h-3.5"/>Why GoToFlow</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-[1.15] text-balance">GoToFlow <span className="text-gradient-brand">creates content</span><br className="hidden lg:block"/> not just designs</h2>
-          <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed text-balance mb-12">While Canva gives you a blank canvas and a template, GoToFlow writes your content content — hooks, slide copy, structure — using AI trained on top-performing social media posts and content.</p>
+          <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed text-balance mb-12">While Canva gives you a blank canvas and a template, GoToFlow writes your content — hooks, slide copy, structure — using AI trained on top-performing social media posts and content.</p>
         </motion.div>
         <div className="flex flex-col gap-4">
           {diffPoints.map((p,i) => (
@@ -397,7 +397,7 @@ export const ContentSEOBlock = () => (
     <div className="max-w-3xl mx-auto">
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">What is an AI Content Generator?</h2>
       <div className="text-zinc-400 leading-relaxed space-y-4 text-base">
-        <p>An <strong className="text-zinc-200">AI content generator</strong> is a tool that uses artificial intelligence to automatically generate multi-slide social media posts — commonly known as posts and content — for platforms like Instagram, LinkedIn, and Telegram. Instead of writing each slide manually, you provide a topic or idea, and the AI produces a structured, hook-led content ready to publish.</p>
+        <p>An <strong className="text-zinc-200">AI content generator</strong> is a tool that uses artificial intelligence to automatically generate multi-format social media content, including posts, captions, carousels, and short-form content ideas for platforms like Instagram, LinkedIn, and Telegram. Instead of writing each slide manually, you provide a topic or idea, and the AI produces a structured, hook-led content ready to publish.</p>
         <p>GoToFlow's <strong className="text-zinc-200">Instagram content</strong> generator goes beyond simple templates. It understands context, applies proven content frameworks, and crafts each slide with a clear purpose — from a scroll-stopping opener to a closing call-to-action.</p>
         <p>The benefits of <strong className="text-zinc-200">AI content</strong> generation for posts and content are significant: faster production, consistent quality, and the ability to test multiple angles without extra effort. Whether you're a creator, marketer, or founder, an AI content generator removes the hardest part of social media — knowing what to say.</p>
       </div>
@@ -408,10 +408,10 @@ export const ContentSEOBlock = () => (
 /* ── FAQ ── */
 const faqItems = [
   { q: 'What is an AI content generator?', a: 'An AI content generator is a tool that automatically generates multi-slide social media posts using artificial intelligence. You provide a topic, and the AI writes the hook, structures the slides, and fills each one with content — in seconds.' },
-  { q: 'Can AI create Instagram posts and content?', a: 'Yes. GoToFlow generates content content optimized for Instagram, LinkedIn, and Telegram. The AI writes hook-led copy, structures the slides logically, and ensures each content is built to drive saves and shares.' },
+  { q: 'Can AI create Instagram posts and content?', a: 'Yes. GoToFlow generates content optimized for Instagram, LinkedIn, and Telegram. The AI writes hook-led copy, structures the slides logically, and ensures each content is built to drive saves and shares.' },
   { q: 'Is GoToFlow better than Canva for posts and content?', a: 'They solve different problems. Canva helps you design; GoToFlow writes the content. GoToFlow generates the ideas, hooks, and copy — then you can use any design tool to format it. Many users combine both.' },
   { q: 'How long does it take to generate a content?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full content structure with copy for every slide.' },
-  { q: 'Do I need to be a good writer to use GoToFlow?', a: 'No. GoToFlow is designed for people who want great content content without being professional copywriters. Just describe your topic and the AI handles the rest.' },
+  { q: 'Do I need to be a good writer to use GoToFlow?', a: 'No. GoToFlow is designed for people who want great content without being professional copywriters. Just describe your topic and the AI handles the rest.' },
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
