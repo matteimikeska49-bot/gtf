@@ -5,16 +5,16 @@ import { PriceDisplay } from './PriceDisplay';
 
 export const pricingConfig = {
   lite: {
-    RU: { monthly: 1500, yearly: 825 },
-    EN: { monthly: 19, yearly: 10 }
+    RU: { monthly: 1500, yearly: 1125 },
+    EN: { monthly: 1500, yearly: 1125 }
   },
   pro: {
-    RU: { monthly: 3500, yearly: 1925 },
-    EN: { monthly: 45, yearly: 25 }
+    RU: { monthly: 3500, yearly: 2625 },
+    EN: { monthly: 3500, yearly: 2625 }
   },
   power: {
-    RU: { monthly: 6990, yearly: 3845 },
-    EN: { monthly: 89, yearly: 49 }
+    RU: { monthly: 6990, yearly: 5243 },
+    EN: { monthly: 6990, yearly: 5243 }
   }
 };
 
