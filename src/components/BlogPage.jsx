@@ -114,6 +114,12 @@ const categories = [
       { to: '/blog/carousel-examples', title: '50 Carousel Examples', desc: 'high-performing structures' },
       { to: '/blog/linkedin-post-templates', title: '50 Post Templates', desc: 'fill-in-the-blank frameworks' }
     ]
+  },
+  {
+    title: 'Guides',
+    links: [
+      { to: '/blog/best-ai-carousel-generators', title: 'Best AI Carousel Generators in 2026', desc: 'Compare AI carousel generators for structure, hooks, visual style, and social media workflows.' }
+    ]
   }
 ];
 

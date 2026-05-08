@@ -104,6 +104,13 @@ const ROUTES_CONFIG = {
     type: 'article',
     crumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'LinkedIn Carousel Ideas', path: '/blog/linkedin-carousel-ideas' }]
   },
+  '/blog/best-ai-carousel-generators': {
+    title: 'Best AI Carousel Generators in 2026',
+    desc: 'Compare the best AI carousel generators for LinkedIn, Instagram, hooks, slide structure, visual style, and social media content workflows.',
+    lang: 'en',
+    type: 'article',
+    crumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Best AI Carousel Generators', path: '/blog/best-ai-carousel-generators' }]
+  },
   '/ru/blog/idei-karuselej-linkedin': {
     title: '50 идей каруселей для LinkedIn, которые реально дают охваты и заявки | GoToFlow',
     desc: '50 идей для каруселей в LinkedIn с примерами и структурой. Узнайте, как быстро создавать вовлекающие карусели с помощью ИИ.',
