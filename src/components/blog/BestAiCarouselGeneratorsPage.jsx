@@ -76,8 +76,11 @@ const ArticleHero = () => {
           </div>
         </motion.div>
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.15]">
-          Best AI Carousel Generators in 2026
+          Best AI Carousel Generators <span className="text-gradient-brand">in 2026</span>
         </motion.h1>
+        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-base md:text-lg text-zinc-400 leading-[1.7] mb-10 max-w-2xl">
+          Compare AI carousel generators by use case: structure, hooks, visual style, and social media content workflows.
+        </motion.p>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }}>
           <a href={CTA_URL} className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_35px_rgba(236,72,153,0.3)] text-sm border border-pink-400/20 group">
             Try Carousel Generator <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -131,7 +134,7 @@ const ArticleBody = () => (
         This guide compares the best AI carousel generators for LinkedIn and Instagram by use case, so you can choose the right tool instead of adding another generic AI writer to your stack.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Quick answer: best AI carousel generators by use case</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Quick answer: best AI carousel generators by use case</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         If you need a fast recommendation based on your current content bottleneck, here is the breakdown:
       </p>
@@ -148,7 +151,7 @@ const ArticleBody = () => (
         The key difference is simple: some tools help you write, some help you design, and some help you move through the full carousel creation process from input to structured visual draft.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">What is an AI carousel generator?</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">What is an AI carousel generator?</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         An AI carousel generator is a tool that uses artificial intelligence to help you create multi-slide social media posts for platforms like LinkedIn and Instagram.
       </p>
@@ -165,23 +168,23 @@ const ArticleBody = () => (
         The best AI carousel generator for you depends on which part of that workflow slows you down most.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">What to look for in an AI carousel generator</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">What to look for in an AI carousel generator</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         Not every tool fits every workflow. When you compare options, look for these specific factors.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">1. Hook quality</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">1. Hook quality</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         The first slide is the entry point. A good generator should help you create hooks that feel specific, clear, and interesting instead of generic headlines like:
       </p>
-      <blockquote className="border-l-2 border-pink-500 pl-4 my-5 italic text-zinc-400">
+      <blockquote className="border-l-[3px] border-pink-500 pl-5 pr-5 py-4 my-8 bg-white/[0.02] rounded-r-xl italic text-zinc-400">
         5 tips for better marketing
       </blockquote>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         A stronger hook creates tension, curiosity, or a clear reason to keep reading.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">2. Slide structure</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">2. Slide structure</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         A strong carousel usually has a logical sequence:
       </p>
@@ -196,7 +199,7 @@ const ArticleBody = () => (
         If a tool only gives you disconnected slide text, you will still need to rebuild the structure manually.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">3. Human-sounding copy</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">3. Human-sounding copy</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Avoid tools that produce repetitive AI phrasing. The copy should be concise, conversational, and easy to read on a mobile screen.
       </p>
@@ -204,7 +207,7 @@ const ArticleBody = () => (
         The best drafts do not sound “perfect.” They sound clear.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">4. Input flexibility</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">4. Input flexibility</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         A strong carousel workflow should not force you to start from scratch every time.
       </p>
@@ -225,7 +228,7 @@ const ArticleBody = () => (
         This matters because many creators do not need “more ideas.” They already have saved posts, competitor videos, or rough materials. What they need is a way to turn those inputs into a new carousel structure.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">5. Platform fit</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">5. Platform fit</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         A LinkedIn carousel and an Instagram carousel are not the same thing.
       </p>
@@ -236,7 +239,7 @@ const ArticleBody = () => (
         A good tool should understand the difference.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">6. Visual style control</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">6. Visual style control</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Some tools only generate text. Others help with the visual direction as well.
       </p>
@@ -254,17 +257,17 @@ const ArticleBody = () => (
         This is important because a carousel is both a content format and a visual format.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">7. Editing and regeneration workflow</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">7. Editing and regeneration workflow</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         AI should provide a strong starting point, not trap you inside a rigid output. You need a way to adjust wording, regenerate a version, change the visual style, refine the tone, and keep author control.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">8. Pricing</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">8. Pricing</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         Some tools offer a free tier, but advanced features such as brand kits, stronger AI outputs, team workflows, exports, or visual generation may require a subscription.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">9. Ease of use</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">9. Ease of use</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         If it takes longer to prompt the AI than it would take to create the carousel yourself, the tool is not saving you time.
       </p>
@@ -272,9 +275,10 @@ const ArticleBody = () => (
         The best tool should reduce manual work, not add another complicated step.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">7 best AI carousel generators and tool categories</h2>
+      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">7 best AI carousel generators and tool categories</h2>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">1. GoToFlow: best for full AI carousel workflow</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">1. GoToFlow: best for full AI carousel workflow</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         GoToFlow is built for people who want to move from a topic, link, video, or competitor example to a structured carousel faster.
       </p>
@@ -306,7 +310,7 @@ const ArticleBody = () => (
         If you want a full AI workflow for carousel creation, start with <Link to="/ai-carousel-maker" className="text-pink-400 hover:underline">GoToFlow AI Carousel Maker</Link>.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">2. Canva: best for design templates</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">2. Canva: best for design templates</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Canva is one of the most popular options for visual design and templates. It is especially useful when you already know what your carousel should say and need to turn it into polished slides quickly.
       </p>
@@ -320,7 +324,7 @@ const ArticleBody = () => (
         Canva is strong for design, but it may not solve the strategy and structure problem by itself.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">3. ChatGPT / Claude: best for raw brainstorming</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">3. ChatGPT / Claude: best for raw brainstorming</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         General AI assistants like ChatGPT and Claude are not carousel makers by default, but they can be useful at the beginning of the process.
       </p>
@@ -334,7 +338,7 @@ const ArticleBody = () => (
         General AI tools are flexible, but they often write like a long-form assistant unless you force them into a slide-by-slide structure.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">4. Gamma: best for slide-style drafts</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">4. Gamma: best for slide-style drafts</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Gamma is closer to a presentation-style AI tool. It can be useful for turning structured ideas into clean, deck-like content.
       </p>
@@ -348,7 +352,7 @@ const ArticleBody = () => (
         Gamma can be useful when your carousel is closer to a mini-presentation than a casual social post.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">5. Taplio / ContentIn: best for LinkedIn workflows</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">5. Taplio / ContentIn: best for LinkedIn workflows</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         LinkedIn-focused tools like Taplio and ContentIn are built around the broader LinkedIn content workflow. They often combine AI writing, scheduling, idea management, and analytics.
       </p>
@@ -362,7 +366,7 @@ const ArticleBody = () => (
         These tools are useful if your main need is not just carousel generation, but the entire LinkedIn publishing workflow. For carousel-specific ideas on LinkedIn, see our <Link to="/blog/linkedin-carousel-ideas" className="text-pink-400 hover:underline">LinkedIn carousel ideas</Link> guide.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">6. Jasper / Copy.ai: best for brand voice and teams</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">6. Jasper / Copy.ai: best for brand voice and teams</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Jasper and Copy.ai are broader AI writing platforms. They are often used by teams that need to keep content aligned with a specific brand voice.
       </p>
@@ -376,7 +380,7 @@ const ArticleBody = () => (
         These tools can be valuable for teams, but they are not always the fastest path from idea to finished carousel.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">7. Figma: best for custom design systems</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">7. Figma: best for custom design systems</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Figma is not an AI carousel generator in the writing sense, but it is a strong option for teams that want a custom carousel system.
       </p>
@@ -390,73 +394,75 @@ const ArticleBody = () => (
         Figma is powerful when you already have the content and want full control over how it looks.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Quick comparison table</h2>
-      <div className="overflow-x-auto mb-14 md:mb-16">
-        <table className="w-full text-left border-collapse border border-white/10 text-zinc-300 text-sm md:text-base">
+      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Quick comparison table</h2>
+      <div className="overflow-x-auto mb-14 md:mb-16 rounded-2xl border border-white/[0.08] bg-white/[0.015]">
+        <table className="w-full text-left border-collapse text-zinc-300 text-sm md:text-base">
           <thead>
-            <tr className="bg-white/[0.04]">
-              <th className="p-4 border border-white/10 font-bold text-white">Tool / Category</th>
-              <th className="p-4 border border-white/10 font-bold text-white">When to choose it</th>
-              <th className="p-4 border border-white/10 font-bold text-white">Strength</th>
-              <th className="p-4 border border-white/10 font-bold text-white">What to keep in mind</th>
-              <th className="p-4 border border-white/10 font-bold text-white">Best fit</th>
+            <tr className="bg-white/[0.06]">
+              <th className="p-4 md:p-5 border-b border-white/10 font-bold text-white text-sm">Tool / Category</th>
+              <th className="p-4 md:p-5 border-b border-white/10 font-bold text-white text-sm">When to choose it</th>
+              <th className="p-4 md:p-5 border-b border-white/10 font-bold text-white text-sm">Strength</th>
+              <th className="p-4 md:p-5 border-b border-white/10 font-bold text-white text-sm">What to keep in mind</th>
+              <th className="p-4 md:p-5 border-b border-white/10 font-bold text-white text-sm">Best fit</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="p-4 border border-white/10"><strong>GoToFlow</strong></td>
-              <td className="p-4 border border-white/10">You want to create a carousel from a topic, link, video, or competitor example</td>
-              <td className="p-4 border border-white/10">Structure, copy, visual style, carousel generation</td>
-              <td className="p-4 border border-white/10">Best results come from clear inputs and style direction; you can refine or regenerate versions</td>
-              <td className="p-4 border border-white/10">Founders, creators, marketers, agencies</td>
+            <tr className="border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors">
+              <td className="p-4 md:p-5 font-medium text-white"><strong>GoToFlow</strong></td>
+              <td className="p-4 md:p-5">You want to create a carousel from a topic, link, video, or competitor example</td>
+              <td className="p-4 md:p-5">Structure, copy, visual style, carousel generation</td>
+              <td className="p-4 md:p-5">Best results come from clear inputs and style direction; you can refine or regenerate versions</td>
+              <td className="p-4 md:p-5">Founders, creators, marketers, agencies</td>
             </tr>
-            <tr className="bg-white/[0.01]">
-              <td className="p-4 border border-white/10"><strong>Canva</strong></td>
-              <td className="p-4 border border-white/10">You already have the content and need design templates</td>
-              <td className="p-4 border border-white/10">Templates, visual editing, export</td>
-              <td className="p-4 border border-white/10">Structure and copy may need to be prepared first</td>
-              <td className="p-4 border border-white/10">Small businesses, SMM teams, creators</td>
+            <tr className="border-b border-white/[0.05] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+              <td className="p-4 md:p-5 font-medium text-white"><strong>Canva</strong></td>
+              <td className="p-4 md:p-5">You already have the content and need design templates</td>
+              <td className="p-4 md:p-5">Templates, visual editing, export</td>
+              <td className="p-4 md:p-5">Structure and copy may need to be prepared first</td>
+              <td className="p-4 md:p-5">Small businesses, SMM teams, creators</td>
             </tr>
-            <tr>
-              <td className="p-4 border border-white/10"><strong>ChatGPT / Claude</strong></td>
-              <td className="p-4 border border-white/10">You need ideas or raw drafts</td>
-              <td className="p-4 border border-white/10">Flexible brainstorming and research</td>
-              <td className="p-4 border border-white/10">No native visual workflow; needs manual formatting</td>
-              <td className="p-4 border border-white/10">Power prompters, researchers</td>
+            <tr className="border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors">
+              <td className="p-4 md:p-5 font-medium text-white"><strong>ChatGPT / Claude</strong></td>
+              <td className="p-4 md:p-5">You need ideas or raw drafts</td>
+              <td className="p-4 md:p-5">Flexible brainstorming and research</td>
+              <td className="p-4 md:p-5">No native visual workflow; needs manual formatting</td>
+              <td className="p-4 md:p-5">Power prompters, researchers</td>
             </tr>
-            <tr className="bg-white/[0.01]">
-              <td className="p-4 border border-white/10"><strong>Gamma</strong></td>
-              <td className="p-4 border border-white/10">You need a slide-style draft or mini-deck</td>
-              <td className="p-4 border border-white/10">Clean presentation-like structure</td>
-              <td className="p-4 border border-white/10">Can feel more like a deck than a social carousel</td>
-              <td className="p-4 border border-white/10">Consultants, educators</td>
+            <tr className="border-b border-white/[0.05] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+              <td className="p-4 md:p-5 font-medium text-white"><strong>Gamma</strong></td>
+              <td className="p-4 md:p-5">You need a slide-style draft or mini-deck</td>
+              <td className="p-4 md:p-5">Clean presentation-like structure</td>
+              <td className="p-4 md:p-5">Can feel more like a deck than a social carousel</td>
+              <td className="p-4 md:p-5">Consultants, educators</td>
             </tr>
-            <tr>
-              <td className="p-4 border border-white/10"><strong>Taplio / ContentIn</strong></td>
-              <td className="p-4 border border-white/10">You need a LinkedIn publishing workflow</td>
-              <td className="p-4 border border-white/10">Scheduling and content workflow support</td>
-              <td className="p-4 border border-white/10">Broader and often more expensive than carousel-only tools</td>
-              <td className="p-4 border border-white/10">LinkedIn power creators</td>
+            <tr className="border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors">
+              <td className="p-4 md:p-5 font-medium text-white"><strong>Taplio / ContentIn</strong></td>
+              <td className="p-4 md:p-5">You need a LinkedIn publishing workflow</td>
+              <td className="p-4 md:p-5">Scheduling and content workflow support</td>
+              <td className="p-4 md:p-5">Broader and often more expensive than carousel-only tools</td>
+              <td className="p-4 md:p-5">LinkedIn power creators</td>
             </tr>
-            <tr className="bg-white/[0.01]">
-              <td className="p-4 border border-white/10"><strong>Jasper / Copy.ai</strong></td>
-              <td className="p-4 border border-white/10">You need brand voice support for a team</td>
-              <td className="p-4 border border-white/10">Tone consistency and scalable writing</td>
-              <td className="p-4 border border-white/10">Mostly text-focused</td>
-              <td className="p-4 border border-white/10">Marketing teams, agencies</td>
+            <tr className="border-b border-white/[0.05] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+              <td className="p-4 md:p-5 font-medium text-white"><strong>Jasper / Copy.ai</strong></td>
+              <td className="p-4 md:p-5">You need brand voice support for a team</td>
+              <td className="p-4 md:p-5">Tone consistency and scalable writing</td>
+              <td className="p-4 md:p-5">Mostly text-focused</td>
+              <td className="p-4 md:p-5">Marketing teams, agencies</td>
             </tr>
-            <tr>
-              <td className="p-4 border border-white/10"><strong>Figma</strong></td>
-              <td className="p-4 border border-white/10">You need a custom visual system</td>
-              <td className="p-4 border border-white/10">Full visual control</td>
-              <td className="p-4 border border-white/10">Requires design skill and prepared content</td>
-              <td className="p-4 border border-white/10">Designers, agencies</td>
+            <tr className="hover:bg-white/[0.02] transition-colors">
+              <td className="p-4 md:p-5 font-medium text-white"><strong>Figma</strong></td>
+              <td className="p-4 md:p-5">You need a custom visual system</td>
+              <td className="p-4 md:p-5">Full visual control</td>
+              <td className="p-4 md:p-5">Requires design skill and prepared content</td>
+              <td className="p-4 md:p-5">Designers, agencies</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Why generic AI writers are not always enough for carousels</h2>
+      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Why generic AI writers are not always enough for carousels</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         You can ask a general AI tool to “write a carousel,” but the result often looks like five similar slides with too much text and no real progression.
       </p>
@@ -478,20 +484,20 @@ const ArticleBody = () => (
         Generic AI often produces text that works better as a paragraph than as a slide. That is why a specialized <Link to="/ai-content-generator" className="text-pink-400 hover:underline">AI content generator</Link> or carousel-focused workflow can be useful: it helps shape the content for swipe behavior instead of long-form reading.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Best workflow: GoToFlow as the base, author control as the final step</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Best workflow: GoToFlow as the base, author control as the final step</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         For many creators, the strongest workflow is not one tool doing everything blindly. It is a simple process where AI handles the heavy lifting and the creator keeps final control.
       </p>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         A practical workflow can look like this:
       </p>
-      <ol className="list-decimal pl-5 space-y-3 mb-5 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
-        <li><strong>Input:</strong> start with a topic, idea, link, video, or competitor example.</li>
-        <li><strong>GoToFlow:</strong> analyze the input, generate the angle, hook, slide structure, and copy.</li>
-        <li><strong>Visual style:</strong> choose a ready-made style or write your own style prompt.</li>
-        <li><strong>Carousel generation:</strong> get a visual carousel draft with text and structure.</li>
-        <li><strong>Refinement:</strong> regenerate a version, adjust the tone, tweak the prompt, or edit the copy if needed.</li>
-        <li><strong>Publishing:</strong> adapt the final result to the platform and publish.</li>
+      <ol className="list-none pl-0 space-y-4 mb-5 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
+        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">1</span><span><strong>Input:</strong> start with a topic, idea, link, video, or competitor example.</span></li>
+        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">2</span><span><strong>GoToFlow:</strong> analyze the input, generate the angle, hook, slide structure, and copy.</span></li>
+        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">3</span><span><strong>Visual style:</strong> choose a ready-made style or write your own style prompt.</span></li>
+        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">4</span><span><strong>Carousel generation:</strong> get a visual carousel draft with text and structure.</span></li>
+        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">5</span><span><strong>Refinement:</strong> regenerate a version, adjust the tone, tweak the prompt, or edit the copy if needed.</span></li>
+        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">6</span><span><strong>Publishing:</strong> adapt the final result to the platform and publish.</span></li>
       </ol>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         This workflow works because it separates two important ideas:
@@ -504,7 +510,7 @@ const ArticleBody = () => (
         That matters because a carousel represents your brand. You want speed, but you also want the final output to match your voice, visual style, and audience.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">When to use GoToFlow</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">When to use GoToFlow</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         GoToFlow is useful when you want to do more than write text. It helps you move from source material to a carousel format faster.
       </p>
@@ -526,15 +532,15 @@ const ArticleBody = () => (
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         GoToFlow helps create the base faster: meaning, structure, slides, copy, and visual direction. The final author control stays with you: you can adjust the prompt, choose a different style, regenerate a version, or refine the output for your brand.
       </p>
-      <blockquote className="border-l-2 border-pink-500 pl-4 my-5 italic text-zinc-400">
+      <blockquote className="border-l-[3px] border-pink-500 pl-5 pr-5 py-4 my-8 bg-white/[0.02] rounded-r-xl italic text-zinc-400">
         <strong>Paste a topic, link, or video and get a carousel structure, copy, and visual draft. <Link to="/ai-carousel-maker" className="text-pink-400 hover:underline">Try GoToFlow AI Carousel Maker</Link>.</strong>
       </blockquote>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mt-14 mb-6">Practical example: turning generic AI into a stronger carousel</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mt-14 mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Practical example: turning generic AI into a stronger carousel</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Let’s take a topic:
       </p>
-      <blockquote className="border-l-2 border-pink-500 pl-4 my-5 italic text-zinc-400">
+      <blockquote className="border-l-[3px] border-pink-500 pl-5 pr-5 py-4 my-8 bg-white/[0.02] rounded-r-xl italic text-zinc-400">
         5 mistakes that make your content sound like generic AI
       </blockquote>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
@@ -554,18 +560,18 @@ const ArticleBody = () => (
         A stronger structure:
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Slide 1 — Hook</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Slide 1 — Hook</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         <strong>5 mistakes that make your content sound like generic AI</strong>
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Slide 2 — Problem</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Slide 2 — Problem</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Readers are not always against AI.<br />
         They are against content with no point of view.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Slide 3 — Mistake 1</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Slide 3 — Mistake 1</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         You start with “In today’s digital landscape.”
       </p>
@@ -573,7 +579,7 @@ const ArticleBody = () => (
         <strong>Fix:</strong> start with tension, pain, or a specific observation.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Slide 4 — Mistake 2</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Slide 4 — Mistake 2</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         There is too much text on one slide.
       </p>
@@ -581,7 +587,7 @@ const ArticleBody = () => (
         <strong>Fix:</strong> one idea per slide.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Slide 5 — Mistake 3</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Slide 5 — Mistake 3</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         There is no personal experience.
       </p>
@@ -589,7 +595,7 @@ const ArticleBody = () => (
         <strong>Fix:</strong> add a client lesson, mistake, screenshot, or real observation.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Slide 6 — Mistake 4</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Slide 6 — Mistake 4</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Every slide sounds the same.
       </p>
@@ -597,13 +603,13 @@ const ArticleBody = () => (
         <strong>Fix:</strong> vary sentence length, rhythm, and slide format.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Slide 7 — Summary</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Slide 7 — Summary</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         AI gives you the draft.<br />
         You add the meaning.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Slide 8 — CTA</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Slide 8 — CTA</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         Save this before writing your next carousel.
       </p>
@@ -611,7 +617,8 @@ const ArticleBody = () => (
         That version has a clearer path: pain, mistake, fix, summary, and next step.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Which AI carousel generator should you choose?</h2>
+      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Which AI carousel generator should you choose?</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         The right tool depends on where you get stuck.
       </p>
@@ -628,39 +635,41 @@ const ArticleBody = () => (
         If you are creating expert content, do not start with design alone. Start with the message: topic, angle, structure, copy, and CTA. Then choose the visual style that supports that message.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Common mistakes when choosing an AI carousel generator</h2>
+      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Common mistakes when choosing an AI carousel generator</h2>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Choosing only by design</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Choosing only by design</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         A beautiful template does not fix weak content.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Expecting one prompt to create a perfect carousel</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Expecting one prompt to create a perfect carousel</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         Most strong results come from iteration: topic, hook, structure, visual style, copy, regeneration, and refinement.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Publishing raw AI output</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Publishing raw AI output</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         Raw AI copy often sounds too general. Add examples, experience, and a point of view.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Using the same format for every platform</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Using the same format for every platform</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         LinkedIn, Instagram, and other platforms need different pacing and visual style.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Not giving enough input</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Not giving enough input</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         If your topic, link, or style direction is too vague, the output will usually be less precise.
       </p>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4">Not checking mobile readability</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Not checking mobile readability</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
         If a slide is hard to read on a phone, it needs to be simplified.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Final thoughts</h2>
+      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Final thoughts</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         The best AI carousel generator is not always the tool with the most features. It is the tool that solves your biggest bottleneck.
       </p>
@@ -675,7 +684,7 @@ const ArticleBody = () => (
         That is how you create a carousel that feels useful, not just generated.
       </p>
 
-      <blockquote className="border-l-2 border-pink-500 pl-4 my-5 italic text-zinc-400">
+      <blockquote className="border-l-[3px] border-pink-500 pl-5 pr-5 py-4 my-8 bg-white/[0.02] rounded-r-xl italic text-zinc-400">
         <strong>Enter a topic, link, or video and get a carousel structure, copy, and visual draft. <Link to="/ai-carousel-maker" className="text-pink-400 hover:underline">Create a carousel with GoToFlow</Link>.</strong>
       </blockquote>
 
