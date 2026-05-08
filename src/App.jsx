@@ -28,6 +28,7 @@ import { BlogPage } from './components/BlogPage';
 import { BlogPageRu } from './components/BlogPageRu';
 import { LinkedInCarouselIdeasPage } from './components/blog/LinkedInCarouselIdeasPage';
 import { LinkedInCarouselIdeasPageRu } from './components/blog/LinkedInCarouselIdeasPageRu';
+import { BestAiCarouselGeneratorsPage } from './components/blog/BestAiCarouselGeneratorsPage';
 import { NotFoundPage } from './components/NotFoundPage';
 const LandingPage = () => (
   <MainLayout>
@@ -69,6 +70,7 @@ function App() {
         <Route path="/ru/generator-karuselej-linkedin" element={<LinkedInCarouselPageRu />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/linkedin-carousel-ideas" element={<LinkedInCarouselIdeasPage />} />
+        <Route path="/blog/best-ai-carousel-generators" element={<BestAiCarouselGeneratorsPage />} />
         <Route path="/ru/blog/idei-karuselej-linkedin" element={<LinkedInCarouselIdeasPageRu />} />
         <Route path="/ru/blog" element={<BlogPageRu />} />
         <Route path="*" element={<NotFoundPage />} />
