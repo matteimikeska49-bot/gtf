@@ -135,18 +135,20 @@ const ArticleBody = () => (
       </p>
 
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Quick answer: best AI carousel generators by use case</h2>
-      <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
+      <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-6">
         If you need a fast recommendation based on your current content bottleneck, here is the breakdown:
       </p>
-      <ul className="space-y-3 mb-6">
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for full AI carousel workflow:</strong> GoToFlow</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for design templates:</strong> Canva</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for raw brainstorming:</strong> ChatGPT / Claude</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for slide-style drafts:</strong> Gamma</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for LinkedIn workflows:</strong> Taplio / ContentIn</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for brand voice:</strong> Jasper / Copy.ai</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for custom design systems:</strong> Figma</li>
-      </ul>
+      <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 md:p-7 mb-6">
+        <ul className="space-y-4">
+          <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[10px] font-bold text-pink-400 mt-0.5">★</span><span><strong className="text-white">Full AI carousel workflow:</strong> GoToFlow</span></li>
+          <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">2</span><span><strong className="text-white">Design templates:</strong> Canva</span></li>
+          <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">3</span><span><strong className="text-white">Raw brainstorming:</strong> ChatGPT / Claude</span></li>
+          <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">4</span><span><strong className="text-white">Slide-style drafts:</strong> Gamma</span></li>
+          <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">5</span><span><strong className="text-white">LinkedIn workflows:</strong> Taplio / ContentIn</span></li>
+          <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">6</span><span><strong className="text-white">Brand voice:</strong> Jasper / Copy.ai</span></li>
+          <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">7</span><span><strong className="text-white">Custom design systems:</strong> Figma</span></li>
+        </ul>
+      </div>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
         The key difference is simple: some tools help you write, some help you design, and some help you move through the full carousel creation process from input to structured visual draft.
       </p>
@@ -278,7 +280,7 @@ const ArticleBody = () => (
       <hr className="border-white/[0.06] my-16 md:my-20" />
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">7 best AI carousel generators and tool categories</h2>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">1. GoToFlow: best for full AI carousel workflow</h2>
+      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5 mt-12">1. GoToFlow: best for full AI carousel workflow</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         GoToFlow is built for people who want to move from a topic, link, video, or competitor example to a structured carousel faster.
       </p>
@@ -310,7 +312,8 @@ const ArticleBody = () => (
         If you want a full AI workflow for carousel creation, start with <Link to="/ai-carousel-maker" className="text-pink-400 hover:underline">GoToFlow AI Carousel Maker</Link>.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">2. Canva: best for design templates</h2>
+      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">2. Canva: best for design templates</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Canva is one of the most popular options for visual design and templates. It is especially useful when you already know what your carousel should say and need to turn it into polished slides quickly.
       </p>
@@ -324,7 +327,8 @@ const ArticleBody = () => (
         Canva is strong for design, but it may not solve the strategy and structure problem by itself.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">3. ChatGPT / Claude: best for raw brainstorming</h2>
+      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">3. ChatGPT / Claude: best for raw brainstorming</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         General AI assistants like ChatGPT and Claude are not carousel makers by default, but they can be useful at the beginning of the process.
       </p>
@@ -338,7 +342,8 @@ const ArticleBody = () => (
         General AI tools are flexible, but they often write like a long-form assistant unless you force them into a slide-by-slide structure.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">4. Gamma: best for slide-style drafts</h2>
+      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">4. Gamma: best for slide-style drafts</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Gamma is closer to a presentation-style AI tool. It can be useful for turning structured ideas into clean, deck-like content.
       </p>
@@ -352,7 +357,8 @@ const ArticleBody = () => (
         Gamma can be useful when your carousel is closer to a mini-presentation than a casual social post.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">5. Taplio / ContentIn: best for LinkedIn workflows</h2>
+      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">5. Taplio / ContentIn: best for LinkedIn workflows</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         LinkedIn-focused tools like Taplio and ContentIn are built around the broader LinkedIn content workflow. They often combine AI writing, scheduling, idea management, and analytics.
       </p>
@@ -366,7 +372,8 @@ const ArticleBody = () => (
         These tools are useful if your main need is not just carousel generation, but the entire LinkedIn publishing workflow. For carousel-specific ideas on LinkedIn, see our <Link to="/blog/linkedin-carousel-ideas" className="text-pink-400 hover:underline">LinkedIn carousel ideas</Link> guide.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">6. Jasper / Copy.ai: best for brand voice and teams</h2>
+      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">6. Jasper / Copy.ai: best for brand voice and teams</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Jasper and Copy.ai are broader AI writing platforms. They are often used by teams that need to keep content aligned with a specific brand voice.
       </p>
@@ -380,7 +387,8 @@ const ArticleBody = () => (
         These tools can be valuable for teams, but they are not always the fastest path from idea to finished carousel.
       </p>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">7. Figma: best for custom design systems</h2>
+      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">7. Figma: best for custom design systems</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Figma is not an AI carousel generator in the writing sense, but it is a strong option for teams that want a custom carousel system.
       </p>
@@ -532,9 +540,13 @@ const ArticleBody = () => (
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         GoToFlow helps create the base faster: meaning, structure, slides, copy, and visual direction. The final author control stays with you: you can adjust the prompt, choose a different style, regenerate a version, or refine the output for your brand.
       </p>
-      <blockquote className="border-l-[3px] border-pink-500 pl-5 pr-5 py-4 my-8 bg-white/[0.02] rounded-r-xl italic text-zinc-400">
-        <strong>Paste a topic, link, or video and get a carousel structure, copy, and visual draft. <Link to="/ai-carousel-maker" className="text-pink-400 hover:underline">Try GoToFlow AI Carousel Maker</Link>.</strong>
-      </blockquote>
+      <div className="relative my-12 md:my-16 p-6 md:p-8 rounded-2xl border border-pink-500/20 bg-gradient-to-br from-pink-500/[0.06] via-white/[0.02] to-orange-500/[0.04]">
+        <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-pink-500/[0.04] via-transparent to-orange-500/[0.03] blur-xl" />
+        <p className="text-zinc-200 font-medium text-sm md:text-base leading-[1.7] mb-4">Paste a topic, link, or video and get a carousel structure, copy, and visual draft.</p>
+        <Link to="/ai-carousel-maker" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-sm hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_25px_rgba(236,72,153,0.25)] border border-pink-400/20 group">
+          Try GoToFlow AI Carousel Maker <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+        </Link>
+      </div>
 
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mt-14 mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Practical example: turning generic AI into a stronger carousel</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
@@ -684,12 +696,16 @@ const ArticleBody = () => (
         That is how you create a carousel that feels useful, not just generated.
       </p>
 
-      <blockquote className="border-l-[3px] border-pink-500 pl-5 pr-5 py-4 my-8 bg-white/[0.02] rounded-r-xl italic text-zinc-400">
-        <strong>Enter a topic, link, or video and get a carousel structure, copy, and visual draft. <Link to="/ai-carousel-maker" className="text-pink-400 hover:underline">Create a carousel with GoToFlow</Link>.</strong>
-      </blockquote>
+      <div className="relative my-12 md:my-16 p-6 md:p-8 rounded-2xl border border-pink-500/20 bg-gradient-to-br from-pink-500/[0.06] via-white/[0.02] to-orange-500/[0.04]">
+        <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-pink-500/[0.04] via-transparent to-orange-500/[0.03] blur-xl" />
+        <p className="text-zinc-200 font-medium text-sm md:text-base leading-[1.7] mb-4">Enter a topic, link, or video and get a carousel structure, copy, and visual draft.</p>
+        <Link to="/ai-carousel-maker" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-sm hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_25px_rgba(236,72,153,0.25)] border border-pink-400/20 group">
+          Create a carousel with GoToFlow <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+        </Link>
+      </div>
 
       <InlineProductBlock
-        text="Turn any idea into a ready-to-post carousel in seconds"
+        text="Turn any idea into a structured carousel faster"
         to="/linkedin-carousel-maker"
       />
 
@@ -727,7 +743,8 @@ const ArticleFAQ = () => {
       {/* Ambient glow — FAQ */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-pink-500/[0.03] blur-[160px] rounded-full pointer-events-none" />
       <div className="max-w-3xl mx-auto relative z-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-8">FAQ</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-3 border-l-[3px] border-pink-500/60 pl-4">Frequently Asked Questions</h2>
+        <p className="text-zinc-400 text-sm md:text-base mb-8 pl-[19px]">Common questions about AI carousel generators</p>
         <div className="space-y-3">
           {faqItems.map((item, i) => <FAQItem key={i} item={item} isOpen={openIdx === i} onClick={() => setOpenIdx(openIdx === i ? null : i)} />)}
         </div>
@@ -748,7 +765,7 @@ const ArticleCTA = () => {
             Create Carousels <span className="text-gradient-brand">in Minutes</span>
           </h2>
           <p className="text-zinc-300 text-sm md:text-base leading-[1.7] mb-8 max-w-lg mx-auto">
-            Stop spending hours designing slides. Generate structured, branded carousels instantly with GoToFlow.
+            Create structured, branded carousels with GoToFlow.
           </p>
           <a href={CTA_URL} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.35)] text-base border border-pink-400/20 group">
             Try GoToFlow <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
