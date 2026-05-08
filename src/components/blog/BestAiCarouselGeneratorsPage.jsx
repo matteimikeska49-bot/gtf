@@ -405,7 +405,7 @@ const ArticleBody = () => (
       <hr className="border-white/[0.06] my-16 md:my-20" />
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Quick comparison table</h2>
       <div className="overflow-x-auto mb-14 md:mb-16 rounded-2xl border border-white/[0.08] bg-white/[0.015]">
-        <table className="w-full text-left border-collapse text-zinc-300 text-sm md:text-base">
+        <table className="w-full min-w-[800px] text-left border-collapse text-zinc-300 text-sm md:text-base">
           <thead>
             <tr className="bg-white/[0.06]">
               <th className="p-4 md:p-5 border-b border-white/10 font-bold text-white text-sm">Tool / Category</th>
@@ -727,7 +727,7 @@ const faqItems = [
 const FAQItem = ({ item, isOpen, onClick }) => (
   <div className={`rounded-2xl border transition-colors duration-300 overflow-hidden cursor-pointer ${isOpen ? 'border-pink-500/30 bg-white/[0.03]' : 'border-white/[0.05] bg-white/[0.01] hover:border-white/10'}`} onClick={onClick}>
     <div className="flex items-center justify-between gap-4 p-5 md:p-6">
-      <span className={`font-semibold text-sm md:text-base leading-snug transition-colors ${isOpen ? 'text-white' : 'text-zinc-200'}`}>{item.q}</span>
+      <h3 className={`font-semibold text-sm md:text-base leading-snug transition-colors ${isOpen ? 'text-white' : 'text-zinc-200'}`}>{item.q}</h3>
       <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }} className="shrink-0 w-7 h-7 rounded-full border border-white/10 flex items-center justify-center bg-white/[0.03]">
         <ChevronRight className={`w-3.5 h-3.5 rotate-90 transition-colors ${isOpen ? 'text-pink-400' : 'text-zinc-500'}`} />
       </motion.div>
