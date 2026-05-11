@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { getAppUrlWithRef } from '../../utils/url';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Sparkles, CornerDownLeft, Download, ChevronDown, Heart, Eye, Star, X, Check, Clock, Zap, Target, Fingerprint, Settings2, Layers, ImageIcon } from 'lucide-react';
 import { useIsMobile } from '../../hooks/useIsMobile';
@@ -65,7 +66,7 @@ export const CarouselHero = () => {
         Generate a complete Instagram or LinkedIn carousel in seconds — from idea to final slides.<br className="hidden md:block" /> No design skills, no team, no templates.
       </motion.p>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }} className="flex flex-col items-center gap-4 w-full sm:w-auto">
-        <button onClick={() => window.location.href = CTA_URL} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
+        <button onClick={() => window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
           Create Your Carousel <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
         <p className="text-sm text-zinc-500 flex flex-wrap justify-center gap-x-3 gap-y-1"><span>✓ No credit card required</span><span className="text-zinc-700">•</span><span>✓ First carousel in 60 seconds</span></p>
@@ -221,7 +222,7 @@ export const CarouselComparison = () => {
               </div>
             </div>
             <div className="flex flex-col items-center justify-center gap-3 w-full">
-              <button onClick={()=>window.location.href=CTA_URL} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
+              <button onClick={()=>window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
                 Create Your Carousel <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform"/>
               </button>
               <p className="text-sm text-zinc-500 text-center">First carousel in 60 seconds</p>
