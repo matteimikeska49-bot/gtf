@@ -81,5 +81,111 @@
     </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+    (function () {
+      'use strict';
+
+      /**
+       * Replace this with the real app origin.
+       * Examples:
+       *   'https://app.gotoflow.io'
+       *   'https://gotoflow.io'
+       *
+       * No trailing slash is required.
+       */
+      var APP_DOMAIN = 'https://app.gotoflow.io';
+
+      var REF_PARAM = 'ref';
+      var REF_KEY = 'gtf_ref';
+      var COOKIE_MAX_AGE_SECONDS = 60 * 24 * 60 * 60; // 60 days
+
+      function normalizeRef(value) {
+        if (!value) return '';
+
+        return String(value)
+          .trim()
+          .replace(/^@+/, '')
+          .replace(/[^a-zA-Z0-9_-]/g, '')
+          .slice(0, 64);
+      }
+
+      function getRefFromUrl() {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          return normalizeRef(params.get(REF_PARAM));
+        } catch (error) {
+          return '';
+        }
+      }
+
+      function saveRef(ref) {
+        if (!ref) return;
+
+        try {
+          window.localStorage.setItem(REF_KEY, ref);
+        } catch (error) {
+          // localStorage may be unavailable in private mode / restricted browsers.
+        }
+
+        try {
+          var secure = window.location.protocol === 'https:' ? '; Secure' : '';
+          document.cookie =
+            REF_KEY + '=' + encodeURIComponent(ref) +
+            '; Path=/' +
+            '; Max-Age=' + COOKIE_MAX_AGE_SECONDS +
+            '; SameSite=Lax' +
+            secure;
+        } catch (error) {
+          // Cookies may be blocked. Do not break the landing page.
+        }
+      }
+
+      function readSavedRef() {
+        try {
+          return normalizeRef(window.localStorage.getItem(REF_KEY));
+        } catch (error) {
+          return '';
+        }
+      }
+
+      function appendRefToAppLinks(ref) {
+        if (!ref || !APP_DOMAIN || APP_DOMAIN === 'https://APP_DOMAIN_HERE') return;
+
+        var appOrigin;
+
+        try {
+          appOrigin = new URL(APP_DOMAIN).origin;
+        } catch (error) {
+          return;
+        }
+
+        var links = document.querySelectorAll('a[href]');
+
+        for (var i = 0; i < links.length; i += 1) {
+          var link = links[i];
+
+          try {
+            var url = new URL(link.getAttribute('href'), window.location.href);
+
+            if (url.origin !== appOrigin) continue;
+
+            url.searchParams.set(REF_PARAM, ref);
+            link.setAttribute('href', url.toString());
+          } catch (error) {
+            // Ignore invalid href values.
+          }
+        }
+      }
+
+      var refFromUrl = getRefFromUrl();
+      var activeRef = refFromUrl || readSavedRef();
+
+      if (refFromUrl) {
+        saveRef(refFromUrl);
+      }
+
+      appendRefToAppLinks(activeRef);
+    })();
+    </script>
   </body>
 </html>
