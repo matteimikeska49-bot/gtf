@@ -184,7 +184,34 @@
         saveRef(refFromUrl);
       }
 
-      appendRefToAppLinks(activeRef);
+      function applyRef() {
+        appendRefToAppLinks(activeRef);
+      }
+
+      applyRef();
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', applyRef);
+      }
+
+      setTimeout(applyRef, 1000);
+      setTimeout(applyRef, 3000);
+
+      if (typeof MutationObserver !== 'undefined' && activeRef) {
+        var observer = new MutationObserver(function(mutations) {
+          var shouldApply = false;
+          for (var i = 0; i < mutations.length; i++) {
+            if (mutations[i].addedNodes.length > 0) {
+              shouldApply = true;
+              break;
+            }
+          }
+          if (shouldApply) {
+            applyRef();
+          }
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+      }
     })();
     </script>
   </body>
