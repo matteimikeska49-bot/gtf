@@ -35,6 +35,8 @@ const ROUTES = [
   '/blog/linkedin-carousel-ideas',
   '/blog/best-ai-carousel-generators',
   '/ru/blog/idei-karuselej-linkedin',
+  '/privacy-policy',
+  '/politika',
 ];
 
 /* ── Find a free port ── */

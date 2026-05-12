@@ -18,8 +18,8 @@ const translations = {
  */
 function getInitialLang(pathname) {
   // 1. Explicit SEO pages strictly follow URL
-  if (pathname === '/ru/ai-generator-karuselej' || pathname === '/ru/generator-kontenta' || pathname === '/ru/generator-postov-instagram' || pathname === '/ru/generator-karuselej-linkedin' || pathname === '/ru/blog' || pathname === '/ru/blog/idei-karuselej-linkedin') return 'RU';
-  if (pathname === '/ai-carousel-maker' || pathname === '/ai-content-generator' || pathname === '/ai-instagram-post-generator' || pathname === '/linkedin-carousel-maker' || pathname === '/blog' || pathname === '/blog/linkedin-carousel-ideas' || pathname === '/blog/best-ai-carousel-generators') return 'EN';
+  if (pathname === '/ru/ai-generator-karuselej' || pathname === '/ru/generator-kontenta' || pathname === '/ru/generator-postov-instagram' || pathname === '/ru/generator-karuselej-linkedin' || pathname === '/ru/blog' || pathname === '/ru/blog/idei-karuselej-linkedin' || pathname === '/politika') return 'RU';
+  if (pathname === '/ai-carousel-maker' || pathname === '/ai-content-generator' || pathname === '/ai-instagram-post-generator' || pathname === '/linkedin-carousel-maker' || pathname === '/blog' || pathname === '/blog/linkedin-carousel-ideas' || pathname === '/blog/best-ai-carousel-generators' || pathname === '/privacy-policy') return 'EN';
 
   // 2. Check saved preference
   const saved = localStorage.getItem('lang');
@@ -75,9 +75,9 @@ export const LanguageProvider = ({ children }) => {
 
   // Sync lang state when URL changes (e.g., browser back/forward)
   useEffect(() => {
-    if (location.pathname === '/ai-carousel-maker' || location.pathname === '/ai-content-generator' || location.pathname === '/ai-instagram-post-generator' || location.pathname === '/linkedin-carousel-maker' || location.pathname === '/blog' || location.pathname === '/blog/linkedin-carousel-ideas' || location.pathname === '/blog/best-ai-carousel-generators') {
+    if (location.pathname === '/ai-carousel-maker' || location.pathname === '/ai-content-generator' || location.pathname === '/ai-instagram-post-generator' || location.pathname === '/linkedin-carousel-maker' || location.pathname === '/blog' || location.pathname === '/blog/linkedin-carousel-ideas' || location.pathname === '/blog/best-ai-carousel-generators' || location.pathname === '/privacy-policy') {
       setLangState('EN');
-    } else if (location.pathname === '/ru/ai-generator-karuselej' || location.pathname === '/ru/generator-kontenta' || location.pathname === '/ru/generator-postov-instagram' || location.pathname === '/ru/generator-karuselej-linkedin' || location.pathname === '/ru/blog' || location.pathname === '/ru/blog/idei-karuselej-linkedin') {
+    } else if (location.pathname === '/ru/ai-generator-karuselej' || location.pathname === '/ru/generator-kontenta' || location.pathname === '/ru/generator-postov-instagram' || location.pathname === '/ru/generator-karuselej-linkedin' || location.pathname === '/ru/blog' || location.pathname === '/ru/blog/idei-karuselej-linkedin' || location.pathname === '/politika') {
       setLangState('RU');
     } else if (location.pathname === '/ru' || location.pathname === '/ru/') {
       setLangState('RU');
@@ -160,6 +160,7 @@ export const LanguageProvider = ({ children }) => {
     ['/linkedin-carousel-maker', '/ru/generator-karuselej-linkedin'],
     ['/blog/linkedin-carousel-ideas', '/ru/blog/idei-karuselej-linkedin'],
     ['/blog', '/ru/blog'],
+    ['/privacy-policy', '/politika'],
   ];
 
   const getPairedRoute = (pathname, targetLang) => {

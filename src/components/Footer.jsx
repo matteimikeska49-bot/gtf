@@ -54,12 +54,21 @@ export const Footer = () => {
             {/* Right Hand: Legal Links & Socials */}
             <div className="flex flex-col lg:flex-row items-center justify-center md:justify-end gap-6 md:gap-8">
               <nav className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-3">
-                <button
-                  onClick={() => setModal('privacy')}
-                  className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
-                >
-                  {t('footer.privacy')}
-                </button>
+                {lang === 'RU' ? (
+                  <Link
+                    to="/politika"
+                    className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
+                  >
+                    {t('footer.privacy')}
+                  </Link>
+                ) : (
+                  <Link
+                    to="/privacy-policy"
+                    className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
+                  >
+                    {t('footer.privacy')}
+                  </Link>
+                )}
                 <button
                   onClick={() => setModal('terms')}
                   className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
