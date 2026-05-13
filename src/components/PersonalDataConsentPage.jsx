@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { LegalPageLayout } from './LegalPageLayout';
 import { useLanguage } from '../context/LanguageContext';
 
-const RefundSEOHead = () => {
+const ConsentSEOHead = () => {
   useEffect(() => {
-    const title = 'Refund & Cancellation Policy — GoToFlow';
-    const desc = 'GoToFlow Refund & Cancellation Policy: subscription cancellation, refunds, billing errors, and payment disputes.';
+    const title = 'Consent to Personal Data Processing — GoToFlow';
+    const desc = 'GoToFlow data processing consent: categories of data, processing purposes, third-party providers, and withdrawal of consent.';
     document.title = title;
 
     const setMeta = (name, content, prop = false) => {
@@ -28,11 +28,11 @@ const RefundSEOHead = () => {
     setMeta('description', desc);
     setMeta('og:title', title, true);
     setMeta('og:description', desc, true);
-    setMeta('og:url', 'https://gotoflow.io/refund-policy', true);
+    setMeta('og:url', 'https://gotoflow.io/personal-data-consent', true);
     setMeta('twitter:title', title, true);
     setMeta('twitter:description', desc, true);
 
-    setLink('canonical', 'https://gotoflow.io/refund-policy');
+    setLink('canonical', 'https://gotoflow.io/personal-data-consent');
     document.documentElement.lang = 'en';
 
     return () => { document.title = 'GoToFlow'; };
@@ -41,17 +41,19 @@ const RefundSEOHead = () => {
   return null;
 };
 
-export const RefundPolicyPage = () => {
+export const PersonalDataConsentPage = () => {
   const { t } = useLanguage();
-  const sections = t('legal.refund.sections');
+  const sections = t('legal.consent.sections');
+  const intro = t('legal.consent.intro');
 
   return (
     <LegalPageLayout
-      title={t('legal.refund.title')}
+      title={t('legal.consent.title')}
       effectiveDate="Effective date: May 13, 2026"
       sections={sections}
+      intro={intro}
     >
-      <RefundSEOHead />
+      <ConsentSEOHead />
     </LegalPageLayout>
   );
 };

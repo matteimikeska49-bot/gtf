@@ -38,6 +38,8 @@ const ROUTES = [
   '/privacy-policy',
   '/politika',
   '/refund-policy',
+  '/terms-of-service',
+  '/personal-data-consent',
 ];
 
 /* ── Find a free port ── */

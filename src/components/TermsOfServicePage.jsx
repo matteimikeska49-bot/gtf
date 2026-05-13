@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { LegalPageLayout } from './LegalPageLayout';
 import { useLanguage } from '../context/LanguageContext';
 
-const RefundSEOHead = () => {
+const TermsSEOHead = () => {
   useEffect(() => {
-    const title = 'Refund & Cancellation Policy — GoToFlow';
-    const desc = 'GoToFlow Refund & Cancellation Policy: subscription cancellation, refunds, billing errors, and payment disputes.';
+    const title = 'Terms of Service — GoToFlow';
+    const desc = 'GoToFlow Terms of Service: account registration, subscriptions, billing, AI-generated content, acceptable use, and limitation of liability.';
     document.title = title;
 
     const setMeta = (name, content, prop = false) => {
@@ -28,11 +28,11 @@ const RefundSEOHead = () => {
     setMeta('description', desc);
     setMeta('og:title', title, true);
     setMeta('og:description', desc, true);
-    setMeta('og:url', 'https://gotoflow.io/refund-policy', true);
+    setMeta('og:url', 'https://gotoflow.io/terms-of-service', true);
     setMeta('twitter:title', title, true);
     setMeta('twitter:description', desc, true);
 
-    setLink('canonical', 'https://gotoflow.io/refund-policy');
+    setLink('canonical', 'https://gotoflow.io/terms-of-service');
     document.documentElement.lang = 'en';
 
     return () => { document.title = 'GoToFlow'; };
@@ -41,17 +41,17 @@ const RefundSEOHead = () => {
   return null;
 };
 
-export const RefundPolicyPage = () => {
+export const TermsOfServicePage = () => {
   const { t } = useLanguage();
-  const sections = t('legal.refund.sections');
+  const sections = t('legal.terms.sections');
 
   return (
     <LegalPageLayout
-      title={t('legal.refund.title')}
+      title={t('legal.terms.title')}
       effectiveDate="Effective date: May 13, 2026"
       sections={sections}
     >
-      <RefundSEOHead />
+      <TermsSEOHead />
     </LegalPageLayout>
   );
 };

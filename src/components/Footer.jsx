@@ -55,39 +55,53 @@ export const Footer = () => {
             <div className="flex flex-col lg:flex-row items-center justify-center md:justify-end gap-6 md:gap-8">
               <nav className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-3">
                 {lang === 'RU' ? (
-                  <Link
-                    to="/politika"
-                    className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                  >
-                    {t('footer.privacy')}
-                  </Link>
+                  <>
+                    <Link
+                      to="/politika"
+                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
+                    >
+                      {t('footer.privacy')}
+                    </Link>
+                    <button
+                      onClick={() => setModal('terms')}
+                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
+                    >
+                      {t('footer.terms')}
+                    </button>
+                    <button
+                      onClick={() => setModal('consent')}
+                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
+                    >
+                      {t('footer.consent')}
+                    </button>
+                  </>
                 ) : (
-                  <Link
-                    to="/privacy-policy"
-                    className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                  >
-                    {t('footer.privacy')}
-                  </Link>
-                )}
-                <button
-                  onClick={() => setModal('terms')}
-                  className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
-                >
-                  {t('footer.terms')}
-                </button>
-                <button
-                  onClick={() => setModal('consent')}
-                  className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
-                >
-                  {t('footer.consent')}
-                </button>
-                {lang === 'EN' && (
-                  <Link
-                    to="/refund-policy"
-                    className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                  >
-                    Refund Policy
-                  </Link>
+                  <>
+                    <Link
+                      to="/privacy-policy"
+                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
+                    >
+                      {t('footer.privacy')}
+                    </Link>
+                    <Link
+                      to="/terms-of-service"
+                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
+                    >
+                      {t('footer.terms')}
+                    </Link>
+                    <Link
+                      to="/personal-data-consent"
+                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
+                    >
+                      {t('footer.consent')}
+                    </Link>
+                    <Link
+                      to="/refund-policy"
+                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
+                    >
+                      Refund Policy
+                    </Link>
+                  </>
                 )}
               </nav>
 
