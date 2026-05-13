@@ -34,6 +34,7 @@ import { RefundPolicyPage } from './components/RefundPolicyPage';
 import { TermsOfServicePage } from './components/TermsOfServicePage';
 import { PersonalDataConsentPage } from './components/PersonalDataConsentPage';
 import { NotFoundPage } from './components/NotFoundPage';
+import { PricingPage } from './components/PricingPage';
 const LandingPage = () => (
   <MainLayout>
     <Header />
@@ -84,6 +85,7 @@ function App() {
         <Route path="/refund-policy" element={<RefundPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/personal-data-consent" element={<PersonalDataConsentPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </LanguageProvider>

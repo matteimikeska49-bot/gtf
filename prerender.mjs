@@ -41,6 +41,7 @@ const ROUTES = [
   '/refund-policy',
   '/terms-of-service',
   '/personal-data-consent',
+  '/pricing',
   '/carousel/create',
 ];
 
