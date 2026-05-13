@@ -419,7 +419,7 @@ export const en = {
     privacy: {
       title: 'Privacy Policy',
       sections: [
-        { title: "Data Controller", items: ["Andrey Cherenok, Individual Entrepreneur", "Service: GoToFlow — https://gotoflow.io", "Email: gotoflow.io@gmail.com", "Effective Date: February 19, 2026"] },
+        { title: "Data Controller", items: ["Andrey Cherenok, Individual Entrepreneur", "Service: GoToFlow — https://gotoflow.io", "Email: gotoflow.io@gmail.com"] },
         { title: "1. Information We Collect", items: [
           "Account Data: email address, name (if provided), and authentication identifiers from third-party login providers (e.g., Google, Telegram).",
           "Usage Data: IP address, browser type and version, device information, operating system, referring URLs, pages visited, feature usage, activity logs, and timestamps.",
@@ -522,8 +522,7 @@ export const en = {
         { title: "1. Acceptance of Terms", items: [
           "By accessing or using GoToFlow (the \"Service\"), you agree to be bound by these Terms of Service.",
           "If you do not agree to these Terms, you must not use the Service.",
-          "GoToFlow is operated by Andrey Cherenok, Individual Entrepreneur.",
-          "Effective Date: February 19, 2026",
+          "GoToFlow is operated by Andrey Cherenok, Individual Entrepreneur."
         ] },
         { title: "2. Service Description", items: [
           "GoToFlow is a SaaS platform that provides AI-assisted content generation tools for social media, including carousel creation, post generation, competitor analysis, and related features.",
@@ -641,13 +640,12 @@ export const en = {
     },
     consent: {
       title: 'Consent to Personal Data Processing',
-      intro: 'By registering, authorizing, or using GoToFlow, you consent to the processing of your personal data as described below and in our Privacy Policy.',
+      intro: 'By registering, authorizing, or using GoToFlow, you acknowledge the processing of your personal data as described below and in our Privacy Policy. Where explicit consent is required by applicable law for specific processing activities, you freely provide such consent by using the Service.',
       sections: [
         { title: "Data Controller", items: [
           "Andrey Cherenok, Individual Entrepreneur",
           "Service: GoToFlow — https://gotoflow.io",
           "Email: gotoflow.io@gmail.com",
-          "Effective Date: February 19, 2026",
         ] },
         { title: "1. Categories of Data We Process", items: [
           "Email address and name, if provided.",
