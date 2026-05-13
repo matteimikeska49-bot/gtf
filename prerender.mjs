@@ -37,6 +37,7 @@ const ROUTES = [
   '/ru/blog/idei-karuselej-linkedin',
   '/privacy-policy',
   '/politika',
+  '/refund-policy',
 ];
 
 /* ── Find a free port ── */

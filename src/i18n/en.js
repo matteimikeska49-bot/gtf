@@ -542,6 +542,7 @@ export const en = {
           "Digital services are generally non-refundable once access has been provided, except where required by applicable law.",
           "Unused tokens, features, or time remaining in a billing period do not create a right to a refund.",
           "If you believe you are entitled to a refund due to a billing error or other issue, please contact us at gotoflow.io@gmail.com. Each request will be reviewed on a case-by-case basis in accordance with applicable law and our payment terms.",
+          "Refunds and cancellations are also described in our Refund & Cancellation Policy at https://gotoflow.io/refund-policy.",
         ] },
         { title: "7. Payment Processing", items: [
           "Payments are processed by third-party payment providers. GoToFlow does not store your full credit or debit card details.",
@@ -692,6 +693,82 @@ export const en = {
           "You have reviewed the Privacy Policy available at https://gotoflow.io/privacy-policy.",
         ] },
         { title: "Contact", items: ["For questions about this consent or your data, contact: gotoflow.io@gmail.com"] },
+      ]
+    },
+    refund: {
+      title: 'Refund & Cancellation Policy',
+      sections: [
+        { title: "1. General", items: [
+          "GoToFlow is a digital SaaS service that provides access to AI-powered content creation tools.",
+          "This Refund & Cancellation Policy explains how paid subscriptions may be cancelled and when refunds may be available.",
+          "This Policy is part of our Terms of Service and applies to paid plans, subscriptions, and digital access to GoToFlow.",
+        ] },
+        { title: "2. Subscriptions and Auto-Renewal", items: [
+          "Some GoToFlow plans may be offered as recurring subscriptions. By purchasing a subscription, you agree that:",
+          "Your subscription may renew automatically at the end of each billing period.",
+          "The price, billing period, and renewal terms are shown before payment.",
+          "You are responsible for cancelling your subscription if you do not want it to renew.",
+          "Renewal charges may be processed for the next billing period unless the subscription is cancelled before renewal.",
+        ] },
+        { title: "3. Cancellation", items: [
+          "You may cancel your subscription through your account settings if this option is available, or by contacting us at: gotoflow.io@gmail.com.",
+          "Cancellation stops future renewal charges.",
+          "Unless otherwise required by applicable law or stated in a specific plan, cancelling a subscription does not automatically refund payments already made.",
+          "Access to paid features may remain available until the end of the paid billing period.",
+        ] },
+        { title: "4. Refunds", items: [
+          "Refund requests are reviewed individually. A refund may be available where:",
+          "A duplicate or mistaken charge occurred.",
+          "You were charged after a confirmed cancellation.",
+          "Paid access was not provided due to a technical issue on GoToFlow's side.",
+          "A refund is required by applicable consumer protection law.",
+          "A refund may not be available where:",
+          "You received access to the digital service and started using paid features.",
+          "You used credits, generations, exports, saved content, or other paid functionality.",
+          "You changed your mind after using the service.",
+          "Your account violated our Terms of Service or acceptable use rules.",
+          "The request is based only on expected business outcomes, such as views, engagement, followers, leads, sales, revenue, or platform performance.",
+        ] },
+        { title: "5. Digital Services and Consumer Rights", items: [
+          "In some countries, users may have a legal right to cancel an online purchase or distance contract within a specific period.",
+          "Where such rights apply, we will process requests in accordance with applicable law.",
+          "For digital services, this right may be limited or lost once the user has agreed to receive digital access and the service has started to be provided.",
+        ] },
+        { title: "6. Billing Errors", items: [
+          "If you believe you were charged by mistake, please contact us as soon as possible at: gotoflow.io@gmail.com.",
+          "Please include: your account email, payment date, payment amount, last four digits of the card if applicable, description of the issue, and payment confirmation or screenshot if available.",
+          "We will review the request and respond within a reasonable time.",
+        ] },
+        { title: "7. Payment Providers", items: [
+          "Payments may be processed by third-party payment providers.",
+          "GoToFlow does not store full payment card details.",
+          "If a refund is approved, the time it takes for funds to appear in your account may depend on the payment provider, bank, card network, and your country.",
+        ] },
+        { title: "8. Chargebacks", items: [
+          "If you initiate a chargeback or payment dispute, we may provide the payment provider or bank with information showing: subscription or purchase details, acceptance of our terms, access to the digital service, usage of paid features, and cancellation or support history.",
+          "We recommend contacting us first at gotoflow.io@gmail.com so we can try to resolve the issue faster.",
+        ] },
+        { title: "9. No Guarantee of Results", items: [
+          "GoToFlow provides tools for creating and improving content, but we do not guarantee specific business or platform results.",
+          "We do not guarantee: views, engagement, followers, leads, sales, revenue, virality, or performance on any third-party platform.",
+          "Dissatisfaction with expected business results is not, by itself, an automatic basis for a refund.",
+        ] },
+        { title: "10. How to Request a Refund", items: [
+          "To request a refund, contact: gotoflow.io@gmail.com",
+          "Email subject: Refund request — GoToFlow",
+          "Please include: account email, payment date, payment amount, reason for the request, and payment confirmation if available.",
+        ] },
+        { title: "11. Changes to This Policy", items: [
+          "We may update this Refund & Cancellation Policy from time to time.",
+          "The updated version becomes effective when posted on the website unless stated otherwise.",
+          "Continued use of GoToFlow after updates means you accept the updated Policy.",
+        ] },
+        { title: "12. Contact", items: [
+          "GoToFlow",
+          "Andrey Cherenok, Individual Entrepreneur",
+          "Email: gotoflow.io@gmail.com",
+          "Website: https://gotoflow.io",
+        ] },
       ]
     }
   }

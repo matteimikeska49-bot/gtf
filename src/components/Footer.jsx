@@ -81,6 +81,14 @@ export const Footer = () => {
                 >
                   {t('footer.consent')}
                 </button>
+                {lang === 'EN' && (
+                  <Link
+                    to="/refund-policy"
+                    className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
+                  >
+                    Refund Policy
+                  </Link>
+                )}
               </nav>
 
               {/* Separator line for larger screens */}

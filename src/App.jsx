@@ -30,6 +30,7 @@ import { LinkedInCarouselIdeasPage } from './components/blog/LinkedInCarouselIde
 import { LinkedInCarouselIdeasPageRu } from './components/blog/LinkedInCarouselIdeasPageRu';
 import { BestAiCarouselGeneratorsPage } from './components/blog/BestAiCarouselGeneratorsPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { RefundPolicyPage } from './components/RefundPolicyPage';
 import { NotFoundPage } from './components/NotFoundPage';
 const LandingPage = () => (
   <MainLayout>
@@ -76,6 +77,7 @@ function App() {
         <Route path="/ru/blog" element={<BlogPageRu />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/politika" element={<PrivacyPolicyPage />} />
+        <Route path="/refund-policy" element={<RefundPolicyPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </LanguageProvider>
