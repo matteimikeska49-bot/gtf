@@ -409,9 +409,13 @@ export const en = {
   },
 
   cookie: {
-    message: 'We use cookies to improve your experience and analyze site traffic.',
-    accept: 'Got it',
-    learnMore: 'Learn more'
+    message: 'We use necessary cookies to make GoToFlow work and may use optional cookies to improve the product and understand website usage. Your choice will be saved for future cookie settings.',
+    reject: 'Reject',
+    acceptAll: 'Accept all',
+    privacyPolicy: 'Privacy Policy',
+    // Legacy keys kept for safety
+    accept: 'Accept all',
+    learnMore: 'Privacy Policy'
   },
 
   legal: {
