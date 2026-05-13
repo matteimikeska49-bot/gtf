@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Crown, Zap, Rocket, Check, ChevronDown, Shield, CreditCard, RefreshCw } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Crown, Zap, Rocket, Shield, CreditCard, RefreshCw } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { CookieBanner } from './CookieBanner';
@@ -49,30 +49,11 @@ const PricingSEOHead = () => {
   return null;
 };
 
-/* ── FAQ Item ── */
-const FAQItem = ({ question, answer, isOpen, onClick }) => (
-  <div className="border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:bg-white/[0.03] transition-colors duration-300">
-    <button
-      onClick={onClick}
-      className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
-    >
-      <span className="text-sm font-semibold text-zinc-200">{question}</span>
-      <ChevronDown className={`w-4 h-4 text-zinc-500 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-    </button>
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: 'auto', opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="px-5 pb-4 text-sm text-zinc-400 leading-relaxed">
-            {answer}
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+/* ── FAQ Item (always visible) ── */
+const FAQItem = ({ question, answer }) => (
+  <div className="border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] px-5 py-4">
+    <p className="text-sm font-semibold text-zinc-200 mb-2">{question}</p>
+    <p className="text-sm text-zinc-400 leading-relaxed">{answer}</p>
   </div>
 );
 
@@ -92,7 +73,6 @@ const InfoBlock = ({ icon: Icon, title, children }) => (
 /* ── Main PricingPage ── */
 export const PricingPage = () => {
   const [isYearly, setIsYearly] = useState(false);
-  const [openFaq, setOpenFaq] = useState(null);
   const { t, lang } = useLanguage();
   const rawPlans = t('pricing.plans') || [];
 
@@ -213,7 +193,7 @@ export const PricingPage = () => {
             </InfoBlock>
 
             <InfoBlock icon={RefreshCw} title="Subscription Renewal">
-              Subscriptions renew automatically at the end of each billing period unless cancelled before the next renewal date. You can cancel your subscription anytime through your account or by contacting support.
+              Subscriptions renew automatically at the end of each billing period unless cancelled before the next renewal date. You can cancel your subscription anytime through your account or by contacting support at gotoflow.io@gmail.com.
             </InfoBlock>
 
             <InfoBlock icon={Shield} title="Refund Policy">
@@ -237,8 +217,6 @@ export const PricingPage = () => {
                   key={i}
                   question={faq.q}
                   answer={faq.a}
-                  isOpen={openFaq === i}
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 />
               ))}
             </div>
