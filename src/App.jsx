@@ -80,6 +80,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/ru/politika" element={<PrivacyPolicyPage />} />
         <Route path="/politika" element={<Navigate to="/ru/politika" replace />} />
+        <Route path="/carousel/create" element={<Navigate to="/ai-carousel-maker" replace />} />
         <Route path="/refund-policy" element={<RefundPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/personal-data-consent" element={<PersonalDataConsentPage />} />
