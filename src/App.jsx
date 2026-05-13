@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import { MainLayout } from './components/MainLayout';
 import { Header } from './components/Header';
@@ -78,7 +78,8 @@ function App() {
         <Route path="/ru/blog/idei-karuselej-linkedin" element={<LinkedInCarouselIdeasPageRu />} />
         <Route path="/ru/blog" element={<BlogPageRu />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-        <Route path="/politika" element={<PrivacyPolicyPage />} />
+        <Route path="/ru/politika" element={<PrivacyPolicyPage />} />
+        <Route path="/politika" element={<Navigate to="/ru/politika" replace />} />
         <Route path="/refund-policy" element={<RefundPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/personal-data-consent" element={<PersonalDataConsentPage />} />

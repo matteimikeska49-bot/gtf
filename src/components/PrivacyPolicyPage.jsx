@@ -29,15 +29,15 @@ const PrivacySEOHead = ({ lang }) => {
     setMeta('twitter:title', title, true);
 
     if (lang === 'RU') {
-      setLink('canonical', 'https://gotoflow.io/politika');
+      setLink('canonical', 'https://gotoflow.io/ru/politika');
       setLink('alternate', 'https://gotoflow.io/privacy-policy', { hreflang: 'en' });
-      setLink('alternate', 'https://gotoflow.io/politika', { hreflang: 'ru' });
+      setLink('alternate', 'https://gotoflow.io/ru/politika', { hreflang: 'ru' });
       setLink('alternate', 'https://gotoflow.io/privacy-policy', { hreflang: 'x-default' });
       document.documentElement.lang = 'ru';
     } else {
       setLink('canonical', 'https://gotoflow.io/privacy-policy');
       setLink('alternate', 'https://gotoflow.io/privacy-policy', { hreflang: 'en' });
-      setLink('alternate', 'https://gotoflow.io/politika', { hreflang: 'ru' });
+      setLink('alternate', 'https://gotoflow.io/ru/politika', { hreflang: 'ru' });
       setLink('alternate', 'https://gotoflow.io/privacy-policy', { hreflang: 'x-default' });
       document.documentElement.lang = 'en';
     }

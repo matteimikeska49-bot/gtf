@@ -57,7 +57,7 @@ export const Footer = () => {
                 {lang === 'RU' ? (
                   <>
                     <Link
-                      to="/politika"
+                      to="/ru/politika"
                       className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
                     >
                       {t('footer.privacy')}
