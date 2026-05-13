@@ -48,7 +48,7 @@ export const TermsOfServicePage = () => {
   return (
     <LegalPageLayout
       title={t('legal.terms.title')}
-      effectiveDate="Effective date: May 13, 2026"
+      effectiveDate="Effective date: February 19, 2026"
       sections={sections}
     >
       <TermsSEOHead />

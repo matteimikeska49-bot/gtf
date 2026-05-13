@@ -62,18 +62,6 @@ export const Footer = () => {
                     >
                       {t('footer.privacy')}
                     </Link>
-                    <button
-                      onClick={() => setModal('terms')}
-                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
-                    >
-                      {t('footer.terms')}
-                    </button>
-                    <button
-                      onClick={() => setModal('consent')}
-                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium cursor-pointer"
-                    >
-                      {t('footer.consent')}
-                    </button>
                   </>
                 ) : (
                   <>

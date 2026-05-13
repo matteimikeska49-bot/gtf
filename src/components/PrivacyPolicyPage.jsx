@@ -52,8 +52,8 @@ export const PrivacyPolicyPage = () => {
   const { t, lang } = useLanguage();
   const sections = t('legal.privacy.sections');
   const effectiveDate = lang === 'RU'
-    ? 'Дата вступления в силу: 13 мая 2026'
-    : 'Effective date: May 13, 2026';
+    ? 'Дата вступления в силу: 19 февраля 2026'
+    : 'Effective date: February 19, 2026';
 
   return (
     <LegalPageLayout
