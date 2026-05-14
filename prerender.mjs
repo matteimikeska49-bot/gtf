@@ -34,6 +34,7 @@ const ROUTES = [
   '/ru/blog',
   '/blog/linkedin-carousel-ideas',
   '/blog/best-ai-carousel-generators',
+  '/blog/how-to-make-linkedin-carousel-with-ai',
   '/ru/blog/idei-karuselej-linkedin',
   '/privacy-policy',
   '/ru/politika',

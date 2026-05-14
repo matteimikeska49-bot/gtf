@@ -119,6 +119,7 @@ const categories = [
   {
     title: 'Guides',
     links: [
+      { to: '/blog/how-to-make-linkedin-carousel-with-ai', title: 'How to Make a LinkedIn Carousel with AI', desc: 'A step-by-step guide to creating LinkedIn carousels with AI: hooks, structure, prompts, examples, visual style, and publishing tips.' },
       { to: '/blog/best-ai-carousel-generators', title: 'Best AI Carousel Generators in 2026', desc: 'Compare AI carousel generators for structure, hooks, visual style, and social media workflows.' }
     ]
   }
