@@ -303,12 +303,24 @@ const ArticleBody = () => (
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         For example, you might find a competitor video that explains a topic well. Instead of manually watching it, taking notes, writing a new outline, and designing the carousel from scratch, you can use the video as an input. GoToFlow helps analyze the content, turn the idea into a new carousel structure, create slide copy, and generate a visual direction you can refine.
       </p>
-      <ul className="space-y-3 mb-5">
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for:</strong> founders, marketers, creators, consultants, agencies, and personal brand builders.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Strengths:</strong> GoToFlow helps move from topic, link, video, or competitor content to structure, copy, visual style, and carousel draft.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>What to keep in mind:</strong> the better your input and style direction, the closer the result will be to what you want. You can refine the prompt, regenerate a version, and adjust the final output before publishing.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Who should use it:</strong> people who want more than a text draft and need a faster way to create carousel content from real inputs.</li>
-      </ul>
+      <div className="space-y-3 mb-5">
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Best for:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">founders, marketers, creators, consultants, agencies, and personal brand builders.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Strengths:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">GoToFlow helps move from topic, link, video, or competitor content to structure, copy, visual style, and carousel draft.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">What to keep in mind:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">the better your input and style direction, the closer the result will be to what you want. You can refine the prompt, regenerate a version, and adjust the final output before publishing.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Who should use it:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">people who want more than a text draft and need a faster way to create carousel content from real inputs.</div>
+        </div>
+      </div>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         If you want a full AI workflow for carousel creation, start with <Link to="/ai-carousel-maker" className="text-pink-400 hover:underline">GoToFlow AI Carousel Maker</Link>.
       </p>
@@ -318,12 +330,24 @@ const ArticleBody = () => (
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Canva is one of the most popular options for visual design and templates. It is especially useful when you already know what your carousel should say and need to turn it into polished slides quickly.
       </p>
-      <ul className="space-y-3 mb-5">
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for:</strong> beginners, small businesses, and social media managers who need fast visual design.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Strengths:</strong> Canva has a large template library, brand kit features, drag-and-drop editing, and easy export options.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>What to keep in mind:</strong> the AI writing can still feel generic. You may want to prepare the hook, structure, and copy elsewhere before designing.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Who should use it:</strong> creators who prioritize visual aesthetics and want a familiar design environment.</li>
-      </ul>
+      <div className="space-y-3 mb-5">
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Best for:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">beginners, small businesses, and social media managers who need fast visual design.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Strengths:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">Canva has a large template library, brand kit features, drag-and-drop editing, and easy export options.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">What to keep in mind:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">the AI writing can still feel generic. You may want to prepare the hook, structure, and copy elsewhere before designing.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Who should use it:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">creators who prioritize visual aesthetics and want a familiar design environment.</div>
+        </div>
+      </div>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         Canva is strong for design, but it may not solve the strategy and structure problem by itself.
       </p>
@@ -333,12 +357,24 @@ const ArticleBody = () => (
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         General AI assistants like ChatGPT and Claude are not carousel makers by default, but they can be useful at the beginning of the process.
       </p>
-      <ul className="space-y-3 mb-5">
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for:</strong> brainstorming, research, repurposing long-form content, and generating rough ideas.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Strengths:</strong> You can paste notes, transcripts, outlines, or reports and ask the AI to extract possible carousel angles.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>What to keep in mind:</strong> there is no native visual carousel workflow. You need to manually move the content into a design or carousel tool, and the output often needs strong editing.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Who should use it:</strong> people who are comfortable with prompting and already have a separate design process.</li>
-      </ul>
+      <div className="space-y-3 mb-5">
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Best for:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">brainstorming, research, repurposing long-form content, and generating rough ideas.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Strengths:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">You can paste notes, transcripts, outlines, or reports and ask the AI to extract possible carousel angles.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">What to keep in mind:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">there is no native visual carousel workflow. You need to manually move the content into a design or carousel tool, and the output often needs strong editing.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Who should use it:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">people who are comfortable with prompting and already have a separate design process.</div>
+        </div>
+      </div>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         General AI tools are flexible, but they often write like a long-form assistant unless you force them into a slide-by-slide structure.
       </p>
@@ -348,12 +384,24 @@ const ArticleBody = () => (
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Gamma is closer to a presentation-style AI tool. It can be useful for turning structured ideas into clean, deck-like content.
       </p>
-      <ul className="space-y-3 mb-5">
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for:</strong> consultants, educators, and B2B marketers who need slide-style explanations or frameworks.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Strengths:</strong> Gamma is good at organizing content into clean cards and slide-like layouts.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>What to keep in mind:</strong> the output may feel more like a presentation deck than a native social media carousel.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Who should use it:</strong> people who create educational or data-heavy content and want a professional slide format.</li>
-      </ul>
+      <div className="space-y-3 mb-5">
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Best for:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">consultants, educators, and B2B marketers who need slide-style explanations or frameworks.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Strengths:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">Gamma is good at organizing content into clean cards and slide-like layouts.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">What to keep in mind:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">the output may feel more like a presentation deck than a native social media carousel.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Who should use it:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">people who create educational or data-heavy content and want a professional slide format.</div>
+        </div>
+      </div>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         Gamma can be useful when your carousel is closer to a mini-presentation than a casual social post.
       </p>
@@ -363,12 +411,24 @@ const ArticleBody = () => (
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         LinkedIn-focused tools like Taplio and ContentIn are built around the broader LinkedIn content workflow. They often combine AI writing, scheduling, idea management, and analytics.
       </p>
-      <ul className="space-y-3 mb-5">
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for:</strong> creators who publish frequently on LinkedIn and want their content process inside one system.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Strengths:</strong> some LinkedIn-focused tools support repurposing, scheduling, idea tracking, and analytics workflows.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>What to keep in mind:</strong> these tools may be more expensive than single-purpose carousel tools because they include features you may not need if you only want to create carousels.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Who should use it:</strong> high-volume LinkedIn creators who need workflow support beyond creating one carousel.</li>
-      </ul>
+      <div className="space-y-3 mb-5">
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Best for:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">creators who publish frequently on LinkedIn and want their content process inside one system.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Strengths:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">some LinkedIn-focused tools support repurposing, scheduling, idea tracking, and analytics workflows.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">What to keep in mind:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">these tools may be more expensive than single-purpose carousel tools because they include features you may not need if you only want to create carousels.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Who should use it:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">high-volume LinkedIn creators who need workflow support beyond creating one carousel.</div>
+        </div>
+      </div>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         These tools are useful if your main need is not just carousel generation, but the entire LinkedIn publishing workflow. For carousel-specific ideas on LinkedIn, see our <Link to="/blog/linkedin-carousel-ideas" className="text-pink-400 hover:underline">LinkedIn carousel ideas</Link> guide.
       </p>
@@ -378,12 +438,24 @@ const ArticleBody = () => (
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Jasper and Copy.ai are broader AI writing platforms. They are often used by teams that need to keep content aligned with a specific brand voice.
       </p>
-      <ul className="space-y-3 mb-5">
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for:</strong> marketing teams, agencies, and companies managing multiple content workflows.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Strengths:</strong> they can help maintain tone consistency across different types of content.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>What to keep in mind:</strong> they are primarily writing tools, so you still need a separate workflow for carousel structure and visual output.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Who should use it:</strong> teams that need scalable copy generation and brand voice control.</li>
-      </ul>
+      <div className="space-y-3 mb-5">
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Best for:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">marketing teams, agencies, and companies managing multiple content workflows.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Strengths:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">they can help maintain tone consistency across different types of content.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">What to keep in mind:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">they are primarily writing tools, so you still need a separate workflow for carousel structure and visual output.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Who should use it:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">teams that need scalable copy generation and brand voice control.</div>
+        </div>
+      </div>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
         These tools can be valuable for teams, but they are not always the fastest path from idea to finished carousel.
       </p>
@@ -393,12 +465,24 @@ const ArticleBody = () => (
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Figma is not an AI carousel generator in the writing sense, but it is a strong option for teams that want a custom carousel system.
       </p>
-      <ul className="space-y-3 mb-5">
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Best for:</strong> professional designers and agencies that need full visual control.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Strengths:</strong> you can build reusable components, create custom design systems, and maintain a unique visual identity.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>What to keep in mind:</strong> it has a steeper learning curve and does not solve the writing or structure problem by itself.</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><strong>Who should use it:</strong> design-led teams that want carousels to look completely different from standard templates.</li>
-      </ul>
+      <div className="space-y-3 mb-5">
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Best for:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">professional designers and agencies that need full visual control.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Strengths:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">you can build reusable components, create custom design systems, and maintain a unique visual identity.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">What to keep in mind:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">it has a steeper learning curve and does not solve the writing or structure problem by itself.</div>
+        </div>
+        <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
+          <div className="text-zinc-100 font-semibold text-[15px] mb-1">Who should use it:</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">design-led teams that want carousels to look completely different from standard templates.</div>
+        </div>
+      </div>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
         Figma is powerful when you already have the content and want full control over how it looks.
       </p>
