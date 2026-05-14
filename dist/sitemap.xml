@@ -152,6 +152,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://gotoflow.io/blog/how-to-make-linkedin-carousel-with-ai</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <url>
     <loc>https://gotoflow.io/privacy-policy</loc>
