@@ -148,9 +148,21 @@
 
   <url>
     <loc>https://gotoflow.io/blog/best-ai-carousel-generators</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/blog/best-ai-carousel-generators" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/blog/luchshie-ai-generatory-karuselej" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/blog/best-ai-carousel-generators" />
+  </url>
+  <url>
+    <loc>https://gotoflow.io/ru/blog/luchshie-ai-generatory-karuselej</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/blog/best-ai-carousel-generators" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/blog/luchshie-ai-generatory-karuselej" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/blog/best-ai-carousel-generators" />
   </url>
   <url>
     <loc>https://gotoflow.io/blog/how-to-make-linkedin-carousel-with-ai</loc>

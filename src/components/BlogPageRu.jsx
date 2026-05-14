@@ -115,6 +115,12 @@ const categoriesRu = [
     links: [
       { to: '/ru/blog/primery-karuselej', title: '50 примеров каруселей', desc: 'эффективные визуальные форматы' }
     ]
+  },
+  {
+    title: 'Статьи',
+    links: [
+      { to: '/ru/blog/luchshie-ai-generatory-karuselej', title: 'Лучшие AI-генераторы каруселей в 2026 году', desc: 'Сравниваем лучшие AI-генераторы каруселей для Instagram, LinkedIn и соцсетей' }
+    ]
   }
 ];
 
