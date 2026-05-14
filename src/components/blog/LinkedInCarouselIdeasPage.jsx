@@ -55,8 +55,8 @@ const ArticleSEOHead = () => {
 
 /* ── Breadcrumbs ── */
 const Breadcrumbs = () => (
-  <nav className="pt-28 pb-4 px-6 relative z-10 w-full bg-[#050505]">
-    <div className="max-w-3xl mx-auto flex items-center gap-1.5 text-sm text-zinc-500">
+  <nav className="pt-28 pb-4 px-4 sm:px-6 relative z-10 w-full bg-[#050505]">
+    <div className="max-w-[920px] mx-auto flex items-center gap-1.5 text-sm text-zinc-500">
       <Link to="/" className="hover:text-zinc-300 transition-colors">Home</Link>
       <ChevronRight className="w-3.5 h-3.5" />
       <Link to="/blog" className="hover:text-zinc-300 transition-colors">Blog</Link>
@@ -70,9 +70,9 @@ const Breadcrumbs = () => (
 const ArticleHero = () => {
   const isMobile = useIsMobile();
   return (
-    <section className="pb-16 md:pb-20 px-6 relative z-10 w-full bg-[#050505]">
+    <section className="pb-16 md:pb-20 px-4 sm:px-6 relative z-10 w-full bg-[#050505]">
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[700px] md:w-[1000px] h-[500px] md:h-[700px] bg-[#ec4899]/[0.06] blur-[60px] md:blur-[140px] rounded-full pointer-events-none" />
-      <div className="max-w-3xl mx-auto relative z-10">
+      <div className="max-w-[920px] mx-auto relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm">
             <Sparkles className="w-3.5 h-3.5 text-pink-400" />
@@ -141,14 +141,15 @@ const IdeaList = ({ items, startNum = 1 }) => (
 
 /* ── Article Body ── */
 const ArticleBody = () => (
-  <article className="pt-4 pb-8 px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
+  <article className="pt-4 pb-8 px-4 sm:px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
     {/* Ambient glow — top of article */}
     <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[600px] md:w-[800px] h-[400px] md:h-[500px] bg-pink-500/[0.035] blur-[160px] rounded-full pointer-events-none" />
     {/* Ambient glow — mid article */}
     <div className="absolute top-[35%] right-[-10%] w-[500px] h-[500px] bg-purple-500/[0.025] blur-[180px] rounded-full pointer-events-none" />
     {/* Ambient glow — lower article */}
     <div className="absolute top-[65%] left-[-10%] w-[500px] h-[400px] bg-orange-500/[0.025] blur-[180px] rounded-full pointer-events-none" />
-    <div className="max-w-3xl mx-auto relative z-10">
+    <div className="max-w-[920px] mx-auto relative z-10">
+    <div className="bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-14">
 
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         LinkedIn carousels drive 3-5x more engagement than text-only posts. They boost dwell time, increase saves, and position you as a thought leader. But the biggest challenge isn't design — it's knowing <strong className="text-white">what to post</strong>.
@@ -304,6 +305,7 @@ const ArticleBody = () => (
       </Section>
 
     </div>
+    </div>
   </article>
 );
 
@@ -331,13 +333,15 @@ const FAQItem = ({ item, isOpen, onClick }) => (
 const ArticleFAQ = () => {
   const [openIdx, setOpenIdx] = React.useState(null);
   return (
-    <section className="py-16 md:py-20 px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
+    <section className="py-14 md:py-20 px-4 sm:px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
       {/* Ambient glow — FAQ */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-pink-500/[0.03] blur-[160px] rounded-full pointer-events-none" />
-      <div className="max-w-3xl mx-auto relative z-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-8">Frequently Asked <span className="text-gradient-brand">Questions</span></h2>
-        <div className="space-y-3">
-          {faqItems.map((item, i) => <FAQItem key={i} item={item} isOpen={openIdx === i} onClick={() => setOpenIdx(openIdx === i ? null : i)} />)}
+      <div className="max-w-[920px] mx-auto relative z-10">
+        <div className="bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-14">
+          <h2 className="text-[22px] md:text-[28px] font-bold text-white tracking-tight mb-2">Frequently Asked <span className="text-gradient-brand">Questions</span></h2>
+          <div className="space-y-3">
+            {faqItems.map((item, i) => <FAQItem key={i} item={item} isOpen={openIdx === i} onClick={() => setOpenIdx(openIdx === i ? null : i)} />)}
+          </div>
         </div>
       </div>
     </section>

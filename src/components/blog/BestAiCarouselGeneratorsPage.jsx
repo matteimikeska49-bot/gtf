@@ -51,8 +51,8 @@ const ArticleSEOHead = () => {
 
 /* ── Breadcrumbs ── */
 const Breadcrumbs = () => (
-  <nav className="pt-28 pb-4 px-6 relative z-10 w-full bg-[#050505]">
-    <div className="max-w-3xl mx-auto flex items-center gap-1.5 text-sm text-zinc-500">
+  <nav className="pt-28 pb-4 px-4 sm:px-6 relative z-10 w-full bg-[#050505]">
+    <div className="max-w-[920px] mx-auto flex items-center gap-1.5 text-sm text-zinc-500">
       <Link to="/" className="hover:text-zinc-300 transition-colors">Home</Link>
       <ChevronRight className="w-3.5 h-3.5" />
       <Link to="/blog" className="hover:text-zinc-300 transition-colors">Blog</Link>
@@ -66,9 +66,9 @@ const Breadcrumbs = () => (
 const ArticleHero = () => {
   const isMobile = useIsMobile();
   return (
-    <section className="pb-16 md:pb-20 px-6 relative z-10 w-full bg-[#050505]">
+    <section className="pb-16 md:pb-20 px-4 sm:px-6 relative z-10 w-full bg-[#050505]">
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[700px] md:w-[1000px] h-[500px] md:h-[700px] bg-[#ec4899]/[0.06] blur-[60px] md:blur-[140px] rounded-full pointer-events-none" />
-      <div className="max-w-3xl mx-auto relative z-10">
+      <div className="max-w-[920px] mx-auto relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm">
             <Sparkles className="w-3.5 h-3.5 text-pink-400" />
@@ -109,14 +109,15 @@ const InlineProductBlock = ({ text, to }) => (
 
 /* ── Article Body ── */
 const ArticleBody = () => (
-  <article className="pt-4 pb-8 px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
+  <article className="pt-4 pb-8 px-4 sm:px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
     {/* Ambient glow — top of article */}
     <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[600px] md:w-[800px] h-[400px] md:h-[500px] bg-pink-500/[0.035] blur-[160px] rounded-full pointer-events-none" />
     {/* Ambient glow — mid article */}
     <div className="absolute top-[35%] right-[-10%] w-[500px] h-[500px] bg-purple-500/[0.025] blur-[180px] rounded-full pointer-events-none" />
     {/* Ambient glow — lower article */}
     <div className="absolute top-[65%] left-[-10%] w-[500px] h-[400px] bg-orange-500/[0.025] blur-[180px] rounded-full pointer-events-none" />
-    <div className="max-w-3xl mx-auto relative z-10">
+    <div className="max-w-[920px] mx-auto relative z-10">
+    <div className="bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-14">
 
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Finding the <strong className="text-white">best AI carousel generator</strong> in 2026 is not just about picking a tool that can split text into slides.
@@ -277,7 +278,7 @@ const ArticleBody = () => (
         The best tool should reduce manual work, not add another complicated step.
       </p>
 
-      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <div className="my-12 md:my-14 flex items-center gap-4"><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /><div className="w-1 h-1 rounded-full bg-pink-500/40" /><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /></div>
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">7 best AI carousel generators and tool categories</h2>
 
       <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5 mt-12">1. GoToFlow: best for full AI carousel workflow</h3>
@@ -312,7 +313,7 @@ const ArticleBody = () => (
         If you want a full AI workflow for carousel creation, start with <Link to="/ai-carousel-maker" className="text-pink-400 hover:underline">GoToFlow AI Carousel Maker</Link>.
       </p>
 
-      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <div className="my-10 md:my-12 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">2. Canva: best for design templates</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Canva is one of the most popular options for visual design and templates. It is especially useful when you already know what your carousel should say and need to turn it into polished slides quickly.
@@ -327,7 +328,7 @@ const ArticleBody = () => (
         Canva is strong for design, but it may not solve the strategy and structure problem by itself.
       </p>
 
-      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <div className="my-10 md:my-12 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">3. ChatGPT / Claude: best for raw brainstorming</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         General AI assistants like ChatGPT and Claude are not carousel makers by default, but they can be useful at the beginning of the process.
@@ -342,7 +343,7 @@ const ArticleBody = () => (
         General AI tools are flexible, but they often write like a long-form assistant unless you force them into a slide-by-slide structure.
       </p>
 
-      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <div className="my-10 md:my-12 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">4. Gamma: best for slide-style drafts</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Gamma is closer to a presentation-style AI tool. It can be useful for turning structured ideas into clean, deck-like content.
@@ -357,7 +358,7 @@ const ArticleBody = () => (
         Gamma can be useful when your carousel is closer to a mini-presentation than a casual social post.
       </p>
 
-      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <div className="my-10 md:my-12 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">5. Taplio / ContentIn: best for LinkedIn workflows</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         LinkedIn-focused tools like Taplio and ContentIn are built around the broader LinkedIn content workflow. They often combine AI writing, scheduling, idea management, and analytics.
@@ -372,7 +373,7 @@ const ArticleBody = () => (
         These tools are useful if your main need is not just carousel generation, but the entire LinkedIn publishing workflow. For carousel-specific ideas on LinkedIn, see our <Link to="/blog/linkedin-carousel-ideas" className="text-pink-400 hover:underline">LinkedIn carousel ideas</Link> guide.
       </p>
 
-      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <div className="my-10 md:my-12 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">6. Jasper / Copy.ai: best for brand voice and teams</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Jasper and Copy.ai are broader AI writing platforms. They are often used by teams that need to keep content aligned with a specific brand voice.
@@ -387,7 +388,7 @@ const ArticleBody = () => (
         These tools can be valuable for teams, but they are not always the fastest path from idea to finished carousel.
       </p>
 
-      <hr className="border-white/[0.04] my-10 md:my-12" />
+      <div className="my-10 md:my-12 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5">7. Figma: best for custom design systems</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         Figma is not an AI carousel generator in the writing sense, but it is a strong option for teams that want a custom carousel system.
@@ -402,74 +403,94 @@ const ArticleBody = () => (
         Figma is powerful when you already have the content and want full control over how it looks.
       </p>
 
-      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <div className="my-12 md:my-14 flex items-center gap-4"><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /><div className="w-1 h-1 rounded-full bg-pink-500/40" /><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /></div>
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Quick comparison table</h2>
-      <div className="overflow-x-auto mb-14 md:mb-16 rounded-2xl border border-white/[0.08] bg-white/[0.015]">
-        <table className="w-full min-w-[800px] text-left border-collapse text-zinc-300 text-sm md:text-base">
+      <div className="hidden md:block overflow-x-auto mb-14 md:mb-16 rounded-2xl border border-white/[0.08] bg-white/[0.015]">
+        <table className="w-full min-w-[800px] text-left border-collapse text-zinc-300 text-sm">
           <thead>
             <tr className="bg-white/[0.06]">
-              <th className="p-4 md:p-5 border-b border-white/10 font-bold text-white text-sm">Tool / Category</th>
-              <th className="p-4 md:p-5 border-b border-white/10 font-bold text-white text-sm">When to choose it</th>
-              <th className="p-4 md:p-5 border-b border-white/10 font-bold text-white text-sm">Strength</th>
-              <th className="p-4 md:p-5 border-b border-white/10 font-bold text-white text-sm">What to keep in mind</th>
-              <th className="p-4 md:p-5 border-b border-white/10 font-bold text-white text-sm">Best fit</th>
+              <th className="p-4 lg:p-5 border-b border-white/10 font-bold text-white text-sm">Tool / Category</th>
+              <th className="p-4 lg:p-5 border-b border-white/10 font-bold text-white text-sm">When to choose it</th>
+              <th className="p-4 lg:p-5 border-b border-white/10 font-bold text-white text-sm">Strength</th>
+              <th className="p-4 lg:p-5 border-b border-white/10 font-bold text-white text-sm">What to keep in mind</th>
+              <th className="p-4 lg:p-5 border-b border-white/10 font-bold text-white text-sm">Best fit</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors">
-              <td className="p-4 md:p-5 font-medium text-white"><strong>GoToFlow</strong></td>
-              <td className="p-4 md:p-5">You want to create a carousel from a topic, link, video, or competitor example</td>
-              <td className="p-4 md:p-5">Structure, copy, visual style, carousel generation</td>
-              <td className="p-4 md:p-5">Best results come from clear inputs and style direction; you can refine or regenerate versions</td>
-              <td className="p-4 md:p-5">Founders, creators, marketers, agencies</td>
+              <td className="p-4 lg:p-5 font-medium text-white"><strong>GoToFlow</strong></td>
+              <td className="p-4 lg:p-5">You want to create a carousel from a topic, link, video, or competitor example</td>
+              <td className="p-4 lg:p-5">Structure, copy, visual style, carousel generation</td>
+              <td className="p-4 lg:p-5">Best results come from clear inputs and style direction; you can refine or regenerate versions</td>
+              <td className="p-4 lg:p-5">Founders, creators, marketers, agencies</td>
             </tr>
             <tr className="border-b border-white/[0.05] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
-              <td className="p-4 md:p-5 font-medium text-white"><strong>Canva</strong></td>
-              <td className="p-4 md:p-5">You already have the content and need design templates</td>
-              <td className="p-4 md:p-5">Templates, visual editing, export</td>
-              <td className="p-4 md:p-5">Structure and copy may need to be prepared first</td>
-              <td className="p-4 md:p-5">Small businesses, SMM teams, creators</td>
+              <td className="p-4 lg:p-5 font-medium text-white"><strong>Canva</strong></td>
+              <td className="p-4 lg:p-5">You already have the content and need design templates</td>
+              <td className="p-4 lg:p-5">Templates, visual editing, export</td>
+              <td className="p-4 lg:p-5">Structure and copy may need to be prepared first</td>
+              <td className="p-4 lg:p-5">Small businesses, SMM teams, creators</td>
             </tr>
             <tr className="border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors">
-              <td className="p-4 md:p-5 font-medium text-white"><strong>ChatGPT / Claude</strong></td>
-              <td className="p-4 md:p-5">You need ideas or raw drafts</td>
-              <td className="p-4 md:p-5">Flexible brainstorming and research</td>
-              <td className="p-4 md:p-5">No native visual workflow; needs manual formatting</td>
-              <td className="p-4 md:p-5">Power prompters, researchers</td>
+              <td className="p-4 lg:p-5 font-medium text-white"><strong>ChatGPT / Claude</strong></td>
+              <td className="p-4 lg:p-5">You need ideas or raw drafts</td>
+              <td className="p-4 lg:p-5">Flexible brainstorming and research</td>
+              <td className="p-4 lg:p-5">No native visual workflow; needs manual formatting</td>
+              <td className="p-4 lg:p-5">Power prompters, researchers</td>
             </tr>
             <tr className="border-b border-white/[0.05] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
-              <td className="p-4 md:p-5 font-medium text-white"><strong>Gamma</strong></td>
-              <td className="p-4 md:p-5">You need a slide-style draft or mini-deck</td>
-              <td className="p-4 md:p-5">Clean presentation-like structure</td>
-              <td className="p-4 md:p-5">Can feel more like a deck than a social carousel</td>
-              <td className="p-4 md:p-5">Consultants, educators</td>
+              <td className="p-4 lg:p-5 font-medium text-white"><strong>Gamma</strong></td>
+              <td className="p-4 lg:p-5">You need a slide-style draft or mini-deck</td>
+              <td className="p-4 lg:p-5">Clean presentation-like structure</td>
+              <td className="p-4 lg:p-5">Can feel more like a deck than a social carousel</td>
+              <td className="p-4 lg:p-5">Consultants, educators</td>
             </tr>
             <tr className="border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors">
-              <td className="p-4 md:p-5 font-medium text-white"><strong>Taplio / ContentIn</strong></td>
-              <td className="p-4 md:p-5">You need a LinkedIn publishing workflow</td>
-              <td className="p-4 md:p-5">Scheduling and content workflow support</td>
-              <td className="p-4 md:p-5">Broader and often more expensive than carousel-only tools</td>
-              <td className="p-4 md:p-5">LinkedIn power creators</td>
+              <td className="p-4 lg:p-5 font-medium text-white"><strong>Taplio / ContentIn</strong></td>
+              <td className="p-4 lg:p-5">You need a LinkedIn publishing workflow</td>
+              <td className="p-4 lg:p-5">Scheduling and content workflow support</td>
+              <td className="p-4 lg:p-5">Broader and often more expensive than carousel-only tools</td>
+              <td className="p-4 lg:p-5">LinkedIn power creators</td>
             </tr>
             <tr className="border-b border-white/[0.05] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
-              <td className="p-4 md:p-5 font-medium text-white"><strong>Jasper / Copy.ai</strong></td>
-              <td className="p-4 md:p-5">You need brand voice support for a team</td>
-              <td className="p-4 md:p-5">Tone consistency and scalable writing</td>
-              <td className="p-4 md:p-5">Mostly text-focused</td>
-              <td className="p-4 md:p-5">Marketing teams, agencies</td>
+              <td className="p-4 lg:p-5 font-medium text-white"><strong>Jasper / Copy.ai</strong></td>
+              <td className="p-4 lg:p-5">You need brand voice support for a team</td>
+              <td className="p-4 lg:p-5">Tone consistency and scalable writing</td>
+              <td className="p-4 lg:p-5">Mostly text-focused</td>
+              <td className="p-4 lg:p-5">Marketing teams, agencies</td>
             </tr>
             <tr className="hover:bg-white/[0.02] transition-colors">
-              <td className="p-4 md:p-5 font-medium text-white"><strong>Figma</strong></td>
-              <td className="p-4 md:p-5">You need a custom visual system</td>
-              <td className="p-4 md:p-5">Full visual control</td>
-              <td className="p-4 md:p-5">Requires design skill and prepared content</td>
-              <td className="p-4 md:p-5">Designers, agencies</td>
+              <td className="p-4 lg:p-5 font-medium text-white"><strong>Figma</strong></td>
+              <td className="p-4 lg:p-5">You need a custom visual system</td>
+              <td className="p-4 lg:p-5">Full visual control</td>
+              <td className="p-4 lg:p-5">Requires design skill and prepared content</td>
+              <td className="p-4 lg:p-5">Designers, agencies</td>
             </tr>
           </tbody>
         </table>
       </div>
+      {/* Mobile stacked cards */}
+      <div className="md:hidden space-y-3 mb-14 md:mb-16">
+        {[
+          { name: 'GoToFlow', when: 'You want to create a carousel from a topic, link, video, or competitor example', strength: 'Structure, copy, visual style, carousel generation', note: 'Best results come from clear inputs and style direction; you can refine or regenerate versions', fit: 'Founders, creators, marketers, agencies' },
+          { name: 'Canva', when: 'You already have the content and need design templates', strength: 'Templates, visual editing, export', note: 'Structure and copy may need to be prepared first', fit: 'Small businesses, SMM teams, creators' },
+          { name: 'ChatGPT / Claude', when: 'You need ideas or raw drafts', strength: 'Flexible brainstorming and research', note: 'No native visual workflow; needs manual formatting', fit: 'Power prompters, researchers' },
+          { name: 'Gamma', when: 'You need a slide-style draft or mini-deck', strength: 'Clean presentation-like structure', note: 'Can feel more like a deck than a social carousel', fit: 'Consultants, educators' },
+          { name: 'Taplio / ContentIn', when: 'You need a LinkedIn publishing workflow', strength: 'Scheduling and content workflow support', note: 'Broader and often more expensive than carousel-only tools', fit: 'LinkedIn power creators' },
+          { name: 'Jasper / Copy.ai', when: 'You need brand voice support for a team', strength: 'Tone consistency and scalable writing', note: 'Mostly text-focused', fit: 'Marketing teams, agencies' },
+          { name: 'Figma', when: 'You need a custom visual system', strength: 'Full visual control', note: 'Requires design skill and prepared content', fit: 'Designers, agencies' },
+        ].map((t, i) => (
+          <div key={i} className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 space-y-2.5">
+            <div className="text-white font-semibold text-sm">{t.name}</div>
+            <div className="flex flex-col gap-0.5"><span className="text-[11px] text-zinc-500 uppercase tracking-wider font-medium">When to choose</span><span className="text-zinc-300 text-[13px] leading-relaxed">{t.when}</span></div>
+            <div className="flex flex-col gap-0.5"><span className="text-[11px] text-zinc-500 uppercase tracking-wider font-medium">Strength</span><span className="text-zinc-300 text-[13px] leading-relaxed">{t.strength}</span></div>
+            <div className="flex flex-col gap-0.5"><span className="text-[11px] text-zinc-500 uppercase tracking-wider font-medium">Keep in mind</span><span className="text-zinc-300 text-[13px] leading-relaxed">{t.note}</span></div>
+            <div className="flex flex-col gap-0.5"><span className="text-[11px] text-zinc-500 uppercase tracking-wider font-medium">Best fit</span><span className="text-zinc-300 text-[13px] leading-relaxed">{t.fit}</span></div>
+          </div>
+        ))}
+      </div>
 
-      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <div className="my-12 md:my-14 flex items-center gap-4"><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /><div className="w-1 h-1 rounded-full bg-pink-500/40" /><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /></div>
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Why generic AI writers are not always enough for carousels</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         You can ask a general AI tool to “write a carousel,” but the result often looks like five similar slides with too much text and no real progression.
@@ -629,7 +650,7 @@ const ArticleBody = () => (
         That version has a clearer path: pain, mistake, fix, summary, and next step.
       </p>
 
-      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <div className="my-12 md:my-14 flex items-center gap-4"><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /><div className="w-1 h-1 rounded-full bg-pink-500/40" /><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /></div>
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Which AI carousel generator should you choose?</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         The right tool depends on where you get stuck.
@@ -647,7 +668,7 @@ const ArticleBody = () => (
         If you are creating expert content, do not start with design alone. Start with the message: topic, angle, structure, copy, and CTA. Then choose the visual style that supports that message.
       </p>
 
-      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <div className="my-12 md:my-14 flex items-center gap-4"><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /><div className="w-1 h-1 rounded-full bg-pink-500/40" /><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /></div>
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Common mistakes when choosing an AI carousel generator</h2>
 
       <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Choosing only by design</h3>
@@ -680,7 +701,7 @@ const ArticleBody = () => (
         If a slide is hard to read on a phone, it needs to be simplified.
       </p>
 
-      <hr className="border-white/[0.06] my-16 md:my-20" />
+      <div className="my-12 md:my-14 flex items-center gap-4"><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /><div className="w-1 h-1 rounded-full bg-pink-500/40" /><div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" /></div>
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Final thoughts</h2>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         The best AI carousel generator is not always the tool with the most features. It is the tool that solves your biggest bottleneck.
@@ -709,6 +730,7 @@ const ArticleBody = () => (
         to="/linkedin-carousel-maker"
       />
 
+    </div>
     </div>
   </article>
 );
@@ -739,14 +761,16 @@ const FAQItem = ({ item, isOpen, onClick }) => (
 const ArticleFAQ = () => {
   const [openIdx, setOpenIdx] = React.useState(null);
   return (
-    <section className="py-16 md:py-20 px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
+    <section className="py-14 md:py-20 px-4 sm:px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
       {/* Ambient glow — FAQ */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-pink-500/[0.03] blur-[160px] rounded-full pointer-events-none" />
-      <div className="max-w-3xl mx-auto relative z-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-3 border-l-[3px] border-pink-500/60 pl-4">Frequently Asked Questions</h2>
-        <p className="text-zinc-400 text-sm md:text-base mb-8 pl-[19px]">Common questions about AI carousel generators</p>
-        <div className="space-y-3">
-          {faqItems.map((item, i) => <FAQItem key={i} item={item} isOpen={openIdx === i} onClick={() => setOpenIdx(openIdx === i ? null : i)} />)}
+      <div className="max-w-[920px] mx-auto relative z-10">
+        <div className="bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-14">
+          <h2 className="text-[22px] md:text-[28px] font-bold text-white tracking-tight mb-2">Frequently Asked Questions</h2>
+          <p className="text-zinc-400 text-sm md:text-base mb-8">Common questions about AI carousel generators</p>
+          <div className="space-y-3">
+            {faqItems.map((item, i) => <FAQItem key={i} item={item} isOpen={openIdx === i} onClick={() => setOpenIdx(openIdx === i ? null : i)} />)}
+          </div>
         </div>
       </div>
     </section>
