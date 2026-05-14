@@ -38,6 +38,8 @@ const ROUTES = [
   '/privacy-policy',
   '/ru/politika',
   '/politika',
+  '/ru/polzovatelskoe-soglashenie',
+  '/ru/soglasie-na-obrabotku-personalnyh-dannyh',
   '/refund-policy',
   '/terms-of-service',
   '/personal-data-consent',

@@ -183,12 +183,36 @@
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/terms-of-service" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/polzovatelskoe-soglashenie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/terms-of-service" />
+  </url>
+  <url>
+    <loc>https://gotoflow.io/ru/polzovatelskoe-soglashenie</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/terms-of-service" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/polzovatelskoe-soglashenie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/terms-of-service" />
   </url>
   <url>
     <loc>https://gotoflow.io/personal-data-consent</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/personal-data-consent" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/soglasie-na-obrabotku-personalnyh-dannyh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/personal-data-consent" />
+  </url>
+  <url>
+    <loc>https://gotoflow.io/ru/soglasie-na-obrabotku-personalnyh-dannyh</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/personal-data-consent" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/soglasie-na-obrabotku-personalnyh-dannyh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/personal-data-consent" />
   </url>
   <url>
     <loc>https://gotoflow.io/pricing</loc>

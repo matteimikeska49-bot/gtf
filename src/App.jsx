@@ -35,6 +35,9 @@ import { TermsOfServicePage } from './components/TermsOfServicePage';
 import { PersonalDataConsentPage } from './components/PersonalDataConsentPage';
 import { NotFoundPage } from './components/NotFoundPage';
 import { PricingPage } from './components/PricingPage';
+import { RuTermsOfServicePage } from './components/RuTermsOfServicePage';
+import { RuPersonalDataConsentPage } from './components/RuPersonalDataConsentPage';
+
 const LandingPage = () => (
   <MainLayout>
     <Header />
@@ -81,6 +84,8 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/ru/politika" element={<PrivacyPolicyPage />} />
         <Route path="/politika" element={<Navigate to="/ru/politika" replace />} />
+        <Route path="/ru/polzovatelskoe-soglashenie" element={<RuTermsOfServicePage />} />
+        <Route path="/ru/soglasie-na-obrabotku-personalnyh-dannyh" element={<RuPersonalDataConsentPage />} />
         <Route path="/carousel/create" element={<Navigate to="/ai-carousel-maker" replace />} />
         <Route path="/refund-policy" element={<RefundPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />

@@ -18,7 +18,7 @@ const translations = {
  */
 function getInitialLang(pathname) {
   // 1. Explicit SEO pages strictly follow URL
-  if (pathname === '/ru/ai-generator-karuselej' || pathname === '/ru/generator-kontenta' || pathname === '/ru/generator-postov-instagram' || pathname === '/ru/generator-karuselej-linkedin' || pathname === '/ru/blog' || pathname === '/ru/blog/idei-karuselej-linkedin' || pathname === '/ru/politika') return 'RU';
+  if (pathname === '/ru/ai-generator-karuselej' || pathname === '/ru/generator-kontenta' || pathname === '/ru/generator-postov-instagram' || pathname === '/ru/generator-karuselej-linkedin' || pathname === '/ru/blog' || pathname === '/ru/blog/idei-karuselej-linkedin' || pathname === '/ru/politika' || pathname === '/ru/polzovatelskoe-soglashenie' || pathname === '/ru/soglasie-na-obrabotku-personalnyh-dannyh') return 'RU';
   if (pathname === '/ai-carousel-maker' || pathname === '/ai-content-generator' || pathname === '/ai-instagram-post-generator' || pathname === '/linkedin-carousel-maker' || pathname === '/blog' || pathname === '/blog/linkedin-carousel-ideas' || pathname === '/blog/best-ai-carousel-generators' || pathname === '/privacy-policy' || pathname === '/refund-policy' || pathname === '/terms-of-service' || pathname === '/personal-data-consent' || pathname === '/pricing') return 'EN';
 
   // 2. Check saved preference
@@ -77,7 +77,7 @@ export const LanguageProvider = ({ children }) => {
   useEffect(() => {
     if (location.pathname === '/ai-carousel-maker' || location.pathname === '/ai-content-generator' || location.pathname === '/ai-instagram-post-generator' || location.pathname === '/linkedin-carousel-maker' || location.pathname === '/blog' || location.pathname === '/blog/linkedin-carousel-ideas' || location.pathname === '/blog/best-ai-carousel-generators' || location.pathname === '/privacy-policy' || location.pathname === '/refund-policy' || location.pathname === '/terms-of-service' || location.pathname === '/personal-data-consent' || location.pathname === '/pricing') {
       setLangState('EN');
-    } else if (location.pathname === '/ru/ai-generator-karuselej' || location.pathname === '/ru/generator-kontenta' || location.pathname === '/ru/generator-postov-instagram' || location.pathname === '/ru/generator-karuselej-linkedin' || location.pathname === '/ru/blog' || location.pathname === '/ru/blog/idei-karuselej-linkedin' || location.pathname === '/ru/politika') {
+    } else if (location.pathname === '/ru/ai-generator-karuselej' || location.pathname === '/ru/generator-kontenta' || location.pathname === '/ru/generator-postov-instagram' || location.pathname === '/ru/generator-karuselej-linkedin' || location.pathname === '/ru/blog' || location.pathname === '/ru/blog/idei-karuselej-linkedin' || location.pathname === '/ru/politika' || location.pathname === '/ru/polzovatelskoe-soglashenie' || location.pathname === '/ru/soglasie-na-obrabotku-personalnyh-dannyh') {
       setLangState('RU');
     } else if (location.pathname === '/ru' || location.pathname === '/ru/') {
       setLangState('RU');
@@ -161,6 +161,8 @@ export const LanguageProvider = ({ children }) => {
     ['/blog/linkedin-carousel-ideas', '/ru/blog/idei-karuselej-linkedin'],
     ['/blog', '/ru/blog'],
     ['/privacy-policy', '/ru/politika'],
+    ['/terms-of-service', '/ru/polzovatelskoe-soglashenie'],
+    ['/personal-data-consent', '/ru/soglasie-na-obrabotku-personalnyh-dannyh'],
   ];
 
   const getPairedRoute = (pathname, targetLang) => {
