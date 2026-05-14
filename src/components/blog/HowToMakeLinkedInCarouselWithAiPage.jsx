@@ -54,27 +54,8 @@ const ArticleSEOHead = () => {
     setLink('canonical', 'https://gotoflow.io/blog/how-to-make-linkedin-carousel-with-ai');
     document.documentElement.lang = 'en';
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqItems.map(item => ({
-        "@type": "Question",
-        "name": item.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.a
-        }
-      }))
-    });
-    document.head.appendChild(script);
-
     return () => {
       document.title = 'GoToFlow';
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
     };
   }, []);
   return null;

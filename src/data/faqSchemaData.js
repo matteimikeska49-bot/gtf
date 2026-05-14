@@ -97,5 +97,26 @@ export const faqSchemaData = {
     { q: "Can I create a carousel from a competitor video or post?", a: "Yes, if the tool supports using links, videos, or competitor examples as input. The goal should not be to copy the original, but to analyze the idea, find a new angle, and create a fresh carousel for your audience." },
     { q: "Do I still need to edit AI-generated carousel content?", a: "Yes, but editing does not mean rebuilding everything from scratch. Usually, you need to choose the best version, adjust the prompt, regenerate parts if needed, refine wording, and make sure the carousel matches your voice and brand." },
     { q: "What should I use if I want both content and visual style?", a: "Use a tool that supports more than text generation. For example, GoToFlow helps with the carousel structure, copy, visual style, and draft generation, while still letting you refine or regenerate the result before publishing." }
+  ],
+  "/blog/how-to-make-linkedin-carousel-with-ai": [
+    { q: 'Can AI create LinkedIn carousels?', a: 'Yes. AI can help create the hook, slide structure, copy, caption, CTA, and visual direction for a LinkedIn carousel. You should still review and edit the final version before publishing.' },
+    { q: 'What is the best way to structure a LinkedIn carousel?', a: 'A strong structure usually includes a hook, context, several value slides, a summary, and a CTA. Each slide should have one clear job.' },
+    { q: 'Can I create a LinkedIn carousel from a video or link?', a: 'Yes. With the right workflow, you can use a video, article, or competitor example as input, then turn it into a new carousel structure with your own angle.' },
+    { q: 'How many slides should a LinkedIn carousel have?', a: 'Most LinkedIn carousels work well with 7–10 slides. Shorter carousels can work if the idea is simple. Longer carousels need stronger pacing.' },
+    { q: 'What format should I use for a LinkedIn carousel?', a: 'PDF is usually the simplest format for a LinkedIn carousel because it keeps the slide layout consistent. Create one page per slide and check the file before uploading.' },
+    { q: 'What is the best AI tool for LinkedIn carousels?', a: 'It depends on your workflow. GoToFlow is useful for turning a topic, link, video, or competitor example into a structured carousel draft with copy and visual style. ChatGPT or Claude can help with ideas and text, while Canva or Figma can help with manual design.' },
+    { q: 'Should I publish AI-generated carousels without editing?', a: 'No. AI-generated drafts should be reviewed for accuracy, tone, readability, and originality. Add your examples and point of view before publishing.' }
+  ],
+  "/ru/blog/luchshie-ai-generatory-karuselej": [
+    { q: 'Какой AI-генератор каруселей лучший?', a: 'Если нужен полный workflow от идеи до визуального черновика, подойдёт GoToFlow. Если нужен только дизайн, можно использовать Canva или Figma. Для идей и текстов подойдут ChatGPT, Claude или Gemini.' },
+    { q: 'Можно ли сделать карусель для Instagram с помощью AI?', a: 'Да. AI может помочь с идеей, структурой, текстом и визуальным направлением. Но для Instagram особенно важно проверить визуал и читаемость на мобильном.' },
+    { q: 'Можно ли сделать карусель для LinkedIn с помощью AI?', a: 'Да. AI может помочь с первым слайдом, структурой, текстом, CTA и визуальным стилем. Для LinkedIn важно, чтобы карусель была логичной, полезной и хорошо читалась в PDF-формате.' },
+    { q: 'Чем GoToFlow отличается от Canva?', a: 'Canva сильна в шаблонах и ручном дизайне. GoToFlow помогает пройти workflow карусели: тема/ссылка/видео → структура → текст → стиль → черновик.' },
+    { q: 'Нужен ли дизайнер, чтобы делать карусели?', a: 'Не всегда. Для базовых и регулярных каруселей можно использовать AI-инструменты. Но если нужен уникальный брендовый стиль, Figma и дизайнер всё ещё могут быть полезны.' },
+    { q: 'Можно ли использовать видео конкурента как источник?', a: 'Да, если инструмент поддерживает работу с видео или ссылками. Важно не копировать, а использовать источник как основу для новой структуры и своего угла.' },
+    { q: 'Что лучше: AI-генератор каруселей или ChatGPT?', a: 'ChatGPT хорош для идей и текста. AI-генератор каруселей лучше, если вам нужен не только текст, но и структура, визуальный стиль и черновик карусели.' },
+    { q: 'Как сделать карусель быстрее?', a: 'Используйте готовый workflow: тема или ссылка → хук → структура → текст → визуальный стиль → черновик → финальная редактура. Так вы не начинаете каждый раз с пустого листа.' },
+    { q: 'Есть ли бесплатные AI-генераторы каруселей?', a: 'Да, у некоторых инструментов есть бесплатный старт или пробный доступ. Но часто бесплатные версии ограничивают количество генераций, экспорт, бренд-стили или продвинутые функции.' },
+    { q: 'Можно ли создать карусель онлайн без дизайнера?', a: 'Да. AI-инструменты помогают собрать структуру, текст и визуальный черновик. Но финальную карусель всё равно стоит проверить: читаемость, стиль, факты и соответствие платформе.' }
   ]
 };

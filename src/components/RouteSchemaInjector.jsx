@@ -117,6 +117,20 @@ const ROUTES_CONFIG = {
     lang: 'ru',
     type: 'article',
     crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Блог', path: '/ru/blog' }, { name: 'Идеи каруселей LinkedIn', path: '/ru/blog/idei-karuselej-linkedin' }]
+  },
+  '/blog/how-to-make-linkedin-carousel-with-ai': {
+    title: 'How to Make a LinkedIn Carousel with AI: Step-by-Step Guide',
+    desc: 'Learn how to make a LinkedIn carousel with AI using hooks, slide structure, prompts, visual style, examples, and a step-by-step carousel workflow.',
+    lang: 'en',
+    type: 'article',
+    crumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'How to Make a LinkedIn Carousel with AI', path: '/blog/how-to-make-linkedin-carousel-with-ai' }]
+  },
+  '/ru/blog/luchshie-ai-generatory-karuselej': {
+    title: 'Лучшие AI-генераторы каруселей в 2026 году: нейросети для Instagram, LinkedIn и соцсетей',
+    desc: 'Сравниваем лучшие AI-генераторы каруселей для Instagram, LinkedIn и соцсетей по удобству, функциям и цене. Выберите идеальную нейросеть для контента.',
+    lang: 'ru',
+    type: 'article',
+    crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Блог', path: '/ru/blog' }, { name: 'Лучшие AI-генераторы каруселей', path: '/ru/blog/luchshie-ai-generatory-karuselej' }]
   }
 };
 
@@ -126,8 +140,13 @@ export const RouteSchemaInjector = () => {
   
   useEffect(() => {
     const config = ROUTES_CONFIG[path];
-    if (!config) return;
-
+    if (!config) {
+      const existing = document.getElementById('dynamic-ld-json');
+      if (existing) {
+        existing.remove();
+      }
+      return;
+    }
     const items = [
       getOrganizationSchema(),
       getWebSiteSchema(config.lang)
