@@ -520,14 +520,14 @@ const ArticleBody = () => (
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         A practical workflow can look like this:
       </p>
-      <ol className="list-none pl-0 space-y-4 mb-5 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
-        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">1</span><span><strong>Input:</strong> start with a topic, idea, link, video, or competitor example.</span></li>
-        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">2</span><span><strong>GoToFlow:</strong> analyze the input, generate the angle, hook, slide structure, and copy.</span></li>
-        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">3</span><span><strong>Visual style:</strong> choose a ready-made style or write your own style prompt.</span></li>
-        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">4</span><span><strong>Carousel generation:</strong> get a visual carousel draft with text and structure.</span></li>
-        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">5</span><span><strong>Refinement:</strong> regenerate a version, adjust the tone, tweak the prompt, or edit the copy if needed.</span></li>
-        <li className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">6</span><span><strong>Publishing:</strong> adapt the final result to the platform and publish.</span></li>
-      </ol>
+      <div className="space-y-4 mb-5 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
+        <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">1</span><span><strong>Input:</strong> start with a topic, idea, link, video, or competitor example.</span></div>
+        <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">2</span><span><strong>GoToFlow:</strong> analyze the input, generate the angle, hook, slide structure, and copy.</span></div>
+        <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">3</span><span><strong>Visual style:</strong> choose a ready-made style or write your own style prompt.</span></div>
+        <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">4</span><span><strong>Carousel generation:</strong> get a visual carousel draft with text and structure.</span></div>
+        <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">5</span><span><strong>Refinement:</strong> regenerate a version, adjust the tone, tweak the prompt, or edit the copy if needed.</span></div>
+        <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">6</span><span><strong>Publishing:</strong> adapt the final result to the platform and publish.</span></div>
+      </div>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         This workflow works because it separates two important ideas:
       </p>
