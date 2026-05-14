@@ -3,12 +3,13 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Header } from '../Header';
+import { getAppUrlWithRef } from '../../utils/url';
 import { Footer } from '../Footer';
 import { MainLayout } from '../MainLayout';
 import { CookieBanner } from '../CookieBanner';
 import { useIsMobile } from '../../hooks/useIsMobile';
 
-const CTA_URL = 'https://gotoflow.io/ai-carousel-maker';
+const CTA_URL = 'https://app.gotoflow.io';
 
 /* ── SEO Head ── */
 const ArticleSEOHead = () => {
@@ -82,7 +83,7 @@ const ArticleHero = () => {
           Compare AI carousel generators by use case: structure, hooks, visual style, and social media content workflows.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }}>
-          <a href={CTA_URL} className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_35px_rgba(236,72,153,0.3)] text-sm border border-pink-400/20 group">
+          <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_35px_rgba(236,72,153,0.3)] text-sm border border-pink-400/20 group">
             Try Carousel Generator <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
@@ -101,9 +102,9 @@ const InlineProductBlock = ({ text, to }) => (
       </div>
       <p className="text-zinc-200 font-medium text-sm md:text-base leading-snug">{text}</p>
     </div>
-    <Link to={to} className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-xs hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_25px_rgba(236,72,153,0.2)] border border-pink-400/20 group whitespace-nowrap">
+    <a href={getAppUrlWithRef('https://app.gotoflow.io')} className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-xs hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_25px_rgba(236,72,153,0.2)] border border-pink-400/20 group whitespace-nowrap">
       Try it free <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-    </Link>
+    </a>
   </div>
 );
 
@@ -875,7 +876,7 @@ const ArticleCTA = () => {
           <p className="text-zinc-300 text-sm md:text-base leading-[1.7] mb-8 max-w-lg mx-auto">
             Create structured, branded carousels with GoToFlow.
           </p>
-          <a href={CTA_URL} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.35)] text-base border border-pink-400/20 group">
+          <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.35)] text-base border border-pink-400/20 group">
             Try GoToFlow <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <p className="text-xs text-zinc-500 mt-4">Free — No credit card required</p>
