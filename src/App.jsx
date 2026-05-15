@@ -75,6 +75,7 @@ function App() {
         <Route path="/ru/ai-generator-karuselej" element={<CarouselPageRu />} />
         <Route path="/ai-content-generator" element={<AIContentPage />} />
         <Route path="/ai-instagram-post-generator" element={<InstagramPostPage />} />
+        <Route path="/ai-post-maker" element={<Navigate to="/ai-instagram-post-generator" replace />} />
         <Route path="/ru/generator-kontenta" element={<AIContentPageRu />} />
         <Route path="/ru/generator-postov-instagram" element={<InstagramPostPageRu />} />
         <Route path="/linkedin-carousel-maker" element={<LinkedInCarouselPage />} />
