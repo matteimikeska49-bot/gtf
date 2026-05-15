@@ -93,18 +93,142 @@ const ArticleHero = () => {
   );
 };
 
+/* ── Local Helpers ── */
+const PromptBlock = ({ label = "Промпт", children }) => (
+  <div className="relative mb-8 mt-2 group">
+    {label && (
+      <div className="absolute -top-3 left-4 bg-[#050505] px-2 text-xs font-semibold tracking-wider text-pink-400 uppercase z-10">
+        {label}
+      </div>
+    )}
+    <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 md:p-6 text-zinc-300 font-mono text-[13px] md:text-sm leading-[1.7] overflow-x-auto whitespace-pre-wrap shadow-inner relative z-0">
+      {children}
+    </div>
+  </div>
+);
+
+const WorkflowBlock = ({ steps }) => (
+  <div className="flex flex-col md:flex-row flex-wrap items-stretch md:items-center gap-2 mb-8 p-5 bg-white/[0.02] border border-white/[0.05] rounded-2xl">
+    {steps.map((step, idx) => (
+      <React.Fragment key={idx}>
+        <div className="px-4 py-2.5 bg-[#0a0a0a] border border-white/[0.08] rounded-lg text-[13px] md:text-sm font-medium text-zinc-200 shadow-sm flex-1 md:flex-none text-center">
+          {step}
+        </div>
+        {idx < steps.length - 1 && (
+          <div className="hidden md:flex shrink-0 w-5 items-center justify-center">
+            <ArrowRight className="w-4 h-4 text-pink-500/50" />
+          </div>
+        )}
+        {idx < steps.length - 1 && (
+          <div className="flex md:hidden justify-center py-0.5">
+            <div className="w-px h-4 bg-pink-500/30"></div>
+          </div>
+        )}
+      </React.Fragment>
+    ))}
+  </div>
+);
+
+const ChecklistItem = ({ num, text }) => (
+  <div className="flex items-start gap-4 p-4 mb-3 bg-white/[0.02] border border-white/[0.04] rounded-2xl hover:border-white/[0.08] transition-colors">
+    {num && (
+      <div className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">
+        {num}
+      </div>
+    )}
+    <div className="text-[15px] md:text-base text-zinc-300 leading-relaxed pt-px">
+      {text}
+    </div>
+  </div>
+);
+
+const SlideCard = ({ num, title, desc, hint }) => (
+  <div className="bg-white/[0.02] border border-white/[0.05] rounded-2xl p-5 md:p-6 hover:border-white/10 transition-colors flex flex-col h-full">
+    <div className="flex items-center gap-3 mb-3">
+      <div className="px-2.5 py-1 rounded-md bg-white/[0.05] text-xs font-bold tracking-wide text-zinc-400 uppercase shrink-0">Слайд {num}</div>
+      <h4 className="text-base md:text-lg font-bold text-pink-300 leading-tight">{title}</h4>
+    </div>
+    <p className="text-zinc-300 text-[15px] leading-relaxed flex-grow">{desc}</p>
+    {hint && <p className="text-zinc-500 text-sm mt-3 pt-3 border-t border-white/[0.04]">{hint}</p>}
+  </div>
+);
+
+const ComparisonTable = () => (
+  <div className="mb-14 md:mb-16">
+    {/* Desktop View */}
+    <div className="hidden md:block w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
+      <table className="w-full text-left border-collapse">
+        <thead>
+          <tr className="border-b border-white/10 bg-white/[0.02]">
+            <th className="px-6 py-4 text-white font-semibold w-[30%]">Инструмент</th>
+            <th className="px-6 py-4 text-white font-semibold w-[35%]">Что делает лучше</th>
+            <th className="px-6 py-4 text-white font-semibold w-[35%]">Ограничение</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-white/[0.05] text-sm lg:text-[15px]">
+          <tr className="hover:bg-white/[0.01] transition-colors">
+            <td className="px-6 py-4 text-zinc-300">ChatGPT / Claude / Gemini</td>
+            <td className="px-6 py-4 text-zinc-300">Идеи, хук, структура, текст, промпты</td>
+            <td className="px-6 py-4 text-zinc-400">Не собирает визуальную карусель</td>
+          </tr>
+          <tr className="hover:bg-white/[0.01] transition-colors">
+            <td className="px-6 py-4 text-zinc-300">Canva / Figma</td>
+            <td className="px-6 py-4 text-zinc-300">Дизайн, шаблоны, ручная сборка</td>
+            <td className="px-6 py-4 text-zinc-400">Нужна готовая структура и текст</td>
+          </tr>
+          <tr className="hover:bg-white/[0.01] transition-colors">
+            <td className="px-6 py-4 text-zinc-300">Gamma</td>
+            <td className="px-6 py-4 text-zinc-300">Презентационный формат, быстрые слайды</td>
+            <td className="px-6 py-4 text-zinc-400">Может выглядеть как презентация, а не нативная карусель</td>
+          </tr>
+          <tr className="bg-pink-500/[0.03]">
+            <td className="px-6 py-4 font-semibold text-pink-300">GoToFlow</td>
+            <td className="px-6 py-4 text-zinc-300">Структура, текст, визуальный стиль и черновик карусели</td>
+            <td className="px-6 py-4 text-zinc-400">Результат всё равно нужно проверить перед публикацией</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    {/* Mobile View */}
+    <div className="md:hidden space-y-4">
+      <div className="bg-white/[0.02] border border-white/10 rounded-xl p-4">
+        <h4 className="text-white font-bold mb-3 pb-2 border-b border-white/[0.05]">ChatGPT / Claude / Gemini</h4>
+        <div className="mb-3"><span className="text-zinc-500 text-[11px] font-bold uppercase tracking-wider mb-1 block">Что делает лучше</span><p className="text-zinc-300 text-sm leading-relaxed">Идеи, хук, структура, текст, промпты</p></div>
+        <div><span className="text-zinc-500 text-[11px] font-bold uppercase tracking-wider mb-1 block">Ограничение</span><p className="text-zinc-400 text-sm leading-relaxed">Не собирает визуальную карусель</p></div>
+      </div>
+      <div className="bg-white/[0.02] border border-white/10 rounded-xl p-4">
+        <h4 className="text-white font-bold mb-3 pb-2 border-b border-white/[0.05]">Canva / Figma</h4>
+        <div className="mb-3"><span className="text-zinc-500 text-[11px] font-bold uppercase tracking-wider mb-1 block">Что делает лучше</span><p className="text-zinc-300 text-sm leading-relaxed">Дизайн, шаблоны, ручная сборка</p></div>
+        <div><span className="text-zinc-500 text-[11px] font-bold uppercase tracking-wider mb-1 block">Ограничение</span><p className="text-zinc-400 text-sm leading-relaxed">Нужна готовая структура и текст</p></div>
+      </div>
+      <div className="bg-white/[0.02] border border-white/10 rounded-xl p-4">
+        <h4 className="text-white font-bold mb-3 pb-2 border-b border-white/[0.05]">Gamma</h4>
+        <div className="mb-3"><span className="text-zinc-500 text-[11px] font-bold uppercase tracking-wider mb-1 block">Что делает лучше</span><p className="text-zinc-300 text-sm leading-relaxed">Презентационный формат, быстрые слайды</p></div>
+        <div><span className="text-zinc-500 text-[11px] font-bold uppercase tracking-wider mb-1 block">Ограничение</span><p className="text-zinc-400 text-sm leading-relaxed">Может выглядеть как презентация</p></div>
+      </div>
+      <div className="bg-pink-500/[0.05] border border-pink-500/20 rounded-xl p-4 relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-2"><Sparkles className="w-4 h-4 text-pink-500/30" /></div>
+        <h4 className="text-pink-400 font-bold mb-3 pb-2 border-b border-pink-500/10">GoToFlow</h4>
+        <div className="mb-3"><span className="text-pink-500/60 text-[11px] font-bold uppercase tracking-wider mb-1 block">Что делает лучше</span><p className="text-zinc-200 text-sm leading-relaxed">Структура, текст, визуальный стиль и черновик</p></div>
+        <div><span className="text-pink-500/60 text-[11px] font-bold uppercase tracking-wider mb-1 block">Ограничение</span><p className="text-zinc-400 text-sm leading-relaxed">Результат нужно проверить перед публикацией</p></div>
+      </div>
+    </div>
+  </div>
+);
+
 /* ── Inline Product Block ── */
 const InlineProductBlock = ({ text, to }) => (
   <div className="relative my-12 md:my-16 p-6 md:p-8 rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
     <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-pink-500/[0.03] via-transparent to-orange-500/[0.02] blur-xl" />
-    <div className="flex items-center gap-3">
-      <div className="shrink-0 w-9 h-9 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
-        <Sparkles className="w-4 h-4 text-pink-400" />
+    <div className="flex items-center gap-4">
+      <div className="shrink-0 w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
+        <Sparkles className="w-5 h-5 text-pink-400" />
       </div>
-      <p className="text-zinc-200 font-medium text-sm md:text-base leading-snug">{text}</p>
+      <p className="text-white font-semibold text-base md:text-lg leading-snug">{text}</p>
     </div>
-    <a href={getAppUrlWithRef('https://app.gotoflow.io')} className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-xs hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_25px_rgba(236,72,153,0.2)] border border-pink-400/20 group whitespace-nowrap">
-      Попробовать <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+    <a href={getAppUrlWithRef(to || CTA_URL)} className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-sm hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_30px_rgba(236,72,153,0.25)] border border-pink-400/20 group whitespace-nowrap">
+      Попробовать <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
     </a>
   </div>
 );
@@ -143,17 +267,17 @@ const ArticleBody = () => (
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">
           Если нужен быстрый план, процесс выглядит так:
         </p>
-        <div className="space-y-3 mb-6">
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">1</span><span>Выберите одну конкретную тему.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">2</span><span>Определите аудиторию.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">3</span><span>Сформулируйте формат карусели.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">4</span><span>Сгенерируйте 5–10 вариантов первого слайда.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">5</span><span>Соберите структуру слайдов.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">6</span><span>Напишите короткий текст для каждого слайда.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">7</span><span>Выберите визуальный стиль.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">8</span><span>Получите черновик карусели.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">9</span><span>Проверьте факты, тон и читаемость.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">10</span><span>Экспортируйте карусель в PDF или изображения и загрузите в LinkedIn.</span></div>
+        <div className="mb-6 space-y-1">
+          <ChecklistItem num="1" text="Выберите одну конкретную тему." />
+          <ChecklistItem num="2" text="Определите аудиторию." />
+          <ChecklistItem num="3" text="Сформулируйте формат карусели." />
+          <ChecklistItem num="4" text="Сгенерируйте 5–10 вариантов первого слайда." />
+          <ChecklistItem num="5" text="Соберите структуру слайдов." />
+          <ChecklistItem num="6" text="Напишите короткий текст для каждого слайда." />
+          <ChecklistItem num="7" text="Выберите визуальный стиль." />
+          <ChecklistItem num="8" text="Получите черновик карусели." />
+          <ChecklistItem num="9" text="Проверьте факты, тон и читаемость." />
+          <ChecklistItem num="10" text="Экспортируйте карусель в PDF или изображения и загрузите в LinkedIn." />
         </div>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
           Главная ошибка — начинать с дизайна.<br />Сначала должна быть мысль. Потом структура. Потом визуал.
@@ -291,9 +415,7 @@ const ArticleBody = () => (
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">
           Он помогает пройти путь:
         </p>
-        <div className="flex flex-wrap items-center gap-2 text-pink-400 font-medium bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 mb-6 text-[13px] md:text-sm">
-          <span>тема / ссылка / видео / черновик</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>хук</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>структура</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>текст слайдов</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>визуальный стиль</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>черновик карусели</span>
-        </div>
+        <WorkflowBlock steps={['тема / ссылка / видео', 'хук', 'структура', 'текст слайдов', 'визуальный стиль', 'черновик']} />
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           Это удобнее, если вы хотите не просто получить текст, а быстрее дойти до визуального результата.
         </p>
@@ -331,11 +453,11 @@ const ArticleBody = () => (
 
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">1. Выберите одну конкретную тему</h3>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Слабая тема:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Маркетинг</div>
+        <PromptBlock label="Пример">Маркетинг</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Сильнее:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">5 ошибок, из-за которых AI-контент звучит одинаково</div>
+        <PromptBlock label="Пример">5 ошибок, из-за которых AI-контент звучит одинаково</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Ещё сильнее:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Почему ваши посты, написанные с AI, не дочитывают до конца</div>
+        <PromptBlock label="Пример">Почему ваши посты, написанные с AI, не дочитывают до конца</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           Хорошая тема должна быть конкретной.
         </p>
@@ -354,13 +476,13 @@ const ArticleBody = () => (
           Одна и та же тема будет звучать по-разному для разных людей.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Например, тема:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">как использовать AI для контента</div>
+        <PromptBlock label="Пример">как использовать AI для контента</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Для основателя SaaS это может быть:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Как основателю SaaS делать LinkedIn-контент быстрее без отдельной контент-команды</div>
+        <PromptBlock label="Пример">Как основателю SaaS делать LinkedIn-контент быстрее без отдельной контент-команды</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Для маркетолога:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Как маркетологу превращать вебинары и статьи в LinkedIn-карусели</div>
+        <PromptBlock label="Пример">Как маркетологу превращать вебинары и статьи в LinkedIn-карусели</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Для эксперта:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Как эксперту упаковать опыт в LinkedIn-карусели без дизайнера</div>
+        <PromptBlock label="Пример">Как эксперту упаковать опыт в LinkedIn-карусели без дизайнера</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Перед генерацией укажите аудиторию:</p>
         <ul className="space-y-3 mb-5">
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>основатели;</span></li>
@@ -399,9 +521,9 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>экспертный вывод.</span></li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Пример слабого запроса:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Сделай карусель про AI-контент</div>
+        <PromptBlock label="Слабо">Сделай карусель про AI-контент</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Пример сильного запроса:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Сделай LinkedIn-карусель на 8 слайдов в формате “ошибки и решения” для B2B-основателей, которые используют AI для контента, но получают слишком общий текст.</div>
+        <PromptBlock label="Сильно">Сделай LinkedIn-карусель на 8 слайдов в формате “ошибки и решения” для B2B-основателей, которые используют AI для контента, но получают слишком общий текст.</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-10 md:mb-12">
           Формат задаёт логику.<br />Без формата AI часто создаёт набор общих советов.
         </p>
@@ -414,11 +536,11 @@ const ArticleBody = () => (
           Он решает, будет ли человек листать дальше.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Плохой первый слайд:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Как улучшить контент</div>
+        <PromptBlock label="Слабо">Как улучшить контент</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Сильнее:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Ваш AI-контент звучит одинаково по 5 причинам</div>
+        <PromptBlock label="Сильнее">Ваш AI-контент звучит одинаково по 5 причинам</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Ещё сильнее:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-4 mb-4 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Люди не устали от AI-контента. Они устали от пустого AI-контента</div>
+        <PromptBlock label="Отлично">Люди не устали от AI-контента. Они устали от пустого AI-контента</PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           Попросите AI дать не один вариант, а 10–15.
         </p>
@@ -451,14 +573,16 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>8. CTA.</span></li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Пример:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 mb-5 text-zinc-300 text-sm leading-relaxed whitespace-pre-wrap">Слайд 1 — Ваш AI-контент звучит одинаково по 5 причинам
+        <PromptBlock label="Структура">
+{`Слайд 1 — Ваш AI-контент звучит одинаково по 5 причинам
 Слайд 2 — Проблема не в AI, а в слабом входе
 Слайд 3 — Ошибка 1: слишком общий запрос
 Слайд 4 — Ошибка 2: нет аудитории
 Слайд 5 — Ошибка 3: нет позиции автора
 Слайд 6 — Как исправить
 Слайд 7 — Короткий чек-лист
-Слайд 8 — CTA</div>
+Слайд 8 — CTA`}
+        </PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-10 md:mb-12">
           Не делайте карусель длинной только ради количества слайдов.<br />Лучше 7 сильных слайдов, чем 14 слабых.
         </p>
@@ -482,7 +606,8 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>без перегруза.</span></li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Промпт:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 mb-5 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Преврати эту структуру в текст для LinkedIn-карусели.
+        <PromptBlock label="Промпт">
+{`Преврати эту структуру в текст для LinkedIn-карусели.
 
 Условия:
 - 8 слайдов;
@@ -491,7 +616,8 @@ const ArticleBody = () => (
 - короткие предложения;
 - без корпоративных клише;
 - стиль экспертный, но простой;
-- финальный слайд с CTA.</div>
+- финальный слайд с CTA.`}
+        </PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-10 md:mb-12">
           AI может дать хороший черновик, но после этого текст нужно сократить ещё раз.
         </p>
@@ -515,10 +641,14 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>визуальная логика между слайдами.</span></li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Промпт для визуального стиля:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 mb-5 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Сделай карусель в чистом premium SaaS-стиле:
-тёмный фон, крупная типографика, розово-оранжевые акценты, аккуратные карточки, много воздуха, профессиональный B2B-вид.</div>
+        <PromptBlock label="Промпт">
+{`Сделай карусель в чистом premium SaaS-стиле:
+тёмный фон, крупная типографика, розово-оранжевые акценты, аккуратные карточки, много воздуха, профессиональный B2B-вид.`}
+        </PromptBlock>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Если у вас есть бренд-стиль, добавьте:</p>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 mb-10 md:mb-12 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Используй стиль бренда: [цвета], [тон], [визуальные элементы], [ограничения].</div>
+        <PromptBlock label="Бренд-стиль">
+{`Используй стиль бренда: [цвета], [тон], [визуальные элементы], [ограничения].`}
+        </PromptBlock>
 
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">8. Сгенерируйте черновик карусели</h3>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
@@ -530,9 +660,7 @@ const ArticleBody = () => (
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">
           Вместо того чтобы прыгать между AI-чатом, заметками, Canva и Figma, вы сразу идёте по логике:
         </p>
-        <div className="flex flex-wrap items-center gap-2 text-pink-400 font-medium bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 mb-6 text-[13px] md:text-sm">
-          <span>входные данные</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>анализ</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>хук</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>структура</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>текст</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>стиль</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>черновик</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>доработка</span>
-        </div>
+        <WorkflowBlock steps={['тема / ссылка', 'анализ', 'хук', 'структура', 'текст', 'стиль', 'черновик', 'доработка']} />
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-10 md:mb-12">
           Это особенно удобно, если вы регулярно делаете контент и не хотите каждый раз собирать карусель с нуля.
         </p>
@@ -567,14 +695,14 @@ const ArticleBody = () => (
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">
           Более быстрый путь:
         </p>
-        <div className="space-y-3 mb-6">
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">1</span><span>Возьмите тему, ссылку, видео или черновик.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">2</span><span>Сгенерируйте хук и структуру.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">3</span><span>Сократите текст до формата “один слайд — одна мысль”.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">4</span><span>Выберите визуальный стиль.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">5</span><span>Получите черновик карусели.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">6</span><span>Проверьте читаемость на мобильном.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">7</span><span>Экспортируйте результат и загрузите в LinkedIn.</span></div>
+        <div className="mb-6 space-y-1">
+          <ChecklistItem num="1" text="Возьмите тему, ссылку, видео или черновик." />
+          <ChecklistItem num="2" text="Сгенерируйте хук и структуру." />
+          <ChecklistItem num="3" text="Сократите текст до формата “один слайд — одна мысль”." />
+          <ChecklistItem num="4" text="Выберите визуальный стиль." />
+          <ChecklistItem num="5" text="Получите черновик карусели." />
+          <ChecklistItem num="6" text="Проверьте читаемость на мобильном." />
+          <ChecklistItem num="7" text="Экспортируйте результат и загрузите в LinkedIn." />
         </div>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           Такой подход удобен для экспертов, основателей, маркетологов и B2B-команд, которым нужно регулярно публиковать карусели без отдельного дизайнера.
@@ -612,14 +740,14 @@ const ArticleBody = () => (
           После того как карусель готова, её нужно загрузить в LinkedIn.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Обычно процесс такой:</p>
-        <div className="space-y-3 mb-6">
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">1</span><span>Экспортируйте карусель в PDF или подходящий формат.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">2</span><span>Откройте LinkedIn.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">3</span><span>Начните новый пост.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">4</span><span>Загрузите документ.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">5</span><span>Напишите caption.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">6</span><span>Проверьте предпросмотр.</span></div>
-          <div className="flex items-start gap-3 text-[15px] md:text-base text-zinc-300"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-medium text-zinc-400 mt-0.5">7</span><span>Опубликуйте.</span></div>
+        <div className="mb-6 space-y-1">
+          <ChecklistItem num="1" text="Экспортируйте карусель в PDF или подходящий формат." />
+          <ChecklistItem num="2" text="Откройте LinkedIn." />
+          <ChecklistItem num="3" text="Начните новый пост." />
+          <ChecklistItem num="4" text="Загрузите документ." />
+          <ChecklistItem num="5" text="Напишите caption." />
+          <ChecklistItem num="6" text="Проверьте предпросмотр." />
+          <ChecklistItem num="7" text="Опубликуйте." />
         </div>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">Перед публикацией проверьте:</p>
         <ul className="space-y-3 mb-5">
@@ -655,81 +783,26 @@ const ArticleBody = () => (
         </p>
 
         <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Сравнение: AI-чат, Canva/Figma и генератор каруселей LinkedIn</h2>
-        <div className="w-full overflow-x-auto pb-4 mb-8">
-          <div className="min-w-[600px]">
-            <div className="grid grid-cols-3 border-b border-white/10 pb-4 mb-4 font-semibold text-white">
-              <div className="px-4">Инструмент</div>
-              <div className="px-4">Что делает лучше</div>
-              <div className="px-4">Ограничение</div>
-            </div>
-            <div className="grid grid-cols-3 border-b border-white/[0.05] pb-4 mb-4 text-zinc-300 text-sm md:text-base">
-              <div className="px-4">ChatGPT / Claude / Gemini</div>
-              <div className="px-4">Идеи, хук, структура, текст, промпты</div>
-              <div className="px-4 text-zinc-400">Не собирает визуальную карусель</div>
-            </div>
-            <div className="grid grid-cols-3 border-b border-white/[0.05] pb-4 mb-4 text-zinc-300 text-sm md:text-base">
-              <div className="px-4">Canva / Figma</div>
-              <div className="px-4">Дизайн, шаблоны, ручная сборка</div>
-              <div className="px-4 text-zinc-400">Нужна готовая структура и текст</div>
-            </div>
-            <div className="grid grid-cols-3 border-b border-white/[0.05] pb-4 mb-4 text-zinc-300 text-sm md:text-base">
-              <div className="px-4">Gamma</div>
-              <div className="px-4">Презентационный формат, быстрые слайды</div>
-              <div className="px-4 text-zinc-400">Может выглядеть как презентация, а не нативная карусель</div>
-            </div>
-            <div className="grid grid-cols-3 pb-2 text-zinc-300 text-sm md:text-base">
-              <div className="px-4 font-medium text-pink-300">GoToFlow</div>
-              <div className="px-4">Структура, текст, визуальный стиль и черновик карусели</div>
-              <div className="px-4 text-zinc-400">Результат всё равно нужно проверить перед публикацией</div>
-            </div>
-          </div>
-        </div>
+        <ComparisonTable />
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
           Если нужна только идея — хватит AI-чата.<br />Если нужен только дизайн — подойдут Canva или Figma.<br />Если нужен путь от идеи, ссылки или видео до черновика карусели — удобнее использовать AI-генератор каруселей.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Пример структуры LinkedIn-карусели на 8 слайдов</h2>
-        <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-6 md:p-8 mb-14 md:mb-16">
-          <p className="text-zinc-400 text-sm mb-2 uppercase tracking-wide font-medium">Тема:</p>
-          <p className="text-white font-medium text-lg mb-8 pb-4 border-b border-white/10">Почему AI-контент звучит одинаково</p>
-
-          <div className="space-y-8">
-            <div>
-              <h4 className="text-pink-400 font-bold mb-2">Слайд 1 — Хук</h4>
-              <p className="text-zinc-300 text-[15px] leading-relaxed">Ваш AI-контент звучит одинаково по 5 причинам.</p>
-            </div>
-            <div>
-              <h4 className="text-pink-400 font-bold mb-2">Слайд 2 — Проблема</h4>
-              <p className="text-zinc-300 text-[15px] leading-relaxed">Люди не устали от AI-контента.<br />Они устали от текста без мысли, примеров и позиции.</p>
-            </div>
-            <div>
-              <h4 className="text-pink-400 font-bold mb-2">Слайд 3 — Причина 1</h4>
-              <p className="text-zinc-300 text-[15px] leading-relaxed">Вы даёте слишком общий запрос.</p>
-              <p className="text-zinc-400 text-sm mt-2">Если вход слабый, результат будет средним.</p>
-            </div>
-            <div>
-              <h4 className="text-pink-400 font-bold mb-2">Слайд 4 — Причина 2</h4>
-              <p className="text-zinc-300 text-[15px] leading-relaxed">Вы не указываете аудиторию.</p>
-              <p className="text-zinc-400 text-sm mt-2">AI не понимает, для кого писать: для новичков, экспертов, основателей или маркетологов.</p>
-            </div>
-            <div>
-              <h4 className="text-pink-400 font-bold mb-2">Слайд 5 — Причина 3</h4>
-              <p className="text-zinc-300 text-[15px] leading-relaxed">В тексте нет вашей позиции.</p>
-              <p className="text-zinc-400 text-sm mt-2">AI может собрать формулировки.<br />Но точку зрения должен дать автор.</p>
-            </div>
-            <div>
-              <h4 className="text-pink-400 font-bold mb-2">Слайд 6 — Причина 4</h4>
-              <p className="text-zinc-300 text-[15px] leading-relaxed">Слишком много текста на слайде.</p>
-              <p className="text-zinc-400 text-sm mt-2">Карусель читают быстро.<br />Один слайд — одна мысль.</p>
-            </div>
-            <div>
-              <h4 className="text-pink-400 font-bold mb-2">Слайд 7 — Решение</h4>
-              <p className="text-zinc-300 text-[15px] leading-relaxed">Давайте AI контекст: аудиторию, цель, формат, примеры, тон и ограничения.</p>
-            </div>
-            <div>
-              <h4 className="text-pink-400 font-bold mb-2">Слайд 8 — CTA</h4>
-              <p className="text-zinc-300 text-[15px] leading-relaxed">Сохраните этот чек-лист перед следующей AI-каруселью.</p>
-            </div>
+        <div className="mb-14 md:mb-16">
+          <div className="mb-6 px-2">
+            <span className="text-zinc-400 text-xs font-bold tracking-wider uppercase mb-1 block">Тема</span>
+            <span className="text-white font-semibold text-lg">Почему AI-контент звучит одинаково</span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <SlideCard num="1" title="Хук" desc="Ваш AI-контент звучит одинаково по 5 причинам." />
+            <SlideCard num="2" title="Проблема" desc="Люди не устали от AI-контента." hint="Они устали от текста без мысли, примеров и позиции." />
+            <SlideCard num="3" title="Причина 1" desc="Вы даёте слишком общий запрос." hint="Если вход слабый, результат будет средним." />
+            <SlideCard num="4" title="Причина 2" desc="Вы не указываете аудиторию." hint="AI не понимает, для кого писать: для новичков, экспертов, основателей или маркетологов." />
+            <SlideCard num="5" title="Причина 3" desc="В тексте нет вашей позиции." hint="AI может собрать формулировки. Но точку зрения должен дать автор." />
+            <SlideCard num="6" title="Причина 4" desc="Слишком много текста на слайде." hint="Карусель читают быстро. Один слайд — одна мысль." />
+            <SlideCard num="7" title="Решение" desc="Давайте AI контекст: аудиторию, цель, формат, примеры, тон и ограничения." />
+            <SlideCard num="8" title="CTA" desc="Сохраните этот чек-лист перед следующей AI-каруселью." />
           </div>
         </div>
 
@@ -738,8 +811,8 @@ const ArticleBody = () => (
           Используйте эти промпты, чтобы получить лучшие черновики.
         </p>
 
-        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">Промпт для идеи</h3>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 mb-8 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Я [кто вы] и создаю контент для [аудитория].
+        <PromptBlock label="Промпт для идеи">
+{`Я [кто вы] и создаю контент для [аудитория].
 
 Предложи 15 идей для LinkedIn-каруселей на тему [тема].
 
@@ -747,18 +820,22 @@ const ArticleBody = () => (
 - идеи должны решать конкретную боль аудитории;
 - без общих тем;
 - каждая идея должна быть понятна по одному заголовку;
-- формат: инструкция, ошибки, чек-лист, фреймворк или разбор.</div>
+- формат: инструкция, ошибки, чек-лист, фреймворк или разбор.`}
+        </PromptBlock>
 
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">Промпт для первого слайда</h3>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 mb-8 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Напиши 15 вариантов первого слайда для LinkedIn-карусели на тему [тема].
+        <PromptBlock label="Промпт">
+{`Напиши 15 вариантов первого слайда для LinkedIn-карусели на тему [тема].
 
 Аудитория: [аудитория].
 Цель: заставить человека листать дальше.
 Стиль: конкретно, экспертно, без кликбейта.
-Длина: до 12 слов.</div>
+Длина: до 12 слов.`}
+        </PromptBlock>
 
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">Промпт для структуры</h3>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 mb-8 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Собери структуру LinkedIn-карусели на 8 слайдов.
+        <PromptBlock label="Промпт">
+{`Собери структуру LinkedIn-карусели на 8 слайдов.
 
 Тема: [тема].
 Аудитория: [аудитория].
@@ -768,10 +845,12 @@ const ArticleBody = () => (
 Для каждого слайда дай:
 - заголовок;
 - основную мысль;
-- короткое пояснение.</div>
+- короткое пояснение.`}
+        </PromptBlock>
 
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">Промпт для текста слайдов</h3>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 mb-8 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Преврати эту структуру в текст для LinkedIn-карусели.
+        <PromptBlock label="Промпт">
+{`Преврати эту структуру в текст для LinkedIn-карусели.
 
 Условия:
 - 8 слайдов;
@@ -780,10 +859,12 @@ const ArticleBody = () => (
 - один слайд — одна мысль;
 - без воды;
 - без корпоративных клише;
-- текст должен легко читаться с телефона.</div>
+- текст должен легко читаться с телефона.`}
+        </PromptBlock>
 
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">Промпт для визуального стиля</h3>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 mb-8 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Предложи визуальный стиль для LinkedIn-карусели.
+        <PromptBlock label="Промпт">
+{`Предложи визуальный стиль для LinkedIn-карусели.
 
 Тема: [тема].
 Аудитория: [аудитория].
@@ -793,10 +874,12 @@ const ArticleBody = () => (
 - много воздуха;
 - хороший контраст;
 - профессиональный B2B-вид;
-- без перегруженного дизайна.</div>
+- без перегруженного дизайна.`}
+        </PromptBlock>
 
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">Промпт для caption</h3>
-        <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 mb-14 md:mb-16 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Напиши caption для LinkedIn-поста с каруселью.
+        <PromptBlock label="Промпт">
+{`Напиши caption для LinkedIn-поста с каруселью.
 
 Тема карусели: [тема].
 Цель поста: [сохранения / комментарии / переходы / подписки].
@@ -806,34 +889,35 @@ const ArticleBody = () => (
 1. короткий хук;
 2. почему тема важна;
 3. что внутри карусели;
-4. CTA.</div>
+4. CTA.`}
+        </PromptBlock>
 
         <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Частые ошибки при создании LinkedIn-карусели с AI</h2>
         
-        <div className="space-y-6 mb-14 md:mb-16">
-          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6">
-            <h3 className="text-lg font-bold text-white mb-2">Делать карусель из слишком общей темы</h3>
-            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.7]">“Маркетинг” — слишком широко.<br />“5 ошибок в AI-контенте для B2B-основателей” — конкретно.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-14 md:mb-16">
+          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6 hover:border-white/[0.15] transition-colors">
+            <h3 className="text-[17px] font-bold text-white mb-2 leading-snug">Делать карусель из слишком общей темы</h3>
+            <p className="text-zinc-300 text-sm md:text-[15px] leading-[1.7]">“Маркетинг” — слишком широко.<br />“5 ошибок в AI-контенте для B2B-основателей” — конкретно.</p>
           </div>
-          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6">
-            <h3 className="text-lg font-bold text-white mb-2">Публиковать первый AI-черновик</h3>
-            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.7]">AI может собрать основу. Но без редактуры текст часто звучит шаблонно.<br /><br />Добавьте свои примеры, опыт и выводы.</p>
+          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6 hover:border-white/[0.15] transition-colors">
+            <h3 className="text-[17px] font-bold text-white mb-2 leading-snug">Публиковать первый AI-черновик</h3>
+            <p className="text-zinc-300 text-sm md:text-[15px] leading-[1.7]">AI может собрать основу. Но без редактуры текст часто звучит шаблонно. Добавьте свои примеры, опыт и выводы.</p>
           </div>
-          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6">
-            <h3 className="text-lg font-bold text-white mb-2">Делать слишком много текста на слайдах</h3>
-            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.7]">Если слайд выглядит как абзац из статьи, его нужно сократить.<br /><br />Карусель должна сканироваться быстро.</p>
+          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6 hover:border-white/[0.15] transition-colors">
+            <h3 className="text-[17px] font-bold text-white mb-2 leading-snug">Делать слишком много текста на слайдах</h3>
+            <p className="text-zinc-300 text-sm md:text-[15px] leading-[1.7]">Если слайд выглядит как абзац из статьи, его нужно сократить. Карусель должна сканироваться быстро.</p>
           </div>
-          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6">
-            <h3 className="text-lg font-bold text-white mb-2">Начинать с дизайна</h3>
-            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.7]">Дизайн не спасёт слабую структуру.<br /><br />Сначала идея, хук и логика.<br />Потом визуал.</p>
+          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6 hover:border-white/[0.15] transition-colors">
+            <h3 className="text-[17px] font-bold text-white mb-2 leading-snug">Начинать с дизайна</h3>
+            <p className="text-zinc-300 text-sm md:text-[15px] leading-[1.7]">Дизайн не спасёт слабую структуру. Сначала идея, хук и логика. Потом визуал.</p>
           </div>
-          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6">
-            <h3 className="text-lg font-bold text-white mb-2">Не проверять мобильную версию</h3>
-            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.7]">Большая часть пользователей смотрит контент с телефона.<br /><br />Если текст мелкий или слайды перегружены, карусель будет хуже работать.</p>
+          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6 hover:border-white/[0.15] transition-colors">
+            <h3 className="text-[17px] font-bold text-white mb-2 leading-snug">Не проверять мобильную версию</h3>
+            <p className="text-zinc-300 text-sm md:text-[15px] leading-[1.7]">Большая часть пользователей смотрит контент с телефона. Если текст мелкий или слайды перегружены, карусель будет хуже работать.</p>
           </div>
-          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6">
-            <h3 className="text-lg font-bold text-white mb-2">Не добавлять CTA</h3>
-            <p className="text-zinc-300 text-[15px] md:text-base leading-[1.7]">У карусели должен быть финальный шаг.<br /><br />Например:<br />- сохранить пост;<br />- написать комментарий;<br />- перейти по ссылке;<br />- подписаться;<br />- попробовать инструмент;<br />- скачать чек-лист;<br />- задать вопрос.</p>
+          <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 md:p-6 hover:border-white/[0.15] transition-colors">
+            <h3 className="text-[17px] font-bold text-white mb-2 leading-snug">Не добавлять CTA</h3>
+            <p className="text-zinc-300 text-sm md:text-[15px] leading-[1.7]">У карусели должен быть финальный шаг. Например: сохранить пост, написать комментарий, перейти по ссылке.</p>
           </div>
         </div>
 
@@ -936,9 +1020,7 @@ const ArticleBody = () => (
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-4">
           Если вы хотите создавать LinkedIn-карусели быстрее, начните с простого workflow:
         </p>
-        <div className="flex flex-wrap items-center gap-2 text-pink-400 font-medium bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 mb-6 text-[13px] md:text-sm">
-          <span>тема или ссылка</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>хук</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>структура</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>текст</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>визуальный стиль</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>черновик</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>редактура</span> <ArrowRight className="w-3.5 h-3.5 text-zinc-500" /> <span>публикация</span>
-        </div>
+        <WorkflowBlock steps={['тема или ссылка', 'хук', 'структура', 'текст', 'визуальный стиль', 'черновик', 'редактура', 'публикация']} />
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85]">
           А если не хотите собирать всё вручную из нескольких инструментов, попробуйте <Link to="/ru/generator-karuselej-linkedin" className="text-pink-400 hover:underline">GoToFlow AI Carousel Maker</Link>.
         </p>
