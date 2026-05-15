@@ -32,6 +32,7 @@ import { BestAiCarouselGeneratorsPage } from './components/blog/BestAiCarouselGe
 import { BestAiCarouselGeneratorsPageRu } from './components/blog/BestAiCarouselGeneratorsPageRu';
 import { HowToMakeLinkedInCarouselWithAiPage } from './components/blog/HowToMakeLinkedInCarouselWithAiPage';
 import { HowToMakeLinkedInCarouselWithAiPageRu } from './components/blog/HowToMakeLinkedInCarouselWithAiPageRu';
+import { AiInstagramCarouselGeneratorPage } from './components/blog/AiInstagramCarouselGeneratorPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { RefundPolicyPage } from './components/RefundPolicyPage';
 import { TermsOfServicePage } from './components/TermsOfServicePage';
@@ -84,6 +85,7 @@ function App() {
         <Route path="/blog/linkedin-carousel-ideas" element={<LinkedInCarouselIdeasPage />} />
         <Route path="/blog/best-ai-carousel-generators" element={<BestAiCarouselGeneratorsPage />} />
         <Route path="/blog/how-to-make-linkedin-carousel-with-ai" element={<HowToMakeLinkedInCarouselWithAiPage />} />
+        <Route path="/blog/ai-instagram-carousel-generator" element={<AiInstagramCarouselGeneratorPage />} />
         <Route path="/ru/blog/idei-karuselej-linkedin" element={<LinkedInCarouselIdeasPageRu />} />
         <Route path="/ru/blog/luchshie-ai-generatory-karuselej" element={<BestAiCarouselGeneratorsPageRu />} />
         <Route path="/ru/blog/kak-sdelat-karusel-linkedin-s-ai" element={<HowToMakeLinkedInCarouselWithAiPageRu />} />

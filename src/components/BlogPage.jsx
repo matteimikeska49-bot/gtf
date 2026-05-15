@@ -97,6 +97,7 @@ const categories = [
   {
     title: 'Guides',
     links: [
+      { to: '/blog/ai-instagram-carousel-generator', title: 'AI Instagram Carousel Generator: How to Create Carousels with AI', desc: 'Turn a topic, link, video, or article into hooks, slide structure, short copy, visual direction, and an Instagram carousel draft with AI.' },
       { to: '/blog/how-to-make-linkedin-carousel-with-ai', title: 'How to Make a LinkedIn Carousel with AI', desc: 'A step-by-step guide to creating LinkedIn carousels with AI: hooks, structure, prompts, examples, visual style, and publishing tips.' },
       { to: '/blog/best-ai-carousel-generators', title: 'Best AI Carousel Generators in 2026', desc: 'Compare AI carousel generators for structure, hooks, visual style, and social media workflows.' }
     ]

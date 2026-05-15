@@ -125,6 +125,13 @@ const ROUTES_CONFIG = {
     type: 'article',
     crumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'How to Make a LinkedIn Carousel with AI', path: '/blog/how-to-make-linkedin-carousel-with-ai' }]
   },
+  '/blog/ai-instagram-carousel-generator': {
+    title: 'AI Instagram Carousel Generator: How to Create Carousels with AI',
+    desc: 'Create Instagram carousels with AI. Turn a topic, link, video, or article into hooks, slide structure, short copy, and a carousel draft with GoToFlow.',
+    lang: 'en',
+    type: 'article',
+    crumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'AI Instagram Carousel Generator', path: '/blog/ai-instagram-carousel-generator' }]
+  },
   '/ru/blog/luchshie-ai-generatory-karuselej': {
     title: 'Лучшие AI-генераторы каруселей в 2026 году: нейросети для Instagram, LinkedIn и соцсетей',
     desc: 'Сравниваем лучшие AI-генераторы каруселей для Instagram, LinkedIn и соцсетей по удобству, функциям и цене. Выберите идеальную нейросеть для контента.',
