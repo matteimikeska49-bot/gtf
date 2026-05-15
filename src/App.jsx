@@ -31,6 +31,7 @@ import { LinkedInCarouselIdeasPageRu } from './components/blog/LinkedInCarouselI
 import { BestAiCarouselGeneratorsPage } from './components/blog/BestAiCarouselGeneratorsPage';
 import { BestAiCarouselGeneratorsPageRu } from './components/blog/BestAiCarouselGeneratorsPageRu';
 import { HowToMakeLinkedInCarouselWithAiPage } from './components/blog/HowToMakeLinkedInCarouselWithAiPage';
+import { HowToMakeLinkedInCarouselWithAiPageRu } from './components/blog/HowToMakeLinkedInCarouselWithAiPageRu';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { RefundPolicyPage } from './components/RefundPolicyPage';
 import { TermsOfServicePage } from './components/TermsOfServicePage';
@@ -84,6 +85,7 @@ function App() {
         <Route path="/blog/how-to-make-linkedin-carousel-with-ai" element={<HowToMakeLinkedInCarouselWithAiPage />} />
         <Route path="/ru/blog/idei-karuselej-linkedin" element={<LinkedInCarouselIdeasPageRu />} />
         <Route path="/ru/blog/luchshie-ai-generatory-karuselej" element={<BestAiCarouselGeneratorsPageRu />} />
+        <Route path="/ru/blog/kak-sdelat-karusel-linkedin-s-ai" element={<HowToMakeLinkedInCarouselWithAiPageRu />} />
         <Route path="/ru/blog" element={<BlogPageRu />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/ru/politika" element={<PrivacyPolicyPage />} />

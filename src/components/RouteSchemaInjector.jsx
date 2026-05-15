@@ -131,6 +131,13 @@ const ROUTES_CONFIG = {
     lang: 'ru',
     type: 'article',
     crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Блог', path: '/ru/blog' }, { name: 'Лучшие AI-генераторы каруселей', path: '/ru/blog/luchshie-ai-generatory-karuselej' }]
+  },
+  '/ru/blog/kak-sdelat-karusel-linkedin-s-ai': {
+    title: 'Как сделать карусель LinkedIn с помощью AI: пошаговая инструкция',
+    desc: 'Пошагово разбираем, как сделать карусель LinkedIn с помощью AI: идея, хук, структура слайдов, текст, визуальный стиль, PDF и публикация.',
+    lang: 'ru',
+    type: 'article',
+    crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Блог', path: '/ru/blog' }, { name: 'Как сделать карусель LinkedIn с помощью AI', path: '/ru/blog/kak-sdelat-karusel-linkedin-s-ai' }]
   }
 };
 

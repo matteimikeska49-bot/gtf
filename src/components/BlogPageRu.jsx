@@ -119,7 +119,8 @@ const categoriesRu = [
   {
     title: 'Статьи',
     links: [
-      { to: '/ru/blog/luchshie-ai-generatory-karuselej', title: 'Лучшие AI-генераторы каруселей в 2026 году', desc: 'Сравниваем лучшие AI-генераторы каруселей для Instagram, LinkedIn и соцсетей' }
+      { to: '/ru/blog/luchshie-ai-generatory-karuselej', title: 'Лучшие AI-генераторы каруселей в 2026 году', desc: 'Сравниваем лучшие AI-генераторы каруселей для Instagram, LinkedIn и соцсетей' },
+      { to: '/ru/blog/kak-sdelat-karusel-linkedin-s-ai', title: 'Как сделать карусель LinkedIn с помощью AI', desc: 'Пошаговая инструкция по созданию каруселей: идеи, структура, дизайн и публикация' }
     ]
   }
 ];
