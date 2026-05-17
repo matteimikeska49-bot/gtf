@@ -589,7 +589,7 @@ const ArticleBody = () => (
   <article className="pt-4 pb-8 px-4 sm:px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
     <div className="max-w-[940px] mx-auto relative z-10">
       <div className="bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-14">
-        <Section title="Intro">
+        <div className="mb-14 md:mb-16">
           <P>Instagram carousels can turn one idea into a swipeable story.</P>
           <P>That is why creators, founders, marketers, agencies, coaches, and SaaS teams use them to explain ideas, teach frameworks, break down problems, and make content easier to save.</P>
           <P>But most carousel tools start too late.</P>
@@ -600,13 +600,39 @@ const ArticleBody = () => (
           <WorkflowBlock />
           <P>GoToFlow is built around that workflow.</P>
           <P>Instead of asking AI for random slide text, you can use GoToFlow to build the logic of the carousel before you polish the design.</P>
-        </Section>
+        </div>
 
         <Section title="What GoToFlow helps you create">
-          <P>With GoToFlow, you can start from:</P>
-          <BulletList items={inputItems} />
-          <P>And turn it into:</P>
-          <BulletList items={outputItems} />
+          <div className="my-8 rounded-2xl border border-white/[0.08] overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="bg-[#080808] p-6 md:p-8">
+                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-pink-400/80 mb-5">Start with</p>
+                <ul className="space-y-3">
+                  {inputItems.map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-[15px] text-zinc-300 leading-[1.6]">
+                      <span className="shrink-0 w-5 h-5 rounded-md bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
+                        <ArrowRight className="w-3 h-3 text-zinc-500" />
+                      </span>
+                      {item.replace(/;$/, '')}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-[#0a0709] p-6 md:p-8 border-t md:border-t-0 md:border-l border-white/[0.06]">
+                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-pink-400/80 mb-5">GoToFlow helps create</p>
+                <ul className="space-y-3">
+                  {outputItems.map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-[15px] text-zinc-300 leading-[1.6]">
+                      <span className="shrink-0 w-5 h-5 rounded-md bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
+                        <Check className="w-3 h-3 text-pink-400" />
+                      </span>
+                      {item.replace(/;$/, '')}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
           <P>The goal is not to replace your judgment. The goal is to help you move from raw input to a structured carousel draft faster.</P>
         </Section>
 
