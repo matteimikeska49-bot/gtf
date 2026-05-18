@@ -364,49 +364,39 @@ const ArticleSEOHead = () => {
   return null;
 };
 
-const Breadcrumbs = () => (
-  <nav className="pt-28 pb-4 px-4 sm:px-6 relative z-10 w-full bg-[#050505]">
-    <div className="max-w-[940px] mx-auto flex items-center gap-1.5 text-sm text-zinc-500 min-w-0">
-      <Link to="/" className="hover:text-zinc-300 transition-colors">Home</Link>
-      <ChevronRight className="w-3.5 h-3.5 shrink-0" />
-      <Link to="/blog" className="hover:text-zinc-300 transition-colors">Blog</Link>
-      <ChevronRight className="w-3.5 h-3.5 shrink-0" />
-      <span className="text-zinc-400 truncate">AI Instagram Carousel Generator</span>
-    </div>
-  </nav>
-);
-
 const ArticleHero = () => {
   const isMobile = useIsMobile();
   return (
-    <section className="pt-8 pb-16 md:pt-12 md:pb-24 px-4 sm:px-6 relative w-full bg-[#050505] overflow-hidden">
+    <section className="pt-28 pb-12 md:pb-20 px-4 sm:px-6 relative w-full bg-[#050505] overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-pink-500/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute top-20 left-1/4 w-[300px] h-[300px] bg-orange-500/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-pink-500/[0.08] blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-20 left-1/4 w-[300px] h-[300px] bg-orange-500/[0.06] blur-[100px] rounded-full pointer-events-none" />
       
-      <div className="max-w-[1060px] mx-auto relative z-10 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-8 flex justify-center">
+      <div className="max-w-[940px] mx-auto relative z-10 text-center">
+        {/* Breadcrumbs */}
+        <div className="flex items-center justify-center gap-1.5 text-sm text-zinc-500 min-w-0 mb-8 md:mb-12">
+          <Link to="/" className="hover:text-zinc-300 transition-colors">Home</Link>
+          <ChevronRight className="w-3.5 h-3.5 shrink-0" />
+          <Link to="/blog" className="hover:text-zinc-300 transition-colors">Blog</Link>
+          <ChevronRight className="w-3.5 h-3.5 shrink-0" />
+          <span className="text-zinc-400 truncate">AI Instagram Carousel Generator</span>
+        </div>
+
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-6 flex justify-center">
           <div className="inline-flex items-center gap-2.5 rounded-full border border-pink-500/20 bg-pink-500/10 px-4 py-1.5 backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-pink-400" />
-            <span className="text-xs font-semibold text-pink-200 tracking-wide uppercase">AI Instagram Carousel Generator</span>
+            <span className="text-xs font-semibold text-pink-200 tracking-wide uppercase">Instagram Carousel Guide</span>
           </div>
         </motion.div>
         
-        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="text-4xl md:text-5xl lg:text-6xl xl:text-[68px] font-bold text-white tracking-tight mb-8 leading-[1.05]">
-          Turn any idea into a <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-orange-400 to-pink-500">structured carousel draft</span>
+        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
+          AI Instagram Carousel Generator: <br className="hidden md:block" />
+          How to Create Instagram Carousels with <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">AI</span>
         </motion.h1>
         
-        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-lg md:text-xl text-zinc-400 leading-[1.6] mb-12 max-w-3xl mx-auto">
+        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-lg md:text-xl text-zinc-400 leading-[1.6] max-w-2xl mx-auto">
           Create Instagram carousels with AI. Turn a topic, link, video, or article into hooks, slide structure, short copy, and a visual direction with GoToFlow.
         </motion.p>
-        
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href={getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-bold bg-white text-black hover:bg-zinc-100 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(255,255,255,0.15)] text-[15px] group">
-            Try GoToFlow Free <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <p className="text-xs text-zinc-500 font-medium sm:hidden mt-2">No credit card required</p>
-        </motion.div>
       </div>
     </section>
   );
@@ -1038,7 +1028,6 @@ export const AiInstagramCarouselGeneratorPage = () => (
   <MainLayout>
     <ArticleSEOHead />
     <Header />
-    <Breadcrumbs />
     <ArticleHero />
     <ArticleBody />
     <Footer />
