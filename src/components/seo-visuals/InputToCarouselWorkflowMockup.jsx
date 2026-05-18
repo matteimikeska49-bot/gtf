@@ -16,8 +16,10 @@ export const InputToCarouselWorkflowMockup = ({
         {eyebrow && (
           <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-pink-400 mb-4">{eyebrow}</p>
         )}
-        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4 leading-tight">{title}</h3>
-        <p className="text-sm md:text-base text-zinc-400 leading-[1.7] max-w-2xl mx-auto">{subtitle}</p>
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-4 leading-tight">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-pink-200 to-purple-300">{title}</span>
+        </h3>
+        <p className="text-sm md:text-base text-zinc-500 leading-[1.7] max-w-2xl mx-auto">{subtitle}</p>
       </div>
 
       {/* Mockup Window */}

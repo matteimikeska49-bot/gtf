@@ -413,23 +413,26 @@ const ArticleHero = () => {
 };
 
 const P = ({ children, strong = false }) => (
-  <p className={`text-[15px] md:text-base leading-[1.85] mb-5 ${strong ? 'text-white font-semibold' : 'text-zinc-300'}`}>
+  <p className={`text-[15px] md:text-base leading-[1.85] mb-5 ${strong ? 'text-white font-semibold' : 'text-zinc-400'}`}>
     {children}
   </p>
 );
 
 const Section = ({ title, children }) => (
-  <section className="mb-14 md:mb-16">
-    <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">
-      {title}
+  <section className="mb-16 md:mb-20">
+    <h2 className="text-2xl md:text-[32px] font-bold tracking-tight mb-8 leading-[1.15]">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-pink-200 to-purple-300">{title}</span>
     </h2>
     {children}
   </section>
 );
 
 const Subsection = ({ title, children }) => (
-  <div className="mt-10">
-    <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4">{title}</h3>
+  <div className="mt-12 mb-8">
+    <div className="flex items-center gap-3 mb-5">
+      <span className="shrink-0 w-2 h-2 rounded-full bg-gradient-to-r from-pink-400 to-orange-400" />
+      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight leading-snug">{title}</h3>
+    </div>
     {children}
   </div>
 );
@@ -437,8 +440,8 @@ const Subsection = ({ title, children }) => (
 const BulletList = ({ items }) => (
   <ul className="space-y-3 mb-6">
     {items.map((item) => (
-      <li key={item} className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
-        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />
+      <li key={item} className="flex items-start gap-3.5 text-zinc-400 text-[15px] md:text-base leading-[1.7]">
+        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/60 shrink-0" />
         <span>{item}</span>
       </li>
     ))}
@@ -596,15 +599,15 @@ const ComparisonTable = () => (
 );
 
 const FormatCards = () => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
     {formatCards.map((format) => (
-      <div key={format.name} className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5">
-        <h3 className="text-lg font-bold text-white tracking-tight mb-2">{format.name}</h3>
-        <p className="text-sm text-zinc-300 leading-[1.7] mb-3">{format.explanation}</p>
-        <p className="text-xs font-bold uppercase tracking-[0.12em] text-zinc-500 mb-1">Example</p>
-        <p className="text-sm text-zinc-200 leading-[1.6] mb-3">{format.example}</p>
-        <p className="text-xs font-bold uppercase tracking-[0.12em] text-zinc-500 mb-1">Best for</p>
-        <p className="text-sm text-zinc-400 leading-[1.6]">{format.bestFor}</p>
+      <div key={format.name} className="rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-5 md:p-6">
+        <h3 className="text-base md:text-lg font-bold text-zinc-100 tracking-tight mb-2">{format.name}</h3>
+        <p className="text-sm text-zinc-500 leading-[1.7] mb-4">{format.explanation}</p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-pink-400/70 mb-1">Example</p>
+        <p className="text-sm text-zinc-300 leading-[1.6] mb-4">{format.example}</p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-600 mb-1">Best for</p>
+        <p className="text-sm text-zinc-500 leading-[1.6]">{format.bestFor}</p>
       </div>
     ))}
   </div>
@@ -635,20 +638,20 @@ const SlideExampleCards = () => (
 const ChecklistGrid = ({ items }) => (
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-8">
     {items.map((item) => (
-      <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.025] p-4">
+      <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-4">
         <span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center mt-0.5">
           <Check className="w-3.5 h-3.5 text-pink-300" />
         </span>
-        <span className="text-sm text-zinc-300 leading-[1.6]">{item}</span>
+        <span className="text-sm text-zinc-400 leading-[1.6]">{item}</span>
       </div>
     ))}
   </div>
 );
 
 const ExampleBox = ({ label, children }) => (
-  <div className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 md:p-6 my-6">
-    <p className="text-xs font-bold uppercase tracking-[0.12em] text-zinc-500 mb-3">{label}</p>
-    <div className="text-sm md:text-base text-zinc-300 leading-[1.75] space-y-2">{children}</div>
+  <div className="rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-5 md:p-6 my-6">
+    <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-600 mb-3">{label}</p>
+    <div className="text-sm md:text-base text-zinc-400 leading-[1.75] space-y-2">{children}</div>
   </div>
 );
 
@@ -657,26 +660,28 @@ const FAQSection = () => {
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
   return (
     <section className="mb-4">
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-8 pt-2 border-l-[3px] border-pink-500/60 pl-4">FAQ</h2>
-      <div className="space-y-4">
+      <h2 className="text-2xl md:text-[32px] font-bold tracking-tight mb-10 leading-[1.15]">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-pink-200 to-purple-300">FAQ</span>
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {faqItems.map((item, i) => (
-          <div key={item.q} className={`rounded-2xl border transition-all duration-300 overflow-hidden ${openIndex === i ? 'border-pink-500/30 bg-[#0a0a0a] shadow-[0_0_30px_rgba(236,72,153,0.05)]' : 'border-white/[0.08] bg-[#0a0a0a] hover:border-white/[0.15]'}`}>
+          <div key={item.q} className={`rounded-2xl border transition-all duration-300 overflow-hidden self-start ${openIndex === i ? 'border-pink-500/25 bg-[#0a0a0a] shadow-[0_0_30px_rgba(236,72,153,0.05)]' : 'border-white/[0.06] bg-[#0a0a0a] hover:border-white/[0.12]'}`}>
             <button
               onClick={() => toggle(i)}
               aria-expanded={openIndex === i}
-              className="w-full flex items-start justify-between gap-4 px-6 py-5 text-left"
+              className="w-full flex items-start justify-between gap-3 px-5 py-4 text-left"
             >
-              <span className="text-[17px] font-bold text-white tracking-tight leading-snug pt-0.5">{item.q}</span>
-              <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${openIndex === i ? 'bg-pink-500/10' : 'bg-white/[0.03]'}`}>
+              <span className="text-[15px] font-semibold text-zinc-200 tracking-tight leading-snug pt-0.5">{item.q}</span>
+              <div className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors ${openIndex === i ? 'bg-pink-500/10' : 'bg-white/[0.03]'}`}>
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-300 ${openIndex === i ? 'rotate-180 text-pink-400' : 'text-zinc-400'}`}
+                  className={`w-3.5 h-3.5 transition-transform duration-300 ${openIndex === i ? 'rotate-180 text-pink-400' : 'text-zinc-500'}`}
                 />
               </div>
             </button>
             <div className={`grid transition-all duration-300 ease-in-out ${openIndex === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
               <div className="overflow-hidden">
-                <div className="px-6 pb-6 pt-1">
-                  <p className="text-[15px] text-zinc-400 leading-[1.8]">{item.a}</p>
+                <div className="px-5 pb-5 pt-0">
+                  <p className="text-[14px] text-zinc-500 leading-[1.75]">{item.a}</p>
                 </div>
               </div>
             </div>
