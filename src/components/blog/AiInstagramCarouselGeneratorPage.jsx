@@ -402,7 +402,7 @@ const ArticleHero = () => {
         </motion.p>
         
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href={getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-bold text-white bg-white text-black hover:bg-zinc-100 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(255,255,255,0.15)] text-[15px] group">
+          <a href={getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-bold bg-white text-black hover:bg-zinc-100 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(255,255,255,0.15)] text-[15px] group">
             Try GoToFlow Free <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
           <p className="text-xs text-zinc-500 font-medium sm:hidden mt-2">No credit card required</p>
@@ -458,62 +458,84 @@ const NumberList = ({ items }) => (
   </div>
 );
 
-const CTABox = ({ heading, text, button }) => (
-  <div className="relative my-14 md:my-16 overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0a0a0a] shadow-xl p-8 md:p-10">
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/10 blur-[80px] rounded-full translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/10 blur-[80px] rounded-full -translate-x-1/3 translate-y-1/3" />
-    </div>
-    <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
-      <div className="flex-1">
-        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-3 leading-snug">{heading}</h3>
-        <p className="text-zinc-400 text-sm md:text-base leading-[1.7] max-w-xl">{text}</p>
+const QuickAnswerSteps = ({ items }) => (
+  <div className="my-8 grid gap-3">
+    {items.map((item, index) => (
+      <div
+        key={item}
+        className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] p-4 sm:p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
+      >
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-pink-500/[0.08] via-transparent to-orange-500/[0.06] opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
+        <div className="relative z-10 flex items-start gap-4">
+          <span className="shrink-0 inline-flex h-9 w-11 items-center justify-center rounded-xl border border-pink-500/25 bg-pink-500/10 text-[11px] font-bold tabular-nums text-pink-200 shadow-[0_0_24px_rgba(236,72,153,0.12)]">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <p className="min-w-0 pt-1 text-[15px] leading-[1.75] text-zinc-200 md:text-base">{item}</p>
+        </div>
       </div>
-      <div className="shrink-0">
-        <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full font-bold text-white bg-white/[0.05] border border-white/[0.1] hover:bg-white/[0.1] transition-all hover:scale-105 active:scale-[0.98] text-[15px] group w-full md:w-auto">
-          {button} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </a>
+    ))}
+  </div>
+);
+
+const CTABox = ({ heading, text, button }) => (
+  <div className="relative my-14 md:my-16 rounded-[28px] bg-gradient-to-br from-pink-500/35 via-white/[0.08] to-orange-500/30 p-px shadow-[0_24px_80px_rgba(0,0,0,0.32)]">
+    <div className="relative overflow-hidden rounded-[27px] bg-[#080808] p-6 sm:p-8 md:p-10">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-pink-500/[0.12] blur-[90px]" />
+        <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-orange-500/[0.1] blur-[95px]" />
+      </div>
+      <div className="relative z-10 flex flex-col gap-7 md:flex-row md:items-center md:justify-between">
+        <div className="min-w-0 flex-1">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.035] px-3 py-1.5">
+            <Sparkles className="h-3.5 w-3.5 text-pink-300" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-400">GoToFlow</span>
+          </div>
+          <h3 className="mb-3 text-xl font-bold leading-snug tracking-tight text-white md:text-2xl">{heading}</h3>
+          <p className="max-w-xl text-sm leading-[1.75] text-zinc-400 md:text-base">{text}</p>
+        </div>
+        <div className="shrink-0">
+          <a href={getAppUrlWithRef(CTA_URL)} className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-white px-6 py-3.5 text-[15px] font-bold text-black shadow-[0_0_34px_rgba(255,255,255,0.16)] transition-all hover:scale-105 hover:bg-zinc-100 active:scale-[0.98] md:w-auto">
+            {button} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
 );
 
 const FinalCTABlock = ({ heading, text, button }) => (
-  <div className="relative my-16 md:my-24 overflow-hidden rounded-[32px] border border-white/[0.08] bg-[#080808] p-10 md:p-16 shadow-2xl">
-    <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] rounded-full bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-orange-500/20 blur-[100px] opacity-60" />
-    </div>
-    <div className="relative z-10 flex flex-col items-center text-center gap-6 max-w-2xl mx-auto">
-      <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-1.5 backdrop-blur-sm">
-        <Sparkles className="w-3.5 h-3.5 text-pink-400" />
-        <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-pink-300">GoToFlow Workspace</span>
+  <div className="relative my-16 rounded-[32px] bg-gradient-to-br from-pink-500/35 via-white/[0.08] to-orange-500/30 p-px shadow-2xl md:my-24">
+    <div className="relative overflow-hidden rounded-[31px] bg-[#080808] px-6 py-10 sm:px-8 md:p-16">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute left-1/2 top-1/2 h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-pink-500/20 to-orange-500/18 blur-[100px] opacity-70" />
       </div>
-      <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-[1.1]">{heading}</h2>
-      <p className="text-zinc-400 text-base md:text-lg leading-[1.6] mb-2">{text}</p>
-      <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-bold text-black bg-white hover:bg-zinc-100 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(255,255,255,0.2)] text-base group">
-        {button} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-      </a>
+      <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-6 text-center">
+        <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-1.5 backdrop-blur-sm">
+          <Sparkles className="h-3.5 w-3.5 text-pink-400" />
+          <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-pink-300">GoToFlow Workspace</span>
+        </div>
+        <h2 className="text-3xl font-bold leading-[1.12] tracking-tight text-white md:text-5xl">{heading}</h2>
+        <p className="mb-2 text-base leading-[1.65] text-zinc-400 md:text-lg">{text}</p>
+        <a href={getAppUrlWithRef(CTA_URL)} className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-white px-8 py-4 text-base font-bold text-black shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all hover:scale-105 hover:bg-zinc-100 active:scale-[0.98] sm:w-auto">
+          {button} <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+        </a>
+      </div>
     </div>
   </div>
 );
 
 const WorkflowBlock = ({ steps = workflowSteps }) => (
-  <div className="my-10 p-5 md:p-8 rounded-3xl border border-white/[0.08] bg-[#0a0a0a] overflow-hidden relative">
-    <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/5 blur-[80px] rounded-full pointer-events-none" />
-    <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-2 md:gap-3 relative z-10">
+  <div className="relative my-10 overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0a0a0a] p-4 shadow-[0_18px_55px_rgba(0,0,0,0.24)] sm:p-5 md:p-7">
+    <div className="pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full bg-pink-500/[0.06] blur-[80px]" aria-hidden="true" />
+    <div className="relative z-10 flex flex-wrap items-center gap-2.5 md:gap-3">
       {steps.map((step, index) => (
-        <React.Fragment key={step}>
-          <div className="w-full md:w-auto px-5 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02] text-sm font-medium text-zinc-300 text-center shadow-sm">
-            {step}
+        <React.Fragment key={`${step}-${index}`}>
+          <div className="min-w-0 max-w-full rounded-2xl border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 shadow-sm sm:px-4">
+            <span className="block max-w-full break-words text-sm font-semibold leading-snug text-zinc-200">{step}</span>
           </div>
           {index < steps.length - 1 && (
-            <div className="hidden md:flex items-center justify-center">
-              <ChevronRight className="w-4 h-4 text-zinc-600" />
-            </div>
-          )}
-          {index < steps.length - 1 && (
-            <div className="flex md:hidden items-center justify-center py-1">
-              <ChevronDown className="w-4 h-4 text-zinc-600" />
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.02]">
+              <ChevronRight className="h-3.5 w-3.5 text-zinc-500" />
             </div>
           )}
         </React.Fragment>
@@ -553,7 +575,7 @@ const ComparisonTable = () => (
         </React.Fragment>
       ))}
     </div>
-    <div className="md:hidden space-y-4" aria-hidden="true">
+    <div className="space-y-4 md:hidden">
       {comparisonRows.map((row) => (
         <div key={row.tool} className="rounded-2xl border border-white/[0.08] bg-[#0a0a0a] p-5 shadow-sm">
           <h3 className="text-white font-semibold mb-4 text-lg">{row.tool}</h3>
@@ -695,7 +717,7 @@ const ArticleBody = () => (
 
         <Section title="Quick answer: how to create an Instagram carousel with AI">
           <P>To create an Instagram carousel with AI:</P>
-          <NumberList items={[
+          <QuickAnswerSteps items={[
             'Start with a topic, link, video, article, notes, or rough idea.',
             'Define the audience and the outcome of the carousel.',
             'Generate several first-slide hook options.',
