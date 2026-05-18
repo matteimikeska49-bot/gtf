@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, ChevronRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Check, ChevronRight, ChevronDown, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
@@ -8,6 +8,7 @@ import { MainLayout } from '../MainLayout';
 import { CookieBanner } from '../CookieBanner';
 import { getAppUrlWithRef } from '../../utils/url';
 import { useIsMobile } from '../../hooks/useIsMobile';
+import { InputToCarouselWorkflowMockup } from '../seo-visuals/InputToCarouselWorkflowMockup';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -449,14 +450,39 @@ const NumberList = ({ items }) => (
 );
 
 const CTABox = ({ heading, text, button }) => (
-  <div className="relative my-12 md:my-16 overflow-hidden rounded-3xl border border-pink-500/20 bg-gradient-to-br from-pink-500/[0.12] via-white/[0.035] to-orange-500/[0.08] p-6 md:p-8">
+  <div className="relative my-12 md:my-16 overflow-hidden rounded-3xl border border-pink-500/25 bg-gradient-to-br from-pink-500/[0.14] via-white/[0.04] to-orange-500/[0.10] p-6 md:p-8">
+    <div className="pointer-events-none absolute -inset-px rounded-3xl" aria-hidden="true">
+      <div className="absolute -top-12 -left-12 w-56 h-56 rounded-full bg-pink-500/20 blur-3xl opacity-60" />
+      <div className="absolute -bottom-10 -right-10 w-48 h-48 rounded-full bg-orange-500/15 blur-3xl opacity-50" />
+    </div>
     <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
       <div>
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-3">{heading}</h3>
         <p className="text-zinc-300 text-sm md:text-base leading-[1.7] max-w-2xl">{text}</p>
       </div>
-      <a href={getAppUrlWithRef(CTA_URL)} className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-sm hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_30px_rgba(236,72,153,0.3)] border border-pink-400/20 group">
+      <a href={getAppUrlWithRef(CTA_URL)} className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-sm hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_30px_rgba(236,72,153,0.35)] border border-pink-400/20 group">
         {button} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      </a>
+    </div>
+  </div>
+);
+
+const FinalCTABlock = ({ heading, text, button }) => (
+  <div className="relative my-14 md:my-20 overflow-hidden rounded-3xl border border-pink-500/30 bg-gradient-to-br from-pink-500/[0.16] via-purple-500/[0.06] to-orange-500/[0.12] p-8 md:p-12">
+    <div className="pointer-events-none absolute inset-0 rounded-3xl" aria-hidden="true">
+      <div className="absolute -top-16 left-1/4 w-72 h-72 rounded-full bg-pink-500/25 blur-[60px] opacity-70" />
+      <div className="absolute -bottom-12 right-1/4 w-60 h-60 rounded-full bg-orange-500/20 blur-[50px] opacity-60" />
+      <div className="absolute top-1/2 -translate-y-1/2 right-0 w-40 h-40 rounded-full bg-purple-500/10 blur-[40px] opacity-50" />
+    </div>
+    <div className="relative z-10 flex flex-col items-center text-center gap-6">
+      <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-1.5">
+        <Sparkles className="w-3.5 h-3.5 text-pink-400" />
+        <span className="text-xs font-semibold text-pink-300 tracking-wide">GoToFlow AI Carousel Maker</span>
+      </div>
+      <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight leading-[1.15] max-w-2xl">{heading}</h2>
+      <p className="text-zinc-300 text-base md:text-lg leading-[1.75] max-w-xl">{text}</p>
+      <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white text-base bg-gradient-to-r from-pink-500 to-orange-500 hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_50px_rgba(236,72,153,0.45)] border border-pink-400/25 group">
+        {button} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
       </a>
     </div>
   </div>
@@ -571,19 +597,36 @@ const ExampleBox = ({ label, children }) => (
   </div>
 );
 
-const FAQSection = () => (
-  <section className="mb-4">
-    <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-8 pt-2 border-l-[3px] border-pink-500/60 pl-4">FAQ</h2>
-    <div className="space-y-4">
-      {faqItems.map((item) => (
-        <div key={item.q} className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 md:p-6">
-          <h3 className="text-base md:text-lg font-bold text-white tracking-tight mb-3">{item.q}</h3>
-          <p className="text-sm md:text-base text-zinc-300 leading-[1.75]">{item.a}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+const FAQSection = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+  return (
+    <section className="mb-4">
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-8 pt-2 border-l-[3px] border-pink-500/60 pl-4">FAQ</h2>
+      <div className="space-y-3">
+        {faqItems.map((item, i) => (
+          <div key={item.q} className="rounded-2xl border border-white/[0.08] bg-white/[0.025] overflow-hidden transition-colors hover:border-white/[0.14]">
+            <button
+              onClick={() => toggle(i)}
+              aria-expanded={openIndex === i}
+              className="w-full flex items-center justify-between gap-4 px-5 md:px-6 py-4 md:py-5 text-left"
+            >
+              <span className="text-base md:text-lg font-bold text-white tracking-tight leading-snug">{item.q}</span>
+              <ChevronDown
+                className={`shrink-0 w-5 h-5 text-zinc-400 transition-transform duration-200 ${openIndex === i ? 'rotate-180' : ''}`}
+              />
+            </button>
+            {openIndex === i && (
+              <div className="px-5 md:px-6 pb-5 md:pb-6 pt-1">
+                <p className="text-sm md:text-base text-zinc-300 leading-[1.75]">{item.a}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
 const ArticleBody = () => (
   <article className="pt-4 pb-8 px-4 sm:px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
@@ -635,6 +678,14 @@ const ArticleBody = () => (
           </div>
           <P>The goal is not to replace your judgment. The goal is to help you move from raw input to a structured carousel draft faster.</P>
         </Section>
+
+        <InputToCarouselWorkflowMockup
+          title="From raw input to carousel draft"
+          subtitle="Start with a topic, link, video, article, or notes — and shape it into a structured Instagram carousel workflow."
+          inputs={['Topic', 'Link', 'Video', 'Article', 'Notes']}
+          steps={['Angle', 'Hook', 'Slide structure', 'Slide copy', 'Visual direction']}
+          output="Carousel draft"
+        />
 
         <Section title="Quick answer: how to create an Instagram carousel with AI">
           <P>To create an Instagram carousel with AI:</P>
@@ -936,8 +987,13 @@ const ArticleBody = () => (
           <P>It needs a clear angle, a strong first-slide hook, a logical slide structure, short copy, a visual direction, and a final review before publishing.</P>
           <P>AI can make that process much faster, but only when you use it as a workflow — not as a one-line prompt machine.</P>
           <P>GoToFlow helps you move from topic, link, video, notes, or rough idea to a structured Instagram carousel draft with hook, slide flow, copy, and visual direction.</P>
-          <CTABox heading="Create your next Instagram carousel with GoToFlow" text="Start with a topic, link, video, article, or rough idea — and turn it into a structured carousel draft with hook, slide flow, short copy, and visual direction." button="Try GoToFlow AI Carousel Maker" />
         </Section>
+
+        <FinalCTABlock
+          heading="Create your next Instagram carousel with GoToFlow"
+          text="Start with a topic, link, video, article, or rough idea — and turn it into a structured carousel draft with hook, slide flow, short copy, and visual direction."
+          button="Try GoToFlow AI Carousel Maker"
+        />
 
         <FAQSection />
       </div>
