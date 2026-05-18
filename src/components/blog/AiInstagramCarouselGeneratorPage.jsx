@@ -379,24 +379,33 @@ const Breadcrumbs = () => (
 const ArticleHero = () => {
   const isMobile = useIsMobile();
   return (
-    <section className="pb-16 md:pb-20 px-4 sm:px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
-      <div className="max-w-[940px] mx-auto relative z-10">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm">
+    <section className="pt-8 pb-16 md:pt-12 md:pb-24 px-4 sm:px-6 relative w-full bg-[#050505] overflow-hidden">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-pink-500/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-20 left-1/4 w-[300px] h-[300px] bg-orange-500/10 blur-[100px] rounded-full pointer-events-none" />
+      
+      <div className="max-w-[1060px] mx-auto relative z-10 text-center">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-8 flex justify-center">
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-pink-500/20 bg-pink-500/10 px-4 py-1.5 backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-pink-400" />
-            <span className="text-xs text-zinc-300 font-medium">Instagram Carousel Guide</span>
+            <span className="text-xs font-semibold text-pink-200 tracking-wide uppercase">AI Instagram Carousel Generator</span>
           </div>
         </motion.div>
-        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.12]">
-          AI Instagram Carousel Generator: How to Create Instagram Carousels with AI
+        
+        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="text-4xl md:text-5xl lg:text-6xl xl:text-[68px] font-bold text-white tracking-tight mb-8 leading-[1.05]">
+          Turn any idea into a <br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-orange-400 to-pink-500">structured carousel draft</span>
         </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-base md:text-lg text-zinc-400 leading-[1.7] mb-10 max-w-2xl">
-          Create Instagram carousels with AI. Turn a topic, link, video, or article into hooks, slide structure, short copy, and a carousel draft with GoToFlow.
+        
+        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-lg md:text-xl text-zinc-400 leading-[1.6] mb-12 max-w-3xl mx-auto">
+          Create Instagram carousels with AI. Turn a topic, link, video, or article into hooks, slide structure, short copy, and a visual direction with GoToFlow.
         </motion.p>
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }}>
-          <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_35px_rgba(236,72,153,0.3)] text-sm border border-pink-400/20 group">
-            Try GoToFlow AI Carousel Maker <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href={getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-bold text-white bg-white text-black hover:bg-zinc-100 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(255,255,255,0.15)] text-[15px] group">
+            Try GoToFlow Free <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
+          <p className="text-xs text-zinc-500 font-medium sm:hidden mt-2">No credit card required</p>
         </motion.div>
       </div>
     </section>
@@ -450,38 +459,38 @@ const NumberList = ({ items }) => (
 );
 
 const CTABox = ({ heading, text, button }) => (
-  <div className="relative my-12 md:my-16 overflow-hidden rounded-3xl border border-pink-500/25 bg-gradient-to-br from-pink-500/[0.14] via-white/[0.04] to-orange-500/[0.10] p-6 md:p-8">
-    <div className="pointer-events-none absolute -inset-px rounded-3xl" aria-hidden="true">
-      <div className="absolute -top-12 -left-12 w-56 h-56 rounded-full bg-pink-500/20 blur-3xl opacity-60" />
-      <div className="absolute -bottom-10 -right-10 w-48 h-48 rounded-full bg-orange-500/15 blur-3xl opacity-50" />
+  <div className="relative my-14 md:my-16 overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0a0a0a] shadow-xl p-8 md:p-10">
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/10 blur-[80px] rounded-full translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/10 blur-[80px] rounded-full -translate-x-1/3 translate-y-1/3" />
     </div>
-    <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <div>
-        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-3">{heading}</h3>
-        <p className="text-zinc-300 text-sm md:text-base leading-[1.7] max-w-2xl">{text}</p>
+    <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+      <div className="flex-1">
+        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-3 leading-snug">{heading}</h3>
+        <p className="text-zinc-400 text-sm md:text-base leading-[1.7] max-w-xl">{text}</p>
       </div>
-      <a href={getAppUrlWithRef(CTA_URL)} className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-sm hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_30px_rgba(236,72,153,0.35)] border border-pink-400/20 group">
-        {button} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-      </a>
+      <div className="shrink-0">
+        <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full font-bold text-white bg-white/[0.05] border border-white/[0.1] hover:bg-white/[0.1] transition-all hover:scale-105 active:scale-[0.98] text-[15px] group w-full md:w-auto">
+          {button} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
     </div>
   </div>
 );
 
 const FinalCTABlock = ({ heading, text, button }) => (
-  <div className="relative my-14 md:my-20 overflow-hidden rounded-3xl border border-pink-500/30 bg-gradient-to-br from-pink-500/[0.16] via-purple-500/[0.06] to-orange-500/[0.12] p-8 md:p-12">
-    <div className="pointer-events-none absolute inset-0 rounded-3xl" aria-hidden="true">
-      <div className="absolute -top-16 left-1/4 w-72 h-72 rounded-full bg-pink-500/25 blur-[60px] opacity-70" />
-      <div className="absolute -bottom-12 right-1/4 w-60 h-60 rounded-full bg-orange-500/20 blur-[50px] opacity-60" />
-      <div className="absolute top-1/2 -translate-y-1/2 right-0 w-40 h-40 rounded-full bg-purple-500/10 blur-[40px] opacity-50" />
+  <div className="relative my-16 md:my-24 overflow-hidden rounded-[32px] border border-white/[0.08] bg-[#080808] p-10 md:p-16 shadow-2xl">
+    <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] rounded-full bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-orange-500/20 blur-[100px] opacity-60" />
     </div>
-    <div className="relative z-10 flex flex-col items-center text-center gap-6">
-      <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-1.5">
+    <div className="relative z-10 flex flex-col items-center text-center gap-6 max-w-2xl mx-auto">
+      <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-1.5 backdrop-blur-sm">
         <Sparkles className="w-3.5 h-3.5 text-pink-400" />
-        <span className="text-xs font-semibold text-pink-300 tracking-wide">GoToFlow AI Carousel Maker</span>
+        <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-pink-300">GoToFlow Workspace</span>
       </div>
-      <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight leading-[1.15] max-w-2xl">{heading}</h2>
-      <p className="text-zinc-300 text-base md:text-lg leading-[1.75] max-w-xl">{text}</p>
-      <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white text-base bg-gradient-to-r from-pink-500 to-orange-500 hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_50px_rgba(236,72,153,0.45)] border border-pink-400/25 group">
+      <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-[1.1]">{heading}</h2>
+      <p className="text-zinc-400 text-base md:text-lg leading-[1.6] mb-2">{text}</p>
+      <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-bold text-black bg-white hover:bg-zinc-100 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(255,255,255,0.2)] text-base group">
         {button} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
       </a>
     </div>
@@ -489,15 +498,23 @@ const FinalCTABlock = ({ heading, text, button }) => (
 );
 
 const WorkflowBlock = ({ steps = workflowSteps }) => (
-  <div className="my-8 rounded-3xl border border-white/[0.08] bg-white/[0.025] p-4 md:p-6 overflow-hidden">
-    <div className="flex flex-col md:flex-row md:flex-wrap items-stretch md:items-center gap-3">
+  <div className="my-10 p-5 md:p-8 rounded-3xl border border-white/[0.08] bg-[#0a0a0a] overflow-hidden relative">
+    <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/5 blur-[80px] rounded-full pointer-events-none" />
+    <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-2 md:gap-3 relative z-10">
       {steps.map((step, index) => (
         <React.Fragment key={step}>
-          <div className="rounded-2xl border border-white/[0.08] bg-[#090909] px-4 py-3 text-sm font-semibold text-zinc-200 text-center md:flex-1 md:min-w-[120px]">
+          <div className="w-full md:w-auto px-5 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02] text-sm font-medium text-zinc-300 text-center shadow-sm">
             {step}
           </div>
           {index < steps.length - 1 && (
-            <div className="hidden md:flex text-zinc-600 items-center justify-center">→</div>
+            <div className="hidden md:flex items-center justify-center">
+              <ChevronRight className="w-4 h-4 text-zinc-600" />
+            </div>
+          )}
+          {index < steps.length - 1 && (
+            <div className="flex md:hidden items-center justify-center py-1">
+              <ChevronDown className="w-4 h-4 text-zinc-600" />
+            </div>
           )}
         </React.Fragment>
       ))}
@@ -506,36 +523,50 @@ const WorkflowBlock = ({ steps = workflowSteps }) => (
 );
 
 const PromptBlock = ({ title, text }) => (
-  <div className="rounded-2xl border border-white/[0.08] bg-[#080808] p-5 md:p-6 mb-5 overflow-hidden">
-    <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight mb-4">{title}</h3>
-    <pre className="whitespace-pre-wrap break-words text-[13px] md:text-sm leading-[1.75] text-zinc-300 font-mono">
-      {text}
-    </pre>
+  <div className="rounded-2xl border border-white/[0.08] bg-[#0a0a0a] mb-6 overflow-hidden shadow-lg">
+    <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.05] bg-[#050505]">
+      <div className="flex items-center gap-2">
+        <div className="w-2.5 h-2.5 rounded-full bg-pink-500/40" />
+        <span className="text-xs font-bold uppercase tracking-[0.1em] text-zinc-400">{title}</span>
+      </div>
+      <div className="text-[10px] uppercase tracking-wider text-zinc-600 font-semibold">Prompt</div>
+    </div>
+    <div className="p-5 md:p-6 bg-[#0a0a0a]">
+      <pre className="whitespace-pre-wrap break-words text-[13px] md:text-sm leading-[1.8] text-zinc-300 font-mono">
+        {text}
+      </pre>
+    </div>
   </div>
 );
 
 const ComparisonTable = () => (
-  <div className="my-8">
-    <div className="hidden md:grid grid-cols-[1fr_1.2fr_1.4fr] overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02]">
-      <div className="px-5 py-4 text-xs font-bold uppercase tracking-[0.12em] text-zinc-500 border-b border-white/[0.08]">Tool</div>
-      <div className="px-5 py-4 text-xs font-bold uppercase tracking-[0.12em] text-zinc-500 border-b border-white/[0.08] border-l border-white/[0.08]">Best for</div>
-      <div className="px-5 py-4 text-xs font-bold uppercase tracking-[0.12em] text-zinc-500 border-b border-white/[0.08] border-l border-white/[0.08]">Limitation</div>
+  <div className="my-10">
+    <div className="hidden md:grid grid-cols-[1fr_1.2fr_1.4fr] overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] shadow-lg">
+      <div className="px-6 py-4 text-xs font-bold uppercase tracking-[0.12em] text-zinc-500 border-b border-white/[0.08] bg-[#050505]">Tool</div>
+      <div className="px-6 py-4 text-xs font-bold uppercase tracking-[0.12em] text-zinc-500 border-b border-white/[0.08] border-l border-white/[0.08] bg-[#050505]">Best for</div>
+      <div className="px-6 py-4 text-xs font-bold uppercase tracking-[0.12em] text-zinc-500 border-b border-white/[0.08] border-l border-white/[0.08] bg-[#050505]">Limitation</div>
       {comparisonRows.map((row) => (
         <React.Fragment key={row.tool}>
-          <div className="px-5 py-5 text-sm font-semibold text-white border-t border-white/[0.05]">{row.tool}</div>
-          <div className="px-5 py-5 text-sm text-zinc-300 border-t border-l border-white/[0.05] leading-[1.6]">{row.bestFor}</div>
-          <div className="px-5 py-5 text-sm text-zinc-400 border-t border-l border-white/[0.05] leading-[1.6]">{row.limitation}</div>
+          <div className="px-6 py-5 text-sm font-semibold text-white border-t border-white/[0.05] flex items-center">{row.tool}</div>
+          <div className="px-6 py-5 text-sm text-zinc-300 border-t border-l border-white/[0.05] leading-[1.6]">{row.bestFor}</div>
+          <div className="px-6 py-5 text-sm text-zinc-400 border-t border-l border-white/[0.05] leading-[1.6]">{row.limitation}</div>
         </React.Fragment>
       ))}
     </div>
-    <div className="md:hidden space-y-4">
+    <div className="md:hidden space-y-4" aria-hidden="true">
       {comparisonRows.map((row) => (
-        <div key={row.tool} className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5">
-          <h3 className="text-white font-semibold mb-3">{row.tool}</h3>
-          <p className="text-xs font-bold uppercase tracking-[0.12em] text-zinc-500 mb-1">Best for</p>
-          <p className="text-sm text-zinc-300 leading-[1.6] mb-3">{row.bestFor}</p>
-          <p className="text-xs font-bold uppercase tracking-[0.12em] text-zinc-500 mb-1">Limitation</p>
-          <p className="text-sm text-zinc-400 leading-[1.6]">{row.limitation}</p>
+        <div key={row.tool} className="rounded-2xl border border-white/[0.08] bg-[#0a0a0a] p-5 shadow-sm">
+          <h3 className="text-white font-semibold mb-4 text-lg">{row.tool}</h3>
+          <div className="space-y-4">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-pink-400/80 mb-1.5">Best for</p>
+              <p className="text-sm text-zinc-300 leading-[1.6]">{row.bestFor}</p>
+            </div>
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-500 mb-1.5">Limitation</p>
+              <p className="text-sm text-zinc-400 leading-[1.6]">{row.limitation}</p>
+            </div>
+          </div>
         </div>
       ))}
     </div>
@@ -558,18 +589,20 @@ const FormatCards = () => (
 );
 
 const SlideExampleCards = () => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+  <div className="my-10 flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
     {slideExamples.map((slide) => (
-      <div key={slide.number} className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="w-9 h-9 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-sm font-bold text-pink-300">
-            {slide.number}
+      <div key={slide.number} className="shrink-0 w-[280px] snap-center rounded-2xl border border-white/[0.08] bg-[#0a0a0a] p-6 flex flex-col shadow-lg">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="w-8 h-8 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-xs font-bold text-pink-400 tabular-nums">
+            0{slide.number}
           </span>
-          <h3 className="text-lg font-bold text-white tracking-tight">{slide.title}</h3>
+          <h3 className="text-base font-bold text-white tracking-tight">{slide.title}</h3>
         </div>
-        <div className="space-y-2.5">
-          {slide.body.map((line) => (
-            <p key={`${slide.number}-${line}`} className="text-sm text-zinc-300 leading-[1.65]">{line}</p>
+        <div className="space-y-3 flex-1 flex flex-col justify-center">
+          {slide.body.map((line, i) => (
+            <p key={`${slide.number}-${i}`} className={`leading-[1.6] text-[15px] ${i === 0 ? 'text-white font-medium' : 'text-zinc-400'}`}>
+              {line}
+            </p>
           ))}
         </div>
       </div>
@@ -603,24 +636,28 @@ const FAQSection = () => {
   return (
     <section className="mb-4">
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-8 pt-2 border-l-[3px] border-pink-500/60 pl-4">FAQ</h2>
-      <div className="space-y-3">
+      <div className="space-y-4">
         {faqItems.map((item, i) => (
-          <div key={item.q} className="rounded-2xl border border-white/[0.08] bg-white/[0.025] overflow-hidden transition-colors hover:border-white/[0.14]">
+          <div key={item.q} className={`rounded-2xl border transition-all duration-300 overflow-hidden ${openIndex === i ? 'border-pink-500/30 bg-[#0a0a0a] shadow-[0_0_30px_rgba(236,72,153,0.05)]' : 'border-white/[0.08] bg-[#0a0a0a] hover:border-white/[0.15]'}`}>
             <button
               onClick={() => toggle(i)}
               aria-expanded={openIndex === i}
-              className="w-full flex items-center justify-between gap-4 px-5 md:px-6 py-4 md:py-5 text-left"
+              className="w-full flex items-start justify-between gap-4 px-6 py-5 text-left"
             >
-              <span className="text-base md:text-lg font-bold text-white tracking-tight leading-snug">{item.q}</span>
-              <ChevronDown
-                className={`shrink-0 w-5 h-5 text-zinc-400 transition-transform duration-200 ${openIndex === i ? 'rotate-180' : ''}`}
-              />
-            </button>
-            {openIndex === i && (
-              <div className="px-5 md:px-6 pb-5 md:pb-6 pt-1">
-                <p className="text-sm md:text-base text-zinc-300 leading-[1.75]">{item.a}</p>
+              <span className="text-[17px] font-bold text-white tracking-tight leading-snug pt-0.5">{item.q}</span>
+              <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${openIndex === i ? 'bg-pink-500/10' : 'bg-white/[0.03]'}`}>
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-300 ${openIndex === i ? 'rotate-180 text-pink-400' : 'text-zinc-400'}`}
+                />
               </div>
-            )}
+            </button>
+            <div className={`grid transition-all duration-300 ease-in-out ${openIndex === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+              <div className="overflow-hidden">
+                <div className="px-6 pb-6 pt-1">
+                  <p className="text-[15px] text-zinc-400 leading-[1.8]">{item.a}</p>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -645,47 +682,16 @@ const ArticleBody = () => (
           <P>Instead of asking AI for random slide text, you can use GoToFlow to build the logic of the carousel before you polish the design.</P>
         </div>
 
-        <Section title="What GoToFlow helps you create">
-          <div className="my-8 rounded-2xl border border-white/[0.08] overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="bg-[#080808] p-6 md:p-8">
-                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-pink-400/80 mb-5">Start with</p>
-                <ul className="space-y-3">
-                  {inputItems.map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-[15px] text-zinc-300 leading-[1.6]">
-                      <span className="shrink-0 w-5 h-5 rounded-md bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
-                        <ArrowRight className="w-3 h-3 text-zinc-500" />
-                      </span>
-                      {item.replace(/;$/, '')}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="bg-[#0a0709] p-6 md:p-8 border-t md:border-t-0 md:border-l border-white/[0.06]">
-                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-pink-400/80 mb-5">GoToFlow helps create</p>
-                <ul className="space-y-3">
-                  {outputItems.map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-[15px] text-zinc-300 leading-[1.6]">
-                      <span className="shrink-0 w-5 h-5 rounded-md bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
-                        <Check className="w-3 h-3 text-pink-400" />
-                      </span>
-                      {item.replace(/;$/, '')}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <P>The goal is not to replace your judgment. The goal is to help you move from raw input to a structured carousel draft faster.</P>
-        </Section>
-
         <InputToCarouselWorkflowMockup
-          title="From raw input to carousel draft"
-          subtitle="Start with a topic, link, video, article, or notes — and shape it into a structured Instagram carousel workflow."
-          inputs={['Topic', 'Link', 'Video', 'Article', 'Notes']}
-          steps={['Angle', 'Hook', 'Slide structure', 'Slide copy', 'Visual direction']}
-          output="Carousel draft"
+          eyebrow="What GoToFlow Helps You Create"
+          title="Turn raw input into a carousel draft"
+          subtitle="Stop writing from scratch. Start with a topic, link, video, or rough notes — and let AI shape the workflow."
+          inputs={['Topic / Idea', 'Link / Article', 'Video', 'Competitor Example', 'Notes']}
+          steps={['Angle', 'First-slide Hook', 'Slide Structure', 'Slide Copy', 'Visual Direction']}
+          output="Carousel Draft"
         />
+
+
 
         <Section title="Quick answer: how to create an Instagram carousel with AI">
           <P>To create an Instagram carousel with AI:</P>
