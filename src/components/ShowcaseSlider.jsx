@@ -36,14 +36,8 @@ const SlideCard = ({ card }) => {
   const imageSrc = isRu ? card.ruImage : card.image;
   const currentFormat = isRu ? (card.ruFormat || card.format) : card.format;
 
-  // Let EN cards keep their original sizes. For RU, we can make vertical cards narrower 
-  // to avoid huge horizontal space occupation.
-  const containerWidthClass = isRu && currentFormat === 'reel' 
-    ? 'w-[250px] md:w-[280px]' 
-    : 'w-[280px] md:w-[320px]';
-
   return (
-    <div className={`shrink-0 ${containerWidthClass} bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3`}>
+    <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
       {/* Плейсхолдер изображения */}
       <div className={`relative w-full ${formatAspect[currentFormat]} rounded-xl bg-[#111] overflow-hidden`}>
         {/* Изображение (нижний слой) */}
