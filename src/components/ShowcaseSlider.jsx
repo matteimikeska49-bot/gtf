@@ -4,17 +4,17 @@ import { useLanguage } from '../context/LanguageContext';
 
 /* ─── Карточки-плейсхолдеры: чередующий ритм Reels + Post ─── */
 const cards = [
-  { id: 1, format: 'square', tag: 'post',     likes: '4.2K', views: '12K', labelKey: 'personalBrand', microLabelKey: 'speed', image: '/images/niches/image_1.png.jpg' },
-  { id: 2, format: 'reel',   tag: 'carousel', likes: '8.1K', views: '20K', labelKey: 'marketing', microLabelKey: 'trend', image: '/images/niches/image_2.png.jpg' },
-  { id: 3, format: 'square', tag: 'carousel', likes: '1.8K', views: '5K',  labelKey: 'promotion', microLabelKey: 'ready', image: '/images/niches/image_3.png.jpg' },
-  { id: 4, format: 'square', tag: 'post',     likes: '3.1K', views: '9K',  labelKey: 'ecommerce', microLabelKey: 'style', image: '/images/niches/image_4.png.jpg' },
-  { id: 5, format: 'reel',   tag: 'carousel', likes: '6.7K', views: '18K', labelKey: 'beauty', microLabelKey: 'speed', image: '/images/niches/image_5.png.jpg' },
-  { id: 6, format: 'square', tag: 'carousel', likes: '5.9K', views: '14K', labelKey: 'fitness', microLabelKey: 'trend', image: '/images/niches/image_6.png.jpg' },
-  { id: 7, format: 'square', tag: 'carousel', likes: '2.4K', views: '7K',  labelKey: 'education', microLabelKey: 'ready', image: '/images/niches/image_7.png.jpg' },
-  { id: 8, format: 'square', tag: 'carousel', likes: '980',  views: '3.2K',labelKey: 'travel', microLabelKey: 'style', image: '/images/niches/image_8.png.jpg' },
-  { id: 9, format: 'reel',   tag: 'carousel', likes: '10K',  views: '25K', labelKey: 'lifestyle', microLabelKey: 'speed', image: '/images/niches/image_9.png.jpg' },
-  { id: 10, format: 'square', tag: 'carousel', likes: '7.2K', views: '15K', labelKey: 'it', microLabelKey: 'trend', image: '/images/niches/image_10.png' },
-  { id: 11, format: 'square', tag: 'carousel', likes: '4.5K', views: '11K', labelKey: 'expert', microLabelKey: 'style', image: '/images/niches/image_1.png.jpg' },
+  { id: 1, format: 'square', tag: 'post',     likes: '4.2K', views: '12K', labelKey: 'personalBrand', microLabelKey: 'speed', image: '/images/niches/image_1.png.jpg', ruImage: '/images/niches/ru/content-ru-1.webp' },
+  { id: 2, format: 'reel',   tag: 'carousel', likes: '8.1K', views: '20K', labelKey: 'marketing', microLabelKey: 'trend', image: '/images/niches/image_2.png.jpg', ruImage: '/images/niches/ru/content-ru-2.webp' },
+  { id: 3, format: 'square', tag: 'carousel', likes: '1.8K', views: '5K',  labelKey: 'promotion', microLabelKey: 'ready', image: '/images/niches/image_3.png.jpg', ruImage: '/images/niches/ru/content-ru-3.webp' },
+  { id: 4, format: 'square', tag: 'post',     likes: '3.1K', views: '9K',  labelKey: 'ecommerce', microLabelKey: 'style', image: '/images/niches/image_4.png.jpg', ruImage: '/images/niches/ru/content-ru-4.webp' },
+  { id: 5, format: 'reel',   tag: 'carousel', likes: '6.7K', views: '18K', labelKey: 'beauty', microLabelKey: 'speed', image: '/images/niches/image_5.png.jpg', ruImage: '/images/niches/ru/content-ru-5.webp' },
+  { id: 6, format: 'square', tag: 'carousel', likes: '5.9K', views: '14K', labelKey: 'fitness', microLabelKey: 'trend', image: '/images/niches/image_6.png.jpg', ruImage: '/images/niches/ru/content-ru-6.webp' },
+  { id: 7, format: 'square', tag: 'carousel', likes: '2.4K', views: '7K',  labelKey: 'education', microLabelKey: 'ready', image: '/images/niches/image_7.png.jpg', ruImage: '/images/niches/ru/content-ru-7.webp' },
+  { id: 8, format: 'square', tag: 'carousel', likes: '980',  views: '3.2K',labelKey: 'travel', microLabelKey: 'style', image: '/images/niches/image_8.png.jpg', ruImage: '/images/niches/ru/content-ru-8.webp' },
+  { id: 9, format: 'reel',   tag: 'carousel', likes: '10K',  views: '25K', labelKey: 'lifestyle', microLabelKey: 'speed', image: '/images/niches/image_9.png.jpg', ruImage: '/images/niches/ru/content-ru-9.webp' },
+  { id: 10, format: 'square', tag: 'carousel', likes: '7.2K', views: '15K', labelKey: 'it', microLabelKey: 'trend', image: '/images/niches/image_10.png', ruImage: '/images/niches/ru/content-ru-10.webp' },
+  { id: 11, format: 'square', tag: 'carousel', likes: '4.5K', views: '11K', labelKey: 'expert', microLabelKey: 'style', image: '/images/niches/image_1.png.jpg', ruImage: '/images/niches/ru/content-ru-1.webp' },
 ];
 
 /* Пропорции плейсхолдеров (aspect-ratio) */
@@ -33,15 +33,18 @@ const tagColor = {
 /* ─── Одна карточка ─── */
 const SlideCard = ({ card }) => {
   const { t, lang } = useLanguage();
+  const isRu = lang === 'RU';
+  const imageSrc = isRu ? card.ruImage : card.image;
+
   return (
     <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
       {/* Плейсхолдер изображения */}
       <div className={`relative w-full ${formatAspect[card.format]} rounded-xl bg-[#111] overflow-hidden`}>
         {/* Изображение (нижний слой) */}
         <img
-          src={card.image}
+          src={imageSrc}
           alt={`AI generated social media carousel example for ${t('showcase.labels.' + card.labelKey)}`}
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className={`absolute inset-0 w-full h-full z-0 ${isRu ? 'object-contain' : 'object-cover'}`}
           loading="lazy"
         />
         {/* Эффекты/overlay поверх */}
