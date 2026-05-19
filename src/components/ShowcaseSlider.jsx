@@ -14,7 +14,6 @@ const cards = [
   { id: 8, format: 'square', ruFormat: 'reel', tag: 'carousel', likes: '980',  views: '3.2K',labelKey: 'travel', microLabelKey: 'style', image: '/images/niches/image_8.png.jpg', ruImage: '/images/niches/ru/content-ru-8.webp' },
   { id: 9, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '10K',  views: '25K', labelKey: 'lifestyle', microLabelKey: 'speed', image: '/images/niches/image_9.png.jpg', ruImage: '/images/niches/ru/content-ru-9.webp' },
   { id: 10, format: 'square', ruFormat: 'reel', tag: 'carousel', likes: '7.2K', views: '15K', labelKey: 'it', microLabelKey: 'trend', image: '/images/niches/image_10.png', ruImage: '/images/niches/ru/content-ru-10.webp' },
-  { id: 11, format: 'square', ruFormat: 'reel', tag: 'carousel', likes: '4.5K', views: '11K', labelKey: 'expert', microLabelKey: 'style', image: '/images/niches/image_1.png.jpg', ruImage: '/images/niches/ru/content-ru-1.webp' },
 ];
 
 /* Пропорции плейсхолдеров (aspect-ratio) */
