@@ -88,19 +88,19 @@ export const CarouselHeroRu = () => {
 
 /* ── Showcase (RU) ── */
 const carouselCards = [
-  { id: 2, likes: '8.1K', views: '20K', label: 'Контент про маркетинг', image: '/images/niches/image_2.png.jpg' },
-  { id: 3, likes: '1.8K', views: '5K', label: 'Контент для продвижения', image: '/images/niches/image_3.png.jpg' },
-  { id: 5, likes: '6.7K', views: '18K', label: 'Контент для бьюти', image: '/images/niches/image_5.png.jpg' },
-  { id: 6, likes: '5.9K', views: '14K', label: 'Контент для фитнеса', image: '/images/niches/image_6.png.jpg' },
-  { id: 7, likes: '2.4K', views: '7K', label: 'Обучающая контент', image: '/images/niches/image_7.png.jpg' },
-  { id: 8, likes: '980', views: '3.2K', label: 'Контент для путешествий', image: '/images/niches/image_8.png.jpg' },
-  { id: 9, likes: '10K', views: '25K', label: 'Контент для лайфстайл', image: '/images/niches/image_9.png.jpg' },
-  { id: 10, likes: '7.2K', views: '15K', label: 'Контент для IT-услуг', image: '/images/niches/image_10.png' },
+  { id: 2, likes: '8.1K', views: '20K', label: 'Контент пример 2', image: '/images/niches/ru/content-ru-2.webp' },
+  { id: 3, likes: '1.8K', views: '5K', label: 'Контент пример 3', image: '/images/niches/ru/content-ru-3.webp' },
+  { id: 5, likes: '6.7K', views: '18K', label: 'Контент пример 5', image: '/images/niches/ru/content-ru-5.webp' },
+  { id: 6, likes: '5.9K', views: '14K', label: 'Контент пример 6', image: '/images/niches/ru/content-ru-6.webp' },
+  { id: 7, likes: '2.4K', views: '7K', label: 'Контент пример 7', image: '/images/niches/ru/content-ru-7.webp' },
+  { id: 8, likes: '980', views: '3.2K', label: 'Контент пример 8', image: '/images/niches/ru/content-ru-8.webp' },
+  { id: 9, likes: '10K', views: '25K', label: 'Контент пример 9', image: '/images/niches/ru/content-ru-9.webp' },
+  { id: 10, likes: '7.2K', views: '15K', label: 'Контент пример 10', image: '/images/niches/ru/content-ru-10.webp' },
 ];
 
 const SlideCard = ({ card }) => (
   <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
-    <div className="relative w-full aspect-square rounded-xl bg-[#111] overflow-hidden">
+    <div className="relative w-full aspect-[4/5] rounded-xl bg-[#111] overflow-hidden">
       <img src={card.image} alt={`Контент Instagram: ${card.label}`} className="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
       <div className="absolute inset-0 md:animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02] z-[1]" />
       <span className="absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full z-[2] bg-violet-500/20 text-violet-300">Контент</span>
@@ -111,7 +111,6 @@ const SlideCard = ({ card }) => (
       <div className="flex items-center gap-3 mt-1">
         <div className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-pink-500/70" /><span className="text-xs text-zinc-500 font-medium">{card.likes}</span></div>
         <div className="flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-zinc-400/50" /><span className="text-xs text-zinc-500 font-medium">{card.views}</span></div>
-        <span className="ml-auto text-[11px] text-zinc-600 truncate">{card.label}</span>
       </div>
     </div>
   </div>
