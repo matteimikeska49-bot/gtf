@@ -88,19 +88,19 @@ export const ContentHero = () => {
 
 /* ── Showcase (content-only) ── */
 const contentCards = [
-  { id: 2, format: 'square', likes: '8.1K', views: '20K', label: 'Marketing content', image: '/images/niches/image_2.png.jpg' },
-  { id: 3, format: 'square', likes: '1.8K', views: '5K', label: 'Promotion content', image: '/images/niches/image_3.png.jpg' },
-  { id: 5, format: 'square', likes: '6.7K', views: '18K', label: 'Beauty content', image: '/images/niches/image_5.png.jpg' },
-  { id: 6, format: 'square', likes: '5.9K', views: '14K', label: 'Fitness content', image: '/images/niches/image_6.png.jpg' },
-  { id: 7, format: 'square', likes: '2.4K', views: '7K', label: 'Educational content', image: '/images/niches/image_7.png.jpg' },
-  { id: 8, format: 'square', likes: '980', views: '3.2K', label: 'Travel content', image: '/images/niches/image_8.png.jpg' },
-  { id: 9, format: 'square', likes: '10K', views: '25K', label: 'Lifestyle content', image: '/images/niches/image_9.png.jpg' },
-  { id: 10, format: 'square', likes: '7.2K', views: '15K', label: 'IT Services content', image: '/images/niches/image_10.png' },
+  { id: 2, format: 'reel', likes: '8.1K', views: '20K', label: 'Content example 2', image: '/images/niches/en/content-en-2.webp' },
+  { id: 3, format: 'reel', likes: '1.8K', views: '5K', label: 'Content example 3', image: '/images/niches/en/content-en-3.webp' },
+  { id: 5, format: 'reel', likes: '6.7K', views: '18K', label: 'Content example 5', image: '/images/niches/en/content-en-5.webp' },
+  { id: 6, format: 'reel', likes: '5.9K', views: '14K', label: 'Content example 6', image: '/images/niches/en/content-en-6.webp' },
+  { id: 7, format: 'reel', likes: '2.4K', views: '7K', label: 'Content example 7', image: '/images/niches/en/content-en-7.webp' },
+  { id: 8, format: 'reel', likes: '980', views: '3.2K', label: 'Content example 8', image: '/images/niches/en/content-en-8.webp' },
+  { id: 9, format: 'reel', likes: '10K', views: '25K', label: 'Content example 9', image: '/images/niches/en/content-en-9.webp' },
+  { id: 10, format: 'reel', likes: '7.2K', views: '15K', label: 'Content example 10', image: '/images/niches/en/content-en-10.webp' },
 ];
 
 const SlideCard = ({ card }) => (
   <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
-    <div className="relative w-full aspect-square rounded-xl bg-[#111] overflow-hidden">
+    <div className="relative w-full aspect-[4/5] rounded-xl bg-[#111] overflow-hidden">
       <img src={card.image} alt={`AI generated ${card.label}`} className="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
       <div className="absolute inset-0 md:animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02] z-[1]" />
       <span className="absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full z-[2] bg-violet-500/20 text-violet-300">Content</span>
@@ -111,7 +111,6 @@ const SlideCard = ({ card }) => (
       <div className="flex items-center gap-3 mt-1">
         <div className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-pink-500/70" /><span className="text-xs text-zinc-500 font-medium">{card.likes}</span></div>
         <div className="flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-zinc-400/50" /><span className="text-xs text-zinc-500 font-medium">{card.views}</span></div>
-        <span className="ml-auto text-[11px] text-zinc-600 truncate">{card.label}</span>
       </div>
     </div>
   </div>

@@ -534,20 +534,23 @@ const CTABox = ({ heading, text, button }) => (
 );
 
 const FinalCTABlock = ({ heading, text, button }) => (
-  <section className="py-12 md:py-16 relative w-full mt-4">
+  <section className="py-12 md:py-16 relative w-full mt-8">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] bg-pink-600/[0.06] blur-[60px] md:blur-[120px] rounded-full pointer-events-none" />
-    <div className="max-w-2xl mx-auto text-center relative z-10">
-      <div className="p-8 md:p-12 rounded-[2rem] border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm shadow-[0_0_40px_rgba(236,72,153,0.02)]">
-        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-4 leading-snug">
+    <div className="max-w-3xl mx-auto text-center relative z-10">
+      <div className="p-8 sm:p-10 md:p-14 rounded-[2rem] border border-white/[0.08] bg-white/[0.02] backdrop-blur-md shadow-[0_0_60px_rgba(236,72,153,0.03)] relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[150px] bg-pink-500/10 blur-[80px] rounded-full pointer-events-none" />
+        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-5 leading-snug relative z-10">
           {heading}
         </h2>
-        <p className="text-zinc-300 text-sm md:text-base leading-[1.7] mb-8 max-w-lg mx-auto">
+        <p className="text-zinc-300 text-[15px] md:text-base leading-[1.7] mb-8 max-w-xl mx-auto relative z-10">
           {text}
         </p>
-        <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.35)] text-[15px] border border-pink-400/20 group">
-          {button} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </a>
-        <p className="text-xs text-zinc-500 mt-4">Free — No credit card required</p>
+        <div className="relative z-10 flex flex-col items-center">
+          <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all duration-300 hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] hover:shadow-[0_0_50px_rgba(236,72,153,0.6)] text-[15px] group border border-pink-400/20">
+            {button} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <p className="text-[13px] text-zinc-500 mt-5 tracking-wide">Free — No credit card required</p>
+        </div>
       </div>
     </div>
   </section>
@@ -689,18 +692,23 @@ const ArticleExploreZone = () => (
       
       <div className="mb-12">
         <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-6 leading-[1.15] text-white">
-          What else you can create with GoToFlow
+          What else you can create with <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">GoToFlow</span>
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {[
             { title: 'Instagram Carousels', desc: 'Turn ideas into swipeable educational posts.', link: '/ai-carousel-maker' },
             { title: 'LinkedIn Carousels', desc: 'Create expert content for professional audiences.', link: '/linkedin-carousel-maker' },
             { title: 'Social Posts', desc: 'Generate short posts from topics, links, or notes.', link: '/ai-instagram-post-generator' },
             { title: 'Content Drafts', desc: 'Shape rough ideas into structured content.', link: '/ai-content-generator' }
           ].map((feature) => (
-            <Link key={feature.title} to={feature.link} className="group flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 transition-all hover:bg-white/[0.04] hover:border-white/[0.15] hover:-translate-y-0.5">
-              <h3 className="text-[15px] font-bold text-zinc-200 tracking-tight transition-colors group-hover:text-white mb-1.5">{feature.title}</h3>
-              <p className="text-[13px] text-zinc-500 leading-snug">{feature.desc}</p>
+            <Link key={feature.title} to={feature.link} className="group flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.18] hover:-translate-y-1 shadow-sm">
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="w-6 h-6 rounded-md border border-white/10 bg-white/[0.04] flex items-center justify-center transition-colors group-hover:bg-pink-500/10 group-hover:border-pink-500/20 shrink-0">
+                  <ChevronRight className="w-3.5 h-3.5 text-zinc-500 group-hover:text-pink-400" />
+                </div>
+                <h3 className="text-[15px] font-bold text-zinc-100 tracking-tight transition-colors group-hover:text-white leading-snug">{feature.title}</h3>
+              </div>
+              <p className="text-[13px] text-zinc-400 leading-snug">{feature.desc}</p>
             </Link>
           ))}
         </div>
@@ -710,7 +718,7 @@ const ArticleExploreZone = () => (
 
       <div>
         <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-6 leading-[1.15] text-white">
-          Related guides
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">Related</span> guides
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
@@ -718,14 +726,17 @@ const ArticleExploreZone = () => (
             { title: 'How to Make a LinkedIn Carousel with AI', desc: 'Step-by-step guide to generating engaging LinkedIn carousels.', link: '/blog/how-to-make-linkedin-carousel-with-ai' },
             { title: '50 LinkedIn Carousel Ideas', desc: 'A list of proven hooks, formats, and structures that get reach.', link: '/blog/linkedin-carousel-ideas' }
           ].map((guide) => (
-            <Link key={guide.title} to={guide.link} className="group flex flex-col justify-between rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 md:p-6 transition-all hover:bg-white/[0.04] hover:border-white/[0.15] hover:-translate-y-0.5 shadow-sm">
+            <Link key={guide.title} to={guide.link} className="group flex flex-col justify-between rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 md:p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.18] hover:-translate-y-1 shadow-sm">
               <div>
-                <h3 className="text-[15px] font-bold text-zinc-200 tracking-tight leading-snug mb-2 group-hover:text-pink-300 transition-colors">{guide.title}</h3>
-                <p className="text-[13px] text-zinc-500 leading-[1.6] mb-5">{guide.desc}</p>
+                <h3 className="text-[16px] font-bold text-zinc-100 tracking-tight leading-snug mb-2 group-hover:text-white transition-colors">{guide.title}</h3>
+                <p className="text-[13px] text-zinc-400 leading-[1.6] mb-6">{guide.desc}</p>
               </div>
-              <span className="text-[12px] font-semibold text-zinc-500 uppercase tracking-widest flex items-center gap-1 group-hover:text-zinc-400 transition-colors">
-                Read guide <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-              </span>
+              <div className="flex items-center gap-1.5 mt-auto">
+                <span className="text-[11px] font-bold text-zinc-300 uppercase tracking-[0.1em] group-hover:text-pink-400 transition-colors">
+                  Read guide
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 text-zinc-500 group-hover:text-pink-400 transition-transform group-hover:translate-x-1" />
+              </div>
             </Link>
           ))}
         </div>
@@ -736,16 +747,16 @@ const ArticleExploreZone = () => (
 );
 
 const FAQItem = ({ item, isOpen, onClick }) => (
-  <div className={`rounded-2xl border transition-colors duration-300 overflow-hidden cursor-pointer ${isOpen ? 'border-pink-500/30 bg-white/[0.03]' : 'border-white/[0.06] bg-white/[0.015] hover:border-white/[0.12]'}`} onClick={onClick}>
-    <div className="flex items-center justify-between gap-4 p-5 md:p-6">
-      <h3 className={`font-semibold text-sm md:text-base leading-snug transition-colors ${isOpen ? 'text-white' : 'text-zinc-200'}`}>{item.q}</h3>
-      <div className={`shrink-0 w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition-colors ${isOpen ? 'bg-pink-500/10' : 'bg-white/[0.03]'}`}>
+  <div className={`rounded-2xl border transition-all duration-300 overflow-hidden cursor-pointer ${isOpen ? 'border-pink-500/30 bg-pink-500/[0.02] shadow-[0_0_30px_rgba(236,72,153,0.03)]' : 'border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/[0.15]'}`} onClick={onClick}>
+    <div className="flex items-start justify-between gap-4 p-5 md:p-6">
+      <h3 className={`font-semibold text-sm md:text-base leading-snug transition-colors pt-0.5 ${isOpen ? 'text-white' : 'text-zinc-200'}`}>{item.q}</h3>
+      <div className={`shrink-0 w-7 h-7 rounded-full border flex items-center justify-center transition-colors ${isOpen ? 'bg-pink-500/10 border-pink-500/20' : 'bg-white/[0.03] border-white/10 group-hover:bg-white/[0.06]'}`}>
         <ChevronRight className={`w-3.5 h-3.5 transition-transform duration-300 ${isOpen ? '-rotate-90 text-pink-400' : 'rotate-90 text-zinc-500'}`} />
       </div>
     </div>
     <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
       <div className="overflow-hidden">
-        <p className="px-5 md:px-6 pb-5 md:pb-6 text-zinc-300 leading-[1.7] text-sm md:text-base">{item.a}</p>
+        <p className="px-5 md:px-6 pb-5 md:pb-6 text-zinc-400 leading-[1.7] text-sm md:text-base">{item.a}</p>
       </div>
     </div>
   </div>
@@ -756,11 +767,13 @@ const FAQSection = () => {
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
   return (
     <section className="py-8 relative w-full overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-pink-500/[0.03] blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-pink-500/[0.04] blur-[160px] rounded-full pointer-events-none" />
       <div className="relative z-10">
-        <div className="bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-14">
-          <h2 className="text-[22px] md:text-[28px] font-bold text-white tracking-tight mb-8">Frequently Asked Questions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-10 py-8 md:py-12 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+          <h2 className="text-[22px] md:text-[28px] font-bold text-white tracking-tight mb-8">
+            Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">Questions</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
             {faqItems.map((item, i) => (
               <FAQItem key={item.q} item={item} isOpen={openIndex === i} onClick={() => toggle(i)} />
             ))}
@@ -775,17 +788,29 @@ const ArticleBody = () => (
   <article className="pt-4 pb-8 px-4 sm:px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
     <div className="max-w-[940px] mx-auto relative z-10">
       <div className="bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-14">
-        <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 md:p-8 mb-14 md:mb-16 shadow-[0_0_60px_rgba(236,72,153,0.04)]">
-          <P>Instagram carousels can turn one idea into a swipeable story.</P>
-          <P>That is why creators, founders, marketers, agencies, coaches, and SaaS teams use them to explain ideas, teach frameworks, break down problems, and make content easier to save.</P>
-          <P>But most carousel tools start too late.</P>
-          <P>They help you design slides after you already know the angle, hook, structure, copy, and visual direction. That is useful — but it skips the hardest part.</P>
-          <P>The real challenge is not only making slides look good. It is deciding what the carousel should say, why someone should swipe, how each slide should build on the previous one, and what the reader should do next.</P>
-          <P>That is where an AI Instagram carousel generator should help earlier in the process.</P>
-          <P>A stronger workflow starts with a topic, link, video, article, notes, competitor example, or rough idea — then turns it into a clear carousel flow:</P>
-          <WorkflowBlock />
-          <P>GoToFlow is built around that workflow.</P>
-          <P>Instead of asking AI for random slide text, you can use GoToFlow to build the logic of the carousel before you polish the design.</P>
+        <div className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-6 md:p-10 mb-14 md:mb-16 shadow-[0_0_40px_rgba(236,72,153,0.03)] relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-pink-500/[0.04] blur-[120px] rounded-full pointer-events-none" />
+          <div className="relative z-10">
+            <P>Instagram carousels can turn one idea into a swipeable story.</P>
+            <P>That is why creators, founders, marketers, agencies, coaches, and SaaS teams use them to explain ideas, teach frameworks, break down problems, and make content easier to save.</P>
+            
+            <div className="my-8 rounded-2xl border border-pink-500/20 bg-pink-500/[0.04] p-5 md:p-6 relative overflow-hidden shadow-sm">
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500/50 to-orange-500/50" />
+              <div className="flex items-center gap-2 mb-3">
+                <Sparkles className="w-4 h-4 text-pink-400" />
+                <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-pink-400">Why this matters</span>
+              </div>
+              <p className="text-[15px] leading-[1.65] text-zinc-300">
+                Most carousel tools start too late. They help you design slides after you already know the angle, hook, and copy. But the real challenge is deciding what the carousel should say, why someone should swipe, and how slides should flow.
+              </p>
+            </div>
+
+            <P>That is where an AI Instagram carousel generator should help earlier in the process.</P>
+            <P>A stronger workflow starts with a topic, link, video, article, notes, competitor example, or rough idea — then turns it into a clear carousel flow:</P>
+            <WorkflowBlock />
+            <P>GoToFlow is built around that workflow.</P>
+            <P>Instead of asking AI for random slide text, you can use GoToFlow to build the logic of the carousel before you polish the design.</P>
+          </div>
         </div>
 
         <InputToCarouselWorkflowMockup
