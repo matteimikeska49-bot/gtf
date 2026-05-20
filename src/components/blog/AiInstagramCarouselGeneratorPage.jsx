@@ -408,29 +408,66 @@ const P = ({ children, strong = false }) => (
   </p>
 );
 
-const Section = ({ title, children }) => (
-  <section className="mb-16 md:mb-20">
-    <h2 className="text-2xl md:text-[32px] font-bold tracking-tight mb-8 leading-[1.15]">
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-pink-200 to-purple-300">{title}</span>
-    </h2>
-    {children}
-  </section>
-);
+const Section = ({ title, children }) => {
+  const words = typeof title === 'string' ? title.split(' ') : [];
+  let formattedTitle = title;
+  
+  if (words.length > 2) {
+    const highlightWords = words.slice(-2).join(' ');
+    const normalWords = words.slice(0, -2).join(' ');
+    formattedTitle = (
+      <>
+        {normalWords} <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">{highlightWords}</span>
+      </>
+    );
+  } else if (words.length === 2) {
+    const highlightWords = words.slice(-1).join(' ');
+    const normalWords = words.slice(0, -1).join(' ');
+    formattedTitle = (
+      <>
+        {normalWords} <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">{highlightWords}</span>
+      </>
+    );
+  }
+
+  return (
+    <section className="mb-16 md:mb-20">
+      <h2 className="text-2xl md:text-[32px] font-bold tracking-tight mb-8 leading-[1.15] text-white">
+        {formattedTitle}
+      </h2>
+      {children}
+    </section>
+  );
+};
 
 const Subsection = ({ title, children }) => (
   <div className="mt-12 mb-8">
     <div className="flex items-center gap-3 mb-5">
-      <span className="shrink-0 w-2 h-2 rounded-full bg-gradient-to-r from-pink-400 to-orange-400" />
-      <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight leading-snug">{title}</h3>
+      <span className="shrink-0 w-2.5 h-2.5 rounded-full bg-gradient-to-r from-pink-400 to-orange-400 shadow-[0_0_12px_rgba(236,72,153,0.6)]" />
+      <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight leading-snug">{title}</h3>
     </div>
     {children}
   </div>
 );
 
+const StepCard = ({ step, title, children }) => (
+  <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 md:p-8 mb-8 shadow-[0_0_40px_rgba(236,72,153,0.03)] relative overflow-hidden">
+    <div className="flex items-center gap-4 mb-6 md:mb-8">
+      <div className="flex items-center justify-center shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500/10 to-orange-500/10 border border-white/[0.08]">
+        <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">{step}</span>
+      </div>
+      <h3 className="text-xl font-bold text-white tracking-tight leading-snug">{title}</h3>
+    </div>
+    <div>
+      {children}
+    </div>
+  </div>
+);
+
 const BulletList = ({ items }) => (
-  <ul className="space-y-3 mb-6">
+  <ul className="space-y-2.5 mb-6">
     {items.map((item) => (
-      <li key={item} className="flex items-start gap-3.5 text-zinc-400 text-[15px] md:text-base leading-[1.7]">
+      <li key={item} className="flex items-start gap-3.5 rounded-xl border border-white/[0.04] bg-white/[0.015] px-4 py-3 text-zinc-400 text-[15px] md:text-base leading-[1.6] transition-colors hover:bg-white/[0.03]">
         <span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/60 shrink-0" />
         <span>{item}</span>
       </li>
@@ -497,24 +534,23 @@ const CTABox = ({ heading, text, button }) => (
 );
 
 const FinalCTABlock = ({ heading, text, button }) => (
-  <div className="relative my-16 rounded-[32px] bg-gradient-to-br from-pink-500/35 via-white/[0.08] to-orange-500/30 p-px shadow-2xl md:my-24">
-    <div className="relative overflow-hidden rounded-[31px] bg-[#080808] px-6 py-10 sm:px-8 md:p-16">
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute left-1/2 top-1/2 h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-pink-500/20 to-orange-500/18 blur-[100px] opacity-70" />
-      </div>
-      <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-6 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-1.5 backdrop-blur-sm">
-          <Sparkles className="h-3.5 w-3.5 text-pink-400" />
-          <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-pink-300">GoToFlow Workspace</span>
-        </div>
-        <h2 className="text-3xl font-bold leading-[1.12] tracking-tight text-white md:text-5xl">{heading}</h2>
-        <p className="mb-2 text-base leading-[1.65] text-zinc-400 md:text-lg">{text}</p>
-        <a href={getAppUrlWithRef(CTA_URL)} className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-white px-8 py-4 text-base font-bold text-black shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all hover:scale-105 hover:bg-zinc-100 active:scale-[0.98] sm:w-auto">
-          {button} <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+  <section className="py-12 md:py-16 relative w-full mt-4">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] bg-pink-600/[0.06] blur-[60px] md:blur-[120px] rounded-full pointer-events-none" />
+    <div className="max-w-2xl mx-auto text-center relative z-10">
+      <div className="p-8 md:p-12 rounded-[2rem] border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm shadow-[0_0_40px_rgba(236,72,153,0.02)]">
+        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-4 leading-snug">
+          {heading}
+        </h2>
+        <p className="text-zinc-300 text-sm md:text-base leading-[1.7] mb-8 max-w-lg mx-auto">
+          {text}
+        </p>
+        <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.35)] text-[15px] border border-pink-400/20 group">
+          {button} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </a>
+        <p className="text-xs text-zinc-500 mt-4">Free — No credit card required</p>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 const WorkflowBlock = ({ steps = workflowSteps }) => (
@@ -604,18 +640,18 @@ const FormatCards = () => (
 );
 
 const SlideExampleCards = () => (
-  <div className="my-10 flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+  <div className="my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
     {slideExamples.map((slide) => (
-      <div key={slide.number} className="shrink-0 w-[280px] snap-center rounded-2xl border border-white/[0.08] bg-[#0a0a0a] p-6 flex flex-col shadow-lg">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-8 h-8 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-xs font-bold text-pink-400 tabular-nums">
+      <div key={slide.number} className="rounded-2xl border border-white/[0.1] bg-white/[0.03] p-5 lg:p-6 flex flex-col shadow-[0_0_40px_rgba(236,72,153,0.03)] transition-colors hover:bg-white/[0.05] relative overflow-hidden">
+        <div className="flex items-start gap-3 mb-5">
+          <span className="w-8 h-8 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-xs font-bold text-pink-300 tabular-nums shrink-0 mt-0.5 shadow-[0_0_10px_rgba(236,72,153,0.1)]">
             0{slide.number}
           </span>
-          <h3 className="text-base font-bold text-white tracking-tight">{slide.title}</h3>
+          <h3 className="text-[15px] font-bold text-white tracking-tight leading-snug">{slide.title}</h3>
         </div>
-        <div className="space-y-3 flex-1 flex flex-col justify-center">
+        <div className="space-y-2.5 flex-1 flex flex-col justify-start">
           {slide.body.map((line, i) => (
-            <p key={`${slide.number}-${i}`} className={`leading-[1.6] text-[15px] ${i === 0 ? 'text-white font-medium' : 'text-zinc-400'}`}>
+            <p key={`${slide.number}-${i}`} className={`leading-[1.6] text-sm ${i === 0 ? 'text-zinc-100 font-medium' : 'text-zinc-300'}`}>
               {line}
             </p>
           ))}
@@ -639,9 +675,79 @@ const ChecklistGrid = ({ items }) => (
 );
 
 const ExampleBox = ({ label, children }) => (
-  <div className="rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-5 md:p-6 my-6">
-    <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-600 mb-3">{label}</p>
-    <div className="text-sm md:text-base text-zinc-400 leading-[1.75] space-y-2">{children}</div>
+  <div className="rounded-xl border border-white/[0.08] bg-[#050505] p-5 md:p-6 my-6 relative overflow-hidden">
+    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500/40 to-orange-500/40" />
+    <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 mb-4">{label}</p>
+    <div className="text-sm md:text-base text-zinc-300 leading-[1.75] space-y-3">{children}</div>
+  </div>
+);
+
+const ArticleExploreZone = () => (
+  <section className="mt-16 mb-8 relative w-full overflow-hidden">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-purple-500/[0.02] blur-[140px] rounded-full pointer-events-none" />
+    <div className="relative z-10 bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-12">
+      
+      <div className="mb-12">
+        <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-6 leading-[1.15] text-white">
+          What else you can create with GoToFlow
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+          {[
+            { title: 'Instagram Carousels', desc: 'Turn ideas into swipeable educational posts.', link: '/ai-carousel-maker' },
+            { title: 'LinkedIn Carousels', desc: 'Create expert content for professional audiences.', link: '/linkedin-carousel-maker' },
+            { title: 'Social Posts', desc: 'Generate short posts from topics, links, or notes.', link: '/ai-instagram-post-generator' },
+            { title: 'Content Drafts', desc: 'Shape rough ideas into structured content.', link: '/ai-content-generator' }
+          ].map((feature) => (
+            <Link key={feature.title} to={feature.link} className="group flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 transition-all hover:bg-white/[0.04] hover:border-white/[0.15] hover:-translate-y-0.5">
+              <h3 className="text-[15px] font-bold text-zinc-200 tracking-tight transition-colors group-hover:text-white mb-1.5">{feature.title}</h3>
+              <p className="text-[13px] text-zinc-500 leading-snug">{feature.desc}</p>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <div className="h-px w-full bg-white/[0.06] mb-12"></div>
+
+      <div>
+        <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-6 leading-[1.15] text-white">
+          Related guides
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {[
+            { title: 'Best AI Carousel Generators', desc: 'Compare the top tools for creating social media carousels in 2026.', link: '/blog/best-ai-carousel-generators' },
+            { title: 'How to Make a LinkedIn Carousel with AI', desc: 'Step-by-step guide to generating engaging LinkedIn carousels.', link: '/blog/how-to-make-linkedin-carousel-with-ai' },
+            { title: '50 LinkedIn Carousel Ideas', desc: 'A list of proven hooks, formats, and structures that get reach.', link: '/blog/linkedin-carousel-ideas' }
+          ].map((guide) => (
+            <Link key={guide.title} to={guide.link} className="group flex flex-col justify-between rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 md:p-6 transition-all hover:bg-white/[0.04] hover:border-white/[0.15] hover:-translate-y-0.5 shadow-sm">
+              <div>
+                <h3 className="text-[15px] font-bold text-zinc-200 tracking-tight leading-snug mb-2 group-hover:text-pink-300 transition-colors">{guide.title}</h3>
+                <p className="text-[13px] text-zinc-500 leading-[1.6] mb-5">{guide.desc}</p>
+              </div>
+              <span className="text-[12px] font-semibold text-zinc-500 uppercase tracking-widest flex items-center gap-1 group-hover:text-zinc-400 transition-colors">
+                Read guide <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+);
+
+const FAQItem = ({ item, isOpen, onClick }) => (
+  <div className={`rounded-2xl border transition-colors duration-300 overflow-hidden cursor-pointer ${isOpen ? 'border-pink-500/30 bg-white/[0.03]' : 'border-white/[0.06] bg-white/[0.015] hover:border-white/[0.12]'}`} onClick={onClick}>
+    <div className="flex items-center justify-between gap-4 p-5 md:p-6">
+      <h3 className={`font-semibold text-sm md:text-base leading-snug transition-colors ${isOpen ? 'text-white' : 'text-zinc-200'}`}>{item.q}</h3>
+      <div className={`shrink-0 w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition-colors ${isOpen ? 'bg-pink-500/10' : 'bg-white/[0.03]'}`}>
+        <ChevronRight className={`w-3.5 h-3.5 transition-transform duration-300 ${isOpen ? '-rotate-90 text-pink-400' : 'rotate-90 text-zinc-500'}`} />
+      </div>
+    </div>
+    <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+      <div className="overflow-hidden">
+        <p className="px-5 md:px-6 pb-5 md:pb-6 text-zinc-300 leading-[1.7] text-sm md:text-base">{item.a}</p>
+      </div>
+    </div>
   </div>
 );
 
@@ -649,34 +755,17 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
   return (
-    <section className="mb-4">
-      <h2 className="text-2xl md:text-[32px] font-bold tracking-tight mb-10 leading-[1.15]">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-pink-200 to-purple-300">FAQ</span>
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {faqItems.map((item, i) => (
-          <div key={item.q} className={`rounded-2xl border transition-all duration-300 overflow-hidden self-start ${openIndex === i ? 'border-pink-500/25 bg-[#0a0a0a] shadow-[0_0_30px_rgba(236,72,153,0.05)]' : 'border-white/[0.06] bg-[#0a0a0a] hover:border-white/[0.12]'}`}>
-            <button
-              onClick={() => toggle(i)}
-              aria-expanded={openIndex === i}
-              className="w-full flex items-start justify-between gap-3 px-5 py-4 text-left"
-            >
-              <span className="text-[15px] font-semibold text-zinc-200 tracking-tight leading-snug pt-0.5">{item.q}</span>
-              <div className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors ${openIndex === i ? 'bg-pink-500/10' : 'bg-white/[0.03]'}`}>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-300 ${openIndex === i ? 'rotate-180 text-pink-400' : 'text-zinc-500'}`}
-                />
-              </div>
-            </button>
-            <div className={`grid transition-all duration-300 ease-in-out ${openIndex === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
-              <div className="overflow-hidden">
-                <div className="px-5 pb-5 pt-0">
-                  <p className="text-[14px] text-zinc-500 leading-[1.75]">{item.a}</p>
-                </div>
-              </div>
-            </div>
+    <section className="py-8 relative w-full overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-pink-500/[0.03] blur-[160px] rounded-full pointer-events-none" />
+      <div className="relative z-10">
+        <div className="bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-14">
+          <h2 className="text-[22px] md:text-[28px] font-bold text-white tracking-tight mb-8">Frequently Asked Questions</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {faqItems.map((item, i) => (
+              <FAQItem key={item.q} item={item} isOpen={openIndex === i} onClick={() => toggle(i)} />
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
@@ -686,7 +775,7 @@ const ArticleBody = () => (
   <article className="pt-4 pb-8 px-4 sm:px-6 relative z-10 w-full bg-[#050505] overflow-hidden">
     <div className="max-w-[940px] mx-auto relative z-10">
       <div className="bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-14">
-        <div className="mb-14 md:mb-16">
+        <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 md:p-8 mb-14 md:mb-16 shadow-[0_0_60px_rgba(236,72,153,0.04)]">
           <P>Instagram carousels can turn one idea into a swipeable story.</P>
           <P>That is why creators, founders, marketers, agencies, coaches, and SaaS teams use them to explain ideas, teach frameworks, break down problems, and make content easier to save.</P>
           <P>But most carousel tools start too late.</P>
@@ -819,7 +908,7 @@ const ArticleBody = () => (
         </Section>
 
         <Section title="How to create an Instagram carousel with AI step by step">
-          <Subsection title="1. Start with a clear topic or source">
+          <StepCard step="1" title="Start with a clear topic or source">
             <P>A strong carousel starts with a clear input.</P>
             <P>You can begin with:</P>
             <BulletList items={['a topic;', 'a rough idea;', 'a link;', 'a video;', 'an article;', 'notes;', 'a competitor example;', 'old content;', 'a customer question;', 'a product insight.']} />
@@ -831,8 +920,8 @@ const ArticleBody = () => (
             </ExampleBox>
             <P>The second version gives AI a clear audience, pain point, and direction.</P>
             <P>If you are using GoToFlow, this is where the workflow starts: you bring the input, and the tool helps turn it into a usable carousel direction.</P>
-          </Subsection>
-          <Subsection title="2. Define the audience and outcome">
+          </StepCard>
+          <StepCard step="2" title="Define the audience and outcome">
             <P>Before writing slides, define who the carousel is for and what it should do.</P>
             <P>Ask:</P>
             <BulletList items={['Who is this for?', 'What problem do they have?', 'What should they understand after swiping?', 'Should the post teach, persuade, compare, explain, or sell?', 'What action should the reader take at the end?']} />
@@ -840,8 +929,8 @@ const ArticleBody = () => (
             <BulletList items={['For founders: explain a growth mistake.', 'For creators: teach a repeatable content framework.', 'For agencies: show a client-facing checklist.', 'For coaches: simplify a complex idea.', 'For SaaS teams: explain a product workflow.', 'For marketers: compare two approaches.']} />
             <P>Without audience and outcome, AI usually produces generic content.</P>
             <P>With audience and outcome, the carousel becomes more specific and useful.</P>
-          </Subsection>
-          <Subsection title="3. Choose the carousel format">
+          </StepCard>
+          <StepCard step="3" title="Choose the carousel format">
             <P>The format gives the carousel a structure.</P>
             <P>Good carousel formats include:</P>
             <BulletList items={['educational guide;', 'mistakes and fixes;', 'checklist;', 'before/after;', 'framework;', 'myth vs truth;', 'comparison;', 'product explainer;', 'case study;', 'tips list.']} />
@@ -857,8 +946,8 @@ const ArticleBody = () => (
             </ExampleBox>
             <P>The format changes the whole article-to-carousel workflow.</P>
             <P>A checklist needs short, direct points. A case study needs context and proof. A comparison needs contrast.</P>
-          </Subsection>
-          <Subsection title="4. Generate first-slide hook options">
+          </StepCard>
+          <StepCard step="4" title="Generate first-slide hook options">
             <P>The first slide decides whether people swipe.</P>
             <P>A weak hook is broad, obvious, or too soft.</P>
             <P>Weak examples:</P>
@@ -869,8 +958,8 @@ const ArticleBody = () => (
             <BulletList items={['names a specific pain;', 'challenges a common belief;', 'promises a useful fix;', 'creates curiosity;', 'shows a before/after;', 'speaks to a clear audience.']} />
             <P>Use AI to generate options, but do not accept the first one.</P>
             <P>Ask for 10–20 variations, then choose the clearest one.</P>
-          </Subsection>
-          <Subsection title="5. Build a slide-by-slide structure">
+          </StepCard>
+          <StepCard step="5" title="Build a slide-by-slide structure">
             <P>A carousel should not feel like a blog post squeezed into slides.</P>
             <P>The rule is simple:</P>
             <P strong>One slide = one idea.</P>
@@ -881,8 +970,8 @@ const ArticleBody = () => (
             <BulletList items={['random tips;', 'repeated ideas;', 'too much context;', 'no progression;', 'no final takeaway.']} />
             <P>Good structure:</P>
             <BulletList items={['clear opening;', 'logical sequence;', 'short slides;', 'one takeaway per slide;', 'useful ending.']} />
-          </Subsection>
-          <Subsection title="6. Write short slide copy">
+          </StepCard>
+          <StepCard step="6" title="Write short slide copy">
             <P>Instagram carousel copy must be easy to read on a phone.</P>
             <P>Avoid long paragraphs. Use short lines. Cut anything that does not help the slide.</P>
             <ExampleBox label="Instead of">
@@ -898,22 +987,22 @@ const ArticleBody = () => (
             </ExampleBox>
             <P>Shorter copy creates stronger slides.</P>
             <P>AI can help you reduce text, but you should still edit for clarity and tone.</P>
-          </Subsection>
-          <Subsection title="7. Choose visual style">
+          </StepCard>
+          <StepCard step="7" title="Choose visual style">
             <P>The visual style should support the message.</P>
             <P>Examples:</P>
             <BulletList items={['Editorial: strong typography, clean layout, magazine-like feel.', 'Minimal: white space, simple headings, few elements.', 'Bold creator style: large hooks, high contrast, expressive layouts.', 'SaaS dark style: dark background, gradient accents, product-like visuals.', 'Brand-led style: consistent colors, fonts, and visual system.']} />
             <P>Do not choose style before structure.</P>
             <P>Design should make the idea easier to understand, not hide weak content.</P>
             <P>A good AI carousel workflow should help you connect the message with a visual direction.</P>
-          </Subsection>
-          <Subsection title="8. Create a draft and refine it">
+          </StepCard>
+          <StepCard step="8" title="Create a draft and refine it">
             <P>An AI draft is a starting point.</P>
             <P>Before publishing, review:</P>
             <BulletList items={['Is the hook specific?', 'Is the structure logical?', 'Is each slide readable?', 'Is the tone consistent with your brand?', 'Are the facts accurate?', 'Is the CTA clear?', 'Does the carousel still work on mobile?']} />
             <P>AI speeds up the workflow, but human review makes the final content credible.</P>
             <P>That is especially important for expert, SaaS, educational, or brand content.</P>
-          </Subsection>
+          </StepCard>
         </Section>
 
         <Section title="Best Instagram carousel formats to create with AI">
@@ -1012,13 +1101,15 @@ const ArticleBody = () => (
           <P>GoToFlow helps you move from topic, link, video, notes, or rough idea to a structured Instagram carousel draft with hook, slide flow, copy, and visual direction.</P>
         </Section>
 
-        <FinalCTABlock
-          heading="Create your next Instagram carousel with GoToFlow"
-          text="Start with a topic, link, video, article, or rough idea — and turn it into a structured carousel draft with hook, slide flow, short copy, and visual direction."
-          button="Try GoToFlow AI Carousel Maker"
-        />
+        <ArticleExploreZone />
 
         <FAQSection />
+
+        <FinalCTABlock
+          heading="Still creating carousels manually?"
+          text="Turn a topic, link, video, or rough note into a structured Instagram carousel draft with angle, hook, slide flow, copy, and visual direction."
+          button="Try GoToFlow For Free"
+        />
       </div>
     </div>
   </article>

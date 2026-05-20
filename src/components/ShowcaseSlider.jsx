@@ -4,16 +4,16 @@ import { useLanguage } from '../context/LanguageContext';
 
 /* ─── Карточки-плейсхолдеры: чередующий ритм Reels + Post ─── */
 const cards = [
-  { id: 1, format: 'square', ruFormat: 'reel', tag: 'post',     likes: '4.2K', views: '12K', labelKey: 'personalBrand', microLabelKey: 'speed', image: '/images/niches/image_1.png.jpg', ruImage: '/images/niches/ru/content-ru-1.webp' },
-  { id: 2, format: 'reel',   ruFormat: 'square', tag: 'carousel', likes: '8.1K', views: '20K', labelKey: 'marketing', microLabelKey: 'trend', image: '/images/niches/image_2.png.jpg', ruImage: '/images/niches/ru/content-ru-2.webp' },
-  { id: 3, format: 'square', ruFormat: 'reel', tag: 'carousel', likes: '1.8K', views: '5K',  labelKey: 'promotion', microLabelKey: 'ready', image: '/images/niches/image_3.png.jpg', ruImage: '/images/niches/ru/content-ru-3.webp' },
-  { id: 4, format: 'square', ruFormat: 'square', tag: 'post',     likes: '3.1K', views: '9K',  labelKey: 'ecommerce', microLabelKey: 'style', image: '/images/niches/image_4.png.jpg', ruImage: '/images/niches/ru/content-ru-4.webp' },
-  { id: 5, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '6.7K', views: '18K', labelKey: 'beauty', microLabelKey: 'speed', image: '/images/niches/image_5.png.jpg', ruImage: '/images/niches/ru/content-ru-5.webp' },
-  { id: 6, format: 'square', ruFormat: 'square', tag: 'carousel', likes: '5.9K', views: '14K', labelKey: 'fitness', microLabelKey: 'trend', image: '/images/niches/image_6.png.jpg', ruImage: '/images/niches/ru/content-ru-6.webp' },
-  { id: 7, format: 'square', ruFormat: 'reel', tag: 'carousel', likes: '2.4K', views: '7K',  labelKey: 'education', microLabelKey: 'ready', image: '/images/niches/image_7.png.jpg', ruImage: '/images/niches/ru/content-ru-7.webp' },
-  { id: 8, format: 'square', ruFormat: 'reel', tag: 'carousel', likes: '980',  views: '3.2K',labelKey: 'travel', microLabelKey: 'style', image: '/images/niches/image_8.png.jpg', ruImage: '/images/niches/ru/content-ru-8.webp' },
-  { id: 9, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '10K',  views: '25K', labelKey: 'lifestyle', microLabelKey: 'speed', image: '/images/niches/image_9.png.jpg', ruImage: '/images/niches/ru/content-ru-9.webp' },
-  { id: 10, format: 'square', ruFormat: 'reel', tag: 'carousel', likes: '7.2K', views: '15K', labelKey: 'it', microLabelKey: 'trend', image: '/images/niches/image_10.png', ruImage: '/images/niches/ru/content-ru-10.webp' },
+  { id: 1, format: 'reel',   ruFormat: 'reel', tag: 'post',     likes: '4.2K', views: '12K', labelKey: 'personalBrand', microLabelKey: 'speed', image: '/images/niches/en/content-en-1.webp', ruImage: '/images/niches/ru/content-ru-1.webp' },
+  { id: 2, format: 'reel',   ruFormat: 'square', tag: 'carousel', likes: '8.1K', views: '20K', labelKey: 'marketing', microLabelKey: 'trend', image: '/images/niches/en/content-en-2.webp', ruImage: '/images/niches/ru/content-ru-2.webp' },
+  { id: 3, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '1.8K', views: '5K',  labelKey: 'promotion', microLabelKey: 'ready', image: '/images/niches/en/content-en-3.webp', ruImage: '/images/niches/ru/content-ru-3.webp' },
+  { id: 4, format: 'reel',   ruFormat: 'square', tag: 'post',     likes: '3.1K', views: '9K',  labelKey: 'ecommerce', microLabelKey: 'style', image: '/images/niches/en/content-en-4.webp', ruImage: '/images/niches/ru/content-ru-4.webp' },
+  { id: 5, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '6.7K', views: '18K', labelKey: 'beauty', microLabelKey: 'speed', image: '/images/niches/en/content-en-5.webp', ruImage: '/images/niches/ru/content-ru-5.webp' },
+  { id: 6, format: 'reel',   ruFormat: 'square', tag: 'carousel', likes: '5.9K', views: '14K', labelKey: 'fitness', microLabelKey: 'trend', image: '/images/niches/en/content-en-6.webp', ruImage: '/images/niches/ru/content-ru-6.webp' },
+  { id: 7, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '2.4K', views: '7K',  labelKey: 'education', microLabelKey: 'ready', image: '/images/niches/en/content-en-7.webp', ruImage: '/images/niches/ru/content-ru-7.webp' },
+  { id: 8, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '980',  views: '3.2K',labelKey: 'travel', microLabelKey: 'style', image: '/images/niches/en/content-en-8.webp', ruImage: '/images/niches/ru/content-ru-8.webp' },
+  { id: 9, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '10K',  views: '25K', labelKey: 'lifestyle', microLabelKey: 'speed', image: '/images/niches/en/content-en-9.webp', ruImage: '/images/niches/ru/content-ru-9.webp' },
+  { id: 10, format: 'reel',  ruFormat: 'reel', tag: 'carousel', likes: '7.2K', views: '15K', labelKey: 'it', microLabelKey: 'trend', image: '/images/niches/en/content-en-10.webp', ruImage: '/images/niches/ru/content-ru-10.webp' },
 ];
 
 /* Пропорции плейсхолдеров (aspect-ratio) */
@@ -75,9 +75,6 @@ const SlideCard = ({ card }) => {
             <Eye className="w-3.5 h-3.5 text-zinc-400/50" />
             <span className="text-xs text-zinc-500 font-medium">{card.views}</span>
           </div>
-          {!isRu && (
-            <span className="ml-auto text-[11px] text-zinc-600 truncate">{t(`showcase.labels.${card.labelKey}`)}</span>
-          )}
         </div>
       </div>
     </div>
