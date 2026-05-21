@@ -552,6 +552,11 @@ const FinalCTABlock = ({ heading, text, button }) => (
           <p className="text-[13px] text-zinc-500 mt-5 tracking-wide">Free — No credit card required</p>
         </div>
       </div>
+      <div className="mt-10 md:mt-14">
+        <a href="#explore-more" className="group inline-flex items-center gap-1.5 text-[12px] md:text-[13px] text-zinc-500 hover:text-zinc-300 transition-colors">
+          Explore more carousel tools and guides <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+        </a>
+      </div>
     </div>
   </section>
 );
@@ -593,6 +598,64 @@ const PromptBlock = ({ title, text }) => (
   </div>
 );
 
+const PhaseLabel = ({ phase, title }) => (
+  <div className="flex items-center gap-4 mb-8 mt-14 first:mt-0">
+    <div className="flex items-center gap-3">
+      <span className="inline-flex items-center justify-center h-7 px-3 rounded-full bg-gradient-to-r from-pink-500/15 to-orange-500/15 border border-pink-500/20 text-[10px] font-bold uppercase tracking-[0.15em] text-pink-300 shadow-[0_0_16px_rgba(236,72,153,0.08)]">
+        {phase}
+      </span>
+      <span className="text-base md:text-lg font-semibold text-zinc-200 tracking-tight">{title}</span>
+    </div>
+    <div className="flex-1 h-px bg-gradient-to-r from-white/[0.08] to-transparent" />
+  </div>
+);
+
+const PromptAccordionItem = ({ prompt, isOpen, onClick }) => (
+  <div className={`rounded-2xl border overflow-hidden transition-all duration-300 shadow-lg ${
+    isOpen ? 'border-pink-500/20 bg-[#0a0a0a] shadow-[0_0_30px_rgba(236,72,153,0.03)]' : 'border-white/[0.08] bg-[#0a0a0a] hover:border-white/[0.15]'
+  }`}>
+    <button
+      onClick={onClick}
+      className="w-full flex items-center justify-between px-4 py-3.5 border-b border-white/[0.05] bg-[#050505] cursor-pointer text-left"
+    >
+      <div className="flex items-center gap-2">
+        <div className={`w-2.5 h-2.5 rounded-full transition-colors ${isOpen ? 'bg-pink-500/60' : 'bg-pink-500/30'}`} />
+        <span className={`text-xs font-bold uppercase tracking-[0.1em] transition-colors ${isOpen ? 'text-zinc-200' : 'text-zinc-400'}`}>{prompt.title}</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="text-[10px] uppercase tracking-wider text-zinc-600 font-semibold">Prompt</span>
+        <ChevronDown className={`w-3.5 h-3.5 text-zinc-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+      </div>
+    </button>
+    <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+      <div className="overflow-hidden">
+        <div className="p-5 md:p-6 bg-[#0a0a0a]">
+          <pre className="whitespace-pre-wrap break-words text-[13px] md:text-sm leading-[1.8] text-zinc-300 font-mono">
+            {prompt.text}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const PromptAccordion = () => {
+  const [openIndex, setOpenIndex] = useState(0);
+  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+  return (
+    <div className="space-y-3 mt-6">
+      {prompts.map((prompt, i) => (
+        <PromptAccordionItem
+          key={prompt.title}
+          prompt={prompt}
+          isOpen={openIndex === i}
+          onClick={() => toggle(i)}
+        />
+      ))}
+    </div>
+  );
+};
+
 const ComparisonTable = () => (
   <div className="my-10">
     <div className="hidden md:grid grid-cols-[1fr_1.2fr_1.4fr] overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] shadow-lg">
@@ -628,15 +691,15 @@ const ComparisonTable = () => (
 );
 
 const FormatCards = () => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mt-10">
     {formatCards.map((format) => (
-      <div key={format.name} className="rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-5 md:p-6">
-        <h3 className="text-base md:text-lg font-bold text-zinc-100 tracking-tight mb-2">{format.name}</h3>
-        <p className="text-sm text-zinc-500 leading-[1.7] mb-4">{format.explanation}</p>
-        <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-pink-400/70 mb-1">Example</p>
-        <p className="text-sm text-zinc-300 leading-[1.6] mb-4">{format.example}</p>
-        <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-600 mb-1">Best for</p>
-        <p className="text-sm text-zinc-500 leading-[1.6]">{format.bestFor}</p>
+      <div key={format.name} className="group rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-4 md:p-5 transition-colors hover:bg-white/[0.03] hover:border-white/[0.12]">
+        <h3 className="text-sm md:text-[15px] font-bold text-zinc-100 tracking-tight mb-2 leading-snug">{format.name}</h3>
+        <p className="text-[13px] text-zinc-400 leading-[1.55] mb-3">{format.explanation}</p>
+        <div className="rounded-lg bg-white/[0.03] border border-white/[0.05] px-3 py-2 mb-3">
+          <p className="text-[12px] text-zinc-300 leading-[1.5] italic">"{format.example}"</p>
+        </div>
+        <p className="text-[11px] text-zinc-500 leading-[1.5]">{format.bestFor}</p>
       </div>
     ))}
   </div>
@@ -686,7 +749,7 @@ const ExampleBox = ({ label, children }) => (
 );
 
 const ArticleExploreZone = () => (
-  <section className="mt-16 mb-8 relative w-full overflow-hidden">
+  <section id="explore-more" className="mt-16 mb-8 relative w-full overflow-hidden">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-purple-500/[0.02] blur-[140px] rounded-full pointer-events-none" />
     <div className="relative z-10 bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-12">
       
@@ -824,22 +887,49 @@ const ArticleBody = () => (
 
 
 
-        <Section title="Quick answer: how to create an Instagram carousel with AI">
-          <P>To create an Instagram carousel with AI:</P>
-          <QuickAnswerSteps items={[
-            'Start with a topic, link, video, article, notes, or rough idea.',
-            'Define the audience and the outcome of the carousel.',
-            'Generate several first-slide hook options.',
-            'Build a slide-by-slide structure.',
-            'Write short slide copy for each slide.',
-            'Choose a visual direction.',
-            'Create a carousel draft.',
-            'Review it on mobile and refine before publishing.'
-          ]} />
-          <P>The key is to treat AI as a workflow assistant, not just a text generator.</P>
-          <P>A strong Instagram carousel needs logic before design: the angle, the hook, the sequence, the message on each slide, and the final action you want the reader to take.</P>
+        <section className="mb-16 md:mb-20">
+          <div className="rounded-3xl border border-white/[0.08] bg-white/[0.015] p-6 sm:p-8 md:p-10 relative overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.4)]">
+            <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-pink-500/[0.04] blur-[100px] rounded-full pointer-events-none" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-2.5 mb-6">
+                <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/20 bg-pink-500/[0.06] px-3.5 py-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-pink-400" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-pink-300">Quick answer</span>
+                </div>
+              </div>
+              <h2 className="text-2xl md:text-[32px] font-bold tracking-tight mb-6 leading-[1.15] text-white">
+                How to create an Instagram carousel with <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">AI</span>
+              </h2>
+              <P>To create an Instagram carousel with AI:</P>
+              <div className="my-6 space-y-3">
+                {[
+                  'Start with a source — topic, link, video, or notes.',
+                  'Define your audience, goal, and carousel angle.',
+                  'Generate hook options and build a slide structure.',
+                  'Write short slide copy and choose a visual direction.',
+                  'Create a draft, review on mobile, and refine.'
+                ].map((item, i) => (
+                  <div key={item} className="flex items-start gap-3 text-[15px] md:text-base text-zinc-200 leading-[1.6]">
+                    <span className="shrink-0 w-6 h-6 rounded-md bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[10px] font-bold text-pink-300 mt-0.5 tabular-nums">
+                      {i + 1}
+                    </span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 rounded-2xl border border-pink-500/15 bg-pink-500/[0.03] p-5 md:p-6 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500/40 to-orange-500/40" />
+                <div className="flex items-center gap-2 mb-2.5">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-pink-400">Key takeaway</span>
+                </div>
+                <p className="text-[15px] leading-[1.65] text-zinc-300">
+                  Treat AI as a workflow assistant, not just a text generator. A strong Instagram carousel needs logic before design: the angle, the hook, the sequence, the message on each slide, and the final action you want the reader to take.
+                </p>
+              </div>
+            </div>
+          </div>
           <CTABox heading="Create your first draft in minutes" text="Start with a topic, link, video, or rough idea. GoToFlow helps turn it into a hook, slide structure, copy, and visual direction." button="Try GoToFlow AI Carousel Maker" />
-        </Section>
+        </section>
 
         <Section title="What is an AI Instagram carousel generator?">
           <P>An AI Instagram carousel generator is a tool that helps create multi-slide Instagram posts with AI.</P>
@@ -903,6 +993,15 @@ const ArticleBody = () => (
           <P>For creators, brands, SaaS teams, coaches, consultants, marketers, and agencies, carousels are a practical way to turn expertise into visual content.</P>
           <P>But the format only works when the slides are clear.</P>
           <P>A carousel with too much text, a vague hook, and no structure is still hard to read — even if it looks polished.</P>
+          <div className="mt-6 rounded-2xl border border-pink-500/15 bg-pink-500/[0.03] p-5 md:p-6 relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500/40 to-orange-500/40" />
+            <div className="flex items-center gap-2 mb-2.5">
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-pink-400">Key insight</span>
+            </div>
+            <p className="text-[15px] leading-[1.65] text-zinc-300">
+              A carousel works because of its structure, not its design. Clear slides, logical flow, and a strong hook matter more than colors or templates.
+            </p>
+          </div>
         </Section>
 
         <Section title="AI carousel generator vs ChatGPT vs Canva/Figma">
@@ -933,6 +1032,7 @@ const ArticleBody = () => (
         </Section>
 
         <Section title="How to create an Instagram carousel with AI step by step">
+          <PhaseLabel phase="Phase 1" title="Define your input" />
           <StepCard step="1" title="Start with a clear topic or source">
             <P>A strong carousel starts with a clear input.</P>
             <P>You can begin with:</P>
@@ -955,6 +1055,8 @@ const ArticleBody = () => (
             <P>Without audience and outcome, AI usually produces generic content.</P>
             <P>With audience and outcome, the carousel becomes more specific and useful.</P>
           </StepCard>
+
+          <PhaseLabel phase="Phase 2" title="Structure the carousel" />
           <StepCard step="3" title="Choose the carousel format">
             <P>The format gives the carousel a structure.</P>
             <P>Good carousel formats include:</P>
@@ -996,6 +1098,8 @@ const ArticleBody = () => (
             <P>Good structure:</P>
             <BulletList items={['clear opening;', 'logical sequence;', 'short slides;', 'one takeaway per slide;', 'useful ending.']} />
           </StepCard>
+
+          <PhaseLabel phase="Phase 3" title="Write the content" />
           <StepCard step="6" title="Write short slide copy">
             <P>Instagram carousel copy must be easy to read on a phone.</P>
             <P>Avoid long paragraphs. Use short lines. Cut anything that does not help the slide.</P>
@@ -1013,6 +1117,8 @@ const ArticleBody = () => (
             <P>Shorter copy creates stronger slides.</P>
             <P>AI can help you reduce text, but you should still edit for clarity and tone.</P>
           </StepCard>
+
+          <PhaseLabel phase="Phase 4" title="Refine and publish" />
           <StepCard step="7" title="Choose visual style">
             <P>The visual style should support the message.</P>
             <P>Examples:</P>
@@ -1046,9 +1152,13 @@ const ArticleBody = () => (
 
         <Section title="Prompt examples for Instagram carousels">
           <P>Use these prompts as starting points. Replace the bracketed parts with your own context.</P>
-          {prompts.map((prompt) => (
-            <PromptBlock key={prompt.title} title={prompt.title} text={prompt.text} />
-          ))}
+          <div className="mt-4 mb-2 rounded-xl border border-pink-500/15 bg-pink-500/[0.03] px-4 py-3 relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-pink-500/40 to-orange-500/40" />
+            <p className="text-[13px] text-zinc-400 leading-[1.6] pl-2">
+              <span className="text-pink-400 font-semibold">Tip:</span> Copy a prompt, fill in the [brackets], and use it in ChatGPT, Claude, or GoToFlow to generate carousel content.
+            </p>
+          </div>
+          <PromptAccordion />
         </Section>
 
         <Section title="Example: 8-slide Instagram carousel structure">
@@ -1116,7 +1226,7 @@ const ArticleBody = () => (
           <P>A better workflow is to build the carousel before you design it.</P>
           <P>First, clarify the idea. Then structure the slides. Then write the copy. Then choose the visual direction. Then polish the draft.</P>
           <P>That is where GoToFlow fits naturally: it helps you turn source material into a structured Instagram carousel draft before the design stage becomes messy.</P>
-          <CTABox heading="Build the carousel before you design it" text="Use GoToFlow to turn a topic, link, video, or rough idea into a structured Instagram carousel draft." button="Try GoToFlow AI Carousel Maker" />
+
         </Section>
 
         <Section title="Conclusion">
