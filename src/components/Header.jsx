@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { getAppUrlWithRef } from '../utils/url';
 import { ChevronRight } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 export const Logo = () => {
   const [imgError, setImgError] = useState(false);
+  const location = useLocation();
+  const isRu = location.pathname.startsWith('/ru');
+  const logoHref = isRu ? '/ru' : '/';
 
   return (
-    <div className="flex items-center gap-2.5 cursor-pointer transition-transform hover:scale-105">
+    <Link to={logoHref} className="flex items-center gap-2.5 cursor-pointer transition-transform hover:scale-105">
       <div className="relative w-9 h-9 flex items-center justify-center">
          <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg blur-[6px] opacity-70" />
          <div className="relative w-full h-full bg-[#0a0a0a] border border-white/10 rounded-xl flex items-center justify-center overflow-hidden">
@@ -37,7 +40,7 @@ export const Logo = () => {
          </div>
       </div>
       <span className="text-xl font-extrabold tracking-tight text-white">GoToFlow</span>
-    </div>
+    </Link>
   );
 };
 
