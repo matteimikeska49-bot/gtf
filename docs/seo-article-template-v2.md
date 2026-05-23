@@ -198,6 +198,17 @@ Secondary link: `Посмотреть другие инструменты и г�
 - лендинговая перегрузка;
 - horizontal overflow.
 
+## Markdown heading styling rules
+
+- Markdown H2 inside article body must not be plain white headings.
+- H2 must use GoToFlow editorial styling: white base text + subtle pink/orange gradient on the meaningful part.
+- Markdown H3 must have a smaller hierarchy with accent marker/glow-dot or subtle brand accent.
+- Do not manually add HTML/className inside markdown to style headings.
+- Heading styling belongs to MarkdownSeoArticleTemplateV2, not to individual articles.
+- Long SEO titles must use adaptive sizing.
+- Quick Answer title must be controlled via quickAnswerTitle or fallback to “What you need to know”.
+- These are system-level rules for all future markdown SEO articles.
+
 ## CTA count rules
 
 - Final CTA обязателен.

@@ -14,6 +14,7 @@ canonical: "https://gotoflow.io/blog/linkedin-carousel-prompts"
 createdAt: "2026-05-24T00:00:00Z"
 updatedAt: "2026-05-24T00:00:00Z"
 lastReviewed: "2026-05-24"
+quickAnswerTitle: "How to use LinkedIn carousel prompts"
 quickAnswer:
   - "**Avoid single master prompts:** Asking an AI to 'write a carousel' leads to dense, generic text walls that do not perform on LinkedIn."
   - "**Adopt modular prompting:** Break generation down into sequential steps—ideation, hook, structure, slide copy, and refinement."

@@ -339,6 +339,15 @@ Hero
 → FAQ
 → Final CTA
 
+## Template-first visual rules
+
+- During Stage 2C/markdown implementation, article markdown must stay clean content.
+- Agents must not manually style headings in markdown.
+- If a visual issue appears across heading/body rhythm, fix the template, not a single article.
+- H1/H2/H3 styling is part of the reusable template.
+- New articles should not introduce one-off visual classes.
+- If three or more articles need the same special structure, create an optional reusable block instead of one-off markup.
+
 ---
 
 ## Required article blocks

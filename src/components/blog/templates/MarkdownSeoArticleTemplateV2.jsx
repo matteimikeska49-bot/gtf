@@ -32,7 +32,7 @@ const parseInlineMarkdown = (text) => {
 
     const token = match[0];
     if (token.startsWith('**')) {
-      parts.push(<strong key={parts.length} className="font-semibold text-white">{token.slice(2, -2)}</strong>);
+      parts.push(<strong key={parts.length} className="font-semibold text-zinc-200">{token.slice(2, -2)}</strong>);
     } else if (token.startsWith('`')) {
       parts.push(<code key={parts.length} className="rounded-md border border-white/10 bg-white/[0.04] px-1.5 py-0.5 text-[0.92em] text-pink-100">{token.slice(1, -1)}</code>);
     } else {
@@ -153,15 +153,15 @@ const MarkdownBody = ({ markdown, title }) => {
         if (block.type === 'heading') {
           if (block.level <= 2) {
             return (
-              <h2 key={index} className="pt-8 pb-2 text-2xl font-bold leading-tight tracking-tight text-white md:text-[32px]">
-                {parseInlineMarkdown(block.text)}
+              <h2 key={index} className="pt-10 pb-4 text-2xl font-bold leading-tight tracking-tight text-white md:text-[32px]">
+                {renderFormattedHeading(block.text)}
               </h2>
             );
           }
           return (
-            <div key={index} className="mt-8 mb-4 flex items-center gap-3">
-              <span className="shrink-0 w-2.5 h-2.5 rounded-full bg-gradient-to-r from-pink-400 to-orange-400 shadow-[0_0_12px_rgba(236,72,153,0.6)]" />
-              <h3 className="text-xl font-semibold leading-snug tracking-tight text-white">
+            <div key={index} className="mt-10 mb-4 flex items-center gap-3">
+              <span className="shrink-0 w-2 h-2 rounded-full bg-gradient-to-r from-pink-400 to-orange-400 shadow-[0_0_10px_rgba(236,72,153,0.5)]" />
+              <h3 className="text-lg md:text-xl font-semibold leading-snug tracking-tight text-white">
                 {parseInlineMarkdown(block.text)}
               </h3>
             </div>
@@ -170,7 +170,7 @@ const MarkdownBody = ({ markdown, title }) => {
 
         if (block.type === 'paragraph') {
           return (
-            <p key={index} className="text-[15px] leading-[1.85] text-zinc-400 md:text-base">
+            <p key={index} className="mb-6 text-[15px] leading-[1.85] text-zinc-400 md:text-base">
               {parseInlineMarkdown(block.text)}
             </p>
           );
@@ -178,11 +178,11 @@ const MarkdownBody = ({ markdown, title }) => {
 
         if (block.type === 'list') {
           return (
-            <div key={index} className="space-y-3 my-6">
+            <div key={index} className="space-y-4 my-8">
               {block.items.map((item, i) => (
-                <div key={item} className={`flex items-start gap-3.5 ${!block.ordered ? 'rounded-xl border border-white/[0.04] bg-white/[0.015] px-4 py-3 transition-colors hover:bg-white/[0.03]' : ''} text-[15px] leading-[1.7] text-zinc-300 md:text-base`}>
+                <div key={item} className={`flex items-start gap-3.5 ${!block.ordered ? 'rounded-xl border border-white/[0.04] bg-white/[0.015] px-4 py-3 transition-colors hover:bg-white/[0.03]' : ''} text-[15px] leading-[1.7] text-zinc-400 md:text-base`}>
                   {block.ordered ? (
-                    <span className="shrink-0 w-7 h-7 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-semibold text-zinc-300 mt-0.5">
+                    <span className="shrink-0 w-7 h-7 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-semibold text-zinc-300 mt-0.5 shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
                       {i + 1}
                     </span>
                   ) : (
@@ -243,6 +243,22 @@ const renderFormattedTitle = (title) => {
   return title;
 };
 
+const renderFormattedHeading = (title) => {
+  if (!title) return null;
+  const words = title.split(' ');
+  if (words.length >= 2) {
+    const highlightWords = words.length > 2 ? words.slice(-2).join(' ') : words.slice(-1).join(' ');
+    const normalWords = words.length > 2 ? words.slice(0, -2).join(' ') : words.slice(0, -1).join(' ');
+    return (
+      <>
+        {parseInlineMarkdown(normalWords)}{' '}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">{parseInlineMarkdown(highlightWords)}</span>
+      </>
+    );
+  }
+  return parseInlineMarkdown(title);
+};
+
 const SectionShell = ({ id, eyebrow, title, children }) => (
   <section id={id} className="scroll-mt-24 mb-16 md:mb-20">
     <div className="mb-6 flex items-center gap-3">
@@ -257,7 +273,7 @@ const SectionShell = ({ id, eyebrow, title, children }) => (
   </section>
 );
 
-const QuickAnswer = ({ items }) => {
+const QuickAnswer = ({ items, title }) => {
   if (!Array.isArray(items) || items.length === 0) return null;
 
   return (
@@ -268,7 +284,7 @@ const QuickAnswer = ({ items }) => {
         </div>
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-pink-200">Quick Answer</p>
-          <h2 className="text-xl font-bold text-white md:text-2xl">What this article confirms</h2>
+          <h2 className="text-xl font-bold text-white md:text-2xl">{title || "What you need to know"}</h2>
         </div>
       </div>
       <ul className="grid gap-3 md:grid-cols-2">
@@ -379,7 +395,7 @@ const PromptAccordion = ({ prompts }) => {
               <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                 <div className="overflow-hidden">
                   <div className="p-5 md:p-6 bg-[#0a0a0a]">
-                    <div className="whitespace-pre-wrap break-words text-[13px] md:text-sm leading-[1.8] text-zinc-300 font-mono">
+                    <div className="whitespace-pre-wrap break-words text-[13px] md:text-sm leading-[1.8] text-zinc-400 font-mono">
                       {parseInlineMarkdown(prompt.text || '')}
                     </div>
                   </div>
@@ -529,7 +545,7 @@ const ArticleHero = ({ article }) => (
         </div>
       </div>
 
-      <h1 className="mx-auto mb-6 max-w-4xl text-3xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl">
+      <h1 className={`mx-auto mb-6 max-w-4xl font-bold leading-[1.1] tracking-tight text-white ${article.title.length > 50 ? 'text-3xl md:text-4xl lg:text-[40px]' : 'text-3xl md:text-5xl lg:text-6xl'}`}>
         {renderFormattedTitle(article.title)}
       </h1>
       <p className="mx-auto max-w-2xl text-lg leading-[1.65] text-zinc-400 md:text-xl">
@@ -550,7 +566,7 @@ export const MarkdownSeoArticleTemplateV2 = ({ article }) => (
     <main className="relative bg-[#050505] px-4 pb-20 sm:px-6 md:pb-28">
       <div className="pointer-events-none absolute inset-x-0 top-20 mx-auto h-[520px] max-w-5xl rounded-full bg-gradient-to-b from-pink-500/[0.035] to-transparent blur-3xl" />
       <div className="relative z-10 mx-auto flex w-full max-w-[920px] flex-col gap-14 md:gap-18">
-        <QuickAnswer items={article.quickAnswer} />
+        <QuickAnswer items={article.quickAnswer} title={article.quickAnswerTitle} />
         <KeyTakeaway text={article.keyTakeaway} />
         {article.body && (
           <article className="rounded-[28px] border border-white/[0.07] bg-white/[0.025] p-5 md:p-8">
