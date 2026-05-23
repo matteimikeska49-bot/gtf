@@ -272,12 +272,29 @@ const QuickAnswer = ({ items }) => {
         </div>
       </div>
       <ul className="grid gap-3 md:grid-cols-2">
-        {items.slice(0, 5).map((item) => (
-          <li key={item} className="flex items-start gap-3 rounded-2xl border border-white/[0.06] bg-black/20 p-4 text-[15px] leading-relaxed text-zinc-300">
-            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange-300" />
-            <span>{parseInlineMarkdown(item)}</span>
-          </li>
-        ))}
+        {items.slice(0, 5).map((item, i) => {
+          let content = null;
+          let key = i;
+          
+          if (typeof item === 'string') {
+            content = parseInlineMarkdown(item);
+            key = item;
+          } else if (item && typeof item === 'object') {
+            if (item.title && item.text) {
+              content = <><strong className="font-semibold text-white">{parseInlineMarkdown(item.title)}</strong> {parseInlineMarkdown(item.text)}</>;
+              key = item.title;
+            }
+          }
+
+          if (!content) return null;
+
+          return (
+            <li key={key} className="flex items-start gap-3 rounded-2xl border border-white/[0.06] bg-black/20 p-4 text-[15px] leading-relaxed text-zinc-300">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange-300" />
+              <span>{content}</span>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

@@ -182,7 +182,9 @@ function parseArray(lines, startIndex, indent) {
       continue;
     }
 
-    if (itemText.includes(':')) {
+    const isQuoted = (itemText.startsWith('"') && itemText.endsWith('"')) || (itemText.startsWith("'") && itemText.endsWith("'"));
+
+    if (itemText.includes(':') && !isQuoted) {
       const [key, rawValue] = splitKeyValue(itemText);
       const initialObject = {
         [key]: rawValue ? parseScalar(rawValue) : null,
