@@ -151,11 +151,20 @@ const MarkdownBody = ({ markdown, title }) => {
     <div className="space-y-7">
       {displayBlocks.map((block, index) => {
         if (block.type === 'heading') {
-          const HeadingTag = block.level <= 2 ? 'h2' : 'h3';
+          if (block.level <= 2) {
+            return (
+              <h2 key={index} className="pt-8 pb-2 text-2xl font-bold leading-tight tracking-tight text-white md:text-[32px]">
+                {parseInlineMarkdown(block.text)}
+              </h2>
+            );
+          }
           return (
-            <HeadingTag key={index} className={block.level <= 2 ? 'pt-5 text-2xl font-bold leading-tight tracking-tight text-white md:text-[32px]' : 'pt-3 text-xl font-semibold leading-snug tracking-tight text-white'}>
-              {parseInlineMarkdown(block.text)}
-            </HeadingTag>
+            <div key={index} className="mt-8 mb-4 flex items-center gap-3">
+              <span className="shrink-0 w-2.5 h-2.5 rounded-full bg-gradient-to-r from-pink-400 to-orange-400 shadow-[0_0_12px_rgba(236,72,153,0.6)]" />
+              <h3 className="text-xl font-semibold leading-snug tracking-tight text-white">
+                {parseInlineMarkdown(block.text)}
+              </h3>
+            </div>
           );
         }
 
@@ -168,39 +177,74 @@ const MarkdownBody = ({ markdown, title }) => {
         }
 
         if (block.type === 'list') {
-          const ListTag = block.ordered ? 'ol' : 'ul';
           return (
-            <ListTag key={index} className={`space-y-3 text-[15px] leading-[1.75] text-zinc-300 md:text-base ${block.ordered ? 'list-decimal pl-6' : ''}`}>
-              {block.items.map((item) => (
-                <li key={item} className={block.ordered ? 'pl-1' : 'flex items-start gap-3'}>
-                  {!block.ordered && <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-pink-400/80" />}
+            <div key={index} className="space-y-3 my-6">
+              {block.items.map((item, i) => (
+                <div key={item} className={`flex items-start gap-3.5 ${!block.ordered ? 'rounded-xl border border-white/[0.04] bg-white/[0.015] px-4 py-3 transition-colors hover:bg-white/[0.03]' : ''} text-[15px] leading-[1.7] text-zinc-300 md:text-base`}>
+                  {block.ordered ? (
+                    <span className="shrink-0 w-7 h-7 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-semibold text-zinc-300 mt-0.5">
+                      {i + 1}
+                    </span>
+                  ) : (
+                    <span className="mt-2 w-1.5 h-1.5 shrink-0 rounded-full bg-pink-400/60" />
+                  )}
                   <span>{parseInlineMarkdown(item)}</span>
-                </li>
+                </div>
               ))}
-            </ListTag>
+            </div>
           );
         }
 
         if (block.type === 'quote') {
           return (
-            <blockquote key={index} className="rounded-2xl border border-pink-400/15 bg-pink-500/[0.06] px-5 py-4 text-[15px] leading-[1.75] text-pink-50 md:px-6 md:text-base">
-              {parseInlineMarkdown(block.text)}
-            </blockquote>
+            <div key={index} className="rounded-xl border border-white/[0.08] bg-[#050505] p-5 md:p-6 my-6 relative overflow-hidden">
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500/40 to-orange-500/40" />
+              <div className="text-[15px] md:text-base leading-[1.75] text-zinc-300 italic">
+                {parseInlineMarkdown(block.text)}
+              </div>
+            </div>
           );
         }
 
         return (
-          <pre key={index} className="overflow-x-auto rounded-2xl border border-white/10 bg-black/40 p-5 text-sm leading-relaxed text-zinc-200">
-            <code>{block.text}</code>
-          </pre>
+          <div key={index} className="rounded-2xl border border-white/[0.08] bg-[#0a0a0a] my-6 overflow-hidden shadow-lg">
+            {block.language && (
+              <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.05] bg-[#050505]">
+                <div className="flex items-center gap-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-pink-500/40" />
+                  <span className="text-xs font-bold uppercase tracking-[0.1em] text-zinc-400">{block.language}</span>
+                </div>
+              </div>
+            )}
+            <div className="p-5 md:p-6 bg-[#0a0a0a]">
+              <pre className="overflow-x-auto text-[13px] md:text-sm leading-[1.8] text-zinc-300 font-mono">
+                <code>{block.text}</code>
+              </pre>
+            </div>
+          </div>
         );
       })}
     </div>
   );
 };
 
+const renderFormattedTitle = (title) => {
+  if (!title) return null;
+  const words = title.split(' ');
+  if (words.length >= 2) {
+    const highlightWords = words.length > 2 ? words.slice(-2).join(' ') : words.slice(-1).join(' ');
+    const normalWords = words.length > 2 ? words.slice(0, -2).join(' ') : words.slice(0, -1).join(' ');
+    return (
+      <>
+        {normalWords} <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">{highlightWords}</span>
+      </>
+    );
+  }
+  return title;
+};
+
 const SectionShell = ({ id, eyebrow, title, children }) => (
-  <section id={id} className="scroll-mt-24">
+  <section id={id} className="scroll-mt-24 mb-16 md:mb-20">
     <div className="mb-6 flex items-center gap-3">
       {eyebrow && (
         <span className="rounded-full border border-pink-400/15 bg-pink-500/[0.08] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-pink-200">
@@ -208,7 +252,7 @@ const SectionShell = ({ id, eyebrow, title, children }) => (
         </span>
       )}
     </div>
-    {title && <h2 className="mb-7 text-2xl font-bold tracking-tight text-white md:text-[32px]">{title}</h2>}
+    {title && <h2 className="mb-8 text-2xl font-bold tracking-tight text-white md:text-[32px] leading-[1.15]">{renderFormattedTitle(title)}</h2>}
     {children}
   </section>
 );
@@ -255,20 +299,29 @@ const StepPhases = ({ phases }) => {
 
   return (
     <SectionShell eyebrow="Workflow" title="Step-by-step phases">
-      <div className="space-y-5">
+      <div className="space-y-10 mt-8">
         {phases.map((phase, phaseIndex) => (
-          <div key={phase.phase || phaseIndex} className="rounded-[26px] border border-white/[0.08] bg-white/[0.03] p-5 md:p-7">
-            <div className="mb-5 flex items-center gap-3">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500/15 to-orange-500/15 text-sm font-bold text-orange-100 ring-1 ring-white/10">
-                {phaseIndex + 1}
-              </span>
-              <h3 className="text-xl font-bold text-white">{phase.phase}</h3>
+          <div key={phase.phase || phaseIndex}>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex items-center justify-center h-7 px-3 rounded-full bg-gradient-to-r from-pink-500/15 to-orange-500/15 border border-pink-500/20 text-[10px] font-bold uppercase tracking-[0.15em] text-pink-300 shadow-[0_0_16px_rgba(236,72,153,0.08)]">
+                  Phase {phaseIndex + 1}
+                </span>
+                <span className="text-base md:text-lg font-semibold text-zinc-200 tracking-tight">{phase.phase}</span>
+              </div>
+              <div className="flex-1 h-px bg-gradient-to-r from-white/[0.08] to-transparent" />
             </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              {(phase.items || []).map((item) => (
-                <article key={item.title} className="rounded-2xl border border-white/[0.06] bg-black/20 p-4">
-                  <h4 className="mb-2 text-base font-semibold text-white">{item.title}</h4>
-                  <p className="text-sm leading-relaxed text-zinc-400">{parseInlineMarkdown(item.text || '')}</p>
+            
+            <div className="grid gap-4 sm:grid-cols-2">
+              {(phase.items || []).map((item, i) => (
+                <article key={item.title} className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-5 md:p-6 shadow-[0_0_40px_rgba(236,72,153,0.02)] relative overflow-hidden transition-colors hover:bg-white/[0.03]">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center justify-center shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-pink-500/10 to-orange-500/10 border border-white/[0.08]">
+                      <span className="text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">{i + 1}</span>
+                    </div>
+                    <h4 className="text-[15px] font-bold text-white tracking-tight leading-snug">{item.title}</h4>
+                  </div>
+                  <p className="text-[13px] md:text-sm leading-relaxed text-zinc-400">{parseInlineMarkdown(item.text || '')}</p>
                 </article>
               ))}
             </div>
@@ -286,25 +339,35 @@ const PromptAccordion = ({ prompts }) => {
 
   return (
     <SectionShell eyebrow="Prompt library" title="Reusable prompts">
-      <div className="space-y-3">
+      <div className="space-y-3 mt-6">
         {prompts.map((prompt, index) => {
           const isOpen = openIndex === index;
           return (
-            <div key={prompt.title || index} className="overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03]">
+            <div key={prompt.title || index} className={`rounded-2xl border overflow-hidden transition-all duration-300 shadow-lg ${isOpen ? 'border-pink-500/20 bg-[#0a0a0a] shadow-[0_0_30px_rgba(236,72,153,0.03)]' : 'border-white/[0.08] bg-[#0a0a0a] hover:border-white/[0.15]'}`}>
               <button
                 type="button"
                 onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-white/[0.03]"
+                className="flex w-full items-center justify-between px-4 py-3.5 border-b border-white/[0.05] bg-[#050505] cursor-pointer text-left"
                 aria-expanded={isOpen}
               >
-                <span className="text-base font-semibold text-white">{prompt.title}</span>
-                <ChevronDown className={`h-5 w-5 shrink-0 text-zinc-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-              </button>
-              {isOpen && (
-                <div className="border-t border-white/[0.06] bg-black/20 px-5 py-4">
-                  <p className="text-sm leading-[1.8] text-zinc-300 md:text-[15px]">{parseInlineMarkdown(prompt.text || '')}</p>
+                <div className="flex items-center gap-2">
+                  <div className={`w-2.5 h-2.5 rounded-full transition-colors ${isOpen ? 'bg-pink-500/60' : 'bg-pink-500/30'}`} />
+                  <span className={`text-xs font-bold uppercase tracking-[0.1em] transition-colors ${isOpen ? 'text-zinc-200' : 'text-zinc-400'}`}>{prompt.title}</span>
                 </div>
-              )}
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] uppercase tracking-wider text-zinc-600 font-semibold">Prompt</span>
+                  <ChevronDown className={`w-3.5 h-3.5 text-zinc-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                </div>
+              </button>
+              <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                <div className="overflow-hidden">
+                  <div className="p-5 md:p-6 bg-[#0a0a0a]">
+                    <div className="whitespace-pre-wrap break-words text-[13px] md:text-sm leading-[1.8] text-zinc-300 font-mono">
+                      {parseInlineMarkdown(prompt.text || '')}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           );
         })}
@@ -316,18 +379,29 @@ const PromptAccordion = ({ prompts }) => {
 const FormatsGrid = ({ formats }) => {
   if (!Array.isArray(formats) || formats.length === 0) return null;
 
+  let gridClass = "grid gap-4 ";
+  if (formats.length === 1) {
+    gridClass += "grid-cols-1 max-w-2xl";
+  } else if (formats.length === 2) {
+    gridClass += "grid-cols-1 sm:grid-cols-2";
+  } else if (formats.length === 3) {
+    gridClass += "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
+  } else {
+    gridClass += "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4";
+  }
+
   return (
     <SectionShell eyebrow="Formats" title="Useful article formats">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className={gridClass}>
         {formats.map((format) => (
-          <article key={format.title} className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5">
-            <Layers3 className="mb-4 h-5 w-5 text-pink-300" />
-            <h3 className="mb-2 text-base font-semibold text-white">{format.title}</h3>
-            <p className="mb-4 text-sm leading-relaxed text-zinc-400">{parseInlineMarkdown(format.text || '')}</p>
+          <article key={format.title} className="group rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-5 md:p-6 transition-colors hover:bg-white/[0.03] hover:border-white/[0.12]">
+            <Layers3 className="mb-4 h-6 w-6 text-pink-300" />
+            <h3 className="mb-2 text-[15px] md:text-base font-bold text-zinc-100 tracking-tight leading-snug">{format.title}</h3>
+            <p className="mb-4 text-[13px] leading-[1.6] text-zinc-400">{parseInlineMarkdown(format.text || '')}</p>
             {format.example && (
-              <p className="rounded-xl border border-white/[0.06] bg-black/25 px-3 py-2 text-xs leading-relaxed text-zinc-300">
-                Example: {parseInlineMarkdown(format.example)}
-              </p>
+              <div className="rounded-lg bg-white/[0.03] border border-white/[0.05] px-3 py-2.5">
+                <p className="text-[12px] leading-[1.5] text-zinc-300 italic">Example: {parseInlineMarkdown(format.example)}</p>
+              </div>
             )}
           </article>
         ))}
@@ -397,7 +471,7 @@ const FinalCta = ({ cta }) => {
 
   return (
     <section className="text-center">
-      <div className="relative overflow-hidden rounded-[32px] border border-pink-300/15 bg-gradient-to-br from-pink-500/[0.12] via-white/[0.035] to-orange-500/[0.10] p-7 shadow-[0_30px_140px_rgba(236,72,153,0.12)] md:p-10">
+      <div className="relative my-16 overflow-hidden rounded-[32px] border border-pink-300/15 bg-gradient-to-br from-pink-500/[0.12] via-white/[0.035] to-orange-500/[0.10] p-7 shadow-[0_30px_140px_rgba(236,72,153,0.12)] md:p-10">
         <div className="absolute left-1/2 top-0 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-400/10 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-2xl">
           <h2 className="mb-4 text-2xl font-bold tracking-tight text-white md:text-4xl">{cta.title}</h2>
@@ -439,7 +513,7 @@ const ArticleHero = ({ article }) => (
       </div>
 
       <h1 className="mx-auto mb-6 max-w-4xl text-3xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl">
-        {article.title}
+        {renderFormattedTitle(article.title)}
       </h1>
       <p className="mx-auto max-w-2xl text-lg leading-[1.65] text-zinc-400 md:text-xl">
         {article.description}
