@@ -243,3 +243,59 @@ Secondary link: `Посмотреть другие инструменты и г�
 - Не делать horizontal scroll.
 - Не превращать статью в лендинг.
 - Не делать белый/серый блог.
+
+## Relationship with blog-production-system.md
+
+This file describes the visual and structural GoToFlow SEO article template v2.
+The full production workflow is documented in docs/blog-production-system.md.
+
+Before creating or publishing a new SEO article, agents must read both:
+
+1. docs/blog-production-system.md
+2. docs/seo-article-template-v2.md
+
+## Markdown publishing workflow
+
+- новые статьи будут жить в src/content/blog/articles/
+- markdown frontmatter управляет SEO, template blocks, related links, CTA, published/noindex
+- test/draft articles must use published: false and noindex: true
+- only published: true and noindex: false can appear in sitemap/blog/category pages
+- ArticleExploreZone must use id="explore-more"
+- Final CTA secondary link must point to #explore-more
+- EN/RU fields must be localized
+
+## Optional blocks library
+
+Use only 2–4 optional blocks per article based on intent. Do not add blocks just for visual decoration or word count.
+- Product workflow mockup
+- Carousel example gallery
+- Before / After block
+- Prompt library preview
+- Checklist block
+- Comparison table
+- Use-case cards
+- Mistakes / pitfalls cards
+- Mini framework block
+- Related examples near bottom
+- Proof / Social proof block
+- Mini case / Example result block
+- What you’ll get block
+- Who this is for block
+- When not to use this block
+- Manual vs GoToFlow workflow
+- Decision guide
+- Copy-ready snippets
+- Glossary / Definitions
+- Screenshots/mockups with captions
+
+## Mockup / screenshot registry
+
+- mockups are selected only from approved registry
+- no random images from folders
+- metadata required: id, path, language, topic, suitableFor, alt, caption, priority, status
+- if no approved asset matches the article intent, do not insert a random image
+
+## Blog/content hub requirement
+
+- blog should not be isolated pages
+- /blog, category pages, article related links, and product page content hub blocks must help users discover related guides and tools
