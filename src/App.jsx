@@ -88,6 +88,7 @@ function App() {
         <Route path="/blog/how-to-make-linkedin-carousel-with-ai" element={<HowToMakeLinkedInCarouselWithAiPage />} />
         <Route path="/blog/ai-instagram-carousel-generator" element={<AiInstagramCarouselGeneratorPage />} />
         <Route path="/blog/test-seo-template-v2" element={<MarkdownBlogArticlePage slug="test-seo-template-v2" />} />
+        <Route path="/blog/linkedin-carousel-prompts" element={<MarkdownBlogArticlePage slug="linkedin-carousel-prompts" />} />
         <Route path="/ru/blog/idei-karuselej-linkedin" element={<LinkedInCarouselIdeasPageRu />} />
         <Route path="/ru/blog/luchshie-ai-generatory-karuselej" element={<BestAiCarouselGeneratorsPageRu />} />
         <Route path="/ru/blog/kak-sdelat-karusel-linkedin-s-ai" element={<HowToMakeLinkedInCarouselWithAiPageRu />} />
