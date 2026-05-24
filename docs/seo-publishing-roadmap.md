@@ -117,10 +117,13 @@ Before any article is published, it must pass indexability QA:
 
 ## 5. P1 Roadmap (Before Batching 10+ Articles)
 
-- Content brief template.
-- SERP / competitor research step.
-- Topic map / SEO content plan.
-- Batch manager / batch status.
+**Stage 4B (Closed by this step):**
+- Batch manager / status system;
+- Batch QA report;
+- Batch status lifecycle;
+- Controlled batch publishing discipline.
+
+**Upcoming P1 tasks (after Stage 4B):**
 - Anti-cannibalization checks.
 - Route/internal link checker.
 - Mockup / approved asset registry.

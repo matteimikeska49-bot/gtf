@@ -141,15 +141,18 @@ RU should be a local adaptation based on:
 
 ## 7. Tracking table format
 
-| Cluster | Topic | Primary keyword | Language | Article type | Priority | Intent | Funnel stage | Status | Slug | Existing URL | Notes |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| LinkedIn Carousel | LinkedIn Carousel Prompts | linkedin carousel prompts | en | prompt-library | P0 | finding templates | BOFU | published | linkedin-carousel-prompts | /blog/linkedin-carousel-prompts | markdown article |
-| Content Repurposing | Repurpose Blog to LinkedIn | repurpose blog post linkedin carousel | en | how-to | P1 | repurposing workflow | MOFU | draft | repurpose-blog-post-linkedin-carousel-ai | needs verification | pending QA |
-| Instagram Carousel | Instagram Carousel Prompts | instagram carousel prompts | en | prompt-library | P1 | finding templates | BOFU | draft | instagram-carousel-prompts | needs verification | pending QA |
-| AI Carousel Maker | AI vs Manual Design | ai carousel maker vs manual design | en | comparison | P1 | comparing tools vs canva | MOFU | draft | ai-carousel-maker-vs-manual-design | needs verification | pending QA |
-| Instagram Carousel | AI Instagram Carousel Generator | ai instagram carousel generator | en | guide | P0 | informational / product | BOFU | published | ai-instagram-carousel-generator | /blog/ai-instagram-carousel-generator | legacy JSX |
-| AI Carousel Maker | Best AI Carousel Generators | best ai carousel generators | en | best-tools | P0 | evaluating software | BOFU | published | best-ai-carousel-generators | /blog/best-ai-carousel-generators | legacy JSX |
-| LinkedIn Carousel | How to Make LinkedIn Carousel with AI | how to make linkedin carousel with ai | en | how-to | P0 | learning the process | MOFU | published | how-to-make-linkedin-carousel-with-ai | /blog/how-to-make-linkedin-carousel-with-ai | legacy JSX |
+**For batch execution, use:**
+`docs/seo-batch-manager.md`
+
+| Batch ID | Cluster | Topic | Primary keyword | Language | Article type | Priority | Intent | Funnel stage | Status | Slug | Existing URL | Notes |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| BATCH-TBD | LinkedIn Carousel | LinkedIn Carousel Prompts | linkedin carousel prompts | en | prompt-library | P0 | finding templates | BOFU | published | linkedin-carousel-prompts | /blog/linkedin-carousel-prompts | markdown article |
+| BATCH-TBD | Content Repurposing | Repurpose Blog to LinkedIn | repurpose blog post linkedin carousel | en | how-to | P1 | repurposing workflow | MOFU | draft | repurpose-blog-post-linkedin-carousel-ai | needs verification | pending QA |
+| BATCH-TBD | Instagram Carousel | Instagram Carousel Prompts | instagram carousel prompts | en | prompt-library | P1 | finding templates | BOFU | draft | instagram-carousel-prompts | needs verification | pending QA |
+| BATCH-TBD | AI Carousel Maker | AI vs Manual Design | ai carousel maker vs manual design | en | comparison | P1 | comparing tools vs canva | MOFU | draft | ai-carousel-maker-vs-manual-design | needs verification | pending QA |
+| BATCH-TBD | Instagram Carousel | AI Instagram Carousel Generator | ai instagram carousel generator | en | guide | P0 | informational / product | BOFU | published | ai-instagram-carousel-generator | /blog/ai-instagram-carousel-generator | legacy JSX |
+| BATCH-TBD | AI Carousel Maker | Best AI Carousel Generators | best ai carousel generators | en | best-tools | P0 | evaluating software | BOFU | published | best-ai-carousel-generators | /blog/best-ai-carousel-generators | legacy JSX |
+| BATCH-TBD | LinkedIn Carousel | How to Make LinkedIn Carousel with AI | how to make linkedin carousel with ai | en | how-to | P0 | learning the process | MOFU | published | how-to-make-linkedin-carousel-with-ai | /blog/how-to-make-linkedin-carousel-with-ai | legacy JSX |
 
 *Если статус неизвестен — писать “needs verification”, не выдумывать.*
 

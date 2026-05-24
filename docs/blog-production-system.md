@@ -57,6 +57,14 @@ topic
 - use `docs/seo-content-brief-template.md` before Gemini generation;
 - batch publishing starts from topic map, not random topics.
 
+## Batch manager
+
+- batch publishing must use `docs/seo-batch-manager.md`;
+- do not generate random batches without topic map and briefs;
+- batches must pass quality gates before publishing;
+- first production batch should be 5 articles maximum;
+- each batch needs a batch QA report.
+
 ---
 
 ## QA & Deployment
