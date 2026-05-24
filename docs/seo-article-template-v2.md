@@ -163,25 +163,31 @@ Quick Answer обязателен в первой трети статьи.
 Final CTA обязателен.
 
 Структура:
-- вопрос / боль статьи;
-- короткое обещание результата;
-- основная кнопка;
-- microcopy;
-- отдельная muted secondary-link под карточкой на `#explore-more`.
+- title: вопрос / боль статьи;
+- text: короткое обещание результата (не использовать description);
+- buttonText: основная кнопка;
+- href: основной URL для CTA (обязателен);
+- microcopy: пояснение снизу;
+- secondaryText: отдельная muted secondary-link под карточкой;
+- secondaryHref: ссылка для secondaryText (например, `#explore-more`).
 
 Пример EN:
-Title: `Still creating carousels manually?`
-Description: `Turn a topic, link, video, or rough note into a structured Instagram carousel draft.`
-Button: `Try GoToFlow For Free`
-Microcopy: `Free — No credit card required`
-Secondary link: `Explore more carousel tools and guides →`
+title: `Still creating carousels manually?`
+text: `Turn a topic, link, video, or rough note into a structured Instagram carousel draft.`
+buttonText: `Try GoToFlow For Free`
+href: `/linkedin-carousel-maker`
+microcopy: `Free — No credit card required`
+secondaryText: `Explore more carousel tools and guides →`
+secondaryHref: `#explore-more`
 
 Пример RU:
-Title: `Всё ещё собираете карусели вручную?`
-Description: `Превратите тему, ссылку, видео или заметки в структурированный черновик карусели.`
-Button: `Попробовать GoToFlow бесплатно`
-Microcopy: `Бесплатно — карта не нужна`
-Secondary link: `Посмотреть другие инструменты и гайды →`
+title: `Всё ещё собираете карусели вручную?`
+text: `Превратите тему, ссылку, видео или заметки в структурированный черновик карусели.`
+buttonText: `Попробовать GoToFlow бесплатно`
+href: `/ru/generator-karuselej-linkedin`
+microcopy: `Бесплатно — карта не нужна`
+secondaryText: `Посмотреть другие инструменты и гайды →`
+secondaryHref: `#explore-more`
 
 Правила:
 - CTA-текст адаптируется под тему статьи;

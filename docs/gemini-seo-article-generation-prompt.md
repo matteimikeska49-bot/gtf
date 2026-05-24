@@ -77,6 +77,8 @@ finalCta:
   buttonText: "..."
   href: "/..."
   microcopy: "..."
+  secondaryText: "..."
+  secondaryHref: "#explore-more"
 ---
 ```
 
@@ -166,10 +168,11 @@ Your task is to write a high-quality, deeply researched, and engaging SEO articl
 2. Frontmatter must contain all required fields: title, slug, language, description, primaryKeyword, secondaryKeywords, searchIntent, cluster, articleType, category, priority, published, noindex, canonical, createdAt, updatedAt, lastReviewed, quickAnswerTitle, quickAnswer, faq, explore, finalCta.
 3. If publication status is 'draft', set `published: false` and `noindex: true`.
 4. Do NOT write the FAQ or Final CTA in the body text. They belong ONLY in the frontmatter.
-5. Place exactly ONE `[!product]` CTA in the first third of the article.
-6. Place exactly ONE `[!related]` block after a major section. DO NOT place it near the product CTA, and DO NOT place it inside lists or prompt groups.
-7. Use ONLY the approved internal links provided in the brief or the standard allowlist. Do not hallucinate URLs.
-8. If writing a prompt library, use H2 for the main section, H3 for groups, and ordered lists for the prompts themselves. Do not interrupt this structure with callouts.
+5. finalCta schema is STRICT: `title`, `text` (NOT description), `buttonText`, `href` (required, from allowlist), `microcopy`, `secondaryText`, and `secondaryHref` (e.g., "#explore-more").
+6. Place exactly ONE `[!product]` CTA in the first third of the article.
+7. Place exactly ONE `[!related]` block after a major section. DO NOT place it near the product CTA, and DO NOT place it inside lists or prompt groups.
+8. Use ONLY the approved internal links provided in the brief or the standard allowlist. Do not hallucinate URLs.
+9. If writing a prompt library, use H2 for the main section, H3 for groups, and ordered lists for the prompts themselves. Do not interrupt this structure with callouts.
 
 Begin.
 ```

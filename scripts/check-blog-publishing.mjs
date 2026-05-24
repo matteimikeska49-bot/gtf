@@ -285,7 +285,20 @@ async function runCheck() {
     if (!getYamlValue(frontmatter, 'updatedAt')) warnings.push(`Missing 'updatedAt'`);
     if (!hasYamlKey(frontmatter, 'faq')) warnings.push(`Missing 'faq'`);
     if (!hasYamlKey(frontmatter, 'explore')) warnings.push(`Missing 'explore'`);
-    if (!hasYamlKey(frontmatter, 'finalCta')) warnings.push(`Missing 'finalCta'`);
+    if (!hasYamlKey(frontmatter, 'finalCta')) {
+      warnings.push(`Missing 'finalCta'`);
+    } else {
+      // Let's extract finalCta block
+      const finalCtaMatch = frontmatter.match(/^finalCta:\s*\n([\s\S]*?)(?:^[a-zA-Z0-9]+:|\n---)/m);
+      if (finalCtaMatch) {
+        const ctaBlock = finalCtaMatch[1];
+        if (!/^\s+title:/m.test(ctaBlock)) warnings.push(`finalCta missing 'title'`);
+        if (!/^\s+buttonText:/m.test(ctaBlock)) warnings.push(`finalCta missing 'buttonText'`);
+        if (!/^\s+href:/m.test(ctaBlock) && !/^\s+secondaryHref:/m.test(ctaBlock)) warnings.push(`finalCta missing 'href' or 'secondaryHref'`);
+        if (!/^\s+href:/m.test(ctaBlock)) warnings.push(`finalCta missing main 'href'`);
+        if (!/^\s+text:/m.test(ctaBlock) && !/^\s+description:/m.test(ctaBlock)) warnings.push(`finalCta missing 'text' or 'description'`);
+      }
+    }
 
     // Output results for this file
     if (errors.length === 0 && warnings.length === 0) {
