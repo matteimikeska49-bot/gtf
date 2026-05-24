@@ -44,46 +44,13 @@ topic
 
 4. Markdown-engine для новых статей должен создаваться рядом со старыми страницами, не ломая их.
 
+## Implementation roadmap & Strategy
+
+Вся стратегическая информация по roadmap, готовности системы, масштабированию, RU-адаптации и ассетам вынесена в отдельный документ:
+
+👉 **[SEO Publishing Roadmap & Strategy](docs/seo-publishing-roadmap.md)**
+
 ---
-
-## Implementation roadmap
-
-### Stage 0 — Production rules
-
-Создать docs/blog-production-system.md и обновить docs/seo-article-template-v2.md.
-Код не трогать.
-
-### Stage 1 — Markdown engine for new articles
-
-Создать рядом со старыми страницами:
-- src/content/blog/articles/
-- MarkdownSeoArticleTemplateV2.jsx
-- markdownArticles.js
-
-Старые статьи не мигрировать.
-
-### Stage 2 — Test markdown article
-
-Создать тестовую статью:
-- /blog/test-seo-template-v2
-- published: false
-- noindex: true
-
-### Stage 3 — One real new article
-
-Одна новая статья через markdown-engine.
-
-### Stage 4 — 3–5 articles batch
-
-Пачка 3–5 статей через новый pipeline.
-
-### Stage 5 — 10–20 articles batch
-
-Только после успешных предыдущих этапов.
-
-### Stage 6 — 1000+ article scale
-
-Только после появления inventory, checkers, analytics, update policy, batch rollback.
 
 ## QA & Deployment
 
@@ -104,14 +71,43 @@ Before publishing any article, you **MUST** run the automated publishing checks.
 
 Future articles are published purely through frontmatter updates, but only after passing the `npm run check:blog` checks.
 
+### SEO indexability quality gate
+
+**Главное правило:** Mass publishing is useless if articles are not indexable, crawlable, rendered correctly, and discoverable in search.
+
+Before any article is published, it must pass indexability QA:
+
+- `published:true`
+- `noindex:false`
+- correct canonical
+- included in sitemap
+- included in blog index/category page
+- production URL returns 200
+- curl/prerendered HTML contains real article content, not empty SPA fallback
+- title/meta/description are unique and present
+- robots.txt allows crawling and points to sitemap
+- no links to draft/noindex pages
+- no broken internal links
+- no obvious keyword cannibalization
+- article is not thin/generic AI content
+- mobile rendering is safe
+- after deploy: verify live URL, sitemap, canonical, noindex, and indexing status in Google Search Console / Yandex Webmaster when needed
+
+**For RU:**
+- correct `/ru/blog/...` URL architecture
+- hreflang EN/RU
+- RU canonical
+- RU sitemap inclusion
+- local RU intent, not literal EN translation
+
 ### Repeated callout QA
 
 Правила:
 - During content QA, reject articles where Gemini stacks 3+ callouts in a row.
 - Before accepting a batch, scan all markdown articles in the batch for repeated callout stacks, not only the article currently being previewed.
-- Convert repeated callouts into structured H3 sections or lists.
+- Convert repeated callouts into structured `:::cards` markdown blocks.
 - Repeated callout labels create visual noise and reduce readability.
-- check:blog should warn on repeated callout stacks.
+- `check:blog` warns on repeated callout stacks and unclosed `:::cards` blocks.
 - test/template pages are allowed to show consecutive callout examples.
 - This rule is important for mass publishing because AI often overuses decorative blocks.
 ### Production Build Verification

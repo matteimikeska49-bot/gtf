@@ -309,6 +309,46 @@ async function runCheck() {
         }
       }
 
+      // Check :::cards blocks
+      const cardsBlocks = content.match(/:::cards([\s\S]*?)(:::|$)/g);
+      if (cardsBlocks) {
+        for (const cBlock of cardsBlocks) {
+          if (!cBlock.endsWith(':::') || cBlock.trim() === ':::cards') {
+            warnings.push(`Cards block is not closed properly (missing ':::').`);
+          }
+          
+          const lines = cBlock.split('\n');
+          let type = 'default';
+          for (let i = 0; i < Math.min(3, lines.length); i++) {
+            const typeMatch = lines[i].trim().match(/^type:\s*([a-zA-Z0-9-]+)$/i);
+            if (typeMatch) {
+              type = typeMatch[1].toLowerCase();
+              break;
+            }
+          }
+          
+          const allowedVariants = ['mistakes', 'tips', 'takeaways', 'workflow', 'best-for', 'examples', 'checklist', 'pros-cons', 'default'];
+          if (!allowedVariants.includes(type)) {
+            warnings.push(`Unknown cards block type '${type}'; using default styling.`);
+          }
+          
+          let h3Count = 0;
+          for (const line of lines) {
+            if (line.trim().startsWith('### ')) {
+              h3Count++;
+            }
+          }
+          
+          if (h3Count === 0) {
+            warnings.push(`Cards block has no H3 items.`);
+          } else if (h3Count < 2) {
+            warnings.push(`Cards block has fewer than 2 items; use a normal callout or paragraph instead.`);
+          } else if (h3Count > 8) {
+            warnings.push(`Cards block has more than 8 items; consider splitting for readability.`);
+          }
+        }
+      }
+
     if (!getYamlValue(frontmatter, 'primaryKeyword')) warnings.push(`Missing 'primaryKeyword'`);
     if (!getYamlValue(frontmatter, 'searchIntent')) warnings.push(`Missing 'searchIntent'`);
     if (!getYamlValue(frontmatter, 'cluster')) warnings.push(`Missing 'cluster'`);

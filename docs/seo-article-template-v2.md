@@ -78,15 +78,28 @@ Quick Answer обязателен в первой трети статьи.
 - дублировать Quick Answer;
 - превращать step-by-step в длинную простыню.
 
-## Repeated callouts
+## Repeated editorial sections (Cards)
 
 Правила:
 - Callouts are accents, not a layout system for every repeated item.
 - Avoid 3+ consecutive callouts in production articles.
-- For repeated mistakes, tips, takeaways, best-for items, or workflow insights, use H3 subsections or compact lists.
-- The test page may include consecutive callout examples for visual QA only.
-- Long SEO articles should avoid visual noise from repeated labels like COMMON MISTAKE, PRO TIP, KEY TAKEAWAY, WORKFLOW INSIGHT.
-- Product and related callouts should remain contextual and separated by meaningful content.
+- For repeated mistakes, tips, takeaways, best-for items, or workflow insights (3+ items), use the `:::cards` markdown block instead of stacked callouts or plain H3s.
+- This renders a premium compact grid of cards, rather than large repeated callout labels.
+- Allowed card types: `mistakes`, `tips`, `takeaways`, `workflow`, `best-for`, `examples`, `checklist`, `pros-cons`, `default`.
+- Product and related callouts should remain contextual and separated by meaningful content outside of `:::cards`.
+
+Синтаксис:
+```markdown
+:::cards
+type: mistakes
+
+### 1. Title
+Text content.
+
+### 2. Title
+Text content.
+:::
+```
 
 ## Prompt examples rules
 

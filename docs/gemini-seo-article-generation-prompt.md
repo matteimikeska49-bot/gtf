@@ -100,10 +100,10 @@ Callouts are editorial accents, not repeated section cards.
 Rules:
 - Do not use 3+ callout blocks in a row.
 - Do not turn every mistake, tip, takeaway, or insight into a separate callout.
-- For repeated sections like Common mistakes, Pro tips, Best for, Key takeaways, or Workflow insights, use H3 subsections or compact markdown lists instead.
+- For repeated sections like Common mistakes, Pro tips, Best for, Key takeaways, or Workflow insights (3+ items), use the `:::cards` syntax instead of stacked callouts or plain H3s.
+- Allowed card types: `mistakes`, `tips`, `takeaways`, `workflow`, `best-for`, `examples`, `checklist`, `pros-cons`, `default`.
 - Use `[!mistake]`, `[!tip]`, `[!takeaway]`, `[!workflow]`, `[!bestfor]` only for one highlighted point inside a larger section.
-- Product and related blocks are allowed, but they should be separated by meaningful content.
-- Test/template pages may show callout examples, but production articles should not stack callouts.
+- Product and related blocks must NOT be placed inside `:::cards`. They are standalone callouts separated by meaningful content.
 
 - `> [!takeaway]` - Key takeaway text.
 - `> [!why]` - Why this matters text.
@@ -112,7 +112,7 @@ Rules:
 - `> [!workflow]` - Workflow insight.
 - `> [!bestfor]` - Best for specific audience/use case.
 
-Bad:
+Bad (Repeated Callouts):
 ```markdown
 > [!mistake]
 > First mistake.
@@ -124,9 +124,12 @@ Bad:
 > Third mistake.
 ```
 
-Good:
+Good (Compact Cards):
 ```markdown
 ## Common mistakes
+
+:::cards
+type: mistakes
 
 ### 1. First mistake
 Explanation.
@@ -136,6 +139,7 @@ Explanation.
 
 ### 3. Third mistake
 Explanation.
+:::
 ```
 
 **Product CTA** (`[!product]`): Must be placed in the first third/middle of the article. Standalone link on the last line.

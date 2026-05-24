@@ -96,6 +96,9 @@ An AI carousel maker forces a healthier workflow by separating ideation from des
 
 ## Comparing the workflows side-by-side
 
+:::cards
+type: default
+
 ### 1. From idea to outline
 - **Manual workflow:** You typically start in a separate text editor to draft the outline, then manually copy and paste each sentence into your design tool, creating new text boxes for every slide.
 - **AI workflow:** You paste your rough notes, URL, or idea directly into the tool. The AI generates the slide-by-slide outline instantly, formatting hooks and conclusions automatically.
@@ -119,6 +122,7 @@ An AI carousel maker forces a healthier workflow by separating ideation from des
 ### 6. Scaling content volume
 - **Manual workflow:** Production time scales linearly. Two carousels take twice as long as one.
 - **AI workflow:** Production time is drastically reduced. Once the core idea is solidified, the tool handles the heavy lifting, allowing a solo creator to produce a week's worth of content in one sitting.
+:::
 
 ## At a glance: Feature comparison
 
@@ -149,17 +153,19 @@ You should pivot to an AI carousel maker if:
 
 ## Common mistakes when choosing a workflow
 
-### 1. Designing before writing
+:::cards
+type: mistakes
 
+### 1. Designing before writing
 The biggest mistake in manual design is opening the design software before the copy is 100% finalized. This leads to endless tinkering. Always lock the text first.
 
 ### 2. Expecting AI to be an art director
-
 Do not expect an AI carousel maker to invent a highly custom, avant-garde design language for your brand. AI tools excel at structure and speed, not bespoke artistic direction.
+:::
 
-### 3. The Hybrid Approach (Pro Tip)
-
-Many top creators use both. They use an AI tool to rapidly outline, condense, and structure the text draft, and then pass that finalized structure into a manual design tool for final polish.
+> [!tip]
+> **The Hybrid Approach**
+> Many top creators use both. They use an AI tool to rapidly outline, condense, and structure the text draft, and then pass that finalized structure into a manual design tool for final polish.
 
 ## Conclusion
 Ultimately, the choice between an AI carousel maker and manual design is not about which tool is objectively better; it is about where the bottleneck lies in your content strategy. If your growth is hindered because you cannot produce enough educational or repurposing content consistently, an AI workflow will transform your output. If your brand relies on highly custom, irreplaceable visual artistry, stick to manual design. For most creators and busy teams, prioritizing speed and structure over endless pixel-pushing is the fastest path to growth.

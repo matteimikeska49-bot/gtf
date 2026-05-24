@@ -108,3 +108,38 @@ This allows GoToFlow to publish new SEO articles faster while keeping old produc
 > This is a generic fallback callout for an unknown tag.
 
 > This is a standard blockquote without a tag.
+
+## Compact cards examples
+
+:::cards
+type: mistakes
+
+### 1. First repeated mistake
+This card shows how repeated mistakes should look without stacking callout labels.
+
+### 2. Second repeated mistake
+This card keeps the section compact and readable.
+
+### 3. Third repeated mistake
+Use this pattern instead of three separate mistake callouts.
+:::
+
+:::cards
+type: tips
+
+### 1. First practical tip
+Use this for repeated tips.
+
+### 2. Second practical tip
+Use compact cards instead of repeated PRO TIP callouts.
+:::
+
+:::cards
+type: workflow
+
+### 1. First workflow insight
+Use this pattern for repeated workflow advice.
+
+### 2. Second workflow insight
+Keep multiple workflow points readable without stacking huge callouts.
+:::

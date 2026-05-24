@@ -177,6 +177,49 @@ const parseMarkdownBlocks = (markdown) => {
       continue;
     }
 
+    if (trimmed === ':::cards') {
+      let variant = 'default';
+      const items = [];
+      index += 1;
+      
+      if (index < lines.length && lines[index].trim().startsWith('type:')) {
+        const typeMatch = lines[index].trim().match(/^type:\s*([a-zA-Z0-9-]+)$/i);
+        if (typeMatch) variant = typeMatch[1].toLowerCase();
+        index += 1;
+      }
+      
+      const allowedVariants = ['mistakes', 'tips', 'takeaways', 'workflow', 'best-for', 'examples', 'checklist', 'pros-cons', 'default'];
+      if (!allowedVariants.includes(variant)) {
+        variant = 'default';
+      }
+
+      let currentItem = null;
+      while (index < lines.length && lines[index].trim() !== ':::') {
+        const cLine = lines[index].trim();
+        const headingMatch = cLine.match(/^###\s+(.+)$/);
+        
+        if (headingMatch) {
+          if (currentItem) items.push(currentItem);
+          currentItem = { title: headingMatch[1], content: [] };
+        } else if (currentItem && cLine !== '') {
+          currentItem.content.push(cLine);
+        }
+        index += 1;
+      }
+      
+      if (currentItem) items.push(currentItem);
+      
+      items.forEach(item => {
+        item.content = item.content.join('\n').trim();
+      });
+
+      blocks.push({ type: 'cards', variant, items });
+      if (index < lines.length && lines[index].trim() === ':::') {
+        index += 1;
+      }
+      continue;
+    }
+
     const paragraph = [trimmed];
     index += 1;
     while (
@@ -185,6 +228,7 @@ const parseMarkdownBlocks = (markdown) => {
       !lines[index].trim().match(/^(#{1,4})\s+/) &&
       !lines[index].trim().startsWith('```') &&
       !lines[index].trim().startsWith('> ') &&
+      !lines[index].trim().startsWith(':::cards') &&
       !/^[-*]\s+/.test(lines[index].trim()) &&
       !/^\d+\.\s+/.test(lines[index].trim()) &&
       !(lines[index].trim().startsWith('|') && lines[index].trim().endsWith('|'))
@@ -437,6 +481,80 @@ const MarkdownBody = ({ markdown, title }) => {
                   {parseInlineMarkdown(block.text, block.calloutType)}
                 </p>
               )}
+            </div>
+          );
+        }
+
+        if (block.type === 'cards') {
+          let glowClass = '';
+          let borderClass = '';
+          let bgClass = '';
+          
+          switch (block.variant) {
+            case 'mistakes':
+              glowClass = 'bg-red-400 shadow-[0_0_10px_rgba(248,113,113,0.6)]';
+              borderClass = 'border-red-500/15 hover:border-red-500/30';
+              bgClass = 'bg-[#0a0a0a] hover:bg-red-500/[0.02]';
+              break;
+            case 'tips':
+              glowClass = 'bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]';
+              borderClass = 'border-emerald-500/15 hover:border-emerald-500/30';
+              bgClass = 'bg-[#0a0a0a] hover:bg-emerald-500/[0.02]';
+              break;
+            case 'takeaways':
+              glowClass = 'bg-pink-400 shadow-[0_0_10px_rgba(244,114,182,0.6)]';
+              borderClass = 'border-pink-500/15 hover:border-pink-500/30';
+              bgClass = 'bg-[#0a0a0a] hover:bg-pink-500/[0.02]';
+              break;
+            case 'workflow':
+              glowClass = 'bg-purple-400 shadow-[0_0_10px_rgba(192,132,252,0.6)]';
+              borderClass = 'border-purple-500/15 hover:border-purple-500/30';
+              bgClass = 'bg-[#0a0a0a] hover:bg-purple-500/[0.02]';
+              break;
+            case 'best-for':
+              glowClass = 'bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.6)]';
+              borderClass = 'border-blue-500/15 hover:border-blue-500/30';
+              bgClass = 'bg-[#0a0a0a] hover:bg-blue-500/[0.02]';
+              break;
+            case 'examples':
+              glowClass = 'bg-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.6)]';
+              borderClass = 'border-orange-500/15 hover:border-orange-500/30';
+              bgClass = 'bg-[#0a0a0a] hover:bg-orange-500/[0.02]';
+              break;
+            case 'checklist':
+              glowClass = 'bg-pink-300 shadow-[0_0_10px_rgba(249,168,212,0.6)]';
+              borderClass = 'border-pink-500/15 hover:border-pink-500/30';
+              bgClass = 'bg-[#0a0a0a] hover:bg-pink-500/[0.02]';
+              break;
+            case 'pros-cons':
+              glowClass = 'bg-zinc-400 shadow-[0_0_10px_rgba(161,161,170,0.6)]';
+              borderClass = 'border-white/10 hover:border-white/20';
+              bgClass = 'bg-[#0a0a0a] hover:bg-white/[0.02]';
+              break;
+            default:
+              glowClass = 'bg-zinc-500 shadow-[0_0_10px_rgba(113,113,122,0.6)]';
+              borderClass = 'border-white/10 hover:border-white/20';
+              bgClass = 'bg-[#0a0a0a] hover:bg-white/[0.02]';
+              break;
+          }
+
+          return (
+            <div key={index} className="my-8 grid grid-cols-1 gap-4">
+              {block.items.map((item, i) => (
+                <div key={i} className={`p-5 md:p-6 rounded-2xl border transition-colors duration-300 ${borderClass} ${bgClass}`}>
+                  <h4 className="text-white text-base md:text-lg font-bold mb-3 flex items-start gap-3">
+                    <span className={`mt-2 shrink-0 w-1.5 h-1.5 rounded-full ${glowClass}`} />
+                    <span>{parseInlineMarkdown(item.title)}</span>
+                  </h4>
+                  <div className="pl-4 md:pl-4">
+                    <div className="text-[15px] leading-[1.7] text-zinc-400 space-y-2">
+                      {item.content.split('\n').map((line, j) => (
+                        <p key={j}>{parseInlineMarkdown(line)}</p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           );
         }

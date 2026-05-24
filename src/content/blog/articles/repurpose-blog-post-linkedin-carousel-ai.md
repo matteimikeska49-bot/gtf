@@ -162,21 +162,21 @@ When repurposing content, you have two primary approaches depending on how much 
 
 ## Common mistakes when repurposing content
 
-### 1. Too much text per slide
+:::cards
+type: mistakes
 
+### 1. Too much text per slide
 Treating a slide like a page in a book makes the carousel hard to read. If it takes more than 3 seconds to understand, it is too long. Limit each slide to one main idea.
 
 ### 2. Boring first slides
-
 Using the blog post title as the hook rarely creates enough curiosity. Rewrite the first slide around the strongest pain, contradiction, or outcome.
 
 ### 3. No clear narrative flow
-
 Do not paste random statistics or disconnected tips into slides. Every slide should logically lead into the next.
 
 ### 4. Forgetting the call to action
-
 An educational carousel without a next step wastes attention. End with a clear CTA: save the post, comment a keyword, open the guide, or try the workflow.
+:::
 
 ## Conclusion
 Repurposing your blog posts into LinkedIn carousels is one of the highest-leverage activities you can do to scale your audience. By extracting the core value, applying strict word limits, and utilizing AI to format the structure, you can turn hours of research into engaging social content in minutes. Stop letting your long-form content gather dust, and start delivering its value directly into your audience's feed.

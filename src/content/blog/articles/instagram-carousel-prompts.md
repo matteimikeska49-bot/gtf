@@ -170,21 +170,21 @@ Turn your existing long-form content into quick Instagram posts.
 
 Even with the best prompts, you can ruin a carousel during the execution phase. Avoid these critical errors:
 
-### 1. Overstuffing slides with text
+:::cards
+type: mistakes
 
+### 1. Overstuffing slides with text
 If a slide takes more than 3 seconds to read, the user will swipe away. Never accept an AI output that gives you heavy paragraphs. Edit it down to bullet points and short sentences.
 
 ### 2. Using generic hooks
-
 "Here are 5 marketing tips" is not a hook. A stronger hook creates a clear curiosity gap on slide one.
 
 ### 3. Forgetting the narrative flow
-
 A carousel is not just a PowerPoint presentation; it is a story. Use transitional phrases at the end of slides to encourage the user to swipe to the next one.
 
 ### 4. Failing to tell them what to do next
-
 An educational carousel without a CTA is a wasted opportunity. Ask the reader to save the post, comment a keyword, or visit your link in bio.
+:::
 
 ## Conclusion
 
