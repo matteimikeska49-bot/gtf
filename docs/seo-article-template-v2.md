@@ -397,3 +397,13 @@ Use only 2–4 optional blocks per article based on intent. Do not add blocks ju
 
 - blog should not be isolated pages
 - /blog, category pages, article related links, and product page content hub blocks must help users discover related guides and tools
+
+## Markdown tables
+
+Правила:
+- comparison articles may use markdown tables;
+- tables are rendered by the template as scroll-safe dark premium tables;
+- tables should be compact;
+- avoid huge 6+ column tables;
+- use tables for comparisons only when they improve scanning;
+- on mobile, tables scroll inside their wrapper.

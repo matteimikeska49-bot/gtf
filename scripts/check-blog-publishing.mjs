@@ -273,6 +273,18 @@ async function runCheck() {
           }
         }
       }
+
+      // Check for Markdown tables with > 4 columns
+      const tableRows = content.match(/^\|.*?\|$/gm);
+      if (tableRows) {
+        for (const row of tableRows) {
+          const columns = row.split('|').length - 2;
+          if (columns > 4) {
+            warnings.push(`Markdown table has more than 4 columns; consider simplifying for mobile readability.`);
+            break;
+          }
+        }
+      }
     }
 
     if (!getYamlValue(frontmatter, 'primaryKeyword')) warnings.push(`Missing 'primaryKeyword'`);

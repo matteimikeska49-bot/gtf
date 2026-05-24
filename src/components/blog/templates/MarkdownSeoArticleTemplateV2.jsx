@@ -165,6 +165,18 @@ const parseMarkdownBlocks = (markdown) => {
       continue;
     }
 
+    if (trimmed.startsWith('|') && trimmed.endsWith('|') && index + 1 < lines.length && lines[index + 1].trim().startsWith('|') && lines[index + 1].trim().includes('---')) {
+      const tableLines = [];
+      while (index < lines.length && lines[index].trim().startsWith('|') && lines[index].trim().endsWith('|')) {
+        tableLines.push(lines[index].trim());
+        index += 1;
+      }
+      const headers = tableLines[0].split('|').slice(1, -1).map(cell => cell.trim());
+      const rows = tableLines.slice(2).map(rowLine => rowLine.split('|').slice(1, -1).map(cell => cell.trim()));
+      blocks.push({ type: 'table', headers, rows });
+      continue;
+    }
+
     const paragraph = [trimmed];
     index += 1;
     while (
@@ -174,7 +186,8 @@ const parseMarkdownBlocks = (markdown) => {
       !lines[index].trim().startsWith('```') &&
       !lines[index].trim().startsWith('> ') &&
       !/^[-*]\s+/.test(lines[index].trim()) &&
-      !/^\d+\.\s+/.test(lines[index].trim())
+      !/^\d+\.\s+/.test(lines[index].trim()) &&
+      !(lines[index].trim().startsWith('|') && lines[index].trim().endsWith('|'))
     ) {
       paragraph.push(lines[index].trim());
       index += 1;
@@ -245,6 +258,35 @@ const MarkdownBody = ({ markdown, title }) => {
             <p key={index} className="mb-6 text-[15px] leading-[1.85] text-zinc-400 md:text-base">
               {parseInlineMarkdown(block.text)}
             </p>
+          );
+        }
+
+        if (block.type === 'table') {
+          return (
+            <div key={index} className="my-8 w-full overflow-x-auto rounded-2xl border border-white/[0.08] bg-[#0a0a0a] shadow-lg">
+              <table className="w-full min-w-[640px] border-collapse text-left">
+                <thead>
+                  <tr>
+                    {block.headers.map((header, i) => (
+                      <th key={i} className="border-b border-white/[0.1] bg-[#050505] px-4 py-3 text-xs font-bold uppercase tracking-wider text-zinc-100">
+                        {parseInlineMarkdown(header)}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {block.rows.map((row, i) => (
+                    <tr key={i} className="transition-colors hover:bg-white/[0.02]">
+                      {row.map((cell, j) => (
+                        <td key={j} className={`border-b border-white/[0.05] px-4 py-3 text-[15px] leading-relaxed ${j === 0 ? 'font-medium text-zinc-200' : 'text-zinc-400'}`}>
+                          {parseInlineMarkdown(cell)}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           );
         }
 

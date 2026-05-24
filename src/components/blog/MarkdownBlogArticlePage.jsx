@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { CookieBanner } from '../CookieBanner';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
 import { MainLayout } from '../MainLayout';
 import { getMarkdownArticleBySlug } from '../../lib/blog/markdownArticles';
 import { MarkdownSeoArticleTemplateV2 } from './templates/MarkdownSeoArticleTemplateV2';
+import { NotFoundPage } from '../NotFoundPage';
 
 const setMeta = (name, content, prop = false) => {
   if (!content) return;
@@ -86,11 +87,16 @@ const MarkdownArticleSEOHead = ({ article }) => {
   return null;
 };
 
-export const MarkdownBlogArticlePage = ({ slug }) => {
+export const MarkdownBlogArticlePage = ({ slug: propSlug }) => {
+  const params = useParams();
+  const slug = propSlug || params.slug;
   const article = getMarkdownArticleBySlug(slug);
 
-  if (!article) {
-    return <Navigate to="/blog" replace />;
+  const isLocalPreview = typeof window !== 'undefined' && 
+    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+
+  if (!article || (article.published === false && !isLocalPreview)) {
+    return <NotFoundPage />;
   }
 
   return (

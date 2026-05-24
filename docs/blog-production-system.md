@@ -1222,3 +1222,12 @@ research → 20 статей → markdown → build → push
 - ломать getAppUrlWithRef;
 - забывать dist, если production берёт dist;
 - делать 100 статей сразу без QA.
+
+---
+
+## Markdown tables
+
+- comparison articles can include compact markdown tables;
+- table support is template-level;
+- do not replace tables with plain text manually unless table is too large;
+- avoid massive tables in SEO articles.

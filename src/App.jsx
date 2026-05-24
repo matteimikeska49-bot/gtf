@@ -103,6 +103,7 @@ function App() {
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/personal-data-consent" element={<PersonalDataConsentPage />} />
         <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/blog/:slug" element={<MarkdownBlogArticlePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </LanguageProvider>
