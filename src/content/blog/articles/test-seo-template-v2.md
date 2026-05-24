@@ -74,3 +74,28 @@ The markdown engine should render this content inside the GoToFlow dark premium 
 ## Why this matters
 
 This allows GoToFlow to publish new SEO articles faster while keeping old production pages safe.
+
+## Callout Examples
+
+> [!takeaway]
+> This is a key takeaway callout.
+
+> [!why]
+> This is why the idea matters for the reader.
+
+> [!mistake]
+> This is a common mistake callout.
+
+> [!tip]
+> This is a practical tip callout.
+
+> [!workflow]
+> This is a workflow insight callout.
+
+> [!bestfor]
+> This is a best-for callout.
+
+> [!unknown-tag]
+> This is a generic fallback callout for an unknown tag.
+
+> This is a standard blockquote without a tag.

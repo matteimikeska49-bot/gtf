@@ -365,6 +365,7 @@ Hero
 - H1/H2/H3 and list styling is part of the reusable template.
 - New articles should not introduce one-off visual classes.
 - If three or more articles need the same special structure (e.g. advanced prompt grouping), create an optional reusable block (like PromptGroupsBlock) later instead of one-off markup.
+- Использовать Markdown callout blocks (`> [!type]`) для смысловых акцентов. Callouts помогают избежать text wall и должны использоваться как часть массового article template, но они не заменяют полноценную структуру статьи.
 
 ---
 

@@ -93,7 +93,19 @@ const parseMarkdownBlocks = (markdown) => {
         quote.push(lines[index].trim().slice(2));
         index += 1;
       }
-      blocks.push({ type: 'quote', text: quote.join(' ') });
+
+      const fullText = quote.join(' ');
+      const calloutMatch = fullText.match(/^\[!([a-zA-Z0-9-]+)\]\s*(.*)$/i);
+
+      if (calloutMatch) {
+        blocks.push({ 
+          type: 'callout', 
+          calloutType: calloutMatch[1].toLowerCase(), 
+          text: calloutMatch[2] 
+        });
+      } else {
+        blocks.push({ type: 'quote', text: fullText });
+      }
       continue;
     }
 
@@ -191,6 +203,84 @@ const MarkdownBody = ({ markdown, title }) => {
                   <span>{parseInlineMarkdown(item)}</span>
                 </div>
               ))}
+            </div>
+          );
+        }
+
+        if (block.type === 'callout') {
+          let badgeText = '';
+          let badgeColor = '';
+          let bgClass = '';
+          let borderClass = '';
+          let gradientLine = '';
+          let icon = null;
+          
+          switch(block.calloutType) {
+            case 'takeaway':
+              badgeText = 'Key takeaway';
+              badgeColor = 'text-pink-400';
+              bgClass = 'bg-pink-500/[0.03]';
+              borderClass = 'border-pink-500/15';
+              gradientLine = 'from-pink-500/40 to-orange-500/40';
+              break;
+            case 'why':
+            case 'why-matters':
+              badgeText = 'Why this matters';
+              badgeColor = 'text-pink-400';
+              bgClass = 'bg-pink-500/[0.04]';
+              borderClass = 'border-pink-500/20';
+              gradientLine = 'from-pink-500/50 to-orange-500/50';
+              icon = <Sparkles className="w-4 h-4 text-pink-400" />;
+              break;
+            case 'insight':
+            case 'workflow':
+              badgeText = 'Workflow insight';
+              badgeColor = 'text-purple-400';
+              bgClass = 'bg-purple-500/[0.03]';
+              borderClass = 'border-purple-500/15';
+              gradientLine = 'from-purple-500/40 to-pink-500/40';
+              break;
+            case 'mistake':
+              badgeText = 'Common mistake';
+              badgeColor = 'text-red-400';
+              bgClass = 'bg-red-500/[0.03]';
+              borderClass = 'border-red-500/15';
+              gradientLine = 'from-red-500/40 to-orange-500/40';
+              break;
+            case 'tip':
+              badgeText = 'Pro tip';
+              badgeColor = 'text-emerald-400';
+              bgClass = 'bg-emerald-500/[0.03]';
+              borderClass = 'border-emerald-500/15';
+              gradientLine = 'from-emerald-500/40 to-teal-500/40';
+              break;
+            case 'bestfor':
+            case 'best-for':
+              badgeText = 'Best for';
+              badgeColor = 'text-blue-400';
+              bgClass = 'bg-blue-500/[0.03]';
+              borderClass = 'border-blue-500/15';
+              gradientLine = 'from-blue-500/40 to-cyan-500/40';
+              break;
+            default:
+              badgeText = 'Note';
+              badgeColor = 'text-zinc-400';
+              bgClass = 'bg-white/[0.03]';
+              borderClass = 'border-white/[0.1]';
+              gradientLine = 'from-white/40 to-white/10';
+              break;
+          }
+
+          return (
+            <div key={index} className={`my-8 rounded-2xl border ${borderClass} ${bgClass} p-5 md:p-6 relative overflow-hidden shadow-sm`}>
+              <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${gradientLine}`} />
+              <div className="flex items-center gap-2 mb-3">
+                {icon}
+                <span className={`text-[12px] font-bold uppercase tracking-[0.15em] ${badgeColor}`}>{badgeText}</span>
+              </div>
+              <p className="text-[15px] leading-[1.65] text-zinc-300">
+                {parseInlineMarkdown(block.text)}
+              </p>
             </div>
           );
         }

@@ -105,22 +105,35 @@ Quick Answer обязателен в первой трети статьи.
 - карточки должны быть читаемыми;
 - не делать длинную однообразную ленту.
 
-## Callouts / anchors rules
+## Markdown callout blocks
 
-Использовать короткие смысловые anchors только если они помогают чтению:
+Использовать callouts только для смысловых акцентов.
+Синтаксис:
 
-- Key takeaway
-- Workflow insight
-- Common mistake
-- Best for
-- Why this matters
-- Prompt tip
+> [!takeaway]
+> This is a key takeaway.
+
+> [!why]
+> This is why it matters.
+
+> [!mistake]
+> This is a common mistake.
+
+> [!tip]
+> This is a pro tip.
+
+> [!workflow]
+> This is a workflow insight.
+
+> [!bestfor]
+> This is who it is best for.
 
 Правила:
-- не добавлять callouts ради декора;
-- 1–2 callouts на длинные text-heavy зоны достаточно;
-- callout должен брать смысл из текущего текста;
-- не писать длинные новые тексты в callout.
+- использовать callouts только для смысловых акцентов;
+- не больше 1 callout на 2–3 секции;
+- не использовать HTML/className в markdown;
+- если новый тип нужен в 3+ статьях — добавлять в шаблон (parseMarkdownBlocks).
+- обычный blockquote `> ` без тега рендерится как стандартная цитата.
 
 ## Final CTA rules
 
