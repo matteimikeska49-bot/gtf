@@ -238,3 +238,27 @@ SEO batch manager нужен, чтобы GoToFlow мог выпускать 5, 1
 - batch manager defines how to move articles through production;
 - `check:blog` validates technical and structural safety;
 - roadmap defines strategic priorities.
+
+---
+
+## 11. Automated Checks (check:blog)
+
+### Route/internal link checker
+- published articles cannot link to draft/noindex pages;
+- every internal route must exist;
+- product/related/final CTA links must be validated;
+- no links to test template pages;
+- broken internal links block publish.
+
+### Anti-cannibalization checks
+- duplicate slug/canonical = P0;
+- duplicate primaryKeyword = warning/P0 depending on publish state;
+- same cluster + same intent = warning;
+- draft articles targeting published keywords need differentiation before publish.
+
+### Batch usage
+Before accepting a batch:
+- run `npm run check:blog`;
+- fix all route/link warnings;
+- review cannibalization warnings;
+- do not publish articles with unresolved duplicate intent.

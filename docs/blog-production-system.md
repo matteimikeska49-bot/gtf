@@ -1252,3 +1252,6 @@ research → 20 статей → markdown → build → push
 - table support is template-level;
 - do not replace tables with plain text manually unless table is too large;
 - avoid massive tables in SEO articles.
+
+## Automated Link & Cannibalization Checks
+Refer to `docs/seo-batch-manager.md` for rules on Route/internal link checking and Anti-cannibalization checks.

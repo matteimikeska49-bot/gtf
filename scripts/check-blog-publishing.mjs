@@ -79,6 +79,18 @@ async function runCheck() {
   let hasP0Error = false;
   let totalWarnings = 0;
   
+  const stats = {
+    totalArticles: 0,
+    publishedCount: 0,
+    draftCount: 0,
+    errorsCount: 0,
+    warningsCount: 0,
+    duplicateKeywords: 0,
+    brokenInternalLinks: 0,
+    draftLinkViolations: 0,
+    cannibalizationWarnings: 0
+  };
+  
   const files = fs.readdirSync(ARTICLES_DIR).filter(f => f.endsWith('.md') && f !== '_template.md');
   
   let sitemapContent = '';
@@ -102,12 +114,18 @@ async function runCheck() {
 
     const slug = getYamlValue(frontmatter, 'slug');
     const published = getYamlValue(frontmatter, 'published');
+    const canonical = getYamlValue(frontmatter, 'canonical');
+    const primaryKeyword = getYamlValue(frontmatter, 'primaryKeyword')?.toLowerCase().trim();
+    const cluster = getYamlValue(frontmatter, 'cluster')?.toLowerCase().trim();
+    const searchIntent = getYamlValue(frontmatter, 'searchIntent')?.toLowerCase().trim();
+    const articleType = getYamlValue(frontmatter, 'articleType')?.toLowerCase().trim();
+    const title = getYamlValue(frontmatter, 'title');
     
     if (slug) {
       if (published === true) publishedSlugs.add(slug);
       if (published === false) draftSlugs.add(slug);
     }
-    parsedFiles.push({ file, content, frontmatter, slug, published });
+    parsedFiles.push({ file, content, frontmatter, slug, published, canonical, primaryKeyword, cluster, searchIntent, articleType, title });
   }
 
   // Pass 2: Validate
@@ -120,6 +138,14 @@ async function runCheck() {
     const title = getYamlValue(frontmatter, 'title');
     const canonical = getYamlValue(frontmatter, 'canonical');
     const noindex = getYamlValue(frontmatter, 'noindex');
+    const primaryKeyword = getYamlValue(frontmatter, 'primaryKeyword')?.toLowerCase().trim();
+    const cluster = getYamlValue(frontmatter, 'cluster')?.toLowerCase().trim();
+    const searchIntent = getYamlValue(frontmatter, 'searchIntent')?.toLowerCase().trim();
+    const articleType = getYamlValue(frontmatter, 'articleType');
+
+    stats.totalArticles++;
+    if (published === true) stats.publishedCount++;
+    if (published === false) stats.draftCount++;
 
     // P0: Presence checks
     if (!slug) errors.push(`Missing 'slug'`);
@@ -147,6 +173,38 @@ async function runCheck() {
         errors.push(`Duplicate slug '${slug}' (already used by ${slugsSeen.get(slug)})`);
       } else {
         slugsSeen.set(slug, file);
+      }
+    }
+
+    // Anti-cannibalization checks
+    for (const other of parsedFiles) {
+      if (other.file === file) continue;
+      
+      if (canonical && other.canonical === canonical) {
+        errors.push(`Duplicate canonical '${canonical}' (already used by ${other.file})`);
+      }
+      
+      if (primaryKeyword && other.primaryKeyword === primaryKeyword) {
+        if (published === true && other.published === true) {
+          errors.push(`Duplicate primaryKeyword '${primaryKeyword}' with published article ${other.file}`);
+          stats.duplicateKeywords++;
+        } else if (other.published === true && published === false) {
+          warnings.push(`Draft may cannibalize published article ${other.file} (same primaryKeyword: '${primaryKeyword}'). Differentiate angle before publishing.`);
+          stats.cannibalizationWarnings++;
+        } else if (other.published === false && published === false && other.file < file) {
+          warnings.push(`Duplicate primaryKeyword '${primaryKeyword}' with draft article ${other.file}`);
+          stats.duplicateKeywords++;
+        }
+      }
+
+      if (cluster && searchIntent && other.cluster === cluster && other.searchIntent === searchIntent && other.file < file) {
+        warnings.push(`Potential cannibalization: shares cluster '${cluster}' and searchIntent '${searchIntent}' with ${other.file}`);
+        stats.cannibalizationWarnings++;
+      }
+
+      if (title && other.title === title && other.file < file) {
+        warnings.push(`Duplicate title '${title}' with ${other.file}`);
+        stats.cannibalizationWarnings++;
       }
     }
 
@@ -198,10 +256,9 @@ async function runCheck() {
     const frontmatterLinks = extractFrontmatterLinks(frontmatter);
     const bodyLinksRaw = extractBodyLinks(content);
     
-    // For warnings
     let internalBodyLinksCount = 0;
-    
     const allLinks = [...frontmatterLinks, ...bodyLinksRaw];
+    
     for (let link of allLinks) {
       link = link.trim();
       if (!link) {
@@ -210,32 +267,73 @@ async function runCheck() {
       }
       if (link === '#explore-more') continue;
       
-      let cleanLink = link.replace(/^https:\/\/gotoflow\.io/, '');
-      if (!cleanLink.startsWith('/')) {
-        errors.push(`Link '${link}' must be relative starting with / or absolute with https://gotoflow.io/`);
+      if (link.startsWith('http://') || (link.startsWith('https://') && !link.startsWith('https://gotoflow.io'))) {
+        warnings.push(`External link should be intentionally reviewed: '${link}'`);
         continue;
       }
 
-      // Check if it's pointing to a blog draft
+      if (!link.startsWith('/') && !link.startsWith('#') && !link.startsWith('https://gotoflow.io')) {
+        errors.push(`Internal link '${link}' must start with / or #`);
+        stats.brokenInternalLinks++;
+        continue;
+      }
+
+      // Check query params
+      if (link.includes('?')) {
+        warnings.push(`Query params are discouraged in internal links: '${link}'`);
+      }
+
+      let cleanLink = link.replace(/^https:\/\/gotoflow\.io/, '');
+      cleanLink = cleanLink.split('#')[0].split('?')[0]; // ignore hash and query
+      if (cleanLink.endsWith('/') && cleanLink !== '/') cleanLink = cleanLink.slice(0, -1);
+
+      if (cleanLink === '' || cleanLink === '/') continue;
+
+      if (cleanLink === '/blog/test-seo-template-v2') {
+        if (published) {
+          errors.push(`Link to test template is forbidden in published article: '${link}'`);
+          stats.brokenInternalLinks++;
+        } else {
+          warnings.push(`Link to test template found: '${link}'`);
+        }
+        continue;
+      }
+
       if (cleanLink.startsWith('/blog/')) {
         const targetSlug = cleanLink.replace('/blog/', '');
         if (draftSlugs.has(targetSlug)) {
-          errors.push(`Link '${link}' points to a draft/noindex markdown article`);
+          if (published) {
+            errors.push(`Published article cannot link to draft/noindex article: '${link}'`);
+            stats.draftLinkViolations++;
+          } else {
+            warnings.push(`Draft article links to another draft: '${link}'`);
+            stats.draftLinkViolations++;
+          }
         } else if (!publishedSlugs.has(targetSlug) && !ALLOWLIST_ROUTES.includes(cleanLink)) {
-          errors.push(`Link '${link}' points to an unknown or unpublished blog article`);
+          if (published) {
+            errors.push(`Link points to unknown/unpublished blog article: '${link}'`);
+            stats.brokenInternalLinks++;
+          } else {
+            warnings.push(`Link points to unknown/unpublished blog article: '${link}'`);
+            stats.brokenInternalLinks++;
+          }
         }
       } else if (!ALLOWLIST_ROUTES.includes(cleanLink)) {
-        errors.push(`Link '${link}' is not in the ALLOWLIST_ROUTES`);
+        if (published) {
+          errors.push(`Link points to missing or non-allowlisted route: '${link}'`);
+          stats.brokenInternalLinks++;
+        } else {
+          warnings.push(`Link points to missing or non-allowlisted route: '${link}'`);
+          stats.brokenInternalLinks++;
+        }
       }
-      
-      // Count internal links in body for warnings (exclude frontmatter links and explore-more)
+
       if (bodyLinksRaw.includes(link) && (cleanLink.startsWith('/') || link.startsWith('https://gotoflow.io/'))) {
         internalBodyLinksCount++;
       }
     }
 
     // Warnings checks
-    const articleType = getYamlValue(frontmatter, 'articleType');
     
     if (published === true) {
       if (!getYamlValue(frontmatter, 'lastReviewed')) {
@@ -381,10 +479,12 @@ async function runCheck() {
       errors.forEach(e => {
         console.log(`  ❌ P0: ${e}`);
         hasP0Error = true;
+        stats.errorsCount++;
       });
       warnings.forEach(w => {
         console.log(`  ⚠️  Warning: ${w}`);
         totalWarnings++;
+        stats.warningsCount++;
       });
     }
     console.log(''); // newline
@@ -393,13 +493,20 @@ async function runCheck() {
   // Final Summary
   console.log('─────────────────────────────────────────');
   console.log('📊 CHECK SUMMARY');
+  console.log(`📄 Total MD Articles: ${stats.totalArticles} (${stats.publishedCount} published, ${stats.draftCount} draft)`);
+  
+  if (stats.duplicateKeywords > 0) console.log(`  - Duplicate keywords: ${stats.duplicateKeywords}`);
+  if (stats.cannibalizationWarnings > 0) console.log(`  - Cannibalization warnings: ${stats.cannibalizationWarnings}`);
+  if (stats.brokenInternalLinks > 0) console.log(`  - Broken internal links: ${stats.brokenInternalLinks}`);
+  if (stats.draftLinkViolations > 0) console.log(`  - Draft link violations: ${stats.draftLinkViolations}`);
+  
   if (hasP0Error) {
-    console.log('❌ Status: FAILED (P0 errors found)');
+    console.log(`❌ Status: FAILED (${stats.errorsCount} P0 errors found)`);
     process.exit(1);
   } else {
     console.log(`✅ Status: PASSED`);
     if (totalWarnings > 0) {
-      console.log(`⚠️  Total Warnings: ${totalWarnings}`);
+      console.log(`⚠️  Total Warnings: ${stats.warningsCount}`);
     }
     process.exit(0);
   }

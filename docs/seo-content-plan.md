@@ -169,3 +169,6 @@ If overlap exists:
 - differentiate angle;
 - make one article pillar and another supporting;
 - or do not create the article.
+
+## Anti-Cannibalization
+Refer to `docs/seo-batch-manager.md` and run `npm run check:blog` to ensure no duplicate intents or keywords.
