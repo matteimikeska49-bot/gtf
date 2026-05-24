@@ -1133,7 +1133,48 @@ batch-YYYY-MM-DD-001
 
 ---
 
+## Gemini article generation workflow
+
+1. Research / brief.
+2. Gemini generates draft markdown using:
+   `docs/gemini-seo-article-generation-prompt.md`
+3. Code-agent saves markdown file as draft:
+   published: false
+   noindex: true
+4. Run:
+   npm run build
+   npm run check:blog
+5. Open preview URL.
+6. Human visual/content QA.
+7. Only after approval:
+   published: true
+   noindex: false
+   npm run build
+   npm run check:blog
+   commit/push.
+
 ## Roles / model usage
+
+Gemini:
+- research;
+- brief;
+- draft article;
+- semantic structure;
+- FAQ;
+- callouts;
+- internal links.
+
+Code-agent:
+- save file;
+- route/build/check;
+- preview;
+- publish;
+- commit/push.
+
+Human:
+- approve topic/brief;
+- visual QA;
+- final publish approval.
 
 Без платного Claude:
 

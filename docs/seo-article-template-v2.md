@@ -286,6 +286,17 @@ This V2 markdown system enforces:
 - Не добавлять CTA ради декора.
 - Каждый CTA должен быть логично связан с предыдущим смысловым блоком.
 
+## Gemini article generation prompt
+
+Для создания новых markdown SEO-статей использовать:
+`docs/gemini-seo-article-generation-prompt.md`
+
+- Gemini output must pass: `npm run check:blog`
+- markdown не должен содержать HTML/className;
+- frontmatter должен соответствовать текущим файлам в `src/content/blog/articles`;
+- callout placement rules обязательны;
+- product/related/freshness/finalCta/explore/FAQ должны соответствовать шаблону.
+
 ## Future agent workflow
 
 Перед созданием новой статьи агент должен:

@@ -267,7 +267,10 @@ async function runCheck() {
       if (promptGroupsSection) {
         const promptGroupsContent = promptGroupsSection.split('\n## ')[0];
         if (promptGroupsContent.includes('> [!related]')) {
-          warnings.push(`[!related] block should not be placed inside 'Prompt Groups' section to avoid interrupting the list.`);
+          const afterRelated = promptGroupsContent.split('> [!related]')[1];
+          if (afterRelated.includes('\n### ') || afterRelated.match(/\n\d+\.\s/)) {
+            warnings.push(`[!related] block should not be placed inside 'Prompt Groups' section to avoid interrupting the list.`);
+          }
         }
       }
     }
