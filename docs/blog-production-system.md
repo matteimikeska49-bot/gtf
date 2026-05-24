@@ -50,6 +50,13 @@ topic
 
 👉 **[SEO Publishing Roadmap & Strategy](docs/seo-publishing-roadmap.md)**
 
+## Content brief and topic map
+
+- before generating an article, create/check a content brief;
+- use `docs/seo-content-plan.md` to prevent duplicates and cannibalization;
+- use `docs/seo-content-brief-template.md` before Gemini generation;
+- batch publishing starts from topic map, not random topics.
+
 ---
 
 ## QA & Deployment

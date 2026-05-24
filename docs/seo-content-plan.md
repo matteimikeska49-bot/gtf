@@ -1,0 +1,168 @@
+# GoToFlow SEO Content Plan
+
+## 1. Purpose
+
+Это не просто список тем, а **content inventory / topic map**, созданный для предотвращения:
+- хаотичной генерации статей;
+- дублей;
+- keyword cannibalization;
+- слабых статей без intent;
+- случайных публикаций без QA.
+
+## 2. Content lifecycle
+
+Статусы статьи в процессе производства:
+
+- `idea`
+- `research`
+- `brief`
+- `draft`
+- `markdown`
+- `preview`
+- `content QA`
+- `ready to publish`
+- `published`
+- `needs update`
+- `archived`
+- `merged / redirected`
+
+## 3. Priority levels
+
+- **P0** — critical cluster / product-led / high intent
+- **P1** — important supporting articles
+- **P2** — long-tail scale
+- **P3** — experimental / low priority
+
+## 4. Article types
+
+- `guide`
+- `how-to`
+- `prompt-library`
+- `comparison`
+- `best-tools`
+- `ideas`
+- `examples`
+- `checklist`
+- `alternatives`
+- `use-case`
+- `pillar`
+
+## 5. Core clusters
+
+Начальная карта кластеров.
+
+### Cluster: AI Carousel Maker
+**Product pages:**
+- `/ai-carousel-maker`
+
+**Possible articles:**
+- AI carousel maker vs manual design
+- Best AI carousel generators
+- How to create a carousel with AI
+- AI carousel maker for small business
+- AI carousel maker for agencies
+- AI carousel maker vs Canva workflow
+
+### Cluster: LinkedIn Carousel
+**Product pages:**
+- `/linkedin-carousel-maker`
+
+**Existing / draft / planned articles:**
+- linkedin-carousel-prompts
+- repurpose-blog-post-linkedin-carousel-ai
+- how-to-make-linkedin-carousel-with-ai
+- linkedin-carousel-ideas
+- LinkedIn carousel examples
+- LinkedIn carousel hook formulas
+- LinkedIn carousel prompt library
+
+### Cluster: Instagram Carousel
+**Product pages:**
+- `/ai-instagram-post-generator`
+- `/ai-carousel-maker`
+
+**Existing / draft / planned articles:**
+- ai-instagram-carousel-generator
+- instagram-carousel-prompts
+- Instagram carousel ideas
+- Instagram carousel examples
+- Instagram carousel for small business
+- Instagram carousel hook prompts
+
+### Cluster: AI Content Generator
+**Product pages:**
+- `/ai-content-generator`
+
+**Possible articles:**
+- AI content generator for social media
+- How to repurpose content with AI
+- Blog post to social media content
+- AI content workflow for creators
+- AI content generator vs manual content planning
+
+### Cluster: Content Repurposing
+**Product pages:**
+- `/ai-content-generator`
+- `/ai-carousel-maker`
+- `/linkedin-carousel-maker`
+
+**Possible articles:**
+- repurpose blog post into LinkedIn carousel
+- repurpose YouTube video into carousel
+- repurpose podcast into social posts
+- turn long-form content into carousel
+- content repurposing workflow with AI
+
+### Cluster: Creator / Small Business Workflows
+**Product pages:**
+- `/ai-carousel-maker`
+- `/ai-content-generator`
+
+**Possible articles:**
+- content workflow for solo founders
+- weekly content system for creators
+- social content calendar with AI
+- carousel workflow for consultants
+- AI content prompts for small businesses
+
+## 6. EN/RU note
+
+**RU articles are not literal translations.**
+RU should be a local adaptation based on:
+- RU search intent;
+- RU social platforms;
+- RU terminology;
+- RU examples;
+- RU CTA;
+- RU product routes;
+- RU sitemap/hreflang when implemented.
+
+*Do not publish RU articles until RU architecture is decided.*
+
+## 7. Tracking table format
+
+| Cluster | Topic | Primary keyword | Language | Article type | Priority | Intent | Funnel stage | Status | Slug | Existing URL | Notes |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| LinkedIn Carousel | LinkedIn Carousel Prompts | linkedin carousel prompts | en | prompt-library | P0 | finding templates | BOFU | published | linkedin-carousel-prompts | /blog/linkedin-carousel-prompts | markdown article |
+| Content Repurposing | Repurpose Blog to LinkedIn | repurpose blog post linkedin carousel | en | how-to | P1 | repurposing workflow | MOFU | draft | repurpose-blog-post-linkedin-carousel-ai | needs verification | pending QA |
+| Instagram Carousel | Instagram Carousel Prompts | instagram carousel prompts | en | prompt-library | P1 | finding templates | BOFU | draft | instagram-carousel-prompts | needs verification | pending QA |
+| AI Carousel Maker | AI vs Manual Design | ai carousel maker vs manual design | en | comparison | P1 | comparing tools vs canva | MOFU | draft | ai-carousel-maker-vs-manual-design | needs verification | pending QA |
+| Instagram Carousel | AI Instagram Carousel Generator | ai instagram carousel generator | en | guide | P0 | informational / product | BOFU | published | ai-instagram-carousel-generator | /blog/ai-instagram-carousel-generator | legacy JSX |
+| AI Carousel Maker | Best AI Carousel Generators | best ai carousel generators | en | best-tools | P0 | evaluating software | BOFU | published | best-ai-carousel-generators | /blog/best-ai-carousel-generators | legacy JSX |
+| LinkedIn Carousel | How to Make LinkedIn Carousel with AI | how to make linkedin carousel with ai | en | how-to | P0 | learning the process | MOFU | published | how-to-make-linkedin-carousel-with-ai | /blog/how-to-make-linkedin-carousel-with-ai | legacy JSX |
+
+*Если статус неизвестен — писать “needs verification”, не выдумывать.*
+
+## 8. Anti-cannibalization rule
+
+Before creating a new article, check if another article already targets:
+- same primary keyword;
+- same slug;
+- same search intent;
+- same cluster + same funnel stage.
+
+If overlap exists:
+- merge;
+- differentiate angle;
+- make one article pillar and another supporting;
+- or do not create the article.

@@ -7,25 +7,21 @@ This prompt is designed to instruct Gemini (or another AI agent) to generate a c
 Use this prompt template whenever you need to generate a new blog post or SEO guide. Do not use this for minor edits. Provide this exact prompt along with the specific article brief to generate a ready-to-publish `.md` file.
 
 ## 3. Input Data for Gemini
-Before generating the article, Gemini must receive the following context (if any data is missing, Gemini should create an "Assumptions" block rather than hallucinating critical URLs):
-- `language`: (en / ru)
-- `primaryKeyword`: 
-- `secondaryKeywords`: 
-- `searchIntent`: 
-- `audience`: 
-- `funnelStage`: 
-- `cluster`: 
-- `articleType`: 
-- `targetSlug`: 
-- `targetCanonical`: 
-- `competitors / SERP notes`: 
-- `unique angle`: 
-- `GoToFlow product angle`: 
-- `related product/tool links`: 
-- `related guide links`: 
-- `required CTA`: 
-- `freshness date / lastReviewed`: 
-- `publication status`: (draft or ready)
+**Rule:** Gemini should not generate articles from a raw topic alone for production batches. For production use, Gemini should receive a completed content brief.
+
+Before generating the article, Gemini must receive the following context via a content brief (reference: `docs/seo-content-brief-template.md`):
+- keyword;
+- intent;
+- audience;
+- angle;
+- product links;
+- structure;
+- related links;
+- CTA;
+- freshness requirement;
+- mockup requirement if any.
+
+*(If any data is missing from the brief, Gemini should create an "Assumptions" block rather than hallucinating critical URLs).*
 
 ## 4. Strict Generation Rules
 1. **Output Format**: Output ONLY the raw Markdown file content. Do not include introductory or concluding conversational text.
