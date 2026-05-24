@@ -85,9 +85,26 @@ topic
 
 Только после появления inventory, checkers, analytics, update policy, batch rollback.
 
----
+## QA & Deployment
 
-## Production pipeline
+### Automated publishing checks
+
+Before publishing any article, you **MUST** run the automated publishing checks. This script validates frontmatter consistency, sitemap inclusion, missing fields, duplicate slugs, and internal links safety.
+
+1. **Run full build** to generate the latest `dist/sitemap.xml` and prerender routes:
+   `npm run build`
+2. **Run blog checks**:
+   `npm run check:blog`
+
+**Check rules:**
+- **P0 Errors** will block publishing (process exits with code 1). You must fix them.
+- **Warnings** should be fixed based on priority but will not block CI.
+- **Draft safety**: Draft/noindex articles must NOT appear in sitemap or blog index.
+- **Link safety**: Internal `explore` and `finalCta` links must not lead to draft articles or 404s.
+
+Future articles are published purely through frontmatter updates, but only after passing the `npm run check:blog` checks.
+
+### Production Build Verification
 
 1. Topic selection
 2. Keyword / intent research

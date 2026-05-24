@@ -211,6 +211,22 @@ Secondary link: `Посмотреть другие инструменты и г�
 - Quick Answer title must be controlled via quickAnswerTitle or fallback to “What you need to know”.
 - These are system-level rules for all future markdown SEO articles.
 
+## 8. Requirements for Automated Publishing
+
+All markdown articles must pass the automated publishing checks before they can be deployed to production.
+
+- Run `npm run check:blog` to validate your article.
+- **P0 Errors** (e.g. missing `slug`, duplicate `slug`, canonical mismatch, draft appearing in sitemap, or broken links) will block publication.
+- **Warnings** (e.g. missing `faq`, `explore`, `finalCta`) should be fixed to ensure maximum SEO quality.
+- **Related Links**: Any links in `explore` or `finalCta` must be valid internal paths (starting with `/` or `https://gotoflow.io/`) and must NOT point to draft or 404 pages. `#explore-more` is allowed for secondary links.
+
+All required frontmatter keys must remain compatible with production checks.
+
+## 9. Conclusion
+
+This V2 markdown system enforces:
+1. Hard boundaries between Markdown (content) and JSX (design).
+
 ## CTA count rules
 
 - Final CTA обязателен.

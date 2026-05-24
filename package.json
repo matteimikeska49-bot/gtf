@@ -8,6 +8,7 @@
     "build": "vite build",
     "prerender": "node prerender.mjs",
     "postbuild": "node prerender.mjs",
+    "check:blog": "node scripts/check-blog-publishing.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
