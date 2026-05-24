@@ -128,8 +128,31 @@ Quick Answer обязателен в первой трети статьи.
 > [!bestfor]
 > This is who it is best for.
 
+> [!product]
+> **Turn this into a carousel faster**
+> Use GoToFlow to turn rough ideas into structured carousel drafts.
+> [Try LinkedIn Carousel Maker](/linkedin-carousel-maker)
+
+> [!related]
+> **Read next**
+> Learn the full process here: [How to make a LinkedIn carousel with AI](/blog/how-to-make-linkedin-carousel-with-ai)
+
 Правила:
 - использовать callouts только для смысловых акцентов;
+- product callout = contextual product bridge;
+  - `[!product]` должен иметь структуру: 1. bold title; 2. description; 3. standalone CTA link последней строкой.
+  - шаблон рендерит standalone CTA link как button/pill (не inline в середине предложения).
+- related callout = internal linking bridge;
+  - `[!related]` имеет структуру: 1. optional bold title; 2. body text with inline link.
+  - визуально более спокойный, чем product.
+  - related block не должен разрывать длинные библиотеки/списки/Prompt Groups.
+- product и related blocks нельзя ставить подряд.
+  - между ними должен быть meaningful content (H2/H3 section, крупный блок, список).
+  - product CTA лучше ставить в первой трети статьи (как product bridge).
+  - related block лучше ставить после крупного смыслового блока, перед примерами, или перед common mistakes (но не сразу после product CTA).
+- не больше 1–2 mid-article CTA/related blocks;
+- не ставить после каждого раздела;
+- не заменяет ArticleExploreZone и Final CTA;
 - не больше 1 callout на 2–3 секции;
 - не использовать HTML/className в markdown;
 - если новый тип нужен в 3+ статьях — добавлять в шаблон (parseMarkdownBlocks).
@@ -224,14 +247,30 @@ Secondary link: `Посмотреть другие инструменты и г�
 - Quick Answer title must be controlled via quickAnswerTitle or fallback to “What you need to know”.
 - These are system-level rules for all future markdown SEO articles.
 
+## Article freshness block
+
+Использовать `lastReviewed`, `updatedAt`, `createdAt` в frontmatter.
+Hero показывает `Reviewed/Updated/Published Month YYYY`.
+Для fresh topics `lastReviewed` обязателен.
+Также генерируется `ArticleFreshnessBlock` перед началом контента, который объясняет пользователю актуальность информации.
+
+## Contextual CTA and related links
+
+Production-ready статьи (guide, how-to, prompts, comparison и т.д.) должны содержать контекстные блоки:
+- `> [!product]` - продуктовый CTA в первой трети статьи (обычно после первой значимой секции).
+- `> [!related]` - рекомендация прочитать связанную статью, ближе к середине или концу статьи.
+
+Эти блоки не заменяют Final CTA, а служат для контекстной навигации.
+Автоматический чекер `check:blog` будет выдавать warning, если этих блоков нет в production-статье.
+
 ## 8. Requirements for Automated Publishing
 
 All markdown articles must pass the automated publishing checks before they can be deployed to production.
 
 - Run `npm run check:blog` to validate your article.
 - **P0 Errors** (e.g. missing `slug`, duplicate `slug`, canonical mismatch, draft appearing in sitemap, or broken links) will block publication.
-- **Warnings** (e.g. missing `faq`, `explore`, `finalCta`) should be fixed to ensure maximum SEO quality.
-- **Related Links**: Any links in `explore` or `finalCta` must be valid internal paths (starting with `/` or `https://gotoflow.io/`) and must NOT point to draft or 404 pages. `#explore-more` is allowed for secondary links.
+- **Warnings** (e.g. missing `faq`, `explore`, `finalCta`, missing freshness meta, missing internal links) should be fixed to ensure maximum SEO quality.
+- **Related Links**: Any links in `explore` or `finalCta` or markdown body must be valid internal paths (starting with `/` or `https://gotoflow.io/`) and must NOT point to draft or 404 pages. `#explore-more` is allowed for secondary links.
 
 All required frontmatter keys must remain compatible with production checks.
 

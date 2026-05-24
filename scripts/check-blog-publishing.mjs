@@ -51,11 +51,26 @@ function hasYamlKey(frontmatter, key) {
   return regex.test(frontmatter);
 }
 
-// Extract all hrefs and secondaryHrefs
-function extractLinks(frontmatter) {
+// Extract all hrefs and secondaryHrefs from frontmatter
+function extractFrontmatterLinks(frontmatter) {
   const hrefMatches = [...frontmatter.matchAll(/href:\s*["']?([^"'\n]+)["']?/g)];
   const secondaryHrefMatches = [...frontmatter.matchAll(/secondaryHref:\s*["']?([^"'\n]+)["']?/g)];
   return [...hrefMatches, ...secondaryHrefMatches].map(m => m[1]);
+}
+
+// Extract markdown links from body
+function extractBodyLinks(content) {
+  const body = content.replace(/^---\s*\n([\s\S]*?)\n---\s*\n?/, '');
+  const linkMatches = [...body.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)];
+  return linkMatches.map(m => m[1]);
+}
+
+function hasCallouts(content) {
+  const body = content.replace(/^---\s*\n([\s\S]*?)\n---\s*\n?/, '');
+  return {
+    hasProduct: />\s*\[!product\]/i.test(body),
+    hasRelated: />\s*\[!related\]/i.test(body)
+  };
 }
 
 async function runCheck() {
@@ -96,7 +111,7 @@ async function runCheck() {
   }
 
   // Pass 2: Validate
-  for (const { file, frontmatter, slug, published } of parsedFiles) {
+  for (const { file, content, frontmatter, slug, published } of parsedFiles) {
     console.log(`📄 Checking ${file}...`);
 
     const errors = [];
@@ -111,6 +126,20 @@ async function runCheck() {
     if (!title) errors.push(`Missing 'title'`);
     if (published === undefined) errors.push(`Missing 'published' (must be true or false)`);
     if (noindex === undefined) errors.push(`Missing 'noindex' (must be true or false)`);
+
+    // Check date validity
+    const checkValidDate = (field) => {
+      const val = getYamlValue(frontmatter, field);
+      if (val) {
+        const date = new Date(val);
+        if (isNaN(date.getTime())) {
+          errors.push(`Invalid date format for '${field}': ${val}`);
+        }
+      }
+    };
+    checkValidDate('lastReviewed');
+    checkValidDate('updatedAt');
+    checkValidDate('createdAt');
 
     // P0: Duplicate slug
     if (slug) {
@@ -165,9 +194,15 @@ async function runCheck() {
       }
     }
 
-    // Link Validation
-    const links = extractLinks(frontmatter);
-    for (let link of links) {
+    // Link Validation (frontmatter & body)
+    const frontmatterLinks = extractFrontmatterLinks(frontmatter);
+    const bodyLinksRaw = extractBodyLinks(content);
+    
+    // For warnings
+    let internalBodyLinksCount = 0;
+    
+    const allLinks = [...frontmatterLinks, ...bodyLinksRaw];
+    for (let link of allLinks) {
       link = link.trim();
       if (!link) {
         errors.push(`Empty href or secondaryHref found`);
@@ -192,13 +227,54 @@ async function runCheck() {
       } else if (!ALLOWLIST_ROUTES.includes(cleanLink)) {
         errors.push(`Link '${link}' is not in the ALLOWLIST_ROUTES`);
       }
+      
+      // Count internal links in body for warnings (exclude frontmatter links and explore-more)
+      if (bodyLinksRaw.includes(link) && (cleanLink.startsWith('/') || link.startsWith('https://gotoflow.io/'))) {
+        internalBodyLinksCount++;
+      }
     }
 
     // Warnings checks
+    const articleType = getYamlValue(frontmatter, 'articleType');
+    
+    if (published === true) {
+      if (!getYamlValue(frontmatter, 'lastReviewed')) {
+        warnings.push(`Missing 'lastReviewed' for published article`);
+      }
+      
+      if (internalBodyLinksCount === 0) {
+        warnings.push(`No contextual internal links found in article body`);
+      }
+      
+      const targetTypes = ['guide', 'how-to', 'prompts', 'prompt-library', 'comparison', 'best-tools'];
+      if (articleType && targetTypes.includes(articleType.toLowerCase())) {
+        const callouts = hasCallouts(content);
+        if (!callouts.hasProduct && !callouts.hasRelated) {
+          warnings.push(`Missing product or related callout for articleType '${articleType}'`);
+        }
+      }
+
+      // Placement warnings
+      const calloutSequenceMatch = content.match(/>\s*\[!product\]([\s\S]*?)>\s*\[!related\]/);
+      if (calloutSequenceMatch) {
+        const between = calloutSequenceMatch[1].replace(/>.*/g, '').trim();
+        if (between.length < 100 && !between.includes('#')) {
+          warnings.push(`[!related] block is placed directly after [!product]. Separate them by meaningful content.`);
+        }
+      }
+
+      const promptGroupsSection = content.split('## Prompt Groups')[1];
+      if (promptGroupsSection) {
+        const promptGroupsContent = promptGroupsSection.split('\n## ')[0];
+        if (promptGroupsContent.includes('> [!related]')) {
+          warnings.push(`[!related] block should not be placed inside 'Prompt Groups' section to avoid interrupting the list.`);
+        }
+      }
+    }
+
     if (!getYamlValue(frontmatter, 'primaryKeyword')) warnings.push(`Missing 'primaryKeyword'`);
     if (!getYamlValue(frontmatter, 'searchIntent')) warnings.push(`Missing 'searchIntent'`);
     if (!getYamlValue(frontmatter, 'cluster')) warnings.push(`Missing 'cluster'`);
-    if (!getYamlValue(frontmatter, 'lastReviewed')) warnings.push(`Missing 'lastReviewed'`);
     if (!getYamlValue(frontmatter, 'language')) warnings.push(`Missing 'language'`);
     if (!getYamlValue(frontmatter, 'description')) warnings.push(`Missing 'description'`);
     if (!getYamlValue(frontmatter, 'articleType')) warnings.push(`Missing 'articleType'`);

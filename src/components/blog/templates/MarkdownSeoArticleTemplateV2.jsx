@@ -5,6 +5,33 @@ import { getAppUrlWithRef } from '../../../utils/url';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
+const formatMonthYear = (dateString) => {
+  if (!dateString) return null;
+  try {
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return null;
+    return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  } catch (e) {
+    return null;
+  }
+};
+
+const getArticleFreshnessMeta = (article) => {
+  if (article.lastReviewed) {
+    const formatted = formatMonthYear(article.lastReviewed);
+    return formatted ? { source: "lastReviewed", label: "Reviewed", blockLabel: "LAST REVIEWED", formattedDate: formatted, displayText: `Reviewed ${formatted}` } : null;
+  }
+  if (article.updatedAt) {
+    const formatted = formatMonthYear(article.updatedAt);
+    return formatted ? { source: "updatedAt", label: "Updated", blockLabel: "UPDATED", formattedDate: formatted, displayText: `Updated ${formatted}` } : null;
+  }
+  if (article.createdAt) {
+    const formatted = formatMonthYear(article.createdAt);
+    return formatted ? { source: "createdAt", label: "Published", blockLabel: "PUBLISHED", formattedDate: formatted, displayText: `Published ${formatted}` } : null;
+  }
+  return null;
+};
+
 const isExternalHref = (href) => /^https?:\/\//.test(href);
 
 const ArticleLink = ({ href, className, children }) => {
@@ -21,7 +48,7 @@ const ArticleLink = ({ href, className, children }) => {
   );
 };
 
-const parseInlineMarkdown = (text) => {
+const parseInlineMarkdown = (text, context = 'normal') => {
   const parts = [];
   const pattern = /(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
   let lastIndex = 0;
@@ -38,8 +65,12 @@ const parseInlineMarkdown = (text) => {
     } else {
       const linkMatch = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
       if (linkMatch) {
+        let linkClass = "text-pink-300 underline decoration-pink-300/30 underline-offset-4 transition-colors hover:text-orange-200 hover:decoration-orange-200/50";
+        if (context === 'related') {
+          linkClass = "text-purple-300 font-semibold underline decoration-purple-300/30 underline-offset-4 transition-colors hover:text-purple-200";
+        }
         parts.push(
-          <ArticleLink key={parts.length} href={linkMatch[2]} className="text-pink-300 underline decoration-pink-300/30 underline-offset-4 transition-colors hover:text-orange-200 hover:decoration-orange-200/50">
+          <ArticleLink key={parts.length} href={linkMatch[2]} className={linkClass}>
             {linkMatch[1]}
           </ArticleLink>
         );
@@ -98,13 +129,18 @@ const parseMarkdownBlocks = (markdown) => {
       const calloutMatch = fullText.match(/^\[!([a-zA-Z0-9-]+)\]\s*(.*)$/i);
 
       if (calloutMatch) {
+        const calloutLines = [...quote];
+        calloutLines[0] = calloutLines[0].replace(/^\[!([a-zA-Z0-9-]+)\]\s*/i, '');
+        if (!calloutLines[0]) calloutLines.shift();
+
         blocks.push({ 
           type: 'callout', 
           calloutType: calloutMatch[1].toLowerCase(), 
-          text: calloutMatch[2] 
+          text: calloutMatch[2],
+          lines: calloutLines
         });
       } else {
-        blocks.push({ type: 'quote', text: fullText });
+        blocks.push({ type: 'quote', text: fullText, lines: quote });
       }
       continue;
     }
@@ -147,6 +183,30 @@ const parseMarkdownBlocks = (markdown) => {
   }
 
   return blocks;
+};
+
+const parseCalloutContent = (lines) => {
+  if (!lines || lines.length === 0) return { title: null, bodyLines: [], actionLink: null };
+  
+  let title = null;
+  let actionLink = null;
+  let bodyLines = [...lines];
+
+  if (bodyLines.length > 0 && bodyLines[0].startsWith('**') && bodyLines[0].endsWith('**')) {
+    title = bodyLines[0];
+    bodyLines.shift();
+  }
+
+  if (bodyLines.length > 0) {
+    const lastLine = bodyLines[bodyLines.length - 1].trim();
+    const linkMatch = lastLine.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      actionLink = { label: linkMatch[1], href: linkMatch[2] };
+      bodyLines.pop();
+    }
+  }
+
+  return { title, bodyLines, actionLink };
 };
 
 const MarkdownBody = ({ markdown, title }) => {
@@ -262,6 +322,20 @@ const MarkdownBody = ({ markdown, title }) => {
               borderClass = 'border-blue-500/15';
               gradientLine = 'from-blue-500/40 to-cyan-500/40';
               break;
+            case 'product':
+              badgeText = 'PRODUCT WORKFLOW';
+              badgeColor = 'text-pink-400';
+              bgClass = 'bg-[#0a0a0a]';
+              borderClass = 'border-pink-500/30 shadow-[0_0_30px_rgba(236,72,153,0.1)]';
+              gradientLine = 'from-pink-500/80 to-orange-500/80 w-1.5';
+              break;
+            case 'related':
+              badgeText = 'READ NEXT';
+              badgeColor = 'text-purple-300';
+              bgClass = 'bg-[#080808]';
+              borderClass = 'border-purple-500/20';
+              gradientLine = 'from-purple-500/40 to-indigo-500/40';
+              break;
             default:
               badgeText = 'Note';
               badgeColor = 'text-zinc-400';
@@ -271,16 +345,56 @@ const MarkdownBody = ({ markdown, title }) => {
               break;
           }
 
+          let content = null;
+          if (block.calloutType === 'product' || block.calloutType === 'related') {
+            content = parseCalloutContent(block.lines);
+          }
+
           return (
-            <div key={index} className={`my-8 rounded-2xl border ${borderClass} ${bgClass} p-5 md:p-6 relative overflow-hidden shadow-sm`}>
-              <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${gradientLine}`} />
+            <div key={index} className={`my-8 rounded-2xl border ${borderClass} ${bgClass} p-5 md:p-6 relative overflow-hidden`}>
+              <div className={`absolute left-0 top-0 bottom-0 ${gradientLine.includes('w-') ? gradientLine : `w-1 ${gradientLine}`}`} />
               <div className="flex items-center gap-2 mb-3">
                 {icon}
                 <span className={`text-[12px] font-bold uppercase tracking-[0.15em] ${badgeColor}`}>{badgeText}</span>
               </div>
-              <p className="text-[15px] leading-[1.65] text-zinc-300">
-                {parseInlineMarkdown(block.text)}
-              </p>
+              {content ? (
+                <div className="flex flex-col gap-3">
+                  {content.title && (
+                    <strong className="font-semibold text-zinc-200">
+                      {parseInlineMarkdown(content.title.replace(/\*\*/g, ''))}
+                    </strong>
+                  )}
+                  <div className="text-[15px] leading-[1.65] text-zinc-300 space-y-2">
+                    {content.bodyLines.map((line, i) => (
+                      <p key={i}>{parseInlineMarkdown(line, block.calloutType)}</p>
+                    ))}
+                  </div>
+                  {content.actionLink && block.calloutType === 'product' && (
+                    <div className="mt-2">
+                      <ArticleLink 
+                        href={content.actionLink.href} 
+                        className="inline-block rounded-full bg-gradient-to-r from-pink-500 to-orange-500 px-6 py-2.5 text-[14px] font-bold text-white shadow-[0_0_20px_rgba(236,72,153,0.3)] transition-transform hover:scale-105 active:scale-[0.98]"
+                      >
+                        {content.actionLink.label}
+                      </ArticleLink>
+                    </div>
+                  )}
+                  {content.actionLink && block.calloutType === 'related' && (
+                    <div className="mt-1">
+                      <ArticleLink 
+                        href={content.actionLink.href} 
+                        className="text-purple-300 font-semibold underline decoration-purple-300/30 underline-offset-4 transition-colors hover:text-purple-200"
+                      >
+                        {content.actionLink.label}
+                      </ArticleLink>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <p className="text-[15px] leading-[1.65] text-zinc-300">
+                  {parseInlineMarkdown(block.text, block.calloutType)}
+                </p>
+              )}
             </div>
           );
         }
@@ -615,47 +729,72 @@ const FinalCta = ({ cta }) => {
   );
 };
 
-const ArticleHero = ({ article }) => (
-  <section className="relative overflow-hidden bg-[#050505] px-4 pb-12 pt-28 sm:px-6 md:pb-20">
-    <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-full max-w-5xl -translate-x-1/2 rounded-full bg-pink-500/[0.08] blur-[120px]" />
-    <div className="pointer-events-none absolute left-1/4 top-28 h-[280px] w-[280px] rounded-full bg-orange-500/[0.06] blur-[100px]" />
-    <div className="relative z-10 mx-auto max-w-[940px] text-center">
-      <div className="mb-10 flex min-w-0 items-center justify-center gap-1.5 text-sm text-zinc-500">
-        <Link to="/" className="transition-colors hover:text-zinc-300">Home</Link>
-        <ChevronRight className="h-3.5 w-3.5 shrink-0" />
-        <Link to="/blog" className="transition-colors hover:text-zinc-300">Blog</Link>
-        <ChevronRight className="h-3.5 w-3.5 shrink-0" />
-        <span className="truncate text-zinc-400">{article.title}</span>
-      </div>
+const ArticleHero = ({ article }) => {
+  const freshness = getArticleFreshnessMeta(article);
+  return (
+    <section className="relative overflow-hidden bg-[#050505] px-4 pb-12 pt-28 sm:px-6 md:pb-20">
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-full max-w-5xl -translate-x-1/2 rounded-full bg-pink-500/[0.08] blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/4 top-28 h-[280px] w-[280px] rounded-full bg-orange-500/[0.06] blur-[100px]" />
+      <div className="relative z-10 mx-auto max-w-[940px] text-center">
+        <div className="mb-10 flex min-w-0 items-center justify-center gap-1.5 text-sm text-zinc-500">
+          <Link to="/" className="transition-colors hover:text-zinc-300">Home</Link>
+          <ChevronRight className="h-3.5 w-3.5 shrink-0" />
+          <Link to="/blog" className="transition-colors hover:text-zinc-300">Blog</Link>
+          <ChevronRight className="h-3.5 w-3.5 shrink-0" />
+          <span className="truncate text-zinc-400">{article.title}</span>
+        </div>
 
-      <div className="mb-6 flex justify-center">
-        <div className="inline-flex max-w-full items-center gap-2.5 rounded-full border border-pink-500/20 bg-pink-500/10 px-4 py-1.5 backdrop-blur-md">
-          <Sparkles className="h-3.5 w-3.5 shrink-0 text-pink-400" />
-          <span className="truncate text-xs font-semibold uppercase tracking-wide text-pink-200">{article.cluster}</span>
+        <div className="mb-6 flex justify-center">
+          <div className="inline-flex max-w-full items-center gap-2.5 rounded-full border border-pink-500/20 bg-pink-500/10 px-4 py-1.5 backdrop-blur-md">
+            <Sparkles className="h-3.5 w-3.5 shrink-0 text-pink-400" />
+            <span className="truncate text-xs font-semibold uppercase tracking-wide text-pink-200">{article.cluster}</span>
+          </div>
+        </div>
+
+        <h1 className={`mx-auto mb-6 max-w-4xl font-bold leading-[1.1] tracking-tight text-white ${article.title.length > 50 ? 'text-3xl md:text-4xl lg:text-[40px]' : 'text-3xl md:text-5xl lg:text-6xl'}`}>
+          {renderFormattedTitle(article.title)}
+        </h1>
+        <p className="mx-auto max-w-2xl text-lg leading-[1.65] text-zinc-400 md:text-xl">
+          {article.description}
+        </p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-zinc-500">
+          <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">{article.articleType}</span>
+          <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">{article.primaryKeyword}</span>
+          {freshness && (
+            <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">
+              {freshness.displayText}
+            </span>
+          )}
         </div>
       </div>
+    </section>
+  );
+};
 
-      <h1 className={`mx-auto mb-6 max-w-4xl font-bold leading-[1.1] tracking-tight text-white ${article.title.length > 50 ? 'text-3xl md:text-4xl lg:text-[40px]' : 'text-3xl md:text-5xl lg:text-6xl'}`}>
-        {renderFormattedTitle(article.title)}
-      </h1>
-      <p className="mx-auto max-w-2xl text-lg leading-[1.65] text-zinc-400 md:text-xl">
-        {article.description}
-      </p>
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-zinc-500">
-        <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">{article.articleType}</span>
-        <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">{article.primaryKeyword}</span>
-        {article.lastReviewed && <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">Reviewed {article.lastReviewed}</span>}
+const ArticleFreshnessBlock = ({ article }) => {
+  const freshness = getArticleFreshnessMeta(article);
+  if (!freshness) return null;
+  
+  return (
+    <div className="mb-2 -mt-4 flex items-start gap-4 rounded-[20px] border border-white/[0.08] bg-[#0a0a0a] p-5 shadow-lg max-w-[800px]">
+      <div className="mt-1.5 w-2 h-2 shrink-0 rounded-full bg-gradient-to-r from-pink-400 to-orange-400 shadow-[0_0_8px_rgba(236,72,153,0.6)]" />
+      <div>
+        <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-pink-200/80 mb-1.5">{freshness.blockLabel}</p>
+        <p className="text-[14px] leading-relaxed text-zinc-300">
+          <strong className="text-white font-semibold">{freshness.displayText}</strong> — this guide is kept up to date for current AI content workflow practices.
+        </p>
       </div>
     </div>
-  </section>
-);
+  );
+};
 
 export const MarkdownSeoArticleTemplateV2 = ({ article }) => (
   <>
     <ArticleHero article={article} />
     <main className="relative bg-[#050505] px-4 pb-20 sm:px-6 md:pb-28">
       <div className="pointer-events-none absolute inset-x-0 top-20 mx-auto h-[520px] max-w-5xl rounded-full bg-gradient-to-b from-pink-500/[0.035] to-transparent blur-3xl" />
-      <div className="relative z-10 mx-auto flex w-full max-w-[920px] flex-col gap-14 md:gap-18">
+      <div className="relative z-10 mx-auto flex w-full max-w-[920px] flex-col gap-14 md:gap-18 pt-6">
+        <ArticleFreshnessBlock article={article} />
         <QuickAnswer items={article.quickAnswer} title={article.quickAnswerTitle} />
         <KeyTakeaway text={article.keyTakeaway} />
         {article.body && (

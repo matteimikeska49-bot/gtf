@@ -95,6 +95,15 @@ This allows GoToFlow to publish new SEO articles faster while keeping old produc
 > [!bestfor]
 > This is a best-for callout.
 
+> [!product]
+> **Turn this idea into a carousel faster**
+> Use GoToFlow to turn rough notes into a structured carousel draft.
+> [Try AI Carousel Maker](/ai-carousel-maker)
+
+> [!related]
+> **Read next**
+> Learn the full workflow here: [How to make a LinkedIn carousel with AI](/blog/how-to-make-linkedin-carousel-with-ai)
+
 > [!unknown-tag]
 > This is a generic fallback callout for an unknown tag.
 

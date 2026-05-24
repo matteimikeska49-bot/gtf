@@ -92,6 +92,11 @@ Before diving into the library, understand the core formula behind a successful 
 ### The modular prompting framework
 Manual prompting gives you absolute control over every word, provided you break the task down into modules. Below is a curated library of 40 modular prompts you can copy and paste to take control of your AI generation.
 
+> [!product]
+> **Want to turn these prompts into a carousel faster?**
+> GoToFlow helps turn a topic, link, or notes into a structured LinkedIn carousel draft without copying prompts between tools.
+> [Create a LinkedIn carousel](/linkedin-carousel-maker)
+
 ## Prompt Groups
 
 ### 1. Idea prompts
@@ -189,6 +194,10 @@ Manual prompting gives you absolute control over every word, provided you break 
 5. "Simplify this complex sentence into 2 short, punchy statements. Avoid vague words."
 
 **Prompt tip:** Providing a 200-word sample of your past writing is the fastest way to fix AI tone issues.
+
+> [!related]
+> **Full workflow guide**
+> Want the full creation process? Read [How to make a LinkedIn carousel with AI](/blog/how-to-make-linkedin-carousel-with-ai).
 
 ## Before / after prompt example
 

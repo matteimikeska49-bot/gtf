@@ -98,9 +98,9 @@ Before publishing any article, you **MUST** run the automated publishing checks.
 
 **Check rules:**
 - **P0 Errors** will block publishing (process exits with code 1). You must fix them.
-- **Warnings** should be fixed based on priority but will not block CI.
+- **Warnings** should be fixed based on priority but will not block CI. Missing freshness meta or internal links will trigger warnings.
 - **Draft safety**: Draft/noindex articles must NOT appear in sitemap or blog index.
-- **Link safety**: Internal `explore` and `finalCta` links must not lead to draft articles or 404s.
+- **Link safety**: Internal `explore`, `finalCta`, and body links must not lead to draft articles or 404s.
 
 Future articles are published purely through frontmatter updates, but only after passing the `npm run check:blog` checks.
 
@@ -233,8 +233,12 @@ Brief должен включать:
 - без generic AI phrasing;
 - без keyword stuffing;
 - не рерайтом конкурентов;
-- не лендингом;
+- не лендингом (не превращать SEO-статьи в агрессивные лендинги);
 - с практическим результатом для пользователя.
+
+Также:
+- production article должен иметь visible freshness meta;
+- каждая статья должна иметь 1–2 contextual internal links/product bridges, если релевантно intent;
 
 Главный вопрос перед публикацией:
 
@@ -364,6 +368,12 @@ Hero
 - If a visual issue appears across heading/body rhythm, fix the template, not a single article.
 - H1/H2/H3 and list styling is part of the reusable template.
 - New articles should not introduce one-off visual classes.
+- Product/related placement должен быть логичным:
+  - mid-article CTA and related links are mandatory when relevant, but they must be separated by meaningful content;
+  - final CTA does not replace contextual CTA;
+  - related link blocks should support internal linking, not interrupt reading flow.
+- Нельзя вставлять related block внутрь длинной библиотеки промптов или списков так, чтобы он ломал чтение.
+- Template-first rule: если CTA выглядит неправильно (например, кнопка рендерится как inline-текст внутри абзаца), исправлять рендер в шаблоне (MarkdownSeoArticleTemplateV2.jsx), а не вручную стилизовать HTML/markdown внутри контента.
 - If three or more articles need the same special structure (e.g. advanced prompt grouping), create an optional reusable block (like PromptGroupsBlock) later instead of one-off markup.
 - Использовать Markdown callout blocks (`> [!type]`) для смысловых акцентов. Callouts помогают избежать text wall и должны использоваться как часть массового article template, но они не заменяют полноценную структуру статьи.
 
@@ -1073,6 +1083,8 @@ curl -L https://gotoflow.io/blog/slug
 - missing FAQ
 - missing Final CTA
 - missing Quick Answer
+- missing freshness meta (lastReviewed/updatedAt/createdAt) and valid date formats
+- missing contextual CTA (> [!product] / > [!related]) in guide/how-to/prompts articles
 - horizontal overflow
 - mobile issues
 - test pages in index
