@@ -180,7 +180,7 @@ const MarkdownBody = ({ markdown, title }) => {
           return (
             <div key={index} className="space-y-4 my-8">
               {block.items.map((item, i) => (
-                <div key={item} className={`flex items-start gap-3.5 ${!block.ordered ? 'rounded-xl border border-white/[0.04] bg-white/[0.015] px-4 py-3 transition-colors hover:bg-white/[0.03]' : ''} text-[15px] leading-[1.7] text-zinc-400 md:text-base`}>
+                <div key={item} className="flex items-start gap-3.5 rounded-xl border border-white/[0.04] bg-white/[0.015] px-4 py-3 transition-colors hover:bg-white/[0.03] text-[15px] leading-[1.7] text-zinc-400 md:text-base">
                   {block.ordered ? (
                     <span className="shrink-0 w-7 h-7 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[11px] font-semibold text-zinc-300 mt-0.5 shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
                       {i + 1}

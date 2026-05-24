@@ -342,11 +342,12 @@ Hero
 ## Template-first visual rules
 
 - During Stage 2C/markdown implementation, article markdown must stay clean content.
-- Agents must not manually style headings in markdown.
+- Agents must not manually style headings or lists in markdown.
+- Long lists should be solved through template list styling (e.g. subtle card rows for ordered lists).
 - If a visual issue appears across heading/body rhythm, fix the template, not a single article.
-- H1/H2/H3 styling is part of the reusable template.
+- H1/H2/H3 and list styling is part of the reusable template.
 - New articles should not introduce one-off visual classes.
-- If three or more articles need the same special structure, create an optional reusable block instead of one-off markup.
+- If three or more articles need the same special structure (e.g. advanced prompt grouping), create an optional reusable block (like PromptGroupsBlock) later instead of one-off markup.
 
 ---
 
