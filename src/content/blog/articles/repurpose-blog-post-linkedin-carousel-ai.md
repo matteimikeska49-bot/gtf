@@ -162,21 +162,21 @@ When repurposing content, you have two primary approaches depending on how much 
 
 ## Common mistakes when repurposing content
 
-> [!mistake]
-> **Too much text per slide**
-> Treating a slide like a page in a book. If it takes more than 3 seconds to read, it is too long. Limit text to one main idea per slide.
+### 1. Too much text per slide
 
-> [!mistake]
-> **Boring first slides**
-> Using the blog post title as the hook. "How to improve SEO" is a weak hook. "Why your SEO strategy is failing (and how to fix it in 3 steps)" drives clicks.
+Treating a slide like a page in a book makes the carousel hard to read. If it takes more than 3 seconds to understand, it is too long. Limit each slide to one main idea.
 
-> [!mistake]
-> **No clear narrative flow**
-> Pasting random statistics or disjointed tips without connecting them into a cohesive story. Every slide must logically lead into the next.
+### 2. Boring first slides
 
-> [!mistake]
-> **Forgetting the call to action**
-> Educating your audience but leaving them without a next step. Always include a clear CTA on the final slide to drive engagement or traffic.
+Using the blog post title as the hook rarely creates enough curiosity. Rewrite the first slide around the strongest pain, contradiction, or outcome.
+
+### 3. No clear narrative flow
+
+Do not paste random statistics or disconnected tips into slides. Every slide should logically lead into the next.
+
+### 4. Forgetting the call to action
+
+An educational carousel without a next step wastes attention. End with a clear CTA: save the post, comment a keyword, open the guide, or try the workflow.
 
 ## Conclusion
 Repurposing your blog posts into LinkedIn carousels is one of the highest-leverage activities you can do to scale your audience. By extracting the core value, applying strict word limits, and utilizing AI to format the structure, you can turn hours of research into engaging social content in minutes. Stop letting your long-form content gather dust, and start delivering its value directly into your audience's feed.

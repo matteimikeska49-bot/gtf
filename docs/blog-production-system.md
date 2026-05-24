@@ -108,6 +108,7 @@ Future articles are published purely through frontmatter updates, but only after
 
 Правила:
 - During content QA, reject articles where Gemini stacks 3+ callouts in a row.
+- Before accepting a batch, scan all markdown articles in the batch for repeated callout stacks, not only the article currently being previewed.
 - Convert repeated callouts into structured H3 sections or lists.
 - Repeated callout labels create visual noise and reduce readability.
 - check:blog should warn on repeated callout stacks.

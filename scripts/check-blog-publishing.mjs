@@ -254,22 +254,26 @@ async function runCheck() {
         }
       }
 
-      // Placement warnings
-      const calloutSequenceMatch = content.match(/>\s*\[!product\]([\s\S]*?)>\s*\[!related\]/);
-      if (calloutSequenceMatch) {
-        const between = calloutSequenceMatch[1].replace(/>.*/g, '').trim();
-        if (between.length < 100 && !between.includes('#')) {
-          warnings.push(`[!related] block is placed directly after [!product]. Separate them by meaningful content.`);
-        }
       }
 
-      const promptGroupsSection = content.split('## Prompt Groups')[1];
-      if (promptGroupsSection) {
-        const promptGroupsContent = promptGroupsSection.split('\n## ')[0];
-        if (promptGroupsContent.includes('> [!related]')) {
-          const afterRelated = promptGroupsContent.split('> [!related]')[1];
-          if (afterRelated.includes('\n### ') || afterRelated.match(/\n\d+\.\s/)) {
-            warnings.push(`[!related] block should not be placed inside 'Prompt Groups' section to avoid interrupting the list.`);
+      // Placement warnings (apply to drafts and published)
+      if (file !== 'test-seo-template-v2.md') {
+        const calloutSequenceMatch = content.match(/>\s*\[!product\]([\s\S]*?)>\s*\[!related\]/);
+        if (calloutSequenceMatch) {
+          const between = calloutSequenceMatch[1].replace(/>.*/g, '').trim();
+          if (between.length < 100 && !between.includes('#')) {
+            warnings.push(`[!related] block is placed directly after [!product]. Separate them by meaningful content.`);
+          }
+        }
+
+        const promptGroupsSection = content.split('## Prompt Groups')[1];
+        if (promptGroupsSection) {
+          const promptGroupsContent = promptGroupsSection.split('\n## ')[0];
+          if (promptGroupsContent.includes('> [!related]')) {
+            const afterRelated = promptGroupsContent.split('> [!related]')[1];
+            if (afterRelated.includes('\n### ') || afterRelated.match(/\n\d+\.\s/)) {
+              warnings.push(`[!related] block should not be placed inside 'Prompt Groups' section to avoid interrupting the list.`);
+            }
           }
         }
       }
@@ -304,7 +308,6 @@ async function runCheck() {
           }
         }
       }
-    }
 
     if (!getYamlValue(frontmatter, 'primaryKeyword')) warnings.push(`Missing 'primaryKeyword'`);
     if (!getYamlValue(frontmatter, 'searchIntent')) warnings.push(`Missing 'searchIntent'`);

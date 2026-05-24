@@ -302,17 +302,17 @@ You should pivot to an AI carousel maker if:
 
 ## Common mistakes when choosing a workflow
 
-> [!mistake]
-> **Designing before writing**
-> The biggest mistake in manual design is opening the design software before the copy is 100% finalized. This leads to endless tinkering. Always lock the text first.
+### 1. Designing before writing
 
-> [!mistake]
-> **Expecting AI to be an art director**
-> Do not expect an AI carousel maker to invent a highly custom, avant-garde design language for your brand. AI tools excel at structure and speed, not bespoke artistic direction.
+The biggest mistake in manual design is opening the design software before the copy is 100% finalized. This leads to endless tinkering. Always lock the text first.
 
-> [!tip]
-> **The Hybrid Approach**
-> Many top creators use both. They use an AI tool to rapidly outline, condense, and structure the text draft, and then pass that finalized structure into a manual design tool for final polish.
+### 2. Expecting AI to be an art director
+
+Do not expect an AI carousel maker to invent a highly custom, avant-garde design language for your brand. AI tools excel at structure and speed, not bespoke artistic direction.
+
+### 3. The Hybrid Approach (Pro Tip)
+
+Many top creators use both. They use an AI tool to rapidly outline, condense, and structure the text draft, and then pass that finalized structure into a manual design tool for final polish.
 
 ## Conclusion
 Ultimately, the choice between an AI carousel maker and manual design is not about which tool is objectively better; it is about where the bottleneck lies in your content strategy. If your growth is hindered because you cannot produce enough educational or repurposing content consistently, an AI workflow will transform your output. If your brand relies on highly custom, irreplaceable visual artistry, stick to manual design. For most creators and busy teams, prioritizing speed and structure over endless pixel-pushing is the fastest path to growth.
@@ -931,21 +931,21 @@ When repurposing content, you have two primary approaches depending on how much 
 
 ## Common mistakes when repurposing content
 
-> [!mistake]
-> **Too much text per slide**
-> Treating a slide like a page in a book. If it takes more than 3 seconds to read, it is too long. Limit text to one main idea per slide.
+### 1. Too much text per slide
 
-> [!mistake]
-> **Boring first slides**
-> Using the blog post title as the hook. "How to improve SEO" is a weak hook. "Why your SEO strategy is failing (and how to fix it in 3 steps)" drives clicks.
+Treating a slide like a page in a book makes the carousel hard to read. If it takes more than 3 seconds to understand, it is too long. Limit each slide to one main idea.
 
-> [!mistake]
-> **No clear narrative flow**
-> Pasting random statistics or disjointed tips without connecting them into a cohesive story. Every slide must logically lead into the next.
+### 2. Boring first slides
 
-> [!mistake]
-> **Forgetting the call to action**
-> Educating your audience but leaving them without a next step. Always include a clear CTA on the final slide to drive engagement or traffic.
+Using the blog post title as the hook rarely creates enough curiosity. Rewrite the first slide around the strongest pain, contradiction, or outcome.
+
+### 3. No clear narrative flow
+
+Do not paste random statistics or disconnected tips into slides. Every slide should logically lead into the next.
+
+### 4. Forgetting the call to action
+
+An educational carousel without a next step wastes attention. End with a clear CTA: save the post, comment a keyword, open the guide, or try the workflow.
 
 ## Conclusion
 Repurposing your blog posts into LinkedIn carousels is one of the highest-leverage activities you can do to scale your audience. By extracting the core value, applying strict word limits, and utilizing AI to format the structure, you can turn hours of research into engaging social content in minutes. Stop letting your long-form content gather dust, and start delivering its value directly into your audience's feed.
