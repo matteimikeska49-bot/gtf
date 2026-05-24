@@ -14,6 +14,7 @@ import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import puppeteer from 'puppeteer';
+import { readdir, readFile } from 'fs/promises';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.join(__dirname, 'dist');
@@ -38,7 +39,6 @@ const ROUTES = [
   '/blog/how-to-make-linkedin-carousel-with-ai',
   '/blog/ai-instagram-carousel-generator',
   '/blog/test-seo-template-v2',
-  '/blog/linkedin-carousel-prompts',
   '/ru/blog/idei-karuselej-linkedin',
   '/ru/blog/luchshie-ai-generatory-karuselej',
   '/ru/blog/kak-sdelat-karusel-linkedin-s-ai',
@@ -103,9 +103,43 @@ async function writeHtml(route, html) {
   return filePath;
 }
 
+/* ── Find dynamic markdown articles ── */
+async function getDynamicMarkdownRoutes() {
+  const articlesDir = path.join(__dirname, 'src', 'content', 'blog', 'articles');
+  const dynamicRoutes = [];
+  try {
+    const files = await readdir(articlesDir);
+    for (const file of files) {
+      if (!file.endsWith('.md') || file.startsWith('_')) continue;
+      
+      const content = await readFile(path.join(articlesDir, file), 'utf-8');
+      
+      // Simple frontmatter parsing
+      const isPublished = /^published:\s*true\b/m.test(content);
+      const isNoindex = /^noindex:\s*true\b/m.test(content);
+      
+      if (isPublished && !isNoindex) {
+        // Extract slug, fallback to filename
+        const slugMatch = content.match(/^slug:\s*["']?([^"'\n]+)["']?/m);
+        const slug = slugMatch ? slugMatch[1].trim() : file.replace(/\.md$/, '');
+        dynamicRoutes.push(`/blog/${slug}`);
+      }
+    }
+  } catch (err) {
+    console.log(`⚠️  Could not read articles dir: ${err.message}`);
+  }
+  return dynamicRoutes;
+}
+
 /* ── Main ── */
 (async () => {
   console.log('🚀  Starting prerender…\n');
+
+  const dynamicRoutes = await getDynamicMarkdownRoutes();
+  if (dynamicRoutes.length > 0) {
+    console.log(`📚  Found ${dynamicRoutes.length} dynamic markdown articles: ${dynamicRoutes.join(', ')}`);
+    ROUTES.push(...dynamicRoutes);
+  }
 
   const port = await getFreePort();
   console.log(`📡  Starting vite preview on port ${port}…`);
@@ -159,6 +193,38 @@ async function writeHtml(route, html) {
   const fail = results.filter(r => !r.ok).length;
   console.log(`✓ ${ok} routes prerendered successfully`);
   if (fail) console.log(`✗ ${fail} routes failed`);
+
+  /* ── Append dynamic routes to Sitemap ── */
+  try {
+    const sitemapPath = path.join(DIST, 'sitemap.xml');
+    let sitemap = await readFile(sitemapPath, 'utf-8');
+    
+    if (dynamicRoutes.length > 0 && sitemap.includes('</urlset>')) {
+      const today = new Date().toISOString().split('T')[0];
+      let newUrls = '';
+      
+      for (const route of dynamicRoutes) {
+        // Ensure it's not already in the sitemap manually
+        if (!sitemap.includes(`<loc>https://gotoflow.io${route}</loc>`)) {
+          newUrls += `
+  <url>
+    <loc>https://gotoflow.io${route}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`;
+        }
+      }
+      
+      if (newUrls) {
+        sitemap = sitemap.replace('</urlset>', `${newUrls}\n</urlset>`);
+        await writeFile(sitemapPath, sitemap, 'utf-8');
+        console.log(`\n🗺️  Added ${dynamicRoutes.length} dynamic routes to sitemap.xml`);
+      }
+    }
+  } catch (err) {
+    console.log(`\n⚠️  Could not update sitemap.xml: ${err.message}`);
+  }
 
   process.exit(fail > 0 ? 1 : 0);
 })();

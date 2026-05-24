@@ -8,8 +8,8 @@ searchIntent: "Find practical, copy-paste prompts for ChatGPT to generate Linked
 cluster: "LinkedIn carousel / Prompt libraries"
 articleType: "prompts"
 priority: "P1"
-published: false
-noindex: true
+published: true
+noindex: false
 canonical: "https://gotoflow.io/blog/linkedin-carousel-prompts"
 createdAt: "2026-05-24T00:00:00Z"
 updatedAt: "2026-05-24T00:00:00Z"

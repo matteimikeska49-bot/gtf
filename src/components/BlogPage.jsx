@@ -8,6 +8,7 @@ import { Footer } from './Footer';
 import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
 import { useIsMobile } from '../hooks/useIsMobile';
+import { getPublicMarkdownArticles } from '../lib/blog/markdownArticles';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -104,25 +105,56 @@ const categories = [
   }
 ];
 
-const BlogCategories = () => (
-  <section className="py-20 px-6 relative z-10 w-full bg-[#050505]">
-    <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-      {categories.map((cat, i) => (
-        <div key={i} className="flex flex-col">
-          <h2 className="text-2xl font-bold text-white mb-6 tracking-tight border-b border-white/10 pb-4">{cat.title}</h2>
-          <div className="flex flex-col gap-6">
-            {cat.links.map((link, j) => (
-              <Link key={j} to={link.to} className="group block">
-                <h3 className="text-lg font-semibold text-zinc-200 group-hover:text-pink-400 transition-colors mb-1">{link.title}</h3>
-                <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-400 transition-colors">→ {link.desc}</p>
-              </Link>
-            ))}
+const BlogCategories = () => {
+  const markdownArticles = getPublicMarkdownArticles();
+  
+  const promptsArticles = markdownArticles.filter(a => a.articleType === 'prompts' || a.cluster?.toLowerCase().includes('prompt'));
+  const otherArticles = markdownArticles.filter(a => !(a.articleType === 'prompts' || a.cluster?.toLowerCase().includes('prompt')));
+
+  const displayCategories = [...categories];
+
+  if (promptsArticles.length > 0) {
+    displayCategories.push({
+      title: 'Prompts & Libraries',
+      links: promptsArticles.map(a => ({
+        to: `/blog/${a.slug}`,
+        title: a.title,
+        desc: a.description
+      }))
+    });
+  }
+
+  if (otherArticles.length > 0) {
+    displayCategories.push({
+      title: 'Articles & Tips',
+      links: otherArticles.map(a => ({
+        to: `/blog/${a.slug}`,
+        title: a.title,
+        desc: a.description
+      }))
+    });
+  }
+
+  return (
+    <section className="py-20 px-6 relative z-10 w-full bg-[#050505]">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+        {displayCategories.map((cat, i) => (
+          <div key={i} className="flex flex-col">
+            <h2 className="text-2xl font-bold text-white mb-6 tracking-tight border-b border-white/10 pb-4">{cat.title}</h2>
+            <div className="flex flex-col gap-6">
+              {cat.links.map((link, j) => (
+                <Link key={j} to={link.to} className="group block">
+                  <h3 className="text-lg font-semibold text-zinc-200 group-hover:text-pink-400 transition-colors mb-1">{link.title}</h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-400 transition-colors">→ {link.desc}</p>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+        ))}
+      </div>
+    </section>
+  );
+};
 
 const BlogInternalLinks = () => (
   <section className="py-16 px-6 relative z-10 w-full bg-[#050505] flex justify-center">
