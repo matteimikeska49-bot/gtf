@@ -78,6 +78,16 @@ Quick Answer обязателен в первой трети статьи.
 - дублировать Quick Answer;
 - превращать step-by-step в длинную простыню.
 
+## Repeated callouts
+
+Правила:
+- Callouts are accents, not a layout system for every repeated item.
+- Avoid 3+ consecutive callouts in production articles.
+- For repeated mistakes, tips, takeaways, best-for items, or workflow insights, use H3 subsections or compact lists.
+- The test page may include consecutive callout examples for visual QA only.
+- Long SEO articles should avoid visual noise from repeated labels like COMMON MISTAKE, PRO TIP, KEY TAKEAWAY, WORKFLOW INSIGHT.
+- Product and related callouts should remain contextual and separated by meaningful content.
+
 ## Prompt examples rules
 
 Если в статье есть промпты, не выводить их длинной стеной.

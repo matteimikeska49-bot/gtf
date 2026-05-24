@@ -104,6 +104,15 @@ Before publishing any article, you **MUST** run the automated publishing checks.
 
 Future articles are published purely through frontmatter updates, but only after passing the `npm run check:blog` checks.
 
+### Repeated callout QA
+
+Правила:
+- During content QA, reject articles where Gemini stacks 3+ callouts in a row.
+- Convert repeated callouts into structured H3 sections or lists.
+- Repeated callout labels create visual noise and reduce readability.
+- check:blog should warn on repeated callout stacks.
+- test/template pages are allowed to show consecutive callout examples.
+- This rule is important for mass publishing because AI often overuses decorative blocks.
 ### Production Build Verification
 
 1. Topic selection

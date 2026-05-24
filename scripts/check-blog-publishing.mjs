@@ -274,6 +274,25 @@ async function runCheck() {
         }
       }
 
+      // Check for repeated callout blocks
+      if (file !== 'test-seo-template-v2.md') {
+        const body = content.replace(/^---\s*\n([\s\S]*?)\n---\s*\n?/, '');
+        const blocks = body.split(/\n\s*\n/);
+        let consecutiveCallouts = 0;
+        for (const block of blocks) {
+          const trimmed = block.trim();
+          if (trimmed.startsWith('> [!')) {
+            consecutiveCallouts++;
+            if (consecutiveCallouts >= 3) {
+              warnings.push(`Avoid 3+ consecutive callout blocks; callouts are editorial accents, not repeated section cards.`);
+              break;
+            }
+          } else if (trimmed !== '') {
+            consecutiveCallouts = 0;
+          }
+        }
+      }
+
       // Check for Markdown tables with > 4 columns
       const tableRows = content.match(/^\|.*?\|$/gm);
       if (tableRows) {

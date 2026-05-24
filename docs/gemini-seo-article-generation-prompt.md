@@ -94,13 +94,49 @@ Generate the body following this logical flow:
 8. **Conclusion**: Brief wrap-up.
 
 ## 7. Callout Rules
-Use blockquotes with specific brackets for callouts. Do not overuse them (1 per 2-3 sections max).
+Use blockquotes with specific brackets for callouts. 
+Callouts are editorial accents, not repeated section cards.
+
+Rules:
+- Do not use 3+ callout blocks in a row.
+- Do not turn every mistake, tip, takeaway, or insight into a separate callout.
+- For repeated sections like Common mistakes, Pro tips, Best for, Key takeaways, or Workflow insights, use H3 subsections or compact markdown lists instead.
+- Use `[!mistake]`, `[!tip]`, `[!takeaway]`, `[!workflow]`, `[!bestfor]` only for one highlighted point inside a larger section.
+- Product and related blocks are allowed, but they should be separated by meaningful content.
+- Test/template pages may show callout examples, but production articles should not stack callouts.
+
 - `> [!takeaway]` - Key takeaway text.
 - `> [!why]` - Why this matters text.
 - `> [!mistake]` - Common mistake text.
 - `> [!tip]` - Practical tip.
 - `> [!workflow]` - Workflow insight.
 - `> [!bestfor]` - Best for specific audience/use case.
+
+Bad:
+```markdown
+> [!mistake]
+> First mistake.
+
+> [!mistake]
+> Second mistake.
+
+> [!mistake]
+> Third mistake.
+```
+
+Good:
+```markdown
+## Common mistakes
+
+### 1. First mistake
+Explanation.
+
+### 2. Second mistake
+Explanation.
+
+### 3. Third mistake
+Explanation.
+```
 
 **Product CTA** (`[!product]`): Must be placed in the first third/middle of the article. Standalone link on the last line.
 ```markdown
