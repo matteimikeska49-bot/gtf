@@ -6,6 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const ARTICLES_DIR = path.join(ROOT, 'src/content/blog/articles');
 const SITEMAP_PATH = path.join(ROOT, 'dist/sitemap.xml');
+const MOCKUP_REGISTRY_PATH = path.join(ROOT, 'src/content/blog/mockups/registry.json');
 
 // Static allowed routes (old JSX pages, tools, root)
 const ALLOWLIST_ROUTES = [
@@ -490,10 +491,122 @@ async function runCheck() {
     console.log(''); // newline
   }
 
+  // --- Mockup Registry Validation ---
+  console.log('🔍 Checking Mockup Asset Registry...\n');
+  const registryStats = {
+    total: 0,
+    approved: 0,
+    planned: 0,
+    needsRescreen: 0,
+    internalOnly: 0,
+    rejected: 0
+  };
+
+  try {
+    if (!fs.existsSync(MOCKUP_REGISTRY_PATH)) {
+      console.log(`  ❌ P0: Mockup registry not found at ${MOCKUP_REGISTRY_PATH}`);
+      hasP0Error = true;
+    } else {
+      const registryContent = fs.readFileSync(MOCKUP_REGISTRY_PATH, 'utf-8');
+      const registry = JSON.parse(registryContent);
+      
+      if (!Array.isArray(registry.assets)) {
+        console.log(`  ❌ P0: Mockup registry must contain an 'assets' array`);
+        hasP0Error = true;
+      } else {
+        const assetIds = new Set();
+        const allowedLanguages = ['ru', 'en'];
+        const allowedStatuses = ['planned', 'needs-rescreen', 'approved', 'internal-only', 'rejected'];
+        
+        for (const asset of registry.assets) {
+          registryStats.total++;
+          if (asset.status === 'approved') registryStats.approved++;
+          if (asset.status === 'planned') registryStats.planned++;
+          if (asset.status === 'needs-rescreen') registryStats.needsRescreen++;
+          if (asset.status === 'internal-only') registryStats.internalOnly++;
+          if (asset.status === 'rejected') registryStats.rejected++;
+          
+          const reqFields = ['id', 'path', 'language', 'cluster', 'suitableFor', 'articleTypes', 'status', 'alt', 'priority', 'source'];
+          for (const field of reqFields) {
+            if (asset[field] === undefined) {
+              console.log(`  ❌ P0: Asset '${asset.id || 'unknown'}' missing required field: ${field}`);
+              hasP0Error = true;
+            }
+          }
+          
+          if (asset.id) {
+            if (assetIds.has(asset.id)) {
+              console.log(`  ❌ P0: Duplicate asset id in registry: '${asset.id}'`);
+              hasP0Error = true;
+            }
+            assetIds.add(asset.id);
+          }
+          
+          if (asset.language && !allowedLanguages.includes(asset.language)) {
+            console.log(`  ❌ P0: Asset '${asset.id}' has invalid language: '${asset.language}'`);
+            hasP0Error = true;
+          }
+          
+          if (asset.status && !allowedStatuses.includes(asset.status)) {
+            console.log(`  ❌ P0: Asset '${asset.id}' has invalid status: '${asset.status}'`);
+            hasP0Error = true;
+          }
+          
+          if (asset.path && !asset.path.startsWith('/assets/blog/mockups/')) {
+            console.log(`  ❌ P0: Asset '${asset.id}' path must start with /assets/blog/mockups/`);
+            hasP0Error = true;
+          }
+          
+          if (asset.status === 'approved') {
+            const publicPath = path.join(ROOT, 'public', asset.path);
+            if (!fs.existsSync(publicPath)) {
+              console.log(`  ❌ P0: Approved asset '${asset.id}' file does not exist at ${publicPath}`);
+              hasP0Error = true;
+            }
+            if (!asset.caption) {
+              console.log(`  ❌ P0: Approved asset '${asset.id}' must have a caption`);
+              hasP0Error = true;
+            }
+            if (!asset.alt) {
+              console.log(`  ❌ P0: Approved asset '${asset.id}' must have an alt`);
+              hasP0Error = true;
+            }
+          }
+          
+          if (['planned', 'needs-rescreen', 'internal-only'].includes(asset.status)) {
+            if (!asset.alt) {
+              console.log(`  ❌ P0: Asset '${asset.id}' must have an alt (even if not approved)`);
+              hasP0Error = true;
+            }
+            if (asset.caption === undefined) {
+              console.log(`  ⚠️  Warning: Asset '${asset.id}' should ideally have a caption (status: ${asset.status})`);
+              totalWarnings++;
+            }
+          }
+          
+          if (asset.status === 'rejected') {
+            if (!asset.notes) {
+              console.log(`  ❌ P0: Rejected asset '${asset.id}' must have notes explaining why`);
+              hasP0Error = true;
+            }
+          }
+        }
+        
+        console.log(`  ✅ Registry check complete: ${registryStats.total} assets found.`);
+      }
+    }
+  } catch (e) {
+    console.log(`  ❌ P0: Failed to parse mockup registry JSON: ${e.message}`);
+    hasP0Error = true;
+  }
+  console.log('');
+  // --- End Mockup Registry Validation ---
+
   // Final Summary
   console.log('─────────────────────────────────────────');
   console.log('📊 CHECK SUMMARY');
   console.log(`📄 Total MD Articles: ${stats.totalArticles} (${stats.publishedCount} published, ${stats.draftCount} draft)`);
+  console.log(`🖼️  Mockup Assets: ${registryStats.total} (${registryStats.approved} approved, ${registryStats.planned} planned, ${registryStats.needsRescreen} needs-rescreen, ${registryStats.internalOnly} internal, ${registryStats.rejected} rejected)`);
   
   if (stats.duplicateKeywords > 0) console.log(`  - Duplicate keywords: ${stats.duplicateKeywords}`);
   if (stats.cannibalizationWarnings > 0) console.log(`  - Cannibalization warnings: ${stats.cannibalizationWarnings}`);

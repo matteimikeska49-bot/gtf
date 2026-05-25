@@ -550,50 +550,23 @@ Testimonials можно использовать только если:
 
 ---
 
-## Mockup / screenshot asset system
+## Mockup / approved asset registry
 
-Макапы и скриншоты можно использовать только через approved asset registry.
+Смысл:
+- articles should use mockups only from registry;
+- no random screenshots;
+- language must match article language;
+- no third-party social feeds in public SEO articles;
+- if no approved asset fits intent, skip mockup;
+- future articles should reference assets by id;
+- check:blog validates registry.
 
-Папка:
-
-public/images/blog-mockups/
+Папки:
+- `public/assets/blog/mockups/ru/`
+- `public/assets/blog/mockups/en/`
 
 Registry:
-
-src/content/blog/mockupRegistry.js
-
-Для каждого asset:
-
-- id
-- path
-- language
-- topic / cluster
-- suitableFor
-- alt
-- caption
-- priority
-- status
-
-Пример:
-
-{
-  id: "linkedin-carousel-editor-dark",
-  path: "/images/blog-mockups/linkedin-carousel-editor-dark.webp",
-  language: "en",
-  topic: ["linkedin-carousel", "ai-carousel-maker"],
-  suitableFor: ["workflow", "product-led-block", "article-example"],
-  alt: "GoToFlow editor showing a LinkedIn carousel draft",
-  caption: "Example of a LinkedIn carousel draft inside GoToFlow",
-  priority: 1,
-  status: "approved"
-}
-
-Правила:
-- использовать только approved assets;
-- выбирать по topic/language/suitableFor;
-- если подходящего asset нет — не вставлять случайную картинку;
-- alt обязателен;
-- caption желателен.
+`src/content/blog/mockups/registry.json`
 
 ---
 

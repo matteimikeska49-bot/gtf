@@ -166,26 +166,17 @@ Before any article is published, it must pass indexability QA:
 
 ---
 
-## 8. Mockup / Asset Registry Strategy
+## 8. Stage 4D: Mockup / Asset Registry Strategy
 
-**Status:** Mockups are not done yet.
+**Status:** Done (Stage 4D).
 
-**Needed:**
-- Approved asset registry;
-- Metadata requirements:
-  - `id`
-  - `path`
-  - `language`
-  - `cluster`
-  - `suitableFor`
-  - `alt`
-  - `caption`
-  - `status`
-  - `priority`
-- Markdown/rendering support for mockup blocks;
-- `check:blog` validation for alt/caption/status;
-- No random images;
-- If no approved asset fits the intent, do not insert a mockup.
+**Accomplished:**
+- Mockup asset registry (`src/content/blog/mockups/registry.json`);
+- RU/EN asset separation (`public/assets/blog/mockups/ru` and `en`);
+- Asset statuses (`planned`, `needs-rescreen`, `approved`, `internal-only`, `rejected`);
+- Future mockup selection logic defined;
+- `check:blog` registry validation;
+- Future markdown `:::mockup` renderer planned for later.
 
 ---
 

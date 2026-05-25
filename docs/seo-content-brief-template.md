@@ -54,8 +54,10 @@
 ## 5. Visual / mockup needs
 
 - Needs mockup: yes/no
-- Suitable asset type:
-- Approved asset id:
+- Required language:
+- Selected mockup asset id:
+- Registry status:
+- Asset path:
 - Alt text:
 - Caption:
 - If no approved asset exists: do not insert image.
