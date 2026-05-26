@@ -221,6 +221,7 @@ const toArticle = ([path, raw]) => {
   const { data, body } = parseFrontmatter(raw);
   const missingFields = REQUIRED_ARTICLE_FIELDS.filter((field) => !(field in data));
   const slug = data.slug || fileName.replace(/\.md$/, '');
+  const language = data.language || 'en'; // Fallback to en if missing
 
   return {
     ...data,
@@ -228,6 +229,7 @@ const toArticle = ([path, raw]) => {
     fileName,
     path,
     slug,
+    language,
     isTemplate: fileName.startsWith('_'),
     missingFields,
   };
@@ -247,6 +249,9 @@ export const isPublicMarkdownArticle = (article) => (
 export const getAllMarkdownArticles = () => [...markdownArticles];
 
 export const getPublicMarkdownArticles = () => markdownArticles.filter(isPublicMarkdownArticle);
+
+export const getPublicMarkdownArticlesByLanguage = (lang = 'en') => 
+  getPublicMarkdownArticles().filter((article) => article.language === lang);
 
 export const getMarkdownArticleBySlug = (slug, options = {}) => {
   const article = markdownArticles.find((item) => item.slug === slug);

@@ -116,6 +116,7 @@ async function runCheck() {
     const slug = getYamlValue(frontmatter, 'slug');
     const published = getYamlValue(frontmatter, 'published');
     const canonical = getYamlValue(frontmatter, 'canonical');
+    const language = getYamlValue(frontmatter, 'language') || 'en';
     const primaryKeyword = getYamlValue(frontmatter, 'primaryKeyword')?.toLowerCase().trim();
     const cluster = getYamlValue(frontmatter, 'cluster')?.toLowerCase().trim();
     const searchIntent = getYamlValue(frontmatter, 'searchIntent')?.toLowerCase().trim();
@@ -126,11 +127,11 @@ async function runCheck() {
       if (published === true) publishedSlugs.add(slug);
       if (published === false) draftSlugs.add(slug);
     }
-    parsedFiles.push({ file, content, frontmatter, slug, published, canonical, primaryKeyword, cluster, searchIntent, articleType, title });
+    parsedFiles.push({ file, content, frontmatter, slug, language, published, canonical, primaryKeyword, cluster, searchIntent, articleType, title });
   }
 
   // Pass 2: Validate
-  for (const { file, content, frontmatter, slug, published } of parsedFiles) {
+  for (const { file, content, frontmatter, slug, language, published } of parsedFiles) {
     console.log(`📄 Checking ${file}...`);
 
     const errors = [];
@@ -217,7 +218,7 @@ async function runCheck() {
       if (!canonical) {
         errors.push(`Missing 'canonical' for published article`);
       } else {
-        const expectedCanonical = `https://gotoflow.io/blog/${slug}`;
+        const expectedCanonical = language === 'ru' ? `https://gotoflow.io/ru/blog/${slug}` : `https://gotoflow.io/blog/${slug}`;
         if (canonical !== expectedCanonical) {
           errors.push(`Canonical mismatch. Expected: ${expectedCanonical}, Found: ${canonical}`);
         }
@@ -225,7 +226,7 @@ async function runCheck() {
 
       // Check sitemap
       if (sitemapContent && slug) {
-        const sitemapUrl = `<loc>https://gotoflow.io/blog/${slug}</loc>`;
+        const sitemapUrl = language === 'ru' ? `<loc>https://gotoflow.io/ru/blog/${slug}</loc>` : `<loc>https://gotoflow.io/blog/${slug}</loc>`;
         if (!sitemapContent.includes(sitemapUrl)) {
           errors.push(`Published article missing from dist/sitemap.xml`);
         }
@@ -239,8 +240,9 @@ async function runCheck() {
       
       // Check sitemap
       if (sitemapContent && slug) {
-        const sitemapUrl = `<loc>https://gotoflow.io/blog/${slug}</loc>`;
-        if (sitemapContent.includes(sitemapUrl)) {
+        const sitemapUrlEn = `<loc>https://gotoflow.io/blog/${slug}</loc>`;
+        const sitemapUrlRu = `<loc>https://gotoflow.io/ru/blog/${slug}</loc>`;
+        if (sitemapContent.includes(sitemapUrlEn) || sitemapContent.includes(sitemapUrlRu)) {
           errors.push(`Draft/noindex article found in dist/sitemap.xml`);
         }
       }
@@ -290,7 +292,7 @@ async function runCheck() {
 
       if (cleanLink === '' || cleanLink === '/') continue;
 
-      if (cleanLink === '/blog/test-seo-template-v2') {
+      if (cleanLink === '/blog/test-seo-template-v2' || cleanLink === '/ru/blog/test-ru-seo-template') {
         if (published) {
           errors.push(`Link to test template is forbidden in published article: '${link}'`);
           stats.brokenInternalLinks++;
@@ -300,8 +302,8 @@ async function runCheck() {
         continue;
       }
 
-      if (cleanLink.startsWith('/blog/')) {
-        const targetSlug = cleanLink.replace('/blog/', '');
+      if (cleanLink.startsWith('/blog/') || cleanLink.startsWith('/ru/blog/')) {
+        const targetSlug = cleanLink.replace(/^\/(ru\/)?blog\//, '');
         if (draftSlugs.has(targetSlug)) {
           if (published) {
             errors.push(`Published article cannot link to draft/noindex article: '${link}'`);
@@ -356,7 +358,7 @@ async function runCheck() {
       }
 
       // Placement warnings (apply to drafts and published)
-      if (file !== 'test-seo-template-v2.md') {
+      if (file !== 'test-seo-template-v2.md' && file !== 'test-ru-seo-template.md') {
         const calloutSequenceMatch = content.match(/>\s*\[!product\]([\s\S]*?)>\s*\[!related\]/);
         if (calloutSequenceMatch) {
           const between = calloutSequenceMatch[1].replace(/>.*/g, '').trim();
@@ -378,7 +380,7 @@ async function runCheck() {
       }
 
       // Check for repeated callout blocks
-      if (file !== 'test-seo-template-v2.md') {
+      if (file !== 'test-seo-template-v2.md' && file !== 'test-ru-seo-template.md') {
         const body = content.replace(/^---\s*\n([\s\S]*?)\n---\s*\n?/, '');
         const blocks = body.split(/\n\s*\n/);
         let consecutiveCallouts = 0;

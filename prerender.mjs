@@ -123,7 +123,13 @@ async function getDynamicMarkdownRoutes() {
         // Extract slug, fallback to filename
         const slugMatch = content.match(/^slug:\s*["']?([^"'\n]+)["']?/m);
         const slug = slugMatch ? slugMatch[1].trim() : file.replace(/\.md$/, '');
-        dynamicRoutes.push(`/blog/${slug}`);
+        
+        // Extract language, fallback to 'en'
+        const langMatch = content.match(/^language:\s*["']?([^"'\n]+)["']?/m);
+        const language = langMatch ? langMatch[1].trim() : 'en';
+
+        const route = language === 'ru' ? `/ru/blog/${slug}` : `/blog/${slug}`;
+        dynamicRoutes.push(route);
       }
     }
   } catch (err) {

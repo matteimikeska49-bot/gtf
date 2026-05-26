@@ -87,7 +87,7 @@ const MarkdownArticleSEOHead = ({ article }) => {
   return null;
 };
 
-export const MarkdownBlogArticlePage = ({ slug: propSlug }) => {
+export const MarkdownBlogArticlePage = ({ slug: propSlug, langPrefix = 'en' }) => {
   const params = useParams();
   const slug = propSlug || params.slug;
   const article = getMarkdownArticleBySlug(slug);
@@ -95,7 +95,7 @@ export const MarkdownBlogArticlePage = ({ slug: propSlug }) => {
   const isLocalPreview = typeof window !== 'undefined' && 
     (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
-  if (!article || (article.published === false && !isLocalPreview)) {
+  if (!article || article.language !== langPrefix || (article.published === false && !isLocalPreview)) {
     return <NotFoundPage />;
   }
 

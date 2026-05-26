@@ -8,7 +8,7 @@ import { Footer } from './Footer';
 import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
 import { useIsMobile } from '../hooks/useIsMobile';
-import { getPublicMarkdownArticles } from '../lib/blog/markdownArticles';
+import { getPublicMarkdownArticlesByLanguage } from '../lib/blog/markdownArticles';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -128,7 +128,7 @@ const groupArticlesByCategory = (articles) => {
 };
 
 const getAllArticles = () => {
-  const markdownArticles = getPublicMarkdownArticles().map(a => normalizeArticle(a, true));
+  const markdownArticles = getPublicMarkdownArticlesByLanguage('en').map(a => normalizeArticle(a, true));
   const legacyNormalized = LEGACY_ARTICLES.map(a => normalizeArticle(a, false));
   return [...markdownArticles, ...legacyNormalized].sort((a, b) => {
     const dateA = new Date(a.updatedAt || a.createdAt || '2000-01-01');

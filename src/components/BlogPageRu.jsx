@@ -9,6 +9,8 @@ import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
 
 import { useIsMobile } from '../hooks/useIsMobile';
+import { getPublicMarkdownArticlesByLanguage } from '../lib/blog/markdownArticles';
+import { Clock } from 'lucide-react';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -104,7 +106,7 @@ const categoriesRu = [
   }
 ];
 
-const BlogCategoriesRu = () => (
+const BlogCategoriesRu = ({ dynamicArticles = [] }) => (
   <section className="py-20 px-6 relative z-10 w-full bg-[#050505]">
     <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
       {categoriesRu.map((cat, i) => (
@@ -120,6 +122,36 @@ const BlogCategoriesRu = () => (
           </div>
         </div>
       ))}
+      
+      {dynamicArticles.length > 0 && (
+        <div className="flex flex-col md:col-span-2 mt-8">
+          <h2 className="text-2xl font-bold text-white mb-6 tracking-tight border-b border-white/10 pb-4">Новые статьи</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {dynamicArticles.map(article => (
+              <Link key={article.slug} to={`/ru/blog/${article.slug}`} className="group flex flex-col bg-white/[0.02] border border-white/[0.05] hover:border-pink-500/30 rounded-2xl p-5 transition-all hover:bg-white/[0.04] relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-[11px] font-medium px-2 py-1 rounded-md bg-white/5 text-pink-300 border border-white/10">
+                    Статьи
+                  </span>
+                  {article.updatedAt && (
+                    <span className="text-[11px] text-zinc-500 flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {new Date(article.updatedAt).toLocaleDateString('ru-RU', { month: 'short', year: 'numeric' })}
+                    </span>
+                  )}
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-pink-400 transition-colors">
+                  {article.title}
+                </h3>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
+                  {article.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   </section>
 );
@@ -153,17 +185,25 @@ const BlogSEOTextRu = () => (
   </section>
 );
 
-export const BlogPageRu = () => (
-  <MainLayout>
-    <BlogSEOHeadRu />
-    <Header />
-    <BlogHeroRu />
-    <PopularBlockRu />
-    <BlogCategoriesRu />
-    <BlogInternalLinksRu />
+export const BlogPageRu = () => {
+  const dynamicArticles = getPublicMarkdownArticlesByLanguage('ru').sort((a, b) => {
+    const dateA = new Date(a.updatedAt || a.createdAt || '2000-01-01');
+    const dateB = new Date(b.updatedAt || b.createdAt || '2000-01-01');
+    return dateB - dateA;
+  });
 
-    <BlogSEOTextRu />
-    <Footer />
-    <CookieBanner />
-  </MainLayout>
-);
+  return (
+    <MainLayout>
+      <BlogSEOHeadRu />
+      <Header />
+      <BlogHeroRu />
+      <PopularBlockRu />
+      <BlogCategoriesRu dynamicArticles={dynamicArticles} />
+      <BlogInternalLinksRu />
+
+      <BlogSEOTextRu />
+      <Footer />
+      <CookieBanner />
+    </MainLayout>
+  );
+};
