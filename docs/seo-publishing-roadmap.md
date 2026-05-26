@@ -197,7 +197,29 @@ Before any article is published, it must pass indexability QA:
 
 ---
 
-## 10. Missing Important Systems (Open Items)
+## 10. Stage 4F: RU Markdown Blog Pipeline
+
+**Status:** Done (Stage 4F).
+
+**Accomplished:**
+- Language-aware routing for `/ru/blog`.
+- `check:blog` validation for RU canonicals and sitemap exclusion of RU drafts.
+- Dynamic article page fallback blocks incorrect language slugs.
+
+---
+
+## 11. Stage 4G: First RU SEO Batch Briefs
+
+**Status:** Done (Stage 4G).
+
+**Accomplished:**
+- Created first RU batch briefs (5 topics).
+- Updated Content Plan and Batch Manager.
+- No articles created or published yet (brief-draft phase only).
+
+---
+
+## 12. Missing Important Systems (Open Items)
 
 - Content brief stage.
 - SERP / competitor research.
