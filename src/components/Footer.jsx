@@ -74,6 +74,12 @@ export const Footer = () => {
                     >
                       {t('footer.consent')}
                     </Link>
+                    <Link
+                      to="/ru/ugc-creator-terms"
+                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
+                    >
+                      Условия для UGC-креаторов
+                    </Link>
                   </>
                 ) : (
                   <>

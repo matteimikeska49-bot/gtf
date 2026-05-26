@@ -47,6 +47,7 @@ const ROUTES = [
   '/politika',
   '/ru/polzovatelskoe-soglashenie',
   '/ru/soglasie-na-obrabotku-personalnyh-dannyh',
+  '/ru/ugc-creator-terms',
   '/refund-policy',
   '/terms-of-service',
   '/personal-data-consent',

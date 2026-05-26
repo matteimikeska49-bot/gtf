@@ -42,6 +42,7 @@ import { NotFoundPage } from './components/NotFoundPage';
 import { PricingPage } from './components/PricingPage';
 import { RuTermsOfServicePage } from './components/RuTermsOfServicePage';
 import { RuPersonalDataConsentPage } from './components/RuPersonalDataConsentPage';
+import { UgcCreatorTermsRu } from './components/UgcCreatorTermsRu';
 
 const LandingPage = () => (
   <MainLayout>
@@ -98,6 +99,7 @@ function App() {
         <Route path="/politika" element={<Navigate to="/ru/politika" replace />} />
         <Route path="/ru/polzovatelskoe-soglashenie" element={<RuTermsOfServicePage />} />
         <Route path="/ru/soglasie-na-obrabotku-personalnyh-dannyh" element={<RuPersonalDataConsentPage />} />
+        <Route path="/ru/ugc-creator-terms" element={<UgcCreatorTermsRu />} />
         <Route path="/carousel/create" element={<Navigate to="/ai-carousel-maker" replace />} />
         <Route path="/refund-policy" element={<RefundPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
