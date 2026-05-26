@@ -643,6 +643,12 @@ CTA адаптируется под:
 
 ## EN/RU adaptation rules
 
+👉 **[RU/EN Blog Architecture Decision](docs/ru-en-blog-architecture.md)**
+
+RU/EN articles must follow architecture doc;
+RU content is adaptation, not literal translation;
+canonical/hreflang/indexability are P0 quality gates.
+
 EN:
 - international SaaS tone
 - headings на английском

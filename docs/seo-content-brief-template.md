@@ -14,6 +14,13 @@
 - Audience:
 - Slug:
 - Canonical:
+- Localization type:
+- Translation/source article:
+- Hreflang pair:
+- Target market:
+- Local examples:
+- Local product routes:
+- Mockup language:
 - Publication status:
 - Requires fresh research: yes/no
 - Review frequency:

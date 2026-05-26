@@ -180,23 +180,18 @@ Before any article is published, it must pass indexability QA:
 
 ---
 
-## 9. RU Adaptation Strategy
+## 9. Stage 4E: RU/EN Blog Architecture Decision
 
-**Status:** RU is not a direct translation pipeline.
+**Status:** Done (Stage 4E).
 
-**Needed:**
-- Decide URL architecture, preferably `/ru/blog/...`;
-- RU article route;
-- RU blog index;
-- RU sitemap;
-- `hreflang`;
-- RU canonical;
-- RU CTA;
-- RU related links;
-- RU local search intent;
-- RU examples/social platforms;
-- RU mockups/assets;
-- `localizationType` field (translation, adaptation, original).
+**Accomplished:**
+- RU/EN blog architecture;
+- `/ru/blog` decision;
+- localization fields;
+- canonical/hreflang rules;
+- sitemap rules;
+- RU adaptation strategy;
+- mockup language matching.
 
 *Rule:* RU content should be a local adaptation, not a literal EN translation.
 
