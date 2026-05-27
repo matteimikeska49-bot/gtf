@@ -219,7 +219,16 @@ Before any article is published, it must pass indexability QA:
 
 ---
 
-## 12. Missing Important Systems (Open Items)
+## 12. Stage 4H: RU Gemini Draft Protocol
+
+**Status:** Done (Stage 4H).
+
+**Accomplished:**
+- Prepared safe RU article generation protocol from briefs, without creating articles.
+
+---
+
+## 13. Missing Important Systems (Open Items)
 
 - Content brief stage.
 - SERP / competitor research.

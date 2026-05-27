@@ -6,6 +6,11 @@ This prompt is designed to instruct Gemini (or another AI agent) to generate a c
 ## 2. When to Use
 Use this prompt template whenever you need to generate a new blog post or SEO guide. Do not use this for minor edits. Provide this exact prompt along with the specific article brief to generate a ready-to-publish `.md` file.
 
+For RU markdown articles, use:
+`docs/gemini-ru-article-draft-protocol.md`
+
+RU articles must be generated from completed RU briefs and must follow RU markdown pipeline rules.
+
 ## 3. Input Data for Gemini
 **Rule:** Gemini should not generate articles from a raw topic alone for production batches. For production use, Gemini should receive a completed content brief.
 

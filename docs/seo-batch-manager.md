@@ -25,7 +25,7 @@ SEO batch manager нужен, чтобы GoToFlow мог выпускать 5, 1
 2. Topic selection
 3. Brief creation
 4. Brief QA
-5. Gemini / AI draft generation
+5. Gemini / AI draft generation (RU Gemini draft generation must use: `docs/gemini-ru-article-draft-protocol.md`. Batch articles must not be generated from raw topics.)
 6. Markdown conversion
 7. `check:blog`
 8. Local preview
