@@ -3,404 +3,398 @@
   "updatedAt": "2026-05-25",
   "assets": [
     {
-      "id": "dashboard-ru-01",
-      "path": "/assets/blog/mockups/ru/dashboard-ru-01.webp",
+      "id": "ru-carousel-result-ideas",
+      "path": "/assets/blog/mockups/ru/ru-carousel-result-ideas.webp",
       "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Дашборд GoToFlow",
-      "caption": "Главная панель инструментов GoToFlow.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
+      "status": "approved",
+      "cluster": [
+        "instagram-carousel",
+        "ai-carousel-maker",
+        "content-creation"
+      ],
+      "suitableFor": [
+        "result",
+        "editor-preview",
+        "product-workflow",
+        "instagram-carousel"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "listicle",
+        "tutorial"
+      ],
+      "priority": "high",
+      "alt": "Готовая карусель GoToFlow с идеями для Instagram и редактором слайдов",
+      "caption": "Пример готовой карусели в редакторе GoToFlow",
+      "notes": "RU approved result mockup. Shows generated carousel result, slide editor, thumbnails and export actions.",
+      "source": "approved-export"
     },
     {
-      "id": "create-carousel-card-ru-01",
-      "path": "/assets/blog/mockups/ru/create-carousel-card-ru-01.webp",
+      "id": "ru-upload-text-topic-expert-breakdown",
+      "path": "/assets/blog/mockups/ru/ru-upload-text-topic-expert-breakdown.webp",
       "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Карточка инструмента «Создать Карусель» в GoToFlow",
-      "caption": "Инструмент GoToFlow для создания каруселей из текста, видео или аудио.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
+      "status": "approved",
+      "cluster": [
+        "ai-carousel-maker",
+        "content-creation",
+        "instagram-carousel"
+      ],
+      "suitableFor": [
+        "input",
+        "text-topic",
+        "workflow-step",
+        "expert-breakdown"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "high",
+      "alt": "Экран GoToFlow для создания карусели из текстовой темы",
+      "caption": "Создание карусели из темы или текста",
+      "notes": "RU approved input mockup. Shows Text/Topic source and Expert breakdown structure.",
+      "source": "approved-export"
     },
     {
-      "id": "create-carousel-page-ru-01",
-      "path": "/assets/blog/mockups/ru/create-carousel-page-ru-01.webp",
+      "id": "ru-upload-file-video",
+      "path": "/assets/blog/mockups/ru/ru-upload-file-video.webp",
       "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Страница создания карусели в GoToFlow",
-      "caption": "Настройки создания карусели в GoToFlow.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
+      "status": "approved",
+      "cluster": [
+        "reels-to-carousel",
+        "video-to-carousel",
+        "content-repurposing"
+      ],
+      "suitableFor": [
+        "input",
+        "file-video",
+        "upload",
+        "workflow-step"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "high",
+      "alt": "Экран загрузки видео, Reels, аудио или PDF в GoToFlow",
+      "caption": "Загрузка видео, Reels, аудио или PDF как источника для карусели",
+      "notes": "RU approved upload mockup. Shows File/Video source mode.",
+      "source": "approved-export"
     },
     {
-      "id": "text-topic-input-ru-01",
-      "path": "/assets/blog/mockups/ru/text-topic-input-ru-01.webp",
+      "id": "ru-character-closeup-female",
+      "path": "/assets/blog/mockups/ru/ru-character-closeup-female.webp",
       "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Ввод темы для карусели в GoToFlow",
-      "caption": "Ввод текста или темы для генерации карусели.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
+      "status": "approved",
+      "cluster": [
+        "ai-carousel-maker",
+        "personal-brand",
+        "creator-content"
+      ],
+      "suitableFor": [
+        "character",
+        "reference-photo",
+        "personalization",
+        "workflow-step"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "medium",
+      "alt": "Настройка персонажа в GoToFlow с описанием и референс-фото",
+      "caption": "Настройка персонажа и загрузка референс-фото",
+      "notes": "RU approved character mockup. Shows character description and uploaded reference photo.",
+      "source": "approved-export"
     },
     {
-      "id": "upload-source-ru-01",
-      "path": "/assets/blog/mockups/ru/upload-source-ru-01.webp",
+      "id": "ru-settings-6-slides-4x5",
+      "path": "/assets/blog/mockups/ru/ru-settings-6-slides-4x5.webp",
       "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Загрузка источника для карусели в GoToFlow",
-      "caption": "Загрузка файлов для генерации карусели.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
+      "status": "approved",
+      "cluster": [
+        "ai-carousel-maker",
+        "carousel-format",
+        "content-creation"
+      ],
+      "suitableFor": [
+        "settings",
+        "format",
+        "slide-count",
+        "cta",
+        "workflow-step"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "medium",
+      "alt": "Настройки формата 4:5, количества слайдов и CTA в GoToFlow",
+      "caption": "Настройка формата, количества слайдов и призыва к действию",
+      "notes": "RU approved settings mockup. Shows 4:5 format and 6 slides.",
+      "source": "approved-export"
     },
     {
-      "id": "structure-dropdown-ru-01",
-      "path": "/assets/blog/mockups/ru/structure-dropdown-ru-01.webp",
+      "id": "ru-visual-style-luxury",
+      "path": "/assets/blog/mockups/ru/ru-visual-style-luxury.webp",
       "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Выбор структуры карусели в GoToFlow",
-      "caption": "Выбор структуры для генерации карусели.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
+      "status": "approved",
+      "cluster": [
+        "visual-style",
+        "ai-carousel-maker",
+        "design"
+      ],
+      "suitableFor": [
+        "visual-style",
+        "style-selection",
+        "luxury",
+        "workflow-step"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "medium",
+      "alt": "Выбор визуального стиля Люкс и минимализм в GoToFlow",
+      "caption": "Выбор визуального стиля карусели",
+      "notes": "RU approved visual style mockup. Shows Luxury and minimalism style selection.",
+      "source": "approved-export"
     },
     {
-      "id": "visual-style-selector-ru-01",
-      "path": "/assets/blog/mockups/ru/visual-style-selector-ru-01.webp",
+      "id": "ru-visual-style-custom",
+      "path": "/assets/blog/mockups/ru/ru-visual-style-custom.webp",
       "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Выбор визуального стиля в GoToFlow",
-      "caption": "Выбор визуального стиля карусели.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
+      "status": "approved",
+      "cluster": [
+        "visual-style",
+        "custom-prompt",
+        "ai-carousel-maker"
+      ],
+      "suitableFor": [
+        "visual-style",
+        "custom-style",
+        "custom-prompt",
+        "workflow-step"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "medium",
+      "alt": "Настройка собственного визуального стиля через промпт в GoToFlow",
+      "caption": "Собственный визуальный стиль через промпт",
+      "notes": "RU approved custom style mockup. Shows Custom prompt mode.",
+      "source": "approved-export"
     },
     {
-      "id": "custom-style-prompt-ru-01",
-      "path": "/assets/blog/mockups/ru/custom-style-prompt-ru-01.webp",
-      "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Промпт для кастомного стиля в GoToFlow",
-      "caption": "Настройка кастомного стиля генерации.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
-    },
-    {
-      "id": "character-block-ru-01",
-      "path": "/assets/blog/mockups/ru/character-block-ru-01.webp",
-      "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Блок персонажа в GoToFlow",
-      "caption": "Настройка персонажа для карусели.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
-    },
-    {
-      "id": "settings-block-ru-01",
-      "path": "/assets/blog/mockups/ru/settings-block-ru-01.webp",
-      "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Блок настроек в GoToFlow",
-      "caption": "Дополнительные настройки генерации.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
-    },
-    {
-      "id": "result-editor-ru-01",
-      "path": "/assets/blog/mockups/ru/result-editor-ru-01.webp",
-      "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Редактор результатов в GoToFlow",
-      "caption": "Редактирование сгенерированной карусели.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
-    },
-    {
-      "id": "slide-editor-crop-ru-01",
-      "path": "/assets/blog/mockups/ru/slide-editor-crop-ru-01.webp",
-      "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Редактор слайда в GoToFlow",
-      "caption": "Детальное редактирование отдельного слайда.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
-    },
-    {
-      "id": "export-buttons-ru-01",
-      "path": "/assets/blog/mockups/ru/export-buttons-ru-01.webp",
-      "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Кнопки экспорта в GoToFlow",
-      "caption": "Экспорт готовой карусели в нужный формат.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
-    },
-    {
-      "id": "instagram-post-text-ru-01",
-      "path": "/assets/blog/mockups/ru/instagram-post-text-ru-01.webp",
-      "language": "ru",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "needs-rescreen",
-      "alt": "Текст поста для Instagram в GoToFlow",
-      "caption": "Сгенерированный текст поста для карусели.",
-      "priority": 1,
-      "source": "current-ru-screenshot-review",
-      "notes": "RU source candidate. Final cropped WebP asset is not imported yet."
-    },
-    {
-      "id": "create-carousel-card-en-01",
-      "path": "/assets/blog/mockups/en/create-carousel-card-en-01.webp",
+      "id": "en-carousel-result-ideas",
+      "path": "/assets/blog/mockups/en/en-carousel-result-ideas.webp",
       "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Create Carousel tool card in GoToFlow",
-      "caption": "GoToFlow tool for creating carousels from text, video or audio.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
+      "status": "approved",
+      "cluster": [
+        "instagram-carousel",
+        "ai-carousel-maker",
+        "content-creation"
+      ],
+      "suitableFor": [
+        "result",
+        "editor-preview",
+        "product-workflow",
+        "instagram-carousel"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "listicle",
+        "tutorial"
+      ],
+      "priority": "high",
+      "alt": "GoToFlow carousel editor showing a finished Instagram carousel result",
+      "caption": "Finished carousel result inside the GoToFlow editor",
+      "notes": "EN approved result mockup. Shows generated carousel result, slide editor, thumbnails and export actions.",
+      "source": "approved-export"
     },
     {
-      "id": "dashboard-en-01",
-      "path": "/assets/blog/mockups/en/dashboard-en-01.webp",
+      "id": "en-upload-text-topic-expert-breakdown",
+      "path": "/assets/blog/mockups/en/en-upload-text-topic-expert-breakdown.webp",
       "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "GoToFlow Dashboard",
-      "caption": "Main GoToFlow dashboard.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
+      "status": "approved",
+      "cluster": [
+        "ai-carousel-maker",
+        "content-creation",
+        "instagram-carousel"
+      ],
+      "suitableFor": [
+        "input",
+        "text-topic",
+        "workflow-step",
+        "expert-breakdown"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "high",
+      "alt": "GoToFlow screen for creating a carousel from a text topic",
+      "caption": "Creating a carousel from a text topic",
+      "notes": "EN approved input mockup. Shows Text/Topic source and Expert breakdown structure.",
+      "source": "approved-export"
     },
     {
-      "id": "create-carousel-empty-en-01",
-      "path": "/assets/blog/mockups/en/create-carousel-empty-en-01.webp",
+      "id": "en-upload-file-video",
+      "path": "/assets/blog/mockups/en/en-upload-file-video.webp",
       "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Empty create carousel page in GoToFlow",
-      "caption": "GoToFlow carousel creation settings.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
+      "status": "approved",
+      "cluster": [
+        "reels-to-carousel",
+        "video-to-carousel",
+        "content-repurposing"
+      ],
+      "suitableFor": [
+        "input",
+        "file-video",
+        "upload",
+        "workflow-step"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "high",
+      "alt": "GoToFlow upload screen for video, Reels, audio or PDF",
+      "caption": "Uploading video, Reels, audio or PDF as a carousel source",
+      "notes": "EN approved upload mockup. Shows File/Video source mode.",
+      "source": "approved-export"
     },
     {
-      "id": "create-carousel-filled-topic-en-01",
-      "path": "/assets/blog/mockups/en/create-carousel-filled-topic-en-01.webp",
+      "id": "en-character-closeup-male",
+      "path": "/assets/blog/mockups/en/en-character-closeup-male.webp",
       "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Filled topic for carousel in GoToFlow",
-      "caption": "Entering text or topic for carousel generation.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
+      "status": "approved",
+      "cluster": [
+        "ai-carousel-maker",
+        "personal-brand",
+        "creator-content"
+      ],
+      "suitableFor": [
+        "character",
+        "reference-photo",
+        "personalization",
+        "workflow-step"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "medium",
+      "alt": "GoToFlow character setup screen with description and reference photo",
+      "caption": "Character setup with a reference photo",
+      "notes": "EN approved character mockup. Shows character description and uploaded reference photo.",
+      "source": "approved-export"
     },
     {
-      "id": "upload-source-en-01",
-      "path": "/assets/blog/mockups/en/upload-source-en-01.webp",
+      "id": "en-settings-5-slides-4x5",
+      "path": "/assets/blog/mockups/en/en-settings-5-slides-4x5.webp",
       "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Upload source for carousel in GoToFlow",
-      "caption": "Uploading files for carousel generation.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
+      "status": "approved",
+      "cluster": [
+        "ai-carousel-maker",
+        "carousel-format",
+        "content-creation"
+      ],
+      "suitableFor": [
+        "settings",
+        "format",
+        "slide-count",
+        "cta",
+        "workflow-step"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "medium",
+      "alt": "GoToFlow settings screen for 4:5 format, slide count and CTA",
+      "caption": "Setting format, number of slides and call to action",
+      "notes": "EN approved settings mockup. Shows 4:5 format and 5 slides.",
+      "source": "approved-export"
     },
     {
-      "id": "structure-dropdown-en-01",
-      "path": "/assets/blog/mockups/en/structure-dropdown-en-01.webp",
+      "id": "en-visual-style-magazine-cover",
+      "path": "/assets/blog/mockups/en/en-visual-style-magazine-cover.webp",
       "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Carousel structure selection in GoToFlow",
-      "caption": "Selecting structure for carousel generation.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
+      "status": "approved",
+      "cluster": [
+        "visual-style",
+        "ai-carousel-maker",
+        "design"
+      ],
+      "suitableFor": [
+        "visual-style",
+        "style-selection",
+        "magazine-cover",
+        "workflow-step"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "medium",
+      "alt": "GoToFlow visual style screen with Magazine Cover selected",
+      "caption": "Choosing a visual style for the carousel",
+      "notes": "EN approved visual style mockup. Shows Magazine Cover style inside Luxury and Minimalism category.",
+      "source": "approved-export"
     },
     {
-      "id": "visual-style-selector-en-01",
-      "path": "/assets/blog/mockups/en/visual-style-selector-en-01.webp",
+      "id": "en-visual-style-custom",
+      "path": "/assets/blog/mockups/en/en-visual-style-custom.webp",
       "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Visual style selection in GoToFlow",
-      "caption": "Selecting carousel visual style.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
-    },
-    {
-      "id": "custom-style-prompt-en-01",
-      "path": "/assets/blog/mockups/en/custom-style-prompt-en-01.webp",
-      "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Custom style prompt in GoToFlow",
-      "caption": "Customizing generation style with a prompt.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
-    },
-    {
-      "id": "character-block-en-01",
-      "path": "/assets/blog/mockups/en/character-block-en-01.webp",
-      "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Character block in GoToFlow",
-      "caption": "Setting up a character for the carousel.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
-    },
-    {
-      "id": "settings-block-en-01",
-      "path": "/assets/blog/mockups/en/settings-block-en-01.webp",
-      "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Settings block in GoToFlow",
-      "caption": "Additional generation settings.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
-    },
-    {
-      "id": "result-editor-en-01",
-      "path": "/assets/blog/mockups/en/result-editor-en-01.webp",
-      "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Result editor in GoToFlow",
-      "caption": "Editing the generated carousel.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
-    },
-    {
-      "id": "slide-editor-crop-en-01",
-      "path": "/assets/blog/mockups/en/slide-editor-crop-en-01.webp",
-      "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Slide editor in GoToFlow",
-      "caption": "Detailed editing of a single slide.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
-    },
-    {
-      "id": "export-buttons-en-01",
-      "path": "/assets/blog/mockups/en/export-buttons-en-01.webp",
-      "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Export buttons in GoToFlow",
-      "caption": "Exporting the finished carousel to the desired format.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
-    },
-    {
-      "id": "projects-gallery-clean-en-01",
-      "path": "/assets/blog/mockups/en/projects-gallery-clean-en-01.webp",
-      "language": "en",
-      "cluster": "ai-carousel-maker",
-      "suitableFor": ["product-bridge", "how-to", "guide"],
-      "articleTypes": ["guide", "how-to", "product-led"],
-      "status": "planned",
-      "alt": "Projects gallery in GoToFlow",
-      "caption": "Clean gallery of generated projects.",
-      "priority": 1,
-      "source": "planned-en-asset",
-      "notes": "EN planned asset."
+      "status": "approved",
+      "cluster": [
+        "visual-style",
+        "custom-prompt",
+        "ai-carousel-maker"
+      ],
+      "suitableFor": [
+        "visual-style",
+        "custom-style",
+        "custom-prompt",
+        "workflow-step"
+      ],
+      "articleTypes": [
+        "guide",
+        "how-to",
+        "tutorial"
+      ],
+      "priority": "medium",
+      "alt": "GoToFlow custom visual style prompt screen",
+      "caption": "Custom visual style through a prompt",
+      "notes": "EN approved custom style mockup. Shows Custom prompt mode.",
+      "source": "approved-export"
     },
     {
       "id": "spy-feed-ru-01",
       "path": "/assets/blog/mockups/ru/spy-feed-ru-01.webp",
       "language": "ru",
       "cluster": "ai-carousel-maker",
-      "suitableFor": ["internal"],
-      "articleTypes": ["internal"],
+      "suitableFor": [
+        "internal"
+      ],
+      "articleTypes": [
+        "internal"
+      ],
       "status": "internal-only",
       "alt": "Spy Feed",
       "caption": "Spy feed example.",
@@ -413,8 +407,12 @@
       "path": "/assets/blog/mockups/ru/top-reels-feed-ru-01.webp",
       "language": "ru",
       "cluster": "ai-carousel-maker",
-      "suitableFor": ["internal"],
-      "articleTypes": ["internal"],
+      "suitableFor": [
+        "internal"
+      ],
+      "articleTypes": [
+        "internal"
+      ],
       "status": "internal-only",
       "alt": "Top Reels Feed",
       "caption": "Top reels feed example.",
@@ -427,8 +425,12 @@
       "path": "/assets/blog/mockups/ru/third-party-reels-feed-ru-01.webp",
       "language": "ru",
       "cluster": "ai-carousel-maker",
-      "suitableFor": ["none"],
-      "articleTypes": ["none"],
+      "suitableFor": [
+        "none"
+      ],
+      "articleTypes": [
+        "none"
+      ],
       "status": "rejected",
       "alt": "Third Party Reels Feed",
       "priority": 99,
@@ -440,8 +442,12 @@
       "path": "/assets/blog/mockups/ru/random-project-gallery-ru-01.webp",
       "language": "ru",
       "cluster": "ai-carousel-maker",
-      "suitableFor": ["internal"],
-      "articleTypes": ["internal"],
+      "suitableFor": [
+        "internal"
+      ],
+      "articleTypes": [
+        "internal"
+      ],
       "status": "needs-rescreen",
       "alt": "Project Gallery",
       "caption": "Random project gallery.",
