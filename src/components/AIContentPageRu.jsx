@@ -1,3 +1,4 @@
+import { RuMetaDisclaimerFootnote } from './common/RuMetaDisclaimerFootnote';
 import { Link } from 'react-router-dom';
 import { getAppUrlWithRef } from '../utils/url';
 import React, { useState, useEffect, useRef } from 'react';
@@ -101,7 +102,7 @@ const carouselCards = [
 const SlideCard = ({ card }) => (
   <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
     <div className="relative w-full aspect-[4/5] rounded-xl bg-[#111] overflow-hidden">
-      <img src={card.image} alt={`Контент Instagram: ${card.label}`} className="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
+      <img src={card.image} alt={`Контент Instagram*: ${card.label}`} className="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
       <div className="absolute inset-0 md:animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02] z-[1]" />
       <span className="absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full z-[2] bg-violet-500/20 text-violet-300">Контент</span>
     </div>
@@ -408,7 +409,7 @@ export const CarouselSEOBlockRu = () => (
 /* ── FAQ (RU) ── */
 const faqItems = [
   { q: 'Что такое генератор контента?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания каруселей. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
-  { q: 'Можно ли создать контент с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу контент сохраняли и репостили.' },
+  { q: 'Можно ли создать контент с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram* и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу контент сохраняли и репостили.' },
   { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
   { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva помогает с дизайном, а GoToFlow создает контент. Наш ИИ генерирует идеи, хуки и текст для структуры контент, после чего вы получаете готовый результат.' },
 ];
@@ -511,7 +512,8 @@ export const AIContentPageRu = () => (
     <TestimonialsSection />
     <CarouselFAQRu />
     <CarouselBottomCTARu />
-    <Footer />
+    <RuMetaDisclaimerFootnote />
+      <Footer />
     <CookieBanner />
   </MainLayout>
 );

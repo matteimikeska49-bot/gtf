@@ -1,3 +1,4 @@
+import { RuMetaDisclaimerFootnote } from './common/RuMetaDisclaimerFootnote';
 import { Link } from 'react-router-dom';
 import { getAppUrlWithRef } from '../utils/url';
 import React, { useState, useEffect, useRef } from 'react';
@@ -69,7 +70,7 @@ export const CarouselHeroRu = () => {
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="max-w-3xl mx-auto w-full">
         <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
-          Генератор постов для Instagram с ИИ —<br className="hidden md:block" /> <span className="text-gradient-brand">готовый пост за 60 секунд</span>
+          Генератор постов для Instagram* с ИИ —<br className="hidden md:block" /> <span className="text-gradient-brand">готовый пост за 60 секунд</span>
         </h1>
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance">
@@ -101,7 +102,7 @@ const carouselCards = [
 const SlideCard = ({ card }) => (
   <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
     <div className="relative w-full aspect-[4/5] rounded-xl bg-[#111] overflow-hidden">
-      <img src={card.image} alt={`Пост Instagram: ${card.label}`} className="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
+      <img src={card.image} alt={`Пост Instagram*: ${card.label}`} className="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
       <div className="absolute inset-0 md:animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02] z-[1]" />
       <span className="absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full z-[2] bg-violet-500/20 text-violet-300">Пост</span>
     </div>
@@ -408,7 +409,7 @@ export const CarouselSEOBlockRu = () => (
 /* ── FAQ (RU) ── */
 const faqItems = [
   { q: 'Что такое генератор постов?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания каруселей. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
-  { q: 'Можно ли создать пост с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу пост сохраняли и репостили.' },
+  { q: 'Можно ли создать пост с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram* и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу пост сохраняли и репостили.' },
   { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
   { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva помогает с дизайном, а GoToFlow создает контент. Наш ИИ генерирует идеи, хуки и текст для структуры посты, после чего вы получаете готовый результат.' },
 ];
@@ -511,7 +512,8 @@ export const InstagramPostPageRu = () => (
     <TestimonialsSection />
     <CarouselFAQRu />
     <CarouselBottomCTARu />
-    <Footer />
+    <RuMetaDisclaimerFootnote />
+      <Footer />
     <CookieBanner />
   </MainLayout>
 );

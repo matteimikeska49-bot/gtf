@@ -1,3 +1,4 @@
+import { RuMetaDisclaimerFootnote } from '../common/RuMetaDisclaimerFootnote';
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, ChevronRight } from 'lucide-react';
@@ -80,7 +81,7 @@ const ArticleHero = () => {
           Лучшие AI-генераторы каруселей <span className="text-gradient-brand">в 2026 году</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-base md:text-lg text-zinc-400 leading-[1.7] mb-10 max-w-2xl">
-          Сравниваем лучшие AI-генераторы каруселей для Instagram, LinkedIn и соцсетей: GoToFlow, Canva, ChatGPT, Claude, Gemini, Gamma, Figma и другие инструменты.
+          Сравниваем лучшие AI-генераторы каруселей для Instagram*, LinkedIn и соцсетей: GoToFlow, Canva, ChatGPT, Claude, Gemini, Gamma, Figma и другие инструменты.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }}>
           <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 active:scale-[0.98] shadow-[0_0_35px_rgba(236,72,153,0.3)] text-sm border border-pink-400/20 group">
@@ -118,7 +119,7 @@ const ArticleBody = () => (
       <div className="bg-white/[0.015] border border-white/[0.06] rounded-3xl px-5 sm:px-8 md:px-12 py-8 md:py-14">
 
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          AI-генераторов контента стало много. Но когда речь заходит о каруселях для Instagram, LinkedIn, Telegram, VK или других соцсетей, не каждый инструмент реально закрывает задачу.
+          AI-генераторов контента стало много. Но когда речь заходит о каруселях для Instagram*, LinkedIn, Telegram, VK или других соцсетей, не каждый инструмент реально закрывает задачу.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           Одни сервисы помогают с дизайном.<br />
@@ -142,7 +143,7 @@ const ArticleBody = () => (
           Поэтому лучший AI-генератор каруселей — это не просто инструмент, который “разбивает текст на слайды”. Это инструмент, который помогает пройти весь путь: от темы, ссылки, видео или черновика до структуры, текста, визуального стиля и готового черновика карусели.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
-          В этой статье разберём лучшие AI-инструменты для создания каруселей в 2026 году и покажем, какой сервис выбрать под разные задачи: Instagram, LinkedIn, Telegram, VK, личный бренд, экспертный контент и маркетинг.
+          В этой статье разберём лучшие AI-инструменты для создания каруселей в 2026 году и покажем, какой сервис выбрать под разные задачи: Instagram*, LinkedIn, Telegram, VK, личный бренд, экспертный контент и маркетинг.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Коротко: какой AI-генератор каруселей выбрать</h2>
@@ -173,7 +174,7 @@ const ArticleBody = () => (
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           Для LinkedIn это чаще всего PDF-документ.<br />
-          Для Instagram — серия изображений.<br />
+          Для Instagram* — серия изображений.<br />
           Для Telegram или VK — серия карточек, слайдов или визуальных постов.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
@@ -246,12 +247,12 @@ const ArticleBody = () => (
 
         <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">AI-генератор каруселей для Instagram и LinkedIn: в чём разница</h2>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
-          Карусель для Instagram и карусель для LinkedIn — это не одно и то же.
+          Карусель для Instagram* и карусель для LinkedIn — это не одно и то же.
         </p>
 
         <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Instagram</h3>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          Для Instagram важны:
+          Для Instagram* важны:
         </p>
         <ul className="space-y-3 mb-5">
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />визуальность;</li>
@@ -263,7 +264,7 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />яркий первый слайд.</li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
-          Instagram-карусель должна быстро привлекать внимание. Человек листает ленту, поэтому первый слайд должен быть максимально понятным и заметным.
+          Instagram*-карусель должна быстро привлекать внимание. Человек листает ленту, поэтому первый слайд должен быть максимально понятным и заметным.
         </p>
 
         <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">LinkedIn</h3>
@@ -571,7 +572,7 @@ const ArticleBody = () => (
           <strong>Плюсы:</strong> хорошо структурирует материал; выглядит аккуратно; подходит для образовательного контента; помогает быстро получить слайдовую основу.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          <strong>Минусы:</strong> может выглядеть больше как презентация, чем как нативная карусель для соцсетей; не всегда подходит для Instagram-стиля; визуал может требовать ручной доработки.
+          <strong>Минусы:</strong> может выглядеть больше как презентация, чем как нативная карусель для соцсетей; не всегда подходит для Instagram*-стиля; визуал может требовать ручной доработки.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
           <strong>Лучше всего подходит:</strong> консультантам, экспертам, B2B-командам и тем, кто делает обучающие материалы.
@@ -859,7 +860,7 @@ const ArticleBody = () => (
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
           LinkedIn чаще любит экспертные PDF-карусели и фреймворки.<br />
-          Instagram чаще требует более визуального, быстрого и эмоционального формата.
+          Instagram* чаще требует более визуального, быстрого и эмоционального формата.
         </p>
 
         <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Не проверять читаемость на телефоне</h3>
@@ -924,7 +925,7 @@ const ArticleBody = () => (
 /* ── FAQ ── */
 const faqItems = [
   { q: 'Какой AI-генератор каруселей лучший?', a: 'Если нужен полный workflow от идеи до визуального черновика, подойдёт GoToFlow. Если нужен только дизайн, можно использовать Canva или Figma. Для идей и текстов подойдут ChatGPT, Claude или Gemini.' },
-  { q: 'Можно ли сделать карусель для Instagram с помощью AI?', a: 'Да. AI может помочь с идеей, структурой, текстом и визуальным направлением. Но для Instagram особенно важно проверить визуал и читаемость на мобильном.' },
+  { q: 'Можно ли сделать карусель для Instagram* с помощью AI?', a: 'Да. AI может помочь с идеей, структурой, текстом и визуальным направлением. Но для Instagram* особенно важно проверить визуал и читаемость на мобильном.' },
   { q: 'Можно ли сделать карусель для LinkedIn с помощью AI?', a: 'Да. AI может помочь с первым слайдом, структурой, текстом, CTA и визуальным стилем. Для LinkedIn важно, чтобы карусель была логичной, полезной и хорошо читалась в PDF-формате.' },
   { q: 'Чем GoToFlow отличается от Canva?', a: 'Canva сильна в шаблонах и ручном дизайне. GoToFlow помогает пройти workflow карусели: тема/ссылка/видео → структура → текст → стиль → черновик.' },
   { q: 'Нужен ли дизайнер, чтобы делать карусели?', a: 'Не всегда. Для базовых и регулярных каруселей можно использовать AI-инструменты. Но если нужен уникальный брендовый стиль, Figma и дизайнер всё ещё могут быть полезны.' },
@@ -1009,7 +1010,8 @@ export const BestAiCarouselGeneratorsPageRu = () => (
     <ArticleFAQ />
     <ArticleCTA />
     <BackToBlog />
-    <Footer />
+    <RuMetaDisclaimerFootnote />
+      <Footer />
     <CookieBanner />
   </MainLayout>
 );

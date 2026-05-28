@@ -1,3 +1,4 @@
+import { RuMetaDisclaimerFootnote } from '../common/RuMetaDisclaimerFootnote';
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, ChevronRight } from 'lucide-react';
@@ -319,7 +320,7 @@ const ArticleBody = () => (
 const faqItems = [
   { q: 'Обязательно делать именно карусели?', a: 'Текст тоже работает. Но LinkedIn любит PDF-документы (карусели). Они задерживают людей на посте, пока те листают слайды. Алгоритмам это нравится.' },
   { q: 'Сколько слайдов делать?', a: 'Оптимально — от 6 до 12. Меньше 6 — слишком мало пользы. Больше 15 — люди устают листать.' },
-  { q: 'В каком формате грузить?', a: 'LinkedIn не понимает карусели из картинок (как Instagram). Нужно собрать все слайды в один PDF-файл и загрузить его как документ.' },
+  { q: 'В каком формате грузить?', a: 'LinkedIn не понимает карусели из картинок (как Instagram*). Нужно собрать все слайды в один PDF-файл и загрузить его как документ.' },
   { q: 'Какой размер выбрать?', a: 'Лучший вариант — вертикальный 1080 x 1350 пикселей (4:5). Он занимает весь экран телефона.' },
   { q: 'Сделает ли ИИ всю работу?', a: 'Да. GoToFlow сам пишет тексты, делит их на слайды и выдает готовый PDF в вашем стиле.' },
 ];
@@ -399,7 +400,8 @@ export const LinkedInCarouselIdeasPageRu = () => (
 
     <ArticleCTA />
     <BackToBlog />
-    <Footer />
+    <RuMetaDisclaimerFootnote />
+      <Footer />
     <CookieBanner />
   </MainLayout>
 );
