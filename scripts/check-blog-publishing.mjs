@@ -7,6 +7,8 @@ const ROOT = path.join(__dirname, '..');
 const ARTICLES_DIR = path.join(ROOT, 'src/content/blog/articles');
 const SITEMAP_PATH = path.join(ROOT, 'dist/sitemap.xml');
 const MOCKUP_REGISTRY_PATH = path.join(ROOT, 'src/content/blog/mockups/registry.json');
+const TEMPLATE_PATH = path.join(ROOT, 'src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx');
+const HELPER_PATH = path.join(ROOT, 'src/lib/blog/metaDisclaimerHelper.js');
 
 // Static allowed routes (old JSX pages, tools, root)
 const ALLOWLIST_ROUTES = [
@@ -105,6 +107,18 @@ async function runCheck() {
   const publishedSlugs = new Set();
   const draftSlugs = new Set();
   const parsedFiles = [];
+
+  let hasAutoDisclaimer = false;
+  if (fs.existsSync(HELPER_PATH) && fs.existsSync(TEMPLATE_PATH)) {
+    const templateContent = fs.readFileSync(TEMPLATE_PATH, 'utf-8');
+    if (templateContent.includes('shouldShowRuMetaDisclaimer') && templateContent.includes('RuMetaDisclaimer')) {
+      hasAutoDisclaimer = true;
+    }
+  }
+  if (!hasAutoDisclaimer) {
+    console.log(`  ❌ P0: Automatic RU Meta disclaimer system is missing from MarkdownSeoArticleTemplateV2.jsx or helper.`);
+    hasP0Error = true;
+  }
 
   // Pass 1: Collect all slugs and publish states
   for (const file of files) {
@@ -252,6 +266,13 @@ async function runCheck() {
     if (file === 'test-seo-template-v2.md') {
       if (published !== false || noindex !== true) {
         errors.push(`test-seo-template-v2.md MUST be published=false and noindex=true`);
+      }
+    }
+
+    // Meta Disclaimer Validation
+    if (language === 'ru') {
+      if (hasYamlKey(frontmatter, 'metaDisclaimer')) {
+        warnings.push(`Manual metaDisclaimer field found in frontmatter. This is now handled automatically by the template.`);
       }
     }
 

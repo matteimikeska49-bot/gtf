@@ -667,6 +667,13 @@ RU:
 - естественная подача
 - microcopy на русском
 
+### RU Meta Disclaimer Rule
+- для RU-статей Gemini может использовать слова Instagram / Facebook / Meta / Инстаграм / Фейсбук / Мета только когда это нужно по смыслу;
+- Gemini **НЕ должен** вручную вставлять юридическую сноску (disclaimer) в markdown;
+- шаблон автоматически добавляет RU-only legal footnote (маленькая сноска "Instagram и Facebook принадлежат Meta...");
+- для EN-страниц сноска не добавляется;
+- generic mentions типа “соцсети”, “social media” не требуют сноски.
+
 ---
 
 ## LLM / AI-search readiness

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, ChevronDown, ChevronRight, ExternalLink, Layers3, Sparkles } from 'lucide-react';
 import { getAppUrlWithRef } from '../../../utils/url';
 import { getMockupsForArticle } from '../../../lib/blog/mockupRegistry';
+import { shouldShowRuMetaDisclaimer } from '../../../lib/blog/metaDisclaimerHelper';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -1082,6 +1083,14 @@ const ArticleMockupPlacement = ({ article, type, layout }) => {
   return <NativeMockupBlock mockup={mockup} layout={layout} />;
 };
 
+const RuMetaDisclaimer = () => (
+  <div className="mx-auto w-full max-w-[920px] mb-8 mt-2 rounded-xl border border-white/[0.04] bg-[#0a0a0a] px-5 py-4 shadow-sm">
+    <p className="text-[12px] md:text-[13px] leading-relaxed text-zinc-500">
+      Instagram и Facebook принадлежат Meta Platforms Inc., деятельность которой признана экстремистской и запрещена на территории Российской Федерации.
+    </p>
+  </div>
+);
+
 export const MarkdownSeoArticleTemplateV2 = ({ article }) => (
   <>
     <ArticleHero article={article} />
@@ -1102,6 +1111,7 @@ export const MarkdownSeoArticleTemplateV2 = ({ article }) => (
         <PromptAccordion prompts={article.prompts} />
         <FormatsGrid formats={article.formats} />
         <ArticleExploreZone explore={article.explore} />
+        {shouldShowRuMetaDisclaimer(article) && <RuMetaDisclaimer />}
         <FaqBlock faq={article.faq} />
         <FinalCta cta={article.finalCta} />
       </div>
