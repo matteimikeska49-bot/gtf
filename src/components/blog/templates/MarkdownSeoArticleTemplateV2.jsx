@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, ChevronDown, ChevronRight, ExternalLink, Layers3, Sparkles } from 'lucide-react';
 import { getAppUrlWithRef } from '../../../utils/url';
 import { getMockupsForArticle } from '../../../lib/blog/mockupRegistry';
-import { shouldShowRuMetaDisclaimer } from '../../../lib/blog/metaDisclaimerHelper';
+import { shouldShowRuMetaDisclaimer, applyRuAutoStar } from '../../../lib/blog/metaDisclaimerHelper';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -50,18 +50,22 @@ const ArticleLink = ({ href, className, children }) => {
   );
 };
 
-const parseInlineMarkdown = (text, context = 'normal') => {
+const parseInlineMarkdown = (text, context = 'normal', isRu = false) => {
   const parts = [];
   const pattern = /(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
   let lastIndex = 0;
   let match;
 
   while ((match = pattern.exec(text)) !== null) {
-    if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index));
+    if (match.index > lastIndex) {
+      const textPart = text.slice(lastIndex, match.index);
+      parts.push(isRu ? applyRuAutoStar(textPart, isRu) : textPart);
+    }
 
     const token = match[0];
     if (token.startsWith('**')) {
-      parts.push(<strong key={parts.length} className="font-semibold text-zinc-200">{token.slice(2, -2)}</strong>);
+      const innerText = token.slice(2, -2);
+      parts.push(<strong key={parts.length} className="font-semibold text-zinc-200">{isRu ? applyRuAutoStar(innerText, isRu) : innerText}</strong>);
     } else if (token.startsWith('`')) {
       parts.push(<code key={parts.length} className="rounded-md border border-white/10 bg-white/[0.04] px-1.5 py-0.5 text-[0.92em] text-pink-100">{token.slice(1, -1)}</code>);
     } else {
@@ -73,7 +77,7 @@ const parseInlineMarkdown = (text, context = 'normal') => {
         }
         parts.push(
           <ArticleLink key={parts.length} href={linkMatch[2]} className={linkClass}>
-            {linkMatch[1]}
+            {isRu ? applyRuAutoStar(linkMatch[1], isRu) : linkMatch[1]}
           </ArticleLink>
         );
       }
@@ -82,7 +86,10 @@ const parseInlineMarkdown = (text, context = 'normal') => {
     lastIndex = match.index + token.length;
   }
 
-  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+  if (lastIndex < text.length) {
+    const textPart = text.slice(lastIndex);
+    parts.push(isRu ? applyRuAutoStar(textPart, isRu) : textPart);
+  }
   return parts;
 };
 
@@ -295,7 +302,7 @@ const parseCalloutContent = (lines) => {
   return { title, bodyLines, actionLink };
 };
 
-const MarkdownBody = ({ markdown, title, article }) => {
+const MarkdownBody = ({ markdown, title, article, isRu }) => {
   const blocks = parseMarkdownBlocks(markdown);
   const normalizedTitle = title.trim().toLowerCase();
   const displayBlocks = blocks.filter((block, index) => !(
@@ -312,7 +319,7 @@ const MarkdownBody = ({ markdown, title, article }) => {
           if (block.level <= 2) {
             return (
               <h2 key={index} className="pt-10 pb-4 text-2xl font-bold leading-tight tracking-tight text-white md:text-[32px]">
-                {renderFormattedHeading(block.text)}
+                {renderFormattedHeading(block.text, isRu)}
               </h2>
             );
           }
@@ -320,7 +327,7 @@ const MarkdownBody = ({ markdown, title, article }) => {
             <div key={index} className="mt-10 mb-4 flex items-center gap-3">
               <span className="shrink-0 w-2 h-2 rounded-full bg-gradient-to-r from-pink-400 to-orange-400 shadow-[0_0_10px_rgba(236,72,153,0.5)]" />
               <h3 className="text-lg md:text-xl font-semibold leading-snug tracking-tight text-white">
-                {parseInlineMarkdown(block.text)}
+                {parseInlineMarkdown(block.text, 'normal', isRu)}
               </h3>
             </div>
           );
@@ -329,7 +336,7 @@ const MarkdownBody = ({ markdown, title, article }) => {
         if (block.type === 'paragraph') {
           return (
             <p key={index} className="mb-6 text-[15px] leading-[1.85] text-zinc-400 md:text-base">
-              {parseInlineMarkdown(block.text)}
+              {parseInlineMarkdown(block.text, 'normal', isRu)}
             </p>
           );
         }
@@ -342,7 +349,7 @@ const MarkdownBody = ({ markdown, title, article }) => {
                   <tr>
                     {block.headers.map((header, i) => (
                       <th key={i} className="border-b border-white/[0.1] bg-[#050505] px-4 py-3 text-xs font-bold uppercase tracking-wider text-zinc-100">
-                        {parseInlineMarkdown(header)}
+                        {parseInlineMarkdown(header, 'normal', isRu)}
                       </th>
                     ))}
                   </tr>
@@ -352,7 +359,7 @@ const MarkdownBody = ({ markdown, title, article }) => {
                     <tr key={i} className="transition-colors hover:bg-white/[0.02]">
                       {row.map((cell, j) => (
                         <td key={j} className={`border-b border-white/[0.05] px-4 py-3 text-[15px] leading-relaxed ${j === 0 ? 'font-medium text-zinc-200' : 'text-zinc-400'}`}>
-                          {parseInlineMarkdown(cell)}
+                          {parseInlineMarkdown(cell, 'normal', isRu)}
                         </td>
                       ))}
                     </tr>
@@ -390,7 +397,7 @@ const MarkdownBody = ({ markdown, title, article }) => {
                   ) : (
                     <span className="mt-2 w-1.5 h-1.5 shrink-0 rounded-full bg-pink-400/60" />
                   )}
-                  <span>{parseInlineMarkdown(item)}</span>
+                  <span>{parseInlineMarkdown(item, 'normal', isRu)}</span>
                 </div>
               ))}
             </div>
@@ -496,7 +503,7 @@ const MarkdownBody = ({ markdown, title, article }) => {
                   )}
                   <div className="text-[15px] leading-[1.65] text-zinc-300 space-y-2">
                     {content.bodyLines.map((line, i) => (
-                      <p key={i}>{parseInlineMarkdown(line, block.calloutType)}</p>
+                      <p key={i}>{parseInlineMarkdown(line, block.calloutType, isRu)}</p>
                     ))}
                   </div>
                   {content.actionLink && block.calloutType === 'product' && (
@@ -522,7 +529,7 @@ const MarkdownBody = ({ markdown, title, article }) => {
                 </div>
               ) : (
                 <p className="text-[15px] leading-[1.65] text-zinc-300">
-                  {parseInlineMarkdown(block.text, block.calloutType)}
+                  {parseInlineMarkdown(block.text, block.calloutType, isRu)}
                 </p>
               )}
             </div>
@@ -588,12 +595,12 @@ const MarkdownBody = ({ markdown, title, article }) => {
                 <div key={i} className={`p-5 md:p-6 rounded-2xl border transition-colors duration-300 ${borderClass} ${bgClass}`}>
                   <h4 className="text-white text-base md:text-lg font-bold mb-3 flex items-start gap-3">
                     <span className={`mt-2 shrink-0 w-1.5 h-1.5 rounded-full ${glowClass}`} />
-                    <span>{parseInlineMarkdown(item.title)}</span>
+                    <span>{parseInlineMarkdown(item.title, 'normal', isRu)}</span>
                   </h4>
                   <div className="pl-4 md:pl-4">
                     <div className="text-[15px] leading-[1.7] text-zinc-400 space-y-2">
                       {item.content.split('\n').map((line, j) => (
-                        <p key={j}>{parseInlineMarkdown(line)}</p>
+                        <p key={j}>{parseInlineMarkdown(line, 'normal', isRu)}</p>
                       ))}
                     </div>
                   </div>
@@ -608,7 +615,7 @@ const MarkdownBody = ({ markdown, title, article }) => {
             <div key={index} className="rounded-xl border border-white/[0.08] bg-[#050505] p-5 md:p-6 my-6 relative overflow-hidden">
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500/40 to-orange-500/40" />
               <div className="text-[15px] md:text-base leading-[1.75] text-zinc-300 italic">
-                {parseInlineMarkdown(block.text)}
+                {parseInlineMarkdown(block.text, 'normal', isRu)}
               </div>
             </div>
           );
@@ -636,7 +643,7 @@ const MarkdownBody = ({ markdown, title, article }) => {
   );
 };
 
-const renderFormattedTitle = (title) => {
+const renderFormattedTitle = (title, isRu = false) => {
   if (!title) return null;
   const words = title.split(' ');
   if (words.length >= 2) {
@@ -651,7 +658,7 @@ const renderFormattedTitle = (title) => {
   return title;
 };
 
-const renderFormattedHeading = (title) => {
+const renderFormattedHeading = (title, isRu = false) => {
   if (!title) return null;
   const words = title.split(' ');
   if (words.length >= 2) {
@@ -659,15 +666,15 @@ const renderFormattedHeading = (title) => {
     const normalWords = words.length > 2 ? words.slice(0, -2).join(' ') : words.slice(0, -1).join(' ');
     return (
       <>
-        {parseInlineMarkdown(normalWords)}{' '}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">{parseInlineMarkdown(highlightWords)}</span>
+        {parseInlineMarkdown(normalWords, 'normal', isRu)}{' '}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">{parseInlineMarkdown(highlightWords, 'normal', isRu)}</span>
       </>
     );
   }
-  return parseInlineMarkdown(title);
+  return parseInlineMarkdown(title, 'normal', isRu);
 };
 
-const SectionShell = ({ id, eyebrow, title, children }) => (
+const SectionShell = ({ id, eyebrow, title, children, isRu }) => (
   <section id={id} className="scroll-mt-24 mb-16 md:mb-20">
     <div className="mb-6 flex items-center gap-3">
       {eyebrow && (
@@ -676,12 +683,12 @@ const SectionShell = ({ id, eyebrow, title, children }) => (
         </span>
       )}
     </div>
-    {title && <h2 className="mb-8 text-2xl font-bold tracking-tight text-white md:text-[32px] leading-[1.15]">{renderFormattedTitle(title)}</h2>}
+    {title && <h2 className="mb-8 text-2xl font-bold tracking-tight text-white md:text-[32px] leading-[1.15]">{renderFormattedTitle(title, isRu)}</h2>}
     {children}
   </section>
 );
 
-const QuickAnswer = ({ items, title }) => {
+const QuickAnswer = ({ items, title, isRu }) => {
   if (!Array.isArray(items) || items.length === 0) return null;
 
   return (
@@ -705,7 +712,7 @@ const QuickAnswer = ({ items, title }) => {
             key = item;
           } else if (item && typeof item === 'object') {
             if (item.title && item.text) {
-              content = <><strong className="font-semibold text-white">{parseInlineMarkdown(item.title)}</strong> {parseInlineMarkdown(item.text)}</>;
+              content = <><strong className="font-semibold text-white">{parseInlineMarkdown(item.title, 'normal', isRu)}</strong> {parseInlineMarkdown(item.text)}</>;
               key = item.title;
             }
           }
@@ -724,7 +731,7 @@ const QuickAnswer = ({ items, title }) => {
   );
 };
 
-const KeyTakeaway = ({ text }) => {
+const KeyTakeaway = ({ text, isRu }) => {
   if (!text) return null;
 
   return (
@@ -735,7 +742,7 @@ const KeyTakeaway = ({ text }) => {
   );
 };
 
-const StepPhases = ({ phases }) => {
+const StepPhases = ({ phases, isRu }) => {
   if (!Array.isArray(phases) || phases.length === 0) return null;
 
   return (
@@ -773,7 +780,7 @@ const StepPhases = ({ phases }) => {
   );
 };
 
-const PromptAccordion = ({ prompts }) => {
+const PromptAccordion = ({ prompts, isRu }) => {
   const [openIndex, setOpenIndex] = useState(0);
 
   if (!Array.isArray(prompts) || prompts.length === 0) return null;
@@ -817,7 +824,7 @@ const PromptAccordion = ({ prompts }) => {
   );
 };
 
-const FormatsGrid = ({ formats }) => {
+const FormatsGrid = ({ formats, isRu }) => {
   if (!Array.isArray(formats) || formats.length === 0) return null;
 
   let gridClass = "grid gap-4 ";
@@ -851,7 +858,7 @@ const FormatsGrid = ({ formats }) => {
   );
 };
 
-const ArticleExploreZone = ({ explore }) => {
+const ArticleExploreZone = ({ explore, isRu }) => {
   const tools = Array.isArray(explore?.tools) ? explore.tools : [];
   const guides = Array.isArray(explore?.guides) ? explore.guides : [];
 
@@ -860,10 +867,10 @@ const ArticleExploreZone = ({ explore }) => {
   const renderCard = (item) => (
     <ArticleLink key={`${item.href}-${item.title}`} href={item.href} className="group block rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 transition-colors hover:border-pink-300/25 hover:bg-pink-500/[0.05]">
       <div className="mb-3 flex items-start justify-between gap-3">
-        <h3 className="text-base font-semibold text-white transition-colors group-hover:text-pink-100">{item.title}</h3>
+        <h3 className="text-base font-semibold text-white transition-colors group-hover:text-pink-100">{isRu ? applyRuAutoStar(item.title, isRu) : item.title}</h3>
         {isExternalHref(item.href || '') ? <ExternalLink className="h-4 w-4 shrink-0 text-zinc-500" /> : <ChevronRight className="h-4 w-4 shrink-0 text-zinc-500 transition-transform group-hover:translate-x-0.5" />}
       </div>
-      <p className="text-sm leading-relaxed text-zinc-400">{item.description}</p>
+      <p className="text-sm leading-relaxed text-zinc-400">{isRu ? applyRuAutoStar(item.description, isRu) : item.description}</p>
     </ArticleLink>
   );
 
@@ -887,7 +894,7 @@ const ArticleExploreZone = ({ explore }) => {
   );
 };
 
-const FaqBlock = ({ faq }) => {
+const FaqBlock = ({ faq, isRu }) => {
   if (!Array.isArray(faq) || faq.length === 0) return null;
 
   return (
@@ -907,7 +914,7 @@ const FaqBlock = ({ faq }) => {
   );
 };
 
-const FinalCta = ({ cta }) => {
+const FinalCta = ({ cta, isRu }) => {
   if (!cta) return null;
 
   return (
@@ -915,8 +922,8 @@ const FinalCta = ({ cta }) => {
       <div className="relative my-16 overflow-hidden rounded-[32px] border border-pink-300/15 bg-gradient-to-br from-pink-500/[0.12] via-white/[0.035] to-orange-500/[0.10] p-7 shadow-[0_30px_140px_rgba(236,72,153,0.12)] md:p-10">
         <div className="absolute left-1/2 top-0 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-400/10 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-2xl">
-          <h2 className="mb-4 text-2xl font-bold tracking-tight text-white md:text-4xl">{cta.title}</h2>
-          <p className="mx-auto mb-7 max-w-xl text-base leading-relaxed text-zinc-300">{cta.description}</p>
+          <h2 className="mb-4 text-2xl font-bold tracking-tight text-white md:text-4xl">{isRu ? applyRuAutoStar(cta.title, isRu) : cta.title}</h2>
+          <p className="mx-auto mb-7 max-w-xl text-base leading-relaxed text-zinc-300">{isRu ? applyRuAutoStar(cta.description, isRu) : cta.description}</p>
           <a href={getAppUrlWithRef(CTA_URL)} className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 px-7 py-3.5 text-[15px] font-bold text-white shadow-[0_0_40px_rgba(236,72,153,0.35)] transition-all hover:scale-105 active:scale-[0.98] sm:w-auto">
             {cta.buttonText}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -933,7 +940,7 @@ const FinalCta = ({ cta }) => {
   );
 };
 
-const ArticleHero = ({ article }) => {
+const ArticleHero = ({ article, isRu }) => {
   const freshness = getArticleFreshnessMeta(article);
   return (
     <section className="relative overflow-hidden bg-[#050505] px-4 pb-12 pt-28 sm:px-6 md:pb-20">
@@ -956,10 +963,10 @@ const ArticleHero = ({ article }) => {
         </div>
 
         <h1 className={`mx-auto mb-6 max-w-4xl font-bold leading-[1.1] tracking-tight text-white ${article.title.length > 50 ? 'text-3xl md:text-4xl lg:text-[40px]' : 'text-3xl md:text-5xl lg:text-6xl'}`}>
-          {renderFormattedTitle(article.title)}
+          {renderFormattedTitle(article.title, isRu)}
         </h1>
         <p className="mx-auto max-w-2xl text-lg leading-[1.65] text-zinc-400 md:text-xl">
-          {article.description}
+          {isRu ? applyRuAutoStar(article.description, isRu) : article.description}
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-zinc-500">
           <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">{article.articleType}</span>
@@ -1084,37 +1091,40 @@ const ArticleMockupPlacement = ({ article, type, layout }) => {
 };
 
 const RuMetaDisclaimer = () => (
-  <div className="mx-auto w-full max-w-[920px] mb-8 mt-2 rounded-xl border border-white/[0.04] bg-[#0a0a0a] px-5 py-4 shadow-sm">
-    <p className="text-[12px] md:text-[13px] leading-relaxed text-zinc-500">
-      Instagram и Facebook принадлежат Meta Platforms Inc., деятельность которой признана экстремистской и запрещена на территории Российской Федерации.
+  <div className="mx-auto w-full max-w-[920px] mt-4 mb-10 px-2">
+    <p className="text-[11px] md:text-[12px] leading-relaxed text-zinc-500/80">
+      *Instagram, Facebook и Meta принадлежат Meta Platforms Inc., деятельность которой признана экстремистской и запрещена на территории Российской Федерации.
     </p>
   </div>
 );
 
-export const MarkdownSeoArticleTemplateV2 = ({ article }) => (
+export const MarkdownSeoArticleTemplateV2 = ({ article }) => {
+  const isRu = article?.language === 'ru';
+  return (
   <>
-    <ArticleHero article={article} />
+    <ArticleHero article={article} isRu={isRu} />
     <main className="relative bg-[#050505] px-4 pb-20 sm:px-6 md:pb-28">
       <div className="pointer-events-none absolute inset-x-0 top-20 mx-auto h-[520px] max-w-5xl rounded-full bg-gradient-to-b from-pink-500/[0.035] to-transparent blur-3xl" />
       <div className="relative z-10 mx-auto flex w-full max-w-[920px] flex-col gap-14 md:gap-18 pt-6">
         <ArticleFreshnessBlock article={article} />
-        <QuickAnswer items={article.quickAnswer} title={article.quickAnswerTitle} />
-        <KeyTakeaway text={article.keyTakeaway} />
+        <QuickAnswer items={article.quickAnswer} title={article.quickAnswerTitle} isRu={isRu} />
+        <KeyTakeaway text={article.keyTakeaway} isRu={isRu} />
         
         {article.body && (
           <article className="rounded-[28px] border border-white/[0.07] bg-white/[0.025] p-5 md:p-8">
-            <MarkdownBody markdown={article.body} title={article.title} article={article} />
+            <MarkdownBody markdown={article.body} title={article.title} article={article} isRu={isRu} />
           </article>
         )}
         
-        <StepPhases phases={article.steps} />
-        <PromptAccordion prompts={article.prompts} />
-        <FormatsGrid formats={article.formats} />
-        <ArticleExploreZone explore={article.explore} />
+        <StepPhases phases={article.steps} isRu={isRu} />
+        <PromptAccordion prompts={article.prompts} isRu={isRu} />
+        <FormatsGrid formats={article.formats} isRu={isRu} />
+        <ArticleExploreZone explore={article.explore} isRu={isRu} />
         {shouldShowRuMetaDisclaimer(article) && <RuMetaDisclaimer />}
-        <FaqBlock faq={article.faq} />
-        <FinalCta cta={article.finalCta} />
+        <FaqBlock faq={article.faq} isRu={isRu} />
+        <FinalCta cta={article.finalCta} isRu={isRu} />
       </div>
     </main>
   </>
-);
+  );
+}

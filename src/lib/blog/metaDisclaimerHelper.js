@@ -1,10 +1,16 @@
 import { getMockupsForArticle } from './mockupRegistry';
 
-const META_RESTRICTED_REGEX = /(^|[^a-zа-яё0-9_])(instagram|facebook|meta|инстаграм|фейсбук|мета)[a-zа-яё0-9_]*/i;
+const META_RESTRICTED_REGEX = /(^|[^a-zа-яё0-9_])(instagram(?:'s)?|facebook(?:'s)?|meta(?:'s)?|инстаграм[а-яё]*|фейсбук[а-яё]*|мет[аеуой]+)(?![a-zа-яё0-9_])/i;
+const META_REPLACE_REGEX = /(^|[^a-zа-яё0-9_])(instagram(?:'s)?|facebook(?:'s)?|meta(?:'s)?|инстаграм[а-яё]*|фейсбук[а-яё]*|мет[аеуой]+)(?![a-zа-яё0-9_]|\*)/gi;
 
 export const containsMetaRestrictedTerms = (text) => {
   if (!text) return false;
   return META_RESTRICTED_REGEX.test(text);
+};
+
+export const applyRuAutoStar = (text, isRu = false) => {
+  if (!isRu || typeof text !== 'string') return text;
+  return text.replace(META_REPLACE_REGEX, '$1$2*');
 };
 
 export const articleContainsMetaRestrictedTerms = (article) => {
