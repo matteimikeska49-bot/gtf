@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, ChevronDown, ChevronRight, ExternalLink, Layers3, Sparkles } from 'lucide-react';
 import { getAppUrlWithRef } from '../../../utils/url';
+import { getMockupsForArticle } from '../../../lib/blog/mockupRegistry';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -177,6 +178,32 @@ const parseMarkdownBlocks = (markdown) => {
       continue;
     }
 
+    if (trimmed.startsWith(':::mockup')) {
+      const match = trimmed.match(/^:::mockup\s*\{([^}]+)\}/);
+      let type = null;
+      let layout = null;
+      if (match) {
+        const attributes = match[1];
+        const typeMatch = attributes.match(/type\s*=\s*"([^"]+)"/);
+        const layoutMatch = attributes.match(/layout\s*=\s*"([^"]+)"/);
+        if (typeMatch) type = typeMatch[1];
+        if (layoutMatch) layout = layoutMatch[1];
+      }
+      
+      index += 1;
+      while (index < lines.length && lines[index].trim() !== ':::') {
+        index += 1;
+      }
+      
+      if (type && layout) {
+        blocks.push({ type: 'mockup', mockupType: type, layout });
+      }
+      if (index < lines.length && lines[index].trim() === ':::') {
+        index += 1;
+      }
+      continue;
+    }
+
     if (trimmed === ':::cards') {
       let variant = 'default';
       const items = [];
@@ -229,6 +256,7 @@ const parseMarkdownBlocks = (markdown) => {
       !lines[index].trim().startsWith('```') &&
       !lines[index].trim().startsWith('> ') &&
       !lines[index].trim().startsWith(':::cards') &&
+      !lines[index].trim().startsWith(':::mockup') &&
       !/^[-*]\s+/.test(lines[index].trim()) &&
       !/^\d+\.\s+/.test(lines[index].trim()) &&
       !(lines[index].trim().startsWith('|') && lines[index].trim().endsWith('|'))
@@ -266,7 +294,7 @@ const parseCalloutContent = (lines) => {
   return { title, bodyLines, actionLink };
 };
 
-const MarkdownBody = ({ markdown, title }) => {
+const MarkdownBody = ({ markdown, title, article }) => {
   const blocks = parseMarkdownBlocks(markdown);
   const normalizedTitle = title.trim().toLowerCase();
   const displayBlocks = blocks.filter((block, index) => !(
@@ -331,6 +359,21 @@ const MarkdownBody = ({ markdown, title }) => {
                 </tbody>
               </table>
             </div>
+          );
+        }
+
+        if (block.type === 'cards') {
+          return <MarkdownCardsBlock key={index} variant={block.variant} items={block.items} />;
+        }
+        
+        if (block.type === 'mockup' && article) {
+          return (
+            <ArticleMockupPlacement 
+              key={`mockup-${index}`}
+              article={article}
+              type={block.mockupType}
+              layout={block.layout}
+            />
           );
         }
 
@@ -948,6 +991,97 @@ const ArticleFreshnessBlock = ({ article }) => {
   );
 };
 
+const typeToSuitableFor = {
+  'result': ['result', 'editor-preview', 'product-workflow'],
+  'text-topic': ['input', 'text-topic', 'workflow-step'],
+  'file-video': ['input', 'file-video', 'workflow-step'],
+  'settings': ['settings', 'format', 'slide-count', 'cta'],
+  'character': ['character', 'reference-photo', 'personalization'],
+  'visual-style': ['visual-style', 'style-selection'],
+  'custom-style': ['custom-style', 'style-prompt']
+};
+
+const NativeMockupBlock = ({ mockup, layout }) => {
+  if (!mockup) return null;
+  
+  if (layout === 'featured') {
+    return (
+      <div className="my-10 overflow-hidden rounded-[24px] border border-white/[0.08] bg-[#0a0a0a] shadow-2xl">
+        <div className="bg-black/40 flex justify-center p-4">
+          <img 
+            src={mockup.path} 
+            alt={mockup.alt || ''} 
+            className="w-full max-h-[600px] object-contain rounded-lg"
+            loading="lazy"
+          />
+        </div>
+        {mockup.caption && (
+          <div className="border-t border-white/[0.05] p-5 text-center">
+            <p className="text-[15px] font-medium text-zinc-300">{mockup.caption}</p>
+          </div>
+        )}
+      </div>
+    );
+  }
+  
+  if (layout === 'inline') {
+    return (
+      <div className="my-8 overflow-hidden rounded-[20px] border border-white/[0.08] bg-[#0a0a0a] shadow-xl">
+        <div className="bg-black/30 flex justify-center p-3">
+          <img 
+            src={mockup.path} 
+            alt={mockup.alt || ''} 
+            className="w-full max-h-[450px] object-contain rounded-md"
+            loading="lazy"
+          />
+        </div>
+        {mockup.caption && (
+          <div className="border-t border-white/[0.05] p-4 text-center">
+            <p className="text-sm font-medium text-zinc-400">{mockup.caption}</p>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  if (layout === 'compact') {
+    return (
+      <div className="my-8 max-w-2xl mx-auto overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] shadow-lg">
+        <div className="bg-black/40 flex justify-center p-3">
+          <img 
+            src={mockup.path} 
+            alt={mockup.alt || ''} 
+            className="w-full max-h-[350px] object-contain rounded-md"
+            loading="lazy"
+          />
+        </div>
+        {mockup.caption && (
+          <div className="border-t border-white/[0.05] p-3 text-center">
+            <p className="text-xs font-medium text-zinc-400">{mockup.caption}</p>
+          </div>
+        )}
+      </div>
+    );
+  }
+  
+  return null;
+};
+
+const ArticleMockupPlacement = ({ article, type, layout }) => {
+  const suitableFor = typeToSuitableFor[type];
+  if (!suitableFor) return null;
+  
+  const selected = getMockupsForArticle(article, {
+    suitableFor: suitableFor,
+    limit: 1
+  });
+  
+  if (!selected || selected.length === 0) return null;
+  const mockup = selected[0];
+  
+  return <NativeMockupBlock mockup={mockup} layout={layout} />;
+};
+
 export const MarkdownSeoArticleTemplateV2 = ({ article }) => (
   <>
     <ArticleHero article={article} />
@@ -957,11 +1091,13 @@ export const MarkdownSeoArticleTemplateV2 = ({ article }) => (
         <ArticleFreshnessBlock article={article} />
         <QuickAnswer items={article.quickAnswer} title={article.quickAnswerTitle} />
         <KeyTakeaway text={article.keyTakeaway} />
+        
         {article.body && (
           <article className="rounded-[28px] border border-white/[0.07] bg-white/[0.025] p-5 md:p-8">
-            <MarkdownBody markdown={article.body} title={article.title} />
+            <MarkdownBody markdown={article.body} title={article.title} article={article} />
           </article>
         )}
+        
         <StepPhases phases={article.steps} />
         <PromptAccordion prompts={article.prompts} />
         <FormatsGrid formats={article.formats} />
