@@ -437,3 +437,36 @@ Use only 2–4 optional blocks per article based on intent. Do not add blocks ju
 - avoid huge 6+ column tables;
 - use tables for comparisons only when they improve scanning;
 - on mobile, tables scroll inside their wrapper.
+
+### Prompts component (:::prompts)
+
+Для вставки нескольких связанных промптов:
+
+```markdown
+:::prompts
+### Заголовок промпта 1
+\`\`\`text
+Ваш текст промпта
+\`\`\`
+
+### Заголовок промпта 2
+\`\`\`text
+Ваш текст промпта 2
+\`\`\`
+:::
+```
+Это генерирует компонент MarkdownPromptsBlock (accordion format), который поддерживает перенос строк, компактное отображение на мобильных и убирает горизонтальный скролл для длинных промптов.
+
+## Mockup placement rules
+- Мокапы не вставляются в каждую статью автоматически.
+- Мокап вставляется только там, где он усиливает смысл блока.
+- Для product-led how-to статей про создание карусели/поста/контента рекомендуется 2–4 мокапа:
+  1. text-topic после блока про ввод темы/текста;
+  2. result после блока про результат/готовую карусель;
+  3. settings после блока про формат/экспорт;
+  4. visual-style после блока про визуальный стиль.
+- Для comparison/best-tools статей обычно 0–1 product mockup, только если есть product-led section.
+- Для prompt-library статей обычно 0–1 mockup, если он показывает, куда вставлять prompt/result.
+- Нельзя вставлять случайный mockup без смысловой связи с текстом.
+- Нельзя использовать markdown image syntax или hardcoded image paths.
+- Использовать только `:::mockup{type="..." layout="..."}`.

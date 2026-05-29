@@ -177,6 +177,8 @@ finalCta:
 
 Gemini может использовать только поддерживаемые шаблоном блоки.
 
+**Важно:** Нельзя использовать markdown block, который parser не поддерживает. Если используется prompts section, она должна быть через поддерживаемый component (например, `:::prompts`). На rendered page не должно быть сырых `:::` блоков.
+
 ### Callouts
 
 Разрешённые callouts:
@@ -373,6 +375,8 @@ Gemini должен:
 18. no product route unless verified
 19. no raw HTML/JSX
 20. output is one article only
+21. no English UI labels in RU article
+22. article is not ready until local rendered page is visually checked (RU статьи должны проходить render QA)
 
 ---
 
@@ -398,3 +402,17 @@ Gemini должен:
 
 [PASTE ONE FULL RU SEO BRIEF HERE]
 ```
+
+## Mockup placement rules
+- Мокапы не вставляются в каждую статью автоматически.
+- Мокап вставляется только там, где он усиливает смысл блока.
+- Для product-led how-to статей про создание карусели/поста/контента рекомендуется 2–4 мокапа:
+  1. text-topic после блока про ввод темы/текста;
+  2. result после блока про результат/готовую карусель;
+  3. settings после блока про формат/экспорт;
+  4. visual-style после блока про визуальный стиль.
+- Для comparison/best-tools статей обычно 0–1 product mockup, только если есть product-led section.
+- Для prompt-library статей обычно 0–1 mockup, если он показывает, куда вставлять prompt/result.
+- Нельзя вставлять случайный mockup без смысловой связи с текстом.
+- Нельзя использовать markdown image syntax или hardcoded image paths.
+- Использовать только `:::mockup{type="..." layout="..."}`.

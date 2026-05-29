@@ -7,29 +7,101 @@ import { shouldShowRuMetaDisclaimer, applyRuAutoStar } from '../../../lib/blog/m
 
 const CTA_URL = 'https://app.gotoflow.io';
 
-const formatMonthYear = (dateString) => {
+const ARTICLE_TEMPLATE_COPY = {
+  en: {
+    lastReviewedLabel: 'Last reviewed',
+    publishedLabel: 'Published',
+    updatedLabel: 'Updated',
+    updatedBlockLabel: 'UPDATED',
+    reviewedPrefix: 'Reviewed',
+    reviewedSuffix: 'this guide is kept up to date for current AI content workflow practices.',
+    quickAnswerLabel: 'Quick Answer',
+    quickAnswerTitle: 'What you need to know',
+    relatedLabel: 'Explore more',
+    relatedTitleToolsGuides: 'Related tools and guides',
+    relatedTitleTools: 'Related tools',
+    relatedTitleGuides: 'Related guides',
+    toolsLabel: 'Tools',
+    guidesLabel: 'Guides',
+    faqLabel: 'FAQ',
+    faqTitle: 'Frequently asked questions',
+    promptLibraryEyebrow: 'PROMPT LIBRARY',
+    promptLibraryTitle: 'Reusable prompts',
+    promptLabel: 'PROMPT',
+    formatsEyebrow: 'Formats',
+    formatsTitle: 'Useful article formats',
+    productWorkflow: 'PRODUCT WORKFLOW',
+    proTip: 'Pro tip',
+    keyTakeaway: 'Key takeaway',
+    commonMistake: 'Common mistake',
+    whyItMatters: 'Why this matters',
+    workflowInsight: 'Workflow insight',
+    bestFor: 'Best for',
+    readNext: 'READ NEXT',
+    note: 'Note'
+  },
+  ru: {
+    lastReviewedLabel: 'Последнее обновление',
+    publishedLabel: 'Опубликовано',
+    updatedLabel: 'Обновлено',
+    updatedBlockLabel: 'ОБНОВЛЕНО',
+    reviewedPrefix: 'Проверено',
+    reviewedSuffix: 'материал актуален для текущих сценариев создания контента с ИИ.',
+    quickAnswerLabel: 'Короткий ответ',
+    quickAnswerTitle: 'Главное',
+    relatedLabel: 'Смотрите также',
+    relatedTitleToolsGuides: 'Связанные инструменты и гайды',
+    relatedTitleTools: 'Связанные инструменты',
+    relatedTitleGuides: 'Связанные гайды',
+    toolsLabel: 'Инструменты',
+    guidesLabel: 'Гайды',
+    faqLabel: 'FAQ',
+    faqTitle: 'Частые вопросы',
+    promptLibraryEyebrow: 'БИБЛИОТЕКА ПРОМПТОВ',
+    promptLibraryTitle: 'Готовые промпты',
+    promptLabel: 'ПРОМПТ',
+    formatsEyebrow: 'Форматы',
+    formatsTitle: 'Полезные форматы',
+    productWorkflow: 'ИНСТРУМЕНТ ИЛИ ПРОЦЕСС',
+    proTip: 'Совет',
+    keyTakeaway: 'Главное',
+    commonMistake: 'Частая ошибка',
+    whyItMatters: 'Почему это важно',
+    workflowInsight: 'Инсайт',
+    bestFor: 'Идеально для',
+    readNext: 'ЧИТАТЬ ТАКЖЕ',
+    note: 'Заметка'
+  }
+};
+
+const getArticleCopy = (language) => ARTICLE_TEMPLATE_COPY[language === 'ru' ? 'ru' : 'en'];
+
+const formatMonthYear = (dateString, isRu = false) => {
   if (!dateString) return null;
   try {
     const date = new Date(dateString);
     if (isNaN(date.getTime())) return null;
-    return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    return date.toLocaleDateString(isRu ? 'ru-RU' : 'en-US', { month: 'long', year: 'numeric' });
   } catch (e) {
     return null;
   }
 };
 
 const getArticleFreshnessMeta = (article) => {
+  const isRu = article.language === 'ru';
+  const copy = getArticleCopy(article.language);
+
   if (article.lastReviewed) {
-    const formatted = formatMonthYear(article.lastReviewed);
-    return formatted ? { source: "lastReviewed", label: "Reviewed", blockLabel: "LAST REVIEWED", formattedDate: formatted, displayText: `Reviewed ${formatted}` } : null;
+    const formatted = formatMonthYear(article.lastReviewed, isRu);
+    return formatted ? { source: "lastReviewed", label: copy.lastReviewedLabel, blockLabel: copy.lastReviewedLabel.toUpperCase(), formattedDate: formatted, displayText: `${copy.reviewedPrefix} ${formatted}` } : null;
   }
   if (article.updatedAt) {
-    const formatted = formatMonthYear(article.updatedAt);
-    return formatted ? { source: "updatedAt", label: "Updated", blockLabel: "UPDATED", formattedDate: formatted, displayText: `Updated ${formatted}` } : null;
+    const formatted = formatMonthYear(article.updatedAt, isRu);
+    return formatted ? { source: "updatedAt", label: copy.updatedLabel, blockLabel: copy.updatedBlockLabel, formattedDate: formatted, displayText: `${copy.updatedLabel} ${formatted}` } : null;
   }
   if (article.createdAt) {
-    const formatted = formatMonthYear(article.createdAt);
-    return formatted ? { source: "createdAt", label: "Published", blockLabel: "PUBLISHED", formattedDate: formatted, displayText: `Published ${formatted}` } : null;
+    const formatted = formatMonthYear(article.createdAt, isRu);
+    return formatted ? { source: "createdAt", label: copy.publishedLabel, blockLabel: copy.publishedLabel.toUpperCase(), formattedDate: formatted, displayText: `${copy.publishedLabel} ${formatted}` } : null;
   }
   return null;
 };
@@ -255,6 +327,39 @@ const parseMarkdownBlocks = (markdown) => {
       continue;
     }
 
+    if (trimmed === ':::prompts') {
+      const items = [];
+      index += 1;
+      
+      let currentItem = null;
+      while (index < lines.length && lines[index].trim() !== ':::') {
+        const cLine = lines[index].trim();
+        const headingMatch = cLine.match(/^###\s+(.+)$/);
+        
+        if (headingMatch) {
+          if (currentItem) items.push(currentItem);
+          currentItem = { title: headingMatch[1], text: [] };
+        } else if (currentItem && cLine !== '') {
+          if (!cLine.startsWith('```')) {
+            currentItem.text.push(cLine);
+          }
+        }
+        index += 1;
+      }
+      
+      if (currentItem) items.push(currentItem);
+      
+      items.forEach(item => {
+        item.text = item.text.join('\n').trim();
+      });
+
+      blocks.push({ type: 'prompts', items });
+      if (index < lines.length && lines[index].trim() === ':::') {
+        index += 1;
+      }
+      continue;
+    }
+
     const paragraph = [trimmed];
     index += 1;
     while (
@@ -265,6 +370,7 @@ const parseMarkdownBlocks = (markdown) => {
       !lines[index].trim().startsWith('> ') &&
       !lines[index].trim().startsWith(':::cards') &&
       !lines[index].trim().startsWith(':::mockup') &&
+      !lines[index].trim().startsWith(':::prompts') &&
       !/^[-*]\s+/.test(lines[index].trim()) &&
       !/^\d+\.\s+/.test(lines[index].trim()) &&
       !(lines[index].trim().startsWith('|') && lines[index].trim().endsWith('|'))
@@ -304,6 +410,7 @@ const parseCalloutContent = (lines) => {
 
 const MarkdownBody = ({ markdown, title, article, isRu }) => {
   const blocks = parseMarkdownBlocks(markdown);
+  const copy = getArticleCopy(article ? article.language : (isRu ? 'ru' : 'en'));
   const normalizedTitle = title.trim().toLowerCase();
   const displayBlocks = blocks.filter((block, index) => !(
     index === 0 &&
@@ -374,6 +481,10 @@ const MarkdownBody = ({ markdown, title, article, isRu }) => {
           return <MarkdownCardsBlock key={index} variant={block.variant} items={block.items} />;
         }
         
+        if (block.type === 'prompts') {
+          return <PromptAccordion key={index} prompts={block.items} isRu={isRu} />;
+        }
+        
         if (block.type === 'mockup' && article) {
           return (
             <ArticleMockupPlacement 
@@ -414,15 +525,16 @@ const MarkdownBody = ({ markdown, title, article, isRu }) => {
           
           switch(block.calloutType) {
             case 'takeaway':
-              badgeText = 'Key takeaway';
-              badgeColor = 'text-pink-400';
-              bgClass = 'bg-pink-500/[0.03]';
-              borderClass = 'border-pink-500/15';
-              gradientLine = 'from-pink-500/40 to-orange-500/40';
+              badgeText = copy.keyTakeaway;
+              badgeColor = 'text-amber-400';
+              bgClass = 'bg-amber-500/[0.03]';
+              borderClass = 'border-amber-500/15';
+              gradientLine = 'from-amber-500/40 to-yellow-500/40';
+              icon = <Sparkles className="w-4 h-4 text-amber-400" />;
               break;
             case 'why':
             case 'why-matters':
-              badgeText = 'Why this matters';
+              badgeText = copy.whyItMatters;
               badgeColor = 'text-pink-400';
               bgClass = 'bg-pink-500/[0.04]';
               borderClass = 'border-pink-500/20';
@@ -431,21 +543,21 @@ const MarkdownBody = ({ markdown, title, article, isRu }) => {
               break;
             case 'insight':
             case 'workflow':
-              badgeText = 'Workflow insight';
+              badgeText = copy.workflowInsight;
               badgeColor = 'text-purple-400';
               bgClass = 'bg-purple-500/[0.03]';
               borderClass = 'border-purple-500/15';
               gradientLine = 'from-purple-500/40 to-pink-500/40';
               break;
             case 'mistake':
-              badgeText = 'Common mistake';
+              badgeText = copy.commonMistake;
               badgeColor = 'text-red-400';
               bgClass = 'bg-red-500/[0.03]';
               borderClass = 'border-red-500/15';
               gradientLine = 'from-red-500/40 to-orange-500/40';
               break;
             case 'tip':
-              badgeText = 'Pro tip';
+              badgeText = copy.proTip;
               badgeColor = 'text-emerald-400';
               bgClass = 'bg-emerald-500/[0.03]';
               borderClass = 'border-emerald-500/15';
@@ -453,28 +565,28 @@ const MarkdownBody = ({ markdown, title, article, isRu }) => {
               break;
             case 'bestfor':
             case 'best-for':
-              badgeText = 'Best for';
+              badgeText = copy.bestFor;
               badgeColor = 'text-blue-400';
               bgClass = 'bg-blue-500/[0.03]';
               borderClass = 'border-blue-500/15';
               gradientLine = 'from-blue-500/40 to-cyan-500/40';
               break;
             case 'product':
-              badgeText = 'PRODUCT WORKFLOW';
+              badgeText = copy.productWorkflow;
               badgeColor = 'text-pink-400';
               bgClass = 'bg-[#0a0a0a]';
               borderClass = 'border-pink-500/30 shadow-[0_0_30px_rgba(236,72,153,0.1)]';
               gradientLine = 'from-pink-500/80 to-orange-500/80 w-1.5';
               break;
             case 'related':
-              badgeText = 'READ NEXT';
+              badgeText = copy.readNext;
               badgeColor = 'text-purple-300';
               bgClass = 'bg-[#080808]';
               borderClass = 'border-purple-500/20';
               gradientLine = 'from-purple-500/40 to-indigo-500/40';
               break;
             default:
-              badgeText = 'Note';
+              badgeText = copy.note;
               badgeColor = 'text-zinc-400';
               bgClass = 'bg-white/[0.03]';
               borderClass = 'border-white/[0.1]';
@@ -690,6 +802,7 @@ const SectionShell = ({ id, eyebrow, title, children, isRu }) => (
 
 const QuickAnswer = ({ items, title, isRu }) => {
   if (!Array.isArray(items) || items.length === 0) return null;
+  const copy = getArticleCopy(isRu ? 'ru' : 'en');
 
   return (
     <section className="rounded-[28px] border border-white/[0.08] bg-white/[0.035] p-5 shadow-[0_24px_120px_rgba(236,72,153,0.08)] md:p-8">
@@ -698,8 +811,8 @@ const QuickAnswer = ({ items, title, isRu }) => {
           <Sparkles className="h-5 w-5 text-pink-300" />
         </div>
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-pink-200">Quick Answer</p>
-          <h2 className="text-xl font-bold text-white md:text-2xl">{title || "What you need to know"}</h2>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-pink-200">{copy.quickAnswerLabel}</p>
+          <h2 className="text-xl font-bold text-white md:text-2xl">{title || copy.quickAnswerTitle}</h2>
         </div>
       </div>
       <ul className="grid gap-3 md:grid-cols-2">
@@ -733,10 +846,11 @@ const QuickAnswer = ({ items, title, isRu }) => {
 
 const KeyTakeaway = ({ text, isRu }) => {
   if (!text) return null;
+  const copy = getArticleCopy(isRu ? 'ru' : 'en');
 
   return (
     <aside className="rounded-3xl border border-orange-300/15 bg-orange-400/[0.06] p-5 md:p-6">
-      <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-orange-200">Key takeaway</p>
+      <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-orange-200">{copy.keyTakeaway}</p>
       <p className="text-base leading-relaxed text-orange-50 md:text-lg">{parseInlineMarkdown(text)}</p>
     </aside>
   );
@@ -782,11 +896,12 @@ const StepPhases = ({ phases, isRu }) => {
 
 const PromptAccordion = ({ prompts, isRu }) => {
   const [openIndex, setOpenIndex] = useState(0);
+  const copy = getArticleCopy(isRu ? 'ru' : 'en');
 
   if (!Array.isArray(prompts) || prompts.length === 0) return null;
 
   return (
-    <SectionShell eyebrow="Prompt library" title="Reusable prompts">
+    <SectionShell eyebrow={copy.promptLibraryEyebrow} title={copy.promptLibraryTitle} isRu={isRu}>
       <div className="space-y-3 mt-6">
         {prompts.map((prompt, index) => {
           const isOpen = openIndex === index;
@@ -803,7 +918,7 @@ const PromptAccordion = ({ prompts, isRu }) => {
                   <span className={`text-xs font-bold uppercase tracking-[0.1em] transition-colors ${isOpen ? 'text-zinc-200' : 'text-zinc-400'}`}>{prompt.title}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] uppercase tracking-wider text-zinc-600 font-semibold">Prompt</span>
+                  <span className="text-[10px] uppercase tracking-wider text-zinc-600 font-semibold">{copy.promptLabel}</span>
                   <ChevronDown className={`w-3.5 h-3.5 text-zinc-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                 </div>
               </button>
@@ -825,6 +940,8 @@ const PromptAccordion = ({ prompts, isRu }) => {
 };
 
 const FormatsGrid = ({ formats, isRu }) => {
+  const copy = getArticleCopy(isRu ? 'ru' : 'en');
+
   if (!Array.isArray(formats) || formats.length === 0) return null;
 
   let gridClass = "grid gap-4 ";
@@ -839,7 +956,7 @@ const FormatsGrid = ({ formats, isRu }) => {
   }
 
   return (
-    <SectionShell eyebrow="Formats" title="Useful article formats">
+    <SectionShell eyebrow={copy.formatsEyebrow} title={copy.formatsTitle} isRu={isRu}>
       <div className={gridClass}>
         {formats.map((format) => (
           <article key={format.title} className="group rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-5 md:p-6 transition-colors hover:bg-white/[0.03] hover:border-white/[0.12]">
@@ -863,6 +980,11 @@ const ArticleExploreZone = ({ explore, isRu }) => {
   const guides = Array.isArray(explore?.guides) ? explore.guides : [];
 
   if (tools.length === 0 && guides.length === 0) return null;
+  const copy = getArticleCopy(isRu ? 'ru' : 'en');
+
+  let title = copy.relatedTitleToolsGuides;
+  if (tools.length > 0 && guides.length === 0) title = copy.relatedTitleTools;
+  if (guides.length > 0 && tools.length === 0) title = copy.relatedTitleGuides;
 
   const renderCard = (item) => (
     <ArticleLink key={`${item.href}-${item.title}`} href={item.href} className="group block rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 transition-colors hover:border-pink-300/25 hover:bg-pink-500/[0.05]">
@@ -875,30 +997,33 @@ const ArticleExploreZone = ({ explore, isRu }) => {
   );
 
   return (
-    <SectionShell id="explore-more" eyebrow="Explore more" title="Related tools and guides">
-      <div className="grid gap-6 md:grid-cols-2">
-        {tools.length > 0 && (
+    <SectionShell id="explore-more" eyebrow={copy.relatedLabel} title={title}>
+      {tools.length > 0 && guides.length > 0 ? (
+        <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">Tools</p>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">{copy.toolsLabel}</p>
             <div className="space-y-3">{tools.map(renderCard)}</div>
           </div>
-        )}
-        {guides.length > 0 && (
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">Guides</p>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">{copy.guidesLabel}</p>
             <div className="space-y-3">{guides.map(renderCard)}</div>
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {tools.length > 0 ? tools.map(renderCard) : guides.map(renderCard)}
+        </div>
+      )}
     </SectionShell>
   );
 };
 
 const FaqBlock = ({ faq, isRu }) => {
   if (!Array.isArray(faq) || faq.length === 0) return null;
+  const copy = getArticleCopy(isRu ? 'ru' : 'en');
 
   return (
-    <SectionShell eyebrow="FAQ" title="Frequently asked questions">
+    <SectionShell eyebrow={copy.faqLabel} title={copy.faqTitle}>
       <div className="space-y-3">
         {faq.map((item) => (
           <details key={item.question} className="group rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5">
@@ -985,6 +1110,7 @@ const ArticleHero = ({ article, isRu }) => {
 const ArticleFreshnessBlock = ({ article }) => {
   const freshness = getArticleFreshnessMeta(article);
   if (!freshness) return null;
+  const copy = getArticleCopy(article.language);
   
   return (
     <div className="mb-2 -mt-4 flex items-start gap-4 rounded-[20px] border border-white/[0.08] bg-[#0a0a0a] p-5 shadow-lg max-w-[800px]">
@@ -992,7 +1118,7 @@ const ArticleFreshnessBlock = ({ article }) => {
       <div>
         <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-pink-200/80 mb-1.5">{freshness.blockLabel}</p>
         <p className="text-[14px] leading-relaxed text-zinc-300">
-          <strong className="text-white font-semibold">{freshness.displayText}</strong> — this guide is kept up to date for current AI content workflow practices.
+          <strong className="text-white font-semibold">{freshness.displayText}</strong> — {copy.reviewedSuffix}
         </p>
       </div>
     </div>
@@ -1007,6 +1133,23 @@ const typeToSuitableFor = {
   'character': ['character', 'reference-photo', 'personalization'],
   'visual-style': ['visual-style', 'style-selection'],
   'custom-style': ['custom-style', 'style-prompt']
+};
+
+const MarkdownCardsBlock = ({ variant, items }) => {
+  if (!items || items.length === 0) return null;
+  
+  return (
+    <div className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+      {items.map((item, idx) => (
+        <div key={idx} className="group rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-5 md:p-6 transition-colors hover:bg-white/[0.03] hover:border-white/[0.12] flex flex-col h-full">
+          {item.title && <h3 className="mb-2 text-[15px] md:text-base font-bold text-zinc-100 tracking-tight leading-snug">{item.title}</h3>}
+          <div className="text-[13px] leading-[1.6] text-zinc-400 whitespace-pre-wrap">
+            {item.content}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 const NativeMockupBlock = ({ mockup, layout }) => {

@@ -9,6 +9,7 @@
     "prerender": "node prerender.mjs",
     "postbuild": "node prerender.mjs",
     "check:blog": "node scripts/check-blog-publishing.mjs",
+    "check:blog:render": "node scripts/check-blog-render.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -489,6 +489,52 @@ async function runCheck() {
         }
       }
 
+    // Check for unsupported raw directives and validate mockups
+    const articleBodyText = content.replace(/^---\s*\n([\s\S]*?)\n---\s*\n?/, '');
+    const rawDirectives = articleBodyText.match(/^:::[a-zA-Z0-9-]+[^\n]*/gm) || [];
+    const supportedDirectives = [':::cards', ':::mockup', ':::prompts'];
+    for (const directive of rawDirectives) {
+      const baseDirective = directive.split('{')[0].trim();
+      if (!supportedDirectives.includes(baseDirective)) {
+        errors.push(`Raw unsupported directive found: ${baseDirective}`);
+      }
+      if (baseDirective === ':::mockup') {
+        const typeMatch = directive.match(/type="([^"]+)"/);
+        const layoutMatch = directive.match(/layout="([^"]+)"/);
+        if (!typeMatch || !layoutMatch) {
+          errors.push(`Mockup shortcode missing type or layout: ${directive}`);
+        }
+      }
+    }
+
+    // Check for raw markdown images
+    if (/!\[.*?\]\(.*?\)/.test(articleBodyText)) {
+      errors.push(`Raw markdown image syntax found. Use :::mockup instead.`);
+    }
+    if (/<img[^>]+src=["'].*?["']/.test(articleBodyText)) {
+      errors.push(`Raw img tag found. Use :::mockup instead.`);
+    }
+
+    const langMatch = frontmatter.match(/^language:\s*([^\s]+)/m);
+    const lang = langMatch ? langMatch[1] : 'en';
+    if (lang === 'ru') {
+      const enLabels = [
+        "What you need to know",
+        "Related tools and guides",
+        "Frequently asked questions",
+        "Last reviewed",
+        "this guide is kept up to date",
+        "Product Workflow",
+        "Pro Tip",
+        "Key Takeaway"
+      ];
+      for (const label of enLabels) {
+        if (articleBodyText.includes(label)) {
+          errors.push(`English UI label in RU article: "${label}"`);
+        }
+      }
+    }
+
     if (!getYamlValue(frontmatter, 'primaryKeyword')) warnings.push(`Missing 'primaryKeyword'`);
     if (!getYamlValue(frontmatter, 'searchIntent')) warnings.push(`Missing 'searchIntent'`);
     if (!getYamlValue(frontmatter, 'cluster')) warnings.push(`Missing 'cluster'`);
