@@ -554,14 +554,15 @@ Testimonials можно использовать только если:
 
 ## Mockup / approved asset registry
 
-Смысл:
 - articles should use mockups only from registry;
-- no random screenshots;
+- mockups must be inserted using slot-level syntax: `:::mockup{slot="..."}` (e.g. `topic-input`, `result-preview`);
+- the template automatically maps the slot to the correct type, layout, and language asset;
+- old format (`type="..." layout="..."`) is deprecated;
 - language must match article language;
 - no third-party social feeds in public SEO articles;
 - if no approved asset fits intent, skip mockup;
-- future articles should reference assets by id;
-- check:blog validates registry.
+- future articles should reference assets by slot;
+- check:blog validates registry and mockup slots.
 
 Папки:
 - `public/assets/blog/mockups/ru/`
@@ -1243,3 +1244,24 @@ research → 20 статей → markdown → build → push
 
 ## Automated Link & Cannibalization Checks
 Refer to `docs/seo-batch-manager.md` for rules on Route/internal link checking and Anti-cannibalization checks.
+
+### Required Publishing Checks
+
+Для любых изменений в:
+- markdown template;
+- article blocks;
+- mockup system;
+- article draft;
+- Explore/CTA/FAQ;
+
+обязательно запускать:
+```bash
+npm run check:blog
+npm run build
+npm run check:blog:render
+npm run check:blog:visual
+```
+И сохранять/прикладывать screenshots/report из:
+`tmp/blog-visual-qa/`
+
+Агент не имеет права писать “визуально всё ок”, если не запустил `check:blog:visual`.

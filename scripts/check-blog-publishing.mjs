@@ -501,9 +501,44 @@ async function runCheck() {
       if (baseDirective === ':::mockup') {
         const typeMatch = directive.match(/type="([^"]+)"/);
         const layoutMatch = directive.match(/layout="([^"]+)"/);
-        if (!typeMatch || !layoutMatch) {
-          errors.push(`Mockup shortcode missing type or layout: ${directive}`);
+        const slotMatch = directive.match(/slot="([^"]+)"/);
+        
+        const validSlots = ['topic-input', 'result-preview', 'format-settings', 'style-choice'];
+
+        if (slotMatch) {
+          const slot = slotMatch[1];
+          if (!validSlots.includes(slot)) {
+            errors.push(`Mockup shortcode has unknown slot: ${slot}`);
+          }
+          if (typeMatch || layoutMatch) {
+            errors.push(`Mockup shortcode cannot use both 'slot' and 'type/layout': ${directive}`);
+          }
+        } else {
+          warnings.push(`Mockup shortcode is using deprecated type/layout format. Please use slot. ${directive}`);
+          if (!typeMatch || !layoutMatch) {
+            errors.push(`Mockup shortcode missing slot or type/layout: ${directive}`);
+          }
         }
+      }
+    }
+
+    const articleTypeStr = getYamlValue(frontmatter, 'articleType') || '';
+    const searchIntentStr = getYamlValue(frontmatter, 'searchIntent') || '';
+    if (articleTypeStr.includes('how-to') || searchIntentStr.includes('how-to') || articleTypeStr.includes('product-led')) {
+      let hasTopicOrResult = false;
+      let hasFormatOrStyle = false;
+
+      for (const directive of rawDirectives) {
+        if (directive.includes('slot="topic-input"') || directive.includes('slot="result-preview"')) {
+          hasTopicOrResult = true;
+        }
+        if (directive.includes('slot="format-settings"') || directive.includes('slot="style-choice"')) {
+          hasFormatOrStyle = true;
+        }
+      }
+
+      if (!hasTopicOrResult || !hasFormatOrStyle) {
+        warnings.push(`Product-led/How-to article should ideally have at least 2 mockups: one of (topic-input, result-preview) and one of (format-settings, style-choice)`);
       }
     }
 

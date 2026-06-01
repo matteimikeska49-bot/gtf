@@ -7,6 +7,13 @@ import { shouldShowRuMetaDisclaimer, applyRuAutoStar } from '../../../lib/blog/m
 
 const CTA_URL = 'https://app.gotoflow.io';
 
+const MOCKUP_SLOT_MAP = {
+  'topic-input': { type: 'text-topic', layout: 'inline' },
+  'result-preview': { type: 'result', layout: 'featured' },
+  'format-settings': { type: 'settings', layout: 'compact' },
+  'style-choice': { type: 'visual-style', layout: 'compact' },
+};
+
 const ARTICLE_TEMPLATE_COPY = {
   en: {
     lastReviewedLabel: 'Last reviewed',
@@ -262,12 +269,25 @@ const parseMarkdownBlocks = (markdown) => {
       const match = trimmed.match(/^:::mockup\s*\{([^}]+)\}/);
       let type = null;
       let layout = null;
+      let slot = null;
+      
       if (match) {
         const attributes = match[1];
+        const slotMatch = attributes.match(/slot\s*=\s*"([^"]+)"/);
         const typeMatch = attributes.match(/type\s*=\s*"([^"]+)"/);
         const layoutMatch = attributes.match(/layout\s*=\s*"([^"]+)"/);
-        if (typeMatch) type = typeMatch[1];
-        if (layoutMatch) layout = layoutMatch[1];
+        
+        if (slotMatch) {
+          slot = slotMatch[1];
+          const mapped = MOCKUP_SLOT_MAP[slot];
+          if (mapped) {
+            type = mapped.type;
+            layout = mapped.layout;
+          }
+        } else {
+          if (typeMatch) type = typeMatch[1];
+          if (layoutMatch) layout = layoutMatch[1];
+        }
       }
       
       index += 1;
@@ -276,7 +296,7 @@ const parseMarkdownBlocks = (markdown) => {
       }
       
       if (type && layout) {
-        blocks.push({ type: 'mockup', mockupType: type, layout });
+        blocks.push({ type: 'mockup', mockupType: type, layout, slot });
       }
       if (index < lines.length && lines[index].trim() === ':::') {
         index += 1;

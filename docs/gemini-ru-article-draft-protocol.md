@@ -247,20 +247,23 @@ Allowed types:
 
 ## 7. Mockup rules
 
-Mockups сейчас НЕ вставлять.
+Mockups теперь вставляются через slot-level архитектуру.
+
+Разрешено:
+- `:::mockup{slot="topic-input"}`
+- `:::mockup{slot="result-preview"}`
+- `:::mockup{slot="format-settings"}`
+- `:::mockup{slot="style-choice"}`
 
 Запрещено:
-- `:::mockup`
+- `:::mockup{type="..." layout="..."}` (старый формат, deprecated)
 - прямые image paths
 - markdown images `![](...)`
 - случайные screenshots
 - opposite-language screenshots
 
-Причина:
-Approved mockup assets пока отсутствуют.
-
 Правило:
-Если brief просит mockup, Gemini должен в статье НЕ вставлять изображение, а просто писать без mockup.
+Gemini указывает только `slot`. Шаблон сам выбирает `type`, `layout`, `asset` и язык из registry.
 
 В frontmatter оставить:
 ```yaml
@@ -407,13 +410,40 @@ Gemini должен:
 ## Mockup placement rules
 - Мокапы не вставляются в каждую статью автоматически.
 - Мокап вставляется только там, где он усиливает смысл блока.
+- Gemini НЕ выбирает asset, path, image, language, layout. Gemini выбирает только смысловой slot.
+- Preferred mockup syntax теперь slot-level:
+  - `:::mockup{slot="topic-input"}`
+  - `:::mockup{slot="result-preview"}`
+  - `:::mockup{slot="format-settings"}`
+  - `:::mockup{slot="style-choice"}`
 - Для product-led how-to статей про создание карусели/поста/контента рекомендуется 2–4 мокапа:
-  1. text-topic после блока про ввод темы/текста;
-  2. result после блока про результат/готовую карусель;
-  3. settings после блока про формат/экспорт;
-  4. visual-style после блока про визуальный стиль.
+  1. `slot="topic-input"` после блока про ввод темы/текста;
+  2. `slot="result-preview"` после блока про результат/готовую карусель;
+  3. `slot="format-settings"` после блока про формат/экспорт;
+  4. `slot="style-choice"` после блока про визуальный стиль.
 - Для comparison/best-tools статей обычно 0–1 product mockup, только если есть product-led section.
 - Для prompt-library статей обычно 0–1 mockup, если он показывает, куда вставлять prompt/result.
 - Нельзя вставлять случайный mockup без смысловой связи с текстом.
 - Нельзя использовать markdown image syntax или hardcoded image paths.
-- Использовать только `:::mockup{type="..." layout="..."}`.
+- Использовать только `:::mockup{slot="..."}`. Старый формат deprecated.
+
+### Required Publishing Checks
+
+Для любых изменений в:
+- markdown template;
+- article blocks;
+- mockup system;
+- article draft;
+- Explore/CTA/FAQ;
+
+обязательно запускать:
+```bash
+npm run check:blog
+npm run build
+npm run check:blog:render
+npm run check:blog:visual
+```
+И сохранять/прикладывать screenshots/report из:
+`tmp/blog-visual-qa/`
+
+Агент не имеет права писать “визуально всё ок”, если не запустил `check:blog:visual`.
