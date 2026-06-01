@@ -75,8 +75,10 @@ Before publishing any article, you **MUST** run the automated publishing checks.
 
 1. **Run full build** to generate the latest `dist/sitemap.xml` and prerender routes:
    `npm run build`
-2. **Run blog checks**:
+2. **Run blog static checks**:
    `npm run check:blog`
+3. **Run blog render checks** (mandatory before batch generation or publish, auto-discovers all drafts and published articles):
+   `npm run check:blog:render`
 
 **Check rules:**
 - **P0 Errors** will block publishing (process exits with code 1). You must fix them.

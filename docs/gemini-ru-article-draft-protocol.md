@@ -376,7 +376,8 @@ Gemini должен:
 19. no raw HTML/JSX
 20. output is one article only
 21. no English UI labels in RU article
-22. article is not ready until local rendered page is visually checked (RU статьи должны проходить render QA)
+22. article is not ready until local rendered page is visually checked
+23. check:blog:render auto-discovers all markdown articles (both drafts and published) and is mandatory before batch generation or publish. Build or check:blog alone without render-check is no longer sufficient.
 
 ---
 
