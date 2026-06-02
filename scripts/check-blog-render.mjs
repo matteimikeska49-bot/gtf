@@ -49,7 +49,7 @@ async function checkRoutes() {
     }
   }
 
-  const baseUrl = 'http://127.0.0.1:4173';
+  const baseUrl = process.env.BLOG_QA_BASE_URL || 'http://localhost:4173';
   console.log(`Found ${routesToCheck.length} articles to check.`);
   console.log(`Starting runtime render check via Puppeteer...\n`);
 

@@ -19,7 +19,7 @@ function fetchUrl(url) {
     https.get(url, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
-      res.on('end', () => resolve({ status: res.statusCode, data }));
+      res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, data }));
     }).on('error', (err) => resolve({ status: 500, data: err.message }));
   });
 }
@@ -83,7 +83,11 @@ async function runChecks() {
 
     // Check Noindex
     if (res.status === 200) {
-      const hasNoindexTag = html.includes('name="robots" content="noindex,nofollow"');
+      const metaRobotsMatch = html.match(/<meta[^>]*name=["']robots["'][^>]*>/i);
+      const hasNoindexMeta = metaRobotsMatch ? /content=["'][^"']*noindex[^"']*["']/i.test(metaRobotsMatch[0]) : false;
+      const robotsHeader = res.headers ? (res.headers['x-robots-tag'] || '') : '';
+      const hasNoindexHeader = robotsHeader.toLowerCase().includes('noindex');
+      const hasNoindexTag = hasNoindexMeta || hasNoindexHeader;
       
       if (article.status === 'published' && hasNoindexTag) {
          conflicts.push(`Published article ${route} has a noindex tag in production.`);
