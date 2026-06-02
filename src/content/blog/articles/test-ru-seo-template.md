@@ -10,6 +10,7 @@ articleType: "guide"
 priority: "low"
 published: false
 noindex: true
+preview: true
 canonical: ""
 createdAt: "2026-05-27"
 updatedAt: "2026-05-27"
@@ -82,27 +83,27 @@ finalCta:
 
 GoToFlow собирает готовую карусель: с обложкой, слайдами, текстом и визуальным стилем.
 
-:::mockup{type="result" layout="featured"}
+:::mockup{slot="result-preview"}
 :::
 
 ## Как создать карусель из темы
 
 Введите тему, выберите структуру, и сервис сам разобьёт идею на слайды.
 
-:::mockup{type="text-topic" layout="inline"}
+:::mockup{slot="topic-input"}
 :::
 
 ## Настройте формат и CTA
 
 Выберите формат 4:5, количество слайдов и призыв к действию.
 
-:::mockup{type="settings" layout="compact"}
+:::mockup{slot="format-settings"}
 :::
 
 ## Выберите визуальный стиль
 
 Выберите Luxury, Magazine Cover, Minimalist или задайте свой стиль.
 
-:::mockup{type="visual-style" layout="compact"}
+:::mockup{slot="style-choice"}
 :::
 

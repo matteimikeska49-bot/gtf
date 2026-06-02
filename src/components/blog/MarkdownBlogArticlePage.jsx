@@ -95,7 +95,10 @@ export const MarkdownBlogArticlePage = ({ slug: propSlug, langPrefix = 'en' }) =
   const isLocalPreview = typeof window !== 'undefined' && 
     (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
-  if (!article || article.language !== langPrefix || (article.published === false && !isLocalPreview)) {
+  // Allow previewing on production only if explicitly marked as preview and noindex
+  const isPreviewable = isLocalPreview || (article?.preview === true && article?.noindex === true);
+
+  if (!article || article.language !== langPrefix || (article.published === false && !isPreviewable)) {
     return <NotFoundPage />;
   }
 

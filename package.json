@@ -7,10 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "prerender": "node prerender.mjs",
-    "postbuild": "node prerender.mjs",
+    "postbuild": "node prerender.mjs && npm run build:marker",
     "check:blog": "node scripts/check-blog-publishing.mjs",
     "check:blog:render": "node scripts/check-blog-render.mjs",
     "check:blog:visual": "node scripts/check-blog-visual.mjs",
+    "build:marker": "node scripts/generate-build-info.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

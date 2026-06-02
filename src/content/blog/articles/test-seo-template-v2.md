@@ -10,6 +10,7 @@ articleType: "how-to"
 priority: "P2"
 published: false
 noindex: true
+preview: true
 canonical: "https://gotoflow.io/blog/test-seo-template-v2"
 createdAt: "2026-05-23"
 updatedAt: "2026-05-23"
@@ -142,4 +143,11 @@ Use this pattern for repeated workflow advice.
 
 ### 2. Second workflow insight
 Keep multiple workflow points readable without stacking huge callouts.
+:::
+
+
+:::mockup{slot="topic-input"}
+:::
+
+:::mockup{slot="style-choice"}
 :::
