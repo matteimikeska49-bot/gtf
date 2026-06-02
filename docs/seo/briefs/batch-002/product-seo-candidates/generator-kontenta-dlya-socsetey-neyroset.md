@@ -1,8 +1,10 @@
 # SEO Article Brief: Генератор контента для соцсетей
 
 > Page type: product_seo_page_candidate
-> Status: not approved for article draft
+> Status: hold
 > Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route.
+> Recommended Action: optimize_existing_route
+> Note: Do not create new blog article until route/canonical decision is made.
 > Existing route overlap: `/ru/generator-kontenta`
 > Approved For Draft: false
 > Approved For Publish: false

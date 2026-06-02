@@ -43,7 +43,8 @@ const MarkdownArticleSEOHead = ({ article }) => {
   useEffect(() => {
     const title = `${article.title} | GoToFlow`;
     const description = article.description;
-    const canonical = article.canonical || `https://gotoflow.io/blog/${article.slug}`;
+    const langPrefix = article.language === 'ru' ? '/ru' : '';
+    const canonical = article.canonical || `https://gotoflow.io${langPrefix}/blog/${article.slug}`;
 
     document.title = title;
     document.documentElement.lang = article.language || 'en';

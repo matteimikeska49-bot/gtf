@@ -127,7 +127,7 @@
     "language": "en",
     "cluster": "AI carousel generator",
     "primaryKeyword": "ai carousel generator",
-    "status": "brief",
+    "status": "hold",
     "published": false,
     "noindex": true,
     "preview": false,
@@ -136,7 +136,7 @@
     "qaStatus": "pending",
     "visualQaStatus": "pending",
     "productionVerificationStatus": "pending",
-    "notes": "Brief created",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "briefStatus": "created",
     "contentQaStatus": "not_run",
     "seoQaStatus": "not_run",
@@ -154,7 +154,8 @@
       "/blog/best-ai-carousel-generators"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "batchId": "batch-002",
@@ -164,7 +165,7 @@
     "language": "ru",
     "cluster": "AI carousel generator",
     "primaryKeyword": "генератор каруселей нейросеть",
-    "status": "brief",
+    "status": "hold",
     "published": false,
     "noindex": true,
     "preview": false,
@@ -173,7 +174,7 @@
     "qaStatus": "pending",
     "visualQaStatus": "pending",
     "productionVerificationStatus": "pending",
-    "notes": "Brief created",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "briefStatus": "created",
     "contentQaStatus": "not_run",
     "seoQaStatus": "not_run",
@@ -190,7 +191,8 @@
       "/ru/ai-generator-karuselej"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "batchId": "batch-002",
@@ -200,7 +202,7 @@
     "language": "en",
     "cluster": "LinkedIn carousel",
     "primaryKeyword": "linkedin carousel generator",
-    "status": "brief",
+    "status": "hold",
     "published": false,
     "noindex": true,
     "preview": false,
@@ -209,7 +211,7 @@
     "qaStatus": "pending",
     "visualQaStatus": "pending",
     "productionVerificationStatus": "pending",
-    "notes": "Brief created",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "briefStatus": "created",
     "contentQaStatus": "not_run",
     "seoQaStatus": "not_run",
@@ -226,7 +228,8 @@
       "/linkedin-carousel-maker"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing LinkedIn product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing LinkedIn product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "batchId": "batch-002",
@@ -236,7 +239,7 @@
     "language": "ru",
     "cluster": "LinkedIn carousel",
     "primaryKeyword": "генератор каруселей linkedin",
-    "status": "brief",
+    "status": "hold",
     "published": false,
     "noindex": true,
     "preview": false,
@@ -245,7 +248,7 @@
     "qaStatus": "pending",
     "visualQaStatus": "pending",
     "productionVerificationStatus": "pending",
-    "notes": "Brief created",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "briefStatus": "created",
     "contentQaStatus": "not_run",
     "seoQaStatus": "not_run",
@@ -262,7 +265,8 @@
       "/ru/generator-karuselej-linkedin"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing RU LinkedIn product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing RU LinkedIn product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "batchId": "batch-002",
@@ -272,7 +276,7 @@
     "language": "en",
     "cluster": "AI content generator",
     "primaryKeyword": "ai content generator for social media",
-    "status": "brief",
+    "status": "hold",
     "published": false,
     "noindex": true,
     "preview": false,
@@ -281,7 +285,7 @@
     "qaStatus": "pending",
     "visualQaStatus": "pending",
     "productionVerificationStatus": "pending",
-    "notes": "Brief created",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "briefStatus": "created",
     "contentQaStatus": "not_run",
     "seoQaStatus": "not_run",
@@ -298,7 +302,8 @@
       "/ai-content-generator"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "batchId": "batch-002",
@@ -308,7 +313,7 @@
     "language": "ru",
     "cluster": "AI content generator",
     "primaryKeyword": "генератор контента для соцсетей нейросеть",
-    "status": "brief",
+    "status": "hold",
     "published": false,
     "noindex": true,
     "preview": false,
@@ -317,7 +322,7 @@
     "qaStatus": "pending",
     "visualQaStatus": "pending",
     "productionVerificationStatus": "pending",
-    "notes": "Brief created",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "briefStatus": "created",
     "contentQaStatus": "not_run",
     "seoQaStatus": "not_run",
@@ -334,7 +339,8 @@
       "/ru/generator-kontenta"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "batchId": "batch-002",

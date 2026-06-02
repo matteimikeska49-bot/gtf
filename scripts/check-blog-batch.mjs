@@ -57,7 +57,7 @@ batchData.forEach((entry, i) => {
   const mdPath = path.join(ARTICLES_DIR, `${entry.slug}.md`);
   const mdExists = fs.existsSync(mdPath);
   
-  if (['idea', 'brief'].includes(entry.status)) {
+  if (['idea', 'brief', 'hold', 'optimize_existing_route'].includes(entry.status)) {
     // Ok if markdown doesn't exist yet
   } else if (['draft', 'qa_failed', 'qa_passed', 'ready_to_publish', 'published'].includes(entry.status)) {
     if (!mdExists) {

@@ -15,8 +15,8 @@
     "targetSlug": "ai-carousel-generator",
     "canonicalRisk": "medium",
     "cannibalizationRisk": "high",
-    "publishStatus": "brief",
-    "notes": "Main pillar for EN market.",
+    "publishStatus": "hold",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
@@ -40,7 +40,8 @@
       "/blog/best-ai-carousel-generators"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "cluster": "AI carousel generator",
@@ -58,8 +59,8 @@
     "targetSlug": "generator-karuseley-neyroset",
     "canonicalRisk": "low",
     "cannibalizationRisk": "high",
-    "publishStatus": "brief",
-    "notes": "Main pillar for RU market.",
+    "publishStatus": "hold",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
@@ -82,7 +83,8 @@
       "/ru/ai-generator-karuselej"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "cluster": "Instagram carousel",
@@ -288,8 +290,8 @@
     "targetSlug": "linkedin-carousel-generator",
     "canonicalRisk": "medium",
     "cannibalizationRisk": "high",
-    "publishStatus": "brief",
-    "notes": "Important BOFU page.",
+    "publishStatus": "hold",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
@@ -311,7 +313,8 @@
       "/linkedin-carousel-maker"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing LinkedIn product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing LinkedIn product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "cluster": "LinkedIn carousel",
@@ -328,8 +331,8 @@
     "targetSlug": "generator-karuseley-linkedin-ai",
     "canonicalRisk": "medium",
     "cannibalizationRisk": "high",
-    "publishStatus": "brief",
-    "notes": "Important BOFU page.",
+    "publishStatus": "hold",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
@@ -351,7 +354,8 @@
       "/ru/generator-karuselej-linkedin"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing RU LinkedIn product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing RU LinkedIn product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "cluster": "LinkedIn carousel",
@@ -505,8 +509,8 @@
     "targetSlug": "ai-content-generator-for-social-media",
     "canonicalRisk": "high",
     "cannibalizationRisk": "high",
-    "publishStatus": "brief",
-    "notes": "Need to balance against existing landing pages.",
+    "publishStatus": "hold",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
@@ -529,7 +533,8 @@
       "/ai-content-generator"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "cluster": "AI content generator",
@@ -546,8 +551,8 @@
     "targetSlug": "generator-kontenta-dlya-socsetey-neyroset",
     "canonicalRisk": "high",
     "cannibalizationRisk": "high",
-    "publishStatus": "brief",
-    "notes": "Need to balance against existing landing pages.",
+    "publishStatus": "hold",
+    "notes": "Do not create new blog article until route/canonical decision is made.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
@@ -567,7 +572,8 @@
       "/ru/generator-kontenta"
     ],
     "decisionNeeded": true,
-    "decisionNote": "Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route."
+    "decisionNote": "Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route.",
+    "recommendedAction": "optimize_existing_route"
   },
   {
     "cluster": "Content repurposing",
