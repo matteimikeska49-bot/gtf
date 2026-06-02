@@ -15,7 +15,7 @@
     "targetSlug": "ai-carousel-generator",
     "canonicalRisk": "medium",
     "cannibalizationRisk": "high",
-    "publishStatus": "idea",
+    "publishStatus": "brief",
     "notes": "Main pillar for EN market.",
     "requiredMockupSlots": [
       "topic-input",
@@ -30,7 +30,17 @@
     "doNotCover": "Generic fluff, unrelated tools.",
     "intentBoundaries": "Keep strictly to the primary keyword intent.",
     "productAngle": "Direct tool usage",
-    "contentQualityNotes": ""
+    "contentQualityNotes": "",
+    "batchId": "batch-002",
+    "targetPublishWave": "batch-002",
+    "pageType": "product_seo_page_candidate",
+    "routeStrategy": "decision_needed",
+    "existingRouteOverlap": [
+      "/ai-carousel-maker",
+      "/blog/best-ai-carousel-generators"
+    ],
+    "decisionNeeded": true,
+    "decisionNote": "Decision needed: strengthen existing product route vs create new product SEO route vs merge with existing route."
   },
   {
     "cluster": "AI carousel generator",
@@ -48,7 +58,7 @@
     "targetSlug": "generator-karuseley-neyroset",
     "canonicalRisk": "low",
     "cannibalizationRisk": "high",
-    "publishStatus": "idea",
+    "publishStatus": "brief",
     "notes": "Main pillar for RU market.",
     "requiredMockupSlots": [
       "topic-input",
@@ -63,7 +73,16 @@
     "doNotCover": "Generic fluff, unrelated tools.",
     "intentBoundaries": "Keep strictly to the primary keyword intent.",
     "productAngle": "Direct tool usage",
-    "contentQualityNotes": ""
+    "contentQualityNotes": "",
+    "batchId": "batch-002",
+    "targetPublishWave": "batch-002",
+    "pageType": "product_seo_page_candidate",
+    "routeStrategy": "decision_needed",
+    "existingRouteOverlap": [
+      "/ru/ai-generator-karuselej"
+    ],
+    "decisionNeeded": true,
+    "decisionNote": "Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route."
   },
   {
     "cluster": "Instagram carousel",
@@ -269,7 +288,7 @@
     "targetSlug": "linkedin-carousel-generator",
     "canonicalRisk": "medium",
     "cannibalizationRisk": "high",
-    "publishStatus": "idea",
+    "publishStatus": "brief",
     "notes": "Important BOFU page.",
     "requiredMockupSlots": [
       "topic-input",
@@ -283,7 +302,16 @@
     "doNotCover": "Generic fluff, unrelated tools.",
     "intentBoundaries": "Keep strictly to the primary keyword intent.",
     "productAngle": "Direct tool usage.",
-    "contentQualityNotes": ""
+    "contentQualityNotes": "",
+    "batchId": "batch-002",
+    "targetPublishWave": "batch-002",
+    "pageType": "product_seo_page_candidate",
+    "routeStrategy": "decision_needed",
+    "existingRouteOverlap": [
+      "/linkedin-carousel-maker"
+    ],
+    "decisionNeeded": true,
+    "decisionNote": "Decision needed: strengthen existing LinkedIn product route vs create new product SEO route vs merge with existing route."
   },
   {
     "cluster": "LinkedIn carousel",
@@ -300,7 +328,7 @@
     "targetSlug": "generator-karuseley-linkedin-ai",
     "canonicalRisk": "medium",
     "cannibalizationRisk": "high",
-    "publishStatus": "idea",
+    "publishStatus": "brief",
     "notes": "Important BOFU page.",
     "requiredMockupSlots": [
       "topic-input",
@@ -314,7 +342,16 @@
     "doNotCover": "Generic fluff, unrelated tools.",
     "intentBoundaries": "Keep strictly to the primary keyword intent.",
     "productAngle": "Direct tool usage.",
-    "contentQualityNotes": ""
+    "contentQualityNotes": "",
+    "batchId": "batch-002",
+    "targetPublishWave": "batch-002",
+    "pageType": "product_seo_page_candidate",
+    "routeStrategy": "decision_needed",
+    "existingRouteOverlap": [
+      "/ru/generator-karuselej-linkedin"
+    ],
+    "decisionNeeded": true,
+    "decisionNote": "Decision needed: strengthen existing RU LinkedIn product route vs create new product SEO route vs merge with existing route."
   },
   {
     "cluster": "LinkedIn carousel",
@@ -427,7 +464,7 @@
     "targetSlug": "prompty-dlya-karuseley-linkedin",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "publishStatus": "idea",
+    "publishStatus": "brief",
     "notes": "Missing RU equivalent.",
     "requiredMockupSlots": [
       "topic-input",
@@ -440,7 +477,17 @@
     "doNotCover": "Generic fluff, unrelated tools.",
     "intentBoundaries": "Keep strictly to the primary keyword intent.",
     "productAngle": "Skip ChatGPT prompting altogether.",
-    "contentQualityNotes": ""
+    "contentQualityNotes": "",
+    "batchId": "batch-002",
+    "targetPublishWave": "batch-002",
+    "pageType": "prompt_library",
+    "routeStrategy": "supporting_blog_route",
+    "existingRouteOverlap": [
+      "/ru/generator-karuselej-linkedin",
+      "/ru/blog/kak-sdelat-karusel-linkedin-s-ai"
+    ],
+    "decisionNeeded": false,
+    "decisionNote": "Safe supporting prompt-library brief; human brief review is still required before draft generation."
   },
   {
     "cluster": "AI content generator",
@@ -458,7 +505,7 @@
     "targetSlug": "ai-content-generator-for-social-media",
     "canonicalRisk": "high",
     "cannibalizationRisk": "high",
-    "publishStatus": "idea",
+    "publishStatus": "brief",
     "notes": "Need to balance against existing landing pages.",
     "requiredMockupSlots": [
       "topic-input",
@@ -473,7 +520,16 @@
     "doNotCover": "Generic fluff, unrelated tools.",
     "intentBoundaries": "Keep strictly to the primary keyword intent.",
     "productAngle": "Direct tool usage.",
-    "contentQualityNotes": ""
+    "contentQualityNotes": "",
+    "batchId": "batch-002",
+    "targetPublishWave": "batch-002",
+    "pageType": "product_seo_page_candidate",
+    "routeStrategy": "decision_needed",
+    "existingRouteOverlap": [
+      "/ai-content-generator"
+    ],
+    "decisionNeeded": true,
+    "decisionNote": "Decision needed: strengthen existing product route vs create new product SEO route vs merge with existing route."
   },
   {
     "cluster": "AI content generator",
@@ -490,7 +546,7 @@
     "targetSlug": "generator-kontenta-dlya-socsetey-neyroset",
     "canonicalRisk": "high",
     "cannibalizationRisk": "high",
-    "publishStatus": "idea",
+    "publishStatus": "brief",
     "notes": "Need to balance against existing landing pages.",
     "requiredMockupSlots": [
       "topic-input",
@@ -502,7 +558,16 @@
     "doNotCover": "Generic fluff, unrelated tools.",
     "intentBoundaries": "Keep strictly to the primary keyword intent.",
     "productAngle": "Direct tool usage.",
-    "contentQualityNotes": ""
+    "contentQualityNotes": "",
+    "batchId": "batch-002",
+    "targetPublishWave": "batch-002",
+    "pageType": "product_seo_page_candidate",
+    "routeStrategy": "decision_needed",
+    "existingRouteOverlap": [
+      "/ru/generator-kontenta"
+    ],
+    "decisionNeeded": true,
+    "decisionNote": "Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route."
   },
   {
     "cluster": "Content repurposing",
