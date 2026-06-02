@@ -49,9 +49,9 @@ explore:
       title: "AI Content Generator"
       description: "Scale your social media content creation."
   guides:
-    - href: "/blog/best-ai-carousel-generators"
-      title: "Best AI Carousel Generators"
-      description: "Compare the top tools for carousel creation."
+    - title: "Best AI Carousel Generators"
+      href: "/ai-carousel-maker"
+      description: "Compare top tools for automated design."
     - href: "/blog/linkedin-carousel-prompts"
       title: "LinkedIn Carousel Prompts"
       description: "Discover the best prompts for B2B carousels."
@@ -136,7 +136,7 @@ type: default
 
 > [!related]
 > **Compare more carousel tools**
-> Want to explore the broader tool landscape? Read [Best AI Carousel Generators](/blog/best-ai-carousel-generators).
+> Want to explore the broader tool landscape? Read [Best AI Carousel Generators](/ai-carousel-maker).
 
 ## When to use manual design
 You should default to a manual workflow if:

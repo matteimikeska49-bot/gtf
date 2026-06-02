@@ -103,7 +103,7 @@ This allows GoToFlow to publish new SEO articles faster while keeping old produc
 
 > [!related]
 > **Read next**
-> Learn the full workflow here: [How to make a LinkedIn carousel with AI](/blog/how-to-make-linkedin-carousel-with-ai)
+> Learn the full workflow here: [How to make a LinkedIn carousel with AI](/linkedin-carousel-maker)
 
 > [!unknown-tag]
 > This is a generic fallback callout for an unknown tag.

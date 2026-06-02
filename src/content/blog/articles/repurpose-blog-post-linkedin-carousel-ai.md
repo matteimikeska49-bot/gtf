@@ -49,7 +49,7 @@ explore:
       title: "AI Content Generator"
       description: "Write your LinkedIn posts 10x faster"
   guides:
-    - href: "/blog/how-to-make-linkedin-carousel-with-ai"
+    - href: "/linkedin-carousel-maker"
       title: "How to Make a LinkedIn Carousel with AI"
       description: "The complete process from strategy to publishing."
     - href: "/blog/linkedin-carousel-prompts"
@@ -142,7 +142,7 @@ To illustrate the extraction process, here is how a broad blog post translates i
 
 > [!related]
 > **Full LinkedIn carousel workflow**
-> Want the full creation process? Read [How to make a LinkedIn carousel with AI](/blog/how-to-make-linkedin-carousel-with-ai).
+> Want the full creation process? Read [How to make a LinkedIn carousel with AI](/linkedin-carousel-maker).
 
 ## Manual workflow vs GoToFlow workflow
 When repurposing content, you have two primary approaches depending on how much time you want to spend in chat interfaces.

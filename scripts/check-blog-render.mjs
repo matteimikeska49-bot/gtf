@@ -57,6 +57,9 @@ async function checkRoutes() {
   let totalWarnings = 0;
   const browser = await puppeteer.launch({ headless: true });
 
+  console.log('Waiting 2 seconds for server warmup...');
+  await new Promise(resolve => setTimeout(resolve, 2000));
+
   for (const item of routesToCheck) {
     const url = `${baseUrl}${item.route}`;
     console.log(`Checking [${item.language.toUpperCase()}] ${item.route} ...`);

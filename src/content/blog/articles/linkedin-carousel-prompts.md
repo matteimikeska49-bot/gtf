@@ -42,7 +42,7 @@ explore:
       title: "AI Content Generator"
       description: "Write your LinkedIn posts 10x faster"
   guides:
-    - href: "/blog/how-to-make-linkedin-carousel-with-ai"
+    - href: "/linkedin-carousel-maker"
       title: "How to Make a LinkedIn Carousel with AI"
       description: "The complete process from strategy to publishing."
     - href: "/blog/linkedin-carousel-ideas"
@@ -197,7 +197,7 @@ Manual prompting gives you absolute control over every word, provided you break 
 
 > [!related]
 > **Full workflow guide**
-> Want the full creation process? Read [How to make a LinkedIn carousel with AI](/blog/how-to-make-linkedin-carousel-with-ai).
+> Want the full creation process? Read [How to make a LinkedIn carousel with AI](/linkedin-carousel-maker).
 
 ## Before / after prompt example
 

@@ -51,7 +51,7 @@ explore:
       title: "AI Content Generator"
       description: "Scale your social media content creation."
   guides:
-    - href: "/blog/ai-instagram-carousel-generator"
+    - href: "/ai-carousel-maker"
       title: "AI Instagram Carousel Generator"
       description: "Learn how to build carousels with AI."
     - href: "/blog/linkedin-carousel-prompts"
@@ -164,7 +164,7 @@ Turn your existing long-form content into quick Instagram posts.
 
 > [!related]
 > **Instagram carousel workflow**
-> Want the full creation process? Read [AI Instagram Carousel Generator](/blog/ai-instagram-carousel-generator).
+> Want the full creation process? Read [AI Instagram Carousel Generator](/ai-carousel-maker).
 
 ## Common mistakes when using carousel prompts
 

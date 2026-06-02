@@ -53,7 +53,7 @@ faq:
 explore:
   tools:
     - title: "AI Генератор Каруселей"
-      href: "/ru/ai-instagram-post-generator"
+      href: "/ru/generator-postov-instagram"
       description: "Превратите идею в готовую карусель за секунды без написания сложных промптов."
   guides:
     - title: "Как создать карусель с помощью AI"
@@ -65,7 +65,7 @@ finalCta:
   buttonText: "Создать карусель бесплатно"
   microcopy: "Без привязки карты — Готово за секунды"
   secondaryText: "Посмотреть примеры →"
-  secondaryHref: "/ru/ai-instagram-post-generator"
+  secondaryHref: "/ru/generator-postov-instagram"
 ---
 
 # Промпты для каруселей в Инстаграм: готовые шаблоны для постов
@@ -146,7 +146,7 @@ AI не знает, что на первом слайде должен быть 
 > [!product]
 > **Попробуйте без долгих промптов**
 > Не тратьте часы на подбор правильных слов для ChatGPT и верстку в редакторе.
-> [Создать карусель в GoToFlow](/ru/ai-instagram-post-generator)
+> [Создать карусель в GoToFlow](/ru/generator-postov-instagram)
 
 ## Заключение
 
