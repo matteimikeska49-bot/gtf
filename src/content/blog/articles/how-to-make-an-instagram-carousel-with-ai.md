@@ -68,11 +68,11 @@ finalCta:
 
 # How to Make an Instagram Carousel with AI
 
-Instagram carousels are one of the most effective formats for driving engagement, saves, and shares. However, creating them manually is a tedious process. You have to outline the content, write concise copy for each slide, and then spend hours designing the layout in Canva or Figma.
+You have a great idea for an Instagram post, but turning that idea into a structured, well-designed carousel feels like a chore. First, you have to write the text, then struggle to keep the sentences short enough for slides, and finally, spend hours in Canva trying to align text boxes.
 
-Fortunately, you can drastically speed up this process by learning how to make an Instagram carousel with AI. 
+While AI can help, simply copying a text prompt from ChatGPT to a design tool still requires too much manual work. The real time-saver happens when your workflow turns an idea directly into a structured, fully designed slide deck.
 
-In this guide, we'll walk you through the most efficient workflow to go from a raw idea to a ready-to-publish carousel.
+In this guide, we'll walk you through the most efficient workflow to make an Instagram carousel with AI—without touching a design tool.
 
 ## The Old Way vs The AI Way
 

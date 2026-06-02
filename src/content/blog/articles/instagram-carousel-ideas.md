@@ -78,21 +78,34 @@ The secret to a consistent content schedule isn't endless creativity—it's rely
 
 Instead of trying to be purely original every time, use these structured formats. You can plug different topics into these frameworks indefinitely.
 
-:::cards
-type: tips
+Here are 15 concrete carousel title ideas categorized by proven frameworks. Adapt them to your specific niche to instantly fill your content calendar.
 
-### 1. The Step-by-Step Guide
-Teach your audience how to solve one specific problem. Break the solution down into 3-5 actionable steps. People save these posts to refer back to them later.
+### 1. Educational & How-to
+Teach your audience how to solve one specific problem. People save these posts to refer back to them later.
+* **"How to [achieve desired result] in just 3 simple steps"** (e.g., *How to optimize your Instagram bio in 3 simple steps*)
+* **"The ultimate beginner's guide to [topic]"** (e.g., *The ultimate beginner's guide to meal prepping*)
+* **"How I went from [struggle] to [success] in 6 months"** (e.g., *How I went from 0 to 10k followers in 6 months*)
+* **"A simple checklist for your next [event/project]"** (e.g., *A simple checklist for your next website launch*)
 
-### 2. The Common Mistakes Breakdown
-Fear of missing out or doing something wrong is a powerful hook. List 3 common mistakes beginners make in your niche, and explain how to fix them.
+### 2. Mistakes & Pitfalls
+Fear of doing something wrong is a powerful hook. List common mistakes and explain how to fix them.
+* **"3 silent mistakes ruining your [goal]"** (e.g., *3 silent mistakes ruining your SEO rankings*)
+* **"Stop doing [common action] if you want to [achieve result]"** (e.g., *Stop skipping breakfast if you want to build muscle*)
+* **"Why your [strategy] isn't working (and how to fix it)"** (e.g., *Why your cold emails aren't working (and how to fix it)*)
+* **"The biggest trap beginners fall into when starting [skill]"** (e.g., *The biggest trap beginners fall into when starting photography*)
 
-### 3. Myth vs. Reality
-Challenge a widely held belief in your industry. This positions you as an authority and encourages comments and debate.
+### 3. Myths vs. Reality & Contrarian
+Challenge a widely held belief in your industry. This positions you as an authority and encourages debate.
+* **"3 lies you've been told about [topic]"** (e.g., *3 lies you've been told about the algorithm*)
+* **"Why [popular trend] is actually a bad idea"** (e.g., *Why hustle culture is actually a bad idea*)
+* **"What people think [job/skill] is like vs. What it actually is"** (e.g., *What people think freelancing is like vs. What it actually is*)
 
-### 4. Tools and Resources
-Share a list of your favorite tools, books, or resources. Listicles are highly shareable and provide immediate value.
-:::
+### 4. Tools, Resources & Listicles
+Share curated lists. These are highly shareable and provide immediate value.
+* **"5 free tools I use every day to [achieve result]"** (e.g., *5 free tools I use every day to save time*)
+* **"The only 3 books you need to read to master [skill]"** (e.g., *The only 3 books you need to read to master sales*)
+* **"My top 4 favorite resources for [topic]"** (e.g., *My top 4 favorite resources for learning Python*)
+* **"Steal my exact workflow for [task]"** (e.g., *Steal my exact workflow for writing blog posts*)
 
 ## How to Never Run Out of Ideas
 
