@@ -18,6 +18,7 @@ category: "Prompts & Libraries"
 priority: "P1"
 published: false
 noindex: true
+preview: true
 canonical: "https://gotoflow.io/blog/instagram-carousel-prompts"
 createdAt: "2026-05-24"
 updatedAt: "2026-05-24"
@@ -94,6 +95,8 @@ To get the best results from the prompts in this library, keep these fundamental
 > GoToFlow helps turn rough ideas, prompts, and content angles into structured Instagram carousel drafts without copying text between tools.
 > [Create an AI carousel](/ai-carousel-maker)
 
+:::mockup{slot="topic-input"}
+
 ## Prompt Groups
 
 Use these categorized prompts to generate specific types of carousels tailored to your audience and business goals.
@@ -141,6 +144,8 @@ Personal branding is about sharing your values, routines, and philosophies to at
 ### 6. Small business carousel prompts
 Small businesses can use carousels to showcase expertise, highlight their team, and answer customer questions.
 
+:::mockup{slot="format-settings"}
+
 1. "Write a 7-slide carousel for our small business (`[BUSINESS TYPE]`). Share '5 Things Your `[PROFESSION, e.g., Plumber/Accountant]` Wishes You Knew'. Make it educational, slightly humorous, and highly practical."
 2. "Draft a 6-slide carousel introducing our core team members. Slide 1: Why we believe in human connection. Slides 2-4: Meet the team (include placeholders for their quirks and expertise). Slide 5: Our shared mission. Slide 6: CTA to visit our store/website."
 3. "Create an 8-slide 'Buyer's Guide' carousel for choosing the right `[PRODUCT/SERVICE]`. Explain the 3 factors customers must consider before making a purchase. Position our business as the trusted advisor."
@@ -165,6 +170,8 @@ Turn your existing long-form content into quick Instagram posts.
 > [!related]
 > **Instagram carousel workflow**
 > Want the full creation process? Read [AI Instagram Carousel Generator](/ai-carousel-maker).
+
+:::mockup{slot="result-preview"}
 
 ## Common mistakes when using carousel prompts
 

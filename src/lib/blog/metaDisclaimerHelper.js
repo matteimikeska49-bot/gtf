@@ -76,5 +76,5 @@ export const mockupsContainMetaRestrictedTerms = (article) => {
 
 export const shouldShowRuMetaDisclaimer = (article) => {
   if (!article || article.language !== 'ru') return false;
-  return articleContainsMetaRestrictedTerms(article) || mockupsContainMetaRestrictedTerms(article);
+  return article.ru_meta_disclaimer === true || articleContainsMetaRestrictedTerms(article) || mockupsContainMetaRestrictedTerms(article);
 };

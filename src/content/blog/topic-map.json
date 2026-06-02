@@ -229,8 +229,8 @@
     "targetSlug": "instagram-carousel-prompts",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "publishStatus": "draft",
-    "notes": "Need to transition to safe templates.",
+    "publishStatus": "draft_preview",
+    "notes": "Upgraded to MarkdownSeoArticleTemplateV2. Draft preview created.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
@@ -468,8 +468,8 @@
     "targetSlug": "prompty-dlya-karuseley-linkedin",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "publishStatus": "brief",
-    "notes": "Missing RU equivalent.",
+    "publishStatus": "draft_preview",
+    "notes": "Draft preview created.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",

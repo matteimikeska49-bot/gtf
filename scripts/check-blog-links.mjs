@@ -21,7 +21,9 @@ const publicRoutes = new Set([
   '/blog', '/ru/blog', '/privacy-policy', '/ru/politika', '/politika', 
   '/ru/polzovatelskoe-soglashenie', '/ru/soglasie-na-obrabotku-personalnyh-dannyh', 
   '/ru/ugc-creator-terms', '/refund-policy', '/terms-of-service', 
-  '/personal-data-consent', '/pricing', '/carousel/create'
+  '/personal-data-consent', '/pricing', '/carousel/create',
+  // Legacy React blog routes (valid production routes that do not exist as markdown)
+  '/ru/blog/kak-sdelat-karusel-linkedin-s-ai'
 ]);
 
 try {

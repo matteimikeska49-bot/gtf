@@ -59,7 +59,7 @@ batchData.forEach((entry, i) => {
   
   if (['idea', 'brief', 'hold', 'optimize_existing_route'].includes(entry.status)) {
     // Ok if markdown doesn't exist yet
-  } else if (['draft', 'qa_failed', 'qa_passed', 'ready_to_publish', 'published'].includes(entry.status)) {
+  } else if (['draft', 'draft_preview', 'qa_failed', 'qa_passed', 'ready_to_publish', 'published'].includes(entry.status)) {
     if (!mdExists) {
       conflicts.push(`Status is '${entry.status}' but markdown file missing: ${entry.slug}.md`);
       hasP0Error = true;
@@ -70,7 +70,7 @@ batchData.forEach((entry, i) => {
       const isNoindex = /^noindex:\s*true\b/m.test(content);
       const isPreview = /^preview:\s*true\b/m.test(content);
       
-      if (['draft', 'qa_passed', 'ready_to_publish'].includes(entry.status)) {
+      if (['draft', 'draft_preview', 'qa_passed', 'ready_to_publish'].includes(entry.status)) {
         if (isPublished) conflicts.push(`${entry.slug}.md has published:true but status is ${entry.status}`);
         if (!isNoindex) conflicts.push(`${entry.slug}.md has noindex:false but status is ${entry.status}`);
       }
@@ -80,7 +80,7 @@ batchData.forEach((entry, i) => {
         if (isNoindex) conflicts.push(`${entry.slug}.md has noindex:true but status is published`);
       }
       
-      if (isPreview && !['draft', 'qa_passed', 'ready_to_publish'].includes(entry.status)) {
+      if (isPreview && !['draft', 'draft_preview', 'qa_passed', 'ready_to_publish'].includes(entry.status)) {
          conflicts.push(`${entry.slug}.md has preview:true which is only allowed in draft states.`);
       }
     }
