@@ -38,6 +38,21 @@ batchData.forEach((entry, i) => {
   if (!entry.primaryKeyword) conflicts.push(`${indexStr} Missing primaryKeyword`);
   if (!entry.status) conflicts.push(`${indexStr} Missing status`);
 
+  if (entry.approvedForPublish === true) {
+    if (entry.published !== true) {
+      conflicts.push(`${entry.articleId || entry.slug} has approvedForPublish:true but published is not true`);
+      hasP0Error = true;
+    }
+    if (entry.noindex === true) {
+      conflicts.push(`${entry.articleId || entry.slug} has approvedForPublish:true but noindex is true`);
+      hasP0Error = true;
+    }
+    if (entry.preview === true) {
+      conflicts.push(`${entry.articleId || entry.slug} has approvedForPublish:true but preview is true`);
+      hasP0Error = true;
+    }
+  }
+
   // Markdown file status
   const mdPath = path.join(ARTICLES_DIR, `${entry.slug}.md`);
   const mdExists = fs.existsSync(mdPath);

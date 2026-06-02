@@ -16,7 +16,18 @@
     "qaStatus": "passed",
     "visualQaStatus": "passed",
     "productionVerificationStatus": "passed",
-    "notes": "First published RU article."
+    "notes": "First published RU article.",
+    "briefStatus": "approved",
+    "contentQaStatus": "passed",
+    "seoQaStatus": "passed",
+    "mockupQaStatus": "passed",
+    "internalLinksStatus": "passed",
+    "targetPublishWave": "batch-1-initial",
+    "reviewer": "System",
+    "failReason": null,
+    "approvedForDraft": true,
+    "approvedForPublish": true,
+    "productionUrl": "https://gotoflow.io/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii"
   },
   {
     "batchId": "batch-3-drafts",
@@ -35,7 +46,18 @@
     "qaStatus": "passed",
     "visualQaStatus": "passed",
     "productionVerificationStatus": "pending",
-    "notes": "Draft preview deployed. Needs final publish command."
+    "notes": "Draft preview deployed. Needs final publish command.",
+    "briefStatus": "approved",
+    "contentQaStatus": "passed",
+    "seoQaStatus": "passed",
+    "mockupQaStatus": "passed",
+    "internalLinksStatus": "passed",
+    "targetPublishWave": "batch-3-drafts",
+    "reviewer": "System",
+    "failReason": null,
+    "approvedForDraft": true,
+    "approvedForPublish": false,
+    "productionUrl": "https://gotoflow.io/ru/blog/prompty-dlya-karuseley-v-instagram"
   },
   {
     "batchId": "batch-3-drafts",
@@ -54,7 +76,18 @@
     "qaStatus": "passed",
     "visualQaStatus": "passed",
     "productionVerificationStatus": "pending",
-    "notes": "Draft preview deployed. Needs final publish command."
+    "notes": "Draft preview deployed. Needs final publish command.",
+    "briefStatus": "approved",
+    "contentQaStatus": "passed",
+    "seoQaStatus": "passed",
+    "mockupQaStatus": "passed",
+    "internalLinksStatus": "passed",
+    "targetPublishWave": "batch-3-drafts",
+    "reviewer": "System",
+    "failReason": null,
+    "approvedForDraft": true,
+    "approvedForPublish": false,
+    "productionUrl": "https://gotoflow.io/blog/how-to-make-an-instagram-carousel-with-ai"
   },
   {
     "batchId": "batch-3-drafts",
@@ -73,6 +106,17 @@
     "qaStatus": "passed",
     "visualQaStatus": "passed",
     "productionVerificationStatus": "pending",
-    "notes": "Draft preview deployed. Needs final publish command."
+    "notes": "Draft preview deployed. Needs final publish command.",
+    "briefStatus": "approved",
+    "contentQaStatus": "passed",
+    "seoQaStatus": "passed",
+    "mockupQaStatus": "passed",
+    "internalLinksStatus": "passed",
+    "targetPublishWave": "batch-3-drafts",
+    "reviewer": "System",
+    "failReason": null,
+    "approvedForDraft": true,
+    "approvedForPublish": false,
+    "productionUrl": "https://gotoflow.io/blog/instagram-carousel-ideas"
   }
 ]

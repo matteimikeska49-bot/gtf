@@ -3,16 +3,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, ChevronDown, ChevronRight, ExternalLink, Layers3, Sparkles } from 'lucide-react';
 import { getAppUrlWithRef } from '../../../utils/url';
 import { getMockupsForArticle } from '../../../lib/blog/mockupRegistry';
+import { MOCKUP_SLOT_MAP } from '../../../lib/blog/mockupSlots';
 import { shouldShowRuMetaDisclaimer, applyRuAutoStar } from '../../../lib/blog/metaDisclaimerHelper';
 
 const CTA_URL = 'https://app.gotoflow.io';
-
-const MOCKUP_SLOT_MAP = {
-  'topic-input': { type: 'text-topic', layout: 'inline' },
-  'result-preview': { type: 'result', layout: 'featured' },
-  'format-settings': { type: 'settings', layout: 'compact' },
-  'style-choice': { type: 'visual-style', layout: 'compact' },
-};
 
 const ARTICLE_TEMPLATE_COPY = {
   en: {

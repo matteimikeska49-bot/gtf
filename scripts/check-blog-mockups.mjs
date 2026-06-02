@@ -1,26 +1,35 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { MOCKUP_SLOT_MAP, VALID_MOCKUP_SLOTS } from '../src/lib/blog/mockupSlots.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ARTICLES_DIR = path.join(__dirname, '../src/content/blog/articles');
 
-// We don't import the registry directly because it might be a module that fails in strict node without transpilation,
-// or we can parse it. For safety in a script, let's just parse the keys from registry.js text if possible.
 const REGISTRY_PATH = path.join(__dirname, '../src/content/blog/mockups/registry.json');
 
 console.log('🖼️  Starting strict mockup language check...\n');
 
 let hasP0Error = false;
-let warnings = [];
 let conflicts = [];
 
-// 1. Extract valid mockup keys from registry.json
-let validMockups = new Set();
+// 1. Extract approved assets from registry.json
+const slotAssets = { en: {}, ru: {} };
+
 try {
   const registryContent = fs.readFileSync(REGISTRY_PATH, 'utf-8');
   const registry = JSON.parse(registryContent);
-  Object.keys(registry.slots || registry).forEach(key => validMockups.add(key));
+  const assets = registry.assets || [];
+  
+  assets.forEach(asset => {
+    if (asset.status === 'approved' && asset.suitableFor) {
+      asset.suitableFor.forEach(slot => {
+        if (!slotAssets[asset.language]) slotAssets[asset.language] = {};
+        if (!slotAssets[asset.language][slot]) slotAssets[asset.language][slot] = [];
+        slotAssets[asset.language][slot].push(asset);
+      });
+    }
+  });
 } catch (e) {
   console.error(`❌ Failed to read registry.json: ${e.message}`);
   process.exit(1);
@@ -39,41 +48,66 @@ try {
     
     // Check for raw markdown images
     if (/!\[.*?\]\(.*?\)/.test(content)) {
-      conflicts.push(`Raw markdown image found in ${file}. Use :::mockup instead.`);
+      conflicts.push(`Raw markdown image found in ${file}. Use :::mockup{slot="..."} instead.`);
       hasP0Error = true;
     }
     
     // Check for raw HTML images
     if (/<img\b/i.test(content)) {
-      conflicts.push(`Raw <img> tag found in ${file}. Use :::mockup instead.`);
+      conflicts.push(`Raw <img> tag found in ${file}. Use :::mockup{slot="..."} instead.`);
       hasP0Error = true;
     }
 
-    // Check mockups
-    const mockupRegex = /:::mockup\s+name=["']?([^"'\s]+)["']?/g;
+    // Check for direct paths or extensions (basic check outside frontmatter if possible, but let's just do a global check and ignore standard frontmatter fields if needed, or just a simple check for common paths)
+    if (/(?<!\w)(\/mockups\/|\/images\/|\.webp|\.png|\.jpg)(?!\w)/i.test(content)) {
+       // Only fail if it's not a known valid exception, but user strictly said fail on these paths
+       conflicts.push(`Direct image path or extension found in ${file}. Use :::mockup{slot="..."} instead.`);
+       hasP0Error = true;
+    }
+
+    // Check for old mockup syntax
+    if (/:::mockup\s+name=["']?([^"'\s]+)["']?/i.test(content)) {
+      conflicts.push(`Old mockup syntax (name="...") found in ${file}. Use :::mockup{slot="..."} instead.`);
+      hasP0Error = true;
+    }
+
+    // Check new slot-based mockups
+    const mockupRegex = /:::mockup\{slot=["']?([^"'\s}]+)["']?\}/g;
     let match;
+    const slotsFound = [];
+
     while ((match = mockupRegex.exec(content)) !== null) {
-      const mockupName = match[1];
+      const slotName = match[1];
+      slotsFound.push(slotName);
       
       // Slot exists?
-      if (!validMockups.has(mockupName)) {
-        conflicts.push(`Invalid mockup '${mockupName}' in ${file}. Not found in registry.`);
+      if (!VALID_MOCKUP_SLOTS.includes(slotName)) {
+        conflicts.push(`Invalid mockup slot '${slotName}' in ${file}. Not found in shared mockup slot map.`);
         hasP0Error = true;
         continue;
       }
       
-      // Strict Language Validation
-      // RU articles MUST use ru- prefix
-      if (language === 'ru' && !mockupName.startsWith('ru-')) {
-        conflicts.push(`Language mismatch in ${file}: RU article uses EN mockup '${mockupName}'. Must use 'ru-' prefix.`);
+      // Check if there's an approved asset for this language and slot
+      const suitableFor = MOCKUP_SLOT_MAP[slotName]?.suitableFor || [];
+      const availableAssets = suitableFor.flatMap(key => slotAssets[language]?.[key] || []);
+      if (availableAssets.length === 0) {
+        // Is there an asset for the OTHER language?
+        const otherLang = language === 'en' ? 'ru' : 'en';
+        const otherAssets = suitableFor.flatMap(key => slotAssets[otherLang]?.[key] || []);
+        
+        if (otherAssets.length > 0) {
+          conflicts.push(`Language mismatch in ${file}: slot '${slotName}' has no approved '${language}' assets, but has '${otherLang}' assets.`);
+        } else {
+          conflicts.push(`No approved assets found for slot '${slotName}' in language '${language}' in ${file}.`);
+        }
         hasP0Error = true;
       }
-      
-      // EN articles MUST NOT use ru- prefix
-      if (language === 'en' && mockupName.startsWith('ru-')) {
-        conflicts.push(`Language mismatch in ${file}: EN article uses RU mockup '${mockupName}'.`);
-        hasP0Error = true;
-      }
+    }
+    
+    if (slotsFound.length > 0) {
+      console.log(`📄 ${file} (${language}): found slots [${slotsFound.join(', ')}]`);
+    } else {
+      console.log(`📄 ${file} (${language}): no mockups found.`);
     }
   }
 } catch (e) {
@@ -83,10 +117,10 @@ try {
 
 // 3. Report
 if (conflicts.length > 0) {
-  console.log('🚨 P0 MOCKUP CONFLICTS FOUND:');
+  console.log('\n🚨 P0 MOCKUP CONFLICTS FOUND:');
   conflicts.forEach(c => console.log(`  - ${c}`));
 } else {
-  console.log('✅ No P0 mockup errors found.');
+  console.log('\n✅ No P0 mockup errors found.');
 }
 
 if (hasP0Error) {

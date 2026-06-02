@@ -3,7 +3,11 @@
     "cluster": "AI carousel generator",
     "language": "en",
     "primaryKeyword": "ai carousel generator",
-    "secondaryKeywords": ["free ai carousel generator", "carousel maker ai", "instagram carousel generator ai"],
+    "secondaryKeywords": [
+      "free ai carousel generator",
+      "carousel maker ai",
+      "instagram carousel generator ai"
+    ],
     "searchIntent": "investigational/transactional",
     "articleType": "pillar",
     "funnelStage": "BOFU",
@@ -11,18 +15,32 @@
     "targetSlug": "ai-carousel-generator",
     "canonicalRisk": "medium",
     "cannibalizationRisk": "high",
-    "relatedExistingArticles": ["best-ai-carousel-generators"],
-    "relatedFutureArticles": ["linkedin-carousel-generator"],
-    "GoToFlowProductAngle": "Direct tool usage",
-    "recommendedMockupSlots": ["ai-carousel-generator-mockup", "ai-post-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Main pillar for EN market."
+    "notes": "Main pillar for EN market.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [
+      "best-ai-carousel-generators",
+      "linkedin-carousel-generator"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Direct tool usage",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "AI carousel generator",
     "language": "ru",
     "primaryKeyword": "генератор каруселей нейросеть",
-    "secondaryKeywords": ["сделать карусель ии", "ии для создания каруселей", "карусель инстаграм нейросеть"],
+    "secondaryKeywords": [
+      "сделать карусель ии",
+      "ии для создания каруселей",
+      "карусель инстаграм нейросеть"
+    ],
     "searchIntent": "investigational/transactional",
     "articleType": "pillar",
     "funnelStage": "BOFU",
@@ -30,18 +48,32 @@
     "targetSlug": "generator-karuseley-neyroset",
     "canonicalRisk": "low",
     "cannibalizationRisk": "high",
-    "relatedExistingArticles": ["luchshie-ai-generatory-karuselej", "kak-sdelat-karusel-dlya-instagram-s-ii"],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Direct tool usage",
-    "recommendedMockupSlots": ["ru-ai-carousel-generator-mockup", "ru-ai-post-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Main pillar for RU market."
+    "notes": "Main pillar for RU market.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [
+      "luchshie-ai-generatory-karuselej",
+      "kak-sdelat-karusel-dlya-instagram-s-ii"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Direct tool usage",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Instagram carousel",
     "language": "en",
     "primaryKeyword": "how to make an instagram carousel",
-    "secondaryKeywords": ["instagram carousel size", "instagram carousel design", "create instagram carousel"],
+    "secondaryKeywords": [
+      "instagram carousel size",
+      "instagram carousel design",
+      "create instagram carousel"
+    ],
     "searchIntent": "informational",
     "articleType": "how-to",
     "funnelStage": "MOFU",
@@ -49,18 +81,32 @@
     "targetSlug": "how-to-make-an-instagram-carousel-with-ai",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "relatedExistingArticles": [],
-    "relatedFutureArticles": ["instagram-carousel-ideas", "instagram-carousel-prompts"],
-    "GoToFlowProductAngle": "Educational how-to that naturally leads to our AI generator.",
-    "recommendedMockupSlots": ["ai-carousel-generator-mockup"],
     "publishStatus": "draft",
-    "notes": "Currently in draft."
+    "notes": "Currently in draft.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [
+      "instagram-carousel-ideas",
+      "instagram-carousel-prompts"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Educational how-to that naturally leads to our AI generator.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Instagram carousel",
     "language": "ru",
     "primaryKeyword": "как сделать карусель в инстаграм",
-    "secondaryKeywords": ["размер карусели инстаграм", "создать карусель для инстаграм", "карусель в инстаграме дизайн"],
+    "secondaryKeywords": [
+      "размер карусели инстаграм",
+      "создать карусель для инстаграм",
+      "карусель в инстаграме дизайн"
+    ],
     "searchIntent": "informational",
     "articleType": "how-to",
     "funnelStage": "MOFU",
@@ -68,18 +114,31 @@
     "targetSlug": "kak-sdelat-karusel-dlya-instagram-s-ii",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "relatedExistingArticles": [],
-    "relatedFutureArticles": ["prompty-dlya-karuseley-v-instagram"],
-    "GoToFlowProductAngle": "Educational how-to leading to AI generator.",
-    "recommendedMockupSlots": ["ru-ai-carousel-generator-mockup"],
     "publishStatus": "published",
-    "notes": "Currently published."
+    "notes": "Currently published.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [
+      "prompty-dlya-karuseley-v-instagram"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Educational how-to leading to AI generator.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Instagram carousel ideas",
     "language": "en",
     "primaryKeyword": "instagram carousel ideas",
-    "secondaryKeywords": ["carousel post ideas", "instagram content ideas", "creative carousel ideas"],
+    "secondaryKeywords": [
+      "carousel post ideas",
+      "instagram content ideas",
+      "creative carousel ideas"
+    ],
     "searchIntent": "informational",
     "articleType": "listicle",
     "funnelStage": "TOFU",
@@ -87,18 +146,31 @@
     "targetSlug": "instagram-carousel-ideas",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "relatedExistingArticles": ["how-to-make-an-instagram-carousel-with-ai"],
-    "relatedFutureArticles": ["linkedin-carousel-ideas"],
-    "GoToFlowProductAngle": "Don't just get ideas, turn them into reality instantly with AI.",
-    "recommendedMockupSlots": ["ai-carousel-generator-mockup", "ai-post-generator-mockup"],
     "publishStatus": "draft",
-    "notes": "Currently in draft."
+    "notes": "Currently in draft.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings"
+    ],
+    "relatedArticles": [
+      "how-to-make-an-instagram-carousel-with-ai",
+      "linkedin-carousel-ideas"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Don't just get ideas, turn them into reality instantly with AI.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Instagram carousel ideas",
     "language": "ru",
     "primaryKeyword": "идеи для карусели инстаграм",
-    "secondaryKeywords": ["идеи постов для инстаграм", "карусель инстаграм идеи", "контент план карусели"],
+    "secondaryKeywords": [
+      "идеи постов для инстаграм",
+      "карусель инстаграм идеи",
+      "контент план карусели"
+    ],
     "searchIntent": "informational",
     "articleType": "listicle",
     "funnelStage": "TOFU",
@@ -106,18 +178,29 @@
     "targetSlug": "idei-dlya-karuseli-instagram",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "relatedExistingArticles": ["kak-sdelat-karusel-dlya-instagram-s-ii"],
-    "relatedFutureArticles": ["idei-karuselej-linkedin"],
-    "GoToFlowProductAngle": "Turn ideas into reality instantly with AI.",
-    "recommendedMockupSlots": ["ru-ai-carousel-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Missing RU equivalent for ideas."
+    "notes": "Missing RU equivalent for ideas.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview"
+    ],
+    "relatedArticles": [
+      "kak-sdelat-karusel-dlya-instagram-s-ii",
+      "idei-karuselej-linkedin"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Turn ideas into reality instantly with AI.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Instagram carousel prompts",
     "language": "en",
     "primaryKeyword": "instagram carousel prompts",
-    "secondaryKeywords": ["chatgpt prompts for instagram carousel", "ai prompts for carousels"],
+    "secondaryKeywords": [
+      "chatgpt prompts for instagram carousel",
+      "ai prompts for carousels"
+    ],
     "searchIntent": "informational/navigational",
     "articleType": "guide/resource",
     "funnelStage": "MOFU",
@@ -125,18 +208,29 @@
     "targetSlug": "instagram-carousel-prompts",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "relatedExistingArticles": ["instagram-carousel-ideas"],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Skip ChatGPT prompting altogether, use our built-in system prompts.",
-    "recommendedMockupSlots": ["ai-carousel-generator-mockup"],
     "publishStatus": "draft",
-    "notes": "Need to transition to safe templates."
+    "notes": "Need to transition to safe templates.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings"
+    ],
+    "relatedArticles": [
+      "instagram-carousel-ideas"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Skip ChatGPT prompting altogether, use our built-in system prompts.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Instagram carousel prompts",
     "language": "ru",
     "primaryKeyword": "промпты для карусели инстаграм",
-    "secondaryKeywords": ["chatgpt промпты для карусели", "нейросеть промпты инстаграм"],
+    "secondaryKeywords": [
+      "chatgpt промпты для карусели",
+      "нейросеть промпты инстаграм"
+    ],
     "searchIntent": "informational/navigational",
     "articleType": "guide/resource",
     "funnelStage": "MOFU",
@@ -144,18 +238,30 @@
     "targetSlug": "prompty-dlya-karuseley-v-instagram",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "relatedExistingArticles": ["kak-sdelat-karusel-dlya-instagram-s-ii"],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Skip ChatGPT prompting altogether, use our built-in system prompts.",
-    "recommendedMockupSlots": ["ru-ai-carousel-generator-mockup"],
     "publishStatus": "draft",
-    "notes": "Currently in draft."
+    "notes": "Currently in draft.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings"
+    ],
+    "relatedArticles": [
+      "kak-sdelat-karusel-dlya-instagram-s-ii"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Skip ChatGPT prompting altogether, use our built-in system prompts.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "LinkedIn carousel",
     "language": "en",
     "primaryKeyword": "linkedin carousel generator",
-    "secondaryKeywords": ["create linkedin carousel", "linkedin slider generator", "ai linkedin carousel"],
+    "secondaryKeywords": [
+      "create linkedin carousel",
+      "linkedin slider generator",
+      "ai linkedin carousel"
+    ],
     "searchIntent": "transactional",
     "articleType": "pillar",
     "funnelStage": "BOFU",
@@ -163,18 +269,30 @@
     "targetSlug": "linkedin-carousel-generator",
     "canonicalRisk": "medium",
     "cannibalizationRisk": "high",
-    "relatedExistingArticles": ["how-to-make-linkedin-carousel-with-ai"],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Direct tool usage.",
-    "recommendedMockupSlots": ["linkedin-carousel-generator-mockup", "ai-carousel-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Important BOFU page."
+    "notes": "Important BOFU page.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [
+      "how-to-make-linkedin-carousel-with-ai"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Direct tool usage.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "LinkedIn carousel",
     "language": "ru",
     "primaryKeyword": "генератор каруселей linkedin",
-    "secondaryKeywords": ["создать карусель для linkedin", "карусель linkedin нейросеть"],
+    "secondaryKeywords": [
+      "создать карусель для linkedin",
+      "карусель linkedin нейросеть"
+    ],
     "searchIntent": "transactional",
     "articleType": "pillar",
     "funnelStage": "BOFU",
@@ -182,18 +300,31 @@
     "targetSlug": "generator-karuseley-linkedin-ai",
     "canonicalRisk": "medium",
     "cannibalizationRisk": "high",
-    "relatedExistingArticles": ["kak-sdelat-karusel-linkedin-s-ai"],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Direct tool usage.",
-    "recommendedMockupSlots": ["ru-linkedin-carousel-generator-mockup", "ru-ai-carousel-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Important BOFU page."
+    "notes": "Important BOFU page.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [
+      "kak-sdelat-karusel-linkedin-s-ai"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Direct tool usage.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "LinkedIn carousel",
     "language": "en",
     "primaryKeyword": "how to make a linkedin carousel",
-    "secondaryKeywords": ["linkedin carousel format", "linkedin carousel size", "linkedin slider"],
+    "secondaryKeywords": [
+      "linkedin carousel format",
+      "linkedin carousel size",
+      "linkedin slider"
+    ],
     "searchIntent": "informational",
     "articleType": "how-to",
     "funnelStage": "MOFU",
@@ -201,18 +332,32 @@
     "targetSlug": "how-to-make-linkedin-carousel-with-ai",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "relatedExistingArticles": ["linkedin-carousel-generator"],
-    "relatedFutureArticles": ["linkedin-carousel-prompts", "linkedin-carousel-ideas"],
-    "GoToFlowProductAngle": "Educational how-to leading to AI generator.",
-    "recommendedMockupSlots": ["linkedin-carousel-generator-mockup"],
     "publishStatus": "draft",
-    "notes": "Need to ensure it doesn't cannibalize linkedin-carousel-generator."
+    "notes": "Need to ensure it doesn't cannibalize linkedin-carousel-generator.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [
+      "linkedin-carousel-generator",
+      "linkedin-carousel-prompts",
+      "linkedin-carousel-ideas"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Educational how-to leading to AI generator.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "LinkedIn carousel",
     "language": "ru",
     "primaryKeyword": "как сделать карусель в linkedin",
-    "secondaryKeywords": ["карусель linkedin формат", "размер карусели linkedin"],
+    "secondaryKeywords": [
+      "карусель linkedin формат",
+      "размер карусели linkedin"
+    ],
     "searchIntent": "informational",
     "articleType": "how-to",
     "funnelStage": "MOFU",
@@ -220,18 +365,31 @@
     "targetSlug": "kak-sdelat-karusel-linkedin-s-ai",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "relatedExistingArticles": ["generator-karuseley-linkedin-ai"],
-    "relatedFutureArticles": ["idei-karuselej-linkedin"],
-    "GoToFlowProductAngle": "Educational how-to leading to AI generator.",
-    "recommendedMockupSlots": ["ru-linkedin-carousel-generator-mockup"],
     "publishStatus": "draft",
-    "notes": "Need to ensure it doesn't cannibalize generator-karuseley-linkedin-ai."
+    "notes": "Need to ensure it doesn't cannibalize generator-karuseley-linkedin-ai.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [
+      "generator-karuseley-linkedin-ai",
+      "idei-karuselej-linkedin"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Educational how-to leading to AI generator.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "LinkedIn carousel prompts",
     "language": "en",
     "primaryKeyword": "linkedin carousel prompts",
-    "secondaryKeywords": ["chatgpt prompts for linkedin", "ai prompts for linkedin slider"],
+    "secondaryKeywords": [
+      "chatgpt prompts for linkedin",
+      "ai prompts for linkedin slider"
+    ],
     "searchIntent": "informational/navigational",
     "articleType": "guide/resource",
     "funnelStage": "MOFU",
@@ -239,18 +397,29 @@
     "targetSlug": "linkedin-carousel-prompts",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "relatedExistingArticles": ["how-to-make-linkedin-carousel-with-ai"],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Skip ChatGPT prompting altogether.",
-    "recommendedMockupSlots": ["linkedin-carousel-generator-mockup"],
     "publishStatus": "draft",
-    "notes": "In draft."
+    "notes": "In draft.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings"
+    ],
+    "relatedArticles": [
+      "how-to-make-linkedin-carousel-with-ai"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Skip ChatGPT prompting altogether.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "LinkedIn carousel prompts",
     "language": "ru",
     "primaryKeyword": "промпты для карусели linkedin",
-    "secondaryKeywords": ["chatgpt промпты linkedin", "нейросеть linkedin"],
+    "secondaryKeywords": [
+      "chatgpt промпты linkedin",
+      "нейросеть linkedin"
+    ],
     "searchIntent": "informational/navigational",
     "articleType": "guide/resource",
     "funnelStage": "MOFU",
@@ -258,18 +427,30 @@
     "targetSlug": "prompty-dlya-karuseley-linkedin",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "relatedExistingArticles": ["kak-sdelat-karusel-linkedin-s-ai"],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Skip ChatGPT prompting altogether.",
-    "recommendedMockupSlots": ["ru-linkedin-carousel-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Missing RU equivalent."
+    "notes": "Missing RU equivalent.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings"
+    ],
+    "relatedArticles": [
+      "kak-sdelat-karusel-linkedin-s-ai"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Skip ChatGPT prompting altogether.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "AI content generator",
     "language": "en",
     "primaryKeyword": "ai content generator for social media",
-    "secondaryKeywords": ["social media ai tool", "ai post generator", "create social posts with ai"],
+    "secondaryKeywords": [
+      "social media ai tool",
+      "ai post generator",
+      "create social posts with ai"
+    ],
     "searchIntent": "transactional/investigational",
     "articleType": "pillar",
     "funnelStage": "BOFU",
@@ -277,18 +458,31 @@
     "targetSlug": "ai-content-generator-for-social-media",
     "canonicalRisk": "high",
     "cannibalizationRisk": "high",
-    "relatedExistingArticles": [],
-    "relatedFutureArticles": ["ai-post-maker", "ai-instagram-post-generator"],
-    "GoToFlowProductAngle": "Direct tool usage.",
-    "recommendedMockupSlots": ["ai-post-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Need to balance against existing landing pages."
+    "notes": "Need to balance against existing landing pages.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [
+      "ai-post-maker",
+      "ai-instagram-post-generator"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Direct tool usage.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "AI content generator",
     "language": "ru",
     "primaryKeyword": "генератор контента для соцсетей нейросеть",
-    "secondaryKeywords": ["ии для постов", "создать посты нейросетью"],
+    "secondaryKeywords": [
+      "ии для постов",
+      "создать посты нейросетью"
+    ],
     "searchIntent": "transactional/investigational",
     "articleType": "pillar",
     "funnelStage": "BOFU",
@@ -296,18 +490,29 @@
     "targetSlug": "generator-kontenta-dlya-socsetey-neyroset",
     "canonicalRisk": "high",
     "cannibalizationRisk": "high",
-    "relatedExistingArticles": [],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Direct tool usage.",
-    "recommendedMockupSlots": ["ru-ai-post-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Need to balance against existing landing pages."
+    "notes": "Need to balance against existing landing pages.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Direct tool usage.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Content repurposing",
     "language": "en",
     "primaryKeyword": "repurpose blog post to linkedin carousel",
-    "secondaryKeywords": ["convert blog to carousel", "ai repurpose content", "blog to linkedin ai"],
+    "secondaryKeywords": [
+      "convert blog to carousel",
+      "ai repurpose content",
+      "blog to linkedin ai"
+    ],
     "searchIntent": "informational/transactional",
     "articleType": "how-to/use-case",
     "funnelStage": "MOFU",
@@ -315,18 +520,30 @@
     "targetSlug": "repurpose-blog-post-linkedin-carousel-ai",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "relatedExistingArticles": ["how-to-make-linkedin-carousel-with-ai"],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Show exactly how the 'URL to Carousel' feature works in GoToFlow.",
-    "recommendedMockupSlots": ["linkedin-carousel-generator-mockup"],
     "publishStatus": "draft",
-    "notes": "Draft exists but needs review."
+    "notes": "Draft exists but needs review.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [
+      "how-to-make-linkedin-carousel-with-ai"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Show exactly how the 'URL to Carousel' feature works in GoToFlow.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Content repurposing",
     "language": "ru",
     "primaryKeyword": "как переделать статью в карусель",
-    "secondaryKeywords": ["из блога в пост linkedin", "нейросеть для рерайта в карусель"],
+    "secondaryKeywords": [
+      "из блога в пост linkedin",
+      "нейросеть для рерайта в карусель"
+    ],
     "searchIntent": "informational/transactional",
     "articleType": "how-to/use-case",
     "funnelStage": "MOFU",
@@ -334,18 +551,31 @@
     "targetSlug": "kak-peredelat-statyu-v-karusel-linkedin",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "relatedExistingArticles": ["kak-sdelat-karusel-linkedin-s-ai"],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Show exactly how the 'URL to Carousel' feature works in GoToFlow.",
-    "recommendedMockupSlots": ["ru-linkedin-carousel-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Missing RU equivalent."
+    "notes": "Missing RU equivalent.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "format-settings",
+      "style-choice"
+    ],
+    "relatedArticles": [
+      "kak-sdelat-karusel-linkedin-s-ai"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Show exactly how the 'URL to Carousel' feature works in GoToFlow.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Social media content workflow",
     "language": "en",
     "primaryKeyword": "ai vs manual carousel design",
-    "secondaryKeywords": ["canva vs ai", "chatgpt and canva carousel", "save time designing carousels"],
+    "secondaryKeywords": [
+      "canva vs ai",
+      "chatgpt and canva carousel",
+      "save time designing carousels"
+    ],
     "searchIntent": "informational",
     "articleType": "thought-leadership/comparison",
     "funnelStage": "TOFU/MOFU",
@@ -353,18 +583,27 @@
     "targetSlug": "ai-carousel-maker-vs-manual-design",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "relatedExistingArticles": [],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Compare split workflow (ChatGPT + Canva) vs unified workflow (GoToFlow).",
-    "recommendedMockupSlots": ["ai-carousel-generator-mockup"],
     "publishStatus": "draft",
-    "notes": "Draft exists."
+    "notes": "Draft exists.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "style-choice"
+    ],
+    "relatedArticles": [],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Compare split workflow (ChatGPT + Canva) vs unified workflow (GoToFlow).",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Social media content workflow",
     "language": "ru",
     "primaryKeyword": "дизайн каруселей нейросеть против canva",
-    "secondaryKeywords": ["чатгпт и канва", "как сэкономить время на дизайне постов"],
+    "secondaryKeywords": [
+      "чатгпт и канва",
+      "как сэкономить время на дизайне постов"
+    ],
     "searchIntent": "informational",
     "articleType": "thought-leadership/comparison",
     "funnelStage": "TOFU/MOFU",
@@ -372,18 +611,28 @@
     "targetSlug": "dizayn-karuseley-neyroset-vs-canva",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "relatedExistingArticles": [],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Compare split workflow (ChatGPT + Canva) vs unified workflow (GoToFlow).",
-    "recommendedMockupSlots": ["ru-ai-carousel-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Missing RU equivalent."
+    "notes": "Missing RU equivalent.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview",
+      "style-choice"
+    ],
+    "relatedArticles": [],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Compare split workflow (ChatGPT + Canva) vs unified workflow (GoToFlow).",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Carousel design / carousel examples",
     "language": "en",
     "primaryKeyword": "best carousel examples",
-    "secondaryKeywords": ["instagram carousel templates", "viral carousel designs", "swipe file carousels"],
+    "secondaryKeywords": [
+      "instagram carousel templates",
+      "viral carousel designs",
+      "swipe file carousels"
+    ],
     "searchIntent": "informational/investigational",
     "articleType": "listicle",
     "funnelStage": "TOFU",
@@ -391,18 +640,28 @@
     "targetSlug": "best-instagram-carousel-examples",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "relatedExistingArticles": ["instagram-carousel-ideas"],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Stop analyzing, start generating similar templates with AI.",
-    "recommendedMockupSlots": ["ai-carousel-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Good for Top of Funnel."
+    "notes": "Good for Top of Funnel.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview"
+    ],
+    "relatedArticles": [
+      "instagram-carousel-ideas"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Stop analyzing, start generating similar templates with AI.",
+    "contentQualityNotes": ""
   },
   {
     "cluster": "Carousel design / carousel examples",
     "language": "ru",
     "primaryKeyword": "примеры каруселей инстаграм",
-    "secondaryKeywords": ["шаблоны каруселей инстаграм", "вирусные карусели дизайн"],
+    "secondaryKeywords": [
+      "шаблоны каруселей инстаграм",
+      "вирусные карусели дизайн"
+    ],
     "searchIntent": "informational/investigational",
     "articleType": "listicle",
     "funnelStage": "TOFU",
@@ -410,11 +669,18 @@
     "targetSlug": "primery-karuseley-instagram",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "relatedExistingArticles": ["idei-dlya-karuseli-instagram"],
-    "relatedFutureArticles": [],
-    "GoToFlowProductAngle": "Stop analyzing, start generating similar templates with AI.",
-    "recommendedMockupSlots": ["ru-ai-carousel-generator-mockup"],
     "publishStatus": "idea",
-    "notes": "Good for Top of Funnel."
+    "notes": "Good for Top of Funnel.",
+    "requiredMockupSlots": [
+      "topic-input",
+      "result-preview"
+    ],
+    "relatedArticles": [
+      "idei-dlya-karuseli-instagram"
+    ],
+    "doNotCover": "Generic fluff, unrelated tools.",
+    "intentBoundaries": "Keep strictly to the primary keyword intent.",
+    "productAngle": "Stop analyzing, start generating similar templates with AI.",
+    "contentQualityNotes": ""
   }
 ]

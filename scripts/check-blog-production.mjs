@@ -16,11 +16,12 @@ let conflicts = [];
 // Helper for HTTP GET
 function fetchUrl(url) {
   return new Promise((resolve) => {
-    https.get(url, (res) => {
+    const req = https.get(url, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
-      res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, data }));
-    }).on('error', (err) => resolve({ status: 500, data: err.message }));
+      res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, data, error: null }));
+    });
+    req.on('error', (err) => resolve({ status: null, data: null, error: err }));
   });
 }
 
@@ -37,23 +38,47 @@ async function runChecks() {
   // 1. Check build.json
   console.log('Checking /build.json...');
   const buildRes = await fetchUrl(`${BASE_URL}/build.json`);
-  if (buildRes.status !== 200) {
+  if (buildRes.error) {
+    conflicts.push(`NETWORK ERROR fetching build.json: ${buildRes.error.message}`);
+    hasP0Error = true;
+  } else if (buildRes.status !== 200) {
     conflicts.push(`Production build.json is missing or returned ${buildRes.status}`);
     hasP0Error = true;
   } else {
-    console.log('  ✅ build.json is accessible.');
+    try {
+      const buildInfo = JSON.parse(buildRes.data);
+      if (buildInfo.commit === 'unknown') {
+        console.log('  ⚠️ Warning: build.json reports commit: "unknown". Deploy likely succeeded but git hash is missing in Docker build.');
+      } else {
+        console.log(`  ✅ build.json is accessible. Commit: ${buildInfo.commit}`);
+      }
+    } catch (e) {
+      console.log('  ⚠️ Warning: Could not parse build.json');
+    }
   }
 
   // Fetch sitemap and blog indexes
   console.log('Fetching sitemaps and blog indexes...');
   const sitemapRes = await fetchUrl(`${BASE_URL}/sitemap.xml`);
-  const sitemapData = sitemapRes.data;
+  if (sitemapRes.error) {
+    conflicts.push(`NETWORK ERROR fetching sitemap: ${sitemapRes.error.message}`);
+    hasP0Error = true;
+  }
+  const sitemapData = sitemapRes.data || '';
   
   const enBlogRes = await fetchUrl(`${BASE_URL}/blog`);
-  const enBlogData = enBlogRes.data;
+  if (enBlogRes.error) {
+    conflicts.push(`NETWORK ERROR fetching EN blog index: ${enBlogRes.error.message}`);
+    hasP0Error = true;
+  }
+  const enBlogData = enBlogRes.data || '';
   
   const ruBlogRes = await fetchUrl(`${BASE_URL}/ru/blog`);
-  const ruBlogData = ruBlogRes.data;
+  if (ruBlogRes.error) {
+    conflicts.push(`NETWORK ERROR fetching RU blog index: ${ruBlogRes.error.message}`);
+    hasP0Error = true;
+  }
+  const ruBlogData = ruBlogRes.data || '';
 
   // 2. Check Articles
   console.log('Checking articles...');
@@ -65,18 +90,25 @@ async function runChecks() {
     console.log(`  Checking ${fullUrl} [Status: ${article.status}, Preview: ${article.preview}]`);
     
     const res = await fetchUrl(fullUrl);
+    
+    if (res.error) {
+      conflicts.push(`NETWORK ERROR for ${fullUrl}: ${res.error.message}`);
+      hasP0Error = true;
+      continue;
+    }
+
     const html = res.data;
     
     // Check Status Code
     if (article.status === 'published' || article.preview === true) {
       if (res.status !== 200) {
-        conflicts.push(`Article ${route} should be accessible (status 200) but returned ${res.status}`);
+        conflicts.push(`[SEO CONTENT ERROR] Article ${fullUrl} should be accessible (status 200) but returned ${res.status}`);
         hasP0Error = true;
       }
     } else {
       // Drafts without preview:true should not be deployed or return 404
       if (res.status === 200) {
-        conflicts.push(`Article ${route} is a draft without preview, but it returned 200 on production.`);
+        conflicts.push(`[SEO CONTENT ERROR] Article ${fullUrl} is a draft without preview, but it returned 200 on production.`);
         hasP0Error = true;
       }
     }
@@ -90,12 +122,12 @@ async function runChecks() {
       const hasNoindexTag = hasNoindexMeta || hasNoindexHeader;
       
       if (article.status === 'published' && hasNoindexTag) {
-         conflicts.push(`Published article ${route} has a noindex tag in production.`);
+         conflicts.push(`[SEO P0 ERROR] Published article ${fullUrl} has a noindex tag in production.`);
          hasP0Error = true;
       }
       
       if (article.status !== 'published' && article.preview && !hasNoindexTag) {
-         conflicts.push(`Preview article ${route} is MISSING a noindex tag in production.`);
+         conflicts.push(`[SEO P0 ERROR] Preview article ${fullUrl} is MISSING a noindex tag in production.`);
          hasP0Error = true;
       }
     }
@@ -103,25 +135,24 @@ async function runChecks() {
     // Check Sitemap presence
     const inSitemap = sitemapData.includes(route);
     if (article.status === 'published' && !inSitemap) {
-      conflicts.push(`Published article ${route} is MISSING from sitemap.xml`);
+      conflicts.push(`[SEO CONTENT ERROR] Published article ${fullUrl} is MISSING from sitemap.xml`);
       hasP0Error = true;
     }
     if (article.status !== 'published' && inSitemap) {
-      conflicts.push(`Draft article ${route} is IN sitemap.xml (SEO Leak)`);
+      conflicts.push(`[SEO P0 ERROR] Draft article ${fullUrl} is IN sitemap.xml (SEO Leak)`);
       hasP0Error = true;
     }
     
     // Check Blog Index presence
     const blogHtml = article.language === 'ru' ? ruBlogData : enBlogData;
     // VERY simple check: Does the route appear as a link in the blog index?
-    // Depending on pagination, it might not be on page 1, but we assume it is for now.
     const inBlogIndex = blogHtml.includes(`href="${route}"`);
     
     if (article.status === 'published' && !inBlogIndex) {
-      console.log(`  ⚠️ Warning: Published article ${route} not found in first page of /${article.language === 'ru' ? 'ru/blog' : 'blog'}`);
+      console.log(`  ⚠️ Warning: Published article ${fullUrl} not found in first page of /${article.language === 'ru' ? 'ru/blog' : 'blog'}`);
     }
     if (article.status !== 'published' && inBlogIndex) {
-       conflicts.push(`Draft article ${route} is linked in the public blog index!`);
+       conflicts.push(`[SEO P0 ERROR] Draft article ${fullUrl} is linked in the public blog index!`);
        hasP0Error = true;
     }
   }

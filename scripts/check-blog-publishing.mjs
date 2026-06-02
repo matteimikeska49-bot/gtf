@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { VALID_MOCKUP_SLOTS } from '../src/lib/blog/mockupSlots.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -503,11 +504,9 @@ async function runCheck() {
         const layoutMatch = directive.match(/layout="([^"]+)"/);
         const slotMatch = directive.match(/slot="([^"]+)"/);
         
-        const validSlots = ['topic-input', 'result-preview', 'format-settings', 'style-choice'];
-
         if (slotMatch) {
           const slot = slotMatch[1];
-          if (!validSlots.includes(slot)) {
+          if (!VALID_MOCKUP_SLOTS.includes(slot)) {
             errors.push(`Mockup shortcode has unknown slot: ${slot}`);
           }
           if (typeMatch || layoutMatch) {
