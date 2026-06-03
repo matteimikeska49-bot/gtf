@@ -9,9 +9,9 @@ cluster: "Carousel design"
 articleType: "listicle"
 pageType: "ideas_article"
 priority: "P2"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 canonical: "https://gotoflow.io/ru/blog/primery-karuseley-instagram"
 createdAt: "2026-06-03"
 updatedAt: "2026-06-03"

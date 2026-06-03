@@ -9,9 +9,9 @@ cluster: "Instagram carousel ideas"
 articleType: "listicle"
 pageType: "ideas_article"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 canonical: "https://gotoflow.io/ru/blog/idei-dlya-karuseli-instagram"
 createdAt: "2026-06-03"
 updatedAt: "2026-06-03"

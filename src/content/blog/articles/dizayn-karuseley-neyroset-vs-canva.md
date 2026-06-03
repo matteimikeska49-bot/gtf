@@ -9,9 +9,9 @@ cluster: "Social media content workflow"
 articleType: "thought-leadership/comparison"
 pageType: "comparison_article"
 priority: "P2"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 canonical: "https://gotoflow.io/ru/blog/dizayn-karuseley-neyroset-vs-canva"
 createdAt: "2026-06-03"
 updatedAt: "2026-06-03"

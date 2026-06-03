@@ -9,9 +9,9 @@ cluster: "Content repurposing"
 articleType: "how-to/use-case"
 pageType: "use_case_article"
 priority: "P2"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 ru_meta_disclaimer: true
 canonical: "https://gotoflow.io/ru/blog/kak-peredelat-statyu-v-karusel-linkedin"
 createdAt: "2026-06-03"
