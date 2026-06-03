@@ -7,14 +7,15 @@ primaryKeyword: "Instagram carousel ideas"
 searchIntent: "user needs content ideas and repeatable carousel formats for Instagram when they do not know what to post."
 cluster: "AI content workflow"
 articleType: "listicle"
+pageType: "ideas_article"
 priority: "P1"
 published: false
 noindex: true
 preview: true
 canonical: "https://gotoflow.io/blog/instagram-carousel-ideas"
 createdAt: "2026-06-02"
-updatedAt: "2026-06-02"
-lastReviewed: "2026-06-02"
+updatedAt: "2026-06-03"
+lastReviewed: "2026-06-03"
 quickAnswer:
   - "The best Instagram carousel ideas rely on proven formats: educational step-by-steps, mistake breakdowns, myth vs. reality, and behind-the-scenes insights."
   - "Instead of reinventing the wheel for every post, creators should use template-based ideas that can be adapted to any niche."
@@ -54,9 +55,9 @@ explore:
       href: "/ai-carousel-maker"
       description: "Generate beautiful carousels from your rough ideas instantly."
   guides:
-    - title: "How to Make an Instagram Carousel with AI"
-      href: "/blog/how-to-make-an-instagram-carousel-with-ai"
-      description: "Learn the exact workflow to create content faster."
+    - title: "Instagram Carousel Prompts"
+      href: "/blog/instagram-carousel-prompts"
+      description: "Copy ready prompts for turning ideas into structured carousel drafts."
 finalCta:
   title: "Turn your ideas into posts instantly"
   description: "Don't let good ideas sit in your notes app. Use GoToFlow to turn them into published carousels today."

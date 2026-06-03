@@ -13,14 +13,16 @@ secondaryKeywords:
 searchIntent: "The reader wants a practical step-by-step workflow for turning an existing blog post or article into a LinkedIn carousel using AI."
 cluster: "linkedin-carousel"
 articleType: "guide"
+pageType: "use_case_article"
 category: "Guides"
 priority: "P1"
 published: false
 noindex: true
+preview: true
 canonical: "https://gotoflow.io/blog/repurpose-blog-post-linkedin-carousel-ai"
 createdAt: "2026-05-24"
-updatedAt: "2026-05-24"
-lastReviewed: "2026-05-24"
+updatedAt: "2026-06-03"
+lastReviewed: "2026-06-03"
 quickAnswerTitle: "How to repurpose a blog post into a carousel"
 quickAnswer:
   - "**Extract the core argument:** Do not summarize the entire blog post. Pick one specific, actionable angle."

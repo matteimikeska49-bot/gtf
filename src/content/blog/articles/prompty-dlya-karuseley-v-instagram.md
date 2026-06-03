@@ -7,14 +7,15 @@ primaryKeyword: "промпты для каруселей в Инстаграм"
 searchIntent: "пользователь хочет готовые промпты и шаблоны, чтобы быстро создавать карусели для Instagram без долгого придумывания структуры."
 cluster: "AI content workflow"
 articleType: "listicle"
+pageType: "prompt_library"
 priority: "P1"
 published: false
 noindex: true
 preview: true
 canonical: "https://gotoflow.io/ru/blog/prompty-dlya-karuseley-v-instagram"
 createdAt: "2026-06-02"
-updatedAt: "2026-06-02"
-lastReviewed: "2026-06-02"
+updatedAt: "2026-06-03"
+lastReviewed: "2026-06-03"
 quickAnswer:
   - "Лучшие промпты для каруселей должны задавать четкую структуру: тему, аудиторию, количество слайдов и tone of voice."
   - "Например: «Напиши текст для Инстаграм-карусели из 6 слайдов на тему [X] для [Аудитория]. Первый слайд — кликбейтный хук, последний — призыв к действию»."
@@ -53,7 +54,7 @@ faq:
 explore:
   tools:
     - title: "AI Генератор Каруселей"
-      href: "/ru/generator-postov-instagram"
+      href: "/ru/ai-generator-karuselej"
       description: "Превратите идею в готовую карусель за секунды без написания сложных промптов."
   guides:
     - title: "Как создать карусель с помощью AI"
@@ -63,9 +64,10 @@ finalCta:
   title: "Устали придумывать промпты?"
   description: "В GoToFlow все системные промпты уже настроены под идеальную карусель. Просто введите тему и получите готовый дизайн."
   buttonText: "Создать карусель бесплатно"
+  href: "/ru/ai-generator-karuselej"
   microcopy: "Без привязки карты — Готово за секунды"
   secondaryText: "Посмотреть примеры →"
-  secondaryHref: "/ru/generator-postov-instagram"
+  secondaryHref: "/ru/ai-generator-karuselej"
 ---
 
 # Промпты для каруселей в Инстаграм: готовые шаблоны для постов
@@ -146,7 +148,7 @@ AI не знает, что на первом слайде должен быть 
 > [!product]
 > **Попробуйте без долгих промптов**
 > Не тратьте часы на подбор правильных слов для ChatGPT и верстку в редакторе.
-> [Создать карусель в GoToFlow](/ru/generator-postov-instagram)
+> [Создать карусель в GoToFlow](/ru/ai-generator-karuselej)
 
 ## Заключение
 

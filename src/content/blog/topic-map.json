@@ -167,15 +167,15 @@
     "targetSlug": "instagram-carousel-ideas",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "publishStatus": "draft",
-    "notes": "Currently in draft.",
+    "publishStatus": "draft_preview",
+    "notes": "Draft-preview polished for D16 review.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
       "format-settings"
     ],
     "relatedArticles": [
-      "how-to-make-an-instagram-carousel-with-ai",
+      "instagram-carousel-prompts",
       "linkedin-carousel-ideas"
     ],
     "doNotCover": "Generic fluff, unrelated tools.",
@@ -259,8 +259,8 @@
     "targetSlug": "prompty-dlya-karuseley-v-instagram",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "publishStatus": "draft",
-    "notes": "Currently in draft.",
+    "publishStatus": "draft_preview",
+    "notes": "Draft-preview polished for D16 review.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
@@ -591,8 +591,8 @@
     "targetSlug": "repurpose-blog-post-linkedin-carousel-ai",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "publishStatus": "draft",
-    "notes": "Draft exists but needs review.",
+    "publishStatus": "draft_preview",
+    "notes": "Draft-preview prepared locally for D16 review; add to production verification tracking after deploy.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
@@ -654,8 +654,8 @@
     "targetSlug": "ai-carousel-maker-vs-manual-design",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "publishStatus": "draft",
-    "notes": "Draft exists.",
+    "publishStatus": "draft_preview",
+    "notes": "Draft-preview prepared locally for D16 review; add to production verification tracking after deploy.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
