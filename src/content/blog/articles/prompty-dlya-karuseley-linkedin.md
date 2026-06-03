@@ -13,9 +13,9 @@ articleType: "guide/resource"
 pageType: "prompt_library"
 category: "Prompts & Libraries"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 ru_meta_disclaimer: true
 canonical: "https://gotoflow.io/ru/blog/prompty-dlya-karuseley-linkedin"
 createdAt: "2026-06-03"

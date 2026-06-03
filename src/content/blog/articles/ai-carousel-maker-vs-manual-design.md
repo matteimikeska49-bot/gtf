@@ -17,9 +17,9 @@ articleType: "comparison"
 pageType: "comparison_article"
 category: "Tools & Comparisons"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 canonical: "https://gotoflow.io/blog/ai-carousel-maker-vs-manual-design"
 createdAt: "2026-05-24"
 updatedAt: "2026-06-03"

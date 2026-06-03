@@ -16,9 +16,9 @@ articleType: "guide"
 pageType: "use_case_article"
 category: "Guides"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 canonical: "https://gotoflow.io/blog/repurpose-blog-post-linkedin-carousel-ai"
 createdAt: "2026-05-24"
 updatedAt: "2026-06-03"

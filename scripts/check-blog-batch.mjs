@@ -94,10 +94,13 @@ batchData.forEach((entry, i) => {
     if (entry.visualQaStatus !== 'passed') conflicts.push(`${entry.articleId} is ${entry.status} but visualQaStatus is not passed`);
   }
   
-  if (entry.status === 'published') {
-    if (entry.productionVerificationStatus !== 'passed') {
-      conflicts.push(`${entry.articleId} is published but productionVerificationStatus is not passed`);
-    }
+  const validProductionStatuses = ['pending', 'not_started', 'passed'];
+  if (entry.productionVerificationStatus && !validProductionStatuses.includes(entry.productionVerificationStatus)) {
+    conflicts.push(`${entry.articleId} has invalid productionVerificationStatus: ${entry.productionVerificationStatus}`);
+  }
+  
+  if (entry.productionVerificationStatus === 'passed' && entry.status !== 'published') {
+    conflicts.push(`${entry.articleId} has productionVerificationStatus: passed but status is not published`);
   }
 });
 

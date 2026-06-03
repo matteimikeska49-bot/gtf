@@ -9,9 +9,9 @@ cluster: "AI content workflow"
 articleType: "listicle"
 pageType: "ideas_article"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 canonical: "https://gotoflow.io/blog/instagram-carousel-ideas"
 createdAt: "2026-06-02"
 updatedAt: "2026-06-03"

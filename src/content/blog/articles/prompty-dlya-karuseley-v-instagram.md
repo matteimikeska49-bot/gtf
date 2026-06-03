@@ -9,9 +9,9 @@ cluster: "AI content workflow"
 articleType: "listicle"
 pageType: "prompt_library"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 canonical: "https://gotoflow.io/ru/blog/prompty-dlya-karuseley-v-instagram"
 createdAt: "2026-06-02"
 updatedAt: "2026-06-03"

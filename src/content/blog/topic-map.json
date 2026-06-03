@@ -167,7 +167,7 @@
     "targetSlug": "instagram-carousel-ideas",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "publishStatus": "draft_preview",
+    "publishStatus": "published",
     "notes": "Draft-preview polished for D16 review.",
     "requiredMockupSlots": [
       "topic-input",
@@ -259,7 +259,7 @@
     "targetSlug": "prompty-dlya-karuseley-v-instagram",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "publishStatus": "draft_preview",
+    "publishStatus": "published",
     "notes": "Draft-preview polished for D16 review.",
     "requiredMockupSlots": [
       "topic-input",
@@ -468,7 +468,7 @@
     "targetSlug": "prompty-dlya-karuseley-linkedin",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "publishStatus": "draft_preview",
+    "publishStatus": "published",
     "notes": "Draft preview created.",
     "requiredMockupSlots": [
       "topic-input",
@@ -591,7 +591,7 @@
     "targetSlug": "repurpose-blog-post-linkedin-carousel-ai",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "publishStatus": "draft_preview",
+    "publishStatus": "published",
     "notes": "Draft-preview prepared locally for D16 review; add to production verification tracking after deploy.",
     "requiredMockupSlots": [
       "topic-input",
@@ -654,7 +654,7 @@
     "targetSlug": "ai-carousel-maker-vs-manual-design",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "publishStatus": "draft_preview",
+    "publishStatus": "published",
     "notes": "Draft-preview prepared locally for D16 review; add to production verification tracking after deploy.",
     "requiredMockupSlots": [
       "topic-input",
