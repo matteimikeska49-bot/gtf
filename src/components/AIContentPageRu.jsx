@@ -10,10 +10,7 @@ import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
 import { TestimonialsSection } from './TestimonialsSection';
 import { useIsMobile } from '../hooks/useIsMobile';
-
-
-
-
+import { ProductRelatedResources } from './ProductRelatedResources';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -396,11 +393,11 @@ export const CarouselDifferentiationRu = () => {
 export const CarouselSEOBlockRu = () => (
   <section className="py-20 md:py-28 px-6 relative z-10 w-full bg-[#050505]">
     <div className="max-w-3xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Что такое генератор контента с ИИ</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Что такое AI-генератор контента?</h2>
       <div className="text-zinc-400 leading-relaxed space-y-4 text-base">
-        <p>Генератор контента с ИИ — это инструмент, который автоматически создает <strong className="text-zinc-200">контент Instagram</strong> и других соцсетей. Вместо того чтобы писать каждый слайд вручную, вы просто вводите тему или идею, и ИИ выдает структурированную контент с сильным хуком, готовую к публикации.</p>
-        <p>Наш генератор контента работает не как обычные шаблоны. ИИ анализирует контекст, применяет проверенные контентные фреймворки и <strong className="text-zinc-200">создает контент</strong> с четкой целью для каждого слайда — от цепляющего заголовка до призыва к действию (CTA) в конце.</p>
-        <p>Создать контент с помощью ИИ — значит ускорить производство контента, получить стабильное качество и возможность тестировать разные подходы. Будь вы эксперт или фаундер, генератор забирает на себя самую сложную часть работы.</p>
+        <p><strong className="text-zinc-200">AI-генератор контента</strong> — это инструмент, который автоматически создает многоформатный контент для соцсетей: карусели, посты, тексты для Instagram, LinkedIn и Telegram. Вы просто вводите тему или идею, и ИИ выдает структурированный текст с сильным хуком, готовый к публикации.</p>
+        <p>Наш <strong className="text-zinc-200">генератор контента с ИИ</strong> работает не как обычные текстовые нейросети. Он понимает контекст, применяет проверенные контентные формулы и создает каждый блок с четкой целью — от цепляющего заголовка до призыва к действию (CTA) в конце.</p>
+        <p>Используя <strong className="text-zinc-200">генератор контента для соцсетей</strong>, вы ускоряете производство, получаете стабильное качество текстов и можете легко тестировать разные гипотезы. Будь вы эксперт, маркетолог или фаундер, ИИ забирает на себя самую сложную часть работы — написание черновика.</p>
       </div>
     </div>
   </section>
@@ -408,10 +405,12 @@ export const CarouselSEOBlockRu = () => (
 
 /* ── FAQ (RU) ── */
 const faqItems = [
-  { q: 'Что такое генератор контента?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания каруселей. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
-  { q: 'Можно ли создать контент с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram* и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу контент сохраняли и репостили.' },
-  { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
-  { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva помогает с дизайном, а GoToFlow создает контент. Наш ИИ генерирует идеи, хуки и текст для структуры контент, после чего вы получаете готовый результат.' },
+  { q: 'Что такое AI-генератор контента?', a: 'Это инструмент, который автоматически создает многоформатный контент для соцсетей с помощью ИИ. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет текст для постов, каруселей и сценариев — за секунды.' },
+  { q: 'В чем разница между генератором постов и AI-генератором контента?', a: 'Генератор постов часто пишет только текст для картинки. Полноценный AI-генератор контента (как GoToFlow) помогает структурировать сложные форматы: карусели, презентации и длинные треды.' },
+  { q: 'Могу ли я использовать GoToFlow как генератор контента для соцсетей?', a: 'Да! GoToFlow специально создан как AI-генератор контента для таких соцсетей как LinkedIn, Telegram и Instagram, превращая простые идеи в готовые к публикации форматы.' },
+  { q: 'Умеет ли ИИ создавать контент для Instagram?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram и других платформ. ИИ пишет цепляющие тексты, логично выстраивает подачу и делает всё, чтобы ваш контент сохраняли.' },
+  { q: 'Чем это лучше Canva?', a: 'Они решают разные задачи. Canva помогает с дизайном, а GoToFlow — пишет текст и задает структуру. Наш ИИ-генератор контента выдает готовые смыслы, которые потом легко перенести в любой редактор.' },
+  { q: 'Сколько времени занимает создание контента?', a: 'Менее 60 секунд. Вы даете ссылку или тему, и GoToFlow выдает полную структуру с готовым копирайтом.' }
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
@@ -500,15 +499,15 @@ export const AIContentPageRu = () => (
     <CarouselHowItWorksRu />
     <CarouselDifferentiationRu />
     <CarouselSEOBlockRu />
-    <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
-      <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
-        <h3 className="text-white font-medium mb-4 text-base md:text-lg">Используйте ИИ для создания контента:</h3>
-        <ul className="space-y-3 text-sm md:text-base">
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ai-generator-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Карусели</Link></li>
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-karuselej-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Контент для LinkedIn</Link></li>
-        </ul>
-      </div>
-    </section>
+    <ProductRelatedResources blocks={[
+      {
+        title: "Другие инструменты:",
+        links: [
+          { url: "/ru/ai-generator-karuselej", label: "Генератор каруселей" },
+          { url: "/ru/generator-karuselej-linkedin", label: "Карусели для LinkedIn" }
+        ]
+      }
+    ]} />
     <TestimonialsSection />
     <CarouselFAQRu />
     <CarouselBottomCTARu />

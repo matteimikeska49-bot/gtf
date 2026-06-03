@@ -9,10 +9,7 @@ import { CookieBanner } from './CookieBanner';
 import { TestimonialsSection } from './TestimonialsSection';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '../hooks/useIsMobile';
-
-
-
-
+import { ProductRelatedResources } from './ProductRelatedResources';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -398,8 +395,8 @@ export const LICarouselSEOBlock = () => (
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">What is a LinkedIn Carousel Maker?</h2>
       <div className="text-zinc-400 leading-relaxed space-y-4 text-base">
         <p>An <strong className="text-zinc-200">AI carousel maker</strong> is a tool that uses artificial intelligence to automatically generate multi-slide social media posts — commonly known as carousels — for platforms like LinkedIn, Instagram, and Telegram. Instead of writing each slide manually, you provide a topic or idea, and the AI produces a structured, hook-led carousel ready to publish.</p>
-        <p>GoToFlow's <strong className="text-zinc-200">LinkedIn carousel</strong> generator goes beyond simple templates. It understands context, applies proven content frameworks, and crafts each slide with a clear purpose — from a scroll-stopping opener to a closing call-to-action.</p>
-        <p>The benefits of <strong className="text-zinc-200">AI content</strong> generation for carousels are significant: faster production, consistent quality, and the ability to test multiple angles without extra effort. Whether you're a creator, marketer, or founder, an AI carousel maker removes the hardest part of social media — knowing what to say.</p>
+        <p>GoToFlow's <strong className="text-zinc-200">LinkedIn carousel generator</strong> goes beyond simple templates. It understands context, applies proven content frameworks, and crafts each slide with a clear purpose — from a scroll-stopping opener to a closing call-to-action.</p>
+        <p>The benefits of using an <strong className="text-zinc-200">AI LinkedIn carousel generator</strong> are significant: faster production, consistent quality, and the ability to test multiple angles without extra effort. Whether you're a creator, marketer, or founder, a dedicated LinkedIn carousel tool removes the hardest part of social media — knowing what to say.</p>
       </div>
     </div>
   
@@ -409,10 +406,11 @@ export const LICarouselSEOBlock = () => (
 /* ── FAQ ── */
 const faqItems = [
   { q: 'What is an AI carousel maker?', a: 'An AI carousel maker is a tool that automatically generates multi-slide social media posts using artificial intelligence. You provide a topic, and the AI writes the hook, structures the slides, and fills each one with content — in seconds.' },
+  { q: 'What is the difference between a LinkedIn carousel maker and a LinkedIn carousel generator?', a: 'They are essentially the same. Both refer to AI tools that take your idea or text and automatically format it into a multi-slide carousel. The term "generator" often emphasizes the AI creating the content from scratch, while "maker" might include the design aspect.' },
+  { q: 'Can I use GoToFlow as an AI LinkedIn carousel generator?', a: 'Yes! GoToFlow is specifically designed to function as an AI LinkedIn carousel generator. It reads your prompts, links, or ideas, and generates a structured, hook-led carousel ready for LinkedIn.' },
   { q: 'Can AI create LinkedIn carousels?', a: 'Yes. GoToFlow generates carousel content optimized for LinkedIn, Instagram, and Telegram. The AI writes hook-led copy, structures the slides logically, and ensures each carousel is built to drive saves and shares.' },
   { q: 'Is GoToFlow better than Canva for carousels?', a: 'They solve different problems. Canva helps you design; GoToFlow writes the content. GoToFlow generates the ideas, hooks, and copy — then you can use any design tool to format it. Many users combine both.' },
   { q: 'How long does it take to generate a carousel?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full carousel structure with copy for every slide.' },
-  { q: 'Do I need to be a good writer to use GoToFlow?', a: 'No. GoToFlow is designed for people who want great carousel content without being professional copywriters. Just describe your topic and the AI handles the rest.' },
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
@@ -505,16 +503,21 @@ export const LinkedInCarouselPage = () => (
     <LICarouselDifferentiation />
     <LICarouselShowcase />
     <LICarouselSEOBlock />
-    <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
-      <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
-        <h3 className="text-white font-medium mb-4 text-base md:text-lg">Create more than just LinkedIn carousels:</h3>
-        <ul className="space-y-3 text-sm md:text-base">
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ai-content-generator" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Generate full content with our AI content generator</Link></li>
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ai-instagram-post-generator" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Create Instagram posts for other platforms</Link></li>
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/blog/linkedin-carousel-ideas" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">LinkedIn carousel ideas</Link></li>
-        </ul>
-      </div>
-    </section>
+    <ProductRelatedResources blocks={[
+      {
+        title: "Related guides & prompts:",
+        links: [
+          { url: "/blog/linkedin-carousel-prompts", label: "LinkedIn carousel prompts" }
+        ]
+      },
+      {
+        title: "Related tools:",
+        links: [
+          { url: "/ai-carousel-maker", label: "AI carousel maker" },
+          { url: "/ai-content-generator", label: "AI content generator" }
+        ]
+      }
+    ]} />
     <TestimonialsSection />
     <LICarouselFAQ />
     <LICarouselBottomCTA />

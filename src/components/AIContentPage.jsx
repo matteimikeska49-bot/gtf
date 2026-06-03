@@ -9,12 +9,7 @@ import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
 import { TestimonialsSection } from './TestimonialsSection';
 import { useIsMobile } from '../hooks/useIsMobile';
-
-
-
-
-
-const CTA_URL = 'https://app.gotoflow.io';
+import { ProductRelatedResources } from './ProductRelatedResources';const CTA_URL = 'https://app.gotoflow.io';
 
 /* ── SEO Head ── */
 export const SEOHead = () => {
@@ -398,20 +393,20 @@ export const ContentSEOBlock = () => (
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">What is an AI Content Generator?</h2>
       <div className="text-zinc-400 leading-relaxed space-y-4 text-base">
         <p>An <strong className="text-zinc-200">AI content generator</strong> is a tool that uses artificial intelligence to automatically generate multi-format social media content, including posts, captions, carousels, and short-form content ideas for platforms like Instagram, LinkedIn, and Telegram. Instead of writing each slide manually, you provide a topic or idea, and the AI produces a structured, hook-led content ready to publish.</p>
-        <p>GoToFlow's <strong className="text-zinc-200">Instagram content</strong> generator goes beyond simple templates. It understands context, applies proven content frameworks, and crafts each slide with a clear purpose — from a scroll-stopping opener to a closing call-to-action.</p>
-        <p>The benefits of <strong className="text-zinc-200">AI content</strong> generation for posts and content are significant: faster production, consistent quality, and the ability to test multiple angles without extra effort. Whether you're a creator, marketer, or founder, an AI content generator removes the hardest part of social media — knowing what to say.</p>
+        <p>GoToFlow's <strong className="text-zinc-200">AI content generator for social media</strong> goes beyond simple templates. It understands context, applies proven content frameworks, and crafts each slide with a clear purpose — from a scroll-stopping opener to a closing call-to-action.</p>
+        <p>The benefits of using a dedicated <strong className="text-zinc-200">social media AI content generator</strong> are significant: faster production, consistent quality, and the ability to test multiple angles without extra effort. Whether you're a creator, marketer, or founder, an AI content generator removes the hardest part of social media — knowing what to say.</p>
       </div>
     </div>
   </section>
 );
 
-/* ── FAQ ── */
 const faqItems = [
   { q: 'What is an AI content generator?', a: 'An AI content generator is a tool that automatically generates multi-slide social media posts using artificial intelligence. You provide a topic, and the AI writes the hook, structures the slides, and fills each one with content — in seconds.' },
+  { q: 'What is the difference between an AI post generator and an AI content generator?', a: 'They serve a similar purpose but vary in scope. A post generator might just write a text caption, whereas a full AI content generator (like GoToFlow) helps you structure entire content formats, including carousels, slides, and long-form threads.' },
+  { q: 'Can I use GoToFlow as an AI content generator for social media?', a: 'Yes! GoToFlow is specifically built to be an AI content generator for social media platforms like LinkedIn and Instagram, turning simple ideas into ready-to-publish content structures.' },
   { q: 'Can AI create Instagram posts and content?', a: 'Yes. GoToFlow generates content optimized for Instagram, LinkedIn, and Telegram. The AI writes hook-led copy, structures the slides logically, and ensures each content is built to drive saves and shares.' },
   { q: 'Is GoToFlow better than Canva for posts and content?', a: 'They solve different problems. Canva helps you design; GoToFlow writes the content. GoToFlow generates the ideas, hooks, and copy — then you can use any design tool to format it. Many users combine both.' },
-  { q: 'How long does it take to generate a content?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full content structure with copy for every slide.' },
-  { q: 'Do I need to be a good writer to use GoToFlow?', a: 'No. GoToFlow is designed for people who want great content without being professional copywriters. Just describe your topic and the AI handles the rest.' },
+  { q: 'How long does it take to generate a content?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full content structure with copy for every slide.' }
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
@@ -500,15 +495,16 @@ export const AIContentPage = () => (
     <ContentHowItWorks />
     <ContentDifferentiation />
     <ContentSEOBlock />
-    <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
-      <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
-        <h3 className="text-white font-medium mb-4 text-base md:text-lg">Turn ideas into structured content:</h3>
-        <ul className="space-y-3 text-sm md:text-base">
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ai-carousel-maker" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Create carousels</Link></li>
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/linkedin-carousel-maker" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Generate LinkedIn content</Link></li>
-        </ul>
-      </div>
-    </section>
+    <ProductRelatedResources blocks={[
+      {
+        title: "Related tools:",
+        links: [
+          { url: "/ai-carousel-maker", label: "AI carousel maker" },
+          { url: "/linkedin-carousel-maker", label: "LinkedIn carousel maker" },
+          { url: "/ai-instagram-post-generator", label: "Instagram post generator" }
+        ]
+      }
+    ]} />
     <TestimonialsSection />
     <ContentFAQ />
     <ContentBottomCTA />

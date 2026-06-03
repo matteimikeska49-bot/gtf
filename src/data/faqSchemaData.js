@@ -31,23 +31,26 @@ export const faqSchemaData = {
   ],
   "/ru/ai-generator-karuselej": [
     { q: 'Что такое генератор каруселей?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания каруселей. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
+    { q: 'Могу ли я использовать GoToFlow как генератор каруселей для Инстаграм?', a: 'Да! GoToFlow отлично работает как генератор каруселей для Инстаграм. Вы получаете структурированные слайды с хуками, которые готовы для дизайна в Canva или Figma.' },
     { q: 'Можно ли создать карусель с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу карусель сохраняли и репостили.' },
     { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
     { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva помогает с дизайном, а GoToFlow создает контент. Наш ИИ генерирует идеи, хуки и текст для структуры карусели, после чего вы получаете готовый результат.' }
   ],
   "/ai-content-generator": [
-    { q: 'What is an AI content generator?', a: 'It is a tool that uses artificial intelligence to automatically create posts, carousels, and scripts. You provide a topic, link, or idea, and the AI generates structured, engaging content ready to publish.' },
-    { q: 'Can AI replace a copywriter?', a: 'AI doesn’t replace human creativity, but it eliminates the blank page. It does the heavy lifting—structuring, writing hooks, and formatting—so you only need to review and polish.' },
-    { q: 'Will my content sound like a robot?', a: 'Not with GoToFlow. You can define your tone of voice and style. The AI adapts to your guidelines, ensuring the output sounds like you, not a generic template.' },
-    { q: 'How does this save time?', a: 'Instead of spending hours writing a post from scratch or analyzing competitors, you get a ready-to-publish draft in under 60 seconds. You spend your time reviewing, not writing.' },
-    { q: 'Can I generate content from a link or video?', a: 'Yes. You can paste a YouTube link, an article URL, or a competitor’s post, and GoToFlow will extract the core ideas and turn them into a fresh post or carousel.' }
+    { q: 'What is an AI content generator?', a: 'An AI content generator is a tool that automatically generates multi-slide social media posts using artificial intelligence. You provide a topic, and the AI writes the hook, structures the slides, and fills each one with content — in seconds.' },
+    { q: 'What is the difference between an AI post generator and an AI content generator?', a: 'They serve a similar purpose but vary in scope. A post generator might just write a text caption, whereas a full AI content generator (like GoToFlow) helps you structure entire content formats, including carousels, slides, and long-form threads.' },
+    { q: 'Can I use GoToFlow as an AI content generator for social media?', a: 'Yes! GoToFlow is specifically built to be an AI content generator for social media platforms like LinkedIn and Instagram, turning simple ideas into ready-to-publish content structures.' },
+    { q: 'Can AI create Instagram posts and content?', a: 'Yes. GoToFlow generates content optimized for Instagram, LinkedIn, and Telegram. The AI writes hook-led copy, structures the slides logically, and ensures each content is built to drive saves and shares.' },
+    { q: 'Is GoToFlow better than Canva for posts and content?', a: 'They solve different problems. Canva helps you design; GoToFlow writes the content. GoToFlow generates the ideas, hooks, and copy — then you can use any design tool to format it. Many users combine both.' },
+    { q: 'How long does it take to generate a content?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full content structure with copy for every slide.' }
   ],
   "/ru/generator-kontenta": [
-    { q: 'Что такое AI-генератор контента?', a: 'Это инструмент, который использует искусственный интеллект для создания постов, каруселей и сценариев. Вы даете тему, ссылку или идею, а ИИ выдает структурированный текст, готовый к публикации.' },
-    { q: 'Может ли ИИ заменить копирайтера?', a: 'ИИ не заменяет креативность, но избавляет от страха чистого листа. Он берет на себя рутину: продумывает структуру, пишет хуки и оформляет текст. Вам остается только внести финальные правки.' },
-    { q: 'Будет ли мой текст звучать как у робота?', a: 'Нет, если использовать GoToFlow. Вы задаете свой tone of voice, и ИИ подстраивается под него. Текст звучит живо и естественно, а не как шаблонная генерация.' },
-    { q: 'В чем реальная экономия времени?', a: 'Вместо часов на написание поста или анализ конкурентов, вы получаете готовый черновик за 60 секунд. Вы тратите время на редактуру, а не на создание с нуля.' },
-    { q: 'Можно ли сделать контент из чужого видео или статьи?', a: 'Да. Вставьте ссылку на YouTube, статью или пост конкурента, и GoToFlow вытащит главные смыслы, превратив их в уникальный пост или карусель.' }
+    { q: 'Что такое AI-генератор контента?', a: 'Это инструмент, который автоматически создает многоформатный контент для соцсетей с помощью ИИ. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет текст для постов, каруселей и сценариев — за секунды.' },
+    { q: 'В чем разница между генератором постов и AI-генератором контента?', a: 'Генератор постов часто пишет только текст для картинки. Полноценный AI-генератор контента (как GoToFlow) помогает структурировать сложные форматы: карусели, презентации и длинные треды.' },
+    { q: 'Могу ли я использовать GoToFlow как генератор контента для соцсетей?', a: 'Да! GoToFlow специально создан как AI-генератор контента для таких соцсетей как LinkedIn, Telegram и Instagram, превращая простые идеи в готовые к публикации форматы.' },
+    { q: 'Умеет ли ИИ создавать контент для Instagram?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram и других платформ. ИИ пишет цепляющие тексты, логично выстраивает подачу и делает всё, чтобы ваш контент сохраняли.' },
+    { q: 'Чем это лучше Canva?', a: 'Они решают разные задачи. Canva помогает с дизайном, а GoToFlow — пишет текст и задает структуру. Наш ИИ-генератор контента выдает готовые смыслы, которые потом легко перенести в любой редактор.' },
+    { q: 'Сколько времени занимает создание контента?', a: 'Менее 60 секунд. Вы даете ссылку или тему, и GoToFlow выдает полную структуру с готовым копирайтом.' }
   ],
   "/ai-instagram-post-generator": [
     { q: 'How does the Instagram post generator work?', a: 'You input a topic, idea, or link. The AI analyzes it, generates a catchy hook, writes the main body, and adds relevant hashtags. You get a ready-to-post caption in seconds.' },
@@ -64,18 +67,19 @@ export const faqSchemaData = {
     { q: 'Будет ли текст звучать естественно?', a: 'Да. Вы можете настроить tone of voice, чтобы посты звучали именно так, как говорите вы или ваш бренд.' }
   ],
   "/linkedin-carousel-maker": [
-    { q: 'Why are LinkedIn carousels so effective?', a: 'Carousels keep users scrolling through your post longer, which signals to the LinkedIn algorithm that your content is highly engaging. This significantly boosts your reach compared to text alone.' },
-    { q: 'How does GoToFlow generate LinkedIn carousels?', a: 'You paste a link, a topic, or a raw idea. The AI extracts the key points, formats them into a logical slide-by-slide structure, writes a strong hook, and adds a CTA.' },
-    { q: 'Can I customize the carousel structure?', a: 'Yes. You can edit the generated text, rearrange slides, add new points, or rewrite specific sections before finalizing the content.' },
-    { q: 'Do I need design skills?', a: 'No. GoToFlow provides the complete structure and copy. You can then copy it into your favorite design tool (like Canva) or use our built-in basic styling.' },
-    { q: 'How many slides should a LinkedIn carousel have?', a: 'The sweet spot is usually between 6 to 12 slides. GoToFlow optimizes the content length to ensure maximum engagement without overwhelming the reader.' }
+    { q: 'What is an AI carousel maker?', a: 'An AI carousel maker is a tool that automatically generates multi-slide social media posts using artificial intelligence. You provide a topic, and the AI writes the hook, structures the slides, and fills each one with content — in seconds.' },
+    { q: 'What is the difference between a LinkedIn carousel maker and a LinkedIn carousel generator?', a: 'They are essentially the same. Both refer to AI tools that take your idea or text and automatically format it into a multi-slide carousel. The term "generator" often emphasizes the AI creating the content from scratch, while "maker" might include the design aspect.' },
+    { q: 'Can I use GoToFlow as an AI LinkedIn carousel generator?', a: 'Yes! GoToFlow is specifically designed to function as an AI LinkedIn carousel generator. It reads your prompts, links, or ideas, and generates a structured, hook-led carousel ready for LinkedIn.' },
+    { q: 'Can AI create LinkedIn carousels?', a: 'Yes. GoToFlow generates carousel content optimized for LinkedIn, Instagram, and Telegram. The AI writes hook-led copy, structures the slides logically, and ensures each carousel is built to drive saves and shares.' },
+    { q: 'Is GoToFlow better than Canva for carousels?', a: 'They solve different problems. Canva helps you design; GoToFlow writes the content. GoToFlow generates the ideas, hooks, and copy — then you can use any design tool to format it. Many users combine both.' },
+    { q: 'How long does it take to generate a carousel?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full carousel structure with copy for every slide.' }
   ],
   "/ru/generator-karuselej-linkedin": [
-    { q: 'Почему карусели в LinkedIn так хорошо работают?', a: 'Карусели заставляют пользователей дольше задерживаться на вашем посте. Алгоритм LinkedIn видит это и начинает активнее продвигать ваш контент в ленте.' },
-    { q: 'Как GoToFlow создает карусели для LinkedIn?', a: 'Вы вставляете ссылку, тему или идею. ИИ выделяет главное, разбивает информацию на слайды, пишет сильный хук для начала и призыв к действию в конце.' },
-    { q: 'Можно ли изменить структуру после генерации?', a: 'Да. Вы можете редактировать текст, менять слайды местами, добавлять свои мысли или просить ИИ переписать отдельные части.' },
-    { q: 'Мне нужен дизайнер для этого?', a: 'Нет. GoToFlow выдает готовую структуру и тексты. Вам остается только перенести их в Canva или Figma, либо использовать встроенные базовые стили.' },
-    { q: 'Сколько слайдов должно быть в идеальной карусели?', a: 'Оптимально — от 6 до 12 слайдов. GoToFlow автоматически подбирает нужный объем текста, чтобы удержать внимание читателя до конца.' }
+    { q: 'Что такое генератор каруселей?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания каруселей. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
+    { q: 'Могу ли я использовать GoToFlow как генератор каруселей для LinkedIn?', a: 'Да! GoToFlow отлично работает как AI-генератор каруселей для LinkedIn. Вы получаете структурированные слайды с хуками, готовые для скачивания или дизайна.' },
+    { q: 'Можно ли создать карусель с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для LinkedIn и Instagram. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу карусель сохраняли и репостили.' },
+    { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
+    { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva помогает с дизайном, а GoToFlow создает контент. Наш ИИ генерирует идеи, хуки и текст для структуры карусели, после чего вы получаете готовый результат.' }
   ],
   "/blog/linkedin-carousel-ideas": [
     { q: 'What makes a good LinkedIn carousel?', a: 'A strong hook on slide 1, one idea per slide, clean visuals, and a clear CTA at the end. The best carousels teach something valuable in a skimmable format.' },

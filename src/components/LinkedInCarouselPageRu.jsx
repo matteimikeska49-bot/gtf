@@ -10,10 +10,7 @@ import { CookieBanner } from './CookieBanner';
 import { TestimonialsSection } from './TestimonialsSection';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '../hooks/useIsMobile';
-
-
-
-
+import { ProductRelatedResources } from './ProductRelatedResources';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -411,9 +408,10 @@ export const LICarouselSEOBlockRu = () => (
 /* ── FAQ (RU) ── */
 const faqItems = [
   { q: 'Что такое генератор каруселей?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания каруселей. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
-  { q: 'Можно ли создать карусель с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для LinkedIn и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу карусель сохраняли и репостили.' },
+  { q: 'Могу ли я использовать GoToFlow как генератор каруселей для LinkedIn?', a: 'Да! GoToFlow отлично работает как AI-генератор каруселей для LinkedIn. Вы получаете структурированные слайды с хуками, готовые для скачивания или дизайна.' },
+  { q: 'Можно ли создать карусель с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для LinkedIn и Instagram. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу карусель сохраняли и репостили.' },
   { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
-  { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva помогает с дизайном, а GoToFlow создает контент. Наш ИИ генерирует идеи, хуки и текст для структуры карусели, после чего вы получаете готовый результат.' },
+  { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva помогает с дизайном, а GoToFlow создает контент. Наш ИИ генерирует идеи, хуки и текст для структуры карусели, после чего вы получаете готовый результат.' }
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
@@ -506,16 +504,21 @@ export const LinkedInCarouselPageRu = () => (
     <LICarouselDifferentiationRu />
     <LICarouselShowcaseRu />
     <LICarouselSEOBlockRu />
-    <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
-      <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
-        <h3 className="text-white font-medium mb-4 text-base md:text-lg">Создавайте не только карусели для LinkedIn:</h3>
-        <ul className="space-y-3 text-sm md:text-base">
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор полного контента</Link></li>
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-postov-instagram" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор постов для Instagram</Link></li>
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/blog/idei-karuselej-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">идеи каруселей LinkedIn</Link></li>
-        </ul>
-      </div>
-    </section>
+    <ProductRelatedResources blocks={[
+      {
+        title: "Полезные материалы:",
+        links: [
+          { url: "/ru/blog/idei-karuselej-linkedin", label: "Идеи для каруселей в LinkedIn" }
+        ]
+      },
+      {
+        title: "Другие инструменты:",
+        links: [
+          { url: "/ru/generator-kontenta", label: "AI Генератор контента" },
+          { url: "/ru/ai-generator-karuselej", label: "Карусели для Instagram" }
+        ]
+      }
+    ]} />
     <TestimonialsSection />
     <LICarouselFAQRu />
     <LICarouselBottomCTARu />
