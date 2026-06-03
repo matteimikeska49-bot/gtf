@@ -129,6 +129,22 @@ async function checkRoutes() {
       pageReport.desktopScreenshot = `${safeName}-desktop.png`;
       
       let evalDataDesktop = await page.evaluate(() => {
+        let offendingElements = [];
+        if (document.documentElement.scrollWidth > window.innerWidth + 10) {
+          const allElements = document.querySelectorAll('*');
+          for (const el of allElements) {
+             if (el.scrollWidth > window.innerWidth && el.tagName !== 'HTML' && el.tagName !== 'BODY') {
+                 const style = window.getComputedStyle(el);
+                 if (style.overflowX === 'auto' || style.overflowX === 'scroll' || style.overflowX === 'hidden') continue;
+                 offendingElements.push({
+                    tagName: el.tagName,
+                    className: el.className,
+                    text: el.innerText ? el.innerText.substring(0, 50).replace(/\n/g, ' ') : ''
+                 });
+             }
+          }
+        }
+
         return {
           scrollWidth: document.documentElement.scrollWidth,
           innerWidth: window.innerWidth,
@@ -136,13 +152,21 @@ async function checkRoutes() {
           bodyText: document.body.innerText,
           htmlText: document.documentElement.outerHTML,
           h1Text: document.querySelector('h1') ? document.querySelector('h1').innerText : null,
-          hasWhiteCard: !!document.querySelector('.prose .bg-white, .prose [style*="background-color: rgb(255, 255, 255)"], .prose .text-slate-900')
+          hasWhiteCard: !!document.querySelector('.prose .bg-white, .prose [style*="background-color: rgb(255, 255, 255)"], .prose .text-slate-900'),
+          offendingElements,
+          hasExploreZone: !!document.querySelector('h2') && (document.body.innerText.includes('Explore more') || document.body.innerText.includes('Смотрите также')),
+          hasFAQ: document.documentElement.outerHTML.includes('itemtype="https://schema.org/FAQPage"') || document.body.innerText.includes('FAQ') || document.body.innerText.includes('Часто задаваемые вопросы')
         };
       });
 
       if (evalDataDesktop.scrollWidth > evalDataDesktop.innerWidth + 10) {
         pageReport.hasHorizontalOverflowDesktop = true;
-        pageReport.warnings.push(`Desktop horizontal overflow: scrollWidth=${evalDataDesktop.scrollWidth}, innerWidth=${evalDataDesktop.innerWidth}`);
+        pageReport.passed = false;
+        hasP0Errors = true;
+        pageReport.pageErrors.push(`Desktop horizontal overflow: scrollWidth=${evalDataDesktop.scrollWidth}, innerWidth=${evalDataDesktop.innerWidth}`);
+        if (evalDataDesktop.offendingElements && evalDataDesktop.offendingElements.length > 0) {
+            pageReport.pageErrors.push(`Offending desktop elements: ${JSON.stringify(evalDataDesktop.offendingElements)}`);
+        }
       }
       
       // Mobile test & screenshot
@@ -154,19 +178,48 @@ async function checkRoutes() {
       pageReport.mobileScreenshot = `${safeName}-mobile.png`;
 
       let evalDataMobile = await page.evaluate(() => {
+        let offendingElements = [];
+        if (document.documentElement.scrollWidth > window.innerWidth + 10) {
+          const allElements = document.querySelectorAll('*');
+          for (const el of allElements) {
+             if (el.scrollWidth > window.innerWidth && el.tagName !== 'HTML' && el.tagName !== 'BODY') {
+                 const style = window.getComputedStyle(el);
+                 if (style.overflowX === 'auto' || style.overflowX === 'scroll' || style.overflowX === 'hidden') continue;
+                 offendingElements.push({
+                    tagName: el.tagName,
+                    className: el.className,
+                    text: el.innerText ? el.innerText.substring(0, 50).replace(/\n/g, ' ') : ''
+                 });
+             }
+          }
+        }
         return {
           scrollWidth: document.documentElement.scrollWidth,
-          innerWidth: window.innerWidth
+          innerWidth: window.innerWidth,
+          offendingElements
         };
       });
 
       if (evalDataMobile.scrollWidth > evalDataMobile.innerWidth + 10) {
         pageReport.hasHorizontalOverflowMobile = true;
-        pageReport.warnings.push(`Mobile horizontal overflow: scrollWidth=${evalDataMobile.scrollWidth}, innerWidth=${evalDataMobile.innerWidth}`);
+        pageReport.passed = false;
+        hasP0Errors = true;
+        pageReport.pageErrors.push(`Mobile horizontal overflow: scrollWidth=${evalDataMobile.scrollWidth}, innerWidth=${evalDataMobile.innerWidth}`);
+        if (evalDataMobile.offendingElements && evalDataMobile.offendingElements.length > 0) {
+            pageReport.pageErrors.push(`Offending mobile elements: ${JSON.stringify(evalDataMobile.offendingElements)}`);
+        }
       }
 
       // Assertions
-      const { bodyText, htmlText, h1Text, hasViteOverlay, hasWhiteCard } = evalDataDesktop;
+      const { bodyText, htmlText, h1Text, hasViteOverlay, hasWhiteCard, hasExploreZone, hasFAQ } = evalDataDesktop;
+
+      if (!hasExploreZone) {
+         pageReport.warnings.push('Article Explore Zone or CTA missing');
+      }
+
+      if (!hasFAQ) {
+         pageReport.warnings.push('FAQ section missing');
+      }
 
       if (hasViteOverlay) {
         pageReport.hasViteOverlay = true;

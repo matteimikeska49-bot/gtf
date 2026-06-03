@@ -149,7 +149,8 @@ async function runChecks() {
     const inBlogIndex = blogHtml.includes(`href="${route}"`);
     
     if (article.status === 'published' && !inBlogIndex) {
-      console.log(`  ⚠️ Warning: Published article ${fullUrl} not found in first page of /${article.language === 'ru' ? 'ru/blog' : 'blog'}`);
+      conflicts.push(`[SEO CONTENT ERROR] Published article ${fullUrl} not found in first page of /${article.language === 'ru' ? 'ru/blog' : 'blog'}`);
+      hasP0Error = true;
     }
     if (article.status !== 'published' && inBlogIndex) {
        conflicts.push(`[SEO P0 ERROR] Draft article ${fullUrl} is linked in the public blog index!`);
