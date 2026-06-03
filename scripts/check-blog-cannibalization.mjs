@@ -27,7 +27,7 @@ const articles = [];
 try {
   const files = fs.readdirSync(ARTICLES_DIR);
   for (const file of files) {
-    if (!file.endsWith('.md') || file.startsWith('_')) continue;
+    if (!file.endsWith('.md') || file.startsWith('_') || file.startsWith('test-')) continue;
     const content = fs.readFileSync(path.join(ARTICLES_DIR, file), 'utf-8');
     
     // Parse frontmatter
@@ -39,8 +39,10 @@ try {
     const slug = getMatch(/^slug:\s*["']?([^"'\n]+)["']?/m) || file.replace(/\.md$/, '');
     const language = getMatch(/^language:\s*["']?([^"'\n]+)["']?/m) || 'en';
     const primaryKeyword = getMatch(/^primaryKeyword:\s*["']?([^"'\n]+)["']?/m);
+    const articleType = getMatch(/^articleType:\s*["']?([^"'\n]+)["']?/m);
+    const searchIntent = getMatch(/^searchIntent:\s*["']?([^"'\n]+)["']?/m);
     
-    articles.push({ file, slug, language, primaryKeyword, content });
+    articles.push({ file, slug, language, primaryKeyword, articleType, searchIntent, content });
   }
 } catch (e) {
   console.error(`❌ Failed to read articles: ${e.message}`);
@@ -112,6 +114,67 @@ articles.forEach(article => {
     
     if (topicEntry && topicEntry.targetSlug !== article.slug) {
       warnings.push(`Mismatch: Markdown article '${article.file}' uses keyword '${article.primaryKeyword}' but its slug '${article.slug}' differs from topic-map targetSlug '${topicEntry.targetSlug}'`);
+    }
+  }
+});
+
+// 3D. Check for product-intent cannibalization
+const productIntentPatternsEn = [
+  "ai carousel maker", "ai carousel generator", "linkedin carousel maker", 
+  "linkedin carousel generator", "ai content generator", "ai content generator for social media", 
+  "social media content generator", "carousel maker", "carousel generator"
+];
+const productIntentPatternsRu = [
+  "генератор каруселей", "ai генератор каруселей", "нейросеть для каруселей", 
+  "генератор контента", "ai генератор контента", "генератор контента для соцсетей", 
+  "генератор каруселей linkedin"
+];
+
+const recommendedRoutes = {
+  "ai carousel maker": "/ai-carousel-maker",
+  "ai carousel generator": "/ai-carousel-maker",
+  "linkedin carousel maker": "/linkedin-carousel-maker",
+  "linkedin carousel generator": "/linkedin-carousel-maker",
+  "ai content generator": "/ai-content-generator",
+  "ai content generator for social media": "/ai-content-generator",
+  "social media content generator": "/ai-content-generator",
+  "carousel maker": "/ai-carousel-maker",
+  "carousel generator": "/ai-carousel-maker",
+  "генератор каруселей": "/ru/ai-generator-karuselej",
+  "ai генератор каруселей": "/ru/ai-generator-karuselej",
+  "нейросеть для каруселей": "/ru/ai-generator-karuselej",
+  "генератор контента": "/ru/generator-kontenta",
+  "ai генератор контента": "/ru/generator-kontenta",
+  "генератор контента для соцсетей": "/ru/generator-kontenta",
+  "генератор каруселей linkedin": "/ru/generator-karuselej-linkedin"
+};
+
+const isAllowedProductIntent = (articleType, primaryKeyword) => {
+  const type = articleType?.toLowerCase() || '';
+  if (type === 'comparison' || type === 'comparison_article') return true;
+  if (type === 'prompt_library') return true;
+  if ((type === 'how_to' || type === 'how_to_article') && !productIntentPatternsEn.includes(primaryKeyword?.toLowerCase()) && !productIntentPatternsRu.includes(primaryKeyword?.toLowerCase())) return true;
+  return false;
+};
+
+articles.forEach(article => {
+  if (article.primaryKeyword) {
+    const kw = article.primaryKeyword.toLowerCase();
+    const patterns = article.language === 'ru' ? productIntentPatternsRu : productIntentPatternsEn;
+    
+    // Check if the keyword contains any product intent pattern
+    const matchedPattern = patterns.find(p => kw.includes(p));
+    
+    if (matchedPattern) {
+      if (!isAllowedProductIntent(article.articleType, kw)) {
+        const recommendedRoute = recommendedRoutes[matchedPattern] || 'Product Route';
+        const msg = `Product-intent cannibalization in article: ${article.file} (Slug: ${article.slug})\n` +
+                    `    Conflicting keyword/intent: '${kw}' contains product term '${matchedPattern}'\n` +
+                    `    Recommended product route: ${recommendedRoute}\n` +
+                    `    Note: If this is supporting content, adjust articleType (e.g. comparison_article, prompt_library) or primaryKeyword.`;
+        conflicts.push(msg);
+        hasP0Error = true;
+      }
     }
   }
 });

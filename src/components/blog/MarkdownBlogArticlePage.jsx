@@ -7,6 +7,14 @@ import { MainLayout } from '../MainLayout';
 import { getMarkdownArticleBySlug } from '../../lib/blog/markdownArticles';
 import { MarkdownSeoArticleTemplateV2 } from './templates/MarkdownSeoArticleTemplateV2';
 import { NotFoundPage } from '../NotFoundPage';
+import {
+  getOrganizationSchema,
+  getWebSiteSchema,
+  getArticleSchema,
+  getBreadcrumbSchema,
+  getFAQPageSchema,
+  buildSchema
+} from '../../utils/schemaGenerator';
 
 const setMeta = (name, content, prop = false) => {
   if (!content) return;
@@ -73,6 +81,44 @@ const MarkdownArticleSEOHead = ({ article }) => {
       });
     }
 
+    const path = `${langPrefix}/blog/${article.slug}`;
+    const items = [
+      getOrganizationSchema(),
+      getWebSiteSchema(article.language || 'en'),
+      getArticleSchema(path, title, description, article.language || 'en')
+    ];
+
+    const blogLabel = article.language === 'ru' ? 'Блог' : 'Blog';
+    const homeLabel = article.language === 'ru' ? 'Главная' : 'Home';
+    const crumbs = [
+      { name: homeLabel, path: langPrefix || '/' },
+      { name: blogLabel, path: `${langPrefix}/blog` },
+      { name: title, path }
+    ];
+    items.push(getBreadcrumbSchema(crumbs, path));
+
+    if (article.faq && Array.isArray(article.faq) && article.faq.length > 0) {
+      const faqItems = article.faq.map(item => ({
+        q: item.question,
+        a: item.answer
+      }));
+      items.push(getFAQPageSchema(faqItems, path));
+    }
+
+    const schema = buildSchema(items);
+    
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'article-ld-json';
+    script.text = JSON.stringify(schema);
+    
+    const existing = document.getElementById('article-ld-json');
+    if (existing) {
+      existing.remove();
+    }
+    
+    document.head.appendChild(script);
+
     return () => {
       const robotsMeta = document.querySelector('meta[name="robots"]');
       const robotsContent = article.noindex ? 'noindex, nofollow' : 'index, follow';
@@ -82,6 +128,10 @@ const MarkdownArticleSEOHead = ({ article }) => {
       }
 
       document.title = 'GoToFlow';
+
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
     };
   }, [article]);
 
