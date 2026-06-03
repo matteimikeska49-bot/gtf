@@ -82,7 +82,7 @@ async function runChecks() {
 
   // 2. Check Articles
   console.log('Checking articles...');
-  const articlesToCheck = batchData.filter(a => ['published', 'ready_to_publish', 'draft'].includes(a.status));
+  const articlesToCheck = batchData.filter(a => ['published', 'ready_to_publish', 'draft', 'draft_preview'].includes(a.status) || (a.published === false && a.noindex === true && a.preview === true));
 
   for (const article of articlesToCheck) {
     const route = article.language === 'ru' ? `/ru/blog/${article.slug}` : `/blog/${article.slug}`;

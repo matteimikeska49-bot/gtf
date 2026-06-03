@@ -122,8 +122,9 @@ async function getDynamicMarkdownRoutes() {
       // Simple frontmatter parsing
       const isPublished = /^published:\s*true\b/m.test(content);
       const isNoindex = /^noindex:\s*true\b/m.test(content);
+      const isPreview = /^preview:\s*true\b/m.test(content);
       
-      if (isPublished && !isNoindex) {
+      if ((isPublished && !isNoindex) || (isPreview && isNoindex && !isPublished)) {
         // Extract slug, fallback to filename
         const slugMatch = content.match(/^slug:\s*["']?([^"'\n]+)["']?/m);
         const slug = slugMatch ? slugMatch[1].trim() : file.replace(/\.md$/, '');
@@ -133,7 +134,11 @@ async function getDynamicMarkdownRoutes() {
         const language = langMatch ? langMatch[1].trim() : 'en';
 
         const route = language === 'ru' ? `/ru/blog/${slug}` : `/blog/${slug}`;
-        dynamicRoutes.push(route);
+        
+        // We only add to sitemap if it's actually published and indexable
+        const addToSitemap = isPublished && !isNoindex;
+        
+        dynamicRoutes.push({ route, addToSitemap });
       }
     }
   } catch (err) {
@@ -147,9 +152,12 @@ async function getDynamicMarkdownRoutes() {
   console.log('🚀  Starting prerender…\n');
 
   const dynamicRoutes = await getDynamicMarkdownRoutes();
-  if (dynamicRoutes.length > 0) {
-    console.log(`📚  Found ${dynamicRoutes.length} dynamic markdown articles: ${dynamicRoutes.join(', ')}`);
-    ROUTES.push(...dynamicRoutes);
+  const routesToPrerender = dynamicRoutes.map(r => r.route);
+  const routesToSitemap = dynamicRoutes.filter(r => r.addToSitemap).map(r => r.route);
+
+  if (routesToPrerender.length > 0) {
+    console.log(`📚  Found ${routesToPrerender.length} dynamic markdown articles: ${routesToPrerender.join(', ')}`);
+    ROUTES.push(...routesToPrerender);
   }
 
   const port = await getFreePort();
@@ -210,11 +218,11 @@ async function getDynamicMarkdownRoutes() {
     const sitemapPath = path.join(DIST, 'sitemap.xml');
     let sitemap = await readFile(sitemapPath, 'utf-8');
     
-    if (dynamicRoutes.length > 0 && sitemap.includes('</urlset>')) {
+    if (routesToSitemap.length > 0 && sitemap.includes('</urlset>')) {
       const today = new Date().toISOString().split('T')[0];
       let newUrls = '';
       
-      for (const route of dynamicRoutes) {
+      for (const route of routesToSitemap) {
         // Ensure it's not already in the sitemap manually
         if (!sitemap.includes(`<loc>https://gotoflow.io${route}</loc>`)) {
           newUrls += `
@@ -230,7 +238,7 @@ async function getDynamicMarkdownRoutes() {
       if (newUrls) {
         sitemap = sitemap.replace('</urlset>', `${newUrls}\n</urlset>`);
         await writeFile(sitemapPath, sitemap, 'utf-8');
-        console.log(`\n🗺️  Added ${dynamicRoutes.length} dynamic routes to sitemap.xml`);
+        console.log(`\n🗺️  Added ${routesToSitemap.length} dynamic routes to sitemap.xml`);
       }
     }
   } catch (err) {
