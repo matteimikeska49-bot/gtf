@@ -27,3 +27,9 @@ Purpose: Prevent repeating the same failures during SEO publishing and platform 
 
 7. **System changes require explicit approval:**
    System changes require explicit separate approval unless the current prompt explicitly approves them.
+
+8. **Commit and push requirements:**
+   Commit and push actions require explicit COMMIT APPROVAL ONLY. Do not commit or push outside of this approved stage.
+
+9. **Production verification status:**
+   `productionVerificationStatus` cannot be set to `passed` before real production verification is performed on the live site.
