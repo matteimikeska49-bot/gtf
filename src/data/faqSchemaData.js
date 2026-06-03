@@ -21,8 +21,10 @@ export const faqSchemaData = {
     { q: "Что входит в бесплатный доступ и нужна ли карта?", a: "Вы можете начать бесплатно без привязки карты. На старте даётся лимит генераций, чтобы протестировать продукт и получить первые результаты без риска." }
   ],
   "/ai-carousel-maker": [
-    { q: 'What is an AI carousel maker?', a: 'It is a tool that uses artificial intelligence to automatically generate carousels. You provide a topic, and the AI writes the hook, structures the content, and fills each slide with text—in seconds.' },
-    { q: 'Can AI make a carousel?', a: 'Yes. GoToFlow generates content optimized for LinkedIn and Instagram. The AI writes engaging copy, structures the slides logically, and ensures your carousel is designed to be saved and shared.' },
+    { q: 'What is an AI carousel maker?', a: 'An AI carousel maker is a tool that automatically generates multi-slide social media posts using artificial intelligence. You provide a topic, and the AI writes the hook, structures the slides, and fills each one with content — in seconds.' },
+    { q: 'What is the difference between an AI carousel maker and an AI carousel generator?', a: 'They usually mean the same thing: a tool that uses AI to turn a topic, prompt, or text into a structured social media carousel.' },
+    { q: 'Can I use GoToFlow as an Instagram carousel generator?', a: 'Yes. GoToFlow can generate Instagram carousel content and slide structure from a topic or text, while also supporting LinkedIn-style carousels when needed.' },
+    { q: 'Can AI create Instagram carousels?', a: 'Yes. GoToFlow generates carousel content optimized for Instagram, LinkedIn, and Telegram. The AI writes hook-led copy, structures the slides logically, and ensures each carousel is built to drive saves and shares.' },
     { q: 'Is GoToFlow better than Canva for carousels?', a: 'They solve different problems. Canva helps you design; GoToFlow writes the content. GoToFlow generates the ideas, hooks, and copy — then you can use any design tool to format it. Many users combine both.' },
     { q: 'How long does it take to generate a carousel?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full carousel structure with copy for every slide.' },
     { q: 'Do I need to be a good writer to use GoToFlow?', a: 'No. GoToFlow is designed for people who want great carousel content without being professional copywriters. Just describe your topic and the AI handles the rest.' }

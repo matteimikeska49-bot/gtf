@@ -153,9 +153,9 @@ export const CarouselSEOBlock = () => (
     <div className="max-w-3xl mx-auto">
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">What is an AI Carousel Maker?</h2>
       <div className="text-zinc-400 leading-relaxed space-y-4 text-base">
-        <p>An <strong className="text-zinc-200">AI carousel maker</strong> is a tool that uses artificial intelligence to automatically generate multi-slide social media posts — commonly known as carousels — for platforms like Instagram, LinkedIn, and Telegram. Instead of writing each slide manually, you provide a topic or idea, and the AI produces a structured, hook-led carousel ready to publish.</p>
-        <p>GoToFlow's <strong className="text-zinc-200">Instagram carousel</strong> generator goes beyond simple templates. It understands context, applies proven content frameworks, and crafts each slide with a clear purpose — from a scroll-stopping opener to a closing call-to-action.</p>
-        <p>The benefits of <strong className="text-zinc-200">AI content</strong> generation for carousels are significant: faster production, consistent quality, and the ability to test multiple angles without extra effort. Whether you're a creator, marketer, or founder, an AI carousel maker removes the hardest part of social media — knowing what to say.</p>
+        <p>An <strong className="text-zinc-200">AI carousel maker</strong> (or AI carousel generator) is a tool that uses artificial intelligence to automatically generate multi-slide social media posts — commonly known as carousels — for platforms like Instagram, LinkedIn, and Telegram. Instead of writing each slide manually, you provide a topic or idea, and the AI produces a structured, hook-led carousel ready to publish.</p>
+        <p>GoToFlow's <strong className="text-zinc-200">Instagram carousel generator</strong> goes beyond simple templates. It understands context, applies proven content frameworks, and crafts each slide with a clear purpose — from a scroll-stopping opener to a closing call-to-action.</p>
+        <p>The benefits of <strong className="text-zinc-200">AI content</strong> generation for carousels are significant: faster production, consistent quality, and the ability to test multiple angles without extra effort. Whether you're a creator, marketer, or founder, an AI carousel maker removes the hardest part of social media — knowing what to say. It acts as your ultimate carousel maker for social media.</p>
       </div>
     </div>
   </section>
@@ -164,6 +164,8 @@ export const CarouselSEOBlock = () => (
 /* ── FAQ ── */
 const faqItems = [
   { q: 'What is an AI carousel maker?', a: 'An AI carousel maker is a tool that automatically generates multi-slide social media posts using artificial intelligence. You provide a topic, and the AI writes the hook, structures the slides, and fills each one with content — in seconds.' },
+  { q: 'What is the difference between an AI carousel maker and an AI carousel generator?', a: 'They usually mean the same thing: a tool that uses AI to turn a topic, prompt, or text into a structured social media carousel.' },
+  { q: 'Can I use GoToFlow as an Instagram carousel generator?', a: 'Yes. GoToFlow can generate Instagram carousel content and slide structure from a topic or text, while also supporting LinkedIn-style carousels when needed.' },
   { q: 'Can AI create Instagram carousels?', a: 'Yes. GoToFlow generates carousel content optimized for Instagram, LinkedIn, and Telegram. The AI writes hook-led copy, structures the slides logically, and ensures each carousel is built to drive saves and shares.' },
   { q: 'Is GoToFlow better than Canva for carousels?', a: 'They solve different problems. Canva helps you design; GoToFlow writes the content. GoToFlow generates the ideas, hooks, and copy — then you can use any design tool to format it. Many users combine both.' },
   { q: 'How long does it take to generate a carousel?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full carousel structure with copy for every slide.' },
