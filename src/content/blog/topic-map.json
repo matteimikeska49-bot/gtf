@@ -229,8 +229,8 @@
     "targetSlug": "instagram-carousel-prompts",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "publishStatus": "draft_preview",
-    "notes": "Upgraded to MarkdownSeoArticleTemplateV2. Draft preview created.",
+    "publishStatus": "published",
+    "notes": "Published.",
     "requiredMockupSlots": [
       "topic-input",
       "result-preview",
