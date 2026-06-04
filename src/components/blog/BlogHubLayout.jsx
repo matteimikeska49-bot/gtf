@@ -261,11 +261,11 @@ const BlogHero = ({ isRu }) => {
         </div>
       </div>
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 leading-tight">
-        {isRu ? 'Идеи, хуки и примеры контента для соцсетей' : 'GoToFlow Blog'}
+        {isRu ? 'Блог GoToFlow: идеи для постов и каруселей' : 'GoToFlow Blog'}
       </h1>
       <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
         {isRu 
-          ? 'Готовые идеи, подписи и шаблоны, которые можно сразу превратить в пост или карусель.'
+          ? 'Практические гайды, промпты, примеры каруселей и AI-воркфлоу для авторов, маркетологов и команд.'
           : 'Practical guides, prompt libraries, carousel ideas, and AI content workflows for creators, founders, marketers, and teams.'}
       </p>
       
@@ -281,10 +281,10 @@ const BlogHero = ({ isRu }) => {
             {isRu ? 'Популярное:' : 'Explore popular:'}
           </span>
           <Link to={isRu ? "/ru/blog/idei-karuselej-linkedin" : "/blog/linkedin-carousel-ideas"} className="px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/20 text-sm text-zinc-300 transition-all">
-            {isRu ? 'Идеи каруселей' : 'LinkedIn carousel ideas'}
+            {isRu ? 'Идеи для каруселей' : 'LinkedIn carousel ideas'}
           </Link>
           <Link to={isRu ? "/ru/blog/luchshie-ai-generatory-karuselej" : "/blog/best-ai-carousel-generators"} className="px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/20 text-sm text-zinc-300 transition-all">
-            {isRu ? 'AI генераторы каруселей' : 'AI carousel generators'}
+            {isRu ? 'AI-генераторы каруселей' : 'AI carousel generators'}
           </Link>
         </div>
       </div>
