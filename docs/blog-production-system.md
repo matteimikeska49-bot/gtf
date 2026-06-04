@@ -173,6 +173,21 @@ Before any article is published, it must pass indexability QA:
 
 ---
 
+## Topic approval gate before article generation
+
+1. No article generation before keyword demand + SERP + intent + product reality + cannibalization + mockup readiness are recorded.
+2. `demandSource`, `exactVolumeKnown`, and `fallbackAllowed` are strictly required for approved topics.
+3. Unknown exact volume is acceptable only as a warning, not hidden. Exact volume should be added later from Ahrefs/Semrush/Wordstat/GSC when available.
+4. AI/SERP synthesis demand source is acceptable for controlled Wave 2, but must be visible as a warning.
+5. Do not invent search volume. Use `demandConfidence` when exact volume is unknown.
+6. Topics must be marked approve/revise/hold/reject in `topic-map.json`.
+7. "Best tools / alternatives" topics require fresh competitor research.
+8. Product capability must be confirmed before promising workflows.
+9. Visual/how-to/comparison/examples articles must include native mockup plan.
+10. Approved topics can move to draft generation only after `check:blog:topics` passes.
+
+---
+
 ## Keyword and intent research rules
 
 Перед написанием статьи агент должен понять:
