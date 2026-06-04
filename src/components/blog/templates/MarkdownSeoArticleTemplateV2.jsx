@@ -292,17 +292,19 @@ const parseMarkdownBlocks = (markdown) => {
         }
       }
       
-      index += 1;
-      while (index < lines.length && lines[index].trim() !== ':::') {
-        index += 1;
-      }
-      
       if (type && layout) {
         blocks.push({ type: 'mockup', mockupType: type, layout, slot });
       }
-      if (index < lines.length && lines[index].trim() === ':::') {
-        index += 1;
+      
+      index += 1;
+      let tempIndex = index;
+      while (tempIndex < lines.length && lines[tempIndex].trim() === '') {
+        tempIndex += 1;
       }
+      if (tempIndex < lines.length && lines[tempIndex].trim() === ':::') {
+        index = tempIndex + 1;
+      }
+      
       continue;
     }
 
@@ -1197,7 +1199,7 @@ const NativeMockupBlock = ({ mockup, layout }) => {
   
   if (layout === 'featured') {
     return (
-      <div className="my-10 overflow-hidden rounded-[24px] border border-white/[0.08] bg-[#0a0a0a] shadow-2xl">
+      <div data-blog-mockup="true" className="my-10 overflow-hidden rounded-[24px] border border-white/[0.08] bg-[#0a0a0a] shadow-2xl">
         <div className="bg-black/40 flex justify-center p-4">
           <img 
             src={mockup.path} 
@@ -1217,7 +1219,7 @@ const NativeMockupBlock = ({ mockup, layout }) => {
   
   if (layout === 'inline') {
     return (
-      <div className="my-8 overflow-hidden rounded-[20px] border border-white/[0.08] bg-[#0a0a0a] shadow-xl">
+      <div data-blog-mockup="true" className="my-8 overflow-hidden rounded-[20px] border border-white/[0.08] bg-[#0a0a0a] shadow-xl">
         <div className="bg-black/30 flex justify-center p-3">
           <img 
             src={mockup.path} 
@@ -1237,7 +1239,7 @@ const NativeMockupBlock = ({ mockup, layout }) => {
 
   if (layout === 'compact') {
     return (
-      <div className="my-8 max-w-2xl mx-auto overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] shadow-lg">
+      <div data-blog-mockup="true" className="my-8 max-w-2xl mx-auto overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] shadow-lg">
         <div className="bg-black/40 flex justify-center p-3">
           <img 
             src={mockup.path} 

@@ -33,14 +33,27 @@ export const getApprovedMockups = (filters = {}) => {
 };
 
 export const getMockupsForArticle = (article, options = {}) => {
-  const filters = {
+  const baseFilters = {
     language: article.language,
-    cluster: article.cluster,
-    articleType: article.articleType,
     suitableFor: options.suitableFor,
   };
   
-  const mockups = getApprovedMockups(filters);
+  let mockups = getApprovedMockups({
+    ...baseFilters,
+    cluster: article.cluster,
+    articleType: article.articleType,
+  });
+  
+  if (mockups.length === 0) {
+    mockups = getApprovedMockups({
+      ...baseFilters,
+      cluster: article.cluster,
+    });
+  }
+  
+  if (mockups.length === 0) {
+    mockups = getApprovedMockups(baseFilters);
+  }
   
   if (options.limit && mockups.length > 0) {
     return mockups.slice(0, options.limit);

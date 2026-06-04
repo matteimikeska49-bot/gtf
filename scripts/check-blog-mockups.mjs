@@ -166,6 +166,44 @@ try {
     } else {
       console.log(`📄 ${file} (${language}): no mockups found.`);
     }
+
+    const slugMatch = content.match(/^slug:\s*["']?([^"'\n]+)["']?/m);
+    const slug = slugMatch ? slugMatch[1].trim() : file.replace('.md', '');
+    const distHtmlPath = path.join(__dirname, '../dist', language === 'ru' ? 'ru/blog' : 'blog', slug, 'index.html');
+    if (fs.existsSync(distHtmlPath)) {
+      const htmlContent = fs.readFileSync(distHtmlPath, 'utf-8');
+      
+      const mockupBlockRegex = /data-blog-mockup="true"/g;
+      let renderedMockupsCount = 0;
+      let match;
+      while ((match = mockupBlockRegex.exec(htmlContent)) !== null) {
+        renderedMockupsCount++;
+        const blockContent = htmlContent.substring(match.index, match.index + 2000);
+        const imgMatch = blockContent.match(/<img([^>]+)>/);
+        if (imgMatch) {
+           const imgAttrs = imgMatch[1];
+           const srcMatch = imgAttrs.match(/src="([^"]+)"/);
+           const altMatch = imgAttrs.match(/alt="([^"]+)"/);
+           
+           if (!srcMatch || !srcMatch[1].includes('/mockups/')) {
+              conflicts.push(`Article ${file} rendered a mockup but the src path is missing or invalid: ${srcMatch ? srcMatch[1] : 'null'}`);
+              hasP0Error = true;
+           }
+           if (!altMatch || !altMatch[1] || altMatch[1].trim() === '') {
+              conflicts.push(`Article ${file} rendered a mockup but the alt text is missing or empty.`);
+              hasP0Error = true;
+           }
+        } else {
+           conflicts.push(`Article ${file} has a mockup container but no <img> tag was found inside it.`);
+           hasP0Error = true;
+        }
+      }
+
+      if (slotsFound.length > 0 && renderedMockupsCount !== slotsFound.length) {
+        conflicts.push(`Article ${file} has ${slotsFound.length} mockup slots in markdown, but found ${renderedMockupsCount} rendered mockups in built HTML.`);
+        hasP0Error = true;
+      }
+    }
   }
 } catch (e) {
   console.error(`❌ Failed to read articles: ${e.message}`);
