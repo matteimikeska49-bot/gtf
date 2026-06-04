@@ -160,33 +160,38 @@ const normalizeArticle = (article, isMarkdown = false, isRu = false) => {
 const getCategoriesConfig = (isRu) => {
   if (isRu) {
     return [
-      { id: 'guides', title: 'Руководства', titleBase: 'Руководства', titleAccent: '', description: 'Пошаговые инструкции по созданию контента с ИИ.' },
-      { id: 'prompts', title: 'Промпты', titleBase: 'Промпты', titleAccent: 'и библиотеки', description: 'Готовые коллекции промптов и шаблоны.' },
-      { id: 'ideas', title: 'Идеи', titleBase: 'Идеи', titleAccent: '', description: 'Темы и идеи для постов.' },
-      { id: 'tools', title: 'Инструменты', titleBase: 'Инструменты', titleAccent: 'и обзоры', description: 'Обзоры AI-инструментов.' },
-      { id: 'workflows', title: 'Воркфлоу', titleBase: 'AI-контент', titleAccent: 'воркфлоу', description: 'Системы создания контента.' },
-      { id: 'articles', title: 'Статьи', titleBase: 'Статьи', titleAccent: '', description: 'Общие советы.' }
+      { id: 'guides', baseCategory: 'Guides', title: 'Руководства', titleBase: 'Руководства', titleAccent: '', description: 'Пошаговые инструкции по созданию контента с ИИ.' },
+      { id: 'prompts', baseCategory: 'Prompts & Libraries', title: 'Промпты и библиотеки', titleBase: 'Промпты', titleAccent: 'и библиотеки', description: 'Готовые коллекции промптов и шаблоны.' },
+      { id: 'ideas', baseCategory: 'Ideas', title: 'Идеи', titleBase: 'Идеи', titleAccent: '', description: 'Темы и идеи для постов.' },
+      { id: 'tools', baseCategory: 'Tools & Comparisons', title: 'Инструменты и обзоры', titleBase: 'Инструменты', titleAccent: 'и обзоры', description: 'Обзоры AI-инструментов.' },
+      { id: 'workflows', baseCategory: 'AI Content Workflows', title: 'AI-контент воркфлоу', titleBase: 'AI-контент', titleAccent: 'воркфлоу', description: 'Системы создания контента.' },
+      { id: 'articles', baseCategory: 'Articles & Tips', title: 'Статьи', titleBase: 'Статьи', titleAccent: '', description: 'Общие советы.' }
     ];
   }
   return [
-    { id: 'guides', title: 'Guides', titleBase: 'Guides', titleAccent: '', description: 'Step-by-step workflows for creating carousels, posts, and content systems with AI.' },
-    { id: 'prompts', title: 'Prompts & Libraries', titleBase: 'Prompts', titleAccent: '& Libraries', description: 'Copy-ready prompt collections and reusable content frameworks.' },
-    { id: 'ideas', title: 'Ideas', titleBase: 'Ideas', titleAccent: '', description: 'Topic ideas and angles for creating better social content.' },
-    { id: 'tools', title: 'Tools & Comparisons', titleBase: 'Tools', titleAccent: '& Comparisons', description: 'Tool roundups, alternatives, and buying guides.' },
-    { id: 'workflows', title: 'AI Content Workflows', titleBase: 'AI Content', titleAccent: 'Workflows', description: 'Systems for repurposing, scaling, and improving AI-assisted content.' },
-    { id: 'articles', title: 'Articles & Tips', titleBase: 'Articles', titleAccent: '& Tips', description: 'General tips and insights for social media growth.' }
+    { id: 'guides', baseCategory: 'Guides', title: 'Guides', titleBase: 'Guides', titleAccent: '', description: 'Step-by-step workflows for creating carousels, posts, and content systems with AI.' },
+    { id: 'prompts', baseCategory: 'Prompts & Libraries', title: 'Prompts & Libraries', titleBase: 'Prompts', titleAccent: '& Libraries', description: 'Copy-ready prompt collections and reusable content frameworks.' },
+    { id: 'ideas', baseCategory: 'Ideas', title: 'Ideas', titleBase: 'Ideas', titleAccent: '', description: 'Topic ideas and angles for creating better social content.' },
+    { id: 'tools', baseCategory: 'Tools & Comparisons', title: 'Tools & Comparisons', titleBase: 'Tools', titleAccent: '& Comparisons', description: 'Tool roundups, alternatives, and buying guides.' },
+    { id: 'workflows', baseCategory: 'AI Content Workflows', title: 'AI Content Workflows', titleBase: 'AI Content', titleAccent: 'Workflows', description: 'Systems for repurposing, scaling, and improving AI-assisted content.' },
+    { id: 'articles', baseCategory: 'Articles & Tips', title: 'Articles & Tips', titleBase: 'Articles', titleAccent: '& Tips', description: 'General tips and insights for social media growth.' }
   ];
 };
 
 const groupArticlesByCategory = (articles, isRu) => {
   const grouped = {};
   const config = getCategoriesConfig(isRu);
-  config.forEach(c => grouped[c.title] = []);
+  
+  config.forEach(c => { grouped[c.id] = []; });
+  grouped['other'] = [];
+  
+  const categoryToId = {};
+  config.forEach(c => { categoryToId[c.baseCategory] = c.id; });
   
   articles.forEach(article => {
-    const cat = article.categoryName;
-    if (!grouped[cat]) grouped[cat] = [];
-    grouped[cat].push(article);
+    const cat = article.baseCategory;
+    const targetId = categoryToId[cat] || 'other';
+    grouped[targetId].push(article);
   });
   
   return grouped;
@@ -377,8 +382,7 @@ const CategorySection = ({ config, articles, index, isRu }) => {
   );
 };
 
-const BlogContentSections = ({ groupedArticles, isRu }) => {
-  const config = getCategoriesConfig(isRu);
+const BlogContentSections = ({ config, groupedArticles, isRu }) => {
   return (
     <section className="pt-16 pb-16 px-6 relative z-10 w-full bg-[#050505]">
       <div className="max-w-6xl mx-auto">
@@ -386,7 +390,7 @@ const BlogContentSections = ({ groupedArticles, isRu }) => {
           <CategorySection 
             key={catConfig.id} 
             config={catConfig} 
-            articles={groupedArticles[catConfig.title]} 
+            articles={groupedArticles[catConfig.id]} 
             index={i} 
             isRu={isRu}
           />
@@ -444,8 +448,21 @@ export const BlogHubLayout = ({ isRu }) => {
   const featuredArticles = getFeaturedArticles(allArticles, isRu);
   const groupedArticles = groupArticlesByCategory(allArticles, isRu);
   
-  const config = getCategoriesConfig(isRu);
-  const activeCategories = config.filter(cat => groupedArticles[cat.title]?.length > 0);
+  let config = getCategoriesConfig(isRu);
+  
+  // Guardrail: Ensure published articles with unknown categories are rendered
+  if (groupedArticles['other'] && groupedArticles['other'].length > 0) {
+    config.push({
+      id: 'other',
+      baseCategory: 'Other',
+      title: isRu ? 'Другое' : 'Other',
+      titleBase: isRu ? 'Другое' : 'Other',
+      titleAccent: '',
+      description: ''
+    });
+  }
+  
+  const activeCategories = config.filter(cat => groupedArticles[cat.id]?.length > 0);
 
   return (
     <MainLayout>
@@ -454,7 +471,7 @@ export const BlogHubLayout = ({ isRu }) => {
       <BlogHero isRu={isRu} />
       <FeaturedSection articles={featuredArticles} isRu={isRu} />
       {activeCategories.length > 0 && <CategoryNavigation categories={activeCategories} />}
-      <BlogContentSections groupedArticles={groupedArticles} isRu={isRu} />
+      <BlogContentSections config={activeCategories} groupedArticles={groupedArticles} isRu={isRu} />
       <BottomWorkflowBlock isRu={isRu} />
       <Footer />
       <CookieBanner />
