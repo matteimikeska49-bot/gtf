@@ -12,17 +12,133 @@ console.log('🖼️  Starting strict mockup language check...\n');
 
 let hasP0Error = false;
 let conflicts = [];
+let warnings = [];
 
 // 1. Extract approved assets from registry.json
 const slotAssets = { en: {}, ru: {} };
+let approvedAssets = [];
+
+const getPriorityWeight = (priority) => {
+  if (priority === 'high' || priority === 1) return 1;
+  if (priority === 'medium' || priority === 2) return 2;
+  if (priority === 'low' || priority === 3) return 3;
+  return 99;
+};
+
+const matchesValue = (assetValue, filterValue) => {
+  if (!filterValue) return true;
+  if (Array.isArray(assetValue)) return assetValue.includes(filterValue);
+  return assetValue === filterValue;
+};
+
+const getApprovedMockups = (filters = {}) => {
+  return approvedAssets
+    .filter(asset => !filters.language || asset.language === filters.language)
+    .filter(asset => matchesValue(asset.cluster, filters.cluster))
+    .filter(asset => matchesValue(asset.articleTypes, filters.articleType))
+    .filter(asset => {
+      if (!filters.suitableFor) return true;
+      const filterSuitable = Array.isArray(filters.suitableFor) ? filters.suitableFor : [filters.suitableFor];
+      const assetSuitable = Array.isArray(asset.suitableFor) ? asset.suitableFor : [asset.suitableFor];
+      return filterSuitable.some(slot => assetSuitable.includes(slot));
+    })
+    .sort((a, b) => getPriorityWeight(a.priority) - getPriorityWeight(b.priority));
+};
+
+const getMockupSelectionForArticle = (article, options = {}) => {
+  const baseFilters = {
+    language: article.language,
+    suitableFor: options.suitableFor,
+  };
+
+  const selectionSteps = [
+    {
+      matchLevel: 'exact',
+      filters: {
+        ...baseFilters,
+        cluster: article.cluster,
+        articleType: article.articleType,
+      },
+    },
+    {
+      matchLevel: 'clusterFallback',
+      filters: {
+        ...baseFilters,
+        cluster: article.cluster,
+      },
+    },
+    {
+      matchLevel: 'articleTypeFallback',
+      filters: {
+        ...baseFilters,
+        articleType: article.articleType,
+      },
+    },
+    {
+      matchLevel: 'languageSlotFallback',
+      filters: baseFilters,
+    },
+  ];
+
+  for (const step of selectionSteps) {
+    const mockups = getApprovedMockups(step.filters);
+    if (mockups.length > 0) {
+      return {
+        asset: mockups[0],
+        matchLevel: step.matchLevel,
+        filters: step.filters,
+      };
+    }
+  }
+
+  return {
+    asset: null,
+    matchLevel: 'none',
+    filters: baseFilters,
+  };
+};
+
+const isStronglyVisualArticle = ({ articleType, pageType, searchIntent, cluster }) => {
+  const typeText = `${articleType || ''} ${pageType || ''}`.toLowerCase();
+  const intentText = `${searchIntent || ''} ${cluster || ''}`.toLowerCase();
+
+  const requiredTypes = [
+    'comparison',
+    'comparison_article',
+    'guide',
+    'how-to',
+    'how_to',
+    'how_to_article',
+    'thought-leadership/comparison',
+    'tutorial',
+    'use_case_article',
+    'how-to/use-case',
+    'ideas_article',
+    'examples_article',
+    'visual guide',
+    'visual_guide',
+    'listicle',
+    'ideas',
+    'best-tools'
+  ];
+
+  const typeRequiresMockup = requiredTypes.some(type => typeText.includes(type));
+  const visualIntent = /(carousel|карусел|examples?|примеры|design|дизайн|workflow|воркфлоу|comparison|сравнен|before\/after|до\/после)/i.test(intentText);
+  const promptLibraryOnly = typeText.includes('prompt_library') || typeText.includes('prompts');
+
+  return typeRequiresMockup || (visualIntent && !promptLibraryOnly);
+};
+
+const assetUsage = new Map();
 
 try {
   const registryContent = fs.readFileSync(REGISTRY_PATH, 'utf-8');
   const registry = JSON.parse(registryContent);
   const assets = registry.assets || [];
+  approvedAssets = assets.filter(asset => asset.status === 'approved');
   
-  assets.forEach(asset => {
-    if (asset.status === 'approved' && asset.suitableFor) {
+  approvedAssets.forEach(asset => {
+    if (asset.suitableFor) {
       asset.suitableFor.forEach(slot => {
         if (!slotAssets[asset.language]) slotAssets[asset.language] = {};
         if (!slotAssets[asset.language][slot]) slotAssets[asset.language][slot] = [];
@@ -45,12 +161,27 @@ try {
     // Parse language
     const langMatch = content.match(/^language:\s*["']?([^"'\n]+)["']?/m);
     const language = langMatch ? langMatch[1].trim() : 'en';
+
+    const slugMatch = content.match(/^slug:\s*["']?([^"'\n]+)["']?/m);
+    const slug = slugMatch ? slugMatch[1].trim() : file.replace('.md', '');
     
     const typeMatch = content.match(/^articleType:\s*["']?([^"'\n]+)["']?/m);
     const articleType = typeMatch ? typeMatch[1].trim() : '';
 
     const pageTypeMatch = content.match(/^pageType:\s*["']?([^"'\n]+)["']?/m);
     const pageType = pageTypeMatch ? pageTypeMatch[1].trim() : '';
+
+    const clusterMatch = content.match(/^cluster:\s*["']?([^"'\n]+)["']?/m);
+    const cluster = clusterMatch ? clusterMatch[1].trim() : '';
+
+    const searchIntentMatch = content.match(/^searchIntent:\s*["']?([^"'\n]+)["']?/m);
+    const searchIntent = searchIntentMatch ? searchIntentMatch[1].trim() : '';
+
+    const publishedMatch = content.match(/^published:\s*(true|false)/m);
+    const published = publishedMatch ? publishedMatch[1] === 'true' : false;
+
+    const previewMatch = content.match(/^preview:\s*(true|false)/m);
+    const preview = previewMatch ? previewMatch[1] === 'true' : false;
 
     const mockupStatusMatch = content.match(/^mockupStatus:\s*["']?([^"'\n]+)["']?/m);
     const mockupStatus = mockupStatusMatch ? mockupStatusMatch[1].trim() : '';
@@ -87,6 +218,7 @@ try {
     const mockupRegex = /:::mockup\{slot=["']?([^"'\s}]+)["']?\}/g;
     let match;
     const slotsFound = [];
+    const articleAssetUsage = new Map();
 
     while ((match = mockupRegex.exec(content)) !== null) {
       const slotName = match[1];
@@ -114,6 +246,44 @@ try {
         }
         hasP0Error = true;
       }
+
+      const selection = getMockupSelectionForArticle({
+        language,
+        cluster,
+        articleType,
+      }, {
+        suitableFor,
+      });
+
+      if (selection.asset) {
+        const assetKey = selection.asset.path || selection.asset.id;
+        const assetLabel = selection.asset.id || selection.asset.path || 'unknown asset';
+
+        if (selection.matchLevel !== 'exact') {
+          warnings.push(
+            `Fallback mockup selection: article '${slug}', slot '${slotName}', asset '${assetLabel}' (${selection.asset.path || 'no path'}), fallback level '${selection.matchLevel}'. Recommended action: approve a more specific asset for this cluster/articleType or document why this fallback is intentional.`
+          );
+        }
+
+        if (!articleAssetUsage.has(assetKey)) articleAssetUsage.set(assetKey, 0);
+        articleAssetUsage.set(assetKey, articleAssetUsage.get(assetKey) + 1);
+        if (articleAssetUsage.get(assetKey) > 1) {
+          warnings.push(
+            `Repeated mockup inside one article: article '${slug}' uses asset '${assetLabel}' (${selection.asset.path || 'no path'}) more than once. Recommended action: use distinct section-specific assets when available.`
+          );
+        }
+
+        if (published || preview) {
+          if (!assetUsage.has(assetKey)) {
+            assetUsage.set(assetKey, {
+              id: selection.asset.id || assetKey,
+              path: selection.asset.path || assetKey,
+              slugs: new Set(),
+            });
+          }
+          assetUsage.get(assetKey).slugs.add(slug);
+        }
+      }
     }
     
     if (slotsFound.length > 0 && mockupStatus === 'not_available') {
@@ -131,22 +301,7 @@ try {
       hasP0Error = true;
     }
 
-    const mockupRequiredTypes = [
-      'comparison',
-      'comparison_article',
-      'guide',
-      'how-to',
-      'thought-leadership/comparison',
-      'tutorial',
-      'use_case_article',
-      'how-to/use-case',
-      'ideas_article',
-      'examples_article',
-      'listicle',
-      'ideas',
-      'best-tools'
-    ];
-    const requiresMockup = mockupRequiredTypes.includes(articleType) || mockupRequiredTypes.includes(pageType);
+    const requiresMockup = isStronglyVisualArticle({ articleType, pageType, searchIntent, cluster });
 
     // Enforcement of minimum mockups
     if (slotsFound.length === 0) {
@@ -167,8 +322,6 @@ try {
       console.log(`📄 ${file} (${language}): no mockups found.`);
     }
 
-    const slugMatch = content.match(/^slug:\s*["']?([^"'\n]+)["']?/m);
-    const slug = slugMatch ? slugMatch[1].trim() : file.replace('.md', '');
     const distHtmlPath = path.join(__dirname, '../dist', language === 'ru' ? 'ru/blog' : 'blog', slug, 'index.html');
     if (fs.existsSync(distHtmlPath)) {
       const htmlContent = fs.readFileSync(distHtmlPath, 'utf-8');
@@ -210,7 +363,20 @@ try {
   process.exit(1);
 }
 
+assetUsage.forEach(({ id, path: assetPath, slugs }) => {
+  if (slugs.size > 3) {
+    warnings.push(
+      `Repeated mockup asset usage: asset '${id}' (${assetPath}) is used across ${slugs.size} published/preview articles: ${Array.from(slugs).sort().join(', ')}. Recommended action: create or approve more section-specific assets before scaling the next batch.`
+    );
+  }
+});
+
 // 3. Report
+if (warnings.length > 0) {
+  console.log('\n⚠️  MOCKUP WARNINGS:');
+  warnings.forEach(w => console.log(`  - ${w}`));
+}
+
 if (conflicts.length > 0) {
   console.log('\n🚨 P0 MOCKUP CONFLICTS FOUND:');
   conflicts.forEach(c => console.log(`  - ${c}`));

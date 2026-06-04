@@ -479,6 +479,16 @@ Use only 2–4 optional blocks per article based on intent. Do not add blocks ju
 - Нельзя использовать markdown image syntax или hardcoded image paths.
 - RU/EN isolation строго соблюдается шаблоном: RU article gets RU mockups, EN article gets EN mockups.
 
+### Native mockup rules for generated articles
+
+- Mockup is not a hero decoration. It must explain a workflow, result preview, example, comparison, before/after, or concrete step.
+- Insert mockups only with `:::mockup{slot="..."}` in the exact section where the visual helps the reader understand the point.
+- RU articles must use RU approved assets only. EN articles must use EN approved assets only.
+- Visual/how-to/comparison/example articles must include native mockup slots unless `mockupStatus: "not_available"` and a meaningful `mockupReason` explain why no approved asset fits.
+- Avoid repeating the same asset across many articles in one batch. If the checker warns about repeated assets, request or approve a more specific native mockup before scaling.
+- If no exact asset exists for the article cluster/type, prefer `mockupStatus: "not_available"` plus a reason over forcing an irrelevant visual.
+- For Wave 2 and later, every brief must explicitly decide: mockup required yes/no, slot(s), purpose, placement section, and fallback allowed yes/no.
+
 ### Required Publishing Checks
 
 Для любых изменений в:

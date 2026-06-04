@@ -560,9 +560,16 @@ Testimonials можно использовать только если:
 - old format (`type="..." layout="..."`) is deprecated;
 - language must match article language;
 - no third-party social feeds in public SEO articles;
-- if no approved asset fits intent, skip mockup;
+- if no approved asset fits intent, use `mockupStatus: "not_available"` plus a meaningful `mockupReason`; do not force irrelevant visuals;
 - future articles should reference assets by slot;
-- check:blog validates registry and mockup slots.
+- check:blog validates registry and mockup slots;
+- check:blog:mockups warns when a broad fallback asset is used or the same asset is repeated too often.
+
+Native mockup rules for generated articles:
+- a mockup is not a decorative header image;
+- place `:::mockup{slot="..."}` inside the section it explains: workflow, result, example, comparison, or step;
+- visual/how-to/comparison/example articles require native mockup slots unless there is a documented `mockupReason`;
+- Wave 2 briefs must specify mockup required yes/no, slot(s), purpose, placement section, and fallback allowed yes/no.
 
 Папки:
 - `public/assets/blog/mockups/ru/`
