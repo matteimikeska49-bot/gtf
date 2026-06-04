@@ -7,6 +7,7 @@ primaryKeyword: "best carousel examples"
 searchIntent: "user is looking for visual inspiration and proven templates/examples of successful carousels."
 cluster: "Carousel design"
 articleType: "listicle"
+mockupStatus: "present"
 pageType: "ideas_article"
 priority: "P2"
 published: true

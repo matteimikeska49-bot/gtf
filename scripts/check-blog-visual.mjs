@@ -307,6 +307,12 @@ async function checkRoutes() {
            hasP0Errors = true;
         }
 
+        if (htmlText.includes('href="/blog"') || htmlText.includes('"item":"https://gotoflow.io/blog"') || htmlText.includes('"item": "https://gotoflow.io/blog"')) {
+           pageReport.pageErrors.push('RU article breadcrumbs point to EN /blog');
+           pageReport.passed = false;
+           hasP0Errors = true;
+        }
+
       } else { // EN
         if (bodyText.includes(ruDisclaimerText) || bodyText.includes('принадлежат')) {
           pageReport.hasDisclaimerIssue = true;
@@ -322,6 +328,12 @@ async function checkRoutes() {
 
         if (htmlText.includes('/mockups/ru/')) {
            pageReport.hasWrongLanguageMockup = true;
+           pageReport.passed = false;
+           hasP0Errors = true;
+        }
+
+        if (htmlText.includes('href="/ru/blog"') || htmlText.includes('"item":"https://gotoflow.io/ru/blog"') || htmlText.includes('"item": "https://gotoflow.io/ru/blog"')) {
+           pageReport.pageErrors.push('EN article breadcrumbs point to RU /ru/blog');
            pageReport.passed = false;
            hasP0Errors = true;
         }
@@ -352,7 +364,7 @@ async function checkRoutes() {
         hasP0Errors = true;
       }
 
-      const filteredConsole = pageReport.consoleErrors.filter(e => !e.includes('favicon'));
+      const filteredConsole = pageReport.consoleErrors.filter(e => !e.toLowerCase().includes('favicon'));
       if (filteredConsole.length > 0) {
         pageReport.passed = false;
         hasP0Errors = true;

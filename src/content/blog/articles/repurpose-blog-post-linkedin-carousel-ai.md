@@ -13,6 +13,8 @@ secondaryKeywords:
 searchIntent: "The reader wants a practical step-by-step workflow for turning an existing blog post or article into a LinkedIn carousel using AI."
 cluster: "linkedin-carousel"
 articleType: "guide"
+mockupStatus: "not_available"
+mockupReason: "No approved EN mockup asset exists yet for the blog-to-LinkedIn-carousel workflow."
 pageType: "use_case_article"
 category: "Guides"
 priority: "P1"

@@ -46,6 +46,18 @@ try {
     const langMatch = content.match(/^language:\s*["']?([^"'\n]+)["']?/m);
     const language = langMatch ? langMatch[1].trim() : 'en';
     
+    const typeMatch = content.match(/^articleType:\s*["']?([^"'\n]+)["']?/m);
+    const articleType = typeMatch ? typeMatch[1].trim() : '';
+
+    const pageTypeMatch = content.match(/^pageType:\s*["']?([^"'\n]+)["']?/m);
+    const pageType = pageTypeMatch ? pageTypeMatch[1].trim() : '';
+
+    const mockupStatusMatch = content.match(/^mockupStatus:\s*["']?([^"'\n]+)["']?/m);
+    const mockupStatus = mockupStatusMatch ? mockupStatusMatch[1].trim() : '';
+
+    const mockupReasonMatch = content.match(/^mockupReason:\s*["']?([^"'\n]+)["']?/m);
+    const mockupReason = mockupReasonMatch ? mockupReasonMatch[1].trim() : '';
+    
     // Check for raw markdown images
     if (/!\[.*?\]\(.*?\)/.test(content)) {
       conflicts.push(`Raw markdown image found in ${file}. Use :::mockup{slot="..."} instead.`);
@@ -104,6 +116,51 @@ try {
       }
     }
     
+    if (slotsFound.length > 0 && mockupStatus === 'not_available') {
+      conflicts.push(`Article ${file} has mockup slots but mockupStatus is 'not_available'. Use mockupStatus: 'present' or remove the status.`);
+      hasP0Error = true;
+    }
+
+    if (slotsFound.length > 0 && mockupStatus && !['present'].includes(mockupStatus)) {
+      conflicts.push(`Article ${file} has mockup slots and invalid mockupStatus '${mockupStatus}'. Use 'present' or omit it.`);
+      hasP0Error = true;
+    }
+
+    if (mockupStatus === 'not_available' && mockupReason.length < 20) {
+      conflicts.push(`Article ${file} uses mockupStatus: 'not_available' but lacks a meaningful mockupReason of at least 20 characters.`);
+      hasP0Error = true;
+    }
+
+    const mockupRequiredTypes = [
+      'comparison',
+      'comparison_article',
+      'guide',
+      'how-to',
+      'thought-leadership/comparison',
+      'tutorial',
+      'use_case_article',
+      'how-to/use-case',
+      'ideas_article',
+      'examples_article',
+      'listicle',
+      'ideas',
+      'best-tools'
+    ];
+    const requiresMockup = mockupRequiredTypes.includes(articleType) || mockupRequiredTypes.includes(pageType);
+
+    // Enforcement of minimum mockups
+    if (slotsFound.length === 0) {
+      if (requiresMockup && mockupStatus !== 'not_available') {
+        conflicts.push(`Article ${file} of type '${articleType || pageType}' MUST have at least 1 mockup slot OR set mockupStatus: 'not_available' with a meaningful mockupReason.`);
+        hasP0Error = true;
+      }
+
+      if (mockupStatus === 'present') {
+        conflicts.push(`Article ${file} uses mockupStatus: 'present' but has no mockup slots.`);
+        hasP0Error = true;
+      }
+    }
+
     if (slotsFound.length > 0) {
       console.log(`📄 ${file} (${language}): found slots [${slotsFound.join(', ')}]`);
     } else {

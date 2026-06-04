@@ -7,6 +7,7 @@ primaryKeyword: "примеры каруселей инстаграм"
 searchIntent: "поиск визуального вдохновения и структурных шаблонов для постов"
 cluster: "Carousel design"
 articleType: "listicle"
+mockupStatus: "present"
 pageType: "ideas_article"
 priority: "P2"
 published: true

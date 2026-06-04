@@ -1096,9 +1096,13 @@ const ArticleHero = ({ article, isRu }) => {
       <div className="pointer-events-none absolute left-1/4 top-28 h-[280px] w-[280px] rounded-full bg-orange-500/[0.06] blur-[100px]" />
       <div className="relative z-10 mx-auto max-w-[940px] text-center">
         <div className="mb-10 flex min-w-0 items-center justify-center gap-1.5 text-sm text-zinc-500">
-          <Link to="/" className="transition-colors hover:text-zinc-300">Home</Link>
+          <Link to={isRu ? "/ru" : "/"} className="transition-colors hover:text-zinc-300">
+            {isRu ? 'Главная' : 'Home'}
+          </Link>
           <ChevronRight className="h-3.5 w-3.5 shrink-0" />
-          <Link to="/blog" className="transition-colors hover:text-zinc-300">Blog</Link>
+          <Link to={isRu ? "/ru/blog" : "/blog"} className="transition-colors hover:text-zinc-300">
+            {isRu ? 'Блог' : 'Blog'}
+          </Link>
           <ChevronRight className="h-3.5 w-3.5 shrink-0" />
           <span className="truncate text-zinc-400">{article.title}</span>
         </div>

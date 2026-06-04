@@ -7,6 +7,7 @@ primaryKeyword: "дизайн каруселей нейросеть против
 searchIntent: "поиск оптимального процесса создания каруселей, сравнение ручного дизайна и AI"
 cluster: "Social media content workflow"
 articleType: "thought-leadership/comparison"
+mockupStatus: "present"
 pageType: "comparison_article"
 priority: "P2"
 published: true

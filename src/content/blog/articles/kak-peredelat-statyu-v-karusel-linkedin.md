@@ -7,6 +7,7 @@ primaryKeyword: "как переделать статью в карусель"
 searchIntent: "репрайз контента, адаптация текста блога под формат каруселей"
 cluster: "Content repurposing"
 articleType: "how-to/use-case"
+mockupStatus: "present"
 pageType: "use_case_article"
 priority: "P2"
 published: true

@@ -14,6 +14,8 @@ secondaryKeywords:
 searchIntent: "The reader wants to understand whether using an AI carousel maker is faster and more practical than creating carousels manually in tools like Canva, Figma, or presentation software."
 cluster: "ai-carousel-maker"
 articleType: "comparison"
+mockupStatus: "not_available"
+mockupReason: "No approved comparison-specific EN mockup asset exists for this workflow article yet."
 pageType: "comparison_article"
 category: "Tools & Comparisons"
 priority: "P1"

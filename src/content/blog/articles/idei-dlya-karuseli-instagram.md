@@ -7,6 +7,7 @@ primaryKeyword: "идеи для карусели инстаграм"
 searchIntent: "поиск идей и готовых форматов для постов-каруселей"
 cluster: "Instagram carousel ideas"
 articleType: "listicle"
+mockupStatus: "present"
 pageType: "ideas_article"
 priority: "P1"
 published: true
