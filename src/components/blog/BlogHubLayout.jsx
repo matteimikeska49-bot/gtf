@@ -261,11 +261,11 @@ const BlogHero = ({ isRu }) => {
         </div>
       </div>
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 leading-tight">
-        {isRu ? 'Блог GoToFlow: идеи для постов и каруселей' : 'GoToFlow Blog'}
+        {isRu ? 'Блог GoToFlow' : 'GoToFlow Blog'}
       </h1>
       <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
         {isRu 
-          ? 'Практические гайды, промпты, примеры каруселей и AI-воркфлоу для авторов, маркетологов и команд.'
+          ? 'Идеи для постов и каруселей, практические гайды, промпты и AI-воркфлоу для авторов, маркетологов и команд.'
           : 'Practical guides, prompt libraries, carousel ideas, and AI content workflows for creators, founders, marketers, and teams.'}
       </p>
       
