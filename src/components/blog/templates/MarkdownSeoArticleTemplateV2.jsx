@@ -39,6 +39,10 @@ const ARTICLE_TEMPLATE_COPY = {
     workflowInsight: 'Workflow insight',
     bestFor: 'Best for',
     readNext: 'READ NEXT',
+    workflowEyebrow: 'Workflow',
+    stepPhasesTitle: 'Step-by-step phases',
+    phaseLabel: 'Phase',
+    exampleLabel: 'Example',
     note: 'Note'
   },
   ru: {
@@ -56,7 +60,7 @@ const ARTICLE_TEMPLATE_COPY = {
     relatedTitleGuides: 'Связанные гайды',
     toolsLabel: 'Инструменты',
     guidesLabel: 'Гайды',
-    faqLabel: 'FAQ',
+    faqLabel: '',
     faqTitle: 'Частые вопросы',
     promptLibraryEyebrow: 'БИБЛИОТЕКА ПРОМПТОВ',
     promptLibraryTitle: 'Готовые промпты',
@@ -71,6 +75,10 @@ const ARTICLE_TEMPLATE_COPY = {
     workflowInsight: 'Инсайт',
     bestFor: 'Идеально для',
     readNext: 'ЧИТАТЬ ТАКЖЕ',
+    workflowEyebrow: 'Рабочий процесс',
+    stepPhasesTitle: 'Пошаговый разбор',
+    phaseLabel: 'Этап',
+    exampleLabel: 'Пример',
     note: 'Заметка'
   }
 };
@@ -872,16 +880,17 @@ const KeyTakeaway = ({ text, isRu }) => {
 
 const StepPhases = ({ phases, isRu }) => {
   if (!Array.isArray(phases) || phases.length === 0) return null;
+  const copy = getArticleCopy(isRu ? 'ru' : 'en');
 
   return (
-    <SectionShell eyebrow="Workflow" title="Step-by-step phases">
+    <SectionShell eyebrow={copy.workflowEyebrow} title={copy.stepPhasesTitle}>
       <div className="space-y-10 mt-8">
         {phases.map((phase, phaseIndex) => (
           <div key={phase.phase || phaseIndex}>
             <div className="flex items-center gap-4 mb-6">
               <div className="flex items-center gap-3">
                 <span className="inline-flex items-center justify-center h-7 px-3 rounded-full bg-gradient-to-r from-pink-500/15 to-orange-500/15 border border-pink-500/20 text-[10px] font-bold uppercase tracking-[0.15em] text-pink-300 shadow-[0_0_16px_rgba(236,72,153,0.08)]">
-                  Phase {phaseIndex + 1}
+                  {copy.phaseLabel} {phaseIndex + 1}
                 </span>
                 <span className="text-base md:text-lg font-semibold text-zinc-200 tracking-tight">{phase.phase}</span>
               </div>
@@ -979,7 +988,7 @@ const FormatsGrid = ({ formats, isRu }) => {
             <p className="mb-4 text-[13px] leading-[1.6] text-zinc-400">{parseInlineMarkdown(format.text || '')}</p>
             {format.example && (
               <div className="rounded-lg bg-white/[0.03] border border-white/[0.05] px-3 py-2.5">
-                <p className="text-[12px] leading-[1.5] text-zinc-300 italic">Example: {parseInlineMarkdown(format.example)}</p>
+                <p className="text-[12px] leading-[1.5] text-zinc-300 italic">{copy.exampleLabel}: {parseInlineMarkdown(format.example)}</p>
               </div>
             )}
           </article>
@@ -1094,12 +1103,7 @@ const ArticleHero = ({ article, isRu }) => {
           <span className="truncate text-zinc-400">{article.title}</span>
         </div>
 
-        <div className="mb-6 flex justify-center">
-          <div className="inline-flex max-w-full items-center gap-2.5 rounded-full border border-pink-500/20 bg-pink-500/10 px-4 py-1.5 backdrop-blur-md">
-            <Sparkles className="h-3.5 w-3.5 shrink-0 text-pink-400" />
-            <span className="truncate text-xs font-semibold uppercase tracking-wide text-pink-200">{article.cluster}</span>
-          </div>
-        </div>
+        {/* cluster hidden */}
 
         <h1 className={`mx-auto mb-6 max-w-4xl font-bold leading-[1.1] tracking-tight text-white ${article.title.length > 50 ? 'text-3xl md:text-4xl lg:text-[40px]' : 'text-3xl md:text-5xl lg:text-6xl'}`}>
           {renderFormattedTitle(article.title, isRu)}
@@ -1108,8 +1112,11 @@ const ArticleHero = ({ article, isRu }) => {
           {isRu ? applyRuAutoStar(article.description, isRu) : article.description}
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-zinc-500">
-          <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">{article.articleType}</span>
-          <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">{article.primaryKeyword}</span>
+          {formatArticleTypeBadge(article.articleType, isRu) && (
+            <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">
+              {formatArticleTypeBadge(article.articleType, isRu)}
+            </span>
+          )}
           {freshness && (
             <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">
               {freshness.displayText}
@@ -1119,6 +1126,21 @@ const ArticleHero = ({ article, isRu }) => {
       </div>
     </section>
   );
+};
+
+const formatArticleTypeBadge = (type, isRu) => {
+  if (!type) return null;
+  const map = {
+    'guide': isRu ? 'Гайд' : 'Guide',
+    'comparison': isRu ? 'Сравнение' : 'Comparison',
+    'thought-leadership/comparison': isRu ? 'Сравнение' : 'Comparison',
+    'ideas_article': isRu ? 'Примеры' : 'Examples',
+    'listicle': isRu ? 'Примеры' : 'Examples',
+    'prompt-library': isRu ? 'Библиотека промптов' : 'Prompt library',
+    'workflow': isRu ? 'Рабочий процесс' : 'Workflow',
+    'examples': isRu ? 'Примеры' : 'Examples',
+  };
+  return map[type] || null;
 };
 
 const ArticleFreshnessBlock = ({ article }) => {

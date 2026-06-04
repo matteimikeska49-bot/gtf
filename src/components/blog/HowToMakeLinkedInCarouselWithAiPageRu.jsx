@@ -1063,7 +1063,7 @@ const ArticleFAQ = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-pink-500/[0.03] blur-[160px] rounded-full pointer-events-none" />
       <div className="max-w-[920px] mx-auto relative z-10">
         <div className="text-center mb-10 md:mb-14">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">FAQ</h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">Частые вопросы</h2>
         </div>
         <div className="space-y-3">
           {faqItems.map((item, i) => (

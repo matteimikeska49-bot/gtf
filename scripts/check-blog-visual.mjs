@@ -270,7 +270,16 @@ async function checkRoutes() {
         "Pro Tip",
         "Key Takeaway",
         "Common mistake",
-        "this guide is kept up to date"
+        "this guide is kept up to date",
+        "Step-by-step phases",
+        "Workflow",
+        "Phase 1",
+        "Phase 2",
+        "Example:",
+        "thought-leadership/comparison",
+        "ideas_article",
+        "listicle",
+        "primaryKeyword"
       ];
       
       const ruDisclaimerText = "принадлежат Meta Platforms Inc.";
@@ -315,6 +324,22 @@ async function checkRoutes() {
            pageReport.hasWrongLanguageMockup = true;
            pageReport.passed = false;
            hasP0Errors = true;
+        }
+
+        const ruLabels = [
+          "Рабочий процесс",
+          "Пошаговый разбор",
+          "Этап 1",
+          "Этап 2",
+          "Пример:"
+        ];
+        
+        for (const label of ruLabels) {
+          if (bodyText.includes(label)) {
+            pageReport.hasWrongLanguageLabels = true;
+            pageReport.passed = false;
+            hasP0Errors = true;
+          }
         }
       }
 
