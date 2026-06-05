@@ -140,7 +140,7 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />возможность быстро доработать результат.</li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          Поэтому лучший AI-генератор каруселей — это не просто инструмент, который “разбивает текст на слайды”. Это инструмент, который помогает пройти весь путь: от темы, ссылки, видео или черновика до структуры, текста, визуального стиля и готового черновика карусели.
+          Поэтому лучший AI-генератор каруселей — это не просто инструмент, который “разбивает текст на слайды”. Это инструмент, который помогает пройти весь путь: от темы, ссылки, видео или исходного текста до структуры, текста, визуального стиля и готовой карусели.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
           В этой статье разберём лучшие AI-инструменты для создания каруселей в 2026 году и покажем, какой сервис выбрать под разные задачи: Instagram*, LinkedIn, Telegram, VK, личный бренд, экспертный контент и маркетинг.
@@ -152,9 +152,9 @@ const ArticleBody = () => (
         </p>
         <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 md:p-7 mb-6">
           <ul className="space-y-4">
-            <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[10px] font-bold text-pink-400 mt-0.5">★</span><span><strong className="text-white">GoToFlow</strong> — лучший вариант для полного workflow: тема, ссылка, видео или пример конкурента → структура, текст, стиль и черновик карусели.</span></li>
+            <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[10px] font-bold text-pink-400 mt-0.5">★</span><span><strong className="text-white">GoToFlow</strong> — лучший вариант для полного workflow: тема, ссылка, видео или пример конкурента → структура, текст, стиль и готовая карусель.</span></li>
             <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">2</span><span><strong className="text-white">Canva</strong> — хороший вариант для дизайна, шаблонов и ручной сборки каруселей.</span></li>
-            <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">3</span><span><strong className="text-white">ChatGPT / Claude / Gemini</strong> — подходят для идей, структуры, промптов и текстовых черновиков.</span></li>
+            <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">3</span><span><strong className="text-white">ChatGPT / Claude / Gemini</strong> — подходят для идей, структуры, промптов и текстовых набросков.</span></li>
             <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">4</span><span><strong className="text-white">Gamma</strong> — удобна для презентационного формата и слайдовых объяснений.</span></li>
             <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">5</span><span><strong className="text-white">Figma</strong> — лучший вариант для дизайнеров и кастомного визуального стиля.</span></li>
             <li className="flex items-start gap-3.5 text-zinc-200 text-[15px] md:text-base leading-[1.6]"><span className="shrink-0 w-6 h-6 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[10px] font-bold text-zinc-400 mt-0.5">6</span><span><strong className="text-white">Taplio / ContentIn</strong> — больше подходят для LinkedIn-workflow и планирования контента.</span></li>
@@ -162,7 +162,7 @@ const ArticleBody = () => (
           </ul>
         </div>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
-          Если вам нужна не просто идея, а готовый процесс создания карусели, смотрите в сторону инструментов, которые закрывают не один этап, а всю цепочку: идея → структура → текст → визуал → черновик.
+          Если вам нужна не просто идея, а готовый процесс создания карусели, смотрите в сторону инструментов, которые закрывают не один этап, а всю цепочку: идея → структура → текст → визуал → готовая карусель.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Что такое AI-генератор каруселей</h2>
@@ -187,14 +187,14 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />структура;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />текст;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />визуальный стиль;</li>
-          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />генерация черновика;</li>
+          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />генерация карусели;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />доработка.</li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           Разница важна.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
-          Если инструмент даёт только текст, вам всё равно нужно отдельно идти в Canva, Figma или другой редактор. Если инструмент помогает сразу собрать структуру и визуальный черновик, процесс становится быстрее.
+          Если инструмент даёт только текст, вам всё равно нужно отдельно идти в Canva, Figma или другой редактор. Если инструмент помогает сразу собрать структуру и визуальный результат, процесс становится быстрее.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Как создать карусель с помощью AI: простой workflow</h2>
@@ -203,13 +203,13 @@ const ArticleBody = () => (
         </p>
 
         <div className="space-y-4 mb-14 md:mb-16 text-zinc-300 text-[15px] md:text-base leading-[1.7]">
-          <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">1</span><span><strong>Вставьте тему, ссылку, видео или черновик.</strong><br/>Это может быть идея поста, статья, видео конкурента, заметки, тезисы из созвона или старый материал.</span></div>
+          <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">1</span><span><strong>Вставьте тему, ссылку, видео или исходный текст.</strong><br/>Это может быть идея поста, статья, видео конкурента, заметки, тезисы из созвона или старый материал.</span></div>
           <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">2</span><span><strong>Определите аудиторию и платформу.</strong><br/>Карусель для Instagram, LinkedIn, Telegram и VK должна быть разной по ритму, длине и визуалу.</span></div>
           <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">3</span><span><strong>Сгенерируйте первый слайд.</strong><br/>Первый слайд должен цеплять. Если он слабый, остальную карусель просто не долистают.</span></div>
           <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">4</span><span><strong>Соберите структуру.</strong><br/>У карусели должна быть логика: проблема → объяснение → решение → вывод → CTA.</span></div>
           <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">5</span><span><strong>Сократите текст.</strong><br/>Один слайд — одна мысль. Если на слайде слишком много текста, он будет плохо читаться с телефона.</span></div>
           <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">6</span><span><strong>Выберите визуальный стиль.</strong><br/>Это может быть премиальный SaaS-стиль, editorial, минимализм, яркий Instagram-стиль или стиль личного бренда.</span></div>
-          <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">7</span><span><strong>Проверьте и доработайте результат.</strong><br/>AI даёт черновик. Финальную версию всё равно нужно проверить: факты, тон, читаемость, логику и визуал.</span></div>
+          <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">7</span><span><strong>Проверьте и доработайте результат.</strong><br/>AI даёт готовую структуру. Финальную версию всё равно нужно проверить: факты, тон, читаемость, логику и визуал.</span></div>
         </div>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
           Именно поэтому обычного “сделай мне карусель” часто недостаточно. Нужен инструмент, который помогает пройти весь процесс, а не просто выдаёт текст.
@@ -231,7 +231,7 @@ const ArticleBody = () => (
           </div>
           <div className="p-5 rounded-xl border border-pink-500/20 bg-pink-500/[0.05]">
             <div className="font-semibold text-white mb-2">AI-генератор каруселей:</div>
-            <div className="text-zinc-300 text-[15px]">у вас есть тема, ссылка, видео или черновик → AI помогает собрать структуру, текст, стиль и визуальный черновик</div>
+            <div className="text-zinc-300 text-[15px]">у вас есть тема, ссылка, видео или исходный текст → AI помогает собрать структуру, текст, стиль и готовую карусель</div>
           </div>
         </div>
 
@@ -347,7 +347,7 @@ const ArticleBody = () => (
           </li>
           <li>
             <strong className="text-white block mb-1">4. Визуальный стиль</strong>
-            <span className="text-zinc-300 text-[15px] md:text-base leading-[1.7]">Можно ли получить не просто текст, а визуальный черновик.</span>
+            <span className="text-zinc-300 text-[15px] md:text-base leading-[1.7]">Можно ли получить не просто текст, а готовый результат.</span>
           </li>
           <li>
             <strong className="text-white block mb-1">5. Работа с источниками</strong>
@@ -363,7 +363,7 @@ const ArticleBody = () => (
           </li>
           <li>
             <strong className="text-white block mb-1">8. Скорость</strong>
-            <span className="text-zinc-300 text-[15px] md:text-base leading-[1.7]">Насколько быстро можно пройти путь от идеи до черновика.</span>
+            <span className="text-zinc-300 text-[15px] md:text-base leading-[1.7]">Насколько быстро можно пройти путь от идеи до готовой карусели.</span>
           </li>
         </ul>
 
@@ -423,7 +423,7 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />статьи;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />PDF;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />заметок;</li>
-          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />черновика;</li>
+          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />готового результата;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />идеи.</li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
@@ -439,7 +439,7 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />задать свой стиль промптом;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />пересоздать результат;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />адаптировать под бренд;</li>
-          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />получить визуальный черновик, а не только текст.</li>
+          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />получить готовый результат, а не только текст.</li>
         </ul>
 
         <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">6. Удобство доработки</h3>
@@ -460,7 +460,7 @@ const ArticleBody = () => (
 
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-5 mt-12">1. GoToFlow — лучший для полного workflow</h3>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          GoToFlow помогает пройти путь от идеи, ссылки, видео или примера конкурента до структуры, текста, визуального стиля и черновика карусели.
+          GoToFlow помогает пройти путь от идеи, ссылки, видео или примера конкурента до структуры, текста, визуального стиля и готовой карусели.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           Это удобно для:
@@ -498,7 +498,7 @@ const ArticleBody = () => (
           <strong>Лучше всего подходит:</strong> тем, кто хочет быстро создавать карусели без ручной сборки с нуля.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-8">
-          Вставьте тему, ссылку или видео и получите структуру, текст и визуальный черновик карусели.
+          Вставьте тему, ссылку или видео и получите структуру, текст и готовый результат.
         </p>
         <div className="mb-12">
           <a href={getAppUrlWithRef(CTA_URL)} className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-sm hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_25px_rgba(236,72,153,0.25)] border border-pink-400/20 group">
@@ -539,14 +539,14 @@ const ArticleBody = () => (
         <ul className="space-y-3 mb-5">
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />придумать темы;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />собрать структуру;</li>
-          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />написать первый черновик;</li>
+          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />написать первый набросок текста;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />улучшить текст;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />сделать варианты заголовков;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />адаптировать статью в карусель;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />сократить длинный текст.</li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          <strong>Плюсы:</strong> гибкость; можно работать с длинными текстами; удобно для brainstorming; можно быстро получить варианты; хорошо подходят для промптов и черновиков.
+          <strong>Плюсы:</strong> гибкость; можно работать с длинными текстами; удобно для brainstorming; можно быстро получить варианты; хорошо подходят для промптов и набросков текста.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           <strong>Минусы:</strong> нет встроенного визуального workflow; результат нужно переносить в дизайн-инструмент; нужен хороший промпт; текст часто требует редактуры; карусель не собирается как готовый визуальный формат.
@@ -651,7 +651,7 @@ const ArticleBody = () => (
               <tr className="border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors">
                 <td className="p-4 lg:p-5 font-medium text-white"><strong>GoToFlow</strong></td>
                 <td className="p-4 lg:p-5">Полный workflow карусели</td>
-                <td className="p-4 lg:p-5">Тема/ссылка/видео → структура, текст, стиль, черновик</td>
+                <td className="p-4 lg:p-5">Тема/ссылка/видео → структура, текст, стиль, готовая карусель</td>
                 <td className="p-4 lg:p-5">Чем точнее входные данные, тем лучше результат</td>
               </tr>
               <tr className="border-b border-white/[0.05] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
@@ -696,7 +696,7 @@ const ArticleBody = () => (
         {/* Mobile stacked cards */}
         <div className="md:hidden space-y-3 mb-14 md:mb-16">
           {[
-            { name: 'GoToFlow', when: 'Полный workflow карусели', strength: 'Тема/ссылка/видео → структура, текст, стиль, черновик', note: 'Чем точнее входные данные, тем лучше результат' },
+            { name: 'GoToFlow', when: 'Полный workflow карусели', strength: 'Тема/ссылка/видео → структура, текст, стиль, готовая карусель', note: 'Чем точнее входные данные, тем лучше результат' },
             { name: 'Canva', when: 'Дизайн и шаблоны', strength: 'Много шаблонов, простой редактор', note: 'Слабее в структуре и смысле' },
             { name: 'ChatGPT / Claude / Gemini', when: 'Идеи и текст', strength: 'Гибкость, brainstorming', note: 'Нет визуальной сборки' },
             { name: 'Gamma', when: 'Презентационный формат', strength: 'Структура и слайды', note: 'Может выглядеть как презентация' },
@@ -750,7 +750,7 @@ const ArticleBody = () => (
           <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">4</span><span><strong>Структура:</strong> логика слайдов.</span></div>
           <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">5</span><span><strong>Текст:</strong> короткие формулировки.</span></div>
           <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">6</span><span><strong>Визуальный стиль:</strong> внешний вид.</span></div>
-          <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">7</span><span><strong>Черновик:</strong> готовая основа.</span></div>
+          <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">7</span><span><strong>Готовая основа:</strong> результат для финальной редактуры.</span></div>
           <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">8</span><span><strong>Доработка:</strong> финальный контроль автора.</span></div>
         </div>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
@@ -768,7 +768,7 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />адаптировать идеи конкурентов без копирования;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />получать структуру и текст слайдов;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />выбирать визуальный стиль;</li>
-          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />генерировать визуальный черновик;</li>
+          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />создавать визуальный результат;</li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />быстрее публиковать контент.</li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
@@ -803,7 +803,7 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />визуал вы делаете отдельно.</li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
-          Это хороший вариант для черновиков. Но если нужен готовый carousel workflow, придётся соединять несколько инструментов.
+          Это хороший вариант для текстовых набросков. Но если нужен готовый carousel workflow, придётся соединять несколько инструментов.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Когда лучше использовать Figma</h2>
@@ -889,7 +889,7 @@ const ArticleBody = () => (
           Если вы системно работаете с LinkedIn — Taplio или ContentIn.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
-          Если нужен полный путь от темы, ссылки или видео до структуры, текста, визуального стиля и черновика — лучше использовать GoToFlow.
+          Если нужен полный путь от темы, ссылки или видео до структуры, текста, визуального стиля и готовой карусели — лучше использовать GoToFlow.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">Итог</h2>
@@ -900,7 +900,7 @@ const ArticleBody = () => (
           Если нужен дизайн — подойдёт Canva или Figma.<br />
           Если нужны идеи — ChatGPT, Claude или Gemini.<br />
           Если нужен LinkedIn-workflow — Taplio или ContentIn.<br />
-          Если нужен полный путь от темы, ссылки или видео до структуры, текста, визуального стиля и черновика — лучше смотреть в сторону GoToFlow.
+          Если нужен полный путь от темы, ссылки или видео до структуры, текста, визуального стиля и готовой карусели — лучше смотреть в сторону GoToFlow.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           Для сильной карусели важны не только картинки. Нужны идея, первый слайд, логика, короткий текст, визуальный стиль и финальная редактура.
@@ -924,16 +924,16 @@ const ArticleBody = () => (
 
 /* ── FAQ ── */
 const faqItems = [
-  { q: 'Какой AI-генератор каруселей лучший?', a: 'Если нужен полный workflow от идеи до визуального черновика, подойдёт GoToFlow. Если нужен только дизайн, можно использовать Canva или Figma. Для идей и текстов подойдут ChatGPT, Claude или Gemini.' },
+  { q: 'Какой AI-генератор каруселей лучший?', a: 'Если нужен полный workflow от идеи до готового результата, подойдёт GoToFlow. Если нужен только дизайн, можно использовать Canva или Figma. Для идей и текстов подойдут ChatGPT, Claude или Gemini.' },
   { q: 'Можно ли сделать карусель для Instagram* с помощью AI?', a: 'Да. AI может помочь с идеей, структурой, текстом и визуальным направлением. Но для Instagram* особенно важно проверить визуал и читаемость на мобильном.' },
   { q: 'Можно ли сделать карусель для LinkedIn с помощью AI?', a: 'Да. AI может помочь с первым слайдом, структурой, текстом, CTA и визуальным стилем. Для LinkedIn важно, чтобы карусель была логичной, полезной и хорошо читалась в PDF-формате.' },
-  { q: 'Чем GoToFlow отличается от Canva?', a: 'Canva сильна в шаблонах и ручном дизайне. GoToFlow помогает пройти workflow карусели: тема/ссылка/видео → структура → текст → стиль → черновик.' },
+  { q: 'Чем GoToFlow отличается от Canva?', a: 'Canva сильна в шаблонах и ручном дизайне. GoToFlow помогает пройти workflow карусели: тема/ссылка/видео → структура → текст → стиль → готовая карусель.' },
   { q: 'Нужен ли дизайнер, чтобы делать карусели?', a: 'Не всегда. Для базовых и регулярных каруселей можно использовать AI-инструменты. Но если нужен уникальный брендовый стиль, Figma и дизайнер всё ещё могут быть полезны.' },
   { q: 'Можно ли использовать видео конкурента как источник?', a: 'Да, если инструмент поддерживает работу с видео или ссылками. Важно не копировать, а использовать источник как основу для новой структуры и своего угла.' },
-  { q: 'Что лучше: AI-генератор каруселей или ChatGPT?', a: 'ChatGPT хорош для идей и текста. AI-генератор каруселей лучше, если вам нужен не только текст, но и структура, визуальный стиль и черновик карусели.' },
-  { q: 'Как сделать карусель быстрее?', a: 'Используйте готовый workflow: тема или ссылка → хук → структура → текст → визуальный стиль → черновик → финальная редактура. Так вы не начинаете каждый раз с пустого листа.' },
+  { q: 'Что лучше: AI-генератор каруселей или ChatGPT?', a: 'ChatGPT хорош для идей и текста. AI-генератор каруселей лучше, если вам нужен не только текст, но и структура, визуальный стиль и готовая карусель.' },
+  { q: 'Как сделать карусель быстрее?', a: 'Используйте готовый workflow: тема или ссылка → хук → структура → текст → визуальный стиль → готовый результат → финальная редактура. Так вы не начинаете каждый раз с пустого листа.' },
   { q: 'Есть ли бесплатные AI-генераторы каруселей?', a: 'Да, у некоторых инструментов есть бесплатный старт или пробный доступ. Но часто бесплатные версии ограничивают количество генераций, экспорт, бренд-стили или продвинутые функции.' },
-  { q: 'Можно ли создать карусель онлайн без дизайнера?', a: 'Да. AI-инструменты помогают собрать структуру, текст и визуальный черновик. Но финальную карусель всё равно стоит проверить: читаемость, стиль, факты и соответствие платформе.' },
+  { q: 'Можно ли создать карусель онлайн без дизайнера?', a: 'Да. AI-инструменты помогают собрать структуру, текст и готовую карусель. Но финальную карусель всё равно стоит проверить: читаемость, стиль, факты и соответствие платформе.' },
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
