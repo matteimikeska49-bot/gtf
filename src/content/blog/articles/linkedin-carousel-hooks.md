@@ -21,6 +21,25 @@ createdAt: "2026-06-05T00:00:00.000Z"
 updatedAt: "2026-06-05T00:00:00.000Z"
 lastReviewed: "2026-06-05T00:00:00.000Z"
 mockupStatus: "present"
+faq:
+  - question: "Should my hook be a question or a statement?"
+    answer: "Statements generally perform better because they project authority. Instead of asking 'Do you want to write better emails?', say 'Here is the exact formula for writing better emails.'"
+  - question: "Can I use emojis on the first slide?"
+    answer: "Yes, but use them sparingly. One or two relevant emojis can break up text and add visual interest, but too many can look unprofessional."
+  - question: "How long should a hook be?"
+    answer: "Keep it under 15 words if possible. Large, legible text is essential for mobile readers, so brevity is your best friend."
+  - question: "Do numbers in hooks actually work?"
+    answer: "Absolutely. Odd numbers and exact data points (like '17.5%') tend to perform exceptionally well because they appear more authentic and specific."
+  - question: "Should I include a subtitle on the first slide?"
+    answer: "Yes. A short subtitle below the main hook adds context and gives the reader one more reason to swipe to the next slide."
+finalCta:
+  title: "Ready to Test Your Hooks?"
+  description: "Take these hooks and turn them into a ready carousel you can review, adjust, and export."
+  buttonText: "Create a Carousel"
+  href: "/linkedin-carousel-maker"
+  microcopy: "Free to try — No design skills needed"
+  secondaryText: "Explore more ideas →"
+  secondaryHref: "#explore-more"
 ---
 
 # 15 Proven LinkedIn Carousel Hooks to Stop the Scroll
@@ -40,20 +59,67 @@ A strong LinkedIn carousel hook usually falls into one of three categories:
 
 LinkedIn's algorithm heavily favors dwell time. When a user pauses on your post and clicks the arrow to view the second slide, it signals to LinkedIn that your content is engaging. Your hook is entirely responsible for earning that first click.
 
-### Hook Formula 1: The "X to Y" Transformation
+## 15 Hooks You Can Steal Today
+
+### Hook 1: The "X to Y" Transformation
 Show the reader the exact journey you are about to take them on.
 * **Example:** "How I went from 0 to 10k followers in 30 days (Without spending a dime)."
-* **Why it works:** It provides measurable results and promises a clear system.
 
-### Hook Formula 2: The "Mistakes You're Making" Warning
+### Hook 2: The "Mistakes You're Making" Warning
 Fear of missing out (or doing something wrong) is a powerful motivator.
 * **Example:** "99% of B2B marketers are writing terrible cold emails. Here are the 3 mistakes you're making."
-* **Why it works:** It challenges the reader's current process and forces them to check if they are guilty of the mistakes.
 
-### Hook Formula 3: The Curated Resource List
+### Hook 3: The Curated Resource List
 Save people time by doing the heavy lifting for them.
 * **Example:** "I tested 50 AI writing tools so you don't have to. Here are the top 5."
-* **Why it works:** It promises high value for minimal effort on the reader's part.
+
+### Hook 4: The Contrarian Truth
+Challenge a widely held belief in your industry.
+* **Example:** "Stop waking up at 5 AM. It's destroying your productivity."
+
+### Hook 5: The "Steal My Strategy"
+Offer a proven framework for free.
+* **Example:** "Steal the exact onboarding process I use for $10k clients."
+
+### Hook 6: The Unpopular Opinion
+Spark a debate in the comments.
+* **Example:** "Unpopular opinion: Traditional resumes will be dead by 2027."
+
+### Hook 7: The "How I Survived" Story
+Share a vulnerable moment and the lesson learned.
+* **Example:** "My startup almost went bankrupt last year. Here is how we turned it around."
+
+### Hook 8: The Behind-the-Scenes Look
+Give people a peek behind the curtain.
+* **Example:** "Inside look: How I plan a month of content in just 2 hours."
+
+### Hook 9: The "If I Had to Start Over"
+Share the lessons you learned the hard way.
+* **Example:** "If I had to start my freelance business over today, I'd do these 3 things differently."
+
+### Hook 10: The Myth Buster
+Correct a common misconception.
+* **Example:** "The biggest lie you've been told about SEO."
+
+### Hook 11: The "Do This, Not That"
+Provide a clear comparison.
+* **Example:** "Stop using Canva templates. Do this instead."
+
+### Hook 12: The Step-by-Step Blueprint
+Promise a clear, actionable guide.
+* **Example:** "The 5-step blueprint to landing your first tech role (no degree required)."
+
+### Hook 13: The Big Question
+Ask a question that your target audience desperately wants answered.
+* **Example:** "Why are your LinkedIn posts getting zero reach? Let's fix it."
+
+### Hook 14: The "Before and After"
+Show the transformation clearly.
+* **Example:** "Before: 10 hours a week on content. After: 2 hours. Here is the system."
+
+### Hook 15: The Time-Saver
+Promise to save the reader's most valuable asset.
+* **Example:** "5 Chrome extensions that will save you 10 hours a week."
 
 ## Automating Your Hooks with AI
 
@@ -84,6 +150,16 @@ Statements generally perform better because they project authority. Instead of a
 ### Can I use emojis on the first slide?
 Yes, but use them sparingly. One or two relevant emojis can break up text and add visual interest, but too many can look unprofessional.
 
-## Ready to Test Your Hooks?
+### How long should a hook be?
+Keep it under 15 words if possible. Large, legible text is essential for mobile readers, so brevity is your best friend.
 
-Now that you have a swipe file of **linkedin carousel hooks**, it's time to put them into action. [Generate a LinkedIn carousel draft in GoToFlow](/linkedin-carousel-maker) to pair your new hooks with slide designs and start testing them.
+### Do numbers in hooks actually work?
+Absolutely. Odd numbers and exact data points (like '17.5%') tend to perform exceptionally well because they appear more authentic and specific.
+
+### Should I include a subtitle on the first slide?
+Yes. A short subtitle below the main hook adds context and gives the reader one more reason to swipe to the next slide.
+
+> [!product]
+> **Put Your New Hooks to Work**
+> Take these hooks and turn them into a ready carousel you can review, adjust, and export right now.
+> [Try LinkedIn Carousel Maker](/linkedin-carousel-maker)

@@ -8,7 +8,7 @@
     "build": "vite build",
     "prerender": "node prerender.mjs",
     "postbuild": "node prerender.mjs && npm run build:marker",
-    "check:blog": "npm run build && npm run check:blog:run && npm run check:blog:product-links",
+    "check:blog": "npm run build && npm run check:blog:run && npm run check:blog:content-template && npm run check:blog:product-links",
     "check:blog:run": "node scripts/check-blog-publishing.mjs",
     "check:blog:cannibalization": "node scripts/check-blog-cannibalization.mjs",
     "check:blog:seo-meta": "node scripts/check-blog-seo-meta.mjs",
@@ -19,7 +19,7 @@
     "check:blog:batch": "node scripts/check-blog-batch.mjs",
     "check:blog:production": "node scripts/check-blog-production.mjs",
     "check:blog:topics": "node scripts/check-blog-topic-research.mjs",
-    "check:blog:all": "npm run build && npm run check:blog:run && npm run check:blog:product-links && npm run check:blog:seo-meta && npm run check:blog:cannibalization && npm run check:blog:links && npm run check:blog:mockups && npm run check:blog:schema && npm run check:blog:batch && npm run check:blog:topics && npx start-server-and-test preview http-get://localhost:4173 \"npm run check:blog:render:run && npm run check:blog:visual:run\"",
+    "check:blog:all": "npm run build && npm run check:blog:run && npm run check:blog:content-template && npm run check:blog:product-links && npm run check:blog:seo-meta && npm run check:blog:cannibalization && npm run check:blog:links && npm run check:blog:mockups && npm run check:blog:schema && npm run check:blog:batch && npm run check:blog:topics && npx start-server-and-test preview http-get://localhost:4173 \"npm run check:blog:render:run && npm run check:blog:visual:run\"",
     "check:blog:deploy": "npm run check:blog:all && npm run check:blog:production",
     "check:blog:render": "npm run build && npx start-server-and-test preview http-get://localhost:4173 \"npm run check:blog:render:run\"",
     "check:blog:render:run": "node scripts/check-blog-render.mjs",
@@ -27,7 +27,8 @@
     "check:blog:visual:run": "node scripts/check-blog-visual.mjs",
     "build:marker": "node scripts/generate-build-info.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check:blog:content-template": "node scripts/check-blog-content-template.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",

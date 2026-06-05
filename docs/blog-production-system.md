@@ -85,6 +85,7 @@ Before publishing any article, you **MUST** run the automated publishing checks.
 - **Warnings** should be fixed based on priority but will not block CI. Missing freshness meta or internal links will trigger warnings.
 - **Draft safety**: Draft/noindex articles must NOT appear in sitemap or blog index.
 - **Link safety**: Internal `explore`, `finalCta`, and body links must not lead to draft articles or 404s.
+- **Content Template safety**: Articles must pass `check:blog:content-template` (minimum 5 FAQs, no "draft/черновик" wording, strong final CTA, numeric title consistency, product-realistic claims).
 
 Future articles are published purely through frontmatter updates, but only after passing the `npm run check:blog` checks.
 

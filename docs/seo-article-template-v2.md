@@ -32,6 +32,15 @@
 9. Visual/how-to/comparison/examples articles must include native mockup plan.
 10. Approved topics can move to draft generation only after `check:blog:topics` passes.
 
+## Content Guardrails & Template Compliance
+- Minimum 5 FAQ questions required for all product-led SEO articles.
+- User-facing "draft/черновик" positioning is strictly forbidden. GoToFlow produces a "ready carousel" / "готовая карусель".
+- The final CTA must be product-led, well-structured (e.g. `> [!product]`), and contain an internal product link.
+- Examples articles must contain at least 5 concrete examples (with hook, logic, CTA idea, etc.), not just generic formats.
+- Hooks articles must deliver the exact number of hooks promised in the numeric title (e.g., "15 hooks").
+- YouTube articles must be product-realistic and not overclaim (e.g., no "AI handles the entire workflow").
+- Compliance is enforced by `check:blog:content-template`.
+
 ## Required article structure
 
 1. Hero
