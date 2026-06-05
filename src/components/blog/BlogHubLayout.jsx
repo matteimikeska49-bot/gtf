@@ -62,7 +62,7 @@ const LEGACY_ARTICLES = [
   {
     slug: 'ai-instagram-carousel-generator',
     title: 'AI Instagram Carousel Generator: How to Create Carousels with AI',
-    description: 'Turn a topic, link, video, or article into hooks, slide structure, short copy, visual direction, and an Instagram carousel draft with AI.',
+    description: 'Turn a topic, link, video, or article into hooks, slide structure, short copy, visual direction, and a ready carousel with AI.',
     articleType: 'guide',
     updatedAt: '2026-03-01'
   },

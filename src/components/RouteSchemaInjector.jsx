@@ -127,7 +127,7 @@ const ROUTES_CONFIG = {
   },
   '/blog/ai-instagram-carousel-generator': {
     title: 'AI Instagram Carousel Generator: How to Create Carousels with AI',
-    desc: 'Create Instagram carousels with AI. Turn a topic, link, video, or article into hooks, slide structure, short copy, and a carousel draft with GoToFlow.',
+    desc: 'Create Instagram carousels with AI. Turn a topic, link, video, or article into hooks, slide structure, short copy, and a ready carousel with GoToFlow.',
     lang: 'en',
     type: 'article',
     crumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'AI Instagram Carousel Generator', path: '/blog/ai-instagram-carousel-generator' }]

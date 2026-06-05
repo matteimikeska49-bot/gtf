@@ -17,7 +17,7 @@ const faqItems = [
   { q: 'Can I create a LinkedIn carousel from a video or link?', a: 'Yes. With the right workflow, you can use a video, article, or competitor example as input, then turn it into a new carousel structure with your own angle.' },
   { q: 'How many slides should a LinkedIn carousel have?', a: 'Most LinkedIn carousels work well with 7–10 slides. Shorter carousels can work if the idea is simple. Longer carousels need stronger pacing.' },
   { q: 'What format should I use for a LinkedIn carousel?', a: 'PDF is usually the simplest format for a LinkedIn carousel because it keeps the slide layout consistent. Create one page per slide and check the file before uploading.' },
-  { q: 'What is the best AI tool for LinkedIn carousels?', a: 'It depends on your workflow. GoToFlow is useful for turning a topic, link, video, or competitor example into a structured carousel draft with copy and visual style. ChatGPT or Claude can help with ideas and text, while Canva or Figma can help with manual design.' },
+  { q: 'What is the best AI tool for LinkedIn carousels?', a: 'It depends on your workflow. GoToFlow is useful for turning a topic, link, video, or competitor example into a structured ready carousel with copy and visual style. ChatGPT or Claude can help with ideas and text, while Canva or Figma can help with manual design.' },
   { q: 'Should I publish AI-generated carousels without editing?', a: 'No. AI-generated drafts should be reviewed for accuracy, tone, readability, and originality. Add your examples and point of view before publishing.' }
 ];
 
@@ -143,7 +143,7 @@ const ArticleBody = () => (
           AI can make that workflow faster.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          Not by replacing your thinking, but by helping you turn a rough idea, link, video, article, or competitor example into a structured carousel draft you can edit and publish.
+          Not by replacing your thinking, but by helping you turn a rough idea, link, video, article, or competitor example into a structured ready carousel you can edit and publish.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
           In this guide, you’ll learn how to make a LinkedIn carousel with AI step by step: from the first idea to the final carousel structure, prompts, visual style, and publishing checklist.
@@ -234,7 +234,7 @@ const ArticleBody = () => (
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>turn a link, video, article, or competitor example into a new carousel concept.</span></li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          For example, you may find a competitor video that explains a topic well. Instead of manually watching it, taking notes, creating a structure, and writing every slide from zero, you can use AI to analyze the input and generate a new carousel draft.
+          For example, you may find a competitor video that explains a topic well. Instead of manually watching it, taking notes, creating a structure, and writing every slide from zero, you can use AI to analyze the input and generate a new visual result.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
           That does not mean copying the competitor. It means using the source as inspiration, then creating your own angle, structure, and message.
@@ -280,14 +280,14 @@ const ArticleBody = () => (
             </div>
             <div className="grid grid-cols-3 pb-2 text-zinc-300 text-sm md:text-base">
               <div className="px-4 font-medium text-pink-300">AI carousel workflow</div>
-              <div className="px-4">Input, hook, structure, copy, visual style, carousel draft</div>
+              <div className="px-4">Input, hook, structure, copy, visual style, ready carousel</div>
               <div className="px-4 text-zinc-400">Still needs final human review</div>
             </div>
           </div>
         </div>
 
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
-          If you only need text, a chat assistant may be enough. If you want to move from an idea, link, or video to a structured visual draft, a carousel-focused tool is faster.
+          If you only need text, a chat assistant may be enough. If you want to move from an idea, link, or video to a structured visual result, a carousel-focused tool is faster.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-8 pt-2 border-l-[3px] border-pink-500/60 pl-4">How to make a LinkedIn carousel with AI: step by step</h2>
@@ -475,9 +475,9 @@ Slide 8: CTA</div>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-2 font-medium">A useful style prompt:</p>
         <div className="bg-[#0c0c0c] border border-white/10 rounded-xl p-5 mb-5 text-zinc-300 font-mono text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap">Use a clean premium SaaS style, dark background, strong contrast, large typography, subtle gradient accents, and enough whitespace. Make it look professional but not corporate.</div>
 
-        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">8. Generate the carousel draft</h3>
+        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">8. Generate the ready carousel</h3>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          Now you can generate the full carousel draft. A complete AI carousel workflow should include:
+          Now you can generate the full ready carousel. A complete AI carousel workflow should include:
         </p>
         <ul className="space-y-3 mb-5">
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>topic or input;</span></li>
@@ -495,7 +495,7 @@ Slide 8: CTA</div>
 
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">9. Review and edit manually</h3>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          AI gives you the draft. You still need to review it. Check:
+          AI gives you the result. You still need to review it. Check:
         </p>
         <ul className="space-y-3 mb-5">
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>Is the hook specific?</span></li>
@@ -547,7 +547,7 @@ Keep the copy readable on mobile.</div>
 
         <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4 pt-2">GoToFlow</h3>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          GoToFlow is best when you want a full AI carousel workflow: topic, link, video, or competitor example → hook → structure → slide copy → visual style → carousel draft.
+          GoToFlow is best when you want a full AI carousel workflow: topic, link, video, or competitor example → hook → structure → slide copy → visual style → ready carousel.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           It is useful when you want to create a carousel faster without manually rebuilding the entire format from scratch.
@@ -743,18 +743,18 @@ Keep it natural and not salesy.</div>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>slide structure;</span></li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>slide copy;</span></li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>visual style;</span></li>
-          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>carousel draft generation;</span></li>
+          <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>ready carousel generation;</span></li>
           <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>regeneration and refinement.</span></li>
         </ul>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           Instead of jumping between ChatGPT, Canva, notes, and design tools, you can create a structured carousel workflow in one place.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          This is especially useful when you do not want to start from a blank page. You can use a topic, link, or video and quickly move toward a structured draft.
+          This is especially useful when you do not want to start from a blank page. You can use a topic, link, or video and quickly move toward a structured ready carousel.
         </p>
         
         <InlineProductBlock
-          text="Paste a topic, link, or video and get a carousel structure, copy, and visual draft."
+          text="Paste a topic, link, or video and get a carousel structure, copy, and visual result."
           to="/ai-carousel-maker"
         />
 
@@ -807,7 +807,7 @@ Keep it natural and not salesy.</div>
           Learning how to make a LinkedIn carousel with AI is not about removing the human from the process. It is about removing the blank-page stage.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-          AI can help you move faster from idea to structure, from structure to slides, and from slides to a visual draft.
+          AI can help you move faster from idea to structure, from structure to slides, and from slides to a visual result.
         </p>
         <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
           But the final carousel still needs your judgment.

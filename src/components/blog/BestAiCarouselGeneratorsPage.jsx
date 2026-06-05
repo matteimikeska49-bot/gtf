@@ -152,7 +152,7 @@ const ArticleBody = () => (
         </ul>
       </div>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-14 md:mb-16">
-        The key difference is simple: some tools help you write, some help you design, and some help you move through the full carousel creation process from input to structured visual draft.
+        The key difference is simple: some tools help you write, some help you design, and some help you move through the full carousel creation process from input to structured visual result.
       </p>
 
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6 pt-2 border-l-[3px] border-pink-500/60 pl-4">What is an AI carousel generator?</h2>
@@ -160,7 +160,7 @@ const ArticleBody = () => (
         An AI carousel generator is a tool that uses artificial intelligence to help you create multi-slide social media posts for platforms like LinkedIn and Instagram.
       </p>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-        In a basic version, an AI carousel tool may take a topic and turn it into several slides. More advanced tools can help with the full creative workflow: analyzing an input, finding an angle, writing a hook, organizing the slides, creating draft copy, choosing a visual style, and preparing a carousel draft you can refine.
+        In a basic version, an AI carousel tool may take a topic and turn it into several slides. More advanced tools can help with the full creative workflow: analyzing an input, finding an angle, writing a hook, organizing the slides, creating draft copy, choosing a visual style, and preparing a ready carousel you can refine.
       </p>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
         That distinction matters.
@@ -311,7 +311,7 @@ const ArticleBody = () => (
         </div>
         <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
           <div className="text-zinc-100 font-semibold text-[15px] mb-1">Strengths:</div>
-          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">GoToFlow helps move from topic, link, video, or competitor content to structure, copy, visual style, and carousel draft.</div>
+          <div className="text-zinc-400 text-[14px] md:text-[15px] leading-relaxed">GoToFlow helps move from topic, link, video, or competitor content to structure, copy, visual style, and ready carousel.</div>
         </div>
         <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.015]">
           <div className="text-zinc-100 font-semibold text-[15px] mb-1">What to keep in mind:</div>
@@ -609,7 +609,7 @@ const ArticleBody = () => (
         <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">1</span><span><strong>Input:</strong> start with a topic, idea, link, video, or competitor example.</span></div>
         <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">2</span><span><strong>GoToFlow:</strong> analyze the input, generate the angle, hook, slide structure, and copy.</span></div>
         <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">3</span><span><strong>Visual style:</strong> choose a ready-made style or write your own style prompt.</span></div>
-        <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">4</span><span><strong>Carousel generation:</strong> get a visual carousel draft with text and structure.</span></div>
+        <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">4</span><span><strong>Carousel generation:</strong> get a ready carousel with text and structure.</span></div>
         <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">5</span><span><strong>Refinement:</strong> regenerate a version, adjust the tone, tweak the prompt, or edit the copy if needed.</span></div>
         <div className="flex items-start gap-3.5"><span className="shrink-0 w-6 h-6 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-[11px] font-bold text-pink-400 mt-0.5">6</span><span><strong>Publishing:</strong> adapt the final result to the platform and publish.</span></div>
       </div>
@@ -639,7 +639,7 @@ const ArticleBody = () => (
         <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />prepare copy for each slide;</li>
         <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />choose a ready-made visual style;</li>
         <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />write your own style prompt;</li>
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />generate a visual carousel draft;</li>
+        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />generate a ready carousel;</li>
         <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />regenerate a version if you want a different tone or design direction;</li>
         <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" />reduce manual assembly time.</li>
       </ul>
@@ -648,7 +648,7 @@ const ArticleBody = () => (
       </p>
       <div className="relative my-12 md:my-16 p-6 md:p-8 rounded-2xl border border-pink-500/20 bg-gradient-to-br from-pink-500/[0.06] via-white/[0.02] to-orange-500/[0.04]">
         <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-pink-500/[0.04] via-transparent to-orange-500/[0.03] blur-xl" />
-        <p className="text-zinc-200 font-medium text-sm md:text-base leading-[1.7] mb-4">Paste a topic, link, or video and get a carousel structure, copy, and visual draft.</p>
+        <p className="text-zinc-200 font-medium text-sm md:text-base leading-[1.7] mb-4">Paste a topic, link, or video and get a carousel structure, copy, and ready carousel.</p>
         <Link to="/ai-carousel-maker" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-sm hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_25px_rgba(236,72,153,0.25)] border border-pink-400/20 group">
           Try GoToFlow AI Carousel Maker <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
         </Link>
@@ -723,7 +723,7 @@ const ArticleBody = () => (
 
       <h3 className="text-lg md:text-xl font-semibold text-zinc-100 tracking-tight mb-4 mt-10">Slide 7 — Summary</h3>
       <p className="text-zinc-300 text-[15px] md:text-base leading-[1.85] mb-5">
-        AI gives you the draft.<br />
+        AI gives you the result.<br />
         You add the meaning.
       </p>
 
@@ -741,7 +741,7 @@ const ArticleBody = () => (
         The right tool depends on where you get stuck.
       </p>
       <ul className="space-y-3 mb-5">
-        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>If you need <strong>structure, copy, and visual draft</strong>, start with <strong>GoToFlow</strong>.</span></li>
+        <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>If you need <strong>structure, copy, and a ready carousel</strong>, start with <strong>GoToFlow</strong>.</span></li>
         <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>If you need <strong>design templates</strong>, use <strong>Canva</strong>.</span></li>
         <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>If you need <strong>raw brainstorming</strong>, use <strong>ChatGPT</strong> or <strong>Claude</strong>.</span></li>
         <li className="flex items-start gap-3.5 text-zinc-300 text-[15px] md:text-base leading-[1.7]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-pink-400/80 shrink-0" /><span>If you need <strong>presentation-style drafts</strong>, use <strong>Gamma</strong>.</span></li>
@@ -804,7 +804,7 @@ const ArticleBody = () => (
 
       <div className="relative my-12 md:my-16 p-6 md:p-8 rounded-2xl border border-pink-500/20 bg-gradient-to-br from-pink-500/[0.06] via-white/[0.02] to-orange-500/[0.04]">
         <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-pink-500/[0.04] via-transparent to-orange-500/[0.03] blur-xl" />
-        <p className="text-zinc-200 font-medium text-sm md:text-base leading-[1.7] mb-4">Enter a topic, link, or video and get a carousel structure, copy, and visual draft.</p>
+        <p className="text-zinc-200 font-medium text-sm md:text-base leading-[1.7] mb-4">Enter a topic, link, or video and get a carousel structure, copy, and ready carousel.</p>
         <Link to="/ai-carousel-maker" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-orange-500 text-sm hover:scale-105 active:scale-[0.98] transition-all shadow-[0_0_25px_rgba(236,72,153,0.25)] border border-pink-400/20 group">
           Create a carousel with GoToFlow <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
         </Link>
@@ -822,13 +822,13 @@ const ArticleBody = () => (
 
 /* ── FAQ ── */
 const faqItems = [
-  { q: 'What is the best AI carousel generator?', a: 'It depends on your goal. GoToFlow is useful for a full carousel workflow: topic, link, or video to structure, copy, visual style, and carousel draft. Canva is strong for design templates, ChatGPT and Claude are useful for brainstorming, and Figma is better for custom visual systems.' },
+  { q: 'What is the best AI carousel generator?', a: 'It depends on your goal. GoToFlow is useful for a full carousel workflow: topic, link, or video to structure, copy, visual style, and ready carousel. Canva is strong for design templates, ChatGPT and Claude are useful for brainstorming, and Figma is better for custom visual systems.' },
   { q: 'Can AI create LinkedIn carousels?', a: 'Yes. AI can help create the hook, slide-by-slide logic, body copy, and visual direction for a LinkedIn carousel. You should still review the draft to make sure the pacing, examples, and tone fit your voice.' },
-  { q: 'Can AI create Instagram carousel posts?', a: 'Yes. AI can help create Instagram carousel ideas, hooks, captions, slide copy, and visual drafts. The final result should still be checked for readability, tone, and visual fit on mobile.' },
+  { q: 'Can AI create Instagram carousel posts?', a: 'Yes. AI can help create Instagram carousel ideas, hooks, captions, slide copy, and ready carousels. The final result should still be checked for readability, tone, and visual fit on mobile.' },
   { q: 'Is Canva enough for carousel creation?', a: 'Canva is excellent for design and templates. But if your main problem is the hook, structure, or slide copy, you may want to create the content logic in another tool first or use a carousel-focused AI workflow before design.' },
   { q: 'Can I create a carousel from a competitor video or post?', a: 'Yes, if the tool supports using links, videos, or competitor examples as input. The goal should not be to copy the original, but to analyze the idea, find a new angle, and create a fresh carousel for your audience.' },
   { q: 'Do I still need to edit AI-generated carousel content?', a: 'Yes, but editing does not mean rebuilding everything from scratch. Usually, you need to choose the best version, adjust the prompt, regenerate parts if needed, refine wording, and make sure the carousel matches your voice and brand.' },
-  { q: 'What should I use if I want both content and visual style?', a: 'Use a tool that supports more than text generation. For example, GoToFlow helps with the carousel structure, copy, visual style, and draft generation, while still letting you refine or regenerate the result before publishing.' },
+  { q: 'What should I use if I want both content and visual style?', a: 'Use a tool that supports more than text generation. For example, GoToFlow helps with the carousel structure, copy, visual style, and ready carousels, while still letting you refine or regenerate the result before publishing.' },
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (

@@ -42,7 +42,13 @@ faq:
   - question: "Do I need complex design for a carousel to go viral?"
     answer: "No. Many of the highest-performing carousels from top creators use simple solid background colors and bold text. Content and readability matter more than complex graphics."
   - question: "How can I replicate these examples quickly?"
-    answer: "Instead of designing from scratch, use an AI Carousel Maker to instantly generate a clean, structured design based on your text."
+    answer: "Instead of designing from scratch, use an AI Carousel Maker to instantly generate a ready carousel based on your text."
+  - question: "How many slides should an Instagram carousel have?"
+    answer: "The best performing carousels usually have 7 to 10 slides. This gives you enough space to build an argument without overwhelming the reader."
+  - question: "What is the best format for a carousel hook?"
+    answer: "The most effective hooks usually present a surprising statement, a common mistake to avoid, or a clear promise of a step-by-step solution."
+  - question: "Can I use AI to create a carousel from an existing blog post?"
+    answer: "Yes. Tools like GoToFlow allow you to input a blog post link and automatically extract the key points to generate a ready-to-publish carousel structure."
 explore:
   tools:
     - title: "AI Carousel Maker"
@@ -122,6 +128,15 @@ Ideal for designers, marketers, and fitness professionals.
 *   **Slide 5:** "The Results (Metrics/Screenshots)"
 *   **Slide 6 (CTA):** "Want similar results? Link in bio."
 
+### Example 5: The "Resource List"
+Highly shareable content that people send to their colleagues.
+
+*   **Slide 1 (Hook):** "The only 5 tools you need to build [Outcome]"
+*   **Slide 2:** "Tool #1: [Name] - Why it is great"
+*   **Slide 3:** "Tool #2: [Name] - Best feature"
+*   **...**
+*   **Slide 7 (CTA):** "Which of these do you use? Let me know below."
+
 ## How to Recreate These Examples Quickly
 
 > [!tip]
@@ -134,7 +149,7 @@ While you could spend hours in Canva trying to recreate these layouts manually, 
 > **Use AI to structure your carousels**
 > Instead of manually placing text boxes, you can use an AI carousel maker to do the heavy lifting.
 
-With a tool like **GoToFlow**, you can simply choose a topic or paste a draft, and the AI will automatically generate the slides using proven structures like the ones mentioned above.
+With a tool like **GoToFlow**, you can simply choose a topic or paste your source text, and the AI will automatically generate the slides using proven structures like the ones mentioned above.
 
 :::mockup{slot="topic-input"}
 :::
@@ -146,9 +161,4 @@ The platform automatically applies clean, high-converting design templates, ensu
 
 ## Conclusion
 
-The best Instagram carousel examples prove that you do not need to be a professional designer to create viral content. By focusing on strong hooks, concise text, and structured frameworks, you can drastically improve your engagement. 
-
-> [!product]
-> **Generate your next carousel**
-> Stop staring at examples and start creating. Use AI to generate beautiful, structured carousels in seconds.
-> [Try GoToFlow for free](/ai-carousel-maker)
+The best Instagram carousel examples prove that you do not need to be a professional designer to create viral content. By focusing on strong hooks, concise text, and structured frameworks, you can drastically improve your engagement.

@@ -31,7 +31,7 @@ quickAnswer:
   - "**Map sections to slides:** Turn your subheadings (H2s) into individual slides."
   - "**Rewrite for mobile:** Compress each point to 15–25 words maximum per slide."
   - "**Add a strong hook:** Your first slide must create an immediate curiosity gap, not just state the title."
-  - "**Automate the structure:** Use tools like GoToFlow to instantly convert long-form text into a structured, visual draft."
+  - "**Automate the structure:** Use tools like GoToFlow to instantly convert long-form text into a structured, ready carousel."
 faq:
   - question: "Can I just paste my whole blog post into ChatGPT?"
     answer: "Yes, but the result will likely be a dense, unreadable wall of text. It is better to extract the key points or use a dedicated workflow tool."
@@ -41,6 +41,8 @@ faq:
     answer: "Absolutely. Blog posts use long sentences and paragraphs. Carousels require punchy, bite-sized copy optimized for mobile scrolling."
   - question: "What is the best way to extract the key points?"
     answer: "Look at your subheadings (H2s and H3s) and bulleted lists. These naturally translate into distinct carousel slides."
+  - question: "Should I include a call to action (CTA) at the end?"
+    answer: "Yes. Always conclude your carousel with a clear action for the reader to take, such as following you or clicking a link."
 explore:
   tools:
     - href: "/linkedin-carousel-maker"
@@ -64,7 +66,7 @@ explore:
       description: "Discover fresh topics for your next post."
 finalCta:
   title: "Ready to turn your articles into carousels?"
-  text: "Let GoToFlow transform your existing blog posts, links, and notes into structured, design-ready LinkedIn carousel drafts."
+  text: "Let GoToFlow transform your existing blog posts, links, and notes into structured, design-ready LinkedIn carousels."
   buttonText: "Create a LinkedIn carousel"
   href: "/linkedin-carousel-maker"
   microcopy: "Free — No credit card required"
@@ -95,10 +97,9 @@ A common mistake is trying to compress an entire 2,000-word article into 8 slide
 3. **Contrarian opinions:** Highlight a specific myth you debunked in the post.
 4. **Frameworks or data:** Focus exclusively on explaining a unique chart, statistic, or method you introduced.
 
-> [!product]
+> [!workflow]
 > **Turn your blog post into a LinkedIn carousel faster**
-> GoToFlow helps turn long-form content, links, or notes into a structured LinkedIn carousel draft without copying prompts between tools.
-> [Create a LinkedIn carousel](/linkedin-carousel-maker)
+> GoToFlow helps turn long-form content, links, or notes into a structured LinkedIn carousel without copying prompts between tools.
 
 ## The step-by-step AI repurposing workflow
 Turning a blog post into a carousel requires a methodical approach. If you simply paste your article into an AI chat and command "make a carousel," the AI will return generic, text-heavy slides. Follow this targeted workflow instead.
@@ -161,7 +162,7 @@ When repurposing content, you have two primary approaches depending on how much 
 
 **The GoToFlow Workflow:**
 1. Paste your blog post text or link directly into the platform.
-2. GoToFlow automatically extracts the core structure, applies strict word limits, and generates a structured draft.
+2. GoToFlow automatically extracts the core structure, applies strict word limits, and generates a structured carousel.
 3. Review and edit the text directly within the visual interface without copying and pasting between tools.
 
 ## Common mistakes when repurposing content

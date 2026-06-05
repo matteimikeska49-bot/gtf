@@ -119,24 +119,6 @@ Even if you use an AI generator, keeping these design principles in mind will el
 * **Use high-contrast colors:** Ensure your text stands out against the background.
 * **Include a progress bar:** Let readers know how many slides are left. It encourages them to swipe to the end.
 
-## Frequently Asked Questions (FAQ)
+## Put the examples into practice
 
-### What is the ideal length for a LinkedIn carousel?
-Most successful carousels range from 5 to 12 slides. Anything longer risks losing the reader's attention.
-
-### What format should I use for LinkedIn carousels?
-Always export your carousel as a PDF. LinkedIn's native document viewer provides the best experience for swiping through slides.
-
-### Should I include a call to action on every slide?
-No, that can come off as spammy. Keep the CTA strictly on the final slide to guide users on what to do next.
-
-### Are plain text carousels better than highly designed ones?
-Often, yes. Heavy graphics can distract from the message. Plain backgrounds with bold, readable text typically perform best.
-
-### How much text should be on a single slide?
-Keep it under 25 words per slide. If it looks like a paragraph from a book, people will scroll past it.
-
-> [!product]
-> **Turn Inspiration into Action**
-> Stop staring at examples. Use GoToFlow to turn your ideas into a ready carousel you can review, adjust, and export.
-> [Try LinkedIn Carousel Maker](/linkedin-carousel-maker)
+Use the patterns above as a swipe file, then [turn your own topic into a LinkedIn carousel in GoToFlow](/linkedin-carousel-maker) so you can review the slide order, adjust the wording, and export the final PDF.

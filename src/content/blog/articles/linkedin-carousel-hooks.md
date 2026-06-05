@@ -142,24 +142,6 @@ Even the best text can fail if the design is poor. Keep these design rules in mi
 * **Include a Subtitle:** Add a smaller line of text below the main hook to provide extra context.
 * **Add a "Swipe" Indicator:** Visually instruct the user to click or swipe to see more. It sounds simple, but it significantly increases conversion rates.
 
-## Frequently Asked Questions (FAQ)
+## Turn a hook into a finished carousel
 
-### Should my hook be a question or a statement?
-Statements generally perform better because they project authority. Instead of asking "Do you want to write better emails?", say "Here is the exact formula for writing better emails."
-
-### Can I use emojis on the first slide?
-Yes, but use them sparingly. One or two relevant emojis can break up text and add visual interest, but too many can look unprofessional.
-
-### How long should a hook be?
-Keep it under 15 words if possible. Large, legible text is essential for mobile readers, so brevity is your best friend.
-
-### Do numbers in hooks actually work?
-Absolutely. Odd numbers and exact data points (like '17.5%') tend to perform exceptionally well because they appear more authentic and specific.
-
-### Should I include a subtitle on the first slide?
-Yes. A short subtitle below the main hook adds context and gives the reader one more reason to swipe to the next slide.
-
-> [!product]
-> **Put Your New Hooks to Work**
-> Take these hooks and turn them into a ready carousel you can review, adjust, and export right now.
-> [Try LinkedIn Carousel Maker](/linkedin-carousel-maker)
+Pick one hook from this list, then [create the LinkedIn carousel in GoToFlow](/linkedin-carousel-maker) so you can test the first slide, refine the flow, and export the final PDF.

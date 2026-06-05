@@ -103,24 +103,6 @@ You can review the generated slides, make any final tweaks to the text, and expo
 * **Keep it concise:** Don't try to fit a 20-minute video into a 10-slide carousel. Focus on one specific takeaway or a high-level summary.
 * **Drive traffic back to the video:** Use the final slide (your CTA) to encourage readers to watch the full video on YouTube for more context.
 
-## Frequently Asked Questions (FAQ)
+## Turn one video into a LinkedIn carousel
 
-### Do I need to provide a transcript?
-No. GoToFlow automatically processes the YouTube video URL and extracts the necessary information without requiring a manual transcript upload.
-
-### Can I repurpose videos that aren't mine?
-While technically possible, it's best practice to only repurpose your own content to avoid copyright issues and maintain your unique brand voice.
-
-### How long does it take to process a video?
-Most videos under 20 minutes take less than a minute to process into a structured carousel.
-
-### Can I edit the text after the AI generates it?
-Yes, you have full control. You can review, adjust, and edit the slides before exporting.
-
-### What format does it export in?
-It exports as a high-quality PDF, which is the native format LinkedIn prefers for document carousels.
-
-> [!product]
-> **Start Repurposing Today**
-> Stop letting your hard work live on only one platform. Use GoToFlow to turn a YouTube video into a ready carousel you can review, adjust, and export.
-> [Try LinkedIn Carousel Maker](/linkedin-carousel-maker)
+Once you choose the video and key angle, [build the LinkedIn carousel in GoToFlow](/linkedin-carousel-maker), review the extracted slides, adjust the CTA, and export the PDF when the structure is ready.

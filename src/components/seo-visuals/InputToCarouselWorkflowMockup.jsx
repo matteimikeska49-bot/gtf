@@ -2,11 +2,11 @@ import React from 'react';
 import { Sparkles, Layers, FileText, Image as ImageIcon, Zap, AlignLeft } from 'lucide-react';
 
 export const InputToCarouselWorkflowMockup = ({
-  title = 'From raw input to carousel draft',
+  title = 'From raw input to ready carousel',
   subtitle = 'Start with a topic, link, video, article, or notes — and shape it into a structured Instagram carousel workflow.',
   inputs = ['Topic', 'Link', 'Video', 'Article', 'Notes'],
   steps = ['Angle', 'Hook', 'Slide structure', 'Slide copy', 'Visual direction'],
-  output = 'Carousel draft',
+  output = 'Ready carousel',
   eyebrow = '',
 }) => {
   return (
@@ -134,7 +134,7 @@ export const InputToCarouselWorkflowMockup = ({
               <div className="relative z-30 mt-auto pt-36">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.05] backdrop-blur-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
-                  <span className="text-[10px] font-medium text-zinc-300">Draft ready to refine</span>
+                  <span className="text-[10px] font-medium text-zinc-300">Ready carousel to refine</span>
                 </div>
               </div>
             </div>
