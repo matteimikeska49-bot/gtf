@@ -112,17 +112,5 @@ export const faqSchemaData = {
     { q: 'What makes Instagram carousel slides readable on mobile?', a: 'Use large headings, short lines, strong spacing, clear hierarchy, and one idea per slide. Avoid long paragraphs and tiny text. Always preview the carousel on a phone before publishing.' },
     { q: 'Can AI generate captions for Instagram carousels too?', a: 'Yes. AI can help write captions, CTA variations, summaries, and hashtags. For best results, give it the carousel topic, audience, main takeaway, desired tone, and CTA.' },
     { q: 'What is the best Instagram carousel format for educational content?', a: 'The best formats for educational content are step-by-step guides, checklists, mistakes and fixes, frameworks, and myth vs truth carousels. These formats make complex ideas easier to understand and easier to save.' }
-  ],
-  "/ru/blog/luchshie-ai-generatory-karuselej": [
-    { q: 'Какой AI-генератор каруселей лучший?', a: 'Если нужен полный workflow от идеи до визуального черновика, подойдёт GoToFlow. Если нужен только дизайн, можно использовать Canva или Figma. Для идей и текстов подойдут ChatGPT, Claude или Gemini.' },
-    { q: 'Можно ли сделать карусель для Instagram с помощью AI?', a: 'Да. AI может помочь с идеей, структурой, текстом и визуальным направлением. Но для Instagram особенно важно проверить визуал и читаемость на мобильном.' },
-    { q: 'Можно ли сделать карусель для LinkedIn с помощью AI?', a: 'Да. AI может помочь с первым слайдом, структурой, текстом, CTA и визуальным стилем. Для LinkedIn важно, чтобы карусель была логичной, полезной и хорошо читалась в PDF-формате.' },
-    { q: 'Чем GoToFlow отличается от Canva?', a: 'Canva сильна в шаблонах и ручном дизайне. GoToFlow помогает пройти workflow карусели: тема/ссылка/видео → структура → текст → стиль → черновик.' },
-    { q: 'Нужен ли дизайнер, чтобы делать карусели?', a: 'Не всегда. Для базовых и регулярных каруселей можно использовать AI-инструменты. Но если нужен уникальный брендовый стиль, Figma и дизайнер всё ещё могут быть полезны.' },
-    { q: 'Можно ли использовать видео конкурента как источник?', a: 'Да, если инструмент поддерживает работу с видео или ссылками. Важно не копировать, а использовать источник как основу для новой структуры и своего угла.' },
-    { q: 'Что лучше: AI-генератор каруселей или ChatGPT?', a: 'ChatGPT хорош для идей и текста. AI-генератор каруселей лучше, если вам нужен не только текст, но и структура, визуальный стиль и готовая карусель.' },
-    { q: 'Как сделать карусель быстрее?', a: 'Используйте готовый workflow: тема или ссылка → хук → структура → текст → визуальный стиль → черновик → финальная редактура. Так вы не начинаете каждый раз с пустого листа.' },
-    { q: 'Есть ли бесплатные AI-генераторы каруселей?', a: 'Да, у некоторых инструментов есть бесплатный старт или пробный доступ. Но часто бесплатные версии ограничивают количество генераций, экспорт, бренд-стили или продвинутые функции.' },
-    { q: 'Можно ли создать карусель онлайн без дизайнера?', a: 'Да. AI-инструменты помогают собрать структуру, текст и визуальный черновик. Но финальную карусель всё равно стоит проверить: читаемость, стиль, факты и соответствие платформе.' }
-  ],
+  ]
 };
