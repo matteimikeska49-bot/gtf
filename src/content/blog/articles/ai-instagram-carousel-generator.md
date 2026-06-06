@@ -620,7 +620,7 @@ That is especially useful if you create carousels often for Instagram, LinkedIn,
 
 For a broader comparison of tools, you can also read GoToFlow’s guide to the [best AI carousel generators](/blog/best-ai-carousel-generators).
 
-And if you create content for LinkedIn too, see the guide on [how to make an Instagram carousel with AI](/blog/how-to-make-an-instagram-carousel-with-ai).
+For more format ideas, see the guide to [best Instagram carousel examples](/blog/best-instagram-carousel-examples).
 
 ## Final checklist before publishing
 
