@@ -848,5 +848,25 @@
     "approvedForPublish": true,
     "productionUrl": "https://gotoflow.io/blog/best-ai-carousel-generators",
     "pageType": "comparison_article"
+  },
+  {
+    "batchId": "legacy-react",
+    "articleId": "en-ai-instagram-carousel-generator",
+    "title": "AI Instagram Carousel Generator: How to Create Carousels with AI",
+    "slug": "ai-instagram-carousel-generator",
+    "language": "en",
+    "cluster": "Carousel tools",
+    "primaryKeyword": "ai instagram carousel generator",
+    "status": "published",
+    "published": true,
+    "searchIntent": "informational",
+    "articleType": "how-to",
+    "targetPublishWave": "legacy-react",
+    "reviewer": "System",
+    "failReason": null,
+    "approvedForDraft": true,
+    "approvedForPublish": true,
+    "productionUrl": "https://gotoflow.io/blog/ai-instagram-carousel-generator",
+    "pageType": "how-to_article"
   }
 ]
