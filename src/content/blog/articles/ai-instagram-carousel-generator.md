@@ -30,10 +30,6 @@ finalCta:
   microcopy: "Free to try — No design skills needed"
 ---
 
-# AI Instagram Carousel Generator: How to Create Instagram Carousels with AI
-
-Create Instagram carousels with AI. Turn a topic, link, video, or article into hooks, slide structure, short copy, and a visual direction with GoToFlow.
-
 ## What is an AI Instagram carousel generator?
 
 An AI Instagram carousel generator is a tool that helps create multi-slide Instagram posts with AI.
