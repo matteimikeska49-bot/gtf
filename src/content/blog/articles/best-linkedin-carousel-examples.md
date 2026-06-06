@@ -13,10 +13,10 @@ funnelStage: "TOFU/MOFU"
 relatedProductRoute: "/linkedin-carousel-maker"
 canonical: "https://gotoflow.io/blog/best-linkedin-carousel-examples"
 audience: "creators_and_marketers"
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 createdAt: "2026-06-05T00:00:00.000Z"
 updatedAt: "2026-06-05T00:00:00.000Z"
 lastReviewed: "2026-06-05T00:00:00.000Z"

@@ -13,10 +13,10 @@ funnelStage: "MOFU/BOFU"
 relatedProductRoute: "/linkedin-carousel-maker"
 canonical: "https://gotoflow.io/blog/youtube-to-linkedin-carousel-ai"
 audience: "creators_and_marketers"
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 createdAt: "2026-06-05T00:00:00.000Z"
 updatedAt: "2026-06-05T00:00:00.000Z"
 lastReviewed: "2026-06-05T00:00:00.000Z"

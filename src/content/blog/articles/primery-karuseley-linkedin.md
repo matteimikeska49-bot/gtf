@@ -13,10 +13,10 @@ funnelStage: "TOFU/MOFU"
 relatedProductRoute: "/ru/generator-karuselej-linkedin"
 canonical: "https://gotoflow.io/ru/blog/primery-karuseley-linkedin"
 audience: "creators_and_marketers"
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 ru_meta_disclaimer: true
 createdAt: "2026-06-05T00:00:00.000Z"
 updatedAt: "2026-06-05T00:00:00.000Z"
