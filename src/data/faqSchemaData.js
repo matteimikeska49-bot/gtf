@@ -81,13 +81,6 @@ export const faqSchemaData = {
     { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
     { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva помогает с дизайном, а GoToFlow создает контент. Наш ИИ генерирует идеи, хуки и текст для структуры карусели, после чего вы получаете готовый результат.' }
   ],
-  "/ru/blog/idei-karuselej-linkedin": [
-    { q: 'Обязательно делать именно карусели?', a: 'Текст тоже работает. Но LinkedIn любит PDF-документы (карусели). Они задерживают людей на посте, пока те листают слайды. Алгоритмам это нравится.' },
-    { q: 'Сколько слайдов делать?', a: 'Оптимально — от 6 до 12. Меньше 6 — слишком мало пользы. Больше 15 — люди устают листать.' },
-    { q: 'В каком формате грузить?', a: 'LinkedIn не понимает карусели из картинок (как Instagram). Нужно собрать все слайды в один PDF-файл и загрузить его как документ.' },
-    { q: 'Какой размер выбрать?', a: 'Лучший вариант — вертикальный 1080 x 1350 пикселей (4:5). Он занимает весь экран телефона.' },
-    { q: 'Сделает ли ИИ всю работу?', a: 'Да. GoToFlow сам пишет тексты, делит их на слайды и выдает готовый PDF в вашем стиле.' }
-  ],
   "/blog/best-ai-carousel-generators": [
     { q: "What is the best AI carousel generator?", a: "It depends on your goal. GoToFlow is useful for a full carousel workflow: topic, link, or video to structure, copy, visual style, and ready carousel. Canva is strong for design templates, ChatGPT and Claude are useful for brainstorming, and Figma is better for custom visual systems." },
     { q: "Can AI create LinkedIn carousels?", a: "Yes. AI can help create the hook, slide-by-slide logic, body copy, and visual direction for a LinkedIn carousel. You should still review the draft to make sure the pacing, examples, and tone fit your voice." },

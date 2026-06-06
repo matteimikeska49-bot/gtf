@@ -104,13 +104,7 @@ const ROUTES_CONFIG = {
     type: 'article',
     crumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'Best AI Carousel Generators', path: '/blog/best-ai-carousel-generators' }]
   },
-  '/ru/blog/idei-karuselej-linkedin': {
-    title: '50 идей каруселей для LinkedIn, которые реально дают охваты и заявки | GoToFlow',
-    desc: '50 идей для каруселей в LinkedIn с примерами и структурой. Узнайте, как быстро создавать вовлекающие карусели с помощью ИИ.',
-    lang: 'ru',
-    type: 'article',
-    crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Блог', path: '/ru/blog' }, { name: 'Идеи каруселей LinkedIn', path: '/ru/blog/idei-karuselej-linkedin' }]
-  },
+
   '/blog/how-to-make-linkedin-carousel-with-ai': {
     title: 'How to Make a LinkedIn Carousel with AI: Step-by-Step Guide',
     desc: 'Learn how to make a LinkedIn carousel with AI using hooks, slide structure, prompts, visual style, examples, and a step-by-step carousel workflow.',
