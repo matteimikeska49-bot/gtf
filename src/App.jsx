@@ -26,7 +26,6 @@ import { LinkedInCarouselPage } from './components/LinkedInCarouselPage';
 import { LinkedInCarouselPageRu } from './components/LinkedInCarouselPageRu';
 import { BlogPage } from './components/BlogPage';
 import { BlogPageRu } from './components/BlogPageRu';
-import { LinkedInCarouselIdeasPage } from './components/blog/LinkedInCarouselIdeasPage';
 import { LinkedInCarouselIdeasPageRu } from './components/blog/LinkedInCarouselIdeasPageRu';
 
 import { BestAiCarouselGeneratorsPageRu } from './components/blog/BestAiCarouselGeneratorsPageRu';
@@ -82,7 +81,7 @@ function App() {
         <Route path="/linkedin-carousel-maker" element={<LinkedInCarouselPage />} />
         <Route path="/ru/generator-karuselej-linkedin" element={<LinkedInCarouselPageRu />} />
         <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog/linkedin-carousel-ideas" element={<LinkedInCarouselIdeasPage />} />
+        <Route path="/blog/linkedin-carousel-ideas" element={<MarkdownBlogArticlePage slug="linkedin-carousel-ideas" langPrefix="en" />} />
         <Route path="/blog/best-ai-carousel-generators" element={<MarkdownBlogArticlePage slug="best-ai-carousel-generators" langPrefix="en" />} />
         <Route path="/blog/how-to-make-linkedin-carousel-with-ai" element={<MarkdownBlogArticlePage slug="how-to-make-linkedin-carousel-with-ai" />} />
         <Route path="/blog/ai-instagram-carousel-generator" element={<MarkdownBlogArticlePage slug="ai-instagram-carousel-generator" langPrefix="en" />} />

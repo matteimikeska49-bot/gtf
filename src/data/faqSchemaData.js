@@ -81,13 +81,6 @@ export const faqSchemaData = {
     { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
     { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva помогает с дизайном, а GoToFlow создает контент. Наш ИИ генерирует идеи, хуки и текст для структуры карусели, после чего вы получаете готовый результат.' }
   ],
-  "/blog/linkedin-carousel-ideas": [
-    { q: 'What makes a good LinkedIn carousel?', a: 'A strong hook on slide 1, one idea per slide, clean visuals, and a clear CTA at the end. The best carousels teach something valuable in a skimmable format.' },
-    { q: 'How many slides should a LinkedIn carousel have?', a: 'Between 6 and 12 slides is the sweet spot. Enough to deliver value, not so many that people drop off.' },
-    { q: 'Can AI generate LinkedIn carousel ideas?', a: 'Yes. Tools like GoToFlow can generate carousel ideas, write slide copy, and build the full structure from a single topic or link — in under 60 seconds.' },
-    { q: 'How often should I post carousels on LinkedIn?', a: '2-3 times per week is ideal for most creators. Consistency matters more than volume.' },
-    { q: 'What size should LinkedIn carousels be?', a: 'The recommended size is 1080x1350px (4:5 ratio). This takes up the most screen real estate in the feed.' }
-  ],
   "/ru/blog/idei-karuselej-linkedin": [
     { q: 'Обязательно делать именно карусели?', a: 'Текст тоже работает. Но LinkedIn любит PDF-документы (карусели). Они задерживают людей на посте, пока те листают слайды. Алгоритмам это нравится.' },
     { q: 'Сколько слайдов делать?', a: 'Оптимально — от 6 до 12. Меньше 6 — слишком мало пользы. Больше 15 — люди устают листать.' },

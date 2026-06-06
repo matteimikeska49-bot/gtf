@@ -97,13 +97,6 @@ const ROUTES_CONFIG = {
     type: 'blog',
     crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Блог', path: '/ru/blog' }]
   },
-  '/blog/linkedin-carousel-ideas': {
-    title: '50 LinkedIn Carousel Ideas That Actually Get Engagement | GoToFlow',
-    desc: 'Explore 50 LinkedIn carousel ideas with examples, hooks, and structures. Learn how to create high-performing carousels faster using AI.',
-    lang: 'en',
-    type: 'article',
-    crumbs: [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: 'LinkedIn Carousel Ideas', path: '/blog/linkedin-carousel-ideas' }]
-  },
   '/blog/best-ai-carousel-generators': {
     title: 'Best AI Carousel Generators in 2026',
     desc: 'Compare the best AI carousel generators for LinkedIn, Instagram, hooks, slide structure, visual style, and social media content workflows.',
