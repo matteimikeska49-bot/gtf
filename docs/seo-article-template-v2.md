@@ -138,6 +138,7 @@ Text content.
 - остальные свернуть;
 - prompts должны оставаться полезными и читабельными;
 - не превращать блок в техническую документацию.
+- Prompt/code examples must be mobile-safe: avoid long single-line fenced code blocks, split prompt instructions into short lines, and never create horizontal scrolling inside the article body.
 
 ## Examples / formats rules
 

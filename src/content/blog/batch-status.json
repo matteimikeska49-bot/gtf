@@ -868,5 +868,25 @@
     "approvedForPublish": true,
     "productionUrl": "https://gotoflow.io/blog/ai-instagram-carousel-generator",
     "pageType": "how-to_article"
+  },
+  {
+    "batchId": "legacy-react",
+    "articleId": "en-how-to-make-linkedin-carousel-with-ai",
+    "title": "How to Make a LinkedIn Carousel with AI: Step-by-Step Guide",
+    "slug": "how-to-make-linkedin-carousel-with-ai",
+    "language": "en",
+    "cluster": "LinkedIn carousel",
+    "primaryKeyword": "how to make a linkedin carousel with ai",
+    "status": "published",
+    "published": true,
+    "searchIntent": "informational",
+    "articleType": "how-to",
+    "targetPublishWave": "legacy-react",
+    "reviewer": "System",
+    "failReason": null,
+    "approvedForDraft": true,
+    "approvedForPublish": true,
+    "productionUrl": "https://gotoflow.io/blog/how-to-make-linkedin-carousel-with-ai",
+    "pageType": "how-to_article"
   }
 ]

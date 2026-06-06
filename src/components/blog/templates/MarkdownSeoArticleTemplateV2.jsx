@@ -768,8 +768,8 @@ const MarkdownBody = ({ markdown, title, article, isRu }) => {
               </div>
             )}
             <div className="p-5 md:p-6 bg-[#0a0a0a]">
-              <pre className="overflow-x-auto text-[13px] md:text-sm leading-[1.8] text-zinc-300 font-mono">
-                <code>{block.text}</code>
+              <pre className="whitespace-pre-wrap break-words [overflow-wrap:anywhere] text-[13px] md:text-sm leading-[1.8] text-zinc-300 font-mono">
+                <code className="break-words [overflow-wrap:anywhere]">{block.text}</code>
               </pre>
             </div>
           </div>
