@@ -31,7 +31,6 @@ import { LinkedInCarouselIdeasPageRu } from './components/blog/LinkedInCarouselI
 
 import { BestAiCarouselGeneratorsPageRu } from './components/blog/BestAiCarouselGeneratorsPageRu';
 
-import { HowToMakeLinkedInCarouselWithAiPageRu } from './components/blog/HowToMakeLinkedInCarouselWithAiPageRu';
 import { MarkdownBlogArticlePage } from './components/blog/MarkdownBlogArticlePage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { RefundPolicyPage } from './components/RefundPolicyPage';
@@ -91,7 +90,7 @@ function App() {
         <Route path="/blog/linkedin-carousel-prompts" element={<MarkdownBlogArticlePage slug="linkedin-carousel-prompts" langPrefix="en" />} />
         <Route path="/ru/blog/idei-karuselej-linkedin" element={<LinkedInCarouselIdeasPageRu />} />
         <Route path="/ru/blog/luchshie-ai-generatory-karuselej" element={<BestAiCarouselGeneratorsPageRu />} />
-        <Route path="/ru/blog/kak-sdelat-karusel-linkedin-s-ai" element={<HowToMakeLinkedInCarouselWithAiPageRu />} />
+        <Route path="/ru/blog/kak-sdelat-karusel-linkedin-s-ai" element={<MarkdownBlogArticlePage slug="kak-sdelat-karusel-linkedin-s-ai" langPrefix="ru" />} />
         <Route path="/ru/blog" element={<BlogPageRu />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/ru/politika" element={<PrivacyPolicyPage />} />
