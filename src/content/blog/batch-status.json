@@ -867,7 +867,9 @@
     "approvedForDraft": true,
     "approvedForPublish": true,
     "productionUrl": "https://gotoflow.io/blog/ai-instagram-carousel-generator",
-    "pageType": "how-to_article"
+    "pageType": "how-to_article",
+    "qaStatus": "passed",
+    "visualQaStatus": "passed"
   },
   {
     "batchId": "legacy-react",
@@ -887,6 +889,39 @@
     "approvedForDraft": true,
     "approvedForPublish": true,
     "productionUrl": "https://gotoflow.io/blog/how-to-make-linkedin-carousel-with-ai",
-    "pageType": "how-to_article"
+    "pageType": "how-to_article",
+    "qaStatus": "passed",
+    "visualQaStatus": "passed"
+  },
+  {
+    "batchId": "test-pipeline",
+    "articleId": "en-linkedin-carousel-from-pdf-ai",
+    "title": "How to Turn a PDF into a LinkedIn Carousel with AI",
+    "slug": "linkedin-carousel-from-pdf-ai",
+    "language": "en",
+    "cluster": "Content repurposing",
+    "primaryKeyword": "linkedin carousel from pdf ai",
+    "status": "published",
+    "published": true,
+    "noindex": false,
+    "preview": false,
+    "owner": "Agent",
+    "lastUpdated": "2026-06-07T00:00:00.000Z",
+    "qaStatus": "passed",
+    "visualQaStatus": "passed",
+    "productionVerificationStatus": "pending",
+    "notes": "Stage 20 pipeline test",
+    "briefStatus": "approved",
+    "contentQaStatus": "pending",
+    "seoQaStatus": "pending",
+    "mockupQaStatus": "pending",
+    "internalLinksStatus": "pending",
+    "targetPublishWave": "test-pipeline",
+    "reviewer": "System",
+    "failReason": null,
+    "approvedForDraft": true,
+    "approvedForPublish": true,
+    "productionUrl": "https://gotoflow.io/blog/linkedin-carousel-from-pdf-ai",
+    "pageType": "blog_post"
   }
 ]

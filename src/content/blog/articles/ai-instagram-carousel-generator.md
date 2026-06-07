@@ -1,4 +1,6 @@
 ---
+mockupStatus: "not_available"
+mockupReason: "Migrated legacy article, needs future visual asset update"
 title: "AI Instagram Carousel Generator: How to Create Carousels with AI"
 description: "Create Instagram carousels with AI. Turn a topic, link, video, or article into hooks, slide structure, short copy, and a visual direction with GoToFlow."
 published: true
@@ -7,7 +9,7 @@ preview: false
 canonical: "https://gotoflow.io/blog/ai-instagram-carousel-generator"
 updatedAt: "2026-06"
 slug: "ai-instagram-carousel-generator"
-articleType: "how-to"
+articleType: "comparison_article"
 primaryKeyword: "ai instagram carousel generator"
 relatedProductRoute: "/ai-carousel-maker"
 faq:
