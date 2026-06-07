@@ -83,7 +83,7 @@ export const faqSchemaData = {
   ],
   "/blog/best-ai-carousel-generators": [
     { q: "What is the best AI carousel generator?", a: "It depends on your goal. GoToFlow is useful for a full carousel workflow: topic, link, or video to structure, copy, visual style, and ready carousel. Canva is strong for design templates, ChatGPT and Claude are useful for brainstorming, and Figma is better for custom visual systems." },
-    { q: "Can AI create LinkedIn carousels?", a: "Yes. AI can help create the hook, slide-by-slide logic, body copy, and visual direction for a LinkedIn carousel. You should still review the draft to make sure the pacing, examples, and tone fit your voice." },
+    { q: "Can AI create LinkedIn carousels?", a: "Yes. AI can help create the hook, slide-by-slide logic, body copy, and visual direction for a LinkedIn carousel. You should still review the result to make sure the pacing, examples, and tone fit your voice." },
     { q: "Can AI create Instagram carousel posts?", a: "Yes. AI can help create Instagram carousel ideas, hooks, captions, slide copy, and visual results. The final result should still be checked for readability, tone, and visual fit on mobile." },
     { q: "Is Canva enough for carousel creation?", a: "Canva is excellent for design and templates. But if your main problem is the hook, structure, or slide copy, you may want to create the content logic in another tool first or use a carousel-focused AI workflow before design." },
     { q: "Can I create a carousel from a competitor video or post?", a: "Yes, if the tool supports using links, videos, or competitor examples as input. The goal should not be to copy the original, but to analyze the idea, find a new angle, and create a fresh carousel for your audience." },

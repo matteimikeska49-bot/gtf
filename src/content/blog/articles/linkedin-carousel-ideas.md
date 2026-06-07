@@ -7,7 +7,7 @@ primaryKeyword: "linkedin carousel ideas"
 secondaryKeywords: ["linkedin content ideas", "linkedin carousel post ideas", "linkedin carousel topics"]
 searchIntent: "informational"
 cluster: "LinkedIn carousel ideas"
-articleType: "listicle"
+articleType: "article"
 pageType: "blog_post"
 funnelStage: "TOFU/MOFU"
 relatedProductRoute: "/linkedin-carousel-maker"
@@ -60,7 +60,7 @@ Use this list as a swipe file for your next LinkedIn carousel. The ideas are gro
 
 If you already have a topic in mind, you can also [create a LinkedIn carousel with GoToFlow](/linkedin-carousel-maker) and turn the idea into a ready carousel workflow instead of starting from a blank page.
 
-## Quick Answer
+## 5 proven LinkedIn carousel formats
 
 The strongest LinkedIn carousel ideas usually fit one of these formats:
 

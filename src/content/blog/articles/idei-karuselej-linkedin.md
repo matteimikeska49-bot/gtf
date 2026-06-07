@@ -10,7 +10,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/idei-karuselej-linkedin"
 updatedAt: "2026-06"
-articleType: "listicle"
+articleType: "article"
 relatedProductRoute: "/ru/generator-karuselej-linkedin"
 quickAnswer:
   - "В каруселях LinkedIn отлично работают экспертные инсайты, пошаговые How-To руководства, данные и аналитика, а также личные истории и подборки инструментов. Главное — один слайд равен одной законченной мысли, а последний слайд должен содержать призыв к действию (CTA)."
