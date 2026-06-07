@@ -38,7 +38,8 @@ finalCta:
   text: "Stop wasting hours manually redesigning whitepapers. Paste your best PDF insights into our AI, and get a ready-to-publish LinkedIn carousel instantly."
   buttonText: "Create Carousel Free"
   secondaryText: "No credit card required"
-mockupStatus: "present"
+mockupStatus: "not_available"
+mockupReason: "No specific LinkedIn document result mockup available yet."
 ---
 
 If your company produces whitepapers, industry reports, or detailed case studies, you are sitting on a goldmine of LinkedIn content. The problem? Dropping a link to a 20-page PDF on LinkedIn usually results in minimal engagement.
@@ -49,49 +50,45 @@ In this guide, we will show you how to extract the best ideas from your document
 
 ## Why repurpose PDFs for LinkedIn?
 
-LinkedIn's algorithm heavily rewards **document posts** (which display as carousels). When a user pauses to swipe through your slides, the platform registers high "dwell time," which pushes your post to a broader audience.
+Document-style posts can perform well because they keep people reading and swiping. When a user pauses to read through your slides, they spend more time with your content, which helps build trust and authority.
 
 Repurposing a long-form PDF gives you several advantages:
 - **Maximized ROI**: A single whitepaper can easily fuel 5 to 10 different carousels.
 - **Higher Consumption**: People are much more likely to read 8 short slides than 10 pages of dense text.
-- **Native Reach**: You aren't fighting the algorithm by forcing users off the platform.
+- **Native Reach**: You keep readers inside LinkedIn rather than sending them to an external landing page.
 
 ## How to extract the best points from your PDF
 
 AI works best when you give it clear, focused constraints. Do not try to summarize an entire 50-page report into a single carousel. 
 
-Instead, break the document down into micro-topics. Look for:
+Instead, break the document down into micro-topics. Aim to copy about 300 to 500 words representing one specific insight. Look for:
 - **A 5-step framework**: Did the report propose a specific methodology?
 - **3 surprising statistics**: Isolate a few key data points and their implications.
 - **A myth vs. reality section**: Contrast industry assumptions with your findings.
 
-Once you have identified a micro-topic, copy the relevant text (around 300 words). This will be the source material for the AI.
+Once you have identified a micro-topic, this will be the source material for the AI. Remove any overly dense academic formatting or footnotes before using it.
 
 ## Step-by-step: Converting PDF text to a carousel with AI
 
-Creating the design manually could take hours. With a specialized tool, you can skip the blank page and go straight to a structured result.
+Creating a 10-slide document post manually in Canva or Illustrator can take hours. With GoToFlow, you can skip the blank page and let the AI structure your PDF insights instantly.
 
-:::mockup{slot="topic-input"}
+### 1. Paste your extracted text
+Take the 300–500 words you extracted from your PDF and paste it into the GoToFlow topic input. Add a simple instruction like: *"Turn this executive summary into an engaging 8-slide LinkedIn carousel. Focus on the problem and the 3 main solutions."*
 
-### 1. Paste your text into the prompt
-Take the text you extracted from the PDF and paste it into your AI generator. Add a simple instruction like: *"Turn this executive summary into an engaging 8-slide LinkedIn carousel. Focus on the problem and the 3 main solutions."*
-
-### 2. Review the generated structure
-The AI will process the text and break it down into a logical flow: an attention-grabbing hook, the core slides, and a final call to action. Review the slide breakdown to ensure it accurately reflects your original document.
+### 2. Review the slide breakdown
+GoToFlow will process your text and break it down into a logical flow: an attention-grabbing hook, the core educational slides, and a final call to action. Review the slide structure to ensure it accurately reflects your original PDF without hallucinating facts. 
 
 ### 3. Customize the design
-Select a template that matches your brand. You can usually adjust colors, fonts, and formatting so the carousel feels like a natural extension of your official PDF.
+Select a template that matches your B2B brand. You can adjust colors, fonts, and formatting so the carousel feels like a natural extension of your official PDF report. GoToFlow automatically balances text sizes for mobile readability.
 
-:::mockup{slot="result-preview"}
-
-### 4. Export as a ready-to-post PDF
-Once you are happy with the preview, export the project. The AI will provide you with a properly formatted PDF file that is optimized for LinkedIn's document viewer.
+### 4. Export as a ready-to-post document
+Once you are happy with the preview, export the project. GoToFlow generates a properly formatted, high-resolution PDF file. You simply upload this file directly to LinkedIn as a document post.
 
 ## Best practices for whitepaper carousels
 
 When adapting formal reports for a social feed, keep these tips in mind:
 - **Simplify the language**: Remove corporate jargon. LinkedIn users scroll quickly and need immediate clarity.
+- **One idea per slide**: Don't cram 3 paragraphs onto a slide. Break long explanations into multiple slides.
 - **Use the final slide strategically**: If the carousel covers one chapter of your report, use the last slide to say, "Want the full data? Download the complete report via the link in the comments."
-- **Focus on readability**: Ensure the text is large enough to read on mobile devices, where the majority of LinkedIn consumption happens.
 
 By turning your heavy PDFs into accessible, visual carousels, you can dramatically increase the visibility of your hard work and drive genuine conversations on LinkedIn. Try generating your first one with the [LinkedIn carousel maker](/linkedin-carousel-maker) today!
