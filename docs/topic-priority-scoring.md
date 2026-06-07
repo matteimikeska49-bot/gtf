@@ -30,6 +30,22 @@ Missing real volume does not block MVP but lowers the Data Confidence Score.
 - **Medium**: Google Trends
 - **Low**: manual SERP analysis, AI estimate, topic_map inheritance.
 
+## Recalculation Workflow
+Because topic selection depends on demand data, scores must be recalculated when new demand evidence is imported. 
+
+### How manual exports affect scores
+- **Real data imported** (Wordstat, GSC): Dramatically increases Data Confidence and adjusts Demand score linearly with volume/impressions.
+- **Google Trends data**: Increases Data Confidence over estimates, and confirms Demand.
+- **Missing data**: Caps Data Confidence to 5/10 and caps Demand Score, meaning an unproven topic must have exceptionally high business/product value to reach P1.
+
+### When to run:
+1. Export manual CSVs from your tool (Wordstat/Trends/GSC) to `src/content/blog/demand-sources/`
+2. Run: `npm run import:keyword-demand`
+3. Run: `npm run recalculate:topic-scores`
+4. Run: `npm run check:blog:topic-score`
+
+**Strict Rule:** After any keyword import, scores MUST be recalculated before choosing topics for a batch.
+
 ## Rules
 - **No draft without score**: `ready_for_draft` topics cannot exist without a score in `topic-priority-score.json`.
 - **No mini-batch without score**: Mini-batch topics cannot be selected without scoring.

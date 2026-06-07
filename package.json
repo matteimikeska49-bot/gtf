@@ -21,6 +21,7 @@
     "check:blog:topics": "node scripts/check-blog-topic-research.mjs",
     "check:blog:keywords": "node scripts/check-blog-keywords.mjs",
     "check:blog:topic-score": "node scripts/check-blog-topic-score.mjs",
+    "recalculate:topic-scores": "node scripts/recalculate-topic-scores.mjs",
     "import:keyword-demand": "node scripts/import-keyword-demand.mjs",
     "check:blog:dist": "node scripts/check-blog-dist.mjs",
     "check:blog:all": "npm run build && npm run check:blog:dist && npm run check:blog:run && npm run check:blog:content-template && npm run check:blog:product-links && npm run check:blog:seo-meta && npm run check:blog:cannibalization && npm run check:blog:links && npm run check:blog:mockups && npm run check:blog:schema && npm run check:blog:batch && npm run check:blog:topics && npx start-server-and-test preview http-get://localhost:4173 \"npm run check:blog:render:run && npm run check:blog:visual:run\"",

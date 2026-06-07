@@ -106,12 +106,27 @@ try {
     const ev = scoreRecord.keywordEvidence;
     if (ev) {
       if (ev.volume === null) warnings.push(`Topic "${scoreRecord.primaryKeyword}" volume is null`);
-      if (ev.exactVolumeKnown === false) warnings.push(`Topic "${scoreRecord.primaryKeyword}" exactVolumeKnown is false`);
-      if (ev.source.includes('manual_') || ev.source === 'existing_topic_map') {
-        warnings.push(`Topic "${scoreRecord.primaryKeyword}" uses manual/estimated demand source: ${ev.source}`);
+      if (ev.exactVolumeKnown === false && (tier === 'P1' || tier === 'P2')) warnings.push(`Topic "${scoreRecord.primaryKeyword}" exactVolumeKnown is false but tier is ${tier}`);
+      if (ev.source === 'existing_topic_map' && (tier === 'P1' || tier === 'P2')) {
+        warnings.push(`Topic "${scoreRecord.primaryKeyword}" uses source: existing_topic_map but tier is ${tier}`);
       }
     }
-    if (scoreRecord.scores.dataConfidenceScore <= 4) warnings.push(`Topic "${scoreRecord.primaryKeyword}" has low dataConfidenceScore (<=4)`);
+
+    // Load matching keyword record for demandDataStatus
+    const keywordCandidatesPath = path.join(ROOT_DIR, 'src/content/blog/keyword-candidates.json');
+    if (fs.existsSync(keywordCandidatesPath)) {
+      const keywords = JSON.parse(fs.readFileSync(keywordCandidatesPath, 'utf8'));
+      const kw = keywords.find(k => k.keyword === scoreRecord.primaryKeyword || k.targetSlug === scoreRecord.targetSlug);
+      if (kw) {
+        if (tier === 'P1' && kw.demandDataStatus !== 'real_data_imported' && kw.demandDataStatus !== 'partial_manual_data') {
+          warnings.push(`Topic "${scoreRecord.primaryKeyword}" is P1 but demandDataStatus is ${kw.demandDataStatus}`);
+        }
+      }
+    }
+
+    if (scoreRecord.scores.dataConfidenceScore <= 4 && topic.generationStatus === 'draft_preview') {
+      warnings.push(`Topic "${scoreRecord.primaryKeyword}" selected for mini-batch (draft_preview) but dataConfidenceScore <= 4`);
+    }
     if (scoreRecord.scores.mockupReadinessScore <= 5) warnings.push(`Topic "${scoreRecord.primaryKeyword}" has low mockupReadinessScore (<=5)`);
   }
 
