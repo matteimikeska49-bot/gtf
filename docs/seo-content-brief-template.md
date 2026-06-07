@@ -5,6 +5,13 @@
 - Working title:
 - Language:
 - Primary keyword:
+- Keyword database record:
+- Demand evidence source:
+- Last checked date:
+- Demand confidence:
+- Exact volume known:
+- Volume/Difficulty/CPC (if known):
+- Notes on missing volume data:
 - Secondary keywords:
 - Cluster:
 - Article type:

@@ -15,7 +15,8 @@ RU articles must be generated from completed RU briefs and must follow RU markdo
 **Rule:** Gemini should not generate articles from a raw topic alone for production batches. For production use, Gemini should receive a completed content brief.
 
 Before generating the article, Gemini must receive the following context via a content brief (reference: `docs/seo-content-brief-template.md`):
-- keyword;
+- keyword and keyword database record;
+- demand evidence source and exactVolumeKnown;
 - intent;
 - audience;
 - angle;
@@ -210,6 +211,8 @@ Your task is to write a high-quality, deeply researched, and engaging SEO articl
 1. OUTPUT ONLY RAW MARKDOWN. No intros, no explanations, no "Here is your article". Just the file content starting with `---` and ending with the conclusion.
 2. Frontmatter must contain all required fields: title, slug, language, description, primaryKeyword, secondaryKeywords, searchIntent, cluster, articleType, category, priority, published, noindex, canonical, createdAt, updatedAt, lastReviewed, quickAnswerTitle, quickAnswer, faq, explore, finalCta.
 3. If publication status is 'draft', set `published: false` and `noindex: true`. Do NOT leave noindex on published articles.
+4. Do not invent keyword volume. Do not claim demand numbers without source.
+5. Topic must reference keyword-candidates record.
 4. Do NOT write the FAQ or Final CTA in the body text. They belong ONLY in the frontmatter. Use EXACTLY `question:` and `answer:` keys for FAQ. Do NOT use empty FAQ rows or duplicate the H1.
 5. finalCta schema is STRICT: `title`, `text` (NOT description), `buttonText`, `href` (required, from allowlist), `microcopy`, `secondaryText`, and `secondaryHref` (e.g., "#explore-more"). No raw HTML or `<span class=...>` allowed.
 6. Do NOT use `[!product]` or `:::mockup` callouts or raw JSX/HTML in the body. Provide a standard markdown link to the product in the body. Avoid old "draft" wording (e.g., "carousel draft").
