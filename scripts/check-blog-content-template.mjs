@@ -73,11 +73,18 @@ function parseFrontmatter(content) {
       let cursor = index + 1;
       while (cursor < lines.length && !lines[cursor].match(/^[a-zA-Z0-9_]+:/)) {
         const question = lines[cursor].match(/^\s+-\s+question:\s*["']?(.+?)["']?\s*$/);
-        if (question) questions.push(question[1].replace(/^"|"$/g, ''));
+        if (question && question[1].trim() !== '') {
+          questions.push(question[1].replace(/^"|"$/g, ''));
+        }
         
         if (lines[cursor].match(/^\s+-\s+q:\s*|^\s+a:\s*/)) {
           frontmatter.hasMalformedFaqKeys = true;
         }
+
+        if (lines[cursor].match(/^\s+-\s+question:\s*(?:""|'')?\s*$/) || lines[cursor].match(/^\s+answer:\s*(?:""|'')?\s*$/)) {
+          frontmatter.hasEmptyFaq = true;
+        }
+        
         cursor += 1;
       }
       frontmatter.faq = questions;
@@ -195,6 +202,10 @@ function checkArticle(file) {
 
   if (frontmatter.hasMalformedFaqKeys) {
     errors.push('Malformed FAQ keys detected (q: or a:). Use "question:" and "answer:".');
+  }
+
+  if (frontmatter.hasEmptyFaq) {
+    errors.push('Empty FAQ row detected (empty question or empty answer).');
   }
 
   const hasProductBlock = hasMarkdownProductCta(body);

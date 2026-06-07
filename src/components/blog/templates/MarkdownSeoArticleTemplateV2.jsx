@@ -1073,7 +1073,7 @@ const FinalCta = ({ cta, isRu }) => {
         <div className="absolute left-1/2 top-0 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-400/10 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-2xl">
           <h2 className="mb-4 text-2xl font-bold tracking-tight text-white md:text-4xl">{isRu ? applyRuAutoStar(cta.title, isRu) : cta.title}</h2>
-          <p className="mx-auto mb-7 max-w-xl text-base leading-relaxed text-zinc-300">{isRu ? applyRuAutoStar(cta.description, isRu) : cta.description}</p>
+          <p className="mx-auto mb-7 max-w-xl text-base leading-relaxed text-zinc-300">{isRu ? applyRuAutoStar((cta.text || cta.description), isRu) : (cta.text || cta.description)}</p>
           <a href={getAppUrlWithRef(CTA_URL)} className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 px-7 py-3.5 text-[15px] font-bold text-white shadow-[0_0_40px_rgba(236,72,153,0.35)] transition-all hover:scale-105 active:scale-[0.98] sm:w-auto">
             {cta.buttonText}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

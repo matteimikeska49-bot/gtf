@@ -54,11 +54,11 @@
 - Prompt groups if needed:
 - Comparison/table if needed:
 - Compact cards sections if needed:
-- Product CTA placement:
+- Product CTA placement: (Do not use raw markdown `[!product]` blocks, use finalCta frontmatter instead)
 - Related block placement:
-- FAQ:
+- FAQ: (Must be >= 5 items. Only define in frontmatter, do not duplicate in body)
 - Explore links:
-- Final CTA:
+- Final CTA: (Define in frontmatter only using `text`, not `description`)
 
 ## 5. Visual / mockup needs
 
