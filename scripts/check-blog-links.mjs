@@ -26,6 +26,9 @@ const publicRoutes = new Set([
   '/ru/blog/kak-sdelat-karusel-linkedin-s-ai'
 ]);
 
+const EN_PRODUCTS = ['/', '/ai-carousel-maker', '/ai-content-generator', '/ai-instagram-post-generator', '/ai-post-maker', '/linkedin-carousel-maker', '/carousel/create'];
+const RU_PRODUCTS = ['/ru', '/ru/ai-generator-karuselej', '/ru/generator-kontenta', '/ru/generator-postov-instagram', '/ru/generator-karuselej-linkedin'];
+
 try {
   const files = fs.readdirSync(ARTICLES_DIR);
   for (const file of files) {
@@ -96,6 +99,27 @@ articles.forEach(article => {
       
       if (link.includes('test-seo-template') || link.includes('test-ru-seo-template')) {
         conflicts.push(`Invalid link in published ${article.file}: Cannot link to test template '${link}'.`);
+        hasP0Error = true;
+      }
+    }
+
+    // Check 3: Cross-language linking
+    if (article.language === 'ru') {
+      if (link.startsWith('/blog/') && !link.startsWith('/ru/blog/')) {
+        conflicts.push(`Cross-language error in ${article.file}: RU article linking to EN blog '${link}'.`);
+        hasP0Error = true;
+      }
+      if (EN_PRODUCTS.includes(link)) {
+        conflicts.push(`Cross-language error in ${article.file}: RU article linking to EN product '${link}'.`);
+        hasP0Error = true;
+      }
+    } else {
+      if (link.startsWith('/ru/blog/')) {
+        conflicts.push(`Cross-language error in ${article.file}: EN article linking to RU blog '${link}'.`);
+        hasP0Error = true;
+      }
+      if (RU_PRODUCTS.includes(link)) {
+        conflicts.push(`Cross-language error in ${article.file}: EN article linking to RU product '${link}'.`);
         hasP0Error = true;
       }
     }

@@ -74,6 +74,10 @@ function parseFrontmatter(content) {
       while (cursor < lines.length && !lines[cursor].match(/^[a-zA-Z0-9_]+:/)) {
         const question = lines[cursor].match(/^\s+-\s+question:\s*["']?(.+?)["']?\s*$/);
         if (question) questions.push(question[1].replace(/^"|"$/g, ''));
+        
+        if (lines[cursor].match(/^\s+-\s+q:\s*|^\s+a:\s*/)) {
+          frontmatter.hasMalformedFaqKeys = true;
+        }
         cursor += 1;
       }
       frontmatter.faq = questions;
@@ -135,13 +139,23 @@ function checkRenderedHtml({ frontmatter, strict, errors, warnings }) {
     ? /Часто задаваемые[\s\S]{0,220}вопросы\s*\(FAQ\)/i.test(html)
     : /Frequently Asked[\s\S]{0,220}Questions\s*\(FAQ\)/i.test(html);
   if (hasDetailsFaq && hasMarkdownFaqHeading) {
-    renderedErrors.push('Rendered HTML contains both markdown FAQ heading and frontmatter FAQ details block.');
+    errors.push('Rendered HTML contains both markdown FAQ heading and frontmatter FAQ details block.');
   }
 
   const hasFrontmatterCta = Boolean(frontmatter.finalCta) && /https:\/\/app\.gotoflow\.io/i.test(html);
   const hasMarkdownProductBlock = /PRODUCT WORKFLOW|ИНСТРУМЕНТ ИЛИ ПРОЦЕСС/i.test(html);
   if (hasFrontmatterCta && hasMarkdownProductBlock) {
-    renderedErrors.push('Rendered HTML contains both markdown product CTA block and frontmatter FinalCta block.');
+    errors.push('Rendered HTML contains both markdown product CTA block and frontmatter FinalCta block.');
+  }
+
+  const hasRawInlineProductBlock = /<InlineProductBlock/i.test(html);
+  if (hasRawInlineProductBlock) {
+    errors.push('Rendered HTML contains raw <InlineProductBlock marker.');
+  }
+
+  const hasRawProductMarkdown = /\[!product\]/i.test(html);
+  if (hasRawProductMarkdown) {
+    errors.push('Rendered HTML contains raw [!product] marker.');
   }
 
   renderedErrors.forEach((message) => addIssue({ errors, warnings, strict, message }));
@@ -175,8 +189,12 @@ function checkArticle(file) {
     });
   }
 
-  if (strict && hasFrontmatterFaq && hasBodyFaq) {
-    errors.push('Duplicate FAQ sources: strict article has both frontmatter faq and markdown FAQ section.');
+  if (hasFrontmatterFaq && hasBodyFaq) {
+    errors.push('Duplicate FAQ sources: article has both frontmatter faq and markdown FAQ section.');
+  }
+
+  if (frontmatter.hasMalformedFaqKeys) {
+    errors.push('Malformed FAQ keys detected (q: or a:). Use "question:" and "answer:".');
   }
 
   const hasProductBlock = hasMarkdownProductCta(body);
@@ -195,8 +213,8 @@ function checkArticle(file) {
     });
   }
 
-  if (strict && hasFinalCtaFrontmatter && hasProductBlock) {
-    errors.push('Duplicate CTA sources: strict article has both finalCta frontmatter and markdown [!product] block.');
+  if (hasFinalCtaFrontmatter && hasProductBlock) {
+    errors.push('Duplicate CTA sources: article has both finalCta frontmatter and markdown [!product] block.');
   }
 
   SOURCE_FORBIDDEN.forEach((phrase) => {
