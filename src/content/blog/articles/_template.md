@@ -39,7 +39,7 @@ explore:
   tools:
     - title: "AI Carousel Maker"
       href: "/ai-carousel-maker"
-      description: "Create structured carousel drafts from rough ideas."
+      description: "Create structured carousel results from rough ideas."
   guides:
     - title: "Best AI Carousel Generators"
       href: "/blog/best-ai-carousel-generators"

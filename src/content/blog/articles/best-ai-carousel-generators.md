@@ -264,9 +264,6 @@ This workflow works because it separates two important ideas:
 
 That matters because a carousel represents your brand. You want speed, but you also want the final output to match your voice, visual style, and audience.
 
-> [!product] **Create a carousel with GoToFlow**
-> Enter a topic, link, or video and get a carousel structure, copy, and ready carousel.
-> [Try GoToFlow AI Carousel Maker](/ai-carousel-maker)
 
 ## Practical example: turning generic AI into a stronger carousel
 
@@ -379,6 +376,3 @@ For a strong carousel, the important pieces are not just images. You need a clea
 Start with the input. Build the structure. Remove generic AI phrasing. Add your own perspective. Refine the visual style. Regenerate a version if needed. Then publish.
 That is how you create a carousel that feels useful, not just generated.
 
-> [!product] **Try GoToFlow**
-> Paste a topic, link, or video and get a carousel structure, copy, and ready carousel.
-> [Try GoToFlow AI Carousel Maker](/ai-carousel-maker)

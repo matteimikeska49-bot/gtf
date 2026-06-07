@@ -57,7 +57,7 @@ explore:
   guides:
     - title: "Instagram Carousel Prompts"
       href: "/blog/instagram-carousel-prompts"
-      description: "Copy ready prompts for turning ideas into structured carousel drafts."
+      description: "Copy ready prompts for turning ideas into structured carousel results."
 finalCta:
   title: "Turn your ideas into posts instantly"
   description: "Don't let good ideas sit in your notes app. Use GoToFlow to turn them into published carousels today."
@@ -143,10 +143,6 @@ Once generated, you can preview the complete carousel and make any final text ad
 :::mockup{slot="result-preview"}
 :::
 
-> [!product]
-> **Bring your ideas to life**
-> Stop letting your content ideas gather dust. Turn them into professional carousels instantly.
-> [Try GoToFlow for free](/ai-carousel-maker)
 
 ## Conclusion
 

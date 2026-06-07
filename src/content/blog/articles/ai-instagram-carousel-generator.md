@@ -245,7 +245,7 @@ Examples:
 - For creators: teach a repeatable content framework.
 - For agencies: show a client-facing checklist.
 - For coaches: simplify a complex idea.
-- For SaaS teams: explain a product workflow.
+- For SaaS teams: explain a software workflow.
 - For marketers: compare two approaches.
 
 Without audience and outcome, AI usually produces generic content.

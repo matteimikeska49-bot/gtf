@@ -131,10 +131,6 @@ Using a dedicated AI carousel maker removes the friction from content creation.
 2. **Zero design time:** The layouts, fonts, and spacing are handled automatically.
 3. **Instant export:** Once generated, you can download the images and post them directly to Instagram or LinkedIn.
 
-> [!product]
-> **Ready to try it yourself?**
-> Turn your next idea into a fully designed carousel in under a minute.
-> [Try GoToFlow for free](/ai-carousel-maker)
 
 ## Conclusion
 

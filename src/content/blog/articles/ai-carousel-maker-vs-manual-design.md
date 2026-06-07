@@ -64,7 +64,7 @@ explore:
       description: "Learn how to build carousels with AI."
 finalCta:
   title: "Ready to speed up your carousel production?"
-  text: "Use GoToFlow to instantly turn your ideas, notes, and links into structured, copy-ready carousel drafts."
+  text: "Use GoToFlow to instantly turn your ideas, notes, and links into structured, copy-ready carousel results."
   buttonText: "Try AI Carousel Maker"
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
@@ -93,10 +93,6 @@ The friction usually occurs because the creator attempts to write the copy and d
 ## Where an AI carousel maker helps
 An AI carousel maker forces a healthier workflow by separating ideation from design. You provide the raw input—a blog post, a rough outline, or a few bullet points—and the AI structures it across multiple slides. It enforces constraints that prevent text-heavy slides and automatically applies layout rules. This allows creators and marketers to produce educational content, listicles, and repurpose long-form text in a fraction of the time.
 
-> [!product]
-> **Create a carousel draft before opening a design tool**
-> GoToFlow helps turn rough ideas, links, or notes into structured carousel drafts so you can review the message before spending time on design.
-> [Try AI Carousel Maker](/ai-carousel-maker)
 
 ## Comparing the workflows side-by-side
 

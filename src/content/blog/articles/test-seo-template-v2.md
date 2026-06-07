@@ -48,7 +48,7 @@ explore:
   tools:
     - title: "AI Carousel Maker"
       href: "/ai-carousel-maker"
-      description: "Create structured carousel drafts from rough ideas."
+      description: "Create structured carousel results from rough ideas."
   guides:
     - title: "Best AI Carousel Generators"
       href: "/blog/best-ai-carousel-generators"
@@ -96,10 +96,6 @@ This allows GoToFlow to publish new SEO articles faster while keeping old produc
 > [!bestfor]
 > This is a best-for callout.
 
-> [!product]
-> **Turn this idea into a carousel faster**
-> Use GoToFlow to turn rough notes into a structured carousel draft.
-> [Try AI Carousel Maker](/ai-carousel-maker)
 
 > [!related]
 > **Read next**

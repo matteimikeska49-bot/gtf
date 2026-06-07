@@ -63,7 +63,7 @@ explore:
       description: "Compare the top tools for carousel creation."
 finalCta:
   title: "Tired of copying prompts into chat interfaces?"
-  text: "Use GoToFlow to instantly turn your ideas, notes, and links into structured, copy-ready Instagram carousel drafts."
+  text: "Use GoToFlow to instantly turn your ideas, notes, and links into structured, copy-ready Instagram carousel results."
   buttonText: "Create an AI Carousel"
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
@@ -90,10 +90,6 @@ To get the best results from the prompts in this library, keep these fundamental
 2. **Set strict limits:** AI tends to be verbose. Every prompt should restrict the word count per slide.
 3. **Iterate and refine:** Treat the AI output as a first draft. Read it out loud and rewrite any phrases that do not sound like your authentic voice.
 
-> [!product]
-> **Turn your carousel prompts into finished posts faster**
-> GoToFlow helps turn rough ideas, prompts, and content angles into structured Instagram carousel drafts without copying text between tools.
-> [Create an AI carousel](/ai-carousel-maker)
 
 :::mockup{slot="topic-input"}
 
@@ -195,4 +191,4 @@ An educational carousel without a CTA is a wasted opportunity. Ask the reader to
 
 ## Conclusion
 
-Instagram carousels are unmatched for building authority, educating your audience, and driving deep engagement. However, writing them manually can quickly lead to burnout. By utilizing highly structured AI prompts, you can establish a repeatable content engine that produces premium carousel drafts in minutes, not hours. Pick one prompt from the library above, insert your specific niche context, and start filling your content calendar today.
+Instagram carousels are unmatched for building authority, educating your audience, and driving deep engagement. However, writing them manually can quickly lead to burnout. By utilizing highly structured AI prompts, you can establish a repeatable content engine that produces premium carousel results in minutes, not hours. Pick one prompt from the library above, insert your specific niche context, and start filling your content calendar today.

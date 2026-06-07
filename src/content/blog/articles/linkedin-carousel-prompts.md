@@ -53,7 +53,7 @@ explore:
       description: "Compare the top tools for content creators."
 finalCta:
   title: "Tired of wrestling with AI chat tools?"
-  description: "Let GoToFlow turn your rough ideas, links, or notes into structured, design-ready LinkedIn carousel drafts in seconds."
+  description: "Let GoToFlow turn your rough ideas, links, or notes into structured, design-ready LinkedIn carousel results in seconds."
   buttonText: "Try GoToFlow For Free"
   microcopy: "Free — No credit card required"
   secondaryText: "Explore more carousel tools and guides →"
@@ -92,10 +92,6 @@ Before diving into the library, understand the core formula behind a successful 
 ### The modular prompting framework
 Manual prompting gives you absolute control over every word, provided you break the task down into modules. Below is a curated library of 40 modular prompts you can copy and paste to take control of your AI generation.
 
-> [!product]
-> **Want to turn these prompts into a carousel faster?**
-> GoToFlow helps turn a topic, link, or notes into a structured LinkedIn carousel draft without copying prompts between tools.
-> [Create a LinkedIn carousel](/linkedin-carousel-maker)
 
 ## Prompt Groups
 
@@ -254,7 +250,7 @@ The modular sequence gives you a clearer hook, stronger pacing, and slide copy t
 **GoToFlow is useful when:**
 - You want the same high-quality workflow, but much faster.
 - You want structure, slide copy, and design direction handled in one place.
-- You want to go from a raw idea, link, or scattered notes straight to a visual carousel draft without copying and pasting between multiple tools.
+- You want to go from a raw idea, link, or scattered notes straight to a visual carousel result without copying and pasting between multiple tools.
 
 ### Conclusion
 Building a high-performing LinkedIn carousel with AI requires strategy, not just a single command. By adopting a modular approach—sequencing your ideation, structure, copywriting, and refining—you retain editorial control while leveraging the speed of AI. Keep these 40 prompts handy, enforce strict word limits, and you will consistently generate carousels that capture attention and drive engagement.
