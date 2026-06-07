@@ -12,6 +12,8 @@
 - Exact volume known:
 - Volume/Difficulty/CPC (if known):
 - Notes on missing volume data:
+- Priority Tier:
+- Final Priority Score:
 - Secondary keywords:
 - Cluster:
 - Article type:

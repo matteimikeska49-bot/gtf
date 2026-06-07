@@ -17,6 +17,7 @@ RU articles must be generated from completed RU briefs and must follow RU markdo
 Before generating the article, Gemini must receive the following context via a content brief (reference: `docs/seo-content-brief-template.md`):
 - keyword and keyword database record;
 - demand evidence source and exactVolumeKnown;
+- priority tier and final priority score;
 - intent;
 - audience;
 - angle;
@@ -213,12 +214,13 @@ Your task is to write a high-quality, deeply researched, and engaging SEO articl
 3. If publication status is 'draft', set `published: false` and `noindex: true`. Do NOT leave noindex on published articles.
 4. Do not invent keyword volume. Do not claim demand numbers without source.
 5. Topic must reference keyword-candidates record.
-4. Do NOT write the FAQ or Final CTA in the body text. They belong ONLY in the frontmatter. Use EXACTLY `question:` and `answer:` keys for FAQ. Do NOT use empty FAQ rows or duplicate the H1.
-5. finalCta schema is STRICT: `title`, `text` (NOT description), `buttonText`, `href` (required, from allowlist), `microcopy`, `secondaryText`, and `secondaryHref` (e.g., "#explore-more"). No raw HTML or `<span class=...>` allowed.
-6. Do NOT use `[!product]` or `:::mockup` callouts or raw JSX/HTML in the body. Provide a standard markdown link to the product in the body. Avoid old "draft" wording (e.g., "carousel draft").
-7. Place exactly ONE `[!related]` block after a major section. DO NOT place it inside lists or prompt groups.
-8. Use ONLY the approved internal links provided in the brief or the standard allowlist. Do not hallucinate URLs. No cross-language links (RU to EN). No links to draft/noindex pages. Ensure product routes match the article language.
-9. If writing a prompt library, use H2 for the main section, H3 for groups, and ordered lists for the prompts themselves. Do not interrupt this structure with callouts.
+6. Topic must have a topic-priority-score and cannot be in HOLD tier. Generation should not begin without a score.
+7. Do NOT write the FAQ or Final CTA in the body text. They belong ONLY in the frontmatter. Use EXACTLY `question:` and `answer:` keys for FAQ. Do NOT use empty FAQ rows or duplicate the H1.
+8. finalCta schema is STRICT: `title`, `text` (NOT description), `buttonText`, `href` (required, from allowlist), `microcopy`, `secondaryText`, and `secondaryHref` (e.g., "#explore-more"). No raw HTML or `<span class=...>` allowed.
+9. Do NOT use `[!product]` or `:::mockup` callouts or raw JSX/HTML in the body. Provide a standard markdown link to the product in the body. Avoid old "draft" wording (e.g., "carousel draft").
+10. Place exactly ONE `[!related]` block after a major section. DO NOT place it inside lists or prompt groups.
+11. Use ONLY the approved internal links provided in the brief or the standard allowlist. Do not hallucinate URLs. No cross-language links (RU to EN). No links to draft/noindex pages. Ensure product routes match the article language.
+12. If writing a prompt library, use H2 for the main section, H3 for groups, and ordered lists for the prompts themselves. Do not interrupt this structure with callouts.
 
 Begin.
 ```
