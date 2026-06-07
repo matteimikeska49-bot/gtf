@@ -87,6 +87,10 @@ try {
     if (keywordRecord.difficulty === null) warnings.push(`Keyword "${keywordRecord.keyword}" has no difficulty data yet`);
     if (keywordRecord.cpc === null) warnings.push(`Keyword "${keywordRecord.keyword}" has no cpc data yet`);
 
+    if (keywordRecord.source === 'manual_pending') warnings.push(`Keyword "${keywordRecord.keyword}" source is manual_pending`);
+    if (keywordRecord.source === 'manual_serp_ai_estimate') warnings.push(`Keyword "${keywordRecord.keyword}" source is manual_serp_ai_estimate`);
+    if (keywordRecord.source === 'existing_topic_map') warnings.push(`Keyword "${keywordRecord.keyword}" source is existing_topic_map`);
+
     if (keywordRecord.futureDataSources) {
       const fd = keywordRecord.futureDataSources;
       if (fd.googleSearchConsole === 'not_connected') warnings.push(`Keyword "${keywordRecord.keyword}": GSC not connected`);
