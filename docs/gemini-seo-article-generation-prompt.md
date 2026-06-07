@@ -30,10 +30,12 @@ Before generating the article, Gemini must receive the following context via a c
 
 ## 4. Strict Generation Rules
 1. **Output Format**: Output ONLY the raw Markdown file content. Do not include introductory or concluding conversational text.
-2. **No Hallucinations**: Do not invent URLs. Use only the provided allowlist for internal links.
-3. **No Duplicate Sections**: Do not write the Quick Answer or FAQ in the body text—they belong exclusively in the frontmatter.
-4. **Final CTA**: Do not manually write a final CTA in the body text. It is handled via frontmatter.
-5. **No HTML**: Do not use HTML tags or `className` attributes inside the Markdown body.
+2. **No Hallucinations / Strict Links**: Do not invent URLs. Use only the provided allowlist for internal links. Do NOT link across languages (RU to EN or EN to RU). Ensure product routes match the article language. Do NOT link to draft or noindex pages.
+3. **No Duplicate Sections / Headers**: Do not write the Quick Answer or FAQ in the body text—they belong exclusively in the frontmatter. Do NOT duplicate the H1 title in the body. Do NOT use empty FAQ rows. Use exactly `question:` and `answer:` keys for FAQ, never `q:` or `a:`.
+4. **Final CTA & Product Context**: Do not manually write a final CTA in the body text. It is handled via frontmatter. Provide a standard markdown link to the product in the normal body text.
+5. **No HTML / JSX**: Do not use HTML tags, `<span class=...>`, raw JSX (like `<InlineProductBlock />`), or `className` attributes anywhere. Do NOT use `[!product]` or `:::mockup` blockquotes as they will leak to rendered HTML.
+6. **No "Draft" Wording**: Never use wording like "carousel draft", "review the draft", or "generate a draft". Use "carousel result", "ready carousel", "slide copy", etc.
+7. **Dates**: Ensure `updatedAt` is present and correct. Do not use weird date labels (e.g. "Examples Reviewed").
 
 ## 5. Frontmatter Schema
 Every article MUST start with this exact YAML frontmatter block:
@@ -207,12 +209,12 @@ Your task is to write a high-quality, deeply researched, and engaging SEO articl
 ### Rules:
 1. OUTPUT ONLY RAW MARKDOWN. No intros, no explanations, no "Here is your article". Just the file content starting with `---` and ending with the conclusion.
 2. Frontmatter must contain all required fields: title, slug, language, description, primaryKeyword, secondaryKeywords, searchIntent, cluster, articleType, category, priority, published, noindex, canonical, createdAt, updatedAt, lastReviewed, quickAnswerTitle, quickAnswer, faq, explore, finalCta.
-3. If publication status is 'draft', set `published: false` and `noindex: true`.
-4. Do NOT write the FAQ or Final CTA in the body text. They belong ONLY in the frontmatter.
-5. finalCta schema is STRICT: `title`, `text` (NOT description), `buttonText`, `href` (required, from allowlist), `microcopy`, `secondaryText`, and `secondaryHref` (e.g., "#explore-more").
-6. Place exactly ONE `[!product]` CTA in the first third of the article.
-7. Place exactly ONE `[!related]` block after a major section. DO NOT place it near the product CTA, and DO NOT place it inside lists or prompt groups.
-8. Use ONLY the approved internal links provided in the brief or the standard allowlist. Do not hallucinate URLs.
+3. If publication status is 'draft', set `published: false` and `noindex: true`. Do NOT leave noindex on published articles.
+4. Do NOT write the FAQ or Final CTA in the body text. They belong ONLY in the frontmatter. Use EXACTLY `question:` and `answer:` keys for FAQ. Do NOT use empty FAQ rows or duplicate the H1.
+5. finalCta schema is STRICT: `title`, `text` (NOT description), `buttonText`, `href` (required, from allowlist), `microcopy`, `secondaryText`, and `secondaryHref` (e.g., "#explore-more"). No raw HTML or `<span class=...>` allowed.
+6. Do NOT use `[!product]` or `:::mockup` callouts or raw JSX/HTML in the body. Provide a standard markdown link to the product in the body. Avoid old "draft" wording (e.g., "carousel draft").
+7. Place exactly ONE `[!related]` block after a major section. DO NOT place it inside lists or prompt groups.
+8. Use ONLY the approved internal links provided in the brief or the standard allowlist. Do not hallucinate URLs. No cross-language links (RU to EN). No links to draft/noindex pages. Ensure product routes match the article language.
 9. If writing a prompt library, use H2 for the main section, H3 for groups, and ordered lists for the prompts themselves. Do not interrupt this structure with callouts.
 
 Begin.

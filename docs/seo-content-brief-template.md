@@ -24,6 +24,8 @@
 - Publication status:
 - Requires fresh research: yes/no
 - Review frequency:
+- updatedAt/freshness requirement:
+- Cannibalization notes:
 
 ## 2. SERP / competitor notes
 
@@ -99,3 +101,5 @@
 - curl HTML contains article content:
 - robots/sitemap ok:
 - GSC/Yandex check after deploy if needed:
+- Rendered HTML risk notes:
+- Visual QA notes:
