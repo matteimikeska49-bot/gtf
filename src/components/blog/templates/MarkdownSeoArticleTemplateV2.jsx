@@ -102,15 +102,15 @@ const getArticleFreshnessMeta = (article) => {
 
   if (article.lastReviewed) {
     const formatted = formatMonthYear(article.lastReviewed, isRu);
-    return formatted ? { source: "lastReviewed", label: copy.lastReviewedLabel, blockLabel: copy.lastReviewedLabel.toUpperCase(), formattedDate: formatted, displayText: `${copy.reviewedPrefix} ${formatted}` } : null;
+    return formatted ? { source: "lastReviewed", label: copy.lastReviewedLabel, blockLabel: copy.lastReviewedLabel.toUpperCase(), formattedDate: formatted, displayText: `${copy.reviewedPrefix}: ${formatted}` } : null;
   }
   if (article.updatedAt) {
     const formatted = formatMonthYear(article.updatedAt, isRu);
-    return formatted ? { source: "updatedAt", label: copy.updatedLabel, blockLabel: copy.updatedBlockLabel, formattedDate: formatted, displayText: `${copy.updatedLabel} ${formatted}` } : null;
+    return formatted ? { source: "updatedAt", label: copy.updatedLabel, blockLabel: copy.updatedBlockLabel, formattedDate: formatted, displayText: `${copy.updatedLabel}: ${formatted}` } : null;
   }
   if (article.createdAt) {
     const formatted = formatMonthYear(article.createdAt, isRu);
-    return formatted ? { source: "createdAt", label: copy.publishedLabel, blockLabel: copy.publishedLabel.toUpperCase(), formattedDate: formatted, displayText: `${copy.publishedLabel} ${formatted}` } : null;
+    return formatted ? { source: "createdAt", label: copy.publishedLabel, blockLabel: copy.publishedLabel.toUpperCase(), formattedDate: formatted, displayText: `${copy.publishedLabel}: ${formatted}` } : null;
   }
   return null;
 };

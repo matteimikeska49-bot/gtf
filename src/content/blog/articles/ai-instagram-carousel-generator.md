@@ -5,6 +5,7 @@ published: true
 noindex: false
 preview: false
 canonical: "https://gotoflow.io/blog/ai-instagram-carousel-generator"
+updatedAt: "2026-06"
 slug: "ai-instagram-carousel-generator"
 articleType: "how-to"
 primaryKeyword: "ai instagram carousel generator"
