@@ -26,6 +26,7 @@
     "check:blog:cluster-map": "node scripts/check-blog-cluster-map.mjs",
     "check:blog:brief-alignment": "node scripts/check-blog-brief-alignment.mjs",
     "check:blog:frontmatter-contract": "node scripts/check-blog-frontmatter-contract.mjs",
+    "check:blog:faq-cta-contract": "node scripts/check-blog-faq-cta-contract.mjs",
     "recalculate:topic-scores": "node scripts/recalculate-topic-scores.mjs",
     "import:keyword-demand": "node scripts/import-keyword-demand.mjs",
     "check:blog:dist": "node scripts/check-blog-dist.mjs",
