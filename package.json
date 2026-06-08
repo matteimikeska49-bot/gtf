@@ -18,6 +18,7 @@
     "check:blog:mockups": "node scripts/check-blog-mockups.mjs",
     "check:blog:batch": "node scripts/check-blog-batch.mjs",
     "check:blog:production": "node scripts/check-blog-production.mjs",
+    "check:blog:live-verification": "node scripts/check-blog-live-verification.mjs",
     "check:blog:topics": "node scripts/check-blog-topic-research.mjs",
     "check:blog:keywords": "node scripts/check-blog-keywords.mjs",
     "check:blog:topic-score": "node scripts/check-blog-topic-score.mjs",

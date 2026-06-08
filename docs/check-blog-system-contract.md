@@ -26,3 +26,7 @@ But:
 Before publishing, pushing render changes, deploying, or running mini-batch:
 You **must** run `prepublish` or `full` as appropriate.
 Never include production live checks inside local build loops.
+
+## Live Verification Rules
+- Production checks (`npm run check:blog:live-verification`) must ONLY be run after successful commit, push, and deployment.
+- Never claim an article is "published" or "live" until live verification explicitly passes on the production URL.

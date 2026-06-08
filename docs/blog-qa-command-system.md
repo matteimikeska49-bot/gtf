@@ -80,3 +80,12 @@ Includes:
 Live URL/deploy verification only.
 Command: `npm run check:blog:production`
 Must remain separate from local checks.
+
+### When to run Production/Live Checks
+`npm run check:blog:live-verification` must ONLY be run:
+1. **After** explicit user approval to publish.
+2. **After** updating frontmatter/batch-status to `published: true`.
+3. **After** local checks (`prepublish`, `full`) have passed.
+4. **After** `git commit` and `git push`.
+5. **After** the production deploy has fully successfully finished (verify GitHub Actions or Vercel).
+Do NOT run this locally as part of the standard editing loop.

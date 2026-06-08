@@ -1308,3 +1308,26 @@ npm run check:blog:visual
 3. **Visual QA:** Build (`npm run build`), verify local preview routes (`npm run check:blog:preview-routes`), and run visual validation (`npm run check:blog:visual`).
 4. **Approval:** User reviews the desktop/mobile screenshots in `tmp/blog-visual-qa/` and explicitly sets `approvedForPublish: true`.
 5. **Publish:** `published: true`, `noindex: false`, `preview: false`. Added to sitemap and public index.
+
+## Publish Approval Workflow
+No article can be published unless the user explicitly approves. State transition must strictly follow:
+1. Draft state (`published: false, noindex: true, preview: true, approvedForPublish: false`).
+2. Approved publish state (`published: true, noindex: false, preview: false, approvedForPublish: true`).
+
+## Live Verification Workflow
+After an article is committed, pushed, and deployed, the system must run `npm run check:blog:live-verification`.
+This script ensures:
+- HTTP 200, valid Canonical, no `noindex`, valid title/meta, Article/FAQ schemas.
+- Presence in `sitemap.xml` and `/blog` index.
+- No raw artifacts leaked on the production URL.
+Drafts must be explicitly verified to NOT be in the live sitemap or blog index.
+
+## Production Verification Fields
+`batch-status.json` must record:
+- `productionVerificationStatus`: 'pending', 'verified', 'failed'
+- `productionVerifiedAt`: timestamp
+- `productionVerificationCommit`: git hash
+- `productionUrl`: Live URL
+- `verificationReportId`
+- `reverificationRequired`
+- `reverificationReason`
