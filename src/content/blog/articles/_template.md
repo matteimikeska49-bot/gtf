@@ -4,12 +4,23 @@ slug: "article-slug"
 language: "en"
 description: "Short SEO description for the article."
 primaryKeyword: "primary keyword"
+keywordRecord: "primary keyword"
 searchIntent: "informational"
-cluster: "AI content workflow"
-articleType: "how-to"
-priority: "P2"
+topicScoreId: "en:primary keyword"
+finalPriorityScore: 100
+priorityTier: "P2"
+productCapabilityIds: ["textToCarousel"]
+intentId: "en:primary-keyword"
+clusterId: "en:cluster-name"
+articleRole: "hub"
+hubSlug: "article-slug"
+relatedProductRoute: "/"
+mockupStatus: "planned"
+mockupReason: "Visualizes the specific workflow"
 published: false
 noindex: true
+preview: true
+approvedForPublish: false
 canonical: "https://gotoflow.io/blog/article-slug"
 createdAt: "2026-05-23"
 updatedAt: "2026-05-23"

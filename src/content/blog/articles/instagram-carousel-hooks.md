@@ -3,6 +3,16 @@ title: "15 Instagram Carousel Hooks Designed to Stop the Scroll"
 description: "Discover 15 proven Instagram carousel hooks to increase your swipe-through rate, engagement, and followers."
 language: "en"
 primaryKeyword: "instagram carousel hooks"
+keywordRecord: "instagram carousel hooks"
+topicScoreId: "en:instagram carousel hooks"
+finalPriorityScore: 80
+priorityTier: "P2"
+productCapabilityIds: ["instagramCarouselGeneration"]
+intentId: "en:instagram-carousel-hooks"
+clusterId: "en:instagram-carousel"
+articleRole: "supporting"
+hubSlug: "how-to-make-an-instagram-carousel-with-ai"
+relatedProductRoute: "/instagram-carousel-maker"
 published: false
 noindex: true
 preview: true

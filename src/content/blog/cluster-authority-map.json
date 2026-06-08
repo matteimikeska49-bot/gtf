@@ -88,6 +88,14 @@
     "hubSlug": "how-to-make-an-instagram-carousel-with-ai",
     "articleRoles": [
       {
+        "slug": "how-to-make-an-instagram-carousel-with-ai",
+        "url": "/blog/how-to-make-an-instagram-carousel-with-ai",
+        "role": "hub",
+        "intentId": "en:how-to-make-instagram-carousel",
+        "priorityTier": "P1",
+        "status": "published"
+      },
+      {
         "slug": "instagram-carousel-hooks",
         "url": "/blog/instagram-carousel-hooks",
         "role": "supporting",

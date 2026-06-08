@@ -36,6 +36,24 @@
     "lastReviewed": "2026-06-08"
   },
   {
+    "intentId": "en:how-to-make-instagram-carousel",
+    "language": "en",
+    "cluster": "en:instagram-carousel",
+    "searchIntent": "How to make an Instagram carousel using AI",
+    "intentType": "how-to",
+    "ownerUrl": "/blog/how-to-make-an-instagram-carousel-with-ai",
+    "ownerSlug": "how-to-make-an-instagram-carousel-with-ai",
+    "ownerRole": "product-led-how-to",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": ["how-to-create-instagram-carousel", "instagram-carousel-generator-guide"],
+    "allowedSupportingAngles": ["ideas", "examples", "prompts", "hooks"],
+    "updateInsteadOfCreateRules": ["new feature additions to the carousel maker"],
+    "relatedProductRoute": "/instagram-carousel-maker",
+    "notes": "Core EN hub intent for Instagram carousels",
+    "lastReviewed": "2026-06-08"
+  },
+  {
     "intentId": "en:linkedin-carousel-from-pdf",
     "language": "en",
     "cluster": "en:linkedin-carousel",
