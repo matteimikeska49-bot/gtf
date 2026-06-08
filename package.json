@@ -22,6 +22,8 @@
     "check:blog:keywords": "node scripts/check-blog-keywords.mjs",
     "check:blog:topic-score": "node scripts/check-blog-topic-score.mjs",
     "check:blog:product-claims": "node scripts/check-blog-product-claims.mjs",
+    "check:blog:intent-ownership": "node scripts/check-blog-intent-ownership.mjs",
+    "check:blog:cluster-map": "node scripts/check-blog-cluster-map.mjs",
     "recalculate:topic-scores": "node scripts/recalculate-topic-scores.mjs",
     "import:keyword-demand": "node scripts/import-keyword-demand.mjs",
     "check:blog:dist": "node scripts/check-blog-dist.mjs",

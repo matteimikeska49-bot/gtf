@@ -217,12 +217,14 @@ Your task is to write a high-quality, deeply researched, and engaging SEO articl
 6. Topic must have a topic-priority-score and cannot be in HOLD tier. Generation should not begin without a score.
 7. PRODUCT REALITY: Do not claim unsupported capabilities. Do not promise direct publishing/scheduling unless `product-capabilities.json` says supported.
 8. PRODUCT REALITY: Do not claim guaranteed engagement or algorithm boosts. For PDF/video workflows, use cautious wording (e.g. "paste text from PDF") unless a capability is explicitly supported. Every product claim must be compatible with `product-capabilities.json`.
-9. Do NOT write the FAQ or Final CTA in the body text. They belong ONLY in the frontmatter. Use EXACTLY `question:` and `answer:` keys for FAQ. Do NOT use empty FAQ rows or duplicate the H1.
-10. finalCta schema is STRICT: `title`, `text` (NOT description), `buttonText`, `href` (required, from allowlist), `microcopy`, `secondaryText`, and `secondaryHref` (e.g., "#explore-more"). No raw HTML or `<span class=...>` allowed.
-11. Do NOT use `[!product]` or `:::mockup` callouts or raw JSX/HTML in the body. Provide a standard markdown link to the product in the body. Avoid old "draft" wording (e.g., "carousel draft").
-12. Place exactly ONE `[!related]` block after a major section. DO NOT place it inside lists or prompt groups.
-13. Use ONLY the approved internal links provided in the brief or the standard allowlist. Do not hallucinate URLs. No cross-language links (RU to EN). No links to draft/noindex pages. Ensure product routes match the article language.
-14. If writing a prompt library, use H2 for the main section, H3 for groups, and ordered lists for the prompts themselves. Do not interrupt this structure with callouts.
+9. INTENT OWNERSHIP: Every new article must have an `intent-map.json` record. Do not generate an article if it would duplicate an Owner's intent.
+10. CLUSTER: Every new article must have a `cluster-authority-map.json` role. Support articles must link to their Hub and Product Route where relevant.
+11. Do NOT write the FAQ or Final CTA in the body text. They belong ONLY in the frontmatter. Use EXACTLY `question:` and `answer:` keys for FAQ. Do NOT use empty FAQ rows or duplicate the H1.
+12. finalCta schema is STRICT: `title`, `text` (NOT description), `buttonText`, `href` (required, from allowlist), `microcopy`, `secondaryText`, and `secondaryHref` (e.g., "#explore-more"). No raw HTML or `<span class=...>` allowed.
+13. Do NOT use `[!product]` or `:::mockup` callouts or raw JSX/HTML in the body. Provide a standard markdown link to the product in the body. Avoid old "draft" wording (e.g., "carousel draft").
+14. Place exactly ONE `[!related]` block after a major section. DO NOT place it inside lists or prompt groups.
+15. Use ONLY the approved internal links provided in the brief or the standard allowlist. Do not hallucinate URLs. No cross-language links (RU to EN). No links to draft/noindex pages. Ensure product routes match the article language.
+16. If writing a prompt library, use H2 for the main section, H3 for groups, and ordered lists for the prompts themselves. Do not interrupt this structure with callouts.
 
 Begin.
 ```

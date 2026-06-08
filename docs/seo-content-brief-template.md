@@ -12,6 +12,14 @@
 - Volume/Difficulty/CPC (if known):
 - Notes on missing volume data:
 
+## Intent & Cluster Architecture
+* Intent ID: {Insert from intent-map.json}
+* Intent Role: {Owner or Supporting}
+* Cluster ID: {Insert from cluster-authority-map.json}
+* Article Role: {e.g. hub, supporting, comparison}
+* Hub Link: {Link to Hub article if supporting}
+* Supporting Links: {Links to any supporting articles if Hub}
+
 ## Topic Priorities
 * Priority Tier: {P1/P2/P3/HOLD}
 * Final Priority Score: {Score}
