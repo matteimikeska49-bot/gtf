@@ -87,3 +87,7 @@
 * **Allowed Slots:** [List slots like `result`, `topic-input`]
 * **Allowed Assets:** [List specific asset IDs]
 * **Visible Text Risk:** [none/low/medium/high]
+
+## Draft & Publish Safety
+* **Draft State:** `published: false`, `noindex: true`, `preview: true`, `approvedForPublish: false`
+* **Internal Link Safety:** Not linked from any published articles yet.

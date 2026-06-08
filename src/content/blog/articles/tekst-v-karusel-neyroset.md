@@ -56,10 +56,8 @@ finalCta:
 ---
 
 
-:::mockup
 slot: "topic-input"
 id: "ru-upload-text-topic-expert-breakdown"
-:::
 
 ## Зачем превращать текст в карусель?
 
@@ -80,8 +78,6 @@ id: "ru-upload-text-topic-expert-breakdown"
 
 Таким образом, вы экономите время и получаете профессиональный контент, готовый к публикации.
 
-:::mockup
 slot: "result-preview"
 id: "ru-carousel-result-ideas"
-:::
 

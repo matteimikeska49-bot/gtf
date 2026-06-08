@@ -238,3 +238,7 @@ Begin.
 22. Never insert `:::mockup{slot="..."}` unless the frontmatter `mockupStatus` is `present` and you have an approved asset.
 23. If no perfectly matching mockup is available for the topic or intent, set `mockupStatus: "not_available"` and do NOT insert fallback mockups.
 24. Never invent or hallucinate mockup assets.
+
+25. Every new draft MUST be generated with `published: false`, `noindex: true`, `preview: true`, `approvedForPublish: false`.
+26. NEVER set `published: true` or `noindex: false` without explicit user approval.
+27. NEVER link to a draft or noindex URL from within a published article's internal links or explore zones.

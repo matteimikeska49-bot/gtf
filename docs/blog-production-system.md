@@ -1288,3 +1288,9 @@ npm run check:blog:visual
 `tmp/blog-visual-qa/`
 
 Агент не имеет права писать “визуально всё ок”, если не запустил `check:blog:visual`.
+
+### Draft to Publish State Machine
+1. **Draft / Generation:** `published: false`, `noindex: true`, `preview: true`, `approvedForPublish: false`
+2. **Review:** Article is checked via `npm run check:blog:all`. It is accessible locally but stripped from sitemap and blog index.
+3. **Approval:** User explicitly sets `approvedForPublish: true` and verifies batch status.
+4. **Publish:** `published: true`, `noindex: false`, `preview: false`. Added to sitemap and public index.

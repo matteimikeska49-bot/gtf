@@ -2,12 +2,15 @@
 title: "7 лучших AI-генераторов каруселей в 2026: GoToFlow, Canva, ChatGPT и другие"
 description: "Обзор и сравнение лучших AI-генераторов каруселей для LinkedIn и Instagram в 2026 году. Плюсы, минусы и для каких задач подходит каждый инструмент."
 language: "ru"
+slug: "luchshie-ai-generatory-karuselej"
+published: true
+noindex: false
 keywords: "ai генератор каруселей, нейросеть для каруселей, создание каруселей ai, linkedin карусель ai, instagram карусель ai, генератор каруселей"
 date: "2024-03-22"
 updatedAt: "2026-06"
 author: "Andrey Cerenok"
 readingTime: "8 min read"
-canonicalUrl: "https://gotoflow.io/ru/blog/luchshie-ai-generatory-karuselej"
+canonical: "https://gotoflow.io/ru/blog/luchshie-ai-generatory-karuselej"
 productRoute: "https://app.gotoflow.io"
 
 faq:
