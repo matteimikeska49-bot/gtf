@@ -1268,19 +1268,32 @@ research → 20 статей → markdown → build → push
 ## Automated Link & Cannibalization Checks
 Refer to `docs/seo-batch-manager.md` for rules on Route/internal link checking and Anti-cannibalization checks.
 
-### Required Publishing Checks
+### Required QA Command Architecture
 
-Для любых изменений в:
-- markdown template;
-- article blocks;
-- mockup system;
-- article draft;
-- Explore/CTA/FAQ;
+The GoToFlow SEO platform uses a layered QA command architecture to balance fast iteration with strict deployment safety.
 
-обязательно запускать:
+**1. Fast source checks** (`npm run check:blog:fast`)
+For small markdown/frontmatter edits. No build required.
+**2. Content/template checks** (`npm run check:blog:content`)
+For article template/content integrity. No build required.
+**3. SEO checks** (`npm run check:blog:seo`)
+For metadata/schema validation. No build required.
+**4. Pre-publish checks** (`npm run check:blog:prepublish`)
+Before any article is allowed to publish. Validates all safety guards without doing a slow build.
+**5. Build/render checks** (`npm run check:blog:build-render`)
+Runs build and then checks dist/render artifacts.
+**6. Full local checks** (`npm run check:blog:full`)
+Before commit/push/publish. Runs `prepublish` and `build-render`.
+**7. Production checks** (`npm run check:blog:production`)
+Live URL/deploy verification only. Must remain separate from local checks.
+
+**Usage Rules:**
+- Do not run heavy build/render for tiny copy edits unless the edit affects rendering, routing, template, schema, publish state, or D53/batch.
+- Before publishing, pushing render changes, deploying, or running mini-batch, you **must** run `prepublish` or `full` as appropriate.
+- Never include production live checks inside local build loops.
+
+Для визуальной проверки:
 ```bash
-npm run check:blog
-npm run build
 npm run check:blog:render
 npm run check:blog:visual
 ```

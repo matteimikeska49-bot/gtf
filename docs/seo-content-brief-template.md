@@ -113,3 +113,10 @@
 * **Canonical:** `https://gotoflow.io/[ru/]blog/slug`.
 * **Schema:** `Article` schema will use frontmatter fields. `FAQPage` schema is strictly driven by the frontmatter `faq` array.
 * **Dates:** Provide `createdAt` and `updatedAt`. Ensure `updatedAt` >= `createdAt`.
+
+## QA Command Checklist
+* [ ] Fast checks passed: `npm run check:blog:fast`
+* [ ] Content checks passed: `npm run check:blog:content`
+* [ ] SEO checks passed: `npm run check:blog:seo`
+* [ ] Pre-publish safety passed: `npm run check:blog:prepublish`
+* [ ] Build/Render safety passed: `npm run check:blog:full`
