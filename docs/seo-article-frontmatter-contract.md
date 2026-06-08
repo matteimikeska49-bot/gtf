@@ -49,3 +49,10 @@ Articles are structurally linked to the SEO platform planning layers.
 * `q` / `a` inside FAQ: Must use `question` / `answer`.
 * `[!product]`: Unsupported markdown directive.
 * Raw JSX/HTML: Forbidden in markdown body.
+
+## SEO Meta & Schema Requirements
+* **Title length:** 30-80 chars (safe warning bounds).
+* **Description length:** 90-180 chars (safe warning bounds).
+* **Uniqueness:** Hard-fail on duplicated titles, descriptions, and primaryKeywords.
+* **Date validation:** `createdAt` <= `updatedAt`. `createdAt` <= `lastReviewed`.
+* **FAQ Schema:** Strictly derived from the frontmatter `faq` object.

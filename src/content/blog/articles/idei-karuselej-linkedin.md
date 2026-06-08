@@ -9,6 +9,7 @@ noindex: false
 preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/idei-karuselej-linkedin"
+createdAt: "2024-01-01"
 updatedAt: "2026-06"
 articleType: "article"
 relatedProductRoute: "/ru/generator-karuselej-linkedin"

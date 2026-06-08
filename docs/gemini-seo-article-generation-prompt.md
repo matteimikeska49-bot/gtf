@@ -254,3 +254,10 @@ Begin.
     - Never mix RU/EN unintentionally in the body, FAQ, Quick Answer, or CTA.
     - Use RU product routes for RU articles and EN product routes for EN articles.
     - Allowed untranslated terms: GoToFlow, LinkedIn, Instagram, AI, SEO, CTA, B2B, PDF, UGC.
+
+30. **SEO Meta & Schema Hardening**:
+    - Title (40-70 chars) and Description (120-160 chars) must be unique. No duplicate meta.
+    - Canonical must match language/slug.
+    - Date fields (`createdAt`, `updatedAt`) must be logically ordered.
+    - Drafts MUST be `noindex: true`.
+    - `FAQPage` schema only comes from the frontmatter `faq` block, do not assume body content generates it.

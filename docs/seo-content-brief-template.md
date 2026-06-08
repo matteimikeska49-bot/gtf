@@ -106,3 +106,10 @@
 * **FAQ Language:** Must be in the target language.
 * **Mockup Language:** `mockupDecision` must assign assets that match the target language or are 'agnostic'.
 * **Allowed mixed-language terms:** GoToFlow, LinkedIn, Instagram, AI, SEO, CTA, B2B, PDF, UGC.
+
+## SEO Meta & Schema
+* **Title:** Must be 40-70 characters, unique across articles, no raw keyword stuffing.
+* **Description:** Must be 120-160 characters, unique across articles.
+* **Canonical:** `https://gotoflow.io/[ru/]blog/slug`.
+* **Schema:** `Article` schema will use frontmatter fields. `FAQPage` schema is strictly driven by the frontmatter `faq` array.
+* **Dates:** Provide `createdAt` and `updatedAt`. Ensure `updatedAt` >= `createdAt`.
