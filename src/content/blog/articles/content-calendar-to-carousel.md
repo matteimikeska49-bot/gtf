@@ -1,5 +1,6 @@
 ---
 title: "How to Turn Your Content Calendar into a Month of Carousels"
+slug: "content-calendar-to-carousel"
 description: "Learn a proven workflow to convert your monthly content calendar into 30 days of high-quality carousels using AI automation."
 language: "en"
 primaryKeyword: "content calendar to carousel"
@@ -20,6 +21,7 @@ approvedForPublish: false
 mockupStatus: "not_available"
 mockupReason: "Workflow level content. No single mockup fits a calendar view."
 author: "GoToFlow Team"
+createdAt: "2026-06-07"
 updatedAt: "2026-06-07T19:12:00.860Z"
 canonical: "https://gotoflow.io/blog/content-calendar-to-carousel"
 
@@ -45,8 +47,11 @@ faq:
 finalCta:
   title: "Batch Create Your Social Media Content"
   text: "Turn your ideas into a month's worth of carousels in minutes with our AI content generator."
-  link: "/ai-content-generator"
-  linkText: "Start Batch Creating"
+  buttonHref: "/ai-content-generator"
+  buttonText: "Start Batch Creating"
+  microcopy: "Free - No credit card required"
+  secondaryText: "Back to related tools and guides ->"
+  secondaryHref: "#explore-more"
 ---
 
 

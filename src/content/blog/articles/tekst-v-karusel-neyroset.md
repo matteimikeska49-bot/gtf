@@ -1,5 +1,6 @@
 ---
 title: "Как сделать карусель из текста с помощью нейросети"
+slug: "tekst-v-karusel-neyroset"
 description: "Пошаговое руководство: как превратить любой текст, статью или заметку в стильную карусель для Инстаграм и LinkedIn за несколько секунд."
 language: "ru"
 primaryKeyword: "текст в карусель нейросеть"
@@ -20,6 +21,7 @@ approvedForPublish: false
 mockupStatus: "present"
 mockupReason: "Topic-input slot directly applies for text to carousel use cases."
 author: "GoToFlow Team"
+createdAt: "2026-06-07"
 updatedAt: "2026-06-07T19:12:00.860Z"
 canonical: "https://gotoflow.io/ru/blog/tekst-v-karusel-neyroset"
 
@@ -46,8 +48,11 @@ faq:
 finalCta:
   title: "Создать карусель из текста"
   text: "Хватит тратить часы на дизайн в Canva. Вставьте текст, и нейросеть сделает всю работу за вас."
-  link: "/ru/ai-generator-karuselej"
-  linkText: "Попробовать бесплатно"
+  buttonHref: "/ru/ai-generator-karuselej"
+  buttonText: "Попробовать бесплатно"
+  microcopy: "Free - No credit card required"
+  secondaryText: "Back to related tools and guides ->"
+  secondaryHref: "#explore-more"
 ---
 
 

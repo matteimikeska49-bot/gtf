@@ -1,5 +1,6 @@
 ---
 title: "Как упаковать B2B кейс в LinkedIn карусель: пошаговый гайд"
+slug: "b2b-keysy-v-linkedin-karusel"
 description: "Узнайте, как превратить скучный B2B кейс в вовлекающую LinkedIn карусель, которая приносит лиды и показывает вашу экспертность."
 language: "ru"
 primaryKeyword: "b2b кейс в linkedin карусель"
@@ -20,6 +21,7 @@ approvedForPublish: false
 mockupStatus: "not_available"
 mockupReason: "Specific B2B intent RU. No perfect mockup available."
 author: "GoToFlow Team"
+createdAt: "2026-06-07"
 updatedAt: "2026-06-07T19:12:00.860Z"
 canonical: "https://gotoflow.io/ru/blog/b2b-keysy-v-linkedin-karusel"
 
@@ -47,8 +49,11 @@ faq:
 finalCta:
   title: "Создайте карусель из вашего B2B кейса"
   text: "Загрузите текст вашего кейса, и нейросеть автоматически превратит его в профессиональную LinkedIn карусель."
-  link: "/ru/generator-karuselej-linkedin"
-  linkText: "Создать карусель бесплатно"
+  buttonHref: "/ru/generator-karuselej-linkedin"
+  buttonText: "Создать карусель бесплатно"
+  microcopy: "Free - No credit card required"
+  secondaryText: "Back to related tools and guides ->"
+  secondaryHref: "#explore-more"
 ---
 
 

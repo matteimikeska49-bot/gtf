@@ -1,5 +1,6 @@
 ---
 title: "How to Convert Text to Carousel for Instagram & LinkedIn with AI"
+slug: "text-to-carousel-ai"
 description: "Learn how to transform any text snippet, article, or note into a highly engaging carousel for Instagram and LinkedIn using an AI carousel maker."
 language: "en"
 primaryKeyword: "text to carousel ai"
@@ -20,6 +21,7 @@ approvedForPublish: false
 mockupStatus: "present"
 mockupReason: "Uses input text screen and output preview screen."
 author: "GoToFlow Team"
+createdAt: "2026-06-07"
 updatedAt: "2026-06-07T19:12:00.860Z"
 canonical: "https://gotoflow.io/blog/text-to-carousel-ai"
 
@@ -45,8 +47,11 @@ faq:
 finalCta:
   title: "Convert Your Text to a Carousel Now"
   text: "Stop wasting hours on design. Paste your text and let AI generate a stunning carousel for Instagram or LinkedIn in seconds."
-  link: "/ai-carousel-maker"
-  linkText: "Try Text-to-Carousel Generator Free"
+  buttonHref: "/ai-carousel-maker"
+  buttonText: "Try Text-to-Carousel Generator Free"
+  microcopy: "Free - No credit card required"
+  secondaryText: "Back to related tools and guides ->"
+  secondaryHref: "#explore-more"
 ---
 
 

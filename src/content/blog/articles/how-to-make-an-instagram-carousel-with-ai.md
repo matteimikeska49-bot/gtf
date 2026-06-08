@@ -22,10 +22,12 @@ priority: "P1"
 published: false
 noindex: true
 preview: true
+approvedForPublish: false
 canonical: "https://gotoflow.io/blog/how-to-make-an-instagram-carousel-with-ai"
 createdAt: "2026-06-02"
 updatedAt: "2026-06-02"
 lastReviewed: "2026-06-02"
+quickAnswerTitle: "Quick Answer"
 quickAnswer:
   - "Making a carousel with AI involves two main steps: generating the text structure and applying a visual design."
   - "While you can use ChatGPT for text and Canva for design, this split workflow takes time."
@@ -70,7 +72,7 @@ explore:
       description: "Get the exact prompts to generate high-converting content."
 finalCta:
   title: "Stop struggling with manual design"
-  description: "Create professional, structured Instagram carousels in seconds. No design skills required."
+  text: "Create professional, structured Instagram carousels in seconds. No design skills required."
   buttonText: "Create a Carousel Free"
   microcopy: "No credit card required — Ready in seconds"
   secondaryText: "See how it works →"

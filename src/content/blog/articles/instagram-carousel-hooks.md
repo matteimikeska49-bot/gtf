@@ -1,5 +1,6 @@
 ---
 title: "15 Instagram Carousel Hooks Designed to Stop the Scroll"
+slug: "instagram-carousel-hooks"
 description: "Discover 15 proven Instagram carousel hooks to increase your swipe-through rate, engagement, and followers."
 language: "en"
 primaryKeyword: "instagram carousel hooks"
@@ -20,6 +21,7 @@ approvedForPublish: false
 mockupStatus: "not_available"
 mockupReason: "No specific mockup exists for Instagram carousel hooks."
 author: "GoToFlow Team"
+createdAt: "2026-06-07"
 updatedAt: "2026-06-07T19:12:00.860Z"
 canonical: "https://gotoflow.io/blog/instagram-carousel-hooks"
 
@@ -42,8 +44,11 @@ faq:
 finalCta:
   title: "Generate Carousels with Built-in Hooks"
   text: "Let AI write your hooks and design your slides automatically. Perfect for creators and businesses."
-  link: "/ai-carousel-maker"
-  linkText: "Create a Carousel Free"
+  buttonHref: "/ai-carousel-maker"
+  buttonText: "Create a Carousel Free"
+  microcopy: "Free - No credit card required"
+  secondaryText: "Back to related tools and guides ->"
+  secondaryHref: "#explore-more"
 ---
 
 
