@@ -32,6 +32,8 @@
     "check:blog:language-consistency": "node scripts/check-blog-language-consistency.mjs",
     "check:blog:seo-meta-hardening": "node scripts/check-blog-seo-meta-hardening.mjs",
     "check:blog:schema-hardening": "node scripts/check-blog-schema-hardening.mjs",
+    "check:blog:render-contract": "node scripts/check-blog-render-contract.mjs",
+    "check:blog:render-source": "node scripts/check-blog-render-source.mjs",
     "check:blog:mockup-relevance": "node scripts/check-blog-mockup-relevance.mjs",
     "check:blog:draft-safety": "node scripts/check-blog-draft-safety.mjs",
     "recalculate:topic-scores": "node scripts/recalculate-topic-scores.mjs",
