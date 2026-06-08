@@ -91,3 +91,9 @@
 ## Draft & Publish Safety
 * **Draft State:** `published: false`, `noindex: true`, `preview: true`, `approvedForPublish: false`
 * **Internal Link Safety:** Not linked from any published articles yet.
+
+## Internal Linking Flow
+* **Product Route:** Must link contextually to the assigned product route at least once in the editorial body.
+* **Hub Link:** If this is a supporting article and the hub is published, you must link to it contextually.
+* **Support Links:** Hub articles should organically link to key supporting articles.
+* **Forbidden:** Never link to a draft, noindex, or unpublished topic.

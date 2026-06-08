@@ -44,7 +44,12 @@
       "mustLinkToHub": true,
       "mustLinkToProductRoute": true,
       "sameLanguageOnly": true,
-      "recommendedLinks": []
+      "recommendedLinks": [
+        "/blog/how-to-make-linkedin-carousel-with-ai",
+        "/linkedin-carousel-maker",
+        "/blog/linkedin-carousel-ideas",
+        "/blog/linkedin-carousel-from-pdf-ai"
+      ]
     },
     "notes": "Main LinkedIn EN cluster",
     "lastReviewed": "2026-06-08"
@@ -84,7 +89,10 @@
       "mustLinkToHub": true,
       "mustLinkToProductRoute": true,
       "sameLanguageOnly": true,
-      "recommendedLinks": []
+      "recommendedLinks": [
+        "/blog/text-to-carousel-ai",
+        "/ai-carousel-maker"
+      ]
     },
     "notes": "Core AI generator cluster EN",
     "lastReviewed": "2026-06-08"
@@ -124,7 +132,10 @@
       "mustLinkToHub": true,
       "mustLinkToProductRoute": true,
       "sameLanguageOnly": true,
-      "recommendedLinks": []
+      "recommendedLinks": [
+        "/blog/how-to-make-an-instagram-carousel-with-ai",
+        "/ai-carousel-maker"
+      ]
     },
     "notes": "Instagram carousel cluster",
     "lastReviewed": "2026-06-08"
@@ -152,7 +163,10 @@
       "mustLinkToHub": true,
       "mustLinkToProductRoute": true,
       "sameLanguageOnly": true,
-      "recommendedLinks": []
+      "recommendedLinks": [
+        "/ru/blog/tekst-v-karusel-neyroset",
+        "/ru/ai-generator-karuselej"
+      ]
     },
     "notes": "RU equivalent cluster",
     "lastReviewed": "2026-06-08"
@@ -182,7 +196,10 @@
       "mustLinkToHub": true,
       "mustLinkToProductRoute": true,
       "sameLanguageOnly": true,
-      "recommendedLinks": []
+      "recommendedLinks": [
+        "/ru/blog/kak-sdelat-karusel-linkedin-s-ai",
+        "/ru/generator-karuselej-linkedin"
+      ]
     },
     "notes": "RU LinkedIn cluster",
     "lastReviewed": "2026-06-08"

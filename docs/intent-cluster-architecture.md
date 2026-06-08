@@ -33,3 +33,9 @@ We organize articles into topical clusters. Every cluster must be tied to a spec
 2. Verify no intent conflict in `intent-map.json`.
 3. Assign Owner/Supporting role and Hub link in `cluster-authority-map.json`.
 4. Proceed to Brief Generation.
+
+## Internal Link Flow Rules
+* **Hub <-> Spoke:** A supporting article must link to its hub. A hub should link out to key published supporting articles.
+* **Product:** All articles in the cluster must link to the canonical `productRoute` for that cluster.
+* **Safety:** Published articles must not leak link authority to drafts/noindex/preview pages.
+* **Language:** Clusters are language-isolated. No cross-language internal linking within the blog hierarchy without an explicit exception.
