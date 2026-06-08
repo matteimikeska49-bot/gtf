@@ -13,7 +13,7 @@ intentId: "ru:tekst-v-karusel"
 clusterId: "ru:ai-carousel-generator"
 articleRole: "hub"
 hubSlug: "tekst-v-karusel-neyroset"
-relatedProductRoute: "/"
+relatedProductRoute: "/ru/ai-generator-karuselej"
 published: false
 noindex: true
 preview: true

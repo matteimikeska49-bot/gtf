@@ -32,8 +32,14 @@
         "status": "published"
       }
     ],
-    "supportingArticles": ["linkedin-carousel-ideas", "linkedin-carousel-from-pdf-ai"],
-    "missingTopics": ["linkedin carousel best practices", "linkedin carousel dimensions"],
+    "supportingArticles": [
+      "linkedin-carousel-ideas",
+      "linkedin-carousel-from-pdf-ai"
+    ],
+    "missingTopics": [
+      "linkedin carousel best practices",
+      "linkedin carousel dimensions"
+    ],
     "internalLinkingRules": {
       "mustLinkToHub": true,
       "mustLinkToProductRoute": true,
@@ -47,7 +53,7 @@
     "clusterId": "en:ai-carousel-generator",
     "clusterName": "EN AI Carousel Generator",
     "language": "en",
-    "productRoute": "/",
+    "productRoute": "/ai-carousel-maker",
     "hubArticle": "text-to-carousel-ai",
     "hubSlug": "text-to-carousel-ai",
     "articleRoles": [
@@ -68,8 +74,12 @@
         "status": "draft_preview"
       }
     ],
-    "supportingArticles": ["content-calendar-to-carousel"],
-    "missingTopics": ["blog to carousel"],
+    "supportingArticles": [
+      "content-calendar-to-carousel"
+    ],
+    "missingTopics": [
+      "blog to carousel"
+    ],
     "internalLinkingRules": {
       "mustLinkToHub": true,
       "mustLinkToProductRoute": true,
@@ -83,7 +93,7 @@
     "clusterId": "en:instagram-carousel",
     "clusterName": "EN Instagram Carousel",
     "language": "en",
-    "productRoute": "/instagram-carousel-maker",
+    "productRoute": "/ai-carousel-maker",
     "hubArticle": "how-to-make-an-instagram-carousel-with-ai",
     "hubSlug": "how-to-make-an-instagram-carousel-with-ai",
     "articleRoles": [
@@ -104,8 +114,12 @@
         "status": "draft_preview"
       }
     ],
-    "supportingArticles": ["instagram-carousel-hooks"],
-    "missingTopics": ["instagram carousel sizes"],
+    "supportingArticles": [
+      "instagram-carousel-hooks"
+    ],
+    "missingTopics": [
+      "instagram carousel sizes"
+    ],
     "internalLinkingRules": {
       "mustLinkToHub": true,
       "mustLinkToProductRoute": true,
@@ -119,7 +133,7 @@
     "clusterId": "ru:ai-carousel-generator",
     "clusterName": "RU AI Carousel Generator",
     "language": "ru",
-    "productRoute": "/",
+    "productRoute": "/ru/ai-generator-karuselej",
     "hubArticle": "tekst-v-karusel-neyroset",
     "hubSlug": "tekst-v-karusel-neyroset",
     "articleRoles": [
@@ -147,7 +161,7 @@
     "clusterId": "ru:linkedin-carousel",
     "clusterName": "RU LinkedIn Carousel",
     "language": "ru",
-    "productRoute": "/linkedin-carousel-maker",
+    "productRoute": "/ru/generator-karuselej-linkedin",
     "hubArticle": "kak-sdelat-karusel-linkedin-s-ai",
     "hubSlug": "kak-sdelat-karusel-linkedin-s-ai",
     "articleRoles": [
@@ -160,7 +174,9 @@
         "status": "draft_preview"
       }
     ],
-    "supportingArticles": ["b2b-keysy-v-linkedin-karusel"],
+    "supportingArticles": [
+      "b2b-keysy-v-linkedin-karusel"
+    ],
     "missingTopics": [],
     "internalLinkingRules": {
       "mustLinkToHub": true,

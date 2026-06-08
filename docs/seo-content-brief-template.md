@@ -74,3 +74,9 @@
 - No fluff, no long-winded intros.
 - Direct, actionable advice.
 
+
+## Product-led Body Link
+* You must include exactly one natural markdown link to the product route in the body text (excluding the finalCta).
+* Product Route: `[Insert productRoute here]`
+* Anchor Text Plan: `[Describe anchor context, e.g. "Try the AI carousel maker"]`
+* Forbidden: Do not claim unsupported features near the link. Do not use `[!product]` or `<InlineProductBlock />`.

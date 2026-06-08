@@ -13,7 +13,7 @@ intentId: "en:instagram-carousel-hooks"
 clusterId: "en:instagram-carousel"
 articleRole: "supporting"
 hubSlug: "how-to-make-an-instagram-carousel-with-ai"
-relatedProductRoute: "/instagram-carousel-maker"
+relatedProductRoute: "/ai-carousel-maker"
 published: false
 noindex: true
 preview: true

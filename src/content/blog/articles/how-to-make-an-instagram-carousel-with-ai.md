@@ -13,7 +13,7 @@ intentId: "en:how-to-make-instagram-carousel"
 clusterId: "en:instagram-carousel"
 articleRole: "hub"
 hubSlug: "how-to-make-an-instagram-carousel-with-ai"
-relatedProductRoute: "/instagram-carousel-maker"
+relatedProductRoute: "/ai-carousel-maker"
 mockupStatus: "planned"
 searchIntent: "user wants a practical step-by-step workflow for creating Instagram carousel posts with AI."
 cluster: "AI content workflow"
@@ -88,6 +88,9 @@ While AI can help, simply copying a text prompt from ChatGPT to a design tool st
 In this guide, we'll walk you through the most efficient workflow to make an Instagram carousel with AI—without touching a design tool.
 
 ## The Old Way vs The AI Way
+
+
+[Try the AI carousel maker](/ai-carousel-maker)
 
 Before dedicated AI tools existed, creators had to use a fragmented workflow.
 

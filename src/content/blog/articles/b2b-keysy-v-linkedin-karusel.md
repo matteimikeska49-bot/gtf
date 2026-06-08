@@ -13,7 +13,7 @@ intentId: "ru:b2b-linkedin-carousel"
 clusterId: "ru:linkedin-carousel"
 articleRole: "supporting"
 hubSlug: "kak-sdelat-karusel-linkedin-s-ai"
-relatedProductRoute: "/linkedin-carousel-maker"
+relatedProductRoute: "/ru/generator-karuselej-linkedin"
 published: false
 noindex: true
 preview: true

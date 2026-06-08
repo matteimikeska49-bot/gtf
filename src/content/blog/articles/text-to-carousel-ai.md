@@ -13,7 +13,7 @@ intentId: "en:text-to-carousel"
 clusterId: "en:ai-carousel-generator"
 articleRole: "hub"
 hubSlug: "text-to-carousel-ai"
-relatedProductRoute: "/"
+relatedProductRoute: "/ai-carousel-maker"
 published: false
 noindex: true
 preview: true

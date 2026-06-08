@@ -13,7 +13,7 @@ intentId: "en:content-calendar-to-carousel"
 clusterId: "en:ai-carousel-generator"
 articleRole: "supporting"
 hubSlug: "text-to-carousel-ai"
-relatedProductRoute: "/"
+relatedProductRoute: "/ai-carousel-maker"
 published: false
 noindex: true
 preview: true
@@ -56,6 +56,9 @@ finalCta:
 
 
 ## The Batch Creation Workflow
+
+
+[Try the AI carousel maker](/ai-carousel-maker)
 
 Creating content day-by-day leads to burnout. The most efficient creators use a content calendar and batch-produce their posts.
 

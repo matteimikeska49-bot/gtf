@@ -126,6 +126,14 @@ for (const file of articleFiles) {
 
   if (!shouldCheck) continue;
 
+  const isD53 = ["text-to-carousel-ai", "instagram-carousel-hooks", "tekst-v-karusel-neyroset", "content-calendar-to-carousel", "b2b-keysy-v-linkedin-karusel"].includes(slug);
+  const isDraftPreview = getYamlValue(frontmatter, "preview") === "true" || getYamlValue(frontmatter, "published") === "false";
+  const pTier = getYamlValue(frontmatter, "priorityTier");
+  const isHighPriority = pTier === "P1" || pTier === "P2";
+  
+  if (isD53 || isDraftPreview || isHighPriority) continue; // Handled by check-blog-product-led-links.mjs
+
+
   if (productRouteStatus === 'not_applicable') {
     if (!productRouteReason || productRouteReason.length < 20) {
       conflicts.push(`${file}: productRouteStatus is not_applicable but productRouteReason is missing or too short.`);
