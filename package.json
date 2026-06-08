@@ -56,7 +56,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "check:blog:content-template": "node scripts/check-blog-content-template.mjs",
-    "check:blog:rendered-html": "node scripts/check-blog-rendered-html.mjs"
+    "check:blog:rendered-html": "node scripts/check-blog-rendered-html.mjs",
+    "check:blog:preview-routes": "node scripts/check-blog-preview-routes.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",

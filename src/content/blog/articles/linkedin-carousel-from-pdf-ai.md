@@ -39,7 +39,8 @@ finalCta:
   text: "Stop wasting hours manually redesigning whitepapers. Paste your best PDF insights into our AI, and get a ready-to-publish LinkedIn carousel instantly."
   buttonText: "Create Carousel Free"
   secondaryText: "No credit card required"
-mockupStatus: "present"
+mockupStatus: "not_available"
+mockupReason: "No perfectly matching mockup is available for this exact topic visual intent."
 ---
 
 If your company produces whitepapers, industry reports, or detailed case studies, you are sitting on a goldmine of LinkedIn content. The problem? Dropping a link to a 20-page PDF on LinkedIn usually results in minimal engagement.
@@ -81,7 +82,6 @@ GoToFlow will process your text and break it down into a logical flow: an attent
 ### 3. Customize the design
 Select a template that matches your B2B brand. You can adjust colors, fonts, and formatting so the carousel feels like a natural extension of your official PDF report. GoToFlow automatically balances text sizes for mobile readability.
 
-:::mockup{slot="result-preview"}
 
 ### 4. Export as a ready-to-post document
 Once you are happy with the preview, export the project. GoToFlow generates a properly formatted, high-resolution PDF file. You simply upload this file directly to LinkedIn as a document post.

@@ -1305,7 +1305,7 @@ export const MarkdownSeoArticleTemplateV2 = ({ article }) => {
         <PromptAccordion prompts={article.prompts} isRu={isRu} />
         <FormatsGrid formats={article.formats} isRu={isRu} />
         <ArticleExploreZone explore={article.explore} isRu={isRu} />
-        {shouldShowRuMetaDisclaimer(article) && <RuMetaDisclaimer />}
+        {isRu && <RuMetaDisclaimer />}
         <FaqBlock faq={article.faq} isRu={isRu} />
         <FinalCta cta={article.finalCta} isRu={isRu} />
       </div>

@@ -66,6 +66,16 @@ Includes:
 * `check:blog:prepublish`
 * `check:blog:build-render`
 
+## Visual QA checks
+Must be run before manual publish approval, requires preview server. Not part of fast checks.
+Command: `npm run check:blog:visual`
+Command: `npm run check:blog:preview-routes`
+Includes:
+* Desktop and mobile viewport checks
+* Empty section checks
+* Overflow and broken image checks
+* Safe preview route extraction
+
 ## Production checks
 Live URL/deploy verification only.
 Command: `npm run check:blog:production`

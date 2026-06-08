@@ -265,5 +265,7 @@ Begin.
 31. **QA Command System & Rendered Output**:
     - **Draft Creation:** After creating a draft, run `npm run check:blog:fast` or `npm run check:blog:content` to verify basic source safety.
     - **Before Publish / Build Handoff:** You MUST run `npm run check:blog:prepublish` or `npm run check:blog:full`. The built HTML (`dist`) must be validated (`npm run check:blog:rendered-html`). Do NOT publish unless these pass.
+    - **Visual QA & Preview:** Visual QA must pass before publish (`npm run check:blog:visual`). Never tell the user to open a preview route unless you have explicitly verified it returns 200 via `npm run check:blog:preview-routes`.
+    - **Manual Approval:** You cannot change `published: false` to `true` without explicit manual user approval of the visual preview.
     - **D53 Drafts:** Must NEVER appear in public `sitemap.xml` or blog indexes.
     - **No Production Check:** Do NOT run `npm run check:blog:production` during local generation. Use it only for live deploy verification.

@@ -1304,6 +1304,7 @@ npm run check:blog:visual
 
 ### Draft to Publish State Machine
 1. **Draft / Generation:** `published: false`, `noindex: true`, `preview: true`, `approvedForPublish: false`
-2. **Review:** Article is checked via `npm run check:blog:all`. It is accessible locally but stripped from sitemap and blog index.
-3. **Approval:** User explicitly sets `approvedForPublish: true` and verifies batch status.
-4. **Publish:** `published: true`, `noindex: false`, `preview: false`. Added to sitemap and public index.
+2. **Review:** Article is checked via `npm run check:blog:prepublish`.
+3. **Visual QA:** Build (`npm run build`), verify local preview routes (`npm run check:blog:preview-routes`), and run visual validation (`npm run check:blog:visual`).
+4. **Approval:** User reviews the desktop/mobile screenshots in `tmp/blog-visual-qa/` and explicitly sets `approvedForPublish: true`.
+5. **Publish:** `published: true`, `noindex: false`, `preview: false`. Added to sitemap and public index.

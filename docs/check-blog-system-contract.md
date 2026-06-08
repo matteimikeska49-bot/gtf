@@ -10,7 +10,13 @@ This document dictates the usage rules for the `check:blog` umbrella commands.
 * **Before preview/publish decision:** `npm run check:blog:prepublish`
 * **Before commit/push involving render or templates:** `npm run check:blog:full`
 * **Validate rendered HTML explicitly after build:** `npm run check:blog:rendered-html` (Included in `render-only` and `build-render`)
+* **Before final manual publish approval:** `npm run check:blog:visual`
+* **To verify local preview routes:** `npm run check:blog:preview-routes`
 * **After deploy:** `npm run check:blog:production`
+
+## Preview route verification rule
+
+Do not provide localhost URLs to the user unless they have been explicitly verified via `npm run check:blog:preview-routes` and the server is confirmed to be running.
 
 ## Rule
 

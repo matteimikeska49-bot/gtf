@@ -47,7 +47,7 @@ async function checkRoutes() {
     const published = getYamlValue(frontmatter, 'published');
     
     if (slug) {
-      const route = language === 'ru' ? `/ru/blog/${slug}` : `/blog/${slug}`;
+      const route = language === 'ru' ? `/ru/blog/${slug}/` : `/blog/${slug}/`;
       routesToCheck.push({ route, file, slug, language, title, published });
     }
   }
@@ -98,6 +98,12 @@ async function checkRoutes() {
       page.on('console', msg => {
         if (msg.type() === 'error') {
           pageReport.consoleErrors.push(msg.text());
+        }
+      });
+
+      page.on('requestfailed', request => {
+        if (request.resourceType() === 'image') {
+          pageReport.warnings.push(`Broken image request: ${request.url()}`);
         }
       });
 
@@ -155,7 +161,8 @@ async function checkRoutes() {
           hasWhiteCard: !!document.querySelector('.prose .bg-white, .prose [style*="background-color: rgb(255, 255, 255)"], .prose .text-slate-900'),
           offendingElements,
           hasExploreZone: !!document.querySelector('h2') && (document.body.innerText.includes('Explore more') || document.body.innerText.includes('Смотрите также')),
-          hasFAQ: document.documentElement.outerHTML.includes('itemtype="https://schema.org/FAQPage"') || document.body.innerText.includes('FAQ') || document.body.innerText.includes('Часто задаваемые вопросы')
+          hasFAQ: document.documentElement.outerHTML.includes('itemtype="https://schema.org/FAQPage"') || document.body.innerText.includes('FAQ') || document.body.innerText.includes('Часто задаваемые вопросы'),
+          hasEmptySection: /<h[2-3][^>]*>\s*<\/h[2-3]>/i.test(document.documentElement.outerHTML)
         };
       });
 
@@ -211,7 +218,13 @@ async function checkRoutes() {
       }
 
       // Assertions
-      const { bodyText, htmlText, h1Text, hasViteOverlay, hasWhiteCard, hasExploreZone, hasFAQ } = evalDataDesktop;
+      const { bodyText, htmlText, h1Text, hasViteOverlay, hasWhiteCard, hasExploreZone, hasFAQ, hasEmptySection } = evalDataDesktop;
+
+      if (hasEmptySection) {
+         pageReport.pageErrors.push('Empty heading section detected (e.g. empty H2 or H3)');
+         pageReport.passed = false;
+         hasP0Errors = true;
+      }
 
       if (!hasExploreZone) {
          pageReport.warnings.push('Article Explore Zone or CTA missing');
