@@ -30,3 +30,6 @@ Never include production live checks inside local build loops.
 ## Live Verification Rules
 - Production checks (`npm run check:blog:live-verification`) must ONLY be run after successful commit, push, and deployment.
 - Never claim an article is "published" or "live" until live verification explicitly passes on the production URL.
+
+## Batch Processing Rules
+- Batch 25 can NEVER start until the mini-batch passes all verification tests and is successfully approved.

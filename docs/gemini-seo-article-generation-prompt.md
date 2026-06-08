@@ -275,3 +275,9 @@ Begin.
 - **NEVER** change `approvedForPublish` to true without explicit user approval.
 - After a user approves publishing, you must transition the state, run `npm run check:blog:full`, commit, push, wait for deployment, and run `npm run check:blog:live-verification`.
 - You **MUST** report the Live Verification status to the user including: Live URL HTTP status, Canonical matches, Robots indexability, Sitemap inclusion, and Blog Index inclusion.
+
+### Batch Workflow Rules
+- **NEVER** start Batch 25 without explicit user approval.
+- You must always complete and verify a mini-batch (3-5 articles) first.
+- The `batch-status.json` must be strictly updated with states like `draft_preview`, `approved_for_publish`, `published`.
+- No publishing by wave without manual approval and subsequent live verification.

@@ -89,3 +89,8 @@ Must remain separate from local checks.
 4. **After** `git commit` and `git push`.
 5. **After** the production deploy has fully successfully finished (verify GitHub Actions or Vercel).
 Do NOT run this locally as part of the standard editing loop.
+
+## Batch Commands
+- **Mini-batch preparation**: `npm run check:blog:batch-workflow`, `check:blog:prepublish`, `check:blog:build-render`, `check:blog:preview-routes`, `check:blog:visual`.
+- **Publish wave**: `npm run check:blog:full`, then commit & push.
+- **Live verification**: `npm run check:blog:live-verification` after deployment completes.
