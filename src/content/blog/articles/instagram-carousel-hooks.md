@@ -19,7 +19,7 @@ noindex: true
 preview: true
 approvedForPublish: false
 mockupStatus: "not_available"
-mockupReason: "No specific mockup exists for Instagram carousel hooks."
+mockupReason: "No perfectly matching mockup is available for this exact topic visual intent."
 author: "GoToFlow Team"
 createdAt: "2026-06-07"
 updatedAt: "2026-06-07T19:12:00.860Z"

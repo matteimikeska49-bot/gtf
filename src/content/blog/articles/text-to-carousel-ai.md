@@ -18,8 +18,8 @@ published: false
 noindex: true
 preview: true
 approvedForPublish: false
-mockupStatus: "present"
-mockupReason: "Uses input text screen and output preview screen."
+mockupStatus: "not_available"
+mockupReason: "No perfectly matching mockup is available for this exact topic visual intent."
 author: "GoToFlow Team"
 createdAt: "2026-06-07"
 updatedAt: "2026-06-07T19:12:00.860Z"

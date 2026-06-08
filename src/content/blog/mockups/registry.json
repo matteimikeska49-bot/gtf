@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "updatedAt": "2026-05-25",
+  "version": 2,
+  "updatedAt": "2026-06-08",
   "assets": [
     {
       "id": "ru-carousel-result-ideas",
@@ -28,7 +28,26 @@
       "alt": "Готовая карусель GoToFlow с идеями для Instagram и редактором слайдов",
       "caption": "Пример готовой карусели в редакторе GoToFlow",
       "notes": "RU approved result mockup. Shows generated carousel result, slide editor, thumbnails and export actions.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "ru-carousel-result-ideas",
+      "slot": "result",
+      "src": "/assets/blog/mockups/ru/ru-carousel-result-ideas.webp",
+      "platform": "instagram",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Пример готовой карусели в редакторе GoToFlow",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "RU approved result mockup. Shows generated carousel result, slide editor, thumbnails and export actions.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "ru-upload-text-topic-expert-breakdown",
@@ -55,7 +74,26 @@
       "alt": "Экран GoToFlow для создания карусели из текстовой темы",
       "caption": "Создание карусели из темы или текста",
       "notes": "RU approved input mockup. Shows Text/Topic source and Expert breakdown structure.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "ru-upload-text-topic-expert-breakdown",
+      "slot": "input",
+      "src": "/assets/blog/mockups/ru/ru-upload-text-topic-expert-breakdown.webp",
+      "platform": "instagram",
+      "sourceType": "topic",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Создание карусели из темы или текста",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "RU approved input mockup. Shows Text/Topic source and Expert breakdown structure.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "ru-upload-file-video",
@@ -82,7 +120,26 @@
       "alt": "Экран загрузки видео, Reels, аудио или PDF в GoToFlow",
       "caption": "Загрузка видео, Reels, аудио или PDF как источника для карусели",
       "notes": "RU approved upload mockup. Shows File/Video source mode.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "ru-upload-file-video",
+      "slot": "input",
+      "src": "/assets/blog/mockups/ru/ru-upload-file-video.webp",
+      "platform": "generic",
+      "sourceType": "video",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Загрузка видео, Reels, аудио или PDF как источника для карусели",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "RU approved upload mockup. Shows File/Video source mode.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "ru-character-closeup-female",
@@ -109,7 +166,26 @@
       "alt": "Настройка персонажа в GoToFlow с описанием и референс-фото",
       "caption": "Настройка персонажа и загрузка референс-фото",
       "notes": "RU approved character mockup. Shows character description and uploaded reference photo.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "ru-character-closeup-female",
+      "slot": "character",
+      "src": "/assets/blog/mockups/ru/ru-character-closeup-female.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Настройка персонажа и загрузка референс-фото",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "RU approved character mockup. Shows character description and uploaded reference photo.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "ru-settings-6-slides-4x5",
@@ -137,7 +213,26 @@
       "alt": "Настройки формата 4:5, количества слайдов и CTA в GoToFlow",
       "caption": "Настройка формата, количества слайдов и призыва к действию",
       "notes": "RU approved settings mockup. Shows 4:5 format and 6 slides.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "ru-settings-6-slides-4x5",
+      "slot": "settings",
+      "src": "/assets/blog/mockups/ru/ru-settings-6-slides-4x5.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Настройка формата, количества слайдов и призыва к действию",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "RU approved settings mockup. Shows 4:5 format and 6 slides.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "ru-visual-style-luxury",
@@ -164,7 +259,26 @@
       "alt": "Выбор визуального стиля Люкс и минимализм в GoToFlow",
       "caption": "Выбор визуального стиля карусели",
       "notes": "RU approved visual style mockup. Shows Luxury and minimalism style selection.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "ru-visual-style-luxury",
+      "slot": "visual-style",
+      "src": "/assets/blog/mockups/ru/ru-visual-style-luxury.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Выбор визуального стиля карусели",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "RU approved visual style mockup. Shows Luxury and minimalism style selection.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "ru-visual-style-custom",
@@ -191,7 +305,26 @@
       "alt": "Настройка собственного визуального стиля через промпт в GoToFlow",
       "caption": "Собственный визуальный стиль через промпт",
       "notes": "RU approved custom style mockup. Shows Custom prompt mode.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "ru-visual-style-custom",
+      "slot": "visual-style",
+      "src": "/assets/blog/mockups/ru/ru-visual-style-custom.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Собственный визуальный стиль через промпт",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "RU approved custom style mockup. Shows Custom prompt mode.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "en-carousel-result-ideas",
@@ -219,7 +352,26 @@
       "alt": "GoToFlow carousel editor showing a finished Instagram carousel result",
       "caption": "Finished carousel result inside the GoToFlow editor",
       "notes": "EN approved result mockup. Shows generated carousel result, slide editor, thumbnails and export actions.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "en-carousel-result-ideas",
+      "slot": "result",
+      "src": "/assets/blog/mockups/en/en-carousel-result-ideas.webp",
+      "platform": "instagram",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Finished carousel result inside the GoToFlow editor",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "EN approved result mockup. Shows generated carousel result, slide editor, thumbnails and export actions.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "en-upload-text-topic-expert-breakdown",
@@ -246,7 +398,26 @@
       "alt": "GoToFlow screen for creating a carousel from a text topic",
       "caption": "Creating a carousel from a text topic",
       "notes": "EN approved input mockup. Shows Text/Topic source and Expert breakdown structure.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "en-upload-text-topic-expert-breakdown",
+      "slot": "input",
+      "src": "/assets/blog/mockups/en/en-upload-text-topic-expert-breakdown.webp",
+      "platform": "instagram",
+      "sourceType": "topic",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Creating a carousel from a text topic",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "EN approved input mockup. Shows Text/Topic source and Expert breakdown structure.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "en-upload-file-video",
@@ -273,7 +444,26 @@
       "alt": "GoToFlow upload screen for video, Reels, audio or PDF",
       "caption": "Uploading video, Reels, audio or PDF as a carousel source",
       "notes": "EN approved upload mockup. Shows File/Video source mode.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "en-upload-file-video",
+      "slot": "input",
+      "src": "/assets/blog/mockups/en/en-upload-file-video.webp",
+      "platform": "generic",
+      "sourceType": "video",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Uploading video, Reels, audio or PDF as a carousel source",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "EN approved upload mockup. Shows File/Video source mode.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "en-character-closeup-male",
@@ -300,7 +490,26 @@
       "alt": "GoToFlow character setup screen with description and reference photo",
       "caption": "Character setup with a reference photo",
       "notes": "EN approved character mockup. Shows character description and uploaded reference photo.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "en-character-closeup-male",
+      "slot": "character",
+      "src": "/assets/blog/mockups/en/en-character-closeup-male.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Character setup with a reference photo",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "EN approved character mockup. Shows character description and uploaded reference photo.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "en-settings-5-slides-4x5",
@@ -328,7 +537,26 @@
       "alt": "GoToFlow settings screen for 4:5 format, slide count and CTA",
       "caption": "Setting format, number of slides and call to action",
       "notes": "EN approved settings mockup. Shows 4:5 format and 5 slides.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "en-settings-5-slides-4x5",
+      "slot": "settings",
+      "src": "/assets/blog/mockups/en/en-settings-5-slides-4x5.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Setting format, number of slides and call to action",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "EN approved settings mockup. Shows 4:5 format and 5 slides.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "en-visual-style-magazine-cover",
@@ -355,7 +583,26 @@
       "alt": "GoToFlow visual style screen with Magazine Cover selected",
       "caption": "Choosing a visual style for the carousel",
       "notes": "EN approved visual style mockup. Shows Magazine Cover style inside Luxury and Minimalism category.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "en-visual-style-magazine-cover",
+      "slot": "visual-style",
+      "src": "/assets/blog/mockups/en/en-visual-style-magazine-cover.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Choosing a visual style for the carousel",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "EN approved visual style mockup. Shows Magazine Cover style inside Luxury and Minimalism category.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "en-visual-style-custom",
@@ -382,7 +629,26 @@
       "alt": "GoToFlow custom visual style prompt screen",
       "caption": "Custom visual style through a prompt",
       "notes": "EN approved custom style mockup. Shows Custom prompt mode.",
-      "source": "approved-export"
+      "source": "approved-export",
+      "assetId": "en-visual-style-custom",
+      "slot": "visual-style",
+      "src": "/assets/blog/mockups/en/en-visual-style-custom.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Custom visual style through a prompt",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "EN approved custom style mockup. Shows Custom prompt mode.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "spy-feed-ru-01",
@@ -400,7 +666,26 @@
       "caption": "Spy feed example.",
       "priority": 99,
       "source": "current-ru-screenshot-review",
-      "notes": "Internal only due to third party social content."
+      "notes": "Internal only due to third party social content.",
+      "assetId": "spy-feed-ru-01",
+      "slot": "internal",
+      "src": "/assets/blog/mockups/ru/spy-feed-ru-01.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Spy feed example.",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "Internal only due to third party social content.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "top-reels-feed-ru-01",
@@ -418,7 +703,26 @@
       "caption": "Top reels feed example.",
       "priority": 99,
       "source": "current-ru-screenshot-review",
-      "notes": "Internal only due to third party social content."
+      "notes": "Internal only due to third party social content.",
+      "assetId": "top-reels-feed-ru-01",
+      "slot": "internal",
+      "src": "/assets/blog/mockups/ru/top-reels-feed-ru-01.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Top reels feed example.",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "Internal only due to third party social content.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "third-party-reels-feed-ru-01",
@@ -435,7 +739,26 @@
       "alt": "Third Party Reels Feed",
       "priority": 99,
       "source": "current-ru-screenshot-review",
-      "notes": "Rejected due to UGC / social feed content."
+      "notes": "Rejected due to UGC / social feed content.",
+      "assetId": "third-party-reels-feed-ru-01",
+      "slot": "none",
+      "src": "/assets/blog/mockups/ru/third-party-reels-feed-ru-01.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "Rejected due to UGC / social feed content.",
+      "lastReviewed": "2026-06-08"
     },
     {
       "id": "random-project-gallery-ru-01",
@@ -453,7 +776,26 @@
       "caption": "Random project gallery.",
       "priority": 99,
       "source": "current-ru-screenshot-review",
-      "notes": "Needs rescreen to be a clean gallery, or internal only."
+      "notes": "Needs rescreen to be a clean gallery, or internal only.",
+      "assetId": "random-project-gallery-ru-01",
+      "slot": "internal",
+      "src": "/assets/blog/mockups/ru/random-project-gallery-ru-01.webp",
+      "platform": "generic",
+      "sourceType": "unknown",
+      "visibleText": [
+        "unknown"
+      ],
+      "suitableTopics": [],
+      "forbiddenTopics": [],
+      "intentFit": [
+        "how-to"
+      ],
+      "productWorkflow": "Random project gallery.",
+      "capabilityIds": [
+        "aiCarouselGeneration"
+      ],
+      "relevanceNotes": "Needs rescreen to be a clean gallery, or internal only.",
+      "lastReviewed": "2026-06-08"
     }
   ]
 }

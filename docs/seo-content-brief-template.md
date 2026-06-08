@@ -80,3 +80,10 @@
 * Product Route: `[Insert productRoute here]`
 * Anchor Text Plan: `[Describe anchor context, e.g. "Try the AI carousel maker"]`
 * Forbidden: Do not claim unsupported features near the link. Do not use `[!product]` or `<InlineProductBlock />`.
+
+## Mockup Relevance
+* **mockupDecisionId/Status:** `not_available` or `present`
+* **Reason:** [Explain why mockup is used or not available]
+* **Allowed Slots:** [List slots like `result`, `topic-input`]
+* **Allowed Assets:** [List specific asset IDs]
+* **Visible Text Risk:** [none/low/medium/high]

@@ -234,3 +234,7 @@ Begin.
 19. The body product route MUST exactly match the `relatedProductRoute` frontmatter.
 20. The body product link cannot claim unsupported capabilities.
 21. No standalone CTA block in the body markdown; final CTA belongs in `finalCta` frontmatter ONLY.
+
+22. Never insert `:::mockup{slot="..."}` unless the frontmatter `mockupStatus` is `present` and you have an approved asset.
+23. If no perfectly matching mockup is available for the topic or intent, set `mockupStatus: "not_available"` and do NOT insert fallback mockups.
+24. Never invent or hallucinate mockup assets.
