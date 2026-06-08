@@ -57,6 +57,7 @@ Command: `npm run check:blog:render-only` (assumes dist exists)
 Includes:
 * `check:blog:dist`
 * `check:blog:render-contract`
+* `check:blog:rendered-html` (Validates page-level HTML, robots, canonicals, schema output, and explicit sitemap/blog-index inclusion based on publish state).
 
 ## Full local checks
 Before commit/push/publish. Runs build.

@@ -9,6 +9,7 @@ This document dictates the usage rules for the `check:blog` umbrella commands.
 * **SEO/meta/schema edit:** `npm run check:blog:seo`
 * **Before preview/publish decision:** `npm run check:blog:prepublish`
 * **Before commit/push involving render or templates:** `npm run check:blog:full`
+* **Validate rendered HTML explicitly after build:** `npm run check:blog:rendered-html` (Included in `render-only` and `build-render`)
 * **After deploy:** `npm run check:blog:production`
 
 ## Rule

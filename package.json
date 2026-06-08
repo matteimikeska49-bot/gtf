@@ -43,7 +43,7 @@
     "check:blog:content": "npm run check:blog:content-template && npm run check:blog:render-source && npm run check:blog:frontmatter-contract && npm run check:blog:faq-cta-contract && npm run check:blog:product-led-links && npm run check:blog:mockup-relevance",
     "check:blog:seo": "npm run check:blog:seo-meta-hardening && npm run check:blog:schema-hardening && npm run check:blog:seo-meta && npm run check:blog:schema && npm run check:blog:language-consistency",
     "check:blog:prepublish": "npm run check:blog:fast && npm run check:blog:content && npm run check:blog:seo",
-    "check:blog:render-only": "npm run check:blog:dist && npm run check:blog:render-contract",
+    "check:blog:render-only": "npm run check:blog:dist && npm run check:blog:render-contract && npm run check:blog:rendered-html",
     "check:blog:build-render": "npm run build && npm run check:blog:render-only",
     "check:blog:full": "npm run check:blog:prepublish && npm run check:blog:build-render",
     "check:blog:all": "npm run build && npm run check:blog:dist && npm run check:blog:run && npm run check:blog:content-template && npm run check:blog:product-links && npm run check:blog:seo-meta && npm run check:blog:cannibalization && npm run check:blog:links && npm run check:blog:mockups && npm run check:blog:schema && npm run check:blog:batch && npm run check:blog:topics && npx start-server-and-test preview http-get://localhost:4173 \"npm run check:blog:render:run && npm run check:blog:visual:run\"",
@@ -55,7 +55,8 @@
     "build:marker": "node scripts/generate-build-info.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "check:blog:content-template": "node scripts/check-blog-content-template.mjs"
+    "check:blog:content-template": "node scripts/check-blog-content-template.mjs",
+    "check:blog:rendered-html": "node scripts/check-blog-rendered-html.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",

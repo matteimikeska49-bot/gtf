@@ -262,7 +262,8 @@ Begin.
     - Drafts MUST be `noindex: true`.
     - `FAQPage` schema only comes from the frontmatter `faq` block, do not assume body content generates it.
 
-31. **QA Command System**:
+31. **QA Command System & Rendered Output**:
     - **Draft Creation:** After creating a draft, run `npm run check:blog:fast` or `npm run check:blog:content` to verify basic source safety.
-    - **Before Publish:** You MUST run `npm run check:blog:prepublish` or `npm run check:blog:full`. Do NOT publish unless these pass.
+    - **Before Publish / Build Handoff:** You MUST run `npm run check:blog:prepublish` or `npm run check:blog:full`. The built HTML (`dist`) must be validated (`npm run check:blog:rendered-html`). Do NOT publish unless these pass.
+    - **D53 Drafts:** Must NEVER appear in public `sitemap.xml` or blog indexes.
     - **No Production Check:** Do NOT run `npm run check:blog:production` during local generation. Use it only for live deploy verification.
