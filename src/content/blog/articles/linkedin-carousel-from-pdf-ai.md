@@ -21,9 +21,10 @@ createdAt: "2026-06-07T00:00:00.000Z"
 updatedAt: "2026-06-07T00:00:00.000Z"
 lastReviewed: "2026-06-07T00:00:00.000Z"
 quickAnswerTitle: "How to convert a PDF into a LinkedIn carousel"
-quickAnswer: "You can convert a PDF into a LinkedIn carousel by copying the core insights from your PDF into an AI carousel generator. The AI will structure the text into slides, apply a visual style, and export the result as a ready-to-post PDF document for LinkedIn."
+quickAnswer:
+  - "You can convert a PDF into a LinkedIn carousel by copying the core insights from your PDF into an AI carousel generator. The AI will structure the text into slides, apply a visual style, and export the result as a ready-to-post PDF document for LinkedIn."
 faq:
-  - question: "Can I upload a PDF directly into an AI carousel maker?"
+  - question: "Can I convert text from a PDF directly into an AI carousel maker?"
     answer: "Most AI generators accept raw text better than direct PDF uploads. The best approach is to copy the executive summary or key bullet points from your PDF and paste them into the prompt."
   - question: "Does LinkedIn support PDF uploads?"
     answer: "Yes. In fact, uploading a PDF as a document post is the standard way to create a swipeable carousel on LinkedIn."

@@ -1,0 +1,309 @@
+[
+  {
+    "capabilityId": "aiCarouselGeneration",
+    "label": "AI Carousel Generation",
+    "status": "supported",
+    "description": "GoToFlow generates carousel content and visuals using AI.",
+    "allowedClaims": [
+      "GoToFlow can generate carousel content and visuals with AI",
+      "create Instagram carousel-style content",
+      "create LinkedIn carousel/document-style content"
+    ],
+    "forbiddenClaims": [
+      "guaranteed reach",
+      "guaranteed engagement",
+      "algorithm boost",
+      "guaranteed to stop the scroll"
+    ],
+    "saferAlternatives": [
+      "designed to improve clarity, structure, and presentation"
+    ],
+    "relatedRoutes": ["/"],
+    "relatedArticleTypes": ["how-to", "listicle"],
+    "relatedKeywords": ["carousel generator", "ai carousel"],
+    "evidence": {
+      "source": "Core value proposition",
+      "notes": "Verified visually on platform"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": false
+  },
+  {
+    "capabilityId": "textToCarousel",
+    "label": "Text to Carousel",
+    "status": "supported",
+    "description": "User can turn text/topic into a carousel.",
+    "allowedClaims": [
+      "turn text into a carousel",
+      "turn a topic into a carousel",
+      "generate a carousel from a prompt"
+    ],
+    "forbiddenClaims": [
+      "unlimited input size",
+      "perfect extraction",
+      "guaranteed quality"
+    ],
+    "saferAlternatives": [],
+    "relatedRoutes": ["/"],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": ["text to carousel"],
+    "evidence": {
+      "source": "Core UI",
+      "notes": "Text input area exists"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": false
+  },
+  {
+    "capabilityId": "instagramCarouselGeneration",
+    "label": "Instagram Carousel Generation",
+    "status": "supported",
+    "description": "Create Instagram carousel-style content.",
+    "allowedClaims": [
+      "create Instagram carousel-style content",
+      "Instagram carousel ideas",
+      "Instagram carousel hooks"
+    ],
+    "forbiddenClaims": [
+      "publish directly to Instagram",
+      "guaranteed reach/engagement",
+      "15 Instagram Carousel Hooks Guaranteed to Stop the Scroll"
+    ],
+    "saferAlternatives": [
+      "15 Instagram Carousel Hooks to Help Stop the Scroll",
+      "15 Instagram Carousel Hooks Designed to Stop the Scroll"
+    ],
+    "relatedRoutes": ["/instagram-carousel-maker"],
+    "relatedArticleTypes": ["how-to", "listicle"],
+    "relatedKeywords": ["instagram carousel"],
+    "evidence": {
+      "source": "Platform orientation options",
+      "notes": "Generates images that can be used on Instagram"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": false
+  },
+  {
+    "capabilityId": "linkedinCarouselGeneration",
+    "label": "LinkedIn Carousel Generation",
+    "status": "supported",
+    "description": "Create LinkedIn carousel/document-style content.",
+    "allowedClaims": [
+      "create LinkedIn carousel/document-style content",
+      "LinkedIn PDF carousels"
+    ],
+    "forbiddenClaims": [
+      "publish directly to LinkedIn",
+      "LinkedIn's algorithm heavily rewards"
+    ],
+    "saferAlternatives": [
+      "LinkedIn's algorithm often favors native document posts"
+    ],
+    "relatedRoutes": ["/linkedin-carousel-maker"],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": ["linkedin carousel"],
+    "evidence": {
+      "source": "Platform orientation options",
+      "notes": "Generates PDF that can be uploaded to LinkedIn"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": false
+  },
+  {
+    "capabilityId": "pdfToCarousel",
+    "label": "PDF to Carousel",
+    "status": "partially_supported",
+    "description": "User must paste text from PDF manually.",
+    "allowedClaims": [
+      "paste or extract text from a PDF/report and turn it into a carousel"
+    ],
+    "forbiddenClaims": [
+      "upload any PDF",
+      "extracts any PDF automatically",
+      "upload a PDF"
+    ],
+    "saferAlternatives": [
+      "paste text from a PDF"
+    ],
+    "relatedRoutes": ["/"],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": ["pdf to carousel"],
+    "evidence": {
+      "source": "Manual extraction",
+      "notes": "No direct file upload API yet"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": true
+  },
+  {
+    "capabilityId": "youtubeVideoToCarousel",
+    "label": "YouTube Video to Carousel",
+    "status": "unknown",
+    "description": "Extraction from YouTube URL.",
+    "allowedClaims": [],
+    "forbiddenClaims": [
+      "paste a YouTube URL",
+      "paste any YouTube URL",
+      "generate automatically from YouTube"
+    ],
+    "saferAlternatives": [
+      "paste the video transcript"
+    ],
+    "relatedRoutes": [],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": ["youtube to carousel"],
+    "evidence": {
+      "source": "Product UI check needed",
+      "notes": "Currently unverified"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": true
+  },
+  {
+    "capabilityId": "directSocialPublishing",
+    "label": "Direct Social Publishing",
+    "status": "not_supported",
+    "description": "Publishing via API to platforms.",
+    "allowedClaims": [
+      "download and post manually"
+    ],
+    "forbiddenClaims": [
+      "publish directly to LinkedIn",
+      "publish directly to Instagram",
+      "one-click social scheduling",
+      "auto-publish"
+    ],
+    "saferAlternatives": [
+      "export the PDF and upload it natively"
+    ],
+    "relatedRoutes": [],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": [],
+    "evidence": {
+      "source": "Known product limitation",
+      "notes": "No OAuth for publishing built yet"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": true
+  },
+  {
+    "capabilityId": "autoScheduling",
+    "label": "Auto-Scheduling",
+    "status": "not_supported",
+    "description": "Scheduling future posts.",
+    "allowedClaims": [],
+    "forbiddenClaims": [
+      "schedule posts automatically",
+      "auto-publish calendar",
+      "batch schedule unlimited carousels"
+    ],
+    "saferAlternatives": [],
+    "relatedRoutes": [],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": [],
+    "evidence": {
+      "source": "Known product limitation",
+      "notes": "No scheduler built yet"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": true
+  },
+  {
+    "capabilityId": "guaranteedEngagement",
+    "label": "Guaranteed Engagement",
+    "status": "not_supported",
+    "description": "Marketing claims promising success.",
+    "allowedClaims": [],
+    "forbiddenClaims": [
+      "guaranteed engagement",
+      "guaranteed reach",
+      "guaranteed algorithm boost",
+      "guaranteed to stop the scroll"
+    ],
+    "saferAlternatives": [
+      "designed to improve clarity, structure, and presentation",
+      "hooks to help stop the scroll"
+    ],
+    "relatedRoutes": [],
+    "relatedArticleTypes": ["listicle", "how-to"],
+    "relatedKeywords": [],
+    "evidence": {
+      "source": "Marketing Policy",
+      "notes": "Must never over-promise"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": true
+  },
+  {
+    "capabilityId": "bulkGeneration",
+    "label": "Bulk Generation",
+    "status": "unknown",
+    "description": "Generate many carousels at once.",
+    "allowedClaims": [],
+    "forbiddenClaims": [
+      "unlimited generation",
+      "generate unlimited posts",
+      "batch schedule unlimited carousels"
+    ],
+    "saferAlternatives": [],
+    "relatedRoutes": [],
+    "relatedArticleTypes": [],
+    "relatedKeywords": [],
+    "evidence": {
+      "source": "Pricing/Quota check needed",
+      "notes": "Currently unverified"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": true
+  },
+  {
+    "capabilityId": "exportDownload",
+    "label": "Export / Download",
+    "status": "supported",
+    "description": "Download carousel as images/PDF.",
+    "allowedClaims": [
+      "export the generated carousel",
+      "download the generated carousel"
+    ],
+    "forbiddenClaims": [
+      "every file format",
+      "every platform format"
+    ],
+    "saferAlternatives": [],
+    "relatedRoutes": ["/"],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": [],
+    "evidence": {
+      "source": "Core UI",
+      "notes": "Download button exists"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": false
+  },
+  {
+    "capabilityId": "brandStyleCustomization",
+    "label": "Brand Style Customization",
+    "status": "partially_supported",
+    "description": "Customize fonts/colors.",
+    "allowedClaims": [
+      "customize style/design",
+      "choose colors and fonts"
+    ],
+    "forbiddenClaims": [
+      "full brand kit automation",
+      "upload custom brand fonts instantly"
+    ],
+    "saferAlternatives": [
+      "tweak the design to match your brand style"
+    ],
+    "relatedRoutes": ["/"],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": [],
+    "evidence": {
+      "source": "Core UI",
+      "notes": "Theme customization exists, but not full brand kits"
+    },
+    "lastVerified": "2026-06-08",
+    "reviewRequiredBeforeClaiming": true
+  }
+]

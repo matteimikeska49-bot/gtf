@@ -54,7 +54,7 @@ finalCta:
 
 You’ve seen them in your feed: swipeable LinkedIn posts that explain one idea clearly, keep people reading, and get saved because they feel useful.
 
-That format is often called a LinkedIn carousel. Technically, LinkedIn treats it as a document post: you upload a PDF or document, and each page becomes a swipeable slide.
+That format is often called a LinkedIn carousel. Technically, LinkedIn treats it as a document post: you upload the generated PDF or document to LinkedIn, and each page becomes a swipeable slide.
 
 The problem is that creating a good carousel usually takes longer than expected.
 
