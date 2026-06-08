@@ -5,6 +5,7 @@ language: "ru"
 slug: "luchshie-ai-generatory-karuselej"
 published: true
 noindex: false
+primaryKeyword: "ai генераторы каруселей"
 keywords: "ai генератор каруселей, нейросеть для каруселей, создание каруселей ai, linkedin карусель ai, instagram карусель ai, генератор каруселей"
 date: "2024-03-22"
 updatedAt: "2026-06"

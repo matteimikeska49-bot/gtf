@@ -29,6 +29,7 @@
     "check:blog:faq-cta-contract": "node scripts/check-blog-faq-cta-contract.mjs",
     "check:blog:product-led-links": "node scripts/check-blog-product-led-links.mjs",
     "check:blog:internal-link-flow": "node scripts/check-blog-internal-link-flow.mjs",
+    "check:blog:language-consistency": "node scripts/check-blog-language-consistency.mjs",
     "check:blog:mockup-relevance": "node scripts/check-blog-mockup-relevance.mjs",
     "check:blog:draft-safety": "node scripts/check-blog-draft-safety.mjs",
     "recalculate:topic-scores": "node scripts/recalculate-topic-scores.mjs",

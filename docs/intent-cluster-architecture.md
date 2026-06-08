@@ -39,3 +39,5 @@ We organize articles into topical clusters. Every cluster must be tied to a spec
 * **Product:** All articles in the cluster must link to the canonical `productRoute` for that cluster.
 * **Safety:** Published articles must not leak link authority to drafts/noindex/preview pages.
 * **Language:** Clusters are language-isolated. No cross-language internal linking within the blog hierarchy without an explicit exception.
+
+* **Language Consistency:** Clusters are completely language-isolated. Mixed-language metadata, links, or mockups will trigger strict build failures for high-priority or newly drafted clusters.

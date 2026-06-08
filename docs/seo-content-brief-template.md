@@ -97,3 +97,12 @@
 * **Hub Link:** If this is a supporting article and the hub is published, you must link to it contextually.
 * **Support Links:** Hub articles should organically link to key supporting articles.
 * **Forbidden:** Never link to a draft, noindex, or unpublished topic.
+
+## Language Consistency Rules
+* **Article Language:** Must explicitly match the `language` field (en|ru).
+* **Canonical Language Route:** Must match the language (e.g., `/blog/slug` for EN, `/ru/blog/slug` for RU).
+* **Product Route Language:** Must use the language-specific product route.
+* **CTA Language:** `finalCta` text, microcopy, and button text must be in the target language.
+* **FAQ Language:** Must be in the target language.
+* **Mockup Language:** `mockupDecision` must assign assets that match the target language or are 'agnostic'.
+* **Allowed mixed-language terms:** GoToFlow, LinkedIn, Instagram, AI, SEO, CTA, B2B, PDF, UGC.

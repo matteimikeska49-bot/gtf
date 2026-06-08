@@ -248,3 +248,9 @@ Begin.
     - If acting as a supporting article, always link to the published hub if it exists.
     - Keep links within the same language boundaries (EN -> EN, RU -> RU).
     - Do not invent broken links or link to held/rejected topics.
+
+29. **Language Consistency**: 
+    - Keep all reader-visible content strictly in the target language (EN or RU).
+    - Never mix RU/EN unintentionally in the body, FAQ, Quick Answer, or CTA.
+    - Use RU product routes for RU articles and EN product routes for EN articles.
+    - Allowed untranslated terms: GoToFlow, LinkedIn, Instagram, AI, SEO, CTA, B2B, PDF, UGC.
