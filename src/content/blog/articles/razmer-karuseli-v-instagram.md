@@ -23,10 +23,10 @@ lastReviewed: "2026-06-09T00:00:00.000Z"
 mockupStatus: "not_needed"
 quickAnswer:
   - "Идеальный размер фото для карусели в Инстаграм — 1080 x 1350 пикселей (соотношение 4:5). Вы можете добавить от 2 до 10 фото или видео в одну карусель. Важно оставлять безопасные зоны сверху и снизу, чтобы текст не перекрывался интерфейсом приложения."
-keywordRecord: "existing_topic_map"
-topicScoreId: "ru-wave-1-id"
-finalPriorityScore: 50
-priorityTier: "P3"
+keywordRecord: "yandex_wordstat"
+topicScoreId: "ru:razmer-karuseli-v-instagram"
+finalPriorityScore: 80
+priorityTier: "P1"
 productCapabilityIds: ["instagramCarouselGeneration"]
 intentId: "ru:razmer-karuseli-v-instagram"
 clusterId: "ru:instagram-carousel"

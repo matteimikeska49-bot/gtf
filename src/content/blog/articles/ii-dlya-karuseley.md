@@ -23,10 +23,10 @@ lastReviewed: "2026-06-09T00:00:00.000Z"
 mockupStatus: "not_needed"
 quickAnswer:
   - "ИИ для каруселей автоматизирует создание контента, превращая короткий текстовый запрос в готовую серию слайдов с профессиональным дизайном и структурированным текстом."
-keywordRecord: "existing_topic_map"
-topicScoreId: "ru-wave-1-id"
-finalPriorityScore: 50
-priorityTier: "P3"
+keywordRecord: "yandex_wordstat"
+topicScoreId: "ru:ii-dlya-karuseley"
+finalPriorityScore: 55
+priorityTier: "P2"
 productCapabilityIds: ["instagramCarouselGeneration"]
 intentId: "ru:ii-dlya-karuseley"
 clusterId: "ru:ai-carousel-generator"

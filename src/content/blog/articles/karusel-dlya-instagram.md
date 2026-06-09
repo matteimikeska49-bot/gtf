@@ -23,10 +23,10 @@ lastReviewed: "2026-06-09T00:00:00.000Z"
 mockupStatus: "not_needed"
 quickAnswer:
   - "Карусель для Инстаграм — это формат поста, состоящий из нескольких слайдов (до 10), которые пользователь может листать. Это один из самых эффективных форматов для повышения вовлеченности и охватов."
-keywordRecord: "existing_topic_map"
-topicScoreId: "ru-wave-1-id"
-finalPriorityScore: 50
-priorityTier: "P3"
+keywordRecord: "yandex_wordstat"
+topicScoreId: "ru:karusel-dlya-instagram"
+finalPriorityScore: 60
+priorityTier: "P2"
 productCapabilityIds: ["instagramCarouselGeneration"]
 intentId: "ru:karusel-dlya-instagram"
 clusterId: "ru:instagram-carousel"

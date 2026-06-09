@@ -23,9 +23,9 @@ lastReviewed: "2026-06-09T00:00:00.000Z"
 mockupStatus: "not_needed"
 quickAnswer:
   - "Бесшовная карусель создается путем разделения одного длинного изображения на несколько квадратных или прямоугольных слайдов, так чтобы при перелистывании в Инстаграм дизайн выглядел как единое целое."
-keywordRecord: "existing_topic_map"
-topicScoreId: "ru-wave-1-id"
-finalPriorityScore: 50
+keywordRecord: "yandex_wordstat"
+topicScoreId: "ru:besshovnaya-karusel-v-instagram"
+finalPriorityScore: 55
 priorityTier: "P3"
 productCapabilityIds: ["instagramCarouselGeneration"]
 intentId: "ru:besshovnaya-karusel-v-instagram"

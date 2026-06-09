@@ -23,10 +23,10 @@ lastReviewed: "2026-06-09T00:00:00.000Z"
 mockupStatus: "not_needed"
 quickAnswer:
   - "Нейросеть для постов — это ИИ-инструмент, который автоматически генерирует идеи, пишет текст и создает визуальный дизайн для публикаций в социальных сетях, экономя часы работы."
-keywordRecord: "existing_topic_map"
-topicScoreId: "ru-wave-1-id"
-finalPriorityScore: 50
-priorityTier: "P3"
+keywordRecord: "yandex_wordstat"
+topicScoreId: "ru:neyroset-dlya-postov"
+finalPriorityScore: 85
+priorityTier: "P1"
 productCapabilityIds: ["instagramCarouselGeneration"]
 intentId: "ru:neyroset-dlya-postov"
 clusterId: "ru:social-content"
@@ -37,7 +37,7 @@ finalCta:
   title: "Создайте первый пост"
   text: "Используйте ИИ, чтобы сделать пост"
   buttonText: "Попробовать бесплатно"
-  buttonHref: "/ru/ai-generator-karuselej"
+  buttonHref: "/ru/generator-postov-instagram"
 ---
 
 В современном SMM **нейросеть для постов** стала не просто трендом, а необходимым инструментом. Создание контента требует времени: нужно придумать идею, написать вовлекающий текст, подобрать визуал. Искусственный интеллект способен автоматизировать большую часть этой рутины.

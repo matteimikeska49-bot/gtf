@@ -952,14 +952,14 @@
     "title": "нейросеть для постов",
     "language": "ru",
     "primaryKeyword": "нейросеть для постов",
-    "relatedProductRoute": "",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
     "topicStatus": "draft",
     "keywordEvidence": {
-      "source": "existing_topic_map",
-      "confidence": "medium",
-      "exactVolumeKnown": false,
-      "volume": null,
-      "trend": "unknown"
+      "source": "yandex_wordstat",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 674,
+      "trend": "stable"
     },
     "scores": {
       "demandScore": 5,
@@ -969,9 +969,9 @@
       "cannibalizationSafetyScore": 5,
       "mockupReadinessScore": 5,
       "dataConfidenceScore": 4,
-      "finalPriorityScore": 50
+      "finalPriorityScore": 85
     },
-    "priorityTier": "P3",
+    "priorityTier": "P1",
     "scoringReason": "RU Wave 1",
     "scoringLastUpdated": "2026-06-09"
   },
@@ -980,14 +980,14 @@
     "title": "карусель для инстаграм",
     "language": "ru",
     "primaryKeyword": "карусель для инстаграм",
-    "relatedProductRoute": "",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
     "topicStatus": "draft",
     "keywordEvidence": {
-      "source": "existing_topic_map",
-      "confidence": "medium",
-      "exactVolumeKnown": false,
-      "volume": null,
-      "trend": "unknown"
+      "source": "yandex_wordstat",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 210,
+      "trend": "stable"
     },
     "scores": {
       "demandScore": 5,
@@ -997,9 +997,9 @@
       "cannibalizationSafetyScore": 5,
       "mockupReadinessScore": 5,
       "dataConfidenceScore": 4,
-      "finalPriorityScore": 50
+      "finalPriorityScore": 60
     },
-    "priorityTier": "P3",
+    "priorityTier": "P2",
     "scoringReason": "RU Wave 1",
     "scoringLastUpdated": "2026-06-09"
   },
@@ -1008,14 +1008,14 @@
     "title": "ии для каруселей",
     "language": "ru",
     "primaryKeyword": "ии для каруселей",
-    "relatedProductRoute": "",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
     "topicStatus": "draft",
     "keywordEvidence": {
-      "source": "existing_topic_map",
-      "confidence": "medium",
-      "exactVolumeKnown": false,
-      "volume": null,
-      "trend": "unknown"
+      "source": "yandex_wordstat",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 123,
+      "trend": "stable"
     },
     "scores": {
       "demandScore": 5,
@@ -1025,9 +1025,9 @@
       "cannibalizationSafetyScore": 5,
       "mockupReadinessScore": 5,
       "dataConfidenceScore": 4,
-      "finalPriorityScore": 50
+      "finalPriorityScore": 55
     },
-    "priorityTier": "P3",
+    "priorityTier": "P2",
     "scoringReason": "RU Wave 1",
     "scoringLastUpdated": "2026-06-09"
   },
@@ -1036,14 +1036,14 @@
     "title": "бесшовная карусель в инстаграм",
     "language": "ru",
     "primaryKeyword": "бесшовная карусель в инстаграм",
-    "relatedProductRoute": "",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
     "topicStatus": "draft",
     "keywordEvidence": {
-      "source": "existing_topic_map",
-      "confidence": "medium",
-      "exactVolumeKnown": false,
-      "volume": null,
-      "trend": "unknown"
+      "source": "yandex_wordstat",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 117,
+      "trend": "stable"
     },
     "scores": {
       "demandScore": 5,
@@ -1053,7 +1053,7 @@
       "cannibalizationSafetyScore": 5,
       "mockupReadinessScore": 5,
       "dataConfidenceScore": 4,
-      "finalPriorityScore": 50
+      "finalPriorityScore": 55
     },
     "priorityTier": "P3",
     "scoringReason": "RU Wave 1",
@@ -1064,14 +1064,14 @@
     "title": "размер карусели в инстаграм",
     "language": "ru",
     "primaryKeyword": "размер карусели в инстаграм",
-    "relatedProductRoute": "",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
     "topicStatus": "draft",
     "keywordEvidence": {
-      "source": "existing_topic_map",
-      "confidence": "medium",
-      "exactVolumeKnown": false,
-      "volume": null,
-      "trend": "unknown"
+      "source": "yandex_wordstat",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 645,
+      "trend": "stable"
     },
     "scores": {
       "demandScore": 5,
@@ -1081,9 +1081,9 @@
       "cannibalizationSafetyScore": 5,
       "mockupReadinessScore": 5,
       "dataConfidenceScore": 4,
-      "finalPriorityScore": 50
+      "finalPriorityScore": 80
     },
-    "priorityTier": "P3",
+    "priorityTier": "P1",
     "scoringReason": "RU Wave 1",
     "scoringLastUpdated": "2026-06-09"
   }
