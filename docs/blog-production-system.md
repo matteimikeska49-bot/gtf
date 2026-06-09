@@ -1336,3 +1336,7 @@ Drafts must be explicitly verified to NOT be in the live sitemap or blog index.
 
 Mini-batches (3-5 articles) serve as gates before full production batches (25 articles).
 Batch 25 can NEVER start until the mini-batch passes user review, visual QA, and live verification.
+
+
+## Batch 25 Gate
+Batch 25 cannot start immediately after D53 publication. It requires D53 live verification first.

@@ -39,5 +39,30 @@
 - **Strongest clusters to target next:**
   - AI Instagram Post Generator (high GSC clicks/impressions and Yandex volume)
   - AI tools for social media posts (very high RU volume: "ии для постов", "нейросеть для постов")
-- **Hold topics:** Any topics with zero proven search volume, especially EN where baseline volume is lower.
-- **Next step:** Select next topics strictly from P1/P2 tiers based on the new demand scores.
+## Corrected Decision
+
+* D53 can be published as evidence-backed mini-batch: Yes, after explicit user approval.
+* Batch 25 can start now: No.
+* Batch 25 can start only after D53 publish + deploy + live verification + user approval.
+* Next action: Publish D53 mini-batch only if user explicitly approves.
+
+## D53 Publish Gate
+
+Before D53 publish:
+
+* user explicit approval required;
+* run `npm run check:blog:full`;
+* publish state transition;
+* commit/push;
+* wait deploy;
+* run `npm run check:blog:live-verification`;
+* update `batch-status.json` to `live_verified`.
+
+## Batch 25 Gate
+
+Batch 25 requires:
+
+* D53 live verification passed;
+* no systemic publish/deploy/indexing issues;
+* only P1/P2 demand-backed topics;
+* user approval to start topic selection.

@@ -69,3 +69,7 @@ A failed article goes to:
 * `rejected`
 
 It must not block unrelated clean articles unless the failure affects shared system checks.
+
+
+## Batch 25 Gate
+Batch 25 cannot start immediately after D53 publication. It requires D53 live verification first.

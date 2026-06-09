@@ -46,3 +46,7 @@
 * merge;
 * reject;
 * do not silently publish.
+
+
+## Batch 25 Gate
+Batch 25 cannot start immediately after D53 publication. It requires D53 live verification first.
