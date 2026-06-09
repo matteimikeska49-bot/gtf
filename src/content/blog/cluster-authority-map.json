@@ -77,6 +77,11 @@
         "intentId": "en:content-calendar-to-carousel",
         "priorityTier": "P2",
         "status": "draft_preview"
+      },
+      {
+        "slug": "ai-carousel-generator",
+        "url": "/blog/ai-carousel-generator",
+        "role": "hub"
       }
     ],
     "supportingArticles": [

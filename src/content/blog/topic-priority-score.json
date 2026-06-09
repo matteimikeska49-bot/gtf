@@ -866,5 +866,33 @@
     "priorityTier": "P1",
     "scoringReason": "Excellent B2B business value. Low estimated volume but highly targeted intent. High product fit.",
     "scoringLastUpdated": "2026-06-09"
+  },
+  {
+    "targetSlug": "ai-carousel-generator",
+    "title": "ai carousel generator",
+    "language": "en",
+    "primaryKeyword": "ai carousel generator",
+    "relatedProductRoute": "/ai-carousel-maker",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "consolidated_demand_import",
+      "confidence": "high",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "rising"
+    },
+    "scores": {
+      "demandScore": 5,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 5,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 5,
+      "finalPriorityScore": 90
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Controlled Wave 1 topic",
+    "scoringLastUpdated": "2026-06-09"
   }
 ]

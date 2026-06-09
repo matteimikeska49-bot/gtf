@@ -10,9 +10,18 @@
     "ownerRole": "product-led-how-to",
     "supportingUrls": [],
     "supportingSlugs": [],
-    "forbiddenNearDuplicates": ["how-to-create-linkedin-carousel", "linkedin-carousel-generator-guide"],
-    "allowedSupportingAngles": ["ideas", "examples", "prompts"],
-    "updateInsteadOfCreateRules": ["new feature additions to the carousel maker"],
+    "forbiddenNearDuplicates": [
+      "how-to-create-linkedin-carousel",
+      "linkedin-carousel-generator-guide"
+    ],
+    "allowedSupportingAngles": [
+      "ideas",
+      "examples",
+      "prompts"
+    ],
+    "updateInsteadOfCreateRules": [
+      "new feature additions to the carousel maker"
+    ],
     "relatedProductRoute": "/linkedin-carousel-maker",
     "notes": "Core EN hub intent for LinkedIn carousels",
     "lastReviewed": "2026-06-08"
@@ -28,9 +37,16 @@
     "ownerRole": "supporting",
     "supportingUrls": [],
     "supportingSlugs": [],
-    "forbiddenNearDuplicates": ["linkedin-carousel-topics", "what-to-post-in-linkedin-carousel"],
-    "allowedSupportingAngles": ["industry specific examples"],
-    "updateInsteadOfCreateRules": ["adding new ideas or formats"],
+    "forbiddenNearDuplicates": [
+      "linkedin-carousel-topics",
+      "what-to-post-in-linkedin-carousel"
+    ],
+    "allowedSupportingAngles": [
+      "industry specific examples"
+    ],
+    "updateInsteadOfCreateRules": [
+      "adding new ideas or formats"
+    ],
     "relatedProductRoute": "/linkedin-carousel-maker",
     "notes": "Supports main LinkedIn carousel intent",
     "lastReviewed": "2026-06-08"
@@ -46,9 +62,19 @@
     "ownerRole": "product-led-how-to",
     "supportingUrls": [],
     "supportingSlugs": [],
-    "forbiddenNearDuplicates": ["how-to-create-instagram-carousel", "instagram-carousel-generator-guide"],
-    "allowedSupportingAngles": ["ideas", "examples", "prompts", "hooks"],
-    "updateInsteadOfCreateRules": ["new feature additions to the carousel maker"],
+    "forbiddenNearDuplicates": [
+      "how-to-create-instagram-carousel",
+      "instagram-carousel-generator-guide"
+    ],
+    "allowedSupportingAngles": [
+      "ideas",
+      "examples",
+      "prompts",
+      "hooks"
+    ],
+    "updateInsteadOfCreateRules": [
+      "new feature additions to the carousel maker"
+    ],
     "relatedProductRoute": "/instagram-carousel-maker",
     "notes": "Core EN hub intent for Instagram carousels",
     "lastReviewed": "2026-06-08"
@@ -64,9 +90,13 @@
     "ownerRole": "supporting",
     "supportingUrls": [],
     "supportingSlugs": [],
-    "forbiddenNearDuplicates": ["turn-pdf-into-linkedin-carousel"],
+    "forbiddenNearDuplicates": [
+      "turn-pdf-into-linkedin-carousel"
+    ],
     "allowedSupportingAngles": [],
-    "updateInsteadOfCreateRules": ["pdf extraction feature updates"],
+    "updateInsteadOfCreateRules": [
+      "pdf extraction feature updates"
+    ],
     "relatedProductRoute": "/linkedin-carousel-maker",
     "notes": "Specific use-case supporting article",
     "lastReviewed": "2026-06-08"
@@ -82,8 +112,14 @@
     "ownerRole": "hub",
     "supportingUrls": [],
     "supportingSlugs": [],
-    "forbiddenNearDuplicates": ["ai-text-to-carousel", "turn-text-into-carousel-generator"],
-    "allowedSupportingAngles": ["calendar to carousel", "blog to carousel"],
+    "forbiddenNearDuplicates": [
+      "ai-text-to-carousel",
+      "turn-text-into-carousel-generator"
+    ],
+    "allowedSupportingAngles": [
+      "calendar to carousel",
+      "blog to carousel"
+    ],
     "updateInsteadOfCreateRules": [],
     "relatedProductRoute": "/",
     "notes": "Core use-case for generic AI generator",
@@ -118,7 +154,9 @@
     "ownerRole": "supporting",
     "supportingUrls": [],
     "supportingSlugs": [],
-    "forbiddenNearDuplicates": ["instagram-carousel-first-slide-ideas"],
+    "forbiddenNearDuplicates": [
+      "instagram-carousel-first-slide-ideas"
+    ],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
     "relatedProductRoute": "/instagram-carousel-maker",
@@ -136,7 +174,9 @@
     "ownerRole": "hub",
     "supportingUrls": [],
     "supportingSlugs": [],
-    "forbiddenNearDuplicates": ["iz-teksta-v-karusel"],
+    "forbiddenNearDuplicates": [
+      "iz-teksta-v-karusel"
+    ],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
     "relatedProductRoute": "/",
@@ -160,5 +200,30 @@
     "relatedProductRoute": "/linkedin-carousel-maker",
     "notes": "Niche B2B RU support",
     "lastReviewed": "2026-06-08"
+  },
+  {
+    "intentId": "en:ai-carousel-generator",
+    "language": "en",
+    "cluster": "en:ai-carousel-generator",
+    "searchIntent": "Find the best AI carousel generator to automate design",
+    "intentType": "commercial",
+    "ownerUrl": "/blog/ai-carousel-generator",
+    "ownerSlug": "ai-carousel-generator",
+    "ownerRole": "product-led-hub",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "best-ai-carousel-generator",
+      "ai-carousel-maker-review"
+    ],
+    "allowedSupportingAngles": [
+      "text-to-carousel"
+    ],
+    "updateInsteadOfCreateRules": [
+      "add new generator features"
+    ],
+    "relatedProductRoute": "/ai-carousel-maker",
+    "notes": "Core EN hub intent for general AI carousel generator",
+    "lastReviewed": "2026-06-09"
   }
 ]

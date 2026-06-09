@@ -35,9 +35,10 @@
     "differentiationRule": "Hub-level guide on AI carousel generation across all platforms, serving as a primary entry point.",
     "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/ai-carousel-generator.md",
-    "articleStatus": "not_created",
+    "articleStatus": "draft_created",
     "publishStatus": "not_started",
-    "briefQaStatus": "passed"
+    "briefQaStatus": "passed",
+    "articlePath": "src/content/blog/articles/ai-carousel-generator.md"
   },
   {
     "targetSlug": "how-to-post-a-carousel-on-linkedin",
