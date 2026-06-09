@@ -14,10 +14,10 @@ clusterId: "en:instagram-carousel"
 articleRole: "supporting"
 hubSlug: "how-to-make-an-instagram-carousel-with-ai"
 relatedProductRoute: "/ai-carousel-maker"
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 mockupStatus: "not_available"
 mockupReason: "No perfectly matching mockup is available for this exact topic visual intent."
 author: "GoToFlow Team"

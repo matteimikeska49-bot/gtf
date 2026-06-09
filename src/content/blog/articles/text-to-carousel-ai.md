@@ -14,10 +14,10 @@ clusterId: "en:ai-carousel-generator"
 articleRole: "hub"
 hubSlug: "text-to-carousel-ai"
 relatedProductRoute: "/ai-carousel-maker"
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 mockupStatus: "not_available"
 mockupReason: "No perfectly matching mockup is available for this exact topic visual intent."
 author: "GoToFlow Team"

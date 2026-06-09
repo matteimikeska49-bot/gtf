@@ -14,10 +14,10 @@ clusterId: "ru:ai-carousel-generator"
 articleRole: "hub"
 hubSlug: "tekst-v-karusel-neyroset"
 relatedProductRoute: "/ru/ai-generator-karuselej"
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 mockupStatus: "not_available"
 mockupReason: "No perfectly matching mockup is available for this exact topic visual intent."
 author: "GoToFlow Team"

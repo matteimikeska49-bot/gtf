@@ -14,10 +14,10 @@ clusterId: "ru:linkedin-carousel"
 articleRole: "supporting"
 hubSlug: "kak-sdelat-karusel-linkedin-s-ai"
 relatedProductRoute: "/ru/generator-karuselej-linkedin"
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 mockupStatus: "not_available"
 mockupReason: "No perfectly matching mockup is available for this exact topic visual intent."
 author: "GoToFlow Team"
