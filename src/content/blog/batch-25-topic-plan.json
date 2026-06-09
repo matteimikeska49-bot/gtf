@@ -15,10 +15,11 @@
     "differentiationRule": "Focus strictly on generation tools specific to Instagram, comparing our tool against other options.",
     "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/ai-instagram-post-generator.md",
-    "articleStatus": "draft_created",
-    "publishStatus": "not_started",
+    "articleStatus": "published",
+    "publishStatus": "published",
     "briefQaStatus": "passed",
-    "articlePath": "src/content/blog/articles/ai-instagram-post-generator.md"
+    "articlePath": "src/content/blog/articles/ai-instagram-post-generator.md",
+    "publishedAt": "2026-06-09T16:46:45.891Z"
   },
   {
     "targetSlug": "ai-carousel-generator",
@@ -36,10 +37,11 @@
     "differentiationRule": "Hub-level guide on AI carousel generation across all platforms, serving as a primary entry point.",
     "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/ai-carousel-generator.md",
-    "articleStatus": "draft_created",
-    "publishStatus": "not_started",
+    "articleStatus": "published",
+    "publishStatus": "published",
     "briefQaStatus": "passed",
-    "articlePath": "src/content/blog/articles/ai-carousel-generator.md"
+    "articlePath": "src/content/blog/articles/ai-carousel-generator.md",
+    "publishedAt": "2026-06-09T16:46:45.891Z"
   },
   {
     "targetSlug": "how-to-post-a-carousel-on-linkedin",
@@ -57,10 +59,11 @@
     "differentiationRule": "Focus on the mechanics of posting (PDF export, uploading to LinkedIn), distinguishing from creation tools.",
     "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/how-to-post-a-carousel-on-linkedin.md",
-    "articleStatus": "draft_created",
-    "publishStatus": "not_started",
+    "articleStatus": "published",
+    "publishStatus": "published",
     "briefQaStatus": "passed",
-    "articlePath": "src/content/blog/articles/how-to-post-a-carousel-on-linkedin.md"
+    "articlePath": "src/content/blog/articles/how-to-post-a-carousel-on-linkedin.md",
+    "publishedAt": "2026-06-09T16:46:45.891Z"
   },
   {
     "targetSlug": "instagram-carousel-post",
@@ -78,10 +81,11 @@
     "differentiationRule": "Focus on optimizing carousel formats for Instagram algorithm, distinguishing from general AI generation.",
     "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/instagram-carousel-post.md",
-    "articleStatus": "draft_created",
-    "publishStatus": "not_started",
+    "articleStatus": "published",
+    "publishStatus": "published",
     "briefQaStatus": "passed",
-    "articlePath": "src/content/blog/articles/instagram-carousel-post.md"
+    "articlePath": "src/content/blog/articles/instagram-carousel-post.md",
+    "publishedAt": "2026-06-09T16:46:45.891Z"
   },
   {
     "targetSlug": "ai-linkedin-post-generator",
@@ -99,9 +103,10 @@
     "differentiationRule": "Specific focus on LinkedIn professional tone generation, distinct from general carousel creation.",
     "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/ai-linkedin-post-generator.md",
-    "articleStatus": "draft_created",
-    "publishStatus": "not_started",
+    "articleStatus": "published",
+    "publishStatus": "published",
     "briefQaStatus": "passed",
-    "articlePath": "src/content/blog/articles/ai-linkedin-post-generator.md"
+    "articlePath": "src/content/blog/articles/ai-linkedin-post-generator.md",
+    "publishedAt": "2026-06-09T16:46:45.891Z"
   }
 ]

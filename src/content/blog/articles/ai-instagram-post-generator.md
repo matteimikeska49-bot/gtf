@@ -22,10 +22,10 @@ articleType: "tool comparison / guide"
 demandEvidence: "100 rising 5% / 80 imp"
 canonicalRisk: "SAFE (differentiated from general AI generators)"
 differentiationRule: "Focus strictly on generation tools specific to Instagram, comparing our tool against other options."
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 mockupStatus: "not_available"
 mockupReason: "Mockup generation not currently active for Wave 1 drafts"
 

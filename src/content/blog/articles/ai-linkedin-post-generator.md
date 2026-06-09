@@ -22,10 +22,10 @@ articleType: "tool comparison / guide"
 demandEvidence: "100 rising 50%"
 canonicalRisk: "SAFE (direct product fit)"
 differentiationRule: "Specific focus on LinkedIn professional tone generation, distinct from general carousel creation."
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 mockupStatus: "not_available"
 mockupReason: "Mockup generation not currently active for Wave 1 drafts"
 

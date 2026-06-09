@@ -22,10 +22,10 @@ articleType: "best practices guide"
 demandEvidence: "89 rising 3%"
 canonicalRisk: "SAFE (canonicalized topic)"
 differentiationRule: "Focus on optimizing carousel formats for Instagram algorithm, distinguishing from general AI generation."
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 mockupStatus: "not_available"
 mockupReason: "Mockup generation not currently active for Wave 1 drafts"
 

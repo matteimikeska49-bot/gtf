@@ -22,10 +22,10 @@ articleType: "how-to guide"
 demandEvidence: "97 rising 160%"
 canonicalRisk: "SAFE (canonicalized intent)"
 differentiationRule: "Focus on the mechanics of posting (PDF export, uploading to LinkedIn), distinguishing from creation tools."
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 mockupStatus: "not_available"
 mockupReason: "Mockup generation not currently active for Wave 1 drafts"
 
