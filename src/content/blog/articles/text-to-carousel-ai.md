@@ -55,8 +55,7 @@ finalCta:
 ---
 
 
-slot: "topic-input"
-id: "en-upload-text-topic-expert-breakdown"
+
 
 ## Why Convert Text to a Carousel?
 
@@ -78,6 +77,4 @@ Using a text to carousel AI generator like GoToFlow, you can instantly turn your
 
 By automating this, you save hours of manual design work while maintaining a high-quality aesthetic.
 
-slot: "result-preview"
-id: "en-carousel-result-ideas"
 

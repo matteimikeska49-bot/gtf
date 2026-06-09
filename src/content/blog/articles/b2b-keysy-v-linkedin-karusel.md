@@ -51,8 +51,8 @@ finalCta:
   text: "Загрузите текст вашего кейса, и нейросеть автоматически превратит его в профессиональную LinkedIn карусель."
   buttonHref: "/ru/generator-karuselej-linkedin"
   buttonText: "Создать карусель бесплатно"
-  microcopy: "Free - No credit card required"
-  secondaryText: "Back to related tools and guides ->"
+  microcopy: "Бесплатно - Карта не требуется"
+  secondaryText: "Вернуться к инструментам ->"
   secondaryHref: "#explore-more"
 ---
 

@@ -57,12 +57,9 @@ finalCta:
 
 ## The Batch Creation Workflow
 
-
-[Try the AI carousel maker](/ai-carousel-maker)
-
 Creating content day-by-day leads to burnout. The most efficient creators use a content calendar and batch-produce their posts.
 
-With an [AI Content Generator](/ai-content-generator), this process becomes incredibly fast.
+With an [AI Content Generator](/ai-content-generator) and a reliable [AI Carousel Maker](/ai-carousel-maker), this process becomes incredibly fast.
 
 ### 4-Step Framework for a Month of Content
 

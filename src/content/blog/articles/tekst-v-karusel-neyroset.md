@@ -50,14 +50,13 @@ finalCta:
   text: "Хватит тратить часы на дизайн в Canva. Вставьте текст, и нейросеть сделает всю работу за вас."
   buttonHref: "/ru/ai-generator-karuselej"
   buttonText: "Попробовать бесплатно"
-  microcopy: "Free - No credit card required"
-  secondaryText: "Back to related tools and guides ->"
+  microcopy: "Бесплатно - Карта не требуется"
+  secondaryText: "Вернуться к инструментам ->"
   secondaryHref: "#explore-more"
 ---
 
 
-slot: "topic-input"
-id: "ru-upload-text-topic-expert-breakdown"
+
 
 ## Зачем превращать текст в карусель?
 
@@ -78,6 +77,4 @@ id: "ru-upload-text-topic-expert-breakdown"
 
 Таким образом, вы экономите время и получаете профессиональный контент, готовый к публикации.
 
-slot: "result-preview"
-id: "ru-carousel-result-ideas"
 
