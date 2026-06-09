@@ -1,4 +1,4 @@
-## D77-control — Strategic QA Gate Report
+## D77-control.2 — Final Topic Set Cleanup Report
 
 ### Process
 
@@ -9,77 +9,132 @@
 * Legal pages changed: 0
 * Dist staged: No
 
-### D77 verdict
+### Previous plan audit
 
-* Is original D77 acceptable: No
-* Main reason: Selected 25 topics arbitrarily just to meet the quota, using weak "existing_topic_map" evidence and ignoring actual demand data from GSC/Trends.
-* Strategic risk: Content farm behavior (publishing low-demand P3 topics without differentiation).
-* Correction required: Yes. Switched to a smaller, highly targeted batch based on real demand.
+* too broad topics: `google ai`, `ai generated content`, `social media post ideas for business`
+* duplicate LinkedIn topics: `how to post carousel on linkedin`, `carousel post linkedin`, `linkedin carousel post`
+* duplicate Instagram topics: `carousel on instagram`, `carousel instagram post`
+* weak product-led topics: `google ai` has zero direct connection to carousel generator tools.
+* removed topics: `google ai`, `ai generated content`, `social media post ideas for business`
+* merged topics: LinkedIn variations merged into `how to post a carousel on linkedin`. Instagram variations merged into `instagram carousel post`.
 
-### Quality audit
+### Final approved topic set
 
-* P1/P2 priority respected: No, original had 20 P3 topics. Corrected version uses only P1/P2.
-* P3 topics justified: No. Removed all P3 topics from this batch.
-* high-demand rejected topics reviewed: Yes.
-* product routes precise: Yes, updated to specific tool routes (`/ai-instagram-carousel-generator`, etc.) instead of root `/`.
-* demand evidence concrete: Yes, now relies on `google_trends_rising`, `google_trends_top`, `gsc`.
-* cannibalization differentiated: Yes, added explicit differentiation rules.
-* mockup requirements specific: Yes, must include language-specific UI mockups.
-* content-farm risk: Mitigated.
+For each approved topic:
 
-### Corrected selection
+* title: ai instagram post generator
+* language: EN
+* target keyword: ai instagram post generator
+* exact demand evidence: google_trends_rising, google_trends_top, gsc
+* product route: /ai-instagram-carousel-generator
+* canonical intent: commercial investigation
+* differentiation rule: Focus strictly on generation tools specific to Instagram, comparing our tool against other options.
+* internal links: Link to Instagram hooks D53 article.
+* article type: tool comparison / guide
+* mockup requirement: Minimum 2 Instagram-specific UI mockups.
+* why safe for brief generation: High demand, exact product fit, clear differentiation.
 
-* final approved topic count: 12
-* selected topics:
-  - ai instagram post generator (P1) [Evidence: google_trends_rising, google_trends_top, gsc] -> /ai-instagram-carousel-generator
-  - ai carousel generator (P1) [Evidence: google_trends_rising, google_trends_top, gsc] -> /ai-carousel-generator
-  - carousel on instagram (P1) [Evidence: google_trends_rising, google_trends_top] -> /ai-instagram-carousel-generator
-  - google ai (P1) [Evidence: google_trends_rising, google_trends_top] -> /ai-carousel-generator
-  - how to post carousel on linkedin (P1) [Evidence: google_trends_rising, google_trends_top] -> /generator-karuselej-linkedin
-  - linkedin carousel post (P2) [Evidence: google_trends_rising, google_trends_top] -> /generator-karuselej-linkedin
-  - social media post ideas for business (P2) [Evidence: google_trends_rising, google_trends_top] -> /
-  - ai generated content (P2) [Evidence: google_trends_rising, google_trends_top] -> /ai-carousel-generator
-  - how to post a carousel on linkedin (P2) [Evidence: google_trends_rising, google_trends_top] -> /generator-karuselej-linkedin
-  - carousel post linkedin (P2) [Evidence: google_trends_rising, google_trends_top] -> /generator-karuselej-linkedin
-  - carousel instagram post (P2) [Evidence: google_trends_rising, google_trends_top] -> /ai-instagram-carousel-generator
-  - instagram carousel post (P2) [Evidence: google_trends_rising, google_trends_top] -> /ai-instagram-carousel-generator
-* held topics: 92 (strong demand topics held for future batches to avoid parallel cannibalization)
-* rejected topics: All generic P3 topics from original D77
-* why not forcing 25: To maintain high quality, topical authority, and avoid content farm behavior. Only the strongest 12 topics with highest priority hints were selected.
+* title: ai carousel generator
+* language: EN
+* target keyword: ai carousel generator
+* exact demand evidence: google_trends_rising, google_trends_top, gsc
+* product route: /ai-carousel-generator
+* canonical intent: transactional / navigational
+* differentiation rule: Hub-level guide on AI carousel generation across all platforms, serving as a primary entry point.
+* internal links: Link to general text-to-carousel D53 article.
+* article type: primary product hub
+* mockup requirement: Minimum 2 general carousel UI mockups.
+* why safe for brief generation: Core product keyword, high commercial intent.
 
-### High-demand rejected topic review
+* title: how to post a carousel on linkedin
+* language: EN
+* target keyword: how to post a carousel on linkedin
+* exact demand evidence: google_trends_rising, google_trends_top
+* product route: /generator-karuselej-linkedin
+* canonical intent: informational
+* differentiation rule: Focus on the mechanics of posting (PDF export, uploading to LinkedIn), distinguishing from creation tools.
+* internal links: Link to LinkedIn AI generator tools.
+* article type: how-to guide
+* mockup requirement: Minimum 2 LinkedIn interface mockups showing PDF upload.
+* why safe for brief generation: Canonicalized intent, eliminates cannibalization among duplicates.
+
+* title: instagram carousel post
+* language: EN
+* target keyword: instagram carousel post
+* exact demand evidence: google_trends_rising, google_trends_top
+* product route: /ai-instagram-carousel-generator
+* canonical intent: informational / inspirational
+* differentiation rule: Focus on optimizing carousel formats for Instagram algorithm, distinguishing from general AI generation.
+* internal links: Link to Instagram Carousel Hooks.
+* article type: best practices guide
+* mockup requirement: Minimum 2 Instagram carousel examples.
+* why safe for brief generation: Canonicalized topic merging 3 variants.
+
+* title: best ai instagram post generators
+* language: EN
+* target keyword: best ai instagram post generators
+* exact demand evidence: google_trends_top, gsc
+* product route: /ai-instagram-carousel-generator
+* canonical intent: commercial investigation
+* differentiation rule: Listicles comparing top tools, placing GoToFlow as the primary option for carousels.
+* internal links: Link to ai instagram post generator tool page.
+* article type: listicle
+* mockup requirement: Minimum 2 tool comparison tables/mockups.
+* why safe for brief generation: Evaluated and selected for strong commercial intent.
+
+* title: ai linkedin post generator
+* language: EN
+* target keyword: ai linkedin post generator
+* exact demand evidence: google_trends_top, gsc
+* product route: /generator-karuselej-linkedin
+* canonical intent: commercial investigation
+* differentiation rule: Specific focus on LinkedIn professional tone generation, distinct from general carousel creation.
+* internal links: Link to B2B case study D53 article.
+* article type: tool comparison / guide
+* mockup requirement: Minimum 2 LinkedIn-specific UI mockups.
+* why safe for brief generation: Direct product fit with strong GSC/Trends demand.
+
+### Held / merged / rejected / hub candidates
+
+* topic: google ai
+* decision: REJECT
+* exact reason: Too broad, not GoToFlow/product-led, not carousel/post-specific.
+* future use: None
+
+* topic: how to post carousel on linkedin
+* decision: MERGE
+* exact reason: Near-duplicate of "how to post a carousel on linkedin".
+* future use: Use as secondary keyword.
+
+* topic: carousel post linkedin
+* decision: MERGE
+* exact reason: Near-duplicate of "how to post a carousel on linkedin".
+* future use: Use as secondary keyword.
+
+* topic: linkedin carousel post
+* decision: MERGE
+* exact reason: Near-duplicate of "how to post a carousel on linkedin".
+* future use: Use as secondary keyword.
+
+* topic: carousel on instagram
+* decision: MERGE
+* exact reason: Near-duplicate of "instagram carousel post".
+* future use: Use as secondary keyword.
+
+* topic: carousel instagram post
+* decision: MERGE
+* exact reason: Near-duplicate of "instagram carousel post".
+* future use: Use as secondary keyword.
 
 * topic: ai tools for social media posts
-* decision: HOLD
-* exact reason: Too broad, better as a cluster hub later. Needs stronger product fit with carousel specifically.
+* decision: HUB_CANDIDATE
+* exact reason: Broad, better utilized as a cluster hub connecting various specific tools later.
+* future use: Batch 26+
 
 * topic: нейросеть для постов
-* decision: HOLD
-* exact reason: Broad informational intent, holds risk of cannibalization with specific tool pages.
-
-* topic: content calendar to carousel
-* decision: REJECT
-* exact reason: Weak demand evidence (only existing_topic_map), better as a section in a guide.
-
-* topic: best ai instagram post generators
-* decision: SELECT (in top pool)
-* exact reason: Strong commercial intent, direct product fit.
-
-* topic: turn article into linkedin carousel
-* decision: MERGE
-* exact reason: Merge with general "text to carousel" tool guide.
-
-* topic: ai linkedin post generator
-* decision: SELECT
-* exact reason: Direct product fit, strong GSC/Trends demand.
-
-* topic: как создать карусель
-* decision: HOLD
-* exact reason: Too generic. Better to target platform-specific queries (Instagram/LinkedIn).
-
-* topic: social media post creator
-* decision: HOLD
-* exact reason: High volume but low specific intent for carousels.
+* decision: HUB_CANDIDATE
+* exact reason: Broad informational intent, holds risk of cannibalization with specific tool pages right now. Better as a general hub.
+* future use: Batch 26+
 
 ### Validation
 
@@ -99,4 +154,4 @@
 * Can generate briefs next: Yes
 * Can create article drafts next: No
 * Remaining blockers: None
-* Exact next action: Proceed to Batch 25 brief generation.
+* Exact next action: Proceed to Controlled Batch 25 Wave 1 brief generation.

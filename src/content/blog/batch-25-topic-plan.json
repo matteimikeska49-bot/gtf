@@ -11,7 +11,7 @@
       "confidence": "high"
     },
     "priorityTier": "P1",
-    "differentiationRule": "Differentiated focus on ai instagram post generator to avoid cannibalization with general carousel tools."
+    "differentiationRule": "Focus strictly on generation tools specific to Instagram, comparing our tool against other options."
   },
   {
     "targetSlug": "ai-carousel-generator",
@@ -25,91 +25,7 @@
       "confidence": "high"
     },
     "priorityTier": "P1",
-    "differentiationRule": "Differentiated focus on ai carousel generator to avoid cannibalization with general carousel tools."
-  },
-  {
-    "targetSlug": "carousel-on-instagram",
-    "title": "carousel on instagram",
-    "language": "en",
-    "primaryKeyword": "carousel on instagram",
-    "relatedProductRoute": "/ai-instagram-carousel-generator",
-    "topicStatus": "draft",
-    "keywordEvidence": {
-      "source": "google_trends_rising, google_trends_top",
-      "confidence": "high"
-    },
-    "priorityTier": "P1",
-    "differentiationRule": "Differentiated focus on carousel on instagram to avoid cannibalization with general carousel tools."
-  },
-  {
-    "targetSlug": "google-ai",
-    "title": "google ai",
-    "language": "en",
-    "primaryKeyword": "google ai",
-    "relatedProductRoute": "/ai-carousel-generator",
-    "topicStatus": "draft",
-    "keywordEvidence": {
-      "source": "google_trends_rising, google_trends_top",
-      "confidence": "high"
-    },
-    "priorityTier": "P1",
-    "differentiationRule": "Differentiated focus on google ai to avoid cannibalization with general carousel tools."
-  },
-  {
-    "targetSlug": "how-to-post-carousel-on-linkedin",
-    "title": "how to post carousel on linkedin",
-    "language": "en",
-    "primaryKeyword": "how to post carousel on linkedin",
-    "relatedProductRoute": "/generator-karuselej-linkedin",
-    "topicStatus": "draft",
-    "keywordEvidence": {
-      "source": "google_trends_rising, google_trends_top",
-      "confidence": "high"
-    },
-    "priorityTier": "P1",
-    "differentiationRule": "Differentiated focus on how to post carousel on linkedin to avoid cannibalization with general carousel tools."
-  },
-  {
-    "targetSlug": "linkedin-carousel-post",
-    "title": "linkedin carousel post",
-    "language": "en",
-    "primaryKeyword": "linkedin carousel post",
-    "relatedProductRoute": "/generator-karuselej-linkedin",
-    "topicStatus": "draft",
-    "keywordEvidence": {
-      "source": "google_trends_rising, google_trends_top",
-      "confidence": "high"
-    },
-    "priorityTier": "P2",
-    "differentiationRule": "Differentiated focus on linkedin carousel post to avoid cannibalization with general carousel tools."
-  },
-  {
-    "targetSlug": "social-media-post-ideas-for-business",
-    "title": "social media post ideas for business",
-    "language": "en",
-    "primaryKeyword": "social media post ideas for business",
-    "relatedProductRoute": "/",
-    "topicStatus": "draft",
-    "keywordEvidence": {
-      "source": "google_trends_rising, google_trends_top",
-      "confidence": "high"
-    },
-    "priorityTier": "P2",
-    "differentiationRule": "Differentiated focus on social media post ideas for business to avoid cannibalization with general carousel tools."
-  },
-  {
-    "targetSlug": "ai-generated-content",
-    "title": "ai generated content",
-    "language": "en",
-    "primaryKeyword": "ai generated content",
-    "relatedProductRoute": "/ai-carousel-generator",
-    "topicStatus": "draft",
-    "keywordEvidence": {
-      "source": "google_trends_rising, google_trends_top",
-      "confidence": "high"
-    },
-    "priorityTier": "P2",
-    "differentiationRule": "Differentiated focus on ai generated content to avoid cannibalization with general carousel tools."
+    "differentiationRule": "Hub-level guide on AI carousel generation across all platforms, serving as a primary entry point."
   },
   {
     "targetSlug": "how-to-post-a-carousel-on-linkedin",
@@ -123,35 +39,7 @@
       "confidence": "high"
     },
     "priorityTier": "P2",
-    "differentiationRule": "Differentiated focus on how to post a carousel on linkedin to avoid cannibalization with general carousel tools."
-  },
-  {
-    "targetSlug": "carousel-post-linkedin",
-    "title": "carousel post linkedin",
-    "language": "en",
-    "primaryKeyword": "carousel post linkedin",
-    "relatedProductRoute": "/generator-karuselej-linkedin",
-    "topicStatus": "draft",
-    "keywordEvidence": {
-      "source": "google_trends_rising, google_trends_top",
-      "confidence": "high"
-    },
-    "priorityTier": "P2",
-    "differentiationRule": "Differentiated focus on carousel post linkedin to avoid cannibalization with general carousel tools."
-  },
-  {
-    "targetSlug": "carousel-instagram-post",
-    "title": "carousel instagram post",
-    "language": "en",
-    "primaryKeyword": "carousel instagram post",
-    "relatedProductRoute": "/ai-instagram-carousel-generator",
-    "topicStatus": "draft",
-    "keywordEvidence": {
-      "source": "google_trends_rising, google_trends_top",
-      "confidence": "high"
-    },
-    "priorityTier": "P2",
-    "differentiationRule": "Differentiated focus on carousel instagram post to avoid cannibalization with general carousel tools."
+    "differentiationRule": "Focus on the mechanics of posting (PDF export, uploading to LinkedIn), distinguishing from creation tools."
   },
   {
     "targetSlug": "instagram-carousel-post",
@@ -165,6 +53,34 @@
       "confidence": "high"
     },
     "priorityTier": "P2",
-    "differentiationRule": "Differentiated focus on instagram carousel post to avoid cannibalization with general carousel tools."
+    "differentiationRule": "Focus on optimizing carousel formats for Instagram algorithm, distinguishing from general AI generation."
+  },
+  {
+    "targetSlug": "best-ai-instagram-post-generators",
+    "title": "best ai instagram post generators",
+    "language": "en",
+    "primaryKeyword": "best ai instagram post generators",
+    "relatedProductRoute": "/ai-instagram-carousel-generator",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "google_trends_top, gsc",
+      "confidence": "high"
+    },
+    "priorityTier": "P1",
+    "differentiationRule": "Listicles comparing top tools, placing GoToFlow as the primary option for carousels."
+  },
+  {
+    "targetSlug": "ai-linkedin-post-generator",
+    "title": "ai linkedin post generator",
+    "language": "en",
+    "primaryKeyword": "ai linkedin post generator",
+    "relatedProductRoute": "/generator-karuselej-linkedin",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "google_trends_top, gsc",
+      "confidence": "high"
+    },
+    "priorityTier": "P1",
+    "differentiationRule": "Specific focus on LinkedIn professional tone generation, distinct from general carousel creation."
   }
 ]
