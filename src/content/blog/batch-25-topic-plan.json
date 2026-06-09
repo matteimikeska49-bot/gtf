@@ -13,10 +13,11 @@
     },
     "priorityTier": "P1",
     "differentiationRule": "Focus strictly on generation tools specific to Instagram, comparing our tool against other options.",
-    "briefStatus": "created",
+    "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/ai-instagram-post-generator.md",
     "articleStatus": "not_created",
-    "publishStatus": "not_started"
+    "publishStatus": "not_started",
+    "briefQaStatus": "passed"
   },
   {
     "targetSlug": "ai-carousel-generator",
@@ -32,10 +33,11 @@
     },
     "priorityTier": "P1",
     "differentiationRule": "Hub-level guide on AI carousel generation across all platforms, serving as a primary entry point.",
-    "briefStatus": "created",
+    "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/ai-carousel-generator.md",
     "articleStatus": "not_created",
-    "publishStatus": "not_started"
+    "publishStatus": "not_started",
+    "briefQaStatus": "passed"
   },
   {
     "targetSlug": "how-to-post-a-carousel-on-linkedin",
@@ -51,10 +53,11 @@
     },
     "priorityTier": "P2",
     "differentiationRule": "Focus on the mechanics of posting (PDF export, uploading to LinkedIn), distinguishing from creation tools.",
-    "briefStatus": "created",
+    "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/how-to-post-a-carousel-on-linkedin.md",
     "articleStatus": "not_created",
-    "publishStatus": "not_started"
+    "publishStatus": "not_started",
+    "briefQaStatus": "passed"
   },
   {
     "targetSlug": "instagram-carousel-post",
@@ -70,10 +73,11 @@
     },
     "priorityTier": "P2",
     "differentiationRule": "Focus on optimizing carousel formats for Instagram algorithm, distinguishing from general AI generation.",
-    "briefStatus": "created",
+    "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/instagram-carousel-post.md",
     "articleStatus": "not_created",
-    "publishStatus": "not_started"
+    "publishStatus": "not_started",
+    "briefQaStatus": "passed"
   },
   {
     "targetSlug": "ai-linkedin-post-generator",
@@ -89,9 +93,10 @@
     },
     "priorityTier": "P1",
     "differentiationRule": "Specific focus on LinkedIn professional tone generation, distinct from general carousel creation.",
-    "briefStatus": "created",
+    "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/ai-linkedin-post-generator.md",
     "articleStatus": "not_created",
-    "publishStatus": "not_started"
+    "publishStatus": "not_started",
+    "briefQaStatus": "passed"
   }
 ]

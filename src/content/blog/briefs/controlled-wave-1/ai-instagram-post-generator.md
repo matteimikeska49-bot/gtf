@@ -2,7 +2,7 @@
 
 ## Metadata
 
-* workingTitle: The Best AI Instagram Post Generators to Automate Your Feed
+* workingTitle: Top AI Instagram Post Generators to Automate Your Feed
 * language: en
 * targetSlug: ai-instagram-post-generator
 * targetKeyword: ai instagram post generator
@@ -18,65 +18,77 @@
 
 ## SERP / Intent Angle
 
-* What the user is trying to solve: The user is looking for a solution related to "ai instagram post generator". They want efficiency, quality, and a clear answer.
-* What must be answered in the first 20 seconds: A direct promise that they will learn exactly how to solve their problem or find the best tool, with a clear path to action.
-* Why this article deserves to exist separately: It directly addresses the specific "ai instagram post generator" intent, which is differentiated from broader topics according to our differentiation rule.
-* How it differs from D53 and other Wave 1 topics: It focuses solely on this specific angle and links out to other articles for related but distinct intents (e.g., separating "how to post" from "how to generate").
+* What the user is trying to solve: The user needs an AI tool specifically optimized for Instagram posts (square/portrait formats, visual-heavy).
+* What must be answered in the first 20 seconds: Which tool is best for Instagram and how to start generating posts instantly.
+* Why this article deserves to exist separately: Instagram has specific requirements (aspect ratio, visual focus) that differ from LinkedIn documents.
+* How it differs from D53 and other Wave 1 topics: It focuses on evaluating and using *tools* for Instagram, not on general Instagram post strategy.
 
 ## Article Structure
 
-# H1: The Best AI Instagram Post Generators to Automate Your Feed
-## H2: Quick Answer (The 3-Step Process)
-## H2: Why You Need a ai instagram post generator Strategy
-## H2: Step-by-Step Workflow
-### H3: Step 1: Preparation
-### H3: Step 2: Execution (Using GoToFlow)
-### H3: Step 3: Review and Publish
-## H2: Common Mistakes to Avoid
+# H1: The Best AI Instagram Post Generators to Scale Your Reach
+## H2: Quick Answer: GoToFlow for Instagram Carousels
+## H2: What Makes an Instagram Post Generator "Good"?
+### H3: Proper Aspect Ratios (4:5 and 1:1)
+### H3: High Visual Contrast
+## H2: Top 3 AI Tools for Instagram Content
+### H3: 1. GoToFlow (Best for Educational Carousels)
+### H3: 2. Canva Magic Studio (Best for Single Image Edits)
+### H3: 3. ChatGPT (Best for Captions, Lacks Design)
+## H2: How to Generate an Instagram Carousel in 3 Steps
+## H2: Common Pitfalls When Using AI for Instagram
 ## H2: Frequently Asked Questions (FAQ)
-## H2: Ready to Start? (Final CTA)
+## H2: Automate Your Instagram Feed Today
 
 ## Product-led Angle
 
-* Where GoToFlow appears naturally: In the Step 2 Execution phase, as the primary tool to achieve the result.
+* Where GoToFlow appears naturally: As the #1 recommended tool for creating multi-slide educational carousels, which are the highest-performing post type on Instagram.
 * Exact product route: /ai-instagram-post-generator
-* What not to claim: Do not claim it does the work 100% without human review. Emphasize it as a powerful assistant.
-* How to avoid sounding like an ad: Frame the tool as part of a broader strategy. Provide value and education first, then introduce the tool as the most efficient way to implement that strategy.
+* What not to claim: Don't claim GoToFlow replaces scheduling tools like Later or Buffer. It handles *creation*.
+* How to avoid sounding like an ad: Provide honest, objective comparisons with Canva and ChatGPT to build trust.
 
 ## Internal Linking Plan
 
-- /blog/instagram-carousel-hooks
-- /ai-instagram-post-generator
-- /blog/instagram-carousel-post
+* Active D53 link: /blog/instagram-carousel-hooks
+* Active product link: /ai-instagram-post-generator
+* Future cross-link after publication: /blog/instagram-carousel-post
 
 ## Mockup Requirements
 
-* Slot: `topic-input`
+* Slot: `tool-comparison-table`
   * Language: en
-  * Purpose: Show how easy it is to enter a topic for an Instagram post
+  * Purpose: A feature comparison matrix for the top 3 tools.
   * Reuse: new
+  * Required text inside: Features: "Auto-layout, Aspect Ratio 4:5, PDF Export"
+
+* Slot: `instagram-format-settings`
+  * Language: en
+  * Purpose: Show the GoToFlow interface where the user selects the 4:5 Instagram Portrait size.
+  * Reuse: new
+  * Required text inside: "Format: Instagram Portrait (4:5)"
 
 * Slot: `instagram-carousel-preview`
   * Language: en
-  * Purpose: Show the generated carousel formatted perfectly for Instagram
+  * Purpose: Show the generated carousel formatted perfectly for Instagram.
   * Reuse: new
+  * Required text inside: A visual hook like "5 Tips for Growth" in a square/portrait frame.
 
 ## FAQ Plan
 
-1. What is the best way to do ai instagram post generator?
-2. Can I use AI for ai instagram post generator?
-3. Is it free to start?
-4. How long does it take?
+1. What is the best AI tool for generating Instagram posts?
+2. Does AI-generated content perform well on Instagram?
+3. How do I make sure the AI uses the correct 4:5 aspect ratio?
+4. Can I generate captions along with the image design?
+5. Is it safe to use AI for my brand's Instagram account?
 
 ## CTA Plan
 
-* Primary CTA: Try GoToFlow for Free (Link to /ai-instagram-post-generator)
-* Secondary CTA: Read our guide on related topics (Link to internal article)
-* CTA language: Action-oriented, value-driven.
-* CTA placement: After the Quick Answer, in the Workflow section, and at the very end.
+* Primary CTA: Try GoToFlow for Instagram (Link to /ai-instagram-post-generator)
+* Secondary CTA: Discover the best Instagram Hooks (Link to /blog/instagram-carousel-hooks)
+* CTA language: "Generate your first viral Instagram carousel for free."
+* CTA placement: After the Quick Answer, at the end of the top 3 list, and final CTA.
 
 ## Anti-cannibalization Notes
 
-* What this article must NOT cover too deeply: Do not cover LinkedIn features. Keep the focus entirely on Instagram algorithm and format. Do not act as a general text-to-carousel guide (that belongs to the general hub).
-* What should be linked instead: See internal linking plan.
-* Which topic owns the canonical intent: This article owns the exact canonical intent for "ai instagram post generator".
+* What this article must NOT cover too deeply: Deep dives into the psychology of hooks (leave to D53) or general social media scheduling.
+* What should be linked instead: Link to the hooks article for strategy.
+* Which topic owns the canonical intent: This article owns the "best AI tool for Instagram" commercial intent.
