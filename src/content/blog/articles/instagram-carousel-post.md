@@ -10,14 +10,14 @@ finalPriorityScore: 89
 priorityTier: "P1"
 productCapabilityIds: ["instagramCarouselGeneration"]
 intentId: "en:instagram-carousel-post"
-clusterId: "en:instagram-carousel"
+clusterId: "en:instagram-post-generator"
 articleRole: "supporting"
-hubSlug: "how-to-make-an-instagram-carousel-with-ai"
+hubSlug: "ai-instagram-post-generator"
 canonical: "https://gotoflow.io/blog/instagram-carousel-post"
 createdAt: "2026-06-09"
 targetKeyword: "instagram carousel post"
 secondaryKeywords: "carousel on instagram, carousel instagram post"
-relatedProductRoute: "/ai-carousel-maker"
+relatedProductRoute: "/ai-instagram-post-generator"
 articleType: "best practices guide"
 demandEvidence: "89 rising 3%"
 canonicalRisk: "SAFE (canonicalized topic)"
@@ -99,4 +99,4 @@ Mobile screens are small, and users often browse outdoors or in low light. Ensur
 
 Applying all these rules manually—formatting the 4:5 ratio, balancing text across 10 slides, and ensuring high contrast—can take hours in standard design software.
 
-With [GoToFlow](/ai-carousel-maker), these best practices are baked in. You simply provide the text or the core idea. The AI automatically generates a perfectly paced, highly readable, 4:5 aspect ratio carousel designed specifically to perform on Instagram.
+With [GoToFlow](/ai-instagram-post-generator), these best practices are baked in. You simply provide the text or the core idea. The AI automatically generates a perfectly paced, highly readable, 4:5 aspect ratio carousel designed specifically to perform on Instagram.

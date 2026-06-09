@@ -100,19 +100,10 @@
         "slug": "ai-carousel-generator",
         "url": "/blog/ai-carousel-generator",
         "role": "hub"
-      },
-      {
-        "slug": "ai-instagram-post-generator",
-        "url": "/blog/ai-instagram-post-generator",
-        "role": "supporting",
-        "intentId": "en:ai-instagram-post-generator",
-        "priorityTier": "P1",
-        "status": "draft_preview"
       }
     ],
     "supportingArticles": [
-      "content-calendar-to-carousel",
-      "ai-instagram-post-generator"
+      "content-calendar-to-carousel"
     ],
     "missingTopics": [
       "blog to carousel"
@@ -152,19 +143,10 @@
         "intentId": "en:instagram-carousel-hooks",
         "priorityTier": "P2",
         "status": "draft_preview"
-      },
-      {
-        "slug": "instagram-carousel-post",
-        "url": "/blog/instagram-carousel-post",
-        "role": "supporting",
-        "intentId": "en:instagram-carousel-post",
-        "priorityTier": "P1",
-        "status": "draft_preview"
       }
     ],
     "supportingArticles": [
-      "instagram-carousel-hooks",
-      "instagram-carousel-post"
+      "instagram-carousel-hooks"
     ],
     "missingTopics": [
       "instagram carousel sizes"
@@ -244,5 +226,46 @@
     },
     "notes": "RU LinkedIn cluster",
     "lastReviewed": "2026-06-08"
+  },
+  {
+    "clusterId": "en:instagram-post-generator",
+    "clusterName": "EN Instagram Post Generator",
+    "language": "en",
+    "productRoute": "/ai-instagram-post-generator",
+    "hubArticle": "ai-instagram-post-generator",
+    "hubSlug": "ai-instagram-post-generator",
+    "articleRoles": [
+      {
+        "slug": "ai-instagram-post-generator",
+        "url": "/blog/ai-instagram-post-generator",
+        "role": "hub",
+        "intentId": "en:ai-instagram-post-generator",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "instagram-carousel-post",
+        "url": "/blog/instagram-carousel-post",
+        "role": "supporting",
+        "intentId": "en:instagram-carousel-post",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      }
+    ],
+    "supportingArticles": [
+      "instagram-carousel-post"
+    ],
+    "missingTopics": [],
+    "internalLinkingRules": {
+      "mustLinkToHub": true,
+      "mustLinkToProductRoute": true,
+      "sameLanguageOnly": true,
+      "recommendedLinks": [
+        "/ai-instagram-post-generator",
+        "/blog/ai-instagram-post-generator"
+      ]
+    },
+    "notes": "Instagram Post Generator cluster created during D80 Recovery",
+    "lastReviewed": "2026-06-09"
   }
 ]

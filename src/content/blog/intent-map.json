@@ -229,12 +229,12 @@
   {
     "intentId": "en:ai-instagram-post-generator",
     "language": "en",
-    "cluster": "en:ai-carousel-generator",
+    "cluster": "en:instagram-post-generator",
     "searchIntent": "Find the best AI instagram post generator tools",
     "intentType": "commercial",
     "ownerUrl": "/blog/ai-instagram-post-generator",
     "ownerSlug": "ai-instagram-post-generator",
-    "ownerRole": "supporting",
+    "ownerRole": "hub",
     "supportingUrls": [],
     "supportingSlugs": [],
     "forbiddenNearDuplicates": [],
@@ -283,7 +283,7 @@
   {
     "intentId": "en:instagram-carousel-post",
     "language": "en",
-    "cluster": "en:instagram-carousel",
+    "cluster": "en:instagram-post-generator",
     "searchIntent": "Learn about instagram carousel post strategy and format",
     "intentType": "informational",
     "ownerUrl": "/blog/instagram-carousel-post",

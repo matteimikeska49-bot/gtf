@@ -10,14 +10,14 @@ finalPriorityScore: 85
 priorityTier: "P1"
 productCapabilityIds: ["instagramCarouselGeneration"]
 intentId: "en:ai-instagram-post-generator"
-clusterId: "en:ai-carousel-generator"
-articleRole: "supporting"
-hubSlug: "ai-carousel-generator"
+clusterId: "en:instagram-post-generator"
+articleRole: "hub"
+hubSlug: "ai-instagram-post-generator"
 canonical: "https://gotoflow.io/blog/ai-instagram-post-generator"
 createdAt: "2026-06-09"
 targetKeyword: "ai instagram post generator"
 secondaryKeywords: "ai post maker, instagram content creator, ai carousel for instagram"
-relatedProductRoute: "/ai-carousel-maker"
+relatedProductRoute: "/ai-instagram-post-generator"
 articleType: "tool comparison / guide"
 demandEvidence: "100 rising 5% / 80 imp"
 canonicalRisk: "SAFE (differentiated from general AI generators)"
@@ -79,7 +79,7 @@ Instagram is a highly visual platform. If your text is too small or blends into 
 Here is how the top AI tools stack up when it comes to generating Instagram content.
 
 ### 1. GoToFlow (Best for Educational Carousels)
-If your goal is to share knowledge, tips, or industry insights, [GoToFlow](/ai-carousel-maker) is the premier choice. It is specifically designed to turn text prompts into multi-slide, swipeable carousels. It automatically handles the slide pacing, applies the 4:5 aspect ratio, and exports a sequence of images perfectly formatted for your Instagram feed.
+If your goal is to share knowledge, tips, or industry insights, [GoToFlow](/ai-instagram-post-generator) is the premier choice. It is specifically designed to turn text prompts into multi-slide, swipeable carousels. It automatically handles the slide pacing, applies the 4:5 aspect ratio, and exports a sequence of images perfectly formatted for your Instagram feed.
 
 ### 2. Canva Magic Studio (Best for Single Image Edits)
 Canva remains the industry standard for graphic design. Its AI features (Magic Studio) are fantastic for removing backgrounds, expanding images, or applying artistic styles to a single photo. However, creating a 10-slide carousel in Canva still requires significant manual layout work and copy-pasting.
