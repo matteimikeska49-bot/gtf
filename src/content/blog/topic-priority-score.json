@@ -7,25 +7,25 @@
     "relatedProductRoute": "",
     "topicStatus": "draft",
     "keywordEvidence": {
-      "source": "existing_topic_map",
+      "source": "consolidated_demand_import",
       "confidence": "medium",
       "exactVolumeKnown": false,
       "volume": null,
-      "trend": "unknown"
+      "trend": "rising"
     },
     "scores": {
-      "demandScore": 5,
+      "demandScore": 3,
       "difficultyScore": 5,
       "productFitScore": 5,
       "businessValueScore": 5,
       "cannibalizationSafetyScore": 5,
       "mockupReadinessScore": 5,
-      "dataConfidenceScore": 4,
-      "finalPriorityScore": 50
+      "dataConfidenceScore": 2,
+      "finalPriorityScore": 44
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "kak-sdelat-karusel-dlya-instagram-s-ii",
@@ -35,25 +35,25 @@
     "relatedProductRoute": "",
     "topicStatus": "published",
     "keywordEvidence": {
-      "source": "existing_topic_map",
+      "source": "yandex_wordstat_manual",
       "confidence": "medium",
-      "exactVolumeKnown": false,
-      "volume": null,
+      "exactVolumeKnown": true,
+      "volume": 1090,
       "trend": "unknown"
     },
     "scores": {
-      "demandScore": 5,
+      "demandScore": 10,
       "difficultyScore": 5,
       "productFitScore": 5,
       "businessValueScore": 5,
       "cannibalizationSafetyScore": 5,
       "mockupReadinessScore": 5,
-      "dataConfidenceScore": 4,
-      "finalPriorityScore": 50
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 62
     },
-    "priorityTier": "P3",
+    "priorityTier": "P2",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "instagram-carousel-ideas",
@@ -63,25 +63,25 @@
     "relatedProductRoute": "",
     "topicStatus": "published",
     "keywordEvidence": {
-      "source": "existing_topic_map",
+      "source": "consolidated_demand_import",
       "confidence": "medium",
       "exactVolumeKnown": false,
       "volume": null,
       "trend": "unknown"
     },
     "scores": {
-      "demandScore": 5,
+      "demandScore": 6,
       "difficultyScore": 5,
       "productFitScore": 5,
       "businessValueScore": 5,
       "cannibalizationSafetyScore": 5,
       "mockupReadinessScore": 5,
-      "dataConfidenceScore": 4,
-      "finalPriorityScore": 50
+      "dataConfidenceScore": 2,
+      "finalPriorityScore": 51
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "idei-dlya-karuseli-instagram",
@@ -109,7 +109,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "instagram-carousel-prompts",
@@ -137,7 +137,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "prompty-dlya-karuseley-v-instagram",
@@ -165,7 +165,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "how-to-make-linkedin-carousel-with-ai",
@@ -175,25 +175,25 @@
     "relatedProductRoute": "",
     "topicStatus": "draft",
     "keywordEvidence": {
-      "source": "existing_topic_map",
+      "source": "consolidated_demand_import",
       "confidence": "medium",
       "exactVolumeKnown": false,
       "volume": null,
       "trend": "unknown"
     },
     "scores": {
-      "demandScore": 5,
+      "demandScore": 6,
       "difficultyScore": 5,
       "productFitScore": 5,
       "businessValueScore": 5,
       "cannibalizationSafetyScore": 5,
       "mockupReadinessScore": 5,
-      "dataConfidenceScore": 4,
-      "finalPriorityScore": 50
+      "dataConfidenceScore": 2,
+      "finalPriorityScore": 51
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "kak-sdelat-karusel-linkedin-s-ai",
@@ -221,7 +221,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "linkedin-carousel-prompts",
@@ -249,7 +249,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "prompty-dlya-karuseley-linkedin",
@@ -277,7 +277,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "repurpose-blog-post-linkedin-carousel-ai",
@@ -305,7 +305,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "kak-peredelat-statyu-v-karusel-linkedin",
@@ -333,7 +333,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "ai-carousel-maker-vs-manual-design",
@@ -361,7 +361,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "dizayn-karuseley-neyroset-vs-canva",
@@ -389,7 +389,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "best-instagram-carousel-examples",
@@ -417,7 +417,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "primery-karuseley-instagram",
@@ -445,7 +445,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "best-linkedin-carousel-examples",
@@ -455,25 +455,25 @@
     "relatedProductRoute": "/linkedin-carousel-maker",
     "topicStatus": "approve",
     "keywordEvidence": {
-      "source": "serp_ai_synthesis",
+      "source": "consolidated_demand_import",
       "confidence": "high",
       "exactVolumeKnown": false,
       "volume": null,
       "trend": "unknown"
     },
     "scores": {
-      "demandScore": 3,
+      "demandScore": 6,
       "difficultyScore": 5,
       "productFitScore": 5,
       "businessValueScore": 5,
       "cannibalizationSafetyScore": 5,
       "mockupReadinessScore": 5,
       "dataConfidenceScore": 2,
-      "finalPriorityScore": 44
+      "finalPriorityScore": 51
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "primery-karuseley-linkedin",
@@ -501,7 +501,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "youtube-to-linkedin-carousel-ai",
@@ -529,7 +529,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "kak-peredelat-youtube-v-karusel-linkedin",
@@ -557,7 +557,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "linkedin-carousel-hooks",
@@ -585,7 +585,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "linkedin-document-post-examples",
@@ -613,7 +613,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "text-to-carousel-ai",
@@ -641,7 +641,7 @@
     },
     "priorityTier": "P1",
     "scoringReason": "High product fit and business value for core text-to-carousel capability. Exact volume missing, so data confidence is low.",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "instagram-carousel-hooks",
@@ -669,7 +669,7 @@
     },
     "priorityTier": "P2",
     "scoringReason": "Good informational top-of-funnel demand. Medium product fit since it's about hooks, not the generator itself.",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "best-carousel-cta-examples",
@@ -697,7 +697,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "linkedin-content-strategy-for-founders",
@@ -725,7 +725,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "b2b-case-study-linkedin-carousel",
@@ -753,7 +753,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "content-calendar-to-carousel",
@@ -781,7 +781,7 @@
     },
     "priorityTier": "P2",
     "scoringReason": "Great workflow angle, good product fit. Demand is likely lower than direct 'carousel generator' terms.",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "huki-dlya-karuseli-instagram",
@@ -809,7 +809,7 @@
     },
     "priorityTier": "P3",
     "scoringReason": "Legacy topic auto-scored",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "tekst-v-karusel-neyroset",
@@ -837,7 +837,7 @@
     },
     "priorityTier": "P1",
     "scoringReason": "RU equivalent of text-to-carousel. Strong product fit and business value. No Wordstat data yet.",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   },
   {
     "targetSlug": "b2b-keysy-v-linkedin-karusel",
@@ -865,6 +865,6 @@
     },
     "priorityTier": "P1",
     "scoringReason": "Excellent B2B business value. Low estimated volume but highly targeted intent. High product fit.",
-    "scoringLastUpdated": "2026-06-07"
+    "scoringLastUpdated": "2026-06-09"
   }
 ]

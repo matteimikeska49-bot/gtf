@@ -1,0 +1,302 @@
+keyword,language,country,timeRange,trend,interestScore,relatedQueries,source,lastChecked,sourceUrl,trendType,change,sourceFile,topicCluster,isRelevant
+ai blog post generator,en,US,2026-05-08..2026-06-08,falling,11,,google_trends_manual,2026-06-08,,rising,-20%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,social_content,True
+ai blog post generator,en,US,2026-05-08..2026-06-08,falling,11,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,social_content,True
+ai carousel generator,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,rising,10%,searched_with_rising-searches_US_20260508-2021_20260608-2021(1).csv,ai_carousel,True
+ai carousel generator,en,US,2026-05-08..2026-06-08,rising,54,,google_trends_manual,2026-06-08,,top,20%,searched_with_top-searches_US_20260508-2018_20260608-2018(1).csv,ai_carousel,True
+ai checker,en,US,2026-05-08..2026-06-08,rising,4,,google_trends_manual,2026-06-08,,rising,7%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+ai checker,en,US,2026-05-08..2026-06-08,rising,4,,google_trends_manual,2026-06-08,,top,7%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai content checker,en,US,2026-05-08..2026-06-08,rising,4,,google_trends_manual,2026-06-08,,rising,20%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+ai content checker,en,US,2026-05-08..2026-06-08,rising,4,,google_trends_manual,2026-06-08,,top,20%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai content creation,en,US,2026-05-08..2026-06-08,falling,46,,google_trends_manual,2026-06-08,,rising,-8%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+ai content creation,en,US,2026-05-08..2026-06-08,falling,46,,google_trends_manual,2026-06-08,,top,-8%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai content creation tools,en,US,2026-05-08..2026-06-08,falling,11,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai content creator,en,US,2026-05-08..2026-06-08,rising,42,,google_trends_manual,2026-06-08,,rising,10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+ai content creator,en,US,2026-05-08..2026-06-08,rising,42,,google_trends_manual,2026-06-08,,top,10%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai content detection,en,US,2026-05-08..2026-06-08,falling,24,,google_trends_manual,2026-06-08,,rising,-6%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+ai content detection,en,US,2026-05-08..2026-06-08,falling,24,,google_trends_manual,2026-06-08,,top,-6%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai content detector,en,US,2026-05-08..2026-06-08,falling,10,,google_trends_manual,2026-06-08,,rising,-20%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,False
+ai content detector,en,US,2026-05-08..2026-06-08,falling,10,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,False
+ai content generator,en,US,2026-05-08..2026-06-08,falling,28,,google_trends_manual,2026-06-08,,rising,-10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+ai content generator,en,US,2026-05-08..2026-06-08,falling,28,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai content marketing,en,US,2026-05-08..2026-06-08,falling,71,,google_trends_manual,2026-06-08,,rising,-6%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+ai content marketing,en,US,2026-05-08..2026-06-08,falling,71,,google_trends_manual,2026-06-08,,top,-6%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai content writer,en,US,2026-05-08..2026-06-08,falling,11,,google_trends_manual,2026-06-08,,top,-30%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai content writing,en,US,2026-05-08..2026-06-08,falling,27,,google_trends_manual,2026-06-08,,rising,-10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+ai content writing,en,US,2026-05-08..2026-06-08,falling,27,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai detector,en,US,2026-05-08..2026-06-08,falling,10,,google_trends_manual,2026-06-08,,rising,-20%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,False
+ai detector,en,US,2026-05-08..2026-06-08,falling,10,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,False
+ai facebook post generator,en,US,2026-05-08..2026-06-08,rising,31,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,social_content,True
+ai facebook post generator,en,US,2026-05-08..2026-06-08,rising,31,,google_trends_manual,2026-06-08,,top,40%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,social_content,True
+ai generated content,en,US,2026-05-08..2026-06-08,rising,99,,google_trends_manual,2026-06-08,,rising,30%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+ai generated content,en,US,2026-05-08..2026-06-08,rising,99,,google_trends_manual,2026-06-08,,top,30%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai image generator,en,US,2026-05-08..2026-06-08,rising,84,,google_trends_manual,2026-06-08,,rising,6%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,False
+ai image generator,en,US,2026-05-08..2026-06-08,rising,84,,google_trends_manual,2026-06-08,,top,6%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,False
+ai image generator free,en,US,2026-05-08..2026-06-08,falling,17,,google_trends_manual,2026-06-08,,rising,-30%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,False
+ai image generator free,en,US,2026-05-08..2026-06-08,falling,17,,google_trends_manual,2026-06-08,,top,-30%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,False
+ai instagram post generator,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,rising,5%,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,instagram_carousel,True
+ai instagram post generator,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,top,5%,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,instagram_carousel,True
+ai linkedin post generator,en,US,2026-05-08..2026-06-08,rising,32,,google_trends_manual,2026-06-08,,rising,50%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,linkedin_carousel,True
+ai linkedin post generator,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,top,50%,searched_with_top-searches_US_20260508-2027_20260608-2027 (1).csv,linkedin_carousel,True
+ai mode,en,US,2026-05-08..2026-06-08,rising,20,,google_trends_manual,2026-06-08,,rising,10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+ai mode,en,US,2026-05-08..2026-06-08,rising,20,,google_trends_manual,2026-06-08,,top,10%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+ai music generator,en,US,2026-05-08..2026-06-08,falling,20,,google_trends_manual,2026-06-08,,rising,-40%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,False
+ai music generator,en,US,2026-05-08..2026-06-08,falling,20,,google_trends_manual,2026-06-08,,top,-40%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,False
+ai photo generator,en,US,2026-05-08..2026-06-08,falling,15,,google_trends_manual,2026-06-08,,rising,-1%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,False
+ai photo generator,en,US,2026-05-08..2026-06-08,falling,15,,google_trends_manual,2026-06-08,,top,-1%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,False
+ai picture generator,en,US,2026-05-08..2026-06-08,breakout,15,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,True
+ai picture generator,en,US,2026-05-08..2026-06-08,breakout,15,,google_trends_manual,2026-06-08,,top,Breakout,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,True
+ai post generator free,en,US,2026-05-08..2026-06-08,falling,80,,google_trends_manual,2026-06-08,,rising,-7%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,social_content,True
+ai post generator free,en,US,2026-05-08..2026-06-08,falling,80,,google_trends_manual,2026-06-08,,top,-7%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,social_content,True
+ai poster generator,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,rising,-70%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,True
+ai poster generator,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,top,-70%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,True
+ai social media post generator,en,US,2026-05-08..2026-06-08,rising,38,,google_trends_manual,2026-06-08,,rising,2%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,social_content,True
+ai social media post generator,en,US,2026-05-08..2026-06-08,rising,38,,google_trends_manual,2026-06-08,,top,2%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,social_content,True
+ai social media post generator free,en,US,2026-05-08..2026-06-08,falling,3,,google_trends_manual,2026-06-08,,rising,-70%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,social_content,True
+ai social media post generator free,en,US,2026-05-08..2026-06-08,falling,3,,google_trends_manual,2026-06-08,,top,-70%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,social_content,True
+ai song generator,en,US,2026-05-08..2026-06-08,rising,14,,google_trends_manual,2026-06-08,,rising,150%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,False
+ai song generator,en,US,2026-05-08..2026-06-08,rising,14,,google_trends_manual,2026-06-08,,top,150%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,False
+ai video generator,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,rising,20%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,False
+ai video generator,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,top,20%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,False
+ai video generator free,en,US,2026-05-08..2026-06-08,falling,8,,google_trends_manual,2026-06-08,,rising,-70%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,False
+ai video generator free,en,US,2026-05-08..2026-06-08,falling,8,,google_trends_manual,2026-06-08,,top,-70%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,False
+api design principles,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,rising,250%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+api design principles,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,top,250%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+artificial intelligence news,en,US,2026-05-08..2026-06-08,rising,2,,google_trends_manual,2026-06-08,,rising,10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+artificial intelligence news,en,US,2026-05-08..2026-06-08,rising,2,,google_trends_manual,2026-06-08,,top,10%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+backend development,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,rising,120%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+banks,en,US,2026-05-08..2026-06-08,rising,9,,google_trends_manual,2026-06-08,,rising,8%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+banks,en,US,2026-05-08..2026-06-08,rising,9,,google_trends_manual,2026-06-08,,top,8%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+best ai image generator,en,US,2026-05-08..2026-06-08,rising,31,,google_trends_manual,2026-06-08,,rising,10%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,False
+best ai image generator,en,US,2026-05-08..2026-06-08,rising,31,,google_trends_manual,2026-06-08,,top,10%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,False
+best ai tools for content creation,en,US,2026-05-08..2026-06-08,falling,5,,google_trends_manual,2026-06-08,,rising,-10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+best ai tools for content creation,en,US,2026-05-08..2026-06-08,falling,5,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+best day to post on instagram,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,rising,-90%,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,instagram_carousel,True
+best day to post on instagram,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,top,-90%,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,instagram_carousel,True
+best photo collage apps,en,US,2026-05-08..2026-06-08,breakout,1,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+best photo collage apps,en,US,2026-05-08..2026-06-08,breakout,1,,google_trends_manual,2026-06-08,,top,Breakout,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+best time to post on instagram,en,US,2026-05-08..2026-06-08,rising,26,,google_trends_manual,2026-06-08,,rising,110%,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,instagram_carousel,True
+best time to post on instagram,en,US,2026-05-08..2026-06-08,rising,26,,google_trends_manual,2026-06-08,,top,110%,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,instagram_carousel,True
+best time to post on tiktok,en,US,2026-05-08..2026-06-08,breakout,0,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,other,False
+best time to post on tiktok,en,US,2026-05-08..2026-06-08,breakout,0,,google_trends_manual,2026-06-08,,top,Breakout,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,other,False
+blockchain technology,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,rising,110%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,False
+blockchain technology,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,top,110%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,False
+business process optimization,en,US,2026-05-08..2026-06-08,rising,0,,google_trends_manual,2026-06-08,,rising,4%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+candy ai,en,US,2026-05-08..2026-06-08,rising,3,,google_trends_manual,2026-06-08,,rising,4%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+candy ai,en,US,2026-05-08..2026-06-08,rising,3,,google_trends_manual,2026-06-08,,top,4%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+canva,en,US,2026-05-08..2026-06-08,falling,100,,google_trends_manual,2026-06-08,,rising,-10%,searched_with_rising-searches_US_20260508-2021_20260608-2021 (1)(2).csv,other,False
+canva,en,US,2026-05-08..2026-06-08,rising,40,,google_trends_manual,2026-06-08,,top,40%,searched_with_top-searches_US_20260508-2018_20260608-2018(1).csv,other,False
+canva carousel,en,US,2026-05-08..2026-06-08,falling,22,,google_trends_manual,2026-06-08,,top,-8%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,carousel_general,True
+canva instagram carousel,en,US,2026-05-08..2026-06-08,falling,19,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+capcut,en,US,2026-05-08..2026-06-08,falling,2,,google_trends_manual,2026-06-08,,rising,-90%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,other,False
+capcut,en,US,2026-05-08..2026-06-08,falling,2,,google_trends_manual,2026-06-08,,top,-90%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,other,False
+carousel collage instagram,en,US,2026-05-08..2026-06-08,rising,3,,google_trends_manual,2026-06-08,,rising,8%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel instagram meaning,en,US,2026-05-08..2026-06-08,falling,10,,google_trends_manual,2026-06-08,,top,-30%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel instagram post,en,US,2026-05-08..2026-06-08,rising,93,,google_trends_manual,2026-06-08,,rising,8%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel instagram post,en,US,2026-05-08..2026-06-08,rising,93,,google_trends_manual,2026-06-08,,top,8%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel instagram template,en,US,2026-05-08..2026-06-08,rising,14,,google_trends_manual,2026-06-08,,rising,10%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel instagram template,en,US,2026-05-08..2026-06-08,rising,14,,google_trends_manual,2026-06-08,,top,10%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel meaning,en,US,2026-05-08..2026-06-08,falling,11,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,carousel_general,True
+carousel meaning instagram,en,US,2026-05-08..2026-06-08,falling,10,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel meaning on instagram,en,US,2026-05-08..2026-06-08,falling,4,,google_trends_manual,2026-06-08,,rising,-1%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel meaning on instagram,en,US,2026-05-08..2026-06-08,falling,4,,google_trends_manual,2026-06-08,,top,-1%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel of progress,en,US,2026-05-08..2026-06-08,breakout,10,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2021_20260608-2021(1).csv,carousel_general,True
+carousel of progress,en,US,2026-05-08..2026-06-08,breakout,5,,google_trends_manual,2026-06-08,,top,Breakout,searched_with_top-searches_US_20260508-2018_20260608-2018(1).csv,carousel_general,True
+carousel on instagram,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,rising,4%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel on instagram,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,top,4%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel on linkedin,en,US,2026-05-08..2026-06-08,falling,79,,google_trends_manual,2026-06-08,,rising,-10%,searched_with_rising-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+carousel on linkedin,en,US,2026-05-08..2026-06-08,falling,79,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+carousel post,en,US,2026-05-08..2026-06-08,rising,88,,google_trends_manual,2026-06-08,,rising,3%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,carousel_general,True
+carousel post,en,US,2026-05-08..2026-06-08,rising,88,,google_trends_manual,2026-06-08,,top,3%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,carousel_general,True
+carousel post instagram,en,US,2026-05-08..2026-06-08,stable,88,,google_trends_manual,2026-06-08,,rising,0%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel post instagram,en,US,2026-05-08..2026-06-08,stable,88,,google_trends_manual,2026-06-08,,top,0%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel post linkedin,en,US,2026-05-08..2026-06-08,rising,96,,google_trends_manual,2026-06-08,,rising,4%,searched_with_rising-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+carousel post linkedin,en,US,2026-05-08..2026-06-08,rising,96,,google_trends_manual,2026-06-08,,top,4%,searched_with_top-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+carousel posts instagram,en,US,2026-05-08..2026-06-08,rising,34,,google_trends_manual,2026-06-08,,rising,8%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+carousel posts instagram,en,US,2026-05-08..2026-06-08,rising,34,,google_trends_manual,2026-06-08,,top,8%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+claude,en,US,2026-05-08..2026-06-08,rising,96,,google_trends_manual,2026-06-08,,rising,60%,searched_with_rising-searches_US_20260508-2021_20260608-2021(1).csv,other,False
+claude,en,US,2026-05-08..2026-06-08,rising,49,,google_trends_manual,2026-06-08,,top,60%,searched_with_top-searches_US_20260508-2018_20260608-2018(1).csv,other,False
+claude ai,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,rising,10%,searched_with_rising-searches_US_20260508-2021_20260608-2021(1).csv,ai_content,False
+claude ai,en,US,2026-05-08..2026-06-08,rising,44,,google_trends_manual,2026-06-08,,top,1%,searched_with_top-searches_US_20260508-2018_20260608-2018(1).csv,ai_content,False
+cloud computing services,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+codex,en,US,2026-05-08..2026-06-08,rising,12,,google_trends_manual,2026-06-08,,rising,70%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+codex,en,US,2026-05-08..2026-06-08,rising,12,,google_trends_manual,2026-06-08,,top,70%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+computer vision projects,en,US,2026-05-08..2026-06-08,rising,0,,google_trends_manual,2026-06-08,,rising,10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+content marketing strategies,en,US,2026-05-08..2026-06-08,falling,3,,google_trends_manual,2026-06-08,,top,-30%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+content writer ai,en,US,2026-05-08..2026-06-08,falling,10,,google_trends_manual,2026-06-08,,top,-30%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+database optimization,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+database optimization,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,top,40%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+discussion post generator,en,US,2026-05-08..2026-06-08,falling,2,,google_trends_manual,2026-06-08,,rising,-70%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,social_content,True
+discussion post generator,en,US,2026-05-08..2026-06-08,falling,2,,google_trends_manual,2026-06-08,,top,-70%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,social_content,True
+download instagram carousel images,en,US,2026-05-08..2026-06-08,breakout,0,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+events,en,US,2026-05-08..2026-06-08,stable,24,,google_trends_manual,2026-06-08,,rising,0%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+events,en,US,2026-05-08..2026-06-08,stable,24,,google_trends_manual,2026-06-08,,top,0%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+font generator,en,US,2026-05-08..2026-06-08,rising,28,,google_trends_manual,2026-06-08,,rising,4%,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,other,False
+font generator,en,US,2026-05-08..2026-06-08,rising,28,,google_trends_manual,2026-06-08,,top,4%,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,other,False
+free ai image generator,en,US,2026-05-08..2026-06-08,falling,6,,google_trends_manual,2026-06-08,,rising,-70%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,False
+free ai image generator,en,US,2026-05-08..2026-06-08,falling,6,,google_trends_manual,2026-06-08,,top,-70%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,False
+free ai instagram post generator,en,US,2026-05-08..2026-06-08,falling,5,,google_trends_manual,2026-06-08,,rising,-80%,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,instagram_carousel,True
+free ai instagram post generator,en,US,2026-05-08..2026-06-08,falling,5,,google_trends_manual,2026-06-08,,top,-80%,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,instagram_carousel,True
+free ai social media post generator,en,US,2026-05-08..2026-06-08,rising,16,,google_trends_manual,2026-06-08,,rising,170%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,social_content,True
+free ai social media post generator,en,US,2026-05-08..2026-06-08,rising,16,,google_trends_manual,2026-06-08,,top,170%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,social_content,True
+free ai video generator,en,US,2026-05-08..2026-06-08,rising,23,,google_trends_manual,2026-06-08,,rising,30%,searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv,ai_content,False
+free ai video generator,en,US,2026-05-08..2026-06-08,rising,23,,google_trends_manual,2026-06-08,,top,30%,searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv,ai_content,False
+gemini,en,US,2026-05-08..2026-06-08,rising,21,,google_trends_manual,2026-06-08,,rising,20%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+gemini,en,US,2026-05-08..2026-06-08,rising,21,,google_trends_manual,2026-06-08,,top,20%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+gemini ai,en,US,2026-05-08..2026-06-08,breakout,44,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2021_20260608-2021(1).csv,ai_content,False
+gemini ai,en,US,2026-05-08..2026-06-08,rising,21,,google_trends_manual,2026-06-08,,top,20%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,False
+google ai,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,rising,5%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+google ai,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,top,5%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+google drive,en,US,2026-05-08..2026-06-08,rising,3,,google_trends_manual,2026-06-08,,rising,140%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,other,False
+google gemini,en,US,2026-05-08..2026-06-08,rising,10,,google_trends_manual,2026-06-08,,rising,60%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+google gemini,en,US,2026-05-08..2026-06-08,rising,10,,google_trends_manual,2026-06-08,,top,60%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+grok,en,US,2026-05-08..2026-06-08,falling,34,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+hospitals,en,US,2026-05-08..2026-06-08,rising,4,,google_trends_manual,2026-06-08,,rising,20%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+hospitals,en,US,2026-05-08..2026-06-08,rising,4,,google_trends_manual,2026-06-08,,top,20%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+how do i post a carousel on instagram,en,US,2026-05-08..2026-06-08,rising,4,,google_trends_manual,2026-06-08,,rising,190%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how do i post a carousel on instagram,en,US,2026-05-08..2026-06-08,rising,4,,google_trends_manual,2026-06-08,,top,190%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how many images in an instagram carousel,en,US,2026-05-08..2026-06-08,rising,0,,google_trends_manual,2026-06-08,,rising,"4,500%",searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to create a carousel on instagram,en,US,2026-05-08..2026-06-08,rising,5,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to create a carousel on instagram,en,US,2026-05-08..2026-06-08,rising,5,,google_trends_manual,2026-06-08,,top,40%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to create a carousel post on linkedin,en,US,2026-05-08..2026-06-08,falling,40,,google_trends_manual,2026-06-08,,rising,-4%,searched_with_rising-searches_US_20260508-2023_20260608-2023(2).csv,linkedin_carousel,True
+how to create a carousel post on linkedin,en,US,2026-05-08..2026-06-08,falling,40,,google_trends_manual,2026-06-08,,top,-4%,searched_with_top-searches_US_20260508-2023_20260608-2023(1).csv,linkedin_carousel,True
+how to create carousel post on instagram,en,US,2026-05-08..2026-06-08,falling,3,,google_trends_manual,2026-06-08,,rising,-4%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to do a carousel post on instagram,en,US,2026-05-08..2026-06-08,rising,3,,google_trends_manual,2026-06-08,,rising,120%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to humanize ai content,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,top,-30%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,ai_content,True
+how to make a carousel on instagram,en,US,2026-05-08..2026-06-08,rising,11,,google_trends_manual,2026-06-08,,rising,60%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to make a carousel on instagram,en,US,2026-05-08..2026-06-08,rising,11,,google_trends_manual,2026-06-08,,top,60%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to make an instagram carousel,en,US,2026-05-08..2026-06-08,rising,3,,google_trends_manual,2026-06-08,,rising,30%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to make carousel on instagram,en,US,2026-05-08..2026-06-08,rising,17,,google_trends_manual,2026-06-08,,rising,70%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to make carousel on instagram,en,US,2026-05-08..2026-06-08,rising,17,,google_trends_manual,2026-06-08,,top,70%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to make carousel post on instagram,en,US,2026-05-08..2026-06-08,rising,5,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to make carousel post on instagram,en,US,2026-05-08..2026-06-08,rising,5,,google_trends_manual,2026-06-08,,top,40%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to make instagram carousel,en,US,2026-05-08..2026-06-08,rising,20,,google_trends_manual,2026-06-08,,rising,1%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to make instagram carousel,en,US,2026-05-08..2026-06-08,rising,20,,google_trends_manual,2026-06-08,,top,1%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to make seamless carousel instagram,en,US,2026-05-08..2026-06-08,breakout,1,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to post a carousel on instagram,en,US,2026-05-08..2026-06-08,rising,13,,google_trends_manual,2026-06-08,,rising,10%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to post a carousel on instagram,en,US,2026-05-08..2026-06-08,rising,13,,google_trends_manual,2026-06-08,,top,10%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to post a carousel on linkedin,en,US,2026-05-08..2026-06-08,rising,97,,google_trends_manual,2026-06-08,,rising,160%,searched_with_rising-searches_US_20260508-2023_20260608-2023(2).csv,linkedin_carousel,True
+how to post a carousel on linkedin,en,US,2026-05-08..2026-06-08,rising,97,,google_trends_manual,2026-06-08,,top,160%,searched_with_top-searches_US_20260508-2023_20260608-2023(1).csv,linkedin_carousel,True
+how to post carousel on instagram,en,US,2026-05-08..2026-06-08,rising,19,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to post carousel on instagram,en,US,2026-05-08..2026-06-08,rising,19,,google_trends_manual,2026-06-08,,top,40%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+how to post carousel on linkedin,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2023_20260608-2023(2).csv,linkedin_carousel,True
+how to post carousel on linkedin,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,top,40%,searched_with_top-searches_US_20260508-2023_20260608-2023(1).csv,linkedin_carousel,True
+instagram caption generator,en,US,2026-05-08..2026-06-08,falling,4,,google_trends_manual,2026-06-08,,rising,-80%,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,instagram_carousel,True
+instagram caption generator,en,US,2026-05-08..2026-06-08,falling,4,,google_trends_manual,2026-06-08,,top,-80%,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,instagram_carousel,True
+instagram carousel ads,en,US,2026-05-08..2026-06-08,rising,7,,google_trends_manual,2026-06-08,,rising,20%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel ads,en,US,2026-05-08..2026-06-08,rising,7,,google_trends_manual,2026-06-08,,top,20%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel app,en,US,2026-05-08..2026-06-08,falling,18,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel aspect ratio,en,US,2026-05-08..2026-06-08,rising,10,,google_trends_manual,2026-06-08,,rising,20%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel aspect ratio,en,US,2026-05-08..2026-06-08,rising,10,,google_trends_manual,2026-06-08,,top,20%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel canva,en,US,2026-05-08..2026-06-08,falling,20,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel collage,en,US,2026-05-08..2026-06-08,rising,5,,google_trends_manual,2026-06-08,,rising,130%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel collage,en,US,2026-05-08..2026-06-08,rising,5,,google_trends_manual,2026-06-08,,top,130%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel cutter,en,US,2026-05-08..2026-06-08,breakout,0,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel dimensions,en,US,2026-05-08..2026-06-08,falling,4,,google_trends_manual,2026-06-08,,top,-40%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel examples,en,US,2026-05-08..2026-06-08,falling,7,,google_trends_manual,2026-06-08,,top,-40%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel maker,en,US,2026-05-08..2026-06-08,rising,5,,google_trends_manual,2026-06-08,,rising,30%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel maker,en,US,2026-05-08..2026-06-08,rising,5,,google_trends_manual,2026-06-08,,top,30%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel mockup,en,US,2026-05-08..2026-06-08,rising,2,,google_trends_manual,2026-06-08,,rising,50%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel post,en,US,2026-05-08..2026-06-08,rising,89,,google_trends_manual,2026-06-08,,rising,3%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel post,en,US,2026-05-08..2026-06-08,rising,89,,google_trends_manual,2026-06-08,,top,3%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel posts,en,US,2026-05-08..2026-06-08,rising,34,,google_trends_manual,2026-06-08,,rising,7%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel posts,en,US,2026-05-08..2026-06-08,rising,34,,google_trends_manual,2026-06-08,,top,7%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel size,en,US,2026-05-08..2026-06-08,falling,25,,google_trends_manual,2026-06-08,,rising,-3%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel size,en,US,2026-05-08..2026-06-08,falling,25,,google_trends_manual,2026-06-08,,top,-3%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel size 2026,en,US,2026-05-08..2026-06-08,falling,9,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram carousel template,en,US,2026-05-08..2026-06-08,falling,11,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram font generator,en,US,2026-05-08..2026-06-08,rising,22,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,instagram_carousel,True
+instagram font generator,en,US,2026-05-08..2026-06-08,rising,22,,google_trends_manual,2026-06-08,,top,40%,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,instagram_carousel,True
+instagram post carousel,en,US,2026-05-08..2026-06-08,rising,88,,google_trends_manual,2026-06-08,,rising,2%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram post carousel,en,US,2026-05-08..2026-06-08,rising,88,,google_trends_manual,2026-06-08,,top,2%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram post dimensions,en,US,2026-05-08..2026-06-08,breakout,2,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram post generator free,en,US,2026-05-08..2026-06-08,falling,28,,google_trends_manual,2026-06-08,,rising,-40%,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,instagram_carousel,True
+instagram post generator free,en,US,2026-05-08..2026-06-08,falling,28,,google_trends_manual,2026-06-08,,top,-40%,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,instagram_carousel,True
+instagram post mockup generator,en,US,2026-05-08..2026-06-08,falling,3,,google_trends_manual,2026-06-08,,rising,-70%,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,instagram_carousel,True
+instagram post mockup generator,en,US,2026-05-08..2026-06-08,falling,3,,google_trends_manual,2026-06-08,,top,-70%,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,instagram_carousel,True
+instagram post size,en,US,2026-05-08..2026-06-08,breakout,33,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,instagram_carousel,True
+instagram post size,en,US,2026-05-08..2026-06-08,breakout,33,,google_trends_manual,2026-06-08,,top,Breakout,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,instagram_carousel,True
+instagram post template,en,US,2026-05-08..2026-06-08,rising,24,,google_trends_manual,2026-06-08,,rising,130%,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,instagram_carousel,True
+instagram post template,en,US,2026-05-08..2026-06-08,rising,24,,google_trends_manual,2026-06-08,,top,130%,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,instagram_carousel,True
+instagram seamless carousel,en,US,2026-05-08..2026-06-08,rising,9,,google_trends_manual,2026-06-08,,rising,50%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram seamless carousel,en,US,2026-05-08..2026-06-08,rising,9,,google_trends_manual,2026-06-08,,top,50%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram size,en,US,2026-05-08..2026-06-08,falling,25,,google_trends_manual,2026-06-08,,rising,-5%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram size,en,US,2026-05-08..2026-06-08,falling,25,,google_trends_manual,2026-06-08,,top,-5%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+instagram video carousel,en,US,2026-05-08..2026-06-08,falling,20,,google_trends_manual,2026-06-08,,top,-30%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+linkedin,en,US,2026-05-08..2026-06-08,falling,39,,google_trends_manual,2026-06-08,,rising,-10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,linkedin_carousel,True
+linkedin,en,US,2026-05-08..2026-06-08,falling,39,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,linkedin_carousel,True
+linkedin carousel,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,top,50%,searched_with_top-searches_US_20260508-2018_20260608-2018(1).csv,linkedin_carousel,True
+linkedin carousel ad examples,en,US,2026-05-08..2026-06-08,breakout,1,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin carousel ad examples,en,US,2026-05-08..2026-06-08,breakout,1,,google_trends_manual,2026-06-08,,top,Breakout,searched_with_top-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin carousel ad specs,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,rising,-70%,searched_with_rising-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin carousel ad specs,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,top,-70%,searched_with_top-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin carousel ads,en,US,2026-05-08..2026-06-08,falling,24,,google_trends_manual,2026-06-08,,rising,-1%,searched_with_rising-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin carousel ads,en,US,2026-05-08..2026-06-08,falling,24,,google_trends_manual,2026-06-08,,top,-1%,searched_with_top-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin carousel dimensions,en,US,2026-05-08..2026-06-08,falling,14,,google_trends_manual,2026-06-08,,rising,-50%,searched_with_rising-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin carousel dimensions,en,US,2026-05-08..2026-06-08,falling,14,,google_trends_manual,2026-06-08,,top,-50%,searched_with_top-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin carousel post,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,rising,10%,searched_with_rising-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin carousel post,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,top,10%,searched_with_top-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin carousel post examples,en,US,2026-05-08..2026-06-08,falling,8,,google_trends_manual,2026-06-08,,rising,-90%,searched_with_rising-searches_US_20260508-2023_20260608-2023(2).csv,linkedin_carousel,True
+linkedin carousel post examples,en,US,2026-05-08..2026-06-08,falling,8,,google_trends_manual,2026-06-08,,top,-90%,searched_with_top-searches_US_20260508-2023_20260608-2023(1).csv,linkedin_carousel,True
+linkedin carousel post size,en,US,2026-05-08..2026-06-08,falling,12,,google_trends_manual,2026-06-08,,rising,-60%,searched_with_rising-searches_US_20260508-2023_20260608-2023(2).csv,linkedin_carousel,True
+linkedin carousel post size,en,US,2026-05-08..2026-06-08,falling,12,,google_trends_manual,2026-06-08,,top,-60%,searched_with_top-searches_US_20260508-2023_20260608-2023(1).csv,linkedin_carousel,True
+linkedin carousel size,en,US,2026-05-08..2026-06-08,falling,19,,google_trends_manual,2026-06-08,,rising,-50%,searched_with_rising-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin carousel size,en,US,2026-05-08..2026-06-08,falling,19,,google_trends_manual,2026-06-08,,top,-50%,searched_with_top-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin pdf carousel,en,US,2026-05-08..2026-06-08,falling,58,,google_trends_manual,2026-06-08,,rising,-20%,searched_with_rising-searches_US_20260508-2022_20260608-2022(2).csv,linkedin_carousel,True
+linkedin pdf carousel,en,US,2026-05-08..2026-06-08,falling,100,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2025_20260608-2025(1).csv,linkedin_carousel,True
+meta business suite,en,US,2026-05-08..2026-06-08,rising,3,,google_trends_manual,2026-06-08,,rising,60%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,other,False
+microservices architecture,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,rising,20%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+museums,en,US,2026-05-08..2026-06-08,rising,2,,google_trends_manual,2026-06-08,,rising,30%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+museums,en,US,2026-05-08..2026-06-08,rising,2,,google_trends_manual,2026-06-08,,top,30%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+new york times,en,US,2026-05-08..2026-06-08,rising,5,,google_trends_manual,2026-06-08,,rising,30%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+new york times,en,US,2026-05-08..2026-06-08,rising,5,,google_trends_manual,2026-06-08,,top,30%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+node.js backend,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,rising,30%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+perplexity,en,US,2026-05-08..2026-06-08,falling,12,,google_trends_manual,2026-06-08,,top,-30%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+photography,en,US,2026-05-08..2026-06-08,falling,6,,google_trends_manual,2026-06-08,,rising,-20%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+photography,en,US,2026-05-08..2026-06-08,falling,6,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+python data analysis,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,rising,-10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+python data analysis,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+python web framework,en,US,2026-05-08..2026-06-08,rising,0,,google_trends_manual,2026-06-08,,rising,30%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+qr code generator,en,US,2026-05-08..2026-06-08,falling,2,,google_trends_manual,2026-06-08,,rising,-80%,searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv,other,False
+qr code generator,en,US,2026-05-08..2026-06-08,falling,2,,google_trends_manual,2026-06-08,,top,-80%,searched_with_top-searches_US_20260508-2027_20260608-2027.csv,other,False
+react development,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,rising,-10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+scrl,en,US,2026-05-08..2026-06-08,rising,4,,google_trends_manual,2026-06-08,,rising,350%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,other,False
+scrl,en,US,2026-05-08..2026-06-08,rising,4,,google_trends_manual,2026-06-08,,top,350%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,other,False
+scrl app,en,US,2026-05-08..2026-06-08,breakout,0,,google_trends_manual,2026-06-08,,rising,Breakout,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,other,False
+seamless carousel instagram,en,US,2026-05-08..2026-06-08,rising,7,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+seamless carousel instagram,en,US,2026-05-08..2026-06-08,rising,7,,google_trends_manual,2026-06-08,,top,40%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+seamless carousel instagram canva,en,US,2026-05-08..2026-06-08,rising,3,,google_trends_manual,2026-06-08,,rising,60%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+seamless instagram carousel,en,US,2026-05-08..2026-06-08,rising,8,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+seamless instagram carousel,en,US,2026-05-08..2026-06-08,rising,8,,google_trends_manual,2026-06-08,,top,40%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+social media post ideas for business,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,rising,3%,searched_with_rising-searches_US_20260508-2026_20260608-2026(2).csv,social_content,True
+social media post ideas for business,en,US,2026-05-08..2026-06-08,rising,100,,google_trends_manual,2026-06-08,,top,3%,searched_with_top-searches_US_20260508-2026_20260608-2026.csv,social_content,True
+walmart near me,en,US,2026-05-08..2026-06-08,breakout,15,,google_trends_manual,2026-06-08,,top,Breakout,searched_with_top-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+web development best practices,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,rising,50%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+web development best practices,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,top,50%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+wednesday social media post ideas,en,US,2026-05-08..2026-06-08,rising,40,,google_trends_manual,2026-06-08,,rising,70%,searched_with_rising-searches_US_20260508-2026_20260608-2026(2).csv,social_content,True
+wednesday social media post ideas,en,US,2026-05-08..2026-06-08,rising,40,,google_trends_manual,2026-06-08,,top,70%,searched_with_top-searches_US_20260508-2026_20260608-2026.csv,social_content,True
+what is a carousel,en,US,2026-05-08..2026-06-08,falling,21,,google_trends_manual,2026-06-08,,rising,-4%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,carousel_general,True
+what is a carousel,en,US,2026-05-08..2026-06-08,falling,21,,google_trends_manual,2026-06-08,,top,-4%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,carousel_general,True
+what is a carousel on instagram,en,US,2026-05-08..2026-06-08,falling,11,,google_trends_manual,2026-06-08,,rising,-3%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+what is a carousel on instagram,en,US,2026-05-08..2026-06-08,falling,11,,google_trends_manual,2026-06-08,,top,-3%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+what is a carousel post,en,US,2026-05-08..2026-06-08,rising,7,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,carousel_general,True
+what is a carousel post,en,US,2026-05-08..2026-06-08,rising,7,,google_trends_manual,2026-06-08,,top,40%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,carousel_general,True
+what is a carousel post on instagram,en,US,2026-05-08..2026-06-08,falling,5,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+what is a content audit,en,US,2026-05-08..2026-06-08,falling,2,,google_trends_manual,2026-06-08,,top,-20%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+what is a content brief,en,US,2026-05-08..2026-06-08,rising,2,,google_trends_manual,2026-06-08,,rising,10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+what is a content brief,en,US,2026-05-08..2026-06-08,rising,2,,google_trends_manual,2026-06-08,,top,10%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+what is a content calendar,en,US,2026-05-08..2026-06-08,falling,2,,google_trends_manual,2026-06-08,,top,-50%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,social_content,False
+what is a content delivery network,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,rising,5%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+what is a content delivery network,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,top,5%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+what is a content management system,en,US,2026-05-08..2026-06-08,falling,2,,google_trends_manual,2026-06-08,,rising,-7%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+what is a content management system,en,US,2026-05-08..2026-06-08,falling,2,,google_trends_manual,2026-06-08,,top,-7%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+what is a content pillar,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,rising,-10%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False
+what is a content pillar,en,US,2026-05-08..2026-06-08,falling,1,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+what is a content strategy,en,US,2026-05-08..2026-06-08,falling,4,,google_trends_manual,2026-06-08,,top,-40%,searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv,other,False
+what is an instagram carousel,en,US,2026-05-08..2026-06-08,falling,6,,google_trends_manual,2026-06-08,,top,-30%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+what is an instagram carousel post,en,US,2026-05-08..2026-06-08,stable,2,,google_trends_manual,2026-06-08,,rising,0%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+what is carousel in instagram,en,US,2026-05-08..2026-06-08,falling,13,,google_trends_manual,2026-06-08,,top,-30%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+what is carousel on instagram,en,US,2026-05-08..2026-06-08,falling,14,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+what is instagram carousel,en,US,2026-05-08..2026-06-08,falling,38,,google_trends_manual,2026-06-08,,top,-10%,searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+what's an instagram carousel,en,US,2026-05-08..2026-06-08,rising,2,,google_trends_manual,2026-06-08,,rising,30%,searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv,instagram_carousel,True
+which ai focuses on classifying or identifying content that is based on preexisting data?,en,US,2026-05-08..2026-06-08,rising,1,,google_trends_manual,2026-06-08,,rising,40%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,ai_content,True
+zerogpt,en,US,2026-05-08..2026-06-08,falling,0,,google_trends_manual,2026-06-08,,rising,-6%,searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv,other,False

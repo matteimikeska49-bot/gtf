@@ -1,0 +1,247 @@
+[
+  {
+    "file": "searched_with_rising-searches_US_20260508-2020_20260608-2020(2).csv",
+    "source": "google_trends",
+    "subtype": "rising",
+    "rows": 50,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_rising-searches_US_20260508-2021_20260608-2021 (1)(2).csv",
+    "source": "google_trends",
+    "subtype": "rising",
+    "rows": 2,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_rising-searches_US_20260508-2021_20260608-2021(1).csv",
+    "source": "google_trends",
+    "subtype": "rising",
+    "rows": 6,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_rising-searches_US_20260508-2022_20260608-2022(2).csv",
+    "source": "google_trends",
+    "subtype": "rising",
+    "rows": 15,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_rising-searches_US_20260508-2023_20260608-2023(2).csv",
+    "source": "google_trends",
+    "subtype": "rising",
+    "rows": 6,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_rising-searches_US_20260508-2024_20260608-2024(2).csv",
+    "source": "google_trends",
+    "subtype": "rising",
+    "rows": 15,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_rising-searches_US_20260508-2025_20260608-2025(1).csv",
+    "source": "google_trends",
+    "subtype": "rising",
+    "rows": 50,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_rising-searches_US_20260508-2026_20260608-2026 (1)(2).csv",
+    "source": "google_trends",
+    "subtype": "rising",
+    "rows": 28,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_rising-searches_US_20260508-2026_20260608-2026(2).csv",
+    "source": "google_trends",
+    "subtype": "rising",
+    "rows": 2,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_rising-searches_US_20260508-2027_20260608-2027(2).csv",
+    "source": "google_trends",
+    "subtype": "rising",
+    "rows": 16,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_top-searches_US_20260508-2018_20260608-2018(1).csv",
+    "source": "google_trends",
+    "subtype": "top",
+    "rows": 7,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_top-searches_US_20260508-2020_20260608-2020(2).csv",
+    "source": "google_trends",
+    "subtype": "top",
+    "rows": 50,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_top-searches_US_20260508-2022_20260608-2022(2).csv",
+    "source": "google_trends",
+    "subtype": "top",
+    "rows": 15,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_top-searches_US_20260508-2023_20260608-2023(1).csv",
+    "source": "google_trends",
+    "subtype": "top",
+    "rows": 6,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_top-searches_US_20260508-2024_20260608-2024(2).csv",
+    "source": "google_trends",
+    "subtype": "top",
+    "rows": 15,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_top-searches_US_20260508-2025_20260608-2025 (1)(2).csv",
+    "source": "google_trends",
+    "subtype": "top",
+    "rows": 50,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_top-searches_US_20260508-2025_20260608-2025(1).csv",
+    "source": "google_trends",
+    "subtype": "top",
+    "rows": 2,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_top-searches_US_20260508-2026_20260608-2026 (1)(1).csv",
+    "source": "google_trends",
+    "subtype": "top",
+    "rows": 28,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_top-searches_US_20260508-2026_20260608-2026.csv",
+    "source": "google_trends",
+    "subtype": "top",
+    "rows": 2,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_top-searches_US_20260508-2027_20260608-2027 (1).csv",
+    "source": "google_trends",
+    "subtype": "top",
+    "rows": 1,
+    "notes": ""
+  },
+  {
+    "file": "searched_with_top-searches_US_20260508-2027_20260608-2027.csv",
+    "source": "google_trends",
+    "subtype": "top",
+    "rows": 16,
+    "notes": ""
+  },
+  {
+    "file": "wordstat_top_queries",
+    "source": "yandex_wordstat",
+    "subtype": "top_queries",
+    "rows": 31,
+    "notes": ""
+  },
+  {
+    "file": "wordstat_top_queries-10",
+    "source": "yandex_wordstat",
+    "subtype": "top_queries",
+    "rows": 118,
+    "notes": ""
+  },
+  {
+    "file": "wordstat_top_queries-2",
+    "source": "yandex_wordstat",
+    "subtype": "top_queries",
+    "rows": 45,
+    "notes": ""
+  },
+  {
+    "file": "wordstat_top_queries-3",
+    "source": "yandex_wordstat",
+    "subtype": "top_queries",
+    "rows": 16,
+    "notes": ""
+  },
+  {
+    "file": "wordstat_top_queries-4",
+    "source": "yandex_wordstat",
+    "subtype": "top_queries",
+    "rows": 70,
+    "notes": ""
+  },
+  {
+    "file": "wordstat_top_queries-5",
+    "source": "yandex_wordstat",
+    "subtype": "top_queries",
+    "rows": 54,
+    "notes": ""
+  },
+  {
+    "file": "wordstat_top_queries-6",
+    "source": "yandex_wordstat",
+    "subtype": "top_queries",
+    "rows": 10,
+    "notes": ""
+  },
+  {
+    "file": "wordstat_top_queries-7",
+    "source": "yandex_wordstat",
+    "subtype": "top_queries",
+    "rows": 1,
+    "notes": ""
+  },
+  {
+    "file": "wordstat_top_queries-8",
+    "source": "yandex_wordstat",
+    "subtype": "top_queries",
+    "rows": 31,
+    "notes": ""
+  },
+  {
+    "file": "wordstat_top_queries-9",
+    "source": "yandex_wordstat",
+    "subtype": "top_queries",
+    "rows": 2,
+    "notes": ""
+  },
+  {
+    "file": "gotoflow.io-Performance-on-Search-2026-06-08(2).zip::Запросы.csv",
+    "source": "google_search_console",
+    "subtype": "queries",
+    "rows": 95,
+    "notes": ""
+  },
+  {
+    "file": "gotoflow.io-Performance-on-Search-2026-06-08(2).zip::Страницы.csv",
+    "source": "google_search_console",
+    "subtype": "pages",
+    "rows": 28,
+    "notes": "pages not imported to keyword demand"
+  },
+  {
+    "file": "gotoflow.io_66ca0f04c5a5028bd45345ea.csv(2).gz",
+    "source": "yandex_webmaster",
+    "subtype": "daily_queries",
+    "rows": 21,
+    "notes": ""
+  },
+  {
+    "file": "gotoflow.io_66ca0f04c5a5028bf770a1e5.csv.gz",
+    "source": "yandex_webmaster",
+    "subtype": "daily_queries",
+    "rows": 21,
+    "notes": "duplicate file"
+  }
+]
