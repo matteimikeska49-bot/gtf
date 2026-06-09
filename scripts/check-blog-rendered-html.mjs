@@ -134,10 +134,16 @@ function checkHtmlFile(filePath, data, isD53) {
     }
 
     // Artifacts checks
-    const artifacts = [':::mockup', '[!product]', 'InlineProductBlock', '<ArticleFinalCta', 'quickAnswer:', 'finalCta:', '\n---\n', 'TODO', 'TBD', 'lorem ipsum'];
+    const artifacts = [
+      ':::mockup', '[!product]', 'InlineProductBlock', '<ArticleFinalCta', 'quickAnswer:', 'finalCta:', '\n---\n', 'TODO', 'TBD', 'lorem ipsum',
+      'if exists', 'if available', 'future cross-link after publication', 'else / fallback'
+    ];
     artifacts.forEach(str => {
       if (htmlContent.includes(str)) errors.push(`[P0] Raw artifact leaked: "${str}"`);
     });
+    if (/(?<!\*)\*\([^)]+\)\*(?!\*)/.test(htmlContent)) {
+      errors.push(`[P0] Raw artifact leaked: "*(...)*"`);
+    }
     if (htmlContent.includes('&lt;span class=')) errors.push(`[P0] Escaped JSX found: "&lt;span class="`);
 
     // Schema checks

@@ -93,7 +93,7 @@ Creating a professional carousel doesn't require a design background. Here is th
 1. **Provide the Insight:** Feed the generator your core B2B insight, case study, or tip. 
 2. **Select the Tone:** Ensure the tool is set to a professional, action-oriented tone.
 3. **Generate the Design:** Let the tool break the text into digestible slides with high-contrast, corporate-friendly visuals.
-4. **Export as PDF:** Download the file as a PDF document. *(LinkedIn requires a PDF to create the swipeable carousel effect).*
+4. **Export as PDF:** Download the file as a PDF document. LinkedIn requires a PDF to create the swipeable carousel effect.
 
 ## The "AI Bro" Trap: What to Avoid on LinkedIn
 

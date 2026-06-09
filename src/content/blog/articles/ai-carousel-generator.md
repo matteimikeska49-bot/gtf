@@ -112,4 +112,4 @@ Even with an AI handling the design, remember these principles:
 2. **Weak hooks:** The first slide must make a specific, irresistible promise. If the hook is boring, no one will swipe to slide two.
 3. **Forgetting the CTA:** Every carousel must end with a clear Call to Action. Tell the user what to do next—whether that's visiting your profile, leaving a comment, or saving the post.
 
-*(For a deeper dive into content strategy, read our guide on [text-to-carousel workflows](/blog/text-to-carousel-ai).)*
+Want to turn longer ideas into carousel-ready slides? Read our guide on [text-to-carousel workflows](/blog/text-to-carousel-ai).

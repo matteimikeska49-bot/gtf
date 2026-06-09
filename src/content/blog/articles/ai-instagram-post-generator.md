@@ -99,6 +99,6 @@ If you want to create a carousel without manual design, the workflow is incredib
 
 When automating your feed, avoid these common mistakes:
 
-* **Ignoring the Hook:** The first slide is everything. If the AI generates a boring title, rewrite it to make a specific promise. *(Read our guide on [Instagram Carousel Hooks](/blog/instagram-carousel-hooks) for inspiration).*
+* **Ignoring the Hook:** The first slide is everything. If the AI generates a boring title, rewrite it to make a specific promise. Need stronger first-slide ideas? Read our guide on [Instagram Carousel Hooks](/blog/instagram-carousel-hooks).
 * **Too Much Text:** Instagram users have short attention spans. Keep each slide focused on one core idea.
 * **Forgetting to Brand:** Always ensure your final design uses your brand colors and includes your handle on the last slide.

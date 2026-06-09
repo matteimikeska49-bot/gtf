@@ -72,6 +72,21 @@ files.forEach(file => {
     errors.push(`[P0] Article ${data.slug} contains raw JSX which will leak as text.`);
   }
 
+  // Raw Artifact Checks
+  const badArtifacts = [
+      'if exists', 'if available', 'future cross-link after publication', 'else / fallback'
+  ];
+  badArtifacts.forEach(str => {
+    if (body.includes(str)) {
+      errors.push(`[P0] Article ${data.slug} contains raw artifact leaked: "${str}"`);
+    }
+  });
+  
+  // Specific regex checks for markdown italic wrapper artifacts *(...)*, avoiding **(...)**
+  if (/(?<!\*)\*\([^)]+\)\*(?!\*)/.test(body)) {
+    errors.push(`[P0] Article ${data.slug} contains raw artifact leaked: "*(...)*"`);
+  }
+
   // Mockup leaking
   if (data.mockupStatus === 'not_available' && body.includes(':::mockup')) {
     errors.push(`[P0] Article ${data.slug} has mockupStatus: not_available but contains :::mockup directives.`);
