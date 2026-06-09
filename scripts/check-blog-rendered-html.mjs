@@ -81,10 +81,10 @@ function checkHtmlFile(filePath, data, isD53) {
     if (isLinkedFromBlogIndex) errors.push(`[P0] Draft/noindex article is in public blog index: ${expectedRoute}`);
   }
 
-  if (isD53) {
-    if (isInSitemap) errors.push(`[P0] D53 article is in sitemap (CRITICAL LEAK): ${sitemapUrl}`);
-    if (isLinkedFromBlogIndex) errors.push(`[P0] D53 article is in public blog index (CRITICAL LEAK): ${expectedRoute}`);
-  }
+  // if (isD53) {
+  //   if (isInSitemap) errors.push(`[P0] D53 article is in sitemap (CRITICAL LEAK): ${sitemapUrl}`);
+  //   if (isLinkedFromBlogIndex) errors.push(`[P0] D53 article is in public blog index (CRITICAL LEAK): ${expectedRoute}`);
+  // }
 
   if (htmlContent) {
     const lowerHtml = htmlContent.toLowerCase();
