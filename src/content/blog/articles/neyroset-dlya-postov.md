@@ -11,10 +11,10 @@ articleType: "guide"
 pageType: "blog_post"
 funnelStage: "TOFU"
 relatedProductRoute: "/ru/generator-postov-instagram"
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/neyroset-dlya-postov"
 audience: "creators_and_marketers"
 createdAt: "2026-06-09T00:00:00.000Z"

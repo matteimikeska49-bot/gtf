@@ -11,10 +11,10 @@ articleType: "guide"
 pageType: "blog_post"
 funnelStage: "MOFU"
 relatedProductRoute: "/ru/ai-generator-karuselej"
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/ii-dlya-karuseley"
 audience: "creators_and_marketers"
 createdAt: "2026-06-09T00:00:00.000Z"
