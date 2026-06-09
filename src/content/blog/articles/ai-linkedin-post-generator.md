@@ -1,5 +1,5 @@
 ---
-title: "Top AI LinkedIn Post Generators to Scale Your B2B Reach | GoToFlow"
+title: "Top AI LinkedIn Post Generators to Scale Your B2B Reach"
 slug: "ai-linkedin-post-generator"
 description: "Discover the best AI LinkedIn post generators. Learn why GoToFlow is the top choice for B2B PDF carousels compared to Taplio and ChatGPT."
 language: "en"
