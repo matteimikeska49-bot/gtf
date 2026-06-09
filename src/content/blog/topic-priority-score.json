@@ -894,5 +894,57 @@
     "priorityTier": "P1",
     "scoringReason": "Controlled Wave 1 topic",
     "scoringLastUpdated": "2026-06-09"
+  },
+  {
+    "topicScoreId": "en:ai instagram post generator",
+    "targetSlug": "ai-instagram-post-generator",
+    "language": "en",
+    "finalPriorityScore": 85,
+    "priorityTier": "P1",
+    "metrics": {
+      "volume": 100,
+      "intentMultiplier": 1.5,
+      "productFitScore": 9
+    },
+    "notes": "Added via D80"
+  },
+  {
+    "topicScoreId": "en:ai linkedin post generator",
+    "targetSlug": "ai-linkedin-post-generator",
+    "language": "en",
+    "finalPriorityScore": 85,
+    "priorityTier": "P1",
+    "metrics": {
+      "volume": 100,
+      "intentMultiplier": 1.5,
+      "productFitScore": 9
+    },
+    "notes": "Added via D80"
+  },
+  {
+    "topicScoreId": "en:how to post a carousel on linkedin",
+    "targetSlug": "how-to-post-a-carousel-on-linkedin",
+    "language": "en",
+    "finalPriorityScore": 80,
+    "priorityTier": "P1",
+    "metrics": {
+      "volume": 97,
+      "intentMultiplier": 1,
+      "productFitScore": 9
+    },
+    "notes": "Added via D80"
+  },
+  {
+    "topicScoreId": "en:instagram carousel post",
+    "targetSlug": "instagram-carousel-post",
+    "language": "en",
+    "finalPriorityScore": 89,
+    "priorityTier": "P1",
+    "metrics": {
+      "volume": 89,
+      "intentMultiplier": 1,
+      "productFitScore": 9
+    },
+    "notes": "Added via D80"
   }
 ]

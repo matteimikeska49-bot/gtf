@@ -30,11 +30,29 @@
         "intentId": "en:linkedin-carousel-from-pdf",
         "priorityTier": "P2",
         "status": "published"
+      },
+      {
+        "slug": "ai-linkedin-post-generator",
+        "url": "/blog/ai-linkedin-post-generator",
+        "role": "supporting",
+        "intentId": "en:ai-linkedin-post-generator",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "how-to-post-a-carousel-on-linkedin",
+        "url": "/blog/how-to-post-a-carousel-on-linkedin",
+        "role": "supporting",
+        "intentId": "en:how-to-post-a-carousel-on-linkedin",
+        "priorityTier": "P1",
+        "status": "draft_preview"
       }
     ],
     "supportingArticles": [
       "linkedin-carousel-ideas",
-      "linkedin-carousel-from-pdf-ai"
+      "linkedin-carousel-from-pdf-ai",
+      "ai-linkedin-post-generator",
+      "how-to-post-a-carousel-on-linkedin"
     ],
     "missingTopics": [
       "linkedin carousel best practices",
@@ -82,10 +100,19 @@
         "slug": "ai-carousel-generator",
         "url": "/blog/ai-carousel-generator",
         "role": "hub"
+      },
+      {
+        "slug": "ai-instagram-post-generator",
+        "url": "/blog/ai-instagram-post-generator",
+        "role": "supporting",
+        "intentId": "en:ai-instagram-post-generator",
+        "priorityTier": "P1",
+        "status": "draft_preview"
       }
     ],
     "supportingArticles": [
-      "content-calendar-to-carousel"
+      "content-calendar-to-carousel",
+      "ai-instagram-post-generator"
     ],
     "missingTopics": [
       "blog to carousel"
@@ -125,10 +152,19 @@
         "intentId": "en:instagram-carousel-hooks",
         "priorityTier": "P2",
         "status": "draft_preview"
+      },
+      {
+        "slug": "instagram-carousel-post",
+        "url": "/blog/instagram-carousel-post",
+        "role": "supporting",
+        "intentId": "en:instagram-carousel-post",
+        "priorityTier": "P1",
+        "status": "draft_preview"
       }
     ],
     "supportingArticles": [
-      "instagram-carousel-hooks"
+      "instagram-carousel-hooks",
+      "instagram-carousel-post"
     ],
     "missingTopics": [
       "instagram carousel sizes"

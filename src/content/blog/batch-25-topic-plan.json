@@ -15,9 +15,10 @@
     "differentiationRule": "Focus strictly on generation tools specific to Instagram, comparing our tool against other options.",
     "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/ai-instagram-post-generator.md",
-    "articleStatus": "not_created",
+    "articleStatus": "draft_created",
     "publishStatus": "not_started",
-    "briefQaStatus": "passed"
+    "briefQaStatus": "passed",
+    "articlePath": "src/content/blog/articles/ai-instagram-post-generator.md"
   },
   {
     "targetSlug": "ai-carousel-generator",
@@ -56,9 +57,10 @@
     "differentiationRule": "Focus on the mechanics of posting (PDF export, uploading to LinkedIn), distinguishing from creation tools.",
     "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/how-to-post-a-carousel-on-linkedin.md",
-    "articleStatus": "not_created",
+    "articleStatus": "draft_created",
     "publishStatus": "not_started",
-    "briefQaStatus": "passed"
+    "briefQaStatus": "passed",
+    "articlePath": "src/content/blog/articles/how-to-post-a-carousel-on-linkedin.md"
   },
   {
     "targetSlug": "instagram-carousel-post",
@@ -76,9 +78,10 @@
     "differentiationRule": "Focus on optimizing carousel formats for Instagram algorithm, distinguishing from general AI generation.",
     "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/instagram-carousel-post.md",
-    "articleStatus": "not_created",
+    "articleStatus": "draft_created",
     "publishStatus": "not_started",
-    "briefQaStatus": "passed"
+    "briefQaStatus": "passed",
+    "articlePath": "src/content/blog/articles/instagram-carousel-post.md"
   },
   {
     "targetSlug": "ai-linkedin-post-generator",
@@ -96,8 +99,9 @@
     "differentiationRule": "Specific focus on LinkedIn professional tone generation, distinct from general carousel creation.",
     "briefStatus": "qa_passed",
     "briefPath": "src/content/blog/briefs/controlled-wave-1/ai-linkedin-post-generator.md",
-    "articleStatus": "not_created",
+    "articleStatus": "draft_created",
     "publishStatus": "not_started",
-    "briefQaStatus": "passed"
+    "briefQaStatus": "passed",
+    "articlePath": "src/content/blog/articles/ai-linkedin-post-generator.md"
   }
 ]
