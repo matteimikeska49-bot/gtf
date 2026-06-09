@@ -37,29 +37,19 @@ function parseFrontmatterAndBody(content) {
   const frontmatterStr = match[1];
   const lines = frontmatterStr.split('\n');
   
-  let currentKey = null;
-
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     if (line.trim() === '') continue;
     
-    if (line.startsWith('  - ')) { 
-      // simple array parser
-      continue;
-    } else if (line.startsWith('  ')) { 
-      // simple object parser
-      continue;
-    }
+    if (line.startsWith('  - ')) continue;
+    if (line.startsWith('  ')) continue;
     
     if (line.includes(':')) {
       let [key, ...rest] = line.split(':');
       key = key.trim();
       let value = rest.join(':').trim();
-      currentKey = key;
       
-      if (value === '') {
-        continue;
-      }
+      if (value === '') continue;
       
       if (value.startsWith('"') && value.endsWith('"')) {
         value = value.slice(1, -1);
@@ -87,13 +77,9 @@ function checkArticleQualityContract() {
     const content = fs.readFileSync(filePath, 'utf-8');
     
     const { data: frontmatter, body: markdownBody } = parseFrontmatterAndBody(content);
-
     const hasQualityGate = !!frontmatter.qualityGateStatus;
     
-    // We enforce for anything that opts-in
-    if (!hasQualityGate) {
-      continue;
-    }
+    if (!hasQualityGate) continue;
 
     countChecked++;
     let articleErrors = [];
@@ -105,7 +91,6 @@ function checkArticleQualityContract() {
       }
     }
 
-    // 2. Validate field values
     if (frontmatter.articleType && !VALID_ARTICLE_TYPES.includes(frontmatter.articleType)) {
       articleErrors.push(`Invalid articleType: ${frontmatter.articleType}`);
     }
@@ -114,8 +99,14 @@ function checkArticleQualityContract() {
       articleErrors.push(`Invalid productFit: ${frontmatter.productFit}`);
     }
 
-    if (frontmatter.productFit === 'PARTIAL' && !frontmatter.productFitExplanation) {
-      articleErrors.push(`productFit is PARTIAL but productFitExplanation is empty/missing`);
+    if (frontmatter.productFit === 'PARTIAL') {
+      if (!frontmatter.productFitExplanation) {
+        articleErrors.push(`productFit is PARTIAL but productFitExplanation is empty/missing`);
+      }
+      if (!markdownBody.includes('GoToFlow') && !markdownBody.includes('Canva') && !markdownBody.includes('Figma')) {
+         // simple heuristic for product fit section
+         articleErrors.push(`productFit PARTIAL requires a visible limitation/product-fit note.`);
+      }
     }
 
     if (frontmatter.published === true && frontmatter.qualityGateStatus !== 'passed') {
@@ -126,28 +117,58 @@ function checkArticleQualityContract() {
       articleErrors.push(`faqFormat must be 'structured'`);
     }
 
-    // 3. Visual Block Gate
-    const requiredBlock = frontmatter.requiredVisualBlock || '';
-    if (requiredBlock && !markdownBody.includes(requiredBlock) && !markdownBody.includes(':::mockup')) {
-      if (!markdownBody.includes(':::cards') && !markdownBody.includes('|') && !markdownBody.includes(':::prompts')) {
-         articleErrors.push(`Missing required visual block. Specified '${requiredBlock}' but no visual blocks found in markdown.`);
+    // Technical guide specific rule
+    if (frontmatter.articleType === 'technical_guide') {
+      if (!markdownBody.includes('|') && !markdownBody.includes(':::cards\ntype: checklist')) {
+         articleErrors.push(`technical_guide requires a technical table/spec/checklist block. Mockup alone is not enough.`);
       }
     }
 
-    // 4. FAQ Gate
-    if (/##\s*(Часто задаваемые вопросы|FAQ|Frequently Asked Questions)/i.test(markdownBody)) {
-      articleErrors.push(`Found '## FAQ' or '## Часто задаваемые вопросы' in markdown body. FAQ must be moved to frontmatter 'faq:' array.`);
+    // Workflow / product led guide rule
+    if (['workflow_article', 'product_led_guide'].includes(frontmatter.articleType)) {
+      if (!markdownBody.includes(':::cards\ntype: workflow') && !markdownBody.includes(':::mockup')) {
+         articleErrors.push(`Workflow/product-led guide requires a workflow or mockup block.`);
+      }
     }
 
-    // 5. Layout Stability (No raw artifacts)
+    // Duplicate Quick Answer rule
+    if (/##\s*(Краткий ответ|Quick Answer|Короткий ответ)/i.test(markdownBody)) {
+      articleErrors.push(`Duplicate quick answer heading in body. Use frontmatter/template quickAnswer block only.`);
+    }
+
+    // Loose FAQ
+    if (/##\s*(FAQ|Частые вопросы|Часто задаваемые вопросы)/i.test(markdownBody)) {
+      articleErrors.push(`Loose FAQ markdown section detected. Use structured faq frontmatter only.`);
+    }
+
+    // Raw artifacts
     if (markdownBody.includes('*(For a deeper dive')) {
        articleErrors.push(`Found raw markdown artifact: '*(For a deeper dive'`);
     }
     if (/\*\([^)]+\)\*/.test(markdownBody)) {
        articleErrors.push(`Found potentially visible raw markdown artifact like '*(...)*'`);
     }
+    if (/\[Link to /i.test(markdownBody)) {
+       articleErrors.push(`Found potentially visible raw markdown artifact like '[Link to'`);
+    }
+    const rawPatterns = ['if exists', 'if available', 'future link', 'TODO', 'TBD'];
+    for (const p of rawPatterns) {
+      if (markdownBody.includes(p)) {
+         articleErrors.push(`Found raw artifact: '${p}'`);
+      }
+    }
     if (markdownBody.includes(':::mockup\n\n:::') || markdownBody.includes(':::mockup\n:::')) {
        articleErrors.push(`Found empty :::mockup block`);
+    }
+
+    // Misleading claims
+    const misleading = ["гарантирует", "идеально", "без ошибок", "автоматически создаёт бесшовную карусель", "seamless guaranteed"];
+    for (const m of misleading) {
+      if (markdownBody.toLowerCase().includes(m)) {
+         // allow "идеально" if followed by "подходит", but let's just flag the strict ones for now
+         if (m === 'идеально' && markdownBody.toLowerCase().includes('идеально подходит')) continue;
+         articleErrors.push(`Misleading claim detected: '${m}'`);
+      }
     }
 
     if (articleErrors.length > 0) {
