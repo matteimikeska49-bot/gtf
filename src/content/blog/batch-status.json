@@ -135,7 +135,7 @@
     "lastUpdated": "2026-06-02T17:12:47.349Z",
     "qaStatus": "passed",
     "visualQaStatus": "passed",
-    "productionVerificationStatus": "pending",
+    "productionVerificationStatus": "passed",
     "notes": "Do not create new blog article until route/canonical decision is made.",
     "briefStatus": "created",
     "contentQaStatus": "not_run",
