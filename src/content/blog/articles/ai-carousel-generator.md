@@ -62,7 +62,7 @@ finalCta:
 
 If you are spending more than 5 minutes designing a social media carousel, you are losing valuable time. The modern solution isn't another batch of pre-made templates—it's an **AI carousel generator**.
 
-By turning text directly into beautifully formatted, multi-slide designs, an AI generator bridges the gap between your ideas and your audience's feed.
+By turning text directly into beautifully formatted, multi-slide designs, an AI generator bridges the gap between your ideas and your audience's feed, saving you hours of tedious work.
 
 ## Manual Design vs. AI Workflow: Why Switch?
 
@@ -84,13 +84,13 @@ A 45-minute chore becomes a 2-minute review process.
 
 Switching to an automated workflow is simple. Here is how you can use [GoToFlow](/ai-carousel-maker) to eliminate design friction.
 
-### Inputting Your Content (Text or URL)
+### 1. Input Your Content (Text or URL)
 Start by providing the AI with your core message. You can paste a full article, a list of tips, or even just a brief topic prompt. The AI acts as your editor, understanding the core value and distilling it into slide-sized bites.
 
-### Customizing the Theme and Layout
+### 2. Customize the Theme and Layout
 Once the AI generates the initial draft, you retain full control. You can adjust the color scheme, swap fonts, or modify the layout style to match your brand identity. The heavy lifting is done, leaving you to make minor aesthetic tweaks.
 
-### Exporting for LinkedIn and Instagram
+### 3. Export for LinkedIn and Instagram
 When you are satisfied with the result, it’s time to export. You can download the carousel as a high-quality PDF document (ideal for LinkedIn) or as a sequence of PNG/JPG images (perfect for Instagram).
 
 ## When to Use AI Carousel Generation vs Manual Design
@@ -109,7 +109,7 @@ Manual design software is better suited when:
 Even with an AI handling the design, remember these principles:
 
 1. **Overcrowding slides:** Don't cram a full paragraph onto one slide. If a slide takes more than 5 seconds to read, the user will scroll past.
-2. **Weak hooks:** The first slide must make a promise. If the hook is boring, no one will swipe to slide two.
+2. **Weak hooks:** The first slide must make a specific, irresistible promise. If the hook is boring, no one will swipe to slide two.
 3. **Forgetting the CTA:** Every carousel must end with a clear Call to Action. Tell the user what to do next—whether that's visiting your profile, leaving a comment, or saving the post.
 
 *(For a deeper dive into content strategy, read our guide on [text-to-carousel workflows](/blog/text-to-carousel-ai).)*

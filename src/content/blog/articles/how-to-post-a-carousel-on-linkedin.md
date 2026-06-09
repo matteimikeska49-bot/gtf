@@ -59,7 +59,7 @@ finalCta:
 
 # How to Post a Carousel on LinkedIn (The PDF Method)
 
-You have a great idea for a B2B post. You know that swipeable carousels get the highest engagement on the platform. But when you try to upload your images, LinkedIn displays them as an ugly grid.
+You have a great idea for a B2B post. You know that swipeable carousels get the highest engagement on the platform. But when you try to upload your images, LinkedIn displays them as an ugly grid instead of a sleek slider.
 
 Posting a carousel on LinkedIn requires a specific, often misunderstood mechanical step. This guide shows you exactly how to get that seamless, swipeable format.
 
@@ -74,7 +74,7 @@ When you upload a document to LinkedIn, the platform automatically renders each 
 Once you understand the PDF rule, the actual upload process is simple.
 
 ### 1. Export Your Design as a PDF
-Whether you designed your carousel manually or used an automated generator, ensure you export the final file as a Standard PDF. Do not use interactive PDFs or large print-quality files, as they may fail to process on LinkedIn.
+Whether you designed your carousel manually or used an automated generator, ensure you export the final file as a Standard PDF. Do not use interactive PDFs or excessively large print-quality files, as they may fail to process on LinkedIn.
 
 ### 2. Click "Add a Document" on LinkedIn
 Go to your LinkedIn homepage and click **"Start a post."** Do not click the photo or video icon. Instead, look for the icon that looks like a sheet of paper with a folded corner (the "Add a document" button). If you don't see it immediately, click the "More" (three dots) button to reveal it.
@@ -86,15 +86,15 @@ Select your PDF file. LinkedIn will prompt you to enter a Document Title. This t
 
 If your upload doesn't look right, you likely made one of two common errors.
 
-### Images Instead of PDF
+### 1. Uploading Images Instead of PDF
 If your post looks like a collage or a grid rather than a swipeable deck, you selected multiple image files instead of a single PDF. Delete the post, convert your images into one PDF, and try again.
 
-### File Size Too Large
-If the document fails to upload or process, it might be too large. While LinkedIn allows up to 100MB, enormous files can time out. Compress your PDF before uploading.
+### 2. File Size Too Large
+If the document fails to upload or process, it might be too large. While LinkedIn allows up to 100MB, enormous files can time out or display slowly for users on mobile networks. Compress your PDF before uploading.
 
 ## The Easiest Way to Create the PDF (GoToFlow Workflow)
 
-The hardest part of posting a LinkedIn carousel isn't the upload—it's creating the PDF in the first place.
+The hardest part of posting a LinkedIn carousel isn't the upload mechanics—it's creating the PDF in the first place.
 
 If you don't want to struggle with design software to format and export your document, use [GoToFlow](/linkedin-carousel-maker). The workflow is designed specifically for this exact process:
 

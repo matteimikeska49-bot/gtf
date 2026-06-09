@@ -51,7 +51,7 @@ faq:
 finalCta:
   title: "Automate Your Instagram Feed Today"
   text: "Generate your first viral Instagram carousel for free. Stop pushing pixels and start sharing your expertise."
-  buttonHref: "/ai-carousel-maker"
+  buttonHref: "/ai-instagram-post-generator"
   buttonText: "Try GoToFlow for Instagram"
   microcopy: "Free - No credit card required"
   secondaryText: "Discover the best Instagram Hooks ->"
@@ -62,7 +62,7 @@ finalCta:
 
 Creating consistent, high-quality content for Instagram is a major bottleneck for creators and brands. While posting a single photo is easy, designing multi-slide educational carousels—the format that drives the most saves and shares—can take hours.
 
-This is where an **AI Instagram post generator** becomes essential. But with so many generic AI tools on the market, finding one that actually understands Instagram's unique visual requirements is critical.
+This is where an **AI Instagram post generator** becomes essential. But with so many generic AI tools on the market, finding one that actually understands Instagram's unique visual requirements is critical to your success.
 
 ## What Makes an Instagram Post Generator "Good"?
 
@@ -85,7 +85,7 @@ If your goal is to share knowledge, tips, or industry insights, [GoToFlow](/ai-i
 Canva remains the industry standard for graphic design. Its AI features (Magic Studio) are fantastic for removing backgrounds, expanding images, or applying artistic styles to a single photo. However, creating a 10-slide carousel in Canva still requires significant manual layout work and copy-pasting.
 
 ### 3. ChatGPT (Best for Captions, Lacks Design)
-ChatGPT is unparalleled for brainstorming ideas, writing hooks, and generating the text for your captions and hashtags. However, it cannot generate the actual visual slides required for an Instagram post, meaning you must pair it with a design tool.
+ChatGPT is unparalleled for brainstorming ideas, writing hooks, and generating the text for your captions and hashtags. However, it cannot generate the actual visual slides required for an Instagram post, meaning you must pair it with a dedicated design tool.
 
 ## How to Generate an Instagram Carousel in 3 Steps
 
@@ -99,6 +99,6 @@ If you want to create a carousel without manual design, the workflow is incredib
 
 When automating your feed, avoid these common mistakes:
 
-* **Ignoring the Hook:** The first slide is everything. If the AI generates a boring title, rewrite it. *(Read our guide on [Instagram Carousel Hooks](/blog/instagram-carousel-hooks) for inspiration).*
+* **Ignoring the Hook:** The first slide is everything. If the AI generates a boring title, rewrite it to make a specific promise. *(Read our guide on [Instagram Carousel Hooks](/blog/instagram-carousel-hooks) for inspiration).*
 * **Too Much Text:** Instagram users have short attention spans. Keep each slide focused on one core idea.
 * **Forgetting to Brand:** Always ensure your final design uses your brand colors and includes your handle on the last slide.

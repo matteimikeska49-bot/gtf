@@ -88,7 +88,7 @@ ChatGPT is excellent for brainstorming ideas or outlining a B2B strategy. But be
 
 ## Step-by-Step: Generating a B2B Carousel with AI
 
-Creating a professional carousel doesn't require a design background. Here is the modern workflow:
+Creating a professional carousel doesn't require a design background. Here is the modern B2B workflow:
 
 1. **Provide the Insight:** Feed the generator your core B2B insight, case study, or tip. 
 2. **Select the Tone:** Ensure the tool is set to a professional, action-oriented tone.
@@ -101,4 +101,4 @@ While AI speeds up the process, you must avoid the common traps that ruin credib
 
 * **Overusing Emojis:** Keep it professional. Limit emojis to bullet points or distinct structural breaks.
 * **Lack of Original Thought:** AI can structure your post, but the core insight must come from your actual industry experience.
-* **Ignoring the Format:** Don't just paste block text. Use generators to create visual PDFs that dominate the feed.
+* **Ignoring the Format:** Don't just paste block text. Use generators to create visual PDFs that dominate the professional feed.

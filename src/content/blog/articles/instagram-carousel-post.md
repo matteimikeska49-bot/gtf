@@ -31,8 +31,8 @@ mockupReason: "Mockup generation not currently active for Wave 1 drafts"
 
 quickAnswerTitle: "Quick Answer: The 3-Part Carousel Formula"
 quickAnswer:
-  - "Slide 1 is your Hook. It must stop the scroll and make a specific promise."
-  - "Slides 2-8 deliver the Value. Keep text short, visual pacing high, and deliver on the promise."
+  - "Slide 1 is your Hook. It must stop the scroll and make a specific, irresistible promise."
+  - "Slides 2-8 deliver the Value. Keep text short, visual pacing high, and deliver on the promise fast."
   - "Slides 9-10 are your Transition and CTA. Tell the user exactly what to do next (Save, Share, Follow)."
 
 faq:
@@ -50,7 +50,7 @@ faq:
 finalCta:
   title: "Start Designing Your Next Viral Post"
   text: "Apply these rules instantly. Build your perfectly structured carousel with our AI generator."
-  buttonHref: "/ai-carousel-maker"
+  buttonHref: "/ai-instagram-post-generator"
   buttonText: "Build Your Carousel with GoToFlow"
   microcopy: "Free - No credit card required"
   secondaryText: "Get the best hooks for Slide 1 ->"
@@ -78,12 +78,12 @@ The first slide has one job: stop the user from scrolling. It is not the place f
 
 ### Slides 2-8: The Value Delivery (Pacing and Visuals)
 Once they swipe, you must immediately deliver value. 
-* Do not waste Slide 2 on an "Introduction." Start giving the advice.
+* Do not waste Slide 2 on an "Introduction." Start giving the advice immediately.
 * Keep text brief. If a slide requires more than 5 seconds to read, users will drop off.
 * Use visual pacing. Break up heavy text slides with simple diagrams, quotes, or listicles to give the reader's eyes a break.
 
 ### Slides 9-10: The Transition and CTA
-Your final slides must convert the reader's attention into action. Slide 9 should summarize the core takeaway or provide a transition statement. Slide 10 must be a clear Call to Action (CTA). Tell them exactly what to do: "Save this post for later," "Share with a friend," or "Click the link in my bio."
+Your final slides must convert the reader's attention into action. Slide 9 should summarize the core takeaway or provide a seamless transition statement. Slide 10 must be a clear Call to Action (CTA). Tell them exactly what to do: "Save this post for later," "Share with a friend," or "Click the link in my bio."
 
 ## Crucial Design Rules for Instagram
 
