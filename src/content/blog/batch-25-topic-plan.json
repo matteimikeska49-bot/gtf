@@ -4,11 +4,12 @@
     "title": "ai instagram post generator",
     "language": "en",
     "primaryKeyword": "ai instagram post generator",
-    "relatedProductRoute": "/ai-instagram-carousel-generator",
+    "relatedProductRoute": "/ai-instagram-post-generator",
     "topicStatus": "draft",
     "keywordEvidence": {
       "source": "google_trends_rising, google_trends_top, gsc",
-      "confidence": "high"
+      "confidence": "high",
+      "metrics": "GSC: 80 imp, Trends: 100 rising 5%"
     },
     "priorityTier": "P1",
     "differentiationRule": "Focus strictly on generation tools specific to Instagram, comparing our tool against other options."
@@ -18,11 +19,12 @@
     "title": "ai carousel generator",
     "language": "en",
     "primaryKeyword": "ai carousel generator",
-    "relatedProductRoute": "/ai-carousel-generator",
+    "relatedProductRoute": "/ai-carousel-maker",
     "topicStatus": "draft",
     "keywordEvidence": {
       "source": "google_trends_rising, google_trends_top, gsc",
-      "confidence": "high"
+      "confidence": "high",
+      "metrics": "GSC: 15 imp, Trends: 100 rising 10%"
     },
     "priorityTier": "P1",
     "differentiationRule": "Hub-level guide on AI carousel generation across all platforms, serving as a primary entry point."
@@ -32,11 +34,12 @@
     "title": "how to post a carousel on linkedin",
     "language": "en",
     "primaryKeyword": "how to post a carousel on linkedin",
-    "relatedProductRoute": "/generator-karuselej-linkedin",
+    "relatedProductRoute": "/linkedin-carousel-maker",
     "topicStatus": "draft",
     "keywordEvidence": {
       "source": "google_trends_rising, google_trends_top",
-      "confidence": "high"
+      "confidence": "high",
+      "metrics": "Trends: 97 rising 160%"
     },
     "priorityTier": "P2",
     "differentiationRule": "Focus on the mechanics of posting (PDF export, uploading to LinkedIn), distinguishing from creation tools."
@@ -46,39 +49,27 @@
     "title": "instagram carousel post",
     "language": "en",
     "primaryKeyword": "instagram carousel post",
-    "relatedProductRoute": "/ai-instagram-carousel-generator",
+    "relatedProductRoute": "/ai-instagram-post-generator",
     "topicStatus": "draft",
     "keywordEvidence": {
       "source": "google_trends_rising, google_trends_top",
-      "confidence": "high"
+      "confidence": "high",
+      "metrics": "Trends: 89 rising 3%"
     },
     "priorityTier": "P2",
     "differentiationRule": "Focus on optimizing carousel formats for Instagram algorithm, distinguishing from general AI generation."
-  },
-  {
-    "targetSlug": "best-ai-instagram-post-generators",
-    "title": "best ai instagram post generators",
-    "language": "en",
-    "primaryKeyword": "best ai instagram post generators",
-    "relatedProductRoute": "/ai-instagram-carousel-generator",
-    "topicStatus": "draft",
-    "keywordEvidence": {
-      "source": "google_trends_top, gsc",
-      "confidence": "high"
-    },
-    "priorityTier": "P1",
-    "differentiationRule": "Listicles comparing top tools, placing GoToFlow as the primary option for carousels."
   },
   {
     "targetSlug": "ai-linkedin-post-generator",
     "title": "ai linkedin post generator",
     "language": "en",
     "primaryKeyword": "ai linkedin post generator",
-    "relatedProductRoute": "/generator-karuselej-linkedin",
+    "relatedProductRoute": "/linkedin-carousel-maker",
     "topicStatus": "draft",
     "keywordEvidence": {
       "source": "google_trends_top, gsc",
-      "confidence": "high"
+      "confidence": "high",
+      "metrics": "Trends: 100 rising 50%"
     },
     "priorityTier": "P1",
     "differentiationRule": "Specific focus on LinkedIn professional tone generation, distinct from general carousel creation."
