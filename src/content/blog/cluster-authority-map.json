@@ -178,6 +178,12 @@
         "intentId": "ru:tekst-v-karusel",
         "priorityTier": "P1",
         "status": "draft_preview"
+      },
+      {
+        "slug": "ii-dlya-karuseley",
+        "url": "/ru/blog/ii-dlya-karuseley",
+        "role": "support",
+        "canonicalRisk": "low"
       }
     ],
     "supportingArticles": [],
@@ -267,5 +273,51 @@
     },
     "notes": "Instagram Post Generator cluster created during D80 Recovery",
     "lastReviewed": "2026-06-09"
+  },
+  {
+    "clusterId": "ru:instagram-carousel",
+    "clusterName": "RU Instagram Carousel",
+    "language": "ru",
+    "productRoute": "/ru/ai-generator-karuselej",
+    "hubArticle": "kak-sdelat-karusel-dlya-instagram-s-ii",
+    "hubSlug": "kak-sdelat-karusel-dlya-instagram-s-ii",
+    "articleRoles": [
+      {
+        "slug": "karusel-dlya-instagram",
+        "url": "/ru/blog/karusel-dlya-instagram",
+        "role": "pillar",
+        "canonicalRisk": "low"
+      },
+      {
+        "slug": "besshovnaya-karusel-v-instagram",
+        "url": "/ru/blog/besshovnaya-karusel-v-instagram",
+        "role": "guide",
+        "canonicalRisk": "low"
+      },
+      {
+        "slug": "razmer-karuseli-v-instagram",
+        "url": "/ru/blog/razmer-karuseli-v-instagram",
+        "role": "support",
+        "canonicalRisk": "low"
+      }
+    ],
+    "supportingArticles": []
+  },
+  {
+    "clusterId": "ru:social-content",
+    "clusterName": "RU Social Content",
+    "language": "ru",
+    "productRoute": "/ru/generator-postov-instagram",
+    "hubArticle": "neyroset-dlya-postov",
+    "hubSlug": "neyroset-dlya-postov",
+    "articleRoles": [
+      {
+        "slug": "neyroset-dlya-postov",
+        "url": "/ru/blog/neyroset-dlya-postov",
+        "role": "hub",
+        "canonicalRisk": "low"
+      }
+    ],
+    "supportingArticles": []
   }
 ]

@@ -946,5 +946,145 @@
       "productFitScore": 9
     },
     "notes": "Added via D80"
+  },
+  {
+    "targetSlug": "neyroset-dlya-postov",
+    "title": "нейросеть для постов",
+    "language": "ru",
+    "primaryKeyword": "нейросеть для постов",
+    "relatedProductRoute": "",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "existing_topic_map",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 5,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 5,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 50
+    },
+    "priorityTier": "P3",
+    "scoringReason": "RU Wave 1",
+    "scoringLastUpdated": "2026-06-09"
+  },
+  {
+    "targetSlug": "karusel-dlya-instagram",
+    "title": "карусель для инстаграм",
+    "language": "ru",
+    "primaryKeyword": "карусель для инстаграм",
+    "relatedProductRoute": "",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "existing_topic_map",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 5,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 5,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 50
+    },
+    "priorityTier": "P3",
+    "scoringReason": "RU Wave 1",
+    "scoringLastUpdated": "2026-06-09"
+  },
+  {
+    "targetSlug": "ii-dlya-karuseley",
+    "title": "ии для каруселей",
+    "language": "ru",
+    "primaryKeyword": "ии для каруселей",
+    "relatedProductRoute": "",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "existing_topic_map",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 5,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 5,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 50
+    },
+    "priorityTier": "P3",
+    "scoringReason": "RU Wave 1",
+    "scoringLastUpdated": "2026-06-09"
+  },
+  {
+    "targetSlug": "besshovnaya-karusel-v-instagram",
+    "title": "бесшовная карусель в инстаграм",
+    "language": "ru",
+    "primaryKeyword": "бесшовная карусель в инстаграм",
+    "relatedProductRoute": "",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "existing_topic_map",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 5,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 5,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 50
+    },
+    "priorityTier": "P3",
+    "scoringReason": "RU Wave 1",
+    "scoringLastUpdated": "2026-06-09"
+  },
+  {
+    "targetSlug": "razmer-karuseli-v-instagram",
+    "title": "размер карусели в инстаграм",
+    "language": "ru",
+    "primaryKeyword": "размер карусели в инстаграм",
+    "relatedProductRoute": "",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "existing_topic_map",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 5,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 5,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 50
+    },
+    "priorityTier": "P3",
+    "scoringReason": "RU Wave 1",
+    "scoringLastUpdated": "2026-06-09"
   }
 ]

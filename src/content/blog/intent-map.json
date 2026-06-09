@@ -297,5 +297,45 @@
     "relatedProductRoute": "/ai-instagram-post-generator",
     "notes": "Added via D80",
     "lastReviewed": "2026-06-09"
+  },
+  {
+    "intentId": "ru:neyroset-dlya-postov",
+    "language": "ru",
+    "cluster": "ru:social-content",
+    "searchIntent": "AI tools for generating social media posts",
+    "intentType": "informational",
+    "ownerUrl": "/ru/blog/neyroset-dlya-postov"
+  },
+  {
+    "intentId": "ru:karusel-dlya-instagram",
+    "language": "ru",
+    "cluster": "ru:instagram-carousel",
+    "searchIntent": "Instagram carousel guide and examples",
+    "intentType": "informational",
+    "ownerUrl": "/ru/blog/karusel-dlya-instagram"
+  },
+  {
+    "intentId": "ru:ii-dlya-karuseley",
+    "language": "ru",
+    "cluster": "ru:ai-carousel-generator",
+    "searchIntent": "How AI automates carousel generation",
+    "intentType": "investigational",
+    "ownerUrl": "/ru/blog/ii-dlya-karuseley"
+  },
+  {
+    "intentId": "ru:besshovnaya-karusel-v-instagram",
+    "language": "ru",
+    "cluster": "ru:instagram-carousel",
+    "searchIntent": "How to make a seamless carousel in Instagram",
+    "intentType": "how-to",
+    "ownerUrl": "/ru/blog/besshovnaya-karusel-v-instagram"
+  },
+  {
+    "intentId": "ru:razmer-karuseli-v-instagram",
+    "language": "ru",
+    "cluster": "ru:instagram-carousel",
+    "searchIntent": "Dimensions and aspect ratio for Instagram carousels",
+    "intentType": "informational",
+    "ownerUrl": "/ru/blog/razmer-karuseli-v-instagram"
   }
 ]
