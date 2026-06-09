@@ -932,7 +932,7 @@
     "language": "en",
     "cluster": "Mini-batch topic",
     "primaryKeyword": "text to carousel ai",
-    "status": "published",
+    "status": "live_verified",
     "priorityScore": 85,
     "published": true,
     "noindex": false,
@@ -941,7 +941,7 @@
     "lastUpdated": "2026-06-07T19:12:00.860Z",
     "qaStatus": "passed",
     "visualQaStatus": "passed",
-    "productionVerificationStatus": "pending",
+    "productionVerificationStatus": "passed",
     "notes": "Mini batch testing",
     "briefStatus": "approved",
     "contentQaStatus": "not_run",
@@ -954,7 +954,11 @@
     "approvedForDraft": true,
     "approvedForPublish": true,
     "productionUrl": "https://gotoflow.io/blog/text-to-carousel-ai",
-    "pageType": "blog_post"
+    "pageType": "blog_post",
+    "productionVerifiedAt": "2026-06-09T12:39:42.484Z",
+    "productionVerificationCommit": "ae86198",
+    "reverificationRequired": false,
+    "reverificationReason": null
   },
   {
     "batchId": "D53",
@@ -964,7 +968,7 @@
     "language": "en",
     "cluster": "Mini-batch topic",
     "primaryKeyword": "instagram carousel hooks",
-    "status": "published",
+    "status": "live_verified",
     "priorityScore": 85,
     "published": true,
     "noindex": false,
@@ -973,7 +977,7 @@
     "lastUpdated": "2026-06-07T19:12:00.860Z",
     "qaStatus": "passed",
     "visualQaStatus": "passed",
-    "productionVerificationStatus": "pending",
+    "productionVerificationStatus": "passed",
     "notes": "Mini batch testing",
     "briefStatus": "approved",
     "contentQaStatus": "not_run",
@@ -986,7 +990,11 @@
     "approvedForDraft": true,
     "approvedForPublish": true,
     "productionUrl": "https://gotoflow.io/blog/instagram-carousel-hooks",
-    "pageType": "blog_post"
+    "pageType": "blog_post",
+    "productionVerifiedAt": "2026-06-09T12:39:42.485Z",
+    "productionVerificationCommit": "ae86198",
+    "reverificationRequired": false,
+    "reverificationReason": null
   },
   {
     "batchId": "D53",
@@ -996,7 +1004,7 @@
     "language": "ru",
     "cluster": "Mini-batch topic",
     "primaryKeyword": "текст в карусель нейросеть",
-    "status": "published",
+    "status": "live_verified",
     "priorityScore": 85,
     "published": true,
     "noindex": false,
@@ -1005,7 +1013,7 @@
     "lastUpdated": "2026-06-07T19:12:00.860Z",
     "qaStatus": "passed",
     "visualQaStatus": "passed",
-    "productionVerificationStatus": "pending",
+    "productionVerificationStatus": "passed",
     "notes": "Mini batch testing",
     "briefStatus": "approved",
     "contentQaStatus": "not_run",
@@ -1018,7 +1026,11 @@
     "approvedForDraft": true,
     "approvedForPublish": true,
     "productionUrl": "https://gotoflow.io/ru/blog/tekst-v-karusel-neyroset",
-    "pageType": "blog_post"
+    "pageType": "blog_post",
+    "productionVerifiedAt": "2026-06-09T12:39:42.485Z",
+    "productionVerificationCommit": "ae86198",
+    "reverificationRequired": false,
+    "reverificationReason": null
   },
   {
     "batchId": "D53",
@@ -1028,7 +1040,7 @@
     "language": "en",
     "cluster": "Mini-batch topic",
     "primaryKeyword": "content calendar to carousel",
-    "status": "published",
+    "status": "live_verified",
     "priorityScore": 85,
     "published": true,
     "noindex": false,
@@ -1037,7 +1049,7 @@
     "lastUpdated": "2026-06-07T19:12:00.860Z",
     "qaStatus": "passed",
     "visualQaStatus": "passed",
-    "productionVerificationStatus": "pending",
+    "productionVerificationStatus": "passed",
     "notes": "Mini batch testing",
     "briefStatus": "approved",
     "contentQaStatus": "not_run",
@@ -1050,7 +1062,11 @@
     "approvedForDraft": true,
     "approvedForPublish": true,
     "productionUrl": "https://gotoflow.io/blog/content-calendar-to-carousel",
-    "pageType": "blog_post"
+    "pageType": "blog_post",
+    "productionVerifiedAt": "2026-06-09T12:39:42.485Z",
+    "productionVerificationCommit": "ae86198",
+    "reverificationRequired": false,
+    "reverificationReason": null
   },
   {
     "batchId": "D53",
@@ -1060,7 +1076,7 @@
     "language": "ru",
     "cluster": "Mini-batch topic",
     "primaryKeyword": "b2b кейс в linkedin карусель",
-    "status": "published",
+    "status": "live_verified",
     "priorityScore": 85,
     "published": true,
     "noindex": false,
@@ -1069,7 +1085,7 @@
     "lastUpdated": "2026-06-07T19:12:00.860Z",
     "qaStatus": "passed",
     "visualQaStatus": "passed",
-    "productionVerificationStatus": "pending",
+    "productionVerificationStatus": "passed",
     "notes": "Mini batch testing",
     "briefStatus": "approved",
     "contentQaStatus": "not_run",
@@ -1082,6 +1098,10 @@
     "approvedForDraft": true,
     "approvedForPublish": true,
     "productionUrl": "https://gotoflow.io/ru/blog/b2b-keysy-v-linkedin-karusel",
-    "pageType": "blog_post"
+    "pageType": "blog_post",
+    "productionVerifiedAt": "2026-06-09T12:39:42.485Z",
+    "productionVerificationCommit": "ae86198",
+    "reverificationRequired": false,
+    "reverificationReason": null
   }
 ]

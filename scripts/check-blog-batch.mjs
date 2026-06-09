@@ -59,7 +59,7 @@ batchData.forEach((entry, i) => {
   
   if (['idea', 'brief', 'hold', 'optimize_existing_route'].includes(entry.status)) {
     // Ok if markdown doesn't exist yet
-  } else if (['draft', 'draft_preview', 'qa_failed', 'qa_passed', 'ready_to_publish', 'published'].includes(entry.status)) {
+  } else if (['draft', 'draft_preview', 'qa_failed', 'qa_passed', 'ready_to_publish', 'published', 'live_verified'].includes(entry.status)) {
     if (!mdExists) {
       conflicts.push(`Status is '${entry.status}' but markdown file missing: ${entry.slug}.md`);
       hasP0Error = true;
@@ -75,7 +75,7 @@ batchData.forEach((entry, i) => {
         if (!isNoindex) conflicts.push(`${entry.slug}.md has noindex:false but status is ${entry.status}`);
       }
       
-      if (entry.status === 'published') {
+      if (['published', 'live_verified'].includes(entry.status)) {
         if (!isPublished) conflicts.push(`${entry.slug}.md has published:false but status is published`);
         if (isNoindex) conflicts.push(`${entry.slug}.md has noindex:true but status is published`);
       }
@@ -89,7 +89,7 @@ batchData.forEach((entry, i) => {
   }
 
   // QA Gate checks
-  if (['ready_to_publish', 'published'].includes(entry.status)) {
+  if (['ready_to_publish', 'published', 'live_verified'].includes(entry.status)) {
     if (entry.qaStatus !== 'passed') conflicts.push(`${entry.articleId} is ${entry.status} but qaStatus is not passed`);
     if (entry.visualQaStatus !== 'passed') conflicts.push(`${entry.articleId} is ${entry.status} but visualQaStatus is not passed`);
   }
@@ -99,8 +99,8 @@ batchData.forEach((entry, i) => {
     conflicts.push(`${entry.articleId} has invalid productionVerificationStatus: ${entry.productionVerificationStatus}`);
   }
   
-  if (entry.productionVerificationStatus === 'passed' && entry.status !== 'published') {
-    conflicts.push(`${entry.articleId} has productionVerificationStatus: passed but status is not published`);
+  if (entry.productionVerificationStatus === 'passed' && !['published', 'live_verified'].includes(entry.status)) {
+    conflicts.push(`${entry.articleId} has productionVerificationStatus: passed but status is not published/live_verified`);
   }
 });
 

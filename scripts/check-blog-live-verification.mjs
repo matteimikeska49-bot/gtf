@@ -66,7 +66,7 @@ async function runChecks() {
   let skippedDraftCount = 0;
 
   for (const article of articlesToCheck) {
-    const isPublished = article.published === true && article.status === 'published';
+    const isPublished = article.published === true && ['published', 'live_verified'].includes(article.status);
     const route = article.language === 'ru' ? `/ru/blog/${article.slug}` : `/blog/${article.slug}`;
     const fullUrl = `${BASE_URL}${route}`;
 

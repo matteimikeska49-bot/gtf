@@ -75,7 +75,7 @@ batchData.forEach((entry, i) => {
     const hasLang = /^language:\s*([^\s]+)/m.test(content);
 
     // D53 strict draft checks (Rule 6)
-    if (isD53 && entry.status !== 'published') {
+    if (isD53 && !['published', 'live_verified'].includes(entry.status)) {
       if (isPublished) { conflicts.push(`[${entry.slug}] D53 draft leaked published:true!`); hasError = true; }
       if (!isNoindex) { conflicts.push(`[${entry.slug}] D53 draft leaked noindex:false!`); hasError = true; }
     }
