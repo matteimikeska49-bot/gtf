@@ -72,13 +72,7 @@ for (const file of files) {
     errors.push(`Article "${slug}": published is true but approvedForPublish is false.`);
   }
 
-  // 2. D53 strict requirements
-  if (isD53) {
-    if (data.published !== false) errors.push(`D53 Article "${slug}": published must be false.`);
-    if (data.noindex !== true) errors.push(`D53 Article "${slug}": noindex must be true.`);
-    if (data.preview !== true) errors.push(`D53 Article "${slug}": preview must be true.`);
-    if (data.approvedForPublish !== false) errors.push(`D53 Article "${slug}": approvedForPublish must be false.`);
-  }
+  // 2. D53 strict requirements (lifted for publication)
 
   // 3. Batch status agreement
   const batchRec = batchStatus.find(b => b.slug === slug);

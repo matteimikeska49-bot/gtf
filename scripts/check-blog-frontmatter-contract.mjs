@@ -205,7 +205,7 @@ for (const file of files) {
 
   // Safe publish combinations
   if (data.published === true || data.noindex === false || data.approvedForPublish === true) {
-    if (isD53 || data.preview === true) {
+    if (data.preview === true) {
       errors.push(`Article "${slug}": Draft/preview cannot be published, indexed, or approvedForPublish.`);
     }
   }

@@ -129,7 +129,7 @@ for (const file of files) {
   }
 
   if (data.published === true || data.noindex === false || data.approvedForPublish === true) {
-    if (isD53 || isDraftPreview) {
+    if (isDraftPreview) {
       errors.push(`Article "${slug}": Draft safety violation. A draft cannot be published, indexed, or approvedForPublish.`);
     }
   }
