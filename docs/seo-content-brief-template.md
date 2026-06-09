@@ -3,10 +3,15 @@
 ## 1. Basic metadata
 - Working title:
 - Language:
-- Article type:
+- Article type: {workflow_article/technical_guide/how_to/comparison/definition/listicle/product_led_guide}
 - Funnel stage:
 - Search intent:
 - Audience:
+- Product Fit: {YES/PARTIAL/NO}
+- Product Fit Explanation: 
+- Required Visual Block: 
+- FAQ Format: structured
+- Quality Gate Status: draft
 
 ## Stage 1: Keyword Demand
 - Primary keyword:

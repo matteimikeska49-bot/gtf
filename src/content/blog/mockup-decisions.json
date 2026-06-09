@@ -111,5 +111,100 @@
     "capabilityRisk": "none",
     "decision": "approved",
     "lastReviewed": "2026-06-08"
+  },
+  {
+    "slug": "ii-dlya-karuseley",
+    "language": "ru",
+    "mockupStatus": "present",
+    "mockupReason": "Verified visual assets exist for RU.",
+    "slotsUsed": [
+      "topic-input"
+    ],
+    "assetsUsed": [
+      "ru-upload-text-topic-expert-breakdown"
+    ],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "low",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-06-09"
+  },
+  {
+    "slug": "karusel-dlya-instagram",
+    "language": "ru",
+    "mockupStatus": "present",
+    "mockupReason": "Verified visual assets exist for RU.",
+    "slotsUsed": [
+      "result-preview"
+    ],
+    "assetsUsed": [
+      "ru-carousel-result-ideas"
+    ],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "low",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-06-09"
+  },
+  {
+    "slug": "neyroset-dlya-postov",
+    "language": "ru",
+    "mockupStatus": "present",
+    "mockupReason": "Verified visual assets exist for RU.",
+    "slotsUsed": [
+      "result-preview"
+    ],
+    "assetsUsed": [
+      "ru-carousel-result-ideas"
+    ],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "low",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-06-09"
+  },
+  {
+    "slug": "razmer-karuseli-v-instagram",
+    "language": "ru",
+    "mockupStatus": "present",
+    "mockupReason": "Verified visual assets exist for RU.",
+    "slotsUsed": [
+      "format-settings"
+    ],
+    "assetsUsed": [
+      "ru-settings-6-slides-4x5"
+    ],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "low",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-06-09"
+  },
+  {
+    "slug": "besshovnaya-karusel-v-instagram",
+    "language": "ru",
+    "mockupStatus": "present",
+    "mockupReason": "Verified visual assets exist for RU.",
+    "slotsUsed": [
+      "format-settings"
+    ],
+    "assetsUsed": [
+      "ru-settings-6-slides-4x5"
+    ],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "low",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-06-09"
   }
 ]

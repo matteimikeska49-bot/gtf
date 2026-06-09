@@ -39,7 +39,10 @@
 - Examples articles must contain at least 5 concrete examples (with hook, logic, CTA idea, etc.), not just generic formats.
 - Hooks articles must deliver the exact number of hooks promised in the numeric title (e.g., "15 hooks").
 - YouTube articles must be product-realistic and not overclaim (e.g., no "AI handles the entire workflow").
-- Compliance is enforced by `check:blog:content-template`.
+- **Blog Article Quality Contract:** All articles must adhere to the rules in `docs/blog-article-quality-contract.md`.
+- **Mandatory Frontmatter:** `articleType`, `productFit`, `productFitExplanation`, `requiredVisualBlock`, `faqFormat`, and `qualityGateStatus` are strictly required.
+- **FAQ Enforcement:** `faq` must be an array in frontmatter. Markdown headings like `## FAQ` with unstructured text below are forbidden.
+- Compliance is enforced by `check:blog:content-template` and `check:blog:quality-contract`.
 
 ## Required article structure
 
