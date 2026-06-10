@@ -38,13 +38,10 @@ const ROUTES = [
   '/blog/best-ai-carousel-generators',
   '/blog/how-to-make-linkedin-carousel-with-ai',
   '/blog/ai-instagram-carousel-generator',
-  '/blog/test-seo-template-v2',
-  '/ru/blog/test-ru-seo-template',
   '/ru/blog/idei-karuselej-linkedin',
   '/ru/blog/luchshie-ai-generatory-karuselej',
   '/ru/blog/kak-sdelat-karusel-linkedin-s-ai',
   '/ru/blog/prompty-dlya-karuseley-v-instagram',
-  '/blog/how-to-make-an-instagram-carousel-with-ai',
   '/blog/instagram-carousel-ideas',
   '/privacy-policy',
   '/ru/politika',
@@ -124,7 +121,7 @@ async function getDynamicMarkdownRoutes() {
       const isNoindex = /^noindex:\s*true\b/m.test(content);
       const isPreview = /^preview:\s*true\b/m.test(content);
       
-      if ((isPublished && !isNoindex) || (isPreview && isNoindex && !isPublished)) {
+      if (isPublished && !isNoindex) {
         // Extract slug, fallback to filename
         const slugMatch = content.match(/^slug:\s*["']?([^"'\n]+)["']?/m);
         const slug = slugMatch ? slugMatch[1].trim() : file.replace(/\.md$/, '');
