@@ -109,7 +109,7 @@ finalCta:
 :::mockup{slot="format-settings"}
 :::
 
-*Попробуйте [генератор от GoToFlow](/ru/ai-generator-karuselej) для создания аккуратных постов без ручной верстки.*
+Попробуйте [генератор от GoToFlow](/ru/ai-generator-karuselej) для создания аккуратных постов без ручной верстки.
 
 ### Инструменты для создания каруселей
 

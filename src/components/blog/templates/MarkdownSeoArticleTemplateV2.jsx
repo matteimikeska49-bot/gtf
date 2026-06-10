@@ -835,11 +835,10 @@ const QuickAnswer = ({ items, title, isRu }) => {
           <Sparkles className="h-5 w-5 text-pink-300" />
         </div>
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-pink-200">{copy.quickAnswerLabel}</p>
           <h2 className="text-xl font-bold text-white md:text-2xl">{title || copy.quickAnswerTitle}</h2>
         </div>
       </div>
-      <ul className="grid gap-3 md:grid-cols-2">
+      <ul className="flex flex-col gap-3">
         {items.slice(0, 5).map((item, i) => {
           let content = null;
           let key = i;
