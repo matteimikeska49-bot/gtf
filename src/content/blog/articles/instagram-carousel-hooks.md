@@ -51,12 +51,13 @@ finalCta:
   secondaryHref: "#explore-more"
 
 explore:
-  - title: "AI Instagram Post Generator"
-    description: "Discover tools to scale your Instagram reach."
-    href: "/blog/ai-instagram-post-generator"
-  - title: "Content Calendar to Carousel"
-    description: "Turn your calendar into a month of carousels."
-    href: "/blog/content-calendar-to-carousel"
+  guides:
+    - title: "AI Instagram Post Generator"
+      description: "Discover tools to scale your Instagram reach."
+      href: "/blog/ai-instagram-post-generator"
+    - title: "Content Calendar to Carousel"
+      description: "Turn your calendar into a month of carousels."
+      href: "/blog/content-calendar-to-carousel"
 ---
 
 

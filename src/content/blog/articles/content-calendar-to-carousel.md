@@ -54,12 +54,13 @@ finalCta:
   secondaryHref: "#explore-more"
 
 explore:
-  - title: "AI Instagram Post Generator"
-    description: "Discover tools to scale your Instagram reach."
-    href: "/blog/ai-instagram-post-generator"
-  - title: "Instagram Carousel Hooks"
-    description: "Hooks designed to stop the scroll."
-    href: "/blog/instagram-carousel-hooks"
+  guides:
+    - title: "AI Instagram Post Generator"
+      description: "Discover tools to scale your Instagram reach."
+      href: "/blog/ai-instagram-post-generator"
+    - title: "Instagram Carousel Hooks"
+      description: "Hooks designed to stop the scroll."
+      href: "/blog/instagram-carousel-hooks"
 ---
 
 

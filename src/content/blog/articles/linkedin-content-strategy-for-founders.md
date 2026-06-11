@@ -39,7 +39,7 @@ finalCta:
   href: "/linkedin-carousel-maker"
   microcopy: "No credit card required"
   secondaryText: "See how it works →"
-  secondaryHref: "#examples"
+  secondaryHref: "#explore-more"
 ---
 
 # LinkedIn Content Strategy for Founders: Building Authority in 2026

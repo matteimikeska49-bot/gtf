@@ -39,7 +39,7 @@ finalCta:
   href: "/ai-carousel-maker"
   microcopy: "No credit card required"
   secondaryText: "See how it works →"
-  secondaryHref: "#examples"
+  secondaryHref: "#explore-more"
 ---
 
 # Best Carousel CTA Examples for High Conversions

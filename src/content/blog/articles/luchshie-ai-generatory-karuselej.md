@@ -169,7 +169,7 @@ GoToFlow помогает пройти путь от идеи, ссылки, в�
 
 Вставьте тему, ссылку или видео и получите структуру, текст и готовый результат.
 
-[Попробовать GoToFlow AI Carousel Maker](#productRoute)
+[Попробовать GoToFlow AI Carousel Maker](/ru/generator-karuselej-linkedin)
 
 ---
 
@@ -420,6 +420,6 @@ Instagram* чаще требует более визуального, быстр
 
 Создайте карусель из темы, ссылки или видео быстрее.
 
-[Попробовать GoToFlow AI Carousel Maker](#productRoute)
+[Попробовать GoToFlow AI Carousel Maker](/ru/generator-karuselej-linkedin)
 
 [Превратите любую идею в структурированную карусель быстрее](/ru/ai-generator-karuselej)

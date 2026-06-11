@@ -38,7 +38,7 @@ finalCta:
   title: "Turn your PDF insights into swipeable carousels"
   text: "Stop wasting hours manually redesigning whitepapers. Paste your best PDF insights into our AI, and get a ready-to-publish LinkedIn carousel instantly."
   buttonText: "Create Carousel Free"
-  secondaryText: "No credit card required"
+  microcopy: "No credit card required"
 mockupStatus: "not_available"
 mockupReason: "No perfectly matching mockup is available for this exact topic visual intent."
 ---

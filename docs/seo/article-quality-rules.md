@@ -38,3 +38,9 @@ These rules dictate the visual and content quality standards for all production 
     - If an article references a specific technical limit of a social platform (e.g., Instagram carousel slide count, character limits, video length), use cautious phrasing and check for current accuracy.
     - For Instagram carousels, use: "до 20 фото или видео, если функция доступна в вашем аккаунте/регионе" (EN: "up to 20 photos or videos, where available") instead of the outdated unconditional "up to 10".
     - Platform limits change frequently. Always add a qualifier like "at the time of writing" or "where available" to avoid stale claims.
+
+11. **Anchor Link Integrity:**
+    - Any internal link using `#section-id` must point to an element with a corresponding `id` on the same page.
+    - Do not use generic anchors like `#examples` unless every single article has a dedicated section with that ID. Use reliable template-generated IDs like `#explore-more`.
+    - CTA secondary links (`secondaryHref`) must provide actual value: they should lead to a valid section on the page (e.g., `#explore-more`) or direct to a relevant product route.
+    - Broken anchors leave the user stranded and are considered a hard UX/SEO quality issue.
