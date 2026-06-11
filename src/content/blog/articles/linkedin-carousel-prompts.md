@@ -30,6 +30,8 @@ faq:
     answer: "Yes. Manual prompting gives you a solid foundation, but you should always review the output to add personal anecdotes, verify data, and adjust the tone to match your unique brand voice."
   - question: "Can AI design the visual carousel for me?"
     answer: "Standard chat interfaces usually return text, not a finished visual carousel. A dedicated tool like GoToFlow can combine the structure, copy generation, and design workflow into a single process."
+  - question: "Why does ChatGPT always write long paragraphs instead of slides?"
+    answer: "Language models are trained to provide comprehensive, essay-style answers. You must explicitly constrain them by stating exact slide counts and strict word limits (e.g., 'maximum 20 words per slide') in your prompt."
 explore:
   tools:
     - href: "/linkedin-carousel-maker"

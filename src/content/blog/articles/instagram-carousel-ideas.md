@@ -49,6 +49,12 @@ faq:
     answer: "Most high-performing carousels have between 5 and 8 slides. This is enough to provide value without overwhelming the reader."
   - question: "What is the best way to come up with ideas?"
     answer: "Look at the most common questions your clients or followers ask you. Every FAQ is a potential carousel idea."
+  - question: "Can I repurpose my blog posts into Instagram carousels?"
+    answer: "Yes, converting blog posts into carousels is a great way to generate content ideas. You can extract the main headings and key takeaways to create educational slides."
+  - question: "What if I don't have any design skills to create carousels?"
+    answer: "You don't need to be a designer. You can use an AI carousel generator that automatically applies proven layouts and typography to your text."
+  - question: "Should I use photos or text for my carousel ideas?"
+    answer: "It depends on your niche, but text-heavy educational carousels often perform best for B2B and educational creators because they encourage saves and shares."
 explore:
   tools:
     - title: "AI Carousel Maker"

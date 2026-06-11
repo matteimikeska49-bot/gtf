@@ -84,7 +84,7 @@ If you need to drive traffic off-platform, you must give a compelling reason. Do
 
 ### 4. The Profile Optimization Play
 If your goal is audience growth rather than immediate monetization, direct people to your profile ecosystem.
-* **The Copy:** "If you found this helpful, follow me and ring the 🔔 on my profile so you never miss a guide."
+* **The Copy:** "If you found this helpful, follow me and turn on notifications so you never miss a guide."
 * **Best used for:** Top-of-funnel content aimed at gaining followers.
 
 ### 5. The Debate Starter
