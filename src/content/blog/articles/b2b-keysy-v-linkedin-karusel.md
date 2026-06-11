@@ -46,6 +46,16 @@ faq:
   - question: "Что писать на последнем слайде?"
     answer: "Четкий призыв к действию: предложить бесплатную консультацию или написать в личные сообщения."
 
+explore:
+  tools:
+    - title: "Генератор каруселей для LinkedIn"
+      href: "/ru/generator-karuselej-linkedin"
+      description: "Создавайте профессиональные карусели для B2B аудитории."
+  guides:
+    - title: "Примеры каруселей LinkedIn"
+      href: "/ru/blog/primery-karuseley-linkedin"
+      description: "Разбор успешных постов и форматов."
+
 finalCta:
   title: "Создайте карусель из вашего B2B кейса"
   text: "Загрузите текст вашего кейса, и нейросеть автоматически превратит его в профессиональную LinkedIn карусель."

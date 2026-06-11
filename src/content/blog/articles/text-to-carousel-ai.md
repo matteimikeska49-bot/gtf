@@ -44,6 +44,19 @@ faq:
   - question: "Does the AI generate the hook automatically?"
     answer: "Yes, the AI analyzes your text and creates a scroll-stopping hook for the first slide."
 
+explore:
+  tools:
+    - title: "AI Carousel Maker"
+      href: "/ai-carousel-maker"
+      description: "Convert any idea or text into a professional carousel in seconds."
+  guides:
+    - title: "Best AI Carousel Generators"
+      href: "/blog/best-ai-carousel-generators"
+      description: "Compare the top tools for creating carousels with AI."
+    - title: "How to Turn a YouTube Video into a LinkedIn Carousel"
+      href: "/blog/youtube-to-linkedin-carousel-ai"
+      description: "Learn the easiest workflow to repurpose your video content."
+
 finalCta:
   title: "Convert Your Text to a Carousel Now"
   text: "Stop wasting hours on design. Paste your text and let AI generate a stunning carousel for Instagram or LinkedIn in seconds."

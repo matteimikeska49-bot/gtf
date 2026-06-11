@@ -45,6 +45,19 @@ faq:
   - question: "Понимает ли нейросеть русский язык?"
     answer: "Да, алгоритм отлично работает с русскоязычными текстами и сохраняет смысл."
 
+explore:
+  tools:
+    - title: "Генератор каруселей для LinkedIn"
+      href: "/ru/generator-karuselej-linkedin"
+      description: "Создавайте профессиональные карусели для LinkedIn за пару кликов."
+  guides:
+    - title: "Лучшие AI генераторы каруселей"
+      href: "/ru/blog/luchshie-ai-generatory-karuselej"
+      description: "Обзор лучших нейросетей для генерации контента."
+    - title: "Как упаковать B2B кейс в LinkedIn карусель"
+      href: "/ru/blog/b2b-keysy-v-linkedin-karusel"
+      description: "Пошаговое руководство по превращению кейса в вовлекающую карусель."
+
 finalCta:
   title: "Создать карусель из текста"
   text: "Хватит тратить часы на дизайн в Canva. Вставьте текст, и нейросеть сделает всю работу за вас."

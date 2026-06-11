@@ -21,6 +21,12 @@ createdAt: "2026-06-05T00:00:00.000Z"
 updatedAt: "2026-06-05T00:00:00.000Z"
 lastReviewed: "2026-06-05T00:00:00.000Z"
 mockupStatus: "present"
+quickAnswerTitle: "How to turn a YouTube video into a carousel?"
+quickAnswer:
+  - "Find a valuable YouTube video and copy its URL."
+  - "Paste the link into GoToFlow's carousel generator."
+  - "Let the AI extract the key points and generate slides."
+  - "Review the content, tweak the design, and export to PDF."
 faq:
   - question: "Do I need to provide a transcript?"
     answer: "No. GoToFlow automatically processes the YouTube video URL and extracts the necessary information without requiring a manual transcript upload."
@@ -32,6 +38,16 @@ faq:
     answer: "Yes, you have full control. You can review, adjust, and edit the slides before exporting."
   - question: "What format does it export in?"
     answer: "It exports as a high-quality PDF, which is the native format LinkedIn prefers for document carousels."
+explore:
+  tools:
+    - title: "LinkedIn Carousel Maker"
+      href: "/linkedin-carousel-maker"
+      description: "Automatically turn your videos and text into LinkedIn carousels."
+  guides:
+    - title: "How to Convert Text to Carousel"
+      href: "/blog/text-to-carousel-ai"
+      description: "Learn how to transform text snippets into engaging carousels."
+
 finalCta:
   title: "Stop wasting hours on repurposing"
   description: "Turn your YouTube videos into ready LinkedIn carousels you can review, adjust, and export."
