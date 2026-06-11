@@ -56,6 +56,14 @@ finalCta:
   microcopy: "Free - No credit card required"
   secondaryText: "Discover the best Instagram Hooks ->"
   secondaryHref: "/blog/instagram-carousel-hooks"
+
+explore:
+  - title: "Content Calendar to Carousel"
+    description: "Turn your content calendar into 30 days of carousels."
+    href: "/blog/content-calendar-to-carousel"
+  - title: "Instagram Carousel Hooks"
+    description: "Discover proven hooks to increase your swipe-through rate."
+    href: "/blog/instagram-carousel-hooks"
 ---
 
 # The Best AI Instagram Post Generators to Scale Your Reach

@@ -43,6 +43,20 @@ finalCta:
   buttonText: "Попробовать GoToFlow"
   href: "/ru/ai-generator-karuselej"
   microcopy: "Бесплатно — Без привязки карты"
+
+quickAnswerTitle: "Краткий ответ"
+quickAnswer:
+  - "Лучший генератор для полного цикла (идея → готовая карусель) — GoToFlow."
+  - "Для ручного дизайна и работы с шаблонами — Canva или Figma."
+  - "Для генерации текста и идей — ChatGPT, Claude или Gemini."
+
+explore:
+  - title: "Как сделать карусель для Инстаграм с ИИ"
+    description: "Узнайте, как нейросети ускоряют создание каруселей для Инстаграм."
+    href: "/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii"
+  - title: "YouTube в карусель LinkedIn"
+    description: "Как переформатировать длинное видео в читаемую карусель."
+    href: "/ru/blog/kak-peredelat-youtube-v-karusel-linkedin"
 ---
 
 За последний год инструменты для создания контента сильно изменились. Если раньше все искали шаблоны в Canva, то теперь главный тренд — AI-генераторы каруселей.

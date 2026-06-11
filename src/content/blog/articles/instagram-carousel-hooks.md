@@ -49,6 +49,14 @@ finalCta:
   microcopy: "Free - No credit card required"
   secondaryText: "Back to related tools and guides ->"
   secondaryHref: "#explore-more"
+
+explore:
+  - title: "AI Instagram Post Generator"
+    description: "Discover tools to scale your Instagram reach."
+    href: "/blog/ai-instagram-post-generator"
+  - title: "Content Calendar to Carousel"
+    description: "Turn your calendar into a month of carousels."
+    href: "/blog/content-calendar-to-carousel"
 ---
 
 
