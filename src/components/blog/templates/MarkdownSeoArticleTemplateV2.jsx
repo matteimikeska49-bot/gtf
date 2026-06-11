@@ -449,7 +449,7 @@ const MarkdownBody = ({ markdown, title, article, isRu }) => {
         if (block.type === 'heading') {
           if (block.level <= 2) {
             return (
-              <h2 key={index} className="pt-10 pb-4 text-2xl font-bold leading-tight tracking-tight text-white md:text-[32px]">
+              <h2 key={index} className="pt-10 pb-4 text-2xl font-bold leading-tight tracking-tight text-white md:text-[32px] text-balance">
                 {renderFormattedHeading(block.text, isRu)}
               </h2>
             );
@@ -819,7 +819,7 @@ const SectionShell = ({ id, eyebrow, title, children, isRu }) => (
         </span>
       )}
     </div>
-    {title && <h2 className="mb-8 text-2xl font-bold tracking-tight text-white md:text-[32px] leading-[1.15]">{renderFormattedTitle(title, isRu)}</h2>}
+    {title && <h2 className="mb-8 text-2xl font-bold tracking-tight text-white md:text-[32px] leading-[1.15] text-balance">{renderFormattedTitle(title, isRu)}</h2>}
     {children}
   </section>
 );
@@ -835,7 +835,7 @@ const QuickAnswer = ({ items, title, isRu }) => {
           <Sparkles className="h-5 w-5 text-pink-300" />
         </div>
         <div>
-          <h2 className="text-xl font-bold text-white md:text-2xl">{title || copy.quickAnswerTitle}</h2>
+          <h2 className="text-xl font-bold text-white md:text-2xl text-balance">{title || copy.quickAnswerTitle}</h2>
         </div>
       </div>
       <ul className="flex flex-col gap-3">
@@ -905,7 +905,7 @@ const StepPhases = ({ phases, isRu }) => {
                     <div className="flex items-center justify-center shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-pink-500/10 to-orange-500/10 border border-white/[0.08]">
                       <span className="text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400">{i + 1}</span>
                     </div>
-                    <h4 className="text-[15px] font-bold text-white tracking-tight leading-snug">{item.title}</h4>
+                    <h4 className="text-[15px] font-bold text-white tracking-tight leading-snug text-balance">{item.title}</h4>
                   </div>
                   <p className="text-[13px] md:text-sm leading-relaxed text-zinc-400">{parseInlineMarkdown(item.text || '')}</p>
                 </article>
@@ -985,7 +985,7 @@ const FormatsGrid = ({ formats, isRu }) => {
         {formats.map((format) => (
           <article key={format.title} className="group rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-5 md:p-6 transition-colors hover:bg-white/[0.03] hover:border-white/[0.12]">
             <Layers3 className="mb-4 h-6 w-6 text-pink-300" />
-            <h3 className="mb-2 text-[15px] md:text-base font-bold text-zinc-100 tracking-tight leading-snug">{format.title}</h3>
+            <h3 className="mb-2 text-[15px] md:text-base font-bold text-zinc-100 tracking-tight leading-snug text-balance">{format.title}</h3>
             <p className="mb-4 text-[13px] leading-[1.6] text-zinc-400">{parseInlineMarkdown(format.text || '')}</p>
             {format.example && (
               <div className="rounded-lg bg-white/[0.03] border border-white/[0.05] px-3 py-2.5">
@@ -1013,7 +1013,7 @@ const ArticleExploreZone = ({ explore, isRu }) => {
   const renderCard = (item) => (
     <ArticleLink key={`${item.href}-${item.title}`} href={item.href} className="group block rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 transition-colors hover:border-pink-300/25 hover:bg-pink-500/[0.05]">
       <div className="mb-3 flex items-start justify-between gap-3">
-        <h3 className="text-base font-semibold text-white transition-colors group-hover:text-pink-100">{isRu ? applyRuAutoStar(item.title, isRu) : item.title}</h3>
+        <h3 className="text-base font-semibold text-white transition-colors group-hover:text-pink-100 text-balance">{isRu ? applyRuAutoStar(item.title, isRu) : item.title}</h3>
         {isExternalHref(item.href || '') ? <ExternalLink className="h-4 w-4 shrink-0 text-zinc-500" /> : <ChevronRight className="h-4 w-4 shrink-0 text-zinc-500 transition-transform group-hover:translate-x-0.5" />}
       </div>
       <p className="text-sm leading-relaxed text-zinc-400">{isRu ? applyRuAutoStar(item.description, isRu) : item.description}</p>
@@ -1071,7 +1071,7 @@ const FinalCta = ({ cta, isRu }) => {
       <div className="relative my-16 overflow-hidden rounded-[32px] border border-pink-300/15 bg-gradient-to-br from-pink-500/[0.12] via-white/[0.035] to-orange-500/[0.10] p-7 shadow-[0_30px_140px_rgba(236,72,153,0.12)] md:p-10">
         <div className="absolute left-1/2 top-0 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-400/10 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-2xl">
-          <h2 className="mb-4 text-2xl font-bold tracking-tight text-white md:text-4xl">{isRu ? applyRuAutoStar(cta.title, isRu) : cta.title}</h2>
+          <h2 className="mb-4 text-2xl font-bold tracking-tight text-white md:text-4xl text-balance">{isRu ? applyRuAutoStar(cta.title, isRu) : cta.title}</h2>
           <p className="mx-auto mb-7 max-w-xl text-base leading-relaxed text-zinc-300">{isRu ? applyRuAutoStar((cta.text || cta.description), isRu) : (cta.text || cta.description)}</p>
           <a href={getAppUrlWithRef(CTA_URL)} className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 px-7 py-3.5 text-[15px] font-bold text-white shadow-[0_0_40px_rgba(236,72,153,0.35)] transition-all hover:scale-105 active:scale-[0.98] sm:w-auto">
             {cta.buttonText}
@@ -1110,10 +1110,10 @@ const ArticleHero = ({ article, isRu }) => {
 
         {/* cluster hidden */}
 
-        <h1 className={`mx-auto mb-6 max-w-4xl font-bold leading-[1.1] tracking-tight text-white ${article.title.length > 50 ? 'text-3xl md:text-4xl lg:text-[40px]' : 'text-3xl md:text-5xl lg:text-6xl'}`}>
+        <h1 className={`mx-auto mb-6 max-w-4xl font-bold leading-[1.1] tracking-tight text-white text-balance ${article.title.length > 50 ? 'text-3xl md:text-4xl lg:text-[40px]' : 'text-3xl md:text-5xl lg:text-6xl'}`}>
           {renderFormattedTitle(article.title, isRu)}
         </h1>
-        <p className="mx-auto max-w-2xl text-lg leading-[1.65] text-zinc-400 md:text-xl">
+        <p className="mx-auto max-w-2xl text-lg leading-[1.65] text-zinc-400 md:text-xl text-balance">
           {isRu ? applyRuAutoStar(article.description, isRu) : article.description}
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-zinc-500">
@@ -1183,7 +1183,7 @@ const MarkdownCardsBlock = ({ variant, items }) => {
     <div className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4">
       {items.map((item, idx) => (
         <div key={idx} className="group rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-5 md:p-6 transition-colors hover:bg-white/[0.03] hover:border-white/[0.12] flex flex-col h-full">
-          {item.title && <h3 className="mb-2 text-[15px] md:text-base font-bold text-zinc-100 tracking-tight leading-snug">{item.title}</h3>}
+          {item.title && <h3 className="mb-2 text-[15px] md:text-base font-bold text-zinc-100 tracking-tight leading-snug text-balance">{item.title}</h3>}
           <div className="text-[13px] leading-[1.6] text-zinc-400 whitespace-pre-wrap">
             {item.content}
           </div>
