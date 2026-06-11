@@ -19,8 +19,8 @@ searchIntent: "user wants a practical step-by-step workflow for creating Instagr
 cluster: "AI content workflow"
 articleType: "how-to"
 priority: "P1"
-published: false
-noindex: true
+published: true
+noindex: false
 preview: true
 approvedForPublish: false
 canonical: "https://gotoflow.io/blog/how-to-make-an-instagram-carousel-with-ai"
@@ -61,6 +61,12 @@ faq:
     answer: "Yes. While ChatGPT only outputs text, dedicated tools like GoToFlow generate both the text and the final visual design, which you can download immediately."
   - question: "Do AI carousels perform well on Instagram?"
     answer: "Yes, if the content is structured correctly. Carousels naturally increase engagement and time spent on the post, regardless of whether the initial draft was AI-generated."
+  - question: "What is the best format for an Instagram carousel?"
+    answer: "A 4:5 vertical format (1080x1350) works best because it takes up more vertical space in the mobile feed, capturing more attention."
+  - question: "How many slides should my Instagram carousel have?"
+    answer: "Most high-performing carousels have between 6 and 10 slides. Keep each slide focused on a single point to maintain readability."
+  - question: "Should I use photos or graphics in AI carousels?"
+    answer: "Both work, but clean graphic-based carousels with large typography are generally easier to read on mobile devices."
 explore:
   tools:
     - title: "AI Carousel Maker"

@@ -32,6 +32,20 @@ finalCta:
   buttonText: "Try GoToFlow For Free"
   href: "/ai-carousel-maker"
   microcopy: "Free to try — No design skills needed"
+quickAnswer:
+  - "An AI Instagram carousel generator creates both the slide text and visual design from a single prompt or idea."
+  - "The best workflow is to provide a core topic or source material, let AI generate a hook and slide sequence, and then apply a visual theme."
+  - "Strong carousels have 6-10 slides, use short text, and end with a clear Call to Action."
+  - "Tools like GoToFlow allow you to handle both copywriting and design simultaneously without manually adjusting Canva templates."
+explore:
+  tools:
+    - title: "AI Carousel Maker"
+      href: "/ai-carousel-maker"
+      description: "Generate professional Instagram carousels in seconds."
+  guides:
+    - title: "Instagram Carousel Prompts"
+      href: "/blog/instagram-carousel-prompts"
+      description: "Exact prompts to get high-converting AI content."
 ---
 
 ## What is an AI Instagram carousel generator?

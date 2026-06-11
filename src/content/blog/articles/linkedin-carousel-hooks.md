@@ -40,6 +40,20 @@ finalCta:
   microcopy: "Free to try — No design skills needed"
   secondaryText: "Explore more ideas →"
   secondaryHref: "#explore-more"
+quickAnswer:
+  - "The first slide of your LinkedIn carousel is responsible for earning the user's attention and convincing them to swipe."
+  - "Strong hooks often fall into three categories: The Contrarian View, The 'How-To' Promise, and The Data/Case Study."
+  - "Effective hooks challenge beliefs, promise a transformation, or highlight a common mistake."
+  - "Use minimal text on the first slide, include a clear subtitle, and visually indicate that the user should swipe."
+explore:
+  tools:
+    - title: "LinkedIn Carousel Maker"
+      href: "/linkedin-carousel-maker"
+      description: "Instantly generate high-converting carousels from your text or links."
+  guides:
+    - title: "Best LinkedIn Carousel Examples"
+      href: "/blog/best-linkedin-carousel-examples"
+      description: "Analyze the anatomy of high-performing carousel posts."
 ---
 
 # 15 Proven LinkedIn Carousel Hooks to Stop the Scroll

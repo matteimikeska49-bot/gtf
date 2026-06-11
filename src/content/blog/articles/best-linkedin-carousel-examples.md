@@ -40,6 +40,20 @@ finalCta:
   microcopy: "Free to try — No design skills needed"
   secondaryText: "Explore more examples →"
   secondaryHref: "#explore-more"
+quickAnswer:
+  - "The best LinkedIn carousels hook the reader with a bold claim, strong statistics, or a relatable problem on the very first slide."
+  - "High-converting structures include Step-by-Step guides, Myth Busters, Before/After transformations, and Curated Listicles."
+  - "Design should be minimal: use large fonts, keep text under 25 words per slide, and ensure high contrast for mobile readability."
+  - "Always export your carousel as a PDF before uploading to LinkedIn to activate the native document viewer."
+explore:
+  tools:
+    - title: "LinkedIn Carousel Maker"
+      href: "/linkedin-carousel-maker"
+      description: "Build beautiful LinkedIn carousels without leaving your browser."
+  guides:
+    - title: "LinkedIn Content Strategy for Founders"
+      href: "/blog/linkedin-content-strategy-for-founders"
+      description: "Learn how to build authority and drive leads on LinkedIn."
 ---
 
 # Best LinkedIn Carousel Examples to Inspire Your Next Post
