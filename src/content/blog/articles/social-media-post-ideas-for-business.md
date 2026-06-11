@@ -37,9 +37,9 @@ finalCta:
   description: "Turn your ideas into fully designed posts using our AI content generator."
   buttonText: "Create a Post Now"
   href: "/ai-content-generator"
-  microcopy: "Fast and easy"
-  secondaryText: "See how it works →"
-  secondaryHref: "/blog/content-repurposing-strategy-2026"
+  secondaryText: "Explore Instagram carousel hooks"
+  secondaryHref: "/blog/instagram-carousel-hooks"
+
 ---
 
 # 30 Social Media Post Ideas for Small Business

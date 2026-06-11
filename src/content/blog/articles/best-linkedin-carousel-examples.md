@@ -37,9 +37,9 @@ finalCta:
   description: "Turn your inspiration into a ready carousel you can review, adjust, and export right now."
   buttonText: "Create a Carousel"
   href: "/linkedin-carousel-maker"
-  microcopy: "Free to try — No design skills needed"
-  secondaryText: "Explore more examples →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Check LinkedIn carousel hooks"
+  secondaryHref: "/blog/linkedin-carousel-hooks"
+
 quickAnswer:
   - "The best LinkedIn carousels hook the reader with a bold claim, strong statistics, or a relatable problem on the very first slide."
   - "High-converting structures include Step-by-Step guides, Myth Busters, Before/After transformations, and Curated Listicles."

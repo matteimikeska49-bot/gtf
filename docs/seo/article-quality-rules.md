@@ -44,3 +44,13 @@ These rules dictate the visual and content quality standards for all production 
     - Do not use generic anchors like `#examples` unless every single article has a dedicated section with that ID. Use reliable template-generated IDs like `#explore-more`.
     - CTA secondary links (`secondaryHref`) must provide actual value: they should lead to a valid section on the page (e.g., `#explore-more`) or direct to a relevant product route.
     - Broken anchors leave the user stranded and are considered a hard UX/SEO quality issue.
+
+12. **Final CTA Useful Secondary Link:**
+    - Primary CTA is required and should lead to the product or relevant conversion path.
+    - Secondary CTA is required for live blog articles unless there is a documented reason to omit it.
+    - Secondary CTA must provide a meaningful next step for the reader (relevant article/guide/example/comparison), not just an anchor.
+    - Secondary CTA must not be decorative or duplicate the primary CTA without adding meaning.
+    - A technically valid anchor is not automatically useful. Do not use `#explore-more` in final CTA if it creates a “nothing happened” feeling.
+    - Microcopy like `No credit card required` / `Без карты` must be plain text, not a link.
+    - Anchor text must describe the destination honestly.
+    - EN articles should primarily link to EN routes. RU articles should primarily link to RU routes.

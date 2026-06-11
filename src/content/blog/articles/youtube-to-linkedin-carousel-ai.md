@@ -53,9 +53,9 @@ finalCta:
   description: "Turn your YouTube videos into ready LinkedIn carousels you can review, adjust, and export."
   buttonText: "Start Creating"
   href: "/linkedin-carousel-maker"
-  microcopy: "Free to try — No credit card required"
-  secondaryText: "Explore more tools →"
-  secondaryHref: "#explore-more"
+  secondaryText: "See LinkedIn carousel examples"
+  secondaryHref: "/blog/best-linkedin-carousel-examples"
+
 ---
 
 # How to Turn a YouTube Video into a LinkedIn Carousel with AI

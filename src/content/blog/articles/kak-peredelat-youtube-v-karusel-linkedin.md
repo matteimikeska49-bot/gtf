@@ -54,9 +54,9 @@ finalCta:
   description: "Превратите ваши YouTube видео в готовую карусель, которую можно проверить, поправить и скачать."
   buttonText: "Создать карусель"
   href: "/ru/generator-karuselej-linkedin"
-  microcopy: "Бесплатно — кредитная карта не требуется"
-  secondaryText: "Посмотреть другие инструменты →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Смотреть примеры LinkedIn-каруселей"
+  secondaryHref: "/ru/blog/primery-karuseley-linkedin"
+
 ---
 
 # Как переделать YouTube видео в карусель LinkedIn с помощью ИИ

@@ -21,7 +21,9 @@ finalCta:
   description: "Хватит тратить часы на дизайн и верстку. Напишите тему, а ИИ GoToFlow сам соберет тексты и слайды в готовый PDF."
   buttonText: "Попробовать бесплатно"
   href: "/ru/generator-karuselej-linkedin"
-  microcopy: "Без привязки карты • Первые генерации бесплатно"
+  secondaryText: "Смотреть примеры LinkedIn-каруселей"
+  secondaryHref: "/ru/blog/primery-karuseley-linkedin"
+
 faq:
   - question: "Обязательно делать именно карусели?"
     answer: "Текст тоже работает. Но LinkedIn любит PDF-документы (карусели). Они задерживают людей на посте, пока те листают слайды. Алгоритмам это нравится."

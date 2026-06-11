@@ -37,9 +37,9 @@ finalCta:
   description: "Stop wasting hours on design. Turn your founder insights into engaging carousels instantly."
   buttonText: "Create a Carousel Free"
   href: "/linkedin-carousel-maker"
-  microcopy: "No credit card required"
-  secondaryText: "See how it works →"
-  secondaryHref: "#explore-more"
+  secondaryText: "See LinkedIn carousel examples"
+  secondaryHref: "/blog/best-linkedin-carousel-examples"
+
 ---
 
 # LinkedIn Content Strategy for Founders: Building Authority in 2026

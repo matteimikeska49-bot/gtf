@@ -57,9 +57,9 @@ finalCta:
   title: "Tired of wrestling with AI chat tools?"
   description: "Let GoToFlow turn your rough ideas, links, or notes into structured, design-ready LinkedIn carousel results in seconds."
   buttonText: "Try GoToFlow For Free"
-  microcopy: "Free — No credit card required"
-  secondaryText: "Explore more carousel tools and guides →"
-  secondaryHref: "#explore-more"
+  secondaryText: "See LinkedIn carousel examples"
+  secondaryHref: "/blog/best-linkedin-carousel-examples"
+
 ---
 
 ### Why generic LinkedIn carousel prompts fail

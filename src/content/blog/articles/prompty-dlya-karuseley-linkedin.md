@@ -52,7 +52,9 @@ finalCta:
   text: "В GoToFlow идеальные промпты уже встроены. Вы просто пишете идею, а мы генерируем готовый PDF для LinkedIn."
   buttonText: "Создать карусель бесплатно"
   href: "/ru/generator-karuselej-linkedin"
-  microcopy: "Кредитная карта не нужна"
+  secondaryText: "Смотреть примеры LinkedIn-каруселей"
+  secondaryHref: "/ru/blog/primery-karuseley-linkedin"
+
 ---
 
 ## Почему обычные промпты в ChatGPT не работают для каруселей LinkedIn

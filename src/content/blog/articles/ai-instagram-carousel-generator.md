@@ -31,7 +31,9 @@ finalCta:
   description: "Turn a topic, link, video, or rough note into a structured Instagram carousel with angle, hook, slide flow, copy, and visual direction."
   buttonText: "Try GoToFlow For Free"
   href: "/ai-carousel-maker"
-  microcopy: "Free to try — No design skills needed"
+  secondaryText: "Explore Instagram carousel hooks"
+  secondaryHref: "/blog/instagram-carousel-hooks"
+
 quickAnswer:
   - "An AI Instagram carousel generator creates both the slide text and visual design from a single prompt or idea."
   - "The best workflow is to provide a core topic or source material, let AI generate a hook and slide sequence, and then apply a visual theme."

@@ -62,6 +62,17 @@ def parse_frontmatter(content):
     data['has_quickAnswer'] = 'yes' if re.search(r'^quickAnswer:', fm_text, re.MULTILINE) else 'no'
     data['has_explore'] = 'yes' if re.search(r'^explore:', fm_text, re.MULTILINE) else 'no'
     data['has_finalCta'] = 'yes' if re.search(r'^finalCta:', fm_text, re.MULTILINE) else 'no'
+
+    # Check secondary CTA
+    m_sec_href = re.search(r'^\s*secondaryHref:\s*"?([^"\n]+)"?', fm_text, re.MULTILINE)
+    if not m_sec_href:
+        data['has_useful_secondaryCta'] = 'no'
+    else:
+        href = m_sec_href.group(1).strip()
+        if href.startswith('#') or 'productRoute' in href or 'placeholder' in href:
+            data['has_useful_secondaryCta'] = 'no'
+        else:
+            data['has_useful_secondaryCta'] = 'yes'
     
     # Count FAQ items (starts with "- question:") inside faq: block
     faq_match = re.search(r'^faq:\s*(.*?)(?=\n[a-z]|\Z)', fm_text, re.MULTILINE | re.DOTALL)

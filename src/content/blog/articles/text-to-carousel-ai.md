@@ -62,9 +62,9 @@ finalCta:
   text: "Stop wasting hours on design. Paste your text and let AI generate a stunning carousel for Instagram or LinkedIn in seconds."
   buttonHref: "/ai-carousel-maker"
   buttonText: "Try Text-to-Carousel Generator Free"
-  microcopy: "Free - No credit card required"
-  secondaryText: "Back to related tools and guides ->"
-  secondaryHref: "#explore-more"
+  secondaryText: "AI Carousel Generator"
+  secondaryHref: "/ai-carousel-maker"
+
 ---
 
 

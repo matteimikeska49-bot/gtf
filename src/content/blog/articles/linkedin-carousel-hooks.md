@@ -37,9 +37,9 @@ finalCta:
   description: "Take these hooks and turn them into a ready carousel you can review, adjust, and export."
   buttonText: "Create a Carousel"
   href: "/linkedin-carousel-maker"
-  microcopy: "Free to try — No design skills needed"
-  secondaryText: "Explore more ideas →"
-  secondaryHref: "#explore-more"
+  secondaryText: "See LinkedIn carousel examples"
+  secondaryHref: "/blog/best-linkedin-carousel-examples"
+
 quickAnswer:
   - "The first slide of your LinkedIn carousel is responsible for earning the user's attention and convincing them to swipe."
   - "Strong hooks often fall into three categories: The Contrarian View, The 'How-To' Promise, and The Data/Case Study."

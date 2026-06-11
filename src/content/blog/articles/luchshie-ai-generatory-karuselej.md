@@ -42,7 +42,8 @@ finalCta:
   description: "Сделайте структурированные карусели с помощью AI."
   buttonText: "Попробовать GoToFlow"
   href: "/ru/ai-generator-karuselej"
-  microcopy: "Бесплатно — Без привязки карты"
+  secondaryText: "Хуки для карусели Instagram"
+  secondaryHref: "/ru/blog/huki-dlya-karuseli-instagram"
 
 quickAnswerTitle: "Краткий ответ"
 quickAnswer:

@@ -38,9 +38,9 @@ finalCta:
   description: "Превратите свои идеи в готовую карусель, которую можно проверить, поправить и скачать."
   buttonText: "Создать карусель"
   href: "/ru/generator-karuselej-linkedin"
-  microcopy: "Бесплатно — кредитная карта не требуется"
-  secondaryText: "Посмотреть другие шаблоны →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Посмотреть промпты для LinkedIn-каруселей"
+  secondaryHref: "/ru/blog/prompty-dlya-karuseley-linkedin"
+
 quickAnswer:
   - "Успешная карусель в LinkedIn всегда начинается с мощного заголовка, который заставляет остановиться и прочитать первый слайд."
   - "Рабочие форматы включают: пошаговые гайды, разбор ошибок, разрушение мифов и примеры 'До и После'."

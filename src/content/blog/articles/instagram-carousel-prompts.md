@@ -66,9 +66,9 @@ finalCta:
   text: "Use GoToFlow to instantly turn your ideas, notes, and links into structured, copy-ready Instagram carousel results."
   buttonText: "Create an AI Carousel"
   href: "/ai-carousel-maker"
-  microcopy: "Free — No credit card required"
-  secondaryText: "Explore more content tools →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Explore Instagram carousel hooks"
+  secondaryHref: "/blog/instagram-carousel-hooks"
+
 ---
 
 ## Why Instagram carousels matter for your brand

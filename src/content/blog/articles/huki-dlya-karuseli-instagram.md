@@ -53,9 +53,9 @@ finalCta:
   description: "Попробуйте генератор GoToFlow. Нейросеть сама напишет цепляющий хук и подберет дизайн."
   buttonText: "Создать карусель бесплатно"
   href: "/ru/generator-karuselej-instagram"
-  microcopy: "Бесплатно — кредитная карта не требуется"
-  secondaryText: "Посмотреть другие инструменты →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Смотреть идеи для карусели Instagram"
+  secondaryHref: "/ru/blog/idei-dlya-karuseli-instagram"
+
 ---
 
 ## Почему первый слайд решает всё

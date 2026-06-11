@@ -49,9 +49,8 @@ finalCta:
   text: "Turn your ideas into a month's worth of carousels in minutes with our AI content generator."
   buttonHref: "/ai-content-generator"
   buttonText: "Start Batch Creating"
-  microcopy: "Free - No credit card required"
-  secondaryText: "Back to related tools and guides ->"
-  secondaryHref: "#explore-more"
+  secondaryText: "Explore Instagram carousel hooks"
+  secondaryHref: "/blog/instagram-carousel-hooks"
 
 explore:
   guides:

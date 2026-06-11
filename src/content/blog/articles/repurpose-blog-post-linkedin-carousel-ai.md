@@ -69,9 +69,9 @@ finalCta:
   text: "Let GoToFlow transform your existing blog posts, links, and notes into structured, design-ready LinkedIn carousels."
   buttonText: "Create a LinkedIn carousel"
   href: "/linkedin-carousel-maker"
-  microcopy: "Free — No credit card required"
-  secondaryText: "Explore more carousel tools and guides →"
-  secondaryHref: "#explore-more"
+  secondaryText: "See LinkedIn carousel examples"
+  secondaryHref: "/blog/best-linkedin-carousel-examples"
+
 ---
 
 ## Why long-form content often struggles on LinkedIn

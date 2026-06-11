@@ -80,9 +80,9 @@ finalCta:
   title: "Stop struggling with manual design"
   text: "Create professional, structured Instagram carousels in seconds. No design skills required."
   buttonText: "Create a Carousel Free"
-  microcopy: "No credit card required — Ready in seconds"
-  secondaryText: "See how it works →"
-  secondaryHref: "/ai-carousel-maker"
+  secondaryText: "Explore Instagram carousel hooks"
+  secondaryHref: "/blog/instagram-carousel-hooks"
+
 ---
 
 # How to Make an Instagram Carousel with AI
