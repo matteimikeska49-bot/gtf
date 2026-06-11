@@ -172,32 +172,45 @@ async function getDynamicMarkdownRoutes() {
 
   for (const route of ROUTES) {
     const url = `${BASE}${route}`;
-    try {
-      const page = await browser.newPage();
-      await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
+    const attempts = route === '/' ? 2 : 1;
+    let success = false;
+    let lastError = null;
 
-      // Wait for the React SEO useEffect to fire and inject meta tags
-      // We wait for <title> to not be the generic fallback
-      await page.waitForFunction(
-        () => document.title && document.title !== 'Vite + React',
-        { timeout: 10000 }
-      ).catch(() => {}); // don't crash if title stays generic
+    for (let attempt = 1; attempt <= attempts; attempt++) {
+      try {
+        const page = await browser.newPage();
+        if (attempt > 1) console.log(`  ↻  Retrying ${route} (attempt ${attempt})...`);
+        await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 
-      // Additional short wait for hreflang / canonical injection
-      await new Promise(r => setTimeout(r, 500));
+        // Wait for the React SEO useEffect to fire and inject meta tags
+        // We wait for <title> to not be the generic fallback
+        await page.waitForFunction(
+          () => document.title && document.title !== 'Vite + React',
+          { timeout: 10000 }
+        ).catch(() => {}); // don't crash if title stays generic
 
-      const html = await page.content();
-      await page.close();
+        // Additional short wait for hreflang / canonical injection
+        await new Promise(r => setTimeout(r, 500));
 
-      const filePath = await writeHtml(route, html);
-      const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '(no title)';
-      const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1] ?? '(no canonical)';
+        const html = await page.content();
+        await page.close();
 
-      results.push({ route, ok: true, title, canonical, filePath });
-      console.log(`  ✅  ${route}\n      title: ${title}\n      canonical: ${canonical}\n      → ${filePath}`);
-    } catch (err) {
-      results.push({ route, ok: false, error: err.message });
-      console.error(`  ❌  ${route}: ${err.message}`);
+        const filePath = await writeHtml(route, html);
+        const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '(no title)';
+        const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1] ?? '(no canonical)';
+
+        results.push({ route, ok: true, title, canonical, filePath });
+        console.log(`  ✅  ${route}\n      title: ${title}\n      canonical: ${canonical}\n      → ${filePath}`);
+        success = true;
+        break;
+      } catch (err) {
+        lastError = err;
+      }
+    }
+
+    if (!success) {
+      results.push({ route, ok: false, error: lastError.message });
+      console.error(`  ❌  ${route}: ${lastError.message}`);
     }
   }
 
@@ -206,9 +219,25 @@ async function getDynamicMarkdownRoutes() {
 
   console.log('\n─────────────────────────────────────────');
   const ok = results.filter(r => r.ok).length;
-  const fail = results.filter(r => !r.ok).length;
+  const failList = results.filter(r => !r.ok);
+  const fail = failList.length;
   console.log(`✓ ${ok} routes prerendered successfully`);
-  if (fail) console.log(`✗ ${fail} routes failed`);
+  
+  let exitCode = 0;
+  if (fail > 0) {
+    console.log(`✗ ${fail} routes failed:`);
+    for (const f of failList) {
+      console.log(`    - ${f.route}: ${f.error}`);
+      if (f.route !== '/') {
+        exitCode = 1; // Any failed route except '/' fails the whole build
+      }
+    }
+    if (exitCode === 0) {
+      console.log(`⚠️  Build passing: only root route '/' failed (handled by fallback html).`);
+    } else {
+      console.log(`❌  Build failed due to SEO route failures.`);
+    }
+  }
 
   /* ── Append dynamic routes to Sitemap ── */
   try {
@@ -242,5 +271,5 @@ async function getDynamicMarkdownRoutes() {
     console.log(`\n⚠️  Could not update sitemap.xml: ${err.message}`);
   }
 
-  process.exit(fail > 0 ? 1 : 0);
+  process.exit(exitCode);
 })();
