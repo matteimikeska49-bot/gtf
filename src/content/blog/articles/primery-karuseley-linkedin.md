@@ -38,7 +38,7 @@ finalCta:
   description: "Превратите свои идеи в готовую карусель, которую можно проверить, поправить и скачать."
   buttonText: "Создать карусель"
   href: "/ru/generator-karuselej-linkedin"
-  secondaryText: "Посмотреть промпты для LinkedIn-каруселей"
+  secondaryText: "Посмотреть промпты для LinkedIn-каруселей →"
   secondaryHref: "/ru/blog/prompty-dlya-karuseley-linkedin"
 
 quickAnswer:

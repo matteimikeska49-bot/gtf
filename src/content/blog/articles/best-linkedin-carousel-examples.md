@@ -37,7 +37,7 @@ finalCta:
   description: "Turn your inspiration into a ready carousel you can review, adjust, and export right now."
   buttonText: "Create a Carousel"
   href: "/linkedin-carousel-maker"
-  secondaryText: "Check LinkedIn carousel hooks"
+  secondaryText: "Check LinkedIn carousel hooks →"
   secondaryHref: "/blog/linkedin-carousel-hooks"
 
 quickAnswer:

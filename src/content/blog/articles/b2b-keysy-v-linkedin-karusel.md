@@ -61,7 +61,7 @@ finalCta:
   text: "Загрузите текст вашего кейса, и нейросеть автоматически превратит его в профессиональную LinkedIn карусель."
   buttonHref: "/ru/generator-karuselej-linkedin"
   buttonText: "Создать карусель бесплатно"
-  secondaryText: "Смотреть примеры LinkedIn-каруселей"
+  secondaryText: "Смотреть примеры LinkedIn-каруселей →"
   secondaryHref: "/ru/blog/primery-karuseley-linkedin"
 
 ---

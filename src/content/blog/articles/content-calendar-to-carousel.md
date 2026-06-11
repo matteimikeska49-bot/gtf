@@ -49,7 +49,7 @@ finalCta:
   text: "Turn your ideas into a month's worth of carousels in minutes with our AI content generator."
   buttonHref: "/ai-content-generator"
   buttonText: "Start Batch Creating"
-  secondaryText: "Explore Instagram carousel hooks"
+  secondaryText: "Explore Instagram carousel hooks →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 
 explore:

@@ -80,7 +80,7 @@ finalCta:
   title: "Stop struggling with manual design"
   text: "Create professional, structured Instagram carousels in seconds. No design skills required."
   buttonText: "Create a Carousel Free"
-  secondaryText: "Explore Instagram carousel hooks"
+  secondaryText: "Explore Instagram carousel hooks →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 
 ---

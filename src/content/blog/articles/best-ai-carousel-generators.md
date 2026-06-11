@@ -56,7 +56,7 @@ finalCta:
   description: "Create structured, branded carousels with GoToFlow."
   buttonText: "Try GoToFlow"
   microcopy: "Free — No credit card required"
-  secondaryText: "Explore more tools and ideas ->"
+  secondaryText: "Explore more tools and ideas →"
   secondaryHref: "/blog"
 ---
 

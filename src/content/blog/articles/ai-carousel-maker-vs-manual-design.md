@@ -69,7 +69,7 @@ finalCta:
   text: "Use GoToFlow to instantly turn your ideas, notes, and links into structured, copy-ready carousel results."
   buttonText: "Try AI Carousel Maker"
   href: "/ai-carousel-maker"
-  secondaryText: "Explore Instagram carousel hooks"
+  secondaryText: "Explore Instagram carousel hooks →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 
 ---

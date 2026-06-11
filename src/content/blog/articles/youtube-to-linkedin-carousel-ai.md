@@ -53,7 +53,7 @@ finalCta:
   description: "Turn your YouTube videos into ready LinkedIn carousels you can review, adjust, and export."
   buttonText: "Start Creating"
   href: "/linkedin-carousel-maker"
-  secondaryText: "See LinkedIn carousel examples"
+  secondaryText: "See LinkedIn carousel examples →"
   secondaryHref: "/blog/best-linkedin-carousel-examples"
 
 ---

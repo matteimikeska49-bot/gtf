@@ -65,12 +65,16 @@ def parse_frontmatter(content):
 
     # Check secondary CTA
     m_sec_href = re.search(r'^\s*secondaryHref:\s*"?([^"\n]+)"?', fm_text, re.MULTILINE)
+    m_sec_text = re.search(r'^\s*secondaryText:\s*"?([^"\n]+)"?', fm_text, re.MULTILINE)
     if not m_sec_href:
         data['has_useful_secondaryCta'] = 'no'
     else:
         href = m_sec_href.group(1).strip()
+        text = m_sec_text.group(1).strip() if m_sec_text else ""
         if href.startswith('#') or 'productRoute' in href or 'placeholder' in href:
             data['has_useful_secondaryCta'] = 'no'
+        elif not (text.endswith('→') or text.endswith('->')):
+            data['has_useful_secondaryCta'] = 'no (missing arrow)'
         else:
             data['has_useful_secondaryCta'] = 'yes'
     

@@ -37,7 +37,7 @@ finalCta:
   description: "Stop wasting hours on design. Turn your founder insights into engaging carousels instantly."
   buttonText: "Create a Carousel Free"
   href: "/linkedin-carousel-maker"
-  secondaryText: "See LinkedIn carousel examples"
+  secondaryText: "See LinkedIn carousel examples →"
   secondaryHref: "/blog/best-linkedin-carousel-examples"
 
 ---

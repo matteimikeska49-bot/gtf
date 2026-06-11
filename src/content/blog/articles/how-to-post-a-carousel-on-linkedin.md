@@ -53,7 +53,7 @@ finalCta:
   buttonHref: "/linkedin-carousel-maker"
   buttonText: "Generate Your PDF Carousel Now"
   microcopy: "Free - No credit card required"
-  secondaryText: "Learn about text-to-carousel workflows ->"
+  secondaryText: "Learn about text-to-carousel workflows →"
   secondaryHref: "/blog/text-to-carousel-ai"
 
 explore:

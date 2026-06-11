@@ -63,7 +63,7 @@ finalCta:
   text: "Хватит тратить часы на дизайн в Canva. Вставьте текст, и нейросеть сделает всю работу за вас."
   buttonHref: "/ru/ai-generator-karuselej"
   buttonText: "Попробовать бесплатно"
-  secondaryText: "Генератор каруселей"
+  secondaryText: "Генератор каруселей →"
   secondaryHref: "/ai-carousel-maker"
 
 ---

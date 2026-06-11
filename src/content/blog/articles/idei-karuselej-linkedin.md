@@ -21,7 +21,7 @@ finalCta:
   description: "Хватит тратить часы на дизайн и верстку. Напишите тему, а ИИ GoToFlow сам соберет тексты и слайды в готовый PDF."
   buttonText: "Попробовать бесплатно"
   href: "/ru/generator-karuselej-linkedin"
-  secondaryText: "Смотреть примеры LinkedIn-каруселей"
+  secondaryText: "Смотреть примеры LinkedIn-каруселей →"
   secondaryHref: "/ru/blog/primery-karuseley-linkedin"
 
 faq:

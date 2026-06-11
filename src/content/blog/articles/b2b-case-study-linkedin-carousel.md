@@ -52,7 +52,7 @@ finalCta:
   description: "Paste your case study text and let our AI generate a professional LinkedIn carousel in seconds."
   buttonText: "Create a carousel for free"
   href: "/linkedin-carousel-maker"
-  secondaryText: "See LinkedIn carousel examples"
+  secondaryText: "See LinkedIn carousel examples →"
   secondaryHref: "/blog/best-linkedin-carousel-examples"
 
 ---

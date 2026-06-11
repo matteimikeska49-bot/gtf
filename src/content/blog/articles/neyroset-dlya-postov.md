@@ -54,7 +54,7 @@ finalCta:
   text: "Используйте ИИ, чтобы сделать пост"
   buttonText: "Попробовать бесплатно"
   buttonHref: "/ru/generator-postov-instagram"
-  secondaryText: "Хуки для карусели Instagram"
+  secondaryText: "Хуки для карусели Instagram →"
   secondaryHref: "/ru/blog/huki-dlya-karuseli-instagram"
 
 ---

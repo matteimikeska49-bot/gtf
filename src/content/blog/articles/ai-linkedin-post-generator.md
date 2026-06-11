@@ -53,7 +53,7 @@ finalCta:
   buttonHref: "/linkedin-carousel-maker"
   buttonText: "Try GoToFlow for LinkedIn"
   microcopy: "Free - No credit card required"
-  secondaryText: "Read about converting content calendars ->"
+  secondaryText: "Read about converting content calendars →"
   secondaryHref: "/blog/content-calendar-to-carousel"
 ---
 

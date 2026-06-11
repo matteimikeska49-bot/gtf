@@ -52,7 +52,7 @@ finalCta:
   text: "В GoToFlow идеальные промпты уже встроены. Вы просто пишете идею, а мы генерируем готовый PDF для LinkedIn."
   buttonText: "Создать карусель бесплатно"
   href: "/ru/generator-karuselej-linkedin"
-  secondaryText: "Смотреть примеры LinkedIn-каруселей"
+  secondaryText: "Смотреть примеры LinkedIn-каруселей →"
   secondaryHref: "/ru/blog/primery-karuseley-linkedin"
 
 ---

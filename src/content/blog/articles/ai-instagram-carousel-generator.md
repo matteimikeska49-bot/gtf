@@ -31,7 +31,7 @@ finalCta:
   description: "Turn a topic, link, video, or rough note into a structured Instagram carousel with angle, hook, slide flow, copy, and visual direction."
   buttonText: "Try GoToFlow For Free"
   href: "/ai-carousel-maker"
-  secondaryText: "Explore Instagram carousel hooks"
+  secondaryText: "Explore Instagram carousel hooks →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 
 quickAnswer:

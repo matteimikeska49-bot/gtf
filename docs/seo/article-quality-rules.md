@@ -54,3 +54,19 @@ These rules dictate the visual and content quality standards for all production 
     - Microcopy like `No credit card required` / `Без карты` must be plain text, not a link.
     - Anchor text must describe the destination honestly.
     - EN articles should primarily link to EN routes. RU articles should primarily link to RU routes.
+
+13. **Final CTA Secondary Link Visual Affordance:**
+    - Every live blog article with  must make the secondary CTA visually recognizable as a link.
+    - Secondary CTA text must end with the arrow symbol .
+    - Do not duplicate arrows.
+    - Do not use secondary CTA as plain-looking static text.
+    - Missing arrow in live published/indexable articles is a quality issue.
+    - The arrow is part of UX affordance: it tells the reader this is a clickable next step.
+
+13. **Final CTA Secondary Link Visual Affordance:**
+    - Every live blog article with `finalCta.secondaryText` must make the secondary CTA visually recognizable as a link.
+    - Secondary CTA text must end with the arrow symbol `→`.
+    - Do not duplicate arrows.
+    - Do not use secondary CTA as plain-looking static text.
+    - Missing arrow in live published/indexable articles is a quality issue.
+    - The arrow is part of UX affordance: it tells the reader this is a clickable next step.

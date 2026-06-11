@@ -53,7 +53,7 @@ finalCta:
   buttonHref: "/ai-instagram-post-generator"
   buttonText: "Build Your Carousel with GoToFlow"
   microcopy: "Free - No credit card required"
-  secondaryText: "Get the best hooks for Slide 1 ->"
+  secondaryText: "Get the best hooks for Slide 1 →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 ---
 

@@ -37,7 +37,7 @@ finalCta:
   description: "Create professional, high-converting carousels with built-in CTAs directly in your browser."
   buttonText: "Try Carousel Maker Free"
   href: "/ai-carousel-maker"
-  secondaryText: "Explore Instagram carousel hooks"
+  secondaryText: "Explore Instagram carousel hooks →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 
 ---

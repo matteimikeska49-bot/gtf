@@ -37,7 +37,7 @@ finalCta:
   description: "Turn your ideas into fully designed posts using our AI content generator."
   buttonText: "Create a Post Now"
   href: "/ai-content-generator"
-  secondaryText: "Explore Instagram carousel hooks"
+  secondaryText: "Explore Instagram carousel hooks →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 
 ---

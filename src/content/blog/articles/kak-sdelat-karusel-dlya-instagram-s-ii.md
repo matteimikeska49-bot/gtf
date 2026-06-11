@@ -53,7 +53,7 @@ finalCta:
   text: "Создавайте профессиональные карусели для Инстаграм за минуты с помощью GoToFlow. От темы до готовых слайдов."
   buttonText: "Создать карусель бесплатно"
   href: "/ru/generator-postov-instagram"
-  secondaryText: "Хуки для карусели Instagram"
+  secondaryText: "Хуки для карусели Instagram →"
   secondaryHref: "/ru/blog/huki-dlya-karuseli-instagram"
 
 ---

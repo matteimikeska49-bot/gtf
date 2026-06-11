@@ -54,7 +54,7 @@ finalCta:
   buttonHref: "/ai-carousel-maker"
   buttonText: "Try GoToFlow for Free"
   microcopy: "Free - No credit card required"
-  secondaryText: "Read our guide on text-to-carousel workflows ->"
+  secondaryText: "Read our guide on text-to-carousel workflows →"
   secondaryHref: "/blog/text-to-carousel-ai"
 ---
 

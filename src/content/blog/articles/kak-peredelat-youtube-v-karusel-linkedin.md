@@ -54,7 +54,7 @@ finalCta:
   description: "Превратите ваши YouTube видео в готовую карусель, которую можно проверить, поправить и скачать."
   buttonText: "Создать карусель"
   href: "/ru/generator-karuselej-linkedin"
-  secondaryText: "Смотреть примеры LinkedIn-каруселей"
+  secondaryText: "Смотреть примеры LinkedIn-каруселей →"
   secondaryHref: "/ru/blog/primery-karuseley-linkedin"
 
 ---

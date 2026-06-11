@@ -53,7 +53,7 @@ finalCta:
   description: "Попробуйте генератор GoToFlow. Нейросеть сама напишет цепляющий хук и подберет дизайн."
   buttonText: "Создать карусель бесплатно"
   href: "/ru/generator-karuselej-instagram"
-  secondaryText: "Смотреть идеи для карусели Instagram"
+  secondaryText: "Смотреть идеи для карусели Instagram →"
   secondaryHref: "/ru/blog/idei-dlya-karuseli-instagram"
 
 ---

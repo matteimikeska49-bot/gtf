@@ -38,7 +38,7 @@ finalCta:
   title: "Turn your PDF insights into swipeable carousels"
   text: "Stop wasting hours manually redesigning whitepapers. Paste your best PDF insights into our AI, and get a ready-to-publish LinkedIn carousel instantly."
   buttonText: "Create Carousel Free"
-  secondaryText: "Check LinkedIn carousel specs"
+  secondaryText: "Check LinkedIn carousel specs →"
   secondaryHref: "/blog/linkedin-carousel-size-and-specs"
 
 mockupStatus: "not_available"

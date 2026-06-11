@@ -46,7 +46,7 @@ finalCta:
   text: "Let AI write your hooks and design your slides automatically. Perfect for creators and businesses."
   buttonHref: "/ai-carousel-maker"
   buttonText: "Create a Carousel Free"
-  secondaryText: "See Instagram carousel examples"
+  secondaryText: "See Instagram carousel examples →"
   secondaryHref: "/blog/best-instagram-carousel-examples"
 
 explore:

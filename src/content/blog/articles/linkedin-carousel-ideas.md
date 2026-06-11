@@ -44,7 +44,7 @@ finalCta:
   buttonText: "Create a LinkedIn carousel"
   href: "/linkedin-carousel-maker"
   microcopy: "Free to try - No design skills needed"
-  secondaryText: "Explore LinkedIn prompts ->"
+  secondaryText: "Explore LinkedIn prompts →"
   secondaryHref: "/blog/linkedin-carousel-prompts"
 ---
 
