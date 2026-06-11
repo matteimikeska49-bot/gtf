@@ -103,7 +103,7 @@ finalCta:
 :::mockup{slot="topic-input"}
 :::
 
-*Ускорьте свою работу с помощью [ИИ для каруселей от GoToFlow](/ru/ai-generator-karuselej) — от идеи до готового дизайна в пару кликов.*
+Ускорьте свою работу с помощью [ИИ для каруселей от GoToFlow](/ru/ai-generator-karuselej) — от идеи до готового дизайна в пару кликов.
 
 :::cards
 type: workflow
