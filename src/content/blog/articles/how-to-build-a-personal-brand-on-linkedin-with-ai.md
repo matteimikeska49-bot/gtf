@@ -52,7 +52,7 @@ If your posts start with "In today's fast-paced digital landscape...", your audi
 
 ## 4. Dominating the Feed with AI Carousels
 
-Text posts are great, but **Document Posts (PDF Carousels)** get the most reach and engagement on LinkedIn in 2026. They prove authority and keep users on your profile longer.
+Text posts are great, but **Document Posts (PDF Carousels)** can support dwell time and reach and engagement on LinkedIn in 2026. They prove authority and keep users on your profile longer.
 
 Busy founders don't have time to use graphic design software. Instead, you can use specialized tools. You simply paste the text of your post into an AI Carousel Maker, select a professional template that matches your personal brand colors, and the AI automatically formats it into a multi-slide PDF ready for LinkedIn.
 
@@ -71,7 +71,7 @@ Spend 20% of your time creating content, and 80% of your time leaving insightful
 It is a marathon, not a sprint. Expect to post consistently (3-4 times a week) for 3 to 6 months before you see significant inbound leads or viral traction.
 
 **Should I use my company page or personal profile?**
-Always prioritize your personal profile. LinkedIn's algorithm heavily favors personal profiles over company pages. People connect with people.
+Always prioritize your personal profile. LinkedIn's algorithm often responds well to personal profiles over company pages. People connect with people.
 
 **Is it okay to use AI-generated profile pictures?**
 No. Trust is the foundation of a personal brand. Use a high-quality, professional, real photograph of yourself. Save the AI for content generation and formatting.

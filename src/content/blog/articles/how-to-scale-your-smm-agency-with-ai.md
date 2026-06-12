@@ -23,7 +23,7 @@ Look at the standard agency workflow for a single client:
 1. Brainstorming 12 post ideas (2 hours).
 2. Copywriting the posts (4 hours).
 3. Graphic design for carousels and images (6 hours).
-4. Client review and revisions (3 hours).
+4. Client review and revisions (a fraction of the time).
 
 **Total: 15 hours per client.**
 If your team has 40 hours a week, they can manage very few clients. The bottleneck is always *production*. 
@@ -36,7 +36,7 @@ Here is how successful agencies are restructuring their operations using AI in 2
 *   **Drafting Copy:** AI Content Generators take the approved topics and draft the initial posts. The human copywriter's job shifts from *writing* to *editing and refining*, ensuring the brand voice is perfect.
 *   **Design Automation:** This is the biggest time-saver. Instead of graphic designers manually building Canva templates or Photoshop files, agencies use AI Carousel Makers. You input the approved text, select the client's brand colors and fonts, and the tool auto-generates a 10-slide carousel in seconds.
 
-**New Total: 3 hours per client.**
+**New Total: a fraction of the time per client.**
 
 ## 3. Productizing Your Services
 

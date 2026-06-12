@@ -63,7 +63,7 @@ Virality requires a combination of **High Dwell Time** (users stopping to read) 
 
 A viral hook will fail if the post looks like a massive block of text. 
 *   **Use line breaks.** Treat every sentence like its own paragraph.
-*   **Use Document Posts.** Put your hook in the text caption, and put the "meat" of the content inside a 10-slide PDF Carousel. This guarantees the highest possible dwell time.
+*   **Use Document Posts.** Put your hook in the text caption, and put the "meat" of the content inside a 10-slide PDF Carousel. This guarantees the good dwell time.
 
 ---
 

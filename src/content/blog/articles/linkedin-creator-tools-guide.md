@@ -64,13 +64,13 @@ Quality beats algorithmic tricks. A well-designed, 5-slide PDF containing real, 
 ## FAQ: Frequently Asked Questions
 
 **Where did the Creator Mode toggle go?**
-LinkedIn removed the manual toggle to simplify the user experience. All premium creator features (Analytics, Newsletters, Follow button priority) are now built into the standard profile settings for active users.
+LinkedIn removed the manual toggle to simplify the user experience. Many creator-related tools and profile settings have become part of a broader profile experience.
 
 **Do I need LinkedIn Premium to be a creator?**
 No. The core creator tools, including analytics and publishing tools, are available to free users. However, Premium provides additional benefits like more InMails and deeper search insights.
 
 **What is the best file format for LinkedIn Carousels?**
-Always use PDF. While LinkedIn accepts PPT and DOCX, PDFs render perfectly on all devices and preserve your exact fonts and designs.
+PDF is usually the safest format for preserving layout, although LinkedIn document posts also support PPT, PPTX, DOC, DOCX and PDF. While LinkedIn accepts PPT and DOCX, PDFs render perfectly on all devices and preserve your exact fonts and designs.
 
 **How do I make a LinkedIn PDF Carousel quickly?**
 You don't need Adobe Illustrator. Use AI tools like GoToFlow's LinkedIn Carousel Maker. You simply input your text, and the AI formats it into a professional, multi-page PDF ready for upload.
