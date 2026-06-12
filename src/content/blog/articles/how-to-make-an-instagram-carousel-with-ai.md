@@ -21,8 +21,8 @@ articleType: "how-to"
 priority: "P1"
 published: true
 noindex: false
-preview: true
-approvedForPublish: false
+preview: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/blog/how-to-make-an-instagram-carousel-with-ai"
 createdAt: "2026-06-02"
 updatedAt: "2026-06-02"

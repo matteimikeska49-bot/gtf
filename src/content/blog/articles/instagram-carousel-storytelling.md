@@ -51,8 +51,8 @@ An open loop introduces a question, a mystery, or a problem on one slide, but de
 Just like a movie, a great carousel has a clear beginning, middle, and end.
 
 ### Act I: The Hook & The Stakes (Slides 1-2)
-*   **Slide 1 (The Hook):** Grab attention immediately. Use a bold statement or a relatable struggle. *(e.g., "I worked 80-hour weeks and still went bankrupt.")*
-*   **Slide 2 (The Stakes):** Explain why the reader should care. What is the cost of not solving this problem? *(e.g., "If you don't fix your pricing model, you will burn out by next year. Here is what happened to me.")*
+*   **Slide 1 (The Hook):** Grab attention immediately. Use a bold statement or a relatable struggle. Example: "I worked 80-hour weeks and still went bankrupt."
+*   **Slide 2 (The Stakes):** Explain why the reader should care. What is the cost of not solving this problem? Example: "If you don't fix your pricing model, you will burn out by next year. Here is what happened to me."
 
 ### Act II: The Journey & The Solution (Slides 3-8)
 *   This is the meat of the content. Break down your story, your framework, or your steps.
@@ -60,8 +60,8 @@ Just like a movie, a great carousel has a clear beginning, middle, and end.
 *   Use "Open Loops" at the bottom of these slides to force the next swipe (e.g., *"But then I realized something shocking..."* -> Swipe).
 
 ### Act III: The Climax & The Resolution (Slides 9-10)
-*   **Slide 9 (The Payoff):** Summarize the transformation or the ultimate lesson. *(e.g., "By changing this one metric, my revenue tripled and my hours halved.")*
-*   **Slide 10 (The CTA):** Tell them what to do next with this new information. *(e.g., "Save this post so you don't make the same mistake, or click the link in my bio to get my pricing template.")*
+*   **Slide 9 (The Payoff):** Summarize the transformation or the ultimate lesson. Example: "By changing this one metric, my revenue tripled and my hours halved."
+*   **Slide 10 (The CTA):** Tell them what to do next with this new information. Example: "Save this post so you don't make the same mistake, or click the link in my bio to get my pricing template."
 
 ## 2. Visual Storytelling: Guiding the Eye
 
@@ -75,11 +75,11 @@ Storytelling isn't just about words; it is about how the reader's eye moves acro
 
 You can apply Joseph Campbell's famous "Hero's Journey" to business carousels.
 
-1. **Status Quo:** Describe the ordinary world. *(e.g., "We were relying entirely on Facebook Ads.")*
-2. **Inciting Incident:** The disaster. *(e.g., "Then the iOS update hit, and our ROAS dropped to zero.")*
-3. **The Struggle:** Failing to fix it. *(e.g., "We tried TikTok, we tried influencers. Nothing worked.")*
-4. **The Mentor/Discovery:** The turning point. *(e.g., "Until we discovered organic SEO carousels.")*
-5. **The Transformation:** The result. *(e.g., "Now we get 1,000 free leads a month.")*
+1. **Status Quo:** Describe the ordinary world. Example: "We were relying entirely on Facebook Ads."
+2. **Inciting Incident:** The disaster. Example: "Then the iOS update hit, and our ROAS dropped to zero."
+3. **The Struggle:** Failing to fix it. Example: "We tried TikTok, we tried influencers. Nothing worked."
+4. **The Mentor/Discovery:** The turning point. Example: "Until we discovered organic SEO carousels."
+5. **The Transformation:** The result. Example: "Now we get 1,000 free leads a month."
 
 This format builds immense trust because it shows vulnerability before showing success.
 
