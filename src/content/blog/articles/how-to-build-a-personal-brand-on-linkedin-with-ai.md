@@ -46,7 +46,6 @@ Building a brand with AI requires three steps:
 2. **Capture your voice:** Do not let AI write generic posts. Dictate your raw thoughts into an audio app, then use an LLM (Large Language Model) to transcribe and format it into a LinkedIn post.
 3. **Automate the visuals:** Use an AI LinkedIn Carousel Maker (like GoToFlow) to instantly turn your text into highly-engaging PDF document posts, ensuring you look professional without spending hours on design.
 
----
 
 ## 1. Defining Your Content Pillars
 
@@ -91,6 +90,4 @@ If you only post and never comment, you will not grow.
 
 Spend 20% of your time creating content, and 80% of your time leaving insightful, high-value comments on the posts of industry leaders and potential clients. *Do not use AI to write your comments.* "Great post! Thanks for sharing" (or robotic AI equivalents) will hurt your reputation. Read the post and leave a genuine human perspective.
 
----
 
----

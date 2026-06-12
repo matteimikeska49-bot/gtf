@@ -47,7 +47,6 @@ The secret to advanced ChatGPT usage is **Context and Constraints**. Never ask f
 3. **The Goal:** "To drive newsletter sign-ups."
 4. **The Constraints:** "Do not use emojis, keep paragraphs under 3 sentences, avoid words like 'innovative' or 'revolutionary'."
 
----
 
 ## 10 Advanced Use Cases for Social Media Managers
 
@@ -93,6 +92,4 @@ If you don't know what to ask, ask ChatGPT to write the prompt for you.
 Stop staring at a blank calendar.
 **Prompt:** *"Create a 30-day content matrix for a [Your Niche] brand. Organize it by week. Each week must include: 1 Educational post, 1 Entertaining/Relatable post, 1 Case Study, and 1 Direct Pitch. Provide specific headlines for all 30 posts."*
 
----
 
----

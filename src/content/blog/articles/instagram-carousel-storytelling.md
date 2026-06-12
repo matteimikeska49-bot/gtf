@@ -44,7 +44,6 @@ In 2026, the Instagram algorithm doesn't just measure if someone liked your post
 The most effective storytelling framework for carousels is the **Open Loop**. 
 An open loop introduces a question, a mystery, or a problem on one slide, but delays the answer until the next slide. This creates psychological tension. If Slide 2 says, *"The biggest mistake I made cost me $10,000..."* the user *has* to swipe to Slide 3 to find out what the mistake was.
 
----
 
 ## 1. The 3-Act Structure for Carousels
 
@@ -89,6 +88,4 @@ This format builds immense trust because it shows vulnerability before showing s
 *   **Too much text:** Treat carousel slides like billboard ads, not book pages. Edit relentlessly. If a word doesn't drive the story forward, delete it.
 *   **Predictable endings:** If the reader can guess the solution by Slide 3, they won't swipe to Slide 10. Keep the ultimate "secret" hidden until the end.
 
----
 
----

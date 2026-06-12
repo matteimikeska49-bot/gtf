@@ -43,7 +43,6 @@ The most critical component of a viral post is the **Hook**—the first two line
 
 Virality requires a combination of **High Dwell Time** (users stopping to read) and **Velocity of Engagement** (getting comments quickly after posting). The best way to achieve this is through **Document Posts (PDF Carousels)** paired with a highly contrarian, emotional, or ultra-specific hook. The hook earns the click, the carousel earns the dwell time, and a polarizing opinion earns the comments.
 
----
 
 ## 10 Viral LinkedIn Hooks Broken Down
 
@@ -93,6 +92,4 @@ A viral hook will fail if the post looks like a massive block of text.
 *   **Use line breaks.** Treat every sentence like its own paragraph.
 *   **Use Document Posts.** Put your hook in the text caption, and put the "meat" of the content inside a 10-slide PDF Carousel. This guarantees the good dwell time.
 
----
 
----
