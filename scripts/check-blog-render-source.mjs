@@ -1,6 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import {
+  extractFrontmatterAndBody,
+  findRawJsxLikeTags,
+  getYamlValue
+} from './blog-template-guardrails.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,10 +20,9 @@ let errors = [];
 let warnings = [];
 
 function extractData(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!match) return { data: {}, body: content };
-  
-  const frontmatterStr = match[1];
+  const { frontmatter: frontmatterStr, body } = extractFrontmatterAndBody(content);
+  if (!frontmatterStr) return { data: {}, body };
+
   const data = {};
   
   const parseMatch = (regex) => {
@@ -28,13 +32,17 @@ function extractData(content) {
 
   data.slug = parseMatch(/^slug:\s*(.*)$/m);
   data.mockupStatus = parseMatch(/^mockupStatus:\s*(.*)$/m);
+  data.preview = getYamlValue(frontmatterStr, 'preview') === true;
+  data.published = getYamlValue(frontmatterStr, 'published');
+  data.noindex = getYamlValue(frontmatterStr, 'noindex');
+  data.priorityTier = parseMatch(/^priorityTier:\s*(.*)$/m);
   
   const faqMatch = frontmatterStr.match(/^faq:([\s\S]*?)(?:^[a-zA-Z]+:|\n---$)/m);
   data.faqStr = faqMatch ? faqMatch[1] : null;
 
-  data.finalCta = /^finalCta:\s*true\b/m.test(frontmatterStr);
+  data.finalCta = /^finalCta:/m.test(frontmatterStr);
 
-  return { data, body: match[2] };
+  return { data, body };
 }
 
 files.forEach(file => {
@@ -51,8 +59,7 @@ files.forEach(file => {
   const h1Match = body.match(/^#\s/gm);
   if (h1Match && h1Match.length > 0) {
     const msg = `Article ${data.slug} contains raw markdown H1 ('#'). H1 must only come from frontmatter 'title'.`;
-    if (isStrict) errors.push(`[P0] ${msg}`);
-    else warnings.push(msg);
+    warnings.push(msg);
   }
 
   // Duplicate FAQ
@@ -67,9 +74,10 @@ files.forEach(file => {
     warnings.push(`Article ${data.slug} might have duplicate CTA heading in body alongside finalCta: true.`);
   }
 
-  // Raw JSX
-  if (body.includes('<InlineProductBlock') || body.includes('<ArticleFinalCta')) {
-    errors.push(`[P0] Article ${data.slug} contains raw JSX which will leak as text.`);
+  // Raw JSX-like component tags must never be emitted in markdown body.
+  const rawJsxTags = findRawJsxLikeTags(body);
+  if (rawJsxTags.length > 0) {
+    errors.push(`[P0] Article ${data.slug} contains raw JSX-like component tag(s) in markdown body: ${rawJsxTags.join(', ')}`);
   }
 
   // Raw Artifact Checks

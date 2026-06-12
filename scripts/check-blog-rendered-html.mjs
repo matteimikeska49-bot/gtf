@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { PRODUCTION_ARTIFACT_MARKERS, hasStarredHref } from './blog-template-guardrails.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -135,6 +136,7 @@ function checkHtmlFile(filePath, data, isD53) {
 
     // Artifacts checks
     const artifacts = [
+      ...PRODUCTION_ARTIFACT_MARKERS,
       ':::mockup', '[!product]', 'InlineProductBlock', '<ArticleFinalCta', 'quickAnswer:', 'finalCta:', '\n---\n', 'TODO', 'TBD', 'lorem ipsum',
       'if exists', 'if available', 'future cross-link after publication', 'else / fallback'
     ];
@@ -145,6 +147,7 @@ function checkHtmlFile(filePath, data, isD53) {
       errors.push(`[P0] Raw artifact leaked: "*(...)*"`);
     }
     if (htmlContent.includes('&lt;span class=')) errors.push(`[P0] Escaped JSX found: "&lt;span class="`);
+    if (hasStarredHref(htmlContent)) errors.push(`[P0] Href with literal * leaked to rendered HTML`);
 
     // Schema checks
     if (!htmlContent.includes('"@type":"Article"') && !htmlContent.includes('"@type":"BlogPosting"')) {

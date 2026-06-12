@@ -1,6 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import {
+  findRawJsxLikeTags,
+  getTemplateContractIssues,
+  isLivePublishedFrontmatter
+} from './blog-template-guardrails.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,7 +31,7 @@ const files = fs.readdirSync(articlesDir).filter(f => f.endsWith('.md') && f !==
 
 function parseFrontmatterAndBody(content) {
   const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!match) return { data: {}, body: content };
+  if (!match) return { data: {}, body: content, frontmatterStr: '' };
   const data = {};
   const body = match[2];
   
@@ -114,18 +119,19 @@ function parseFrontmatterAndBody(content) {
     }
   }
   
-  return { data, body };
+  return { data, body, frontmatterStr };
 }
 
 for (const file of files) {
   scannedCount++;
   const filePath = path.join(articlesDir, file);
   const content = fs.readFileSync(filePath, 'utf8');
-  const { data, body } = parseFrontmatterAndBody(content);
+  const { data, body, frontmatterStr } = parseFrontmatterAndBody(content);
   const slug = data.slug || file.replace('.md', '');
 
   if (slug.startsWith('test-')) continue;
 
+  const isLivePublished = isLivePublishedFrontmatter(frontmatterStr);
   const isD53 = d53Topics.includes(slug);
   const isDraftPreview = data.preview === true || data.published === false;
   const isHighPriority = data.priorityTier === 'P1' || data.priorityTier === 'P2';
@@ -134,6 +140,17 @@ for (const file of files) {
   // Wait, instructions: "Apply strict validation to: D53 draft articles; any article with preview: true; any article with published: false; any future high-priority article if detectable. Apply rollout warnings to older published legacy articles."
   // So if it's published and not high-priority, it's a warning.
   const isStrict = isD53 || isDraftPreview || isHighPriority;
+
+  const rawJsxTags = findRawJsxLikeTags(body);
+  if (rawJsxTags.length > 0) {
+    errors.push(`Article "${slug}": raw JSX-like component tag(s) found in markdown body: ${rawJsxTags.join(', ')}.`);
+  }
+
+  if (isLivePublished) {
+    const { issues: templateIssues, warnings: templateWarnings } = getTemplateContractIssues(frontmatterStr, slug);
+    templateIssues.forEach(issue => errors.push(`Article "${slug}": ${issue}.`));
+    templateWarnings.forEach(warning => warnings.push(`Article "${slug}": ${warning}.`));
+  }
 
   if (!isStrict) {
     // Legacy warnings
@@ -195,11 +212,11 @@ for (const file of files) {
 
   // FinalCta structure
   if (data.finalCta) {
-    if (!data.finalCta.title || !data.finalCta.text || !data.finalCta.buttonText) {
-      errors.push(`Article "${slug}": finalCta missing required keys (title, text, buttonText).`);
+    if (!data.finalCta.title || (!data.finalCta.text && !data.finalCta.description) || !data.finalCta.buttonText) {
+      errors.push(`Article "${slug}": finalCta missing required keys (title, text/description, buttonText).`);
     }
-    if (data.finalCta.description) {
-      errors.push(`Article "${slug}": finalCta uses forbidden 'description' key.`);
+    if (data.finalCta.description && !data.finalCta.text) {
+      warnings.push(`Article "${slug}": finalCta uses legacy 'description' key; migrate to 'text'.`);
     }
   }
 

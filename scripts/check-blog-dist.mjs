@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { PRODUCTION_ARTIFACT_MARKERS, RAW_COMPONENT_MARKERS, hasStarredHref } from './blog-template-guardrails.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,11 +15,7 @@ if (!fs.existsSync(DIST_DIR)) {
   process.exit(1);
 }
 
-const RAW_JSX_MARKERS = [
-  'InlineProductBlock',
-  '<InlineProductBlock',
-  '</InlineProductBlock'
-];
+const RAW_JSX_MARKERS = RAW_COMPONENT_MARKERS;
 
 const RAW_MARKDOWN = [
   '[!product]',
@@ -52,7 +49,10 @@ function checkHtmlFile(htmlPath) {
 
   // Check Raw JSX
   RAW_JSX_MARKERS.forEach(marker => {
-    if (html.includes(marker)) errors.push(`Raw JSX found: ${marker}`);
+    if (html.includes(marker)) errors.push(`Raw JSX/component marker found: ${marker}`);
+  });
+  PRODUCTION_ARTIFACT_MARKERS.forEach(marker => {
+    if (html.includes(marker) && !RAW_JSX_MARKERS.includes(marker)) errors.push(`Production artifact found: ${marker}`);
   });
 
   // Check Raw Markdown
@@ -81,6 +81,7 @@ function checkHtmlFile(htmlPath) {
   if (html.includes('&lt;span class=')) {
     if (!errors.includes('Escaped <span class= found in text.')) errors.push('Escaped <span class= found in text.');
   }
+  if (hasStarredHref(html)) errors.push('Href with literal * found.');
 
   // Check Old forbidden wording
   FORBIDDEN_WORDING.forEach(wording => {
@@ -169,7 +170,10 @@ function checkArticleHtml(htmlPath, isPublished) {
   const errors = [];
 
   RAW_JSX_MARKERS.forEach(marker => {
-    if (html.includes(marker)) errors.push(`Raw JSX found: ${marker}`);
+    if (html.includes(marker)) errors.push(`Raw JSX/component marker found: ${marker}`);
+  });
+  PRODUCTION_ARTIFACT_MARKERS.forEach(marker => {
+    if (html.includes(marker) && !RAW_JSX_MARKERS.includes(marker)) errors.push(`Production artifact found: ${marker}`);
   });
 
   RAW_MARKDOWN.forEach(marker => {
@@ -178,6 +182,7 @@ function checkArticleHtml(htmlPath, isPublished) {
 
   if (html.includes('&lt;span class=')) errors.push('Escaped <span class= found in text.');
   if (html.includes('class=\\"text-gradient-brand\\"')) errors.push('Raw class string found in text.');
+  if (hasStarredHref(html)) errors.push('Href with literal * found.');
 
   FORBIDDEN_WORDING.forEach(wording => {
     if (lowerHtml.includes(wording)) errors.push(`Forbidden wording found: "${wording}"`);

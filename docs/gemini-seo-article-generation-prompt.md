@@ -6,6 +6,11 @@ This prompt is designed to instruct Gemini (or another AI agent) to generate a c
 ## 2. When to Use
 Use this prompt template whenever you need to generate a new blog post or SEO guide. Do not use this for minor edits. Provide this exact prompt along with the specific article brief to generate a ready-to-publish `.md` file.
 
+Before generating or editing a new SEO markdown article, open and follow:
+- `src/content/blog/articles/test-seo-template-v2.md`
+- `src/content/blog/articles/_template.md`
+- `src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx`
+
 For RU markdown articles, use:
 `docs/gemini-ru-article-draft-protocol.md`
 
@@ -35,7 +40,7 @@ Before generating the article, Gemini must receive the following context via a c
 2. **No Hallucinations / Strict Links**: Do not invent URLs. Use only the provided allowlist for internal links. Do NOT link across languages (RU to EN or EN to RU). Ensure product routes match the article language. Do NOT link to draft or noindex pages.
 3. **No Duplicate Sections / Headers**: Do not write the Quick Answer or FAQ in the body text—they belong exclusively in the frontmatter. Do NOT duplicate the H1 title in the body. Do NOT use empty FAQ rows. Use exactly `question:` and `answer:` keys for FAQ, never `q:` or `a:`.
 4. **Final CTA & Product Context**: Do not manually write a final CTA in the body text. It is handled via frontmatter. Provide a standard markdown link to the product in the normal body text.
-5. **No HTML / JSX**: Do not use HTML tags, `<span class=...>`, raw JSX (like `<InlineProductBlock />`), or `className` attributes anywhere. Do NOT use `[!product]` or `:::mockup` blockquotes as they will leak to rendered HTML.
+5. **No HTML / JSX**: Do not use HTML tags, `<span class=...>`, raw JSX (like `<InlineProductBlock />`), or `className` attributes anywhere. Never emit component-looking tags in `.md` body, including `<ArticleExploreZone>`, `<RelatedArticles>`, `<SecondaryCta>`, or `<FinalCta>`. FAQ, Explore/Related links, and Final CTA belong in YAML frontmatter, not in markdown body. Do NOT use `[!product]` or `:::mockup` blockquotes as they will leak to rendered HTML.
 6. **No "Draft" Wording**: Never use wording like "carousel draft", "review the draft", or "generate a draft". Use "carousel result", "ready carousel", "slide copy", etc.
 7. **Dates**: Ensure `updatedAt` is present and correct. Do not use weird date labels (e.g. "Examples Reviewed").
 

@@ -26,11 +26,11 @@ For article template/content integrity. No build unless needed.
 Command: `npm run check:blog:content`
 Includes:
 * `check:blog:content-template`
-* `check:blog:render-source`
-* `check:blog:frontmatter-contract`
-* `check:blog:faq-cta-contract`
+* `check:blog:template-contract`
 * `check:blog:product-led-links`
 * `check:blog:mockup-relevance`
+
+`check:blog:template-contract` runs the source/frontmatter/FAQ-CTA guardrails together. It blocks raw JSX-like component tags in markdown body, requires live published articles to use V2 frontmatter blocks (`faq`, `explore`, `finalCta`), and prevents Batch 22-style component markers from reaching publish.
 
 ## SEO checks
 For metadata/schema validation.
@@ -59,6 +59,8 @@ Includes:
 * `check:blog:render-contract`
 * `check:blog:rendered-html` (Validates page-level HTML, robots, canonicals, schema output, and explicit sitemap/blog-index inclusion based on publish state).
 
+Rendered checks grep `dist/**/*.html` for raw component markers including `ArticleExploreZone`, `RelatedArticles`, `SecondaryCta`, `FinalCta`, `ArticleFinalCta`, and `InlineProductBlock`. Any match is a P0 blocker.
+
 ## Full local checks
 Before commit/push/publish. Runs build.
 Command: `npm run check:blog:full`
@@ -80,6 +82,8 @@ Includes:
 Live URL/deploy verification only.
 Command: `npm run check:blog:production`
 Must remain separate from local checks.
+
+Production checks fetch canonical public URLs without cache-busting query parameters. Published canonical HTML must not contain raw component markers, starred href leaks, or known Batch 22 cleanup artifacts.
 
 ### When to run Production/Live Checks
 `npm run check:blog:live-verification` must ONLY be run:

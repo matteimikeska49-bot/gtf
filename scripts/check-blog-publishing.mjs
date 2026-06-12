@@ -2,6 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { VALID_MOCKUP_SLOTS } from '../src/lib/blog/mockupSlots.js';
+import {
+  findRawJsxLikeTags,
+  getTemplateContractIssues,
+  isLivePublishedFrontmatter
+} from './blog-template-guardrails.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -177,6 +182,18 @@ async function runCheck() {
     if (!title) errors.push(`Missing 'title'`);
     if (published === undefined) errors.push(`Missing 'published' (must be true or false)`);
     if (noindex === undefined) errors.push(`Missing 'noindex' (must be true or false)`);
+
+    const articleBodyForTemplate = content.replace(/^---\s*\n([\s\S]*?)\n---\s*\n?/, '');
+    const rawJsxTags = findRawJsxLikeTags(articleBodyForTemplate);
+    if (rawJsxTags.length > 0) {
+      errors.push(`Raw JSX-like component tag(s) found in markdown body: ${rawJsxTags.join(', ')}`);
+    }
+
+    if (isLivePublishedFrontmatter(frontmatter)) {
+      const { issues: templateIssues, warnings: templateWarnings } = getTemplateContractIssues(frontmatter, slug);
+      templateIssues.forEach(issue => errors.push(`V2 template contract: ${issue}`));
+      templateWarnings.forEach(warning => warnings.push(`V2 template contract: ${warning}`));
+    }
 
     // Check date validity
     const checkValidDate = (field) => {

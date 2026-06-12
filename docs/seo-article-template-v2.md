@@ -33,6 +33,12 @@
 10. Approved topics can move to draft generation only after `check:blog:topics` passes.
 
 ## Content Guardrails & Template Compliance
+- Before generating or editing a new SEO markdown article, open the live fixture, markdown fixture, template file, and renderer:
+  - `src/content/blog/articles/test-seo-template-v2.md`
+  - `src/content/blog/articles/_template.md`
+  - `src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx`
+- Never emit component-looking tags in `.md` body. Raw tags such as `<ArticleExploreZone>`, `<RelatedArticles>`, `<SecondaryCta>`, `<FinalCta>`, `<ArticleFinalCta>`, or `<InlineProductBlock>` are P0 blockers.
+- FAQ, Explore/Related links, and Final CTA belong in YAML frontmatter (`faq`, `explore`, `finalCta`), not in markdown body. If raw JSX-like tags are found in source or dist, publishing is blocked.
 - Minimum 5 FAQ questions required for all product-led SEO articles.
 - User-facing "draft/черновик" positioning is strictly forbidden. GoToFlow produces a "ready carousel" / "готовая карусель".
 - The final CTA must be product-led, well-structured (e.g. `> [!product]`), and contain an internal product link.

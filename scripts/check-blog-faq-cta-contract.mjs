@@ -1,6 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import {
+  findRawJsxLikeTags,
+  getTemplateContractIssues,
+  getYamlValue,
+  isLivePublishedFrontmatter
+} from './blog-template-guardrails.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,7 +27,7 @@ const files = fs.readdirSync(articlesDir).filter(f => f.endsWith('.md') && f !==
 
 function extractFrontmatter(content) {
   const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!match) return { data: {}, body: content };
+  if (!match) return { data: {}, body: content, frontmatterStr: '' };
   
   const frontmatterStr = match[1];
   const data = {
@@ -73,23 +79,26 @@ function extractFrontmatter(content) {
     }
   }
 
-  return { data, body: match[2] };
+  data.noindex = getYamlValue(frontmatterStr, 'noindex');
+
+  return { data, body: match[2], frontmatterStr };
 }
 
 for (const file of files) {
   scannedCount++;
   const filePath = path.join(articlesDir, file);
   const content = fs.readFileSync(filePath, 'utf8');
-  const { data, body } = extractFrontmatter(content);
+  const { data, body, frontmatterStr } = extractFrontmatter(content);
   const slug = data.slug || file.replace('.md', '');
 
   if (slug.startsWith('test-')) continue;
 
+  const isLivePublished = isLivePublishedFrontmatter(frontmatterStr);
   const isD53 = d53Topics.includes(slug);
   const isDraftPreview = data.preview === true || data.published === false;
   const isHighPriority = data.priorityTier === 'P1' || data.priorityTier === 'P2';
   
-  const isStrict = isD53 || isDraftPreview || isHighPriority;
+  const isStrict = isLivePublished || isD53 || isDraftPreview || isHighPriority;
 
   if (!isStrict) {
     // Check if legacy article leaks raw html or bad sections but keep it as warning
@@ -99,10 +108,20 @@ for (const file of files) {
     if (body.includes('[!product]') || body.includes('<InlineProductBlock')) {
       warnings.push(`Legacy article "${slug}" contains forbidden body product block.`);
     }
+    const rawJsxTags = findRawJsxLikeTags(body);
+    if (rawJsxTags.length > 0) {
+      errors.push(`Article "${slug}": body contains raw JSX-like component tag(s): ${rawJsxTags.join(', ')}`);
+    }
     continue;
   }
 
   strictCount++;
+
+  if (isLivePublished) {
+    const { issues: templateIssues, warnings: templateWarnings } = getTemplateContractIssues(frontmatterStr, slug);
+    templateIssues.forEach(issue => errors.push(`Article "${slug}": ${issue}.`));
+    templateWarnings.forEach(warning => warnings.push(`Article "${slug}": ${warning}.`));
+  }
 
   // FAQ rules
   if (data.faq.length === 0) {
@@ -124,10 +143,10 @@ for (const file of files) {
   if (Object.keys(data.finalCta).length === 0) {
     errors.push(`Article "${slug}": frontmatter finalCta is missing or empty.`);
   } else {
-    if (!data.finalCta.title || !data.finalCta.text || !data.finalCta.buttonText) {
-      errors.push(`Article "${slug}": frontmatter finalCta missing required keys (title, text, buttonText).`);
+    if (!data.finalCta.title || (!data.finalCta.text && !data.finalCta.description) || !data.finalCta.buttonText) {
+      errors.push(`Article "${slug}": frontmatter finalCta missing required keys (title, text/description, buttonText).`);
     }
-    if (data.finalCta.description) errors.push(`Article "${slug}": finalCta uses forbidden 'description' key.`);
+    if (data.finalCta.description && !data.finalCta.text) warnings.push(`Article "${slug}": finalCta uses legacy 'description' key; migrate to 'text'.`);
     if (data.finalCta.linkText) errors.push(`Article "${slug}": finalCta uses forbidden 'linkText' key.`);
     if (data.finalCta.link) errors.push(`Article "${slug}": finalCta uses forbidden 'link' key.`);
     
@@ -153,6 +172,10 @@ for (const file of files) {
   }
   if (body.includes('<ArticleFinalCta')) {
     errors.push(`Article "${slug}": body contains forbidden <ArticleFinalCta /> JSX component.`);
+  }
+  const rawJsxTags = findRawJsxLikeTags(body);
+  if (rawJsxTags.length > 0) {
+    errors.push(`Article "${slug}": body contains raw JSX-like component tag(s): ${rawJsxTags.join(', ')}.`);
   }
   
   // Generic body CTA check (if it looks like a big promotional block)

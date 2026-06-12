@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { PRODUCTION_ARTIFACT_MARKERS, hasStarredHref } from './blog-template-guardrails.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,6 +17,7 @@ if (!fs.existsSync(DIST_DIR)) {
 }
 
 const FORBIDDEN_STRINGS = [
+  ...PRODUCTION_ARTIFACT_MARKERS,
   ':::mockup',
   '[!product]',
   '<InlineProductBlock',
@@ -46,6 +48,7 @@ function checkHtmlFile(htmlPath) {
   FORBIDDEN_STRINGS.forEach(str => {
     if (html.includes(str)) errors.push(`[P0] Raw artifact leaked: "${str}"`);
   });
+  if (hasStarredHref(html)) errors.push(`[P0] Href with literal * leaked to rendered HTML`);
 
   // Duplicate H1 check
   const h1Match = html.match(/<h1[^>]*>/gi);
