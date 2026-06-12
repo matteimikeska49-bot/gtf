@@ -7,7 +7,7 @@ noindex: false
 language: en
 faq:
   - question: "How many slides should an Instagram carousel have?"
-    answer: "Data suggests that 8 to 7-10 slides can be a practical structure for many educational carousels perform best for engagement. It provides enough space to deliver real value and maximizes dwell time without overwhelming the reader."
+    answer: "Data suggests that 7-10 slides perform best for engagement. It provides enough space to deliver real value and maximizes dwell time without overwhelming the reader."
   - question: "What is the best aspect ratio for carousels?"
     answer: "Always use the portrait format (4:5 ratio, 1080 x 1350 pixels). It takes up more vertical space on the mobile screen, reducing distractions from other posts."
   - question: "Can I mix photos and videos in a carousel?"
