@@ -15,9 +15,15 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import puppeteer from 'puppeteer';
 import { readdir, readFile } from 'fs/promises';
+import http from 'http';
+import { setTimeout as delay } from 'timers/promises';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.join(__dirname, 'dist');
+const PREVIEW_HOST = '127.0.0.1';
+const NAVIGATION_ATTEMPTS = 3;
+const NAVIGATION_TIMEOUT_MS = 60000;
+const PREVIEW_READY_TIMEOUT_MS = 30000;
 
 /* ── Routes to prerender ── */
 const ROUTES = [
@@ -60,7 +66,7 @@ const ROUTES = [
 function getFreePort() {
   return new Promise((resolve, reject) => {
     const srv = createServer();
-    srv.listen(0, () => {
+    srv.listen(0, PREVIEW_HOST, () => {
       const { port } = srv.address();
       srv.close(() => resolve(port));
     });
@@ -68,28 +74,72 @@ function getFreePort() {
   });
 }
 
+function waitForPreviewReady(baseUrl, timeoutMs = PREVIEW_READY_TIMEOUT_MS) {
+  const started = Date.now();
+
+  return new Promise((resolve, reject) => {
+    const check = () => {
+      const req = http.get(baseUrl, (res) => {
+        res.resume();
+        resolve();
+      });
+
+      req.on('error', () => {
+        if (Date.now() - started >= timeoutMs) {
+          reject(new Error(`Preview server did not respond within ${timeoutMs}ms`));
+          return;
+        }
+        setTimeout(check, 250);
+      });
+
+      req.setTimeout(2000, () => {
+        req.destroy();
+      });
+    };
+
+    check();
+  });
+}
+
 /* ── Start vite preview and wait until it's ready ── */
 function startPreviewServer(port) {
   return new Promise((resolve, reject) => {
-    const proc = spawn('npx', ['vite', 'preview', '--port', String(port), '--strictPort'], {
+    const proc = spawn('npx', ['vite', 'preview', '--host', PREVIEW_HOST, '--port', String(port), '--strictPort'], {
       cwd: __dirname,
       stdio: ['ignore', 'pipe', 'pipe'],
     });
 
-    const timeout = setTimeout(() => reject(new Error('Preview server timed out')), 30000);
+    let settled = false;
+    const timeout = setTimeout(() => {
+      if (settled) return;
+      settled = true;
+      proc.kill();
+      reject(new Error('Preview server timed out'));
+    }, PREVIEW_READY_TIMEOUT_MS);
 
     const onData = (data) => {
       const text = data.toString();
-      if (text.includes('Local:') || text.includes('localhost:')) {
+      if (!settled && (text.includes('Local:') || text.includes(PREVIEW_HOST) || text.includes('localhost:'))) {
+        settled = true;
         clearTimeout(timeout);
-        // Give the server 300ms to fully bind
-        setTimeout(() => resolve(proc), 300);
+        resolve(proc);
       }
     };
 
     proc.stdout.on('data', onData);
     proc.stderr.on('data', onData);
-    proc.on('error', reject);
+    proc.on('error', (err) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
+      reject(err);
+    });
+    proc.on('exit', (code, signal) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
+      reject(new Error(`Preview server exited before ready (code ${code}, signal ${signal})`));
+    });
   });
 }
 
@@ -144,6 +194,100 @@ async function getDynamicMarkdownRoutes() {
   return dynamicRoutes;
 }
 
+async function launchBrowser() {
+  return puppeteer.launch({
+    headless: true,
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
+    protocolTimeout: 120000,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-gpu',
+      '--disable-background-networking',
+      '--disable-background-timer-throttling',
+      '--disable-renderer-backgrounding',
+      '--disable-extensions',
+      '--disable-sync',
+      '--mute-audio'
+    ],
+  });
+}
+
+async function closeBrowser(browser) {
+  if (!browser) return;
+  try {
+    await browser.close();
+  } catch (err) {
+    console.log(`⚠️  Could not close browser cleanly: ${err.message}`);
+  }
+}
+
+async function closePreviewServer(server) {
+  if (!server || server.killed) return;
+  await new Promise((resolve) => {
+    server.once('exit', resolve);
+    server.kill();
+    setTimeout(resolve, 3000);
+  });
+}
+
+async function preparePage(page, baseHostname) {
+  page.setDefaultNavigationTimeout(NAVIGATION_TIMEOUT_MS);
+  page.setDefaultTimeout(NAVIGATION_TIMEOUT_MS);
+
+  await page.setRequestInterception(true);
+  page.on('request', (request) => {
+    try {
+      const requestUrl = new URL(request.url());
+      const isLocalRequest = requestUrl.hostname === baseHostname || requestUrl.hostname === 'localhost';
+
+      if (requestUrl.protocol.startsWith('http') && !isLocalRequest) {
+        request.abort();
+        return;
+      }
+    } catch {
+      // Non-standard URLs such as data: or blob: should continue.
+    }
+
+    request.continue();
+  });
+}
+
+async function prerenderRoute(browser, route, baseUrl) {
+  const url = `${baseUrl}${route}`;
+  let page = null;
+
+  try {
+    page = await browser.newPage();
+    await preparePage(page, PREVIEW_HOST);
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: NAVIGATION_TIMEOUT_MS });
+
+    await page.waitForFunction(
+      () => document.title && document.title !== 'Vite + React',
+      { timeout: 10000 }
+    ).catch(() => {});
+
+    await page.waitForFunction(
+      () => document.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+      { timeout: 10000 }
+    ).catch(() => {});
+
+    await delay(500);
+
+    const html = await page.content();
+    const filePath = await writeHtml(route, html);
+    const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '(no title)';
+    const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1] ?? '(no canonical)';
+
+    return { route, ok: true, title, canonical, filePath };
+  } finally {
+    if (page) {
+      await page.close().catch(() => {});
+    }
+  }
+}
+
 /* ── Main ── */
 (async () => {
   console.log('🚀  Starting prerender…\n');
@@ -157,65 +301,58 @@ async function getDynamicMarkdownRoutes() {
     ROUTES.push(...routesToPrerender);
   }
 
-  const port = await getFreePort();
-  console.log(`📡  Starting vite preview on port ${port}…`);
-  const server = await startPreviewServer(port);
-  const BASE = `http://localhost:${port}`;
-
-  const browser = await puppeteer.launch({
-    headless: true,
-    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
-
+  let server = null;
+  let browser = null;
   const results = [];
 
-  for (const route of ROUTES) {
-    const url = `${BASE}${route}`;
-    const attempts = route === '/' ? 2 : 1;
-    let success = false;
-    let lastError = null;
+  try {
+    const port = await getFreePort();
+    const BASE = `http://${PREVIEW_HOST}:${port}`;
 
-    for (let attempt = 1; attempt <= attempts; attempt++) {
-      try {
-        const page = await browser.newPage();
-        if (attempt > 1) console.log(`  ↻  Retrying ${route} (attempt ${attempt})...`);
-        await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
+    console.log(`📡  Starting vite preview on ${BASE}…`);
+    server = await startPreviewServer(port);
+    await waitForPreviewReady(BASE);
 
-        // Wait for the React SEO useEffect to fire and inject meta tags
-        // We wait for <title> to not be the generic fallback
-        await page.waitForFunction(
-          () => document.title && document.title !== 'Vite + React',
-          { timeout: 10000 }
-        ).catch(() => {}); // don't crash if title stays generic
+    browser = await launchBrowser();
 
-        // Additional short wait for hreflang / canonical injection
-        await new Promise(r => setTimeout(r, 500));
+    for (const route of ROUTES) {
+      let success = false;
+      let lastError = null;
 
-        const html = await page.content();
-        await page.close();
+      for (let attempt = 1; attempt <= NAVIGATION_ATTEMPTS; attempt++) {
+        try {
+          if (!browser || !browser.connected) {
+            await closeBrowser(browser);
+            browser = await launchBrowser();
+          }
 
-        const filePath = await writeHtml(route, html);
-        const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '(no title)';
-        const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1] ?? '(no canonical)';
+          if (attempt > 1) console.log(`  ↻  Retrying ${route} (attempt ${attempt}/${NAVIGATION_ATTEMPTS})...`);
+          const result = await prerenderRoute(browser, route, BASE);
 
-        results.push({ route, ok: true, title, canonical, filePath });
-        console.log(`  ✅  ${route}\n      title: ${title}\n      canonical: ${canonical}\n      → ${filePath}`);
-        success = true;
-        break;
-      } catch (err) {
-        lastError = err;
+          results.push(result);
+          console.log(`  ✅  ${route}\n      title: ${result.title}\n      canonical: ${result.canonical}\n      → ${result.filePath}`);
+          success = true;
+          break;
+        } catch (err) {
+          lastError = err;
+          console.error(`  ⚠️  ${route} attempt ${attempt}/${NAVIGATION_ATTEMPTS} failed: ${err.message}`);
+
+          if (!browser?.connected || /Connection closed|frame was detached|Target closed|Session closed/i.test(err.message)) {
+            await closeBrowser(browser);
+            browser = await launchBrowser();
+          }
+        }
+      }
+
+      if (!success) {
+        results.push({ route, ok: false, error: lastError.message });
+        console.error(`  ❌  ${route}: ${lastError.message}`);
       }
     }
-
-    if (!success) {
-      results.push({ route, ok: false, error: lastError.message });
-      console.error(`  ❌  ${route}: ${lastError.message}`);
-    }
+  } finally {
+    await closeBrowser(browser);
+    await closePreviewServer(server);
   }
-
-  await browser.close();
-  server.kill();
 
   console.log('\n─────────────────────────────────────────');
   const ok = results.filter(r => r.ok).length;
