@@ -133,7 +133,7 @@ const ArticleLink = ({ href, className, children }) => {
 
 const parseInlineMarkdown = (text, context = 'normal') => {
   const parts = [];
-  const pattern = /(\*\*[^*]+\*\*|__[^_]+__|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
+  const pattern = /(\*\*[^*]+\*\*|__[^_]+__|(?<!\*)\*[^*\n]+\*(?!\*)|(?<!_)_[^_\n]+_(?!_)|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
   let lastIndex = 0;
   let match;
 
@@ -147,6 +147,9 @@ const parseInlineMarkdown = (text, context = 'normal') => {
     if (token.startsWith('**') || token.startsWith('__')) {
       const innerText = token.slice(2, -2);
       parts.push(<strong key={parts.length} className="font-semibold text-zinc-200">{innerText}</strong>);
+    } else if (token.startsWith('*') || token.startsWith('_')) {
+      const innerText = token.slice(1, -1);
+      parts.push(<em key={parts.length}>{innerText}</em>);
     } else if (token.startsWith('`')) {
       parts.push(<code key={parts.length} className="rounded-md border border-white/10 bg-white/[0.04] px-1.5 py-0.5 text-[0.92em] text-pink-100">{token.slice(1, -1)}</code>);
     } else {
@@ -502,7 +505,7 @@ const MarkdownBody = ({ markdown, title, article, isRu }) => {
         }
 
         if (block.type === 'cards') {
-          return <MarkdownCardsBlock key={index} variant={block.variant} items={block.items} />;
+          return <MarkdownCardsBlock key={index} variant={block.variant} items={block.items} isRu={isRu} />;
         }
         
         if (block.type === 'prompts') {
@@ -1176,19 +1179,28 @@ const typeToSuitableFor = {
   'custom-style': ['custom-style', 'style-prompt']
 };
 
-const MarkdownCardsBlock = ({ variant, items }) => {
+const MarkdownCardsBlock = ({ variant, items, isRu }) => {
   if (!items || items.length === 0) return null;
   
   return (
     <div className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-      {items.map((item, idx) => (
-        <div key={idx} className="group rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-5 md:p-6 transition-colors hover:bg-white/[0.03] hover:border-white/[0.12] flex flex-col h-full">
-          {item.title && <h3 className="mb-2 text-[15px] md:text-base font-bold text-zinc-100 tracking-tight leading-snug text-balance">{item.title}</h3>}
-          <div className="text-[13px] leading-[1.6] text-zinc-400 whitespace-pre-wrap">
-            {item.content}
+      {items.map((item, idx) => {
+        const lines = String(item.content || '').split('\n').filter((line) => line.trim());
+        return (
+          <div key={idx} className="group rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-5 md:p-6 transition-colors hover:bg-white/[0.03] hover:border-white/[0.12] flex flex-col h-full">
+            {item.title && (
+              <h3 className="mb-2 text-[15px] md:text-base font-bold text-zinc-100 tracking-tight leading-snug text-balance">
+                {parseInlineMarkdown(item.title, 'normal', isRu)}
+              </h3>
+            )}
+            <div className="space-y-2 text-[13px] leading-[1.6] text-zinc-400">
+              {lines.map((line, lineIndex) => (
+                <p key={lineIndex}>{parseInlineMarkdown(line, 'normal', isRu)}</p>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

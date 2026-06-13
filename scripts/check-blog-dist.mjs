@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { PRODUCTION_ARTIFACT_MARKERS, RAW_COMPONENT_MARKERS, findVisiblePlatformFootnoteMarkers, hasStarredHref } from './blog-template-guardrails.mjs';
+import { PRODUCTION_ARTIFACT_MARKERS, RAW_COMPONENT_MARKERS, findRawMarkdownTextMarkers, findVisiblePlatformFootnoteMarkers, hasStarredHref } from './blog-template-guardrails.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -84,6 +84,9 @@ function checkHtmlFile(htmlPath) {
   if (hasStarredHref(html)) errors.push('Href with literal * found.');
   findVisiblePlatformFootnoteMarkers(html, { html: true }).forEach((finding) => {
     errors.push(`Visible platform footnote marker leaked: "${finding.marker}" (${finding.text})`);
+  });
+  findRawMarkdownTextMarkers(html, { html: true, includeBold: true }).forEach((finding) => {
+    errors.push(`Raw markdown marker leaked: "${finding.marker}" (${finding.text})`);
   });
 
   // Check Old forbidden wording
@@ -188,6 +191,9 @@ function checkArticleHtml(htmlPath, isPublished) {
   if (hasStarredHref(html)) errors.push('Href with literal * found.');
   findVisiblePlatformFootnoteMarkers(html, { html: true }).forEach((finding) => {
     errors.push(`Visible platform footnote marker leaked: "${finding.marker}" (${finding.text})`);
+  });
+  findRawMarkdownTextMarkers(html, { html: true, includeBold: true }).forEach((finding) => {
+    errors.push(`Raw markdown marker leaked: "${finding.marker}" (${finding.text})`);
   });
 
   FORBIDDEN_WORDING.forEach(wording => {

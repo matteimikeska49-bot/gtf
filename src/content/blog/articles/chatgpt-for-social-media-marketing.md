@@ -16,7 +16,7 @@ faq:
   - question: Can ChatGPT design images for my posts?
     answer: ChatGPT (via DALL-E) can generate images, but they often look distinctly "AI-generated" and may include spelling errors in text. For social media graphics and carousels, it is better to use dedicated design tools or AI Carousel Makers.
   - question: How do I make ChatGPT stop using emojis?
-    answer: 'Simply add the hard constraint to your prompt: *"CRITICAL INSTRUCTION: Do not use a single emoji in your response."*'
+    answer: 'Simply add the hard constraint to your prompt: "CRITICAL INSTRUCTION: Do not use a single emoji in your response."'
   - question: Is it safe to copy and paste AI text directly?
     answer: It is always better to review and edit AI-generated text to ensure it aligns with your brand voice, fixes formatting, and is free of factual inaccuracies or hallucinations.
 explore:
@@ -96,5 +96,4 @@ If you don't know what to ask, ask ChatGPT to write the prompt for you.
 ### 10. Building a 30-Day Content Matrix
 Stop staring at a blank calendar.
 **Prompt:** *"Create a 30-day content matrix for a [Your Niche] brand. Organize it by week. Each week must include: 1 Educational post, 1 Entertaining/Relatable post, 1 Case Study, and 1 Direct Pitch. Provide specific headlines for all 30 posts."*
-
 

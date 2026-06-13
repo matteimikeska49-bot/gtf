@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { PRODUCTION_ARTIFACT_MARKERS, findVisiblePlatformFootnoteMarkers, hasStarredHref } from './blog-template-guardrails.mjs';
+import { PRODUCTION_ARTIFACT_MARKERS, findRawMarkdownTextMarkers, findVisiblePlatformFootnoteMarkers, hasStarredHref } from './blog-template-guardrails.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -150,6 +150,9 @@ function checkHtmlFile(filePath, data, isD53) {
     if (hasStarredHref(htmlContent)) errors.push(`[P0] Href with literal * leaked to rendered HTML`);
     findVisiblePlatformFootnoteMarkers(htmlContent, { html: true }).forEach((finding) => {
       errors.push(`[P0] Visible platform footnote marker leaked to rendered HTML: "${finding.marker}" (${finding.text})`);
+    });
+    findRawMarkdownTextMarkers(htmlContent, { html: true, includeBold: true }).forEach((finding) => {
+      errors.push(`[P0] Raw markdown marker leaked to rendered HTML: "${finding.marker}" (${finding.text})`);
     });
 
     // Schema checks

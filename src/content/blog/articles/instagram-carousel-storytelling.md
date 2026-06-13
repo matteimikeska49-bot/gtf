@@ -37,8 +37,8 @@ quickAnswerTitle: Quick Answer
 quickAnswer:
   - The most effective storytelling framework for carousels is the Open Loop.
   - An open loop introduces a question, a mystery, or a problem on one slide, but delays the answer until the next slide.
-  - This creates psychological tension. If Slide 2 says, *"The biggest mistake I made cost me $10,000...
-  - '"* the user *has* to swipe to Slide 3 to find out what the mistake was.'
+  - 'This creates psychological tension. If Slide 2 says, "The biggest mistake I made cost me $10,000..."'
+  - The user has to swipe to Slide 3 to find out what the mistake was.
 lastReviewed: '2026-06-13'
 updatedAt: '2026-06-13'
 ---
@@ -95,5 +95,4 @@ This format builds immense trust because it shows vulnerability before showing s
 *   **Boring the reader on Slide 2:** Slide 1 gets the click, but Slide 2 keeps them reading. If Slide 2 is a long, boring introduction ("Hi, my name is John and I have 10 years of experience..."), they will swipe away. Get straight to the drama.
 *   **Too much text:** Treat carousel slides like billboard ads, not book pages. Edit relentlessly. If a word doesn't drive the story forward, delete it.
 *   **Predictable endings:** If the reader can guess the solution by Slide 3, they won't swipe to Slide 10. Keep the ultimate "secret" hidden until the end.
-
 

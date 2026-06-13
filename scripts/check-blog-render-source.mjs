@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import {
   extractFrontmatterAndBody,
+  findRawMarkdownTextMarkers,
   findVisiblePlatformFootnoteMarkers,
   findRawJsxLikeTags,
   getYamlValue
@@ -85,6 +86,26 @@ files.forEach(file => {
   const bodyPlatformMarkers = findVisiblePlatformFootnoteMarkers(body);
   [...frontmatterPlatformMarkers, ...bodyPlatformMarkers].forEach((finding) => {
     errors.push(`[P0] Article ${data.slug} contains visible platform footnote marker "${finding.marker}" on line ${finding.line}: ${finding.text}`);
+  });
+
+  const frontmatterRawMarkdown = (content.match(/^---\s*\n([\s\S]*?)\n---/)?.[1] || '')
+    .split('\n')
+    .flatMap((line, index) => {
+      if (!/^\s*(?:title|description|text|primaryText|secondaryText|buttonText|microcopy|question|answer):\s*/.test(line)) return [];
+      return findRawMarkdownTextMarkers(line, { includeBold: true }).map((finding) => ({ ...finding, line: index + 1 }));
+    });
+  frontmatterRawMarkdown.forEach((finding) => {
+    errors.push(`[P0] Article ${data.slug} contains raw markdown marker "${finding.marker}" in plain frontmatter field on line ${finding.line}: ${finding.text}`);
+  });
+
+  const frontmatterQuoteMarkers = (content.match(/^---\s*\n([\s\S]*?)\n---/)?.[1] || '')
+    .split('\n')
+    .flatMap((line, index) => {
+      if (!/(?<!\*)\*"|"\*(?!\*)/.test(line)) return [];
+      return [{ line: index + 1, text: line.trim() }];
+    });
+  frontmatterQuoteMarkers.forEach((finding) => {
+    errors.push(`[P0] Article ${data.slug} contains raw markdown quote boundary in frontmatter on line ${finding.line}: ${finding.text}`);
   });
 
   // Raw Artifact Checks

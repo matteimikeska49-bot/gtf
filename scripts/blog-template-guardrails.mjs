@@ -81,6 +81,9 @@ export function stripHtmlForTemplateGuardrails(html) {
   return html
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<pre[\s\S]*?<\/pre>/gi, ' ')
+    .replace(/<code[\s\S]*?<\/code>/gi, ' ')
+    .replace(/<kbd[\s\S]*?<\/kbd>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
@@ -116,6 +119,36 @@ export function findVisiblePlatformFootnoteMarkers(text, { html = false } = {}) 
         marker: match[0],
         text: line.trim()
       });
+    }
+  });
+
+  return findings;
+}
+
+export function findRawMarkdownTextMarkers(text, { html = false, includeBold = true } = {}) {
+  if (!text) return [];
+  const source = html ? stripHtmlForTemplateGuardrails(text) : stripCodeForTemplateGuardrails(text);
+  const findings = [];
+  const patterns = [
+    { type: 'quoted italic', regex: /(?<!\*)\*"[^"\n]+"\*(?!\*)/g },
+    ...(includeBold ? [
+      { type: 'bold', regex: /\*\*[^*\n]+\*\*/g },
+      { type: 'bold', regex: /__[^_\n]+__/g }
+    ] : [])
+  ];
+
+  source.split('\n').forEach((line, index) => {
+    if (isLegalMetaDisclaimerLine(line)) return;
+    for (const pattern of patterns) {
+      let match;
+      while ((match = pattern.regex.exec(line)) !== null) {
+        findings.push({
+          line: index + 1,
+          marker: match[0],
+          type: pattern.type,
+          text: line.trim()
+        });
+      }
     }
   });
 
