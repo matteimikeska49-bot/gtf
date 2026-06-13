@@ -67,7 +67,7 @@ The hardest part of writing is the blank page. Use AI as your brainstorming part
 **The "Pain Point" Prompt:**
 > "Act as my target audience (VP of Sales at mid-sized software companies). List the top 5 problems you face on a daily basis. Then, generate 3 provocative LinkedIn post headlines addressing each of those problems."
 
-This prompt guarantees that your content is always relevant to the people you want to attract.
+This prompt helps keep your content anchored in the problems and language of the people you want to attract.
 
 ## 3. The "Voice Cloning" Workflow
 
@@ -95,5 +95,4 @@ A personal brand is not a broadcast channel; it is a networking event.
 If you only post and never comment, you will not grow. 
 
 Spend 20% of your time creating content, and 80% of your time leaving insightful, high-value comments on the posts of industry leaders and potential clients. *Do not use AI to write your comments.* "Great post! Thanks for sharing" (or robotic AI equivalents) will hurt your reputation. Read the post and leave a genuine human perspective.
-
 

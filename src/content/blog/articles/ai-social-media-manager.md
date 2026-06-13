@@ -72,7 +72,7 @@ To become an AI Social Media Manager, you need to master the right stack.
 
 1.  **The Brain (LLMs):** ChatGPT (GPT-4o), Claude, or Gemini for ideation, drafting, and analyzing data.
 2.  **The Designer (Visual Generators):** Midjourney or DALL-E for creating unique background images, abstract art, or brand mascots.
-3.  **The Publisher (Carousel & Formatting Tools):** GoToFlow to instantly convert AI-generated text into ready-to-publish Instagram and LinkedIn document carousels.
+3.  **The Carousel Workflow System:** GoToFlow to move from idea or source material to hook, slide structure, copy, visual direction, CTA, and ready-to-publish Instagram or LinkedIn carousel.
 4.  **The Analyst (Social Listening AI):** Tools that monitor mentions of your brand and gauge overall public sentiment.
 
 
@@ -86,5 +86,4 @@ If you feel threatened by AI, the best defense is to lean into it.
 *   **Stop selling "hours" and start selling "output."** If you are a freelancer, do not charge by the hour. Charge a flat retainer for 30 posts a month. Use AI to do that work in 4 hours instead of 40. Your profit margins will skyrocket.
 *   **Market yourself as an "AI-Augmented Marketer."** Clients want efficiency. Tell them you use advanced AI to lower production costs, allowing you to spend more of their budget on high-level strategy and community growth.
 *   **Become a Prompt Engineer.** Learn how to write highly specific, constraint-bound prompts that force the AI to write in the exact tone of voice of your clients.
-
 
