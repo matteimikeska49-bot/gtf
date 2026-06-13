@@ -54,8 +54,8 @@ If your daily tasks fall heavily into this category, you must adapt your skill s
 
 *   **First-Draft Copywriting:** Staring at a blank page is obsolete. AI can generate 10 variations of a caption, blog post, or LinkedIn update in 5 seconds based on a single prompt.
 *   **Routine Graphic Design:** The days of manually aligning text in Canva are ending. Tools like GoToFlow automatically format text into perfectly designed, swipeable carousels.
-*   **Content Repurposing:** Turning a 30-minute YouTube transcript into 5 tweets, 2 LinkedIn articles, and an Instagram Carousel is now a one-click automated process.
-*   **Scheduling and Optimal Timing:** Predictive AI algorithms now automatically publish your posts at the exact minute your specific audience is most active online, rendering manual scheduling tools unnecessary.
+*   **Content Repurposing:** Turning a 30-minute YouTube transcript into 5 tweets, 2 LinkedIn articles, and an Instagram Carousel can be done much faster using AI tools.
+*   **Scheduling and Optimal Timing:** You can prepare the content in GoToFlow and then publish it manually or schedule it in a separate publishing tool. Some scheduling tools can publish automatically, while GoToFlow focuses on preparing the content and visual structure.
 
 ## 2. What AI Cannot Do (The Human Premium)
 
