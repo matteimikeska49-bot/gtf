@@ -12,6 +12,15 @@ export const PRODUCTION_ARTIFACT_MARKERS = [
   '8 to 7-10'
 ];
 
+export const PLATFORM_FOOTNOTE_TERMS = [
+  'Instagram',
+  'Инстаграм',
+  'Facebook',
+  'Фейсбук',
+  'Meta',
+  'Мета'
+];
+
 export const LEGACY_MISSING_EXPLORE_EXCEPTIONS = new Set([
   'ai-carousel-generator',
   'ai-linkedin-post-generator',
@@ -66,6 +75,51 @@ export function findRawComponentMarkers(text) {
 
 export function hasStarredHref(text) {
   return /href=["'][^"']*\*[^"']*["']/i.test(text) || /\]\([^)]*\*[^)]*\)/.test(text);
+}
+
+export function stripHtmlForTemplateGuardrails(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
+
+export function stripInvisibleMarkdownSyntax(text) {
+  return stripCodeForTemplateGuardrails(text)
+    .replace(/\*\*([^*\n]+)\*\*/g, '$1')
+    .replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, '$1')
+    .replace(/__([^_\n]+)__/g, '$1')
+    .replace(/_([^_\n]+)_/g, '$1');
+}
+
+function isLegalMetaDisclaimerLine(line) {
+  return /^\s*\*+\s*(?:Instagram|Facebook|Meta|Инстаграм|Фейсбук|Мета)\b/i.test(line)
+    && /(?:Meta Platforms|принадлеж|экстремист|запрещен|запрещена|disclaimer|trademark|belongs)/i.test(line);
+}
+
+export function findVisiblePlatformFootnoteMarkers(text, { html = false } = {}) {
+  if (!text) return [];
+  const source = html ? stripHtmlForTemplateGuardrails(text) : stripInvisibleMarkdownSyntax(text);
+  const findings = [];
+  const markerRe = /\b(?:Instagram|Инстаграм|Facebook|Фейсбук|Meta|Мета)\*(?!\*)/gi;
+
+  source.split('\n').forEach((line, index) => {
+    if (isLegalMetaDisclaimerLine(line)) return;
+    let match;
+    while ((match = markerRe.exec(line)) !== null) {
+      findings.push({
+        line: index + 1,
+        marker: match[0],
+        text: line.trim()
+      });
+    }
+  });
+
+  return findings;
 }
 
 export function getYamlValue(frontmatter, key) {

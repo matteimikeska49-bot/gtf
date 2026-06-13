@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { PRODUCTION_ARTIFACT_MARKERS, RAW_COMPONENT_MARKERS, hasStarredHref } from './blog-template-guardrails.mjs';
+import { PRODUCTION_ARTIFACT_MARKERS, RAW_COMPONENT_MARKERS, findVisiblePlatformFootnoteMarkers, hasStarredHref } from './blog-template-guardrails.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -82,6 +82,9 @@ function checkHtmlFile(htmlPath) {
     if (!errors.includes('Escaped <span class= found in text.')) errors.push('Escaped <span class= found in text.');
   }
   if (hasStarredHref(html)) errors.push('Href with literal * found.');
+  findVisiblePlatformFootnoteMarkers(html, { html: true }).forEach((finding) => {
+    errors.push(`Visible platform footnote marker leaked: "${finding.marker}" (${finding.text})`);
+  });
 
   // Check Old forbidden wording
   FORBIDDEN_WORDING.forEach(wording => {
@@ -183,6 +186,9 @@ function checkArticleHtml(htmlPath, isPublished) {
   if (html.includes('&lt;span class=')) errors.push('Escaped <span class= found in text.');
   if (html.includes('class=\\"text-gradient-brand\\"')) errors.push('Raw class string found in text.');
   if (hasStarredHref(html)) errors.push('Href with literal * found.');
+  findVisiblePlatformFootnoteMarkers(html, { html: true }).forEach((finding) => {
+    errors.push(`Visible platform footnote marker leaked: "${finding.marker}" (${finding.text})`);
+  });
 
   FORBIDDEN_WORDING.forEach(wording => {
     if (lowerHtml.includes(wording)) errors.push(`Forbidden wording found: "${wording}"`);

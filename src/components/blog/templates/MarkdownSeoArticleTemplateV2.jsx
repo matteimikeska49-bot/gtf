@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle2, ChevronDown, ChevronRight, ExternalLink, Laye
 import { getAppUrlWithRef } from '../../../utils/url';
 import { getMockupsForArticle } from '../../../lib/blog/mockupRegistry';
 import { MOCKUP_SLOT_MAP } from '../../../lib/blog/mockupSlots';
-import { shouldShowRuMetaDisclaimer, applyRuAutoStar } from '../../../lib/blog/metaDisclaimerHelper';
+import { shouldShowRuMetaDisclaimer } from '../../../lib/blog/metaDisclaimerHelper';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -131,22 +131,22 @@ const ArticleLink = ({ href, className, children }) => {
   );
 };
 
-const parseInlineMarkdown = (text, context = 'normal', isRu = false) => {
+const parseInlineMarkdown = (text, context = 'normal') => {
   const parts = [];
-  const pattern = /(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
+  const pattern = /(\*\*[^*]+\*\*|__[^_]+__|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
   let lastIndex = 0;
   let match;
 
   while ((match = pattern.exec(text)) !== null) {
     if (match.index > lastIndex) {
       const textPart = text.slice(lastIndex, match.index);
-      parts.push(isRu ? applyRuAutoStar(textPart, isRu) : textPart);
+      parts.push(textPart);
     }
 
     const token = match[0];
-    if (token.startsWith('**')) {
+    if (token.startsWith('**') || token.startsWith('__')) {
       const innerText = token.slice(2, -2);
-      parts.push(<strong key={parts.length} className="font-semibold text-zinc-200">{isRu ? applyRuAutoStar(innerText, isRu) : innerText}</strong>);
+      parts.push(<strong key={parts.length} className="font-semibold text-zinc-200">{innerText}</strong>);
     } else if (token.startsWith('`')) {
       parts.push(<code key={parts.length} className="rounded-md border border-white/10 bg-white/[0.04] px-1.5 py-0.5 text-[0.92em] text-pink-100">{token.slice(1, -1)}</code>);
     } else {
@@ -158,7 +158,7 @@ const parseInlineMarkdown = (text, context = 'normal', isRu = false) => {
         }
         parts.push(
           <ArticleLink key={parts.length} href={linkMatch[2]} className={linkClass}>
-            {isRu ? applyRuAutoStar(linkMatch[1], isRu) : linkMatch[1]}
+            {linkMatch[1]}
           </ArticleLink>
         );
       }
@@ -169,7 +169,7 @@ const parseInlineMarkdown = (text, context = 'normal', isRu = false) => {
 
   if (lastIndex < text.length) {
     const textPart = text.slice(lastIndex);
-    parts.push(isRu ? applyRuAutoStar(textPart, isRu) : textPart);
+    parts.push(textPart);
   }
   return parts;
 };
@@ -1013,10 +1013,10 @@ const ArticleExploreZone = ({ explore, isRu }) => {
   const renderCard = (item) => (
     <ArticleLink key={`${item.href}-${item.title}`} href={item.href} className="group block rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 transition-colors hover:border-pink-300/25 hover:bg-pink-500/[0.05]">
       <div className="mb-3 flex items-start justify-between gap-3">
-        <h3 className="text-base font-semibold text-white transition-colors group-hover:text-pink-100 text-balance">{isRu ? applyRuAutoStar(item.title, isRu) : item.title}</h3>
+        <h3 className="text-base font-semibold text-white transition-colors group-hover:text-pink-100 text-balance">{item.title}</h3>
         {isExternalHref(item.href || '') ? <ExternalLink className="h-4 w-4 shrink-0 text-zinc-500" /> : <ChevronRight className="h-4 w-4 shrink-0 text-zinc-500 transition-transform group-hover:translate-x-0.5" />}
       </div>
-      <p className="text-sm leading-relaxed text-zinc-400">{isRu ? applyRuAutoStar(item.description, isRu) : item.description}</p>
+      <p className="text-sm leading-relaxed text-zinc-400">{item.description}</p>
     </ArticleLink>
   );
 
@@ -1071,8 +1071,8 @@ const FinalCta = ({ cta, isRu }) => {
       <div className="relative my-16 overflow-hidden rounded-[32px] border border-pink-300/15 bg-gradient-to-br from-pink-500/[0.12] via-white/[0.035] to-orange-500/[0.10] p-7 shadow-[0_30px_140px_rgba(236,72,153,0.12)] md:p-10">
         <div className="absolute left-1/2 top-0 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-400/10 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-2xl">
-          <h2 className="mb-4 text-2xl font-bold tracking-tight text-white md:text-4xl text-balance">{isRu ? applyRuAutoStar(cta.title, isRu) : cta.title}</h2>
-          <p className="mx-auto mb-7 max-w-xl text-base leading-relaxed text-zinc-300">{isRu ? applyRuAutoStar((cta.text || cta.description), isRu) : (cta.text || cta.description)}</p>
+          <h2 className="mb-4 text-2xl font-bold tracking-tight text-white md:text-4xl text-balance">{cta.title}</h2>
+          <p className="mx-auto mb-7 max-w-xl text-base leading-relaxed text-zinc-300">{cta.text || cta.description}</p>
           <a href={getAppUrlWithRef(CTA_URL)} className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 px-7 py-3.5 text-[15px] font-bold text-white shadow-[0_0_40px_rgba(236,72,153,0.35)] transition-all hover:scale-105 active:scale-[0.98] sm:w-auto">
             {cta.buttonText}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -1114,7 +1114,7 @@ const ArticleHero = ({ article, isRu }) => {
           {renderFormattedTitle(article.title, isRu)}
         </h1>
         <p className="mx-auto max-w-2xl text-lg leading-[1.65] text-zinc-400 md:text-xl text-balance">
-          {isRu ? applyRuAutoStar(article.description, isRu) : article.description}
+          {article.description}
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-zinc-500">
           {formatArticleTypeBadge(article.articleType, isRu) && (

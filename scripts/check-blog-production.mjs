@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import https from 'https';
-import { PRODUCTION_ARTIFACT_MARKERS, hasStarredHref } from './blog-template-guardrails.mjs';
+import { PRODUCTION_ARTIFACT_MARKERS, findVisiblePlatformFootnoteMarkers, hasStarredHref } from './blog-template-guardrails.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BATCH_STATUS_PATH = path.join(__dirname, '../src/content/blog/batch-status.json');
@@ -141,6 +141,12 @@ async function runChecks() {
 
       if (hasStarredHref(html)) {
         conflicts.push(`[SEO P0 ERROR] Production canonical HTML for ${fullUrl} contains href with a literal *.`);
+        hasP0Error = true;
+      }
+
+      const visiblePlatformMarkers = findVisiblePlatformFootnoteMarkers(html, { html: true });
+      for (const finding of visiblePlatformMarkers) {
+        conflicts.push(`[SEO P0 ERROR] Production canonical HTML for ${fullUrl} contains visible platform footnote marker "${finding.marker}".`);
         hasP0Error = true;
       }
     }

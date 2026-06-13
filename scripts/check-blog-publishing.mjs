@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { VALID_MOCKUP_SLOTS } from '../src/lib/blog/mockupSlots.js';
 import {
+  findVisiblePlatformFootnoteMarkers,
   findRawJsxLikeTags,
   getTemplateContractIssues,
   isLivePublishedFrontmatter
@@ -115,22 +116,22 @@ async function runCheck() {
   const parsedFiles = [];
 
   let hasAutoDisclaimer = false;
-  let hasAutoStar = false;
+  let hasVisibleAutoStar = false;
   if (fs.existsSync(HELPER_PATH) && fs.existsSync(TEMPLATE_PATH)) {
     const templateContent = fs.readFileSync(TEMPLATE_PATH, 'utf-8');
     if (templateContent.includes('shouldShowRuMetaDisclaimer') && templateContent.includes('RuMetaDisclaimer')) {
       hasAutoDisclaimer = true;
     }
     if (templateContent.includes('applyRuAutoStar')) {
-      hasAutoStar = true;
+      hasVisibleAutoStar = true;
     }
   }
   if (!hasAutoDisclaimer) {
     console.log(`  ❌ P0: Automatic RU Meta disclaimer system is missing from MarkdownSeoArticleTemplateV2.jsx or helper.`);
     hasP0Error = true;
   }
-  if (!hasAutoStar) {
-    console.log(`  ❌ P0: Automatic RU Meta auto-star system (applyRuAutoStar) is missing.`);
+  if (hasVisibleAutoStar) {
+    console.log(`  ❌ P0: Visible RU Meta auto-star system (applyRuAutoStar) must not be used in MarkdownSeoArticleTemplateV2.jsx.`);
     hasP0Error = true;
   }
 
@@ -300,9 +301,9 @@ async function runCheck() {
       if (hasYamlKey(frontmatter, 'metaDisclaimer')) {
         warnings.push(`Manual metaDisclaimer field found in frontmatter. This is now handled automatically by the template.`);
       }
-      if (/(^|[^a-zа-яё0-9_])(Instagram|Facebook|Meta|Инстаграм|Фейсбук|Мета)\*(?!\*)/i.test(content)) {
-         warnings.push(`Manual asterisk found on restricted term (e.g. Instagram*). The template automatically adds them now, so please remove manual ones to avoid double-starring.`);
-      }
+      findVisiblePlatformFootnoteMarkers(content).forEach((finding) => {
+         errors.push(`Visible platform footnote marker found: "${finding.marker}" on line ${finding.line}`);
+      });
       if (/принадлежат Meta Platforms Inc., деятельность которой/i.test(content)) {
          warnings.push(`Manual disclaimer text found in content. The template automatically adds it now.`);
       }

@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import {
   extractFrontmatterAndBody,
+  findVisiblePlatformFootnoteMarkers,
   findRawJsxLikeTags,
   getYamlValue
 } from './blog-template-guardrails.mjs';
@@ -79,6 +80,12 @@ files.forEach(file => {
   if (rawJsxTags.length > 0) {
     errors.push(`[P0] Article ${data.slug} contains raw JSX-like component tag(s) in markdown body: ${rawJsxTags.join(', ')}`);
   }
+
+  const frontmatterPlatformMarkers = findVisiblePlatformFootnoteMarkers(content.match(/^---\s*\n([\s\S]*?)\n---/)?.[1] || '');
+  const bodyPlatformMarkers = findVisiblePlatformFootnoteMarkers(body);
+  [...frontmatterPlatformMarkers, ...bodyPlatformMarkers].forEach((finding) => {
+    errors.push(`[P0] Article ${data.slug} contains visible platform footnote marker "${finding.marker}" on line ${finding.line}: ${finding.text}`);
+  });
 
   // Raw Artifact Checks
   const badArtifacts = [
