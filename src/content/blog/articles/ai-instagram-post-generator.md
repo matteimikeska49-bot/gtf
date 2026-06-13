@@ -15,6 +15,7 @@ articleRole: "hub"
 hubSlug: "ai-instagram-post-generator"
 canonical: "https://gotoflow.io/blog/ai-instagram-post-generator"
 createdAt: "2026-06-09"
+lastReviewed: '2026-06-13'
 targetKeyword: "ai instagram post generator"
 secondaryKeywords: "ai post maker, instagram content creator, ai carousel for instagram"
 relatedProductRoute: "/ai-instagram-post-generator"
