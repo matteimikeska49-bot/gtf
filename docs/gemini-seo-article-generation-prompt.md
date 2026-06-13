@@ -7,9 +7,14 @@ This prompt is designed to instruct Gemini (or another AI agent) to generate a c
 Use this prompt template whenever you need to generate a new blog post or SEO guide. Do not use this for minor edits. Provide this exact prompt along with the specific article brief to generate a ready-to-publish `.md` file.
 
 Before generating or editing a new SEO markdown article, open and follow:
+- `docs/product/gotoflow-capabilities.md`
 - `src/content/blog/articles/test-seo-template-v2.md`
 - `src/content/blog/articles/_template.md`
 - `src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx`
+
+`docs/product/gotoflow-capabilities.md` is the canonical product source of truth for GoToFlow positioning, capabilities, comparisons, roadmap framing, forbidden negative framing, and misleading-claim rules. Before writing or editing a GoToFlow article, the agent must check whether the article positioning matches that file. Any article, prompt, or QA decision that contradicts `docs/product/gotoflow-capabilities.md` is incorrect.
+
+Product positioning summary: GoToFlow is an end-to-end carousel creation system: competitor/viral research, idea, scenario, structure, copy, visual style/design, own photos, AI characters, slides, and CTA — from zero to a ready carousel in minutes. Never reduce GoToFlow to text-only, structure-only, Canva/Midjourney/ChatGPT add-on, or random AI carousel generation. Do not invent product limitations, do not frame GoToFlow through “minuses”, and do not describe roadmap items as strategic weaknesses.
 
 For RU markdown articles, use:
 `docs/gemini-ru-article-draft-protocol.md`
@@ -44,6 +49,7 @@ Before generating the article, Gemini must receive the following context via a c
 6. **No "Draft" Wording**: Never use wording like "carousel draft", "review the draft", or "generate a draft". Use "carousel result", "ready carousel", "slide copy", etc.
 7. **Dates**: Ensure `updatedAt` or `lastReviewed` is present and correct. The V2 template requires one of these fields to render the meta block.
 8. **V2 Layout Elements**: A plain markdown body is forbidden. You MUST include at least one V2 visual layout element such as `:::cards`, `[!takeaway]`, `[!workflow]`, or `[!tip]`.
+9. **Product Source of Truth**: Follow `docs/product/gotoflow-capabilities.md`. GoToFlow must be described as an end-to-end carousel workflow, not as a text-only assistant, structure-only assistant, Canva/Midjourney/ChatGPT add-on, or random generator.
 
 ## 5. Frontmatter Schema
 Every article MUST start with this exact YAML frontmatter block:
@@ -229,6 +235,7 @@ Your task is to write a high-quality, deeply researched, and engaging SEO articl
 12. Do NOT write the FAQ or Final CTA in the body text. They belong ONLY in the frontmatter. Use EXACTLY `question:` and `answer:` keys for FAQ. Do NOT use empty FAQ rows or duplicate the H1.
 13. finalCta schema is STRICT: `title`, `text` (NOT description), `buttonText`, `href` (required, from allowlist), `microcopy`, `secondaryText`, and `secondaryHref` (e.g., "#explore-more"). No raw HTML or `<span class=...>` allowed.
 14. Do NOT use `[!product]` or `:::mockup` callouts or raw JSX/HTML in the body. Provide a standard markdown link to the product in the body. Avoid old "draft" wording (e.g., "carousel draft").
+15. Before writing, verify GoToFlow positioning against `docs/product/gotoflow-capabilities.md`. Do not invent product limitations, do not write "Cons of GoToFlow" / "Минусы GoToFlow" blocks, and do not frame roadmap items as weaknesses.
 15. Place exactly ONE `[!related]` block after a major section. DO NOT place it inside lists or prompt groups.
 16. Use ONLY the approved internal links provided in the brief or the standard allowlist. Do not hallucinate URLs. No cross-language links (RU to EN). No links to draft/noindex pages. Ensure product routes match the article language.
 17. If writing a prompt library, use H2 for the main section, H3 for groups, and ordered lists for the prompts themselves. Do not interrupt this structure with callouts.

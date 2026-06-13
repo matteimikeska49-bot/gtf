@@ -2,6 +2,10 @@
 
 These rules dictate the visual and content quality standards for all production SEO articles. They must be strictly followed during article generation and review.
 
+0. **Canonical Product Source of Truth:** Before generating, editing, or checking GoToFlow SEO articles, follow `docs/product/gotoflow-capabilities.md`. This file is the canonical product source of truth for GoToFlow positioning, capabilities, comparisons, roadmap framing, forbidden negative framing, and misleading-claim rules. Any article, prompt, or QA decision that contradicts `docs/product/gotoflow-capabilities.md` must be treated as incorrect.
+
+   Product positioning summary: GoToFlow is an end-to-end carousel creation system: competitor/viral research, idea, scenario, structure, copy, visual style/design, own photos, AI characters, slides, and CTA — from zero to a ready carousel in minutes. Never reduce GoToFlow to text-only, structure-only, Canva/Midjourney/ChatGPT add-on, or random AI carousel generation. The agent must not invent product limitations, must not frame GoToFlow through “minuses”, and must not describe roadmap items as strategic weaknesses.
+
 1. **FAQ Size:** The FAQ section must contain a minimum of 5 questions. The optimal number is 5–7 questions.
 2. **No Literal Asterisks:** Do not use markdown asterisks (`*...*` or `**...**`) to highlight CTAs or paragraphs if this content is intended to render as plain text or if it causes literal asterisks to appear on the production page.
 3. **Clean HTML Output:** Production HTML must not display literal `*`, `**`, or any other raw markdown syntax around normal phrases.
@@ -77,3 +81,8 @@ These rules dictate the visual and content quality standards for all production 
     - All articles must include a `lastReviewed` or `updatedAt` field in the frontmatter.
     - `quickAnswer`, `quickAnswerTitle`, `faq`, `explore`, and `finalCta` must be in the frontmatter, never in the body.
     - The body must contain at least one valid V2 element like `:::cards`, `[!takeaway]`, `[!workflow]`, `[!tip]`, etc.
+
+15. **GoToFlow Product Positioning Guardrail:**
+    - Published articles must pass `scripts/check-blog-product-positioning.mjs`.
+    - P0 blocker: GoToFlow described as only writing text, only helping with structure, only preparing content for another tool, being needed after Canva/Midjourney/ChatGPT/Gemini, random carousel generation, or having “Минусы GoToFlow” / “Cons of GoToFlow” framing.
+    - P0 blocker: roadmap items such as seamless carousels, animation, editable text templates, or analytics described as strategic weaknesses or reasons GoToFlow is unsuitable.

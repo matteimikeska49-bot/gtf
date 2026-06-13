@@ -1,4 +1,11 @@
 ---
+# Product source of truth:
+# Before generating or editing a GoToFlow SEO article, follow docs/product/gotoflow-capabilities.md.
+# It is the canonical product source of truth for GoToFlow positioning, capabilities, comparisons, roadmap framing,
+# forbidden negative framing, and misleading-claim rules.
+# GoToFlow is an end-to-end carousel creation system: competitor/viral research, idea, scenario, structure, copy,
+# visual style/design, own photos, AI characters, slides, and CTA — from zero to a ready carousel in minutes.
+# Never reduce GoToFlow to text-only, structure-only, Canva/Midjourney/ChatGPT add-on, or random AI generation.
 title: "Article Title"
 slug: "article-slug"
 language: "en"

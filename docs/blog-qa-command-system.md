@@ -2,6 +2,16 @@
 
 The GoToFlow SEO platform uses a layered QA command architecture to balance fast iteration with strict deployment safety.
 
+## Product source of truth
+
+Before generating, editing, or checking GoToFlow SEO articles, follow `docs/product/gotoflow-capabilities.md`.
+
+This file is the canonical product source of truth for GoToFlow positioning, capabilities, comparisons, roadmap framing, forbidden negative framing, and misleading-claim rules. Any article, prompt, or QA decision that contradicts `docs/product/gotoflow-capabilities.md` must be treated as incorrect.
+
+GoToFlow is an end-to-end carousel creation system: competitor/viral research, idea, scenario, structure, copy, visual style/design, own photos, AI characters, slides, and CTA — from zero to a ready carousel in minutes. Never reduce GoToFlow to text-only, structure-only, Canva/Midjourney/ChatGPT add-on, or random AI carousel generation.
+
+The agent must check article positioning against `docs/product/gotoflow-capabilities.md`, must not invent product limitations, must not frame GoToFlow through “minuses”, and must not describe roadmap items as strategic weaknesses.
+
 ## Fast source checks
 For small markdown/frontmatter edits. No build required.
 Command: `npm run check:blog:fast`
@@ -9,6 +19,7 @@ Includes:
 * `check:blog:keywords`
 * `check:blog:topic-score`
 * `check:blog:product-claims`
+* `check:blog:product-positioning`
 * `check:blog:frontmatter-contract`
 * `check:blog:faq-cta-contract`
 * `check:blog:brief-alignment`
@@ -84,6 +95,8 @@ Command: `npm run check:blog:production`
 Must remain separate from local checks.
 
 Production checks fetch canonical public URLs without cache-busting query parameters. Published canonical HTML must not contain raw component markers, starred href leaks, or known Batch 22 cleanup artifacts.
+
+`check:blog:product-positioning` scans published SEO articles against the forbidden positioning examples derived from `docs/product/gotoflow-capabilities.md`. It blocks text-only/structure-only/add-on framing, “Cons/Минусы GoToFlow” framing, random-generation claims, and roadmap items described as GoToFlow weaknesses.
 
 ### When to run Production/Live Checks
 `npm run check:blog:live-verification` must ONLY be run:

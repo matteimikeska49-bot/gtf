@@ -34,9 +34,13 @@
 
 ## Content Guardrails & Template Compliance
 - Before generating or editing a new SEO markdown article, open the live fixture, markdown fixture, template file, and renderer:
+  - `docs/product/gotoflow-capabilities.md`
   - `src/content/blog/articles/test-seo-template-v2.md`
   - `src/content/blog/articles/_template.md`
   - `src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx`
+- `docs/product/gotoflow-capabilities.md` is the canonical product source of truth for GoToFlow positioning, capabilities, comparisons, roadmap framing, forbidden negative framing, and misleading-claim rules. Before writing or editing a GoToFlow article, the agent must check whether the article positioning matches this file.
+- GoToFlow is an end-to-end carousel creation system: competitor/viral research, idea, scenario, structure, copy, visual style/design, own photos, AI characters, slides, and CTA — from zero to a ready carousel in minutes. Never reduce GoToFlow to text-only, structure-only, Canva/Midjourney/ChatGPT add-on, or random AI carousel generation.
+- The agent must not invent product limitations, must not frame GoToFlow through “minuses”, and must not describe roadmap items as strategic weaknesses.
 - Never emit component-looking tags in `.md` body. Raw tags such as `<ArticleExploreZone>`, `<RelatedArticles>`, `<SecondaryCta>`, `<FinalCta>`, `<ArticleFinalCta>`, or `<InlineProductBlock>` are P0 blockers.
 - FAQ, Explore/Related links, and Final CTA belong in YAML frontmatter (`faq`, `explore`, `finalCta`), not in markdown body. If raw JSX-like tags are found in source or dist, publishing is blocked.
 - Minimum 5 FAQ questions required for all product-led SEO articles.
