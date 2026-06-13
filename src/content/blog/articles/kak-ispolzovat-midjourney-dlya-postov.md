@@ -2,6 +2,9 @@
 title: Как использовать Midjourney для постов и каруселей
 description: Инструкция по созданию изображений для Инстаграм с помощью Midjourney. Как сгенерировать единый визуальный стиль и собрать из картинок экспертную карусель.
 primaryKeyword: midjourney для постов
+canonical: "https://gotoflow.io/ru/blog/kak-ispolzovat-midjourney-dlya-postov"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: ru
@@ -25,8 +28,8 @@ explore:
     - title: Обзор лучших генераторов постов
       href: /ru/blog/neyroset-dlya-postov
 finalCta:
-  title: Соберите карусель из ваших ИИ-картинок
-  description: Уже сгенерировали арт в Midjourney? Отлично! Загрузите его в GoToFlow, и наша нейросеть сама напишет текст и красиво сверстает его поверх вашей картинки.
+  title: "Создавайте карусели быстрее и аккуратнее"
+  description: "GoToFlow помогает собрать структуру, текст и визуальную подачу без ручной сборки с нуля."
   buttonText: Собрать карусель
   secondaryText: Посмотреть примеры крутых обложек для каруселей →
   secondaryHref: /ru/blog/oblozhka-dlya-karuseli-instagram

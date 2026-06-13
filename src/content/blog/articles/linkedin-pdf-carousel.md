@@ -5,6 +5,9 @@ language: "en"
 description: "Learn how to create a highly engaging LinkedIn PDF carousel. Discover the exact dimensions, formatting rules, and strategies to maximize your reach."
 primaryKeyword: "linkedin pdf carousel"
 secondaryKeywords: ["pdf carousel format linkedin", "how to upload pdf to linkedin", "linkedin document format"]
+canonical: "https://gotoflow.io/blog/linkedin-pdf-carousel"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:
@@ -48,7 +51,7 @@ If you've spent any time on LinkedIn recently, you've likely seen them: beautifu
 
 These aren't standard image galleries. They are native document posts. And the secret to making them look perfect every time is using the **LinkedIn PDF carousel** format.
 
-In this guide, we'll explain exactly how to design, export, and upload a PDF to maximize your engagement on LinkedIn.
+In this guide, we'll explain exactly how to design, export, and paste text from a PDF to maximize your engagement on LinkedIn.
 
 ## Why PDF is the Ultimate Format for LinkedIn
 

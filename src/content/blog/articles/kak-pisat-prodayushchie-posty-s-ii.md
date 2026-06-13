@@ -2,6 +2,9 @@
 title: Как писать продающие посты с помощью ИИ за минуты
 description: 'Гайд по копирайтингу: как заставить нейросеть писать конверсионные продающие посты. Разбор фреймворков и промптов для продаж в социальных сетях.'
 primaryKeyword: продающие посты нейросеть
+canonical: "https://gotoflow.io/ru/blog/kak-pisat-prodayushchie-posty-s-ii"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: ru
@@ -25,8 +28,8 @@ explore:
     - title: Структура продающего поста в Telegram
       href: /ru/blog/struktura-prodayuschego-posta-v-telegram
 finalCta:
-  title: Продавайте эффективно с AI Content Generator
-  description: GoToFlow использует продвинутые маркетинговые модели для создания конверсионных постов. Никаких клише и воды — только текст, который приносит лидов.
+  title: "Создавайте карусели быстрее и аккуратнее"
+  description: "GoToFlow помогает собрать структуру, текст и визуальную подачу без ручной сборки с нуля."
   buttonText: Создать продающий пост
   secondaryText: Освоить лучшие ИИ-инструменты для SMM →
   secondaryHref: /ru/blog/neyroset-dlya-postov

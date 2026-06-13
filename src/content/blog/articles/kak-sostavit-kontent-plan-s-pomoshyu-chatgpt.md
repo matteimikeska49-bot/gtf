@@ -2,6 +2,9 @@
 title: 'Контент-план с помощью ChatGPT: Промпты и стратегия'
 description: Пошаговая инструкция, как составить матрицу контента и контент-план на месяц с помощью нейросетей. Промпты для генерации рубрик и тем постов.
 primaryKeyword: контент план chatgpt
+canonical: "https://gotoflow.io/ru/blog/kak-sostavit-kontent-plan-s-pomoshyu-chatgpt"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: ru
@@ -25,8 +28,8 @@ explore:
     - title: Как написать экспертный пост
       href: /ru/blog/kak-napisat-ekspertnyj-post
 finalCta:
-  title: Превратите контент-план в готовые посты
-  description: Есть темы, но нет времени писать? Введите ваш заголовок в GoToFlow, и наша нейросеть напишет идеальный пост и соберет из него дизайн-карусель за секунды.
+  title: "Создавайте карусели быстрее и аккуратнее"
+  description: "GoToFlow помогает собрать структуру, текст и визуальную подачу без ручной сборки с нуля."
   buttonText: Генерировать посты по плану
   secondaryText: Забрать лучшие 20 промптов для SMM →
   secondaryHref: /ru/blog/chatgpt-prompty-dlya-kopirajtera

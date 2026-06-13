@@ -5,6 +5,9 @@ language: "en"
 description: "Discover 10 highly effective LinkedIn document post examples. Learn how to format PDFs to maximize engagement, reach, and lead generation."
 primaryKeyword: "linkedin document post examples"
 secondaryKeywords: ["li document examples", "pdf posts linkedin", "document carousel linkedin"]
+canonical: "https://gotoflow.io/blog/linkedin-document-post-examples"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

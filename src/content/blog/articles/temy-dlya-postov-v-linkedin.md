@@ -5,6 +5,9 @@ language: "ru"
 description: "Не знаете, о чем писать? Забирайте 50 готовых тем для постов в LinkedIn, которые помогут вам построить личный бренд и привлечь B2B клиентов."
 primaryKeyword: "темы для постов в linkedin"
 secondaryKeywords: ["идеи постов linkedin", "о чем писать в linkedin", "контент план linkedin"]
+canonical: "https://gotoflow.io/ru/blog/temy-dlya-postov-v-linkedin"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

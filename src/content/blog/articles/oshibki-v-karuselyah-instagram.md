@@ -5,6 +5,9 @@ language: "ru"
 description: "Почему ваши карусели не читают? Узнайте 7 критических ошибок в дизайне и текстах каруселей Инстаграм, которые убивают ваши охваты."
 primaryKeyword: "ошибки в каруселях инстаграм"
 secondaryKeywords: ["почему не читают карусель", "дизайн карусели ошибки", "низкие охваты в инстаграм"]
+canonical: "https://gotoflow.io/ru/blog/oshibki-v-karuselyah-instagram"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

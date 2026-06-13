@@ -5,6 +5,9 @@ language: "en"
 description: "Never run out of content again. Discover 30 highly engaging social media post ideas for small business owners to drive traffic, trust, and sales."
 primaryKeyword: "social media post ideas for business"
 secondaryKeywords: ["b2b post ideas", "smb content calendar", "what to post on social media"]
+canonical: "https://gotoflow.io/blog/social-media-post-ideas-for-business"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

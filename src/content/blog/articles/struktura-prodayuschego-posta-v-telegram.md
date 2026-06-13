@@ -2,6 +2,9 @@
 title: 'Структура продающего поста в Telegram: Примеры и разбор'
 description: Как написать продающий пост в Телеграм-канал. Готовая структура текста, примеры прогревов и советы по копирайтингу для продаж в мессенджере.
 primaryKeyword: продающий пост в телеграм
+canonical: "https://gotoflow.io/ru/blog/struktura-prodayuschego-posta-v-telegram"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: ru
@@ -25,8 +28,8 @@ explore:
     - title: Как написать экспертный пост
       href: /ru/blog/kak-napisat-ekspertnyj-post
 finalCta:
-  title: Генерация постов для Telegram за секунды
-  description: Не тратьте время на форматирование и структуру. GoToFlow сгенерирует идеальный пост под специфику Телеграм с правильными абзацами и буллитами.
+  title: "Создавайте карусели быстрее и аккуратнее"
+  description: "GoToFlow помогает собрать структуру, текст и визуальную подачу без ручной сборки с нуля."
   buttonText: Сгенерировать пост
   secondaryText: Как написать пост для ВКонтакте с помощью ИИ →
   secondaryHref: /ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii

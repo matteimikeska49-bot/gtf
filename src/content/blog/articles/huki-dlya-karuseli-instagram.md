@@ -10,7 +10,7 @@ cluster: "Instagram carousel ideas"
 articleType: "listicle/how-to"
 pageType: "blog_post"
 funnelStage: "TOFU"
-relatedProductRoute: "/ru/generator-karuselej-instagram"
+relatedProductRoute: "/ru/ai-generator-karuselej"
 canonical: "https://gotoflow.io/ru/blog/huki-dlya-karuseli-instagram"
 audience: "creators_and_marketers"
 published: true
@@ -42,7 +42,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей для Instagram"
-      href: "/ru/generator-karuselej-instagram"
+      href: "/ru/ai-generator-karuselej"
       description: "Создавайте стильные карусели для Инстаграм с помощью ИИ."
   guides:
     - title: "Как сделать бесшовную карусель"
@@ -52,7 +52,7 @@ finalCta:
   title: "Готовы создать свою первую карусель?"
   description: "Попробуйте генератор GoToFlow. Нейросеть сама напишет цепляющий хук и подберет дизайн."
   buttonText: "Создать карусель бесплатно"
-  href: "/ru/generator-karuselej-instagram"
+  href: "/ru/ai-generator-karuselej"
   secondaryText: "Смотреть идеи для карусели Instagram →"
   secondaryHref: "/ru/blog/idei-dlya-karuseli-instagram"
 

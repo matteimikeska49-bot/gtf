@@ -5,6 +5,9 @@ language: "ru"
 description: "Пошаговый гайд: как написать вовлекающий пост во ВКонтакте (ВК) с помощью ИИ. Структура, примеры промптов и советы по адаптации текста."
 primaryKeyword: "как написать пост в вк"
 secondaryKeywords: ["генерация постов вк", "посты для вконтакте", "нейросеть для вк"]
+canonical: "https://gotoflow.io/ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

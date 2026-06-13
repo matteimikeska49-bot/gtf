@@ -5,6 +5,9 @@ language: "en"
 description: "A complete LinkedIn content strategy for founders. Learn how to build authority, drive inbound leads, and scale your personal brand without spending 10 hours a week."
 primaryKeyword: "linkedin content strategy for founders"
 secondaryKeywords: ["linkedin strategy 2026", "personal branding for founders", "founder content marketing"]
+canonical: "https://gotoflow.io/blog/linkedin-content-strategy-for-founders"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

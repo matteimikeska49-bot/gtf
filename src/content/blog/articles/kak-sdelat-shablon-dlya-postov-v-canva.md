@@ -2,6 +2,9 @@
 title: 'Как сделать шаблон для постов: Переход от Canva к нейросетям'
 description: Гайд по созданию шаблонов для постов и каруселей в социальных сетях. Почему старые шаблоны Canva часто устаревают для рутинных задач и как нейросети ускоряют дизайн.
 primaryKeyword: шаблон для постов
+canonical: "https://gotoflow.io/ru/blog/kak-sdelat-shablon-dlya-postov-v-canva"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: ru
@@ -25,8 +28,8 @@ explore:
     - title: Ошибки в каруселях Инстаграм
       href: /ru/blog/oshibki-v-karuselyah-instagram
 finalCta:
-  title: Забудьте про ручную подгонку текста
-  description: Ускорьте производство контента в 10 раз. GoToFlow сам напишет текст, разобьет его на слайды и применит ваш фирменный стиль.
+  title: "Создавайте карусели быстрее и аккуратнее"
+  description: "GoToFlow помогает собрать структуру, текст и визуальную подачу без ручной сборки с нуля."
   buttonText: Создать пост через ИИ
   secondaryText: Посмотреть обзор лучших генераторов каруселей →
   secondaryHref: /ru/blog/luchshie-ai-generatory-karuselej

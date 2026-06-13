@@ -5,6 +5,9 @@ language: "en"
 description: "Learn the exact copywriting formulas and structural frameworks to write a B2B LinkedIn post that generates high-quality leads and builds authority."
 primaryKeyword: "how to write a b2b linkedin post"
 secondaryKeywords: ["b2b linkedin copywriting", "linkedin post structure", "writing for linkedin b2b"]
+canonical: "https://gotoflow.io/blog/how-to-write-a-b2b-linkedin-post"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

@@ -5,6 +5,9 @@ language: "en"
 description: "Discover the best carousel Call to Action (CTA) examples. Learn how to convert your audience from swipers into subscribers and customers."
 primaryKeyword: "best carousel CTA examples"
 secondaryKeywords: ["carousel call to action", "instagram carousel cta", "linkedin carousel cta"]
+canonical: "https://gotoflow.io/blog/best-carousel-cta-examples"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

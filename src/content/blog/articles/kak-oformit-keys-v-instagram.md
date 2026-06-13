@@ -5,6 +5,9 @@ language: "ru"
 description: "Подробное руководство, как правильно оформить кейс в Инстаграм. Узнайте структуру продающего кейса и как упаковать его в формат карусели."
 primaryKeyword: "как оформить кейс в инстаграм"
 secondaryKeywords: ["пример кейса в инстаграм", "дизайн кейса", "как написать кейс"]
+canonical: "https://gotoflow.io/ru/blog/kak-oformit-keys-v-instagram"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

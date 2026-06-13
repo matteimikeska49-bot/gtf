@@ -5,6 +5,9 @@ language: "en"
 description: "Confused by the amount of AI tools? This guide helps you choose the perfect AI social media post generator for your specific business needs."
 primaryKeyword: "ai social media post generator"
 secondaryKeywords: ["cross platform ai post maker", "how to choose ai generator", "ai social media tool guide"]
+canonical: "https://gotoflow.io/blog/guide-to-ai-social-media-post-generators"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

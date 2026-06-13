@@ -5,6 +5,9 @@ language: "en"
 description: "Learn how to build a scalable AI content marketing strategy. Discover frameworks for ideation, creation, and distribution to grow your business faster."
 primaryKeyword: "ai content marketing strategy"
 secondaryKeywords: ["ai for content marketing", "automated content strategy", "scaling content with ai"]
+canonical: "https://gotoflow.io/blog/ai-content-marketing-strategy"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

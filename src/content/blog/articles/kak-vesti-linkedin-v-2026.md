@@ -5,6 +5,9 @@ language: "ru"
 description: "Узнайте, как правильно вести LinkedIn в 2026 году. Стратегии, тренды форматов, алгоритмы и советы по созданию личного бренда для экспертов."
 primaryKeyword: "как вести linkedin"
 secondaryKeywords: ["стратегия linkedin", "тренды linkedin 2026", "личный бренд в linkedin"]
+canonical: "https://gotoflow.io/ru/blog/kak-vesti-linkedin-v-2026"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

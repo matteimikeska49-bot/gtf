@@ -5,6 +5,9 @@ language: "en"
 description: "Everything you need to know about LinkedIn carousel size, dimensions, and specifications. Ensure your document posts look perfect on every device."
 primaryKeyword: "linkedin carousel size"
 secondaryKeywords: ["linkedin carousel dimensions", "linkedin document specs", "linkedin pdf size"]
+canonical: "https://gotoflow.io/blog/linkedin-carousel-size-and-specs"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

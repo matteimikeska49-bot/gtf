@@ -2,6 +2,9 @@
 title: 'Трендовые шрифты для каруселей в Инстаграм 2026: Подборка пар'
 description: Обзор актуальных шрифтов и шрифтовых пар для оформления постов и каруселей. Как выбрать читабельный шрифт, который повышает конверсию и удержание аудитории.
 primaryKeyword: шрифты для каруселей
+canonical: "https://gotoflow.io/ru/blog/trendovye-shrifty-dlya-karuseley"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: ru
@@ -25,8 +28,8 @@ explore:
     - title: 'Бесшовная карусель в Инстаграм: Как сделать'
       href: /ru/blog/besshovnaya-karusel-v-instagram
 finalCta:
-  title: Дизайн, который уже настроен за вас
-  description: GoToFlow предлагает идеальные шрифтовые пары и автоматическую верстку. Сгенерируйте красивую карусель без навыков дизайна.
+  title: "Создавайте карусели быстрее и аккуратнее"
+  description: "GoToFlow помогает собрать структуру, текст и визуальную подачу без ручной сборки с нуля."
   buttonText: Сделать карусель с крутым дизайном
   secondaryText: Изучить гайд по правильным размерам постов →
   secondaryHref: /ru/blog/razmer-karuseli-v-instagram

@@ -5,6 +5,9 @@ language: "ru"
 description: "Узнайте, как написать экспертный пост, который подчеркнет ваш профессионализм, вызовет доверие аудитории и не будет выглядеть скучно."
 primaryKeyword: "как написать экспертный пост"
 secondaryKeywords: ["структура экспертного поста", "как писать экспертные тексты", "экспертный контент"]
+canonical: "https://gotoflow.io/ru/blog/kak-napisat-ekspertnyj-post"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

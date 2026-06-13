@@ -2,6 +2,9 @@
 title: 'Instagram Carousel Storytelling: How to Keep Readers Swiping'
 description: Master the art of storytelling in Instagram carousels. Learn the structural frameworks that keep users engaged from slide 1 to slide 10, increasing retention and reach.
 primaryKeyword: carousel storytelling
+canonical: "https://gotoflow.io/blog/instagram-carousel-storytelling"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: en
@@ -25,8 +28,8 @@ explore:
     - title: How to Increase Instagram Engagement
       href: /blog/how-to-increase-instagram-engagement-with-carousels
 finalCta:
-  title: Turn Your Stories into Stunning Carousels
-  description: Focus on your narrative and let us handle the design. GoToFlow automatically formats your stories into perfectly spaced, high-retention carousels.
+  title: "Create carousels faster and cleaner"
+  description: "GoToFlow helps you structure, write, and design your carousel without starting from a blank page."
   buttonText: Create a Story Carousel
   secondaryText: Learn how to write the perfect Call to Action →
   secondaryHref: /blog/best-carousel-cta-examples

@@ -2,6 +2,9 @@
 title: 'How to Write a Viral LinkedIn Post: Breakdown of 10 Hooks'
 description: Discover the anatomy of a viral LinkedIn post. We break down 10 proven hooks and frameworks that generate millions of views, and explain why they work.
 primaryKeyword: viral linkedin post
+canonical: "https://gotoflow.io/blog/viral-linkedin-post-examples"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: en
@@ -25,8 +28,8 @@ explore:
     - title: How to Build a Personal Brand on LinkedIn
       href: /blog/how-to-build-a-personal-brand-on-linkedin-with-ai
 finalCta:
-  title: Turn Viral Hooks into Engaging Carousels
-  description: Got a great hook? Don't waste it on a boring text post. Use GoToFlow to instantly convert your viral ideas into stunning, high-dwell-time LinkedIn Carousels.
+  title: "Create carousels faster and cleaner"
+  description: "GoToFlow helps you structure, write, and design your carousel without starting from a blank page."
   buttonText: Create a Viral Carousel
   secondaryText: Dive deeper into proven LinkedIn carousel hooks →
   secondaryHref: /blog/linkedin-carousel-hooks

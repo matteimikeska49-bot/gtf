@@ -2,6 +2,9 @@
 title: How to Increase Instagram Engagement with Carousels in 2026
 description: Learn how to use Instagram carousels to boost engagement rates, increase dwell time, and get your followers to save and share your content. Actionable tips for 2026.
 primaryKeyword: increase instagram engagement
+canonical: "https://gotoflow.io/blog/how-to-increase-instagram-engagement-with-carousels"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: en
@@ -25,8 +28,8 @@ explore:
     - title: Instagram Carousel Ideas for Business
       href: /blog/instagram-carousel-ideas
 finalCta:
-  title: Create Engaging Carousels in Minutes
-  description: Don't spend hours designing slides. Let AI handle the heavy lifting. Generate structured, swipe-worthy carousels automatically with GoToFlow.
+  title: "Create carousels faster and cleaner"
+  description: "GoToFlow helps you structure, write, and design your carousel without starting from a blank page."
   buttonText: Try AI Carousel Maker
   secondaryText: Discover powerful hooks for your next carousel →
   secondaryHref: /blog/instagram-carousel-hooks

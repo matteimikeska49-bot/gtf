@@ -2,6 +2,9 @@
 title: 'The AI Social Media Manager: Will AI Replace Human Marketers?'
 description: A deep dive into the role of the AI Social Media Manager in 2026. What tasks can AI fully automate, and why human strategy and empathy are still irreplaceable.
 primaryKeyword: ai social media manager
+canonical: "https://gotoflow.io/blog/ai-social-media-manager"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: en
@@ -25,8 +28,8 @@ explore:
     - title: ChatGPT for Social Media Marketing
       href: /blog/chatgpt-for-social-media-marketing
 finalCta:
-  title: Your AI Social Media Assistant
-  description: Ready to level up your workflow? GoToFlow acts as your personal design assistant, instantly turning your strategies into stunning, algorithm-friendly carousels.
+  title: "Create carousels faster and cleaner"
+  description: "GoToFlow helps you structure, write, and design your carousel without starting from a blank page."
   buttonText: Start Automating Your Content
   secondaryText: Learn how to scale your agency using AI tools →
   secondaryHref: /blog/how-to-scale-your-smm-agency-with-ai

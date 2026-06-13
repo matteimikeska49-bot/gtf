@@ -5,6 +5,9 @@ language: "en"
 description: "Struggling with what to post on Facebook? Discover actionable Facebook post ideas for small businesses to drive engagement, community, and local sales."
 primaryKeyword: "facebook post ideas for small business"
 secondaryKeywords: ["fb post creator ideas", "local business facebook posts", "what to post on facebook page"]
+canonical: "https://gotoflow.io/blog/facebook-post-ideas-for-small-business"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

@@ -5,6 +5,9 @@ language: "en"
 description: "Discover the best free AI post generators available today. Learn how to choose the right tool to create engaging text and visuals for your social media."
 primaryKeyword: "ai post generator free"
 secondaryKeywords: ["free social media ai", "free post creator", "ai social media generator free"]
+canonical: "https://gotoflow.io/blog/best-free-ai-post-generators"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

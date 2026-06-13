@@ -2,6 +2,9 @@
 title: 'Анимация в каруселях Инстаграм: Стоит ли делать видео-слайды?'
 description: Плюсы и минусы добавления анимации и видео в карусели Инстаграм. Как алгоритм ранжирует гифки и почему статика в PDF часто работает лучше видео.
 primaryKeyword: анимация в каруселях
+canonical: "https://gotoflow.io/ru/blog/animaciya-v-karuselyah-instagram"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: ru
@@ -25,8 +28,8 @@ explore:
     - title: Трендовые шрифты для каруселей
       href: /ru/blog/trendovye-shrifty-dlya-karuseley
 finalCta:
-  title: Фокус на смыслах, а не на спецэффектах
-  description: Создавайте экспертные карусели с идеальным текстом и читабельным дизайном. GoToFlow сделает это за вас в два клика.
+  title: "Создавайте карусели быстрее и аккуратнее"
+  description: "GoToFlow помогает собрать структуру, текст и визуальную подачу без ручной сборки с нуля."
   buttonText: Создать карусель
   secondaryText: Смотреть примеры крутых статических каруселей →
   secondaryHref: /ru/blog/primery-karuseley-instagram

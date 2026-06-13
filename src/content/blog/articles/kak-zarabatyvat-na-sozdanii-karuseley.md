@@ -2,6 +2,9 @@
 title: 'Как зарабатывать на каруселях: Гайд для SMM и дизайна 2026'
 description: Инструкция для фрилансеров, дизайнеров и SMM-специалистов по заработку на создании каруселей для Инстаграм и LinkedIn. Монетизация навыков с помощью ИИ.
 primaryKeyword: как зарабатывать на каруселях
+canonical: "https://gotoflow.io/ru/blog/kak-zarabatyvat-na-sozdanii-karuseley"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: ru
@@ -25,8 +28,8 @@ explore:
     - title: Лучшие генераторы каруселей
       href: /ru/blog/luchshie-ai-generatory-karuselej
 finalCta:
-  title: Масштабируйте свой фриланс с ИИ
-  description: Берите больше клиентов, автоматизируя рутину. Создавайте профессиональные карусели для заказчиков в 10 раз быстрее с GoToFlow.
+  title: "Создавайте карусели быстрее и аккуратнее"
+  description: "GoToFlow помогает собрать структуру, текст и визуальную подачу без ручной сборки с нуля."
   buttonText: Начать работу бесплатно
   secondaryText: Изучить лучшие нейросети для создания постов →
   secondaryHref: /ru/blog/neyroset-dlya-postov

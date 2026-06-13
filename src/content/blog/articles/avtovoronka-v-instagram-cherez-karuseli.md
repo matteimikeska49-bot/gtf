@@ -2,6 +2,9 @@
 title: 'Автоворонка в Инстаграм через карусели: Пошаговый гайд'
 description: Как выстроить автоворонку продаж в Инстаграм с помощью контента. Схема прогрева через посты-карусели, лид-магниты и чат-боты для автоматизации B2B и инфобизнеса.
 primaryKeyword: автоворонка в инстаграм
+canonical: "https://gotoflow.io/ru/blog/avtovoronka-v-instagram-cherez-karuseli"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: ru
@@ -25,8 +28,8 @@ explore:
     - title: Хуки для каруселей
       href: /ru/blog/huki-dlya-karuseli-instagram
 finalCta:
-  title: Контент для вашей воронки за минуты
-  description: Создавайте магниты для трафика без дизайнера. Нейросеть GoToFlow напишет текст и сверстает идеальную карусель для входа в автоворонку.
+  title: "Создавайте карусели быстрее и аккуратнее"
+  description: "GoToFlow помогает собрать структуру, текст и визуальную подачу без ручной сборки с нуля."
   buttonText: Сделать карусель для воронки
   secondaryText: Посмотреть главные ошибки в каруселях →
   secondaryHref: /ru/blog/oshibki-v-karuselyah-instagram

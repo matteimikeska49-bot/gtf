@@ -5,6 +5,9 @@ language: "ru"
 description: "Узнайте, как создать идеальную обложку для карусели в Инстаграм. Примеры дизайна, правила композиции и секреты кликабельных заголовков."
 primaryKeyword: "обложка для карусели инстаграм"
 secondaryKeywords: ["первый слайд карусели", "дизайн обложки инстаграм", "заголовок для карусели"]
+canonical: "https://gotoflow.io/ru/blog/oblozhka-dlya-karuseli-instagram"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

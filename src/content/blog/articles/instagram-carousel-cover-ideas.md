@@ -5,6 +5,9 @@ language: "en"
 description: "Your first slide is everything. Discover 15 proven Instagram carousel cover ideas and design layouts to drastically increase your swipe-through rate."
 primaryKeyword: "instagram carousel cover ideas"
 secondaryKeywords: ["carousel cover design", "instagram first slide ideas", "carousel hook design"]
+canonical: "https://gotoflow.io/blog/instagram-carousel-cover-ideas"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:
@@ -39,7 +42,7 @@ finalCta:
   href: "/ai-carousel-maker"
   microcopy: "Ready-to-use templates"
   secondaryText: "See the best carousel examples →"
-  secondaryHref: "/blog/carousel-post-examples"
+  secondaryHref: "/blog/best-instagram-carousel-examples"
 ---
 
 # 15 Instagram Carousel Cover Ideas That Stop the Scroll

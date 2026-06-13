@@ -2,6 +2,9 @@
 title: How to Build a Personal Brand on LinkedIn using AI
 description: A step-by-step guide for founders and professionals on building a powerful personal brand on LinkedIn. Learn how to use AI to generate content consistently.
 primaryKeyword: personal brand linkedin ai
+canonical: "https://gotoflow.io/blog/how-to-build-a-personal-brand-on-linkedin-with-ai"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: en
@@ -25,8 +28,8 @@ explore:
     - title: Best AI Post Generators Reviewed
       href: /blog/best-free-ai-post-generators
 finalCta:
-  title: Build Your Authority on Autopilot
-  description: Turn your expertise into high-performing LinkedIn content. GoToFlow generates professional text and stunning PDF carousels in seconds, saving you hours every week.
+  title: "Create carousels faster and cleaner"
+  description: "GoToFlow helps you structure, write, and design your carousel without starting from a blank page."
   buttonText: Try the AI Generator
   secondaryText: Read the ultimate guide to writing B2B posts →
   secondaryHref: /blog/how-to-write-a-b2b-linkedin-post

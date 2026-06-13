@@ -5,6 +5,9 @@ language: "ru"
 description: "Ищете лучшую нейросеть для написания постов? В этом обзоре мы разбираем, как выбрать ИИ-инструмент для создания качественного контента в соцсетях."
 primaryKeyword: "нейросеть для написания постов"
 secondaryKeywords: ["ии для текстов", "ai для постов", "генератор текста для соцсетей"]
+canonical: "https://gotoflow.io/ru/blog/neyroset-dlya-napisaniya-postov-obzor"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

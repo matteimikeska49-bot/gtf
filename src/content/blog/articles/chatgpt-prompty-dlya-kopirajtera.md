@@ -2,6 +2,9 @@
 title: 'ChatGPT промпты для копирайтера: 20 формул для постов в соцсетях'
 description: Мощная подборка ChatGPT промптов для SMM и копирайтеров. 20 готовых формул для генерации продающих, экспертных и вовлекающих постов в Инстаграм, Telegram и LinkedIn.
 primaryKeyword: промпты для копирайтера
+canonical: "https://gotoflow.io/ru/blog/chatgpt-prompty-dlya-kopirajtera"
+createdAt: '2026-06-12'
+updatedAt: '2026-06-13'
 published: true
 noindex: false
 language: ru
@@ -25,8 +28,8 @@ explore:
     - title: Промпты для создания каруселей
       href: /ru/blog/prompty-dlya-karuseley-v-instagram
 finalCta:
-  title: Генерация текста и дизайна в один клик
-  description: GoToFlow уже содержит вшитые идеальные промпты. Вам достаточно просто ввести тему, и ИИ напишет продающий текст и сверстает его в карусель.
+  title: "Создавайте карусели быстрее и аккуратнее"
+  description: "GoToFlow помогает собрать структуру, текст и визуальную подачу без ручной сборки с нуля."
   buttonText: Создать пост через ИИ
   secondaryText: Посмотреть обзор лучших текстовых нейросетей →
   secondaryHref: /ru/blog/neyroset-dlya-napisaniya-postov-obzor

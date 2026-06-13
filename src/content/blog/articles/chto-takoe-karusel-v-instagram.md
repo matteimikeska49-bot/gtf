@@ -5,6 +5,9 @@ language: "ru"
 description: "Что такое карусель в Инстаграм? Подробный разбор формата, его преимуществ для охватов и пошаговая инструкция по созданию."
 primaryKeyword: "что такое карусель в инстаграм"
 secondaryKeywords: ["формат карусели", "карусель инстаграм это", "что значит карусель"]
+canonical: "https://gotoflow.io/ru/blog/chto-takoe-karusel-v-instagram"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

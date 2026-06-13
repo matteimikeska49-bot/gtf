@@ -5,6 +5,9 @@ language: "ru"
 description: "Хотите больше просмотров? Узнайте рабочие стратегии, как повысить охваты в Инстаграм с помощью формата каруселей и умного алгоритма."
 primaryKeyword: "как повысить охваты в инстаграм"
 secondaryKeywords: ["карусели для охватов", "как поднять охваты", "алгоритмы инстаграм карусель"]
+canonical: "https://gotoflow.io/ru/blog/kak-povisit-ohvaty-v-instagram-s-pomoshyu-karuseley"
+createdAt: 2026-06-12
+updatedAt: 2026-06-13
 published: true
 noindex: false
 quickAnswer:

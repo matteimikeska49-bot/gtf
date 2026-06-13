@@ -64,7 +64,7 @@ finalCta:
   buttonHref: "/ru/ai-generator-karuselej"
   buttonText: "Попробовать бесплатно"
   secondaryText: "Генератор каруселей →"
-  secondaryHref: "/ai-carousel-maker"
+  secondaryHref: "/ru/ai-generator-karuselej"
 
 ---
 
