@@ -57,12 +57,13 @@ finalCta:
   secondaryHref: "/blog/text-to-carousel-ai"
 
 explore:
-  - title: "Best LinkedIn Carousel Examples"
-    description: "Get inspired by top-performing LinkedIn carousels."
-    href: "/blog/best-linkedin-carousel-examples"
-  - title: "LinkedIn Carousel Hooks"
-    description: "Learn how to write hooks that increase engagement."
-    href: "/blog/linkedin-carousel-hooks"
+  guides:
+    - title: "Best LinkedIn Carousel Examples"
+      description: "Get inspired by top-performing LinkedIn carousels."
+      href: "/blog/best-linkedin-carousel-examples"
+    - title: "LinkedIn Carousel Hooks"
+      description: "Learn how to write hooks that increase engagement."
+      href: "/blog/linkedin-carousel-hooks"
 ---
 
 # How to Post a Carousel on LinkedIn (The PDF Method)

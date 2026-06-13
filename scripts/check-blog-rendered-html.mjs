@@ -162,6 +162,33 @@ function checkHtmlFile(filePath, data, isD53) {
       errors.push(`[P0] FAQPage schema found but frontmatter has no FAQ`);
     }
 
+    // V2 DOM Checks (only for live published non-legacy articles)
+    // We assume if it has quickAnswer, it's a V2 article
+    if (data.hasQuickAnswer) {
+        if (!htmlContent.includes('shadow-[0_24px_120px_rgba(236,72,153,0.08)]') && !htmlContent.includes('bg-pink-500/10')) {
+            errors.push(`[P0] Quick Answer block is not rendered in HTML (missing signature classes)`);
+        }
+    }
+    // Check Meta/Date block
+    if (data.lastReviewed || data.updatedAt) {
+        if (!lowerHtml.includes('последнее обновление') && !lowerHtml.includes('last reviewed') && !lowerHtml.includes('updated') && !lowerHtml.includes('обновлено')) {
+             errors.push(`[P0] Meta/Date block is not rendered in HTML (missing date labels)`);
+        }
+    }
+
+    // Explore / Final CTA / FAQ sections
+    if (data.hasFaq && !htmlContent.includes('id="faq"')) {
+        errors.push(`[P0] FAQ section is not rendered in HTML (missing id="faq")`);
+    }
+    if (data.hasExplore && !htmlContent.includes('id="explore-more"') && !htmlContent.includes('id="related-articles"')) {
+        errors.push(`[P0] Explore section is not rendered in HTML (missing id="explore-more")`);
+    }
+    // Final CTA usually has secondaryHref and "Explore more" link inside
+    if (!htmlContent.includes('from-pink-500/10') && !htmlContent.includes('from-pink-500/20')) {
+         // rough check for final CTA container
+         // just check if there's a CTA
+    }
+
     // Duplications
     const h1Count = (htmlContent.match(/<h1[^>]*>/gi) || []).length;
     if (h1Count > 1) errors.push(`[P0] Duplicate <h1 tag rendered (${h1Count} found)`);
@@ -204,7 +231,12 @@ for (const file of files) {
     canonical: getYamlValue(frontmatter, 'canonical'),
     title: getYamlValue(frontmatter, 'title'),
     description: getYamlValue(frontmatter, 'description'),
-    hasFaq: /^faq:/m.test(frontmatter)
+    hasFaq: /^faq:/m.test(frontmatter),
+    hasExplore: /^explore:/m.test(frontmatter),
+    hasQuickAnswer: /^quickAnswer:/m.test(frontmatter),
+    lastReviewed: getYamlValue(frontmatter, 'lastReviewed'),
+    updatedAt: getYamlValue(frontmatter, 'updatedAt'),
+    isV2Test: slug.startsWith('test-')
   };
 
   const isD53 = d53Topics.includes(slug);

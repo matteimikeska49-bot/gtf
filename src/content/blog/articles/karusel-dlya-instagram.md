@@ -58,12 +58,13 @@ finalCta:
   secondaryHref: "/ru/blog/huki-dlya-karuseli-instagram"
 
 explore:
-  - title: "AI Генераторы каруселей"
-    description: "Обзор лучших инструментов для создания каруселей в 2026 году."
-    href: "/ru/blog/luchshie-ai-generatory-karuselej"
-  - title: "Текст в карусель"
-    description: "Как превратить любой текст в готовую карусель."
-    href: "/ru/blog/tekst-v-karusel-neyroset"
+  guides:
+    - title: "AI Генераторы каруселей"
+      description: "Обзор лучших инструментов для создания каруселей в 2026 году."
+      href: "/ru/blog/luchshie-ai-generatory-karuselej"
+    - title: "Текст в карусель"
+      description: "Как превратить любой текст в готовую карусель."
+      href: "/ru/blog/tekst-v-karusel-neyroset"
 ---
 
 **Карусель для Инстаграм** — это формат публикации, состоящий из 2–10 изображений или видео, которые можно перелистывать свайпом влево. Благодаря высокой вовлеченности и особенности алгоритма показывать пост повторно (с других слайдов), карусели стабильно приносят больше охватов, чем одиночные фото.

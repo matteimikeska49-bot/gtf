@@ -42,8 +42,8 @@
     "import:keyword-demand": "node scripts/import-keyword-demand.mjs",
     "check:blog:quality-contract": "node scripts/check-blog-quality-contract.mjs",
     "check:blog:dist": "node scripts/check-blog-dist.mjs",
-    "check:blog:template-contract": "node scripts/check-blog-render-source.mjs && node scripts/check-blog-frontmatter-contract.mjs && node scripts/check-blog-faq-cta-contract.mjs",
-    "check:blog:fast": "npm run check:blog:quality-contract && npm run check:blog:frontmatter-contract && npm run check:blog:faq-cta-contract && npm run check:blog:brief-alignment && npm run check:blog:language-consistency && npm run check:blog:draft-safety && npm run check:blog:internal-link-flow && npm run check:blog:product-led-links && npm run check:blog:intent-ownership && npm run check:blog:cluster-map && npm run check:blog:mockup-relevance && npm run check:blog:batch && npm run check:blog:keywords && npm run check:blog:topic-score && npm run check:blog:product-claims",
+    "check:blog:template-contract": "node scripts/check-blog-render-source.mjs && node scripts/check-blog-frontmatter-contract.mjs && node scripts/check-blog-faq-cta-contract.mjs && node scripts/check-blog-v2-layout-contract.mjs",
+    "check:blog:fast": "npm run check:blog:quality-contract && npm run check:blog:frontmatter-contract && npm run check:blog:faq-cta-contract && npm run check:blog:v2-layout-contract && npm run check:blog:brief-alignment && npm run check:blog:language-consistency && npm run check:blog:draft-safety && npm run check:blog:internal-link-flow && npm run check:blog:product-led-links && npm run check:blog:intent-ownership && npm run check:blog:cluster-map && npm run check:blog:mockup-relevance && npm run check:blog:batch && npm run check:blog:keywords && npm run check:blog:topic-score && npm run check:blog:product-claims",
     "check:blog:content": "npm run check:blog:content-template && npm run check:blog:template-contract && npm run check:blog:product-led-links && npm run check:blog:mockup-relevance",
     "check:blog:seo": "npm run check:blog:seo-meta-hardening && npm run check:blog:schema-hardening && npm run check:blog:seo-meta && npm run check:blog:schema && npm run check:blog:language-consistency",
     "check:blog:prepublish": "npm run check:blog:fast && npm run check:blog:content && npm run check:blog:seo",
@@ -61,7 +61,8 @@
     "preview": "vite preview",
     "check:blog:content-template": "node scripts/check-blog-content-template.mjs",
     "check:blog:rendered-html": "node scripts/check-blog-rendered-html.mjs",
-    "check:blog:preview-routes": "node scripts/check-blog-preview-routes.mjs"
+    "check:blog:preview-routes": "node scripts/check-blog-preview-routes.mjs",
+    "check:blog:v2-layout-contract": "node scripts/check-blog-v2-layout-contract.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",

@@ -42,7 +42,8 @@ Before generating the article, Gemini must receive the following context via a c
 4. **Final CTA & Product Context**: Do not manually write a final CTA in the body text. It is handled via frontmatter. Provide a standard markdown link to the product in the normal body text.
 5. **No HTML / JSX**: Do not use HTML tags, `<span class=...>`, raw JSX (like `<InlineProductBlock />`), or `className` attributes anywhere. Never emit component-looking tags in `.md` body, including `<ArticleExploreZone>`, `<RelatedArticles>`, `<SecondaryCta>`, or `<FinalCta>`. FAQ, Explore/Related links, and Final CTA belong in YAML frontmatter, not in markdown body. Do NOT use `[!product]` or `:::mockup` blockquotes as they will leak to rendered HTML.
 6. **No "Draft" Wording**: Never use wording like "carousel draft", "review the draft", or "generate a draft". Use "carousel result", "ready carousel", "slide copy", etc.
-7. **Dates**: Ensure `updatedAt` is present and correct. Do not use weird date labels (e.g. "Examples Reviewed").
+7. **Dates**: Ensure `updatedAt` or `lastReviewed` is present and correct. The V2 template requires one of these fields to render the meta block.
+8. **V2 Layout Elements**: A plain markdown body is forbidden. You MUST include at least one V2 visual layout element such as `:::cards`, `[!takeaway]`, `[!workflow]`, or `[!tip]`.
 
 ## 5. Frontmatter Schema
 Every article MUST start with this exact YAML frontmatter block:

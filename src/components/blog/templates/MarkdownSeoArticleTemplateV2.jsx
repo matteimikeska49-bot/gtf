@@ -1047,7 +1047,7 @@ const FaqBlock = ({ faq, isRu }) => {
   const copy = getArticleCopy(isRu ? 'ru' : 'en');
 
   return (
-    <SectionShell eyebrow={copy.faqLabel} title={copy.faqTitle}>
+    <SectionShell id="faq" eyebrow={copy.faqLabel} title={copy.faqTitle}>
       <div className="space-y-3">
         {faq.map((item) => (
           <details key={item.question} className="group rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5">

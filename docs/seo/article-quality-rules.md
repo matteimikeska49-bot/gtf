@@ -71,3 +71,9 @@ These rules dictate the visual and content quality standards for all production 
     - Do not use secondary CTA as plain-looking static text.
     - Missing arrow in live published/indexable articles is a quality issue.
     - The arrow is part of UX affordance: it tells the reader this is a clickable next step.
+
+14. **Strict V2 Layout Enforcement:**
+    - Plain markdown body is not acceptable for production SEO articles.
+    - All articles must include a `lastReviewed` or `updatedAt` field in the frontmatter.
+    - `quickAnswer`, `quickAnswerTitle`, `faq`, `explore`, and `finalCta` must be in the frontmatter, never in the body.
+    - The body must contain at least one valid V2 element like `:::cards`, `[!takeaway]`, `[!workflow]`, `[!tip]`, etc.
