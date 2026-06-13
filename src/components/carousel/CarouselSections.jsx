@@ -214,7 +214,7 @@ export const CarouselComparison = () => {
               <div className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-all duration-500" style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', boxShadow:'0 20px 40px -10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)', backdropFilter:'blur(16px)' }}>
                 <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-10">GoToFlow</p>
                 <div className="flex flex-col gap-5 flex-1 relative z-10">
-                  {['Enter a topic or paste a link — get a full carousel','AI writes the hook, structures slides, fills in copy','Get a ready-to-publish carousel in one click','Instantly generate multiple variations to test','Your tone of voice preserved in every slide'].map((t,i)=>(
+                  {['Enter a topic or paste a link — get a full carousel','AI builds the hook, slide flow, copy, visual direction, and CTA','Get a ready-to-publish carousel in one click','Instantly generate multiple variations to test','Your tone of voice preserved in every slide'].map((t,i)=>(
                     <div key={i} className="flex items-start gap-4"><div className="shrink-0 mt-1 w-5 h-5 rounded-full border border-pink-500/30 bg-[rgba(244,63,94,0.1)] flex items-center justify-center"><Check className="w-3 h-3 text-pink-400" strokeWidth={3}/></div><p className="text-sm md:text-base text-white font-medium leading-relaxed">{t}</p></div>
                   ))}
                 </div>

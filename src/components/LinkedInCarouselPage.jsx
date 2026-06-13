@@ -360,8 +360,8 @@ export const LICarouselDifferentiation = () => {
       <div className="flex flex-col">
         <motion.div initial={{opacity:0,x: isMobile ? 0 : -40, y: isMobile ? 24 : 0}} whileInView={{opacity:1,x:0,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Fingerprint className="w-3.5 h-3.5"/>Why GoToFlow</div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-[1.15] text-balance">GoToFlow <span className="text-gradient-brand">creates content</span><br className="hidden lg:block"/> not just designs</h2>
-          <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed text-balance mb-12">While Canva gives you a blank canvas and a template, GoToFlow writes your carousel content — hooks, slide copy, structure — using AI trained on top-performing social media carousels.</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-[1.15] text-balance">GoToFlow <span className="text-gradient-brand">creates the full carousel workflow</span></h2>
+          <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed text-balance mb-12">Canva starts from a blank canvas and template. GoToFlow starts from your idea or source material and builds the hook, slide flow, copy, visual direction, CTA, and ready LinkedIn carousel in one workflow.</p>
         </motion.div>
         <div className="flex flex-col gap-4">
           {diffPoints.map((p,i) => (
@@ -408,8 +408,8 @@ const faqItems = [
   { q: 'What is an AI carousel maker?', a: 'An AI carousel maker is a tool that automatically generates multi-slide social media posts using artificial intelligence. You provide a topic, and the AI writes the hook, structures the slides, and fills each one with content — in seconds.' },
   { q: 'What is the difference between a LinkedIn carousel maker and a LinkedIn carousel generator?', a: 'They are essentially the same. Both refer to AI tools that take your idea or text and automatically format it into a multi-slide carousel. The term "generator" often emphasizes the AI creating the content from scratch, while "maker" might include the design aspect.' },
   { q: 'Can I use GoToFlow as an AI LinkedIn carousel generator?', a: 'Yes! GoToFlow is specifically designed to function as an AI LinkedIn carousel generator. It reads your prompts, links, or ideas, and generates a structured, hook-led carousel ready for LinkedIn.' },
-  { q: 'Can AI create LinkedIn carousels?', a: 'Yes. GoToFlow generates carousel content optimized for LinkedIn, Instagram, and Telegram. The AI writes hook-led copy, structures the slides logically, and ensures each carousel is built to drive saves and shares.' },
-  { q: 'Is GoToFlow better than Canva for carousels?', a: 'They solve different problems. Canva helps you design; GoToFlow writes the content. GoToFlow generates the ideas, hooks, and copy — then you can use any design tool to format it. Many users combine both.' },
+  { q: 'Can AI create LinkedIn carousels?', a: 'Yes. GoToFlow generates carousel content optimized for LinkedIn, Instagram, and Telegram. The AI builds the hook, slide flow, copy, visual direction, and CTA so the result is a complete carousel workflow.' },
+  { q: 'Is GoToFlow better than Canva for carousels?', a: 'They solve different problems. Canva is a manual design editor. GoToFlow is an end-to-end carousel workflow: idea, structure, copy, visual direction, slides, and CTA. Some users still use Canva for manual edits, but GoToFlow is not just a text layer.' },
   { q: 'How long does it take to generate a carousel?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full carousel structure with copy for every slide.' },
 ];
 
