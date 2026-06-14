@@ -12,25 +12,21 @@ const translations = {
 
 /**
  * Determines the initial language based on:
- * 1. Saved preference in localStorage ('lang')
- * 2. Current URL path (/ru → RU, / → EN)
- * 3. Browser language auto-detection (first visit only)
+ * 1. Explicit route language (/ru... → RU, non-root non-RU routes → EN)
+ * 2. Saved preference in localStorage ('lang') for root only
+ * 3. Browser language auto-detection for root only
  */
-function getInitialLang(pathname) {
-  // 1. Explicit SEO pages strictly follow URL
-  if (pathname.startsWith('/ru/blog') || pathname === '/ru/ai-generator-karuselej' || pathname === '/ru/generator-kontenta' || pathname === '/ru/generator-postov-instagram' || pathname === '/ru/generator-karuselej-linkedin' || pathname === '/ru/politika' || pathname === '/ru/polzovatelskoe-soglashenie' || pathname === '/ru/soglasie-na-obrabotku-personalnyh-dannyh' || pathname === '/ru/ugc-creator-terms') return 'RU';
-  if (pathname.startsWith('/blog') || pathname === '/ai-carousel-maker' || pathname === '/ai-content-generator' || pathname === '/ai-instagram-post-generator' || pathname === '/linkedin-carousel-maker' || pathname === '/privacy-policy' || pathname === '/refund-policy' || pathname === '/terms-of-service' || pathname === '/personal-data-consent' || pathname === '/pricing') return 'EN';
+function getRouteLang(pathname) {
+  if (pathname === '/ru' || pathname === '/ru/' || pathname.startsWith('/ru/')) return 'RU';
+  if (pathname === '/' || pathname === '') return null;
+  return 'EN';
+}
 
-  // 2. Check saved preference
+function getPreferredLang() {
   const saved = localStorage.getItem('lang');
   if (saved === 'ru') return 'RU';
   if (saved === 'en') return 'EN';
 
-  // 3. Check URL
-  if (pathname === '/ru' || pathname === '/ru/') return 'RU';
-  if (pathname === '/' || pathname === '') return 'EN';
-
-  // 4. Auto-detect from browser (first visit only)
   const browserLang = (navigator.language || '').toLowerCase();
   const slavicPrefixes = ['ru', 'be', 'uk', 'kk'];
   if (slavicPrefixes.some((prefix) => browserLang.startsWith(prefix))) {
@@ -40,50 +36,34 @@ function getInitialLang(pathname) {
   return 'EN';
 }
 
+function getInitialLang(pathname) {
+  return getRouteLang(pathname) || getPreferredLang();
+}
+
 export const LanguageProvider = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [lang, setLangState] = useState(() => getInitialLang(location.pathname));
 
-  // On first mount: handle redirect for auto-detection (only if no saved lang)
+  // On first mount: handle redirect for root auto-detection.
   useEffect(() => {
-    const isRootRoute = location.pathname === '/' || location.pathname === '' || location.pathname === '/ru' || location.pathname === '/ru/';
-    
-    // Do not redirect SEO pages or any other non-root pages
-    if (!isRootRoute) {
+    const routeLang = getRouteLang(location.pathname);
+
+    if (routeLang) {
+      setLangState(routeLang);
       return;
     }
 
-    const saved = localStorage.getItem('lang');
-    if (saved) {
-      // Saved preference exists — enforce correct URL on root pages
-      if (saved === 'ru' && location.pathname !== '/ru') {
-        navigate('/ru' + location.search, { replace: true });
-      } else if (saved === 'en' && location.pathname !== '/') {
-        navigate('/' + location.search, { replace: true });
-      }
-      return;
-    }
-
-    // No saved preference — auto-detect for root visitors
-    const detectedLang = getInitialLang(location.pathname);
+    const detectedLang = getPreferredLang();
+    setLangState(detectedLang);
     if (detectedLang === 'RU' && location.pathname !== '/ru') {
-      navigate('/ru' + location.search, { replace: true });
+      navigate('/ru' + location.search + location.hash, { replace: true });
     }
-    // If EN and already at /, no redirect needed
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Sync lang state when URL changes (e.g., browser back/forward)
   useEffect(() => {
-    if (location.pathname.startsWith('/blog') || location.pathname === '/ai-carousel-maker' || location.pathname === '/ai-content-generator' || location.pathname === '/ai-instagram-post-generator' || location.pathname === '/linkedin-carousel-maker' || location.pathname === '/privacy-policy' || location.pathname === '/refund-policy' || location.pathname === '/terms-of-service' || location.pathname === '/personal-data-consent' || location.pathname === '/pricing') {
-      setLangState('EN');
-    } else if (location.pathname.startsWith('/ru/blog') || location.pathname === '/ru/ai-generator-karuselej' || location.pathname === '/ru/generator-kontenta' || location.pathname === '/ru/generator-postov-instagram' || location.pathname === '/ru/generator-karuselej-linkedin' || location.pathname === '/ru/politika' || location.pathname === '/ru/polzovatelskoe-soglashenie' || location.pathname === '/ru/soglasie-na-obrabotku-personalnyh-dannyh' || location.pathname === '/ru/ugc-creator-terms') {
-      setLangState('RU');
-    } else if (location.pathname === '/ru' || location.pathname === '/ru/') {
-      setLangState('RU');
-    } else if (location.pathname === '/' || location.pathname === '') {
-      setLangState('EN');
-    }
+    setLangState(getInitialLang(location.pathname));
   }, [location.pathname]);
 
   // Update <html lang>, canonical, and hreflang when language changes
@@ -189,7 +169,7 @@ export const LanguageProvider = ({ children }) => {
 
     setLangState(newLang);
     localStorage.setItem('lang', newLang === 'RU' ? 'ru' : 'en');
-    navigate(paired + location.search);
+    navigate(paired + location.search + location.hash);
   };
 
   const t = useCallback((path) => {
