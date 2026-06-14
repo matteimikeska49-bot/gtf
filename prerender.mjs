@@ -275,6 +275,12 @@ async function prerenderRoute(browser, route, baseUrl) {
 
     await delay(500);
 
+    await page.evaluate(() => {
+      document
+        .querySelectorAll('script[src*="googletagmanager.com/gtm.js?id=GTM-W5R5NBH8"]')
+        .forEach((script) => script.remove());
+    });
+
     const html = await page.content();
     const filePath = await writeHtml(route, html);
     const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '(no title)';
