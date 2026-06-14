@@ -149,7 +149,7 @@
       }
 
       function appendRefToAppLinks(ref) {
-        if (!ref || !APP_DOMAIN || APP_DOMAIN === 'https://APP_DOMAIN_HERE') return;
+        if (!APP_DOMAIN || APP_DOMAIN === 'https://APP_DOMAIN_HERE') return;
 
         var appOrigin;
 
@@ -169,8 +169,23 @@
 
             if (url.origin !== appOrigin) continue;
 
-            url.searchParams.set(REF_PARAM, ref);
-            link.setAttribute('href', url.toString());
+            if (window.location.search) {
+              var currentParams = new URLSearchParams(window.location.search);
+              currentParams.forEach(function(value, key) {
+                url.searchParams.set(key, value);
+              });
+            }
+
+            if (ref && !url.searchParams.has(REF_PARAM)) {
+              url.searchParams.set(REF_PARAM, ref);
+            }
+
+            var urlString = url.toString();
+            if (urlString.endsWith('?')) {
+              urlString = urlString.slice(0, -1);
+            }
+
+            link.setAttribute('href', urlString);
           } catch (error) {
             // Ignore invalid href values.
           }

@@ -20,11 +20,22 @@ export function getAppUrlWithRef(baseUrl) {
     const url = new URL(baseUrl);
     const ref = getSavedRef();
 
-    if (ref) {
+    // Preserve all existing query parameters from the current page URL
+    if (typeof window !== 'undefined' && window.location && window.location.search) {
+      const currentParams = new URLSearchParams(window.location.search);
+      currentParams.forEach((value, key) => {
+        url.searchParams.set(key, value);
+      });
+    }
+
+    // Ensure the saved ref is applied if no ref is in the URL
+    if (ref && !url.searchParams.has('ref')) {
       url.searchParams.set('ref', ref);
     }
 
-    return url.toString();
+    // Remove the trailing '?' if search params are empty
+    const urlString = url.toString();
+    return urlString.endsWith('?') ? urlString.slice(0, -1) : urlString;
   } catch (error) {
     return baseUrl;
   }
