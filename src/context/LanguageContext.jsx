@@ -58,9 +58,9 @@ export const LanguageProvider = ({ children }) => {
     if (saved) {
       // Saved preference exists — enforce correct URL on root pages
       if (saved === 'ru' && location.pathname !== '/ru') {
-        navigate('/ru', { replace: true });
+        navigate('/ru' + location.search, { replace: true });
       } else if (saved === 'en' && location.pathname !== '/') {
-        navigate('/', { replace: true });
+        navigate('/' + location.search, { replace: true });
       }
       return;
     }
@@ -68,7 +68,7 @@ export const LanguageProvider = ({ children }) => {
     // No saved preference — auto-detect for root visitors
     const detectedLang = getInitialLang(location.pathname);
     if (detectedLang === 'RU' && location.pathname !== '/ru') {
-      navigate('/ru', { replace: true });
+      navigate('/ru' + location.search, { replace: true });
     }
     // If EN and already at /, no redirect needed
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -189,7 +189,7 @@ export const LanguageProvider = ({ children }) => {
 
     setLangState(newLang);
     localStorage.setItem('lang', newLang === 'RU' ? 'ru' : 'en');
-    navigate(paired);
+    navigate(paired + location.search);
   };
 
   const t = useCallback((path) => {
