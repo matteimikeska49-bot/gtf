@@ -1086,5 +1086,61 @@
     "priorityTier": "P1",
     "scoringReason": "RU Wave 1",
     "scoringLastUpdated": "2026-06-09"
+  },
+  {
+    "targetSlug": "how-to-write-carousel-copy-with-ai",
+    "title": "how to write carousel copy with ai",
+    "language": "en",
+    "primaryKeyword": "how to write carousel copy with ai",
+    "relatedProductRoute": "/ai-carousel-maker",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "test",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 100,
+      "trend": "stable"
+    },
+    "scores": {
+      "demandScore": 5,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 5,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 5,
+      "finalPriorityScore": 90
+    },
+    "priorityTier": "P2",
+    "scoringReason": "Test batch",
+    "scoringLastUpdated": "2026-06-16"
+  },
+  {
+    "targetSlug": "kak-napisat-tekst-dlya-karuseli-s-ii",
+    "title": "kak napisat tekst dlya karuseli s ii",
+    "language": "ru",
+    "primaryKeyword": "как написать текст для карусели с ИИ",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "test",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 100,
+      "trend": "stable"
+    },
+    "scores": {
+      "demandScore": 5,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 5,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 5,
+      "finalPriorityScore": 90
+    },
+    "priorityTier": "P2",
+    "scoringReason": "Test batch",
+    "scoringLastUpdated": "2026-06-16"
   }
 ]

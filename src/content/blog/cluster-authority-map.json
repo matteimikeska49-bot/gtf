@@ -100,10 +100,19 @@
         "slug": "ai-carousel-generator",
         "url": "/blog/ai-carousel-generator",
         "role": "hub"
+      },
+      {
+        "slug": "how-to-write-carousel-copy-with-ai",
+        "url": "/blog/how-to-write-carousel-copy-with-ai",
+        "role": "supporting",
+        "intentId": "en:text-to-carousel",
+        "priorityTier": "P2",
+        "status": "draft_preview"
       }
     ],
     "supportingArticles": [
-      "content-calendar-to-carousel"
+      "content-calendar-to-carousel",
+      "how-to-write-carousel-copy-with-ai"
     ],
     "missingTopics": [
       "blog to carousel"
@@ -184,9 +193,19 @@
         "url": "/ru/blog/ii-dlya-karuseley",
         "role": "support",
         "canonicalRisk": "low"
+      },
+      {
+        "slug": "kak-napisat-tekst-dlya-karuseli-s-ii",
+        "url": "/ru/blog/kak-napisat-tekst-dlya-karuseli-s-ii",
+        "role": "supporting",
+        "intentId": "ru:tekst-v-karusel",
+        "priorityTier": "P2",
+        "status": "draft_preview"
       }
     ],
-    "supportingArticles": [],
+    "supportingArticles": [
+      "kak-napisat-tekst-dlya-karuseli-s-ii"
+    ],
     "missingTopics": [],
     "internalLinkingRules": {
       "mustLinkToHub": true,

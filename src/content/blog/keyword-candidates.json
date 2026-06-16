@@ -8220,5 +8220,17 @@
       "dateRange": "2026-06-01..2026-06-07"
     },
     "sourceUrl": "https://wordstat.yandex.ru/"
+  },
+  {
+    "keyword": "how to write carousel copy with ai",
+    "volume": 100,
+    "difficulty": 10,
+    "intent": "informational"
+  },
+  {
+    "keyword": "как написать текст для карусели с ИИ",
+    "volume": 100,
+    "difficulty": 10,
+    "intent": "informational"
   }
 ]
