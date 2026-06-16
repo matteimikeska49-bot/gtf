@@ -52,7 +52,7 @@ quickAnswerTitle: "Краткий ответ"
 explore:
   tools:
     - title: "ИИ-генератор каруселей"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Создайте карусель от идеи, ссылки или текста до готовых слайдов."
   guides:
     - title: "Лучшие AI-генераторы каруселей"
@@ -64,8 +64,8 @@ explore:
 finalCta:
   title: "Создайте карусель от идеи до готовых слайдов"
   text: "Используйте GoToFlow, чтобы собрать сценарий, структуру, текст, визуальную подачу и CTA в одном workflow."
-  buttonText: "Попробовать бесплатно"
-  buttonHref: "/ru/ai-generator-karuselej"
+  buttonText: "Создать карусель с ИИ"
+  buttonHref: "/ru/ii-generator-karuseley"
   secondaryText: "Хуки для карусели Instagram →"
   secondaryHref: "/ru/blog/huki-dlya-karuseli-instagram"
 
@@ -118,7 +118,7 @@ finalCta:
 :::mockup{slot="topic-input"}
 :::
 
-Ускорьте свою работу с помощью [ИИ для каруселей от GoToFlow](/ru/ai-generator-karuselej) — от идеи до готового дизайна в пару кликов.
+Ускорьте свою работу: [Создать карусель с ИИ в GoToFlow](/ru/ii-generator-karuseley) — от идеи до готового дизайна в пару кликов.
 
 :::cards
 type: workflow

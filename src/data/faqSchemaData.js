@@ -36,6 +36,15 @@ export const faqSchemaData = {
     { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
     { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva — ручной дизайн-редактор. GoToFlow — end-to-end workflow для каруселей: идея, сценарий, структура, текст, визуальная подача, слайды и CTA.' }
   ],
+  "/ru/ii-generator-karuseley": [
+    { q: 'Что такое ИИ-генератор каруселей?', a: 'ИИ-генератор каруселей помогает собрать готовую серию слайдов: идею, сценарий, структуру, текст по слайдам, визуальную подачу и CTA.' },
+    { q: 'Можно ли создать карусель без готовой идеи?', a: 'Да. В GoToFlow можно начать с нуля: использовать анализ конкурентов, виральные видео, ссылку, тему или короткое описание задачи.' },
+    { q: 'Можно ли использовать свой текст?', a: 'Да. Вы можете загрузить или вставить свой текст, а GoToFlow поможет разложить его по слайдам, усилить структуру и добавить CTA.' },
+    { q: 'Можно ли загрузить свои фото?', a: 'Да. GoToFlow поддерживает сценарии, где пользовательские фотографии и визуальные предпочтения становятся частью карусели.' },
+    { q: 'GoToFlow заменяет Canva или ChatGPT?', a: 'У инструментов разный фокус. ChatGPT и Gemini помогают с отдельными частями, Canva удобна для ручного дизайна, а GoToFlow закрывает полный workflow карусели: от идеи до готовых слайдов.' },
+    { q: 'Можно ли сделать карусель для Instagram и LinkedIn?', a: 'Да. GoToFlow подходит для каруселей под Instagram, LinkedIn и другие соцсети, где важны структура, читаемость и визуальная подача.' },
+    { q: 'Можно ли управлять сценарием и текстом по слайдам?', a: 'Да. Вы можете задавать тему, сценарий, стиль и материалы, а затем проверять текст, логику слайдов и CTA перед публикацией.' }
+  ],
   "/ai-content-generator": [
     { q: 'What is an AI content generator?', a: 'An AI content generator is a tool that creates social media content using artificial intelligence. You provide a topic, link, or idea, and the AI builds the hook, structure, copy, visual direction, and CTA in seconds.' },
     { q: 'What is the difference between an AI post generator and an AI content generator?', a: 'They serve a similar purpose but vary in scope. A post generator might just write a text caption, whereas a full AI content generator (like GoToFlow) helps you structure entire content formats, including carousels, slides, and long-form threads.' },

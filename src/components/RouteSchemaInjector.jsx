@@ -41,6 +41,13 @@ const ROUTES_CONFIG = {
     type: 'software',
     crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Генератор каруселей', path: '/ru/ai-generator-karuselej' }]
   },
+  '/ru/ii-generator-karuseley': {
+    title: 'ИИ-генератор каруселей — создать карусель с ИИ | GoToFlow',
+    desc: 'Создавайте карусели с ИИ в GoToFlow: идея, сценарий, структура, текст по слайдам, визуальный стиль, свои фото, AI-персонажи, слайды и CTA за пару минут.',
+    lang: 'ru',
+    type: 'software',
+    crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'ИИ-генератор каруселей', path: '/ru/ii-generator-karuseley' }]
+  },
   '/ai-content-generator': {
     title: 'AI Content Generator for Social Media | GoToFlow',
     desc: 'Generate high-quality social media posts, carousels, and scripts with AI.',

@@ -19,7 +19,7 @@ const HELPER_PATH = path.join(ROOT, 'src/lib/blog/metaDisclaimerHelper.js');
 
 // Static allowed routes (old JSX pages, tools, root)
 const ALLOWLIST_ROUTES = [
-  '/', '/ru', '/ai-carousel-maker', '/ru/ai-generator-karuselej',
+  '/', '/ru', '/ai-carousel-maker', '/ru/ai-generator-karuselej', '/ru/ii-generator-karuseley',
   '/ai-content-generator', '/ru/generator-kontenta',
   '/ai-instagram-post-generator', '/ai-post-maker', '/ru/generator-postov-instagram',
   '/linkedin-carousel-maker', '/ru/generator-karuselej-linkedin',

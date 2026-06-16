@@ -76,6 +76,16 @@
   </url>
 
   <url>
+    <loc>https://gotoflow.io/ru/ii-generator-karuseley</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gotoflow.io/ai-carousel-maker" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gotoflow.io/ru/ii-generator-karuseley" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gotoflow.io/ai-carousel-maker" />
+  </url>
+
+  <url>
     <loc>https://gotoflow.io/ru/generator-kontenta</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>

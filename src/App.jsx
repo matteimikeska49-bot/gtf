@@ -18,6 +18,7 @@ import { Footer } from './components/Footer';
 import { CookieBanner } from './components/CookieBanner';
 import { CarouselPage } from './components/CarouselPage';
 import { CarouselPageRu } from './components/CarouselPageRu';
+import { RuAICarouselGeneratorPage } from './components/RuAICarouselGeneratorPage';
 import { AIContentPage } from './components/AIContentPage';
 import { InstagramPostPage } from './components/InstagramPostPage';
 import { AIContentPageRu } from './components/AIContentPageRu';
@@ -72,6 +73,7 @@ function App() {
         <Route path="/ru" element={<LandingPage />} />
         <Route path="/ai-carousel-maker" element={<CarouselPage />} />
         <Route path="/ru/ai-generator-karuselej" element={<CarouselPageRu />} />
+        <Route path="/ru/ii-generator-karuseley" element={<RuAICarouselGeneratorPage />} />
         <Route path="/ai-content-generator" element={<AIContentPage />} />
         <Route path="/ai-instagram-post-generator" element={<InstagramPostPage />} />
         <Route path="/ai-post-maker" element={<Navigate to="/ai-instagram-post-generator" replace />} />
