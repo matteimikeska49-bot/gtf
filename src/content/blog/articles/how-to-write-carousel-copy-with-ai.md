@@ -166,13 +166,13 @@ In the past, creating a carousel meant writing a script in Google Docs, passing 
 
 The modern workflow is completely different:
 
-1. **Input:** You provide a raw idea, a URL, a video transcript, or rough notes.
+1. **Input:** You provide a raw idea, a topic, a transcript, or rough notes.
 2. **Analysis:** The AI system analyzes the content and extracts the core value.
-3. **Structuring:** The system breaks the copy down into perfectly paced slides.
+3. **Structuring:** The system helps pace the copy across slides.
 4. **Design:** Visual style, characters, and formatting are applied automatically.
 5. **Publish:** You get a ready-to-publish carousel in minutes.
 
-This is exactly how GoToFlow operates. It is an end-to-end system that replaces the fragmented process of using ChatGPT for text and a separate design tool for slides. It ensures your copy fits the format perfectly, minimizing manual edits.
+This is exactly how GoToFlow operates. It is an end-to-end system that combines what teams often split across ChatGPT, docs, and design tools into one carousel-focused workflow. It helps adapt the copy to the carousel format, minimizing manual edits.
 
 ## Common mistakes to avoid
 
