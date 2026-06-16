@@ -1142,5 +1142,509 @@
     "priorityTier": "P2",
     "scoringReason": "Test batch",
     "scoringLastUpdated": "2026-06-16"
+  },
+  {
+    "targetSlug": "kak-pridumat-temu-dlya-karuseli-s-ii",
+    "title": "Как придумать тему для карусели с ИИ: матрица контента для экспертов",
+    "language": "ru",
+    "primaryKeyword": "как придумать тему для карусели с ИИ",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 4,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "kak-uvelichit-sohraneniya-karuseley",
+    "title": "Как увеличить сохранения каруселей в Instagram: структура поста, который хочется сохранить",
+    "language": "ru",
+    "primaryKeyword": "как увеличить сохранения каруселей",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 4,
+      "businessValueScore": 4,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "cta-dlya-karuseley-instagram-s-ii",
+    "title": "CTA для каруселей Instagram с ИИ: как завершать пост, чтобы повышать шанс заявок и реакций",
+    "language": "ru",
+    "primaryKeyword": "CTA для каруселей Instagram с ИИ",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "karusel-dlya-lichnogo-brenda-s-ii",
+    "title": "Карусель для личного бренда с ИИ: как упаковать экспертность в слайды",
+    "language": "ru",
+    "primaryKeyword": "карусель для личного бренда с ИИ",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 4,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "karusel-dlya-zapuska-produkta-s-ii",
+    "title": "Карусель для запуска продукта с ИИ: как прогреть аудиторию через слайды",
+    "language": "ru",
+    "primaryKeyword": "карусель для запуска продукта с ИИ",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 4,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P2",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "karusel-dlya-otzyvov-s-ii",
+    "title": "Как оформить отзывы клиентов в продающую карусель с ИИ",
+    "language": "ru",
+    "primaryKeyword": "как оформить отзывы в карусель с ИИ",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 4,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P2",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "karuseli-dlya-ekspertov-s-ii",
+    "title": "Карусели для экспертов с ИИ: как объяснять сложные темы простыми слайдами",
+    "language": "ru",
+    "primaryKeyword": "карусели для экспертов с ИИ",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 4,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "karuseli-dlya-onlayn-shkol-s-ii",
+    "title": "Карусели для онлайн-школ с ИИ: как привлекать учеников через образовательный контент",
+    "language": "ru",
+    "primaryKeyword": "карусели для онлайн-школ с ИИ",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P2",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "karuseli-dlya-smm-agentstva-s-ii",
+    "title": "Карусели для SMM-агентства с ИИ: как ускорить производство контента для клиентов",
+    "language": "ru",
+    "primaryKeyword": "карусели для SMM-агентства с ИИ",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P0",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "kak-sdelat-karusel-iz-video-s-ii",
+    "title": "Как сделать карусель из видео с ИИ: превратите Reels, Shorts или вебинар в слайды",
+    "language": "ru",
+    "primaryKeyword": "как сделать карусель из видео с ИИ",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P0",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "psihologiya-karuseley-kak-uderzhat-vnimanie",
+    "title": "Психология каруселей: как удерживать внимание с 1 по 10 слайд",
+    "language": "ru",
+    "primaryKeyword": "психология каруселей",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 4,
+      "businessValueScore": 3,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P2",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "how-to-brainstorm-carousel-topics-with-ai",
+    "title": "How to Brainstorm Carousel Topics with AI",
+    "language": "en",
+    "primaryKeyword": "how to brainstorm carousel topics with AI",
+    "relatedProductRoute": "/ai-carousel-maker",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 4,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "carousel-post-mistakes",
+    "title": "Carousel Post Mistakes: Why People Stop Swiping and How to Fix It",
+    "language": "en",
+    "primaryKeyword": "carousel post mistakes",
+    "relatedProductRoute": "/ai-carousel-maker",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 4,
+      "businessValueScore": 4,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "ai-linkedin-carousel-strategy-for-b2b-founders",
+    "title": "AI LinkedIn Carousel Strategy for B2B Founders",
+    "language": "en",
+    "primaryKeyword": "AI LinkedIn carousel strategy",
+    "relatedProductRoute": "/ai-carousel-maker",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "how-to-repurpose-podcasts-into-ai-carousels",
+    "title": "How to Repurpose Podcasts and Webinars into AI Carousels",
+    "language": "en",
+    "primaryKeyword": "repurpose podcast into carousel with AI",
+    "relatedProductRoute": "/ai-carousel-maker",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P0",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "turn-video-into-carousel-with-ai",
+    "title": "How to Turn a Video into a Carousel with AI",
+    "language": "en",
+    "primaryKeyword": "turn video into carousel with AI",
+    "relatedProductRoute": "/ai-carousel-maker",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P0",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "ai-carousel-content-strategy",
+    "title": "AI Carousel Content Strategy: How to Build a Repeatable Workflow",
+    "language": "en",
+    "primaryKeyword": "AI carousel content strategy",
+    "relatedProductRoute": "/ai-carousel-maker",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 4,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "ai-carousel-workflow",
+    "title": "AI Carousel Workflow: From Idea to Ready-to-Publish Slides",
+    "language": "en",
+    "primaryKeyword": "AI carousel workflow",
+    "relatedProductRoute": "/ai-carousel-maker",
+    "topicStatus": "draft",
+    "keywordEvidence": {
+      "source": "internal/planned",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": "unknown",
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 4,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 4,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 85
+    },
+    "priorityTier": "P0",
+    "scoringReason": "Batch 23 injection",
+    "scoringLastUpdated": "2026-06-17"
   }
 ]
