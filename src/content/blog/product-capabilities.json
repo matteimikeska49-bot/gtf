@@ -3,9 +3,10 @@
     "capabilityId": "aiCarouselGeneration",
     "label": "AI Carousel Generation",
     "status": "supported",
-    "description": "GoToFlow generates carousel content and visuals using AI.",
+    "description": "GoToFlow creates full-cycle carousel workflows from source inputs into structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.",
     "allowedClaims": [
       "GoToFlow can generate carousel content and visuals with AI",
+      "GoToFlow helps turn a topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo into a carousel workflow",
       "create Instagram carousel-style content",
       "create LinkedIn carousel/document-style content"
     ],
@@ -32,10 +33,12 @@
     "capabilityId": "textToCarousel",
     "label": "Text to Carousel",
     "status": "supported",
-    "description": "User can turn text/topic into a carousel.",
+    "description": "User can turn a topic, idea, ready script, or plain text into a carousel workflow.",
     "allowedClaims": [
       "turn text into a carousel",
       "turn a topic into a carousel",
+      "turn a ready script into a carousel",
+      "turn plain text into a carousel",
       "generate a carousel from a prompt"
     ],
     "forbiddenClaims": [
@@ -112,18 +115,19 @@
   {
     "capabilityId": "pdfToCarousel",
     "label": "PDF to Carousel",
-    "status": "partially_supported",
-    "description": "User must paste text from PDF manually.",
+    "status": "supported",
+    "description": "GoToFlow can use a PDF as an input for a carousel workflow.",
     "allowedClaims": [
-      "paste or extract text from a PDF/report and turn it into a carousel"
+      "turn a PDF into a carousel workflow",
+      "use a PDF as source material for a carousel"
     ],
     "forbiddenClaims": [
-      "upload any PDF",
-      "extracts any PDF automatically",
-      "upload a PDF"
+      "perfect PDF extraction",
+      "guaranteed PDF extraction accuracy",
+      "unlimited PDF input size"
     ],
     "saferAlternatives": [
-      "paste text from a PDF"
+      "use a PDF as source material for a carousel workflow"
     ],
     "relatedRoutes": ["/"],
     "relatedArticleTypes": ["how-to"],
@@ -137,17 +141,21 @@
   },
   {
     "capabilityId": "youtubeVideoToCarousel",
-    "label": "YouTube Video to Carousel",
-    "status": "unknown",
-    "description": "Extraction from YouTube URL.",
-    "allowedClaims": [],
+    "label": "Video to Carousel",
+    "status": "supported",
+    "description": "GoToFlow can use video as an input, watch it, transcribe it, extract the core idea, and turn it into a carousel workflow.",
+    "allowedClaims": [
+      "turn video into a carousel workflow",
+      "use a video as source material for a carousel",
+      "AI can watch the video, make a transcript, and extract the core idea"
+    ],
     "forbiddenClaims": [
-      "paste a YouTube URL",
-      "paste any YouTube URL",
-      "generate automatically from YouTube"
+      "guaranteed video transcription accuracy",
+      "perfect video extraction",
+      "unlimited video input size"
     ],
     "saferAlternatives": [
-      "paste the video transcript"
+      "use video as source material for a carousel workflow"
     ],
     "relatedRoutes": [],
     "relatedArticleTypes": ["how-to"],
@@ -157,7 +165,118 @@
       "notes": "Currently unverified"
     },
     "lastVerified": "2026-06-08",
-    "reviewRequiredBeforeClaiming": true
+    "reviewRequiredBeforeClaiming": false
+  },
+  {
+    "capabilityId": "reelsToCarousel",
+    "label": "Reels to Carousel",
+    "status": "supported",
+    "description": "GoToFlow can create carousel workflows from a Reels link.",
+    "allowedClaims": [
+      "turn a Reels link into a carousel workflow",
+      "use a Reels link as source material for a carousel",
+      "AI can watch a Reels video, make a transcript, and extract the core idea"
+    ],
+    "forbiddenClaims": [
+      "guaranteed Reels transcription accuracy",
+      "perfect Reels extraction",
+      "unlimited Reels input size"
+    ],
+    "saferAlternatives": [
+      "use a Reels link as source material for a carousel workflow"
+    ],
+    "relatedRoutes": ["/", "/ai-carousel-maker", "/ru/ii-generator-karuseley"],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": ["reels to carousel", "video to carousel"],
+    "evidence": {
+      "source": "Product dashboard",
+      "notes": "Dashboard says: VIDEO / REELS / AUDIO / PDF; AI сам посмотрит видео, сделает транскрипцию и выделит суть; Вставьте ссылку на Reels, готовый сценарий или просто тему"
+    },
+    "lastVerified": "2026-06-17",
+    "reviewRequiredBeforeClaiming": false
+  },
+  {
+    "capabilityId": "audioVoiceToCarousel",
+    "label": "Audio / Voice to Carousel",
+    "status": "supported",
+    "description": "GoToFlow can use audio or voice input as source material for a carousel workflow.",
+    "allowedClaims": [
+      "turn audio into a carousel workflow",
+      "turn voice input into a carousel workflow",
+      "use audio as source material for a carousel"
+    ],
+    "forbiddenClaims": [
+      "guaranteed audio transcription accuracy",
+      "perfect audio extraction",
+      "unlimited audio input size"
+    ],
+    "saferAlternatives": [
+      "use audio as source material for a carousel workflow"
+    ],
+    "relatedRoutes": ["/", "/ai-carousel-maker", "/ru/ii-generator-karuseley"],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": ["audio to carousel", "podcast to carousel"],
+    "evidence": {
+      "source": "Product dashboard",
+      "notes": "Dashboard lists AUDIO as an input."
+    },
+    "lastVerified": "2026-06-17",
+    "reviewRequiredBeforeClaiming": false
+  },
+  {
+    "capabilityId": "imageScreenshotToCarousel",
+    "label": "Image / Screenshot to Carousel",
+    "status": "supported",
+    "description": "GoToFlow can use images and screenshots as carousel source material or visual material.",
+    "allowedClaims": [
+      "turn images into carousel source material",
+      "use screenshots as source material for a carousel",
+      "use images in a carousel workflow"
+    ],
+    "forbiddenClaims": [
+      "perfect image extraction",
+      "guaranteed OCR accuracy",
+      "unlimited image input size"
+    ],
+    "saferAlternatives": [
+      "use images or screenshots as source material for a carousel workflow"
+    ],
+    "relatedRoutes": ["/", "/ai-carousel-maker", "/ru/ii-generator-karuseley"],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": ["image to carousel", "screenshot to carousel"],
+    "evidence": {
+      "source": "Product source of truth",
+      "notes": "Supported input capability."
+    },
+    "lastVerified": "2026-06-17",
+    "reviewRequiredBeforeClaiming": false
+  },
+  {
+    "capabilityId": "userPhotosInCarousel",
+    "label": "User Photos in Carousel",
+    "status": "supported",
+    "description": "GoToFlow can use user photos in the carousel workflow.",
+    "allowedClaims": [
+      "use user photos in a carousel",
+      "add your own photos to a carousel workflow",
+      "combine AI generation with user photos"
+    ],
+    "forbiddenClaims": [
+      "perfect photo placement",
+      "guaranteed brand consistency from any photo"
+    ],
+    "saferAlternatives": [
+      "use user photos as visual material in a carousel workflow"
+    ],
+    "relatedRoutes": ["/", "/ai-carousel-maker", "/ru/ii-generator-karuseley"],
+    "relatedArticleTypes": ["how-to"],
+    "relatedKeywords": ["own photos carousel", "user photos carousel"],
+    "evidence": {
+      "source": "Product source of truth",
+      "notes": "User photos are part of the full-cycle carousel workflow."
+    },
+    "lastVerified": "2026-06-17",
+    "reviewRequiredBeforeClaiming": false
   },
   {
     "capabilityId": "directSocialPublishing",

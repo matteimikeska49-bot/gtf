@@ -11,11 +11,28 @@ const FORBIDDEN_PRODUCT_PHRASES = [
   "after ChatGPT",
   "post-ChatGPT",
   "Canva add-on",
+  "Midjourney add-on",
   "separate design tool replacement",
   "carousel draft",
   "carousel drafts",
   "draft carousel",
-  "черновик карусели"
+  "only creates drafts",
+  "only formats text",
+  "requires you to transcribe",
+  "need to transcribe",
+  "first need to convert the audio into text",
+  "first need to convert the video into text",
+  "must first transcribe",
+  "must first extract key takeaways",
+  "must first extract the key takeaways",
+  "manual extraction before GoToFlow",
+  "черновик карусели",
+  "только форматирует текст",
+  "сначала сделайте текстовую расшифровку",
+  "вам потребуется получить транскрипт",
+  "сначала получите транскрипт",
+  "сначала выделите ключевые тезисы",
+  "вручную выделить ключевые тезисы"
 ];
 
 const RISKY_CLAIMS = [

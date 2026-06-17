@@ -57,6 +57,80 @@ GoToFlow умеет:
 
 ---
 
+## 2.1. GoToFlow input capabilities
+
+GoToFlow can create carousel workflows from:
+
+1. Topic / idea.
+2. Ready script.
+3. Plain text.
+4. Reels link.
+5. Video.
+6. Audio / voice.
+7. PDF.
+8. Images / screenshots.
+9. User photos.
+
+GoToFlow is a full-cycle carousel creation system: it can turn the input into structure, slide copy, visual direction, CTA and a ready-to-publish carousel.
+
+Dashboard source phrases:
+
+```text
+VIDEO / REELS / AUDIO / PDF
+```
+
+```text
+AI сам посмотрит видео, сделает транскрипцию и выделит суть
+```
+
+```text
+Вставьте ссылку на Reels, готовый сценарий или просто тему
+```
+
+Correct EN positioning:
+
+```text
+GoToFlow helps turn a topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo into a carousel workflow: structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.
+```
+
+Correct RU positioning:
+
+```text
+GoToFlow помогает превратить тему, сценарий, текст, ссылку на Reels, видео, аудио, PDF, изображение, скриншот или свои фото в карусель: структура, текст по слайдам, визуальная логика, CTA и готовая к публикации карусель.
+```
+
+Нельзя описывать GoToFlow как:
+
+```text
+post-ChatGPT formatter
+```
+
+```text
+Canva add-on
+```
+
+```text
+Midjourney add-on
+```
+
+```text
+tool that only formats text
+```
+
+```text
+tool that only creates drafts
+```
+
+```text
+tool where user must first transcribe video somewhere else
+```
+
+```text
+tool where user must first extract key takeaways manually
+```
+
+---
+
 ## 3. GoToFlow — не рандомная генерация
 
 GoToFlow нельзя описывать как сервис, который просто случайно генерирует карусели.
@@ -285,12 +359,22 @@ GoToFlow развивается в сторону более сложных фо
 
 В GoToFlow планируется / добавляется:
 
+* editable template-based carousel mode;
+* seamless carousel mode;
+* animated carousel mode, including animated first slide;
 * бесшовные / panoramic / seamless карусели;
 * карусели с анимированным первым слайдом;
 * шаблонные форматы, где текст можно будет редактировать отдельно;
 * аналитика;
 * расширение визуальных сценариев;
 * усиление workflow “создание → публикация → анализ результата”.
+
+Эти функции можно подавать только как:
+
+* coming soon;
+* near-term rollout;
+* roadmap expansion;
+* upcoming workflow mode.
 
 Формулировать аккуратно:
 

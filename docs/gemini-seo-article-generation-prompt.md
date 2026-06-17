@@ -14,7 +14,7 @@ Before generating or editing a new SEO markdown article, open and follow:
 
 `docs/product/gotoflow-capabilities.md` is the canonical product source of truth for GoToFlow positioning, capabilities, comparisons, roadmap framing, forbidden negative framing, and misleading-claim rules. Before writing or editing a GoToFlow article, the agent must check whether the article positioning matches that file. Any article, prompt, or QA decision that contradicts `docs/product/gotoflow-capabilities.md` is incorrect.
 
-Product positioning summary: GoToFlow is an end-to-end carousel creation system: competitor/viral research, idea, scenario, structure, copy, visual style/design, own photos, AI characters, slides, and CTA — from zero to a ready carousel in minutes. Never reduce GoToFlow to text-only, structure-only, Canva/Midjourney/ChatGPT add-on, or random AI carousel generation. Do not invent product limitations, do not frame GoToFlow through “minuses”, and do not describe roadmap items as strategic weaknesses.
+Product positioning summary: GoToFlow is an end-to-end carousel creation system: competitor/viral research, idea, scenario, structure, copy, visual style/design, own photos, AI characters, slides, and CTA — from zero to a ready carousel in minutes. It can turn a topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo into a carousel workflow. Never reduce GoToFlow to text-only, structure-only, Canva/Midjourney/ChatGPT add-on, post-ChatGPT formatter, random AI carousel generation, or a tool that only creates drafts. Do not invent product limitations, do not tell users they must first transcribe video/audio somewhere else, do not require manual key-takeaway extraction before GoToFlow, do not frame GoToFlow through “minuses”, and do not describe roadmap items as strategic weaknesses.
 
 For RU markdown articles, use:
 `docs/gemini-ru-article-draft-protocol.md`
@@ -49,7 +49,7 @@ Before generating the article, Gemini must receive the following context via a c
 6. **No "Draft" Wording**: Never use wording like "carousel draft", "review the draft", or "generate a draft". Use "carousel result", "ready carousel", "slide copy", etc.
 7. **Dates**: Ensure `updatedAt` or `lastReviewed` is present and correct. The V2 template requires one of these fields to render the meta block.
 8. **V2 Layout Elements**: A plain markdown body is forbidden. You MUST include at least one V2 visual layout element such as `:::cards`, `[!takeaway]`, `[!workflow]`, or `[!tip]`.
-9. **Product Source of Truth**: Follow `docs/product/gotoflow-capabilities.md`. GoToFlow must be described as an end-to-end carousel workflow, not as a text-only assistant, structure-only assistant, Canva/Midjourney/ChatGPT add-on, or random generator.
+9. **Product Source of Truth**: Follow `docs/product/gotoflow-capabilities.md`. GoToFlow must be described as an end-to-end carousel workflow, not as a text-only assistant, structure-only assistant, Canva/Midjourney/ChatGPT add-on, post-ChatGPT formatter, random generator, or external-transcript-only formatter. Correct framing: GoToFlow can turn a topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo into structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.
 
 ## 5. Frontmatter Schema
 Every article MUST start with this exact YAML frontmatter block:
@@ -228,7 +228,7 @@ Your task is to write a high-quality, deeply researched, and engaging SEO articl
 5. Topic must reference keyword-candidates record.
 6. Topic must have a topic-priority-score and cannot be in HOLD tier. Generation should not begin without a score.
 7. PRODUCT REALITY: Do not claim unsupported capabilities. Do not promise direct publishing/scheduling unless `product-capabilities.json` says supported.
-8. PRODUCT REALITY: Do not claim guaranteed engagement or algorithm boosts. For PDF/video workflows, use cautious wording (e.g. "paste text from PDF") unless a capability is explicitly supported. Every product claim must be compatible with `product-capabilities.json`.
+8. PRODUCT REALITY: Do not claim guaranteed engagement or algorithm boosts. For PDF/video/Reels/audio/image workflows, use wording that matches the supported capability in `product-capabilities.json`; never downgrade supported inputs into "paste text manually first" requirements. Every product claim must be compatible with `product-capabilities.json`.
 9. INTENT OWNERSHIP: Every new article must have an `intent-map.json` record. Do not generate an article if it would duplicate an Owner's intent.
 10. CLUSTER: Every new article must have a `cluster-authority-map.json` role. Support articles must link to their Hub and Product Route where relevant.
 11. ALIGNMENT CHECK: Before generating any article, you must confirm that a keyword record exists, topic score exists, product capabilities are mapped, intent record exists, cluster role exists, product route exists, and draft publish safety values are correct (`published: false`, `noindex: true`, `preview: true`, `approvedForPublish: false`). If any of these are missing: STOP and report. Do not generate an article. Do not invent these fields. Do not create an article outside the topic-map/intent/cluster.

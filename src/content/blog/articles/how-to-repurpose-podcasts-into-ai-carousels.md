@@ -2,7 +2,7 @@
 title: "How to Repurpose Podcasts and Webinars into AI Carousels | GoToFlow"
 slug: "how-to-repurpose-podcasts-into-ai-carousels"
 language: "en"
-description: "Learn how to turn long-form podcast transcripts and webinar notes into engaging AI carousels for LinkedIn and Instagram."
+description: "Learn how to turn podcasts, webinars, audio, video, transcripts, or notes into engaging AI carousel workflows for LinkedIn and Instagram."
 primaryKeyword: "repurpose podcasts into carousels"
 secondaryKeywords:
   - "webinar to carousel"
@@ -29,27 +29,27 @@ keywordRecord: "repurpose podcast into carousel with AI"
 topicScoreId: "TS-23-15"
 finalPriorityScore: 81
 priorityTier: "P1"
-productCapabilityIds: ["textToCarousel"]
+productCapabilityIds: ["audioVoiceToCarousel", "youtubeVideoToCarousel", "textToCarousel"]
 intentId: "en:how-to-repurpose-podcasts-into-ai-carousels"
 clusterId: "en:ai-carousel-generator"
 articleRole: "supporting"
 hubSlug: "text-to-carousel-ai"
 relatedProductRoute: "/ai-carousel-maker"
 productFit: "YES"
-productFitExplanation: "GoToFlow takes transcripts and notes and structures them into ready-to-publish carousels."
+productFitExplanation: "GoToFlow can use audio, video, transcripts, notes, or a topic to build a carousel workflow with structure, slide copy, visual direction, and CTA."
 requiredVisualBlock: "none"
 faqFormat: "structured"
 qualityGateStatus: "passed"
 quickAnswerTitle: "Quick Answer"
 quickAnswer:
   - "Podcasts and webinars are goldmines of content, but few people watch a 60-minute video on social media."
-  - "Repurpose this long-form content by using transcripts, show notes, or key takeaways."
-  - "Identify the 'aha moments' in the transcript. One 60-minute episode can yield 5-10 distinct carousel topics."
-  - "Clean up the spoken language. Remove filler words and structure the points logically for reading."
-  - "Use GoToFlow to paste your podcast notes and instantly generate a ready-to-publish carousel."
+  - "Repurpose this long-form content from audio, video, webinar material, transcripts, show notes, or a topic."
+  - "GoToFlow can process the source, make a transcript when needed, and extract the strongest carousel angles."
+  - "One 60-minute episode can yield several distinct carousel topics."
+  - "Use GoToFlow to turn the selected angle into structure, slide copy, visual direction, and a ready-to-publish carousel."
 faq:
   - question: "Can I just paste a podcast audio file into a carousel generator?"
-    answer: "No. You first need to convert the audio into text using a transcription tool. Once you have the transcript or show notes, you can use those text assets to generate the carousel."
+    answer: "Use a supported audio, video, transcript, note, or topic input. GoToFlow can process the source, make a transcript when needed, extract the core idea, and turn it into a carousel workflow."
   - question: "How much text should I extract for one carousel?"
     answer: "Focus on one specific lesson or framework per carousel. If the podcast covered 5 different topics, that is 5 separate carousels, not one massive 50-slide presentation."
   - question: "Should I quote the podcast guest directly?"
@@ -57,12 +57,12 @@ faq:
   - question: "Why not just post short video clips (Shorts/Reels)?"
     answer: "Video clips are great for reach, but carousels are better for retention and saves. People save carousels as reference material. A smart strategy uses both formats to promote the same podcast episode."
   - question: "How does AI speed up this process?"
-    answer: "AI can summarize a 10,000-word transcript into key takeaways in seconds. Then, an AI carousel generator turns those takeaways into a slide-by-slide structure with proper formatting."
+    answer: "AI can analyze long-form source material, surface the strongest angles, and turn one selected idea into a slide-by-slide structure with readable formatting."
 explore:
   tools:
     - title: "AI Carousel Maker"
       href: "/ai-carousel-maker"
-      description: "Turn your transcripts and notes into structured carousels."
+      description: "Turn audio, video, notes, or topics into structured carousels."
   guides:
     - title: "AI Carousel Workflow"
       href: "/blog/ai-carousel-workflow"
@@ -72,7 +72,7 @@ explore:
       description: "Create carousels from text instantly."
 finalCta:
   title: "Sitting on hours of recorded content?"
-  text: "Don't let your webinars and podcasts go to waste. Paste your transcripts and notes to generate structured carousels in minutes."
+  text: "Don't let your webinars and podcasts go to waste. Turn audio, video, notes, or one topic into structured carousels in minutes."
   buttonText: "Repurpose Your Content"
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
@@ -97,11 +97,11 @@ You cannot just summarize a whole hour into 10 slides. That creates an overwhelm
 :::cards
 type: workflow
 
-### 1. Transcription
-The foundation of repurposing is text. Run your audio or video file through a transcription tool (like Whisper or Otter) to get a written record of the conversation.
+### 1. Source analysis
+Start with the podcast audio, webinar video, transcript, show notes, or a clear topic. GoToFlow can process the source, make a transcript when needed, and identify usable carousel angles.
 
 ### 2. Identify 'Aha Moments'
-Scan the transcript for frameworks, contrarian opinions, or step-by-step processes discussed by the guest. One episode should yield 3 to 5 distinct "aha moments."
+Choose the strongest framework, contrarian opinion, or step-by-step process discussed by the guest. One episode should yield 3 to 5 distinct "aha moments."
 
 ### 3. Clean and Structure
 Spoken language is messy. Remove filler words, tangents, and conversational back-and-forth. Rewrite the core idea into a structured list or a logical sequence.
@@ -115,17 +115,17 @@ If your guest shared a 5-step process for hiring developers, that naturally maps
 
 > [!tip]
 > **Automate the slide formatting**
-> Stop wasting time trying to fit webinar notes onto Canva templates. Paste your key takeaways into GoToFlow, and the AI will automatically distribute the text across slides, apply formatting, and prepare the carousel for publication.
+> Stop wasting time trying to fit webinar ideas onto Canva templates. Add the source, transcript, notes, or chosen angle to GoToFlow, and the AI will distribute the message across slides, apply formatting, and prepare the carousel for publication.
 > [Try AI Carousel Maker](/ai-carousel-maker)
 
-## Prompts for Extracting Value
+## Optional Prompts for Finding an Angle
 
-If staring at a massive transcript is daunting, use an AI chat tool to help you find the gold.
+If you want to plan the editorial angle separately, use these optional prompts before generating the carousel. GoToFlow can also start directly from audio, video, notes, or a topic.
 
 :::prompts
 ### The Insight Extractor
 ```text
-Here is a transcript of my recent podcast interview. 
+Here is the topic or source material from my recent podcast interview.
 Identify the 3 most controversial or surprising opinions shared 
 by the guest. For each opinion, write a short paragraph explaining 
 the context.
@@ -133,8 +133,8 @@ the context.
 
 ### The Framework Builder
 ```text
-In this webinar transcript, I explained a process for [Topic]. 
-Extract the exact steps I mentioned and format them as a clear, 
+In this webinar, I explained a process for [Topic].
+Turn the exact steps into a clear,
 actionable checklist. Remove all conversational filler.
 ```
 :::
@@ -160,4 +160,4 @@ The goal of repurposing a podcast is often to drive listeners to the full episod
 
 ## Conclusion
 
-Your podcasts and webinars are a goldmine of authority-building content. By transcribing the audio, extracting the most valuable insights, and utilizing AI tools to format those notes into structured slides, you can fuel your social media presence for weeks off a single recording. Stop promoting links and start providing native value in the feed.
+Your podcasts and webinars are a goldmine of authority-building content. By turning long-form source material into focused carousel workflows, you can fuel your social media presence for weeks off a single recording. Stop promoting links and start providing native value in the feed.

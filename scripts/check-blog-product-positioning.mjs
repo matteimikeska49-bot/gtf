@@ -15,6 +15,10 @@ const SOURCE_OF_TRUTH = path.join(ROOT, 'docs/product/gotoflow-capabilities.md')
 
 const REQUIRED_SOURCE_PHRASES = [
   'GoToFlow — это end-to-end система создания каруселей',
+  'GoToFlow input capabilities',
+  'VIDEO / REELS / AUDIO / PDF',
+  'AI сам посмотрит видео, сделает транскрипцию и выделит суть',
+  'GoToFlow helps turn a topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo',
   'Нельзя писать',
   'GoToFlow только пишет текст',
   'Canva делает дизайн, а GoToFlow только структуру'
@@ -40,6 +44,26 @@ const RULES = [
     id: 'prepare-then-design-en',
     reason: 'GoToFlow must not be framed as preparing content for design elsewhere.',
     re: /\bGoToFlow\b[^.\n]{0,100}\b(?:prepare|prepares|generate|generates|write|writes)\b[^.\n]{0,50}\b(?:content|copy|text)\b[^.\n]{0,80}\b(?:then|afterward|afterwards)\b[^.\n]{0,50}\b(?:design|Canva|another design tool|elsewhere)\b/i
+  },
+  {
+    id: 'post-chatgpt-formatter-en',
+    reason: 'GoToFlow must not be framed as a post-ChatGPT formatter.',
+    re: /\b(?:post-ChatGPT formatter|import the refined text into GoToFlow|copy your refined text[^.\n]{0,80}\bGoToFlow\b|refined text[^.\n]{0,80}\bGoToFlow\b)\b/i
+  },
+  {
+    id: 'manual-transcript-required-en',
+    reason: 'GoToFlow must not be framed as requiring users to transcribe video or audio elsewhere first.',
+    re: /\b(?:you\s+)?(?:first\s+)?(?:need|must|have)\s+to\s+(?:convert|transcribe|run|get|create|make)[^.\n]{0,80}\b(?:audio|video|file|recording|podcast|webinar)\b[^.\n]{0,80}\b(?:text|transcript|transcription|transcription tool)\b|\bGoToFlow\b[^.\n]{0,100}\b(?:requires?|needs?|only works if)\b[^.\n]{0,80}\b(?:transcript|transcription|key takeaways|manual extraction)\b/i
+  },
+  {
+    id: 'manual-takeaways-required-en',
+    reason: 'GoToFlow must not be framed as requiring manual extraction of key takeaways first.',
+    re: /\b(?:must|need to|have to|first)\b[^.\n]{0,60}\b(?:extract|identify|pull|prepare)\b[^.\n]{0,40}\b(?:key takeaways|takeaways|aha moments)\b[^.\n]{0,80}\b(?:before|then|to use|into GoToFlow)\b/i
+  },
+  {
+    id: 'draft-only-en',
+    reason: 'GoToFlow must not be framed as only creating carousel drafts.',
+    re: /\b(?:carousel draft|carousel drafts|draft carousel|only creates drafts|only creates carousel drafts)\b/i
   },
   {
     id: 'addon-after-tool-en',
@@ -80,6 +104,21 @@ const RULES = [
     id: 'text-generator-ru',
     reason: 'GoToFlow нельзя описывать как текстовый генератор.',
     re: /(?:текстов(?:ый|ые|ого|ых)\s+генератор(?:ы|а|ов)?|генератор(?:ы|а|ов)?\s+текста)[^.\n]{0,80}(?:включая\s+)?GoToFlow\b|\bGoToFlow\b[^.\n]{0,80}(?:текстов(?:ый|ые|ого|ых)\s+генератор|генератор\s+текста)/i
+  },
+  {
+    id: 'manual-transcript-required-ru',
+    reason: 'GoToFlow нельзя описывать так, будто пользователь обязан сначала транскрибировать видео или аудио в другом месте.',
+    re: /(?:сначала|сперва|вам\s+потребуется|нужно|необходимо)[^.\n]{0,70}(?:получить|сделать|создать|подготовить|вытащить)[^.\n]{0,70}(?:транскрипт|расшифровк|транскрибац|ключев(?:ые|ых)\s+тезис|key takeaways)|\bGoToFlow\b[^.\n]{0,100}(?:требует|нуж[её]н|работает\s+только)[^.\n]{0,80}(?:транскрипт|расшифровк|тезис)/i
+  },
+  {
+    id: 'manual-takeaways-required-ru',
+    reason: 'GoToFlow нельзя описывать так, будто пользователь обязан вручную выделять тезисы перед использованием.',
+    re: /(?:сначала|сперва|нужно|необходимо)[^.\n]{0,60}(?:выделить|извлечь|подготовить)[^.\n]{0,60}(?:ключев(?:ые|ых)\s+тезис|главн(?:ые|ых)\s+мысл|суть)[^.\n]{0,80}(?:перед|затем|потом|в GoToFlow)/i
+  },
+  {
+    id: 'draft-only-ru',
+    reason: 'GoToFlow нельзя сужать до создания черновиков карусели.',
+    re: /(?:черновик карусели|черновую карусель|только\s+созда[её]т\s+черновик|только\s+делает\s+черновик)/i
   },
   {
     id: 'addon-after-tool-ru',
@@ -160,8 +199,14 @@ function findIssuesInText(text) {
 }
 
 function runSmokeTest() {
-  const bad = 'Canva делает дизайн, а GoToFlow только структуру.';
-  const good = 'Canva — ручной дизайн-редактор. GoToFlow — система создания готовой карусели от идеи до результата.';
+  const bad = [
+    'Canva делает дизайн, а GoToFlow только структуру.',
+    'You first need to convert the audio into text using a transcription tool before using GoToFlow.'
+  ].join('\n');
+  const good = [
+    'Canva — ручной дизайн-редактор. GoToFlow — система создания готовой карусели от идеи до результата.',
+    'GoToFlow helps turn a topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo into a carousel workflow: structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.'
+  ].join('\n');
 
   const badIssues = findIssuesInText(bad);
   const goodIssues = findIssuesInText(good);

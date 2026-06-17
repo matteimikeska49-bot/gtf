@@ -189,7 +189,7 @@ Text content.
 
 > [!product]
 > **Turn this into a carousel faster**
-> Use GoToFlow to turn rough ideas into structured carousel drafts.
+> Use GoToFlow to turn rough ideas into ready carousel workflows.
 > [Try LinkedIn Carousel Maker](/linkedin-carousel-maker)
 
 > [!related]
@@ -232,7 +232,7 @@ Final CTA обязателен.
 
 Пример EN:
 title: `Still creating carousels manually?`
-text: `Turn a topic, link, video, or rough note into a structured Instagram carousel draft.`
+text: `Turn a topic, link, video, or rough note into a structured, ready-to-publish Instagram carousel.`
 buttonText: `Try GoToFlow For Free`
 href: `/linkedin-carousel-maker`
 microcopy: `Free — No credit card required`
@@ -241,7 +241,7 @@ secondaryHref: `#explore-more`
 
 Пример RU:
 title: `Всё ещё собираете карусели вручную?`
-text: `Превратите тему, ссылку, видео или заметки в структурированный черновик карусели.`
+text: `Превратите тему, ссылку, видео или заметки в структурированную карусель, готовую к публикации.`
 buttonText: `Попробовать GoToFlow бесплатно`
 href: `/ru/generator-karuselej-linkedin`
 microcopy: `Бесплатно — карта не нужна`

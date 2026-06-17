@@ -29,7 +29,7 @@ keywordRecord: "AI carousel workflow"
 topicScoreId: "TS-23-18"
 finalPriorityScore: 90
 priorityTier: "P1"
-productCapabilityIds: ["textToCarousel"]
+productCapabilityIds: ["textToCarousel", "reelsToCarousel", "youtubeVideoToCarousel", "audioVoiceToCarousel", "pdfToCarousel", "imageScreenshotToCarousel", "userPhotosInCarousel"]
 intentId: "en:ai-carousel-workflow"
 clusterId: "en:ai-carousel-generator"
 articleRole: "supporting"
@@ -43,9 +43,9 @@ qualityGateStatus: "passed"
 quickAnswerTitle: "Quick Answer"
 quickAnswer:
   - "A good workflow combines your unique expertise with AI's formatting speed."
-  - "Start with a brain-dump. Capture your raw ideas, frameworks, and stories without worrying about structure."
-  - "Use an AI chat tool to refine your raw text, extract key points, and generate strong hooks."
-  - "GoToFlow helps turn a topic, draft, transcript, notes, or rough idea into a structured carousel with slide copy, visual direction, and CTA."
+  - "Start with a topic, script, text, Reels link, video, audio, PDF, image, screenshot, user photo, or rough idea."
+  - "GoToFlow can analyze the source, extract the core idea, and shape it into a carousel workflow."
+  - "GoToFlow helps turn the input into structure, slide copy, visual direction, CTA, and a ready-to-publish carousel."
   - "Review the AI output. Add your personal touch, check the CTA, and download the final PDF or images."
 faq:
   - question: "Does this workflow replace my designer?"
@@ -57,7 +57,7 @@ faq:
   - question: "What formats do I need for different platforms?"
     answer: "LinkedIn requires a PDF document for carousels. Instagram requires high-resolution square (1:1) or portrait (4:5) image files (JPG/PNG). A good workflow tool exports both."
   - question: "How do I ensure the AI output sounds like me?"
-    answer: "The AI's output is only as good as its input. If you provide a detailed, opinionated draft in your own words, the AI will retain your voice when formatting the slides."
+    answer: "The AI's output is strongest when the input carries your real point of view. Add your own topic, script, notes, voice memo, video, or examples so the carousel keeps your perspective."
 explore:
   tools:
     - title: "AI Carousel Maker"
@@ -72,7 +72,7 @@ explore:
       description: "Automate your B2B content."
 finalCta:
   title: "Stop doing the manual work"
-  text: "Upgrade your workflow. Let AI handle the formatting and layout while you focus on the ideas. Create a ready-to-publish carousel today."
+  text: "Upgrade your workflow. Let AI handle source analysis, structure, slide copy, visual direction, and layout while you focus on the idea. Create a ready-to-publish carousel today."
   buttonText: "Try the Workflow"
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
@@ -88,27 +88,26 @@ This manual process is the reason most creators are inconsistent.
 
 A modern AI carousel workflow changes the equation. It does not replace human creativity; it removes the mechanical friction of formatting. Here is the exact step-by-step workflow to go from a raw idea to a published carousel in under 30 minutes.
 
-## Step 1: The Brain Dump (Human Task)
+## Step 1: Add the Source
 
 AI cannot invent your personal experience. The workflow starts with you. 
 
-When you have an idea—a lesson learned, a client case study, or a framework—just get it down. Open a notes app, record a voice memo, or write a messy draft. Do not worry about spelling, grammar, or slide structure. 
+When you have an idea—a lesson learned, a client case study, a framework, a Reels link, a video, an audio note, a PDF, or screenshots—add it as the source. Do not worry about perfect slide structure yet.
 
 The goal here is purely to capture the "meat" of your expertise.
 
-## Step 2: Refinement and Structuring (AI Task)
+## Step 2: Source Analysis and Structuring (AI Task)
 
-Raw notes are hard to read. You need to structure them before they can become a carousel. 
+Raw source material is hard to read. The workflow needs to find the core idea, remove the noise, and turn the message into a sequence.
 
-If your notes are a mess, use an AI chat tool (like ChatGPT or Claude) to act as your editor. 
+GoToFlow can analyze the input, extract the main point, suggest a strong hook, and organize the carousel flow.
 
 :::prompts
 ### The Structure Prompt
 ```text
-Here are my raw notes on [Topic]. 
-Please clean this up, remove the fluff, and organize the core 
-insights into a logical list. Suggest a strong, curiosity-driven 
-hook for the beginning.
+Here is my source material on [Topic].
+Turn it into a clear carousel angle with a strong hook,
+logical slide flow, and one CTA.
 ```
 :::
 
@@ -122,7 +121,7 @@ You no longer need to spend an hour nudging text boxes in Figma.
 
 > [!tip]
 > **Automate the slide design**
-> Copy your refined text from Step 2 and paste it directly into GoToFlow. The AI engine will analyze your text, automatically distribute it across 5 to 10 slides to prevent cognitive overload, and apply professional typography and layout rules.
+> Add your topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo to GoToFlow. The AI engine will analyze the source, distribute the message across 5 to 10 slides to prevent cognitive overload, and apply professional typography and layout rules.
 > [Try the AI Carousel Workflow](/ai-carousel-maker)
 
 :::cards
@@ -161,4 +160,4 @@ Different platforms require different file formats.
 
 ## Conclusion
 
-The AI carousel workflow is a collaboration. You provide the unique insight, strategy, and final approval. The AI handles the editing, layout, and formatting. By adopting this workflow, you can drastically reduce your production time, allowing you to publish high-value carousels consistently without the burnout of manual design.
+The AI carousel workflow is a collaboration. You provide the unique insight, strategy, source material, and final approval. The AI handles source analysis, structure, slide copy, visual direction, layout, and formatting. By adopting this workflow, you can drastically reduce your production time, allowing you to publish high-value carousels consistently without the burnout of manual design.
