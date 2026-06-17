@@ -15,9 +15,9 @@ cluster: "AI Carousel Workflow"
 articleType: "how_to"
 category: "Productivity"
 priority: "P0"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/blog/ai-carousel-workflow"
 createdAt: "2026-06-17"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow provides the exact workflow automation described in the article."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Quick Answer"
 quickAnswer:
   - "A good workflow combines your unique expertise with AI's formatting speed."

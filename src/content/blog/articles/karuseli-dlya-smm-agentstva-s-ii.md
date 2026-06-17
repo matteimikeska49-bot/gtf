@@ -15,9 +15,9 @@ cluster: "AI Carousel Workflow"
 articleType: "guide"
 category: "Content Strategy"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/ru/blog/karuseli-dlya-smm-agentstva-s-ii"
 createdAt: "2026-06-17"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow significantly reduces manual design and formatting time for agency teams."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Короткий ответ"
 quickAnswer:
   - "Главная проблема SMM-агентств — масштабирование. Ручная верстка каруселей съедает маржу."

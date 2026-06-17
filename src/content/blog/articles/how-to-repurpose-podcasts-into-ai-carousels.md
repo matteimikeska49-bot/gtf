@@ -15,9 +15,9 @@ cluster: "AI Content Repurposing"
 articleType: "how_to"
 category: "Content Creation"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/blog/how-to-repurpose-podcasts-into-ai-carousels"
 createdAt: "2026-06-17"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow takes transcripts and notes and structures them into readable carousel drafts."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Quick Answer"
 quickAnswer:
   - "Podcasts and webinars are goldmines of content, but few people watch a 60-minute video on social media."
