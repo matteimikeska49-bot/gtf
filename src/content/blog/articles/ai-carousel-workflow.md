@@ -18,7 +18,7 @@ priority: "P0"
 published: true
 noindex: false
 preview: false
-approvedForPublish: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/blog/ai-carousel-workflow"
 createdAt: "2026-06-17"
 updatedAt: "2026-06-17"
@@ -45,7 +45,7 @@ quickAnswer:
   - "A good workflow combines your unique expertise with AI's formatting speed."
   - "Start with a brain-dump. Capture your raw ideas, frameworks, and stories without worrying about structure."
   - "Use an AI chat tool to refine your raw text, extract key points, and generate strong hooks."
-  - "Import the refined text into a carousel generator like GoToFlow to handle the slide layout and design."
+  - "GoToFlow helps turn a topic, draft, transcript, notes, or rough idea into a structured carousel with slide copy, visual direction, and CTA."
   - "Review the AI output. Add your personal touch, check the CTA, and download the final PDF or images."
 faq:
   - question: "Does this workflow replace my designer?"
@@ -64,12 +64,12 @@ explore:
       href: "/ai-carousel-maker"
       description: "Automate your carousel production workflow."
   guides:
-    - title: "AI Content Strategy"
-      href: "/blog/ai-carousel-content-strategy"
-      description: "How to scale your content operations."
-    - title: "Brainstorm with AI"
-      href: "/blog/how-to-brainstorm-carousel-topics-with-ai"
-      description: "Generate endless topic ideas."
+    - title: "Repurpose Podcasts"
+      href: "/blog/how-to-repurpose-podcasts-into-ai-carousels"
+      description: "Turn audio into carousels."
+    - title: "LinkedIn Content Automation"
+      href: "/linkedin-carousel-maker"
+      description: "Automate your B2B content."
 finalCta:
   title: "Stop doing the manual work"
   text: "Upgrade your workflow. Let AI handle the formatting and layout while you focus on the ideas. Create a ready-to-publish carousel today."
@@ -77,7 +77,7 @@ finalCta:
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
   secondaryText: "Explore more productivity guides →"
-  secondaryHref: "#explore-more"
+  secondaryHref: "/blog"
 ---
 
 # AI Carousel Workflow: From Idea to Ready-to-Publish Slides
@@ -157,7 +157,7 @@ Different platforms require different file formats.
 
 > [!related]
 > **Read next**
-> Ensure your new workflow is actually producing engaging content by reading our guide on [Carousel Post Mistakes](/blog/carousel-post-mistakes).
+> Looking for ways to apply this workflow? Learn [How to Repurpose Podcasts into AI Carousels](/blog/how-to-repurpose-podcasts-into-ai-carousels).
 
 ## Conclusion
 

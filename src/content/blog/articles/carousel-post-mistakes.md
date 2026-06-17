@@ -72,8 +72,8 @@ explore:
       description: "Convert ideas into slide formats."
 finalCta:
   title: "Stop making formatting mistakes"
-  text: "Let AI handle the slide constraints, text limits, and layout. Turn your text into a perfectly structured carousel draft in minutes."
-  buttonText: "Create a Perfect Carousel"
+  text: "Let AI handle the slide constraints, text limits, and layout. Turn your text into a beautifully structured ready-to-publish carousel in minutes."
+  buttonText: "Create a Carousel"
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
   secondaryText: "Explore more carousel tips →"

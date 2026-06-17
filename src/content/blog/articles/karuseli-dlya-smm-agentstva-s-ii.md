@@ -18,7 +18,7 @@ priority: "P1"
 published: true
 noindex: false
 preview: false
-approvedForPublish: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/karuseli-dlya-smm-agentstva-s-ii"
 createdAt: "2026-06-17"
 updatedAt: "2026-06-17"
@@ -64,9 +64,9 @@ explore:
       href: "/ru/ii-generator-karuseley"
       description: "Создавайте структурированные карусели из текста и идей."
   guides:
-    - title: "Как придумать тему для карусели"
-      href: "/ru/blog/kak-pridumat-temu-dlya-karuseli-s-ii"
-      description: "Матрица контента для агентств и клиентов."
+    - title: "Карусель из видео с ИИ"
+      href: "/ru/blog/kak-sdelat-karusel-iz-video-s-ii"
+      description: "Переупаковка Reels и вебинаров."
     - title: "Трендовые шрифты для каруселей"
       href: "/ru/blog/trendovye-shrifty-dlya-karuseley"
       description: "Подборка качественных шрифтовых пар."
@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Автоматизировать создание каруселей"
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
-  secondaryText: "Смотреть другие гайды для SMM →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Смотреть другие гайды →"
+  secondaryHref: "/ru/blog"
 ---
 
 # Карусели для SMM-агентства с ИИ: как ускорить производство контента для клиентов

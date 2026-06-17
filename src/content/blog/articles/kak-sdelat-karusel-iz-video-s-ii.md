@@ -18,7 +18,7 @@ priority: "P1"
 published: true
 noindex: false
 preview: false
-approvedForPublish: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/kak-sdelat-karusel-iz-video-s-ii"
 createdAt: "2026-06-17"
 updatedAt: "2026-06-17"
@@ -36,7 +36,7 @@ articleRole: "supporting"
 hubSlug: "tekst-v-karusel-neyroset"
 relatedProductRoute: "/ru/ii-generator-karuseley"
 productFit: "YES"
-productFitExplanation: "GoToFlow transforms video notes/transcripts into structured carousel drafts."
+productFitExplanation: "GoToFlow transforms video notes/transcripts into structured ready-to-publish carousels."
 requiredVisualBlock: "none"
 faqFormat: "structured"
 qualityGateStatus: "passed"
@@ -64,9 +64,9 @@ explore:
       href: "/ru/ii-generator-karuseley"
       description: "Создавайте структурированные карусели из текста и идей."
   guides:
-    - title: "Карусель для онлайн-школ"
-      href: "/ru/blog/karuseli-dlya-onlayn-shkol-s-ii"
-      description: "Переупаковка лекций в контент."
+    - title: "Карусели для SMM-агентств"
+      href: "/ru/blog/karuseli-dlya-smm-agentstva-s-ii"
+      description: "Масштабирование производства контента."
     - title: "Размер карусели в Инстаграм"
       href: "/ru/blog/razmer-karuseli-v-instagram"
       description: "Правильные габариты для постов."
@@ -76,13 +76,13 @@ finalCta:
   buttonText: "Переупаковать контент с ИИ"
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
-  secondaryText: "Смотреть гайды по переупаковке →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Смотреть другие гайды →"
+  secondaryHref: "/ru/blog"
 ---
 
 # Как сделать карусель из видео с ИИ: превратите Reels, Shorts или вебинар в слайды
 
-Производство контента — это дорого. Если вы потратили 3 часа на написание сценария, съемку и монтаж короткого экспертного видео для Reels или TikTok, обидно использовать этот материал только один раз.
+Производство контента — это дорого. Если вы потратили много времени на написание сценария, съемку и монтаж короткого экспертного видео для Reels или TikTok, обидно использовать этот материал только один раз.
 
 Умный маркетинг строится на ресайклах (переупаковке контента). Одно крутое видео может и должно стать каруселью, статьей и серией сторис. Формат карусели идеально подходит для того, чтобы перевести динамичный видеоформат в структурную и сохраняемую презентацию.
 
@@ -167,7 +167,7 @@ type: mistakes
 
 > [!related]
 > **Читайте также**
-> Узнайте, как правильно писать призывы к действию для ваших каруселей: [CTA для каруселей Instagram](/ru/blog/cta-dlya-karuseley-instagram-s-ii).
+> Узнайте, как масштабировать производство контента: [Карусели для SMM-агентств](/ru/blog/karuseli-dlya-smm-agentstva-s-ii).
 
 ## Заключение
 

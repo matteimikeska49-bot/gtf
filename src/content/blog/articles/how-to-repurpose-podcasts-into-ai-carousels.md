@@ -18,7 +18,7 @@ priority: "P1"
 published: true
 noindex: false
 preview: false
-approvedForPublish: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/blog/how-to-repurpose-podcasts-into-ai-carousels"
 createdAt: "2026-06-17"
 updatedAt: "2026-06-17"
@@ -36,7 +36,7 @@ articleRole: "supporting"
 hubSlug: "text-to-carousel-ai"
 relatedProductRoute: "/ai-carousel-maker"
 productFit: "YES"
-productFitExplanation: "GoToFlow takes transcripts and notes and structures them into readable carousel drafts."
+productFitExplanation: "GoToFlow takes transcripts and notes and structures them into ready-to-publish carousels."
 requiredVisualBlock: "none"
 faqFormat: "structured"
 qualityGateStatus: "passed"
@@ -46,7 +46,7 @@ quickAnswer:
   - "Repurpose this long-form content by using transcripts, show notes, or key takeaways."
   - "Identify the 'aha moments' in the transcript. One 60-minute episode can yield 5-10 distinct carousel topics."
   - "Clean up the spoken language. Remove filler words and structure the points logically for reading."
-  - "Use GoToFlow to paste your podcast notes and instantly generate a formatted carousel draft."
+  - "Use GoToFlow to paste your podcast notes and instantly generate a ready-to-publish carousel."
 faq:
   - question: "Can I just paste a podcast audio file into a carousel generator?"
     answer: "No. You first need to convert the audio into text using a transcription tool. Once you have the transcript or show notes, you can use those text assets to generate the carousel."
@@ -64,12 +64,12 @@ explore:
       href: "/ai-carousel-maker"
       description: "Turn your transcripts and notes into structured carousels."
   guides:
-    - title: "Turn Video into Carousel"
-      href: "/blog/turn-video-into-carousel-with-ai"
-      description: "How to repurpose short-form video ideas."
-    - title: "AI Content Strategy"
-      href: "/blog/ai-carousel-content-strategy"
-      description: "Build a repeatable workflow."
+    - title: "AI Carousel Workflow"
+      href: "/blog/ai-carousel-workflow"
+      description: "Scale your content production."
+    - title: "AI Carousel Maker"
+      href: "/ai-carousel-maker"
+      description: "Create carousels from text instantly."
 finalCta:
   title: "Sitting on hours of recorded content?"
   text: "Don't let your webinars and podcasts go to waste. Paste your transcripts and notes to generate structured carousels in minutes."
@@ -77,7 +77,7 @@ finalCta:
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
   secondaryText: "Explore more repurposing tools →"
-  secondaryHref: "#explore-more"
+  secondaryHref: "/blog"
 ---
 
 # How to Repurpose Podcasts and Webinars into AI Carousels
@@ -156,7 +156,7 @@ The goal of repurposing a podcast is often to drive listeners to the full episod
 
 > [!related]
 > **Read next**
-> If you are repurposing shorter video formats like TikToks or Reels, the strategy is slightly different. Read our guide on [How to Turn a Video into a Carousel with AI](/blog/turn-video-into-carousel-with-ai).
+> If you want to scale this process, read our guide on building an [AI Carousel Workflow](/blog/ai-carousel-workflow).
 
 ## Conclusion
 
