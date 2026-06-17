@@ -294,3 +294,6 @@ Begin.
 - You must always complete and verify a mini-batch (3-5 articles) first.
 - The `batch-status.json` must be strictly updated with states like `draft_preview`, `approved_for_publish`, `published`.
 - No publishing by wave without manual approval and subsequent live verification.
+
+### Visible Title Rule
+Do not include `| GoToFlow` or `— GoToFlow` in the frontmatter `title` field. The `title` field is used for the visible H1 and breadcrumbs, which must NOT contain the brand suffix. The system will automatically append `| GoToFlow` for SEO meta tags when rendering.

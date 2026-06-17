@@ -1,5 +1,5 @@
 ---
-title: "How to Repurpose Podcasts and Webinars into AI Carousels | GoToFlow"
+title: "How to Repurpose Podcasts and Webinars into AI Carousels"
 slug: "how-to-repurpose-podcasts-into-ai-carousels"
 language: "en"
 description: "Learn how to turn podcasts, webinars, audio, video, transcripts, or notes into engaging AI carousel workflows for LinkedIn and Instagram."

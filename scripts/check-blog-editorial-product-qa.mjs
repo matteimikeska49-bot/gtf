@@ -77,6 +77,11 @@ const LEGACY_ARTICLES = [
 
 function checkFile(filePath, content) {
   const errors = [];
+  // Check that title does NOT contain | GoToFlow
+  if (frontmatter.title && frontmatter.title.toLowerCase().includes('gotoflow')) {
+    errors.push(`Visible title must NOT contain the brand name 'GoToFlow'. The system automatically appends it for SEO tags. Found in: "${frontmatter.title}"`);
+  }
+
   const fileName = path.basename(filePath);
 
   // Check Product Positioning

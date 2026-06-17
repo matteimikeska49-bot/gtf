@@ -1,5 +1,5 @@
 ---
-title: "How to Turn a Video into a Carousel with AI | GoToFlow"
+title: "How to Turn a Video into a Carousel with AI"
 slug: "turn-video-into-carousel-with-ai"
 language: "en"
 description: "Discover how to repurpose short-form videos like Reels and Shorts into AI carousel workflows with source analysis, slide copy, visual direction, and CTA."

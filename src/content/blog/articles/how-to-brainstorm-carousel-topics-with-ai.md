@@ -1,5 +1,5 @@
 ---
-title: "How to Brainstorm Carousel Topics with AI | GoToFlow"
+title: "How to Brainstorm Carousel Topics with AI"
 slug: "how-to-brainstorm-carousel-topics-with-ai"
 language: "en"
 description: "Learn how to brainstorm endless carousel topics using AI. Stop staring at a blank page and generate high-converting ideas for LinkedIn and Instagram."

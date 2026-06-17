@@ -545,3 +545,6 @@ npm run check:blog:visual
 `tmp/blog-visual-qa/`
 
 Агент не имеет права писать “визуально всё ок”, если не запустил `check:blog:visual`.
+
+## Visible Title Rule
+Do not include `| GoToFlow` or `— GoToFlow` in the frontmatter `title` field. The `title` field is used for the visible H1 and breadcrumbs, which must NOT contain the brand suffix. The system will automatically append `| GoToFlow` for SEO meta tags when rendering.

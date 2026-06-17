@@ -1,5 +1,5 @@
 ---
-title: "AI LinkedIn Carousel Strategy for B2B Founders | GoToFlow"
+title: "AI LinkedIn Carousel Strategy for B2B Founders"
 slug: "ai-linkedin-carousel-strategy-for-b2b-founders"
 language: "en"
 description: "Discover how B2B founders can build authority on LinkedIn using AI-generated carousels. Learn the strategy to convert thought leadership into inbound leads."

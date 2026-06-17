@@ -1,5 +1,5 @@
 ---
-title: "AI Carousel Workflow: From Idea to Ready-to-Publish Slides | GoToFlow"
+title: "AI Carousel Workflow: From Idea to Ready-to-Publish Slides"
 slug: "ai-carousel-workflow"
 language: "en"
 description: "Master the complete AI carousel workflow. Learn how to combine human creativity with AI efficiency to produce high-quality carousels faster."

@@ -1,5 +1,5 @@
 ---
-title: "AI Carousel Content Strategy: How to Build a Repeatable Workflow | GoToFlow"
+title: "AI Carousel Content Strategy: How to Build a Repeatable Workflow"
 slug: "ai-carousel-content-strategy"
 language: "en"
 description: "Build a scalable, repeatable AI carousel content strategy for your brand. Learn how to plan, produce, and publish high-quality carousels consistently."

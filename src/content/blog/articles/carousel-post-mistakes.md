@@ -1,5 +1,5 @@
 ---
-title: "Carousel Post Mistakes: Why People Stop Swiping and How to Fix It | GoToFlow"
+title: "Carousel Post Mistakes: Why People Stop Swiping and How to Fix It"
 slug: "carousel-post-mistakes"
 language: "en"
 description: "Discover the top carousel post mistakes that kill your reach on LinkedIn and Instagram. Learn how to fix formatting, hooks, and structure."
