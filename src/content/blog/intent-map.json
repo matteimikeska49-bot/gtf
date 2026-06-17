@@ -341,7 +341,7 @@
   {
     "intentId": "ru:kak-pridumat-temu-dlya-karuseli-s-ii",
     "language": "ru",
-    "cluster": "ru:ai-carousel-generator",
+    "cluster": "ru:ii-carousel-generator",
     "searchIntent": "topic generation for AI carousels",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/kak-pridumat-temu-dlya-karuseli-s-ii",
@@ -359,7 +359,7 @@
   {
     "intentId": "ru:kak-uvelichit-sohraneniya-karuseley",
     "language": "ru",
-    "cluster": "ru:ai-carousel-generator",
+    "cluster": "ru:ii-carousel-generator",
     "searchIntent": "improve carousel saves and engagement without guarantees",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/kak-uvelichit-sohraneniya-karuseley",
@@ -377,7 +377,7 @@
   {
     "intentId": "ru:cta-dlya-karuseley-instagram-s-ii",
     "language": "ru",
-    "cluster": "ru:instagram-carousel",
+    "cluster": "ru:ii-carousel-generator",
     "searchIntent": "CTA examples and conversion-oriented carousel endings",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/cta-dlya-karuseley-instagram-s-ii",
@@ -395,7 +395,7 @@
   {
     "intentId": "ru:karusel-dlya-lichnogo-brenda-s-ii",
     "language": "ru",
-    "cluster": "ru:ai-carousel-generator",
+    "cluster": "ru:ii-carousel-generator",
     "searchIntent": "personal brand carousel creation with AI",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/karusel-dlya-lichnogo-brenda-s-ii",
@@ -413,7 +413,7 @@
   {
     "intentId": "ru:karusel-dlya-zapuska-produkta-s-ii",
     "language": "ru",
-    "cluster": "ru:ai-carousel-generator",
+    "cluster": "ru:ii-carousel-generator",
     "searchIntent": "product launch warming carousel workflow",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/karusel-dlya-zapuska-produkta-s-ii",
@@ -431,7 +431,7 @@
   {
     "intentId": "ru:karusel-dlya-otzyvov-s-ii",
     "language": "ru",
-    "cluster": "ru:ai-carousel-generator",
+    "cluster": "ru:ii-carousel-generator",
     "searchIntent": "turn testimonials/reviews into structured carousel content",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/karusel-dlya-otzyvov-s-ii",
@@ -449,7 +449,7 @@
   {
     "intentId": "ru:karuseli-dlya-ekspertov-s-ii",
     "language": "ru",
-    "cluster": "ru:ai-carousel-generator",
+    "cluster": "ru:ii-carousel-generator",
     "searchIntent": "explain complex expert topics through carousel slides",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/karuseli-dlya-ekspertov-s-ii",
@@ -467,7 +467,7 @@
   {
     "intentId": "ru:karuseli-dlya-onlayn-shkol-s-ii",
     "language": "ru",
-    "cluster": "ru:ai-carousel-generator",
+    "cluster": "ru:ii-carousel-generator",
     "searchIntent": "educational carousel marketing for online schools",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/karuseli-dlya-onlayn-shkol-s-ii",
@@ -485,7 +485,7 @@
   {
     "intentId": "ru:karuseli-dlya-smm-agentstva-s-ii",
     "language": "ru",
-    "cluster": "ru:ai-carousel-generator",
+    "cluster": "ru:ii-carousel-generator",
     "searchIntent": "AI carousel workflow for agencies",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/karuseli-dlya-smm-agentstva-s-ii",
@@ -503,7 +503,7 @@
   {
     "intentId": "ru:kak-sdelat-karusel-iz-video-s-ii",
     "language": "ru",
-    "cluster": "ru:ai-carousel-generator",
+    "cluster": "ru:ii-carousel-generator",
     "searchIntent": "repurpose video ideas/transcripts/key takeaways into carousel",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/kak-sdelat-karusel-iz-video-s-ii",
@@ -521,7 +521,7 @@
   {
     "intentId": "ru:psihologiya-karuseley-kak-uderzhat-vnimanie",
     "language": "ru",
-    "cluster": "ru:ai-carousel-generator",
+    "cluster": "ru:ii-carousel-generator",
     "searchIntent": "carousel retention and attention structure",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie",
@@ -586,7 +586,7 @@
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
-    "relatedProductRoute": "/ai-carousel-maker",
+    "relatedProductRoute": "/linkedin-carousel-maker",
     "notes": "Batch 23 intent: LinkedIn Carousels",
     "lastReviewed": "2026-06-17"
   },

@@ -119,38 +119,6 @@
         "status": "draft_preview"
       },
       {
-        "slug": "how-to-brainstorm-carousel-topics-with-ai",
-        "url": "/blog/how-to-brainstorm-carousel-topics-with-ai",
-        "role": "supporting",
-        "intentId": "en:how-to-brainstorm-carousel-topics-with-ai",
-        "priorityTier": "P1",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "carousel-post-mistakes",
-        "url": "/blog/carousel-post-mistakes",
-        "role": "supporting",
-        "intentId": "en:carousel-post-mistakes",
-        "priorityTier": "P1",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "how-to-repurpose-podcasts-into-ai-carousels",
-        "url": "/blog/how-to-repurpose-podcasts-into-ai-carousels",
-        "role": "supporting",
-        "intentId": "en:how-to-repurpose-podcasts-into-ai-carousels",
-        "priorityTier": "P0",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "turn-video-into-carousel-with-ai",
-        "url": "/blog/turn-video-into-carousel-with-ai",
-        "role": "supporting",
-        "intentId": "en:turn-video-into-carousel-with-ai",
-        "priorityTier": "P0",
-        "status": "draft_preview"
-      },
-      {
         "slug": "ai-carousel-content-strategy",
         "url": "/blog/ai-carousel-content-strategy",
         "role": "supporting",
@@ -163,19 +131,51 @@
         "url": "/blog/ai-carousel-workflow",
         "role": "supporting",
         "intentId": "en:ai-carousel-workflow",
-        "priorityTier": "P0",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "carousel-post-mistakes",
+        "url": "/blog/carousel-post-mistakes",
+        "role": "supporting",
+        "intentId": "en:carousel-post-mistakes",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "how-to-brainstorm-carousel-topics-with-ai",
+        "url": "/blog/how-to-brainstorm-carousel-topics-with-ai",
+        "role": "supporting",
+        "intentId": "en:how-to-brainstorm-carousel-topics-with-ai",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "how-to-repurpose-podcasts-into-ai-carousels",
+        "url": "/blog/how-to-repurpose-podcasts-into-ai-carousels",
+        "role": "supporting",
+        "intentId": "en:how-to-repurpose-podcasts-into-ai-carousels",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "turn-video-into-carousel-with-ai",
+        "url": "/blog/turn-video-into-carousel-with-ai",
+        "role": "supporting",
+        "intentId": "en:turn-video-into-carousel-with-ai",
+        "priorityTier": "P1",
         "status": "draft_preview"
       }
     ],
     "supportingArticles": [
       "content-calendar-to-carousel",
       "how-to-write-carousel-copy-with-ai",
-      "how-to-brainstorm-carousel-topics-with-ai",
-      "carousel-post-mistakes",
-      "how-to-repurpose-podcasts-into-ai-carousels",
-      "turn-video-into-carousel-with-ai",
       "ai-carousel-content-strategy",
-      "ai-carousel-workflow"
+      "ai-carousel-workflow",
+      "carousel-post-mistakes",
+      "how-to-brainstorm-carousel-topics-with-ai",
+      "how-to-repurpose-podcasts-into-ai-carousels",
+      "turn-video-into-carousel-with-ai"
     ],
     "missingTopics": [
       "blog to carousel"
@@ -264,100 +264,10 @@
         "intentId": "ru:tekst-v-karusel",
         "priorityTier": "P2",
         "status": "draft_preview"
-      },
-      {
-        "slug": "kak-pridumat-temu-dlya-karuseli-s-ii",
-        "url": "/ru/blog/kak-pridumat-temu-dlya-karuseli-s-ii",
-        "role": "supporting",
-        "intentId": "ru:kak-pridumat-temu-dlya-karuseli-s-ii",
-        "priorityTier": "P1",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "kak-uvelichit-sohraneniya-karuseley",
-        "url": "/ru/blog/kak-uvelichit-sohraneniya-karuseley",
-        "role": "supporting",
-        "intentId": "ru:kak-uvelichit-sohraneniya-karuseley",
-        "priorityTier": "P1",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "karusel-dlya-lichnogo-brenda-s-ii",
-        "url": "/ru/blog/karusel-dlya-lichnogo-brenda-s-ii",
-        "role": "supporting",
-        "intentId": "ru:karusel-dlya-lichnogo-brenda-s-ii",
-        "priorityTier": "P1",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "karusel-dlya-zapuska-produkta-s-ii",
-        "url": "/ru/blog/karusel-dlya-zapuska-produkta-s-ii",
-        "role": "supporting",
-        "intentId": "ru:karusel-dlya-zapuska-produkta-s-ii",
-        "priorityTier": "P2",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "karusel-dlya-otzyvov-s-ii",
-        "url": "/ru/blog/karusel-dlya-otzyvov-s-ii",
-        "role": "supporting",
-        "intentId": "ru:karusel-dlya-otzyvov-s-ii",
-        "priorityTier": "P2",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "karuseli-dlya-ekspertov-s-ii",
-        "url": "/ru/blog/karuseli-dlya-ekspertov-s-ii",
-        "role": "supporting",
-        "intentId": "ru:karuseli-dlya-ekspertov-s-ii",
-        "priorityTier": "P1",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "karuseli-dlya-onlayn-shkol-s-ii",
-        "url": "/ru/blog/karuseli-dlya-onlayn-shkol-s-ii",
-        "role": "supporting",
-        "intentId": "ru:karuseli-dlya-onlayn-shkol-s-ii",
-        "priorityTier": "P2",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "karuseli-dlya-smm-agentstva-s-ii",
-        "url": "/ru/blog/karuseli-dlya-smm-agentstva-s-ii",
-        "role": "supporting",
-        "intentId": "ru:karuseli-dlya-smm-agentstva-s-ii",
-        "priorityTier": "P0",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "kak-sdelat-karusel-iz-video-s-ii",
-        "url": "/ru/blog/kak-sdelat-karusel-iz-video-s-ii",
-        "role": "supporting",
-        "intentId": "ru:kak-sdelat-karusel-iz-video-s-ii",
-        "priorityTier": "P0",
-        "status": "draft_preview"
-      },
-      {
-        "slug": "psihologiya-karuseley-kak-uderzhat-vnimanie",
-        "url": "/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie",
-        "role": "supporting",
-        "intentId": "ru:psihologiya-karuseley-kak-uderzhat-vnimanie",
-        "priorityTier": "P2",
-        "status": "draft_preview"
       }
     ],
     "supportingArticles": [
-      "kak-napisat-tekst-dlya-karuseli-s-ii",
-      "kak-pridumat-temu-dlya-karuseli-s-ii",
-      "kak-uvelichit-sohraneniya-karuseley",
-      "karusel-dlya-lichnogo-brenda-s-ii",
-      "karusel-dlya-zapuska-produkta-s-ii",
-      "karusel-dlya-otzyvov-s-ii",
-      "karuseli-dlya-ekspertov-s-ii",
-      "karuseli-dlya-onlayn-shkol-s-ii",
-      "karuseli-dlya-smm-agentstva-s-ii",
-      "kak-sdelat-karusel-iz-video-s-ii",
-      "psihologiya-karuseley-kak-uderzhat-vnimanie"
+      "kak-napisat-tekst-dlya-karuseli-s-ii"
     ],
     "missingTopics": [],
     "internalLinkingRules": {
@@ -471,19 +381,9 @@
         "url": "/ru/blog/razmer-karuseli-v-instagram",
         "role": "support",
         "canonicalRisk": "low"
-      },
-      {
-        "slug": "cta-dlya-karuseley-instagram-s-ii",
-        "url": "/ru/blog/cta-dlya-karuseley-instagram-s-ii",
-        "role": "supporting",
-        "intentId": "ru:cta-dlya-karuseley-instagram-s-ii",
-        "priorityTier": "P1",
-        "status": "draft_preview"
       }
     ],
-    "supportingArticles": [
-      "cta-dlya-karuseley-instagram-s-ii"
-    ]
+    "supportingArticles": []
   },
   {
     "clusterId": "ru:social-content",
@@ -501,5 +401,127 @@
       }
     ],
     "supportingArticles": []
+  },
+  {
+    "clusterId": "ru:ii-carousel-generator",
+    "clusterName": "RU II Carousel Generator",
+    "language": "ru",
+    "productRoute": "/ru/ii-generator-karuseley",
+    "hubArticle": "kak-pridumat-temu-dlya-karuseli-s-ii",
+    "hubSlug": "kak-pridumat-temu-dlya-karuseli-s-ii",
+    "articleRoles": [
+      {
+        "slug": "kak-pridumat-temu-dlya-karuseli-s-ii",
+        "url": "/ru/blog/kak-pridumat-temu-dlya-karuseli-s-ii",
+        "role": "supporting",
+        "intentId": "ru:kak-pridumat-temu-dlya-karuseli-s-ii",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "kak-sdelat-karusel-iz-video-s-ii",
+        "url": "/ru/blog/kak-sdelat-karusel-iz-video-s-ii",
+        "role": "supporting",
+        "intentId": "ru:kak-sdelat-karusel-iz-video-s-ii",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "kak-uvelichit-sohraneniya-karuseley",
+        "url": "/ru/blog/kak-uvelichit-sohraneniya-karuseley",
+        "role": "supporting",
+        "intentId": "ru:kak-uvelichit-sohraneniya-karuseley",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "karusel-dlya-lichnogo-brenda-s-ii",
+        "url": "/ru/blog/karusel-dlya-lichnogo-brenda-s-ii",
+        "role": "supporting",
+        "intentId": "ru:karusel-dlya-lichnogo-brenda-s-ii",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "karusel-dlya-otzyvov-s-ii",
+        "url": "/ru/blog/karusel-dlya-otzyvov-s-ii",
+        "role": "supporting",
+        "intentId": "ru:karusel-dlya-otzyvov-s-ii",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "karusel-dlya-zapuska-produkta-s-ii",
+        "url": "/ru/blog/karusel-dlya-zapuska-produkta-s-ii",
+        "role": "supporting",
+        "intentId": "ru:karusel-dlya-zapuska-produkta-s-ii",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "karuseli-dlya-ekspertov-s-ii",
+        "url": "/ru/blog/karuseli-dlya-ekspertov-s-ii",
+        "role": "supporting",
+        "intentId": "ru:karuseli-dlya-ekspertov-s-ii",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "karuseli-dlya-onlayn-shkol-s-ii",
+        "url": "/ru/blog/karuseli-dlya-onlayn-shkol-s-ii",
+        "role": "supporting",
+        "intentId": "ru:karuseli-dlya-onlayn-shkol-s-ii",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "karuseli-dlya-smm-agentstva-s-ii",
+        "url": "/ru/blog/karuseli-dlya-smm-agentstva-s-ii",
+        "role": "supporting",
+        "intentId": "ru:karuseli-dlya-smm-agentstva-s-ii",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "psihologiya-karuseley-kak-uderzhat-vnimanie",
+        "url": "/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie",
+        "role": "supporting",
+        "intentId": "ru:psihologiya-karuseley-kak-uderzhat-vnimanie",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "cta-dlya-karuseley-instagram-s-ii",
+        "url": "/ru/blog/cta-dlya-karuseley-instagram-s-ii",
+        "role": "supporting",
+        "intentId": "ru:cta-dlya-karuseley-instagram-s-ii",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      }
+    ],
+    "supportingArticles": [
+      "kak-pridumat-temu-dlya-karuseli-s-ii",
+      "kak-sdelat-karusel-iz-video-s-ii",
+      "kak-uvelichit-sohraneniya-karuseley",
+      "karusel-dlya-lichnogo-brenda-s-ii",
+      "karusel-dlya-otzyvov-s-ii",
+      "karusel-dlya-zapuska-produkta-s-ii",
+      "karuseli-dlya-ekspertov-s-ii",
+      "karuseli-dlya-onlayn-shkol-s-ii",
+      "karuseli-dlya-smm-agentstva-s-ii",
+      "psihologiya-karuseley-kak-uderzhat-vnimanie",
+      "cta-dlya-karuseley-instagram-s-ii"
+    ],
+    "missingTopics": [],
+    "internalLinkingRules": {
+      "mustLinkToHub": true,
+      "mustLinkToProductRoute": true,
+      "sameLanguageOnly": true,
+      "recommendedLinks": [
+        "/ru/ii-generator-karuseley"
+      ]
+    },
+    "notes": "New RU II cluster for Batch 23",
+    "lastReviewed": "2026-06-17"
   }
 ]
