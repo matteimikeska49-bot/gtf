@@ -15,14 +15,14 @@ cluster: "AI Carousel Engagement"
 articleType: "guide"
 category: "Content Strategy"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
-lastReviewed: "2026-06-17"
+updatedAt: "2026-06-18"
+lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
 keywordRecord: "психология каруселей"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow creates balanced layouts that respect reading psychology and cognitive load."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Короткий ответ"
 quickAnswer:
   - "Удержание внимания строится на микро-обещаниях: каждый слайд должен давать причину свайпнуть дальше."

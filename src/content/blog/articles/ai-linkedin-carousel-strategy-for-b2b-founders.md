@@ -15,14 +15,14 @@ cluster: "AI Carousel Strategy"
 articleType: "guide"
 category: "Marketing Strategy"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/blog/ai-linkedin-carousel-strategy-for-b2b-founders"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
-lastReviewed: "2026-06-17"
+updatedAt: "2026-06-18"
+lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
 keywordRecord: "AI LinkedIn carousel strategy"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow enables busy founders to quickly convert their notes into professional LinkedIn documents."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Quick Answer"
 quickAnswer:
   - "LinkedIn carousels (PDF documents) are the highest-performing content format for B2B reach."

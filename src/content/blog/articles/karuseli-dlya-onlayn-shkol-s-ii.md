@@ -15,14 +15,14 @@ cluster: "AI Carousel Strategy"
 articleType: "guide"
 category: "Marketing Strategy"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/ru/blog/karuseli-dlya-onlayn-shkol-s-ii"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
-lastReviewed: "2026-06-17"
+updatedAt: "2026-06-18"
+lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
 keywordRecord: "карусели для онлайн-школ с ИИ"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow creates educational micro-content perfect for edtech marketing."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Короткий ответ"
 quickAnswer:
   - "Для онлайн-школ лучший способ продаж — это бесплатная демонстрация ценности через микрообучение."

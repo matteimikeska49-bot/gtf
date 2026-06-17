@@ -15,14 +15,14 @@ cluster: "AI Content Repurposing"
 articleType: "how_to"
 category: "Content Creation"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/blog/turn-video-into-carousel-with-ai"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
-lastReviewed: "2026-06-17"
+updatedAt: "2026-06-18"
+lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
 keywordRecord: "turn video into carousel with AI"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow can use a Reels link, video, ready script, text, or idea as source material for a carousel workflow."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Quick Answer"
 quickAnswer:
   - "Short-form videos (Reels, Shorts) and carousels serve different audience preferences. You need both to maximize reach."

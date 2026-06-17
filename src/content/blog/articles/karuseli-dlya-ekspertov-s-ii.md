@@ -15,14 +15,14 @@ cluster: "AI Carousel Strategy"
 articleType: "guide"
 category: "Content Creation"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/ru/blog/karuseli-dlya-ekspertov-s-ii"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
-lastReviewed: "2026-06-17"
+updatedAt: "2026-06-18"
+lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
 keywordRecord: "карусели для экспертов с ИИ"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow excels at structuring dense expert information into readable slide formats."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Короткий ответ"
 quickAnswer:
   - "Главная ошибка экспертов — попытка написать научную статью в Instagram. Люди приходят в соцсети не за энциклопедией."

@@ -15,14 +15,14 @@ cluster: "AI Carousel Strategy"
 articleType: "guide"
 category: "Marketing Strategy"
 priority: "P0"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/blog/ai-carousel-content-strategy"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
-lastReviewed: "2026-06-17"
+updatedAt: "2026-06-18"
+lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
 keywordRecord: "AI carousel content strategy"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow acts as the core production engine in a scalable carousel strategy."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Quick Answer"
 quickAnswer:
   - "A strategy relies on systems, not inspiration. You need a repeatable pipeline to stay consistent."

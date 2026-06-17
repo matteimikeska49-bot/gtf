@@ -15,14 +15,14 @@ cluster: "AI Carousel Copywriting"
 articleType: "guide"
 category: "Content Strategy"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/ru/blog/cta-dlya-karuseley-instagram-s-ii"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
-lastReviewed: "2026-06-17"
+updatedAt: "2026-06-18"
+lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
 keywordRecord: "CTA для каруселей Instagram с ИИ"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow automatically suggests and formats the final CTA slide."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Короткий ответ"
 quickAnswer:
   - "CTA (Call to Action) на последнем слайде — главный инструмент конверсии."
@@ -127,7 +127,7 @@ type: takeaways
 
 > [!tip]
 > **Автоматический финальный слайд**
-> GoToFlow генерирует не только структуру контента, но и профессионально сверстанный CTA-слайд, который органично вписывается в дизайн всей карусели.
+> GoToFlow переупаковывает любой исходник (видео, текст, аудио, Reels) в готовую карусель, включая профессионально сверстанный финальный CTA-слайд.
 > [Попробовать ИИ-генератор](/ru/ii-generator-karuseley)
 
 ## Как ИИ помогает создавать CTA

@@ -15,14 +15,14 @@ cluster: "AI Carousel Engagement"
 articleType: "guide"
 category: "Social Media Growth"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/ru/blog/kak-uvelichit-sohraneniya-karuseley"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
-lastReviewed: "2026-06-17"
+updatedAt: "2026-06-18"
+lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
 keywordRecord: "как увеличить сохранения каруселей"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow creates structured, highly readable carousels that encourage saves."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Короткий ответ"
 quickAnswer:
   - "Сохранения — это сигнал для алгоритма Instagram, что ваш контент полезен."

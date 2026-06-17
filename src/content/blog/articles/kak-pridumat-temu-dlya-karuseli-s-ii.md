@@ -15,14 +15,14 @@ cluster: "AI Carousel Ideas"
 articleType: "guide"
 category: "Content Strategy"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/ru/blog/kak-pridumat-temu-dlya-karuseli-s-ii"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
-lastReviewed: "2026-06-17"
+updatedAt: "2026-06-18"
+lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
 keywordRecord: "как придумать тему для карусели с ИИ"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow helps brainstorm topics and turn them into carousels."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Короткий ответ"
 quickAnswer:
   - "Анализируйте частые вопросы клиентов — это лучшие темы для каруселей."

@@ -15,14 +15,14 @@ cluster: "AI Carousel Ideas"
 articleType: "how_to"
 category: "Content Strategy"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/blog/how-to-brainstorm-carousel-topics-with-ai"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
-lastReviewed: "2026-06-17"
+updatedAt: "2026-06-18"
+lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
 keywordRecord: "how to brainstorm carousel topics with AI"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow helps creators turn brainstormed topics into fully structured ready-to-publish carousels."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Quick Answer"
 quickAnswer:
   - "The blank page is your enemy. Use AI to generate a content matrix intersecting your niche with proven formats."

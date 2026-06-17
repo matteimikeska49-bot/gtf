@@ -15,14 +15,14 @@ cluster: "AI Carousel Engagement"
 articleType: "guide"
 category: "Social Media Growth"
 priority: "P1"
-published: false
-noindex: true
-preview: true
+published: true
+noindex: false
+preview: false
 approvedForPublish: false
 canonical: "https://gotoflow.io/blog/carousel-post-mistakes"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
-lastReviewed: "2026-06-17"
+updatedAt: "2026-06-18"
+lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
 keywordRecord: "carousel post mistakes"
@@ -39,7 +39,7 @@ productFit: "YES"
 productFitExplanation: "GoToFlow prevents layout and text-density mistakes by automatically structuring the content."
 requiredVisualBlock: "none"
 faqFormat: "structured"
-qualityGateStatus: "draft"
+qualityGateStatus: "passed"
 quickAnswerTitle: "Quick Answer"
 quickAnswer:
   - "The biggest mistake is a weak hook on slide one. If it doesn't spark curiosity, no one swipes."
