@@ -75,7 +75,7 @@ const LEGACY_ARTICLES = [
   "text-to-carousel-ai.md"
 ];
 
-function checkFile(filePath, content) {
+function checkFile(filePath, content, frontmatter) {
   const errors = [];
   // Check that title does NOT contain | GoToFlow
   if (frontmatter.title && frontmatter.title.toLowerCase().includes('gotoflow')) {
@@ -143,7 +143,7 @@ function main() {
     // Only enforce editorial/product QA rules on live published articles
     if (!isLivePublishedFrontmatter(frontmatter)) continue;
 
-    const errors = checkFile(file, content);
+    const errors = checkFile(file, content, frontmatter);
     if (errors.length > 0) {
       console.error(`\n❌ Errors in ${file}:`);
       errors.forEach(e => console.error(`  - ${e}`));
