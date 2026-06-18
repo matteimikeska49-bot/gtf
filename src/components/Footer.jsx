@@ -100,7 +100,7 @@ export const Footer = () => {
             {/* Column 5: Social */}
             <div className="flex flex-col items-start gap-4">
               <h3 className="text-sm font-semibold text-white tracking-wide uppercase mb-2">
-                {lang === 'RU' ? 'Соцсети' : 'Social'}
+                {lang === 'RU' ? 'Поддержка' : 'Support'}
               </h3>
               <div className="flex flex-col gap-3">
                 <a href="https://t.me/GoToFlowio" target="_blank" rel="noopener noreferrer" aria-label="GoToFlow Telegram" className="text-zinc-400 hover:text-white transition-colors duration-300 flex items-center gap-2">
