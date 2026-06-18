@@ -72,6 +72,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/ru" element={<LandingPage />} />
         <Route path="/ai-carousel-maker" element={<CarouselPage />} />
+        <Route path="/carousel-maker" element={<Navigate to="/ai-carousel-maker" replace />} />
         <Route path="/ru/ai-generator-karuselej" element={<CarouselPageRu />} />
         <Route path="/ru/ii-generator-karuseley" element={<RuAICarouselGeneratorPage />} />
         <Route path="/ai-content-generator" element={<AIContentPage />} />
