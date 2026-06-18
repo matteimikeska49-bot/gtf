@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   const [modal, setModal] = useState(null); // 'privacy' | 'terms' | 'consent' | null
-  const { t, lang } = useLanguage();
+  const { lang } = useLanguage();
 
   return (
     <>
@@ -19,119 +19,111 @@ export const Footer = () => {
 
       <footer className="relative z-10 w-full bg-[#050505] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
-
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-center gap-8 md:gap-12">
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-8">
             
-            {/* Left Hand: Logo and Copyright */}
-            <div className="flex flex-col items-center md:items-start gap-4">
+            {/* Column 1: Brand */}
+            <div className="flex flex-col items-start gap-4 lg:col-span-2">
               <Logo />
-              <p className="text-[11px] text-zinc-500 font-medium">
-                {t('footer.copyright')}
+              <p className="text-[13px] text-zinc-400 font-medium leading-relaxed max-w-sm mt-2">
+                {lang === 'RU' 
+                  ? 'Создавайте карусели и контент быстрее с AI.' 
+                  : 'Create carousels and content faster with AI.'}
               </p>
-              
-              {/* Internal SEO Links */}
-              <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4">
+              <p className="text-[12px] text-zinc-600 font-medium mt-6">
+                {lang === 'RU'
+                  ? '© 2026 GoToFlow. Все права защищены.'
+                  : '© 2026 GoToFlow. All rights reserved.'}
+              </p>
+            </div>
+
+            {/* Column 2: Product / Tools */}
+            <div className="flex flex-col items-start gap-4">
+              <h3 className="text-sm font-semibold text-white tracking-wide uppercase mb-2">
+                {lang === 'RU' ? 'Инструменты' : 'Tools'}
+              </h3>
+              <nav className="flex flex-col gap-3">
                 {lang === 'RU' ? (
                   <>
-                    <Link to="/ru/generator-kontenta" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Генератор контента</Link>
-                    <Link to="/ru/ai-generator-karuselej" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Карусели</Link>
-                    <Link to="/ru/generator-karuselej-linkedin" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Карусели LinkedIn</Link>
-                    <Link to="/ru/generator-postov-instagram" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Посты Instagram</Link>
-                    <Link to="/ru/blog" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Блог</Link>
+                    <Link to="/ru/ii-generator-karuseley" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">ИИ-генератор каруселей</Link>
+                    <Link to="/ru" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Генератор контента</Link>
+                    <Link to="/ru" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Карусели</Link>
                   </>
                 ) : (
                   <>
-                    <Link to="/ai-content-generator" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Content Generator</Link>
-                    <Link to="/ai-carousel-maker" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Carousel Maker</Link>
-                    <Link to="/linkedin-carousel-maker" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">LinkedIn Carousels</Link>
-                    <Link to="/ai-instagram-post-generator" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Instagram Posts</Link>
-                    <Link to="/blog" className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300">Blog</Link>
+                    <Link to="/ai-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">AI Carousel Maker</Link>
+                    <Link to="/" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Content Generator</Link>
+                    <Link to="/" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Carousels</Link>
                   </>
                 )}
               </nav>
             </div>
 
-            {/* Right Hand: Legal Links & Socials */}
-            <div className="flex flex-col lg:flex-row items-center justify-center md:justify-end gap-6 md:gap-8">
-              <nav className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-3">
+            {/* Column 3: Resources */}
+            <div className="flex flex-col items-start gap-4">
+              <h3 className="text-sm font-semibold text-white tracking-wide uppercase mb-2">
+                {lang === 'RU' ? 'Ресурсы' : 'Resources'}
+              </h3>
+              <nav className="flex flex-col gap-3">
+                {lang === 'RU' ? (
+                  <Link to="/ru/blog" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Блог</Link>
+                ) : (
+                  <Link to="/blog" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Blog</Link>
+                )}
+              </nav>
+            </div>
+
+            {/* Column 4: Legal */}
+            <div className="flex flex-col items-start gap-4 lg:col-span-1">
+              <h3 className="text-sm font-semibold text-white tracking-wide uppercase mb-2">
+                {lang === 'RU' ? 'Документы' : 'Legal'}
+              </h3>
+              <nav className="flex flex-col gap-3">
                 {lang === 'RU' ? (
                   <>
-                    <Link
-                      to="/ru/politika"
-                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                    >
-                      {t('footer.privacy')}
-                    </Link>
-                    <Link
-                      to="/ru/polzovatelskoe-soglashenie"
-                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                    >
-                      {t('footer.terms')}
-                    </Link>
-                    <Link
-                      to="/ru/soglasie-na-obrabotku-personalnyh-dannyh"
-                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                    >
-                      {t('footer.consent')}
-                    </Link>
-                    <Link
-                      to="/ru/ugc-creator-terms"
-                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                    >
-                      Условия для UGC-креаторов
-                    </Link>
+                    <Link to="/ru/politika" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Политика конфиденциальности</Link>
+                    <Link to="/ru/polzovatelskoe-soglashenie" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Пользовательское соглашение</Link>
+                    <Link to="/ru/soglasie-na-obrabotku-personalnyh-dannyh" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Согласие на обработку данных</Link>
+                    <Link to="/ru/ugc-creator-terms" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Условия для UGC-креаторов</Link>
                   </>
                 ) : (
                   <>
-                    <Link
-                      to="/privacy-policy"
-                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                    >
-                      {t('footer.privacy')}
-                    </Link>
-                    <Link
-                      to="/terms-of-service"
-                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                    >
-                      {t('footer.terms')}
-                    </Link>
-                    <Link
-                      to="/personal-data-consent"
-                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                    >
-                      {t('footer.consent')}
-                    </Link>
-                    <Link
-                      to="/refund-policy"
-                      className="text-[11px] text-zinc-500 hover:text-white transition-colors duration-300 font-medium"
-                    >
-                      Refund Policy
-                    </Link>
+                    <Link to="/privacy-policy" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Privacy Policy</Link>
+                    <Link to="/terms-of-service" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Terms of Service</Link>
+                    <Link to="/personal-data-consent" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Personal Data Consent</Link>
+                    <Link to="/refund-policy" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Refund Policy</Link>
                   </>
                 )}
               </nav>
+            </div>
 
-              {/* Separator line for larger screens */}
-              <div className="hidden lg:block w-px h-4 bg-white/10" />
-
-              {/* Social Icons */}
-              <div className="flex items-center gap-5">
-                <span className="text-zinc-500 hover:text-white transition-colors duration-300" aria-label="Telegram">
-                  <svg className="w-5 h-5 -ml-0.5 -mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            {/* Column 5: Social */}
+            <div className="flex flex-col items-start gap-4">
+              <h3 className="text-sm font-semibold text-white tracking-wide uppercase mb-2">
+                {lang === 'RU' ? 'Соцсети' : 'Social'}
+              </h3>
+              <div className="flex flex-col gap-3">
+                <a href="https://t.me/GoToFlowio" target="_blank" rel="noopener noreferrer" aria-label="GoToFlow Telegram" className="text-zinc-400 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                   </svg>
-                </span>
-                <span className="text-zinc-500 hover:text-white transition-colors duration-300" aria-label="Instagram">
+                  <span className="text-[13px] font-medium">Telegram</span>
+                </a>
+                
+                {/* Instagram hidden from UI */}
+                {/*
+                <a href="https://instagram.com/gotoflow" target="_blank" rel="noopener noreferrer" aria-label="GoToFlow Instagram" className="text-zinc-400 hover:text-white transition-colors duration-300 flex items-center gap-2 hidden">
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                   </svg>
-                </span>
+                </a>
+                */}
               </div>
             </div>
-            
+
           </div>
 
         </div>
