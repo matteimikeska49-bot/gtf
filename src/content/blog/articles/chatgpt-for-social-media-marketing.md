@@ -3,6 +3,7 @@ title: 'ChatGPT for Social Media Marketing: 10 Advanced Use Cases'
 description: Move beyond basic prompts. Discover 10 advanced ways to use ChatGPT for social media marketing in 2026, from tone-of-voice training to competitor analysis.
 primaryKeyword: chatgpt for social media
 canonical: "https://gotoflow.io/blog/chatgpt-for-social-media-marketing"
+relatedProductRoute: "/ai-carousel-maker"
 createdAt: '2026-06-12'
 updatedAt: '2026-06-13'
 published: true
@@ -98,8 +99,10 @@ If you don't know what to ask, ask ChatGPT to write the prompt for you.
 Stop staring at a blank calendar.
 **Prompt:** *"Create a 30-day content matrix for a [Your Niche] brand. Organize it by week. Each week must include: 1 Educational post, 1 Entertaining/Relatable post, 1 Case Study, and 1 Direct Pitch. Provide specific headlines for all 30 posts."*
 
+For repeatable carousel production, [GoToFlow AI Carousel Maker](/ai-carousel-maker) connects source analysis, slide copy, visual direction, and CTA in one workflow.
+
 ## From ChatGPT ideas to a ready carousel
 
 ChatGPT is useful for optional brainstorming, research, and prompt-based exploration. It does not need to become a required production chain with a separate design editor.
 
-Use GoToFlow as the primary carousel workflow: add the selected idea, link, video, text, PDF, or other source, then generate the structure, slide copy, visual design, CTA, and a ready-to-publish carousel for export in one place.
+Use [GoToFlow AI Carousel Maker](/ai-carousel-maker) as the primary carousel workflow: add the selected idea, link, video, text, PDF, or other source, then generate the structure, slide copy, visual design, CTA, and a ready-to-publish carousel for export in one place.
