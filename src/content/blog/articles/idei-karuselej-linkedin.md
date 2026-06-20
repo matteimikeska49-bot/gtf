@@ -18,7 +18,7 @@ quickAnswer:
 mockupStatus: "no_mockups_needed"
 finalCta:
   title: "Делайте карусели за пару минут"
-  description: "Хватит тратить часы на дизайн и верстку. Напишите тему, а ИИ GoToFlow сам соберет тексты и слайды в готовый PDF."
+  text: "Введите тему или добавьте источник — GoToFlow соберёт структуру, текст по слайдам, визуальный дизайн, CTA и готовую LinkedIn-карусель для экспорта в PDF."
   buttonText: "Попробовать бесплатно"
   href: "/ru/generator-karuselej-linkedin"
   secondaryText: "Смотреть примеры LinkedIn-каруселей →"

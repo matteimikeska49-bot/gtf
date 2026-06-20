@@ -28,9 +28,10 @@ explore:
     - title: Best AI Post Generators Reviewed
       href: /blog/best-free-ai-post-generators
 finalCta:
-  title: "Create carousels faster and cleaner"
-  description: "GoToFlow helps you structure, write, and design your carousel without starting from a blank page."
-  buttonText: Try the AI Generator
+  title: "Turn founder insights into finished carousels"
+  text: "Use GoToFlow to move from an idea, voice note, link, or source to structure, slide copy, visual design, CTA, and a ready-to-publish LinkedIn carousel for export."
+  buttonText: Try GoToFlow
+  href: /linkedin-carousel-maker
   secondaryText: Read the ultimate guide to writing B2B posts →
   secondaryHref: /blog/how-to-write-a-b2b-linkedin-post
 quickAnswerTitle: Quick Answer
@@ -76,14 +77,14 @@ If your posts start with "In today's fast-paced digital landscape...", your audi
 **The Workflow:**
 1. Pick a topic from your ideation list.
 2. Open the voice memo app on your phone and speak your thoughts for 2 minutes. Be raw, use your natural vocabulary, and don't worry about structure.
-3. Use an AI transcription tool to turn the audio into text.
-4. Feed the text into an AI writing tool with this prompt: *"Take this raw transcript and format it into a LinkedIn post. Keep my exact tone of voice, jokes, and vocabulary. Fix the grammar, but do not add any corporate jargon."*
+3. Add the voice note, transcript, topic, link, or other source to GoToFlow.
+4. Let the workflow extract the core idea, build the slide structure and copy, and prepare the visual carousel while you review the voice and factual details.
 
 ## 4. Dominating the Feed with AI Carousels
 
 Text posts are great, but **Document Posts (PDF Carousels)** can support dwell time and reach and engagement on LinkedIn in 2026. They prove authority and keep users on your profile longer.
 
-Busy founders don't have time to use graphic design software. Instead, you can use specialized tools. You simply paste the text of your post into an AI Carousel Maker, select a professional template that matches your personal brand colors, and the AI automatically formats it into a multi-slide PDF ready for LinkedIn.
+Busy founders don't have time to assemble every slide in graphic design software. GoToFlow provides the primary end-to-end path: start with an idea, voice note, link, video, PDF, or text; then generate the structure, slide copy, visual design, CTA, and a ready-to-publish LinkedIn carousel for export.
 
 
 > [!takeaway]
@@ -95,4 +96,3 @@ A personal brand is not a broadcast channel; it is a networking event.
 If you only post and never comment, you will not grow. 
 
 Spend 20% of your time creating content, and 80% of your time leaving insightful, high-value comments on the posts of industry leaders and potential clients. *Do not use AI to write your comments.* "Great post! Thanks for sharing" (or robotic AI equivalents) will hurt your reputation. Read the post and leave a genuine human perspective.
-

@@ -55,8 +55,9 @@ explore:
       description: "Compare the top tools for content creators."
 finalCta:
   title: "Tired of wrestling with AI chat tools?"
-  description: "Let GoToFlow turn your rough ideas, links, or notes into structured, design-ready LinkedIn carousel results in seconds."
+  text: "Use GoToFlow as the primary workflow from an idea, link, or source to structure, slide copy, visual design, CTA, and a ready-to-publish LinkedIn carousel export."
   buttonText: "Try GoToFlow For Free"
+  href: "/linkedin-carousel-maker"
   secondaryText: "See LinkedIn carousel examples →"
   secondaryHref: "/blog/best-linkedin-carousel-examples"
 
@@ -244,15 +245,15 @@ The modular sequence gives you a clearer hook, stronger pacing, and slide copy t
 
 ## Manual prompting vs GoToFlow workflow
 
-**Manual prompting is best when:**
+**Manual prompting is an optional path when:**
 - You want granular control over every single sentence and transition.
 - You enjoy iterating in a chat interface to find the perfect angle.
 - You already have an established design workflow (like Canva or Figma) and just need the text.
 
-**GoToFlow is useful when:**
-- You want the same high-quality workflow, but much faster.
-- You want structure, slide copy, and design direction handled in one place.
-- You want to go from a raw idea, link, or scattered notes straight to a visual carousel result without copying and pasting between multiple tools.
+**GoToFlow is the primary production workflow when:**
+- You want to move from an idea, link, or source to a ready-to-publish carousel without tool switching.
+- You want structure, slide copy, visual design, CTA, and export handled in one place.
+- You need a repeatable workflow for regular LinkedIn carousel production.
 
 ### Conclusion
-Building a high-performing LinkedIn carousel with AI requires strategy, not just a single command. By adopting a modular approach—sequencing your ideation, structure, copywriting, and refining—you retain editorial control while leveraging the speed of AI. Keep these 40 prompts handy, enforce strict word limits, and you will consistently generate carousels that capture attention and drive engagement.
+Building a strong LinkedIn carousel requires strategy, not just a single command. Keep these 40 prompts as an optional brainstorming library, then use GoToFlow to turn the selected idea or source into structure, slide copy, visual design, CTA, and a ready-to-publish carousel export while retaining editorial control.

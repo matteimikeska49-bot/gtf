@@ -66,8 +66,9 @@ explore:
       description: "Copy ready prompts for turning ideas into structured carousel results."
 finalCta:
   title: "Turn your ideas into posts instantly"
-  description: "Don't let good ideas sit in your notes app. Use GoToFlow to turn them into published carousels today."
+  text: "Use GoToFlow to turn an idea, link, or source into structure, slide copy, visual design, CTA, and a ready-to-publish Instagram carousel for export."
   buttonText: "Start Creating"
+  href: "/ai-carousel-maker"
   microcopy: "Free to try — No design skills needed"
   secondaryText: "Explore features →"
   secondaryHref: "/ai-carousel-maker"

@@ -37,7 +37,7 @@ explore:
       description: "See how other founders structure their high-converting posts."
 finalCta:
   title: "Ready to scale your personal brand?"
-  description: "Stop wasting hours on design. Turn your founder insights into engaging carousels instantly."
+  text: "Use GoToFlow to turn founder insights into structure, slide copy, visual design, CTA, and a ready-to-publish LinkedIn carousel for export."
   buttonText: "Create a Carousel Free"
   href: "/linkedin-carousel-maker"
   secondaryText: "See LinkedIn carousel examples →"

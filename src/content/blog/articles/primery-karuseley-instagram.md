@@ -59,9 +59,10 @@ explore:
       href: "/ru/blog/idei-dlya-karuseli-instagram"
       description: "О чем писать в следующих постах."
 finalCta:
-  title: "Создайте свою вирусную карусель"
-  description: "Хватит просто смотреть примеры. Сгенерируйте красивый пост прямо сейчас с помощью ИИ."
+  title: "Создайте свою карусель в GoToFlow"
+  text: "Возьмите идею из примеров и превратите её в структуру, текст по слайдам, визуальный дизайн, CTA и готовую карусель для экспорта."
   buttonText: "Попробовать бесплатно"
+  href: "/ru/ai-generator-karuselej"
   microcopy: "Навыки дизайна не нужны"
   secondaryText: "Узнать больше →"
   secondaryHref: "/ru/ai-generator-karuselej"

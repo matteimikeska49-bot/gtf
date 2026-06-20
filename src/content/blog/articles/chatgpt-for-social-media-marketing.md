@@ -28,9 +28,10 @@ explore:
     - title: How to Write a B2B LinkedIn Post
       href: /blog/how-to-write-a-b2b-linkedin-post
 finalCta:
-  title: "Create carousels faster and cleaner"
-  description: "GoToFlow helps you structure, write, and design your carousel without starting from a blank page."
-  buttonText: Try the AI Content Generator
+  title: "Turn the idea into a finished carousel"
+  text: "Use ChatGPT for optional brainstorming, then use GoToFlow as the primary workflow for source analysis, structure, slide copy, visual design, CTA, and a ready-to-publish carousel export."
+  buttonText: Try GoToFlow
+  href: /ai-carousel-maker
   secondaryText: Explore the best free AI post generators →
   secondaryHref: /blog/best-free-ai-post-generators
 quickAnswerTitle: Quick Answer
@@ -97,3 +98,8 @@ If you don't know what to ask, ask ChatGPT to write the prompt for you.
 Stop staring at a blank calendar.
 **Prompt:** *"Create a 30-day content matrix for a [Your Niche] brand. Organize it by week. Each week must include: 1 Educational post, 1 Entertaining/Relatable post, 1 Case Study, and 1 Direct Pitch. Provide specific headlines for all 30 posts."*
 
+## From ChatGPT ideas to a ready carousel
+
+ChatGPT is useful for optional brainstorming, research, and prompt-based exploration. It does not need to become a required production chain with a separate design editor.
+
+Use GoToFlow as the primary carousel workflow: add the selected idea, link, video, text, PDF, or other source, then generate the structure, slide copy, visual design, CTA, and a ready-to-publish carousel for export in one place.

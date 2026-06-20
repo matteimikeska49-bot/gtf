@@ -28,9 +28,10 @@ explore:
     - title: Instagram Carousel Ideas for Business
       href: /blog/instagram-carousel-ideas
 finalCta:
-  title: "Create carousels faster and cleaner"
-  description: "GoToFlow helps you structure, write, and design your carousel without starting from a blank page."
+  title: "Build the full carousel in GoToFlow"
+  text: "Turn a topic or source into structure, slide copy, visual design, CTA, and a ready-to-publish Instagram carousel for export with GoToFlow."
   buttonText: Try AI Carousel Maker
+  href: /ai-carousel-maker
   secondaryText: Discover powerful hooks for your next carousel →
   secondaryHref: /blog/instagram-carousel-hooks
 quickAnswerTitle: Quick Answer
@@ -84,5 +85,4 @@ If your carousel is hard to read, engagement will drop instantly.
 Creating a 10-slide carousel from scratch used to take hours in Photoshop or Canva. Today, creators who post consistently use AI tools to maintain their volume.
 
 You can use an **AI Carousel Maker** to instantly turn a text prompt or an existing blog post into a fully formatted, swipe-friendly carousel. These tools automatically handle the layout, fonts, and slide breaks, allowing you to focus purely on the core message and the hook.
-
 

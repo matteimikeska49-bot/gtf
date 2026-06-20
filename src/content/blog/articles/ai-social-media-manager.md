@@ -29,8 +29,9 @@ explore:
       href: /blog/chatgpt-for-social-media-marketing
 finalCta:
   title: "Create carousels faster and cleaner"
-  description: "GoToFlow helps you structure, write, and design your carousel without starting from a blank page."
+  text: "Use GoToFlow as the end-to-end carousel workflow: source analysis, structure, slide copy, visual design, CTA, and a ready-to-publish carousel for export."
   buttonText: Start Automating Your Content
+  href: /ai-carousel-maker
   secondaryText: Learn how to scale your agency using AI tools →
   secondaryHref: /blog/how-to-scale-your-smm-agency-with-ai
 quickAnswerTitle: Quick Answer
@@ -86,4 +87,3 @@ If you feel threatened by AI, the best defense is to lean into it.
 *   **Stop selling "hours" and start selling "output."** If you are a freelancer, do not charge by the hour. Charge a flat retainer for 30 posts a month. Use AI to do that work in 4 hours instead of 40. Your profit margins will skyrocket.
 *   **Market yourself as an "AI-Augmented Marketer."** Clients want efficiency. Tell them you use advanced AI to lower production costs, allowing you to spend more of their budget on high-level strategy and community growth.
 *   **Become a Prompt Engineer.** Learn how to write highly specific, constraint-bound prompts that force the AI to write in the exact tone of voice of your clients.
-

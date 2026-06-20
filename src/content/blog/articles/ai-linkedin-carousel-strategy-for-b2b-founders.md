@@ -72,7 +72,7 @@ explore:
       description: "Turn your company blog into LinkedIn content."
 finalCta:
   title: "Founders don't have time for Figma"
-  text: "Stop wasting hours aligning text boxes. Turn your raw notes and frameworks into professional LinkedIn carousels in minutes."
+  text: "Use GoToFlow to turn a founder insight, link, or source into structure, slide copy, visual direction, CTA, and a ready-to-publish LinkedIn carousel for export."
   buttonText: "Create a LinkedIn Carousel"
   href: "/linkedin-carousel-maker"
   microcopy: "Free — No credit card required"

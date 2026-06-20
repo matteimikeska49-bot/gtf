@@ -28,9 +28,10 @@ explore:
     - title: Guide to AI Social Media Post Generators
       href: /blog/guide-to-ai-social-media-post-generators
 finalCta:
-  title: "Create carousels faster and cleaner"
-  description: "GoToFlow helps you structure, write, and design your carousel without starting from a blank page."
+  title: "Scale carousel production with GoToFlow"
+  text: "Give your team one end-to-end workflow for source analysis, structure, slide copy, visual design, CTA, and ready-to-publish carousel exports."
   buttonText: Try GoToFlow for Agencies
+  href: /ai-carousel-maker
   secondaryText: Review the best AI carousel tools for agencies →
   secondaryHref: /blog/best-ai-carousel-generators
 quickAnswerTitle: Quick Answer
@@ -88,5 +89,4 @@ Scaling with AI doesn't mean firing your team. It means elevating them.
 Clients still pay agencies for **Strategy, Empathy, and Client Success**. AI cannot hop on a Zoom call and reassure a nervous founder. AI cannot understand the subtle, unwritten political nuances of a client's industry. 
 
 Your team should spend 80% of their time on client relationships and high-level strategy, and only 20% on operating the AI tools to execute that strategy.
-
 
