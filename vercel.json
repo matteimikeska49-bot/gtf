@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/carousel-maker",
+      "destination": "/ai-carousel-maker",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
