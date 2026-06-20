@@ -30,6 +30,7 @@ const ROUTES = [
   '/',
   '/ru',
   '/ai-carousel-maker',
+  '/carousel-maker',
   '/ru/ai-generator-karuselej',
   '/ru/ii-generator-karuseley',
   '/ai-content-generator',
@@ -282,7 +283,13 @@ async function prerenderRoute(browser, route, baseUrl) {
         .forEach((script) => script.remove());
     });
 
-    const html = await page.content();
+    let html = await page.content();
+
+    // Inject meta refresh for specific alias routes to act as a soft 301 for SEO
+    if (route === '/carousel-maker') {
+      html = html.replace('<head>', '<head>\n    <meta http-equiv="refresh" content="0; url=/ai-carousel-maker">');
+    }
+
     const filePath = await writeHtml(route, html);
     const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '(no title)';
     const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1] ?? '(no canonical)';
