@@ -23,7 +23,7 @@ const TermsSEOHead = () => {
     };
 
     setMeta('title', title);
-    setMeta('description', 'Пользовательское соглашение GoToFlow: условия использования сервиса, подписки, AI-функций, ответственности пользователя и ограничений.');
+    setMeta('description', 'Пользовательское соглашение GoToFlow: условия использования сервиса, права пользователей и правила работы с инструментами создания контента.');
     setMeta('og:title', title, true);
     setMeta('twitter:title', title, true);
 

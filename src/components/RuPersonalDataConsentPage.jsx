@@ -23,7 +23,7 @@ const ConsentSEOHead = () => {
     };
 
     setMeta('title', title);
-    setMeta('description', 'Согласие на обработку персональных данных GoToFlow: категории данных, цели обработки, права пользователя и порядок отзыва согласия.');
+    setMeta('description', 'Согласие на обработку персональных данных GoToFlow: какие данные пользователь разрешает обрабатывать и для каких целей.');
     setMeta('og:title', title, true);
     setMeta('twitter:title', title, true);
 

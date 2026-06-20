@@ -24,9 +24,16 @@ const PrivacySEOHead = ({ lang }) => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
 
+    const desc = lang === 'RU' 
+      ? 'Политика конфиденциальности GoToFlow: как сервис собирает, использует, хранит и защищает данные пользователей при работе с инструментами ИИ для каруселей и контента.'
+      : 'Privacy Policy for GoToFlow: how we collect, use, store, and protect user data when you use our AI carousel and content generation tools.';
+
     setMeta('title', title);
+    setMeta('description', desc);
     setMeta('og:title', title, true);
+    setMeta('og:description', desc, true);
     setMeta('twitter:title', title, true);
+    setMeta('twitter:description', desc, true);
 
     if (lang === 'RU') {
       setLink('canonical', 'https://gotoflow.io/ru/politika');

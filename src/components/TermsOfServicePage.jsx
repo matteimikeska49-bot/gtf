@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 const TermsSEOHead = () => {
   useEffect(() => {
     const title = 'Terms of Service — GoToFlow';
-    const desc = 'GoToFlow Terms of Service: account registration, subscriptions, billing, AI-generated content, acceptable use, and limitation of liability.';
+    const desc = 'GoToFlow Terms of Use: service rules, user responsibilities, account terms, and conditions for using AI content generation tools.';
     document.title = title;
 
     const setMeta = (name, content, prop = false) => {
