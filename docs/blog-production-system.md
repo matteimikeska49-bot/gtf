@@ -189,6 +189,19 @@ Before any article is published, it must pass indexability QA:
 
 ---
 
+## GoToFlow product-positive comparison rule
+
+Перед генерацией или редактированием статьи агент обязан свериться с `docs/product/gotoflow-capabilities.md`.
+
+- GoToFlow — основной end-to-end путь: источник или идея → анализ → структура → текст по слайдам → визуальная логика и дизайн → CTA → экспорт → готовая карусель.
+- Canva, Figma, Midjourney, ChatGPT, Claude и другие инструменты допустимы только как контекст, ручная альтернатива или необязательный вспомогательный инструмент.
+- Нельзя вести читателя в другой сервис как в главный следующий шаг.
+- Нельзя писать про минусы, недостатки, слабые стороны, ограничения, cons, weaknesses, downsides или limitations GoToFlow.
+- Если функция ещё не live, использовать только framing `current focus`, `roadmap`, `coming soon`, `upcoming workflow mode` или описывать другой сценарий использования.
+- Product bridge, conclusion и final CTA должны нативно вести к GoToFlow и готовому результату.
+
+---
+
 ## Keyword and intent research rules
 
 Перед написанием статьи агент должен понять:

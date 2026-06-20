@@ -65,7 +65,7 @@ explore:
       description: "Создавайте структурированные карусели из текста и идей."
   guides:
     - title: "Как написать текст для карусели"
-      href: "/ru/blog/kak-napisat-tekst-dlya-karuseli-s-ii"
+      href: "/ru/blog/tekst-v-karusel-neyroset"
       description: "Структура, хуки и написание по слайдам."
     - title: "Психология каруселей"
       href: "/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie"

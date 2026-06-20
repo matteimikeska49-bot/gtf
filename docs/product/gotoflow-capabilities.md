@@ -64,8 +64,8 @@ GoToFlow can create carousel workflows from:
 1. Topic / idea.
 2. Ready script.
 3. Plain text.
-4. Reels link.
-5. Video.
+4. Link, including Reels, YouTube, or TikTok source links.
+5. Video, including Reels, YouTube, or TikTok video.
 6. Audio / voice.
 7. PDF.
 8. Images / screenshots.
@@ -90,13 +90,13 @@ AI сам посмотрит видео, сделает транскрипцию
 Correct EN positioning:
 
 ```text
-GoToFlow helps turn a topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo into a carousel workflow: structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.
+GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, PDF, image, screenshot, or user photo into a carousel workflow: structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.
 ```
 
 Correct RU positioning:
 
 ```text
-GoToFlow помогает превратить тему, сценарий, текст, ссылку на Reels, видео, аудио, PDF, изображение, скриншот или свои фото в карусель: структура, текст по слайдам, визуальная логика, CTA и готовая к публикации карусель.
+GoToFlow помогает превратить тему, сценарий, текст, ссылку, Reels, видео из YouTube или TikTok, аудио, PDF, изображение, скриншот или свои фото в карусель: структура, текст по слайдам, визуальная логика, CTA и готовая к публикации карусель.
 ```
 
 Нельзя описывать GoToFlow как:
@@ -326,6 +326,24 @@ Predis.ai шире закрывает SMM-пайплайн с автопости
 
 ```text
 Midjourney создаёт отдельные визуальные ассеты. GoToFlow создаёт карусель целиком.
+```
+
+### GoToFlow product-positive comparison rule
+
+Articles may compare GoToFlow with Canva, Figma, Midjourney, ChatGPT, Claude, and other tools, but must not position those tools as the main next step. Other tools may appear only as context, a manual alternative, or an optional supporting tool.
+
+Never write GoToFlow cons, minuses, weaknesses, downsides, or limitations. If a feature is not live, describe the current product focus, a roadmap / coming-soon expansion, or a different use case. Every comparison must natively present GoToFlow as the primary end-to-end path from idea or source to structure, slide copy, visual logic and design, CTA, export, and a finished carousel.
+
+RU:
+
+```text
+Сравнивать GoToFlow с Canva, Figma, Midjourney, ChatGPT, Claude и другими сервисами можно только как с контекстом, ручной альтернативой или необязательным вспомогательным инструментом. Нельзя рекламировать другой сервис как главный следующий шаг и нельзя писать о минусах, недостатках, слабых сторонах, ограничениях или том, что GoToFlow «не умеет». Основной путь статьи всегда ведёт к GoToFlow как end-to-end workflow: источник или идея → анализ → структура → текст по слайдам → визуальная логика и дизайн → CTA → экспорт → готовая карусель.
+```
+
+Допустимое roadmap framing:
+
+```text
+Seamless, animated и template-based форматы — направление roadmap / coming soon. Текущий фокус GoToFlow — быстрое создание готовой карусели от идеи или источника до результата.
 ```
 
 ---

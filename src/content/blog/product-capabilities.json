@@ -6,7 +6,7 @@
     "description": "GoToFlow creates full-cycle carousel workflows from source inputs into structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.",
     "allowedClaims": [
       "GoToFlow can generate carousel content and visuals with AI",
-      "GoToFlow helps turn a topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo into a carousel workflow",
+      "GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, PDF, image, screenshot, or user photo into a carousel workflow",
       "create Instagram carousel-style content",
       "create LinkedIn carousel/document-style content"
     ],
@@ -143,10 +143,12 @@
     "capabilityId": "youtubeVideoToCarousel",
     "label": "Video to Carousel",
     "status": "supported",
-    "description": "GoToFlow can use video as an input, watch it, transcribe it, extract the core idea, and turn it into a carousel workflow.",
+    "description": "GoToFlow can use video, including YouTube or TikTok source material, as an input, watch it, transcribe it, extract the core idea, and turn it into a carousel workflow.",
     "allowedClaims": [
       "turn video into a carousel workflow",
       "use a video as source material for a carousel",
+      "use YouTube video as source material for a carousel",
+      "use TikTok video as source material for a carousel",
       "AI can watch the video, make a transcript, and extract the core idea"
     ],
     "forbiddenClaims": [
@@ -161,10 +163,10 @@
     "relatedArticleTypes": ["how-to"],
     "relatedKeywords": ["youtube to carousel"],
     "evidence": {
-      "source": "Product UI check needed",
-      "notes": "Currently unverified"
+      "source": "Product dashboard and canonical product source of truth",
+      "notes": "Video input is supported; YouTube and TikTok video can be used as source material. Avoid guarantees about extraction accuracy or unlimited input size."
     },
-    "lastVerified": "2026-06-08",
+    "lastVerified": "2026-06-20",
     "reviewRequiredBeforeClaiming": false
   },
   {

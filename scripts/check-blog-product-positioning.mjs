@@ -18,7 +18,8 @@ const REQUIRED_SOURCE_PHRASES = [
   'GoToFlow input capabilities',
   'VIDEO / REELS / AUDIO / PDF',
   'AI сам посмотрит видео, сделает транскрипцию и выделит суть',
-  'GoToFlow helps turn a topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo',
+  'GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, PDF, image, screenshot, or user photo',
+  'GoToFlow product-positive comparison rule',
   'Нельзя писать',
   'GoToFlow только пишет текст',
   'Canva делает дизайн, а GoToFlow только структуру'
@@ -83,7 +84,12 @@ const RULES = [
   {
     id: 'negative-block-en',
     reason: 'SEO articles must not use negative GoToFlow framing blocks.',
-    re: /^(?:#{1,4}\s*)?(?:Cons of GoToFlow|GoToFlow cons|Disadvantages of GoToFlow|Where GoToFlow is weaker|Why GoToFlow is worse)\b/im
+    re: /^(?:#{1,4}\s*)?(?:Cons of GoToFlow|GoToFlow cons|Disadvantages of GoToFlow|GoToFlow weaknesses|Weaknesses of GoToFlow|GoToFlow limitations|Limitations of GoToFlow|Downsides of GoToFlow|Where GoToFlow is weaker|Why GoToFlow is worse)\b/im
+  },
+  {
+    id: 'negative-capability-en',
+    reason: 'Articles must not frame GoToFlow through missing capabilities or limitations.',
+    re: /\bGoToFlow\b[^.\n]{0,60}\b(?:does not|doesn't|cannot|can't)\b/i
   },
   {
     id: 'roadmap-weakness-en',
@@ -138,7 +144,12 @@ const RULES = [
   {
     id: 'negative-block-ru',
     reason: 'В SEO-статьях нельзя использовать негативные блоки про GoToFlow.',
-    re: /^(?:#{1,4}\s*)?(?:Минусы GoToFlow|Недостатки GoToFlow|Где GoToFlow слабее|Чего не хватает GoToFlow|Почему GoToFlow хуже)\b/im
+    re: /^(?:#{1,4}\s*)?(?:Минусы GoToFlow|Недостатки GoToFlow|Слабые стороны GoToFlow|Ограничения GoToFlow|Где GoToFlow слабее|Чего не хватает GoToFlow|Почему GoToFlow хуже)\b/im
+  },
+  {
+    id: 'negative-capability-ru',
+    reason: 'Нельзя описывать GoToFlow через отсутствие возможностей или ограничения.',
+    re: /(?:\bGoToFlow\b[^.\n]{0,60}(?:не умеет|не подходит|не может)|(?:ограничение|ограничения|слабая сторона|слабые стороны)\s+GoToFlow\b)/i
   },
   {
     id: 'roadmap-weakness-ru',
@@ -198,10 +209,41 @@ function findIssuesInText(text) {
   return issues;
 }
 
+const COMPARISON_TOOL_RE = /\b(?:Canva|Figma|Photoshop|Midjourney|ChatGPT|Claude)\b/gi;
+
+function hasStrongProductBridge(text) {
+  return /\bGoToFlow\b/i.test(text)
+    && /(?:готов(?:ая|ую|ой|ые|ых)?\s+(?:к\s+публикации\s+)?карусел|ready(?:-to-publish)?\s+carousel|finished\s+carousel|экспорт|export)/i.test(text)
+    && /(?:от\s+(?:идеи|источника)[\s\S]{0,180}(?:результат|карусел)|end-to-end|полный\s+цикл|структур|slide\s+copy|текст\s+по\s+слайдам|визуальн|visual|дизайн|design|CTA)/i.test(text);
+}
+
+function findComparisonBridgeWarning(frontmatter, body) {
+  const normalizedBody = normalizeText(body);
+  const normalizedFrontmatter = normalizeText(frontmatter);
+  const matches = [...normalizedBody.matchAll(COMPARISON_TOOL_RE)];
+  if (matches.length === 0) return null;
+
+  const hasNearbyBridge = matches.some((match) => {
+    const start = Math.max(0, match.index - 700);
+    const end = Math.min(normalizedBody.length, match.index + match[0].length + 700);
+    return hasStrongProductBridge(normalizedBody.slice(start, end));
+  });
+  const conclusionWindow = normalizedBody.slice(-2200);
+
+  if (hasNearbyBridge || hasStrongProductBridge(conclusionWindow) || hasStrongProductBridge(normalizedFrontmatter)) {
+    return null;
+  }
+
+  const tools = [...new Set(matches.map((match) => match[0]))].join(', ');
+  return `mentions comparison tools (${tools}) without a strong nearby GoToFlow product bridge, conclusion, or final CTA.`;
+}
+
 function runSmokeTest() {
   const bad = [
     'Canva делает дизайн, а GoToFlow только структуру.',
-    'You first need to convert the audio into text using a transcription tool before using GoToFlow.'
+    'You first need to convert the audio into text using a transcription tool before using GoToFlow.',
+    '## Limitations of GoToFlow',
+    'GoToFlow не умеет создавать готовые карусели.'
   ].join('\n');
   const good = [
     'Canva — ручной дизайн-редактор. GoToFlow — система создания готовой карусели от идеи до результата.',
@@ -222,9 +264,17 @@ function runSmokeTest() {
     process.exit(1);
   }
 
+  const missingBridgeWarning = findComparisonBridgeWarning('', 'Create the text in ChatGPT, then finish the design in Canva.');
+  const goodBridgeWarning = findComparisonBridgeWarning('', good);
+  if (!missingBridgeWarning || goodBridgeWarning) {
+    console.error('❌ Smoke test failed: product-positive comparison warning is not calibrated correctly.');
+    process.exit(1);
+  }
+
   console.log('✅ Product positioning smoke test passed.');
   console.log(`- Bad example blocked by: ${badIssues.map((issue) => issue.ruleId).join(', ')}`);
   console.log('- Good Canva comparison accepted.');
+  console.log('- Missing GoToFlow product bridge warning detected; strong bridge accepted.');
 }
 
 function scanArticles() {
@@ -233,6 +283,7 @@ function scanArticles() {
 
   let scanned = 0;
   const errors = [];
+  const warnings = [];
 
   for (const file of files) {
     const filePath = path.join(ARTICLES_DIR, file);
@@ -245,12 +296,21 @@ function scanArticles() {
     for (const issue of issues) {
       errors.push(`[P0] ${file}:${issue.line} violates GoToFlow product source of truth (${issue.ruleId}). ${issue.reason} Snippet: "${issue.snippet}"`);
     }
+    const comparisonWarning = findComparisonBridgeWarning(frontmatter, body);
+    if (comparisonWarning) {
+      warnings.push(`${file}: ${comparisonWarning}`);
+    }
   }
 
   console.log('\n🔍 Blog Product Positioning Check');
   console.log(`- Source of truth: ${path.relative(ROOT, SOURCE_OF_TRUTH)}`);
   console.log(`- Published articles scanned: ${scanned}`);
   console.log(`- Rules loaded: ${RULES.length}`);
+
+  if (warnings.length > 0) {
+    console.warn(`\n⚠️ Comparison warnings (${warnings.length}):`);
+    warnings.forEach((warning) => console.warn(`  - ${warning}`));
+  }
 
   if (errors.length > 0) {
     console.error(`\n❌ Errors (${errors.length}):`);
