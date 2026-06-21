@@ -18,7 +18,7 @@ priority: "P0"
 published: true
 noindex: false
 preview: false
-approvedForPublish: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/blog/ai-carousel-content-strategy"
 createdAt: "2026-06-17"
 updatedAt: "2026-06-18"

@@ -189,6 +189,15 @@ function checkHtmlFile(filePath, data, isD53) {
     if (data.hasExplore && !htmlContent.includes('id="explore-more"') && !htmlContent.includes('id="related-articles"')) {
         errors.push(`[P0] Explore section is not rendered in HTML (missing id="explore-more")`);
     }
+    const hasExploreAnchorLink = htmlContent.includes('href="#explore-more"');
+    const hasExploreAnchorTarget = htmlContent.includes('id="explore-more"');
+    if (hasExploreAnchorLink && !hasExploreAnchorTarget) {
+      errors.push('[P0] Final CTA links to #explore-more, but rendered HTML has no matching id="explore-more" target');
+    }
+    if (hasExploreAnchorLink && hasExploreAnchorTarget
+      && htmlContent.indexOf('id="explore-more"') > htmlContent.lastIndexOf('href="#explore-more"')) {
+      errors.push('[P0] Explore anchor target must render before the Final CTA secondary link');
+    }
     // Final CTA usually has secondaryHref and "Explore more" link inside
     if (!htmlContent.includes('from-pink-500/10') && !htmlContent.includes('from-pink-500/20')) {
          // rough check for final CTA container

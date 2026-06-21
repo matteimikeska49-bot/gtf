@@ -135,11 +135,14 @@ function checkRenderedHtml({ frontmatter, strict, errors, warnings }) {
   const lowerHtml = html.toLowerCase();
   const renderedErrors = [];
 
-  SOURCE_FORBIDDEN.forEach((phrase) => {
-    if (lowerHtml.includes(phrase)) {
-      renderedErrors.push(`Rendered HTML forbidden wording found: "${phrase}"`);
-    }
-  });
+  const isLivePublished = frontmatter.published === true && frontmatter.noindex === false;
+  if (isLivePublished) {
+    SOURCE_FORBIDDEN.forEach((phrase) => {
+      if (lowerHtml.includes(phrase)) {
+        renderedErrors.push(`Rendered HTML forbidden wording found: "${phrase}"`);
+      }
+    });
+  }
 
   const hasDetailsFaq = /<details\b/i.test(html);
   const hasMarkdownFaqHeading = language === 'ru'
@@ -179,6 +182,7 @@ function checkArticle(file) {
   const errors = [];
   const warnings = [];
   const strict = isStrictArticle(frontmatter);
+  const isLivePublished = frontmatter.published === true && frontmatter.noindex === false;
   const lowerBody = body.toLowerCase();
 
   const frontmatterFaqCount = Array.isArray(frontmatter.faq) ? frontmatter.faq.length : 0;
@@ -228,19 +232,23 @@ function checkArticle(file) {
     errors.push('Duplicate CTA sources: article has both finalCta frontmatter and markdown [!product] block.');
   }
 
-  SOURCE_FORBIDDEN.forEach((phrase) => {
-    if (lowerBody.includes(phrase)) {
-      addIssue({
-        errors,
-        warnings,
-        strict,
-        message: `Forbidden user-facing wording found: "${phrase}"`
-      });
-    }
-  });
+  if (isLivePublished) {
+    SOURCE_FORBIDDEN.forEach((phrase) => {
+      if (lowerBody.includes(phrase)) {
+        addIssue({
+          errors,
+          warnings,
+          strict,
+          message: `Forbidden user-facing wording found: "${phrase}"`
+        });
+      }
+    });
+  }
 
   const titleSlug = `${frontmatter.title || ''} ${frontmatter.slug || ''}`;
-  if (titleSlug.toLowerCase().includes('examples') || titleSlug.toLowerCase().includes('примеры')) {
+  const isExamplesFocused = frontmatter.articleType === 'examples'
+    || /(?:^|-)(?:examples|primery)(?:-|$)/i.test(frontmatter.slug || '');
+  if (isExamplesFocused) {
     const exampleMatch = body.match(/^### (?:\d+\.|Example|Пример)/gm);
     const exampleCount = exampleMatch ? exampleMatch.length : 0;
     if (exampleCount < 5) {

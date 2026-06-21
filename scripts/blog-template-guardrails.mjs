@@ -37,7 +37,7 @@ export const LEGACY_MISSING_EXPLORE_EXCEPTIONS = new Set([
 ]);
 
 const TOP_LEVEL_KEY_RE = /^[A-Za-z0-9_]+:\s*/;
-const FORBIDDEN_SECONDARY_HREFS = new Set(['#explore-more', '#examples', '#productRoute']);
+const FORBIDDEN_SECONDARY_HREFS = new Set(['#examples', '#productRoute']);
 
 export function extractFrontmatterAndBody(content) {
   const match = content.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
@@ -249,6 +249,8 @@ export function getTemplateContractIssues(frontmatter, slug) {
       issues.push('frontmatter finalCta.secondaryHref is missing');
     } else if (FORBIDDEN_SECONDARY_HREFS.has(secondaryHref)) {
       issues.push(`frontmatter finalCta.secondaryHref must not be ${secondaryHref}`);
+    } else if (secondaryHref === '#explore-more' && (exploreHrefs.length === 0 || exploreTitles.length === 0)) {
+      issues.push('frontmatter finalCta.secondaryHref points to #explore-more, but no renderable Explore links exist');
     }
   }
 

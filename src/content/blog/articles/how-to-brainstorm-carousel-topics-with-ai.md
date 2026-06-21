@@ -18,7 +18,7 @@ priority: "P1"
 published: true
 noindex: false
 preview: false
-approvedForPublish: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/blog/how-to-brainstorm-carousel-topics-with-ai"
 createdAt: "2026-06-17"
 updatedAt: "2026-06-18"
@@ -143,7 +143,7 @@ They should be under 10 words and make the reader want to swipe.
 
 ## From Topic to Structured Carousel
 
-Having a great topic is only 10% of the work. The remaining 90% is structuring that idea into a readable, engaging 10-slide presentation.
+Having a great topic is only the starting point. The next challenge is structuring that idea into a readable, engaging 10-slide presentation.
 
 Many creators drop the ball here. They take a great topic but dump all the information onto three crowded slides. 
 

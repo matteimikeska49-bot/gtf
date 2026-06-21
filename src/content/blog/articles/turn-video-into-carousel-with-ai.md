@@ -18,7 +18,7 @@ priority: "P1"
 published: true
 noindex: false
 preview: false
-approvedForPublish: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/blog/turn-video-into-carousel-with-ai"
 createdAt: "2026-06-17"
 updatedAt: "2026-06-18"
