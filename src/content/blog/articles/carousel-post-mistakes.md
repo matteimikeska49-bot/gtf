@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Create a Carousel"
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
-  secondaryText: "Explore more carousel tips →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Instagram Post Size Guide →"
+  secondaryHref: "/blog/instagram-post-size-guide"
 ---
 
 # Carousel Post Mistakes: Why People Stop Swiping and How to Fix It

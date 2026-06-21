@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Упаковать знания в карусель"
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
-  secondaryText: "Смотреть гайды для экспертов →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Карусели для экспертов с ИИ →"
+  secondaryHref: "/ru/blog/karuseli-dlya-ekspertov-s-ii"
 ---
 
 # Карусель для личного бренда с ИИ: как упаковать экспертность в слайды

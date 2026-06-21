@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Создать карусель с ИИ"
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
-  secondaryText: "Посмотреть другие гайды →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Темы для постов в LinkedIn →"
+  secondaryHref: "/ru/blog/temy-dlya-postov-v-linkedin"
 ---
 
 # Как придумать тему для карусели с ИИ: матрица контента для экспертов

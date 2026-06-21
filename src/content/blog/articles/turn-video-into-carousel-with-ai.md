@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Convert Video to Carousel"
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
-  secondaryText: "Explore more workflow tips →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Repurpose Podcast to Carousel →"
+  secondaryHref: "/blog/how-to-repurpose-podcasts-into-ai-carousels"
 ---
 
 # How to Turn a Video into a Carousel with AI

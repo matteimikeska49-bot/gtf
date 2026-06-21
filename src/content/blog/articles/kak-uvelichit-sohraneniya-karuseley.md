@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Создать карусель бесплатно"
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
-  secondaryText: "Больше советов и инструментов →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Психология каруселей →"
+  secondaryHref: "/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie"
 ---
 
 # Как увеличить сохранения каруселей в Instagram: структура поста, который хочется сохранить

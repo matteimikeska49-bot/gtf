@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Ускорить запуск с ИИ"
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
-  secondaryText: "Больше инструментов для маркетологов →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Генератор каруселей →"
+  secondaryHref: "/ru/ai-generator-karuselej"
 ---
 
 # Карусель для запуска продукта с ИИ: как прогреть аудиторию через слайды

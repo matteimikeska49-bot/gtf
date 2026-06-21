@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Упростить контент с ИИ"
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
-  secondaryText: "Смотреть другие гайды →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Карусель для личного бренда →"
+  secondaryHref: "/ru/blog/karusel-dlya-lichnogo-brenda-s-ii"
 ---
 
 # Карусели для экспертов с ИИ: как объяснять сложные темы простыми слайдами

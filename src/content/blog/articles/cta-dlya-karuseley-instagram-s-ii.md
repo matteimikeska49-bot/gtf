@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Создать карусель бесплатно"
   href: "/ru/ii-generator-karuseley"
   microcopy: "Попробуйте без привязки карты"
-  secondaryText: "Смотреть другие гайды →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Ошибки в каруселях Инстаграм →"
+  secondaryHref: "/ru/blog/oshibki-v-karuselyah-instagram"
 ---
 
 # CTA для каруселей Instagram с ИИ: как завершать пост, чтобы повышать шанс заявок и реакций

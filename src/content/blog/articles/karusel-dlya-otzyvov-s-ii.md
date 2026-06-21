@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Создать карусель с отзывами"
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
-  secondaryText: "Смотреть другие гайды →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Генератор каруселей →"
+  secondaryHref: "/ru/ai-generator-karuselej"
 ---
 
 # Как оформить отзывы клиентов в продающую карусель с ИИ

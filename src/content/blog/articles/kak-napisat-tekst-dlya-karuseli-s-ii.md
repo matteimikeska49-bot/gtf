@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Создать карусель с ИИ"
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
-  secondaryText: "Больше инструментов и гайдов →"
-  secondaryHref: "#explore-more"
+  secondaryText: "ИИ текст для поста →"
+  secondaryHref: "/ru/blog/ii-tekst-dlya-posta"
 ---
 
 # Как написать текст для карусели с ИИ: структура, хуки и CTA по слайдам

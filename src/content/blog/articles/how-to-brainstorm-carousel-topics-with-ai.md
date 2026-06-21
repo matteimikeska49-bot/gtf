@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Create a Carousel with AI"
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
-  secondaryText: "Explore more carousel tools →"
-  secondaryHref: "#explore-more"
+  secondaryText: "AI Content Marketing Strategy →"
+  secondaryHref: "/blog/ai-content-marketing-strategy"
 ---
 
 # How to Brainstorm Carousel Topics with AI

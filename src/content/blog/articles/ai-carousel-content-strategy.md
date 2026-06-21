@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Start Building Carousels"
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
-  secondaryText: "Explore more strategic guides →"
-  secondaryHref: "#explore-more"
+  secondaryText: "AI Content Marketing Strategy →"
+  secondaryHref: "/blog/ai-content-marketing-strategy"
 ---
 
 # AI Carousel Content Strategy: How to Build a Repeatable Workflow

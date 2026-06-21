@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Create a LinkedIn Carousel"
   href: "/linkedin-carousel-maker"
   microcopy: "Free — No credit card required"
-  secondaryText: "Explore more B2B strategies →"
-  secondaryHref: "#explore-more"
+  secondaryText: "LinkedIn carousel posting guide →"
+  secondaryHref: "/blog/how-to-post-a-carousel-on-linkedin"
 ---
 
 # AI LinkedIn Carousel Strategy for B2B Founders

@@ -76,8 +76,8 @@ finalCta:
   buttonText: "Создать комфортную карусель"
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
-  secondaryText: "Смотреть гайды по структуре →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Размер карусели в Инстаграм →"
+  secondaryHref: "/ru/blog/razmer-karuseli-v-instagram"
 ---
 
 # Психология каруселей: как удерживать внимание с 1 по 10 слайд
