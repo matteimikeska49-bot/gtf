@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '..');
 const ARTICLES_DIR = path.join(ROOT, 'src/content/blog/articles');
 const DIST_DIR = path.join(ROOT, 'dist');
+const APP_PATH = path.join(ROOT, 'src/App.jsx');
 
 const STRICT_SLUGS = new Set([
   'best-linkedin-carousel-examples',
@@ -15,6 +16,28 @@ const STRICT_SLUGS = new Set([
   'kak-peredelat-youtube-v-karusel-linkedin',
   'linkedin-carousel-hooks'
 ]);
+
+// Existing published debt remains visible as P1 warnings. Any new occurrence is P0.
+const LEGACY_GENERIC_EXPLORE_ANCHOR_SLUGS = new Set([
+  'ai-carousel-content-strategy',
+  'ai-linkedin-carousel-strategy-for-b2b-founders',
+  'carousel-post-mistakes',
+  'cta-dlya-karuseley-instagram-s-ii',
+  'how-to-brainstorm-carousel-topics-with-ai',
+  'ii-tekst-dlya-posta',
+  'kak-pridumat-temu-dlya-karuseli-s-ii',
+  'kak-uvelichit-sohraneniya-karuseley',
+  'karusel-dlya-lichnogo-brenda-s-ii',
+  'karusel-dlya-otzyvov-s-ii',
+  'karusel-dlya-zapuska-produkta-s-ii',
+  'karuseli-dlya-ekspertov-s-ii',
+  'karuseli-dlya-onlayn-shkol-s-ii',
+  'psihologiya-karuseley-kak-uderzhat-vnimanie',
+  'turn-video-into-carousel-with-ai'
+]);
+
+const SAME_PAGE_SECONDARY_TEXT = /(?:ниже|на этой странице|связанным материалам|к инструментам и гайдам ниже|below|on this page|related materials below|related tools and guides|back to related)/iu;
+const GENERIC_SECONDARY_TEXT = /^(?:learn more|read more|see more|explore more|подробнее|узнать больше|смотреть больше)\s*→?$/iu;
 
 const SOURCE_FORBIDDEN = [
   'draft carousel',
@@ -122,6 +145,76 @@ function hasRenderableExplore(exploreBlock) {
   return /^    - title:\s*\S/m.test(exploreBlock) && /^      href:\s*["']?\//m.test(exploreBlock);
 }
 
+function getExploreItems(exploreBlock) {
+  const items = [];
+  let current = null;
+
+  for (const line of exploreBlock.split('\n')) {
+    const titleMatch = line.match(/^    - title:\s*(.*)$/);
+    if (titleMatch) {
+      if (current) items.push(current);
+      current = { title: normalizeScalar(titleMatch[1]), href: '' };
+      continue;
+    }
+
+    const hrefMatch = line.match(/^      href:\s*(.*)$/);
+    if (hrefMatch && current) current.href = normalizeScalar(hrefMatch[1]);
+  }
+
+  if (current) items.push(current);
+  return items;
+}
+
+function normalizeInternalRoute(href) {
+  if (!href || typeof href !== 'string') return '';
+  if (href.startsWith('https://gotoflow.io/')) return new URL(href).pathname.replace(/\/$/, '') || '/';
+  if (!href.startsWith('/')) return href;
+  return href.split(/[?#]/)[0].replace(/\/$/, '') || '/';
+}
+
+function buildRouteRegistry(files) {
+  const registry = new Map([
+    ['/', { live: true, language: 'neutral' }],
+    ['/ru', { live: true, language: 'ru' }],
+    ['/blog', { live: true, language: 'en' }],
+    ['/ru/blog', { live: true, language: 'ru' }]
+  ]);
+
+  const appSource = fs.readFileSync(APP_PATH, 'utf8');
+  for (const match of appSource.matchAll(/<Route\s+path=["']([^"']+)["']/g)) {
+    if (!match[1].includes(':') && !match[1].includes('*')) {
+      const route = normalizeInternalRoute(match[1]);
+      registry.set(route, { live: true, language: route.startsWith('/ru') ? 'ru' : 'en' });
+    }
+  }
+
+  for (const file of files) {
+    const content = fs.readFileSync(path.join(ARTICLES_DIR, file), 'utf8');
+    const { frontmatter } = parseFrontmatter(content);
+    const slug = frontmatter.slug || file.replace(/\.md$/, '');
+    const route = frontmatter.language === 'ru'
+      ? `/ru/blog/${slug}`
+      : `/blog/${slug}`;
+    registry.set(route, {
+      live: frontmatter.published === true && frontmatter.noindex === false,
+      language: frontmatter.language === 'ru' ? 'ru' : 'en'
+    });
+  }
+
+  return registry;
+}
+
+function validatePublishedRoute({ href, label, routeRegistry, errors }) {
+  const route = normalizeInternalRoute(href);
+  const target = routeRegistry.get(route);
+  if (!target) {
+    errors.push(`P0: ${label} points to non-existing route "${href}".`);
+  } else if (!target.live) {
+    errors.push(`P0: ${label} points to draft/noindex route "${href}".`);
+  }
+  return { route, target };
+}
+
 const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const hasMarkdownFaqSection = (body) =>
@@ -194,7 +287,7 @@ function checkRenderedHtml({ frontmatter, strict, errors, warnings }) {
   renderedErrors.forEach((message) => addIssue({ errors, warnings, strict, message }));
 }
 
-function checkArticle(file) {
+function checkArticle(file, routeRegistry) {
   if (file.startsWith('test-') || file.includes('seo-template')) {
     return { file, errors: [], warnings: [] };
   }
@@ -206,6 +299,7 @@ function checkArticle(file) {
   const warnings = [];
   const strict = isStrictArticle(frontmatter);
   const isLivePublished = frontmatter.published === true && frontmatter.noindex === false;
+  const articleLanguage = frontmatter.language === 'ru' ? 'ru' : 'en';
   const lowerBody = body.toLowerCase();
 
   const frontmatterFaqCount = Array.isArray(frontmatter.faq) ? frontmatter.faq.length : 0;
@@ -241,6 +335,7 @@ function checkArticle(file) {
   const secondaryText = getNestedYamlValue(finalCtaBlock, 'secondaryText');
   const secondaryHref = getNestedYamlValue(finalCtaBlock, 'secondaryHref');
   const exploreBlock = getYamlBlock(yaml, 'explore');
+  const exploreItems = getExploreItems(exploreBlock);
   const relatedRoute = frontmatter.relatedProductRoute || '';
   const hasRelatedRouteLink = relatedRoute
     ? new RegExp(`\\]\\(${escapeRegExp(relatedRoute)}\\)`, 'i').test(body)
@@ -259,12 +354,54 @@ function checkArticle(file) {
     errors.push('Duplicate CTA sources: article has both finalCta frontmatter and markdown [!product] block.');
   }
 
-  if (isLivePublished && secondaryText && !secondaryHref) {
-    errors.push('P0: Final CTA secondary link text exists, but secondaryHref is empty.');
-  }
+  if (isLivePublished) {
+    if (secondaryText && (!secondaryHref || secondaryHref === '#' || /^(?:undefined|null)$/i.test(secondaryHref))) {
+      errors.push('P0: Final CTA secondary link text exists, but secondaryHref is empty or invalid.');
+    } else if (secondaryHref === '#explore-more') {
+      if (!hasRenderableExplore(exploreBlock)) {
+        errors.push('P0: Final CTA secondary link points to #explore-more, but frontmatter has no renderable explore.tools or explore.guides entries.');
+      }
+      if (!SAME_PAGE_SECONDARY_TEXT.test(secondaryText)) {
+        const message = 'Final CTA secondaryHref may use #explore-more only when secondaryText explicitly describes same-page related materials.';
+        if (LEGACY_GENERIC_EXPLORE_ANCHOR_SLUGS.has(frontmatter.slug)) {
+          warnings.push(`Legacy P1: ${message}`);
+        } else {
+          errors.push(`P0: ${message}`);
+        }
+      }
+    } else if (secondaryHref) {
+      const { route, target } = validatePublishedRoute({
+        href: secondaryHref,
+        label: 'Final CTA secondaryHref',
+        routeRegistry,
+        errors
+      });
+      if (target && target.language !== 'neutral' && target.language !== articleLanguage) {
+        warnings.push(`P1: Final CTA secondaryHref language does not match article language: "${secondaryHref}".`);
+      }
+      if ((route === '/blog' || route === '/ru/blog') && exploreItems.some((item) => item.href && item.href.startsWith('/'))) {
+        warnings.push('P1: Final CTA uses a blog hub fallback although Explore contains a more specific route.');
+      }
+      if (GENERIC_SECONDARY_TEXT.test(secondaryText)) {
+        warnings.push('P1: Final CTA secondaryText is generic and does not describe its destination.');
+      }
+    }
 
-  if (isLivePublished && secondaryHref === '#explore-more' && !hasRenderableExplore(exploreBlock)) {
-    errors.push('P0: Final CTA secondary link points to #explore-more, but frontmatter has no renderable explore.tools or explore.guides entries.');
+    for (const item of exploreItems) {
+      if (!item.href || item.href === '#' || item.href.startsWith('#') || /^(?:undefined|null)$/i.test(item.href)) {
+        errors.push(`P0: Explore card "${item.title || 'untitled'}" has an empty or local-anchor href.`);
+        continue;
+      }
+      const { target } = validatePublishedRoute({
+        href: item.href,
+        label: `Explore card "${item.title || 'untitled'}"`,
+        routeRegistry,
+        errors
+      });
+      if (target && target.language !== 'neutral' && target.language !== articleLanguage) {
+        warnings.push(`P1: Explore card "${item.title || 'untitled'}" language does not match article language.`);
+      }
+    }
   }
 
   if (isLivePublished) {
@@ -330,12 +467,13 @@ function checkArticle(file) {
 function runCheck() {
   console.log('🔍 Starting Content Template Check...');
   const files = fs.readdirSync(ARTICLES_DIR).filter((file) => file.endsWith('.md') && file !== '_template.md');
+  const routeRegistry = buildRouteRegistry(files);
 
   let totalErrors = 0;
   let totalWarnings = 0;
 
   files.forEach((file) => {
-    const { errors, warnings } = checkArticle(file);
+    const { errors, warnings } = checkArticle(file, routeRegistry);
     if (errors.length > 0 || warnings.length > 0) {
       console.log(`\n📄 ${file}`);
       warnings.forEach((warning) => {

@@ -44,8 +44,8 @@ finalCta:
   buttonText: "Create Instagram Carousel"
   href: "/ai-instagram-post-generator"
   microcopy: "Free — No credit card required"
-  secondaryText: "Explore more Instagram tools →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Create an Instagram post with AI →"
+  secondaryHref: "/ai-instagram-post-generator"
 ---
 
 Using the correct Instagram post size is critical for engagement. If your image is too small, it will look pixelated. If the aspect ratio is wrong, the algorithm might crop out crucial parts of your photo or text. Whether you are posting a single image or a multi-slide carousel, understanding exact dimensions ensures your content looks professional.

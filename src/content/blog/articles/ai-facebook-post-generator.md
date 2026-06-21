@@ -44,8 +44,8 @@ finalCta:
   buttonText: "Try the Content Generator"
   href: "/ai-content-generator"
   microcopy: "Free — No credit card required"
-  secondaryText: "See more AI generation tools →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Read the AI social media generator guide →"
+  secondaryHref: "/blog/guide-to-ai-social-media-post-generators"
 ---
 
 Writing consistent, engaging content for a Facebook Business Page can quickly become exhausting. Unlike platforms that rely purely on visuals (like Instagram) or short text (like X), Facebook audiences respond to a mix of storytelling, community questions, and link sharing. Using an AI Facebook post generator allows you to break through writer's block and maintain a steady publishing schedule without sacrificing quality.

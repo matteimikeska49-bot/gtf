@@ -44,8 +44,8 @@ finalCta:
   buttonText: "Create LinkedIn Carousel"
   href: "/linkedin-carousel-maker"
   microcopy: "Free — No credit card required"
-  secondaryText: "Read more LinkedIn guides →"
-  secondaryHref: "#explore-more"
+  secondaryText: "Read the LinkedIn carousel posting guide →"
+  secondaryHref: "/blog/how-to-post-a-carousel-on-linkedin"
 ---
 
 Posting consistently on LinkedIn is the key to building a B2B audience. But logging in every single day to manually upload a PDF document and write a caption is inefficient. Scheduling your LinkedIn carousel posts allows you to batch your content creation, ensuring you stay visible even when you are busy with client work or meetings.

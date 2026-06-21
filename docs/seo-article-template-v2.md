@@ -84,7 +84,7 @@ Final CTA должен быть последним смысловым блоко
 
 Не добавлять ссылки или новые блоки после Final CTA.
 
-Допускается маленькая muted secondary-link под CTA-card, которая ведёт на `#explore-more`.
+Допускается маленькая muted secondary-link под CTA-card. Обычно она ведёт прямо на следующий релевантный published guide/tool. `#explore-more` допустим только для явно обозначенной навигации к same-page related section.
 
 ## Quick Answer rules
 
@@ -237,8 +237,8 @@ text: `Turn a topic, link, video, or rough note into a structured, ready-to-publ
 buttonText: `Try GoToFlow For Free`
 href: `/linkedin-carousel-maker`
 microcopy: `Free — No credit card required`
-secondaryText: `Explore more carousel tools and guides →`
-secondaryHref: `#explore-more`
+secondaryText: `Read the LinkedIn carousel posting guide →`
+secondaryHref: `/blog/how-to-post-a-carousel-on-linkedin`
 
 Пример RU:
 title: `Всё ещё собираете карусели вручную?`
@@ -246,8 +246,8 @@ text: `Превратите тему, ссылку, видео или замет
 buttonText: `Попробовать GoToFlow бесплатно`
 href: `/ru/generator-karuselej-linkedin`
 microcopy: `Бесплатно — карта не нужна`
-secondaryText: `Посмотреть другие инструменты и гайды →`
-secondaryHref: `#explore-more`
+secondaryText: `Смотреть гайд по размеру карусели →`
+secondaryHref: `/ru/blog/razmer-karuseli-v-instagram`
 
 Правила:
 - CTA-текст адаптируется под тему статьи;
@@ -255,7 +255,7 @@ secondaryHref: `#explore-more`
 - не копировать дословно один CTA во все статьи;
 - дизайн CTA остаётся единым;
 - CTA должен использовать корректную app/ref логику через существующую функцию, если она используется в проекте.
-- Final CTA secondary links are not decorative: `secondaryHref: "#explore-more"` requires renderable `explore.tools` or `explore.guides` entries and a matching `id="explore-more"` in rendered HTML before the Final CTA. A flat `explore` list is invalid. If Explore is not rendered, point the secondary link to a real published route such as `/blog` or `/ru/blog`. Missing anchors and empty secondary hrefs are P0.
+- Final CTA secondary links are not decorative: use the next best relevant published route from `explore.tools` or `explore.guides`. `/blog` and `/ru/blog` are fallback only. `secondaryHref: "#explore-more"` is allowed only with explicit same-page wording such as `К связанным материалам ниже →` or `See related materials below →`, and requires a matching `id="explore-more"` before the Final CTA. Missing, draft, or misleading targets are P0.
 
 ## Explore / Related rules
 
@@ -344,7 +344,7 @@ All markdown articles must pass the automated publishing checks before they can 
 - Run `npm run check:blog` to validate your article.
 - **P0 Errors** (e.g. missing `slug`, duplicate `slug`, canonical mismatch, draft appearing in sitemap, or broken links) will block publication.
 - **Warnings** (e.g. missing `faq`, `explore`, `finalCta`, missing freshness meta, missing internal links) should be fixed to ensure maximum SEO quality.
-- **Related Links**: Any links in `explore` or `finalCta` or markdown body must be valid internal paths (starting with `/` or `https://gotoflow.io/`) and must NOT point to draft or 404 pages. `#explore-more` is allowed for secondary links.
+- **Related Links**: Any links in `explore`, `finalCta`, or markdown body must be valid internal paths and must NOT point to draft or 404 pages. Final CTA secondary links should use a specific relevant published route; `/blog` and `/ru/blog` are fallback only. `#explore-more` is allowed only when the label explicitly describes navigation to the same-page related section.
 
 All required frontmatter keys must remain compatible with production checks.
 
@@ -427,7 +427,7 @@ Before creating or publishing a new SEO article, agents must read both:
 - test/draft articles must use published: false and noindex: true
 - only published: true and noindex: false can appear in sitemap/blog/category pages
 - ArticleExploreZone must use id="explore-more"
-- Final CTA secondary link must point to #explore-more
+- Final CTA secondary link must point to the next best relevant published guide/tool; use `#explore-more` only for explicit same-page navigation wording
 - EN/RU fields must be localized
 
 ## Optional blocks library

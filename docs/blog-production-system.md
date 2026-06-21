@@ -665,12 +665,12 @@ Conclusion
 - короткое обещание результата
 - основная кнопка
 - microcopy
-- secondary muted link на #explore-more
+- secondary muted link на следующий лучший релевантный шаг по intent статьи
 
 Secondary link:
-href="#explore-more"
+использует конкретный published route из релевантных `explore.tools` / `explore.guides`.
 
-Final CTA secondary links are not decorative. If a secondary link points to `#explore-more`, the article frontmatter must contain renderable `explore.tools` or `explore.guides` entries and the rendered page must contain a real `id="explore-more"` block before the Final CTA. A flat `explore` list does not satisfy the V2 renderer contract. If no Explore block is rendered, use a real published route such as `/blog` or `/ru/blog`. Missing anchors and empty secondary hrefs are P0 publishing blockers.
+Final CTA secondary links are not decorative. The link text must describe its destination and normally point directly to the next best published guide or tool for the article intent. `/blog` and `/ru/blog` are fallback routes only when no more relevant published target exists. `#explore-more` is allowed only when the label explicitly describes same-page navigation, for example `К связанным материалам ниже →` or `Back to related tools and guides →`; the rendered page must then contain `id="explore-more"` before the Final CTA. Missing, draft, irrelevant, or misleading secondary targets are publishing blockers.
 
 CTA адаптируется под:
 - язык
