@@ -99,6 +99,29 @@ function parseFrontmatter(content) {
   return { yaml, frontmatter, body };
 }
 
+function getYamlBlock(yaml, key) {
+  const lines = yaml.split('\n');
+  const startIndex = lines.findIndex((line) => line.startsWith(`${key}:`));
+  if (startIndex === -1) return '';
+
+  const blockLines = [];
+  for (let index = startIndex + 1; index < lines.length; index += 1) {
+    if (/^[a-zA-Z0-9_]+:\s*/.test(lines[index])) break;
+    blockLines.push(lines[index]);
+  }
+  return blockLines.join('\n');
+}
+
+function getNestedYamlValue(block, key) {
+  const match = block.match(new RegExp(`^\\s+${key}:\\s*(.*)$`, 'm'));
+  return match ? match[1].trim().replace(/^["']|["']$/g, '') : '';
+}
+
+function hasRenderableExplore(exploreBlock) {
+  if (!/^  (?:tools|guides):\s*$/m.test(exploreBlock)) return false;
+  return /^    - title:\s*\S/m.test(exploreBlock) && /^      href:\s*["']?\//m.test(exploreBlock);
+}
+
 const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const hasMarkdownFaqSection = (body) =>
@@ -178,7 +201,7 @@ function checkArticle(file) {
 
   const filePath = path.join(ARTICLES_DIR, file);
   const content = fs.readFileSync(filePath, 'utf-8');
-  const { frontmatter, body } = parseFrontmatter(content);
+  const { yaml, frontmatter, body } = parseFrontmatter(content);
   const errors = [];
   const warnings = [];
   const strict = isStrictArticle(frontmatter);
@@ -214,6 +237,10 @@ function checkArticle(file) {
 
   const hasProductBlock = hasMarkdownProductCta(body);
   const hasFinalCtaFrontmatter = Boolean(frontmatter.finalCta);
+  const finalCtaBlock = getYamlBlock(yaml, 'finalCta');
+  const secondaryText = getNestedYamlValue(finalCtaBlock, 'secondaryText');
+  const secondaryHref = getNestedYamlValue(finalCtaBlock, 'secondaryHref');
+  const exploreBlock = getYamlBlock(yaml, 'explore');
   const relatedRoute = frontmatter.relatedProductRoute || '';
   const hasRelatedRouteLink = relatedRoute
     ? new RegExp(`\\]\\(${escapeRegExp(relatedRoute)}\\)`, 'i').test(body)
@@ -230,6 +257,14 @@ function checkArticle(file) {
 
   if (hasFinalCtaFrontmatter && hasProductBlock) {
     errors.push('Duplicate CTA sources: article has both finalCta frontmatter and markdown [!product] block.');
+  }
+
+  if (isLivePublished && secondaryText && !secondaryHref) {
+    errors.push('P0: Final CTA secondary link text exists, but secondaryHref is empty.');
+  }
+
+  if (isLivePublished && secondaryHref === '#explore-more' && !hasRenderableExplore(exploreBlock)) {
+    errors.push('P0: Final CTA secondary link points to #explore-more, but frontmatter has no renderable explore.tools or explore.guides entries.');
   }
 
   if (isLivePublished) {

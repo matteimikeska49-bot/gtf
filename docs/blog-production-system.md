@@ -670,6 +670,8 @@ Conclusion
 Secondary link:
 href="#explore-more"
 
+Final CTA secondary links are not decorative. If a secondary link points to `#explore-more`, the article frontmatter must contain renderable `explore.tools` or `explore.guides` entries and the rendered page must contain a real `id="explore-more"` block before the Final CTA. A flat `explore` list does not satisfy the V2 renderer contract. If no Explore block is rendered, use a real published route such as `/blog` or `/ru/blog`. Missing anchors and empty secondary hrefs are P0 publishing blockers.
+
 CTA адаптируется под:
 - язык
 - тему

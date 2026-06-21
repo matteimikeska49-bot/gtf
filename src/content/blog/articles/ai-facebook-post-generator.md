@@ -20,10 +20,13 @@ lastReviewed: "2026-06-21"
 createdAt: "2026-06-21"
 updatedAt: "2026-06-21"
 explore:
-  - title: "AI Content Generation Strategy"
-    href: "/blog/guide-to-ai-social-media-post-generators"
-  - title: "Facebook Post Ideas for Business"
-    href: "/blog/facebook-post-ideas-for-small-business"
+  guides:
+    - title: "AI Content Generation Strategy"
+      href: "/blog/guide-to-ai-social-media-post-generators"
+      description: "Build a practical AI workflow for planning and creating social content."
+    - title: "Facebook Post Ideas for Business"
+      href: "/blog/facebook-post-ideas-for-small-business"
+      description: "Find useful Facebook post formats for small-business audiences."
 faq:
   - question: "What is an AI Facebook post generator?"
     answer: "It is a tool that uses artificial intelligence to write copy, suggest emojis, and format content specifically optimized for Facebook's algorithm and audience."

@@ -20,10 +20,13 @@ lastReviewed: "2026-06-21"
 createdAt: "2026-06-21"
 updatedAt: "2026-06-21"
 explore:
-  - title: "How to post a carousel on LinkedIn"
-    href: "/blog/how-to-post-a-carousel-on-linkedin"
-  - title: "B2B Social Media Post Ideas"
-    href: "/blog/social-media-post-ideas-for-business"
+  guides:
+    - title: "How to post a carousel on LinkedIn"
+      href: "/blog/how-to-post-a-carousel-on-linkedin"
+      description: "Follow the publishing steps for a LinkedIn document carousel."
+    - title: "B2B Social Media Post Ideas"
+      href: "/blog/social-media-post-ideas-for-business"
+      description: "Plan relevant B2B topics for your next carousel."
 faq:
   - question: "Can I schedule a LinkedIn Carousel natively?"
     answer: "Yes, but there is a catch. You can schedule standard text and image posts natively via LinkedIn's desktop interface. However, scheduling Document (PDF) posts—the format used for LinkedIn carousels—often requires third-party tools depending on recent platform updates."

@@ -255,6 +255,7 @@ secondaryHref: `#explore-more`
 - не копировать дословно один CTA во все статьи;
 - дизайн CTA остаётся единым;
 - CTA должен использовать корректную app/ref логику через существующую функцию, если она используется в проекте.
+- Final CTA secondary links are not decorative: `secondaryHref: "#explore-more"` requires renderable `explore.tools` or `explore.guides` entries and a matching `id="explore-more"` in rendered HTML before the Final CTA. A flat `explore` list is invalid. If Explore is not rendered, point the secondary link to a real published route such as `/blog` or `/ru/blog`. Missing anchors and empty secondary hrefs are P0.
 
 ## Explore / Related rules
 

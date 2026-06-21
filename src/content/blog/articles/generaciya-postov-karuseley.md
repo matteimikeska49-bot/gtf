@@ -20,10 +20,13 @@ lastReviewed: "2026-06-21"
 createdAt: "2026-06-21"
 updatedAt: "2026-06-21"
 explore:
-  - title: "ИИ текст для поста"
-    href: "/ru/blog/ii-tekst-dlya-posta"
-  - title: "Нейросеть для постов: обзор"
-    href: "/ru/blog/neyroset-dlya-napisaniya-postov-obzor"
+  guides:
+    - title: "ИИ текст для поста"
+      href: "/ru/blog/ii-tekst-dlya-posta"
+      description: "Разберите, как подготовить текст для публикации с помощью ИИ."
+    - title: "Нейросеть для постов: обзор"
+      href: "/ru/blog/neyroset-dlya-napisaniya-postov-obzor"
+      description: "Сравните подходы к созданию постов с помощью нейросетей."
 faq:
   - question: "Что такое генерация постов-каруселей?"
     answer: "Это процесс использования искусственного интеллекта для автоматического создания как текста (сценария), так и визуального оформления многостраничных слайдов для социальных сетей."

@@ -20,10 +20,13 @@ lastReviewed: "2026-06-21"
 createdAt: "2026-06-21"
 updatedAt: "2026-06-21"
 explore:
-  - title: "AI Instagram Post Generator"
-    href: "/ai-instagram-post-generator"
-  - title: "AI Carousel Generator"
-    href: "/ai-carousel-maker"
+  tools:
+    - title: "AI Instagram Post Generator"
+      href: "/ai-instagram-post-generator"
+      description: "Create correctly sized Instagram visual content with AI."
+    - title: "AI Carousel Generator"
+      href: "/ai-carousel-maker"
+      description: "Turn an idea or source into a complete carousel workflow."
 faq:
   - question: "What is the best Instagram post size?"
     answer: "The portrait size (1080 x 1350 pixels, 4:5 aspect ratio) is generally the best. It takes up the maximum vertical space on a smartphone screen, keeping users focused on your content longer."
