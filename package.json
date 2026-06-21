@@ -59,6 +59,7 @@
     "check:blog:visual": "npm run build && npx start-server-and-test preview http-get://localhost:4173 \"npm run check:blog:visual:run\"",
     "check:blog:visual:run": "node scripts/check-blog-visual.mjs",
     "build:marker": "node scripts/generate-build-info.mjs",
+    "check:task-scope": "node scripts/check-task-scope.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "check:blog:content-template": "node scripts/check-blog-content-template.mjs",

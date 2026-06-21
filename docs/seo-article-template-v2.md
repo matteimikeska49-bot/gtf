@@ -555,5 +555,14 @@ npm run check:blog:visual
 - Approved output wording: finished carousel, export-ready carousel, publish-ready content, готовая карусель, готовый контент, результат для экспорта.
 - Internal publication status may still use `draft` for unpublished/noindex files; that state must never leak into user-facing copy.
 
+## Scope Guard for article tasks
+
+1. Declare the exact allowed article, checker, template, and documentation files before editing.
+2. Do not run mass replacements over `src/content/blog/articles/*.md`, `src/content/blog/articles/**/*.md`, or the complete article directory without separate explicit approval.
+3. Run `git diff --name-only` after each edit pass and stop when a tracked file falls outside scope.
+4. Do not modify legacy published articles to silence a checker unless they belong to the current task.
+5. Before commit, run `npm run check:task-scope -- <allowed-file> ...` and stage only the reviewed paths.
+6. `git add .` is forbidden.
+
 ## Visible Title Rule
 Do not include `| GoToFlow` or `— GoToFlow` in the frontmatter `title` field. The `title` field is used for the visible H1 and breadcrumbs, which must NOT contain the brand suffix. The system will automatically append `| GoToFlow` for SEO meta tags when rendering.

@@ -1313,6 +1313,16 @@ Live URL/deploy verification only. Must remain separate from local checks.
 - CTA, product bridges, meta, hero, Quick Answer, FAQ and Final CTA must use finished-result wording.
 - For unfinished user input use notes, rough notes, source text, materials, заметки, исходный текст or материалы.
 
+### Scope Guard for mass SEO publishing
+
+- Mass edits across `src/content/blog/articles/*.md`, `src/content/blog/articles/**/*.md`, or the full article directory via sed, perl, Node.js, Python, or similar scripts require separate explicit user approval.
+- Before editing, the agent must name the exact allowed files or routes for the task.
+- After every edit pass, run `git diff --name-only`. Stop if any tracked file is outside the declared scope.
+- Never repair a checker failure with a repository-wide article replacement. Fix only the current batch or correct the checker when it is mismatched.
+- Do not edit legacy published articles merely to make a checker pass unless those files are explicitly in scope.
+- Before commit, run `npm run check:task-scope -- <allowed-file> ...`; every tracked diff entry must be allowed.
+- `git add .` is forbidden. Stage only explicitly reviewed files.
+
 Для визуальной проверки:
 ```bash
 npm run check:blog:render
