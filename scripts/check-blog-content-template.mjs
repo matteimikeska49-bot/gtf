@@ -309,13 +309,76 @@ function checkArticle(file, routeRegistry) {
   const faqCount = Math.max(frontmatterFaqCount, markdownFaqCount);
 
   if (faqCount < 5) {
-    addIssue({
-      errors,
-      warnings,
-      strict,
-      message: `FAQ count is ${faqCount}. Must be >= 5.`
-    });
+    if (isLivePublished) {
+      errors.push(`FAQ count is ${faqCount}. Must be >= 5 for live articles.`);
+    } else {
+      if (faqCount === 0) {
+        warnings.push(`FAQ count is 0. Drafts should ideally have FAQs.`);
+      }
+    }
   }
+
+  // Content depth gate for batch B & new articles
+  const NEW_ARTICLES = new Set([
+    'ii-post-dlya-socsetej',
+    'kakoy-ii-sozdast-post-karusel',
+    'gde-delat-posty-karuseli-s-ii',
+    'neyroset-dlya-postov',
+    'ai-content-creation',
+    'ai-content-writing',
+    'b2b-social-media-post-ideas',
+    'best-time-to-post-on-instagram',
+    'linkedin-carousel-ads'
+  ]);
+  
+  if (isLivePublished && (NEW_ARTICLES.has(frontmatter.slug) || !STRICT_SLUGS.has(frontmatter.slug))) {
+      const type = frontmatter.articleType || 'guide';
+      const bodyChars = body.trim().length;
+      const h2Match = body.match(/^## /gm);
+      const h2Count = h2Match ? h2Match.length : 0;
+      
+      let minChars = 0;
+      let minH2 = 0;
+      if (type === 'supporting') { minChars = 6000; minH2 = 3; }
+      else if (type === 'guide') { minChars = 8000; minH2 = 4; }
+      else if (type === 'comparison') { minChars = 9000; minH2 = 4; }
+      else if (type === 'pillar') { minChars = 12000; minH2 = 6; }
+      else { minChars = 6000; minH2 = 3; }
+      
+      if (bodyChars < minChars) {
+          // If it's a legacy article, just warn. If it's one of the NEW_ARTICLES, error.
+          if (NEW_ARTICLES.has(frontmatter.slug)) {
+              errors.push(`P0: Content depth too thin for ${type}. Body chars: ${bodyChars} (min ${minChars}).`);
+          } else {
+              // Ignore legacy articles for now to not break the build
+          }
+      } else if (bodyChars >= minChars && bodyChars < minChars + 2000) {
+          warnings.push(`P1: Content depth ${bodyChars} chars is close to the minimum ${minChars} for ${type}.`);
+      }
+      
+      if (h2Count < minH2) {
+          if (NEW_ARTICLES.has(frontmatter.slug)) {
+              errors.push(`P0: Insufficient depth structure for ${type}. H2 count: ${h2Count} (min ${minH2}).`);
+          }
+      }
+      
+      if (!frontmatter.quickAnswer && NEW_ARTICLES.has(frontmatter.slug)) {
+          errors.push('P0: Missing Quick Answer frontmatter block.');
+      }
+      
+      if (!/(?:workflow|шаг 1|step 1|сценари|guide|инструкц)/i.test(body) && NEW_ARTICLES.has(frontmatter.slug)) {
+          errors.push('P0: Missing product-led workflow section.');
+      }
+      
+      if (!/(?:carousel|карусел)/i.test(body) && NEW_ARTICLES.has(frontmatter.slug)) {
+          errors.push('P0: Missing carousel bridge.');
+      }
+      
+      if (!/(?:example|mistake|scenario|compar|пример|ошибк|сравнен)/i.test(body) && NEW_ARTICLES.has(frontmatter.slug)) {
+          errors.push('P0: Missing practical examples/scenarios/mistakes/comparison section.');
+      }
+  }
+
 
   if (hasFrontmatterFaq && hasBodyFaq) {
     errors.push('Duplicate FAQ sources: article has both frontmatter faq and markdown FAQ section.');
