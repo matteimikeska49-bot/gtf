@@ -401,6 +401,7 @@ export const ContentSEOBlock = () => (
 );
 
 const faqItems = [
+  { q: 'Is GoToFlow an AI content generator?', a: 'Yes. GoToFlow is an end-to-end AI content generator that goes beyond raw text. It takes your topic and generates full ready-to-use carousel structures, engaging hooks, slide-by-slide copy, and clear CTAs.' },
   { q: 'What is an AI content generator?', a: 'An AI content generator is a tool that automatically generates multi-slide social media posts using artificial intelligence. You provide a topic, and the AI writes the hook, structures the slides, and fills each one with content — in seconds.' },
   { q: 'What is the difference between an AI post generator and an AI content generator?', a: 'They serve a similar purpose but vary in scope. A post generator might just write a text caption, whereas a full AI content generator (like GoToFlow) helps you structure entire content formats, including carousels, slides, and long-form threads.' },
   { q: 'Can I use GoToFlow as an AI content generator for social media?', a: 'Yes! GoToFlow is specifically built to be an AI content generator for social media platforms like LinkedIn and Instagram, turning simple ideas into ready-to-publish content structures.' },
