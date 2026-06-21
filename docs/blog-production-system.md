@@ -1305,6 +1305,14 @@ Live URL/deploy verification only. Must remain separate from local checks.
 - Before publishing, pushing render changes, deploying, or running mini-batch, you **must** run `prepublish` or `full` as appropriate.
 - Never include production live checks inside local build loops.
 
+### Product output wording gate
+
+- Do not position GoToFlow outputs as drafts.
+- Published copy must describe the end-to-end result: source/idea → structure → slide copy → visual direction/design → CTA → export or publish-ready content.
+- `draft/черновик` is reserved for internal publishing state only (`published: false`, `noindex: true`, preview/QA records).
+- CTA, product bridges, meta, hero, Quick Answer, FAQ and Final CTA must use finished-result wording.
+- For unfinished user input use notes, rough notes, source text, materials, заметки, исходный текст or материалы.
+
 Для визуальной проверки:
 ```bash
 npm run check:blog:render

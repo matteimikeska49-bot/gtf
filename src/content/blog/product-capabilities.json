@@ -426,5 +426,40 @@
     },
     "lastVerified": "2026-06-08",
     "reviewRequiredBeforeClaiming": true
+  },
+  {
+    "capabilityId": "finishedOutputPositioning",
+    "label": "Finished Output Positioning",
+    "status": "supported",
+    "description": "GoToFlow turns an idea or source into a finished carousel or publish-ready content workflow with structure, copy, visual direction, CTA, and export.",
+    "allowedClaims": [
+      "finished carousel",
+      "export-ready carousel",
+      "publish-ready content",
+      "готовая карусель",
+      "готовый контент"
+    ],
+    "forbiddenClaims": [
+      "GoToFlow creates a draft",
+      "generate a draft",
+      "draft carousel",
+      "copy-ready carousel results",
+      "GoToFlow создаёт черновик",
+      "сгенерируйте черновик",
+      "черновик карусели"
+    ],
+    "saferAlternatives": [
+      "turn rough notes or source material into a finished carousel",
+      "превратить заметки или исходный материал в готовую карусель"
+    ],
+    "relatedRoutes": ["/", "/ai-carousel-maker", "/ai-content-generator", "/linkedin-carousel-maker", "/ai-instagram-post-generator", "/ru"],
+    "relatedArticleTypes": ["how-to", "comparison", "guide", "product-led"],
+    "relatedKeywords": ["finished carousel", "publish-ready content", "готовая карусель", "готовый контент"],
+    "evidence": {
+      "source": "Product source of truth",
+      "notes": "Canonical product positioning rule: outputs are finished results, not drafts."
+    },
+    "lastVerified": "2026-06-21",
+    "reviewRequiredBeforeClaiming": false
   }
 ]

@@ -102,7 +102,7 @@ An AI carousel maker creates a repeatable path from source to finished carousel.
 type: default
 
 ### 1. From idea to outline
-- **Manual workflow:** You typically start in a separate text editor to draft the outline, then manually copy and paste each sentence into your design tool, creating new text boxes for every slide.
+- **Manual workflow:** You typically start in a separate text editor to write the outline, then manually copy and paste each sentence into your design tool, creating new text boxes for every slide.
 - **GoToFlow workflow:** Add rough notes, a URL, video, audio, PDF, image, screenshot, or idea. GoToFlow develops the slide-by-slide structure and carries it through copy, visual direction, CTA, and export-ready output.
 
 ### 2. Writing slide copy

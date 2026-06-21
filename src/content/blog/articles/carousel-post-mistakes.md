@@ -125,7 +125,7 @@ If you introduce a new concept, put it on a new slide.
 
 > [!tip]
 > **Never overstuff a slide again**
-> Structuring text manually is tedious. GoToFlow automatically analyzes your draft and distributes the text across the perfect number of slides, ensuring your carousel is highly readable.
+> Structuring text manually is tedious. GoToFlow analyzes your source text or notes and distributes the content across the right number of slides, keeping the finished carousel readable.
 > [Try AI Carousel Maker](/ai-carousel-maker)
 
 ## Mistake 3: Zero Visual Rhythm

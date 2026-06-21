@@ -66,7 +66,7 @@ If your team has 40 hours a week, they can manage very few clients. The bottlene
 Here is how successful agencies are restructuring their operations using AI in 2026:
 
 *   **Ideation Phase:** Instead of staring at a blank screen, strategists feed client data (industry, target audience, brand voice) into an LLM and ask for a 30-day content matrix. 
-*   **Drafting Copy:** AI Content Generators take the approved topics and draft the initial posts. The human copywriter's job shifts from *writing* to *editing and refining*, ensuring the brand voice is perfect.
+*   **Creating Copy:** AI Content Generators take the approved topics and prepare the initial posts. The human copywriter reviews and refines them so every piece matches the client's brand voice.
 *   **Design Automation:** This is the biggest time-saver. With [GoToFlow AI Content Generator](/ai-content-generator), an agency can turn an approved idea or source into structure, slide copy, visual direction, CTA, and export-ready carousel output without rebuilding the workflow in separate tools.
 
 **New Total: much less time per client.**

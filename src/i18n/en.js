@@ -210,7 +210,7 @@ export const en = {
       },
       {
         q: "Is this just another AI text generator?",
-        a: "No. GoToFlow doesn't just generate text — it builds complete content. You get structured posts and carousels with visuals, flow, and tone of voice — not raw drafts you still have to fix."
+        a: "No. GoToFlow doesn't just generate text — it builds complete content. You get structured posts and carousels with visuals, flow, and tone of voice, ready for final review and publishing."
       },
       {
         q: "How is this better than using multiple tools?",
@@ -245,7 +245,7 @@ export const en = {
       {
         name: "Sarah",
         role: "Social Media Manager",
-        text: "I didn't need more AI text. I needed something I could actually post.\nMost drafts looked fine at first, but still felt too smooth and generic.\n\nNow I spend less time cleaning up the \"AI voice\".",
+        text: "I didn't need more AI text. I needed something I could actually post.\nMost generic AI output looked fine at first, but still felt too smooth and repetitive.\n\nNow I spend less time cleaning up the \"AI voice\".",
         result: "Less editing, less AI-sludge in my posts",
         avatar: "/images/avatars/en/sarah.png"
       },
@@ -259,8 +259,8 @@ export const en = {
       {
         name: "Emma",
         role: "Marketing Consultant",
-        text: "AI tools were supposed to save time, but I kept fixing the output.\nToo much fluff, weak openings, and generic structure.\n\nNow the first draft is closer to something I can actually use.",
-        result: "Shorter edits, more drafts reaching the finish line",
+        text: "AI tools were supposed to save time, but I kept fixing the output.\nToo much fluff, weak openings, and generic structure.\n\nNow the first version is much closer to publish-ready content.",
+        result: "Shorter edits, more content reaching the finish line",
         avatar: "/images/avatars/en/emma.png"
       },
       {
@@ -271,7 +271,7 @@ export const en = {
       {
         name: "Mark",
         role: "Agency Owner",
-        text: "Our workflow had too many moving parts.\nIdeas in one tool, copy in another, design somewhere else.\n\nNow the team gets to a usable content draft faster.",
+        text: "Our workflow had too many moving parts.\nIdeas in one tool, copy in another, design somewhere else.\n\nNow the team gets to usable, publish-ready content faster.",
         result: "Fewer tool switches, faster content production",
         avatar: "/images/avatars/en/mark.png"
       },
@@ -304,7 +304,7 @@ export const en = {
       {
         name: "Daniel",
         role: "Freelance Designer",
-        text: "Every post used to feel like a separate project.\nIdea, structure, copy, cleanup — all before I could publish.\n\nNow I get to a draft faster.",
+        text: "Every post used to feel like a separate project.\nIdea, structure, copy, cleanup — all before I could publish.\n\nNow I get to finished content faster.",
         result: "More posts without content taking over the whole day",
         avatar: "/images/avatars/en/daniel.png"
       },

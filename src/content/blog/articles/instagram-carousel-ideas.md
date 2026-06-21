@@ -63,7 +63,7 @@ explore:
   guides:
     - title: "Instagram Carousel Prompts"
       href: "/blog/instagram-carousel-prompts"
-      description: "Copy ready prompts for turning ideas into structured carousel results."
+      description: "Ready-to-use prompts for turning ideas into structured carousel results."
 finalCta:
   title: "Turn your ideas into posts instantly"
   text: "Use GoToFlow to turn an idea, link, or source into structure, slide copy, visual design, CTA, and a ready-to-publish Instagram carousel for export."

@@ -19,11 +19,11 @@ faq:
   - question: "What is an AI content marketing strategy?"
     answer: "It is a strategic framework that integrates AI tools into your marketing workflow to increase efficiency. It involves using AI for keyword research, drafting content, designing visuals, and repurposing assets."
   - question: "Will Google penalize my site for using AI content?"
-    answer: "Google's guidelines state they reward high-quality content, regardless of how it is produced. However, purely auto-generated, spammy content with no added human value will perform poorly. Always edit and refine AI drafts."
+    answer: "Google's guidelines state they reward high-quality content, regardless of how it is produced. However, purely auto-generated, spammy content with no added human value will perform poorly. Always review AI-assisted content and add original value."
   - question: "How can AI help with content ideation?"
     answer: "AI can analyze search trends, process large amounts of customer feedback, and generate hundreds of potential blog post or social media topics tailored to your specific audience in seconds."
   - question: "Is it safe to automate my social media posts completely with AI?"
-    answer: "Full automation is risky because it lacks authenticity and responsiveness to real-time events. The best strategy is 'AI-assisted'—where AI creates the drafts and formats the carousels, but a human reviews and approves the final post."
+    answer: "Full automation is risky because it lacks authenticity and responsiveness to real-time events. The best strategy is AI-assisted: the system prepares structured content and formatted carousels, while a human reviews and approves the final post."
   - question: "How do I maintain my brand voice when using AI?"
     answer: "Provide the AI with a strict 'system prompt' or brand guideline document. Feed it examples of your previous successful posts so it learns your tone, vocabulary, and formatting preferences."
 explore:
@@ -71,7 +71,7 @@ Ask the AI to generate a "hub and spoke" model for your core product. This will 
 
 Notice we say *assisted*. You should never publish raw AI output. Instead, use AI to overcome the blank page.
 
-* **The Shitty First Draft:** Use AI to generate an outline and a rough first draft. This gets you 60% of the way there in seconds.
+* **The First Version:** Use AI to generate an outline and an initial version. This gets you moving in seconds and leaves room for your proprietary insights.
 * **The Human Injection:** This is where you win. Add your proprietary data, personal anecdotes, unique opinions, and brand voice. AI cannot replicate your specific lived experience.
 * **Visual Generation:** Use tools to generate matching charts, graphs, or formatting. 
 

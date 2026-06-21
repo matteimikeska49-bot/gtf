@@ -136,7 +136,7 @@ export const CarouselShowcase = () => (
 
 /* ── Problem ── */
 const problemCards = [
-  { title: "Spend 3 hours → get one carousel", text: "Writing hooks, structuring slides, and formatting takes forever — even with AI drafts that need full rewriting." },
+  { title: "Spend 3 hours → get one carousel", text: "Writing hooks, structuring slides, and formatting takes forever — even with generic AI output that still needs full rewriting." },
   { title: "First slide doesn't stop the scroll", text: "Weak hooks mean nobody swipes. Your carousel dies on slide 1 no matter how good the rest is." },
   { title: "Structure falls apart", text: "No clear flow between slides. The message is scattered, the reader drops off, and engagement tanks." },
   { title: "Too many tools, zero system", text: "ChatGPT for text, Canva for design, notes for ideas — context-switching kills your output." },

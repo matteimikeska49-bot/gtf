@@ -20,7 +20,7 @@ quickAnswer:
   - "**Adopt modular prompting:** Break generation down into sequential steps—ideation, hook, structure, slide copy, and refinement."
   - "**Define tight constraints:** Always force the AI to limit text to 15–25 words per slide to ensure mobile readability."
   - "**Use a structured formula:** Every prompt should include context, audience, constraints, and the specific output format."
-  - "**Choose your workflow:** Use manual prompting for granular control, or use a tool like GoToFlow to automate the sequence from idea to design draft."
+  - "**Choose your workflow:** Use manual prompting for granular control, or use GoToFlow to automate the sequence from idea to finished carousel design."
 faq:
   - question: "Which AI model is best for writing LinkedIn carousels?"
     answer: "The model matters less than context, constraints, prompt structure, and editing. ChatGPT, Claude, and Gemini can all produce excellent results if you use a modular prompting framework with strict word limits."
@@ -118,7 +118,7 @@ Manual prompting gives you absolute control over every word, provided you break 
 2. "Create 3 'How I did X' style headlines that emphasize a specific timeline and tangible result for `[Target Audience]`."
 3. "Generate 5 negative-framed hooks (e.g., 'Stop doing X') to instantly grab attention for `[Topic]`. Use a B2B founder tone."
 4. "Write 3 question-based hooks that challenge a widely accepted belief about `[Industry]`."
-5. "Draft 5 numbered-list headlines promising a specific, actionable outcome in exactly `[X]` steps."
+5. "Write 5 numbered-list headlines promising a specific, actionable outcome in exactly `[X]` steps."
 
 **Prompt tip:** Generate 5-10 options at once, then manually combine the best halves of two different hooks.
 
@@ -129,19 +129,19 @@ Manual prompting gives you absolute control over every word, provided you break 
 1. "Outline an 8-slide carousel using the Problem-Solution-Benefit framework for `[Topic]`. Return output as a numbered slide-by-slide list."
 2. "Break down `[Topic]` into 5 actionable, sequential steps suitable for individual slides. Include one intro slide and one CTA slide."
 3. "Create a 'Myth vs. Reality' slide outline for a 7-slide carousel on `[Topic]` targeted at `[Audience]`."
-4. "Draft a 'Case Study' outline: Slide 1 is the result, Slides 2-5 are the process, Slide 6 is the takeaway. Keep explanations brief."
+4. "Write a 'Case Study' outline: Slide 1 is the result, Slides 2-5 are the process, Slide 6 is the takeaway. Keep explanations brief."
 5. "Outline a curated list carousel highlighting 5 must-have tools/habits for `[Target Audience]`."
 
 **Prompt tip:** Explicitly state the exact number of slides so the AI does not compress or stretch the pacing.
 
 ### 4. Slide copy prompts
 **Short explanation:** Generates the actual text that will appear on the visual slides.
-**When to use:** When expanding your approved outline into the final draft text.
+**When to use:** When expanding your approved outline into finished slide copy.
 
 1. "Expand slide 3 from our outline. Strict limit: keep it under 25 words. Use punchy, short sentences."
 2. "Write the copy for this step using bullet points. Keep it under 20 words total for maximum mobile readability."
 3. "Rewrite this paragraph into a single, high-impact sentence suitable for a carousel slide."
-4. "Draft the copy for slide 4 focusing only on one core insight. Use an active voice and avoid corporate language."
+4. "Write the copy for slide 4 focusing only on one core insight. Use an active voice and avoid corporate language."
 5. "Summarize this concept into a 15-word actionable tip for slide 5."
 
 **Prompt tip:** The phrase "keep it under 25 words" is mandatory. AI will always try to write more if you let it.
@@ -164,7 +164,7 @@ Manual prompting gives you absolute control over every word, provided you break 
 
 1. "Write a LinkedIn post caption to introduce this carousel. Start with a bold 1-line statement and add a call-to-comment at the end."
 2. "Create a short caption that shares a personal anecdote related to the carousel's topic for `[Target Audience]`."
-3. "Draft a concise caption summarizing the carousel's main value without giving away the steps, ending with a question to drive engagement."
+3. "Write a concise caption summarizing the carousel's main value without giving away the steps, ending with a question to drive engagement."
 4. "Write a 'story-driven' caption explaining the specific moment I realized the insights shared in this carousel."
 5. "Generate a caption that highlights the biggest mistake mentioned in the carousel and tags relevant industry peers."
 

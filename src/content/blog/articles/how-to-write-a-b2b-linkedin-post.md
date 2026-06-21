@@ -86,7 +86,7 @@ Vulnerability builds trust faster than success metrics.
 
 > [!workflow]
 > **Pro Tip: Turn Your Text into a Carousel**
-> Text posts are great, but Document Carousels often get 2x-3x the reach on LinkedIn. Once you have drafted your B2B post using the frameworks above, you can paste the text into a [LinkedIn Carousel Maker](/linkedin-carousel-maker) to instantly generate a swipeable PDF presentation.
+> Text posts are useful, but Document Carousels can create more dwell time on LinkedIn. Once you have written your B2B post using the frameworks above, add the text to a [LinkedIn Carousel Maker](/linkedin-carousel-maker) to generate a swipeable PDF presentation.
 
 ## What to Avoid in B2B LinkedIn Writing
 

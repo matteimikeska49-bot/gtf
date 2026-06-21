@@ -86,7 +86,7 @@ Don't just sign up for the first tool you see. Run a quick test:
 
 > [!workflow]
 > **The Ideal AI Workflow**
-> Use your chosen generator to brainstorm ideas, write the first draft, and format the visuals. Then, spend 5-10 minutes editing the output to add your unique stories and insights before publishing.
+> Use your chosen generator to brainstorm ideas, create the first version, and format the visuals. Then review the finished output, add your unique stories and insights, and publish when it matches your voice.
 
 ## Conclusion
 

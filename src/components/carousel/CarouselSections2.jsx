@@ -107,7 +107,7 @@ const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
 const diffPoints = [
   { icon: Fingerprint, title: 'Your style, not generic AI text', desc: 'GoToFlow preserves your tone of voice and visual delivery, so every carousel sounds like you wrote it.' },
   { icon: Settings2, title: 'Control every slide', desc: 'Set topics, guide the hook, adjust structure and copy — edit details exactly how you want them.' },
-  { icon: Zap, title: 'Full carousel, not raw drafts', desc: 'Get a complete, structured carousel — not a block of text you still need to manually split into slides.' },
+  { icon: Zap, title: 'Finished carousel, ready to publish', desc: 'Get a complete, structured carousel — not unfinished text you still need to split into slides manually.' },
 ];
 
 export const CarouselDifferentiation = () => {

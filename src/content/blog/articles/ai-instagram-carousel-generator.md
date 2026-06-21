@@ -694,7 +694,7 @@ They start with a template before they know the message. Then they force the ide
 
 A better workflow is to build the carousel before you design it.
 
-First, clarify the idea. Then structure the slides. Then write the copy. Then choose the visual direction. Then polish the draft.
+First, clarify the idea. Then structure the slides, write the copy, choose the visual direction, and review the finished carousel before publishing.
 
 That is where GoToFlow fits naturally: it helps you turn source material into a structured Instagram carousel before the design stage becomes messy.
 

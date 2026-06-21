@@ -836,3 +836,17 @@ GoToFlow — это не AI-чат, не генератор отдельных �
 Абсолютные гарантии результата не обещаем.
 
 Roadmap-фичи не выдаём за live, но и не пишем их как минусы.
+
+---
+
+## 18. Finished output, not draft positioning
+
+Do not position GoToFlow outputs as drafts.
+
+GoToFlow ведёт пользователя от идеи или источника до готовой карусели или готового контента: структура, текст по слайдам, визуальная логика/дизайн, CTA и экспорт.
+
+В CTA, product bridge, final CTA, meta description, hero, Quick Answer и product descriptions нельзя обещать `черновик`, `draft`, `first draft`, `copy-ready structure` или `copy-ready carousel results` как результат GoToFlow.
+
+Если входной материал пользователя ещё не готов, используйте формулировки `заметки`, `исходный текст`, `материалы`, `идея`, `первый вариант`, `rough notes`, `source text` или `existing materials`. Результат GoToFlow описывайте как `готовый контент`, `готовая карусель`, `publish-ready content`, `finished carousel` или `export-ready output`.
+
+Operational draft status разрешён только для внутренних publishing states: `published: false`, `noindex: true`, preview/QA records и непубличные fixtures. Он не является продуктовым обещанием.

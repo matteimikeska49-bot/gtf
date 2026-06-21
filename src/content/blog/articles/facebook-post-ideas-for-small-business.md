@@ -28,17 +28,17 @@ faq:
     answer: "Yes! AI is great for brainstorming ideas, drafting engaging questions, and structuring your text. Just ensure you edit the output to maintain your authentic local voice."
 explore:
   tools:
-    - title: "AI Content Draft Generator"
+    - title: "AI Content Generator"
       href: "/ai-content-generator"
-      description: "Draft engaging Facebook captions and ideas quickly."
+      description: "Create engaging Facebook captions and ideas quickly."
   guides:
     - title: "Social Media Post Ideas for Business"
       href: "/blog/social-media-post-ideas-for-business"
       description: "Broader ideas applicable across multiple platforms."
 finalCta:
-  title: "Draft your next month of Facebook posts"
-  description: "Use our AI tools to structure and draft engaging community-focused content."
-  buttonText: "Draft Posts Now"
+  title: "Create your next month of Facebook posts"
+  description: "Use our AI tools to structure and create engaging community-focused content."
+  buttonText: "Create Posts Now"
   href: "/ai-content-generator"
   microcopy: "Brainstorming made simple"
   secondaryText: "Explore more content strategies →"

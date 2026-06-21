@@ -88,7 +88,7 @@ Switching to an automated workflow is simple. Here is how you can use [GoToFlow]
 Start by providing the AI with your core message. You can paste a full article, a list of tips, or even just a brief topic prompt. The AI acts as your editor, understanding the core value and distilling it into slide-sized bites.
 
 ### 2. Customize the Theme and Layout
-Once the AI generates the initial draft, you retain full control. You can adjust the color scheme, swap fonts, or modify the layout style to match your brand identity. The heavy lifting is done, leaving you to make minor aesthetic tweaks.
+Once the AI generates the first complete version, you retain full control. You can adjust the color scheme, swap fonts, or modify the layout style to match your brand identity. The heavy lifting is done, leaving you to make minor aesthetic tweaks.
 
 ### 3. Export for LinkedIn and Instagram
 When you are satisfied with the result, it’s time to export. You can download the carousel as a high-quality PDF document (ideal for LinkedIn) or as a sequence of PNG/JPG images (perfect for Instagram).

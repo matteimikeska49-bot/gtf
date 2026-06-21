@@ -51,7 +51,7 @@ faq:
   - question: "How many carousels should I publish a week?"
     answer: "Quality beats quantity. Publishing 1 to 2 highly valuable, well-structured carousels a week will outperform 5 low-effort posts."
   - question: "What is batching and why is it important?"
-    answer: "Batching means doing the same task for multiple posts at once. Brainstorm 10 topics on Monday. Write 5 drafts on Tuesday. Format them all with AI on Wednesday. Context-switching kills productivity."
+    answer: "Batching means doing the same task for multiple posts at once. Brainstorm 10 topics on Monday. Write 5 first versions on Tuesday. Format them all with AI on Wednesday. Context-switching kills productivity."
   - question: "Can I use AI to write the entire content strategy?"
     answer: "AI can suggest pillars and topics based on your inputs, but the overarching strategy and business goals must come from you. AI is the execution engine, not the CEO."
   - question: "How do I ensure all my carousels look like they belong to the same brand?"
@@ -72,7 +72,7 @@ explore:
       description: "How to position yourself as an authority."
 finalCta:
   title: "Ready to scale your content production?"
-  text: "Stop designing carousels one by one. Build a scalable pipeline and turn your drafts into ready-to-publish slides in minutes."
+  text: "Stop designing carousels one by one. Build a scalable pipeline and turn your source materials into ready-to-publish slides in minutes."
   buttonText: "Start Building Carousels"
   href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
@@ -99,7 +99,7 @@ type: takeaways
 Never ideate, write, and design on the same day. These require different states of mind. Separate the tasks to maintain quality.
 
 ### 2. Task Batching
-Generate a month's worth of ideas in one sitting. Write five drafts in another. Batching eliminates the friction of context-switching.
+Generate a month's worth of ideas in one sitting. Write five first versions in another. Batching eliminates the friction of context-switching.
 
 ### 3. Leverage AI for Bottlenecks
 Identify what slows you down (usually formatting and design) and use AI tools to automate that specific bottleneck.
@@ -113,7 +113,7 @@ Here is a blueprint for a sustainable content engine that integrates AI effectiv
 Your content must align with your business goals. Define 3-4 content pillars (e.g., Marketing Theory, Case Studies, Software Tools). 
 Use AI to brainstorm 10 specific topics for each pillar. Review the list and select the strongest ideas. You now have a content calendar.
 
-### Phase 2: The Knowledge Draft (Weekly)
+### Phase 2: Source Material Development (Weekly)
 Pick 2-3 topics. Write the core knowledge in a simple text document. Do not worry about slide numbers, formatting, or design. Just get the raw value, the frameworks, and the insights out of your head and onto the page.
 
 ### Phase 3: AI Formatting & Structure (Weekly)
@@ -121,7 +121,7 @@ This is where you save hours.
 
 > [!tip]
 > **Eliminate the design phase**
-> Take your raw knowledge draft and paste it into GoToFlow. The AI will instantly divide your text logically, apply optimal formatting, and generate a professional ready-to-publish carousel ready for review.
+> Add your source notes, existing text, or other materials to GoToFlow. The AI will divide the content logically, apply the visual structure, and generate a professional ready-to-publish carousel for final review.
 > [Try AI Carousel Maker](/ai-carousel-maker)
 
 ### Phase 4: Review and Publish (Bi-Weekly)

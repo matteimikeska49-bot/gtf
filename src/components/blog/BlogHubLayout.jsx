@@ -170,7 +170,7 @@ const getCategoriesConfig = (isRu) => {
   }
   return [
     { id: 'guides', baseCategory: 'Guides', title: 'Guides', titleBase: 'Guides', titleAccent: '', description: 'Step-by-step workflows for creating carousels, posts, and content systems with AI.' },
-    { id: 'prompts', baseCategory: 'Prompts & Libraries', title: 'Prompts & Libraries', titleBase: 'Prompts', titleAccent: '& Libraries', description: 'Copy-ready prompt collections and reusable content frameworks.' },
+    { id: 'prompts', baseCategory: 'Prompts & Libraries', title: 'Prompts & Libraries', titleBase: 'Prompts', titleAccent: '& Libraries', description: 'Ready-to-use prompt collections and reusable content frameworks.' },
     { id: 'ideas', baseCategory: 'Ideas', title: 'Ideas', titleBase: 'Ideas', titleAccent: '', description: 'Topic ideas and angles for creating better social content.' },
     { id: 'tools', baseCategory: 'Tools & Comparisons', title: 'Tools & Comparisons', titleBase: 'Tools', titleAccent: '& Comparisons', description: 'Tool roundups, alternatives, and buying guides.' },
     { id: 'workflows', baseCategory: 'AI Content Workflows', title: 'AI Content Workflows', titleBase: 'AI Content', titleAccent: 'Workflows', description: 'Systems for repurposing, scaling, and improving AI-assisted content.' },

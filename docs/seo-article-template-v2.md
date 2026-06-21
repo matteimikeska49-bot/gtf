@@ -547,5 +547,13 @@ npm run check:blog:visual
 
 Агент не имеет права писать “визуально всё ок”, если не запустил `check:blog:visual`.
 
+## Finished-output wording rule
+
+- GoToFlow output must never be described as `draft`, `first draft`, `copy-ready structure`, `copy-ready carousel results`, `черновик` or `черновая работа`.
+- This applies to title/meta, Quick Answer, FAQ, body product bridges, Explore labels, Final CTA and CTA buttons.
+- Unfinished user input should be called notes, rough notes, source text, existing materials, заметки, исходный текст or материалы.
+- Approved output wording: finished carousel, export-ready carousel, publish-ready content, готовая карусель, готовый контент, результат для экспорта.
+- Internal publication status may still use `draft` for unpublished/noindex files; that state must never leak into user-facing copy.
+
 ## Visible Title Rule
 Do not include `| GoToFlow` or `— GoToFlow` in the frontmatter `title` field. The `title` field is used for the visible H1 and breadcrumbs, which must NOT contain the brand suffix. The system will automatically append `| GoToFlow` for SEO meta tags when rendering.

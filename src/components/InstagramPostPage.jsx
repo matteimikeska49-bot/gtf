@@ -146,7 +146,7 @@ export const PostShowcase = () => (
 
 /* ── Problem ── */
 const problemCards = [
-  { title: "Spend 3 hours → get one post", text: "Writing hooks, structuring slides, and formatting takes forever — even with AI drafts that need full rewriting." },
+  { title: "Spend 3 hours → get one post", text: "Writing hooks, structuring slides, and formatting takes forever — even with generic AI output that still needs full rewriting." },
   { title: "First slide doesn't stop the scroll", text: "Weak hooks mean nobody swipes. Your post dies on slide 1 no matter how good the rest is." },
   { title: "Structure falls apart", text: "No clear flow between slides. The message is scattered, the reader drops off, and engagement tanks." },
   { title: "Too many tools, zero system", text: "ChatGPT for text, Canva for design, notes for ideas — context-switching kills your output." },
@@ -351,7 +351,7 @@ const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
 const diffPoints = [
   { icon: Fingerprint, title: 'Your style, not generic AI text', desc: 'GoToFlow preserves your tone of voice and visual delivery, so every post sounds like you wrote it.' },
   { icon: Settings2, title: 'Control every slide', desc: 'Set topics, guide the hook, adjust structure and copy — edit details exactly how you want them.' },
-  { icon: Zap, title: 'Full post, not raw drafts', desc: 'Get a complete, structured post — not a block of text you still need to manually split into slides.' },
+  { icon: Zap, title: 'Complete post, ready to publish', desc: 'Get a complete, structured post — not unfinished text you still need to split into slides manually.' },
 ];
 
 export const PostDifferentiation = () => {

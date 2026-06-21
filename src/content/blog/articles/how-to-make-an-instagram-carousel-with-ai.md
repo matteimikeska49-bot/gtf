@@ -60,7 +60,7 @@ faq:
   - question: "Can AI design the carousel images too?"
     answer: "Yes. While ChatGPT only outputs text, dedicated tools like GoToFlow generate both the text and the final visual design, which you can download immediately."
   - question: "Do AI carousels perform well on Instagram?"
-    answer: "Yes, if the content is structured correctly. Carousels naturally increase engagement and time spent on the post, regardless of whether the initial draft was AI-generated."
+    answer: "Yes, if the content is structured correctly. Carousels can increase engagement and time spent on the post when the first AI-assisted version is reviewed for clarity, accuracy, and visual flow."
   - question: "What is the best format for an Instagram carousel?"
     answer: "A 4:5 vertical format (1080x1350) works best because it takes up more vertical space in the mobile feed, capturing more attention."
   - question: "How many slides should my Instagram carousel have?"

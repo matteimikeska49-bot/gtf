@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import {
   extractFrontmatterAndBody,
+  getYamlBlock,
   isLivePublishedFrontmatter,
   stripCodeForTemplateGuardrails
 } from './blog-template-guardrails.mjs';
@@ -20,9 +21,39 @@ const REQUIRED_SOURCE_PHRASES = [
   'AI сам посмотрит видео, сделает транскрипцию и выделит суть',
   'GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, PDF, image, screenshot, or user photo',
   'GoToFlow product-positive comparison rule',
+  'Do not position GoToFlow outputs as drafts.',
   'Нельзя писать',
   'GoToFlow только пишет текст',
   'Canva делает дизайн, а GoToFlow только структуру'
+];
+
+const VISIBLE_FRONTMATTER_KEYS = [
+  'title',
+  'description',
+  'quickAnswerTitle',
+  'quickAnswer',
+  'faq',
+  'explore',
+  'finalCta'
+];
+
+const PRODUCT_COPY_ROOTS = [
+  path.join(ROOT, 'src/components'),
+  path.join(ROOT, 'src/i18n'),
+  path.join(ROOT, 'src/data/faqSchemaData.js')
+];
+
+const DRAFT_OUTPUT_RULES = [
+  {
+    id: 'draft-output-en',
+    reason: 'Visible product copy must promise a finished or publish-ready result, not a draft.',
+    re: /\b(?:first[-\s]?draft|drafts?|copy[-\s]?ready)\b/i
+  },
+  {
+    id: 'draft-output-ru',
+    reason: 'Видимый продуктовый текст должен обещать готовый результат, а не черновик.',
+    re: /чернов(?:ик(?:а|и|ов|ом|у)?|ая|ую|ые|ых|ой|ыми?)/i
+  }
 ];
 
 const RULES = [
@@ -209,6 +240,65 @@ function findIssuesInText(text) {
   return issues;
 }
 
+function findDraftOutputIssues(text) {
+  const normalized = normalizeText(text);
+  const issues = [];
+
+  for (const rule of DRAFT_OUTPUT_RULES) {
+    const match = rule.re.exec(normalized);
+    if (!match) continue;
+
+    const snippet = normalized
+      .slice(Math.max(0, match.index - 70), Math.min(normalized.length, match.index + match[0].length + 70))
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    issues.push({
+      ruleId: rule.id,
+      reason: rule.reason,
+      line: lineForIndex(normalized, match.index),
+      snippet
+    });
+  }
+
+  return issues;
+}
+
+function getVisibleArticleText(frontmatter, body) {
+  const visibleFrontmatter = VISIBLE_FRONTMATTER_KEYS
+    .map((key) => getYamlBlock(frontmatter, key).text)
+    .filter(Boolean)
+    .join('\n');
+
+  return `${visibleFrontmatter}\n${body}`;
+}
+
+function listProductCopyFiles(target) {
+  if (!fs.existsSync(target)) return [];
+  const stat = fs.statSync(target);
+  if (stat.isFile()) return [target];
+
+  return fs.readdirSync(target, { withFileTypes: true }).flatMap((entry) => {
+    const entryPath = path.join(target, entry.name);
+    if (entry.isDirectory()) return listProductCopyFiles(entryPath);
+    return /\.(?:js|jsx)$/.test(entry.name) ? [entryPath] : [];
+  });
+}
+
+function scanProductCopy() {
+  const errors = [];
+  const files = PRODUCT_COPY_ROOTS.flatMap(listProductCopyFiles);
+
+  for (const filePath of files) {
+    const content = fs.readFileSync(filePath, 'utf8');
+    for (const issue of findDraftOutputIssues(content)) {
+      errors.push(`[P0] ${path.relative(ROOT, filePath)}:${issue.line} positions a product output as unfinished (${issue.ruleId}). ${issue.reason} Snippet: "${issue.snippet}"`);
+    }
+  }
+
+  return { filesScanned: files.length, errors };
+}
+
 const COMPARISON_TOOL_RE = /\b(?:Canva|Figma|Photoshop|Midjourney|ChatGPT|Claude)\b/gi;
 
 function hasStrongProductBridge(text) {
@@ -243,24 +333,29 @@ function runSmokeTest() {
     'Canva делает дизайн, а GoToFlow только структуру.',
     'You first need to convert the audio into text using a transcription tool before using GoToFlow.',
     '## Limitations of GoToFlow',
-    'GoToFlow не умеет создавать готовые карусели.'
+    'GoToFlow не умеет создавать готовые карусели.',
+    'GoToFlow creates a draft carousel.',
+    'Сгенерируйте черновик в GoToFlow.',
+    'Use GoToFlow for structured, copy-ready carousel results.'
   ].join('\n');
   const good = [
     'Canva — ручной дизайн-редактор. GoToFlow — система создания готовой карусели от идеи до результата.',
-    'GoToFlow helps turn a topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo into a carousel workflow: structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.'
+    'GoToFlow helps turn rough notes or existing materials into a finished, export-ready carousel: structure, slide copy, visual direction, CTA, and a ready-to-publish result.'
   ].join('\n');
 
   const badIssues = findIssuesInText(bad);
   const goodIssues = findIssuesInText(good);
+  const badDraftIssues = findDraftOutputIssues(bad);
+  const goodDraftIssues = findDraftOutputIssues(good);
 
-  if (badIssues.length === 0) {
+  if (badIssues.length === 0 || badDraftIssues.length < 2) {
     console.error('❌ Smoke test failed: bad positioning example was not blocked.');
     process.exit(1);
   }
 
-  if (goodIssues.length > 0) {
+  if (goodIssues.length > 0 || goodDraftIssues.length > 0) {
     console.error('❌ Smoke test failed: good positioning example produced a false positive.');
-    goodIssues.forEach((issue) => console.error(`  - ${issue.ruleId}: ${issue.snippet}`));
+    [...goodIssues, ...goodDraftIssues].forEach((issue) => console.error(`  - ${issue.ruleId}: ${issue.snippet}`));
     process.exit(1);
   }
 
@@ -272,7 +367,7 @@ function runSmokeTest() {
   }
 
   console.log('✅ Product positioning smoke test passed.');
-  console.log(`- Bad example blocked by: ${badIssues.map((issue) => issue.ruleId).join(', ')}`);
+  console.log(`- Bad example blocked by: ${[...badIssues, ...badDraftIssues].map((issue) => issue.ruleId).join(', ')}`);
   console.log('- Good Canva comparison accepted.');
   console.log('- Missing GoToFlow product bridge warning detected; strong bridge accepted.');
 }
@@ -296,15 +391,23 @@ function scanArticles() {
     for (const issue of issues) {
       errors.push(`[P0] ${file}:${issue.line} violates GoToFlow product source of truth (${issue.ruleId}). ${issue.reason} Snippet: "${issue.snippet}"`);
     }
+    const draftOutputIssues = findDraftOutputIssues(getVisibleArticleText(frontmatter, body));
+    for (const issue of draftOutputIssues) {
+      errors.push(`[P0] ${file}:${issue.line} positions a published output as unfinished (${issue.ruleId}). ${issue.reason} Snippet: "${issue.snippet}"`);
+    }
     const comparisonWarning = findComparisonBridgeWarning(frontmatter, body);
     if (comparisonWarning) {
       warnings.push(`${file}: ${comparisonWarning}`);
     }
   }
 
+  const productCopy = scanProductCopy();
+  errors.push(...productCopy.errors);
+
   console.log('\n🔍 Blog Product Positioning Check');
   console.log(`- Source of truth: ${path.relative(ROOT, SOURCE_OF_TRUTH)}`);
   console.log(`- Published articles scanned: ${scanned}`);
+  console.log(`- Product copy files scanned: ${productCopy.filesScanned}`);
   console.log(`- Rules loaded: ${RULES.length}`);
 
   if (warnings.length > 0) {
