@@ -1090,14 +1090,24 @@
   },
   {
     "keyword": "ai content creation",
-    "targetSlug": "",
+    "targetSlug": "ai-content-creation",
     "language": "en",
-    "status": "backlog",
+    "country": "",
+    "topicTitle": "AI Content Creation",
+    "intent": "informational",
+    "serpType": "organic",
+    "volume": null,
+    "difficulty": null,
+    "cpc": null,
+    "status": "published",
     "trend": "falling",
     "source": "consolidated_demand_import",
     "lastChecked": "2026-06-09",
     "exactVolumeKnown": false,
-    "sourceUrl": "https://wordstat.yandex.ru/"
+    "sourceUrl": "https://wordstat.yandex.ru/",
+    "confidence": "medium",
+    "demandDataStatus": "post_publish_pending",
+    "notes": "Batch 1 owner for the broad AI content creation informational intent."
   },
   {
     "keyword": "ai content creation tools",
@@ -1185,14 +1195,24 @@
   },
   {
     "keyword": "ai content writing",
-    "targetSlug": "",
+    "targetSlug": "ai-content-writing",
     "language": "en",
-    "status": "backlog",
+    "country": "",
+    "topicTitle": "AI Content Writing",
+    "intent": "informational",
+    "serpType": "organic",
+    "volume": null,
+    "difficulty": null,
+    "cpc": null,
+    "status": "published",
     "trend": "falling",
     "source": "consolidated_demand_import",
     "lastChecked": "2026-06-09",
     "exactVolumeKnown": false,
-    "sourceUrl": "https://wordstat.yandex.ru/"
+    "sourceUrl": "https://wordstat.yandex.ru/",
+    "confidence": "medium",
+    "demandDataStatus": "post_publish_pending",
+    "notes": "Batch 1 owner for practical AI writing workflows for social content."
   },
   {
     "keyword": "ai detector",
@@ -4500,15 +4520,24 @@
   },
   {
     "keyword": "ии пост для соцсетей",
-    "targetSlug": "",
+    "targetSlug": "ii-post-dlya-socsetej",
     "language": "ru",
-    "status": "backlog",
+    "country": "RU",
+    "topicTitle": "ИИ-пост для соцсетей",
+    "intent": "informational",
+    "serpType": "organic",
+    "difficulty": null,
+    "cpc": null,
+    "status": "published",
     "source": "yandex_wordstat_manual",
     "lastChecked": "2026-06-08",
     "volume": 777,
     "trend": "unknown",
     "exactVolumeKnown": true,
-    "sourceUrl": "https://wordstat.yandex.ru/"
+    "sourceUrl": "https://wordstat.yandex.ru/",
+    "confidence": "medium",
+    "demandDataStatus": "real_data_imported",
+    "notes": "Batch 1 owner; exact Wordstat volume retained from the existing demand record."
   },
   {
     "keyword": "генерация постов каруселей",
@@ -4847,9 +4876,19 @@
   },
   {
     "keyword": "где делать посты карусели с ии",
-    "targetSlug": "",
+    "targetSlug": "gde-delat-posty-karuseli-s-ii",
     "language": "ru",
-    "status": "backlog",
+    "country": "RU",
+    "topicTitle": "Где делать посты-карусели с ИИ",
+    "intent": "commercial investigation",
+    "serpType": "organic",
+    "volume": null,
+    "difficulty": null,
+    "cpc": null,
+    "trend": "unknown",
+    "exactVolumeKnown": false,
+    "confidence": "low",
+    "status": "published",
     "source": "yandex_webmaster_manual",
     "lastChecked": "2026-06-08",
     "performance": {
@@ -4859,7 +4898,9 @@
       "position": 0,
       "dateRange": "2026-06-01..2026-06-07"
     },
-    "sourceUrl": "https://wordstat.yandex.ru/"
+    "sourceUrl": "https://wordstat.yandex.ru/",
+    "demandDataStatus": "partial_manual_data",
+    "notes": "Batch 1 owner; demand evidence is limited to the retained Yandex Webmaster impression record."
   },
   {
     "keyword": "генерация постов-каруселей",
@@ -4911,9 +4952,19 @@
   },
   {
     "keyword": "какой ии создаст пост карусель",
-    "targetSlug": "",
+    "targetSlug": "kakoy-ii-sozdast-post-karusel",
     "language": "ru",
-    "status": "backlog",
+    "country": "RU",
+    "topicTitle": "Какой ИИ создаст пост-карусель",
+    "intent": "commercial investigation",
+    "serpType": "organic",
+    "volume": null,
+    "difficulty": null,
+    "cpc": null,
+    "trend": "unknown",
+    "exactVolumeKnown": false,
+    "confidence": "low",
+    "status": "published",
     "source": "yandex_webmaster_manual",
     "lastChecked": "2026-06-08",
     "performance": {
@@ -4923,7 +4974,9 @@
       "position": 0,
       "dateRange": "2026-06-01..2026-06-07"
     },
-    "sourceUrl": "https://wordstat.yandex.ru/"
+    "sourceUrl": "https://wordstat.yandex.ru/",
+    "demandDataStatus": "partial_manual_data",
+    "notes": "Batch 1 owner; demand evidence is limited to the retained Yandex Webmaster impression record."
   },
   {
     "keyword": "посты карусели ии",

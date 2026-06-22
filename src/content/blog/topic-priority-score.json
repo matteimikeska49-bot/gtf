@@ -1646,5 +1646,145 @@
     "priorityTier": "P0",
     "scoringReason": "Batch 23 injection",
     "scoringLastUpdated": "2026-06-17"
+  },
+  {
+    "targetSlug": "ii-post-dlya-socsetej",
+    "title": "ИИ-пост для соцсетей: Как создавать контент, который читают",
+    "language": "ru",
+    "primaryKeyword": "ии пост для соцсетей",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "medium",
+      "exactVolumeKnown": true,
+      "volume": 777,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 8,
+      "difficultyScore": 6,
+      "productFitScore": 8,
+      "businessValueScore": 8,
+      "cannibalizationSafetyScore": 7,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 8,
+      "finalPriorityScore": 68
+    },
+    "priorityTier": "P2",
+    "scoringReason": "Exact Yandex Wordstat demand supports a useful social-content guide; visual proof is intentionally deferred because no intent-specific mockup is verified.",
+    "scoringLastUpdated": "2026-06-22"
+  },
+  {
+    "targetSlug": "kakoy-ii-sozdast-post-karusel",
+    "title": "Какой ИИ создаст пост-карусель лучше всего: Сравнение инструментов",
+    "language": "ru",
+    "primaryKeyword": "какой ии создаст пост карусель",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "yandex_webmaster_manual",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 2,
+      "difficultyScore": 5,
+      "productFitScore": 9,
+      "businessValueScore": 7,
+      "cannibalizationSafetyScore": 7,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 57
+    },
+    "priorityTier": "P3",
+    "scoringReason": "The comparison intent has direct product fit but only limited Yandex Webmaster evidence, so it remains a lower-priority published owner.",
+    "scoringLastUpdated": "2026-06-22"
+  },
+  {
+    "targetSlug": "gde-delat-posty-karuseli-s-ii",
+    "title": "Где делать посты-карусели с ИИ: Обзор лучших платформ и методов",
+    "language": "ru",
+    "primaryKeyword": "где делать посты карусели с ии",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "yandex_webmaster_manual",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 2,
+      "difficultyScore": 5,
+      "productFitScore": 9,
+      "businessValueScore": 7,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 3,
+      "finalPriorityScore": 55
+    },
+    "priorityTier": "P3",
+    "scoringReason": "The where-to-create intent is commercially relevant but supported by limited Yandex Webmaster evidence and is kept distinct from the which-AI comparison owner.",
+    "scoringLastUpdated": "2026-06-22"
+  },
+  {
+    "targetSlug": "ai-content-creation",
+    "title": "The Ultimate Guide to AI Content Creation for Social Media",
+    "language": "en",
+    "primaryKeyword": "ai content creation",
+    "relatedProductRoute": "/ai-content-generator",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "consolidated_demand_import",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "falling"
+    },
+    "scores": {
+      "demandScore": 6,
+      "difficultyScore": 7,
+      "productFitScore": 8,
+      "businessValueScore": 8,
+      "cannibalizationSafetyScore": 7,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 6,
+      "finalPriorityScore": 66
+    },
+    "priorityTier": "P2",
+    "scoringReason": "Broad informational demand and strong fit with the AI content generator justify a pillar owner; exact volume remains unavailable.",
+    "scoringLastUpdated": "2026-06-22"
+  },
+  {
+    "targetSlug": "ai-content-writing",
+    "title": "AI Content Writing for Social Media: From Generic Prompts to High-Converting Carousels",
+    "language": "en",
+    "primaryKeyword": "ai content writing",
+    "relatedProductRoute": "/ai-content-generator",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "consolidated_demand_import",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "falling"
+    },
+    "scores": {
+      "demandScore": 6,
+      "difficultyScore": 7,
+      "productFitScore": 7,
+      "businessValueScore": 7,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 6,
+      "finalPriorityScore": 63
+    },
+    "priorityTier": "P2",
+    "scoringReason": "The practical writing intent supports the broader AI content creation hub and has medium-confidence imported demand without exact volume.",
+    "scoringLastUpdated": "2026-06-22"
   }
 ]

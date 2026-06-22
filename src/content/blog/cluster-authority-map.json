@@ -398,9 +398,19 @@
         "url": "/ru/blog/neyroset-dlya-postov",
         "role": "hub",
         "canonicalRisk": "low"
+      },
+      {
+        "slug": "ii-post-dlya-socsetej",
+        "url": "/ru/blog/ii-post-dlya-socsetej",
+        "role": "supporting",
+        "intentId": "ru:ii-post-dlya-socsetej",
+        "priorityTier": "P2",
+        "status": "published"
       }
     ],
-    "supportingArticles": []
+    "supportingArticles": [
+      "ii-post-dlya-socsetej"
+    ]
   },
   {
     "clusterId": "ru:ii-carousel-generator",
@@ -497,6 +507,22 @@
         "intentId": "ru:cta-dlya-karuseley-instagram-s-ii",
         "priorityTier": "P1",
         "status": "draft_preview"
+      },
+      {
+        "slug": "kakoy-ii-sozdast-post-karusel",
+        "url": "/ru/blog/kakoy-ii-sozdast-post-karusel",
+        "role": "supporting",
+        "intentId": "ru:kakoy-ii-sozdast-post-karusel",
+        "priorityTier": "P3",
+        "status": "published"
+      },
+      {
+        "slug": "gde-delat-posty-karuseli-s-ii",
+        "url": "/ru/blog/gde-delat-posty-karuseli-s-ii",
+        "role": "supporting",
+        "intentId": "ru:gde-delat-posty-karuseli-s-ii",
+        "priorityTier": "P3",
+        "status": "published"
       }
     ],
     "supportingArticles": [
@@ -510,7 +536,9 @@
       "karuseli-dlya-onlayn-shkol-s-ii",
       "karuseli-dlya-smm-agentstva-s-ii",
       "psihologiya-karuseley-kak-uderzhat-vnimanie",
-      "cta-dlya-karuseley-instagram-s-ii"
+      "cta-dlya-karuseley-instagram-s-ii",
+      "kakoy-ii-sozdast-post-karusel",
+      "gde-delat-posty-karuseli-s-ii"
     ],
     "missingTopics": [],
     "internalLinkingRules": {
@@ -521,7 +549,49 @@
         "/ru/ii-generator-karuseley"
       ]
     },
-    "notes": "New RU II cluster for Batch 23",
-    "lastReviewed": "2026-06-17"
+    "notes": "RU AI carousel generator cluster, extended for Batch 1 comparison owners.",
+    "lastReviewed": "2026-06-22"
+  },
+  {
+    "clusterId": "en:ai-content-workflow",
+    "clusterName": "EN AI Content Workflow",
+    "language": "en",
+    "productRoute": "/ai-content-generator",
+    "hubArticle": "ai-content-creation",
+    "hubSlug": "ai-content-creation",
+    "articleRoles": [
+      {
+        "slug": "ai-content-creation",
+        "url": "/blog/ai-content-creation",
+        "role": "hub",
+        "intentId": "en:ai-content-creation",
+        "priorityTier": "P2",
+        "status": "published"
+      },
+      {
+        "slug": "ai-content-writing",
+        "url": "/blog/ai-content-writing",
+        "role": "supporting",
+        "intentId": "en:ai-content-writing",
+        "priorityTier": "P2",
+        "status": "published"
+      }
+    ],
+    "supportingArticles": [
+      "ai-content-writing"
+    ],
+    "missingTopics": [],
+    "internalLinkingRules": {
+      "mustLinkToHub": true,
+      "mustLinkToProductRoute": true,
+      "sameLanguageOnly": true,
+      "recommendedLinks": [
+        "/blog/ai-content-creation",
+        "/blog/ai-content-writing",
+        "/ai-content-generator"
+      ]
+    },
+    "notes": "Batch 1 cluster for broad AI content creation and practical AI writing workflows.",
+    "lastReviewed": "2026-06-22"
   }
 ]
