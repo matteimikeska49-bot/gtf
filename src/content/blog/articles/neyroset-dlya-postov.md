@@ -3,6 +3,7 @@ title: "Нейросеть для постов: Как создавать кон
 description: "Полное руководство по использованию нейросетей для постов. Как генерировать идеи, писать цепляющие тексты и создавать готовые карусели для Instagram и LinkedIn с помощью ИИ."
 language: "ru"
 slug: "neyroset-dlya-postov"
+canonical: "https://gotoflow.io/ru/blog/neyroset-dlya-postov"
 articleType: "guide"
 published: true
 noindex: false
