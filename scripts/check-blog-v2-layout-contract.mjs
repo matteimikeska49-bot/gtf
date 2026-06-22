@@ -46,7 +46,12 @@ const BATCH_22_FILES = new Set([
     "how-to-build-a-personal-brand-on-linkedin-with-ai",
     "instagram-carousel-storytelling",
     "viral-linkedin-post-examples",
-    "ai-social-media-manager"
+    "ai-social-media-manager",
+    "ii-post-dlya-socsetej",
+    "kakoy-ii-sozdast-post-karusel",
+    "gde-delat-posty-karuseli-s-ii",
+    "ai-content-creation",
+    "ai-content-writing"
 ]);
 
 for (const file of files) {
@@ -123,6 +128,24 @@ for (const file of files) {
                       
   if (!hasV2Layout) {
       errors.push(`Article "${slug}": body is missing V2 layout markers (cards, callouts, mockups). Plain markdown is not allowed for V2 published SEO articles.`);
+  }
+
+  
+  // 6. Enforce Mockups for V2 Articles
+  const mockupStatus = getYamlValue(frontmatter, 'mockupStatus');
+  const mockupReason = getYamlValue(frontmatter, 'mockupReason') || '';
+  
+  if (!mockupStatus) {
+      errors.push(`Article "${slug}": frontmatter is missing 'mockupStatus'. V2 articles must declare mockupStatus.`);
+  } else if (mockupStatus === 'not_available') {
+      if (mockupReason.length < 30 || (!mockupReason.includes('system exception') && !mockupReason.includes('no-ui-required'))) {
+          errors.push(`Article "${slug}": mockupStatus is 'not_available' without a strict system reason. Must include 'system exception' or 'no-ui-required' and be >30 chars.`);
+      }
+  }
+  
+  const hasMockupMarker = body.includes(':::mockup');
+  if (!hasMockupMarker && mockupStatus === 'present') {
+      errors.push(`Article "${slug}": mockupStatus is 'present' but body is missing ':::mockup'.`);
   }
 
   // 5. Check Body for Forbidden tags/patterns
