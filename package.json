@@ -52,6 +52,8 @@
     "check:blog:render-only": "npm run check:blog:dist && npm run check:blog:render-contract && npm run check:blog:rendered-html",
     "check:blog:build-render": "npm run build && npm run check:blog:render-only",
     "check:blog:full": "npm run check:blog:prepublish && npm run check:blog:build-render",
+    "check:blog:release": "node scripts/check-blog-release.mjs",
+    "check:blog:legacy-debt": "node scripts/check-blog-release.mjs --legacy-debt",
     "check:blog:all": "npm run build && npm run check:blog:dist && npm run check:blog:run && npm run check:blog:content-template && npm run check:blog:product-links && npm run check:blog:seo-meta && npm run check:blog:cannibalization && npm run check:blog:links && npm run check:blog:mockups && npm run check:blog:schema && npm run check:blog:batch && npm run check:blog:topics && npx start-server-and-test preview http-get://localhost:4173 \"npm run check:blog:render:run && npm run check:blog:visual:run\"",
     "check:blog:deploy": "npm run check:blog:all && npm run check:blog:production",
     "check:blog:render": "npm run build && npx start-server-and-test preview http-get://localhost:4173 \"npm run check:blog:render:run\"",

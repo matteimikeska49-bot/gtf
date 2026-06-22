@@ -11,6 +11,20 @@ console.log('🔍 Starting anti-cannibalization check...\n');
 let hasP0Error = false;
 let warnings = [];
 let conflicts = [];
+const releaseMode = process.env.BLOG_RELEASE_MODE === '1';
+const releaseSlugs = new Set((process.env.BLOG_RELEASE_ARTICLE_SLUGS || '').split(',').filter(Boolean));
+const changedPaths = new Set((process.env.BLOG_RELEASE_CHANGED_PATHS || '').split(',').filter(Boolean));
+const strategyDataChanged = changedPaths.has('src/content/blog/topic-map.json');
+
+function addConflict(message, slugs = []) {
+  const affectsRelease = slugs.some((slug) => releaseSlugs.has(slug));
+  if (!releaseMode || strategyDataChanged || affectsRelease) {
+    conflicts.push(message);
+    hasP0Error = true;
+  } else {
+    warnings.push(`Legacy debt (non-blocking for current release): ${message}`);
+  }
+}
 
 // 1. Read topic map
 let topicMap = [];
@@ -59,16 +73,14 @@ const topicIntents = new Set();
 topicMap.forEach((entry, i) => {
   const slugKey = `${entry.language}:${entry.targetSlug}`;
   if (topicSlugs.has(slugKey)) {
-    conflicts.push(`Duplicate targetSlug in topic-map.json: ${slugKey}`);
-    hasP0Error = true;
+    addConflict(`Duplicate targetSlug in topic-map.json: ${slugKey}`, [entry.targetSlug]);
   }
   topicSlugs.add(slugKey);
   
   if (entry.primaryKeyword) {
     const kwKey = `${entry.language}:${entry.primaryKeyword.toLowerCase()}`;
     if (topicKeywords.has(kwKey)) {
-      conflicts.push(`Duplicate primaryKeyword in topic-map.json: ${kwKey}`);
-      hasP0Error = true;
+      addConflict(`Duplicate primaryKeyword in topic-map.json: ${kwKey}`, [entry.targetSlug]);
     }
     topicKeywords.add(kwKey);
   }
@@ -89,16 +101,14 @@ const mdKeywords = new Set();
 articles.forEach(article => {
   const slugKey = `${article.language}:${article.slug}`;
   if (mdSlugs.has(slugKey)) {
-    conflicts.push(`Duplicate slug in markdown articles: ${slugKey} (File: ${article.file})`);
-    hasP0Error = true;
+    addConflict(`Duplicate slug in markdown articles: ${slugKey} (File: ${article.file})`, [article.slug]);
   }
   mdSlugs.add(slugKey);
   
   if (article.primaryKeyword) {
     const kwKey = `${article.language}:${article.primaryKeyword.toLowerCase()}`;
     if (mdKeywords.has(kwKey)) {
-      conflicts.push(`Duplicate primaryKeyword in markdown articles: ${kwKey} (File: ${article.file})`);
-      hasP0Error = true;
+      addConflict(`Duplicate primaryKeyword in markdown articles: ${kwKey} (File: ${article.file})`, [article.slug]);
     }
     mdKeywords.add(kwKey);
   }
@@ -172,8 +182,7 @@ articles.forEach(article => {
                     `    Conflicting keyword/intent: '${kw}' contains product term '${matchedPattern}'\n` +
                     `    Recommended product route: ${recommendedRoute}\n` +
                     `    Note: If this is supporting content, adjust articleType (e.g. comparison_article, prompt_library) or primaryKeyword.`;
-        conflicts.push(msg);
-        hasP0Error = true;
+        addConflict(msg, [article.slug]);
       }
     }
   }

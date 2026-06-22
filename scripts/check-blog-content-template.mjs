@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execFileSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,6 +17,33 @@ const STRICT_SLUGS = new Set([
   'kak-peredelat-youtube-v-karusel-linkedin',
   'linkedin-carousel-hooks'
 ]);
+
+const LEGACY_STRICT_SLUGS = new Set([
+  'ii-post-dlya-socsetej',
+  'kakoy-ii-sozdast-post-karusel',
+  'gde-delat-posty-karuseli-s-ii',
+  'neyroset-dlya-postov',
+  'ai-content-creation',
+  'ai-content-writing',
+  'b2b-social-media-post-ideas',
+  'best-time-to-post-on-instagram',
+  'linkedin-carousel-ads'
+]);
+
+function getChangedArticleSlugs() {
+  const fromRelease = (process.env.BLOG_RELEASE_ARTICLE_SLUGS || '').split(',').filter(Boolean);
+  if (fromRelease.length > 0) return new Set(fromRelease);
+  try {
+    const changed = execFileSync('git', ['diff', '--name-only', 'HEAD', '--', 'src/content/blog/articles'], { cwd: ROOT, encoding: 'utf8' });
+    const untracked = execFileSync('git', ['ls-files', '--others', '--exclude-standard', 'src/content/blog/articles'], { cwd: ROOT, encoding: 'utf8' });
+    return new Set(`${changed}\n${untracked}`.split('\n').filter((file) => file.endsWith('.md')).map((file) => path.basename(file, '.md')));
+  } catch {
+    return new Set();
+  }
+}
+
+const changedArticleSlugs = getChangedArticleSlugs();
+const legacyDepthDebt = [];
 
 // Existing published debt remains visible as P1 warnings. Any new occurrence is P0.
 const LEGACY_GENERIC_EXPLORE_ANCHOR_SLUGS = new Set([
@@ -236,7 +264,38 @@ const getMarkdownFaqCount = (body) => {
 
 const hasMarkdownProductCta = (body) => body.includes('> [!product]');
 
-const isStrictArticle = (frontmatter) => STRICT_SLUGS.has(frontmatter.slug);
+const isStrictArticle = (frontmatter) => STRICT_SLUGS.has(frontmatter.slug)
+  || LEGACY_STRICT_SLUGS.has(frontmatter.slug)
+  || changedArticleSlugs.has(frontmatter.slug);
+
+function findRepeatedContent(body) {
+  const repeatedH2 = [];
+  const repeatedParagraphs = [];
+  const headings = new Map();
+  const paragraphs = new Map();
+
+  for (const heading of body.matchAll(/^##\s+(.+)$/gm)) {
+    const normalized = heading[1].toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+    if (!normalized) continue;
+    if (headings.has(normalized)) repeatedH2.push(heading[1].trim());
+    headings.set(normalized, true);
+  }
+
+  const withoutFences = body.replace(/```[\s\S]*?```/g, '');
+  for (const paragraph of withoutFences.split(/\n\s*\n/)) {
+    const normalized = paragraph
+      .replace(/^#{1,6}\s+/gm, '')
+      .replace(/[*_`>\[\]()!-]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+    if (normalized.length < 180) continue;
+    if (paragraphs.has(normalized)) repeatedParagraphs.push(normalized.slice(0, 90));
+    paragraphs.set(normalized, true);
+  }
+
+  return { repeatedH2, repeatedParagraphs };
+}
 
 function addIssue({ errors, warnings, strict, message }) {
   if (strict) {
@@ -272,23 +331,23 @@ function checkRenderedHtml({ frontmatter, strict, errors, warnings }) {
     ? /Часто задаваемые[\s\S]{0,220}вопросы\s*\(FAQ\)/i.test(html)
     : /Frequently Asked[\s\S]{0,220}Questions\s*\(FAQ\)/i.test(html);
   if (hasDetailsFaq && hasMarkdownFaqHeading) {
-    errors.push('Rendered HTML contains both markdown FAQ heading and frontmatter FAQ details block.');
+    renderedErrors.push('Rendered HTML contains both markdown FAQ heading and frontmatter FAQ details block.');
   }
 
   const hasFrontmatterCta = Boolean(frontmatter.finalCta) && /https:\/\/app\.gotoflow\.io/i.test(html);
   const hasMarkdownProductBlock = /PRODUCT WORKFLOW|ИНСТРУМЕНТ ИЛИ ПРОЦЕСС/i.test(html);
   if (hasFrontmatterCta && hasMarkdownProductBlock) {
-    errors.push('Rendered HTML contains both markdown product CTA block and frontmatter FinalCta block.');
+    renderedErrors.push('Rendered HTML contains both markdown product CTA block and frontmatter FinalCta block.');
   }
 
   const hasRawInlineProductBlock = /<InlineProductBlock/i.test(html);
   if (hasRawInlineProductBlock) {
-    errors.push('Rendered HTML contains raw <InlineProductBlock marker.');
+    renderedErrors.push('Rendered HTML contains raw <InlineProductBlock marker.');
   }
 
   const hasRawProductMarkdown = /\[!product\]/i.test(html);
   if (hasRawProductMarkdown) {
-    errors.push('Rendered HTML contains raw [!product] marker.');
+    renderedErrors.push('Rendered HTML contains raw [!product] marker.');
   }
 
   renderedErrors.forEach((message) => addIssue({ errors, warnings, strict, message }));
@@ -302,9 +361,11 @@ function checkArticle(file, routeRegistry) {
   const filePath = path.join(ARTICLES_DIR, file);
   const content = fs.readFileSync(filePath, 'utf-8');
   const { yaml, frontmatter, body } = parseFrontmatter(content);
+  frontmatter.slug = frontmatter.slug || file.replace(/\.md$/, '');
   const errors = [];
   const warnings = [];
   const strict = isStrictArticle(frontmatter);
+  const depthStrict = LEGACY_STRICT_SLUGS.has(frontmatter.slug) || changedArticleSlugs.has(frontmatter.slug);
   const isLivePublished = frontmatter.published === true && frontmatter.noindex === false;
   const articleLanguage = frontmatter.language === 'ru' ? 'ru' : 'en';
   const lowerBody = body.toLowerCase();
@@ -325,20 +386,8 @@ function checkArticle(file, routeRegistry) {
     }
   }
 
-  // Content depth gate for batch B & new articles
-  const NEW_ARTICLES = new Set([
-    'ii-post-dlya-socsetej',
-    'kakoy-ii-sozdast-post-karusel',
-    'gde-delat-posty-karuseli-s-ii',
-    'neyroset-dlya-postov',
-    'ai-content-creation',
-    'ai-content-writing',
-    'b2b-social-media-post-ideas',
-    'best-time-to-post-on-instagram',
-    'linkedin-carousel-ads'
-  ]);
-  
-  if (isLivePublished && (NEW_ARTICLES.has(frontmatter.slug) || !STRICT_SLUGS.has(frontmatter.slug))) {
+  // Current changed articles are strict. Existing corpus debt remains visible without blocking unrelated releases.
+  if (isLivePublished) {
       const type = frontmatter.articleType || 'guide';
       const bodyChars = body.trim().length;
       const h2Match = body.match(/^## /gm);
@@ -353,37 +402,44 @@ function checkArticle(file, routeRegistry) {
       else { minChars = 6000; minH2 = 3; }
       
       if (bodyChars < minChars) {
-          // If it's a legacy article, just warn. If it's one of the NEW_ARTICLES, error.
-          if (NEW_ARTICLES.has(frontmatter.slug)) {
+          if (depthStrict) {
               errors.push(`P0: Content depth too thin for ${type}. Body chars: ${bodyChars} (min ${minChars}).`);
           } else {
-              // Ignore legacy articles for now to not break the build
+              legacyDepthDebt.push({ slug: frontmatter.slug, type, bodyChars, minChars });
           }
       } else if (bodyChars >= minChars && bodyChars < minChars + 2000) {
           warnings.push(`P1: Content depth ${bodyChars} chars is close to the minimum ${minChars} for ${type}.`);
       }
       
       if (h2Count < minH2) {
-          if (NEW_ARTICLES.has(frontmatter.slug)) {
+          if (depthStrict) {
               errors.push(`P0: Insufficient depth structure for ${type}. H2 count: ${h2Count} (min ${minH2}).`);
           }
       }
       
-      if (!frontmatter.quickAnswer && NEW_ARTICLES.has(frontmatter.slug)) {
+      if (!frontmatter.quickAnswer && depthStrict) {
           errors.push('P0: Missing Quick Answer frontmatter block.');
       }
       
-      if (!/(?:workflow|шаг 1|step 1|сценари|guide|инструкц)/i.test(body) && NEW_ARTICLES.has(frontmatter.slug)) {
+      if (!/(?:workflow|шаг 1|step 1|сценари|guide|инструкц)/i.test(body) && depthStrict) {
           errors.push('P0: Missing product-led workflow section.');
       }
       
-      if (!/(?:carousel|карусел)/i.test(body) && NEW_ARTICLES.has(frontmatter.slug)) {
+      if (!/(?:carousel|карусел)/i.test(body) && depthStrict) {
           errors.push('P0: Missing carousel bridge.');
       }
       
-      if (!/(?:example|mistake|scenario|compar|пример|ошибк|сравнен)/i.test(body) && NEW_ARTICLES.has(frontmatter.slug)) {
+      if (!/(?:example|mistake|scenario|compar|пример|ошибк|сравнен)/i.test(body) && depthStrict) {
           errors.push('P0: Missing practical examples/scenarios/mistakes/comparison section.');
       }
+  }
+
+  const repeated = findRepeatedContent(body);
+  if (repeated.repeatedH2.length > 0) {
+    addIssue({ errors, warnings, strict, message: `Repeated H2 headings found: ${repeated.repeatedH2.join(', ')}` });
+  }
+  if (repeated.repeatedParagraphs.length > 0) {
+    addIssue({ errors, warnings, strict, message: `Repeated long paragraphs found (${repeated.repeatedParagraphs.length}). Raw character count cannot be padded with duplicated copy.` });
   }
 
 
@@ -563,6 +619,11 @@ function runCheck() {
   console.log(`Checked:  ${files.length} articles`);
   console.log(`Errors:   ${totalErrors}`);
   console.log(`Warnings: ${totalWarnings}`);
+  console.log(`Legacy depth debt: ${legacyDepthDebt.length} articles below current numeric thresholds (report-only).`);
+  legacyDepthDebt.slice(0, 10).forEach((item) => {
+    console.log(`  - ${item.slug}: ${item.bodyChars}/${item.minChars} chars (${item.type})`);
+  });
+  if (legacyDepthDebt.length > 10) console.log(`  ...and ${legacyDepthDebt.length - 10} more`);
   console.log(`Can proceed: ${totalErrors === 0 ? 'yes' : 'no'}`);
 
   if (totalErrors > 0) {

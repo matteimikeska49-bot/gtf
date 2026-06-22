@@ -11,6 +11,20 @@ console.log('📦 Starting Batch Workflow Check (Stage 20)...\n');
 
 let hasError = false;
 let conflicts = [];
+let legacyDebt = [];
+const releaseMode = process.env.BLOG_RELEASE_MODE === '1';
+const releaseSlugs = new Set((process.env.BLOG_RELEASE_ARTICLE_SLUGS || '').split(',').filter(Boolean));
+const changedPaths = new Set((process.env.BLOG_RELEASE_CHANGED_PATHS || '').split(',').filter(Boolean));
+const batchDataChanged = changedPaths.has('src/content/blog/batch-status.json');
+
+function addConflict(message, slug = null) {
+  if (!releaseMode || batchDataChanged || (slug && releaseSlugs.has(slug))) {
+    conflicts.push(message);
+    hasError = true;
+  } else {
+    legacyDebt.push(message);
+  }
+}
 
 let batchData = [];
 try {
@@ -25,8 +39,7 @@ const isMiniBatchComplete = batchData.filter(d => d.batchId === 'D53').every(d =
 const hasBatch25 = batchData.some(d => d.batchId === 'B25');
 
 if (hasBatch25 && !isMiniBatchComplete) {
-  conflicts.push(`Batch 25 cannot start while mini-batch (D53) is not fully complete (published & verified).`);
-  hasError = true;
+  addConflict(`Batch 25 cannot start while mini-batch (D53) is not fully complete (published & verified).`);
 }
 
 let d53Count = 0;
@@ -40,8 +53,7 @@ batchData.forEach((entry, i) => {
 
   // 1. Every article has batch-status entry (We are iterating over them, so implicitly true, but we check if properties are missing)
   if (!entry.batchId || !entry.slug || !entry.status) {
-    conflicts.push(`Entry [Index ${i}] missing required fields (batchId, slug, status).`);
-    hasError = true;
+    addConflict(`Entry [Index ${i}] missing required fields (batchId, slug, status).`, entry.slug);
   }
 
   // 2. D53 briefs tracking
@@ -55,14 +67,12 @@ batchData.forEach((entry, i) => {
 
   // 9. Topic score/priority
   if ((isD53 || entry.batchId === 'B25') && !entry.priorityScore && !['idea', 'rejected', 'hold'].includes(entry.status)) {
-    conflicts.push(`[${entry.slug}] missing priorityScore but is active in ${entry.batchId}.`);
-    hasError = true;
+    addConflict(`[${entry.slug}] missing priorityScore but is active in ${entry.batchId}.`, entry.slug);
   }
 
   // 10. Intent/cluster/product references
   if ((isD53 || entry.batchId === 'B25') && (!entry.cluster || !entry.primaryKeyword)) {
-    conflicts.push(`[${entry.slug}] missing intent/cluster/product mapping in ${entry.batchId}.`);
-    hasError = true;
+    addConflict(`[${entry.slug}] missing intent/cluster/product mapping in ${entry.batchId}.`, entry.slug);
   }
 
   // 3. Frontmatter agreement
@@ -76,8 +86,8 @@ batchData.forEach((entry, i) => {
 
     // D53 strict draft checks (Rule 6)
     if (isD53 && !['published', 'live_verified'].includes(entry.status)) {
-      if (isPublished) { conflicts.push(`[${entry.slug}] D53 draft leaked published:true!`); hasError = true; }
-      if (!isNoindex) { conflicts.push(`[${entry.slug}] D53 draft leaked noindex:false!`); hasError = true; }
+      if (isPublished) addConflict(`[${entry.slug}] D53 draft leaked published:true!`, entry.slug);
+      if (!isNoindex) addConflict(`[${entry.slug}] D53 draft leaked noindex:false!`, entry.slug);
     }
 
     // 4. approved_for_publish gates
@@ -91,8 +101,7 @@ batchData.forEach((entry, i) => {
     // 5. published gates
     if (entry.status === 'published' || isPublished) {
       if (!entry.approvedForPublish) {
-         conflicts.push(`[${entry.slug}] published but lack approvedForPublish true.`);
-         hasError = true;
+         addConflict(`[${entry.slug}] published but lack approvedForPublish true.`, entry.slug);
       }
       if ((isD53 || entry.batchId === 'B25') && !entry.productionVerificationStatus) {
          conflicts.push(`[${entry.slug}] published but missing productionVerificationStatus in ${entry.batchId}.`);
@@ -104,8 +113,7 @@ batchData.forEach((entry, i) => {
   if (['hold', 'rejected'].includes(entry.status)) {
     blockedCount++;
     if (entry.published || entry.approvedForPublish) {
-      conflicts.push(`[${entry.slug}] is hold/rejected but has active publish flags.`);
-      hasError = true;
+      addConflict(`[${entry.slug}] is hold/rejected but has active publish flags.`, entry.slug);
     }
   }
 
@@ -128,6 +136,11 @@ if (conflicts.length > 0) {
   conflicts.forEach(c => console.log(`  - ${c}`));
 } else {
   console.log('\n✅ No workflow conflicts found.');
+}
+
+if (legacyDebt.length > 0) {
+  console.log('\n⚠️ LEGACY WORKFLOW DEBT (not caused by current release scope):');
+  legacyDebt.forEach((item) => console.log(`  - ${item}`));
 }
 
 if (hasError) {

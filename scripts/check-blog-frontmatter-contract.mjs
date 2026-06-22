@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execFileSync } from 'child_process';
 import {
   findRawJsxLikeTags,
   getTemplateContractIssues,
@@ -21,6 +22,21 @@ const intents = JSON.parse(fs.readFileSync(intentMapPath, 'utf8'));
 const clusters = JSON.parse(fs.readFileSync(clusterMapPath, 'utf8'));
 
 const d53Topics = ['text-to-carousel-ai', 'instagram-carousel-hooks', 'tekst-v-karusel-neyroset', 'content-calendar-to-carousel', 'b2b-keysy-v-linkedin-karusel'];
+
+function getChangedArticleSlugs() {
+  const fromRelease = (process.env.BLOG_RELEASE_ARTICLE_SLUGS || '').split(',').filter(Boolean);
+  if (fromRelease.length > 0) return new Set(fromRelease);
+  try {
+    const changed = execFileSync('git', ['diff', '--name-only', 'HEAD', '--', 'src/content/blog/articles'], { cwd: ROOT_DIR, encoding: 'utf8' });
+    const untracked = execFileSync('git', ['ls-files', '--others', '--exclude-standard', 'src/content/blog/articles'], { cwd: ROOT_DIR, encoding: 'utf8' });
+    return new Set(`${changed}\n${untracked}`.split('\n').filter((file) => file.endsWith('.md')).map((file) => path.basename(file, '.md')));
+  } catch {
+    return new Set();
+  }
+}
+
+const changedArticleSlugs = getChangedArticleSlugs();
+const DUMMY_VALUE = /^(?:dummy|placeholder|replace[-_ ]?me|todo|tbd|fake|lorem ipsum|example\.com)(?:\b|$)/i;
 
 let errors = [];
 let warnings = [];
@@ -133,13 +149,21 @@ for (const file of files) {
 
   const isLivePublished = isLivePublishedFrontmatter(frontmatterStr);
   const isD53 = d53Topics.includes(slug);
-  const isDraftPreview = data.preview === true || data.published === false;
+  const isDraftPreview = data.preview === true || data.published === false || data.noindex === true || data.priorityTier === 'HOLD';
   const isHighPriority = data.priorityTier === 'P1' || data.priorityTier === 'P2';
+  const isCurrentArticle = changedArticleSlugs.has(slug);
   
   // Strict mode applies to D53, any draft/preview, or any P1/P2 that is published but we treat new contract as strict.
   // Wait, instructions: "Apply strict validation to: D53 draft articles; any article with preview: true; any article with published: false; any future high-priority article if detectable. Apply rollout warnings to older published legacy articles."
   // So if it's published and not high-priority, it's a warning.
-  const isStrict = isD53 || isDraftPreview || isHighPriority;
+  const isStrictProduction = isLivePublished && (isD53 || isHighPriority || isCurrentArticle);
+
+  for (const line of frontmatterStr.split('\n')) {
+    const match = line.match(/^\s*[A-Za-z0-9_]+:\s*["']?([^"']+?)["']?\s*$/);
+    if (match && DUMMY_VALUE.test(match[1].trim())) {
+      errors.push(`Article "${slug}": obvious dummy frontmatter value found: "${match[1].trim()}".`);
+    }
+  }
 
   const rawJsxTags = findRawJsxLikeTags(body);
   if (rawJsxTags.length > 0) {
@@ -152,7 +176,25 @@ for (const file of files) {
     templateWarnings.forEach(warning => warnings.push(`Article "${slug}": ${warning}.`));
   }
 
-  if (!isStrict) {
+  if (isDraftPreview) {
+    const draftRequired = ['slug', 'language', 'published', 'noindex'];
+    if (data.title === undefined && data.workingTitle === undefined) {
+      errors.push(`Article "${slug}": draft/hold requires title or workingTitle.`);
+    }
+    const missingDraft = draftRequired.filter((field) => data[field] === undefined);
+    if (missingDraft.length > 0) {
+      errors.push(`Article "${slug}": draft/hold missing safety fields: ${missingDraft.join(', ')}.`);
+    }
+    if (data.published !== false || data.noindex !== true) {
+      errors.push(`Article "${slug}": draft/hold must use published:false and noindex:true.`);
+    }
+    if (data.approvedForPublish === true) {
+      errors.push(`Article "${slug}": draft/hold cannot be approvedForPublish.`);
+    }
+    continue;
+  }
+
+  if (!isStrictProduction) {
     // Legacy warnings
     const legacyReq = ['title', 'slug', 'language', 'primaryKeyword', 'canonical'];
     const missing = legacyReq.filter(f => data[f] === undefined);

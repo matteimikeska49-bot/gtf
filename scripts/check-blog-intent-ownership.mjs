@@ -26,6 +26,7 @@ let supportCount = 0;
 let d53Count = 0;
 
 const d53Topics = ['text-to-carousel-ai', 'instagram-carousel-hooks', 'tekst-v-karusel-neyroset', 'content-calendar-to-carousel', 'b2b-keysy-v-linkedin-karusel'];
+const releaseSlugs = new Set((process.env.BLOG_RELEASE_ARTICLE_SLUGS || '').split(',').filter(Boolean));
 
 const activeTopics = topicMap.filter(t => 
   t.publishStatus === 'published' || 
@@ -36,7 +37,7 @@ const activeTopics = topicMap.filter(t =>
 // Map high priority topics
 const highPriorityTopics = topicScores.filter(s => s.priorityTier === 'P1' || s.priorityTier === 'P2').map(s => s.targetSlug);
 
-const combinedActive = new Set([...activeTopics.map(t => t.targetSlug), ...highPriorityTopics, ...d53Topics]);
+const combinedActive = new Set([...activeTopics.map(t => t.targetSlug), ...highPriorityTopics, ...d53Topics, ...releaseSlugs]);
 
 const intentIds = new Set();
 intentMap.forEach(intent => {
@@ -62,7 +63,7 @@ for (const targetSlug of combinedActive) {
       // But the user said: "If too many legacy topics lack mapping: either map them or implement rollout mode: hard-fail D53/P1/P2/new topics, warn legacy."
       // Since I mapped D53 and P1/P2 from D53, this should be fine. But what about legacy P1/P2?
       // For now, warn on unmapped P1/P2 to avoid blocking MVP, hard fail on unmapped D53.
-      if (isD53) {
+      if (isD53 || releaseSlugs.has(targetSlug)) {
         errors.push(`D53 Draft Topic "${targetSlug}" has no intent ownership record.`);
       } else {
         warnings.push(`High priority topic "${targetSlug}" has no intent ownership record.`);
