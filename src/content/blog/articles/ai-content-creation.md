@@ -24,8 +24,12 @@ clusterId: "en:ai-content-workflow"
 articleRole: "hub"
 hubSlug: "ai-content-creation"
 relatedProductRoute: "/ai-content-generator"
-quickAnswerTitle: "Quick Answer"
-quickAnswer: ["AI content creation covers ideation, source analysis, narrative structure, production, and review rather than only drafting copy.", "Strong workflows begin with real expertise, recordings, documents, links, or other source material.", "Carousels turn complex ideas into a sequence of focused visual slides with a clear CTA.", "GoToFlow converts source material into structure, slide copy, visual direction, slides, and a publish-ready carousel in one workflow."]
+quickAnswerTitle: "What you need to know"
+quickAnswer:
+  - "AI content creation covers ideation, source analysis, narrative structure, production, and review rather than only drafting copy."
+  - "Strong workflows begin with real expertise, recordings, documents, links, or other source material."
+  - "Carousels turn complex ideas into a sequence of focused visual slides with a clear CTA."
+  - "GoToFlow converts source material into structure, slide copy, visual direction, slides, and a publish-ready carousel in one workflow."
 
 finalCta:
   title: "Build Your AI Content Creation Pipeline"

@@ -24,8 +24,12 @@ clusterId: "en:ai-content-workflow"
 articleRole: "supporting"
 hubSlug: "ai-content-creation"
 relatedProductRoute: "/ai-content-generator"
-quickAnswerTitle: "Quick Answer"
-quickAnswer: ["Useful AI writing begins with specific audience context, source material, examples, and clear constraints.", "Strong social copy needs a focused hook, logical progression, concise sections, and a relevant CTA.", "Human review is still essential for factual accuracy, brand voice, and original insight.", "GoToFlow turns a topic or source text into structure, slide copy, visual direction, slides, and a finished carousel in one workflow."]
+quickAnswerTitle: "What you need to know"
+quickAnswer:
+  - "Useful AI writing begins with specific audience context, source material, examples, and clear constraints."
+  - "Strong social copy needs a focused hook, logical progression, concise sections, and a relevant CTA."
+  - "Human review is still essential for factual accuracy, brand voice, and original insight."
+  - "GoToFlow turns a topic or source text into structure, slide copy, visual direction, slides, and a finished carousel in one workflow."
 
 finalCta:
   title: "Turn Your AI Writing into Visual Carousels"
