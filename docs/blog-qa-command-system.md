@@ -2,6 +2,20 @@
 
 The GoToFlow SEO platform uses a layered QA command architecture to balance fast iteration with strict deployment safety.
 
+## Canonical release command
+
+Use `npm run check:blog:release` before every SEO batch commit or push. It is the canonical release decision and covers scope safety, strategy gates, strict changed-article contracts, build/prerender, rendered HTML, and sitemap checks.
+
+`npm run check:blog:fast` is a quick source check only. `check:blog:prepublish`, `check:blog:full`, and the older `check:blog:all` remain useful diagnostics, but they are not substitutes for the scope-aware release command. Run `npm run check:blog:legacy-debt` to inspect pre-existing corpus failures separately.
+
+Release output distinguishes:
+
+- **blocking**: changed article/data failures, draft leaks, current-batch intent/cannibalization/workflow failures, broken links, build/prerender/render/sitemap failures;
+- **warning**: quality improvements that do not invalidate the current release;
+- **legacy debt**: pre-existing corpus failures outside the changed release scope.
+
+After push, verify the Beget/Coolify deployment and run the live verification contract. Local release success is not evidence that production has updated.
+
 ## Product source of truth
 
 Before generating, editing, or checking GoToFlow SEO articles, follow `docs/product/gotoflow-capabilities.md`.
@@ -104,7 +118,7 @@ Production checks fetch canonical public URLs without cache-busting query parame
 2. **After** updating frontmatter/batch-status to `published: true`.
 3. **After** local checks (`prepublish`, `full`) have passed.
 4. **After** `git commit` and `git push`.
-5. **After** the production deploy has fully successfully finished (verify GitHub Actions or Vercel).
+5. **After** the Beget/Coolify production deploy has fully finished and the production build marker has updated.
 Do NOT run this locally as part of the standard editing loop.
 
 ## Batch Commands

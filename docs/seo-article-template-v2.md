@@ -8,6 +8,16 @@
 Эталонная страница:
 `/blog/ai-instagram-carousel-generator`
 
+## Mandatory release contract
+
+Before committing or pushing any new or edited SEO article, run `npm run check:blog:release`. This is the canonical gate combining current-scope strategy, article contracts, build/prerender, rendered HTML, and sitemap validation. `npm run check:blog:fast` is diagnostic only and never constitutes publish approval.
+
+Changed published markdown files are automatically strict. Existing corpus debt remains visible through `npm run check:blog:legacy-debt`; it must not be hidden or “fixed” with fake values in an unrelated batch.
+
+Draft/hold content uses `published: false` and `noindex: true` and needs a real slug, language, and title/working title. Do not add fake canonical, product capability, CTA, Explore, mockup, or product-route values. Full V2 production fields are required when the article enters publish-ready state.
+
+Minimum character counts do not establish article quality. Do not repeat headings, duplicate paragraphs, expand conclusions with generic AI prose, or add filler solely to pass a threshold. The release gate blocks obvious repetition; a human reviewer remains responsible for intent coverage, factual accuracy, useful examples, and non-redundant prose.
+
 ## Core principles
 
 - Не делать уникальный дизайн под каждую статью.

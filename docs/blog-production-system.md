@@ -1287,6 +1287,32 @@ Refer to `docs/seo-batch-manager.md` for rules on Route/internal link checking a
 
 The GoToFlow SEO platform uses a layered QA command architecture to balance fast iteration with strict deployment safety.
 
+#### Canonical SEO release gate
+
+`npm run check:blog:release` is the only canonical local decision gate for committing or pushing an SEO article batch. It discovers changed article markdown files from the Git working tree, applies strict current-batch rules, runs topic/demand, intent, cannibalization, batch workflow, source/content/product/link/language checks, then builds and validates prerendered HTML and sitemap output.
+
+`npm run check:blog:fast` is only a quick source-safety check. A green fast check does not approve a batch and does not replace the release gate.
+
+The release command reports known corpus-wide failures from `npm run check:blog:legacy-debt` separately. Existing debt does not become invisible, but it must not force dummy fields or unrelated article rewrites into the current batch. Any failure involving a changed article, changed strategy data, build, rendered HTML, sitemap, draft leak, broken route, or current batch lifecycle remains blocking.
+
+For an explicit task allowlist, run `npm run check:task-scope -- <files...>` before release. The release gate also runs changed-files safety mode and blocks tracked `dist`, `scratch`, archives, sitemap dumps, and temporary output.
+
+#### Draft/hold versus publish-ready
+
+A draft or hold article needs only a real `slug`, `language`, `title` or `workingTitle`, `published: false`, and `noindex: true`. It must not be approved for publication. Do not invent canonical URLs, capability IDs, CTA copy, mockups, or product links to satisfy a checker.
+
+A publish-ready article must satisfy the complete V2 frontmatter, intent/cluster, product, CTA/Explore, mockup decision, content, SEO, schema, build, and rendered-output contracts. Changing a published markdown article automatically puts it into strict current-release scope.
+
+Obvious placeholder values such as `dummy`, `placeholder`, `replace-me`, `TODO`, `TBD`, `fake`, `lorem ipsum`, or `example.com` are P0 frontmatter errors.
+
+#### Content acceptance and padding
+
+Character and heading thresholds are minimum structural signals, not proof of quality. Repeated H2 headings and duplicated long paragraphs are blocked for current-release articles. Human QA must still confirm search-intent satisfaction, factual accuracy, useful examples, paragraph novelty, and visual relevance; do not pad an article to make a numeric threshold green.
+
+#### Batch definition of done
+
+A batch is done only when its changed articles have approved demand and intent ownership, approved briefs, complete publish-ready frontmatter, substantive content, valid product positioning and links, an explicit mockup decision, a green `check:blog:release`, human content/visual approval, a scoped commit, and successful Beget/Coolify live verification recorded after deployment.
+
 **1. Fast source checks** (`npm run check:blog:fast`)
 For small markdown/frontmatter edits. No build required.
 **2. Content/template checks** (`npm run check:blog:content`)
@@ -1304,7 +1330,7 @@ Live URL/deploy verification only. Must remain separate from local checks.
 
 **Usage Rules:**
 - Do not run heavy build/render for tiny copy edits unless the edit affects rendering, routing, template, schema, publish state, or D53/batch.
-- Before publishing, pushing render changes, deploying, or running mini-batch, you **must** run `prepublish` or `full` as appropriate.
+- Before committing, pushing, deploying, or running a mini-batch, you **must** run `npm run check:blog:release`. `prepublish` and `full` remain diagnostic commands, not the canonical release decision.
 - Never include production live checks inside local build loops.
 
 ### Product output wording gate
