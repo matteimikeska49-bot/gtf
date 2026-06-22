@@ -24,7 +24,6 @@ clusterId: "en:ai-content-workflow"
 articleRole: "hub"
 hubSlug: "ai-content-creation"
 relatedProductRoute: "/ai-content-generator"
-mockupStatus: "not_available"
 quickAnswerTitle: "Quick Answer"
 quickAnswer: ["AI content creation covers ideation, source analysis, narrative structure, production, and review rather than only drafting copy.", "Strong workflows begin with real expertise, recordings, documents, links, or other source material.", "Carousels turn complex ideas into a sequence of focused visual slides with a clear CTA.", "GoToFlow converts source material into structure, slide copy, visual direction, slides, and a publish-ready carousel in one workflow."]
 
@@ -57,6 +56,8 @@ explore:
       href: "/blog/ai-content-writing"
     - title: "How to Convert Video to Carousel"
       href: "/blog/turn-video-into-carousel-with-ai"
+requiredVisualBlock: "tutorial"
+faqFormat: "structured"
 ---
 
 The landscape of digital marketing is undergoing a seismic shift. We have moved past the novelty phase of chatbots; we are now in the era of systemic **AI content creation**. Today, the creators and brands dominating social media algorithms are not those working the hardest, but those leveraging intelligent pipelines to scale their output without sacrificing quality.
@@ -71,9 +72,15 @@ In this comprehensive pillar guide, we will deconstruct the modern AI content cr
 
 ## What AI Content Creation Actually Means
 
+:::mockup{slot="topic-input"}
+
+
 To master AI content creation, we must first redefine it. It is not a magic button that generates virality. It is a collaborative process where the human acts as the strategic director, and the AI acts as the tireless executioner.
 
 ### The Problem with "Just Writing"
+
+:::mockup{slot="result-preview"}
+
 
 When most people think of AI for content, they think of text generation. They log into a Large Language Model (LLM), type "write a LinkedIn post about leadership," and hit enter. The result is inevitably a bland, bulleted list filled with corporate clichés. 
 

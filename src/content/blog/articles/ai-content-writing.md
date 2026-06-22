@@ -24,7 +24,6 @@ clusterId: "en:ai-content-workflow"
 articleRole: "supporting"
 hubSlug: "ai-content-creation"
 relatedProductRoute: "/ai-content-generator"
-mockupStatus: "not_available"
 quickAnswerTitle: "Quick Answer"
 quickAnswer: ["Useful AI writing begins with specific audience context, source material, examples, and clear constraints.", "Strong social copy needs a focused hook, logical progression, concise sections, and a relevant CTA.", "Human review is still essential for factual accuracy, brand voice, and original insight.", "GoToFlow turns a topic or source text into structure, slide copy, visual direction, slides, and a finished carousel in one workflow."]
 
@@ -57,6 +56,8 @@ explore:
       href: "/blog/ai-content-creation"
     - title: "Turn Videos into Carousels"
       href: "/blog/turn-video-into-carousel-with-ai"
+requiredVisualBlock: "tutorial"
+faqFormat: "structured"
 ---
 
 The barrier to generating words has dropped to zero. Anyone with an internet connection can produce thousands of words of **AI content writing** in seconds. Yet, despite this massive increase in volume, the amount of truly engaging, high-converting content on social media remains surprisingly low.
@@ -71,6 +72,9 @@ In this guide, we will explore advanced AI content writing techniques designed s
 
 ## AI Writing vs. Content Strategy
 
+:::mockup{slot="topic-input"}
+
+
 The most common mistake creators make is expecting artificial intelligence to replace their content strategy. It cannot.
 
 * **Content Strategy** is the architecture. It defines your target audience, your unique value proposition, the pain points you solve, and the overarching narrative of your brand. It relies on your human experience and market knowledge.
@@ -79,6 +83,9 @@ The most common mistake creators make is expecting artificial intelligence to re
 If you ask an AI to "write a viral post about marketing," you are asking the construction crew to build a house without a blueprint. You will get a generic, uninhabitable structure. Your job is to provide the strategy; the AI's job is to execute the formatting.
 
 ## The Problem with Generic AI Copy
+
+:::mockup{slot="result-preview"}
+
 
 Before we dive into solutions, we must identify the enemy: generic AI writing. Readers have developed an immune response to specific phrases and structural patterns. 
 

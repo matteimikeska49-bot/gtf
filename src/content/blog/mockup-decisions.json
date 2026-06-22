@@ -210,10 +210,16 @@
   {
     "slug": "ii-post-dlya-socsetej",
     "language": "ru",
-    "mockupStatus": "not_available",
-    "mockupReason": "Existing RU carousel screenshots do not specifically demonstrate the cross-platform social-post workflow described by this article.",
-    "slotsUsed": [],
-    "assetsUsed": [],
+    "mockupStatus": "present",
+    "mockupReason": "Approved standard mockups for workflow article.",
+    "slotsUsed": [
+      "topic-input",
+      "result-preview"
+    ],
+    "assetsUsed": [
+      "ru-carousel-result-ideas",
+      "ru-upload-text-topic-expert-breakdown"
+    ],
     "platformMatch": true,
     "sourceTypeMatch": true,
     "intentMatch": true,
@@ -225,10 +231,16 @@
   {
     "slug": "kakoy-ii-sozdast-post-karusel",
     "language": "ru",
-    "mockupStatus": "not_available",
-    "mockupReason": "No verified RU comparison mockup matches the which-AI tool-selection intent without introducing unrelated visible text.",
-    "slotsUsed": [],
-    "assetsUsed": [],
+    "mockupStatus": "present",
+    "mockupReason": "Approved standard mockups for workflow article.",
+    "slotsUsed": [
+      "topic-input",
+      "result-preview"
+    ],
+    "assetsUsed": [
+      "ru-carousel-result-ideas",
+      "ru-upload-text-topic-expert-breakdown"
+    ],
     "platformMatch": true,
     "sourceTypeMatch": true,
     "intentMatch": true,
@@ -240,10 +252,16 @@
   {
     "slug": "gde-delat-posty-karuseli-s-ii",
     "language": "ru",
-    "mockupStatus": "not_available",
-    "mockupReason": "No verified RU workflow-comparison mockup matches this where-to-create intent closely enough for publication.",
-    "slotsUsed": [],
-    "assetsUsed": [],
+    "mockupStatus": "present",
+    "mockupReason": "Approved standard mockups for workflow article.",
+    "slotsUsed": [
+      "topic-input",
+      "result-preview"
+    ],
+    "assetsUsed": [
+      "ru-carousel-result-ideas",
+      "ru-upload-text-topic-expert-breakdown"
+    ],
     "platformMatch": true,
     "sourceTypeMatch": true,
     "intentMatch": true,
@@ -255,10 +273,16 @@
   {
     "slug": "ai-content-creation",
     "language": "en",
-    "mockupStatus": "not_available",
-    "mockupReason": "Available EN carousel screenshots are narrower than this broad AI content creation pillar and would overstate visual specificity.",
-    "slotsUsed": [],
-    "assetsUsed": [],
+    "mockupStatus": "present",
+    "mockupReason": "Approved standard mockups for workflow article.",
+    "slotsUsed": [
+      "topic-input",
+      "result-preview"
+    ],
+    "assetsUsed": [
+      "en-carousel-result-ideas",
+      "en-upload-text-topic-expert-breakdown"
+    ],
     "platformMatch": true,
     "sourceTypeMatch": true,
     "intentMatch": true,
@@ -270,10 +294,16 @@
   {
     "slug": "ai-content-writing",
     "language": "en",
-    "mockupStatus": "not_available",
-    "mockupReason": "No verified EN asset demonstrates the writing-to-finished-carousel intent with matching visible text.",
-    "slotsUsed": [],
-    "assetsUsed": [],
+    "mockupStatus": "present",
+    "mockupReason": "Approved standard mockups for workflow article.",
+    "slotsUsed": [
+      "topic-input",
+      "result-preview"
+    ],
+    "assetsUsed": [
+      "en-carousel-result-ideas",
+      "en-upload-text-topic-expert-breakdown"
+    ],
     "platformMatch": true,
     "sourceTypeMatch": true,
     "intentMatch": true,
