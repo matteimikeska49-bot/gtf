@@ -50,7 +50,14 @@ const SOURCE_FORBIDDEN = [
   'черновик',
   'соберите черновик',
   'zero extra effort',
-  'start repurposing today'
+  'start repurposing today',
+  'final thoughts on the future',
+  'the future belongs',
+  'ai technology continues to evolve',
+  'scaling the pipeline',
+  'enterprise ready',
+  'окупаемость инвестиций',
+  'технические лимиты'
 ];
 
 const OVERCLAIMS_YT = [
