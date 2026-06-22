@@ -149,6 +149,18 @@ function parseFrontmatter(content) {
       continue;
     }
 
+    if (key === 'quickAnswer') {
+      const items = [];
+      let cursor = index + 1;
+      while (cursor < lines.length && !lines[cursor].match(/^[a-zA-Z0-9_]+:/)) {
+        const item = lines[cursor].match(/^\s+-\s+(.+?)\s*$/);
+        if (item) items.push(normalizeScalar(item[1]));
+        cursor += 1;
+      }
+      frontmatter.quickAnswer = items;
+      continue;
+    }
+
     if (key === 'finalCta') {
       frontmatter.finalCta = true;
     }
@@ -417,8 +429,20 @@ function checkArticle(file, routeRegistry) {
           }
       }
       
+      const quickAnswerIsValid = Array.isArray(frontmatter.quickAnswer)
+          && frontmatter.quickAnswer.length >= 4
+          && frontmatter.quickAnswer.length <= 5
+          && frontmatter.quickAnswer.every((item) => typeof item === 'string' && item.trim() !== '');
+
       if (!frontmatter.quickAnswer && depthStrict) {
           errors.push('P0: Missing Quick Answer frontmatter block.');
+      } else if (frontmatter.quickAnswer && !quickAnswerIsValid && depthStrict) {
+          const message = 'Quick Answer must be a YAML block-list with 4-5 non-empty items.';
+          if (changedArticleSlugs.has(frontmatter.slug)) {
+              errors.push(`P0: ${message}`);
+          } else {
+              warnings.push(`P1 legacy: ${message}`);
+          }
       }
       
       if (!/(?:workflow|шаг 1|step 1|сценари|guide|инструкц)/i.test(body) && depthStrict) {
