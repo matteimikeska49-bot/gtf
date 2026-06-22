@@ -58,6 +58,7 @@ explore:
       href: "/blog/turn-video-into-carousel-with-ai"
 requiredVisualBlock: "tutorial"
 faqFormat: "structured"
+mockupStatus: "present"
 ---
 
 The barrier to generating words has dropped to zero. Anyone with an internet connection can produce thousands of words of **AI content writing** in seconds. Yet, despite this massive increase in volume, the amount of truly engaging, high-converting content on social media remains surprisingly low.

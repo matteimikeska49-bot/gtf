@@ -58,6 +58,7 @@ explore:
       href: "/blog/turn-video-into-carousel-with-ai"
 requiredVisualBlock: "tutorial"
 faqFormat: "structured"
+mockupStatus: "present"
 ---
 
 The landscape of digital marketing is undergoing a seismic shift. We have moved past the novelty phase of chatbots; we are now in the era of systemic **AI content creation**. Today, the creators and brands dominating social media algorithms are not those working the hardest, but those leveraging intelligent pipelines to scale their output without sacrificing quality.

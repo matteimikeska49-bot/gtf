@@ -58,6 +58,7 @@ explore:
       href: "/ru/blog/prompty-dlya-karuseley-v-instagram"
 requiredVisualBlock: "tutorial"
 faqFormat: "structured"
+mockupStatus: "present"
 ---
 
 Каждый SMM-специалист, эксперт или предприниматель рано или поздно задается вопросом: **какой ИИ создаст пост-карусель** так, чтобы результат не выглядел как дешевая поделка, а алгоритмы соцсетей давали максимальный охват? 

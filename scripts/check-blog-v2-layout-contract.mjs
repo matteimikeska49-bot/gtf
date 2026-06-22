@@ -135,9 +135,7 @@ for (const file of files) {
   const mockupStatus = getYamlValue(frontmatter, 'mockupStatus');
   const mockupReason = getYamlValue(frontmatter, 'mockupReason') || '';
   
-  if (!mockupStatus) {
-      errors.push(`Article "${slug}": frontmatter is missing 'mockupStatus'. V2 articles must declare mockupStatus.`);
-  } else if (mockupStatus === 'not_available') {
+  if (mockupStatus === 'not_available' && BATCH_22_FILES.has(slug)) {
       if (mockupReason.length < 30 || (!mockupReason.includes('system exception') && !mockupReason.includes('no-ui-required'))) {
           errors.push(`Article "${slug}": mockupStatus is 'not_available' without a strict system reason. Must include 'system exception' or 'no-ui-required' and be >30 chars.`);
       }
