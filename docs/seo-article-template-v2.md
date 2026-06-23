@@ -506,6 +506,8 @@ Use only 2–4 optional blocks per article based on intent. Do not add blocks ju
 Это генерирует компонент MarkdownPromptsBlock (accordion format), который поддерживает перенос строк, компактное отображение на мобильных и убирает горизонтальный скролл для длинных промптов.
 
 ## Mockup placement rules
+
+**Machine-readable source of truth for mockup meaning and owner-context policy: `src/lib/blog/mockupPolicy.js`**
 - Мокапы не вставляются в каждую статью автоматически.
 - Мокап вставляется только там, где он усиливает смысл блока.
 - Gemini НЕ выбирает asset, path, image, language, layout. Gemini выбирает только смысловой slot.

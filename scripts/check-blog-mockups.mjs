@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { MOCKUP_SLOT_MAP, VALID_MOCKUP_SLOTS } from '../src/lib/blog/mockupSlots.js';
+import { MOCKUP_POLICY } from '../src/lib/blog/mockupPolicy.js';
 
 function getActiveArticleFiles() {
   const activeFiles = new Set();
@@ -293,44 +294,24 @@ migration needed: yes`);
       const nearestHeadingLower = nearestHeading.toLowerCase();
 
       // Semantic placement rules
-      const forbiddenP0 = [
-        'manual', 'manually', 'without ai', 'competitor', 'competitors', 'canva', 'figma', 'manual method',
-        'ручной', 'вручную', 'без ии', 'конкурент', 'конкуренты', 'ручной метод'
-      ];
-
-      if (forbiddenP0.some(kw => nearestHeadingLower.includes(kw))) {
-        reportArticleError(`P0: Mockup semantic placement error\nfile: ${file}\nline: ${i + 1}\nslot: ${slotName}\nnearest heading: ${nearestHeading}\nreason: forbidden placement P0 keyword found\nexpected: placement under relevant positive section`, true);
-      }
-
-      const negativeKeywords = [
-        'problem', 'problems', 'mistake', 'mistakes', 'generic', 'just writing', 'trap', 'limitations', 'cons', 'bad', 'why it fails',
-        'проблема', 'проблемы', 'ошибка', 'ошибки', 'минусы', 'недостатки', 'ловушка', 'почему не работает'
-      ];
-
-      const isNegative = negativeKeywords.some(kw => nearestHeadingLower.includes(kw));
-
-      if (isNegative) {
-        if (slotName === 'result-preview') {
-          reportArticleError(`P0: Mockup semantic placement error\nfile: ${file}\nline: ${i + 1}\nslot: ${slotName}\nnearest heading: ${nearestHeading}\nreason: result-preview under negative/problem heading\nexpected: placement under positive result section`, true);
-        } else {
-          warnings.push(`P1: Mockup placement needs semantic review\nfile: ${file}\nline: ${i + 1}\nslot: ${slotName}\nnearest heading: ${nearestHeading}\nexpected intent: positive context missing`);
-          if (isActiveArticle) activeP1Count++;
+      const policy = MOCKUP_POLICY[slotName];
+      if (policy) {
+        const hasForbidden = policy.forbiddenContextKeywords.some(kw => nearestHeadingLower.includes(kw));
+        if (hasForbidden) {
+          reportArticleError(`P0: Mockup semantic placement error\nfile: ${file}\nline: ${i + 1}\nslot: ${slotName}\nnearest heading: ${nearestHeading}\nreason: forbidden context keyword found for this slot\nexpected: placement under relevant positive section`, true);
         }
-      } else {
-        const positiveKeywordsMap = {
-          'topic-input': ['topic', 'idea', 'input', 'prompt', 'source', 'brief', 'start', 'text', 'link', 'upload', 'тема', 'идея', 'ввод', 'промпт', 'исходник', 'текст', 'ссылка', 'бриф', 'старт', 'загруз'],
-          'result-preview': ['result', 'preview', 'output', 'final', 'carousel', 'ready', 'finished', 'publish', 'результат', 'превью', 'готов', 'готовая', 'карусель', 'публикация', 'итог'],
-          'format-settings': ['format', 'settings', 'export', 'platform', 'publish', 'size', 'channel', 'linkedin', 'instagram', 'facebook', 'вк', 'настройки', 'экспорт', 'платформа', 'размер', 'канал'],
-          'style-choice': ['style', 'visual', 'design', 'brand', 'branding', 'look', 'template', 'tone', 'стиль', 'визуал', 'дизайн', 'бренд', 'оформление', 'шаблон', 'тон']
-        };
 
-        const expectedKeywords = positiveKeywordsMap[slotName];
-        if (expectedKeywords) {
-          const hasPositive = expectedKeywords.some(kw => nearestHeadingLower.includes(kw));
-          if (!hasPositive) {
-            warnings.push(`P1: Mockup placement needs semantic review\nfile: ${file}\nline: ${i + 1}\nslot: ${slotName}\nnearest heading: ${nearestHeading}\nexpected intent: requires one of: ${expectedKeywords.slice(0, 5).join(', ')}...`);
-            if (isActiveArticle) activeP1Count++;
-          }
+        const hasForbiddenGeneric = policy.forbiddenWithoutOwnerContextKeywords.some(kw => nearestHeadingLower.includes(kw));
+        const hasOwnerContext = policy.allowedOwnerContextKeywords.some(kw => nearestHeadingLower.includes(kw));
+
+        if (hasForbiddenGeneric && !hasOwnerContext) {
+          reportArticleError(`P0: Mockup semantic placement error\nfile: ${file}\nline: ${i + 1}\nslot: ${slotName}\nnearest heading: ${nearestHeading}\nreason: generic/competitor context without GoToFlow-owned workflow context\nexpected: placement under GoToFlow-owned context`, true);
+        }
+
+        const hasPositive = policy.allowedIntentKeywords.some(kw => nearestHeadingLower.includes(kw));
+        if (!hasPositive && !hasOwnerContext) {
+          warnings.push(`P1: Mockup placement needs semantic review\nfile: ${file}\nline: ${i + 1}\nslot: ${slotName}\nnearest heading: ${nearestHeading}\nexpected intent: requires one of: ${policy.allowedIntentKeywords.slice(0, 5).join(', ')}...`);
+          if (isActiveArticle) activeP1Count++;
         }
       }
       

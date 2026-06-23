@@ -595,6 +595,7 @@ Testimonials можно использовать только если:
 - check:blog:mockups warns when a broad fallback asset is used or the same asset is repeated too often.
 
 Native mockup rules for generated articles:
+**Machine-readable source of truth for mockup meaning and owner-context policy: `src/lib/blog/mockupPolicy.js`**
 - a mockup is not a decorative header image;
 - place `:::mockup{slot="..."}` inside the section it explains (semantic placement).
 - **Slot-to-Intent Map:** The surrounding heading (H2/H3) must semantically match the slot. For example, `topic-input` matches "idea/prompt/text/ввод", `result-preview` matches "result/carousel/ready/карусель/готов", `format-settings` matches "settings/format/size/размер", `style-choice` matches "style/design/brand/дизайн".
