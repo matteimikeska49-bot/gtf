@@ -16,6 +16,7 @@ if (!fs.existsSync(capabilitiesPath)) {
 
 const capabilities = JSON.parse(fs.readFileSync(capabilitiesPath, 'utf8'));
 const files = fs.readdirSync(articlesDir).filter(f => f.endsWith('.md') && !f.startsWith('_'));
+const validStatuses = new Set(['supported', 'partially_supported', 'roadmap', 'not_supported', 'unknown']);
 
 let totalScanned = 0;
 let errors = [];
@@ -25,6 +26,9 @@ let riskyClaimsByFile = {};
 // Flatten forbidden claims with their capability context
 const forbiddenRules = [];
 capabilities.forEach(cap => {
+  if (!validStatuses.has(cap.status)) {
+    errors.push(`Capability "${cap.capabilityId}" has invalid status "${cap.status}". Expected one of: ${Array.from(validStatuses).join(', ')}`);
+  }
   if (cap.forbiddenClaims) {
     cap.forbiddenClaims.forEach(claim => {
       forbiddenRules.push({
@@ -61,6 +65,8 @@ for (const file of files) {
 
       if (rule.status === 'not_supported') {
         errors.push(`File "${file}" uses forbidden claim "${rule.claimText}" (Capability: ${rule.capabilityId} is NOT SUPPORTED). Consider: ${rule.saferAlternatives.join(' OR ')}`);
+      } else if (rule.status === 'roadmap') {
+        errors.push(`File "${file}" uses roadmap capability as live claim "${rule.claimText}" (Capability: ${rule.capabilityId}). Use roadmap/coming-soon wording only.`);
       } else if (rule.status === 'unknown') {
         warnings.push(`File "${file}" uses claim "${rule.claimText}" (Capability: ${rule.capabilityId} is UNKNOWN). Verification required.`);
       } else if (rule.status === 'partially_supported') {

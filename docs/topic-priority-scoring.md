@@ -60,3 +60,5 @@ Because topic selection depends on demand data, scores must be recalculated when
 - **No mini-batch without score**: Mini-batch topics cannot be selected without scoring.
 - **Every brief must reference**: Priority Tier and Final Priority Score must be included in the brief metadata.
 - **Generation blocker**: Gemini/Codex should not begin article generation unless scoring exists.
+- **Research package gate**: Active batch topics must pass `npm run check:blog:research-package` before any article generation starts.
+- **Batch readiness gate**: A batch should not start unless `npm run check:blog:batch-readiness` reports `canProceed: true`.

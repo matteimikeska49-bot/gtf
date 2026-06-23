@@ -428,6 +428,114 @@
     "reviewRequiredBeforeClaiming": true
   },
   {
+    "capabilityId": "editableTemplates",
+    "label": "Editable Templates",
+    "status": "partially_supported",
+    "description": "Generated carousel content can be edited and styled, but GoToFlow should not be described as a full template marketplace or full manual design editor.",
+    "allowedClaims": [
+      "edit generated carousel text and style",
+      "adjust the generated design",
+      "refine the carousel before export"
+    ],
+    "forbiddenClaims": [
+      "full template marketplace",
+      "thousands of editable templates",
+      "replace every manual design editor"
+    ],
+    "saferAlternatives": [
+      "edit and refine generated carousel content before export"
+    ],
+    "relatedRoutes": ["/", "/ai-carousel-maker", "/linkedin-carousel-maker", "/ai-instagram-post-generator"],
+    "relatedArticleTypes": ["how-to", "comparison", "workflow_article"],
+    "relatedKeywords": ["editable carousel", "carousel templates"],
+    "evidence": {
+      "source": "Product source of truth",
+      "notes": "Editing/refinement is supported; broad template marketplace claims require review."
+    },
+    "lastVerified": "2026-06-23",
+    "reviewRequiredBeforeClaiming": true
+  },
+  {
+    "capabilityId": "seamlessPanoramicCarousel",
+    "label": "Seamless / Panoramic Carousel",
+    "status": "partially_supported",
+    "description": "GoToFlow can help structure multi-slide carousel content, but seamless panoramic visual effects should be claimed carefully unless a specific generated mockup proves it.",
+    "allowedClaims": [
+      "plan a seamless carousel structure",
+      "create a multi-slide carousel workflow"
+    ],
+    "forbiddenClaims": [
+      "automatic seamless panoramic carousel",
+      "one-click seamless carousel",
+      "perfect seamless carousel"
+    ],
+    "saferAlternatives": [
+      "plan and refine a multi-slide carousel layout"
+    ],
+    "relatedRoutes": ["/ai-carousel-maker", "/ru/ii-generator-karuseley"],
+    "relatedArticleTypes": ["how-to", "workflow_article"],
+    "relatedKeywords": ["seamless carousel", "panoramic carousel"],
+    "evidence": {
+      "source": "Product review needed",
+      "notes": "Treat seamless/panoramic claims as partial unless verified by a specific UI path and mockup."
+    },
+    "lastVerified": "2026-06-23",
+    "reviewRequiredBeforeClaiming": true
+  },
+  {
+    "capabilityId": "animatedCarousel",
+    "label": "Animated Carousel / Animated First Slide",
+    "status": "roadmap",
+    "description": "Animated carousel output is not a live capability in the current SEO source of truth.",
+    "allowedClaims": [
+      "animated carousel support is a roadmap idea",
+      "animated first-slide experiments are not a live feature"
+    ],
+    "forbiddenClaims": [
+      "animated carousel generator",
+      "generate animated carousels",
+      "animated first slide",
+      "motion carousel export"
+    ],
+    "saferAlternatives": [
+      "create static carousel slides and export them for social platforms"
+    ],
+    "relatedRoutes": [],
+    "relatedArticleTypes": ["how-to", "comparison", "workflow_article"],
+    "relatedKeywords": ["animated carousel", "animated first slide"],
+    "evidence": {
+      "source": "Product source of truth",
+      "notes": "Do not describe animation as live unless product status changes."
+    },
+    "lastVerified": "2026-06-23",
+    "reviewRequiredBeforeClaiming": true
+  },
+  {
+    "capabilityId": "analyticsInsights",
+    "label": "Analytics",
+    "status": "not_supported",
+    "description": "GoToFlow does not provide social performance analytics in the current SEO source of truth.",
+    "allowedClaims": [],
+    "forbiddenClaims": [
+      "built-in analytics",
+      "track carousel performance in GoToFlow",
+      "measure engagement inside GoToFlow",
+      "analytics dashboard"
+    ],
+    "saferAlternatives": [
+      "review performance in the social platform analytics after posting"
+    ],
+    "relatedRoutes": [],
+    "relatedArticleTypes": ["how-to", "workflow_article"],
+    "relatedKeywords": ["carousel analytics", "social media analytics"],
+    "evidence": {
+      "source": "Known product limitation",
+      "notes": "No social analytics dashboard is documented as live."
+    },
+    "lastVerified": "2026-06-23",
+    "reviewRequiredBeforeClaiming": true
+  },
+  {
     "capabilityId": "finishedOutputPositioning",
     "label": "Finished Output Positioning",
     "status": "supported",
