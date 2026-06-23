@@ -93,8 +93,6 @@ To consistently produce high-performing content, you must stop treating AI as a 
 
 ### Stage 1: The Idea and Source Material
 
-:::mockup{slot="topic-input"}
-
 Never ask AI to generate an idea from a blank slate. Start with source material. This could be a 30-minute podcast you recorded, an insightful email you sent to a client, a comprehensive blog article you wrote, or a messy voice note containing your raw thoughts. This source material contains your unique voice and facts.
 
 ### Stage 2: Structure and Extraction
@@ -119,8 +117,6 @@ Understanding the strengths and weaknesses of artificial intelligence is crucial
 * **Formatting and Pacing:** AI excels at taking dense paragraphs and breaking them into digestible, scannable bullet points suitable for mobile consumption.
 
 ## Why Visual Carousels are the Ultimate Output Format
-
-:::mockup{slot="result-preview"}
 
 If you are investing in AI content creation, you must target the formats that yield the highest return. Currently, the undisputed champion of organic reach on platforms like LinkedIn and Instagram is the visual carousel.
 
@@ -157,10 +153,15 @@ This is where **GoToFlow** handles the full carousel process, connecting source 
 ### How the GoToFlow Workflow Operates
 Instead of juggling multiple AI chat interfaces and complex graphic design software, you utilize a single, unified platform:
 
+:::mockup{slot="topic-input"}
+
 1. **Input Your Source:** You provide the raw material. This can be a text prompt, but more powerfully, it can be a direct URL to your latest blog article.
 2. **Intelligent Extraction:** GoToFlow's engine reads the article, understands the context, and automatically extracts the key narratives suitable for a social media audience.
 3. **Automated Carousel Generation:** The platform does not just output text. It instantly layouts the extracted information onto beautifully designed, conversion-optimized carousel slides. 
 4. **Dynamic Adaptation:** The system intelligently scales fonts to fit the text, balances margins, and applies your brand's specific color palette and logo.
+
+:::mockup{slot="result-preview"}
+
 5. **Ready to Publish:** Within minutes, you receive a high-resolution PDF (perfect for LinkedIn's document viewer) or a sequence of images (for Instagram). 
 
 By using GoToFlow, you are not just generating text; you are generating a complete, publishable asset. You bypass the design bottleneck entirely.

@@ -127,8 +127,6 @@ Every piece of content must have a job. What do you want the reader to do after 
 
 ## When AI Writing Should Become a Carousel
 
-:::mockup{slot="result-preview"}
-
 Even with perfect hooks, structure, and conciseness, text alone has limitations. On visually-driven platforms like Instagram, and increasingly on professional networks like LinkedIn, plain text posts struggle to compete with interactive formats.
 
 You should transition your AI writing from a text post into a visual carousel when your content involves:
@@ -140,8 +138,6 @@ You should transition your AI writing from a text post into a visual carousel wh
 Carousels work because they force interaction. Every swipe is a micro-commitment from the user, signaling to the algorithm that the content is highly engaging.
 
 ## Bridging the Gap: From Text to Visual Design
-
-:::mockup{slot="topic-input"}
 
 This brings us to the biggest bottleneck in the modern content creation workflow. 
 
@@ -157,9 +153,14 @@ To reduce manual design friction, use an end-to-end platform like [GoToFlow](/ai
 
 GoToFlow is designed specifically to solve the text-to-design bottleneck. Instead of managing your AI writing in one tab and your design templates in another, GoToFlow integrates the entire process:
 
+:::mockup{slot="topic-input"}
+
 1. **Input Your Text:** You paste your raw idea, your AI-generated script, or even a link to a blog post directly into the platform.
 2. **Automated Parsing:** The system intelligently understands your structure. It knows what should be the hook, what should be the body slides, and what should be the CTA.
 3. **Instant Layout:** GoToFlow automatically applies your text to professional carousel templates. It handles the tedious work: scaling fonts, balancing margins, and ensuring visual consistency across all slides.
+
+:::mockup{slot="result-preview"}
+
 4. **Publish-Ready Output:** Within seconds, you have a high-resolution PDF for LinkedIn or a sequence of images for Instagram, ready to post.
 
 By utilizing a dedicated carousel generator, you transform AI content writing from a simple text-generation exercise into a complete, automated production pipeline. You spend your time on the high-value tasks—strategy, insights, and engaging with your audience—while the platform handles the execution and formatting.
