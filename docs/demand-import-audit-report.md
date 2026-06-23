@@ -1,10 +1,21 @@
 # Demand Import Audit Report
 
 ## Import Overview
-- Total Keyword Records: 613
-- RU Records: 329
-- EN Records: 284
-- Files Imported: 6
+- Last hygiene review: 2026-06-23
+- Total Keyword Records: 635
+- RU Records: 340
+- EN Records: 293
+- Blank/unknown language records: 2
+- Classified Demand Records: 584
+- Source Manifest Records: 35
+- Normalized Source Files: 4 real CSV outputs + 4 sample CSV headers + classified CSV/JSON
+- Manual source freshness:
+  - Google Trends: `lastChecked=2026-06-08`, `timeRange=2026-05-08..2026-06-08`
+  - GSC: `lastChecked=2026-06-08`, `dateRange=2026-03-07..2026-06-08`
+  - Yandex Webmaster: `lastChecked=2026-06-08`, `dateRange=2026-06-01..2026-06-07`
+  - Yandex Wordstat: `lastChecked=2026-06-08`
+- Import mode: manual CSV exports only; no live GSC/Yandex/Wordstat/Ahrefs/Semrush API connection is present.
+- Known limitation: EN exact volume, difficulty, and CPC are mostly absent in the current files; Google Trends is relative interest and must not be treated as exact volume.
 
 ## Source Signals
 - Top RU Demand Signals:

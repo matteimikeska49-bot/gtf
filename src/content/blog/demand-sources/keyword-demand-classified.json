@@ -533,7 +533,7 @@
         "position": 96.31
       }
     },
-    "priorityHint": 11.0,
+    "priorityHint": 11,
     "sourceCount": 3,
     "demandConfidence": "high",
     "recommendation": "candidate"
@@ -1541,7 +1541,7 @@
         "country": "US"
       }
     },
-    "priorityHint": 7.0,
+    "priorityHint": 7,
     "sourceCount": 2,
     "demandConfidence": "high",
     "recommendation": "candidate"
@@ -1926,7 +1926,7 @@
         "country": "US"
       }
     },
-    "priorityHint": 2.0,
+    "priorityHint": 2,
     "sourceCount": 1,
     "demandConfidence": "medium",
     "recommendation": "candidate"
@@ -2042,7 +2042,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 98.0
+        "position": 98
       }
     },
     "priorityHint": 5.1499999999999995,
@@ -2185,7 +2185,7 @@
         "country": "US"
       }
     },
-    "priorityHint": 7.0,
+    "priorityHint": 7,
     "sourceCount": 2,
     "demandConfidence": "high",
     "recommendation": "candidate"
@@ -2332,7 +2332,7 @@
         "country": "US"
       }
     },
-    "priorityHint": 2.0,
+    "priorityHint": 2,
     "sourceCount": 1,
     "demandConfidence": "medium",
     "recommendation": "candidate"
@@ -2717,7 +2717,7 @@
         "country": "US"
       }
     },
-    "priorityHint": 7.0,
+    "priorityHint": 7,
     "sourceCount": 2,
     "demandConfidence": "high",
     "recommendation": "candidate"
@@ -2892,7 +2892,7 @@
         "country": "US"
       }
     },
-    "priorityHint": 2.0,
+    "priorityHint": 2,
     "sourceCount": 1,
     "demandConfidence": "medium",
     "recommendation": "candidate"
@@ -3424,7 +3424,7 @@
         "country": "US"
       }
     },
-    "priorityHint": 4.0,
+    "priorityHint": 4,
     "sourceCount": 1,
     "demandConfidence": "medium",
     "recommendation": "candidate"
@@ -3564,7 +3564,7 @@
         "country": "US"
       }
     },
-    "priorityHint": 7.0,
+    "priorityHint": 7,
     "sourceCount": 2,
     "demandConfidence": "high",
     "recommendation": "candidate"
@@ -4096,7 +4096,7 @@
         "country": "US"
       }
     },
-    "priorityHint": 7.0,
+    "priorityHint": 7,
     "sourceCount": 2,
     "demandConfidence": "high",
     "recommendation": "candidate"
@@ -4645,7 +4645,7 @@
         "clicks": 0,
         "impressions": 3,
         "ctr": "0%",
-        "position": 72.0
+        "position": 72
       }
     },
     "priorityHint": 0.214,
@@ -10639,7 +10639,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 91.0
+        "position": 91
       }
     },
     "priorityHint": 0.05,
@@ -10681,7 +10681,7 @@
         "clicks": 0,
         "impressions": 13,
         "ctr": "0%",
-        "position": 82.0
+        "position": 82
       }
     },
     "priorityHint": 0.65,
@@ -10744,7 +10744,7 @@
         "clicks": 0,
         "impressions": 6,
         "ctr": "0%",
-        "position": 92.0
+        "position": 92
       }
     },
     "priorityHint": 0.3,
@@ -10786,7 +10786,7 @@
         "clicks": 0,
         "impressions": 2,
         "ctr": "0%",
-        "position": 55.0
+        "position": 55
       }
     },
     "priorityHint": 0.1,
@@ -10807,7 +10807,7 @@
         "clicks": 0,
         "impressions": 2,
         "ctr": "0%",
-        "position": 98.0
+        "position": 98
       }
     },
     "priorityHint": 0.1,
@@ -10870,7 +10870,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 95.0
+        "position": 95
       }
     },
     "priorityHint": 0.05,
@@ -10891,7 +10891,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 68.0
+        "position": 68
       }
     },
     "priorityHint": 0.05,
@@ -10933,7 +10933,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 90.0
+        "position": 90
       }
     },
     "priorityHint": 0.05,
@@ -10954,7 +10954,7 @@
         "clicks": 0,
         "impressions": 7,
         "ctr": "0%",
-        "position": 92.0
+        "position": 92
       }
     },
     "priorityHint": 0.35,
@@ -10996,7 +10996,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 97.0
+        "position": 97
       }
     },
     "priorityHint": 0.05,
@@ -11059,7 +11059,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 95.0
+        "position": 95
       }
     },
     "priorityHint": 0.05,
@@ -11080,7 +11080,7 @@
         "clicks": 0,
         "impressions": 2,
         "ctr": "0%",
-        "position": 81.0
+        "position": 81
       }
     },
     "priorityHint": 0.1,
@@ -11122,7 +11122,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 99.0
+        "position": 99
       }
     },
     "priorityHint": 0.05,
@@ -11143,7 +11143,7 @@
         "clicks": 0,
         "impressions": 2,
         "ctr": "0%",
-        "position": 82.0
+        "position": 82
       }
     },
     "priorityHint": 0.1,
@@ -11164,7 +11164,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 79.0
+        "position": 79
       }
     },
     "priorityHint": 0.05,
@@ -11227,7 +11227,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 152.0
+        "position": 152
       }
     },
     "priorityHint": 0.05,
@@ -11248,7 +11248,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 67.0
+        "position": 67
       }
     },
     "priorityHint": 0,
@@ -11290,7 +11290,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 5.0
+        "position": 5
       }
     },
     "priorityHint": 0.05,
@@ -11332,7 +11332,7 @@
         "clicks": 1,
         "impressions": 1,
         "ctr": "100%",
-        "position": 133.0
+        "position": 133
       }
     },
     "priorityHint": 1.05,
@@ -11353,7 +11353,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 126.0
+        "position": 126
       }
     },
     "priorityHint": 0.05,
@@ -11374,7 +11374,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 74.0
+        "position": 74
       }
     },
     "priorityHint": 0.05,
@@ -11395,7 +11395,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 10.0
+        "position": 10
       }
     },
     "priorityHint": 0.05,
@@ -11479,7 +11479,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 84.0
+        "position": 84
       }
     },
     "priorityHint": 0,
@@ -11500,7 +11500,7 @@
         "clicks": 0,
         "impressions": 2,
         "ctr": "0%",
-        "position": 59.0
+        "position": 59
       }
     },
     "priorityHint": 0.1,
@@ -11542,7 +11542,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 75.0
+        "position": 75
       }
     },
     "priorityHint": 0.05,
@@ -11563,7 +11563,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 83.0
+        "position": 83
       }
     },
     "priorityHint": 0.05,
@@ -11584,7 +11584,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 95.0
+        "position": 95
       }
     },
     "priorityHint": 0.05,
@@ -11652,7 +11652,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 2.0
+        "position": 2
       }
     },
     "priorityHint": 0,
@@ -11673,7 +11673,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 2.0
+        "position": 2
       }
     },
     "priorityHint": 0,
@@ -11694,7 +11694,7 @@
         "clicks": 0,
         "impressions": 3,
         "ctr": "0%",
-        "position": 91.0
+        "position": 91
       }
     },
     "priorityHint": 0.15,
@@ -11715,7 +11715,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 74.0
+        "position": 74
       }
     },
     "priorityHint": 0.05,
@@ -11736,7 +11736,7 @@
         "clicks": 0,
         "impressions": 4,
         "ctr": "0%",
-        "position": 71.0
+        "position": 71
       }
     },
     "priorityHint": 0.2,
@@ -11757,7 +11757,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 72.0
+        "position": 72
       }
     },
     "priorityHint": 0.05,
@@ -11778,7 +11778,7 @@
         "clicks": 0,
         "impressions": 3,
         "ctr": "0%",
-        "position": 77.0
+        "position": 77
       }
     },
     "priorityHint": 0.15,
@@ -11799,7 +11799,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 40.0
+        "position": 40
       }
     },
     "priorityHint": 0.05,
@@ -11820,7 +11820,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 97.0
+        "position": 97
       }
     },
     "priorityHint": 0.05,
@@ -11862,7 +11862,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 96.0
+        "position": 96
       }
     },
     "priorityHint": 0.05,
@@ -11904,7 +11904,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 11.0
+        "position": 11
       }
     },
     "priorityHint": 0.05,
@@ -11946,7 +11946,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 81.0
+        "position": 81
       }
     },
     "priorityHint": 0.05,
@@ -11967,7 +11967,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 63.0
+        "position": 63
       }
     },
     "priorityHint": 0.05,
@@ -11988,7 +11988,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 96.0
+        "position": 96
       }
     },
     "priorityHint": 0.05,
@@ -12030,7 +12030,7 @@
         "clicks": 0,
         "impressions": 2,
         "ctr": "0%",
-        "position": 98.0
+        "position": 98
       }
     },
     "priorityHint": 0.1,
@@ -12051,7 +12051,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 95.0
+        "position": 95
       }
     },
     "priorityHint": 0.05,
@@ -12156,7 +12156,7 @@
         "clicks": 0,
         "impressions": 6,
         "ctr": "0%",
-        "position": 50.0
+        "position": 50
       }
     },
     "priorityHint": 0.3,
@@ -12219,7 +12219,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 55.0
+        "position": 55
       }
     },
     "priorityHint": 0.05,
@@ -12240,7 +12240,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 73.0
+        "position": 73
       }
     },
     "priorityHint": 0.05,
@@ -12261,7 +12261,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 47.0
+        "position": 47
       }
     },
     "priorityHint": 0.05,
@@ -12345,7 +12345,7 @@
         "clicks": 0,
         "impressions": 2,
         "ctr": "0%",
-        "position": 44.0
+        "position": 44
       }
     },
     "priorityHint": 0.1,
@@ -12366,7 +12366,7 @@
         "clicks": 0,
         "impressions": 5,
         "ctr": "0%",
-        "position": 85.0
+        "position": 85
       }
     },
     "priorityHint": 0,
@@ -12387,7 +12387,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 23.0
+        "position": 23
       }
     },
     "priorityHint": 0.05,
@@ -12408,7 +12408,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 8.0
+        "position": 8
       }
     },
     "priorityHint": 0.05,
@@ -12450,7 +12450,7 @@
         "clicks": 0,
         "impressions": 1,
         "ctr": "0%",
-        "position": 84.0
+        "position": 84
       }
     },
     "priorityHint": 0,
@@ -12681,7 +12681,7 @@
         "dateRange": "2026-06-01..2026-06-07"
       }
     },
-    "priorityHint": 3.0,
+    "priorityHint": 3,
     "sourceCount": 1,
     "demandConfidence": "medium",
     "recommendation": "candidate"
@@ -12776,7 +12776,7 @@
         "dateRange": "2026-06-01..2026-06-07"
       }
     },
-    "priorityHint": 1.0,
+    "priorityHint": 1,
     "sourceCount": 1,
     "demandConfidence": "low",
     "recommendation": "hold_or_filter"
@@ -12799,5 +12799,52 @@
     "sourceCount": 1,
     "demandConfidence": "low",
     "recommendation": "hold_or_filter"
+  },
+  {
+    "keyword": "instagram post size guide",
+    "language": "en",
+    "topicCluster": "instagram_carousel",
+    "isRelevant": true,
+    "sources": [
+      "published_article_backfill",
+      "google_trends_parent_query"
+    ],
+    "signals": {
+      "publishedArticleBackfill": {
+        "targetSlug": "instagram-post-size-guide",
+        "demandEvidence": "needs_refresh"
+      },
+      "parentQuery": {
+        "keyword": "instagram post size",
+        "source": "google_trends_manual",
+        "interestScore": 33,
+        "change": "Breakout",
+        "trend": "breakout",
+        "country": "US"
+      }
+    },
+    "priorityHint": 1,
+    "sourceCount": 2,
+    "demandConfidence": "low",
+    "recommendation": "needs_refresh"
+  },
+  {
+    "keyword": "how to schedule linkedin carousel",
+    "language": "en",
+    "topicCluster": "linkedin_carousel",
+    "isRelevant": true,
+    "sources": [
+      "published_article_backfill"
+    ],
+    "signals": {
+      "publishedArticleBackfill": {
+        "targetSlug": "how-to-schedule-linkedin-carousel",
+        "demandEvidence": "not_available"
+      }
+    },
+    "priorityHint": 0,
+    "sourceCount": 1,
+    "demandConfidence": "low",
+    "recommendation": "needs_refresh"
   }
 ]

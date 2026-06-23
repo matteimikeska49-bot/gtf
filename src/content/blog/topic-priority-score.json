@@ -873,27 +873,28 @@
     "language": "en",
     "primaryKeyword": "ai carousel generator",
     "relatedProductRoute": "/ai-carousel-maker",
-    "topicStatus": "draft",
+    "topicStatus": "published",
     "keywordEvidence": {
-      "source": "consolidated_demand_import",
+      "source": "google_trends_manual,gsc",
       "confidence": "high",
       "exactVolumeKnown": false,
       "volume": null,
-      "trend": "rising"
+      "trend": "rising",
+      "requiresDemandRefresh": true
     },
     "scores": {
-      "demandScore": 5,
+      "demandScore": 7,
       "difficultyScore": 5,
-      "productFitScore": 5,
-      "businessValueScore": 5,
-      "cannibalizationSafetyScore": 5,
-      "mockupReadinessScore": 5,
-      "dataConfidenceScore": 5,
-      "finalPriorityScore": 90
+      "productFitScore": 7,
+      "businessValueScore": 7,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 6,
+      "finalPriorityScore": 63
     },
-    "priorityTier": "P1",
-    "scoringReason": "Controlled Wave 1 topic",
-    "scoringLastUpdated": "2026-06-09"
+    "priorityTier": "P2",
+    "scoringReason": "Published supporting article with real Trends/GSC evidence; downgraded from product-hub scoring because /ai-carousel-maker owns transactional product intent.",
+    "scoringLastUpdated": "2026-06-23"
   },
   {
     "topicScoreId": "en:ai instagram post generator",
@@ -1786,5 +1787,125 @@
     "priorityTier": "P2",
     "scoringReason": "The practical writing intent supports the broader AI content creation hub and has medium-confidence imported demand without exact volume.",
     "scoringLastUpdated": "2026-06-22"
+  },
+  {
+    "targetSlug": "ii-tekst-dlya-posta",
+    "title": "ИИ текст для поста: как быстро написать готовый текст для соцсетей",
+    "language": "ru",
+    "primaryKeyword": "ии текст для поста",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "medium",
+      "exactVolumeKnown": true,
+      "volume": 421,
+      "trend": "unknown",
+      "demandEvidence": "available",
+      "requiresDemandRefresh": false
+    },
+    "scores": {
+      "demandScore": 8,
+      "difficultyScore": 6,
+      "productFitScore": 7,
+      "businessValueScore": 7,
+      "cannibalizationSafetyScore": 7,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 68
+    },
+    "priorityTier": "P2",
+    "scoringReason": "Published article backfill. Yandex Wordstat exact RU volume 421 for the primary keyword.",
+    "scoringLastUpdated": "2026-06-23"
+  },
+  {
+    "targetSlug": "instagram-post-size-guide",
+    "title": "Instagram Post Size Guide: Dimensions and Aspect Ratios",
+    "language": "en",
+    "primaryKeyword": "instagram post size guide",
+    "relatedProductRoute": "/ai-instagram-post-generator",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "published_article_backfill",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "breakout",
+      "demandEvidence": "needs_refresh",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 6,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 6,
+      "finalPriorityScore": 56
+    },
+    "priorityTier": "P2",
+    "scoringReason": "Published article backfill. No exact primary-keyword volume; parent query \"instagram post size\" appears in Google Trends as breakout.",
+    "scoringLastUpdated": "2026-06-23"
+  },
+  {
+    "targetSlug": "ai-facebook-post-generator",
+    "title": "AI Facebook Post Generator: Write Better Updates in Seconds",
+    "language": "en",
+    "primaryKeyword": "ai facebook post generator",
+    "relatedProductRoute": "/ai-content-generator",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "google_trends_manual",
+      "confidence": "medium",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "rising",
+      "demandEvidence": "needs_refresh",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 7,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 6,
+      "cannibalizationSafetyScore": 7,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 6,
+      "finalPriorityScore": 61
+    },
+    "priorityTier": "P2",
+    "scoringReason": "Published article backfill. Google Trends manual export shows interest 31 and +40% change; no exact EN volume.",
+    "scoringLastUpdated": "2026-06-23"
+  },
+  {
+    "targetSlug": "how-to-schedule-linkedin-carousel",
+    "title": "How to Schedule a LinkedIn Carousel Post",
+    "language": "en",
+    "primaryKeyword": "how to schedule linkedin carousel",
+    "relatedProductRoute": "/linkedin-carousel-maker",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "published_article_backfill",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "needs_refresh",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 2,
+      "difficultyScore": 5,
+      "productFitScore": 4,
+      "businessValueScore": 4,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 2,
+      "finalPriorityScore": 40
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published article backfill. No exact primary-keyword volume found in current imports; published article backfilled for hygiene.",
+    "scoringLastUpdated": "2026-06-23"
   }
 ]

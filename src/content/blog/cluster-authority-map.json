@@ -54,6 +54,16 @@
         "intentId": "en:ai-linkedin-carousel-strategy-for-b2b-founders",
         "priorityTier": "P1",
         "status": "draft_preview"
+      },
+      {
+        "slug": "how-to-schedule-linkedin-carousel",
+        "url": "/blog/how-to-schedule-linkedin-carousel",
+        "role": "supporting",
+        "intentId": "en:how-to-schedule-linkedin-carousel",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published backfill; demand refresh required."
       }
     ],
     "supportingArticles": [
@@ -61,7 +71,8 @@
       "linkedin-carousel-from-pdf-ai",
       "ai-linkedin-post-generator",
       "how-to-post-a-carousel-on-linkedin",
-      "ai-linkedin-carousel-strategy-for-b2b-founders"
+      "ai-linkedin-carousel-strategy-for-b2b-founders",
+      "how-to-schedule-linkedin-carousel"
     ],
     "missingTopics": [
       "linkedin carousel best practices",
@@ -79,7 +90,7 @@
       ]
     },
     "notes": "Main LinkedIn EN cluster",
-    "lastReviewed": "2026-06-08"
+    "lastReviewed": "2026-06-23"
   },
   {
     "clusterId": "en:ai-carousel-generator",
@@ -108,7 +119,12 @@
       {
         "slug": "ai-carousel-generator",
         "url": "/blog/ai-carousel-generator",
-        "role": "hub"
+        "role": "supporting",
+        "intentId": "en:ai-carousel-generator",
+        "priorityTier": "P2",
+        "status": "published",
+        "canonicalRisk": "medium",
+        "notes": "Supporting article only; product route owner is /ai-carousel-maker."
       },
       {
         "slug": "how-to-write-carousel-copy-with-ai",
@@ -175,7 +191,8 @@
       "carousel-post-mistakes",
       "how-to-brainstorm-carousel-topics-with-ai",
       "how-to-repurpose-podcasts-into-ai-carousels",
-      "turn-video-into-carousel-with-ai"
+      "turn-video-into-carousel-with-ai",
+      "ai-carousel-generator"
     ],
     "missingTopics": [
       "blog to carousel"
@@ -190,7 +207,7 @@
       ]
     },
     "notes": "Core AI generator cluster EN",
-    "lastReviewed": "2026-06-08"
+    "lastReviewed": "2026-06-23"
   },
   {
     "clusterId": "en:instagram-carousel",
@@ -215,10 +232,21 @@
         "intentId": "en:instagram-carousel-hooks",
         "priorityTier": "P2",
         "status": "draft_preview"
+      },
+      {
+        "slug": "instagram-post-size-guide",
+        "url": "/blog/instagram-post-size-guide",
+        "role": "supporting",
+        "intentId": "en:instagram-post-size-guide",
+        "priorityTier": "P2",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published backfill; demand refresh required."
       }
     ],
     "supportingArticles": [
-      "instagram-carousel-hooks"
+      "instagram-carousel-hooks",
+      "instagram-post-size-guide"
     ],
     "missingTopics": [
       "instagram carousel sizes"
@@ -233,7 +261,7 @@
       ]
     },
     "notes": "Instagram carousel cluster",
-    "lastReviewed": "2026-06-08"
+    "lastReviewed": "2026-06-23"
   },
   {
     "clusterId": "ru:ai-carousel-generator",
@@ -406,11 +434,23 @@
         "intentId": "ru:ii-post-dlya-socsetej",
         "priorityTier": "P2",
         "status": "published"
+      },
+      {
+        "slug": "ii-tekst-dlya-posta",
+        "url": "/ru/blog/ii-tekst-dlya-posta",
+        "role": "supporting",
+        "intentId": "ru:ii-tekst-dlya-posta",
+        "priorityTier": "P2",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published backfill with imported demand evidence."
       }
     ],
     "supportingArticles": [
-      "ii-post-dlya-socsetej"
-    ]
+      "ii-post-dlya-socsetej",
+      "ii-tekst-dlya-posta"
+    ],
+    "lastReviewed": "2026-06-23"
   },
   {
     "clusterId": "ru:ii-carousel-generator",
@@ -575,10 +615,21 @@
         "intentId": "en:ai-content-writing",
         "priorityTier": "P2",
         "status": "published"
+      },
+      {
+        "slug": "ai-facebook-post-generator",
+        "url": "/blog/ai-facebook-post-generator",
+        "role": "supporting",
+        "intentId": "en:ai-facebook-post-generator",
+        "priorityTier": "P2",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published backfill; demand refresh required."
       }
     ],
     "supportingArticles": [
-      "ai-content-writing"
+      "ai-content-writing",
+      "ai-facebook-post-generator"
     ],
     "missingTopics": [],
     "internalLinkingRules": {
@@ -592,6 +643,6 @@
       ]
     },
     "notes": "Batch 1 cluster for broad AI content creation and practical AI writing workflows.",
-    "lastReviewed": "2026-06-22"
+    "lastReviewed": "2026-06-23"
   }
 ]

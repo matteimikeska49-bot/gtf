@@ -30,6 +30,15 @@ Missing real volume does not block MVP but lowers the Data Confidence Score.
 - **Medium**: Google Trends
 - **Low**: manual SERP analysis, AI estimate, topic_map inheritance.
 
+### Published Article Backfill
+Published articles must not sit outside the demand/topic layer. If a published article has no keyword, topic, score, intent, or cluster record, add a minimal backfill record before selecting the next batch.
+
+Backfill rules:
+- Do not invent volume, clicks, impressions, difficulty, or CPC.
+- If an exact imported source exists, use it and keep the original source name.
+- If no exact imported source exists, use `source: "published_article_backfill"`, `exactVolumeKnown: false`, `demandEvidence: "needs_refresh"`, `dataConfidenceScore` low, and `requiresDemandRefresh: true`.
+- A backfilled published article can be scored P2/P3 for hygiene, but it should not justify new batch expansion until demand is refreshed.
+
 ## Recalculation Workflow
 Because topic selection depends on demand data, scores must be recalculated when new demand evidence is imported. 
 

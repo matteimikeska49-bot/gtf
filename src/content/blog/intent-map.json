@@ -205,26 +205,35 @@
     "intentId": "en:ai-carousel-generator",
     "language": "en",
     "cluster": "en:ai-carousel-generator",
-    "searchIntent": "Find the best AI carousel generator to automate design",
-    "intentType": "commercial",
-    "ownerUrl": "/blog/ai-carousel-generator",
-    "ownerSlug": "ai-carousel-generator",
-    "ownerRole": "product-led-hub",
-    "supportingUrls": [],
-    "supportingSlugs": [],
+    "searchIntent": "Evaluate AI carousel generator workflows while product ownership remains on the AI carousel maker route",
+    "intentType": "commercial/supporting",
+    "ownerUrl": "/ai-carousel-maker",
+    "ownerSlug": "ai-carousel-maker",
+    "ownerRole": "product-route",
+    "supportingUrls": [
+      "/blog/ai-carousel-generator"
+    ],
+    "supportingSlugs": [
+      "ai-carousel-generator"
+    ],
     "forbiddenNearDuplicates": [
       "best-ai-carousel-generator",
-      "ai-carousel-maker-review"
+      "ai-carousel-maker-review",
+      "free-ai-carousel-generator"
     ],
     "allowedSupportingAngles": [
-      "text-to-carousel"
+      "text-to-carousel",
+      "workflow explanation",
+      "manual design comparison",
+      "text-to-carousel workflow"
     ],
     "updateInsteadOfCreateRules": [
-      "add new generator features"
+      "add new generator features",
+      "new generator features belong on /ai-carousel-maker first"
     ],
     "relatedProductRoute": "/ai-carousel-maker",
-    "notes": "Core EN hub intent for general AI carousel generator",
-    "lastReviewed": "2026-06-09"
+    "notes": "Product intent owner is /ai-carousel-maker. /blog/ai-carousel-generator is a supporting article and must not replace the product route.",
+    "lastReviewed": "2026-06-23"
   },
   {
     "intentId": "en:ai-instagram-post-generator",
@@ -674,8 +683,14 @@
     "supportingUrls": [],
     "supportingSlugs": [],
     "forbiddenNearDuplicates": [],
-    "allowedSupportingAngles": ["platform adaptation", "carousel packaging", "human review"],
-    "updateInsteadOfCreateRules": ["Update this owner for the exact keyword ии пост для соцсетей."],
+    "allowedSupportingAngles": [
+      "platform adaptation",
+      "carousel packaging",
+      "human review"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Update this owner for the exact keyword ии пост для соцсетей."
+    ],
     "relatedProductRoute": "/ru/generator-postov-instagram",
     "notes": "Batch 1 owner for AI-assisted social post creation across platforms.",
     "lastReviewed": "2026-06-22"
@@ -691,9 +706,16 @@
     "ownerRole": "supporting",
     "supportingUrls": [],
     "supportingSlugs": [],
-    "forbiddenNearDuplicates": ["gde-delat-posty-karuseli-s-ii"],
-    "allowedSupportingAngles": ["tool category comparison", "manual editor versus end-to-end workflow"],
-    "updateInsteadOfCreateRules": ["Update this owner for which-AI comparison queries."],
+    "forbiddenNearDuplicates": [
+      "gde-delat-posty-karuseli-s-ii"
+    ],
+    "allowedSupportingAngles": [
+      "tool category comparison",
+      "manual editor versus end-to-end workflow"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Update this owner for which-AI comparison queries."
+    ],
     "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Batch 1 comparison owner focused on which type of AI creates a finished carousel.",
     "lastReviewed": "2026-06-22"
@@ -709,9 +731,16 @@
     "ownerRole": "supporting",
     "supportingUrls": [],
     "supportingSlugs": [],
-    "forbiddenNearDuplicates": ["kakoy-ii-sozdast-post-karusel"],
-    "allowedSupportingAngles": ["workflow selection", "manual versus end-to-end creation"],
-    "updateInsteadOfCreateRules": ["Update this owner for where-to-create carousel queries."],
+    "forbiddenNearDuplicates": [
+      "kakoy-ii-sozdast-post-karusel"
+    ],
+    "allowedSupportingAngles": [
+      "workflow selection",
+      "manual versus end-to-end creation"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Update this owner for where-to-create carousel queries."
+    ],
     "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Batch 1 comparison owner focused on where the full carousel workflow is completed.",
     "lastReviewed": "2026-06-22"
@@ -728,8 +757,14 @@
     "supportingUrls": [],
     "supportingSlugs": [],
     "forbiddenNearDuplicates": [],
-    "allowedSupportingAngles": ["AI writing", "source repurposing", "carousel production"],
-    "updateInsteadOfCreateRules": ["Update this hub for broad AI content creation intent."],
+    "allowedSupportingAngles": [
+      "AI writing",
+      "source repurposing",
+      "carousel production"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Update this hub for broad AI content creation intent."
+    ],
     "relatedProductRoute": "/ai-content-generator",
     "notes": "Batch 1 hub for broad AI content creation workflow intent.",
     "lastReviewed": "2026-06-22"
@@ -746,10 +781,97 @@
     "supportingUrls": [],
     "supportingSlugs": [],
     "forbiddenNearDuplicates": [],
-    "allowedSupportingAngles": ["hooks", "slide copy", "prompt context", "human editing"],
-    "updateInsteadOfCreateRules": ["Update this owner for the exact AI content writing intent."],
+    "allowedSupportingAngles": [
+      "hooks",
+      "slide copy",
+      "prompt context",
+      "human editing"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Update this owner for the exact AI content writing intent."
+    ],
     "relatedProductRoute": "/ai-content-generator",
     "notes": "Batch 1 supporting owner for AI writing within the broader content workflow.",
     "lastReviewed": "2026-06-22"
+  },
+  {
+    "intentId": "ru:ii-tekst-dlya-posta",
+    "language": "ru",
+    "cluster": "ru:social-content",
+    "searchIntent": "пользователь ищет инструкции, структуру и промпты, чтобы написать качественный пост с помощью ИИ",
+    "intentType": "workflow",
+    "ownerUrl": "/ru/blog/ii-tekst-dlya-posta",
+    "ownerSlug": "ii-tekst-dlya-posta",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [],
+    "allowedSupportingAngles": [],
+    "updateInsteadOfCreateRules": [
+      "update the published article instead of creating a near-duplicate"
+    ],
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "notes": "Published article backfilled on 2026-06-23; has imported demand evidence.",
+    "lastReviewed": "2026-06-23"
+  },
+  {
+    "intentId": "en:instagram-post-size-guide",
+    "language": "en",
+    "cluster": "en:instagram-carousel",
+    "searchIntent": "find current Instagram post and carousel dimensions",
+    "intentType": "informational",
+    "ownerUrl": "/blog/instagram-post-size-guide",
+    "ownerSlug": "instagram-post-size-guide",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [],
+    "allowedSupportingAngles": [],
+    "updateInsteadOfCreateRules": [
+      "update the published article instead of creating a near-duplicate"
+    ],
+    "relatedProductRoute": "/ai-instagram-post-generator",
+    "notes": "Published article backfilled on 2026-06-23; needs demand refresh for exact volume.",
+    "lastReviewed": "2026-06-23"
+  },
+  {
+    "intentId": "en:ai-facebook-post-generator",
+    "language": "en",
+    "cluster": "en:ai-content-workflow",
+    "searchIntent": "generate Facebook post copy and visual social content with AI",
+    "intentType": "workflow",
+    "ownerUrl": "/blog/ai-facebook-post-generator",
+    "ownerSlug": "ai-facebook-post-generator",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [],
+    "allowedSupportingAngles": [],
+    "updateInsteadOfCreateRules": [
+      "update the published article instead of creating a near-duplicate"
+    ],
+    "relatedProductRoute": "/ai-content-generator",
+    "notes": "Published article backfilled on 2026-06-23; needs demand refresh for exact volume.",
+    "lastReviewed": "2026-06-23"
+  },
+  {
+    "intentId": "en:how-to-schedule-linkedin-carousel",
+    "language": "en",
+    "cluster": "en:linkedin-carousel",
+    "searchIntent": "learn how to schedule or prepare LinkedIn carousel/document posts",
+    "intentType": "how-to",
+    "ownerUrl": "/blog/how-to-schedule-linkedin-carousel",
+    "ownerSlug": "how-to-schedule-linkedin-carousel",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [],
+    "allowedSupportingAngles": [],
+    "updateInsteadOfCreateRules": [
+      "update the published article instead of creating a near-duplicate"
+    ],
+    "relatedProductRoute": "/linkedin-carousel-maker",
+    "notes": "Published article backfilled on 2026-06-23; needs demand refresh for exact volume.",
+    "lastReviewed": "2026-06-23"
   }
 ]

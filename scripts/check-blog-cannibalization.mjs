@@ -5,6 +5,8 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ARTICLES_DIR = path.join(__dirname, '../src/content/blog/articles');
 const TOPIC_MAP_PATH = path.join(__dirname, '../src/content/blog/topic-map.json');
+const INTENT_MAP_PATH = path.join(__dirname, '../src/content/blog/intent-map.json');
+const CLUSTER_MAP_PATH = path.join(__dirname, '../src/content/blog/cluster-authority-map.json');
 
 console.log('🔍 Starting anti-cannibalization check...\n');
 
@@ -28,11 +30,19 @@ function addConflict(message, slugs = []) {
 
 // 1. Read topic map
 let topicMap = [];
+let intentMap = [];
+let clusterMap = [];
 try {
   const content = fs.readFileSync(TOPIC_MAP_PATH, 'utf-8');
   topicMap = JSON.parse(content);
+  if (fs.existsSync(INTENT_MAP_PATH)) {
+    intentMap = JSON.parse(fs.readFileSync(INTENT_MAP_PATH, 'utf-8'));
+  }
+  if (fs.existsSync(CLUSTER_MAP_PATH)) {
+    clusterMap = JSON.parse(fs.readFileSync(CLUSTER_MAP_PATH, 'utf-8'));
+  }
 } catch (e) {
-  console.error(`❌ Failed to read topic-map.json: ${e.message}`);
+  console.error(`❌ Failed to read strategy JSON files: ${e.message}`);
   process.exit(1);
 }
 
@@ -55,8 +65,12 @@ try {
     const primaryKeyword = getMatch(/^primaryKeyword:\s*["']?([^"'\n]+)["']?/m);
     const articleType = getMatch(/^articleType:\s*["']?([^"'\n]+)["']?/m);
     const searchIntent = getMatch(/^searchIntent:\s*["']?([^"'\n]+)["']?/m);
+    const articleRole = getMatch(/^articleRole:\s*["']?([^"'\n]+)["']?/m);
+    const intentId = getMatch(/^intentId:\s*["']?([^"'\n]+)["']?/m);
+    const clusterId = getMatch(/^clusterId:\s*["']?([^"'\n]+)["']?/m);
+    const relatedProductRoute = getMatch(/^relatedProductRoute:\s*["']?([^"'\n]+)["']?/m);
     
-    articles.push({ file, slug, language, primaryKeyword, articleType, searchIntent, content });
+    articles.push({ file, slug, language, primaryKeyword, articleType, searchIntent, articleRole, intentId, clusterId, relatedProductRoute, content });
   }
 } catch (e) {
   console.error(`❌ Failed to read articles: ${e.message}`);
@@ -159,11 +173,60 @@ const recommendedRoutes = {
   "генератор каруселей linkedin": "/ru/generator-karuselej-linkedin"
 };
 
-const isAllowedProductIntent = (articleType, primaryKeyword) => {
+const routeSlug = (route) => (route || '').replace(/^\/+/, '').split('/').filter(Boolean).pop() || '';
+
+const findTopicEntry = (article) => topicMap.find(t =>
+  (t.targetSlug === article.slug) ||
+  (article.primaryKeyword && t.primaryKeyword && t.language === article.language && t.primaryKeyword.toLowerCase() === article.primaryKeyword.toLowerCase())
+);
+
+const findIntentRecord = (article) => intentMap.find(i =>
+  i.intentId === article.intentId ||
+  i.ownerSlug === article.slug ||
+  (i.supportingSlugs || []).includes(article.slug)
+);
+
+const findClusterRole = (article) => {
+  for (const cluster of clusterMap) {
+    const role = (cluster.articleRoles || []).find(r => r.slug === article.slug);
+    if (role) return { cluster, role };
+  }
+  return null;
+};
+
+const isExplicitSupportingProductArticle = (article, recommendedRoute) => {
+  const topicEntry = findTopicEntry(article);
+  const intentRecord = findIntentRecord(article);
+  const clusterRole = findClusterRole(article);
+
+  if (!topicEntry || !intentRecord || !clusterRole) return false;
+
+  const productOwnedByRoute =
+    intentRecord.ownerUrl === recommendedRoute ||
+    intentRecord.ownerSlug === routeSlug(recommendedRoute);
+
+  const articleListedAsSupport =
+    (intentRecord.supportingSlugs || []).includes(article.slug) ||
+    (intentRecord.supportingUrls || []).includes(`/blog/${article.slug}`) ||
+    (intentRecord.supportingUrls || []).includes(`/ru/blog/${article.slug}`);
+
+  const clusterMarksSupport = ['supporting', 'support'].includes((clusterRole.role.role || '').toLowerCase());
+
+  const topicAllowsSupport =
+    topicEntry.relatedProductRoute === recommendedRoute &&
+    topicEntry.cannibalizationRisk !== 'high' &&
+    ['support_existing_product_route', 'support_product_route'].includes(topicEntry.routeStrategy || topicEntry.recommendedAction);
+
+  return productOwnedByRoute && articleListedAsSupport && clusterMarksSupport && topicAllowsSupport;
+};
+
+const isAllowedProductIntent = (article, recommendedRoute) => {
+  const { articleType, primaryKeyword } = article;
   const type = articleType?.toLowerCase() || '';
   if (type === 'comparison' || type === 'comparison_article') return true;
   if (type === 'prompt_library') return true;
   if ((type === 'how_to' || type === 'how_to_article') && !productIntentPatternsEn.includes(primaryKeyword?.toLowerCase()) && !productIntentPatternsRu.includes(primaryKeyword?.toLowerCase())) return true;
+  if (isExplicitSupportingProductArticle(article, recommendedRoute)) return true;
   return false;
 };
 
@@ -176,8 +239,8 @@ articles.forEach(article => {
     const matchedPattern = patterns.find(p => kw.includes(p));
     
     if (matchedPattern) {
-      if (!isAllowedProductIntent(article.articleType, kw)) {
-        const recommendedRoute = recommendedRoutes[matchedPattern] || 'Product Route';
+      const recommendedRoute = recommendedRoutes[matchedPattern] || 'Product Route';
+      if (!isAllowedProductIntent(article, recommendedRoute)) {
         const msg = `Product-intent cannibalization in article: ${article.file} (Slug: ${article.slug})\n` +
                     `    Conflicting keyword/intent: '${kw}' contains product term '${matchedPattern}'\n` +
                     `    Recommended product route: ${recommendedRoute}\n` +

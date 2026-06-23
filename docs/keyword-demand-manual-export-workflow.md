@@ -9,6 +9,8 @@ Building API integrations for Google Search Console, Yandex Webmaster, Yandex Wo
 3. You run `npm run import:keyword-demand`.
 4. The script updates `src/content/blog/keyword-candidates.json`.
 
+Published-article backfills are allowed only as hygiene records. They connect an already published URL to keyword/topic/score maps, but they are not a substitute for fresh demand export unless an exact imported source already exists.
+
 ## Data Sources
 
 ### Google Search Console / Yandex Webmaster
@@ -26,6 +28,13 @@ Building API integrations for Google Search Console, Yandex Webmaster, Yandex Wo
 
 ### Paid Tools (Ahrefs/Semrush)
 - **Used for**: Exact volume, difficulty, and CPC for EN/Global markets.
+
+## Current Limitations
+- Imports are manual CSV/JSON exports, not live API pulls.
+- GSC and Yandex Webmaster prove post-publish impressions/clicks, not generic search volume.
+- Google Trends proves relative interest only; it does not provide exact volume.
+- EN exact volume, difficulty, and CPC are mostly absent until Ahrefs/Semrush or equivalent data is imported.
+- Use `published_article_backfill` only with `exactVolumeKnown: false` and `requiresDemandRefresh: true` unless a real imported source is matched.
 
 ## Rules for Exact Volume
 - **What counts**: Ahrefs volume, Semrush volume, Wordstat precise frequency.
