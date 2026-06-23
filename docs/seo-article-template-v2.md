@@ -530,7 +530,12 @@ Use only 2–4 optional blocks per article based on intent. Do not add blocks ju
 ### Native mockup rules for generated articles
 
 - Mockup is not a hero decoration. It must explain a workflow, result preview, example, comparison, before/after, or concrete step.
-- Insert mockups only with `:::mockup{slot="..."}` in the exact section where the visual helps the reader understand the point.
+- Insert mockups only with `:::mockup{slot="..."}` in the exact section where the visual helps the reader understand the point (semantic placement).
+- **Slot-to-Intent Map:** The surrounding heading (H2/H3) must semantically match the slot. For example, `topic-input` matches "idea/prompt/text/ввод", `result-preview` matches "result/carousel/ready/карусель/готов", `format-settings` matches "settings/format/size/размер", `style-choice` matches "style/design/brand/дизайн".
+- **Forbidden Placement:** Mockups MUST NOT be placed under sections discussing manual work (e.g., "manual", "without AI", "ручной"), competitors/third-party tools (e.g., "Canva", "Figma", "Photoshop"), or problems/mistakes (e.g., "problem", "mistake", "ошибка", "минус").
+- **Checker Behavior:**
+  - Semantic mismatches (no positive keywords) trigger a **P1 Warning**.
+  - Placing a mockup under a forbidden/negative heading triggers a **P0 Error** and blocks the build.
 - RU articles must use RU approved assets only. EN articles must use EN approved assets only.
 - Visual/how-to/comparison/example articles must include native mockup slots unless `mockupStatus: "not_available"` and a meaningful `mockupReason` explain why no approved asset fits.
 - Avoid repeating the same asset across many articles in one batch. If the checker warns about repeated assets, request or approve a more specific native mockup before scaling.

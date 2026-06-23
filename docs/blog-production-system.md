@@ -596,7 +596,12 @@ Testimonials можно использовать только если:
 
 Native mockup rules for generated articles:
 - a mockup is not a decorative header image;
-- place `:::mockup{slot="..."}` inside the section it explains: workflow, result, example, comparison, or step;
+- place `:::mockup{slot="..."}` inside the section it explains (semantic placement).
+- **Slot-to-Intent Map:** The surrounding heading (H2/H3) must semantically match the slot. For example, `topic-input` matches "idea/prompt/text/ввод", `result-preview` matches "result/carousel/ready/карусель/готов", `format-settings` matches "settings/format/size/размер", `style-choice` matches "style/design/brand/дизайн".
+- **Forbidden Placement:** Mockups MUST NOT be placed under sections discussing manual work (e.g., "manual", "without AI", "ручной"), competitors/third-party tools (e.g., "Canva", "Figma", "Photoshop"), or problems/mistakes (e.g., "problem", "mistake", "ошибка", "минус").
+- **Checker Behavior:**
+  - Semantic mismatches (no positive keywords) trigger a **P1 Warning**.
+  - Placing a mockup under a forbidden/negative heading triggers a **P0 Error** and blocks the build.
 - visual/how-to/comparison/example articles require native mockup slots unless there is a documented `mockupReason`;
 - Wave 2 briefs must specify mockup required yes/no, slot(s), purpose, placement section, and fallback allowed yes/no.
 

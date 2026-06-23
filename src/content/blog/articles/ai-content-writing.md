@@ -77,9 +77,6 @@ In this guide, we will explore advanced AI content writing techniques designed s
 
 ## AI Writing vs. Content Strategy
 
-:::mockup{slot="topic-input"}
-
-
 The most common mistake creators make is expecting artificial intelligence to replace their content strategy. It cannot.
 
 * **Content Strategy** is the architecture. It defines your target audience, your unique value proposition, the pain points you solve, and the overarching narrative of your brand. It relies on your human experience and market knowledge.
@@ -88,9 +85,6 @@ The most common mistake creators make is expecting artificial intelligence to re
 If you ask an AI to "write a viral post about marketing," you are asking the construction crew to build a house without a blueprint. You will get a generic, uninhabitable structure. Your job is to provide the strategy; the AI's job is to execute the formatting.
 
 ## The Problem with Generic AI Copy
-
-:::mockup{slot="result-preview"}
-
 
 Before we dive into solutions, we must identify the enemy: generic AI writing. Readers have developed an immune response to specific phrases and structural patterns. 
 
@@ -133,6 +127,8 @@ Every piece of content must have a job. What do you want the reader to do after 
 
 ## When AI Writing Should Become a Carousel
 
+:::mockup{slot="result-preview"}
+
 Even with perfect hooks, structure, and conciseness, text alone has limitations. On visually-driven platforms like Instagram, and increasingly on professional networks like LinkedIn, plain text posts struggle to compete with interactive formats.
 
 You should transition your AI writing from a text post into a visual carousel when your content involves:
@@ -144,6 +140,8 @@ You should transition your AI writing from a text post into a visual carousel wh
 Carousels work because they force interaction. Every swipe is a micro-commitment from the user, signaling to the algorithm that the content is highly engaging.
 
 ## Bridging the Gap: From Text to Visual Design
+
+:::mockup{slot="topic-input"}
 
 This brings us to the biggest bottleneck in the modern content creation workflow. 
 

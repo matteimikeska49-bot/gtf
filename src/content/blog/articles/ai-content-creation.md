@@ -77,15 +77,9 @@ In this comprehensive pillar guide, we will deconstruct the modern AI content cr
 
 ## What AI Content Creation Actually Means
 
-:::mockup{slot="topic-input"}
-
-
 To master AI content creation, we must first redefine it. It is not a magic button that generates virality. It is a collaborative process where the human acts as the strategic director, and the AI acts as the tireless executioner.
 
 ### The Problem with "Just Writing"
-
-:::mockup{slot="result-preview"}
-
 
 When most people think of AI for content, they think of text generation. They log into a Large Language Model (LLM), type "write a LinkedIn post about leadership," and hit enter. The result is inevitably a bland, bulleted list filled with corporate clichés. 
 
@@ -98,6 +92,9 @@ AI content creation is not about outsourcing your thinking; it is about outsourc
 To consistently produce high-performing content, you must stop treating AI as a slot machine and start treating it as an assembly line. A professional AI content creation pipeline consists of the following distinct stages:
 
 ### Stage 1: The Idea and Source Material
+
+:::mockup{slot="topic-input"}
+
 Never ask AI to generate an idea from a blank slate. Start with source material. This could be a 30-minute podcast you recorded, an insightful email you sent to a client, a comprehensive blog article you wrote, or a messy voice note containing your raw thoughts. This source material contains your unique voice and facts.
 
 ### Stage 2: Structure and Extraction
@@ -122,6 +119,8 @@ Understanding the strengths and weaknesses of artificial intelligence is crucial
 * **Formatting and Pacing:** AI excels at taking dense paragraphs and breaking them into digestible, scannable bullet points suitable for mobile consumption.
 
 ## Why Visual Carousels are the Ultimate Output Format
+
+:::mockup{slot="result-preview"}
 
 If you are investing in AI content creation, you must target the formats that yield the highest return. Currently, the undisputed champion of organic reach on platforms like LinkedIn and Instagram is the visual carousel.
 
