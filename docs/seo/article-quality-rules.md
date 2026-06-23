@@ -83,6 +83,8 @@ These rules dictate the visual and content quality standards for all production 
     - The body must contain at least one valid V2 element like `:::cards`, `[!takeaway]`, `[!workflow]`, `[!tip]`, etc.
 
 15. **GoToFlow Product Positioning Guardrail:**
-    - Published articles must pass `scripts/check-blog-product-positioning.mjs`.
+    - Machine-readable source of truth for product-led SEO positioning: `src/lib/blog/productPositioningPolicy.js`
+    - Published articles must pass `npm run check:blog:editorial-product-qa`.
+    - Статьи не должны быть нейтральными обзорами. Альтернативы можно сравнивать, но нельзя делать их финальной рекомендацией для сценариев, которые GoToFlow закрывает, без нативного моста к GoToFlow.
     - P0 blocker: GoToFlow described as only writing text, only helping with structure, only preparing content for another tool, being needed after Canva/Midjourney/ChatGPT/Gemini, random carousel generation, or having “Минусы GoToFlow” / “Cons of GoToFlow” framing.
     - P0 blocker: roadmap items such as seamless carousels, animation, editable text templates, or analytics described as strategic weaknesses or reasons GoToFlow is unsuitable.

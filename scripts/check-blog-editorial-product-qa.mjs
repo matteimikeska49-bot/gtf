@@ -60,6 +60,38 @@ const FORBIDDEN_MICROCOPY = [
   "READ NEXT"
 ];
 
+import { MOCKUP_POSITIONING_POLICY } from '../src/lib/blog/productPositioningPolicy.js';
+
+function getActiveArticleFiles() {
+  const activeFiles = new Set();
+  const args = process.argv.slice(2);
+  args.forEach(arg => {
+    if (arg.includes('src/content/blog/articles/')) {
+      activeFiles.add(path.resolve(arg));
+    }
+  });
+  if (activeFiles.size > 0) return Array.from(activeFiles);
+  try {
+    const diff = execSync('git diff --name-only', { encoding: 'utf-8' });
+    const cachedDiff = execSync('git diff --cached --name-only', { encoding: 'utf-8' });
+    let allDiffs = diff + '\n' + cachedDiff;
+    if (!allDiffs.trim()) {
+      const headDiff = execSync('git diff --name-only HEAD~1..HEAD', { encoding: 'utf-8' });
+      allDiffs = headDiff;
+    }
+    allDiffs.split('\n').forEach(line => {
+      if (line.includes('src/content/blog/articles/') && line.endsWith('.md')) {
+        activeFiles.add(path.resolve(line.trim()));
+      }
+    });
+  } catch (e) {
+    console.error("Exec error:", e);
+  }
+  return Array.from(activeFiles);
+}
+
+const activeArticleFiles = getActiveArticleFiles();
+
 const LEGACY_ARTICLES = [
   "ai-carousel-generator.md",
   "ai-carousel-maker-vs-manual-design.md",
@@ -83,8 +115,28 @@ const LEGACY_ARTICLES = [
   "text-to-carousel-ai.md"
 ];
 
-function checkFile(filePath, content, frontmatter) {
+function analyzeSection(sectionText, heading, errors, warnings, isActive) {
+  const textLower = sectionText.toLowerCase();
+
+  const hasCompetitor = MOCKUP_POSITIONING_POLICY.competitorAndGenericKeywords.some(kw => textLower.includes(kw));
+  const hasRiskyVerb = MOCKUP_POSITIONING_POLICY.riskyRecommendationVerbs.some(kw => textLower.includes(kw));
+
+  if (hasCompetitor && hasRiskyVerb) {
+    const hasBridge = MOCKUP_POSITIONING_POLICY.productBridgeKeywords.some(kw => textLower.includes(kw));
+    if (!hasBridge) {
+      const msg = `Competitor/generic recommendation without GoToFlow product bridge under heading: "${heading}"`;
+      if (isActive) {
+        errors.push(`[P0] ${msg}`);
+      } else {
+        warnings.push(`[P1] ${msg}`);
+      }
+    }
+  }
+}
+
+function checkFile(filePath, content, frontmatter, isActive) {
   const errors = [];
+  const warnings = [];
   // Check that title does NOT contain | GoToFlow
   if (frontmatter.title && frontmatter.title.toLowerCase().includes('gotoflow')) {
     errors.push(`Visible title must NOT contain the brand name 'GoToFlow'. The system automatically appends it for SEO tags. Found in: "${frontmatter.title}"`);
@@ -120,7 +172,30 @@ function checkFile(filePath, content, frontmatter) {
     }
   });
 
-  return errors;
+  // Check Semantic Product Positioning in Risky Sections
+  const lines = content.split('\n');
+  let currentHeading = null;
+  let isInsideRiskySection = false;
+  let sectionContent = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (line.startsWith('#')) {
+      if (isInsideRiskySection && sectionContent.length > 0) {
+        analyzeSection(sectionContent.join('\n'), currentHeading, errors, warnings, isActive);
+      }
+      currentHeading = line;
+      sectionContent = [];
+      isInsideRiskySection = MOCKUP_POSITIONING_POLICY.riskyRecommendationHeadingKeywords.some(kw => line.toLowerCase().includes(kw));
+    } else if (isInsideRiskySection) {
+      sectionContent.push(line);
+    }
+  }
+  if (isInsideRiskySection && sectionContent.length > 0) {
+    analyzeSection(sectionContent.join('\n'), currentHeading, errors, warnings, isActive);
+  }
+
+  return { errors, warnings };
 }
 
 function runDraftLeaksCheck() {
@@ -151,11 +226,19 @@ function main() {
     // Only enforce editorial/product QA rules on live published articles
     if (!isLivePublishedFrontmatter(frontmatter)) continue;
 
-    const errors = checkFile(file, content, frontmatter);
-    if (errors.length > 0) {
-      console.error(`\n❌ Errors in ${file}:`);
-      errors.forEach(e => console.error(`  - ${e}`));
-      hasErrors = true;
+    const isActive = activeArticleFiles.includes(path.resolve(file));
+    const { errors, warnings } = checkFile(file, content, frontmatter, isActive);
+
+    if (errors.length > 0 || warnings.length > 0) {
+      if (errors.length > 0) {
+        console.error(`\n❌ Errors in ${file}:`);
+        errors.forEach(e => console.error(`  - ${e}`));
+        hasErrors = true;
+      }
+      if (warnings.length > 0) {
+        console.warn(`\n⚠️ Warnings in ${file}:`);
+        warnings.forEach(w => console.warn(`  - ${w}`));
+      }
     }
   }
 

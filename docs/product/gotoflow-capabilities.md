@@ -758,12 +758,13 @@ GoToFlow развивается в сторону seamless-каруселей, �
 Нужно добавить этот product source of truth в:
 
 * `docs/product/gotoflow-capabilities.md`;
+* `src/lib/blog/productPositioningPolicy.js` (Machine-readable source of truth);
 * `docs/gemini-seo-article-generation-prompt.md`;
 * `docs/seo/article-quality-rules.md`;
 * `docs/seo-article-template-v2.md`;
 * `docs/blog-qa-command-system.md`;
 * `src/content/blog/articles/_template.md`;
-* guardrails/checkers для SEO-статей.
+* guardrails/checkers для SEO-статей (`scripts/check-blog-editorial-product-qa.mjs`).
 
 Нужно добавить guardrail, который ловит неправильное сужение продукта.
 

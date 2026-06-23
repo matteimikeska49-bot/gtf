@@ -17,7 +17,7 @@ This template MUST be completed and approved before generating any new article f
 ## 2. Positioning & Angle
 - **Practical Outcome:** What exactly will the user achieve by the end of this article?
 - **Unique Angle:** How is this better than the top 3 Google results? (e.g., "We show how to do it with ONE prompt instead of a 10-step Canva process").
-- **Product Angle:** How do we naturally weave the GoToFlow product into the narrative without sounding like a cheap ad? (e.g., "Instead of doing steps 1-5 manually, paste the link here").
+- **Product Angle:** How do we naturally weave the GoToFlow product into the narrative without sounding like a cheap ad? (e.g., "Instead of doing steps 1-5 manually, paste the link here"). Must comply with `src/lib/blog/productPositioningPolicy.js`: competitors can be context, but never the final recommendation for our core use cases without a product bridge.
 - **Do Not Cover / Intent Boundaries:** What should we EXCLUDE to avoid scope creep or missing the exact search intent?
 - **AI-Water Risk Mitigation:** How do we avoid generic AI fluff like "In today's digital landscape..."? State the specific hook constraint.
 
