@@ -48,11 +48,32 @@ const forbiddenWords = [
   'гарантированно'
 ];
 
+const parseListArg = (name) => {
+  const args = process.argv.slice(2);
+  const index = args.indexOf(name);
+  if (index === -1) return [];
+  return (args[index + 1] || '').split(',').map((item) => item.trim()).filter(Boolean);
+};
+
+if (process.argv.includes('--help')) {
+  console.log(`Usage:
+  node scripts/check-blog-article-review-summary.mjs [--slug <slug>] [--file <articlePath>]
+
+Without explicit arguments, summarizes changed articles or active draft/QA batch articles.`);
+  process.exit(0);
+}
+
 const getChangedArticleFiles = () => {
-  const explicit = process.argv.slice(2).filter((arg) => arg.endsWith('.md'));
+  const explicit = [
+    ...parseListArg('--file'),
+    ...process.argv.slice(2).filter((arg) => arg.endsWith('.md'))
+  ];
   if (explicit.length > 0) return explicit.map((file) => path.resolve(ROOT_DIR, file));
 
-  const envSlugs = (process.env.BLOG_ARTICLE_REVIEW_SLUGS || '').split(',').map((slug) => slug.trim()).filter(Boolean);
+  const envSlugs = [
+    ...parseListArg('--slug'),
+    ...(process.env.BLOG_ARTICLE_REVIEW_SLUGS || '').split(',').map((slug) => slug.trim()).filter(Boolean)
+  ];
   if (envSlugs.length > 0) return envSlugs.map((slug) => path.join(ARTICLES_DIR, `${slug}.md`));
 
   const changed = new Set();

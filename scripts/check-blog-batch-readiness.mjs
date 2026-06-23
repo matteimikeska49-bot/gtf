@@ -15,21 +15,37 @@ const clusterMap = readJson('src/content/blog/cluster-authority-map.json');
 const topicScores = readJson('src/content/blog/topic-priority-score.json');
 const keywords = readJson('src/content/blog/keyword-candidates.json');
 const batchStatus = readJson('src/content/blog/batch-status.json');
+const ruWaveTopicPlan = readJson('src/content/blog/ru-wave-1-topic-plan.json');
+const mockupDecisions = readJson('src/content/blog/mockup-decisions.json');
+
+const parseListArg = (name) => {
+  const args = process.argv.slice(2);
+  const index = args.indexOf(name);
+  if (index === -1) return [];
+  return (args[index + 1] || '').split(',').map((item) => item.trim()).filter(Boolean);
+};
+
+if (process.argv.includes('--help')) {
+  console.log(`Usage:
+  node scripts/check-blog-batch-readiness.mjs [--topics <slug,slug>] [--batch <batchId>]
+
+Checks active batch topics by default. Use --topics or --batch to verify explicit candidates.`);
+  process.exit(0);
+}
 
 const activeStatuses = new Set(['idea', 'brief', 'ready_for_draft', 'draft', 'draft_preview', 'qa_failed', 'qa_passed', 'ready_to_publish']);
 const explicitSlugs = new Set([
-  ...process.argv.slice(2).filter((arg) => !arg.startsWith('--')),
+  ...parseListArg('--topics'),
+  ...process.argv.slice(2).filter((arg) => !arg.startsWith('--') && !arg.includes(',')),
   ...(process.env.BLOG_BATCH_TOPICS || '').split(',').map((slug) => slug.trim()).filter(Boolean)
 ]);
+const explicitBatches = new Set(parseListArg('--batch'));
 
 const activeBatchEntries = batchStatus.filter((entry) => activeStatuses.has(entry.status));
-const activeBatchSlugs = new Set(activeBatchEntries.map((entry) => entry.slug).filter(Boolean));
-
-const topics = topicMap.filter((topic) => {
-  if (explicitSlugs.size > 0) return explicitSlugs.has(topic.targetSlug);
-  if (activeBatchSlugs.has(topic.targetSlug)) return true;
-  return topic.generationStatus === 'ready_for_draft' || topic.approvalStatus === 'approved_for_draft';
-});
+const activeBatchSlugs = new Set(activeBatchEntries
+  .filter((entry) => explicitBatches.size === 0 || explicitBatches.has(entry.batchId))
+  .map((entry) => entry.slug)
+  .filter(Boolean));
 
 const findKeyword = (topic) => keywords.find((keyword) =>
   keyword.targetSlug === topic.targetSlug ||
@@ -43,9 +59,82 @@ const findScore = (topic) => topicScores.find((score) =>
 
 const findIntent = (topic) => intentMap.find((intent) =>
   intent.ownerSlug === topic.targetSlug ||
+  intent.ownerUrl === `/blog/${topic.targetSlug}` ||
+  intent.ownerUrl === `/ru/blog/${topic.targetSlug}` ||
   (intent.supportingSlugs || []).includes(topic.targetSlug) ||
-  intent.intentId === topic.intentId
+  intent.intentId === topic.intentId ||
+  intent.intentId === `${topic.language}:${topic.targetSlug}`
 );
+
+const findMockupDecision = (topic) => mockupDecisions.find((decision) => decision.slug === topic.targetSlug);
+
+const canonicalRiskToGateRisk = (canonicalRisk = '') => {
+  if (/high/i.test(canonicalRisk)) return 'high';
+  if (/medium|moderate/i.test(canonicalRisk)) return 'medium';
+  if (/low/i.test(canonicalRisk)) return 'low';
+  return null;
+};
+
+const deriveCapabilityIds = (topic) => {
+  const existing = topic.productCapabilityIds || topic.productCapabilityId || [];
+  const normalizedExisting = Array.isArray(existing) ? existing : [existing].filter(Boolean);
+  if (normalizedExisting.length > 0) return normalizedExisting;
+
+  const route = topic.relatedProductRoute || topic.targetProductRoute || '';
+  const cluster = topic.clusterId || topic.cluster || '';
+  if (/generator-postov|content-generator|post-generator/i.test(route)) return ['finishedOutputPositioning'];
+  if (/karusel|carousel/i.test(`${route} ${cluster}`)) return ['aiCarouselGeneration'];
+  return [];
+};
+
+const topicFromPlan = (slug) => {
+  const topic = topicMap.find((entry) => entry.targetSlug === slug);
+  if (topic) return { ...topic, topicMapExists: true, topicSource: 'topic-map' };
+
+  const plan = ruWaveTopicPlan.find((entry) => entry.slug === slug);
+  const score = topicScores.find((entry) => entry.targetSlug === slug);
+  const batchEntry = batchStatus.find((entry) => entry.slug === slug);
+  if (!plan && !score && !batchEntry) {
+    return {
+      targetSlug: slug,
+      topicMapExists: false,
+      topicSource: null,
+      missingTopic: true
+    };
+  }
+
+  const language = plan?.language || score?.language || batchEntry?.language || 'ru';
+  return {
+    topicId: `${language}:${slug}`,
+    targetSlug: slug,
+    title: score?.title || batchEntry?.title || plan?.primaryKeyword || slug,
+    language,
+    primaryKeyword: plan?.primaryKeyword || score?.primaryKeyword || batchEntry?.primaryKeyword || '',
+    searchIntent: plan?.intent || null,
+    clusterId: plan?.clusterId || batchEntry?.cluster || score?.clusterId || null,
+    articleRole: plan?.articleRole || null,
+    relatedProductRoute: plan?.targetProductRoute || score?.relatedProductRoute || null,
+    targetProductRoute: plan?.targetProductRoute || score?.relatedProductRoute || null,
+    cannibalizationRisk: canonicalRiskToGateRisk(plan?.canonicalRisk),
+    productAngle: plan?.differentiation || score?.scoringReason || null,
+    decisionReason: plan?.differentiation || null,
+    demandEvidenceSummary: plan?.demandEvidence || score?.keywordEvidence || null,
+    exactVolumeKnown: Boolean(score?.keywordEvidence?.exactVolumeKnown || plan?.estimatedVolume),
+    internalLinks: plan?.internalLinks || [],
+    approvalStatus: plan?.status === 'selected' || batchEntry?.approvedForDraft ? 'approved_for_draft' : null,
+    topicMapExists: false,
+    topicSource: plan ? 'ru-wave-1-topic-plan' : score ? 'topic-priority-score' : 'batch-status',
+    publishStatus: plan?.publishStatus || batchEntry?.publishStatus || null,
+    batchId: batchEntry?.batchId || plan?.waveId || null
+  };
+};
+
+const topics = explicitSlugs.size > 0
+  ? [...explicitSlugs].map(topicFromPlan)
+  : topicMap.filter((topic) => {
+      if (activeBatchSlugs.has(topic.targetSlug)) return true;
+      return topic.generationStatus === 'ready_for_draft' || topic.approvalStatus === 'approved_for_draft';
+    }).map((topic) => ({ ...topic, topicMapExists: true, topicSource: 'topic-map' }));
 
 const findClusterRole = (topic) => {
   for (const cluster of clusterMap) {
@@ -102,19 +191,24 @@ for (const topic of topics) {
   const clusterRole = findClusterRole(topic);
   const briefPath = hasBrief(topic);
   const batchEntry = batchStatus.find((entry) => entry.slug === topic.targetSlug);
-  const capabilityIds = topic.productCapabilityIds || topic.productCapabilityId || [];
-  const normalizedCapabilities = Array.isArray(capabilityIds) ? capabilityIds : [capabilityIds].filter(Boolean);
+  const mockupDecision = findMockupDecision(topic);
+  const normalizedCapabilities = deriveCapabilityIds(topic);
+  const mockupSlots = topic.mockupSlots || topic.requiredMockupSlots || mockupDecision?.slotsUsed || [];
+  const mockupStatus = topic.mockupStatus || mockupDecision?.mockupStatus || null;
+  const mockupRequired = topic.mockupRequired ?? (mockupDecision ? mockupDecision.mockupStatus === 'present' : null);
   const needsRefresh = topic.requiresDemandRefresh || keyword?.requiresDemandRefresh || keyword?.demandDataStatus === 'needs_refresh';
   const exactVolumeKnown = Boolean(topic.exactVolumeKnown ?? keyword?.exactVolumeKnown ?? score?.keywordEvidence?.exactVolumeKnown);
 
-  if (!keyword && !needsRefresh) topicBlockers.push('missing keyword');
+  if (topic.missingTopic) topicBlockers.push('missing topic in topic-map and fallback topic plans');
+  if (!keyword && !score?.keywordEvidence && !needsRefresh) topicBlockers.push('missing keyword or scored demand evidence');
   if (!intent) topicBlockers.push('missing intent owner');
   if (!clusterRole) topicBlockers.push('missing cluster');
   if (!score && !topic.fallbackAllowed) topicBlockers.push('missing topic score');
   if (!briefPath) topicBlockers.push('missing brief/research package');
   if (!topic.productAngle && !topic.decisionReason) topicBlockers.push('missing product angle');
   if (normalizedCapabilities.length === 0) topicBlockers.push('missing product capability decision');
-  if (topic.mockupRequired === undefined && topic.mockupStatus === undefined) topicBlockers.push('missing mockup decision');
+  if (mockupRequired === null && !mockupStatus) topicBlockers.push('missing mockup decision');
+  if (mockupRequired === true && mockupSlots.length === 0) topicBlockers.push('mockupRequired true but mockupSlots empty');
   if (topic.cannibalizationRisk === 'high' && !isSupportingException(topic, intent, clusterRole)) topicBlockers.push('high cannibalization risk');
   if (isProductIntent(topic) && intent && !isProductRouteOwner(intent) && !isSupportingException(topic, intent, clusterRole)) {
     topicBlockers.push('product intent is not owned by a product route');
@@ -124,17 +218,29 @@ for (const topic of topics) {
     topicBlockers.push('brief is not approved/frozen');
   }
 
+  if (topic.topicMapExists === false) topicWarnings.push('topic-map record missing; using fallback topic plan/score data');
+  if (!keyword && score?.keywordEvidence) topicWarnings.push('keyword-candidates record missing; using scored demand evidence');
   if (!exactVolumeKnown && topic.language === 'en') topicWarnings.push('EN exact volume missing');
   if (needsRefresh) topicWarnings.push('demand source needs refresh');
   if ((score?.scores?.dataConfidenceScore ?? 10) <= 4) topicWarnings.push('low data confidence');
-  if (topic.mockupStatus === 'not_available' || score?.scores?.mockupReadinessScore <= 5) topicWarnings.push('mockup not available or weak');
+  if (mockupStatus === 'not_available' || (!mockupDecision && score?.scores?.mockupReadinessScore <= 5)) {
+    topicWarnings.push('mockup not available or weak');
+  }
   if (!batchEntry?.visualQaStatus || batchEntry.visualQaStatus !== 'passed') topicWarnings.push('human visual review required before publish');
 
   const item = {
     slug: topic.targetSlug,
+    topicSource: topic.topicSource,
+    topicMapExists: topic.topicMapExists ?? true,
+    keywordRecordExists: Boolean(keyword),
+    scoredDemandEvidenceExists: Boolean(score?.keywordEvidence),
     language: topic.language,
     primaryKeyword: topic.primaryKeyword,
     priorityTier: score?.priorityTier || null,
+    productCapabilityIds: normalizedCapabilities,
+    mockupStatus,
+    mockupDecision: mockupDecision?.decision || null,
+    mockupSlots,
     briefPath,
     blockers: topicBlockers,
     warnings: topicWarnings

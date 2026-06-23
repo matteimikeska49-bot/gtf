@@ -214,19 +214,23 @@
     "mockupReason": "Approved standard mockups for workflow article.",
     "slotsUsed": [
       "topic-input",
-      "result-preview"
+      "result-preview",
+      "format-settings",
+      "style-choice"
     ],
     "assetsUsed": [
       "ru-carousel-result-ideas",
-      "ru-upload-text-topic-expert-breakdown"
+      "ru-upload-text-topic-expert-breakdown",
+      "ru-settings-6-slides-4x5",
+      "ru-visual-style-luxury"
     ],
     "platformMatch": true,
     "sourceTypeMatch": true,
     "intentMatch": true,
     "visibleTextRisk": "high",
     "capabilityRisk": "none",
-    "decision": "not_available",
-    "lastReviewed": "2026-06-22"
+    "decision": "approved",
+    "lastReviewed": "2026-06-23"
   },
   {
     "slug": "kakoy-ii-sozdast-post-karusel",
