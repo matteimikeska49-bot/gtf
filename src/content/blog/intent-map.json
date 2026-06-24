@@ -313,7 +313,17 @@
     "cluster": "ru:social-content",
     "searchIntent": "AI tools for generating social media posts",
     "intentType": "informational",
-    "ownerUrl": "/ru/blog/neyroset-dlya-postov"
+    "ownerUrl": "/ru/blog/neyroset-dlya-postov",
+    "ownerSlug": "neyroset-dlya-postov",
+    "ownerRole": "hub",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [],
+    "allowedSupportingAngles": [],
+    "updateInsteadOfCreateRules": [],
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "notes": "Updated for release",
+    "lastReviewed": "2026-06-25"
   },
   {
     "intentId": "ru:karusel-dlya-instagram",
