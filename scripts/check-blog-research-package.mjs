@@ -170,6 +170,12 @@ const isSupportingProductException = (topic, intent, clusterRole) => {
   return listedAsSupport && clusterSupports && productRouteOwner;
 };
 
+const getPublishBlockers = (topic, draftBlockers) => {
+  const publishBlockers = [...draftBlockers];
+  if (topic.topicMapExists !== true) publishBlockers.push('missing topic-map entry');
+  return publishBlockers;
+};
+
 const packages = [];
 const blockers = [];
 const warnings = [];
@@ -219,13 +225,24 @@ for (const topic of candidateTopics) {
     packageWarnings.push('mockup weak/not available');
   }
 
+  const publishBlockers = getPublishBlockers(topic, packageBlockers);
+  const draftReady = packageBlockers.length === 0;
+  const publishReady = publishBlockers.length === 0;
+
   const researchPackage = {
     topicId: topic.topicId || `${topic.language}:${topic.targetSlug}`,
     targetSlug: topic.targetSlug,
+    intakeSource: topic.topicSource || 'unknown',
+    topicMapPresent: topic.topicMapExists === true,
     topicSource: topic.topicSource,
     topicMapExists: topic.topicMapExists ?? true,
     keywordRecordExists: Boolean(keyword),
     scoredDemandEvidenceExists: Boolean(score?.keywordEvidence),
+    draftReady,
+    publishReady,
+    canProceedToDraft: draftReady,
+    canProceedToPublish: publishReady,
+    publishBlockers,
     language: topic.language,
     primaryKeyword: topic.primaryKeyword,
     secondaryKeywords: topic.secondaryKeywords || [],

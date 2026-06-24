@@ -61,4 +61,6 @@ Because topic selection depends on demand data, scores must be recalculated when
 - **Every brief must reference**: Priority Tier and Final Priority Score must be included in the brief metadata.
 - **Generation blocker**: Gemini/Codex should not begin article generation unless scoring exists.
 - **Research package gate**: Active batch topics must pass `npm run check:blog:research-package` before any article generation starts.
-- **Batch readiness gate**: A batch should not start unless `npm run check:blog:batch-readiness` reports `canProceed: true`.
+- **Draft readiness gate**: A batch draft/brief workflow should not start unless `npm run check:blog:batch-readiness` reports `canProceedToDraft: true`. `canProceed` is a backward-compatible alias for this draft state.
+- **Publish readiness gate**: A topic must exist in `topic-map.json` before it can be publish-ready. Intake plans such as `ru-wave-1-topic-plan` can support scoring and draft readiness, but `publishReady` and `canProceedToPublish` must stay false until the topic-map entry exists.
+- **No publish from fallback only**: Before switching an article to `published:true` / `noindex:false`, `npm run check:blog:batch-readiness` must report `canProceedToPublish: true`.

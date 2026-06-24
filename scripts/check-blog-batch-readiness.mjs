@@ -176,10 +176,19 @@ const isSupportingException = (topic, intent, clusterRole) =>
     ['supporting', 'support'].includes((clusterRole.role.role || '').toLowerCase()) &&
     isProductRouteOwner(intent));
 
+const getPublishBlockers = (topic, draftBlockers) => {
+  const publishBlockers = [...draftBlockers];
+  if (topic.topicMapExists !== true) publishBlockers.push('missing topic-map entry');
+  return publishBlockers;
+};
+
 const blockers = [];
+const publishBlockers = [];
 const warnings = [];
-const topicsReady = [];
-const topicsBlocked = [];
+const draftReadyTopics = [];
+const draftBlockedTopics = [];
+const publishReadyTopics = [];
+const publishBlockedTopics = [];
 const humanReviewRequired = [];
 
 for (const topic of topics) {
@@ -228,12 +237,20 @@ for (const topic of topics) {
   }
   if (!batchEntry?.visualQaStatus || batchEntry.visualQaStatus !== 'passed') topicWarnings.push('human visual review required before publish');
 
+  const topicPublishBlockers = getPublishBlockers(topic, topicBlockers);
+  const draftReady = topicBlockers.length === 0;
+  const publishReady = topicPublishBlockers.length === 0;
+
   const item = {
     slug: topic.targetSlug,
+    intakeSource: topic.topicSource || 'unknown',
+    topicMapPresent: topic.topicMapExists === true,
     topicSource: topic.topicSource,
     topicMapExists: topic.topicMapExists ?? true,
     keywordRecordExists: Boolean(keyword),
     scoredDemandEvidenceExists: Boolean(score?.keywordEvidence),
+    draftReady,
+    publishReady,
     language: topic.language,
     primaryKeyword: topic.primaryKeyword,
     priorityTier: score?.priorityTier || null,
@@ -243,14 +260,22 @@ for (const topic of topics) {
     mockupSlots,
     briefPath,
     blockers: topicBlockers,
+    publishBlockers: topicPublishBlockers,
     warnings: topicWarnings
   };
 
-  if (topicBlockers.length > 0) {
-    topicsBlocked.push(item);
-    topicBlockers.forEach((blocker) => blockers.push(`${topic.targetSlug}: ${blocker}`));
+  if (draftReady) {
+    draftReadyTopics.push(item);
   } else {
-    topicsReady.push(item);
+    draftBlockedTopics.push(item);
+    topicBlockers.forEach((blocker) => blockers.push(`${topic.targetSlug}: ${blocker}`));
+  }
+
+  if (publishReady) {
+    publishReadyTopics.push(item);
+  } else {
+    publishBlockedTopics.push(item);
+    topicPublishBlockers.forEach((blocker) => publishBlockers.push(`${topic.targetSlug}: ${blocker}`));
   }
 
   if (topicWarnings.some((warning) => warning.includes('human')) || topicBlockers.length > 0 || needsRefresh || !exactVolumeKnown) {
@@ -267,12 +292,21 @@ if (topics.length === 0) {
   warnings.push('No active batch topics found. Passes now, but a future batch must supply approved topics or BLOG_BATCH_TOPICS.');
 }
 
+const canProceedToDraft = blockers.length === 0;
+const canProceedToPublish = topics.length > 0 && publishBlockers.length === 0 && publishReadyTopics.length === topics.length;
 const result = {
-  canProceed: blockers.length === 0,
+  canProceed: canProceedToDraft,
+  canProceedToDraft,
+  canProceedToPublish,
   blockers,
+  publishBlockers,
   warnings,
-  topicsReady,
-  topicsBlocked,
+  draftReadyTopics,
+  publishReadyTopics,
+  publishBlockedTopics,
+  topicsReady: draftReadyTopics,
+  topicsBlocked: draftBlockedTopics,
+  draftBlockedTopics,
   humanReviewRequired
 };
 
@@ -283,4 +317,4 @@ if (blockers.length > 0) {
   process.exit(1);
 }
 
-console.log(`\n✅ Batch readiness gate passed. canProceed=${result.canProceed}`);
+console.log(`\n✅ Batch readiness gate passed. canProceed=${result.canProceed}; canProceedToPublish=${result.canProceedToPublish}`);

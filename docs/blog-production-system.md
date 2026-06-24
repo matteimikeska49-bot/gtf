@@ -56,12 +56,16 @@ topic
 - use `docs/seo-content-plan.md` to prevent duplicates and cannibalization;
 - use `docs/seo-content-brief-template.md` before Gemini generation;
 - batch publishing starts from topic map, not random topics.
+- `ru-wave-1-topic-plan` and similar intake plans may make a topic draft-ready, but they do not make it publish-ready.
+- `topic-map.json` is the required source of truth before any article can move to `published:true` / `noindex:false`.
 
 ## Batch manager
 
 - batch publishing must use `docs/seo-batch-manager.md`;
 - do not generate random batches without topic map and briefs;
 - batches must pass quality gates before publishing;
+- batch readiness must distinguish `canProceedToDraft` from `canProceedToPublish`;
+- `canProceed` is only a backward-compatible draft-readiness alias and must not be used as publish approval;
 - first production batch should be 5 articles maximum;
 - each batch needs a batch QA report.
 
@@ -186,6 +190,8 @@ Before any article is published, it must pass indexability QA:
 8. Product capability must be confirmed before promising workflows.
 9. Visual/how-to/comparison/examples articles must include native mockup plan.
 10. Approved topics can move to draft generation only after `check:blog:topics` passes.
+11. A fallback intake source such as `ru-wave-1-topic-plan` can support brief or draft work, but publish readiness requires a matching `topic-map.json` entry.
+12. Before switching an article to `published:true` and `noindex:false`, `npm run check:blog:batch-readiness` must report `canProceedToPublish: true` for that topic or batch.
 
 ---
 
