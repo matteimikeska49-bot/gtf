@@ -64,7 +64,6 @@ For creators and brands publishing multi-slide carousels or text-heavy graphics,
 - **Carousel Rule:** The first image in a carousel strictly sets the aspect ratio for the rest of the slides.
 - **Resolution matters:** Always aim for a width of exactly 1080 pixels to avoid compression artifacts.
 
-> [!product]
 > **Don't waste time formatting slides manually**
 > GoToFlow automatically generates educational carousels in the perfect 4:5 aspect ratio for Instagram, so you never have to worry about pixels, safe zones, or awkward cropping.
 > [Try Instagram Carousel Maker](/ai-instagram-post-generator)

@@ -62,7 +62,6 @@ Scheduling your LinkedIn carousel posts allows you to batch your content creatio
 - **Third-Party Tools:** Platforms like Taplio, Buffer, Hootsuite, and AuthoredUp actively support PDF scheduling for LinkedIn.
 - **File Constraints:** Ensure your exported PDF is under 100MB and fewer than 300 pages (though 5-15 pages is best for engagement).
 
-> [!product]
 > **Create before you schedule**
 > A scheduling tool is useless if you don't have content to fill it. GoToFlow instantly turns your ideas and links into a beautifully designed, ready-to-publish PDF carousel. Download it once, schedule it anywhere.
 > [Try LinkedIn Carousel Maker](/linkedin-carousel-maker)
