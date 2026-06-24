@@ -200,8 +200,11 @@ const groupArticlesByCategory = (articles, isRu) => {
 const getAllArticles = (isRu) => {
   const lang = isRu ? 'ru' : 'en';
   const markdownArticles = getPublicMarkdownArticlesByLanguage(lang).map(a => normalizeArticle(a, true, isRu));
+  const markdownSlugs = new Set(markdownArticles.map(article => article.slug));
   const legacyList = isRu ? LEGACY_ARTICLES_RU : LEGACY_ARTICLES;
-  const legacyNormalized = legacyList.map(a => normalizeArticle(a, false, isRu));
+  const legacyNormalized = legacyList
+    .filter(article => !markdownSlugs.has(article.slug))
+    .map(a => normalizeArticle(a, false, isRu));
   
   return [...markdownArticles, ...legacyNormalized].sort((a, b) => {
     const dateA = new Date(a.updatedAt || a.createdAt || '2000-01-01');

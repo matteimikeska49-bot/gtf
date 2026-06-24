@@ -2,6 +2,17 @@
 
 Before a new SEO article is drafted, the topic must have a research package. The package can be explicit in a brief or derived from the existing demand/topic maps, but the required fields must be present.
 
+Canonical template source for article planning is repo files only:
+
+- `docs/seo-article-template-v2.md`
+- `src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx`
+- `src/components/blog/MarkdownBlogArticlePage.jsx`
+- `src/lib/blog/markdownArticles.js`
+- `src/content/blog/articles/_template.md` as the authoring skeleton
+- `src/content/blog/articles/test-seo-template-v2.md` as an internal fixture only
+
+Do not use live production articles as template source. `/blog/ai-instagram-carousel-generator` is a live article, not a canonical template reference. `/blog/test-seo-template-v2` is not a production article example.
+
 Required fields:
 
 ```yaml

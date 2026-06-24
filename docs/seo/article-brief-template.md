@@ -2,6 +2,17 @@
 
 This template MUST be completed and approved before generating any new article for the GoToFlow SEO Publishing Platform.
 
+Canonical template source is repo files only:
+
+- `docs/seo-article-template-v2.md`
+- `src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx`
+- `src/components/blog/MarkdownBlogArticlePage.jsx`
+- `src/lib/blog/markdownArticles.js`
+- `src/content/blog/articles/_template.md` as the authoring skeleton
+- `src/content/blog/articles/test-seo-template-v2.md` as an internal fixture only
+
+Do not use live production articles as template source. `/blog/ai-instagram-carousel-generator` is a live article, not a canonical template reference. `/blog/test-seo-template-v2` is not a production article example.
+
 ## 1. Meta & Strategy
 - **Title (H1):** [Draft Title]
 - **Slug:** `[slug-name]`

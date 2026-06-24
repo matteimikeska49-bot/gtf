@@ -5,8 +5,16 @@
 Этот шаблон нужен для массовой публикации EN/RU SEO-статей GoToFlow.
 Цель — быстро выпускать много статей по единому dark premium product-led editorial шаблону без ручного редизайна каждой страницы.
 
-Эталонная страница:
-`/blog/ai-instagram-carousel-generator`
+Canonical template source is repo files only:
+
+- `docs/seo-article-template-v2.md`
+- `src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx`
+- `src/components/blog/MarkdownBlogArticlePage.jsx`
+- `src/lib/blog/markdownArticles.js`
+- `src/content/blog/articles/_template.md` as the authoring skeleton
+- `src/content/blog/articles/test-seo-template-v2.md` as an internal fixture only
+
+Do not use live production articles, including `/blog/ai-instagram-carousel-generator`, as canonical template source. Do not use `/blog/test-seo-template-v2` as a production article example.
 
 ## Mandatory release contract
 
@@ -43,11 +51,13 @@ Minimum character counts do not establish article quality. Do not repeat heading
 10. Approved topics can move to draft generation only after `check:blog:topics` passes.
 
 ## Content Guardrails & Template Compliance
-- Before generating or editing a new SEO markdown article, open the live fixture, markdown fixture, template file, and renderer:
+- Before generating or editing a new SEO markdown article, open the canonical product, fixture, skeleton, template, route, and loader files:
   - `docs/product/gotoflow-capabilities.md`
   - `src/content/blog/articles/test-seo-template-v2.md`
   - `src/content/blog/articles/_template.md`
   - `src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx`
+  - `src/components/blog/MarkdownBlogArticlePage.jsx`
+  - `src/lib/blog/markdownArticles.js`
 - `docs/product/gotoflow-capabilities.md` is the canonical product source of truth for GoToFlow positioning, capabilities, comparisons, roadmap framing, forbidden negative framing, and misleading-claim rules. Before writing or editing a GoToFlow article, the agent must check whether the article positioning matches this file.
 - GoToFlow is an end-to-end carousel creation system: source/idea, analysis, structure, slide copy, visual style/design, own photos, AI characters, slides, CTA, and export — from zero to a ready carousel in minutes. Supported inputs include a topic, script, text, link, Reels, YouTube or TikTok video, audio, PDF, image, screenshot, or user photo. Never reduce GoToFlow to text-only, structure-only, Canva/Midjourney/ChatGPT add-on, or random AI carousel generation.
 - The agent must not invent product limitations, must not frame GoToFlow through “minuses”, and must not describe roadmap items as strategic weaknesses.

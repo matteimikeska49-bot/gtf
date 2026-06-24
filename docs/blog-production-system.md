@@ -31,18 +31,19 @@ topic
 
 ## Current foundation
 
-1. Эталонная визуальная статья:
-   /blog/ai-instagram-carousel-generator
+1. Canonical template source lives in repo files, not live article URLs:
+   - `docs/seo-article-template-v2.md`
+   - `src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx`
+   - `src/components/blog/MarkdownBlogArticlePage.jsx`
+   - `src/lib/blog/markdownArticles.js`
+   - `src/content/blog/articles/_template.md` as the authoring skeleton
+   - `src/content/blog/articles/test-seo-template-v2.md` as an internal fixture only
 
-2. Rulebook шаблона:
-   docs/seo-article-template-v2.md
+2. Live production articles, including `/blog/ai-instagram-carousel-generator`, are content examples and must not be used as canonical template references.
 
-3. Старые рабочие JSX-статьи нельзя трогать при создании markdown-engine:
-   - /blog/ai-instagram-carousel-generator
-   - /blog/how-to-make-linkedin-carousel-with-ai
-   - /blog/best-ai-carousel-generators
+3. `/blog/test-seo-template-v2` is a noindex preview/demo route for the internal fixture. It is not a production article example.
 
-4. Markdown-engine для новых статей должен создаваться рядом со старыми страницами, не ломая их.
+4. Markdown-engine changes for new articles must not break already published routes.
 
 ## Implementation roadmap & Strategy
 

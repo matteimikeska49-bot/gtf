@@ -8,7 +8,11 @@ Use this prompt template whenever you need to generate a new blog post or SEO gu
 
 Before generating or editing a new SEO markdown article, open and follow:
 - `docs/product/gotoflow-capabilities.md`
-- `src/content/blog/articles/test-seo-template-v2.md`
+- `src/content/blog/articles/test-seo-template-v2.md` (internal fixture only; not a production article example)
+- `src/content/blog/articles/_template.md` (authoring skeleton)
+- `src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx`
+- `src/components/blog/MarkdownBlogArticlePage.jsx`
+- `src/lib/blog/markdownArticles.js`
 - `src/content/blog/articles/_template.md`
 - `src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx`
 
@@ -193,7 +197,7 @@ Use ONLY valid, real internal routes starting with `/`. Do not invent URLs.
 - `/blog/linkedin-carousel-ideas`
 - `/blog/best-ai-carousel-generators`
 - `/blog/how-to-make-linkedin-carousel-with-ai`
-- `/blog/ai-instagram-carousel-generator`
+- `/blog/ai-instagram-carousel-generator` is a live article route, not a template source.
 - `/blog/linkedin-carousel-prompts`
 
 - Use 1-2 contextual internal links in the body.
