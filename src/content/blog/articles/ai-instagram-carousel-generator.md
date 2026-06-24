@@ -124,16 +124,22 @@ The input does not need to be polished.
 
 The goal is to extract the angle, simplify the message, and turn it into a clear carousel structure.
 
-> [!NOTE]
-> **Example**
-> **Input:**
-> A long blog post about why AI content often sounds generic.
-> **Carousel angle:**
-> “Your AI content sounds generic because your workflow is too vague.”
-> **Hook:**
-> “Your AI content sounds generic for 3 reasons.”
-> **Slide structure:**
-> Problem → reason 1 → reason 2 → reason 3 → fix → checklist → CTA.
+:::cards
+type: examples
+
+### Example
+**Input:**
+A long blog post about why AI content often sounds generic.
+
+**Carousel angle:**
+“Your AI content sounds generic because your workflow is too vague.”
+
+**Hook:**
+“Your AI content sounds generic for 3 reasons.”
+
+**Slide structure:**
+Problem → reason 1 → reason 2 → reason 3 → fix → checklist → CTA.
+:::
 
 This is where AI becomes more useful than a blank design template.
 
@@ -231,12 +237,16 @@ You can begin with:
 - a customer question;
 - a product insight.
 
-> [!NOTE]
-> **Input quality**
-> **Bad input:**
-> “Make a carousel about marketing.”
-> **Better input:**
-> “Create an Instagram carousel for early-stage SaaS founders about why their AI-generated content sounds generic and how to fix it.”
+:::cards
+type: examples
+
+### Input quality
+**Bad input:**
+“Make a carousel about marketing.”
+
+**Better input:**
+“Create an Instagram carousel for early-stage SaaS founders about why their AI-generated content sounds generic and how to fix it.”
+:::
 
 The second version gives AI a clear audience, pain point, and direction.
 
@@ -281,16 +291,20 @@ Good carousel formats include:
 - case study;
 - tips list.
 
-> [!NOTE]
-> **Example**
-> **Topic:**
-> “AI content sounds generic”
-> **Possible formats:**
-> “7 reasons your AI content sounds generic”
-> “Before/after: generic AI post vs useful AI post”
-> “A checklist for making AI content sound like your brand”
-> “Myth vs truth: AI content quality”
-> “Framework: how to turn AI output into branded content”
+:::cards
+type: examples
+
+### Example
+**Topic:**
+“AI content sounds generic”
+
+**Possible formats:**
+- “7 reasons your AI content sounds generic”
+- “Before/after: generic AI post vs useful AI post”
+- “A checklist for making AI content sound like your brand”
+- “Myth vs truth: AI content quality”
+- “Framework: how to turn AI output into branded content”
+:::
 
 The format changes the whole article-to-carousel workflow.
 
@@ -364,18 +378,21 @@ Instagram carousel copy must be easy to read on a phone.
 
 Avoid long paragraphs. Use short lines. Cut anything that does not help the slide.
 
-> [!WARNING]
-> **Instead of**
-> “Many brands struggle with AI content because they use generic prompts that do not include enough context about the audience, the desired outcome, the tone of voice, and the content format.”
+:::cards
+type: tips
 
-> [!TIP]
-> **Use**
-> Generic AI content usually comes from generic input.
-> Add:
-> audience
-> goal
-> tone
-> format
+### Instead of
+“Many brands struggle with AI content because they use generic prompts that do not include enough context about the audience, the desired outcome, the tone of voice, and the content format.”
+
+### Use
+Generic AI content usually comes from generic input.
+
+Add:
+- audience
+- goal
+- tone
+- format
+:::
 
 Shorter copy creates stronger slides.
 

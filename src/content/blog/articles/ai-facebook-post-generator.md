@@ -57,7 +57,7 @@ Writing consistent, engaging content for a Facebook Business Page can quickly be
 - **Visuals Win:** Text-only posts have the lowest reach. Combining AI text with an image or carousel boosts visibility.
 - **Link Penalty:** The algorithm suppresses posts that send users away from Facebook.
 
-> [!workflow]
+> [!product]
 > **Generate complete visual posts**
 > Don't settle for just text. GoToFlow takes your prompt and generates a ready-to-publish visual carousel and caption perfect for your Facebook audience.
 > [Try AI Content Generator](/ai-content-generator)

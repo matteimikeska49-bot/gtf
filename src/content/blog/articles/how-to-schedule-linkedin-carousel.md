@@ -57,7 +57,7 @@ Posting consistently on LinkedIn is the key to building a B2B audience. But logg
 - **Tools:** Platforms like Taplio, Buffer, and AuthoredUp support PDF scheduling for LinkedIn.
 - **File size:** Ensure your exported PDF is under 100MB.
 
-> [!workflow]
+> [!product]
 > **Need content to schedule?**
 > Don't let a lack of design skills stop your posting schedule. GoToFlow instantly turns your text into a ready-to-publish PDF carousel, ready for LinkedIn.
 > [Try LinkedIn Carousel Maker](/linkedin-carousel-maker)

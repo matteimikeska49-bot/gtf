@@ -58,7 +58,7 @@ Using the correct Instagram post size is critical for engagement. If your image 
 - **Consistency:** The first image in a carousel sets the size for the rest.
 - **Resolution matters:** Always aim for a width of 1080 pixels to avoid compression artifacts.
 
-> [!workflow]
+> [!product]
 > **Don't waste time formatting slides**
 > GoToFlow automatically generates carousels in the perfect 4:5 aspect ratio for Instagram, so you never have to worry about pixels or cropping.
 > [Try Instagram Carousel Maker](/ai-instagram-post-generator)
