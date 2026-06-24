@@ -76,19 +76,6 @@ function getRawBlockquoteSeparatorOnlyChangedSlugs(changedSlugs) {
     if (hasContentChange && onlyRawBlockquoteSeparators) {
       slugs.add(slug);
     }
-    
-    // Explicitly exempt files being fixed for markdown artifacts
-    const exemptArtifactFixes = new Set([
-      'ai-instagram-carousel-generator',
-      'ai-facebook-post-generator',
-      'generaciya-postov-karuseley',
-      'how-to-schedule-linkedin-carousel',
-      'instagram-post-size-guide',
-      'kak-vylozhit-karusel-v-instagram'
-    ]);
-    if (exemptArtifactFixes.has(slug)) {
-      slugs.add(slug);
-    }
   });
 
   return slugs;
