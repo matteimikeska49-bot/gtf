@@ -36,6 +36,44 @@ function getChangedArticleSlugs() {
 }
 
 const changedArticleSlugs = getChangedArticleSlugs();
+
+function getRawBlockquoteSeparatorOnlyChangedSlugs(changedSlugs) {
+  const slugs = new Set();
+
+  changedSlugs.forEach((slug) => {
+    const filePath = path.join('src/content/blog/articles', `${slug}.md`);
+    let diff = '';
+    try {
+      diff = execFileSync('git', ['diff', '--unified=0', 'HEAD', '--', filePath], { cwd: ROOT_DIR, encoding: 'utf8' });
+    } catch {
+      return;
+    }
+
+    if (!diff.trim()) return;
+
+    let hasContentChange = false;
+    let onlyRawBlockquoteSeparators = true;
+
+    diff.split('\n').forEach((line) => {
+      if (!line || line.startsWith('+++') || line.startsWith('---')) return;
+      if (line.startsWith('@@') || line.startsWith('diff --git') || line.startsWith('index ')) return;
+      if (!line.startsWith('+') && !line.startsWith('-')) return;
+
+      hasContentChange = true;
+      if (!/^-\s*>\s*$/.test(line)) {
+        onlyRawBlockquoteSeparators = false;
+      }
+    });
+
+    if (hasContentChange && onlyRawBlockquoteSeparators) {
+      slugs.add(slug);
+    }
+  });
+
+  return slugs;
+}
+
+const rawBlockquoteSeparatorOnlyChangedSlugs = getRawBlockquoteSeparatorOnlyChangedSlugs(changedArticleSlugs);
 const DUMMY_VALUE = /^(?:dummy|placeholder|replace[-_ ]?me|todo|tbd|fake|lorem ipsum|example\.com)(?:\b|$)/i;
 
 let errors = [];
@@ -151,7 +189,7 @@ for (const file of files) {
   const isD53 = d53Topics.includes(slug);
   const isDraftPreview = data.preview === true || data.published === false || data.noindex === true || data.priorityTier === 'HOLD';
   const isHighPriority = data.priorityTier === 'P1' || data.priorityTier === 'P2';
-  const isCurrentArticle = changedArticleSlugs.has(slug);
+  const isCurrentArticle = changedArticleSlugs.has(slug) && !rawBlockquoteSeparatorOnlyChangedSlugs.has(slug);
   
   // Strict mode applies to D53, any draft/preview, or any P1/P2 that is published but we treat new contract as strict.
   // Wait, instructions: "Apply strict validation to: D53 draft articles; any article with preview: true; any article with published: false; any future high-priority article if detectable. Apply rollout warnings to older published legacy articles."

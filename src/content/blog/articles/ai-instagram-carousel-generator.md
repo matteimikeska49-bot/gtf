@@ -126,16 +126,12 @@ The goal is to extract the angle, simplify the message, and turn it into a clear
 
 > [!NOTE]
 > **Example**
->
 > **Input:**
 > A long blog post about why AI content often sounds generic.
->
 > **Carousel angle:**
 > “Your AI content sounds generic because your workflow is too vague.”
->
 > **Hook:**
 > “Your AI content sounds generic for 3 reasons.”
->
 > **Slide structure:**
 > Problem → reason 1 → reason 2 → reason 3 → fix → checklist → CTA.
 
@@ -174,7 +170,6 @@ A carousel with too much text, a vague hook, and no structure is still hard to r
 
 > [!TIP]
 > **Key insight**
->
 > A carousel works because of its structure, not its design. Clear slides, logical flow, and a strong hook matter more than colors or templates.
 
 ## AI carousel generator vs ChatGPT vs Canva/Figma
@@ -238,10 +233,8 @@ You can begin with:
 
 > [!NOTE]
 > **Input quality**
->
 > **Bad input:**
 > “Make a carousel about marketing.”
->
 > **Better input:**
 > “Create an Instagram carousel for early-stage SaaS founders about why their AI-generated content sounds generic and how to fix it.”
 
@@ -290,10 +283,8 @@ Good carousel formats include:
 
 > [!NOTE]
 > **Example**
->
 > **Topic:**
 > “AI content sounds generic”
->
 > **Possible formats:**
 > “7 reasons your AI content sounds generic”
 > “Before/after: generic AI post vs useful AI post”
@@ -375,16 +366,12 @@ Avoid long paragraphs. Use short lines. Cut anything that does not help the slid
 
 > [!WARNING]
 > **Instead of**
->
 > “Many brands struggle with AI content because they use generic prompts that do not include enough context about the audience, the desired outcome, the tone of voice, and the content format.”
 
 > [!TIP]
 > **Use**
->
 > Generic AI content usually comes from generic input.
->
 > Add:
->
 > audience
 > goal
 > tone

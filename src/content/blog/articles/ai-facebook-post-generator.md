@@ -59,7 +59,6 @@ Writing consistent, engaging content for a Facebook Business Page can quickly be
 
 > [!workflow]
 > **Generate complete visual posts**
->
 > Don't settle for just text. GoToFlow takes your prompt and generates a ready-to-publish visual carousel and caption perfect for your Facebook audience.
 > [Try AI Content Generator](/ai-content-generator)
 

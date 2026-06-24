@@ -45,6 +45,44 @@ function getChangedArticleSlugs() {
 const changedArticleSlugs = getChangedArticleSlugs();
 const legacyDepthDebt = [];
 
+function getRawBlockquoteSeparatorOnlyChangedSlugs(changedSlugs) {
+  const slugs = new Set();
+
+  changedSlugs.forEach((slug) => {
+    const filePath = path.join('src/content/blog/articles', `${slug}.md`);
+    let diff = '';
+    try {
+      diff = execFileSync('git', ['diff', '--unified=0', 'HEAD', '--', filePath], { cwd: ROOT, encoding: 'utf8' });
+    } catch {
+      return;
+    }
+
+    if (!diff.trim()) return;
+
+    let hasContentChange = false;
+    let onlyRawBlockquoteSeparators = true;
+
+    diff.split('\n').forEach((line) => {
+      if (!line || line.startsWith('+++') || line.startsWith('---')) return;
+      if (line.startsWith('@@') || line.startsWith('diff --git') || line.startsWith('index ')) return;
+      if (!line.startsWith('+') && !line.startsWith('-')) return;
+
+      hasContentChange = true;
+      if (!/^-\s*>\s*$/.test(line)) {
+        onlyRawBlockquoteSeparators = false;
+      }
+    });
+
+    if (hasContentChange && onlyRawBlockquoteSeparators) {
+      slugs.add(slug);
+    }
+  });
+
+  return slugs;
+}
+
+const rawBlockquoteSeparatorOnlyChangedSlugs = getRawBlockquoteSeparatorOnlyChangedSlugs(changedArticleSlugs);
+
 // Existing published debt remains visible as P1 warnings. Any new occurrence is P0.
 const LEGACY_GENERIC_EXPLORE_ANCHOR_SLUGS = new Set([
   'ai-carousel-content-strategy',
@@ -278,7 +316,7 @@ const hasMarkdownProductCta = (body) => body.includes('> [!product]');
 
 const isStrictArticle = (frontmatter) => STRICT_SLUGS.has(frontmatter.slug)
   || LEGACY_STRICT_SLUGS.has(frontmatter.slug)
-  || changedArticleSlugs.has(frontmatter.slug);
+  || (changedArticleSlugs.has(frontmatter.slug) && !rawBlockquoteSeparatorOnlyChangedSlugs.has(frontmatter.slug));
 
 function findRepeatedContent(body) {
   const repeatedH2 = [];
@@ -307,6 +345,16 @@ function findRepeatedContent(body) {
   }
 
   return { repeatedH2, repeatedParagraphs };
+}
+
+function findRawBlockquoteSeparators(body) {
+  const findings = [];
+  body.split('\n').forEach((line, index) => {
+    if (/^\s*>\s*$/.test(line)) {
+      findings.push(index + 1);
+    }
+  });
+  return findings;
 }
 
 function addIssue({ errors, warnings, strict, message }) {
@@ -377,7 +425,9 @@ function checkArticle(file, routeRegistry) {
   const errors = [];
   const warnings = [];
   const strict = isStrictArticle(frontmatter);
-  const depthStrict = LEGACY_STRICT_SLUGS.has(frontmatter.slug) || changedArticleSlugs.has(frontmatter.slug);
+  const depthStrict = LEGACY_STRICT_SLUGS.has(frontmatter.slug)
+    || (changedArticleSlugs.has(frontmatter.slug) && !rawBlockquoteSeparatorOnlyChangedSlugs.has(frontmatter.slug));
+  const changedStrict = changedArticleSlugs.has(frontmatter.slug) && !rawBlockquoteSeparatorOnlyChangedSlugs.has(frontmatter.slug);
   const isLivePublished = frontmatter.published === true && frontmatter.noindex === false;
   const articleLanguage = frontmatter.language === 'ru' ? 'ru' : 'en';
   const lowerBody = body.toLowerCase();
@@ -400,6 +450,11 @@ function checkArticle(file, routeRegistry) {
 
   // Current changed articles are strict. Existing corpus debt remains visible without blocking unrelated releases.
   if (isLivePublished) {
+      const rawBlockquoteSeparators = findRawBlockquoteSeparators(body);
+      if (rawBlockquoteSeparators.length > 0) {
+          errors.push(`P0: Raw blockquote separator lines found at body lines ${rawBlockquoteSeparators.join(', ')}. Empty ">" lines are not supported by the article renderer and can leak as visible text.`);
+      }
+
       const type = frontmatter.articleType || 'guide';
       const bodyChars = body.trim().length;
       const h2Match = body.match(/^## /gm);
@@ -438,7 +493,7 @@ function checkArticle(file, routeRegistry) {
           errors.push('P0: Missing Quick Answer frontmatter block.');
       } else if (frontmatter.quickAnswer && !quickAnswerIsValid && depthStrict) {
           const message = 'Quick Answer must be a YAML block-list with 4-5 non-empty items.';
-          if (changedArticleSlugs.has(frontmatter.slug)) {
+          if (changedStrict) {
               errors.push(`P0: ${message}`);
           } else {
               warnings.push(`P1 legacy: ${message}`);
