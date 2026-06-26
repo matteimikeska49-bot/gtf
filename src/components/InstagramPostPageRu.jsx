@@ -80,7 +80,7 @@ export const CarouselHeroRu = () => {
         <button onClick={() => window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
           Создать пост <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
-        <p className="text-sm text-zinc-500 flex flex-wrap justify-center gap-x-3 gap-y-1"><span>✓ Без привязки карты</span><span className="text-zinc-700">•</span><span>✓ Первая пост за 60 секунд</span></p>
+        <p className="text-sm text-zinc-500 flex flex-wrap justify-center gap-x-3 gap-y-1"><span>✓ Без привязки карты</span><span className="text-zinc-700">•</span><span>✓ Первый пост за 60 секунд</span></p>
       </motion.div>
     </div>
   </section>
@@ -204,7 +204,7 @@ export const CarouselComparisonRu = () => {
           <div className="relative z-10 flex flex-col">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto w-full">
               {[{ icon:<Clock className="w-6 h-6"/>, color:'text-amber-400', ring:'bg-amber-500/10 border-amber-500/20', text:'Экономьте 5+ часов в неделю' },
-                { icon:<Zap className="w-6 h-6"/>, color:'text-violet-400', ring:'bg-violet-500/10 border-violet-500/20', text:'Готовая пост за ~60 секунд' },
+                { icon:<Zap className="w-6 h-6"/>, color:'text-violet-400', ring:'bg-violet-500/10 border-violet-500/20', text:'Готовый пост за ~60 секунд' },
                 { icon:<Target className="w-6 h-6"/>, color:'text-rose-400', ring:'bg-rose-500/10 border-rose-500/20', text:'Один процесс вместо 4 инструментов' }
               ].map((m,i)=>(
                 <div key={i} className="flex flex-col items-center justify-center bg-white/[0.04] border border-white/10 backdrop-blur-3xl rounded-2xl py-4 px-6 text-center hover:bg-white/[0.06] transition-colors duration-300">
@@ -217,7 +217,7 @@ export const CarouselComparisonRu = () => {
               <div className="rounded-2xl p-6 md:p-8 flex flex-col h-full" style={{ background:'rgba(5,5,5,0.6)', border:'1px solid rgba(255,255,255,0.03)', boxShadow:'inset 0 4px 24px rgba(0,0,0,0.4)' }}>
                 <p className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-600 mb-8 text-center">Обычный путь</p>
                 <div className="flex flex-col gap-5 flex-1">
-                  {['Пишете хуки вручную в ChatGPT','Структурируете слайды в отдельном документе','Каждый раз собираете дизайн в Canva с нуля','Получаете сырой AI-текст и переписываете слайд за слайдом','Нет системы — каждая пост начинается с нуля'].map((t,i)=>(
+                  {['Пишете хуки вручную в ChatGPT','Структурируете слайды в отдельном документе','Каждый раз собираете дизайн в Canva с нуля','Получаете сырой AI-текст и переписываете слайд за слайдом','Нет системы — каждый пост начинается с нуля'].map((t,i)=>(
                     <div key={i} className="flex items-start gap-4"><div className="shrink-0 mt-1 w-5 h-5 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center"><X className="w-3 h-3 text-zinc-600"/></div><p className="text-sm md:text-base text-zinc-500 leading-relaxed">{t}</p></div>
                   ))}
                 </div>
@@ -235,7 +235,7 @@ export const CarouselComparisonRu = () => {
               <button onClick={()=>window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
                 Создать пост <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform"/>
               </button>
-              <p className="text-sm text-zinc-500 text-center">Первая пост за 60 секунд</p>
+              <p className="text-sm text-zinc-500 text-center">Первый пост за 60 секунд</p>
             </div>
           </div>
         </div>
@@ -350,9 +350,9 @@ const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
 };
 
 const diffPoints = [
-  { icon: Fingerprint, title: 'Ваш стиль, а не шаблонный текст', desc: 'GoToFlow сохраняет ваш tone of voice, поэтому каждая пост звучит так, будто её написали вы.' },
+  { icon: Fingerprint, title: 'Ваш стиль, а не шаблонный текст', desc: 'GoToFlow сохраняет ваш tone of voice, поэтому каждый пост звучит так, будто его написали вы.' },
   { icon: Settings2, title: 'Контроль каждого слайда', desc: 'Задавайте темы, направляйте хук, корректируйте структуру и тексты так, как нужно вам.' },
-  { icon: Zap, title: 'Готовая пост, а не просто текст', desc: 'Получите готовую структурированную пост — а не блок текста, который нужно вручную разбивать на слайды.' },
+  { icon: Zap, title: 'Готовый пост, а не просто текст', desc: 'Получите готовый структурированный пост — а не блок текста, который нужно вручную разбивать на слайды.' },
 ];
 
 export const CarouselDifferentiationRu = () => {
@@ -464,7 +464,7 @@ export const CarouselBottomCTARu = () => {
                 <span className="text-[10px] font-semibold text-zinc-500 tracking-[0.1em] uppercase">Начать бесплатно</span>
               </div>
               <h2 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-6 max-w-2xl">
-                Готовая пост за 60 секунд. <span className="text-gradient-brand">Без дизайна.</span><br/><span className="text-zinc-400 font-semibold" style={{fontSize:'0.78em'}}>Без команды.</span>
+                Готовый пост за 60 секунд. <span className="text-gradient-brand">Без дизайна.</span><br/><span className="text-zinc-400 font-semibold" style={{fontSize:'0.78em'}}>Без команды.</span>
               </h2>
               <p className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg leading-[1.75] font-medium mb-12">Присоединяйтесь к тысячам креаторов и предпринимателей, которые создают вовлекающие посты за секунды с помощью ИИ GoToFlow.</p>
               <div className="relative group mb-5">
