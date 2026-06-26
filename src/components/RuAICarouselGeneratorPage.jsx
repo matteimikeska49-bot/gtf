@@ -579,7 +579,7 @@ export const RuAICarouselGeneratorPage = () => {
           title: "Полезные материалы:",
           links: [
             { url: "/ru/blog/ii-dlya-karuseley", label: "Как использовать ИИ для каруселей" },
-            { url: "/ru/blog/shablony-karuseley-v-instagram", label: "Шаблоны каруселей" }
+            { url: "/ru/blog/prompty-dlya-karuseley-v-instagram", label: "Шаблоны каруселей" }
           ]
         }
       ]} />

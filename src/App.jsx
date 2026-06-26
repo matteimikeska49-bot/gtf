@@ -95,6 +95,7 @@ function App() {
         <Route path="/ru/blog/idei-karuselej-linkedin" element={<MarkdownBlogArticlePage slug="idei-karuselej-linkedin" langPrefix="ru" />} />
         <Route path="/ru/blog/luchshie-ai-generatory-karuselej" element={<MarkdownBlogArticlePage slug="luchshie-ai-generatory-karuselej" langPrefix="ru" />} />
         <Route path="/ru/blog/kak-sdelat-karusel-linkedin-s-ai" element={<MarkdownBlogArticlePage slug="kak-sdelat-karusel-linkedin-s-ai" langPrefix="ru" />} />
+        <Route path="/ru/blog/shablony-karuseley-v-instagram" element={<Navigate to="/ru/blog/prompty-dlya-karuseley-v-instagram" replace />} />
         <Route path="/ru/blog" element={<BlogPageRu />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/ru/politika" element={<PrivacyPolicyPage />} />

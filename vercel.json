@@ -19,6 +19,11 @@
       "source": "/ru/ii-generator-postov-dlya-linkedin",
       "destination": "/ru/generator-karuselej-linkedin",
       "permanent": true
+    },
+    {
+      "source": "/ru/blog/shablony-karuseley-v-instagram",
+      "destination": "/ru/blog/prompty-dlya-karuseley-v-instagram",
+      "permanent": true
     }
   ],
   "headers": [
