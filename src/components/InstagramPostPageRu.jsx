@@ -225,7 +225,7 @@ export const CarouselComparisonRu = () => {
               <div className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-colors duration-500" style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', boxShadow:'0 20px 40px -10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)', backdropFilter:'blur(16px)' }}>
                 <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-10">GoToFlow</p>
                 <div className="flex flex-col gap-5 flex-1 relative z-10">
-                  {['Введите тему или вставьте ссылку — получите готовую пост','ИИ пишет хук, структурирует слайды и заполняет текст','Получите готовую к публикации пост в один клик','Мгновенно генерируйте несколько вариантов','Ваш tone of voice сохраняется в каждом слайде'].map((t,i)=>(
+                  {['Введите тему или вставьте ссылку — получите готовый пост','ИИ пишет хук, структурирует слайды и заполняет текст','Получите готовый к публикации пост в один клик','Мгновенно генерируйте несколько вариантов','Ваш tone of voice сохраняется в каждом слайде'].map((t,i)=>(
                     <div key={i} className="flex items-start gap-4"><div className="shrink-0 mt-1 w-5 h-5 rounded-full border border-pink-500/30 bg-[rgba(244,63,94,0.1)] flex items-center justify-center"><Check className="w-3 h-3 text-pink-400" strokeWidth={3}/></div><p className="text-sm md:text-base text-white font-medium leading-relaxed">{t}</p></div>
                   ))}
                 </div>
@@ -274,7 +274,7 @@ const ProgressMockup = () => {
   }, []);
   return (
     <div className="mt-6 w-full max-w-xs flex flex-col gap-2">
-      <div className="flex items-center justify-between"><span className="text-[11px] text-zinc-500 font-medium tracking-wide">Создание посты...</span><span className="text-[11px] text-zinc-400 font-bold tabular-nums">{pct}%</span></div>
+      <div className="flex items-center justify-between"><span className="text-[11px] text-zinc-500 font-medium tracking-wide">Создание поста...</span><span className="text-[11px] text-zinc-400 font-bold tabular-nums">{pct}%</span></div>
       <div className="w-full h-2 rounded-full bg-white/[0.08] overflow-hidden"><div className="h-full rounded-full bg-gradient-to-r from-pink-500 to-orange-400 transition-[width] duration-[16ms] ease-linear shadow-[0_0_20px_rgba(236,72,153,0.6)]" style={{width:`${pct}%`}}/></div>
     </div>
   );
@@ -291,7 +291,7 @@ const ExportMockup = () => (
 const hiwSteps = [
   { icon: CornerDownLeft, number: 1, title: 'Введите тему или ссылку', desc: 'Введите тему, URL или идею. ИИ изучит контекст и подготовит пост.', micro: <InputMockup/> },
   { icon: Sparkles, number: 2, title: 'ИИ создаёт пост', desc: 'ИИ собирает хук, структуру, текст, визуальную подачу и CTA.', micro: <ProgressMockup/> },
-  { icon: Download, number: 3, title: 'Получите готовые слайды', desc: 'Проверьте, отредактируйте при необходимости и скачайте готовую пост.', micro: <ExportMockup/> },
+  { icon: Download, number: 3, title: 'Получите готовые слайды', desc: 'Проверьте, отредактируйте при необходимости и скачайте готовый пост.', micro: <ExportMockup/> },
 ];
 
 export const CarouselHowItWorksRu = () => {
@@ -302,7 +302,7 @@ export const CarouselHowItWorksRu = () => {
     <div className="max-w-7xl mx-auto bg-[#050505]/60 border border-white/[0.08] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-2xl relative z-10 shadow-[0_30px_100px_-15px_rgba(0,0,0,1),0_0_40px_rgba(236,72,153,0.15)]">
       <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}} className="text-center mb-16 flex flex-col items-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Sparkles className="w-3.5 h-3.5"/>Как это работает</div>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">От идеи до готовой посты за <span className="text-gradient-brand">3 простых шага</span></h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">От идеи до готового поста за <span className="text-gradient-brand">3 простых шага</span></h2>
         <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed text-balance">ИИ делает всю тяжёлую работу — вы принимаете финальное решение.</p>
       </motion.div>
       <div className="relative mt-12 max-w-5xl mx-auto">
@@ -365,7 +365,7 @@ export const CarouselDifferentiationRu = () => {
         <motion.div initial={{opacity:0,x: isMobile ? 0 : -40, y: isMobile ? 24 : 0}} whileInView={{opacity:1,x:0,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Fingerprint className="w-3.5 h-3.5"/>Почему GoToFlow</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-[1.15] text-balance">GoToFlow <span className="text-gradient-brand">создаёт контент</span><br className="hidden lg:block"/> а не просто дизайн</h2>
-          <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed text-balance mb-12">Пока другие сервисы дают вам пустой холст, GoToFlow генерирует полную пост — структуру слайдов, тексты и логику — используя ИИ.</p>
+          <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed text-balance mb-12">Пока другие сервисы дают вам пустой холст, GoToFlow генерирует полный пост — структуру слайдов, тексты и логику — используя ИИ.</p>
         </motion.div>
         <div className="flex flex-col gap-4">
           {diffPoints.map((p,i) => (
@@ -398,7 +398,7 @@ export const CarouselSEOBlockRu = () => (
     <div className="max-w-3xl mx-auto">
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Что такое генератор постов с ИИ</h2>
       <div className="text-zinc-400 leading-relaxed space-y-4 text-base">
-        <p>Генератор постов с ИИ — это инструмент, который автоматически создает <strong className="text-zinc-200">пост Instagram</strong> и других соцсетей. Вместо того чтобы писать каждый слайд вручную, вы просто вводите тему или идею, и ИИ выдает структурированную пост с сильным хуком, готовую к публикации.</p>
+        <p>Генератор постов с ИИ — это инструмент, который автоматически создает <strong className="text-zinc-200">пост Instagram</strong> и других соцсетей. Вместо того чтобы писать каждый слайд вручную, вы просто вводите тему или идею, и ИИ выдает структурированный пост с сильным хуком, готовый к публикации.</p>
         <p>Наш генератор постов работает не как обычные шаблоны. ИИ анализирует контекст, применяет проверенные контентные фреймворки и <strong className="text-zinc-200">создает пост</strong> с четкой целью для каждого слайда — от цепляющего заголовка до призыва к действию (CTA) в конце.</p>
         <p>Создать пост с помощью ИИ — значит ускорить производство контента, получить стабильное качество и возможность тестировать разные подходы. Будь вы эксперт или фаундер, генератор забирает на себя самую сложную часть работы.</p>
       </div>
