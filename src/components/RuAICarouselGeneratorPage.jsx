@@ -570,9 +570,9 @@ export const RuAICarouselGeneratorPage = () => {
         {
           title: "Создавайте разный контент с ИИ:",
           links: [
-            { url: "/ru/ii-generator-postov-dlya-linkedin", label: "Карусели для LinkedIn" },
-            { url: "/ru/ii-generator-postov-dlya-instagram", label: "Посты для Instagram" },
-            { url: "/ru/ii-generator-kontenta", label: "Любой контент" }
+            { url: "/ru/generator-karuselej-linkedin", label: "Карусели для LinkedIn" },
+            { url: "/ru/generator-postov-instagram", label: "Посты для Instagram" },
+            { url: "/ru/generator-kontenta", label: "Любой контент" }
           ]
         },
         {

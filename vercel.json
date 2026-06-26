@@ -4,6 +4,21 @@
       "source": "/carousel-maker",
       "destination": "/ai-carousel-maker",
       "permanent": true
+    },
+    {
+      "source": "/ru/ii-generator-kontenta",
+      "destination": "/ru/generator-kontenta",
+      "permanent": true
+    },
+    {
+      "source": "/ru/ii-generator-postov-dlya-instagram",
+      "destination": "/ru/generator-postov-instagram",
+      "permanent": true
+    },
+    {
+      "source": "/ru/ii-generator-postov-dlya-linkedin",
+      "destination": "/ru/generator-karuselej-linkedin",
+      "permanent": true
     }
   ],
   "headers": [

@@ -79,9 +79,12 @@ function App() {
         <Route path="/ai-instagram-post-generator" element={<InstagramPostPage />} />
         <Route path="/ai-post-maker" element={<Navigate to="/ai-instagram-post-generator" replace />} />
         <Route path="/ru/generator-kontenta" element={<AIContentPageRu />} />
+        <Route path="/ru/ii-generator-kontenta" element={<Navigate to="/ru/generator-kontenta" replace />} />
         <Route path="/ru/generator-postov-instagram" element={<InstagramPostPageRu />} />
+        <Route path="/ru/ii-generator-postov-dlya-instagram" element={<Navigate to="/ru/generator-postov-instagram" replace />} />
         <Route path="/linkedin-carousel-maker" element={<LinkedInCarouselPage />} />
         <Route path="/ru/generator-karuselej-linkedin" element={<LinkedInCarouselPageRu />} />
+        <Route path="/ru/ii-generator-postov-dlya-linkedin" element={<Navigate to="/ru/generator-karuselej-linkedin" replace />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/linkedin-carousel-ideas" element={<MarkdownBlogArticlePage slug="linkedin-carousel-ideas" langPrefix="en" />} />
         <Route path="/blog/best-ai-carousel-generators" element={<MarkdownBlogArticlePage slug="best-ai-carousel-generators" langPrefix="en" />} />
