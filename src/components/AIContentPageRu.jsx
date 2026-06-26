@@ -193,7 +193,7 @@ export const CarouselComparisonRu = () => {
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-5">
           Старый процесс vs <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">GoToFlow</span>
         </h2>
-        <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-medium">Поиск идей, написание хуков, структура слайдов и копирайтинг обычно живут в 4+ разных инструментах. В GoToFlow это один процесс создания контент.</p>
+        <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-medium">Поиск идей, написание хуков, структура слайдов и копирайтинг обычно живут в 4+ разных инструментах. В GoToFlow это один процесс создания контента.</p>
       </motion.div>
       <motion.div initial={{ opacity:0,y:56 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ duration: isMobile ? 0.6 : 0.9 }} className="relative">
         <div className="relative rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 lg:p-14">
@@ -271,7 +271,7 @@ const ProgressMockup = () => {
   }, []);
   return (
     <div className="mt-6 w-full max-w-xs flex flex-col gap-2">
-      <div className="flex items-center justify-between"><span className="text-[11px] text-zinc-500 font-medium tracking-wide">Создание контент...</span><span className="text-[11px] text-zinc-400 font-bold tabular-nums">{pct}%</span></div>
+      <div className="flex items-center justify-between"><span className="text-[11px] text-zinc-500 font-medium tracking-wide">Создание контента...</span><span className="text-[11px] text-zinc-400 font-bold tabular-nums">{pct}%</span></div>
       <div className="w-full h-2 rounded-full bg-white/[0.08] overflow-hidden"><div className="h-full rounded-full bg-gradient-to-r from-pink-500 to-orange-400 transition-[width] duration-[16ms] ease-linear shadow-[0_0_20px_rgba(236,72,153,0.6)]" style={{width:`${pct}%`}}/></div>
     </div>
   );
@@ -299,7 +299,7 @@ export const CarouselHowItWorksRu = () => {
     <div className="max-w-7xl mx-auto bg-[#050505]/60 border border-white/[0.08] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-2xl relative z-10 shadow-[0_30px_100px_-15px_rgba(0,0,0,1),0_0_40px_rgba(236,72,153,0.15)]">
       <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}} className="text-center mb-16 flex flex-col items-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Sparkles className="w-3.5 h-3.5"/>Как это работает</div>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">От идеи до готовой контент за <span className="text-gradient-brand">3 простых шага</span></h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">От идеи до готового контента за <span className="text-gradient-brand">3 простых шага</span></h2>
         <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed text-balance">ИИ делает всю тяжёлую работу — вы принимаете финальное решение.</p>
       </motion.div>
       <div className="relative mt-12 max-w-5xl mx-auto">
