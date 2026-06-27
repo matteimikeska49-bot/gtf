@@ -25,6 +25,7 @@ import { AIContentPageRu } from './components/AIContentPageRu';
 import { InstagramPostPageRu } from './components/InstagramPostPageRu';
 import { LinkedInCarouselPage } from './components/LinkedInCarouselPage';
 import { LinkedInCarouselPageRu } from './components/LinkedInCarouselPageRu';
+import { LinkedInPostPage } from './components/LinkedInPostPage';
 import { LinkedInPostPageRu } from './components/LinkedInPostPageRu';
 import { BlogPage } from './components/BlogPage';
 import { BlogPageRu } from './components/BlogPageRu';
@@ -74,10 +75,14 @@ function App() {
         <Route path="/ru" element={<LandingPage />} />
         <Route path="/ai-carousel-maker" element={<CarouselPage />} />
         <Route path="/carousel-maker" element={<Navigate to="/ai-carousel-maker" replace />} />
-        <Route path="/ru/ai-generator-karuselej" element={<CarouselPageRu />} />
-        <Route path="/ru/ii-generator-karuseley" element={<RuAICarouselGeneratorPage />} />
-        <Route path="/ai-content-generator" element={<AIContentPage />} />
         <Route path="/ai-instagram-post-generator" element={<InstagramPostPage />} />
+        <Route path="/ai-linkedin-post-generator" element={<LinkedInPostPage />} />
+        <Route path="/instagram-carousel-maker" element={<CarouselPage />} />
+        
+        {/* RU Tool Pages (200 OK SEO structure) */}
+        <Route path="/ru/ii-generator-karuseley" element={<RuAICarouselGeneratorPage />} />
+        <Route path="/ru/generator-karuselej-instagram" element={<RuAICarouselGeneratorPage />} />
+        <Route path="/ai-content-generator" element={<AIContentPage />} />
         <Route path="/ai-post-maker" element={<Navigate to="/ai-instagram-post-generator" replace />} />
         <Route path="/ru/generator-kontenta" element={<AIContentPageRu />} />
         <Route path="/ru/ii-generator-kontenta" element={<AIContentPageRu />} />

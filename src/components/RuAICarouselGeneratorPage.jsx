@@ -17,14 +17,16 @@ import { getAppUrlWithRef } from '../utils/url';
 import { useIsMobile } from '../hooks/useIsMobile';
 
 const CTA_URL = 'https://app.gotoflow.io';
-const CANONICAL_URL = 'https://gotoflow.io/ru/ii-generator-karuseley';
-const PAGE_TITLE = 'ИИ-генератор каруселей — создать карусель с ИИ | GoToFlow';
-const PAGE_DESCRIPTION = 'Создавайте карусели с ИИ в GoToFlow: идея, сценарий, структура, текст по слайдам, визуальный стиль, свои фото, AI-персонажи, слайды и CTA за пару минут.';
 
 /* ── SEO Head ── */
 const RuSEOHead = () => {
   useEffect(() => {
-    document.title = PAGE_TITLE;
+    const isInsta = window.location.pathname === '/ru/generator-karuselej-instagram';
+    const canonicalUrl = isInsta ? 'https://gotoflow.io/ru/generator-karuselej-instagram' : 'https://gotoflow.io/ru/ii-generator-karuseley';
+    const pageTitle = isInsta ? 'Генератор каруселей Инстаграм с ИИ | Создать карусель онлайн' : 'ИИ-генератор каруселей — создать карусель с ИИ | GoToFlow';
+    const pageDescription = isInsta ? 'Быстро создавайте вовлекающие Инстаграм карусели с помощью нейросетей онлайн.' : 'Создавайте карусели с ИИ в GoToFlow: идея, сценарий, структура, текст по слайдам, визуальный стиль, свои фото, AI-персонажи, слайды и CTA за пару минут.';
+    
+    document.title = pageTitle;
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let el = document.querySelector(sel);
@@ -40,18 +42,18 @@ const RuSEOHead = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
 
-    setMeta('title', PAGE_TITLE);
-    setMeta('description', PAGE_DESCRIPTION);
-    setMeta('og:title', PAGE_TITLE, true);
-    setMeta('og:description', PAGE_DESCRIPTION, true);
-    setMeta('og:url', CANONICAL_URL, true);
-    setMeta('twitter:title', PAGE_TITLE);
-    setMeta('twitter:description', PAGE_DESCRIPTION);
-    setMeta('twitter:url', CANONICAL_URL);
+    setMeta('title', pageTitle);
+    setMeta('description', pageDescription);
+    setMeta('og:title', pageTitle, true);
+    setMeta('og:description', pageDescription, true);
+    setMeta('og:url', canonicalUrl, true);
+    setMeta('twitter:title', pageTitle, true);
+    setMeta('twitter:description', pageDescription, true);
+    setMeta('twitter:url', canonicalUrl, true);
 
-    setLink('canonical', CANONICAL_URL);
+    setLink('canonical', canonicalUrl);
     setLink('alternate', 'https://gotoflow.io/ai-carousel-maker', { hreflang: 'en' });
-    setLink('alternate', CANONICAL_URL, { hreflang: 'ru' });
+    setLink('alternate', canonicalUrl, { hreflang: 'ru' });
     setLink('alternate', 'https://gotoflow.io/ai-carousel-maker', { hreflang: 'x-default' });
     document.documentElement.lang = 'ru';
     return () => { document.title = 'GoToFlow'; };

@@ -47,16 +47,19 @@ export const Footer = () => {
                   <>
                     <Link to="/ru/ii-generator-karuseley" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">ИИ-генератор каруселей</Link>
                     <Link to="/ru/ii-generator-kontenta" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Генератор контента</Link>
+                    <Link to="/ru/generator-karuselej-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Карусели Instagram</Link>
                     <Link to="/ru/ii-generator-postov-dlya-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Посты Instagram</Link>
-                    <Link to="/ru/ii-generator-postov-dlya-linkedin" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Посты LinkedIn</Link>
                     <Link to="/ru/generator-karuselej-linkedin" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Карусели LinkedIn</Link>
+                    <Link to="/ru/ii-generator-postov-dlya-linkedin" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Посты LinkedIn</Link>
                   </>
                 ) : (
                   <>
                     <Link to="/ai-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">AI Carousel Maker</Link>
                     <Link to="/ai-content-generator" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Content Generator</Link>
+                    <Link to="/instagram-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Instagram Carousels</Link>
                     <Link to="/ai-instagram-post-generator" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Instagram Posts</Link>
                     <Link to="/linkedin-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">LinkedIn Carousels</Link>
+                    <Link to="/ai-linkedin-post-generator" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">LinkedIn Posts</Link>
                   </>
                 )}
               </nav>
@@ -77,6 +80,7 @@ export const Footer = () => {
                 ) : (
                   <>
                     <Link to="/blog" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Blog</Link>
+                    <Link to="/blog/instagram-carousel-templates" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Instagram Carousel Templates</Link>
                     <Link to="/blog/instagram-carousel-prompts" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Instagram Carousel Prompts</Link>
                   </>
                 )}

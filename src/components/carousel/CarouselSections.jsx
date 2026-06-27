@@ -9,7 +9,12 @@ const CTA_URL = 'https://app.gotoflow.io';
 /* ── SEO Head ── */
 export const SEOHead = () => {
   useEffect(() => {
-    document.title = 'AI Carousel Maker — Create Carousels with AI | GoToFlow';
+    const isInsta = window.location.pathname === '/instagram-carousel-maker';
+    const canonicalUrl = isInsta ? 'https://gotoflow.io/instagram-carousel-maker' : 'https://gotoflow.io/ai-carousel-maker';
+    const pageTitle = isInsta ? 'Instagram Carousel Maker with AI | Free Online' : 'AI Carousel Maker — Create Carousels with AI | GoToFlow';
+    const pageDescription = isInsta ? 'Create beautiful Instagram carousels in 60 seconds with our free online AI carousel maker.' : 'Create a ready-to-publish Instagram or LinkedIn carousel in 60 seconds with AI. From idea to final slides — no design skills, no team, no templates.';
+
+    document.title = pageTitle;
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let el = document.querySelector(sel);
@@ -25,19 +30,19 @@ export const SEOHead = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     
-    setMeta('title', 'AI Carousel Maker — Create Carousels with AI | GoToFlow');
-    setMeta('description', 'Create a ready-to-publish Instagram or LinkedIn carousel in 60 seconds with AI. From idea to final slides — no design skills, no team, no templates.');
-    setMeta('og:title', 'AI Carousel Maker — Create Carousels with AI | GoToFlow', true);
-    setMeta('og:description', 'Create a ready-to-publish Instagram or LinkedIn carousel in 60 seconds with AI. From idea to final slides — no design skills, no team, no templates.', true);
-    setMeta('og:url', 'https://gotoflow.io/ai-carousel-maker', true);
-    setMeta('twitter:title', 'AI Carousel Maker — Create Carousels with AI | GoToFlow', true);
-    setMeta('twitter:description', 'Create a ready-to-publish Instagram or LinkedIn carousel in 60 seconds with AI. From idea to final slides — no design skills, no team, no templates.', true);
-    setMeta('twitter:url', 'https://gotoflow.io/ai-carousel-maker', true);
+    setMeta('title', pageTitle);
+    setMeta('description', pageDescription);
+    setMeta('og:title', pageTitle, true);
+    setMeta('og:description', pageDescription, true);
+    setMeta('og:url', canonicalUrl, true);
+    setMeta('twitter:title', pageTitle, true);
+    setMeta('twitter:description', pageDescription, true);
+    setMeta('twitter:url', canonicalUrl, true);
     
-    setLink('canonical', 'https://gotoflow.io/ai-carousel-maker');
-    setLink('alternate', 'https://gotoflow.io/ai-carousel-maker', { hreflang: 'en' });
-    setLink('alternate', 'https://gotoflow.io/ru/ai-generator-karuselej', { hreflang: 'ru' });
-    setLink('alternate', 'https://gotoflow.io/ai-carousel-maker', { hreflang: 'x-default' });
+    setLink('canonical', canonicalUrl);
+    setLink('alternate', canonicalUrl, { hreflang: 'en' });
+    setLink('alternate', isInsta ? 'https://gotoflow.io/ru/generator-karuselej-instagram' : 'https://gotoflow.io/ru/ii-generator-karuseley', { hreflang: 'ru' });
+    setLink('alternate', canonicalUrl, { hreflang: 'x-default' });
     document.documentElement.lang = 'en';
     return () => { document.title = 'GoToFlow'; };
   }, []);

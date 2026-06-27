@@ -56,7 +56,7 @@ finalCta:
   title: "Не тратьте часы на дизайн"
   description: "В GoToFlow встроены десятки готовых шаблонов. Просто введите тему, и ИИ соберет идеальную карусель."
   buttonText: "Создать карусель бесплатно"
-  href: "/ru/ai-generator-karuselej"
+  href: "/ru/ii-generator-karuseley"
   microcopy: "Без привязки карты — Готово за 60 секунд"
   secondaryText: "Узнать больше о промптах →"
   secondaryHref: "/ru/blog/prompty-dlya-karuseley-v-instagram"
