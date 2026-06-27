@@ -6,26 +6,6 @@
       "permanent": true
     },
     {
-      "source": "/ru/ii-generator-kontenta",
-      "destination": "/ru/generator-kontenta",
-      "permanent": true
-    },
-    {
-      "source": "/ru/ii-generator-postov-dlya-instagram",
-      "destination": "/ru/generator-postov-instagram",
-      "permanent": true
-    },
-    {
-      "source": "/ru/ii-generator-postov-dlya-linkedin",
-      "destination": "/ru/generator-karuselej-linkedin",
-      "permanent": true
-    },
-    {
-      "source": "/ru/blog/shablony-karuseley-v-instagram",
-      "destination": "/ru/blog/prompty-dlya-karuseley-v-instagram",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

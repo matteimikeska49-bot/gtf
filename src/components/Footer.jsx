@@ -46,10 +46,10 @@ export const Footer = () => {
                 {lang === 'RU' ? (
                   <>
                     <Link to="/ru/ii-generator-karuseley" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">ИИ-генератор каруселей</Link>
-                    <Link to="/ru/generator-kontenta" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Генератор контента</Link>
-                    <Link to="/ru/ai-generator-karuselej" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Карусели</Link>
+                    <Link to="/ru/ii-generator-kontenta" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Генератор контента</Link>
+                    <Link to="/ru/ii-generator-postov-dlya-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Посты Instagram</Link>
+                    <Link to="/ru/ii-generator-postov-dlya-linkedin" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Посты LinkedIn</Link>
                     <Link to="/ru/generator-karuselej-linkedin" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Карусели LinkedIn</Link>
-                    <Link to="/ru/generator-postov-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Посты Instagram</Link>
                   </>
                 ) : (
                   <>

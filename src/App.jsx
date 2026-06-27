@@ -25,6 +25,7 @@ import { AIContentPageRu } from './components/AIContentPageRu';
 import { InstagramPostPageRu } from './components/InstagramPostPageRu';
 import { LinkedInCarouselPage } from './components/LinkedInCarouselPage';
 import { LinkedInCarouselPageRu } from './components/LinkedInCarouselPageRu';
+import { LinkedInPostPageRu } from './components/LinkedInPostPageRu';
 import { BlogPage } from './components/BlogPage';
 import { BlogPageRu } from './components/BlogPageRu';
 
@@ -79,12 +80,12 @@ function App() {
         <Route path="/ai-instagram-post-generator" element={<InstagramPostPage />} />
         <Route path="/ai-post-maker" element={<Navigate to="/ai-instagram-post-generator" replace />} />
         <Route path="/ru/generator-kontenta" element={<AIContentPageRu />} />
-        <Route path="/ru/ii-generator-kontenta" element={<Navigate to="/ru/generator-kontenta" replace />} />
+        <Route path="/ru/ii-generator-kontenta" element={<AIContentPageRu />} />
         <Route path="/ru/generator-postov-instagram" element={<InstagramPostPageRu />} />
-        <Route path="/ru/ii-generator-postov-dlya-instagram" element={<Navigate to="/ru/generator-postov-instagram" replace />} />
+        <Route path="/ru/ii-generator-postov-dlya-instagram" element={<InstagramPostPageRu />} />
         <Route path="/linkedin-carousel-maker" element={<LinkedInCarouselPage />} />
         <Route path="/ru/generator-karuselej-linkedin" element={<LinkedInCarouselPageRu />} />
-        <Route path="/ru/ii-generator-postov-dlya-linkedin" element={<Navigate to="/ru/generator-karuselej-linkedin" replace />} />
+        <Route path="/ru/ii-generator-postov-dlya-linkedin" element={<LinkedInPostPageRu />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/linkedin-carousel-ideas" element={<MarkdownBlogArticlePage slug="linkedin-carousel-ideas" langPrefix="en" />} />
         <Route path="/blog/best-ai-carousel-generators" element={<MarkdownBlogArticlePage slug="best-ai-carousel-generators" langPrefix="en" />} />
@@ -95,7 +96,6 @@ function App() {
         <Route path="/ru/blog/idei-karuselej-linkedin" element={<MarkdownBlogArticlePage slug="idei-karuselej-linkedin" langPrefix="ru" />} />
         <Route path="/ru/blog/luchshie-ai-generatory-karuselej" element={<MarkdownBlogArticlePage slug="luchshie-ai-generatory-karuselej" langPrefix="ru" />} />
         <Route path="/ru/blog/kak-sdelat-karusel-linkedin-s-ai" element={<MarkdownBlogArticlePage slug="kak-sdelat-karusel-linkedin-s-ai" langPrefix="ru" />} />
-        <Route path="/ru/blog/shablony-karuseley-v-instagram" element={<Navigate to="/ru/blog/prompty-dlya-karuseley-v-instagram" replace />} />
         <Route path="/ru/blog" element={<BlogPageRu />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/ru/politika" element={<PrivacyPolicyPage />} />

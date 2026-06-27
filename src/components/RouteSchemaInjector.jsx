@@ -76,6 +76,27 @@ const ROUTES_CONFIG = {
     type: 'software',
     crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Генератор постов Instagram', path: '/ru/generator-postov-instagram' }]
   },
+  '/ru/ii-generator-kontenta': {
+    title: 'ИИ-генератор контента для соцсетей | GoToFlow',
+    desc: 'Создавайте качественный контент для соцсетей с помощью ИИ. Быстрая генерация постов и каруселей.',
+    lang: 'ru',
+    type: 'software',
+    crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'ИИ-генератор контента', path: '/ru/ii-generator-kontenta' }]
+  },
+  '/ru/ii-generator-postov-dlya-instagram': {
+    title: 'ИИ-генератор постов для Instagram | Создать пост с ИИ',
+    desc: 'Создавайте вовлекающие посты для Instagram с помощью ИИ. Быстрая генерация контента.',
+    lang: 'ru',
+    type: 'software',
+    crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'ИИ-генератор постов для Instagram', path: '/ru/ii-generator-postov-dlya-instagram' }]
+  },
+  '/ru/ii-generator-postov-dlya-linkedin': {
+    title: 'ИИ-генератор постов для LinkedIn | Создать пост с ИИ',
+    desc: 'Создавайте профессиональные B2B посты для LinkedIn с помощью ИИ. Быстрая генерация постов для экспертов.',
+    lang: 'ru',
+    type: 'software',
+    crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Генератор постов LinkedIn', path: '/ru/ii-generator-postov-dlya-linkedin' }]
+  },
   '/linkedin-carousel-maker': {
     title: 'LinkedIn Carousel Maker | Create LinkedIn Carousels with AI',
     desc: 'Create engaging LinkedIn carousels instantly with AI. Boost your reach and engagement.',
