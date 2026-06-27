@@ -66,6 +66,9 @@ explore:
     - title: "Как создать карусель с помощью AI"
       href: "/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii"
       description: "Пошаговое руководство по созданию постов для Инстаграм."
+    - title: "Шаблоны каруселей в Инстаграм"
+      href: "/ru/blog/shablony-karuseley-v-instagram"
+      description: "Готовые структуры и примеры оформления каруселей."
 finalCta:
   title: "Устали придумывать промпты?"
   description: "В GoToFlow все системные промпты уже настроены под идеальную карусель. Просто введите тему и получите готовый дизайн."

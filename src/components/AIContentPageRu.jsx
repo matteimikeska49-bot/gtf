@@ -17,7 +17,16 @@ const CTA_URL = 'https://app.gotoflow.io';
 /* ── SEO Head (RU) ── */
 export const SEOHeadRu = () => {
   useEffect(() => {
-    document.title = 'AI-генератор контента для соцсетей — посты, карусели и Reels | GoToFlow';
+    const isIiGenerator = window.location.pathname === '/ru/ii-generator-kontenta';
+    const pageTitle = isIiGenerator 
+      ? 'ИИ-генератор контента для соцсетей | GoToFlow'
+      : 'AI-генератор контента для соцсетей — посты, карусели и Reels | GoToFlow';
+    const pageDesc = isIiGenerator
+      ? 'Создавайте качественный контент для соцсетей с помощью ИИ. Быстрая генерация постов и каруселей.'
+      : 'Создавайте посты, карусели, сценарии Reels и идеи для соцсетей с помощью AI. GoToFlow помогает быстро делать контент под ваш стиль.';
+    const canonicalUrl = `https://gotoflow.io${window.location.pathname}`;
+
+    document.title = pageTitle;
     const setMeta = (name, content, prop = false) => {
       const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let el = document.querySelector(sel);
@@ -33,16 +42,16 @@ export const SEOHeadRu = () => {
       Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
     };
     
-    setMeta('title', 'AI-генератор контента для соцсетей — посты, карусели и Reels | GoToFlow');
-    setMeta('description', 'Создавайте посты, карусели, сценарии Reels и идеи для соцсетей с помощью AI. GoToFlow помогает быстро делать контент под ваш стиль.');
-    setMeta('og:title', 'AI-генератор контента для соцсетей — посты, карусели и Reels | GoToFlow', true);
-    setMeta('og:description', 'Создавайте посты, карусели, сценарии Reels и идеи для соцсетей с помощью AI. GoToFlow помогает быстро делать контент под ваш стиль.', true);
-    setMeta('og:url', 'https://gotoflow.io/ru/generator-kontenta', true);
-    setMeta('twitter:title', 'AI-генератор контента для соцсетей — посты, карусели и Reels | GoToFlow', true);
-    setMeta('twitter:description', 'Создавайте посты, карусели, сценарии Reels и идеи для соцсетей с помощью AI. GoToFlow помогает быстро делать контент под ваш стиль.', true);
-    setMeta('twitter:url', 'https://gotoflow.io/ru/generator-kontenta', true);
+    setMeta('title', pageTitle);
+    setMeta('description', pageDesc);
+    setMeta('og:title', pageTitle, true);
+    setMeta('og:description', pageDesc, true);
+    setMeta('og:url', canonicalUrl, true);
+    setMeta('twitter:title', pageTitle, true);
+    setMeta('twitter:description', pageDesc, true);
+    setMeta('twitter:url', canonicalUrl, true);
     
-    setLink('canonical', 'https://gotoflow.io/ru/generator-kontenta');
+    setLink('canonical', canonicalUrl);
     setLink('alternate', 'https://gotoflow.io/ai-content-generator', { hreflang: 'en' });
     setLink('alternate', 'https://gotoflow.io/ru/generator-kontenta', { hreflang: 'ru' });
     setLink('alternate', 'https://gotoflow.io/ai-content-generator', { hreflang: 'x-default' });

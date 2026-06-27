@@ -70,7 +70,10 @@ export const Footer = () => {
               </h3>
               <nav className="flex flex-col gap-3">
                 {lang === 'RU' ? (
-                  <Link to="/ru/blog" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Блог</Link>
+                  <>
+                    <Link to="/ru/blog" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Блог</Link>
+                    <Link to="/ru/blog/shablony-karuseley-v-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Шаблоны каруселей Instagram</Link>
+                  </>
                 ) : (
                   <Link to="/blog" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Blog</Link>
                 )}

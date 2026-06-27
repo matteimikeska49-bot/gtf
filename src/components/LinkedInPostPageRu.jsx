@@ -1,4 +1,4 @@
-import { RuMetaDisclaimerFootnote } from './common/RuMetaDisclaimerFootnote';
+
 import { Link } from 'react-router-dom';
 import { getAppUrlWithRef } from '../utils/url';
 import React, { useState, useEffect, useRef } from 'react';
@@ -37,18 +37,18 @@ export const SEOHeadRu = () => {
     };
     
     setMeta('title', 'ИИ-генератор постов для LinkedIn | Создать пост с ИИ');
-    setMeta('description', 'Создавайте посты, подписи, идеи и карусели для LinkedIn с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.');
+    setMeta('description', 'Создавайте посты, подписи, идеи и посты для LinkedIn с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.');
     setMeta('og:title', 'ИИ-генератор постов для LinkedIn | Создать пост с ИИ', true);
-    setMeta('og:description', 'Создавайте посты, подписи, идеи и карусели для LinkedIn с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.', true);
-    setMeta('og:url', 'https://gotoflow.io/ru/generator-postov-instagram', true);
+    setMeta('og:description', 'Создавайте посты, подписи, идеи и посты для LinkedIn с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.', true);
+    setMeta('og:url', 'https://gotoflow.io/ru/ii-generator-postov-dlya-linkedin', true);
     setMeta('twitter:title', 'ИИ-генератор постов для LinkedIn | Создать пост с ИИ', true);
-    setMeta('twitter:description', 'Создавайте посты, подписи, идеи и карусели для LinkedIn с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.', true);
-    setMeta('twitter:url', 'https://gotoflow.io/ru/generator-postov-instagram', true);
+    setMeta('twitter:description', 'Создавайте посты, подписи, идеи и посты для LinkedIn с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.', true);
+    setMeta('twitter:url', 'https://gotoflow.io/ru/ii-generator-postov-dlya-linkedin', true);
     
-    setLink('canonical', 'https://gotoflow.io/ru/generator-postov-instagram');
-    setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'en' });
-    setLink('alternate', 'https://gotoflow.io/ru/generator-postov-instagram', { hreflang: 'ru' });
-    setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'x-default' });
+    setLink('canonical', 'https://gotoflow.io/ru/ii-generator-postov-dlya-linkedin');
+    setLink('alternate', 'https://gotoflow.io/linkedin-post-generator', { hreflang: 'en' });
+    setLink('alternate', 'https://gotoflow.io/ru/ii-generator-postov-dlya-linkedin', { hreflang: 'ru' });
+    setLink('alternate', 'https://gotoflow.io/linkedin-post-generator', { hreflang: 'x-default' });
     document.documentElement.lang = 'ru';
     return () => { document.title = 'GoToFlow'; document.documentElement.lang = 'en'; };
   }, []);
@@ -133,7 +133,7 @@ export const CarouselShowcaseRu = () => (
         </div>
       </div>
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-16 px-6">
-        Примеры каруселей, <span className="text-gradient-brand">созданных с помощью ИИ</span>
+        Примеры постов, <span className="text-gradient-brand">созданных с помощью ИИ</span>
       </h2>
       <div className="relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}>
         <div className="flex items-center gap-5" style={{ animation: 'marquee-scroll 35s linear infinite', width: 'max-content', willChange: 'transform' }}>
@@ -161,7 +161,7 @@ export const CarouselProblemRu = () => {
     <section ref={ref} className="relative z-10 py-24 md:py-32 w-full flex flex-col items-center bg-[#050505]">
       <motion.div animate={{ opacity: [0.35,0.55,0.35], scale: [1,1.05,1] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }} className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[450px] rounded-full -z-10 pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(236,72,153,0.14) 0%, rgba(249,115,22,0.07) 50%, transparent 75%)', filter: 'blur(100px)' }} />
       <motion.h2 initial={{ opacity:0,y:12 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.7 }} className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight text-center relative z-20 px-6">
-        Создание каруселей превратилось в <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">хаос?</span>
+        Создание постов превратилось в <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">хаос?</span>
       </motion.h2>
       <motion.p initial={{ opacity:0,y:12 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.7,delay:0.08 }} className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto text-center mb-16 relative z-20 px-6">
         Вы тратите часы на слайды, но результат всё равно не конвертирует
@@ -408,9 +408,9 @@ export const CarouselSEOBlockRu = () => (
 
 /* ── FAQ (RU) ── */
 const faqItems = [
-  { q: 'Что такое генератор постов?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания каруселей. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
+  { q: 'Что такое генератор постов?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания постов. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
   { q: 'Можно ли создать пост с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для LinkedIn и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу пост сохраняли и репостили.' },
-  { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
+  { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для постов без навыков дизайна и профессионального копирайтинга.' },
   { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva — ручной дизайн-редактор. GoToFlow — workflow для контента: идея, структура, текст, визуальная подача, готовый результат и CTA.' },
 ];
 
@@ -435,7 +435,7 @@ export const CarouselFAQRu = () => {
         <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}} className="text-center mb-14 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">FAQ</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight text-balance">Частые <span className="text-gradient-brand">вопросы</span></h2>
-          <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">Всё, что нужно знать про генерацию каруселей</p>
+          <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">Всё, что нужно знать про генерацию постов</p>
         </motion.div>
         <div className="max-w-3xl mx-auto space-y-4">
           {faqItems.map((item,i) => <FAQItem key={i} item={item} isOpen={openIdx===i} onClick={()=>setOpenIdx(openIdx===i?null:i)}/>)}
@@ -512,7 +512,7 @@ export const LinkedInPostPageRu = () => (
     <TestimonialsSection />
     <CarouselFAQRu />
     <CarouselBottomCTARu />
-    <RuMetaDisclaimerFootnote />
+    
       <Footer />
     <CookieBanner />
   </MainLayout>
