@@ -60,7 +60,7 @@ faq:
 explore:
   tools:
     - title: "AI Генератор Каруселей"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Превратите идею в готовую карусель за секунды без написания сложных промптов."
   guides:
     - title: "Как создать карусель с помощью AI"
@@ -73,10 +73,10 @@ finalCta:
   title: "Устали придумывать промпты?"
   description: "В GoToFlow все системные промпты уже настроены под идеальную карусель. Просто введите тему и получите готовый дизайн."
   buttonText: "Создать карусель бесплатно"
-  href: "/ru/ai-generator-karuselej"
+  href: "/ru/ii-generator-karuseley"
   microcopy: "Без привязки карты — Готово за секунды"
   secondaryText: "Посмотреть примеры →"
-  secondaryHref: "/ru/ai-generator-karuselej"
+  secondaryHref: "/ru/ii-generator-karuseley"
 ---
 
 # Промпты для каруселей в Инстаграм: готовые шаблоны для постов

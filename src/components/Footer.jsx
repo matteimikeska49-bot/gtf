@@ -55,9 +55,8 @@ export const Footer = () => {
                   <>
                     <Link to="/ai-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">AI Carousel Maker</Link>
                     <Link to="/ai-content-generator" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Content Generator</Link>
-                    <Link to="/ai-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Carousel Maker / Carousels</Link>
-                    <Link to="/linkedin-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">LinkedIn Carousels</Link>
                     <Link to="/ai-instagram-post-generator" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Instagram Posts</Link>
+                    <Link to="/linkedin-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">LinkedIn Carousels</Link>
                   </>
                 )}
               </nav>
@@ -73,9 +72,13 @@ export const Footer = () => {
                   <>
                     <Link to="/ru/blog" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Блог</Link>
                     <Link to="/ru/blog/shablony-karuseley-v-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Шаблоны каруселей Instagram</Link>
+                    <Link to="/ru/blog/prompty-dlya-karuseley-v-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Промпты для каруселей Instagram</Link>
                   </>
                 ) : (
-                  <Link to="/blog" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Blog</Link>
+                  <>
+                    <Link to="/blog" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Blog</Link>
+                    <Link to="/blog/instagram-carousel-prompts" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Instagram Carousel Prompts</Link>
+                  </>
                 )}
               </nav>
             </div>

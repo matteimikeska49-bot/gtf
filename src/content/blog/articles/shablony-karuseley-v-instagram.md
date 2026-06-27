@@ -46,7 +46,7 @@ faq:
 explore:
   tools:
     - title: "ИИ-генератор каруселей"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Создавайте готовые карусели по проверенным шаблонам с помощью ИИ."
   guides:
     - title: "Промпты для каруселей"
