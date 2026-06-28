@@ -79,9 +79,9 @@ const AbstractUIMockup = () => {
 
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 1, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: isMobile ? 0.6 : 0.9, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: isMobile ? 0.35 : 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
       className="block w-full max-w-[380px] md:max-w-5xl mt-8 md:mt-20 relative mx-auto perspective-1000"
     >
       {/* Огромное свечение за дашбордом — эффект «парения» */}
