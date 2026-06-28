@@ -5,11 +5,49 @@ import { useLanguage } from '../context/LanguageContext';
 import { useIsMobile } from '../hooks/useIsMobile';
 
 /* ─── Video Preview (с фоллбэком) ─── */
-const VideoPreview = ({ icon: Icon, videoSrc }) => {
+const VideoPreview = ({ icon: Icon, videoSrc, posterSrc }) => {
   const [videoError, setVideoError] = React.useState(false);
+  const [shouldLoad, setShouldLoad] = React.useState(false);
+  const containerRef = React.useRef(null);
+  const videoRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (!videoSrc || videoError) return;
+
+    const node = containerRef.current;
+    if (!node) return;
+
+    if (!('IntersectionObserver' in window)) {
+      setShouldLoad(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '500px 0px' }
+    );
+
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, [videoSrc, videoError]);
+
+  React.useEffect(() => {
+    if (!shouldLoad || !videoRef.current) return;
+
+    const playPromise = videoRef.current.play();
+    if (playPromise) {
+      playPromise.catch(() => {});
+    }
+  }, [shouldLoad]);
 
   return (
-    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 flex items-center justify-center group-hover:border-white/10 transition-colors duration-500">
+    <div ref={containerRef} className="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 flex items-center justify-center group-hover:border-white/10 transition-colors duration-500">
       {/* Subtle grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:24px_24px]" />
       {/* Glow */}
@@ -28,10 +66,23 @@ const VideoPreview = ({ icon: Icon, videoSrc }) => {
         </div>
       )}
 
+      {posterSrc && !videoError && (
+        <img
+          src={posterSrc}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover z-20 pointer-events-none"
+        />
+      )}
+
       {/* Video */}
-      {videoSrc && !videoError && (
+      {videoSrc && shouldLoad && !videoError && (
         <video
+          ref={videoRef}
           src={videoSrc}
+          poster={posterSrc}
           autoPlay
           loop
           muted
@@ -62,6 +113,7 @@ export const ToolsSection = () => {
       borderHover: "group-hover:border-pink-500/20",
       featured: false,
       videoSrc: "/videos/tools/tool-1.mp4",
+      posterSrc: "/videos/tools/posters/tool-1.webp",
     },
     {
       icon: Layers,
@@ -73,6 +125,7 @@ export const ToolsSection = () => {
       borderHover: "group-hover:border-pink-500/30",
       featured: true,
       videoSrc: "/videos/tools/tool-2.mp4",
+      posterSrc: "/videos/tools/posters/tool-2.webp",
     },
     {
       icon: Search,
@@ -84,6 +137,7 @@ export const ToolsSection = () => {
       borderHover: "group-hover:border-violet-500/20",
       featured: false,
       videoSrc: "/videos/tools/tool-3.mp4",
+      posterSrc: "/videos/tools/posters/tool-3.webp",
     },
   ];
 
@@ -161,7 +215,7 @@ export const ToolsSection = () => {
                     <div className={`absolute inset-0 bg-gradient-to-br ${tool.accentColor} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
 
                     {/* Video / Fallback */}
-                    <VideoPreview icon={tool.icon} videoSrc={tool.videoSrc} />
+                    <VideoPreview icon={tool.icon} videoSrc={tool.videoSrc} posterSrc={tool.posterSrc} />
 
                     {/* Content */}
                     <div className="flex flex-col gap-4 relative z-10">

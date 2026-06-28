@@ -46,6 +46,7 @@ const SlideCard = ({ card }) => {
           alt={`AI generated social media carousel example for ${t('showcase.labels.' + card.labelKey)}`}
           className="absolute inset-0 w-full h-full z-0 object-cover"
           loading="lazy"
+          decoding="async"
         />
         {/* Эффекты/overlay поверх */}
         <div className="absolute inset-0 md:animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02] z-[1]" />
@@ -124,6 +125,10 @@ export const ShowcaseSlider = () => {
                   key={i}
                   src={src}
                   alt="GoToFlow carousel maker user profile"
+                  loading="lazy"
+                  decoding="async"
+                  width="24"
+                  height="24"
                   className="w-6 h-6 rounded-full border-2 border-[#121212] object-cover bg-zinc-800"
                   style={{ zIndex: 4 - i }}
                 />

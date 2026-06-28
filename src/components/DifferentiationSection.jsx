@@ -34,6 +34,10 @@ const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
               alt={`GoToFlow AI social media content generator interface screen ${imageId}`}
               // w-full и h-auto: картинка сама задаёт пропорции, мы её не сжимаем и не обрезаем! 
               className="w-full h-auto block object-contain transition-transform duration-700 ease-[0.21,0.47,0.32,0.98] group-hover:scale-[1.02] transform-gpu origin-center"
+              loading="lazy"
+              decoding="async"
+              width={imageId === "1" ? "734" : imageId === "2" ? "1428" : "1500"}
+              height={imageId === "1" ? "798" : imageId === "2" ? "1032" : "820"}
               onError={() => setImgError(true)}
             />
           ) : (
