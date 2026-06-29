@@ -10,11 +10,37 @@ const translations = {
   EN: en,
 };
 
+function normalizeLang(value) {
+  const normalized = (value || '').toLowerCase();
+  if (normalized === 'ru') return 'RU';
+  if (normalized === 'en') return 'EN';
+  return null;
+}
+
+function getQueryLang(search) {
+  return normalizeLang(new URLSearchParams(search || '').get('lang'));
+}
+
+function getCookieLang() {
+  const match = document.cookie.match(/(?:^|;\s*)gtf_lang=([^;]+)/);
+  return normalizeLang(match ? decodeURIComponent(match[1]) : null);
+}
+
+function saveLangPreference(newLang) {
+  const value = newLang === 'RU' ? 'ru' : 'en';
+  localStorage.setItem('lang', value);
+
+  const maxAge = 60 * 60 * 24 * 365;
+  const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+  document.cookie = `gtf_lang=${value}; Path=/; Max-Age=${maxAge}; SameSite=Lax${secure}`;
+}
+
 /**
  * Determines the initial language based on:
  * 1. Explicit route language (/ru... → RU, non-root non-RU routes → EN)
- * 2. Saved preference in localStorage ('lang') for root only
- * 3. Browser language auto-detection for root only
+ * 2. Query override (?lang=en / ?lang=ru) for root only
+ * 3. Saved preference in gtf_lang cookie or localStorage ('lang') for root only
+ * 4. Browser language auto-detection for root only
  */
 function getRouteLang(pathname) {
   if (pathname === '/ru' || pathname === '/ru/' || pathname.startsWith('/ru/')) return 'RU';
@@ -22,11 +48,18 @@ function getRouteLang(pathname) {
   return 'EN';
 }
 
-function getPreferredLang() {
+function getSavedLang() {
+  const cookieLang = getCookieLang();
+  if (cookieLang) return cookieLang;
+
   const saved = localStorage.getItem('lang');
   if (saved === 'ru') return 'RU';
   if (saved === 'en') return 'EN';
 
+  return null;
+}
+
+function getBrowserLang() {
   const browserLang = (navigator.language || '').toLowerCase();
   const slavicPrefixes = ['ru', 'be', 'uk', 'kk'];
   if (slavicPrefixes.some((prefix) => browserLang.startsWith(prefix))) {
@@ -36,14 +69,18 @@ function getPreferredLang() {
   return 'EN';
 }
 
-function getInitialLang(pathname) {
-  return getRouteLang(pathname) || getPreferredLang();
+function isLocalPrerenderBrowser() {
+  return navigator.webdriver && ['127.0.0.1', 'localhost'].includes(window.location.hostname);
+}
+
+function getInitialLang(pathname, search) {
+  return getRouteLang(pathname) || getQueryLang(search) || getSavedLang() || 'EN';
 }
 
 export const LanguageProvider = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [lang, setLangState] = useState(() => getInitialLang(location.pathname));
+  const [lang, setLangState] = useState(() => getInitialLang(location.pathname, location.search));
 
   // On first mount: handle redirect for root auto-detection.
   useEffect(() => {
@@ -54,7 +91,18 @@ export const LanguageProvider = ({ children }) => {
       return;
     }
 
-    const detectedLang = getPreferredLang();
+    const queryLang = getQueryLang(location.search);
+    if (queryLang) {
+      saveLangPreference(queryLang);
+      setLangState(queryLang);
+
+      if (queryLang === 'RU' && location.pathname !== '/ru') {
+        navigate('/ru' + location.search + location.hash, { replace: true });
+      }
+      return;
+    }
+
+    const detectedLang = getSavedLang() || (isLocalPrerenderBrowser() ? 'EN' : getBrowserLang());
     setLangState(detectedLang);
     if (detectedLang === 'RU' && location.pathname !== '/ru') {
       navigate('/ru' + location.search + location.hash, { replace: true });
@@ -63,8 +111,8 @@ export const LanguageProvider = ({ children }) => {
 
   // Sync lang state when URL changes (e.g., browser back/forward)
   useEffect(() => {
-    setLangState(getInitialLang(location.pathname));
-  }, [location.pathname]);
+    setLangState(getInitialLang(location.pathname, location.search));
+  }, [location.pathname, location.search]);
 
   // Update <html lang>, canonical, and hreflang when language changes
   useEffect(() => {
@@ -168,7 +216,7 @@ export const LanguageProvider = ({ children }) => {
     if (!paired) return;
 
     setLangState(newLang);
-    localStorage.setItem('lang', newLang === 'RU' ? 'ru' : 'en');
+    saveLangPreference(newLang);
     navigate(paired + location.search + location.hash);
   };
 
