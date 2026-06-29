@@ -78,13 +78,13 @@ jobs:
         run: |
           curl -sSI -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" http://localhost:8080/ | tr -d '\r' | tee /tmp/ru-root-headers.txt
           grep -Ei "^HTTP/.* 302" /tmp/ru-root-headers.txt
-          grep -Ei "^location: .*/ru($|[?])" /tmp/ru-root-headers.txt
+          grep -Ei "^location: /ru($|[?])" /tmp/ru-root-headers.txt
 
       - name: Smoke test RU redirect preserves query string
         run: |
           curl -sSI -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" "http://localhost:8080/?utm_source=smoke" | tr -d '\r' | tee /tmp/ru-root-query-headers.txt
           grep -Ei "^HTTP/.* 302" /tmp/ru-root-query-headers.txt
-          grep -Ei "^location: .*/ru[?]utm_source=smoke" /tmp/ru-root-query-headers.txt
+          grep -Ei "^location: /ru[?]utm_source=smoke" /tmp/ru-root-query-headers.txt
 
       - name: Smoke test EN browser root stays 200
         run: |
