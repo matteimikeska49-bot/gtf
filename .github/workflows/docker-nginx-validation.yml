@@ -76,34 +76,34 @@ jobs:
 
       - name: Smoke test RU browser root redirect
         run: |
-          curl -sSI -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" http://localhost:8080/ | tee /tmp/ru-root-headers.txt
+          curl -sSI -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" http://localhost:8080/ | tr -d '\r' | tee /tmp/ru-root-headers.txt
           grep -Ei "^HTTP/.* 302" /tmp/ru-root-headers.txt
           grep -Ei "^location: .*/ru($|[?])" /tmp/ru-root-headers.txt
 
       - name: Smoke test RU redirect preserves query string
         run: |
-          curl -sSI -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" "http://localhost:8080/?utm_source=smoke" | tee /tmp/ru-root-query-headers.txt
+          curl -sSI -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" "http://localhost:8080/?utm_source=smoke" | tr -d '\r' | tee /tmp/ru-root-query-headers.txt
           grep -Ei "^HTTP/.* 302" /tmp/ru-root-query-headers.txt
           grep -Ei "^location: .*/ru[?]utm_source=smoke" /tmp/ru-root-query-headers.txt
 
       - name: Smoke test EN browser root stays 200
         run: |
-          curl -sSI -H "Accept-Language: en-US,en;q=0.9" http://localhost:8080/ | tee /tmp/en-root-headers.txt
+          curl -sSI -H "Accept-Language: en-US,en;q=0.9" http://localhost:8080/ | tr -d '\r' | tee /tmp/en-root-headers.txt
           grep -Ei "^HTTP/.* 200" /tmp/en-root-headers.txt
 
       - name: Smoke test bot is not redirected
         run: |
-          curl -sSI -A "Googlebot/2.1 (+http://www.google.com/bot.html)" -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" http://localhost:8080/ | tee /tmp/bot-root-headers.txt
+          curl -sSI -A "Googlebot/2.1 (+http://www.google.com/bot.html)" -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" http://localhost:8080/ | tr -d '\r' | tee /tmp/bot-root-headers.txt
           grep -Ei "^HTTP/.* 200" /tmp/bot-root-headers.txt
 
       - name: Smoke test manual English cookie is not redirected
         run: |
-          curl -sSI -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" -H "Cookie: gtf_lang=en" http://localhost:8080/ | tee /tmp/cookie-en-root-headers.txt
+          curl -sSI -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" -H "Cookie: gtf_lang=en" http://localhost:8080/ | tr -d '\r' | tee /tmp/cookie-en-root-headers.txt
           grep -Ei "^HTTP/.* 200" /tmp/cookie-en-root-headers.txt
 
       - name: Smoke test lang en query is not redirected
         run: |
-          curl -sSI -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" "http://localhost:8080/?lang=en" | tee /tmp/lang-en-root-headers.txt
+          curl -sSI -H "Accept-Language: ru-RU,ru;q=0.9,en;q=0.8" "http://localhost:8080/?lang=en" | tr -d '\r' | tee /tmp/lang-en-root-headers.txt
           grep -Ei "^HTTP/.* 200" /tmp/lang-en-root-headers.txt
 
       - name: Diagnostic SPA fallback route
