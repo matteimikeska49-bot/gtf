@@ -40,6 +40,14 @@ function getInitialLang(pathname) {
   return getRouteLang(pathname) || getPreferredLang();
 }
 
+function saveManualLangPreference(newLang) {
+  const value = newLang === 'RU' ? 'ru' : 'en';
+  localStorage.setItem('lang', value);
+
+  const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+  document.cookie = `gtf_lang=${value}; Path=/; Max-Age=31536000; SameSite=Lax${secure}`;
+}
+
 export const LanguageProvider = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -168,7 +176,7 @@ export const LanguageProvider = ({ children }) => {
     if (!paired) return;
 
     setLangState(newLang);
-    localStorage.setItem('lang', newLang === 'RU' ? 'ru' : 'en');
+    saveManualLangPreference(newLang);
     navigate(paired + location.search + location.hash);
   };
 
