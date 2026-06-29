@@ -1,0 +1,86 @@
+name: Docker Nginx Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "Dockerfile"
+      - "nginx.conf"
+      - "package.json"
+      - "package-lock.json"
+      - "src/**"
+      - "public/**"
+      - "prerender.mjs"
+      - ".github/workflows/docker-nginx-validation.yml"
+
+  push:
+    branches:
+      - main
+    paths:
+      - "Dockerfile"
+      - "nginx.conf"
+      - ".github/workflows/docker-nginx-validation.yml"
+
+  workflow_dispatch:
+
+concurrency:
+  group: docker-nginx-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docker-nginx-validation:
+    name: Build Docker image and validate nginx
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show changed context
+        run: |
+          echo "Commit: $GITHUB_SHA"
+          echo "Ref: $GITHUB_REF"
+          ls -la
+          test -f Dockerfile
+          test -f nginx.conf
+
+      - name: Build production Docker image
+        run: |
+          docker build -t gotoflow-nginx-validation:${{ github.sha }} .
+
+      - name: Validate nginx config inside image
+        run: |
+          docker run --rm --entrypoint nginx gotoflow-nginx-validation:${{ github.sha }} -t
+
+      - name: Start container for smoke test
+        run: |
+          docker run -d --name gotoflow-nginx-smoke -p 8080:80 gotoflow-nginx-validation:${{ github.sha }}
+          sleep 5
+
+      - name: Smoke test root page
+        run: |
+          curl -fsSI http://localhost:8080/
+
+      - name: Smoke test RU page
+        run: |
+          curl -fsSI http://localhost:8080/ru
+
+      - name: Smoke test logo asset
+        run: |
+          curl -fsSI http://localhost:8080/images/logo.png
+
+      - name: Smoke test SPA fallback route
+        run: |
+          curl -fsSI http://localhost:8080/ai-instagram-carousel-generator
+
+      - name: Print container logs on failure
+        if: failure()
+        run: |
+          docker logs gotoflow-nginx-smoke || true
+
+      - name: Stop smoke container
+        if: always()
+        run: |
+          docker rm -f gotoflow-nginx-smoke || true
