@@ -80,6 +80,7 @@ function App() {
         <Route path="/instagram-carousel-maker" element={<CarouselPage />} />
         
         {/* RU Tool Pages (200 OK SEO structure) */}
+        <Route path="/ru/ai-generator-karuselej" element={<RuAICarouselGeneratorPage />} />
         <Route path="/ru/ii-generator-karuseley" element={<RuAICarouselGeneratorPage />} />
         <Route path="/ru/generator-karuselej-instagram" element={<RuAICarouselGeneratorPage />} />
         <Route path="/ai-content-generator" element={<AIContentPage />} />

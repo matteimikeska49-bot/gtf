@@ -1027,5 +1027,53 @@
     "relatedProductRoute": "/ru/generator-kontenta",
     "notes": "Draft topic from ru-vk-instagram-batch-1; publish requires demand and final QA refresh.",
     "lastReviewed": "2026-07-03"
+  },
+  {
+    "intentId": "en:instagram-carousel-templates",
+    "language": "en",
+    "cluster": "en:instagram-carousel",
+    "searchIntent": "find reusable Instagram carousel templates and structure patterns",
+    "intentType": "informational",
+    "ownerUrl": "/blog/instagram-carousel-templates",
+    "ownerSlug": "instagram-carousel-templates",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [],
+    "allowedSupportingAngles": [
+      "template structure",
+      "carousel design patterns",
+      "template adaptation"
+    ],
+    "updateInsteadOfCreateRules": [
+      "update the published template article instead of creating a near-duplicate"
+    ],
+    "relatedProductRoute": "/ai-carousel-maker",
+    "notes": "Legacy published template article aligned for release gate on 2026-07-03.",
+    "lastReviewed": "2026-07-03"
+  },
+  {
+    "intentId": "ru:instagram-carousel-templates",
+    "language": "ru",
+    "cluster": "ru:instagram-carousel",
+    "searchIntent": "найти шаблоны и структуру каруселей для Instagram",
+    "intentType": "informational",
+    "ownerUrl": "/ru/blog/shablony-karuseley-v-instagram",
+    "ownerSlug": "shablony-karuseley-v-instagram",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [],
+    "allowedSupportingAngles": [
+      "структура шаблона",
+      "визуальные паттерны карусели",
+      "адаптация шаблона"
+    ],
+    "updateInsteadOfCreateRules": [
+      "обновлять опубликованную статью с шаблонами вместо создания near-duplicate"
+    ],
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "notes": "Legacy published template article aligned for release gate on 2026-07-03.",
+    "lastReviewed": "2026-07-03"
   }
 ]
