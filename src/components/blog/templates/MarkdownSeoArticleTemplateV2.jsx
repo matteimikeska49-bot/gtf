@@ -4,7 +4,6 @@ import { ArrowRight, CheckCircle2, ChevronDown, ChevronRight, ExternalLink, Laye
 import { getAppUrlWithRef } from '../../../utils/url';
 import { getMockupsForArticle } from '../../../lib/blog/mockupRegistry';
 import { MOCKUP_SLOT_MAP } from '../../../lib/blog/mockupSlots';
-import { shouldShowRuMetaDisclaimer } from '../../../lib/blog/metaDisclaimerHelper';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -1286,14 +1285,6 @@ const ArticleMockupPlacement = ({ article, type, layout }) => {
   return <NativeMockupBlock mockup={mockup} layout={layout} />;
 };
 
-const RuMetaDisclaimer = () => (
-  <div className="mx-auto w-full max-w-[920px] mt-4 mb-10 px-2">
-    <p className="text-[11px] md:text-[12px] leading-relaxed text-zinc-500/80">
-      *Instagram, Facebook и Meta принадлежат Meta Platforms Inc., деятельность которой признана экстремистской и запрещена на территории Российской Федерации.
-    </p>
-  </div>
-);
-
 export const MarkdownSeoArticleTemplateV2 = ({ article }) => {
   const isRu = article?.language === 'ru';
   return (
@@ -1316,7 +1307,6 @@ export const MarkdownSeoArticleTemplateV2 = ({ article }) => {
         <PromptAccordion prompts={article.prompts} isRu={isRu} />
         <FormatsGrid formats={article.formats} isRu={isRu} />
         <ArticleExploreZone explore={article.explore} isRu={isRu} />
-        {isRu && <RuMetaDisclaimer />}
         <FaqBlock faq={article.faq} isRu={isRu} />
         <FinalCta cta={article.finalCta} isRu={isRu} />
       </div>

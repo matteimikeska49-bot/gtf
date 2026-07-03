@@ -12,7 +12,6 @@ import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
 import { TestimonialsSection } from './TestimonialsSection';
 import { ProductRelatedResources } from './ProductRelatedResources';
-import { RuMetaDisclaimerFootnote } from './common/RuMetaDisclaimerFootnote';
 import { getAppUrlWithRef } from '../utils/url';
 import { useIsMobile } from '../hooks/useIsMobile';
 
@@ -589,10 +588,6 @@ export const RuAICarouselGeneratorPage = () => {
       <TestimonialsSection />
       <RuCarouselFAQ />
       <RuCarouselBottomCTA />
-
-      <div className="bg-[#050505] pt-12 pb-24">
-        <RuMetaDisclaimerFootnote />
-      </div>
 
       <Footer />
       <CookieBanner />

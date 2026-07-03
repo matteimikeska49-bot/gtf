@@ -305,7 +305,8 @@ secondaryHref: `/ru/blog/razmer-karuseli-v-instagram`
 ### RU Meta Disclaimer Rule
 - для RU-статей Gemini может использовать слова Instagram / Facebook / Meta / Инстаграм / Фейсбук / Мета только когда это нужно по смыслу;
 - Gemini **НЕ должен** вручную вставлять юридическую сноску (disclaimer) в markdown;
-- шаблон автоматически добавляет RU-only legal footnote (маленькая сноска "Instagram и Facebook принадлежат Meta...");
+- общий RU footer автоматически добавляет RU-only legal footnote (маленькая сноска "Instagram и Facebook принадлежат Meta...");
+- article template не должен рендерить эту сноску внутри статьи;
 - для EN-страниц сноска не добавляется;
 - generic mentions типа “соцсети”, “social media” не требуют сноски.
 

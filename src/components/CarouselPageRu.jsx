@@ -1,4 +1,3 @@
-import { RuMetaDisclaimerFootnote } from './common/RuMetaDisclaimerFootnote';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { Header } from './Header';
@@ -32,8 +31,7 @@ export const CarouselPageRu = () => (
     <TestimonialsSection />
     <CarouselFAQRu />
     <CarouselBottomCTARu />
-    <RuMetaDisclaimerFootnote />
-      <Footer />
+    <Footer />
     <CookieBanner />
   </MainLayout>
 );

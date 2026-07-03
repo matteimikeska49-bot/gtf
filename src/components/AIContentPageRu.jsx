@@ -1,4 +1,3 @@
-import { RuMetaDisclaimerFootnote } from './common/RuMetaDisclaimerFootnote';
 import { Link } from 'react-router-dom';
 import { getAppUrlWithRef } from '../utils/url';
 import React, { useState, useEffect, useRef } from 'react';
@@ -521,8 +520,7 @@ export const AIContentPageRu = () => (
     <TestimonialsSection />
     <CarouselFAQRu />
     <CarouselBottomCTARu />
-    <RuMetaDisclaimerFootnote />
-      <Footer />
+    <Footer />
     <CookieBanner />
   </MainLayout>
 );

@@ -1,4 +1,3 @@
-import { RuMetaDisclaimerFootnote } from './common/RuMetaDisclaimerFootnote';
 import React, { useState, useEffect, useRef } from 'react';
 import { getAppUrlWithRef } from '../utils/url';
 import { motion, useInView } from 'framer-motion';
@@ -522,8 +521,7 @@ export const LinkedInCarouselPageRu = () => (
     <TestimonialsSection />
     <LICarouselFAQRu />
     <LICarouselBottomCTARu />
-    <RuMetaDisclaimerFootnote />
-      <Footer />
+    <Footer />
     <CookieBanner />
   </MainLayout>
 );

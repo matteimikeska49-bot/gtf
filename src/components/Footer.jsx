@@ -4,11 +4,15 @@ import { TermsOfService } from './TermsOfService';
 import { UserConsent } from './UserConsent';
 import { Logo } from './Header';
 import { useLanguage } from '../context/LanguageContext';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { RuMetaDisclaimerFootnote } from './common/RuMetaDisclaimerFootnote';
 
 export const Footer = () => {
   const [modal, setModal] = useState(null); // 'privacy' | 'terms' | 'consent' | null
   const { lang } = useLanguage();
+  const location = useLocation();
+  const routePath = window.__GTF_PRERENDER_ROUTE || location.pathname;
+  const isRuRoute = routePath === '/ru' || routePath.startsWith('/ru/');
 
   return (
     <>
@@ -140,6 +144,11 @@ export const Footer = () => {
 
           </div>
 
+          {lang === 'RU' && isRuRoute && (
+            <div className="mt-10 border-t border-white/[0.05] pt-6 md:mt-12">
+              <RuMetaDisclaimerFootnote />
+            </div>
+          )}
         </div>
       </footer>
     </>

@@ -15,7 +15,7 @@ const ARTICLES_DIR = path.join(ROOT, 'src/content/blog/articles');
 const SITEMAP_PATH = path.join(ROOT, 'dist/sitemap.xml');
 const MOCKUP_REGISTRY_PATH = path.join(ROOT, 'src/content/blog/mockups/registry.json');
 const TEMPLATE_PATH = path.join(ROOT, 'src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx');
-const HELPER_PATH = path.join(ROOT, 'src/lib/blog/metaDisclaimerHelper.js');
+const FOOTER_PATH = path.join(ROOT, 'src/components/Footer.jsx');
 
 // Static allowed routes (old JSX pages, tools, root)
 const ALLOWLIST_ROUTES = [
@@ -115,19 +115,28 @@ async function runCheck() {
   const draftSlugs = new Set();
   const parsedFiles = [];
 
-  let hasAutoDisclaimer = false;
+  let hasFooterDisclaimer = false;
+  let hasTemplateDisclaimer = false;
   let hasVisibleAutoStar = false;
-  if (fs.existsSync(HELPER_PATH) && fs.existsSync(TEMPLATE_PATH)) {
+  if (fs.existsSync(TEMPLATE_PATH)) {
     const templateContent = fs.readFileSync(TEMPLATE_PATH, 'utf-8');
-    if (templateContent.includes('shouldShowRuMetaDisclaimer') && templateContent.includes('RuMetaDisclaimer')) {
-      hasAutoDisclaimer = true;
+    if (templateContent.includes('RuMetaDisclaimer') || templateContent.includes('Meta Platforms Inc.')) {
+      hasTemplateDisclaimer = true;
     }
     if (templateContent.includes('applyRuAutoStar')) {
       hasVisibleAutoStar = true;
     }
   }
-  if (!hasAutoDisclaimer) {
-    console.log(`  ❌ P0: Automatic RU Meta disclaimer system is missing from MarkdownSeoArticleTemplateV2.jsx or helper.`);
+  if (fs.existsSync(FOOTER_PATH)) {
+    const footerContent = fs.readFileSync(FOOTER_PATH, 'utf-8');
+    hasFooterDisclaimer = footerContent.includes('RuMetaDisclaimerFootnote') && footerContent.includes("lang === 'RU'") && footerContent.includes('isRuRoute');
+  }
+  if (!hasFooterDisclaimer) {
+    console.log(`  ❌ P0: Shared RU footer Meta disclaimer system is missing from Footer.jsx.`);
+    hasP0Error = true;
+  }
+  if (hasTemplateDisclaimer) {
+    console.log(`  ❌ P0: RU Meta disclaimer must not be rendered from MarkdownSeoArticleTemplateV2.jsx.`);
     hasP0Error = true;
   }
   if (hasVisibleAutoStar) {
@@ -299,13 +308,13 @@ async function runCheck() {
     // Meta Disclaimer Validation
     if (language === 'ru') {
       if (hasYamlKey(frontmatter, 'metaDisclaimer')) {
-        warnings.push(`Manual metaDisclaimer field found in frontmatter. This is now handled automatically by the template.`);
+        warnings.push(`Manual metaDisclaimer field found in frontmatter. This is now handled by the shared RU footer.`);
       }
       findVisiblePlatformFootnoteMarkers(content).forEach((finding) => {
          errors.push(`Visible platform footnote marker found: "${finding.marker}" on line ${finding.line}`);
       });
       if (/принадлежат Meta Platforms Inc., деятельность которой/i.test(content)) {
-         warnings.push(`Manual disclaimer text found in content. The template automatically adds it now.`);
+         warnings.push(`Manual disclaimer text found in content. The shared RU footer adds it now.`);
       }
     } else {
       if (/принадлежат Meta Platforms Inc., деятельность которой/i.test(content) || hasYamlKey(frontmatter, 'metaDisclaimer')) {

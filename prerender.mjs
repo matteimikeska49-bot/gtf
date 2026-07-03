@@ -268,6 +268,9 @@ async function prerenderRoute(browser, route, baseUrl) {
 
   try {
     page = await browser.newPage();
+    await page.evaluateOnNewDocument((currentRoute) => {
+      window.__GTF_PRERENDER_ROUTE = currentRoute;
+    }, route);
     await preparePage(page, PREVIEW_HOST);
     await page.goto(url, { waitUntil: 'networkidle2', timeout: NAVIGATION_TIMEOUT_MS });
 
