@@ -1907,5 +1907,245 @@
     "priorityTier": "P3",
     "scoringReason": "Published article backfill. No exact primary-keyword volume found in current imports; published article backfilled for hygiene.",
     "scoringLastUpdated": "2026-06-23"
+  },
+  {
+    "targetSlug": "razmer-foto-dlya-posta-vk-formaty",
+    "title": "Размер поста в ВК: форматы фото и картинок",
+    "language": "ru",
+    "primaryKeyword": "размер поста в вк",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "ru-vk-instagram-batch-1",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "needs_refresh",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 58
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Prompt 1 audit approved draft implementation; no exact demand data imported yet.",
+    "scoringLastUpdated": "2026-07-03"
+  },
+  {
+    "targetSlug": "temy-postov-dlya-gruppy-vkontakte",
+    "title": "Темы постов для группы ВК: идеи для сообщества",
+    "language": "ru",
+    "primaryKeyword": "темы постов для вк",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "ru-vk-instagram-batch-1",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "needs_refresh",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 62
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Prompt 1 audit approved draft implementation; no exact demand data imported yet.",
+    "scoringLastUpdated": "2026-07-03"
+  },
+  {
+    "targetSlug": "krasivye-posty-dlya-vk-oformlenie",
+    "title": "Красивые посты для ВК: оформление текста и визуала",
+    "language": "ru",
+    "primaryKeyword": "красивые посты для вк",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "ru-vk-instagram-batch-1",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "needs_refresh",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 60
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Prompt 1 audit approved draft implementation; no exact demand data imported yet.",
+    "scoringLastUpdated": "2026-07-03"
+  },
+  {
+    "targetSlug": "kak-sdelat-post-v-instagram-s-ii",
+    "title": "Как сделать пост в Instagram с помощью ИИ: текст и визуал",
+    "language": "ru",
+    "primaryKeyword": "как сделать пост в инстаграм",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "ru-vk-instagram-batch-1",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "needs_refresh",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 64
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Prompt 1 audit approved draft implementation; no exact demand data imported yet.",
+    "scoringLastUpdated": "2026-07-03"
+  },
+  {
+    "targetSlug": "razmer-posta-v-instagram-v-pikselih",
+    "title": "Размер поста в Instagram: форматы и разрешения фото",
+    "language": "ru",
+    "primaryKeyword": "размер поста в инстаграм",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "ru-vk-instagram-batch-1",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "needs_refresh",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 61
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Prompt 1 audit approved draft implementation; no exact demand data imported yet.",
+    "scoringLastUpdated": "2026-07-03"
+  },
+  {
+    "targetSlug": "kakie-posty-delat-v-instagram-idei",
+    "title": "Какие посты делать в Instagram: идеи и форматы",
+    "language": "ru",
+    "primaryKeyword": "какие посты в инстаграм",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "ru-vk-instagram-batch-1",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "needs_refresh",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 3,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 63
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Prompt 1 audit approved draft implementation; no exact demand data imported yet.",
+    "scoringLastUpdated": "2026-07-03"
+  },
+  {
+    "targetSlug": "foto-dlya-posta-instagram-vizual-s-ii",
+    "title": "Фото для поста в Instagram: подготовка визуала и слайдов",
+    "language": "ru",
+    "primaryKeyword": "фото пост инстаграм",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "ru-vk-instagram-batch-1",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "needs_refresh",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 59
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Prompt 1 audit approved draft implementation; no exact demand data imported yet.",
+    "scoringLastUpdated": "2026-07-03"
+  },
+  {
+    "targetSlug": "tekst-i-foto-dlya-posta-instagram",
+    "title": "Текст и фото для поста в Instagram: как связать подпись и визуал",
+    "language": "ru",
+    "primaryKeyword": "текст и фото для поста в инстаграм",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "ru-vk-instagram-batch-1",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "needs_refresh",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 4,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 62
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Prompt 1 audit approved draft implementation; no exact demand data imported yet.",
+    "scoringLastUpdated": "2026-07-03"
   }
 ]

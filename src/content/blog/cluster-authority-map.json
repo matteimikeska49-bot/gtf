@@ -644,5 +644,143 @@
     },
     "notes": "Batch 1 cluster for broad AI content creation and practical AI writing workflows.",
     "lastReviewed": "2026-06-23"
+  },
+  {
+    "clusterId": "ru:vk-content",
+    "clusterName": "RU VK Content",
+    "language": "ru",
+    "productRoute": "/ru/generator-kontenta",
+    "hubArticle": "neyroset-dlya-postov",
+    "hubSlug": "neyroset-dlya-postov",
+    "articleRoles": [
+      {
+        "slug": "razmer-foto-dlya-posta-vk-formaty",
+        "url": "/ru/blog/razmer-foto-dlya-posta-vk-formaty",
+        "role": "format-guide",
+        "intentId": "ru:vk-post-size-format",
+        "priorityTier": "P3",
+        "status": "draft_preview",
+        "canonicalRisk": "low",
+        "notes": "Draft from ru-vk-instagram-batch-1"
+      },
+      {
+        "slug": "temy-postov-dlya-gruppy-vkontakte",
+        "url": "/ru/blog/temy-postov-dlya-gruppy-vkontakte",
+        "role": "supporting",
+        "intentId": "ru:vk-group-post-ideas",
+        "priorityTier": "P3",
+        "status": "draft_preview",
+        "canonicalRisk": "medium",
+        "notes": "Draft from ru-vk-instagram-batch-1"
+      },
+      {
+        "slug": "krasivye-posty-dlya-vk-oformlenie",
+        "url": "/ru/blog/krasivye-posty-dlya-vk-oformlenie",
+        "role": "supporting",
+        "intentId": "ru:vk-beautiful-posts",
+        "priorityTier": "P3",
+        "status": "draft_preview",
+        "canonicalRisk": "medium",
+        "notes": "Draft from ru-vk-instagram-batch-1"
+      }
+    ],
+    "supportingArticles": [
+      "razmer-foto-dlya-posta-vk-formaty",
+      "temy-postov-dlya-gruppy-vkontakte",
+      "krasivye-posty-dlya-vk-oformlenie"
+    ],
+    "missingTopics": [],
+    "internalLinkingRules": {
+      "mustLinkToHub": false,
+      "mustLinkToProductRoute": true,
+      "sameLanguageOnly": true,
+      "recommendedLinks": [
+        "/ru/generator-kontenta",
+        "/ru/blog/neyroset-dlya-postov",
+        "/ru/blog/ii-tekst-dlya-posta"
+      ]
+    },
+    "notes": "Draft cluster registration for ru-vk-instagram-batch-1.",
+    "lastReviewed": "2026-07-03"
+  },
+  {
+    "clusterId": "ru:instagram-content",
+    "clusterName": "RU Instagram Content",
+    "language": "ru",
+    "productRoute": "/ru/generator-kontenta",
+    "hubArticle": "neyroset-dlya-postov",
+    "hubSlug": "neyroset-dlya-postov",
+    "articleRoles": [
+      {
+        "slug": "kak-sdelat-post-v-instagram-s-ii",
+        "url": "/ru/blog/kak-sdelat-post-v-instagram-s-ii",
+        "role": "supporting",
+        "intentId": "ru:instagram-ai-post",
+        "priorityTier": "P3",
+        "status": "draft_preview",
+        "canonicalRisk": "medium",
+        "notes": "Draft from ru-vk-instagram-batch-1"
+      },
+      {
+        "slug": "razmer-posta-v-instagram-v-pikselih",
+        "url": "/ru/blog/razmer-posta-v-instagram-v-pikselih",
+        "role": "format-guide",
+        "intentId": "ru:instagram-post-size-format",
+        "priorityTier": "P3",
+        "status": "draft_preview",
+        "canonicalRisk": "medium",
+        "notes": "Draft from ru-vk-instagram-batch-1"
+      },
+      {
+        "slug": "kakie-posty-delat-v-instagram-idei",
+        "url": "/ru/blog/kakie-posty-delat-v-instagram-idei",
+        "role": "supporting",
+        "intentId": "ru:instagram-post-ideas",
+        "priorityTier": "P3",
+        "status": "draft_preview",
+        "canonicalRisk": "medium",
+        "notes": "Draft from ru-vk-instagram-batch-1"
+      },
+      {
+        "slug": "foto-dlya-posta-instagram-vizual-s-ii",
+        "url": "/ru/blog/foto-dlya-posta-instagram-vizual-s-ii",
+        "role": "supporting",
+        "intentId": "ru:instagram-post-visual",
+        "priorityTier": "P3",
+        "status": "draft_preview",
+        "canonicalRisk": "low",
+        "notes": "Draft from ru-vk-instagram-batch-1"
+      },
+      {
+        "slug": "tekst-i-foto-dlya-posta-instagram",
+        "url": "/ru/blog/tekst-i-foto-dlya-posta-instagram",
+        "role": "supporting",
+        "intentId": "ru:instagram-post-text-visual",
+        "priorityTier": "P3",
+        "status": "draft_preview",
+        "canonicalRisk": "medium",
+        "notes": "Draft from ru-vk-instagram-batch-1"
+      }
+    ],
+    "supportingArticles": [
+      "kak-sdelat-post-v-instagram-s-ii",
+      "razmer-posta-v-instagram-v-pikselih",
+      "kakie-posty-delat-v-instagram-idei",
+      "foto-dlya-posta-instagram-vizual-s-ii",
+      "tekst-i-foto-dlya-posta-instagram"
+    ],
+    "missingTopics": [],
+    "internalLinkingRules": {
+      "mustLinkToHub": false,
+      "mustLinkToProductRoute": true,
+      "sameLanguageOnly": true,
+      "recommendedLinks": [
+        "/ru/generator-kontenta",
+        "/ru/blog/neyroset-dlya-postov",
+        "/ru/blog/ii-tekst-dlya-posta"
+      ]
+    },
+    "notes": "Draft cluster registration for ru-vk-instagram-batch-1.",
+    "lastReviewed": "2026-07-03"
   }
 ]
