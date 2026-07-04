@@ -315,5 +315,229 @@
     "capabilityRisk": "none",
     "decision": "not_available",
     "lastReviewed": "2026-06-22"
+  },
+  {
+    "slug": "konstruktor-karuseley-onlayn",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "topic-input",
+      "result-preview"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "kak-sozdat-karusel-s-chatgpt",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "result-preview"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "generator-karuseley-dlya-vk",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "style-choice"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "massovoe-sozdanie-karuseley-s-ii",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "topic-input"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "algoritm-instagram-karuseli",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "result-preview"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "chitabelnost-teksta-v-karuselyah",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "style-choice"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "karusel-ili-setka-v-instagram",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "result-preview"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "kak-narezat-foto-dlya-karuseli",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "result-preview"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "gorizontalnye-i-vertikalnye-foto-v-karuseli",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "style-choice"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "pochemu-instagram-obrezaet-foto-v-karuseli",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "format-settings"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "generator-vizualnyh-postov-ai",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "topic-input",
+      "result-preview"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "mnogostranichnye-karuseli-prezentacii",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "topic-input",
+      "result-preview"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "slug": "pervyy-post-vkontakte-s-ii",
+    "language": "ru",
+    "mockupStatus": "planned",
+    "mockupReason": "Published article uses supported existing mockup slots; final bespoke assets are not required for publish.",
+    "slotsUsed": [
+      "result-preview"
+    ],
+    "assetsUsed": [],
+    "platformMatch": true,
+    "sourceTypeMatch": true,
+    "intentMatch": true,
+    "visibleTextRisk": "none",
+    "capabilityRisk": "none",
+    "decision": "approved",
+    "lastReviewed": "2026-07-04"
   }
 ]

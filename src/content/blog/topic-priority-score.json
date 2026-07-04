@@ -2147,5 +2147,395 @@
     "priorityTier": "P3",
     "scoringReason": "Prompt 1 audit approved draft implementation; no exact demand data imported yet.",
     "scoringLastUpdated": "2026-07-03"
+  },
+  {
+    "targetSlug": "konstruktor-karuseley-onlayn",
+    "title": "Конструктор каруселей онлайн: ручной дизайн или автоматизация",
+    "language": "ru",
+    "primaryKeyword": "конструктор каруселей онлайн",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 7,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 7,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 64
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "kak-sozdat-karusel-s-chatgpt",
+    "title": "Как создать текст для карусели с помощью ChatGPT: полезные промпты",
+    "language": "ru",
+    "primaryKeyword": "как создать карусель с chatgpt",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 6,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 62
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "generator-karuseley-dlya-vk",
+    "title": "Как создать карточки (карусель) для ВКонтакте из текста",
+    "language": "ru",
+    "primaryKeyword": "генератор каруселей для вк",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 7,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 6,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 61
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "massovoe-sozdanie-karuseley-s-ii",
+    "title": "Массовое создание контента: планирование серии каруселей с ИИ",
+    "language": "ru",
+    "primaryKeyword": "массовое создание каруселей с ии",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 7,
+      "mockupReadinessScore": 6,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 63
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "algoritm-instagram-karuseli",
+    "title": "Как алгоритмы ранжируют карусели: анализ механизмов показа",
+    "language": "ru",
+    "primaryKeyword": "как инстаграм продвигает карусели",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 60
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "chitabelnost-teksta-v-karuselyah",
+    "title": "Читабельность слайдов: базовые правила оформления текста",
+    "language": "ru",
+    "primaryKeyword": "шрифт для чтения в инстаграм",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 7,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 7,
+      "mockupReadinessScore": 7,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 61
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "karusel-ili-setka-v-instagram",
+    "title": "Карусель или одиночное фото: сравнение форматов для ленты",
+    "language": "ru",
+    "primaryKeyword": "карусель или сетка в инстаграм",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 6,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 7,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 60
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "kak-narezat-foto-dlya-karuseli",
+    "title": "Инструменты для нарезки: как разделить фото на равные слайды",
+    "language": "ru",
+    "primaryKeyword": "как нарезать фото для карусели",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 6,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 59
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "gorizontalnye-i-vertikalnye-foto-v-karuseli",
+    "title": "Как совместить фото разного формата в одной публикации",
+    "language": "ru",
+    "primaryKeyword": "горизонтальные и вертикальные фото в карусели",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 6,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 58
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "pochemu-instagram-obrezaet-foto-v-karuseli",
+    "title": "Почему при публикации серии обрезаются фото и как это решить",
+    "language": "ru",
+    "primaryKeyword": "почему инстаграм обрезает фото в карусели",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 6,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 59
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "generator-vizualnyh-postov-ai",
+    "title": "AI для визуального контента: инструменты оформления карточек",
+    "language": "ru",
+    "primaryKeyword": "генератор визуальных постов ai",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 7,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 7,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 62
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "mnogostranichnye-karuseli-prezentacii",
+    "title": "Адаптация презентаций: создание многостраничных форматов",
+    "language": "ru",
+    "primaryKeyword": "многостраничные карусели",
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 7,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 6,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 61
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "pervyy-post-vkontakte-s-ii",
+    "title": "Подготовка первого поста: структура приветствия",
+    "language": "ru",
+    "primaryKeyword": "первый пост в вк с помощью ии",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "published",
+    "keywordEvidence": {
+      "source": "ru-seo-batch-3-new-articles-full-22",
+      "confidence": "low",
+      "exactVolumeKnown": false,
+      "volume": null,
+      "trend": "unknown",
+      "demandEvidence": "post_publish_pending",
+      "requiresDemandRefresh": true
+    },
+    "scores": {
+      "demandScore": 4,
+      "difficultyScore": 5,
+      "productFitScore": 5,
+      "businessValueScore": 5,
+      "cannibalizationSafetyScore": 6,
+      "mockupReadinessScore": 6,
+      "dataConfidenceScore": 4,
+      "finalPriorityScore": 58
+    },
+    "priorityTier": "P3",
+    "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
+    "scoringLastUpdated": "2026-07-04"
   }
 ]

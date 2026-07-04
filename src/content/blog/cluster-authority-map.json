@@ -409,9 +409,88 @@
         "url": "/ru/blog/razmer-karuseli-v-instagram",
         "role": "support",
         "canonicalRisk": "low"
+      },
+      {
+        "slug": "algoritm-instagram-karuseli",
+        "url": "/ru/blog/algoritm-instagram-karuseli",
+        "role": "guide",
+        "intentId": "ru:algoritm-instagram-karuseli",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "medium",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "chitabelnost-teksta-v-karuselyah",
+        "url": "/ru/blog/chitabelnost-teksta-v-karuselyah",
+        "role": "guide",
+        "intentId": "ru:chitabelnost-teksta-v-karuselyah",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "medium",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "karusel-ili-setka-v-instagram",
+        "url": "/ru/blog/karusel-ili-setka-v-instagram",
+        "role": "comparison",
+        "intentId": "ru:karusel-ili-setka-v-instagram",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "kak-narezat-foto-dlya-karuseli",
+        "url": "/ru/blog/kak-narezat-foto-dlya-karuseli",
+        "role": "technical_guide",
+        "intentId": "ru:kak-narezat-foto-dlya-karuseli",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "gorizontalnye-i-vertikalnye-foto-v-karuseli",
+        "url": "/ru/blog/gorizontalnye-i-vertikalnye-foto-v-karuseli",
+        "role": "technical_guide",
+        "intentId": "ru:gorizontalnye-i-vertikalnye-foto-v-karuseli",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "medium",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "pochemu-instagram-obrezaet-foto-v-karuseli",
+        "url": "/ru/blog/pochemu-instagram-obrezaet-foto-v-karuseli",
+        "role": "technical_guide",
+        "intentId": "ru:pochemu-instagram-obrezaet-foto-v-karuseli",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "medium",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "mnogostranichnye-karuseli-prezentacii",
+        "url": "/ru/blog/mnogostranichnye-karuseli-prezentacii",
+        "role": "how_to",
+        "intentId": "ru:mnogostranichnye-karuseli-prezentacii",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
       }
     ],
-    "supportingArticles": []
+    "supportingArticles": [
+      "algoritm-instagram-karuseli",
+      "chitabelnost-teksta-v-karuselyah",
+      "karusel-ili-setka-v-instagram",
+      "kak-narezat-foto-dlya-karuseli",
+      "gorizontalnye-i-vertikalnye-foto-v-karuseli",
+      "pochemu-instagram-obrezaet-foto-v-karuseli",
+      "mnogostranichnye-karuseli-prezentacii"
+    ],
+    "lastReviewed": "2026-07-04"
   },
   {
     "clusterId": "ru:social-content",
@@ -444,13 +523,24 @@
         "status": "published",
         "canonicalRisk": "low",
         "notes": "Published backfill with imported demand evidence."
+      },
+      {
+        "slug": "generator-vizualnyh-postov-ai",
+        "url": "/ru/blog/generator-vizualnyh-postov-ai",
+        "role": "product_led_guide",
+        "intentId": "ru:generator-vizualnyh-postov-ai",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "medium",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
       }
     ],
     "supportingArticles": [
       "ii-post-dlya-socsetej",
-      "ii-tekst-dlya-posta"
+      "ii-tekst-dlya-posta",
+      "generator-vizualnyh-postov-ai"
     ],
-    "lastReviewed": "2026-06-23"
+    "lastReviewed": "2026-07-04"
   },
   {
     "clusterId": "ru:ii-carousel-generator",
@@ -563,6 +653,36 @@
         "intentId": "ru:gde-delat-posty-karuseli-s-ii",
         "priorityTier": "P3",
         "status": "published"
+      },
+      {
+        "slug": "konstruktor-karuseley-onlayn",
+        "url": "/ru/blog/konstruktor-karuseley-onlayn",
+        "role": "comparison",
+        "intentId": "ru:konstruktor-karuseley-onlayn",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "kak-sozdat-karusel-s-chatgpt",
+        "url": "/ru/blog/kak-sozdat-karusel-s-chatgpt",
+        "role": "how_to",
+        "intentId": "ru:kak-sozdat-karusel-s-chatgpt",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "massovoe-sozdanie-karuseley-s-ii",
+        "url": "/ru/blog/massovoe-sozdanie-karuseley-s-ii",
+        "role": "workflow_article",
+        "intentId": "ru:massovoe-sozdanie-karuseley-s-ii",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
       }
     ],
     "supportingArticles": [
@@ -578,7 +698,10 @@
       "psihologiya-karuseley-kak-uderzhat-vnimanie",
       "cta-dlya-karuseley-instagram-s-ii",
       "kakoy-ii-sozdast-post-karusel",
-      "gde-delat-posty-karuseli-s-ii"
+      "gde-delat-posty-karuseli-s-ii",
+      "konstruktor-karuseley-onlayn",
+      "kak-sozdat-karusel-s-chatgpt",
+      "massovoe-sozdanie-karuseley-s-ii"
     ],
     "missingTopics": [],
     "internalLinkingRules": {
@@ -590,7 +713,7 @@
       ]
     },
     "notes": "RU AI carousel generator cluster, extended for Batch 1 comparison owners.",
-    "lastReviewed": "2026-06-22"
+    "lastReviewed": "2026-07-04"
   },
   {
     "clusterId": "en:ai-content-workflow",
@@ -682,12 +805,34 @@
         "status": "draft_preview",
         "canonicalRisk": "medium",
         "notes": "Draft from ru-vk-instagram-batch-1"
+      },
+      {
+        "slug": "generator-karuseley-dlya-vk",
+        "url": "/ru/blog/generator-karuseley-dlya-vk",
+        "role": "how_to",
+        "intentId": "ru:generator-karuseley-dlya-vk",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "pervyy-post-vkontakte-s-ii",
+        "url": "/ru/blog/pervyy-post-vkontakte-s-ii",
+        "role": "how_to",
+        "intentId": "ru:pervyy-post-vkontakte-s-ii",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "medium",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
       }
     ],
     "supportingArticles": [
       "razmer-foto-dlya-posta-vk-formaty",
       "temy-postov-dlya-gruppy-vkontakte",
-      "krasivye-posty-dlya-vk-oformlenie"
+      "krasivye-posty-dlya-vk-oformlenie",
+      "generator-karuseley-dlya-vk",
+      "pervyy-post-vkontakte-s-ii"
     ],
     "missingTopics": [],
     "internalLinkingRules": {
@@ -701,7 +846,7 @@
       ]
     },
     "notes": "Draft cluster registration for ru-vk-instagram-batch-1.",
-    "lastReviewed": "2026-07-03"
+    "lastReviewed": "2026-07-04"
   },
   {
     "clusterId": "ru:instagram-content",
