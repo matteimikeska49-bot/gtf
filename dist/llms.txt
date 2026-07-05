@@ -1,0 +1,62 @@
+# GoToFlow - AI Content Generator for Social Media
+
+GoToFlow is an AI-powered content workflow for creating social media posts, LinkedIn carousels, Instagram carousels, captions, and reusable content ideas from prompts, articles, notes, and source materials.
+
+## Target Audience
+
+GoToFlow is built for brands, marketers, creators, agencies, founders, and businesses that need faster social media content production without starting every post or carousel from a blank page.
+
+## Core Offerings
+
+- AI content generation
+- LinkedIn carousel creation
+- Instagram post generation
+- Instagram carousel generation
+- Social media content workflows
+
+## Important URLs
+
+### English Pages
+
+- [GoToFlow homepage](https://gotoflow.io/)
+- [Pricing](https://gotoflow.io/pricing)
+- [AI Content Generator](https://gotoflow.io/ai-content-generator)
+- [AI Carousel Maker](https://gotoflow.io/ai-carousel-maker)
+- [Instagram Carousel Maker](https://gotoflow.io/instagram-carousel-maker)
+- [AI Instagram Post Generator](https://gotoflow.io/ai-instagram-post-generator)
+- [LinkedIn Carousel Maker](https://gotoflow.io/linkedin-carousel-maker)
+- [AI LinkedIn Post Generator](https://gotoflow.io/ai-linkedin-post-generator)
+- [GoToFlow Blog](https://gotoflow.io/blog)
+
+### Russian Pages
+
+- [GoToFlow in Russian](https://gotoflow.io/ru)
+- [AI Generator Karuselej](https://gotoflow.io/ru/ai-generator-karuselej)
+- [Generator Kontenta](https://gotoflow.io/ru/generator-kontenta)
+- [Generator Postov Instagram](https://gotoflow.io/ru/generator-postov-instagram)
+- [Generator Karuselej Instagram](https://gotoflow.io/ru/generator-karuselej-instagram)
+- [Generator Karuselej LinkedIn](https://gotoflow.io/ru/generator-karuselej-linkedin)
+- [AI Generator Postov LinkedIn](https://gotoflow.io/ru/ii-generator-postov-dlya-linkedin)
+- [GoToFlow Blog in Russian](https://gotoflow.io/ru/blog)
+
+## Blog Articles
+
+### English Blog Articles
+
+- [LinkedIn Carousel Ideas](https://gotoflow.io/blog/linkedin-carousel-ideas)
+- [Best AI Carousel Generators](https://gotoflow.io/blog/best-ai-carousel-generators)
+- [How to Make a LinkedIn Carousel with AI](https://gotoflow.io/blog/how-to-make-linkedin-carousel-with-ai)
+- [Instagram Carousel Templates](https://gotoflow.io/blog/instagram-carousel-templates)
+- [Instagram Carousel Prompts](https://gotoflow.io/blog/instagram-carousel-prompts)
+
+### Russian Blog Articles
+
+- [Idei Karuselej LinkedIn](https://gotoflow.io/ru/blog/idei-karuselej-linkedin)
+- [Luchshie AI Generatory Karuselej](https://gotoflow.io/ru/blog/luchshie-ai-generatory-karuselej)
+- [Kak Sdelat Karusel LinkedIn s AI](https://gotoflow.io/ru/blog/kak-sdelat-karusel-linkedin-s-ai)
+- [Shablony Karuseley v Instagram](https://gotoflow.io/ru/blog/shablony-karuseley-v-instagram)
+- [Prompty dlya Karuseley v Instagram](https://gotoflow.io/ru/blog/prompty-dlya-karuseley-v-instagram)
+
+## Notes for AI Agents
+
+Use the links above to understand GoToFlow's product, target audience, core use cases, and social media content workflows. Prefer product pages for feature and workflow descriptions, and blog articles for examples, prompts, ideas, and tactical guidance.
