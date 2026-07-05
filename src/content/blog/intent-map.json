@@ -353,9 +353,27 @@
     "intentId": "ru:razmer-karuseli-v-instagram",
     "language": "ru",
     "cluster": "ru:instagram-carousel",
-    "searchIntent": "Dimensions and aspect ratio for Instagram carousels",
-    "intentType": "informational",
-    "ownerUrl": "/ru/blog/razmer-karuseli-v-instagram"
+    "searchIntent": "Instagram carousel size, aspect ratio, safe zones, and mixed photo/video preparation",
+    "intentType": "technical_guide",
+    "ownerUrl": "/ru/blog/razmer-karuseli-v-instagram",
+    "ownerSlug": "razmer-karuseli-v-instagram",
+    "ownerRole": "support",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "trebovaniya-k-video-v-karuseli"
+    ],
+    "allowedSupportingAngles": [
+      "video checks",
+      "safe zones",
+      "mixed media preparation"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Instagram carousel video requirement questions should update this owner article unless fresh platform validation supports a separate specs page."
+    ],
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "notes": "Existing technical guide expanded to resolve deferred Batch 3 video-requirements intent without unsupported standalone platform specs.",
+    "lastReviewed": "2026-07-04"
   },
   {
     "intentId": "ru:kak-pridumat-temu-dlya-karuseli-s-ii",
@@ -1308,6 +1326,58 @@
     "updateInsteadOfCreateRules": [],
     "relatedProductRoute": "/ru/generator-kontenta",
     "notes": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; monitor demand and cannibalization post-publish.",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "intentId": "ru:kak-ispolzovat-midjourney-dlya-postov",
+    "language": "ru",
+    "cluster": "ru:instagram-carousel",
+    "searchIntent": "use Midjourney visuals as assets for Instagram posts and carousels",
+    "intentType": "supporting-guide",
+    "ownerUrl": "/ru/blog/kak-ispolzovat-midjourney-dlya-postov",
+    "ownerSlug": "kak-ispolzovat-midjourney-dlya-postov",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "kak-sdelat-karusel-v-midjourney"
+    ],
+    "allowedSupportingAngles": [
+      "visual assets",
+      "background generation",
+      "workflow integration"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Midjourney carousel-specific questions should update this owner instead of creating a standalone article unless fresh platform research supports a distinct page."
+    ],
+    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "notes": "Existing article expanded to cover deferred Batch 3 Midjourney carousel intent without unsupported tool/platform claims.",
+    "lastReviewed": "2026-07-04"
+  },
+  {
+    "intentId": "ru:kak-sostavit-kontent-plan-s-pomoshyu-chatgpt",
+    "language": "ru",
+    "cluster": "ru:social-content",
+    "searchIntent": "create content plans and content matrices with ChatGPT or AI for social posts",
+    "intentType": "supporting-guide",
+    "ownerUrl": "/ru/blog/kak-sostavit-kontent-plan-s-pomoshyu-chatgpt",
+    "ownerSlug": "kak-sostavit-kontent-plan-s-pomoshyu-chatgpt",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "matrica-kontenta-s-ii"
+    ],
+    "allowedSupportingAngles": [
+      "content matrix",
+      "carousel series planning",
+      "social content calendar"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Content matrix with AI belongs in this owner article unless a future brief proves a distinct product-led carousel matrix page."
+    ],
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "notes": "Existing content planning article expanded to resolve deferred Batch 3 content-matrix intent without a thin duplicate page.",
     "lastReviewed": "2026-07-04"
   }
 ]
