@@ -10,6 +10,7 @@
 
 import { createServer } from 'net';
 import { spawn } from 'child_process';
+import { existsSync } from 'fs';
 import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -203,18 +204,24 @@ async function getDynamicMarkdownRoutes() {
 }
 
 async function launchBrowser() {
+  const chromiumPath = process.env.PUPPETEER_EXECUTABLE_PATH || (existsSync('/usr/bin/chromium') ? '/usr/bin/chromium' : undefined);
+
   return puppeteer.launch({
-    headless: true,
-    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
+    headless: 'new',
+    executablePath: chromiumPath,
     protocolTimeout: 120000,
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
       '--disable-gpu',
+      '--disable-dev-tools',
+      '--no-first-run',
+      '--no-zygote',
       '--disable-background-networking',
       '--disable-background-timer-throttling',
       '--disable-renderer-backgrounding',
+      '--disable-default-apps',
       '--disable-extensions',
       '--disable-sync',
       '--mute-audio'
