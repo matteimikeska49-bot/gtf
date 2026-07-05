@@ -1595,9 +1595,9 @@
     "serpEvidenceSummary": "Published after internal QA and release checks; live SERP refresh remains post-publish work.",
     "mockupPurpose": "Visual block and existing mockup slots planned in markdown body.",
     "mockupPlacement": "inline body block",
-    "decisionReason": "Published after Codex Prompt 3 QA and publish checks.",
+    "decisionReason": "Published after Codex Prompt 3 QA and publish checks. Claude carousel intent is resolved as a section in this existing ChatGPT article because Claude is covered as an alternative AI-chat workflow, not as a standalone Claude carousel generator article.",
     "requiresDemandRefresh": true,
-    "lastReviewed": "2026-07-04"
+    "lastReviewed": "2026-07-05"
   },
   {
     "targetSlug": "generator-karuseley-dlya-vk",

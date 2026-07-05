@@ -54,6 +54,38 @@ const RISKY_CLAIMS = [
   "гарантированно"
 ];
 
+const EXTERNAL_AI_SERVICE_PATTERN = /\b(ChatGPT|Claude|Gemini|Midjourney|OpenAI|Anthropic|Cloud|cloud)\b|Клод|Клауд|клауд/u;
+
+const RU_AI_AVAILABILITY_REQUIREMENTS = [
+  {
+    label: 'Russia availability/support-region note',
+    pattern: /(официально\s+недоступн|недоступн[а-я\s]+из\s+РФ|поддерживаем[а-я\s]+регион)/iu
+  },
+  {
+    label: 'Russian bank card warning',
+    pattern: /(российск[а-я\s]+банк[а-я\s]+карт|российск[а-я\s]+карт[а-я\s]+(?:не\s+принима|нельзя\s+считать|могут\s+не\s+приним))/iu
+  },
+  {
+    label: 'foreign payment method note',
+    pattern: /зарубежн[а-я\s]+способ\s+оплат/iu
+  },
+  {
+    label: 'prices/limits may change note',
+    pattern: /цены[а-я,\s]+лимит[а-я,\s]+доступност[а-я\s]+могут\s+меняться/iu
+  },
+  {
+    label: 'GoToFlow Russia availability bridge',
+    pattern: /GoToFlow\s+доступен\s+в\s+РФ/iu
+  },
+  {
+    label: 'GoToFlow Russian cards bridge',
+    pattern: /GoToFlow[\s\S]{0,220}принимает\s+российск[а-я\s]+карт/iu
+  }
+];
+
+const RU_AI_PRICING_PATTERN = /(ChatGPT|Claude|Gemini|Midjourney|OpenAI|Anthropic)[\s\S]{0,160}(\$\d+|стоит\s+\$|тариф|цена|стоимость|Plus|Pro|Max)/iu;
+const RU_AI_PRICING_FRESHNESS_PATTERN = /на\s+момент\s+обновления\s+статьи\s+в\s+[а-яё]+\s+20\d{2}\s+года/iu;
+
 // Check for all caps or specific bad microcopy
 const FORBIDDEN_MICROCOPY = [
   "ЧИТАТЬ ТАКЖЕ",
@@ -143,6 +175,32 @@ function checkFile(filePath, content, frontmatter, isActive) {
   }
 
   const fileName = path.basename(filePath);
+  const language = frontmatter.language || '';
+  const slug = frontmatter.slug || '';
+  const canonical = frontmatter.canonical || '';
+  const isRuArticle = language === 'ru' || slug.startsWith('ru/') || canonical.includes('/ru/blog/');
+
+  if (isRuArticle && EXTERNAL_AI_SERVICE_PATTERN.test(content)) {
+    RU_AI_AVAILABILITY_REQUIREMENTS.forEach(({ label, pattern }) => {
+      if (!pattern.test(content)) {
+        const msg = `RU external AI service mention missing required availability/payment note component: ${label}`;
+        if (isActive) {
+          errors.push(`[P0] ${msg}`);
+        } else {
+          warnings.push(`[P1] ${msg}`);
+        }
+      }
+    });
+
+    if (RU_AI_PRICING_PATTERN.test(content) && !RU_AI_PRICING_FRESHNESS_PATTERN.test(content)) {
+      const msg = 'RU external AI pricing mention must use freshness wording like "на момент обновления статьи в июле 2026 года".';
+      if (isActive) {
+        errors.push(`[P0] ${msg}`);
+      } else {
+        warnings.push(`[P1] ${msg}`);
+      }
+    }
+  }
 
   // Check Product Positioning
   FORBIDDEN_PRODUCT_PHRASES.forEach(phrase => {

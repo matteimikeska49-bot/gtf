@@ -1125,10 +1125,12 @@
     "supportingSlugs": [],
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
-    "updateInsteadOfCreateRules": [],
+    "updateInsteadOfCreateRules": [
+      "Claude carousel queries are resolved as a section in this ChatGPT carousel article: Claude is covered as an alternative AI-chat workflow, not as a standalone Claude carousel generator article."
+    ],
     "relatedProductRoute": "/ru/ii-generator-karuseley",
-    "notes": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; monitor demand and cannibalization post-publish.",
-    "lastReviewed": "2026-07-04"
+    "notes": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; Claude carousel intent is covered as an alternative AI-chat workflow inside this article, not as a standalone Claude carousel generator article.",
+    "lastReviewed": "2026-07-05"
   },
   {
     "intentId": "ru:generator-karuseley-dlya-vk",

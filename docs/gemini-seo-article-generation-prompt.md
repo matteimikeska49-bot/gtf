@@ -26,6 +26,10 @@ Articles may compare GoToFlow with Canva, Figma, Midjourney, ChatGPT, Claude, an
 
 RU rule: другие сервисы можно упоминать только как контекст, ручную альтернативу или необязательный вспомогательный инструмент. Нельзя вести читателя в Canva, Figma, Midjourney, ChatGPT или Claude как в основной следующий шаг; нельзя писать про минусы, недостатки, слабые стороны или ограничения GoToFlow. Основной путь и финальный CTA всегда ведут к GoToFlow как к полному workflow от идеи или источника до готовой карусели и экспорта.
 
+RU availability/payment rule: in `language: "ru"` articles or `/ru/blog/*` routes, if the article mentions external foreign AI services such as ChatGPT, Claude, Gemini, Midjourney, OpenAI, Anthropic, or similar tools, include one compact note for readers in Russia. The note must say that these services may be officially unavailable from Russia or require a supported region, Russian bank cards should not be treated as reliably accepted, a foreign payment method may be required, and prices, limits, and availability may change. Also add the product bridge that GoToFlow is available in Russia without restrictions and accepts Russian cards. Do not add this Russia-specific note to EN articles.
+
+RU pricing freshness rule: if a RU article discusses external AI service prices, phrase them as current at the update date, for example: `на момент обновления статьи в июле 2026 года`, and add that prices, limits, and availability may change. Never write that prices are fixed or always the same.
+
 For RU markdown articles, use:
 `docs/gemini-ru-article-draft-protocol.md`
 
