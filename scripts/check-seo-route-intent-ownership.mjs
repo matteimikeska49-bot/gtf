@@ -227,6 +227,38 @@ const validateRouteOwnership = (inventory) => {
     }
   }
 
+  // Cannibalization extended checks
+  const seoTitles = new Map();
+  const seoH1s = new Map();
+  const seoCanonicals = new Map();
+  
+  for (const page of pages) {
+    if (page.state !== 'indexable_approved') continue;
+    
+    const title = page.meta?.title;
+    if (title) {
+      if (seoTitles.has(title)) errors.push(`[Cannibalization P0] Duplicate Title: ${title} in ${page.path} and ${seoTitles.get(title)}`);
+      seoTitles.set(title, page.path);
+    }
+    
+    const h1 = page.hero?.title?.text;
+    if (h1) {
+      if (seoH1s.has(h1)) errors.push(`[Cannibalization P0] Duplicate H1: ${h1} in ${page.path} and ${seoH1s.get(h1)}`);
+      seoH1s.set(h1, page.path);
+    }
+    
+    const canonical = page.meta?.canonicalUrl || `https://gotoflow.io${page.path}`;
+    if (seoCanonicals.has(canonical)) errors.push(`[Cannibalization P0] Duplicate Canonical: ${canonical} in ${page.path} and ${seoCanonicals.get(canonical)}`);
+    seoCanonicals.set(canonical, page.path);
+    
+    // Cross-system checks vs blog
+    for (const blog of inventory.blogRoutes) {
+      if (title && blog.title && title.toLowerCase() === blog.title.toLowerCase()) {
+         errors.push(`[Cannibalization P0] Duplicate Title across systems: ${page.path} matches blog ${blog.path} ("${title}")`);
+      }
+    }
+  }
+
   return { errors, warnings };
 };
 

@@ -73,7 +73,9 @@
     "check:blog:content-template": "node scripts/check-blog-content-template.mjs",
     "check:blog:rendered-html": "node scripts/check-blog-rendered-html.mjs",
     "check:blog:preview-routes": "node scripts/check-blog-preview-routes.mjs",
-    "check:blog:v2-layout-contract": "node scripts/check-blog-v2-layout-contract.mjs"
+    "check:blog:v2-layout-contract": "node scripts/check-blog-v2-layout-contract.mjs",
+    "check:seo:release": "npm run check:seo && node scripts/check-seo-cross-system-product-truth.mjs && node scripts/check-seo-dist-sync.mjs && node scripts/check-seo-shared-layout.mjs && node scripts/check-seo-performance.mjs",
+    "check:seo:live": "node scripts/check-live-seo-page.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",

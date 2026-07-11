@@ -144,6 +144,15 @@ export const SEO_PAGE_HUBS = {
  * @property {boolean} published
  * @property {boolean} noindex
  * @property {string} lastUpdated
+ * @property {string=} productTruthReviewedAt
+ * @property {string=} seoReviewedAt
+ * @property {string=} indexationApprovedAt
+ * @property {string=} lastLiveCheckedAt
+ * @property {string=} nextProductReviewAt
+ * @property {string=} nextSeoReviewAt
+ * @property {string=} contentOwner
+ * @property {string=} seoOwner
+ * @property {string=} productVersion
  * @property {SeoPageBlockItem[]=} examples
  * @property {SeoPageBlockItem[]=} templates
  * @property {{lang: string, href: string}[]=} hreflang
