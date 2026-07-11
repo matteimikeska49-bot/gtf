@@ -38,6 +38,20 @@ export const getSoftwareSchema = (path, name, desc, lang = 'en') => ({
   "brand": { "@id": "https://gotoflow.io/#organization" }
 });
 
+export const getWebApplicationSchema = (path, name, desc, lang = 'en') => ({
+  "@type": "WebApplication",
+  "@id": `https://gotoflow.io${path}#webapplication`,
+  "name": name,
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": `https://gotoflow.io${path}`,
+  "description": desc,
+  "inLanguage": lang,
+  "browserRequirements": "Requires JavaScript",
+  "brand": { "@id": "https://gotoflow.io/#organization" },
+  "publisher": { "@id": "https://gotoflow.io/#organization" }
+});
+
 export const getArticleSchema = (path, title, desc, lang = 'en') => ({
   "@type": "Article",
   "@id": `https://gotoflow.io${path}#article`,

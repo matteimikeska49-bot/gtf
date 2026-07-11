@@ -33,6 +33,8 @@ import { BlogPageRu } from './components/BlogPageRu';
 
 
 import { MarkdownBlogArticlePage } from './components/blog/MarkdownBlogArticlePage';
+import { SeoHubPage } from './components/seo/SeoHubPage';
+import { SeoPageRoute } from './components/seo/SeoPageRoute';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { RefundPolicyPage } from './components/RefundPolicyPage';
 import { TermsOfServicePage } from './components/TermsOfServicePage';
@@ -92,6 +94,21 @@ function App() {
         <Route path="/linkedin-carousel-maker" element={<LinkedInCarouselPage />} />
         <Route path="/ru/generator-karuselej-linkedin" element={<LinkedInCarouselPageRu />} />
         <Route path="/ru/ii-generator-postov-dlya-linkedin" element={<LinkedInPostPageRu />} />
+        <Route path="/ru/tools" element={<SeoHubPage pageType="tool" />} />
+        <Route path="/ru/platforms" element={<SeoHubPage pageType="platform" />} />
+        <Route path="/ru/use-cases" element={<SeoHubPage pageType="useCase" />} />
+        <Route path="/ru/templates" element={<SeoHubPage pageType="template" />} />
+        <Route path="/ru/examples" element={<SeoHubPage pageType="example" />} />
+        <Route path="/ru/prompts" element={<SeoHubPage pageType="prompt" />} />
+        <Route path="/ru/alternatives" element={<SeoHubPage pageType="alternative" />} />
+        <Route path="/ru/tools/:slug" element={<SeoPageRoute pageType="tool" />} />
+        <Route path="/ru/platforms/:slug" element={<SeoPageRoute pageType="platform" />} />
+        <Route path="/ru/use-cases/:slug" element={<SeoPageRoute pageType="useCase" />} />
+        <Route path="/ru/templates/:slug" element={<SeoPageRoute pageType="template" />} />
+        <Route path="/ru/examples/:slug" element={<SeoPageRoute pageType="example" />} />
+        <Route path="/ru/prompts/:slug" element={<SeoPageRoute pageType="prompt" />} />
+        <Route path="/ru/alternatives/:slug" element={<SeoPageRoute pageType="alternative" />} />
+        <Route path="/ru/:slug" element={<SeoPageRoute pageTypes={['commercial', 'tool']} />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/linkedin-carousel-ideas" element={<MarkdownBlogArticlePage slug="linkedin-carousel-ideas" langPrefix="en" />} />
         <Route path="/blog/best-ai-carousel-generators" element={<MarkdownBlogArticlePage slug="best-ai-carousel-generators" langPrefix="en" />} />

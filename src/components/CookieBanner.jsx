@@ -95,14 +95,14 @@ export const CookieBanner = () => {
                   <button
                     id="cookie-accept-all"
                     onClick={handleAcceptAll}
-                    className="px-3.5 py-1 rounded-md text-[11px] font-semibold text-white bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-500 hover:to-rose-400 shadow-lg shadow-pink-500/20 transition-all duration-200 hover:shadow-pink-500/30"
+                    className="inline-flex min-h-11 items-center justify-center rounded-md bg-gradient-to-r from-pink-600 to-rose-500 px-3.5 py-2 text-[11px] font-semibold text-white shadow-lg shadow-pink-500/20 transition-all duration-200 hover:from-pink-500 hover:to-rose-400 hover:shadow-pink-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60"
                   >
                     {t('cookie.acceptAll')}
                   </button>
                   <button
                     id="cookie-reject"
                     onClick={handleReject}
-                    className="px-3 py-1 rounded-md text-[11px] font-medium text-zinc-400 hover:text-zinc-200 border border-white/[0.08] hover:border-white/20 transition-all duration-200"
+                    className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/[0.08] px-3 py-2 text-[11px] font-medium text-zinc-400 transition-all duration-200 hover:border-white/20 hover:text-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60"
                   >
                     {t('cookie.reject')}
                   </button>
@@ -112,14 +112,14 @@ export const CookieBanner = () => {
                   <button
                     id="cookie-accept-ru"
                     onClick={handleAcceptLegacy}
-                    className="px-3.5 py-1 rounded-md text-[11px] font-semibold text-white bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-500 hover:to-rose-400 shadow-lg shadow-pink-500/20 transition-all duration-200 hover:shadow-pink-500/30"
+                    className="inline-flex min-h-11 items-center justify-center rounded-md bg-gradient-to-r from-pink-600 to-rose-500 px-3.5 py-2 text-[11px] font-semibold text-white shadow-lg shadow-pink-500/20 transition-all duration-200 hover:from-pink-500 hover:to-rose-400 hover:shadow-pink-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60"
                   >
                     {t('cookie.accept')}
                   </button>
                   <button
                     id="cookie-learn-more-ru"
                     onClick={handleAcceptLegacy}
-                    className="px-2 py-1 rounded-md text-[11px] text-zinc-500 hover:text-zinc-300 transition-colors duration-200"
+                    className="inline-flex min-h-11 items-center justify-center rounded-md px-3 py-2 text-[11px] text-zinc-500 transition-colors duration-200 hover:text-zinc-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60"
                   >
                     {t('cookie.learnMore')}
                   </button>

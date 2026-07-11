@@ -11,6 +11,7 @@ import {
   buildSchema
 } from '../utils/schemaGenerator';
 import { faqSchemaData } from '../data/faqSchemaData';
+import { getSeoPageByPath } from '../content/seoPages';
 
 const ROUTES_CONFIG = {
   '/': {
@@ -162,6 +163,14 @@ export const RouteSchemaInjector = () => {
   const path = location.pathname;
   
   useEffect(() => {
+    if (getSeoPageByPath(path)) {
+      const existing = document.getElementById('dynamic-ld-json');
+      if (existing) {
+        existing.remove();
+      }
+      return;
+    }
+
     const config = ROUTES_CONFIG[path];
     if (!config) {
       const existing = document.getElementById('dynamic-ld-json');

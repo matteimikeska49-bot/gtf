@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run check:seo-route-intent && vite build",
+    "check:seo": "node scripts/check-seo-pages.mjs && node scripts/check-seo-origin-ledger.mjs && node scripts/check-seo-route-intent-ownership.mjs && node scripts/check-seo-related-links.mjs && node scripts/check-seo-sitemap-eligibility.mjs && node scripts/check-seo-product-claims.mjs && node scripts/check-seo-assets.mjs && node scripts/check-seo-content-readiness.mjs",
+    "check:seo-route-intent": "node scripts/check-seo-route-intent-ownership.mjs",
     "prerender": "node prerender.mjs",
     "postbuild": "node prerender.mjs && npm run build:marker",
     "check:blog": "npm run build && npm run check:blog:run && npm run check:blog:content-template && npm run check:blog:template-contract && npm run check:blog:product-links",

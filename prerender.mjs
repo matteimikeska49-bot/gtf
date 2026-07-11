@@ -18,9 +18,12 @@ import puppeteer from 'puppeteer';
 import { readdir, readFile } from 'fs/promises';
 import http from 'http';
 import { setTimeout as delay } from 'timers/promises';
+import { getSeoPagesForPrerender, getSeoPagesForSitemap } from './src/content/seoPages/index.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DIST = path.join(__dirname, 'dist');
+const DIST = process.env.PRERENDER_DIST_DIR
+  ? path.resolve(process.env.PRERENDER_DIST_DIR)
+  : path.join(__dirname, 'dist');
 const PREVIEW_HOST = '127.0.0.1';
 const NAVIGATION_ATTEMPTS = 3;
 const NAVIGATION_TIMEOUT_MS = 60000;
@@ -33,7 +36,6 @@ const ROUTES = [
   '/ai-carousel-maker',
   '/carousel-maker',
   '/ru/ai-generator-karuselej',
-  '/ru/ii-generator-karuseley',
   '/ai-content-generator',
   '/ru/generator-kontenta',
   '/ru/ii-generator-kontenta',
@@ -113,7 +115,7 @@ function waitForPreviewReady(baseUrl, timeoutMs = PREVIEW_READY_TIMEOUT_MS) {
 /* ── Start vite preview and wait until it's ready ── */
 function startPreviewServer(port) {
   return new Promise((resolve, reject) => {
-    const proc = spawn('npx', ['vite', 'preview', '--host', PREVIEW_HOST, '--port', String(port), '--strictPort'], {
+    const proc = spawn('npx', ['vite', 'preview', '--outDir', DIST, '--host', PREVIEW_HOST, '--port', String(port), '--strictPort'], {
       cwd: __dirname,
       stdio: ['ignore', 'pipe', 'pipe'],
     });
@@ -204,7 +206,10 @@ async function getDynamicMarkdownRoutes() {
 }
 
 async function launchBrowser() {
-  const chromiumPath = process.env.PUPPETEER_EXECUTABLE_PATH || (existsSync('/usr/bin/chromium') ? '/usr/bin/chromium' : undefined);
+  const macChromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+  const chromiumPath = process.env.PUPPETEER_EXECUTABLE_PATH ||
+    (existsSync('/usr/bin/chromium') ? '/usr/bin/chromium' : undefined) ||
+    (existsSync(macChromePath) ? macChromePath : undefined);
 
   return puppeteer.launch({
     headless: 'new',
@@ -325,11 +330,21 @@ async function prerenderRoute(browser, route, baseUrl) {
   const dynamicRoutes = await getDynamicMarkdownRoutes();
   const routesToPrerender = dynamicRoutes.map(r => r.route);
   const routesToSitemap = dynamicRoutes.filter(r => r.addToSitemap).map(r => r.route);
+  const seoPagesToPrerender = getSeoPagesForPrerender();
+  const seoPagesToSitemap = getSeoPagesForSitemap();
+  const seoRoutesToPrerender = seoPagesToPrerender.map((page) => page.path);
 
   if (routesToPrerender.length > 0) {
     console.log(`📚  Found ${routesToPrerender.length} dynamic markdown articles: ${routesToPrerender.join(', ')}`);
     ROUTES.push(...routesToPrerender);
   }
+
+  if (seoRoutesToPrerender.length > 0) {
+    console.log(`🧭  Found ${seoRoutesToPrerender.length} indexable SEO pages: ${seoRoutesToPrerender.join(', ')}`);
+    ROUTES.push(...seoRoutesToPrerender);
+  }
+
+  const uniqueRoutes = [...new Set(ROUTES)];
 
   let server = null;
   let browser = null;
@@ -345,7 +360,7 @@ async function prerenderRoute(browser, route, baseUrl) {
 
     browser = await launchBrowser();
 
-    for (const route of ROUTES) {
+    for (const route of uniqueRoutes) {
       let success = false;
       let lastError = null;
 
@@ -411,7 +426,7 @@ async function prerenderRoute(browser, route, baseUrl) {
     const sitemapPath = path.join(DIST, 'sitemap.xml');
     let sitemap = await readFile(sitemapPath, 'utf-8');
     
-    if (routesToSitemap.length > 0 && sitemap.includes('</urlset>')) {
+    if ((routesToSitemap.length > 0 || seoPagesToSitemap.length > 0) && sitemap.includes('</urlset>')) {
       const today = new Date().toISOString().split('T')[0];
       let newUrls = '';
       
@@ -427,11 +442,24 @@ async function prerenderRoute(browser, route, baseUrl) {
   </url>`;
         }
       }
+
+      for (const page of seoPagesToSitemap) {
+        if (!sitemap.includes(`<loc>https://gotoflow.io${page.path}</loc>`)) {
+          const lastmod = page.lastUpdated || today;
+          newUrls += `
+  <url>
+    <loc>https://gotoflow.io${page.path}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>${page.priority || 0.6}</priority>
+  </url>`;
+        }
+      }
       
       if (newUrls) {
         sitemap = sitemap.replace('</urlset>', `${newUrls}\n</urlset>`);
         await writeFile(sitemapPath, sitemap, 'utf-8');
-        console.log(`\n🗺️  Added ${routesToSitemap.length} dynamic routes to sitemap.xml`);
+        console.log(`\n🗺️  Added ${routesToSitemap.length + seoPagesToSitemap.length} dynamic routes to sitemap.xml`);
       }
     }
   } catch (err) {
