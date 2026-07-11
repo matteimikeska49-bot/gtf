@@ -185,7 +185,7 @@ const validateRouteOwnership = (inventory) => {
   for (const page of pages) {
     const dynamicRouteOwner = inventory.nonRegistryRouteOwners.get(page.path);
     const configuredRouteOwner = getSeoPageRouteCollision(page);
-    const sitemapRouteOwner = inventory.sitemapRouteOwners.get(page.path);
+    const sitemapRouteOwner = sitemapPages.has(page.path) ? null : inventory.sitemapRouteOwners.get(page.path);
     const routeOwner = dynamicRouteOwner || configuredRouteOwner || sitemapRouteOwner;
     const hasApprovedMigration = hasApprovedSeoRouteMigration(page);
     const isRouteAllowed = isSeoPageRouteAllowed(page);

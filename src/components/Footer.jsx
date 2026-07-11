@@ -13,7 +13,6 @@ export const Footer = () => {
   const location = useLocation();
   const routePath = window.__GTF_PRERENDER_ROUTE || location.pathname;
   const isRuRoute = routePath === '/ru' || routePath.startsWith('/ru/');
-  const footerNavClass = 'flex flex-col gap-1 [&>a]:inline-flex [&>a]:min-h-11 [&>a]:items-center [&>a]:rounded-md [&>a]:transition-colors [&>a]:duration-300 [&>a]:focus-visible:outline-none [&>a]:focus-visible:ring-2 [&>a]:focus-visible:ring-pink-400/60';
 
   return (
     <>
@@ -47,24 +46,24 @@ export const Footer = () => {
               <h3 className="text-sm font-semibold text-white tracking-wide uppercase mb-2">
                 {lang === 'RU' ? 'Инструменты' : 'Tools'}
               </h3>
-              <nav className={footerNavClass}>
+              <nav className="flex flex-col gap-3">
                 {lang === 'RU' ? (
                   <>
-                    <Link to="/ru/ii-generator-karuseley" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">ИИ-генератор каруселей</Link>
-                    <Link to="/ru/ii-generator-kontenta" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Генератор контента</Link>
-                    <Link to="/ru/generator-karuselej-instagram" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Карусели Instagram</Link>
-                    <Link to="/ru/ii-generator-postov-dlya-instagram" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Посты Instagram</Link>
-                    <Link to="/ru/generator-karuselej-linkedin" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Карусели LinkedIn</Link>
-                    <Link to="/ru/ii-generator-postov-dlya-linkedin" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Посты LinkedIn</Link>
+                    <Link to="/ru/ii-generator-karuseley" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">ИИ-генератор каруселей</Link>
+                    <Link to="/ru/ii-generator-kontenta" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Генератор контента</Link>
+                    <Link to="/ru/generator-karuselej-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Карусели Instagram</Link>
+                    <Link to="/ru/ii-generator-postov-dlya-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Посты Instagram</Link>
+                    <Link to="/ru/generator-karuselej-linkedin" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Карусели LinkedIn</Link>
+                    <Link to="/ru/ii-generator-postov-dlya-linkedin" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Посты LinkedIn</Link>
                   </>
                 ) : (
                   <>
-                    <Link to="/ai-carousel-maker" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">AI Carousel Maker</Link>
-                    <Link to="/ai-content-generator" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Content Generator</Link>
-                    <Link to="/instagram-carousel-maker" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Instagram Carousels</Link>
-                    <Link to="/ai-instagram-post-generator" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Instagram Posts</Link>
-                    <Link to="/linkedin-carousel-maker" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">LinkedIn Carousels</Link>
-                    <Link to="/ai-linkedin-post-generator" className="inline-flex min-h-11 items-center text-[13px] text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">LinkedIn Posts</Link>
+                    <Link to="/ai-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">AI Carousel Maker</Link>
+                    <Link to="/ai-content-generator" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Content Generator</Link>
+                    <Link to="/instagram-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Instagram Carousels</Link>
+                    <Link to="/ai-instagram-post-generator" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Instagram Posts</Link>
+                    <Link to="/linkedin-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">LinkedIn Carousels</Link>
+                    <Link to="/ai-linkedin-post-generator" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">LinkedIn Posts</Link>
                   </>
                 )}
               </nav>
@@ -75,7 +74,7 @@ export const Footer = () => {
               <h3 className="text-sm font-semibold text-white tracking-wide uppercase mb-2">
                 {lang === 'RU' ? 'Ресурсы' : 'Resources'}
               </h3>
-              <nav className={footerNavClass}>
+              <nav className="flex flex-col gap-3">
                 {lang === 'RU' ? (
                   <>
                     <Link to="/ru/blog" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Блог</Link>
@@ -97,7 +96,7 @@ export const Footer = () => {
               <h3 className="text-sm font-semibold text-white tracking-wide uppercase mb-2">
                 {lang === 'RU' ? 'Документы' : 'Legal'}
               </h3>
-              <nav className={footerNavClass}>
+              <nav className="flex flex-col gap-3">
                 {lang === 'RU' ? (
                   <>
                     <Link to="/ru/politika" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300">Политика конфиденциальности</Link>
@@ -122,7 +121,7 @@ export const Footer = () => {
                 {lang === 'RU' ? 'Поддержка' : 'Support'}
               </h3>
               <div className="flex flex-col gap-3">
-                <a href="https://t.me/GoToFlowio" target="_blank" rel="noopener noreferrer" aria-label="GoToFlow Telegram" className="flex min-h-11 items-center gap-2 rounded-md text-zinc-400 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">
+                <a href="https://t.me/GoToFlowio" target="_blank" rel="noopener noreferrer" aria-label="GoToFlow Telegram" className="text-zinc-400 hover:text-white transition-colors duration-300 flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
