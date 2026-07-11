@@ -45,7 +45,7 @@ const setLink = (rel, href, extra = {}) => {
 
 const removeSeoPageHead = () => {
   document
-    .querySelectorAll('[data-seo-page-head="true"], #seo-page-ld-json')
+    .querySelectorAll('[data-seo-page-head="true"], #seo-page-ld-json, link[rel="alternate"][hreflang]')
     .forEach((element) => element.remove());
 };
 

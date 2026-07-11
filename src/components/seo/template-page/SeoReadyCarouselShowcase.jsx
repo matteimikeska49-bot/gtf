@@ -63,7 +63,7 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
                 {/* Hover overlay CTA */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
                   <span className="rounded-full bg-gradient-to-r from-pink-500 to-orange-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg">
-                    Создать такую карусель
+                    Создать карусель в GoToFlow
                   </span>
                 </div>
               </div>

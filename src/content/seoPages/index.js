@@ -1319,7 +1319,7 @@ const rawSeoPages = [
       },
       {
         question: 'Сколько слайдов должна содержать карусель?',
-        answer: 'Оптимально 5-8 слайдов для экспертного контента. Максимум в Instagram — 20 слайдов, но длинные карусели работают только при высокой плотности пользы на каждом слайде.',
+        answer: 'Instagram технически позволяет добавить в карусель до 20 фото или видео. В GoToFlow карусель может содержать до 10 слайдов — для большинства экспертных и продающих публикаций этого достаточно.',
       },
       {
         question: 'Можно ли использовать свою тему и текст?',
@@ -1362,12 +1362,12 @@ const rawSeoPages = [
     relatedBlogSlugs: ['shablony-karuseley-v-instagram', 'kak-sdelat-karusel-dlya-instagram-s-ii', 'razmer-karuseli-v-instagram'],
     breadcrumbs: [
       { label: 'Главная', path: '/ru' },
-      { label: 'Шаблоны', path: '/ru/templates' },
       { label: 'Карусели Instagram', path: '/ru/templates/instagram-carousel' },
     ],
     schemaType: 'WebPage',
     published: true,
     noindex: false,
+    state: 'indexable_approved',
     sitemapEligible: true,
     routeReviewApproved: true,
     approvedByHuman: true,
