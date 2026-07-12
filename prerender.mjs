@@ -36,6 +36,7 @@ const ROUTES = [
   '/ai-carousel-maker',
   '/carousel-maker',
   '/ru/ai-generator-karuselej',
+  '/ru/ii-generator-karuseley',
   '/ai-content-generator',
   '/ru/generator-kontenta',
   '/ru/ii-generator-kontenta',

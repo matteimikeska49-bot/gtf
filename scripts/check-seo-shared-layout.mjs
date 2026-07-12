@@ -2,74 +2,127 @@ import fs from 'fs';
 import path from 'path';
 import { getSeoPagesForPrerender } from '../src/content/seoPages/index.js';
 
-console.log('🔍 Starting Shared Layout Guard...');
-
 const rootDir = process.cwd();
-const distDir = path.join(rootDir, 'dist');
-const srcSeoDir = path.join(rootDir, 'src/components/seo');
-
+const distDir = path.resolve(process.env.SEO_SHARED_LAYOUT_DIST || path.join(rootDir, 'dist'));
 const errors = [];
+const warnings = [];
 
-// 1. Source Contract: Verify forbidden headers are not imported or created
-const forbiddenPatterns = ['SeoHeader', 'SeoFooter', 'TemplateHeader', 'TemplateFooter', 'HeaderV2', 'FooterV2'];
-const walkSync = (dir, filelist = []) => {
-  if (!fs.existsSync(dir)) return filelist;
-  fs.readdirSync(dir).forEach(file => {
-    const dirFile = path.join(dir, file);
-    if (fs.statSync(dirFile).isDirectory()) {
-      filelist = walkSync(dirFile, filelist);
-    } else {
-      filelist.push(dirFile);
-    }
+const forbiddenLayoutNames = [
+  'SeoHeader',
+  'SeoFooter',
+  'TemplateHeader',
+  'TemplateFooter',
+  'HeaderV2',
+  'FooterV2',
+  'LegacyHeader',
+  'LegacyFooter',
+];
+
+const requiredRoutes = [
+  '/',
+  '/ru',
+  '/ru/generator-karuselej-instagram',
+  '/ru/ii-generator-karuseley',
+  '/ru/blog',
+  '/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii',
+  '/ru/templates/instagram-carousel',
+];
+
+const normalizeRoute = (route) => route.replace(/\/+$/, '') || '/';
+const routeToHtmlPath = (route) => (
+  route === '/'
+    ? path.join(distDir, 'index.html')
+    : path.join(distDir, route.replace(/^\//, ''), 'index.html')
+);
+
+const walkFiles = (dir, result = []) => {
+  if (!fs.existsSync(dir)) return result;
+  fs.readdirSync(dir).forEach((entry) => {
+    const filePath = path.join(dir, entry);
+    const stat = fs.statSync(filePath);
+    if (stat.isDirectory()) walkFiles(filePath, result);
+    else if (/\.(js|jsx|ts|tsx)$/.test(entry)) result.push(filePath);
   });
-  return filelist;
+  return result;
 };
 
-const seoComponentFiles = walkSync(srcSeoDir).filter(f => f.endsWith('.jsx') || f.endsWith('.js'));
-for (const file of seoComponentFiles) {
-  const content = fs.readFileSync(file, 'utf-8');
-  for (const forbidden of forbiddenPatterns) {
-    if (content.includes(forbidden)) {
-      errors.push(`[SOURCE P0] Forbidden layout component "${forbidden}" found in ${path.relative(rootDir, file)}`);
-    }
-  }
-}
+const countMatches = (text, pattern) => (text.match(pattern) || []).length;
 
-// 2. Rendered Contract: Verify single header/footer in dist
-if (!fs.existsSync(distDir)) {
-  console.log('⚠️ dist/ directory not found. Skipping rendered layout check. Please run build first.');
-} else {
-  const seoPages = getSeoPagesForPrerender();
-  const routesToCheck = [
-    'ru',
-    'ru/generator-karuselej-instagram',
-    'ru/blog',
-    ...seoPages.map(p => p.path.replace(/^\//, ''))
+const checkSource = () => {
+  const sourceFiles = [
+    ...walkFiles(path.join(rootDir, 'src', 'components', 'seo')),
+    ...walkFiles(path.join(rootDir, 'src', 'content', 'seoPages')),
   ];
 
-  routesToCheck.forEach(route => {
-    const htmlPath = path.join(distDir, route, 'index.html');
-    if (fs.existsSync(htmlPath)) {
-      const html = fs.readFileSync(htmlPath, 'utf-8');
-      
-      const headerCount = (html.match(/<header\b/gi) || []).length;
-      const footerCount = (html.match(/<footer\b/gi) || []).length;
-      
-      if (headerCount !== 1) errors.push(`[RENDER P0] [${route}] Expected exactly 1 <header>, found ${headerCount}`);
-      if (footerCount !== 1) errors.push(`[RENDER P0] [${route}] Expected exactly 1 <footer>, found ${footerCount}`);
-
-      // Basic semantic check for shared elements
-      if (!html.includes('GoToFlow')) {
-          errors.push(`[RENDER P0] [${route}] Does not appear to contain GoToFlow brand terms, indicating broken layout.`);
+  sourceFiles.forEach((filePath) => {
+    const relativePath = path.relative(rootDir, filePath);
+    const source = fs.readFileSync(filePath, 'utf8');
+    forbiddenLayoutNames.forEach((name) => {
+      if (source.includes(name)) {
+        errors.push(`${relativePath}: forbidden route-specific layout token found: ${name}`);
       }
-    }
+    });
   });
-}
+};
+
+const checkRenderedRoute = (route) => {
+  const normalizedRoute = normalizeRoute(route);
+  const htmlPath = routeToHtmlPath(normalizedRoute);
+  if (!fs.existsSync(htmlPath)) {
+    errors.push(`${normalizedRoute}: physical HTML is missing at ${path.relative(rootDir, htmlPath)}.`);
+    return;
+  }
+
+  const html = fs.readFileSync(htmlPath, 'utf8');
+  const headerCount = countMatches(html, /<header\b/gi);
+  const footerCount = countMatches(html, /<footer\b/gi);
+  const headerIndex = html.search(/<header\b/i);
+  const footerIndex = html.search(/<footer\b/i);
+  const mainIndex = html.search(/<main\b/i);
+  const h1Index = html.search(/<h1\b/i);
+
+  if (headerCount !== 1) errors.push(`${normalizedRoute}: expected exactly one <header>, found ${headerCount}.`);
+  if (footerCount !== 1) errors.push(`${normalizedRoute}: expected exactly one <footer>, found ${footerCount}.`);
+
+  forbiddenLayoutNames.forEach((name) => {
+    if (html.includes(name)) errors.push(`${normalizedRoute}: rendered HTML contains forbidden layout marker ${name}.`);
+  });
+
+  if (headerIndex < 0 || footerIndex < 0) return;
+  if (mainIndex >= 0 && headerIndex > mainIndex) {
+    errors.push(`${normalizedRoute}: shared header appears after page content.`);
+  }
+  if (mainIndex >= 0 && footerIndex < mainIndex) {
+    errors.push(`${normalizedRoute}: shared footer appears before page content.`);
+  }
+  if (h1Index >= 0 && headerIndex > h1Index) {
+    errors.push(`${normalizedRoute}: shared header appears after primary page content.`);
+  }
+  if (h1Index >= 0 && footerIndex < h1Index) {
+    errors.push(`${normalizedRoute}: shared footer appears before primary page content.`);
+  }
+  if (!/GoToFlow/.test(html)) warnings.push(`${normalizedRoute}: GoToFlow brand text not found in rendered HTML.`);
+};
+
+console.log('SEO shared layout guard');
+console.log(`- dist: ${distDir}`);
+
+checkSource();
+
+const routes = [...new Set([
+  ...requiredRoutes.map(normalizeRoute),
+  ...getSeoPagesForPrerender().map((page) => normalizeRoute(page.path)),
+])];
+
+routes.forEach(checkRenderedRoute);
+
+warnings.forEach((warning) => console.warn(`WARNING: ${warning}`));
 
 if (errors.length > 0) {
-  console.error('\n❌ FAIL: Shared Layout Check failed:');
-  errors.forEach(e => console.error(`  - ${e}`));
+  console.error('\nSEO shared layout guard failed:');
+  errors.forEach((error) => console.error(`- ${error}`));
   process.exit(1);
 }
 
-console.log('✅ PASS: Shared Layout Check passed.');
+console.log(`- routes checked: ${routes.join(', ')}`);
+console.log('SEO shared layout guard passed.');

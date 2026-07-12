@@ -24,6 +24,130 @@ const normalizeRoute = (route) => (
     .replace(/^$/, '/')
 );
 
+const normalizeText = (text = '') => text
+  .toLowerCase()
+  .replace(/https?:\/\/\S+/g, ' ')
+  .replace(/[^\p{L}\p{N}\s]+/gu, ' ')
+  .replace(/\s+/g, ' ')
+  .trim();
+
+const tokenSet = (text = '') => new Set(
+  normalizeText(text)
+    .split(' ')
+    .filter((token) => token.length > 3)
+);
+
+const jaccard = (leftText = '', rightText = '') => {
+  const left = tokenSet(leftText);
+  const right = tokenSet(rightText);
+  if (left.size === 0 || right.size === 0) return 0;
+  const intersection = [...left].filter((token) => right.has(token)).length;
+  const union = new Set([...left, ...right]).size;
+  return Number((intersection / union).toFixed(3));
+};
+
+const sharedFaqScore = (leftFaq = [], rightFaq = []) => {
+  const left = new Set(leftFaq.map((item) => normalizeText(item.question || item.q || '')).filter(Boolean));
+  const right = new Set(rightFaq.map((item) => normalizeText(item.question || item.q || '')).filter(Boolean));
+  if (left.size === 0 || right.size === 0) return { score: 0, shared: 0 };
+  const shared = [...left].filter((question) => right.has(question)).length;
+  return {
+    score: Number((shared / Math.min(left.size, right.size)).toFixed(3)),
+    shared,
+  };
+};
+
+const pageLeadText = (page) => [
+  page.heroSubtitle,
+  page.quickAnswer?.answer,
+  page.productBridge,
+].filter(Boolean).join(' ');
+
+const pageH2Text = (page) => [
+  ...(page.sections || []).map((section) => section.title),
+  ...(page.templateCategories || []).map((section) => section.title),
+  ...(page.howItWorks || []).map((section) => section.title),
+].filter(Boolean).join(' ');
+
+const productionIntentPages = (pages) => pages.filter((page) => (
+  page.state === 'indexable_approved' ||
+  (page.published === true && page.noindex !== true && page.sitemapEligible === true)
+));
+
+export const validateSeoIntentRecords = (pages, { blogRoutes = [] } = {}) => {
+  const errors = [];
+  const warnings = [];
+  const intentOwners = new Map();
+  const titles = new Map();
+  const h1s = new Map();
+  const canonicals = new Map();
+  const productionPages = productionIntentPages(pages);
+
+  for (const page of productionPages) {
+    const intentOwner = normalizeText(page.intentOwner || page.primaryIntent || page.searchIntent || page.primaryKeyword || '');
+    const title = normalizeText(page.title || '');
+    const h1 = normalizeText(page.h1 || '');
+    const canonical = page.canonicalOwner || page.path;
+
+    if (intentOwner) {
+      if (intentOwners.has(intentOwner)) {
+        errors.push(`[Cannibalization P0] Duplicate primary intent owner "${page.intentOwner || page.primaryIntent}" for ${page.path} and ${intentOwners.get(intentOwner)}.`);
+      }
+      intentOwners.set(intentOwner, page.path);
+    }
+
+    if (title) {
+      if (titles.has(title)) errors.push(`[Cannibalization P0] Duplicate title for ${page.path} and ${titles.get(title)}: "${page.title}".`);
+      titles.set(title, page.path);
+    }
+
+    if (h1) {
+      if (h1s.has(h1)) errors.push(`[Cannibalization P0] Duplicate H1 for ${page.path} and ${h1s.get(h1)}: "${page.h1}".`);
+      h1s.set(h1, page.path);
+    }
+
+    if (canonical) {
+      if (canonicals.has(canonical)) errors.push(`[Cannibalization P0] Duplicate canonical owner ${canonical} for ${page.path} and ${canonicals.get(canonical)}.`);
+      canonicals.set(canonical, page.path);
+    }
+
+    for (const blog of blogRoutes) {
+      const blogTitle = normalizeText(blog.title || '');
+      if (title && blogTitle && title === blogTitle) {
+        errors.push(`[Cannibalization P0] Duplicate title across systems: ${page.path} matches blog ${blog.path} ("${page.title}").`);
+      }
+    }
+  }
+
+  for (let i = 0; i < productionPages.length; i += 1) {
+    for (let j = i + 1; j < productionPages.length; j += 1) {
+      const left = productionPages[i];
+      const right = productionPages[j];
+      const leadScore = jaccard(pageLeadText(left), pageLeadText(right));
+      const h2Score = jaccard(pageH2Text(left), pageH2Text(right));
+      const faq = sharedFaqScore(left.faq, right.faq);
+
+      if (leadScore >= 0.94) {
+        errors.push(`[Cannibalization P0] Near-identical lead copy: ${left.path} vs ${right.path}, score ${leadScore}.`);
+      } else if (leadScore >= 0.82) {
+        warnings.push(`[Cannibalization warning] Similar lead copy: ${left.path} vs ${right.path}, score ${leadScore}.`);
+      }
+
+      if (h2Score >= 0.92) {
+        warnings.push(`[Cannibalization warning] Highly similar major H2 set: ${left.path} vs ${right.path}, score ${h2Score}.`);
+      }
+
+      if (faq.shared >= 5 && faq.score >= 0.85) {
+        errors.push(`[Cannibalization P0] FAQ set is too similar: ${left.path} vs ${right.path}, score ${faq.score}, shared ${faq.shared}.`);
+      } else if (faq.shared >= 4 && faq.score >= 0.65) {
+        warnings.push(`[Cannibalization warning] FAQ overlap should be reviewed: ${left.path} vs ${right.path}, score ${faq.score}, shared ${faq.shared}.`);
+      }
+    }
+  }
+
+  return { errors, warnings };
+};
+
 const extractAppRoutes = async () => {
   const source = await readUtf8('src/App.jsx');
   const routes = [];
@@ -227,37 +351,11 @@ const validateRouteOwnership = (inventory) => {
     }
   }
 
-  // Cannibalization extended checks
-  const seoTitles = new Map();
-  const seoH1s = new Map();
-  const seoCanonicals = new Map();
-  
-  for (const page of pages) {
-    if (page.state !== 'indexable_approved') continue;
-    
-    const title = page.meta?.title;
-    if (title) {
-      if (seoTitles.has(title)) errors.push(`[Cannibalization P0] Duplicate Title: ${title} in ${page.path} and ${seoTitles.get(title)}`);
-      seoTitles.set(title, page.path);
-    }
-    
-    const h1 = page.hero?.title?.text;
-    if (h1) {
-      if (seoH1s.has(h1)) errors.push(`[Cannibalization P0] Duplicate H1: ${h1} in ${page.path} and ${seoH1s.get(h1)}`);
-      seoH1s.set(h1, page.path);
-    }
-    
-    const canonical = page.meta?.canonicalUrl || `https://gotoflow.io${page.path}`;
-    if (seoCanonicals.has(canonical)) errors.push(`[Cannibalization P0] Duplicate Canonical: ${canonical} in ${page.path} and ${seoCanonicals.get(canonical)}`);
-    seoCanonicals.set(canonical, page.path);
-    
-    // Cross-system checks vs blog
-    for (const blog of inventory.blogRoutes) {
-      if (title && blog.title && title.toLowerCase() === blog.title.toLowerCase()) {
-         errors.push(`[Cannibalization P0] Duplicate Title across systems: ${page.path} matches blog ${blog.path} ("${title}")`);
-      }
-    }
-  }
+  const cannibalizationValidation = validateSeoIntentRecords(pages, {
+    blogRoutes: inventory.blogRoutes,
+  });
+  errors.push(...cannibalizationValidation.errors);
+  warnings.push(...cannibalizationValidation.warnings);
 
   return { errors, warnings };
 };
@@ -293,7 +391,9 @@ const main = async () => {
   console.log('\nSEO route/intent ownership guardrail passed.');
 };
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}

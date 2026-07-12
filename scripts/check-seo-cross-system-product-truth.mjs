@@ -1,75 +1,110 @@
 import fs from 'fs';
 import path from 'path';
 
-console.log('🔍 Starting Cross-system Product Truth Check...');
-
 const rootDir = process.cwd();
 const blogDir = path.join(rootDir, 'src/content/blog/articles');
 
-// True boundaries for current product
-const PRODUCT_TRUTH = {
-  maxInstagramSlides: 10,
-  maxSupportedFormat: 'PDF',
-  aiAvailable: true,
-  animatedAvailable: true,
-  seamlessAvailable: true
+export const PRODUCT_TRUTH = {
+  maxGoToFlowSlides: 10,
+  instagramTechnicalLimit: 20,
+  recommendedSlides: '5-10',
+  aiCarouselAvailable: true,
+  templateCarouselAvailable: true,
+  animatedCarouselAvailable: true,
+  seamlessCarouselAvailable: true,
+  supportedInputs: ['topic', 'text', 'link', 'video', 'pdf', 'voice'],
+  supportedControls: ['ai-style', 'custom prompt', 'template', 'background', 'character', 'cta'],
+  supportedFormats: ['4:5', '1:1', '9:16'],
 };
 
 const rules = [
   {
-    key: 'instagram_limit',
-    // Flags things like "GoToFlow позволяет до 20", but allows "В инстаграм можно до 20"
-    // This regex is a simple heuristic: if "20" is near "фото", "слайдов", etc. without "Instagram" context or explicitly with "GoToFlow".
-    // For read-only script, we catch any mention of 20 photos as a warning to be manually checked if it implies GoToFlow can do 20.
-    pattern: /до\s+20\s+(?:слайд|фото|картин|изображ)/i,
-    severity: 'warning',
-    expected: `Instagram limit is 20, GoToFlow limit is ${PRODUCT_TRUTH.maxInstagramSlides}`
+    key: 'roadmap_available_feature',
+    severity: 'blocking',
+    expected: 'AI, template, animated, and seamless carousel features are available; do not describe them as roadmap/coming soon.',
+    pattern: /(?:(?:в разработке|coming soon|скоро появится|планируется|roadmap)[^.?!\n]*(?:ai|ии|анимац|animated|бесшовн|seamless|шаблон)|(?:ai|ии|анимац|animated|бесшовн|seamless|шаблон)[^.?!\n]*(?:в разработке|coming soon|скоро появится|планируется|roadmap))/i,
   },
   {
-    key: 'roadmap_claims',
-    pattern: /(?:в разработке|coming soon|скоро появится)[^.]*(?:ai|ии|анимац|бесшовн|seamless|animated)/i,
+    key: 'gotoflow_20_slide_limit',
     severity: 'blocking',
-    expected: 'Features are now available, remove roadmap language'
-  }
+    expected: 'Instagram technically allows up to 20 media items, but GoToFlow creates up to 10 slides and most carousels should use 5-10.',
+    pattern: /gotoflow[^.?!\n]{0,80}(?:до|up to)\s+20\s+(?:слайд|slide|фото|photo|изображ|картин)/i,
+  },
+  {
+    key: 'unsupported_format_claim',
+    severity: 'blocking',
+    expected: 'Only 4:5, 1:1, and 9:16 are confirmed supported output formats.',
+    pattern: /(?:поддерживает|supports)[^.?!\n]*(?:16:9|3:2|2:3|21:9)/i,
+  },
+  {
+    key: 'instagram_20_context_review',
+    severity: 'warning',
+    expected: 'Mentions of 20 media items must clearly belong to Instagram, not GoToFlow.',
+    pattern: /(?:инструмент|генератор|сервис|tool|generator)[^.?!\n]{0,80}(?:до|up to)\s+20\s+(?:слайд|slide|фото|photo|изображ|картин)/i,
+    ignoreWhen: (line) => /instagram|инстаграм|инстаграме/i.test(line) && !/gotoflow/i.test(line),
+  },
 ];
 
-let warningsCount = 0;
-let errorsCount = 0;
-
-if (fs.existsSync(blogDir)) {
-  const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.md'));
-  
-  files.forEach(file => {
-    // Exceptions for specific articles that properly explain the 20 slide limit vs GoToFlow limit.
-    if (file === 'razmer-karuseli-v-instagram.md' || file === 'shablony-karuseley-v-instagram.md') return;
-
-    const content = fs.readFileSync(path.join(blogDir, file), 'utf-8');
-    const lines = content.split('\n');
-
-    lines.forEach((line, idx) => {
-      rules.forEach(rule => {
-        if (rule.pattern.test(line)) {
-          const msg = `[${rule.severity.toUpperCase()}] ${file}:${idx + 1}\n  Match: "${line.trim().substring(0, 80)}..."\n  Expected: ${rule.expected}`;
-          if (rule.severity === 'blocking') {
-            console.error(`❌ ${msg}`);
-            errorsCount++;
-          } else {
-            console.warn(`⚠️  ${msg}`);
-            warningsCount++;
-          }
-        }
-      });
+export const scanProductTruthText = (text, filePath = '(fixture)') => {
+  const findings = [];
+  text.split('\n').forEach((line, index) => {
+    rules.forEach((rule) => {
+      if (rule.pattern.test(line) && !(rule.ignoreWhen?.(line))) {
+        findings.push({
+          path: filePath,
+          line: index + 1,
+          text: line.trim(),
+          claimKey: rule.key,
+          expected: rule.expected,
+          severity: rule.severity,
+        });
+      }
     });
   });
-}
+  return findings;
+};
 
-if (errorsCount > 0) {
-  console.error(`\n❌ FAIL: Found ${errorsCount} blocking product truth contradictions.`);
-  process.exit(1);
-}
+export const scanProductTruthRepository = (directory = blogDir) => {
+  if (!fs.existsSync(directory)) return [];
+  return fs.readdirSync(directory)
+    .filter((file) => file.endsWith('.md'))
+    .flatMap((file) => {
+      const filePath = path.join(directory, file);
+      return scanProductTruthText(fs.readFileSync(filePath, 'utf8'), path.relative(rootDir, filePath));
+    });
+};
 
-if (warningsCount > 0) {
-  console.log(`\n✅ PASS (with warnings): Found ${warningsCount} potential product truth warnings.`);
-} else {
-  console.log('\n✅ PASS: Cross-system product truth check passed.');
+const runCli = () => {
+  console.log('SEO cross-system product truth check');
+  const findings = scanProductTruthRepository();
+  const blocking = findings.filter((finding) => finding.severity === 'blocking');
+  const warnings = findings.filter((finding) => finding.severity === 'warning');
+
+  findings.forEach((finding) => {
+    const prefix = finding.severity === 'blocking' ? 'ERROR' : 'WARNING';
+    const stream = finding.severity === 'blocking' ? console.error : console.warn;
+    stream(`${prefix}: ${finding.path}:${finding.line}`);
+    stream(`  text: ${finding.text}`);
+    stream(`  claimKey: ${finding.claimKey}`);
+    stream(`  expected: ${finding.expected}`);
+    stream(`  severity: ${finding.severity}`);
+  });
+
+  console.log(`- blocking contradictions: ${blocking.length}`);
+  console.log(`- warnings: ${warnings.length}`);
+
+  if (blocking.length > 0) {
+    console.error('\nSEO cross-system product truth check failed.');
+    process.exit(1);
+  }
+
+  if (warnings.length > 0) {
+    console.log('SEO cross-system product truth check passed with review warnings.');
+  } else {
+    console.log('SEO cross-system product truth check passed.');
+  }
+};
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  runCli();
 }
