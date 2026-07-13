@@ -51,7 +51,7 @@ The complete current file map is maintained in:
 
 Current engine groups:
 
-- Core files: `src/content/seoPages/README.md`, `index.js`, `registry.js`, `schema.js`, `states.js`, `templateVariants.js`, `workflowPresets.js`, `protectedRoutes.js`, `pages/ru/README.md`, and helpers under `src/content/seoPages/helpers/`.
+- Core files: `src/content/seoPages/README.md`, `index.js`, `registry.js`, `schema.js`, `states.js`, `templateVariants.js`, `workflowPresets.js`, `protectedRoutes.js`, `pages/ru/README.md`, planning manifests under `src/content/seoPages/planning/`, and helpers under `src/content/seoPages/helpers/`.
 - Component files: all files under `src/components/seo/`.
 - Checker files: all `scripts/check-seo-*.mjs`.
 - Documentation files: `docs/seo-pages-engine/README.md` and existing SEO Pages Engine reports under `docs/`.
