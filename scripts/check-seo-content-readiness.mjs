@@ -12,6 +12,13 @@ import {
   getSeoPageProductionReadinessErrors,
 } from '../src/content/seoPages/helpers/contentReadiness.js';
 import { getTemplateSectionOrder } from '../src/content/seoPages/templateVariants.js';
+import {
+  EXACT_SEO_PAGE_BLUEPRINT,
+  EXACT_SEO_PAGE_BLUEPRINT_ID,
+  SEO_HANDOFF_STATUSES,
+  validateSeoBlueprintCatalog,
+  validateSeoPageHandoff,
+} from '../src/content/seoPages/blueprints/exactSeoPageBlueprint.js';
 
 const errors = [];
 const publicBlogSlugs = new Set(['supporting-blog']);
@@ -43,6 +50,15 @@ const buildContext = (pages) => ({
   ),
   productToolPathExists: (routePath) => protectedPaths.has(routePath),
 });
+
+const blueprintContext = {
+  componentPathExists: (filePath) => existsSync(path.join(process.cwd(), filePath)),
+  assetExists: (assetPath) => (
+    typeof assetPath === 'string' &&
+    assetPath.startsWith('/') &&
+    existsSync(path.join(process.cwd(), 'public', assetPath.replace(/^\//u, '')))
+  ),
+};
 
 const variantToPageType = {
   commercial_tool: 'commercial',
@@ -382,6 +398,168 @@ const expectFail = (name, pages, contextPages = pages) => {
 };
 
 const clone = (value) => JSON.parse(JSON.stringify(value));
+
+const blueprintCatalogErrors = validateSeoBlueprintCatalog(blueprintContext);
+if (blueprintCatalogErrors.length) {
+  errors.push(`SEO blueprint catalog failed:\n${blueprintCatalogErrors.join('\n')}`);
+}
+
+let blueprintFixturesTested = 0;
+let blueprintFixturesPassed = 0;
+
+const blueprintRequiredSections = () => EXACT_SEO_PAGE_BLUEPRINT.sections
+  .filter((sectionItem) => EXACT_SEO_PAGE_BLUEPRINT.requiredSections.includes(sectionItem.id));
+
+const approvedCopyForSlot = (sectionItem, slotName) => (
+  `Owner reviewed GoToFlow copy with concrete audience, task, result, and action detail.`
+);
+
+const approvedVisualForSlot = (sectionItem, slotName) => ({
+  type: slotName,
+  assetPath: (sectionItem.assetRequirements || [])[0] || `component:${sectionItem.componentName}.${slotName}`,
+  caption: `Owner reviewed GoToFlow visual proof.`,
+  alt: `Owner reviewed GoToFlow visual proof.`,
+});
+
+const buildBlueprintHandoffSection = (sectionItem) => ({
+  id: sectionItem.id,
+  order: sectionItem.order,
+  purpose: sectionItem.purpose,
+  componentName: sectionItem.componentName,
+  componentPath: sectionItem.componentPath,
+  benchmarkRoute: sectionItem.benchmarkRoute,
+  copySlots: Object.fromEntries((sectionItem.copySlots || []).map((slotName) => [
+    slotName,
+    approvedCopyForSlot(sectionItem, slotName),
+  ])),
+  visualSlots: Object.fromEntries((sectionItem.visualSlots || []).map((slotName) => [
+    slotName,
+    approvedVisualForSlot(sectionItem, slotName),
+  ])),
+  requiredProps: sectionItem.acceptedProps,
+  ProductTruthClaims: ['GoToFlow helps prepare content that the owner reviews before release.'],
+  ownerApprovalStatus: 'approved_for_technical_integration',
+});
+
+const makeBlueprintHandoffFixture = (overrides = {}) => ({
+  id: 'fixture-exact-blueprint-handoff',
+  route: '/ru/templates/fixture-exact-blueprint',
+  blueprintId: EXACT_SEO_PAGE_BLUEPRINT_ID,
+  benchmarkRoute: EXACT_SEO_PAGE_BLUEPRINT.benchmarkRoute,
+  ownerApprovalStatus: 'approved_for_technical_integration',
+  codexStageRequested: true,
+  releaseRequested: false,
+  roleContract: {
+    gemini: 'content_design_draft',
+    codex: 'technical_review_after_owner_approval',
+    humanOwner: SEO_HANDOFF_STATUSES,
+  },
+  sections: blueprintRequiredSections().map(buildBlueprintHandoffSection),
+  ...overrides,
+});
+
+const expectBlueprintHandoffPass = (name, handoff) => {
+  blueprintFixturesTested += 1;
+  const result = validateSeoPageHandoff(handoff, blueprintContext);
+  if (result.length) {
+    errors.push(`${name} should pass but failed:\n${result.join('\n')}`);
+    return;
+  }
+  blueprintFixturesPassed += 1;
+};
+
+const expectBlueprintHandoffFail = (name, handoff) => {
+  blueprintFixturesTested += 1;
+  const result = validateSeoPageHandoff(handoff, blueprintContext);
+  if (!result.length) {
+    errors.push(`${name} should fail but passed.`);
+    return;
+  }
+  blueprintFixturesPassed += 1;
+};
+
+const mutateBlueprintHandoffSection = (handoff, sectionId, mutate) => {
+  const sectionItem = handoff.sections.find((entry) => entry.id === sectionId);
+  if (!sectionItem) throw new Error(`Missing blueprint fixture section ${sectionId}`);
+  mutate(sectionItem);
+  return handoff;
+};
+
+expectBlueprintHandoffPass('positive exact blueprint handoff', makeBlueprintHandoffFixture());
+
+[
+  ['forbidden USE_CASE_PAGE visible token', 'USE_CASE_PAGE'],
+  ['forbidden COMMERCIAL_TOOL visible token', 'COMMERCIAL_TOOL'],
+  ['forbidden SECTION visible token', 'SECTION'],
+  ['forbidden readyCarouselShowcase visible token', 'readyCarouselShowcase'],
+].forEach(([name, token]) => {
+  const handoff = makeBlueprintHandoffFixture();
+  mutateBlueprintHandoffSection(handoff, 'hero', (sectionItem) => {
+    sectionItem.copySlots.eyebrow = `Owner reviewed copy must not expose ${token}`;
+  });
+  expectBlueprintHandoffFail(name, handoff);
+});
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  mutateBlueprintHandoffSection(handoff, 'hero', (sectionItem) => {
+    sectionItem.componentPath = 'src/components/seo/template-page/MissingHero.jsx';
+  });
+  expectBlueprintHandoffFail('blueprint handoff with nonexistent componentPath', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  mutateBlueprintHandoffSection(handoff, 'hero', (sectionItem) => {
+    delete sectionItem.visualSlots.heroCarouselImages;
+  });
+  expectBlueprintHandoffFail('blueprint handoff with required visual absent', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  mutateBlueprintHandoffSection(handoff, 'productWorkflow', (sectionItem) => {
+    sectionItem.visualSlots.mockups = {
+      type: 'mockups',
+      assetPath: 'mockup: not_available',
+      caption: 'Owner reviewed workflow visual.',
+    };
+  });
+  expectBlueprintHandoffFail('blueprint handoff with mockup not_available', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  mutateBlueprintHandoffSection(handoff, 'quickAnswer', (sectionItem) => {
+    sectionItem.copySlots.body = 'placeholder';
+  });
+  expectBlueprintHandoffFail('blueprint handoff with placeholder copy', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  mutateBlueprintHandoffSection(handoff, 'readyCarouselShowcase', (sectionItem) => {
+    sectionItem.copySlots['item.title'] = '';
+    sectionItem.visualSlots['items.image'] = [];
+  });
+  expectBlueprintHandoffFail('blueprint handoff with empty showcase', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture({
+    ownerApprovalStatus: 'human_review',
+    codexStageRequested: true,
+  });
+  expectBlueprintHandoffFail('Codex integration without owner approval', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture({
+    ownerApprovalStatus: 'technical_review',
+    releaseRequested: true,
+  });
+  expectBlueprintHandoffFail('release without final owner approval', handoff);
+}
 
 const completeFixtures = Object.keys(variantToPageType).map((variant) => makeCompletePage(variant, variant));
 completeFixtures.forEach((page) => expectPass(`complete fixture ${page.templateVariant}`, [page]));
@@ -778,6 +956,8 @@ console.log(`- registry records checked: ${summary.pagesChecked}`);
 console.log(`- production records checked: ${summary.productionPagesChecked}`);
 console.log(`- failing fixtures tested: ${failingFixturesTested}`);
 console.log(`- passing variant fixtures tested: ${completeFixtures.length}`);
+console.log(`- blueprint handoff fixtures tested: ${blueprintFixturesTested}`);
+console.log(`- blueprint handoff fixtures passed: ${blueprintFixturesPassed}`);
 
 if (registryErrors.length > 0) {
   errors.push(`Registry content readiness failed:\n${registryErrors.join('\n')}`);

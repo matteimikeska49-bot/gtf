@@ -51,7 +51,7 @@ The complete current file map is maintained in:
 
 Current engine groups:
 
-- Core files: `src/content/seoPages/README.md`, `index.js`, `registry.js`, `schema.js`, `states.js`, `templateVariants.js`, `workflowPresets.js`, `protectedRoutes.js`, `pages/ru/README.md`, planning manifests under `src/content/seoPages/planning/`, and helpers under `src/content/seoPages/helpers/`.
+- Core files: `src/content/seoPages/README.md`, `index.js`, `registry.js`, `schema.js`, `states.js`, `templateVariants.js`, `workflowPresets.js`, `protectedRoutes.js`, `pages/ru/README.md`, planning manifests under `src/content/seoPages/planning/`, exact reusable blueprints under `src/content/seoPages/blueprints/`, and helpers under `src/content/seoPages/helpers/`.
 - Component files: all files under `src/components/seo/`.
 - Checker files: all `scripts/check-seo-*.mjs`.
 - Documentation files: `docs/seo-pages-engine/README.md` and existing SEO Pages Engine reports under `docs/`.
@@ -149,6 +149,67 @@ Implemented rule sources:
 - Validation enforces the presence of all required sections and silently ignores omitted optional sections without failing readiness.
 - No one-off custom layouts.
 - No blog/article layout for commercial SEO pages.
+
+## Exact SEO Page Blueprint and Handoff Gates
+
+Canonical reusable blueprint:
+
+- `src/content/seoPages/blueprints/exactSeoPageBlueprint.js`
+
+The first approved blueprint is based on the existing `/ru/templates/instagram-carousel` implementation. It records the real section order, component names, component paths, accepted data props, required copy slots, required visual slots, existing asset paths, protected reference routes, and handoff validation rules.
+
+This blueprint is a production handoff contract. It is not a new runtime renderer, not a new template variant, not a page record, not a sitemap source, and not permission to create batch pages.
+
+Gemini responsibilities:
+
+- Choose the approved blueprint.
+- Fill complete human-readable copy for every required copy slot.
+- Select real local visual assets or approved component visual references for every required visual slot.
+- Draft metadata, FAQ, CTA, related links, Product Truth claims, and localhost review notes.
+- Fix owner feedback before Codex integration.
+
+Gemini is forbidden to:
+
+- Invent new variants, renderers, routes, sitemap entries, or release approvals.
+- Expose registry keys, section IDs, lifecycle states, implementation labels, placeholders, or `mockup: not_available` in visible copy.
+- Substitute generic cards for mapped components.
+
+Codex responsibilities:
+
+- Verify blueprint ID, component paths, props, assets, route ownership, intent ownership, schema, accessibility, Product Truth, build, prerender, sitemap eligibility, committed dist, and local commit readiness.
+- Wire only owner-approved content into existing registry/runtime systems.
+- Keep the existing Header/Footer and protected product/tool routes intact.
+
+Codex is forbidden to:
+
+- Rewrite approved copy, change approved section order, replace approved components, insert placeholder visuals, create generic renderers, or push/release without final owner approval.
+
+Human owner approval states:
+
+- `content_design_draft`
+- `human_review`
+- `approved_for_technical_integration`
+- `technical_review`
+- `approved_for_release`
+
+Gates:
+
+- Gemini work may remain in `content_design_draft` or `human_review`.
+- Codex integration is blocked until `approved_for_technical_integration`.
+- Technical validation may move through `technical_review`.
+- Push, sitemap release, and public release are blocked until `approved_for_release`.
+
+Forbidden visible strings and patterns include:
+
+- `USE_CASE_PAGE`
+- `COMMERCIAL_TOOL`
+- `SECTION`
+- raw section IDs such as `readyCarouselShowcase` and `productWorkflow`
+- raw variant keys such as `template_page`, `commercial_tool`, and `use_case_page`
+- lifecycle states such as `planning_only`, `quarantined_review`, `noindex_review`, and `indexable_approved`
+- placeholders such as `TODO`, `TBD`, `placeholder`, `not_available`, and `mockup: not_available`
+
+The readiness checker imports the blueprint and proves both a valid handoff fixture and failing handoff fixtures. Future blueprint changes must update the checker fixtures in the same commit.
 
 ## CTA Contract
 
