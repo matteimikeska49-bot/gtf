@@ -7,16 +7,31 @@ import {
 
 export const SEO_PRODUCTION_STAGES = [
   'gemini_content_design',
-  'codex_technical_integration',
+  'codex_draft_preview_integration',
+  'human_visual_review',
+  'codex_production_integration',
   'human_release_review',
 ];
 
+export const SEO_STAGE_ALIASES = {
+  codex_technical_integration: 'codex_production_integration',
+};
+
 export const SEO_STAGE_APPROVALS = {
-  codexTechnicalIntegration: {
-    approvedForTechnicalIntegration: true,
+  codexDraftPreviewIntegration: {
+    handoffComplete: true,
+  },
+  humanVisualReview: {
     ownerVisualApprovalReceived: true,
+    approvedForProductionIntegration: true,
+  },
+  codexProductionIntegration: {
+    handoffComplete: true,
+    ownerVisualApprovalReceived: true,
+    approvedForProductionIntegration: true,
   },
   humanReleaseReview: {
+    productionIntegrationCompleted: true,
     approvedForRelease: true,
   },
 };
@@ -51,16 +66,42 @@ export const GEMINI_FORBIDDEN_RUNTIME_PATHS = [
   'scripts/**/*.mjs',
 ];
 
-export const CODEX_ALLOWED_PATHS_AFTER_APPROVAL = [
+export const CODEX_DRAFT_PREVIEW_ALLOWED_PATHS = [
   'src/App.jsx',
-  'src/content/seoPages/**/*.js',
+  'src/content/seoPages/index.js',
+  'src/content/seoPages/pages/**/*.js',
+  'src/content/seoPages/handoffs/**/*.js',
+  'public/images/seo-handoffs/**/*',
+];
+
+export const CODEX_DRAFT_PREVIEW_FORBIDDEN_PATHS = [
+  'src/content/seoPages/blueprints/**/*.js',
+  'src/content/seoPages/templateVariants.js',
+  'src/content/seoPages/**/templateVariants.js',
+  'src/content/seoPages/productTruthRegistry.js',
+  'src/content/seoPages/helpers/**/*.js',
+  'src/content/seoPages/states.js',
+  'src/content/seoPages/schema.js',
+  'src/content/seoPages/releaseContracts.js',
+  'src/components/**/*.jsx',
+  'src/components/**/*.js',
+  'prerender.mjs',
+  'public/sitemap.xml',
+  'dist/**',
+  'package.json',
+  'scripts/**/*.mjs',
+];
+
+export const CODEX_PRODUCTION_ALLOWED_PATHS = [
+  'src/App.jsx',
+  'src/content/seoPages/index.js',
+  'src/content/seoPages/pages/**/*.js',
+  'src/content/seoPages/handoffs/**/*.js',
   'src/components/seo/**/*.jsx',
   'src/components/RouteSchemaInjector.jsx',
   'src/utils/schemaGenerator.js',
   'prerender.mjs',
-  'package.json',
-  'scripts/check-seo-*.mjs',
-  'public/images/seo-workflow/**/*',
+  'public/images/seo-handoffs/**/*',
   'dist/**',
 ];
 
@@ -78,14 +119,40 @@ export const SEO_STAGE_CONTRACT = {
     requiresTechnicalApproval: false,
     requiresReleaseApproval: false,
   },
-  codex_technical_integration: {
-    purpose: 'Technical integration of an owner-approved complete handoff.',
-    allowedPaths: CODEX_ALLOWED_PATHS_AFTER_APPROVAL,
+  codex_draft_preview_integration: {
+    purpose: 'Noindex localhost draft preview from a complete Gemini handoff. No production release work.',
+    allowedPaths: CODEX_DRAFT_PREVIEW_ALLOWED_PATHS,
+    forbiddenPaths: CODEX_DRAFT_PREVIEW_FORBIDDEN_PATHS,
+    mayEditRuntime: true,
+    routeMayExistInRuntime: true,
+    sitemapMayIncludeRoute: false,
+    physicalHtmlMayExist: false,
+    requiresCompleteHandoff: true,
+    requiresOwnerVisualApproval: false,
+    requiresProductionApproval: false,
+    requiresProductionIntegrationCompleted: false,
+    requiresReleaseApproval: false,
+  },
+  human_visual_review: {
+    purpose: 'Owner visual/content/product review of the noindex localhost draft.',
+    allowedPaths: [],
+    forbiddenPaths: [],
+    mayEditRuntime: false,
+    requiresCompleteHandoff: true,
+    requiresOwnerVisualApproval: false,
+    requiresProductionApproval: false,
+    requiresProductionIntegrationCompleted: false,
+    requiresReleaseApproval: false,
+  },
+  codex_production_integration: {
+    purpose: 'Production integration of an owner-approved complete handoff after visual review.',
+    allowedPaths: CODEX_PRODUCTION_ALLOWED_PATHS,
     forbiddenPaths: [],
     mayEditRuntime: true,
     requiresCompleteHandoff: true,
     requiresOwnerVisualApproval: true,
-    requiresTechnicalApproval: true,
+    requiresProductionApproval: true,
+    requiresProductionIntegrationCompleted: false,
     requiresReleaseApproval: false,
   },
   human_release_review: {
@@ -95,7 +162,8 @@ export const SEO_STAGE_CONTRACT = {
     mayEditRuntime: false,
     requiresCompleteHandoff: true,
     requiresOwnerVisualApproval: true,
-    requiresTechnicalApproval: true,
+    requiresProductionApproval: true,
+    requiresProductionIntegrationCompleted: true,
     requiresReleaseApproval: true,
   },
 };
@@ -130,26 +198,33 @@ export const pathMatchesAnyPattern = (filePath, patterns) => (
   patterns.some((pattern) => pathMatchesPattern(filePath, pattern))
 );
 
-export const getStageContract = (stage) => SEO_STAGE_CONTRACT[stage] || null;
+export const normalizeStage = (stage) => SEO_STAGE_ALIASES[stage] || stage;
+
+export const getStageContract = (stage) => SEO_STAGE_CONTRACT[normalizeStage(stage)] || null;
 
 export const validateStageDiff = ({ stage, changedPaths = [] }) => {
   const errors = [];
-  const contract = getStageContract(stage);
+  const normalizedStage = normalizeStage(stage);
+  const contract = getStageContract(normalizedStage);
 
   if (!contract) {
     return [`Unknown SEO production stage: ${stage}. Expected one of: ${SEO_PRODUCTION_STAGES.join(', ')}.`];
   }
 
-  if (stage !== 'gemini_content_design') return errors;
-
   const paths = changedPaths.map(normalizePath).filter(Boolean);
   paths.forEach((filePath) => {
     if (pathMatchesAnyPattern(filePath, contract.forbiddenPaths)) {
-      errors.push(`${stage} may not change runtime path: ${filePath}`);
+      errors.push(`${normalizedStage} may not change forbidden path: ${filePath}`);
       return;
     }
     if (!pathMatchesAnyPattern(filePath, contract.allowedPaths)) {
-      errors.push(`${stage} may only change explicit handoff/design paths, not: ${filePath}`);
+      if (normalizedStage === 'gemini_content_design') {
+        errors.push(`${normalizedStage} may only change explicit handoff/design paths, not: ${filePath}`);
+        return;
+      }
+      if (normalizedStage === 'codex_draft_preview_integration') {
+        errors.push(`${normalizedStage} may only change minimal draft-preview paths, not: ${filePath}`);
+      }
     }
   });
 
@@ -188,7 +263,16 @@ const findBlueprintSection = (blueprint, id) => blueprint.sections.find((section
 
 const isDraftHandoff = (handoff) => handoff.contentDesignStatus === 'content_design_draft';
 
-const isCompleteHandoff = (handoff) => handoff.contentDesignStatus === 'complete_gemini_handoff';
+const isCompleteHandoff = (handoff) => (
+  handoff.handoffComplete === true ||
+  handoff.contentDesignStatus === 'handoff_complete' ||
+  handoff.contentDesignStatus === 'complete_gemini_handoff'
+);
+
+const hasProductionApproval = (handoff) => (
+  handoff.approvedForProductionIntegration === true ||
+  handoff.approvedForTechnicalIntegration === true
+);
 
 const validateCopySlotValue = ({ value, allowDraftAwaiting, label, errors }) => {
   if (allowDraftAwaiting && isAwaitingGemini(value)) return;
@@ -254,6 +338,14 @@ export const validateHandoffStructure = (handoff, context = {}) => {
     'FAQ',
     'relatedLinks',
     'ownerReviewStatus',
+    'handoffComplete',
+    'contentDesignStatus',
+    'draftPreviewIntegrationAllowed',
+    'draftPreviewIntegrated',
+    'ownerVisualApprovalReceived',
+    'approvedForProductionIntegration',
+    'productionIntegrationCompleted',
+    'approvedForRelease',
   ].forEach((field) => {
     if (handoff[field] === undefined || handoff[field] === null) {
       errors.push(`${label} missing required handoff field ${field}.`);
@@ -314,31 +406,72 @@ export const validateHandoffStructure = (handoff, context = {}) => {
   return errors;
 };
 
+const validateDraftPreviewSafety = (handoff, label) => {
+  const errors = [];
+  const lifecycleState = handoff.lifecycleState || handoff.state;
+
+  if (handoff.sitemapIncluded === true || handoff.sitemapEligible === true) {
+    errors.push(`${label} draft preview must not be included in sitemap.`);
+  }
+  if (
+    handoff.indexable === true ||
+    handoff.indexationApproved === true ||
+    lifecycleState === 'indexable_approved'
+  ) {
+    errors.push(`${label} draft preview must stay noindex and non-indexable.`);
+  }
+  if (handoff.approvedForRelease === true) {
+    errors.push(`${label} draft preview must not request release approval.`);
+  }
+  if (handoff.productionCanonicalApproved === true || handoff.productionSchemaApproved === true) {
+    errors.push(`${label} draft preview must not approve production canonical/schema.`);
+  }
+  if (handoff.committedReleaseDist === true || handoff.physicalHtmlCreated === true) {
+    errors.push(`${label} draft preview must not create committed release dist or physical HTML.`);
+  }
+  if (handoff.approvedCopyModified === true || handoff.sectionOrderModified === true || handoff.componentMapModified === true) {
+    errors.push(`${label} draft preview must not modify approved copy, section order, or component map.`);
+  }
+  if (handoff.genericRendererCreated === true || handoff.newVariantCreated === true || handoff.blueprintModified === true) {
+    errors.push(`${label} draft preview must not create generic renderers, new variants, or blueprint changes.`);
+  }
+
+  return errors;
+};
+
 export const validateStageHandoff = ({ stage, handoff, context = {} }) => {
   const errors = validateHandoffStructure(handoff, context);
-  const contract = getStageContract(stage);
+  const normalizedStage = normalizeStage(stage);
+  const contract = getStageContract(normalizedStage);
   const label = handoff?.id || handoff?.route || 'handoff';
 
   if (!contract) return [`Unknown SEO production stage: ${stage}.`];
 
-  if (stage === 'gemini_content_design') {
+  if (normalizedStage === 'gemini_content_design') {
     if (handoff.approvedForRelease === true || handoff.runtimeImported === true) {
       errors.push(`${label} may not request release or runtime import during Gemini content/design stage.`);
     }
     return errors;
   }
 
+  if (normalizedStage === 'codex_draft_preview_integration') {
+    errors.push(...validateDraftPreviewSafety(handoff, label));
+  }
+
   if (contract.requiresCompleteHandoff && !isCompleteHandoff(handoff)) {
-    errors.push(`${label} must be complete_gemini_handoff before ${stage}.`);
+    errors.push(`${label} must be handoff_complete before ${normalizedStage}.`);
   }
   if (contract.requiresOwnerVisualApproval && handoff.ownerVisualApprovalReceived !== true) {
-    errors.push(`${label} requires ownerVisualApprovalReceived before ${stage}.`);
+    errors.push(`${label} requires ownerVisualApprovalReceived before ${normalizedStage}.`);
   }
-  if (contract.requiresTechnicalApproval && handoff.approvedForTechnicalIntegration !== true) {
-    errors.push(`${label} requires approvedForTechnicalIntegration before ${stage}.`);
+  if (contract.requiresProductionApproval && !hasProductionApproval(handoff)) {
+    errors.push(`${label} requires approvedForProductionIntegration before ${normalizedStage}.`);
+  }
+  if (contract.requiresProductionIntegrationCompleted && handoff.productionIntegrationCompleted !== true) {
+    errors.push(`${label} requires productionIntegrationCompleted before ${normalizedStage}.`);
   }
   if (contract.requiresReleaseApproval && handoff.approvedForRelease !== true) {
-    errors.push(`${label} requires approvedForRelease before ${stage}.`);
+    errors.push(`${label} requires approvedForRelease before ${normalizedStage}.`);
   }
 
   return errors;
@@ -349,10 +482,21 @@ export const buildCompleteHandoffFromBlueprint = (overrides = {}) => ({
   route: '/ru/use-cases/fixture-complete-handoff',
   blueprintId: EXACT_SEO_PAGE_BLUEPRINT_ID,
   runtimeImported: false,
-  contentDesignStatus: 'complete_gemini_handoff',
+  routeRegistered: false,
+  sitemapIncluded: false,
+  indexable: false,
+  sitemapEligible: false,
+  indexationApproved: false,
+  lifecycleState: 'noindex_review',
+  handoffComplete: true,
+  contentDesignStatus: 'handoff_complete',
+  draftPreviewIntegrationAllowed: true,
+  draftPreviewIntegrated: false,
   ownerReviewStatus: 'approved_for_technical_integration',
   ownerVisualApprovalReceived: true,
+  approvedForProductionIntegration: true,
   approvedForTechnicalIntegration: true,
+  productionIntegrationCompleted: false,
   approvedForRelease: false,
   primaryQuery: 'owner approved complete fixture',
   searchIntent: 'review complete structured handoff before technical integration',

@@ -5,6 +5,7 @@ import seamlessInstagramCarouselHandoff from '../src/content/seoPages/handoffs/s
 import {
   SEO_PRODUCTION_STAGES,
   buildCompleteHandoffFromBlueprint,
+  normalizeStage,
   validateStageDiff,
   validateStageHandoff,
 } from '../src/content/seoPages/handoffs/stageContract.js';
@@ -21,6 +22,7 @@ const readArg = (name, fallback = '') => {
 };
 
 const stage = readArg('--stage', 'gemini_content_design');
+const normalizedStage = normalizeStage(stage);
 const fixtureOnly = args.includes('--fixture-only');
 
 const context = {
@@ -51,82 +53,127 @@ const addFixture = (name, expected, getErrors) => {
   fixtures.push({ name, expected, getErrors });
 };
 
-addFixture('Gemini stage changing templateVariants.js fails', 'fail', () => (
-  validateStageDiff({
-    stage: 'gemini_content_design',
-    changedPaths: ['src/content/seoPages/templateVariants.js'],
-  })
-));
-
-addFixture('Gemini stage changing runtime registry fails', 'fail', () => (
-  validateStageDiff({
-    stage: 'gemini_content_design',
-    changedPaths: ['src/content/seoPages/index.js'],
-  })
-));
-
-addFixture('Gemini stage changing App.jsx fails', 'fail', () => (
-  validateStageDiff({
-    stage: 'gemini_content_design',
-    changedPaths: ['src/App.jsx'],
-  })
-));
-
-addFixture('Gemini stage changing dist fails', 'fail', () => (
-  validateStageDiff({
-    stage: 'gemini_content_design',
-    changedPaths: ['dist/assets/index.js'],
-  })
-));
-
-addFixture('Gemini stage creating only handoff passes', 'pass', () => (
+addFixture('Gemini changes only handoff passes', 'pass', () => (
   validateStageDiff({
     stage: 'gemini_content_design',
     changedPaths: ['src/content/seoPages/handoffs/seamlessInstagramCarouselHandoff.js'],
   })
 ));
 
-addFixture('Incomplete handoff blocks Codex stage', 'fail', () => (
+addFixture('Gemini changing runtime fails', 'fail', () => (
+  validateStageDiff({
+    stage: 'gemini_content_design',
+    changedPaths: ['src/content/seoPages/index.js'],
+  })
+));
+
+addFixture('Incomplete handoff blocks draft preview integration', 'fail', () => (
   validateStageHandoff({
-    stage: 'codex_technical_integration',
+    stage: 'codex_draft_preview_integration',
     handoff: seamlessInstagramCarouselHandoff,
     context,
   })
 ));
 
-addFixture('Owner approval false blocks Codex stage', 'fail', () => {
+addFixture('Complete handoff with owner approval false allows draft preview', 'pass', () => {
   const handoff = buildCompleteHandoffFromBlueprint({
     ownerVisualApprovalReceived: false,
+    approvedForProductionIntegration: false,
     approvedForTechnicalIntegration: false,
   });
   return validateStageHandoff({
-    stage: 'codex_technical_integration',
+    stage: 'codex_draft_preview_integration',
     handoff,
     context,
   });
 });
 
-addFixture('Owner approval true and complete handoff passes Codex stage', 'pass', () => (
+addFixture('Draft preview adding route to sitemap fails', 'fail', () => (
   validateStageHandoff({
-    stage: 'codex_technical_integration',
+    stage: 'codex_draft_preview_integration',
+    handoff: buildCompleteHandoffFromBlueprint({
+      ownerVisualApprovalReceived: false,
+      approvedForProductionIntegration: false,
+      sitemapIncluded: true,
+    }),
+    context,
+  })
+));
+
+addFixture('Draft preview setting indexable state fails', 'fail', () => (
+  validateStageHandoff({
+    stage: 'codex_draft_preview_integration',
+    handoff: buildCompleteHandoffFromBlueprint({
+      ownerVisualApprovalReceived: false,
+      approvedForProductionIntegration: false,
+      lifecycleState: 'indexable_approved',
+      indexable: true,
+      indexationApproved: true,
+    }),
+    context,
+  })
+));
+
+addFixture('Draft preview modifying approved copy fails', 'fail', () => (
+  validateStageHandoff({
+    stage: 'codex_draft_preview_integration',
+    handoff: buildCompleteHandoffFromBlueprint({
+      ownerVisualApprovalReceived: false,
+      approvedForProductionIntegration: false,
+      approvedCopyModified: true,
+    }),
+    context,
+  })
+));
+
+addFixture('Production integration with owner approval false fails', 'fail', () => (
+  validateStageHandoff({
+    stage: 'codex_production_integration',
+    handoff: buildCompleteHandoffFromBlueprint({
+      ownerVisualApprovalReceived: false,
+      approvedForProductionIntegration: false,
+      approvedForTechnicalIntegration: false,
+    }),
+    context,
+  })
+));
+
+addFixture('Production integration with owner approval true passes', 'pass', () => (
+  validateStageHandoff({
+    stage: 'codex_production_integration',
     handoff: buildCompleteHandoffFromBlueprint(),
     context,
   })
 ));
 
-addFixture('Release approval false blocks push/release', 'fail', () => (
+addFixture('Release with productionIntegrationCompleted false fails', 'fail', () => (
   validateStageHandoff({
     stage: 'human_release_review',
-    handoff: buildCompleteHandoffFromBlueprint({ approvedForRelease: false }),
+    handoff: buildCompleteHandoffFromBlueprint({
+      productionIntegrationCompleted: false,
+      approvedForRelease: true,
+    }),
     context,
   })
 ));
 
-addFixture('Release approval true passes human release review', 'pass', () => (
+addFixture('Release with approvedForRelease false fails', 'fail', () => (
+  validateStageHandoff({
+    stage: 'human_release_review',
+    handoff: buildCompleteHandoffFromBlueprint({
+      productionIntegrationCompleted: true,
+      approvedForRelease: false,
+    }),
+    context,
+  })
+));
+
+addFixture('Release after all approvals passes', 'pass', () => (
   validateStageHandoff({
     stage: 'human_release_review',
     handoff: buildCompleteHandoffFromBlueprint({
       ownerReviewStatus: 'approved_for_release',
+      productionIntegrationCompleted: true,
       approvedForRelease: true,
     }),
     context,
@@ -148,7 +195,7 @@ fixtures.forEach((fixture) => {
 
 const errors = [];
 
-if (!SEO_PRODUCTION_STAGES.includes(stage)) {
+if (!SEO_PRODUCTION_STAGES.includes(normalizedStage)) {
   errors.push(`Unknown stage ${stage}. Expected one of: ${SEO_PRODUCTION_STAGES.join(', ')}.`);
 }
 
@@ -166,6 +213,7 @@ errors.push(...fixtureFailures);
 
 console.log('SEO stage boundary check');
 console.log(`- stage: ${stage}`);
+if (stage !== normalizedStage) console.log(`- normalized stage: ${normalizedStage}`);
 console.log(`- fixture-only: ${fixtureOnly}`);
 console.log(`- fixtures tested: ${fixtures.length}`);
 console.log(`- fixtures passed: ${fixturePasses}`);

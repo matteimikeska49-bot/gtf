@@ -36,12 +36,21 @@ export const seamlessInstagramCarouselHandoff = {
   runtimeImported: false,
   routeRegistered: false,
   sitemapIncluded: false,
+  sitemapEligible: false,
+  indexable: false,
+  indexationApproved: false,
+  lifecycleState: 'content_design_draft',
   physicalHtmlCreated: false,
 
+  handoffComplete: false,
   contentDesignStatus: 'content_design_draft',
+  draftPreviewIntegrationAllowed: false,
+  draftPreviewIntegrated: false,
   ownerReviewStatus: 'content_design_draft',
   ownerVisualApprovalReceived: false,
+  approvedForProductionIntegration: false,
   approvedForTechnicalIntegration: false,
+  productionIntegrationCompleted: false,
   approvedForRelease: false,
 
   primaryQuery: {

@@ -168,16 +168,38 @@ Canonical stage contract and page-specific handoffs:
 Production stages:
 
 - `gemini_content_design`
-- `codex_technical_integration`
+- `codex_draft_preview_integration`
+- `human_visual_review`
+- `codex_production_integration`
 - `human_release_review`
 
 Gemini content/design stage may only change explicit handoff/design paths such as `src/content/seoPages/handoffs/*.js` and separately approved `public/images/seo-handoffs/**/*` assets. It may not change runtime routes, the registry, template variants, React renderers, shared components, Header/Footer, sitemap, lifecycle/schema/prerender implementation, `dist`, checkers, package scripts, Product Truth Registry, or runtime page files.
 
-Codex technical integration may change runtime only after a complete handoff has both `approvedForTechnicalIntegration: true` and `ownerVisualApprovalReceived: true`.
+Codex draft-preview integration may build a noindex localhost draft before owner visual approval, but only after a complete Gemini handoff: `handoffComplete: true`, `contentDesignStatus: handoff_complete`, filled copy slots, filled visual slots, valid component paths, valid Product Truth claims, no placeholders, and no internal labels. Draft preview must stay `noindex_review` or equivalent, with `indexable: false`, `sitemapEligible: false`, `indexationApproved: false`, `approvedForRelease: false`, no committed release dist, no production schema/canonical approval, and no push.
 
-Human release review blocks push/release until `approvedForRelease: true`.
+Human visual review is required after localhost draft preview. The owner reviews text, composition, real visuals, mobile layout, blueprint fit, Product Truth, and absence of internal labels or generic placeholders. Automated checks do not replace this review.
 
-The command `npm run check:seo:stage -- --stage=gemini_content_design` enforces the current git diff and handoff state. It also supports `--stage=codex_technical_integration` and `--stage=human_release_review`.
+Codex production integration may change production runtime only after the owner approves the visual draft: `ownerVisualApprovalReceived: true` and `approvedForProductionIntegration: true`. Codex may not rewrite approved copy, change section order, replace approved components, create a generic renderer, or create a new variant without returning to Gemini/human review.
+
+Human release review blocks push/release until production integration is complete and `approvedForRelease: true`.
+
+The command `npm run check:seo:stage -- --stage=gemini_content_design` enforces the current git diff and handoff state. It also supports `--stage=codex_draft_preview_integration`, `--stage=codex_production_integration`, and `--stage=human_release_review`.
+
+Full production pipeline:
+
+1. demand/intent/cluster/brief
+2. Gemini complete handoff
+3. Codex noindex localhost draft
+4. human visual approval
+5. Codex production integration
+6. lifecycle/release/build/prerender/dist
+7. human release approval
+8. Gemini push
+9. Coolify
+10. live SEO gate
+11. live visual review
+12. Lighthouse/PageSpeed
+13. Google/Yandex indexing
 
 Gemini responsibilities:
 
