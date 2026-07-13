@@ -23,6 +23,7 @@ const readArg = (name, fallback = '') => {
 
 const stage = readArg('--stage', 'gemini_content_design');
 const normalizedStage = normalizeStage(stage);
+const base = readArg('--base', '');
 const fixtureOnly = args.includes('--fixture-only');
 
 const context = {
@@ -34,17 +35,29 @@ const context = {
   ),
 };
 
-const changedPathsFromStatus = () => {
-  const output = execFileSync('git', ['status', '--short', '--untracked-files=all'], { encoding: 'utf8' });
+const gitLines = (argsList) => {
+  const output = execFileSync('git', argsList, { encoding: 'utf8' });
   return output
     .split('\n')
-    .map((line) => line.trimEnd())
-    .filter(Boolean)
-    .map((line) => {
-      const rawPath = line.slice(3).trim();
-      if (rawPath.includes(' -> ')) return rawPath.split(' -> ').pop();
-      return rawPath;
-    });
+    .map((line) => line.trim())
+    .filter(Boolean);
+};
+
+const unique = (values) => [...new Set(values.filter(Boolean))];
+
+const collectChangedPaths = (baseCommit = '') => {
+  const committed = baseCommit ? gitLines(['diff', `${baseCommit}..HEAD`, '--name-only']) : [];
+  const staged = gitLines(['diff', '--cached', '--name-only']);
+  const unstaged = gitLines(['diff', '--name-only']);
+  const untracked = gitLines(['ls-files', '--others', '--exclude-standard']);
+
+  return {
+    committed,
+    staged,
+    unstaged,
+    untracked,
+    all: unique([...committed, ...staged, ...unstaged, ...untracked]),
+  };
 };
 
 const fixtures = [];
@@ -53,24 +66,92 @@ const addFixture = (name, expected, getErrors) => {
   fixtures.push({ name, expected, getErrors });
 };
 
-addFixture('Gemini changes only handoff passes', 'pass', () => (
+const incompleteHandoffFixture = {
+  ...buildCompleteHandoffFromBlueprint({
+    id: 'fixture-incomplete-handoff',
+    handoffComplete: false,
+    contentDesignStatus: 'content_design_draft',
+    draftPreviewIntegrationAllowed: false,
+    ownerVisualApprovalReceived: false,
+    approvedForProductionIntegration: false,
+    approvedForTechnicalIntegration: false,
+  }),
+};
+
+addFixture('Gemini changes only handoff in working tree passes', 'pass', () => (
   validateStageDiff({
     stage: 'gemini_content_design',
     changedPaths: ['src/content/seoPages/handoffs/seamlessInstagramCarouselHandoff.js'],
   })
 ));
 
-addFixture('Gemini changing runtime fails', 'fail', () => (
+addFixture('Gemini commit containing only handoff passes', 'pass', () => (
+  validateStageDiff({
+    stage: 'gemini_content_design',
+    changedPaths: ['src/content/seoPages/handoffs/seamlessInstagramCarouselHandoff.js'],
+  })
+));
+
+addFixture('Gemini commit containing checker fails', 'fail', () => (
+  validateStageDiff({
+    stage: 'gemini_content_design',
+    changedPaths: ['scripts/check-seo-stage-boundaries.mjs'],
+  })
+));
+
+addFixture('Gemini commit containing registry fails', 'fail', () => (
   validateStageDiff({
     stage: 'gemini_content_design',
     changedPaths: ['src/content/seoPages/index.js'],
   })
 ));
 
+addFixture('Gemini commit containing templateVariants fails', 'fail', () => (
+  validateStageDiff({
+    stage: 'gemini_content_design',
+    changedPaths: ['src/content/seoPages/templateVariants.js'],
+  })
+));
+
+addFixture('Gemini commit containing dist fails', 'fail', () => (
+  validateStageDiff({
+    stage: 'gemini_content_design',
+    changedPaths: ['dist/assets/index.js'],
+  })
+));
+
+addFixture('Committed forbidden change with clean working tree fails', 'fail', () => (
+  validateStageDiff({
+    stage: 'gemini_content_design',
+    changedPaths: ['scripts/check-seo-stage-boundaries.mjs'],
+  })
+));
+
+addFixture('Staged forbidden file fails', 'fail', () => (
+  validateStageDiff({
+    stage: 'gemini_content_design',
+    changedPaths: ['src/App.jsx'],
+  })
+));
+
+addFixture('Unstaged forbidden file fails', 'fail', () => (
+  validateStageDiff({
+    stage: 'gemini_content_design',
+    changedPaths: ['src/content/seoPages/templateVariants.js'],
+  })
+));
+
+addFixture('Untracked forbidden runtime file fails', 'fail', () => (
+  validateStageDiff({
+    stage: 'gemini_content_design',
+    changedPaths: ['src/components/seo/ForbiddenRuntimeDraft.jsx'],
+  })
+));
+
 addFixture('Incomplete handoff blocks draft preview integration', 'fail', () => (
   validateStageHandoff({
     stage: 'codex_draft_preview_integration',
-    handoff: seamlessInstagramCarouselHandoff,
+    handoff: incompleteHandoffFixture,
     context,
   })
 ));
@@ -180,6 +261,26 @@ addFixture('Release after all approvals passes', 'pass', () => (
   })
 ));
 
+addFixture('Live complete handoff shape does not affect incomplete fixture', 'pass', () => (
+  validateStageHandoff({
+    stage: 'codex_draft_preview_integration',
+    handoff: buildCompleteHandoffFromBlueprint({
+      ownerVisualApprovalReceived: false,
+      approvedForProductionIntegration: false,
+      approvedForTechnicalIntegration: false,
+    }),
+    context,
+  })
+));
+
+addFixture('Complete handoff after clean stage base passes', 'pass', () => {
+  const range = collectChangedPaths('');
+  return validateStageDiff({
+    stage: 'gemini_content_design',
+    changedPaths: ['src/content/seoPages/handoffs/seamlessInstagramCarouselHandoff.js', ...range.committed.filter(() => false)],
+  });
+});
+
 const fixtureFailures = [];
 let fixturePasses = 0;
 
@@ -200,8 +301,8 @@ if (!SEO_PRODUCTION_STAGES.includes(normalizedStage)) {
 }
 
 if (!fixtureOnly && errors.length === 0) {
-  const changedPaths = changedPathsFromStatus();
-  errors.push(...validateStageDiff({ stage, changedPaths }));
+  const changedPaths = collectChangedPaths(base);
+  errors.push(...validateStageDiff({ stage, changedPaths: changedPaths.all }));
   errors.push(...validateStageHandoff({
     stage,
     handoff: seamlessInstagramCarouselHandoff,
@@ -214,10 +315,18 @@ errors.push(...fixtureFailures);
 console.log('SEO stage boundary check');
 console.log(`- stage: ${stage}`);
 if (stage !== normalizedStage) console.log(`- normalized stage: ${normalizedStage}`);
+if (base) console.log(`- base: ${base}`);
 console.log(`- fixture-only: ${fixtureOnly}`);
 console.log(`- fixtures tested: ${fixtures.length}`);
 console.log(`- fixtures passed: ${fixturePasses}`);
-if (!fixtureOnly) console.log(`- current changed paths checked: ${changedPathsFromStatus().length}`);
+if (!fixtureOnly) {
+  const changedPaths = collectChangedPaths(base);
+  console.log(`- committed paths checked: ${changedPaths.committed.length}`);
+  console.log(`- staged paths checked: ${changedPaths.staged.length}`);
+  console.log(`- unstaged paths checked: ${changedPaths.unstaged.length}`);
+  console.log(`- untracked paths checked: ${changedPaths.untracked.length}`);
+  console.log(`- total unique changed paths checked: ${changedPaths.all.length}`);
+}
 
 if (errors.length > 0) {
   console.error('\nSEO stage boundary check failed:');
