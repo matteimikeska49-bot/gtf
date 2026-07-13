@@ -1,5 +1,6 @@
 import { getDefaultTemplateVariantForPageType } from './templateVariants.js';
 import { getProtectedRouteOwner } from './protectedRoutes.js';
+import { seamlessInstagramCarouselHandoff } from './handoffs/seamlessInstagramCarouselHandoff.js';
 import { hasApprovedSeoRouteMigration as hasApprovedEngineRouteMigration } from './helpers/routeOwnership.js';
 import {
   isSeoPageRoutable,
@@ -298,8 +299,352 @@ const p0OwnershipDecisions = {
   }),
 };
 
+const seamlessHandoffSection = (sectionId) => (
+  seamlessInstagramCarouselHandoff.sections.find((section) => section.id === sectionId)
+);
+
+const seamlessCopySlot = (sectionId, slotName, fallback = '') => (
+  seamlessHandoffSection(sectionId)?.copySlots?.[slotName] ?? fallback
+);
+
+const seamlessCopyList = (sectionId, slotName) => {
+  const value = seamlessCopySlot(sectionId, slotName, []);
+  return Array.isArray(value) ? value : [];
+};
+
+const seamlessVisualList = (sectionId, slotName) => {
+  const value = seamlessHandoffSection(sectionId)?.visualSlots?.[slotName] ?? [];
+  return Array.isArray(value) ? value : [];
+};
+
+const seamlessItemsFromSlots = (sectionId, limit = Infinity) => {
+  const titles = seamlessCopyList(sectionId, 'item.title');
+  const bodies = seamlessCopyList(sectionId, 'item.body');
+  const types = seamlessCopyList(sectionId, 'item.type');
+  const audiences = seamlessCopyList(sectionId, 'item.audience');
+  const images = seamlessVisualList(sectionId, 'items.image');
+
+  return titles.slice(0, limit).map((title, index) => ({
+    title,
+    body: bodies[index],
+    type: types[index],
+    audience: audiences[index],
+    image: images[index]?.assetPath,
+    width: 1080,
+    height: 1350,
+  }));
+};
+
+const seamlessGuideItems = seamlessCopyList('templateChoiceGuide', 'items.task').map((task, index) => ({
+  id: `seamless-guide-${index + 1}`,
+  task,
+  template: seamlessCopyList('templateChoiceGuide', 'items.template')[index],
+  structure: seamlessCopyList('templateChoiceGuide', 'items.structure')[index],
+}));
+
+const seamlessWorkflowStepKeys = ['source', 'structure', 'textReview', 'visualRoute', 'editorResult'];
+const seamlessWorkflowStepTitles = seamlessCopyList('productWorkflow', 'stepOverrides');
+const seamlessWorkflowStepDescriptions = [
+  seamlessWorkflowStepTitles[0],
+  seamlessWorkflowStepTitles[1],
+  seamlessWorkflowStepTitles[2],
+  seamlessWorkflowStepTitles[3],
+  seamlessWorkflowStepTitles[4],
+];
+
+const seamlessResultSlides = [
+  {
+    src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp',
+    alt: 'Начало бесшовной карусели Instagram с перетекающей золотой линией и темным фоном',
+  },
+  {
+    src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp',
+    alt: 'Второй слайд бесшовной карусели с продолжением линии через границу слайда',
+  },
+  {
+    src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp',
+    alt: 'Средний слайд бесшовной карусели с общей композицией и безопасными зонами',
+  },
+  {
+    src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-4.webp',
+    alt: 'Четвертый слайд бесшовной карусели с непрерывной графикой между слайдами',
+  },
+  {
+    src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp',
+    alt: 'Финальный слайд бесшовной карусели Instagram с завершением общей визуальной линии',
+  },
+];
+
+const seamlessSectionPolicy = Object.fromEntries([
+  'hero',
+  'quickAnswer',
+  'templateCategories',
+  'templateChoiceGuide',
+  'productWorkflow',
+  'readyCarouselShowcase',
+  'faq',
+  'related',
+  'finalCta',
+].map((sectionId) => [
+  sectionId,
+  {
+    enabled: true,
+    reason: 'Section is required by the exact reusable SEO page blueprint and populated from the approved Gemini handoff.',
+  },
+]));
+
+const seamlessInstagramCarouselDraftPage = {
+  id: 'ru-use-case-seamless-instagram-carousel',
+  language: 'ru',
+  pageType: 'useCase',
+  slug: 'besshovnaya-karusel-instagram',
+  path: seamlessInstagramCarouselHandoff.route,
+  title: seamlessInstagramCarouselHandoff.metadata.title,
+  description: seamlessInstagramCarouselHandoff.metadata.description,
+  h1: seamlessCopySlot('hero', 'heading'),
+  heroSubtitle: seamlessCopySlot('hero', 'body'),
+  primaryKeyword: seamlessInstagramCarouselHandoff.primaryQuery,
+  secondaryKeywords: seamlessInstagramCarouselHandoff.supportingQueries,
+  searchIntent: seamlessInstagramCarouselHandoff.searchIntent,
+  priority: 0.72,
+  commercialValue: 0.8,
+  productBridge: seamlessInstagramCarouselHandoff.userJob,
+  primaryIntent: seamlessInstagramCarouselHandoff.searchIntent,
+  templateVariant: 'template_page',
+  templateSections: [
+    'hero',
+    'quickAnswer',
+    'templateCategories',
+    'templateChoiceGuide',
+    'productWorkflow',
+    'readyCarouselShowcase',
+    'faq',
+    'related',
+    'finalCta',
+  ],
+  cta: {
+    label: seamlessCopySlot('hero', 'primaryCta'),
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+  },
+  finalCta: {
+    eyebrow: seamlessCopySlot('finalCta', 'eyebrow'),
+    title: {
+      before: seamlessCopySlot('finalCta', 'heading.before'),
+      accent: seamlessCopySlot('finalCta', 'heading.accent'),
+      after: seamlessCopySlot('finalCta', 'heading.after'),
+    },
+    description: seamlessCopySlot('finalCta', 'body'),
+    primaryAction: {
+      label: seamlessCopySlot('finalCta', 'primaryCta'),
+      href: 'https://app.gotoflow.io',
+      action: 'open_app',
+    },
+  },
+  conversion: {
+    destinationType: 'app',
+    destinationUrl: 'https://app.gotoflow.io',
+    targetAction: 'create_seamless_instagram_carousel',
+    pageEntity: 'seamless_instagram_carousel',
+    appDeepLinkVerified: false,
+    appDeepLinkNotes: 'No verified deep link for the draft preview; route uses the approved GoToFlow app origin.',
+  },
+  seoBrief: {
+    pageEntity: 'seamless Instagram carousel use case',
+    primaryQuery: seamlessInstagramCarouselHandoff.primaryQuery,
+    primaryIntent: seamlessInstagramCarouselHandoff.searchIntent,
+    userJob: seamlessInstagramCarouselHandoff.userJob,
+    uniqueAngle: seamlessInstagramCarouselHandoff.generatorBoundary,
+    audience: 'Создатели Instagram-каруселей, эксперты, SMM-команды и авторы визуального контента.',
+    contentType: 'noindex use-case SEO page',
+    platform: 'Instagram',
+    language: 'ru',
+    country: 'RU',
+    conversionAction: 'create_seamless_instagram_carousel',
+    productRoute: 'https://app.gotoflow.io',
+    cannibalizationBoundary: seamlessInstagramCarouselHandoff.articleBoundary,
+  },
+  faqPolicy: {
+    minItems: 4,
+    maxItems: 8,
+    requireUniqueQuestions: true,
+    requireVisibleSchemaParity: true,
+  },
+  sectionPolicy: seamlessSectionPolicy,
+  sections: [],
+  quickAnswer: {
+    title: seamlessCopySlot('quickAnswer', 'heading'),
+    body: seamlessCopySlot('quickAnswer', 'body'),
+    contextualLink: {
+      label: seamlessCopySlot('quickAnswer', 'contextualLink'),
+      href: '/ru/blog/kak-narezat-foto-dlya-karuseli',
+    },
+  },
+  templateCategories: seamlessItemsFromSlots('templateCategories'),
+  categoryCta: {
+    label: seamlessCopySlot('templateCategories', 'categoryCta'),
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+  },
+  templateChoiceGuide: {
+    eyebrow: seamlessCopySlot('templateChoiceGuide', 'eyebrow'),
+    title: {
+      before: seamlessCopySlot('templateChoiceGuide', 'heading.before'),
+      accent: seamlessCopySlot('templateChoiceGuide', 'heading.accent'),
+      after: seamlessCopySlot('templateChoiceGuide', 'heading.after'),
+    },
+    description: seamlessCopySlot('templateChoiceGuide', 'description'),
+    items: seamlessGuideItems,
+  },
+  productWorkflow: {
+    preset: 'carousel_creation',
+    eyebrow: seamlessCopySlot('productWorkflow', 'eyebrow'),
+    title: {
+      before: seamlessCopySlot('productWorkflow', 'heading.before'),
+      accent: seamlessCopySlot('productWorkflow', 'heading.accent'),
+      after: seamlessCopySlot('productWorkflow', 'heading.after'),
+    },
+    description: seamlessCopySlot('productWorkflow', 'description'),
+    carouselTypes: [
+      { id: 'ai', label: 'AI-карусель', availability: 'available' },
+      { id: 'template', label: 'Шаблонная', availability: 'available' },
+      { id: 'seamless', label: 'Бесшовная', availability: 'available', active: true },
+      { id: 'animated', label: 'Анимированная', availability: 'available' },
+    ],
+    stepOverrides: Object.fromEntries(seamlessWorkflowStepKeys.map((key, index) => [
+      key,
+      {
+        title: seamlessWorkflowStepTitles[index],
+        description: seamlessWorkflowStepDescriptions[index],
+      },
+    ])),
+    mockups: [
+      {
+        id: 'source-structure',
+        title: 'Выбор темы и структуры',
+        caption: seamlessWorkflowStepTitles[0],
+        fallbackVisualType: 'source_structure',
+      },
+      {
+        id: 'text-review',
+        title: 'Проверка текста',
+        caption: seamlessWorkflowStepTitles[2],
+        fallbackVisualType: 'text_review',
+      },
+      {
+        id: 'visual-route',
+        title: 'Бесшовный стиль',
+        caption: seamlessWorkflowStepTitles[1],
+        fallbackVisualType: 'ai_template',
+      },
+      {
+        id: 'editor-result',
+        title: 'Готовая панорама',
+        caption: seamlessWorkflowStepTitles[3],
+        fallbackVisualType: 'editor_result',
+        resultCarousel: {
+          title: seamlessCopySlot('readyCarouselShowcase', 'sectionHeading'),
+          label: 'Бесшовная карусель',
+          format: '4:5',
+          slideCount: seamlessResultSlides.length,
+          width: 1080,
+          height: 1350,
+          mode: 'Панорама',
+          images: seamlessResultSlides,
+        },
+      },
+    ],
+    featureChips: seamlessCopyList('productWorkflow', 'featureChips'),
+    cta: {
+      label: seamlessCopySlot('productWorkflow', 'cta'),
+      href: 'https://app.gotoflow.io',
+      action: 'open_app',
+      note: seamlessCopySlot('productWorkflow', 'description'),
+    },
+  },
+  readyCarouselShowcase: seamlessItemsFromSlots('readyCarouselShowcase', 5).map((item, index) => ({
+    ...item,
+    image: seamlessResultSlides[index].src,
+    width: 1080,
+    height: 1350,
+  })),
+  readyCarouselShowcaseCta: {
+    label: seamlessCopySlot('readyCarouselShowcase', 'showcaseCta'),
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+    note: seamlessCopySlot('readyCarouselShowcase', 'sectionBody'),
+  },
+  faq: seamlessInstagramCarouselHandoff.FAQ,
+  relatedSeoPages: [],
+  relatedSeoPaths: ['/ru/templates/instagram-carousel'],
+  relatedProductToolPaths: ['/ru/generator-karuselej-instagram'],
+  contextualLinks: [],
+  relatedBlogSlugs: ['kak-narezat-foto-dlya-karuseli'],
+  breadcrumbs: [
+    ruHomeBreadcrumb,
+    { label: 'Сценарии использования', path: '/ru/use-cases' },
+    { label: seamlessCopySlot('hero', 'heading'), path: seamlessInstagramCarouselHandoff.route },
+  ],
+  schemaType: 'WebPage',
+  published: true,
+  noindex: true,
+  state: 'noindex_review',
+  sitemapEligible: false,
+  routeReviewApproved: true,
+  approvedByHuman: false,
+  indexationApproved: false,
+  indexationApproval: {
+    approved: false,
+    approvedBy: '',
+    approvedAt: '',
+    notes: 'Noindex localhost preview only. Owner visual approval and release approval are pending.',
+  },
+  contentReviewedByHuman: true,
+  uniquenessReviewedByHuman: true,
+  internalLinksReviewedByHuman: true,
+  ctaReviewedByHuman: true,
+  productClaimsReviewedByHuman: true,
+  review: {
+    owner: 'GoToFlow',
+    contentReviewedAt: '2026-07-14',
+    productClaimsReviewedAt: '2026-07-14',
+    assetsReviewedAt: '',
+    seoReviewedAt: '2026-07-14',
+    productVersion: 'seo-draft-preview-2026-07-14',
+  },
+  designReference: '/ru',
+  urlOrigin: 'seo_registry_candidate',
+  urlOriginEvidence: [
+    'src/content/seoPages/handoffs/seamlessInstagramCarouselHandoff.js',
+    'src/content/seoPages/blueprints/exactSeoPageBlueprint.js',
+    'scratch/seo-demand-imports/2026-07-06/seo-route-only-manual-check-plan-2026-07-08.csv',
+  ],
+  intentOwner: 'ru-use-case-seamless-instagram-carousel',
+  routeOwner: 'ru-use-case-seamless-instagram-carousel',
+  canonicalOwner: seamlessInstagramCarouselHandoff.metadata.canonicalPath,
+  riskLevel: 'medium',
+  manualReviewReason: 'Noindex localhost preview from the approved Gemini handoff; owner visual approval is still required before production integration.',
+  createdFromActionMapRowIds: ['seamless-instagram-carousel-gemini-handoff-2026-07-14'],
+  notes: [
+    seamlessInstagramCarouselHandoff.generatorBoundary,
+    seamlessInstagramCarouselHandoff.articleBoundary,
+    'Draft route remains noindex and excluded from sitemap until separate owner release approval.',
+  ],
+  draftPreviewIntegrated: true,
+  productionIntegrationCompleted: false,
+  approvedForRelease: false,
+  lastUpdated: '2026-07-14',
+  ownershipDecision: ownershipDecision({
+    decision: 'safe_new_registry_page',
+    reason: 'No exact protected route collision found for the use-case path; existing generator and slicing article remain separate route owners.',
+    existingOwnerStatus: 'Existing product route /ru/generator-karuselej-instagram remains the generator owner; related blog route keeps slicing-instruction intent.',
+    intentOverlapPaths: ['/ru/generator-karuselej-instagram', '/ru/blog/kak-narezat-foto-dlya-karuseli', '/ru/templates/instagram-carousel'],
+  }),
+};
+
 /** @type {SeoPage[]} */
 const rawSeoPages = [
+  seamlessInstagramCarouselDraftPage,
   {
     id: 'ru-commercial-generator-karuseley',
     language: 'ru',
