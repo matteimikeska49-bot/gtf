@@ -160,6 +160,25 @@ The first approved blueprint is based on the existing `/ru/templates/instagram-c
 
 This blueprint is a production handoff contract. It is not a new runtime renderer, not a new template variant, not a page record, not a sitemap source, and not permission to create batch pages.
 
+Canonical stage contract and page-specific handoffs:
+
+- `src/content/seoPages/handoffs/stageContract.js`
+- `src/content/seoPages/handoffs/seamlessInstagramCarouselHandoff.js`
+
+Production stages:
+
+- `gemini_content_design`
+- `codex_technical_integration`
+- `human_release_review`
+
+Gemini content/design stage may only change explicit handoff/design paths such as `src/content/seoPages/handoffs/*.js` and separately approved `public/images/seo-handoffs/**/*` assets. It may not change runtime routes, the registry, template variants, React renderers, shared components, Header/Footer, sitemap, lifecycle/schema/prerender implementation, `dist`, checkers, package scripts, Product Truth Registry, or runtime page files.
+
+Codex technical integration may change runtime only after a complete handoff has both `approvedForTechnicalIntegration: true` and `ownerVisualApprovalReceived: true`.
+
+Human release review blocks push/release until `approvedForRelease: true`.
+
+The command `npm run check:seo:stage -- --stage=gemini_content_design` enforces the current git diff and handoff state. It also supports `--stage=codex_technical_integration` and `--stage=human_release_review`.
+
 Gemini responsibilities:
 
 - Choose the approved blueprint.
