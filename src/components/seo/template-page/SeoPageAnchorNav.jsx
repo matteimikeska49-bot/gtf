@@ -2,8 +2,8 @@ import { isCarouselProductSeoPage } from '../../../content/seoPages/templateVari
 
 const CAROUSEL_NAV_ITEMS = [
   { id: 'page-relevant-formats', label: 'Форматы' },
-  { id: 'product-capabilities', label: 'Возможности' },
   { id: 'product-workflow', label: 'Как создать' },
+  { id: 'product-capabilities', label: 'Возможности' },
   { id: 'ready-carousel-showcase', label: 'Примеры' },
   { id: 'page-specific-proof', label: 'Результат' },
   { id: 'use-cases', label: 'Сценарии' },
