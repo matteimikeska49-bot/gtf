@@ -747,7 +747,7 @@ const validateProductCapabilitiesContent = (errors, page) => {
   if (!hasMeaningfulText(capabilities.eyebrow, 4)) {
     errors.push(`${id} productCapabilities eyebrow must contain meaningful text.`);
   }
-  if (!hasMeaningfulText(capabilities.heading, 12)) {
+  if (!hasMeaningfulText(textFrom(capabilities.heading), 12)) {
     errors.push(`${id} productCapabilities heading must contain meaningful text.`);
   }
   if (!hasMeaningfulText(capabilities.introCopy, 30)) {

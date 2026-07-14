@@ -19,6 +19,7 @@ import {
 import { getAppUrlWithRef } from '../../../utils/url';
 import { SEO_ANALYTICS_EVENTS } from '../../../content/seoPages/releaseContracts';
 import { trackSeoEvent } from '../seoAnalytics';
+import { SeoSectionHeading } from '../SeoSectionHeading';
 
 const isExternalHref = (href) => /^https?:\/\//.test(href || '');
 
@@ -395,16 +396,12 @@ export const SeoProductWorkflowShowcase = ({ page }) => {
       data-seo-proof="product-workflow"
       className="border-t border-white/[0.08] py-14 md:py-20"
     >
-      {/* ── Section heading ── */}
-      <div className="mb-10 max-w-3xl">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">{workflow.eyebrow}</p>
-        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>
-          {title.before}
-          <span className="bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">{title.accent}</span>
-          {title.after}
-        </h2>
-        <p className="mt-4 max-w-2xl text-base font-normal leading-7 text-zinc-400" style={{ textWrap: 'pretty' }}>{workflow.description}</p>
-      </div>
+      <SeoSectionHeading
+        eyebrow={workflow.eyebrow}
+        heading={title}
+        intro={workflow.description}
+        sectionId="product-workflow"
+      />
 
       {/* ── Horizontal workflow steps — article-style surface ── */}
       <div className="mb-10 overflow-hidden rounded-3xl border border-white/[0.07] bg-[#080808] p-3 sm:p-4 lg:p-5">

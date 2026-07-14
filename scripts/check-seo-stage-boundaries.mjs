@@ -61,13 +61,29 @@ const fixtureRuntimePage = {
   path: '/ru/use-cases/fixture-complete-handoff',
   pageFamily: 'carousel_product_page',
   templateVariant: 'template_page',
-  heroCarouselImages: [
-    { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp', alt: 'Hero carousel proof slide one' },
-    { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp', alt: 'Hero carousel proof slide three' },
-    { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp', alt: 'Hero carousel proof slide five' },
+  heroCarouselAssetIds: [
+    'seamless-instagram-hero-slide-1',
+    'seamless-instagram-hero-slide-3',
+    'seamless-instagram-hero-slide-5',
   ],
+  templateCategoriesIntro: {
+    heading: { before: 'Fixture ', accent: 'formats', after: '' },
+  },
+  templateChoiceGuide: {
+    title: { before: 'Fixture ', accent: 'parameters', after: '' },
+  },
+  readyCarouselShowcaseIntro: {
+    heading: { before: 'Fixture ', accent: 'showcase', after: '' },
+  },
+  useCasesIntro: {
+    heading: { before: 'Fixture ', accent: 'use cases', after: '' },
+  },
+  finalCta: {
+    title: { before: 'Fixture ', accent: 'CTA', after: '' },
+  },
   productWorkflow: {
     preset: 'carousel_creation',
+    title: { before: 'Fixture ', accent: 'workflow', after: '' },
     mockups: [
       { id: 'source-structure', title: 'Source', caption: 'Source proof', fallbackVisualType: 'source_structure' },
       { id: 'text-review', title: 'Text', caption: 'Text proof', fallbackVisualType: 'text_review' },
@@ -90,6 +106,7 @@ const fixtureRuntimePage = {
     ],
   },
   productCapabilities: {
+    heading: { before: 'Fixture ', accent: 'capabilities', after: '' },
     groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,
     highlightedCapabilities: ['seamlessCarousels', 'formats4511916'],
     introCopy: 'Fixture canonical product capabilities for the exact blueprint.',
@@ -108,6 +125,7 @@ const fixtureRuntimePage = {
   },
   pageSpecificVisualProof: {
     proofType: 'page-specific',
+    heading: { before: 'Fixture ', accent: 'proof', after: '' },
     title: 'Page-specific proof fixture',
     description: 'Dedicated fixture proof separate from workflow and ready showcase.',
     images: [

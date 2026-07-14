@@ -4,6 +4,7 @@ import { getMarkdownArticleBySlug } from '../../lib/blog/markdownArticles';
 import { getSeoPageByPath } from '../../content/seoPages';
 import { SEO_ANALYTICS_EVENTS } from '../../content/seoPages/releaseContracts';
 import { trackSeoEvent } from './seoAnalytics';
+import { SeoSectionHeading } from './SeoSectionHeading';
 
 const RelatedCard = ({ to, title, description, page, linkType }) => (
   <Link
@@ -48,16 +49,12 @@ export const SeoPageRelatedLinks = ({ page }) => {
 
   return (
     <section id="related-content" data-seo-section="related-content" className="border-t border-white/[0.08] py-16 md:py-20">
-      <div className="mb-8 max-w-3xl">
-        {page.relatedIntro?.eyebrow && (
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">
-            {page.relatedIntro.eyebrow}
-          </p>
-        )}
-        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>
-          Связанные материалы
-        </h2>
-      </div>
+      <SeoSectionHeading
+        eyebrow={page.relatedIntro?.eyebrow}
+        heading={page.relatedIntro?.heading || { before: 'Связанные ', accent: 'материалы', after: '' }}
+        sectionId="related-content"
+        className="mb-8 max-w-3xl"
+      />
 
       <div className="grid gap-4 md:grid-cols-2">
         {customCards.map((item) => (

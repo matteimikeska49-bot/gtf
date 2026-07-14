@@ -137,6 +137,15 @@ const validateHtml = (html, sourceLabel) => {
       productWorkflowMarkers: countMatches(html, /data-seo-proof=["']product-workflow["']/gi),
       heroCarouselCards: countMatches(html, /data-seo-hero-card=["']carousel["']/gi),
       heroCarouselImages: countMatches(html, /data-seo-hero-image=["']carousel["']/gi),
+      heroAssetIds: countMatches(html, /data-hero-asset-placement=["'](?:left|center|right)["']/gi),
+      heroCenterAssetIds: countMatches(html, /data-hero-asset-placement=["']center["']/gi),
+      seoHeadingCount: countMatches(html, /data-seo-heading=["'][^"']+["']/gi),
+      seoHeadingAccentCount: countMatches(html, /data-seo-heading-accent=["'][^"']+["']/gi),
+      majorH2WithoutAccent: Math.max(
+        0,
+        countMatches(html, /data-seo-heading=["'][^"']+["']/gi) -
+          countMatches(html, /data-seo-heading-accent=["'][^"']+["']/gi),
+      ),
       productCapabilitiesMarkers: countMatches(html, /data-seo-proof=["']product-capabilities["']/gi),
       productCapabilityCards: countMatches(html, /data-seo-proof-card=["']product-capability["']/gi),
       readyResultsShowcaseMarkers: countMatches(html, /data-seo-proof=["']ready-results-showcase["']/gi),
@@ -256,6 +265,12 @@ const validateRuntime = async () => {
         proofSnapshot: {
           heroCarouselCards: document.querySelectorAll('[data-seo-hero-card="carousel"]').length,
           heroCarouselImages: document.querySelectorAll('[data-seo-hero-image="carousel"]').length,
+          heroAssetIds: document.querySelectorAll('[data-hero-asset-placement]').length,
+          heroCenterAssetIds: document.querySelectorAll('[data-hero-asset-placement="center"]').length,
+          seoHeadingCount: document.querySelectorAll('[data-seo-heading]').length,
+          seoHeadingAccentCount: document.querySelectorAll('[data-seo-heading-accent]').length,
+          majorH2WithoutAccent: [...document.querySelectorAll('[data-seo-heading]')]
+            .filter((heading) => !heading.querySelector('[data-seo-heading-accent]')).length,
           productWorkflowMarkers: document.querySelectorAll('[data-seo-proof="product-workflow"]').length,
           productCapabilitiesMarkers: document.querySelectorAll('[data-seo-proof="product-capabilities"]').length,
           productCapabilityCards: document.querySelectorAll('[data-seo-proof-card="product-capability"]').length,

@@ -2,24 +2,11 @@ import { SeoPageBreadcrumbs } from '../SeoPageHero';
 import { SeoPageCTA } from '../SeoPageCTA';
 import { Sparkles, ArrowDown } from 'lucide-react';
 import { isCarouselProductSeoPage } from '../../../content/seoPages/templateVariants';
+import { resolveSeoHeroCarouselAssets } from '../../../content/seoPages/carouselAssetRegistry';
 
-const DEFAULT_HERO_CAROUSEL_IMAGES = [
-  {
-    src: '/images/niches/ru/content-ru-9.webp',
-    alt: 'Пример карусели: экспертный пост',
-  },
-  {
-    src: '/images/niches/ru/content-ru-10.webp',
-    alt: 'Пример карусели: продуктовый кейс',
-  },
-  {
-    src: '/images/niches/ru/content-ru-5.webp',
-    alt: 'Пример карусели: готовый шаблон с обложкой и слайдами',
-  },
-];
-
-const HeroCarouselComposition = ({ images = DEFAULT_HERO_CAROUSEL_IMAGES, badge = 'Шаблон' }) => {
-  const [left, right, center] = (images.length >= 3 ? images : DEFAULT_HERO_CAROUSEL_IMAGES).slice(0, 3);
+const HeroCarouselComposition = ({ images = [], badge = 'Шаблон' }) => {
+  const [left, center, right] = images.slice(0, 3);
+  if (!left || !center || !right) return null;
 
   return (
   <div data-seo-hero-carousel="true" className="relative h-[400px] w-full max-w-lg md:h-[500px]">
@@ -28,20 +15,20 @@ const HeroCarouselComposition = ({ images = DEFAULT_HERO_CAROUSEL_IMAGES, badge 
     <div className="absolute left-1/3 top-1/3 -z-10 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/[0.1] blur-[60px]" />
 
     {/* Card 1: Back left — real image */}
-    <div data-seo-hero-card="carousel" className="absolute left-4 top-12 h-64 w-48 -rotate-12 rounded-2xl border border-white/10 bg-zinc-900 shadow-2xl overflow-hidden transition-transform duration-500 hover:-translate-y-4 hover:rotate-[-8deg] md:left-0 md:h-80 md:w-56" style={{ transformStyle: 'preserve-3d' }}>
-      <img data-seo-hero-image="carousel" src={left.src} alt={left.alt} className="h-full w-full object-cover opacity-80" loading="lazy" />
+    <div data-seo-hero-card="carousel" data-hero-asset-id={left.id} data-hero-asset-placement="left" className="absolute left-4 top-12 h-64 w-48 -rotate-12 rounded-2xl border border-white/10 bg-zinc-900 shadow-2xl overflow-hidden transition-transform duration-500 hover:-translate-y-4 hover:rotate-[-8deg] md:left-0 md:h-80 md:w-56" style={{ transformStyle: 'preserve-3d' }}>
+      <img data-seo-hero-image="carousel" data-hero-asset-id={left.id} src={left.src || left.assetPath} alt={left.alt} className="h-full w-full object-cover opacity-80" loading="lazy" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
     </div>
 
     {/* Card 2: Back right — real image */}
-    <div data-seo-hero-card="carousel" className="absolute right-4 top-20 h-64 w-48 rotate-12 rounded-2xl border border-white/10 bg-zinc-900 shadow-2xl overflow-hidden transition-transform duration-500 hover:-translate-y-4 hover:rotate-[8deg] md:right-0 md:h-80 md:w-56" style={{ transformStyle: 'preserve-3d' }}>
-      <img data-seo-hero-image="carousel" src={right.src} alt={right.alt} className="h-full w-full object-cover opacity-80" loading="lazy" />
+    <div data-seo-hero-card="carousel" data-hero-asset-id={right.id} data-hero-asset-placement="right" className="absolute right-4 top-20 h-64 w-48 rotate-12 rounded-2xl border border-white/10 bg-zinc-900 shadow-2xl overflow-hidden transition-transform duration-500 hover:-translate-y-4 hover:rotate-[8deg] md:right-0 md:h-80 md:w-56" style={{ transformStyle: 'preserve-3d' }}>
+      <img data-seo-hero-image="carousel" data-hero-asset-id={right.id} src={right.src || right.assetPath} alt={right.alt} className="h-full w-full object-cover opacity-80" loading="lazy" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
     </div>
 
     {/* Card 3: Foreground center — real image, prominent */}
-    <div data-seo-hero-card="carousel" data-seo-hero-card-role="primary" className="absolute left-1/2 top-4 z-10 h-72 w-56 -translate-x-1/2 rounded-2xl border border-white/20 bg-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden transition-transform duration-500 hover:-translate-y-4 md:h-[360px] md:w-[280px]" style={{ transformStyle: 'preserve-3d' }}>
-      <img data-seo-hero-image="carousel" src={center.src} alt={center.alt} className="h-full w-full object-cover" loading="eager" />
+    <div data-seo-hero-card="carousel" data-seo-hero-card-role="primary" data-hero-asset-id={center.id} data-hero-asset-placement="center" className="absolute left-1/2 top-4 z-10 h-72 w-56 -translate-x-1/2 rounded-2xl border border-white/20 bg-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden transition-transform duration-500 hover:-translate-y-4 md:h-[360px] md:w-[280px]" style={{ transformStyle: 'preserve-3d' }}>
+      <img data-seo-hero-image="carousel" data-hero-asset-id={center.id} src={center.src || center.assetPath} alt={center.alt} className="h-full w-full object-cover" loading="eager" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 p-4">
         <div className="inline-flex rounded-full bg-pink-500/20 px-3 py-1 text-[10px] font-bold text-pink-200 backdrop-blur-sm border border-pink-500/20 mb-2">
@@ -80,12 +67,7 @@ const renderH1 = (text) => {
 };
 
 export const SeoPageTemplateHero = ({ page }) => {
-  const heroImages = Array.isArray(page.heroCarouselImages)
-    ? page.heroCarouselImages.map((image) => ({
-      src: image.src || image.assetPath,
-      alt: image.alt,
-    })).filter((image) => image.src && image.alt).slice(0, 3)
-    : DEFAULT_HERO_CAROUSEL_IMAGES;
+  const heroImages = resolveSeoHeroCarouselAssets(page.heroCarouselAssetIds);
   const nextSectionId = isCarouselProductSeoPage(page) ? 'page-relevant-formats' : 'template-categories';
   const scrollToNext = (e) => {
     e.preventDefault();

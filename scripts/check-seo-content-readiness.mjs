@@ -227,6 +227,38 @@ const makeCompletePage = (variant, suffix = variant) => {
       },
     ])),
     sections: baseSectionsForVariant(variant, suffix),
+    ...(variant === 'template_page' ? {
+      heroCarouselAssetIds: [
+        'seamless-instagram-hero-slide-1',
+        'seamless-instagram-hero-slide-3',
+        'seamless-instagram-hero-slide-5',
+      ],
+      templateCategoriesIntro: {
+        eyebrow: `Categories ${suffix}`,
+        heading: {
+          before: `Popular formats `,
+          accent: `${suffix}`,
+          after: '',
+        },
+      },
+      readyCarouselShowcaseIntro: {
+        eyebrow: `Ready result ${suffix}`,
+        heading: {
+          before: `Finished carousel examples in `,
+          accent: `GoToFlow`,
+          after: ` ${suffix}`,
+        },
+        body: `Ready carousel showcase intro copy for ${suffix} with realistic result context.`,
+      },
+      useCasesIntro: {
+        eyebrow: `Use cases ${suffix}`,
+        heading: {
+          before: `Use cases for `,
+          accent: `${suffix}`,
+          after: '',
+        },
+      },
+    } : {}),
     useCases: fixtureUseCases(suffix),
     platformUseCases: [
       item(`Platform use case ${suffix}`, `Platform-specific use case explanation for ${suffix} with a clear channel context.`),
@@ -270,6 +302,28 @@ const makeCompletePage = (variant, suffix = variant) => {
       action: 'open_app',
       note: `Move from examples into the creation flow for ${suffix}.`,
     },
+    ...(variant === 'template_page' ? {
+      pageSpecificVisualProof: {
+        proofType: 'page-specific',
+        eyebrow: `Proof ${suffix}`,
+        heading: {
+          before: `Page-specific proof for `,
+          accent: `${suffix}`,
+          after: '',
+        },
+        title: `Page-specific proof for ${suffix}`,
+        description: `Dedicated page-specific proof carousel for ${suffix} that stays separate from the ready showcase.`,
+        label: `Proof ${suffix}`,
+        slideCount: 5,
+        images: [
+          { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp', alt: `Page-specific proof slide 1 ${suffix}` },
+          { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp', alt: `Page-specific proof slide 2 ${suffix}` },
+          { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp', alt: `Page-specific proof slide 3 ${suffix}` },
+          { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-4.webp', alt: `Page-specific proof slide 4 ${suffix}` },
+          { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp', alt: `Page-specific proof slide 5 ${suffix}` },
+        ],
+      },
+    } : {}),
     promptGroups: [
       item(`Prompt group ${suffix}`, `Prompt group explanation for ${suffix} with actual prompt-like wording and usage context.`),
     ],
@@ -332,7 +386,11 @@ const makeCompletePage = (variant, suffix = variant) => {
     ...(variant === 'template_page' ? {
       productCapabilities: {
         eyebrow: `Capabilities ${suffix}`,
-        heading: `What GoToFlow supports for ${suffix}`,
+        heading: {
+          before: `What GoToFlow supports for `,
+          accent: `${suffix}`,
+          after: '',
+        },
         introCopy: `Canonical product capabilities for ${suffix} using the approved GoToFlow product truth registry.`,
         highlightedCapabilities: ['seamlessCarousels', 'formats4511916'],
         groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,

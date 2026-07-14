@@ -2,6 +2,7 @@ import { SeoPageCTA } from '../SeoPageCTA';
 import { getAppUrlWithRef } from '../../../utils/url';
 import { SEO_ANALYTICS_EVENTS } from '../../../content/seoPages/releaseContracts';
 import { trackSeoEvent } from '../seoAnalytics';
+import { SeoSectionHeading } from '../SeoSectionHeading';
 
 export const SeoReadyCarouselShowcase = ({ page }) => {
   const showcase = (page.readyCarouselShowcase || []).slice(0, 6);
@@ -14,6 +15,11 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
   };
   const showcaseCardHref = getAppUrlWithRef(showcaseCta.href);
   const intro = page.readyCarouselShowcaseIntro || {};
+  const heading = intro.heading || {
+    before: 'Посмотрите, какие карусели можно создать в ',
+    accent: 'GoToFlow',
+    after: '',
+  };
 
   return (
     <section
@@ -21,18 +27,14 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
       data-seo-proof="ready-results-showcase"
       className="border-t border-white/[0.08] py-14 md:py-20"
     >
-      <div className="mb-9 max-w-3xl">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">{intro.eyebrow || 'Готовый результат'}</p>
-        {intro.heading ? (
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>{intro.heading}</h2>
-        ) : (
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>
-            Посмотрите, какие карусели можно создать в{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">GoToFlow</span>
-          </h2>
-        )}
-        <p className="mt-4 text-zinc-400 leading-relaxed" style={{ textWrap: 'pretty' }}>{intro.body || 'Готовая структура, текст по слайдам, визуальная подача и CTA — результат, который можно сразу забирать в работу.'}</p>
-      </div>
+      <SeoSectionHeading
+        eyebrow={intro.eyebrow || 'Готовый результат'}
+        heading={heading}
+        intro={intro.body || 'Готовая структура, текст по слайдам, визуальная подача и CTA — результат, который можно сразу забирать в работу.'}
+        sectionId="ready-carousel-showcase"
+        className="mb-9 max-w-3xl"
+        introClassName="mt-4 text-zinc-400 leading-relaxed"
+      />
 
       <div className="mx-auto grid max-w-[340px] grid-cols-[minmax(0,340px)] justify-center gap-4 md:max-w-[696px] md:grid-cols-[repeat(2,minmax(0,340px))] xl:max-w-[1052px] xl:grid-cols-[repeat(3,minmax(0,340px))]">
         {showcase.map((item, index) => (

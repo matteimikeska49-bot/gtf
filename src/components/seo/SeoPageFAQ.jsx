@@ -2,6 +2,7 @@ import { useState, useId } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { SEO_ANALYTICS_EVENTS } from '../../content/seoPages/releaseContracts';
 import { trackSeoEvent } from './seoAnalytics';
+import { SeoSectionHeading } from './SeoSectionHeading';
 
 export const SeoPageFAQ = ({ items = [], page }) => {
   const [openIndex, setOpenIndex] = useState(0);
@@ -10,12 +11,11 @@ export const SeoPageFAQ = ({ items = [], page }) => {
 
   return (
     <section id="faq-section" data-seo-section="faq" className="border-t border-white/[0.08] py-16 md:py-20">
-      <div className="mb-8 max-w-3xl">
-        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>
-          Частые{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">вопросы</span>
-        </h2>
-      </div>
+      <SeoSectionHeading
+        heading={{ before: 'Частые ', accent: 'вопросы', after: '' }}
+        sectionId="faq"
+        className="mb-8 max-w-3xl"
+      />
       <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-3">
         {items.map((item, index) => {
           const isOpen = openIndex === index;

@@ -11,6 +11,7 @@ import { getUrlOriginErrors } from './originLedger.js';
 import { getIntentOwnershipErrors } from './intentOwnership.js';
 import { getLocaleRuleErrors } from './localeRules.js';
 import { getSeoPageProductionReadinessErrors, getSeoContentUniquenessErrors } from './contentReadiness.js';
+import { getSeoHeroAssetSelectionErrors } from '../carouselAssetRegistry.js';
 
 export const REQUIRED_SEO_PAGE_FIELDS = [
   'id',
@@ -52,10 +53,76 @@ export const REQUIRED_SEO_PAGE_FIELDS = [
 const hasText = (value) => typeof value === 'string' && value.trim().length > 0;
 const hasItems = (value) => Array.isArray(value) && value.length > 0;
 const hasCta = (cta) => Boolean(cta?.label && cta?.href);
+const RAW_HTML_PATTERN = /<[^>]+>/u;
 const findSection = (page, names) => (
   (page.sections || []).some((section) => names.includes(section.id)) ||
   (page.templateSections || []).some((section) => names.includes(section))
 );
+
+const isTypedSeoHeading = (heading) => (
+  Boolean(
+    heading &&
+    typeof heading === 'object' &&
+    typeof heading.before === 'string' &&
+    typeof heading.accent === 'string' &&
+    typeof heading.after === 'string'
+  )
+);
+
+const getValueAtPath = (source, fieldPath) => (
+  fieldPath.split('.').reduce((value, key) => value?.[key], source)
+);
+
+const validateCarouselHeadingContract = (page) => {
+  const requiredHeadingFields = [
+    ['templateCategoriesIntro.heading', page.templateCategoriesIntro?.heading],
+    ['templateChoiceGuide.title', page.templateChoiceGuide?.title],
+    ['productWorkflow.title', page.productWorkflow?.title],
+    ['productCapabilities.heading', page.productCapabilities?.heading],
+    ['readyCarouselShowcaseIntro.heading', page.readyCarouselShowcaseIntro?.heading],
+    ['pageSpecificVisualProof.heading', page.pageSpecificVisualProof?.heading],
+    ['useCasesIntro.heading', page.useCasesIntro?.heading],
+    ['finalCta.title', page.finalCta?.title],
+  ];
+  const errors = [];
+
+  requiredHeadingFields.forEach(([field, heading]) => {
+    if (!isTypedSeoHeading(heading)) {
+      errors.push(`${page.id} ${field} must use typed heading data { before, accent, after }.`);
+      return;
+    }
+    if (!heading.accent.trim()) {
+      errors.push(`${page.id} ${field}.accent must be non-empty for the shared heading system.`);
+    }
+    ['before', 'accent', 'after'].forEach((part) => {
+      if (RAW_HTML_PATTERN.test(heading[part])) {
+        errors.push(`${page.id} ${field}.${part} must not contain raw HTML.`);
+      }
+    });
+  });
+
+  [
+    'templateCategoriesIntro.heading',
+    'templateChoiceGuide.title',
+    'productWorkflow.title',
+    'productCapabilities.heading',
+    'readyCarouselShowcaseIntro.heading',
+    'pageSpecificVisualProof.heading',
+    'useCasesIntro.heading',
+    'finalCta.title',
+    'relatedIntro.heading',
+  ].forEach((fieldPath) => {
+    const value = getValueAtPath(page, fieldPath);
+    if (typeof value === 'string') {
+      errors.push(`${page.id} ${fieldPath} must not be a plain heading string on carousel product pages.`);
+    }
+    if (RAW_HTML_PATTERN.test(typeof value === 'string' ? value : JSON.stringify(value || {}))) {
+      errors.push(`${page.id} ${fieldPath} must not contain raw heading HTML.`);
+    }
+  });
+
+  return errors;
+};
 
 export const getTemplateSectionPresence = (page) => ({
   hero: hasText(page.h1) && hasText(page.heroSubtitle || page.description),
@@ -118,9 +185,11 @@ export const getTemplateSectionOrderErrors = (page) => {
     if (Array.isArray(page.sections) && page.sections.length > 0) {
       errors.push(`${page.id} carousel product page config must not add arbitrary sections.`);
     }
-    if (!Array.isArray(page.heroCarouselImages) || page.heroCarouselImages.length !== 3) {
-      errors.push(`${page.id} carousel product page must define exactly 3 heroCarouselImages.`);
+    if (page.heroCarouselImages !== undefined) {
+      errors.push(`${page.id} carousel product page config must not pass arbitrary heroCarouselImages; use heroCarouselAssetIds from the approved registry.`);
     }
+    errors.push(...getSeoHeroAssetSelectionErrors(page));
+    errors.push(...validateCarouselHeadingContract(page));
     if (!Array.isArray(page.readyCarouselShowcase) || page.readyCarouselShowcase.length !== 6) {
       errors.push(`${page.id} carousel product page must define exactly 6 readyCarouselShowcase cards.`);
     }

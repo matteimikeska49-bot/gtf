@@ -1,3 +1,5 @@
+import { SeoSectionHeading } from '../SeoSectionHeading';
+
 export const SeoTemplateChoiceGuide = ({ page }) => {
   const guide = page.templateChoiceGuide;
   if (!guide || !guide.items?.length) return null;
@@ -6,27 +8,12 @@ export const SeoTemplateChoiceGuide = ({ page }) => {
 
   return (
     <section id="template-choice-guide" className="border-t border-white/[0.08] py-14 md:py-20">
-      <div className="mb-10 max-w-3xl">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">
-          {guide.eyebrow}
-        </p>
-        <h2
-          className="text-3xl font-bold tracking-tight text-white md:text-4xl"
-          style={{ textWrap: 'balance' }}
-        >
-          {title.before}
-          <span className="bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
-            {title.accent}
-          </span>
-          {title.after}
-        </h2>
-        <p
-          className="mt-4 max-w-2xl text-base font-normal leading-7 text-zinc-400"
-          style={{ textWrap: 'pretty' }}
-        >
-          {guide.description}
-        </p>
-      </div>
+      <SeoSectionHeading
+        eyebrow={guide.eyebrow}
+        heading={title}
+        intro={guide.description}
+        sectionId="template-choice-guide"
+      />
 
       {/* Article-style surface — matches workflow step surface */}
       <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] px-5 py-1 md:px-7 md:py-2">

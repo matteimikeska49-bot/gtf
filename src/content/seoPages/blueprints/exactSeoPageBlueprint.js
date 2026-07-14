@@ -1,3 +1,5 @@
+import { getSeoHeroAssetSelectionErrors } from '../carouselAssetRegistry.js';
+
 export const EXACT_SEO_PAGE_BLUEPRINT_ID = 'gotoflow-template-page-exact-v1';
 
 export const SEO_HANDOFF_STATUSES = [
@@ -786,8 +788,7 @@ export const validateSeoRuntimeProductProof = ({ page, handoff = null, context =
     }
   }
 
-  const heroImages = asArray(page?.heroCarouselImages);
-  if (heroImages.length !== 3) errors.push(`${label} heroCarouselImages must contain exactly 3 carousel images.`);
+  errors.push(...getSeoHeroAssetSelectionErrors(page));
 
   const capabilities = page?.productCapabilities;
   const requiredCapabilities = SEO_PRODUCT_PROOF_CONTRACT.canonicalProductCapabilities;
@@ -870,6 +871,11 @@ export const validateRenderedSeoProductProofDom = (snapshot = {}) => {
   if (snapshot.footerCount !== undefined && snapshot.footerCount !== 1) errors.push('Rendered DOM must contain exactly one shared footer.');
   if (snapshot.heroCarouselCards !== undefined && snapshot.heroCarouselCards !== 3) errors.push('Rendered DOM hero must contain exactly 3 carousel cards.');
   if (snapshot.heroCarouselImages !== undefined && snapshot.heroCarouselImages !== 3) errors.push('Rendered DOM hero must contain exactly 3 carousel images.');
+  if (snapshot.heroAssetIds !== undefined && snapshot.heroAssetIds !== 3) errors.push('Rendered DOM hero must expose exactly 3 data-hero-asset-id markers.');
+  if (snapshot.heroCenterAssetIds !== undefined && snapshot.heroCenterAssetIds !== 1) errors.push('Rendered DOM hero must expose exactly one center asset marker.');
+  if (snapshot.seoHeadingCount !== undefined && snapshot.seoHeadingCount < 10) errors.push('Rendered DOM must render all mandatory carousel product H2 through data-seo-heading.');
+  if (snapshot.seoHeadingAccentCount !== undefined && snapshot.seoHeadingAccentCount < 10) errors.push('Rendered DOM must render a data-seo-heading-accent marker for every mandatory carousel product H2.');
+  if ((snapshot.majorH2WithoutAccent || 0) > 0) errors.push('Rendered DOM contains major section H2 without a shared heading accent marker.');
   if (snapshot.productWorkflowMarkers !== 1) errors.push('Rendered DOM must contain exactly one data-seo-proof="product-workflow" marker.');
   if (snapshot.productCapabilitiesMarkers !== 1) errors.push('Rendered DOM must contain exactly one data-seo-proof="product-capabilities" marker.');
   if ((snapshot.productCapabilityCards || 0) < 6) errors.push('Rendered DOM product capabilities must contain at least 6 capability group cards.');

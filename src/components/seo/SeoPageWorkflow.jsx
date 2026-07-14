@@ -1,4 +1,5 @@
 import { SeoPageSection } from './SeoPageSection';
+import { SeoSectionHeading } from './SeoSectionHeading';
 
 export const SeoPageWorkflow = ({
   sections = [],
@@ -21,17 +22,13 @@ export const SeoPageWorkflow = ({
       data-seo-proof={dataSeoProof}
       className="py-16 md:py-20"
     >
-      <div className="mb-8 max-w-3xl">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">{eyebrow}</p>
-        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>
-          {heading}
-        </h2>
-        {description && (
-          <p className="mt-4 max-w-2xl text-base font-normal leading-7 text-zinc-400" style={{ textWrap: 'pretty' }}>
-            {description}
-          </p>
-        )}
-      </div>
+      <SeoSectionHeading
+        eyebrow={eyebrow}
+        heading={heading}
+        intro={description}
+        sectionId={dataSeoProof || dataSeoSection || id || 'workflow'}
+        className="mb-8 max-w-3xl"
+      />
 
       {compact ? (
         <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] px-5 py-1 md:px-7 md:py-2">

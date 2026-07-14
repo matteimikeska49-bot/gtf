@@ -307,7 +307,7 @@ const seamlessHandoffSection = (sectionId) => (
 
 const buildCanonicalProductCapabilities = ({ heading, introCopy, highlightedCapabilities = [] } = {}) => ({
   eyebrow: 'Возможности GoToFlow',
-  heading: heading || 'Что можно настроить в GoToFlow',
+  heading: heading || { before: 'Что можно настроить в ', accent: 'GoToFlow', after: '' },
   introCopy: introCopy || 'Этот блок показывает подтвержденные возможности продукта: источники, AI-структуру, шаблоны, визуальные настройки, редактирование, типы каруселей и форматы.',
   highlightedCapabilities,
   groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,
@@ -326,13 +326,6 @@ const seamlessVisualList = (sectionId, slotName) => {
   const value = seamlessHandoffSection(sectionId)?.visualSlots?.[slotName] ?? [];
   return Array.isArray(value) ? value : [];
 };
-
-const seamlessImagesFromVisualSlot = (sectionId, slotName) => (
-  seamlessVisualList(sectionId, slotName).map((item) => ({
-    src: item.assetPath,
-    alt: item.alt,
-  }))
-);
 
 const seamlessItemsFromSlots = (sectionId, limit = Infinity) => {
   const titles = seamlessCopyList(sectionId, 'item.title');
@@ -478,11 +471,19 @@ const seamlessInstagramCarouselDraftPage = {
       href: '/ru/blog/besshovnaya-karusel-v-instagram',
     },
   },
-  heroCarouselImages: seamlessImagesFromVisualSlot('hero', 'heroCarouselImages'),
+  heroCarouselAssetIds: [
+    'seamless-instagram-hero-slide-1',
+    'seamless-instagram-hero-slide-3',
+    'seamless-instagram-hero-slide-5',
+  ],
   heroVisualBadge: 'Бесшовная',
   templateCategoriesIntro: {
     eyebrow: seamlessCopySlot('pageRelevantFormats', 'sectionEyebrow'),
-    heading: seamlessCopySlot('pageRelevantFormats', 'sectionHeading'),
+    heading: {
+      before: 'Для каких задач подходит ',
+      accent: 'бесшовный дизайн',
+      after: '',
+    },
   },
   templateCategories: seamlessItemsFromSlots('pageRelevantFormats', 4),
   categoryCta: {
@@ -575,6 +576,11 @@ const seamlessInstagramCarouselDraftPage = {
   pageSpecificVisualProof: {
     proofType: 'page-specific',
     eyebrow: seamlessCopySlot('pageSpecificVisualProof', 'eyebrow'),
+    heading: {
+      before: 'Как выглядит ',
+      accent: 'бесшовная карусель',
+      after: ' в Instagram',
+    },
     title: seamlessCopySlot('pageSpecificVisualProof', 'title'),
     description: seamlessCopySlot('pageSpecificVisualProof', 'description'),
     label: seamlessCopySlot('pageSpecificVisualProof', 'label'),
@@ -587,7 +593,11 @@ const seamlessInstagramCarouselDraftPage = {
   },
   readyCarouselShowcaseIntro: {
     eyebrow: seamlessCopySlot('readyCarouselShowcase', 'sectionEyebrow'),
-    heading: seamlessCopySlot('readyCarouselShowcase', 'sectionHeading'),
+    heading: {
+      before: 'Посмотрите, какие карусели можно создать в ',
+      accent: 'GoToFlow',
+      after: '',
+    },
     body: seamlessCopySlot('readyCarouselShowcase', 'sectionBody'),
   },
   readyCarouselShowcase: seamlessItemsFromSlots('readyCarouselShowcase', 6),
@@ -598,13 +608,21 @@ const seamlessInstagramCarouselDraftPage = {
     note: seamlessCopySlot('readyCarouselShowcase', 'sectionBody'),
   },
   productCapabilities: buildCanonicalProductCapabilities({
-    heading: seamlessCopySlot('productCapabilities', 'heading'),
+    heading: {
+      before: 'Что можно настроить при создании ',
+      accent: 'бесшовной карусели',
+      after: '',
+    },
     introCopy: seamlessCopySlot('productCapabilities', 'introCopy', seamlessInstagramCarouselHandoff.productProofModules.canonicalProductCapabilities.introCopy),
     highlightedCapabilities: ['seamlessCarousels', 'formats4511916', 'upTo10Slides', 'slideEditing'],
   }),
   useCasesIntro: {
     eyebrow: 'Сценарии',
-    heading: 'Для каких задач подходит бесшовная карусель',
+    heading: {
+      before: 'Для каких задач подходит ',
+      accent: 'бесшовная карусель',
+      after: '',
+    },
   },
   useCases: seamlessCopyList('useCases', 'item.title').map((title, index) => ({
     title,
@@ -1447,8 +1465,29 @@ const rawSeoPages = [
       body: 'Шаблоны каруселей Instagram — это готовые структуры слайдов для разных задач: экспертного чек-листа, разбора ошибки, кейса, объяснения проблемы или презентации продукта. В GoToFlow можно выбрать подходящую структуру и создать готовую карусель с обложкой, последовательностью слайдов, текстом, визуальной подачей и финальным CTA.',
       contextualLink: { label: 'Размеры карусели Instagram', href: '/ru/blog/razmer-karuseli-v-instagram' },
     },
-    heroCarouselImages: getSeoCarouselAssets('hero', 'instagramTemplates'),
+    heroCarouselAssetIds: [
+      'instagram-template-hero-expert-post',
+      'instagram-template-hero-template-cover',
+      'instagram-template-hero-product-case',
+    ],
+    templateCategoriesIntro: {
+      eyebrow: 'Категории',
+      heading: {
+        before: 'Популярные форматы ',
+        accent: 'шаблонов',
+        after: '',
+      },
+    },
     readyCarouselShowcase: getSeoCarouselAssets('readyShowcase', 'instagramCarousel'),
+    readyCarouselShowcaseIntro: {
+      eyebrow: 'Готовый результат',
+      heading: {
+        before: 'Посмотрите, какие карусели можно создать в ',
+        accent: 'GoToFlow',
+        after: '',
+      },
+      body: 'Готовая структура, текст по слайдам, визуальная подача и CTA — результат, который можно сразу забирать в работу.',
+    },
     readyCarouselShowcaseCta: {
       label: 'Выбрать структуру и создать карусель',
       href: 'https://app.gotoflow.io',
@@ -1456,13 +1495,21 @@ const rawSeoPages = [
       note: 'Перед публикацией результат можно проверить и отредактировать.',
     },
     productCapabilities: buildCanonicalProductCapabilities({
-      heading: 'Что можно настроить в GoToFlow',
+      heading: {
+        before: 'Что можно настроить в ',
+        accent: 'GoToFlow',
+        after: '',
+      },
       introCopy: 'GoToFlow поддерживает разные исходники, AI-структуру и текст, шаблоны, стили, промпты, фон, персонажа, CTA, редактирование, перегенерацию, бесшовные и анимированные карусели, форматы 4:5, 1:1 и 9:16 и до 10 слайдов для Instagram-карусели.',
       highlightedCapabilities: ['templates', 'aiStructureText', 'textEditing', 'formats4511916'],
     }),
     useCasesIntro: {
       eyebrow: 'Сценарии',
-      heading: 'Для каких задач подходят шаблоны каруселей',
+      heading: {
+        before: 'Для каких задач подходят ',
+        accent: 'шаблоны каруселей',
+        after: '',
+      },
     },
     useCases: [
       {
@@ -1652,6 +1699,11 @@ const rawSeoPages = [
     pageSpecificVisualProof: {
       proofType: 'page-specific',
       eyebrow: 'Доказательство результата',
+      heading: {
+        before: 'Как структура превращается в ',
+        accent: 'готовую карусель',
+        after: '',
+      },
       title: 'Как структура превращается в готовую карусель',
       description: 'Отдельный proof-блок показывает последовательность готовых слайдов после выбора шаблона, исходника, текстов и визуального направления.',
       label: 'Карусель по шаблону',

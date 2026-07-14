@@ -15,6 +15,7 @@ import { SeoQuickAnswer } from './template-page/SeoQuickAnswer';
 import { SeoPageAnchorNav } from './template-page/SeoPageAnchorNav';
 import { SeoReadyCarouselShowcase } from './template-page/SeoReadyCarouselShowcase';
 import { SeoPageSpecificVisualProof } from './template-page/SeoPageSpecificVisualProof';
+import { SeoSectionHeading } from './SeoSectionHeading';
 import {
   CAROUSEL_PRODUCT_SEO_SECTION_ORDER,
   isCarouselProductSeoPage,
@@ -104,21 +105,14 @@ const FinalCtaBlock = ({ page }) => {
       <div className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.045] p-8 shadow-[0_24px_90px_rgba(0,0,0,0.28)] md:flex md:items-center md:justify-between md:gap-10 md:p-12">
         <div className="absolute right-[-12%] top-[-40%] h-80 w-80 rounded-full bg-pink-500/[0.12] blur-[90px]" />
         <div className="relative max-w-2xl">
-          {finalCta.eyebrow && (
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">
-              {finalCta.eyebrow}
-            </p>
-          )}
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>
-            {title.before}
-            {title.accent && (
-              <span className="bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
-                {title.accent}
-              </span>
-            )}
-            {title.after}
-          </h2>
-          <p className="mt-4 text-sm leading-7 text-zinc-400" style={{ textWrap: 'pretty' }}>{finalCta.description}</p>
+          <SeoSectionHeading
+            eyebrow={finalCta.eyebrow}
+            heading={title}
+            intro={finalCta.description}
+            sectionId="final-cta"
+            className=""
+            introClassName="mt-4 text-sm leading-7 text-zinc-400"
+          />
         </div>
         <div className="relative mt-7 shrink-0 md:mt-0">
           <SeoPageCTA cta={finalCta.primaryAction} page={page} ctaPosition="final" compact />
@@ -144,7 +138,7 @@ const renderVariantSection = (page, requirement) => {
         dataSeoProof="product-capabilities"
         sections={page.productCapabilities?.groups || []}
         eyebrow={page.productCapabilities?.eyebrow || 'Возможности продукта'}
-        heading={page.productCapabilities?.heading || 'Возможности GoToFlow'}
+        heading={page.productCapabilities?.heading || { before: 'Возможности ', accent: 'GoToFlow', after: '' }}
         description={page.productCapabilities?.introCopy}
         cardMarker="product-capability"
         variant="compact-list"
@@ -160,7 +154,7 @@ const renderVariantSection = (page, requirement) => {
         dataSeoSection="use-cases"
         sections={getSectionsForRequirement(page, requirement)}
         eyebrow={page.useCasesIntro?.eyebrow || 'Сценарии'}
-        heading={page.useCasesIntro?.heading || 'Для каких задач подходит бесшовная карусель'}
+        heading={page.useCasesIntro?.heading || { before: 'Для каких задач подходит ', accent: 'бесшовная карусель', after: '' }}
         variant="compact-list"
       />
     );

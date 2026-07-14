@@ -1,32 +1,65 @@
+const APPROVED_STATUS = 'approved';
+const HERO_PLACEMENT = 'hero';
+
+const carouselHeroAsset = ({
+  id,
+  assetPath,
+  alt,
+  intentTags,
+  allowedPlacements = [HERO_PLACEMENT],
+  status = APPROVED_STATUS,
+}) => ({
+  id,
+  assetPath,
+  src: assetPath,
+  alt,
+  intentTags,
+  allowedPlacements,
+  status,
+  approved: status === APPROVED_STATUS,
+});
+
 export const SEO_CAROUSEL_ASSET_REGISTRY = {
   hero: {
     instagramTemplates: [
-      {
-        src: '/images/niches/ru/content-ru-9.webp',
+      carouselHeroAsset({
+        id: 'instagram-template-hero-expert-post',
+        assetPath: '/images/niches/ru/content-ru-9.webp',
         alt: 'Пример карусели: экспертный пост',
-      },
-      {
-        src: '/images/niches/ru/content-ru-10.webp',
+        intentTags: ['instagram', 'carousel', 'templates', 'template-discovery'],
+      }),
+      carouselHeroAsset({
+        id: 'instagram-template-hero-product-case',
+        assetPath: '/images/niches/ru/content-ru-10.webp',
         alt: 'Пример карусели: продуктовый кейс',
-      },
-      {
-        src: '/images/niches/ru/content-ru-5.webp',
+        intentTags: ['instagram', 'carousel', 'templates', 'template-discovery'],
+      }),
+      carouselHeroAsset({
+        id: 'instagram-template-hero-template-cover',
+        assetPath: '/images/niches/ru/content-ru-5.webp',
         alt: 'Пример карусели: готовый шаблон с обложкой и слайдами',
-      },
+        intentTags: ['instagram', 'carousel', 'templates', 'template-discovery'],
+      }),
     ],
     seamlessInstagram: [
-      {
-        src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp',
+      carouselHeroAsset({
+        id: 'seamless-instagram-hero-slide-1',
+        assetPath: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp',
         alt: 'Первый слайд бесшовной карусели Instagram с началом непрерывной композиции',
-      },
-      {
-        src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp',
-        alt: 'Финальный слайд бесшовной карусели Instagram с продолжением общего визуала',
-      },
-      {
-        src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp',
+        intentTags: ['instagram', 'carousel', 'seamless', 'besshovnaya-karusel-instagram'],
+      }),
+      carouselHeroAsset({
+        id: 'seamless-instagram-hero-slide-3',
+        assetPath: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp',
         alt: 'Центральный слайд бесшовной карусели Instagram с видимым переходом между слайдами',
-      },
+        intentTags: ['instagram', 'carousel', 'seamless', 'besshovnaya-karusel-instagram'],
+      }),
+      carouselHeroAsset({
+        id: 'seamless-instagram-hero-slide-5',
+        assetPath: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp',
+        alt: 'Финальный слайд бесшовной карусели Instagram с продолжением общего визуала',
+        intentTags: ['instagram', 'carousel', 'seamless', 'besshovnaya-karusel-instagram'],
+      }),
     ],
   },
   readyShowcase: {
@@ -138,3 +171,71 @@ export const SEO_CAROUSEL_ASSET_REGISTRY = {
 export const getSeoCarouselAssets = (group, key) => (
   SEO_CAROUSEL_ASSET_REGISTRY[group]?.[key] || []
 );
+
+export const getSeoCarouselAssetRegistryItems = () => (
+  Object.values(SEO_CAROUSEL_ASSET_REGISTRY)
+    .flatMap((group) => Object.values(group))
+    .flat()
+    .filter((item) => item && typeof item === 'object' && item.id)
+);
+
+export const getSeoCarouselAssetById = (assetId) => (
+  getSeoCarouselAssetRegistryItems().find((item) => item.id === assetId) || null
+);
+
+export const getCarouselPageIntentTags = (page = {}) => {
+  const text = [
+    page.path,
+    page.slug,
+    page.primaryKeyword,
+    page.primaryIntent,
+    page.searchIntent,
+    page.h1,
+  ].filter(Boolean).join(' ').toLowerCase();
+
+  const tags = ['carousel'];
+  if (/instagram|инстаграм/u.test(text)) tags.push('instagram');
+  if (/бесшовн|seamless|besshovnaya/u.test(text)) tags.push('seamless', 'besshovnaya-karusel-instagram');
+  if (/шаблон|template/u.test(text)) tags.push('templates', 'template-discovery');
+  return [...new Set(tags)];
+};
+
+export const resolveSeoHeroCarouselAssets = (assetIds = []) => (
+  assetIds.map((assetId) => getSeoCarouselAssetById(assetId)).filter(Boolean)
+);
+
+export const getSeoHeroAssetSelectionErrors = (page = {}) => {
+  const label = page.id || page.path || 'carousel product page';
+  const assetIds = page.heroCarouselAssetIds;
+  const errors = [];
+
+  if (!Array.isArray(assetIds) || assetIds.length !== 3) {
+    return [`${label} heroCarouselAssetIds must contain exactly 3 approved carousel asset IDs.`];
+  }
+
+  assetIds.forEach((assetId, index) => {
+    const asset = getSeoCarouselAssetById(assetId);
+    if (!asset) {
+      errors.push(`${label} hero asset ${index + 1} does not exist in the carousel asset registry: ${assetId}`);
+      return;
+    }
+    if (asset.status !== APPROVED_STATUS || asset.approved !== true) {
+      errors.push(`${label} hero asset ${assetId} must be approved.`);
+    }
+    if (!asset.allowedPlacements?.includes(HERO_PLACEMENT)) {
+      errors.push(`${label} hero asset ${assetId} is not allowed for Hero placement.`);
+    }
+    if (/placeholder|not_available|todo|tbd|заглушк|плейсхолдер/iu.test(asset.assetPath || asset.src || asset.id || '')) {
+      errors.push(`${label} hero asset ${assetId} must not be a placeholder asset.`);
+    }
+  });
+
+  const centralAsset = getSeoCarouselAssetById(assetIds[1]);
+  const pageIntentTags = getCarouselPageIntentTags(page);
+  const centralTags = centralAsset?.intentTags || [];
+  if (centralAsset && !centralTags.some((tag) => pageIntentTags.includes(tag))) {
+    errors.push(`${label} central hero asset ${centralAsset.id} must match page intent tags: ${pageIntentTags.join(', ')}.`);
+  }
+
+  return errors;
+};
