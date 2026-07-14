@@ -372,6 +372,540 @@ const seamlessWorkflowStepDescriptions = [
 const seamlessResultSlides = getSeoCarouselAssets('workflowResults', 'seamlessInstagramFiveSlides');
 const aiCarouselResultSlides = getSeoCarouselAssets('workflowResults', 'aiCarouselFiveSlides');
 
+const textToCarouselReadyShowcaseAssets = getSeoCarouselAssets('readyShowcase', 'instagramCarousel');
+
+const textToCarouselReadyShowcaseTitles = [
+  'Экспертный пост из заметок',
+  'Гайд, собранный из статьи',
+  'Переупаковка кейса клиента',
+  'Чек-лист из инструкции',
+  'Сторителлинг из лонгрида',
+  'Подборка инструментов из списка',
+];
+
+const textToCarouselReadyShowcase = textToCarouselReadyShowcaseAssets.slice(0, 6).map((item, index) => ({
+  ...item,
+  title: textToCarouselReadyShowcaseTitles[index],
+}));
+
+const textToCarouselSectionPolicy = Object.fromEntries([
+  'hero',
+  'quickAnswer',
+  'pageRelevantFormats',
+  'productWorkflow',
+  'productCapabilities',
+  'readyCarouselShowcase',
+  'pageSpecificVisualProof',
+  'useCases',
+  'faq',
+  'related',
+  'finalCta',
+].map((sectionId) => [
+  sectionId,
+  {
+    enabled: true,
+    reason: 'Section is required by GoToFlow Carousel Page Production System v1.0 Freeze and populated from the approved Content & Design Contract.',
+  },
+]));
+
+const textToCarouselFaq = [
+  {
+    question: 'Какой длины текст можно вставить?',
+    answer: 'Вы можете загрузить любую статью, заметку или длинный пост. Искусственный интеллект способен обработать лонгриды и самостоятельно разделить их на логичные карточки без потери смысла.',
+  },
+  {
+    question: 'Теряется ли смысл текста при сокращении ИИ?',
+    answer: 'Нет, алгоритм настроен на выделение ключевых тезисов. ИИ сохраняет главные мысли и убирает лишнюю воду, чтобы текст легко читался в формате карусели Instagram.',
+  },
+  {
+    question: 'Можно ли запретить ИИ сокращать текст?',
+    answer: 'Да. Если у вас уже готов короткий текст для каждого слайда, вы можете настроить систему так, чтобы она оставила исходный материал без сокращений и изменений.',
+  },
+  {
+    question: 'ИИ сам придумывает заголовки для слайдов?',
+    answer: 'Да, система автоматически анализирует вставленный текст и генерирует вовлекающие заголовки для каждой карточки, чтобы удержать внимание читателя.',
+  },
+  {
+    question: 'Как ИИ понимает, где заканчивается один слайд и начинается другой?',
+    answer: 'Нейросеть анализирует логическую структуру вашего текста и делит его на смысловые блоки. Каждый завершенный тезис или шаг инструкции помещается на отдельный слайд.',
+  },
+  {
+    question: 'Можно ли перенести уже готовые абзацы на слайды без изменения?',
+    answer: 'Да, если ваш текст уже структурирован, вы можете вручную перенести абзацы на конкретные карточки в редакторе без ИИ-сокращений.',
+  },
+  {
+    question: 'Сколько времени занимает конвертация статьи в карусель?',
+    answer: 'Процесс анализа текста, разбивки на слайды и создания базового дизайна занимает всего несколько секунд.',
+  },
+  {
+    question: 'Какие форматы исходников поддерживаются?',
+    answer: 'Вы можете вставить обычный текст, скопировать ссылку на статью, загрузить PDF-файл, добавить ссылку на YouTube-видео или использовать голосовое сообщение.',
+  },
+  {
+    question: 'Нужно ли мне самому подбирать картинки к тексту?',
+    answer: 'Нет, GoToFlow автоматически предлагает визуальные шаблоны, фоны, ИИ-стили и персонажей, которые подходят под ваш контент.',
+  },
+  {
+    question: 'Можно ли вручную исправить текст после генерации?',
+    answer: 'Да. Вы имеете полный контроль над результатом и можете отредактировать любой текст на сгенерированных слайдах перед скачиванием.',
+  },
+  {
+    question: 'Что делать, если на одном слайде получилось слишком много текста?',
+    answer: 'Вы можете перегенерировать структуру карусели, попросить ИИ сократить текст сильнее или вручную разбить длинный тезис на два отдельных слайда.',
+  },
+  {
+    question: 'Какие форматы экспорта доступны?',
+    answer: 'Готовая карусель скачивается в виде ZIP-архива с пронумерованными изображениями высокого качества, готовыми к публикации. Мы поддерживаем форматы 4:5, 1:1 и 9:16.',
+  },
+  {
+    question: 'Нужно ли уметь работать в графических редакторах?',
+    answer: 'Абсолютно нет. GoToFlow берет всю верстку, дизайн и распределение текста на себя. Вы работаете только со смыслами.',
+  },
+  {
+    question: 'Можно ли превратить текст в бесшовную карусель?',
+    answer: 'Да, в настройках дизайна можно выбрать бесшовный шаблон, и ваш текст будет наложен на перетекающий фон, создавая панорамный эффект.',
+  },
+  {
+    question: 'Сколько слайдов можно сгенерировать из одного текста?',
+    answer: 'Система позволяет создать от 5 до 10 слайдов в одной карусели. Это рекомендуемый диапазон для достижения максимальных охватов в Instagram.',
+  },
+];
+
+const textToCarouselDraftPage = {
+  id: 'ru-use-case-tekst-v-karusel',
+  language: 'ru',
+  pageType: 'useCase',
+  slug: 'tekst-v-karusel',
+  path: '/ru/use-cases/tekst-v-karusel',
+  title: 'Превратите текст в готовую карусель для Instagram | GoToFlow',
+  description: 'Вставьте статью, заметку или длинный пост, и GoToFlow автоматически выделит главное, разобьет на слайды и создаст красивый дизайн без ручной верстки.',
+  h1: 'Превратите текст в готовую карусель для Instagram',
+  heroSubtitle: 'Вставьте статью, заметку или длинный пост, и GoToFlow автоматически выделит главное, разобьет на слайды и создаст красивый дизайн без ручной верстки.',
+  primaryKeyword: 'текст в карусель',
+  secondaryKeywords: ['текст в карусель нейросеть', 'создать карусель из текста', 'статья в карусель'],
+  searchIntent: 'Преобразовать готовый текст, заметку или статью в структурированную карусель Instagram.',
+  priority: 0.7,
+  commercialValue: 0.78,
+  productBridge: 'GoToFlow принимает текстовый исходник, выделяет смысл, распределяет материал по слайдам и помогает получить редактируемую готовую карусель.',
+  primaryIntent: 'Текстовый исходник превращается в готовую карусель Instagram с редактируемыми слайдами.',
+  pageFamily: 'carousel_product_page',
+  templateVariant: 'template_page',
+  cta: {
+    label: 'Создать карусель из текста',
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+  },
+  heroEyebrow: 'Текст в карусель',
+  heroSecondaryLinkLabel: 'Смотреть примеры',
+  finalCta: {
+    eyebrow: 'Начните сейчас',
+    title: {
+      before: 'Превратите свой первый ',
+      accent: 'текст в карусель',
+      after: '',
+    },
+    description: 'Скопируйте заметки или лонгрид, и GoToFlow сделает всю рутину по чтению, анализу и верстке за вас.',
+    primaryAction: {
+      label: 'Вставить текст и создать карусель',
+      href: 'https://app.gotoflow.io',
+      action: 'open_app',
+    },
+  },
+  conversion: {
+    destinationType: 'app',
+    destinationUrl: 'https://app.gotoflow.io',
+    targetAction: 'convert_text_to_carousel',
+    pageEntity: 'text_to_carousel',
+    appDeepLinkVerified: false,
+    appDeepLinkNotes: 'No verified page-specific app deep link is documented in this repo; conversion CTAs use the app origin.',
+  },
+  seoBrief: {
+    pageEntity: 'text_to_carousel_use_case',
+    primaryQuery: 'текст в карусель',
+    primaryIntent: 'Преобразовать готовый текст, заметку или статью в структурированную карусель Instagram.',
+    userJob: 'Вставить текстовый материал и получить готовую редактируемую карусель.',
+    uniqueAngle: 'Input-source use-case page focused on text-to-carousel conversion.',
+    audience: 'Эксперты, авторы, SMM-команды и владельцы контента, которым нужно переупаковать текст в Instagram-карусель.',
+    contentType: 'noindex use-case SEO page',
+    platform: 'Instagram',
+    language: 'ru',
+    country: 'RU',
+    conversionAction: 'convert_text_to_carousel',
+    productRoute: 'https://app.gotoflow.io',
+    cannibalizationBoundary: 'This route owns commercial text-to-carousel conversion intent. The supporting article owns educational how-to context.',
+  },
+  faqPolicy: {
+    minItems: 12,
+    maxItems: 16,
+    requireUniqueQuestions: true,
+    requireVisibleSchemaParity: true,
+  },
+  sectionPolicy: textToCarouselSectionPolicy,
+  sections: [],
+  quickAnswer: {
+    title: 'Как превратить текст в карусель?',
+    body: 'Просто скопируйте свой текст, заметку или целую статью в GoToFlow. ИИ сам проанализирует смысл, выделит тезисы, сократит лишнее и распределит материал по карточкам с единым дизайном. Вам останется только проверить результат и скачать готовую карусель.',
+  },
+  heroCarouselAssetIds: [
+    'instagram-template-hero-product-case',
+    'instagram-template-hero-expert-post',
+    'instagram-template-hero-template-cover',
+  ],
+  heroVisualBadge: 'Текст',
+  templateCategoriesIntro: {
+    eyebrow: 'Поддерживаемые форматы',
+    heading: {
+      before: 'Какие тексты можно ',
+      accent: 'превратить в карусель',
+      after: '',
+    },
+  },
+  templateCategories: [
+    {
+      title: 'Статья из блога',
+      body: 'Сожмите длинный материал до ключевых тезисов для соцсетей.',
+    },
+    {
+      title: 'Личные заметки',
+      body: 'Превратите хаос из мыслей и набросков в структурированный гайд.',
+    },
+    {
+      title: 'Длинный лонгрид',
+      body: 'Разделите тяжелый текстовый пост на легкие для чтения карточки.',
+    },
+    {
+      title: 'Текстовая инструкция',
+      body: 'Визуализируйте пошаговые процессы, выделив каждый шаг на отдельный слайд.',
+    },
+  ],
+  categoryCta: {
+    label: 'Создать карусель из текста',
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+  },
+  templateChoiceGuide: {
+    eyebrow: 'Подготовка текста',
+    title: {
+      before: 'Какой исходник лучше ',
+      accent: 'превратить в карусель',
+      after: '',
+    },
+    description: 'Этот блок использует существующий compact pattern системы для поддерживаемых текстовых форматов и не добавляет новый layout.',
+    items: [
+      {
+        id: 'blog-article',
+        task: 'Статья из блога',
+        template: 'Ключевые тезисы',
+        structure: 'сожмите длинный материал до ключевых тезисов для соцсетей',
+      },
+      {
+        id: 'personal-notes',
+        task: 'Личные заметки',
+        template: 'Структурированный гайд',
+        structure: 'превратите хаос из мыслей и набросков в структурированный гайд',
+      },
+      {
+        id: 'longread',
+        task: 'Длинный лонгрид',
+        template: 'Легкие карточки',
+        structure: 'разделите тяжелый текстовый пост на легкие для чтения карточки',
+      },
+      {
+        id: 'instruction',
+        task: 'Текстовая инструкция',
+        template: 'Пошаговый процесс',
+        structure: 'визуализируйте пошаговые процессы, выделив каждый шаг на отдельный слайд',
+      },
+    ],
+  },
+  productWorkflow: {
+    preset: 'carousel_creation',
+    eyebrow: 'Процесс',
+    title: {
+      before: 'Как происходит конвертация ',
+      accent: 'текста в слайды',
+      after: '',
+    },
+    description: 'Вставьте текстовый исходник, проверьте выделенные тезисы, настройте визуальный стиль и скачайте готовую карусель для Instagram.',
+    carouselTypes: [
+      { id: 'ai', label: 'AI-карусель', availability: 'available', active: true },
+      { id: 'template', label: 'Шаблонная', availability: 'available' },
+      { id: 'seamless', label: 'Бесшовная', availability: 'available' },
+      { id: 'animated', label: 'Анимированная', availability: 'available' },
+    ],
+    stepOverrides: {
+      source: {
+        title: 'Вставка текста',
+        description: 'Просто скопируйте ваш лонгрид или сырые заметки в поле ввода GoToFlow.',
+      },
+      structure: {
+        title: 'AI-анализ содержания',
+        description: 'Система считывает смысл, выделяет заголовки и выжимки для карточек.',
+      },
+      textReview: {
+        title: 'Распределение по слайдам',
+        description: 'Текст автоматически разбивается на логичные фрагменты без перегруза слайдов.',
+      },
+      visualRoute: {
+        title: 'Редактирование и дизайн',
+        description: 'Настройте визуальный стиль, примените шаблон и поправьте текст при необходимости.',
+      },
+      editorResult: {
+        title: 'Скачивание',
+        description: 'Скачайте готовый архив со слайдами, которые сразу можно публиковать в Instagram.',
+      },
+    },
+    mockups: [
+      {
+        id: 'source-structure',
+        title: 'Исходный текст и структура',
+        caption: 'Панель исходного текста и визуально выделенная AI-структура.',
+        fallbackVisualType: 'source_structure',
+      },
+      {
+        id: 'text-review',
+        title: 'Разбивка на слайды',
+        caption: 'Проверьте заголовки, выжимки и текстовые блоки будущих карточек.',
+        fallbackVisualType: 'text_review',
+      },
+      {
+        id: 'visual-route',
+        title: 'Дизайн и настройки',
+        caption: 'Выберите шаблон, фон, шрифты и персонажа под ваш фирменный стиль.',
+        fallbackVisualType: 'ai_template',
+      },
+      {
+        id: 'editor-result',
+        title: 'Готовые слайды',
+        caption: 'Готовые слайды из утвержденной группы workflowResults.aiCarouselFiveSlides.',
+        resultCarousel: {
+          proofType: 'workflow-result',
+          title: 'Из текста в готовые слайды',
+          label: 'Текст в карусель',
+          format: '4:5',
+          slideCount: aiCarouselResultSlides.length,
+          width: 1122,
+          height: 1402,
+          mode: 'Готовая карусель',
+          images: aiCarouselResultSlides,
+        },
+        fallbackVisualType: 'editor_result',
+      },
+    ],
+    featureChips: [
+      'Вставка текста',
+      'AI-анализ содержания',
+      'Разбивка по слайдам',
+      'Редактирование и дизайн',
+      'Скачивание',
+    ],
+    cta: {
+      label: 'Создать карусель из текста',
+      href: 'https://app.gotoflow.io',
+      action: 'open_app',
+      note: 'Вставьте текст, проверьте структуру и доработайте готовые слайды перед публикацией.',
+    },
+  },
+  productCapabilities: {
+    eyebrow: 'Настройки',
+    heading: {
+      before: 'Какие параметры можно настроить ',
+      accent: 'перед скачиванием',
+      after: '',
+    },
+    introCopy: 'Искусственный интеллект делает основную работу, но вы полностью контролируете финальный результат карусели.',
+    highlightedCapabilities: ['topicText', 'aiStructureText', 'templates', 'textEditing', 'cta', 'upTo10Slides'],
+    groups: [
+      {
+        id: 'text-input-method',
+        title: 'Способ ввода текста',
+        body: 'Прямая вставка текста, загрузка файла (PDF) или ссылка на статью.',
+        capabilityIds: ['topicText', 'link', 'video', 'pdf', 'voice'],
+      },
+      {
+        id: 'compression-level',
+        title: 'Стипендия сжатия',
+        body: 'Настройте, насколько сильно ИИ должен сократить текст, или попросите оставить его без изменений.',
+        capabilityIds: ['aiStructureText', 'regeneration'],
+      },
+      {
+        id: 'series-length',
+        title: 'Длина серии',
+        body: 'Задайте желаемое количество слайдов (от 5 до 10).',
+        capabilityIds: ['upTo10Slides', 'formats4511916'],
+      },
+      {
+        id: 'design-settings',
+        title: 'Настройки дизайна',
+        body: 'Выберите шаблон, фон, шрифты и персонажа под ваш фирменный стиль.',
+        capabilityIds: ['templates', 'aiStyle', 'customPrompt', 'background', 'character', 'seamlessCarousels', 'animatedCarousels'],
+      },
+      {
+        id: 'manual-editing',
+        title: 'Ручная корректировка',
+        body: 'Отредактируйте текст на любом конкретном слайде, если ИИ упустил важную деталь.',
+        capabilityIds: ['textEditing', 'slideEditing'],
+      },
+      {
+        id: 'cta-settings',
+        title: 'Призыв к действию (CTA)',
+        body: 'Добавьте свои контакты или призыв к подписке на финальный слайд.',
+        capabilityIds: ['cta'],
+      },
+    ],
+  },
+  readyCarouselShowcaseIntro: {
+    eyebrow: 'Примеры каруселей',
+    heading: {
+      before: 'Посмотрите, какие карусели ',
+      accent: 'получаются из текста',
+      after: '',
+    },
+    body: 'Примеры выглядят как типичные текстовые выжимки: готовая структура, заголовки, короткие смысловые блоки и визуальный дизайн.',
+  },
+  readyCarouselShowcase: textToCarouselReadyShowcase,
+  readyCarouselShowcaseCta: {
+    label: 'Создать карусель из текста',
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+    note: 'Перед публикацией результат можно проверить и отредактировать.',
+  },
+  pageSpecificVisualProof: {
+    proofType: 'page-specific',
+    eyebrow: 'Доказательство работы',
+    heading: {
+      before: 'Из сплошного текста — ',
+      accent: 'в готовую карусель',
+      after: '',
+    },
+    title: 'Исходный текст, AI-структура и готовые слайды',
+    description: 'Существующий proof pattern показывает готовые слайды GoToFlow из утвержденной группы workflowResults.aiCarouselFiveSlides после обработки текстового исходника и выделения структуры.',
+    label: 'Текст в карусель',
+    format: '4:5',
+    slideCount: aiCarouselResultSlides.length,
+    width: 1122,
+    height: 1402,
+    mode: 'Готовые слайды',
+    images: aiCarouselResultSlides,
+  },
+  useCasesIntro: {
+    eyebrow: 'Сценарии',
+    heading: {
+      before: 'Для каких текстов ',
+      accent: 'это работает',
+      after: '',
+    },
+  },
+  useCases: [
+    { title: 'Статья → Карусель', body: 'Статья превращается в карусель.' },
+    { title: 'Заметки → Карусель', body: 'Заметки превращаются в карусель.' },
+    { title: 'Лонгрид → Карусель', body: 'Лонгрид превращается в карусель.' },
+    { title: 'Инструкция → Карусель', body: 'Инструкция превращается в карусель.' },
+    { title: 'Чек-лист → Карусель', body: 'Чек-лист превращается в карусель.' },
+    { title: 'Отзывы → Карусель', body: 'Отзывы превращаются в карусель.' },
+    { title: 'Кейс → Карусель', body: 'Кейс превращается в карусель.' },
+    { title: 'Рассылка → Карусель', body: 'Рассылка превращается в карусель.' },
+  ],
+  faq: textToCarouselFaq,
+  relatedIntro: {
+    eyebrow: 'Связанные материалы',
+    heading: {
+      before: 'Что еще почитать ',
+      accent: 'и попробовать',
+      after: '',
+    },
+  },
+  relatedCards: [
+    {
+      href: '/ru/ai-generator-karuselej',
+      title: 'AI-генератор каруселей',
+      description: 'Генерация с нуля по теме.',
+      type: 'product_tool',
+    },
+    {
+      href: '/ru/generator-karuselej-instagram',
+      title: 'Генератор каруселей для Instagram',
+      description: 'Ручной контроль.',
+      type: 'product_tool',
+    },
+    {
+      href: '/ru/templates/instagram-carousel',
+      title: 'Шаблоны Instagram-каруселей',
+      description: 'Вдохновение.',
+      type: 'seo_page',
+    },
+    {
+      href: '/ru/use-cases/besshovnaya-karusel-instagram',
+      title: 'Бесшовная карусель',
+      description: 'Специальный эффект.',
+      type: 'seo_page',
+    },
+  ],
+  relatedSeoPages: [],
+  relatedSeoPaths: ['/ru/templates/instagram-carousel', '/ru/use-cases/besshovnaya-karusel-instagram'],
+  relatedProductToolPaths: ['/ru/ai-generator-karuselej', '/ru/generator-karuselej-instagram'],
+  contextualLinks: [],
+  relatedBlogSlugs: [],
+  breadcrumbs: [
+    ruHomeBreadcrumb,
+    { label: 'Сценарии использования', path: '/ru/use-cases' },
+    { label: 'Текст в карусель', path: '/ru/use-cases/tekst-v-karusel' },
+  ],
+  schemaType: 'WebPage',
+  published: true,
+  noindex: true,
+  state: 'noindex_review',
+  sitemapEligible: false,
+  routeReviewApproved: true,
+  approvedByHuman: false,
+  indexationApproved: false,
+  indexationApproval: {
+    approved: false,
+    approvedBy: '',
+    approvedAt: '',
+    notes: 'Local noindex draft only. Owner visual approval and release approval are pending.',
+  },
+  contentReviewedByHuman: true,
+  uniquenessReviewedByHuman: true,
+  internalLinksReviewedByHuman: true,
+  ctaReviewedByHuman: true,
+  productClaimsReviewedByHuman: true,
+  ownerVisualApprovalReceived: false,
+  review: {
+    owner: 'GoToFlow',
+    contentReviewedAt: '2026-07-15',
+    productClaimsReviewedAt: '2026-07-15',
+    assetsReviewedAt: '2026-07-15',
+    seoReviewedAt: '2026-07-15',
+    productVersion: 'seo-draft-preview-2026-07-15',
+  },
+  designReference: '/ru',
+  urlOrigin: 'seo_registry_candidate',
+  urlOriginEvidence: [
+    'src/content/seoPages/handoffs/content_design_contract_tekst_v_karusel.md',
+  ],
+  intentOwner: 'ru-use-case-tekst-v-karusel',
+  routeOwner: 'ru-use-case-tekst-v-karusel',
+  canonicalOwner: '/ru/use-cases/tekst-v-karusel',
+  riskLevel: 'medium',
+  manualReviewReason: 'Local noindex draft from the approved Content & Design Contract; owner visual approval is required before production release.',
+  createdFromActionMapRowIds: ['content-design-contract-tekst-v-karusel-2026-07-15'],
+  notes: [
+    'Draft route remains noindex and excluded from sitemap until separate owner release approval.',
+    'GoToFlow SEO Publishing Platform is not part of this page integration.',
+  ],
+  draftPreviewIntegrated: true,
+  productionIntegrationCompleted: false,
+  approvedForRelease: false,
+  lastUpdated: '2026-07-15',
+  ownershipDecision: ownershipDecision({
+    decision: 'safe_new_registry_page',
+    reason: 'No exact protected route collision found for the text-to-carousel use-case path; existing generator and article owners remain separate.',
+    existingOwnerStatus: 'Existing generator routes keep broad generator intent; the supporting article keeps informational how-to intent.',
+    intentOverlapPaths: ['/ru/ai-generator-karuselej', '/ru/generator-karuselej-instagram', '/ru/blog/tekst-v-karusel-neyroset'],
+  }),
+};
+
 const seamlessSectionPolicy = Object.fromEntries([
   'hero',
   'quickAnswer',
@@ -703,6 +1237,7 @@ const seamlessInstagramCarouselDraftPage = {
 /** @type {SeoPage[]} */
 const rawSeoPages = [
   seamlessInstagramCarouselDraftPage,
+  textToCarouselDraftPage,
   {
     id: 'ru-commercial-generator-karuseley',
     language: 'ru',
