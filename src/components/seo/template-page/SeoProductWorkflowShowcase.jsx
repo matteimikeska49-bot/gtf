@@ -283,7 +283,7 @@ const RESULT_SLIDE_LAYOUT = [
   },
 ];
 
-const ResultCarouselStack = ({ resultCarousel }) => {
+export const ResultCarouselStack = ({ resultCarousel }) => {
   const images = resultCarousel?.images || [];
   if (images.length === 0) return <EditorResultFallback />;
   const proofAttributes = resultCarousel.proofType === 'page-specific'

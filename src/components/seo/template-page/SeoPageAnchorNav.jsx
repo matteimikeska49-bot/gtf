@@ -1,12 +1,26 @@
-const NAV_ITEMS = [
-  { id: 'template-categories', label: 'Шаблоны' },
+import { isCarouselProductSeoPage } from '../../../content/seoPages/templateVariants';
+
+const CAROUSEL_NAV_ITEMS = [
+  { id: 'page-relevant-formats', label: 'Форматы' },
+  { id: 'product-capabilities', label: 'Возможности' },
+  { id: 'product-workflow', label: 'Как создать' },
+  { id: 'ready-carousel-showcase', label: 'Примеры' },
+  { id: 'page-specific-proof', label: 'Результат' },
+  { id: 'use-cases', label: 'Сценарии' },
+  { id: 'faq-section', label: 'Вопросы' },
+];
+
+const TEMPLATE_NAV_ITEMS = [
+  { id: 'template-categories', label: 'Форматы' },
   { id: 'template-choice-guide', label: 'Как выбрать' },
   { id: 'product-workflow', label: 'Как создать' },
-  { id: 'ready-carousel-showcase', label: 'Готовые карусели' },
+  { id: 'ready-carousel-showcase', label: 'Примеры' },
   { id: 'faq-section', label: 'Вопросы' },
 ];
 
 export const SeoPageAnchorNav = ({ page }) => {
+  const navItems = isCarouselProductSeoPage(page) ? CAROUSEL_NAV_ITEMS : TEMPLATE_NAV_ITEMS;
+
   const handleClick = (e, id) => {
     e.preventDefault();
     const el = document.getElementById(id);
@@ -20,7 +34,7 @@ export const SeoPageAnchorNav = ({ page }) => {
       <div className="mx-auto max-w-7xl px-6">
         <nav className="flex flex-wrap items-center gap-2 py-2 md:gap-3 md:py-3" aria-label="Навигация по странице">
           <span className="min-h-11 inline-flex items-center text-sm font-medium text-zinc-500 shrink-0">На странице:</span>
-          {NAV_ITEMS.map((item) => (
+          {navItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}

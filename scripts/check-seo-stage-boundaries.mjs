@@ -59,8 +59,13 @@ const fixtureUseCases = [
 const fixtureRuntimePage = {
   id: 'fixture-runtime-product-proof',
   path: '/ru/use-cases/fixture-complete-handoff',
+  pageFamily: 'carousel_product_page',
   templateVariant: 'template_page',
-  templateSections: ['hero', 'quickAnswer', 'templateCategories', 'templateChoiceGuide', 'productWorkflow', 'productCapabilities', 'readyCarouselShowcase', 'useCases', 'faq', 'related', 'finalCta'],
+  heroCarouselImages: [
+    { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp', alt: 'Hero carousel proof slide one' },
+    { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp', alt: 'Hero carousel proof slide three' },
+    { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp', alt: 'Hero carousel proof slide five' },
+  ],
   productWorkflow: {
     preset: 'carousel_creation',
     mockups: [
@@ -71,9 +76,9 @@ const fixtureRuntimePage = {
         id: 'editor-result',
         title: 'Result',
         caption: 'Page proof',
-        resultCarousel: {
-          proofType: 'page-specific',
-          images: [
+            resultCarousel: {
+              proofType: 'workflow-result',
+              images: [
             { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp', alt: 'Page proof 1' },
             { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp', alt: 'Page proof 2' },
             { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp', alt: 'Page proof 3' },
@@ -95,10 +100,23 @@ const fixtureRuntimePage = {
     { title: 'Ready 3', image: '/images/niches/ru/content-ru-5.webp' },
     { title: 'Ready 4', image: '/images/niches/ru/content-ru-6.webp' },
     { title: 'Ready 5', image: '/images/niches/ru/content-ru-7.webp' },
+    { title: 'Ready 6', image: '/images/niches/ru/content-ru-8.webp' },
   ],
   readyCarouselShowcaseCta: {
     label: 'Create',
     href: 'https://app.gotoflow.io',
+  },
+  pageSpecificVisualProof: {
+    proofType: 'page-specific',
+    title: 'Page-specific proof fixture',
+    description: 'Dedicated fixture proof separate from workflow and ready showcase.',
+    images: [
+      { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp', alt: 'Page proof 1' },
+      { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp', alt: 'Page proof 2' },
+      { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp', alt: 'Page proof 3' },
+      { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-4.webp', alt: 'Page proof 4' },
+      { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp', alt: 'Page proof 5' },
+    ],
   },
   useCases: fixtureUseCases,
   faq: fixtureFaqItems,

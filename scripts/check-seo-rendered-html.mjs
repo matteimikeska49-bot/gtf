@@ -60,6 +60,37 @@ const questionsMatch = (left, right) => (
   JSON.stringify(left.map(normalizeText)) === JSON.stringify(right.map(normalizeText))
 );
 
+const sectionOrderFromHtml = (html) => {
+  const markers = [
+    ['header', /<header\b/i],
+    ['hero', /data-seo-hero-carousel=["']true["']/i],
+    ['anchorNav', /aria-label=["']Навигация по странице["']/i],
+    ['quickAnswer', /id=["']quick-answer["']/i],
+    ['pageRelevantFormats', /id=["']page-relevant-formats["']/i],
+    ['productCapabilities', /id=["']product-capabilities["']/i],
+    ['productWorkflow', /id=["']product-workflow["']/i],
+    ['readyCarouselShowcase', /id=["']ready-carousel-showcase["']/i],
+    ['pageSpecificVisualProof', /id=["']page-specific-proof["']/i],
+    ['useCases', /id=["']use-cases["']/i],
+    ['faq', /id=["']faq-section["']/i],
+    ['related', /id=["']related-content["']/i],
+    ['finalCta', /id=["']final-cta["']/i],
+    ['footer', /<footer\b/i],
+  ];
+  return markers
+    .map(([id, pattern]) => ({ id, index: html.search(pattern) }))
+    .filter((item) => item.index >= 0)
+    .sort((left, right) => left.index - right.index)
+    .map((item) => item.id);
+};
+
+const anchorTargetsMissingFromHtml = (html) => {
+  const ids = new Set([...html.matchAll(/\bid=["']([^"']+)["']/gi)].map((match) => match[1]));
+  return [...html.matchAll(/<a\b[^>]*href=["']#([^"']+)["'][^>]*>/gi)]
+    .map((match) => match[1])
+    .filter((target) => !ids.has(target));
+};
+
 const validateHtml = (html, sourceLabel) => {
   if (!html) {
     errors.push(`No rendered HTML available for ${targetPath}.`);
@@ -104,6 +135,8 @@ const validateHtml = (html, sourceLabel) => {
     const expectedFaqQuestions = (pageRecord.faq || []).map((item) => item.question);
     const proofErrors = validateRenderedSeoProductProofDom({
       productWorkflowMarkers: countMatches(html, /data-seo-proof=["']product-workflow["']/gi),
+      heroCarouselCards: countMatches(html, /data-seo-hero-card=["']carousel["']/gi),
+      heroCarouselImages: countMatches(html, /data-seo-hero-image=["']carousel["']/gi),
       productCapabilitiesMarkers: countMatches(html, /data-seo-proof=["']product-capabilities["']/gi),
       productCapabilityCards: countMatches(html, /data-seo-proof-card=["']product-capability["']/gi),
       readyResultsShowcaseMarkers: countMatches(html, /data-seo-proof=["']ready-results-showcase["']/gi),
@@ -113,9 +146,17 @@ const validateHtml = (html, sourceLabel) => {
       pageSpecificProofMarkers: countMatches(html, /data-seo-proof=["']page-specific-result["']/gi),
       pageSpecificProofImages: countMatches(html, /data-seo-proof-image=["']page-specific-result["']/gi),
       workflowSteps: countMatches(html, /data-workflow-step/gi),
+      workflowPanels: countMatches(html, /data-seo-proof-card=["']product-workflow-mockup["']/gi),
       useCasesMarkers: countMatches(html, /data-seo-section=["']use-cases["']/gi),
+      relatedMarkers: countMatches(html, /data-seo-section=["']related-content["']/gi),
+      finalCtaMarkers: countMatches(html, /data-seo-section=["']final-cta["']/gi),
       visibleFaqCount,
       faqSchemaParity: questionsMatch(faqSchemaQuestions, expectedFaqQuestions),
+      headerCount: countMatches(html, /<header\b/gi),
+      footerCount: countMatches(html, /<footer\b/gi),
+      sectionOrder: sectionOrderFromHtml(html),
+      anchorTargetsMissing: anchorTargetsMissingFromHtml(html),
+      legacyTechnicalLabels: /\b(?:USE_CASE_PAGE|COMMERCIAL_TOOL|SECTION|readyCarouselShowcase)\b/.test(html),
     });
     errors.push(...proofErrors.map((error) => `${sourceLabel}: ${error}`));
   }
@@ -171,6 +212,32 @@ const validateRuntime = async () => {
         const rect = el.getBoundingClientRect();
         return rect.width > 0 && rect.height > 0 && (rect.width < 44 || rect.height < 44);
       }).length;
+      const sectionOrder = [
+        ['header', 'header'],
+        ['hero', '[data-seo-hero-carousel="true"]'],
+        ['anchorNav', 'nav[aria-label="Навигация по странице"]'],
+        ['quickAnswer', '#quick-answer'],
+        ['pageRelevantFormats', '#page-relevant-formats'],
+        ['productCapabilities', '#product-capabilities'],
+        ['productWorkflow', '#product-workflow'],
+        ['readyCarouselShowcase', '#ready-carousel-showcase'],
+        ['pageSpecificVisualProof', '#page-specific-proof'],
+        ['useCases', '#use-cases'],
+        ['faq', '#faq-section'],
+        ['related', '#related-content'],
+        ['finalCta', '#final-cta'],
+        ['footer', 'footer'],
+      ]
+        .map(([id, selector]) => ({ id, el: document.querySelector(selector) }))
+        .filter((item) => item.el)
+        .sort((left, right) => {
+          const position = left.el.compareDocumentPosition(right.el);
+          return position & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
+        })
+        .map((item) => item.id);
+      const anchorTargetsMissing = [...document.querySelectorAll('a[href^="#"]')]
+        .map((link) => link.getAttribute('href').slice(1))
+        .filter((id) => id && !document.getElementById(id));
 
       return {
         h1Count: document.querySelectorAll('h1').length,
@@ -187,6 +254,8 @@ const validateRuntime = async () => {
         blogPostingSchemaUsed: [...document.querySelectorAll('script[type="application/ld+json"]')].some((script) => script.textContent.includes('"BlogPosting"')),
         faqSchemaUsed: [...document.querySelectorAll('script[type="application/ld+json"]')].some((script) => script.textContent.includes('"FAQPage"')),
         proofSnapshot: {
+          heroCarouselCards: document.querySelectorAll('[data-seo-hero-card="carousel"]').length,
+          heroCarouselImages: document.querySelectorAll('[data-seo-hero-image="carousel"]').length,
           productWorkflowMarkers: document.querySelectorAll('[data-seo-proof="product-workflow"]').length,
           productCapabilitiesMarkers: document.querySelectorAll('[data-seo-proof="product-capabilities"]').length,
           productCapabilityCards: document.querySelectorAll('[data-seo-proof-card="product-capability"]').length,
@@ -197,9 +266,17 @@ const validateRuntime = async () => {
           pageSpecificProofMarkers: document.querySelectorAll('[data-seo-proof="page-specific-result"]').length,
           pageSpecificProofImages: document.querySelectorAll('[data-seo-proof-image="page-specific-result"]').length,
           workflowSteps: document.querySelectorAll('[data-workflow-step]').length,
+          workflowPanels: document.querySelectorAll('[data-seo-proof-card="product-workflow-mockup"]').length,
           useCasesMarkers: document.querySelectorAll('[data-seo-section="use-cases"]').length,
+          relatedMarkers: document.querySelectorAll('[data-seo-section="related-content"]').length,
+          finalCtaMarkers: document.querySelectorAll('[data-seo-section="final-cta"]').length,
           visibleFaqCount: visibleFaqQuestions.length,
           faqSchemaParity: sameQuestions(visibleFaqQuestions, faqSchemaQuestions),
+          headerCount: document.querySelectorAll('header').length,
+          footerCount: document.querySelectorAll('footer').length,
+          sectionOrder,
+          anchorTargetsMissing,
+          legacyTechnicalLabels: /\b(?:USE_CASE_PAGE|COMMERCIAL_TOOL|SECTION|readyCarouselShowcase)\b/.test(document.body.textContent || ''),
         },
         imagesWithoutAlt,
         linksWithoutNames,

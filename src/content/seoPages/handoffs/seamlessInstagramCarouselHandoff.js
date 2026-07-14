@@ -189,6 +189,11 @@ export const seamlessInstagramCarouselHandoff = {
       visualSlots = {
         heroCarouselImages: seamlessHeroCarouselImages,
       };
+    } else if (section.id === 'anchorNav') {
+      copySlots = {
+        navLabels: ['Форматы', 'Возможности', 'Как создать', 'Примеры', 'Результат', 'Сценарии', 'Вопросы'],
+      };
+      visualSlots = {};
     } else if (section.id === 'quickAnswer') {
       copySlots = {
         heading: 'Что такое бесшовная карусель?',
@@ -203,15 +208,24 @@ export const seamlessInstagramCarouselHandoff = {
           alt: 'Информация о бесшовной карусели',
         }
       };
-    } else if (section.id === 'templateCategories') {
+    } else if (section.id === 'pageRelevantFormats') {
       copySlots = {
         sectionEyebrow: 'Популярные форматы',
         sectionHeading: 'Для каких задач подходит бесшовный дизайн',
-        'item.title': ['Экспертный гайд', 'Пошаговый чек-лист', 'Кейс или портфолио'],
+        'item.title': ['Экспертный гайд', 'Пошаговый чек-лист', 'Кейс или портфолио', 'Панорамный продуктовый рассказ'],
         'item.body': [
           'Разберите сложную тему на шаги. Единая линия дизайна будет вести читателя от первого слайда к последнему.',
           'Оформите список советов так, чтобы каждый пункт визуально цеплялся за предыдущий.',
           'Покажите результат «До/После» в едином полотне, не разрывая контекст.',
+          'Проведите читателя через проблему, решение, детали предложения и следующий шаг.',
+        ],
+        'items.task': ['Исходный материал', 'Тип карусели', 'Визуальный стиль', 'Редактирование'],
+        'items.template': ['Тема, текст, ссылка, видео, PDF или голосовое', 'Бесшовная карусель', 'AI-стиль или собственный промпт', 'Текст, слайды и CTA'],
+        'items.structure': [
+          'добавьте контекст и задачу карусели',
+          'выберите визуальное продолжение между слайдами',
+          'задайте направление, фон и персонажа',
+          'проверьте, исправьте и перегенерируйте части результата',
         ],
         categoryCta: 'Выбрать формат',
       };
@@ -235,25 +249,7 @@ export const seamlessInstagramCarouselHandoff = {
             caption: 'Превью кейса',
             alt: 'Пример шаблона кейса',
           },
-        ]
-      };
-    } else if (section.id === 'templateChoiceGuide') {
-      copySlots = {
-        eyebrow: 'Настройки',
-        'heading.before': 'Какие параметры ',
-        'heading.accent': 'можно настроить',
-        'heading.after': ' перед скачиванием',
-        description: 'Этот блок про настройки редактора, а не про сценарии применения: исходник, бесшовный тип, стиль, фон, персонаж, CTA и ручная проверка результата.',
-        'items.task': ['Исходный материал', 'Тип карусели', 'Визуальный стиль', 'Редактирование'],
-        'items.template': ['Тема, текст, ссылка, видео, PDF или голосовое', 'Бесшовная карусель', 'AI-стиль или собственный промпт', 'Текст, слайды и CTA'],
-        'items.structure': [
-          'добавьте контекст и задачу карусели',
-          'выберите визуальное продолжение между слайдами',
-          'задайте направление, фон и персонажа',
-          'проверьте, исправьте и перегенерируйте части результата',
         ],
-      };
-      visualSlots = {
         articleStyleDecisionSurface: {
           type: 'componentRef',
           componentRef: 'component:SeoTemplateChoiceGuide.decisionSurface',
@@ -321,16 +317,17 @@ export const seamlessInstagramCarouselHandoff = {
         sectionEyebrow: 'Полноценные примеры',
         sectionHeading: 'Посмотрите, какие карусели можно создать в GoToFlow',
         sectionBody: 'GoToFlow генерирует полностью готовые карусели для Instagram: с продуманной структурой, качественным текстом, бесшовными переходами и призывом к действию.',
-        'item.title': ['Экспертная карусель о маркетинге', 'Пошаговый гайд по Reels', 'Сторителлинг о запуске бизнеса', 'Продуктовая презентация приложения', 'Чек-лист проверки сайта'],
+        'item.title': ['Экспертная карусель о маркетинге', 'Пошаговый гайд по Reels', 'Сторителлинг о запуске бизнеса', 'Продуктовая презентация приложения', 'Чек-лист проверки сайта', 'Анонс продукта в карусели'],
         'item.body': [
           'Разбор сложной темы на 8 слайдах. Градиентный фон плавно объединяет советы в единую линию повествования.',
           'Инструкция из 6 шагов. Линии дизайна переходят со слайда на слайд, ведя взгляд подписчика от начала до CTA.',
           'Яркая визуальная история с крупным шрифтом и перетекающими фотографиями автора на 10 слайдах.',
           'Обзор функций нового сервиса на 5 слайдах. Элементы интерфейса пересекают границы слайдов для эффекта объема.',
-          'Контрастная карусель из 7 слайдов. Каждый новый пункт визуально цепляется за предыдущий.'
+          'Контрастная карусель из 7 слайдов. Каждый новый пункт визуально цепляется за предыдущий.',
+          'Короткая продающая серия: кому подходит предложение, что входит и почему стоит перейти к следующему шагу.'
         ],
-        'item.type': ['Экспертиза', 'Инструкция', 'Сторителлинг', 'Товар', 'Подборка'],
-        'item.audience': ['Предприниматели', 'Блогеры', 'Подписчики', 'Покупатели', 'Специалисты'],
+        'item.type': ['Экспертиза', 'Инструкция', 'Сторителлинг', 'Товар', 'Подборка', 'Анонс'],
+        'item.audience': ['Предприниматели', 'Блогеры', 'Подписчики', 'Покупатели', 'Специалисты', 'Малый бизнес'],
         showcaseCta: 'Создать такую карусель',
       };
       visualSlots = {
@@ -340,7 +337,25 @@ export const seamlessInstagramCarouselHandoff = {
           { type: 'image', assetPath: '/images/niches/ru/content-ru-5.webp', caption: 'Сторителлинг', alt: 'Пример карусели-истории' },
           { type: 'image', assetPath: '/images/niches/ru/content-ru-6.webp', caption: 'Презентация продукта', alt: 'Пример продуктовой карусели' },
           { type: 'image', assetPath: '/images/niches/ru/content-ru-7.webp', caption: 'Чек-лист', alt: 'Пример чек-листа в Instagram' },
+          { type: 'image', assetPath: '/images/niches/ru/content-ru-8.webp', caption: 'Анонс продукта', alt: 'Пример анонса продукта в карусели' },
         ]
+      };
+    } else if (section.id === 'pageSpecificVisualProof') {
+      copySlots = {
+        eyebrow: 'Доказательство сценария',
+        title: 'Как выглядит бесшовная карусель между соседними слайдами',
+        description: 'Отдельный proof-блок показывает связанные слайды как результат бесшовного режима. Он не заменяет общий showcase готовых каруселей.',
+        label: 'Бесшовная карусель',
+        mode: 'Связанные слайды',
+      };
+      visualSlots = {
+        images: [
+          { type: 'image', assetPath: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp', caption: 'Слайд 1', alt: 'Слайд 1 бесшовной карусели Instagram' },
+          { type: 'image', assetPath: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp', caption: 'Слайд 2', alt: 'Слайд 2 бесшовной карусели Instagram' },
+          { type: 'image', assetPath: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp', caption: 'Слайд 3', alt: 'Слайд 3 бесшовной карусели Instagram' },
+          { type: 'image', assetPath: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-4.webp', caption: 'Слайд 4', alt: 'Слайд 4 бесшовной карусели Instagram' },
+          { type: 'image', assetPath: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp', caption: 'Слайд 5', alt: 'Слайд 5 бесшовной карусели Instagram' },
+        ],
       };
     } else if (section.id === 'useCases') {
       copySlots = {
@@ -503,13 +518,15 @@ export const seamlessInstagramCarouselHandoff = {
       required: true,
       componentName: 'SeoReadyCarouselShowcase',
       componentPath: 'src/components/seo/template-page/SeoReadyCarouselShowcase.jsx',
-      minimumExamples: 5,
+      minimumExamples: 6,
+      exactExamples: 6,
       examples: [
         { title: 'Экспертная карусель о маркетинге', assetPath: '/images/niches/ru/content-ru-2.webp' },
         { title: 'Пошаговый гайд по Reels', assetPath: '/images/niches/ru/content-ru-3.webp' },
         { title: 'Сторителлинг о запуске бизнеса', assetPath: '/images/niches/ru/content-ru-5.webp' },
         { title: 'Продуктовая презентация приложения', assetPath: '/images/niches/ru/content-ru-6.webp' },
         { title: 'Чек-лист проверки сайта', assetPath: '/images/niches/ru/content-ru-7.webp' },
+        { title: 'Анонс продукта в карусели', assetPath: '/images/niches/ru/content-ru-8.webp' },
       ],
       assetPaths: [
         '/images/niches/ru/content-ru-2.webp',
@@ -517,14 +534,16 @@ export const seamlessInstagramCarouselHandoff = {
         '/images/niches/ru/content-ru-5.webp',
         '/images/niches/ru/content-ru-6.webp',
         '/images/niches/ru/content-ru-7.webp',
+        '/images/niches/ru/content-ru-8.webp',
       ],
       cta: 'Создать такую карусель',
     },
     pageSpecificVisualProof: {
       required: true,
       type: 'page_specific_result_carousel',
-      componentName: 'ResultCarouselStack',
-      componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
+      componentName: 'SeoPageSpecificVisualProof',
+      componentPath: 'src/components/seo/template-page/SeoPageSpecificVisualProof.jsx',
+      dataSource: 'page.pageSpecificVisualProof',
       assetPaths: [
         '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp',
         '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp',

@@ -139,7 +139,8 @@ export const SEO_PRODUCT_PROOF_CONTRACT = {
     componentName: 'SeoReadyCarouselShowcase',
     componentPath: 'src/components/seo/template-page/SeoReadyCarouselShowcase.jsx',
     dataSource: 'page.readyCarouselShowcase',
-    minimumExamples: 5,
+    minimumExamples: 6,
+    exactExamples: 6,
     domMarker: 'ready-results-showcase',
     requiredCardMarker: 'ready-carousel',
     disallowedAssetPrefixes: ['/images/seo-handoffs/'],
@@ -150,6 +151,7 @@ export const SEO_PRODUCT_PROOF_CONTRACT = {
       '/images/niches/ru/content-ru-5.webp',
       '/images/niches/ru/content-ru-6.webp',
       '/images/niches/ru/content-ru-7.webp',
+      '/images/niches/ru/content-ru-8.webp',
     ],
     forbiddenFallbacks: ['single technical proof reused as gallery', 'placeholder image cards', 'generic cards without images'],
   },
@@ -167,9 +169,9 @@ export const SEO_PRODUCT_PROOF_CONTRACT = {
   pageSpecificVisualProof: {
     required: true,
     type: 'page_specific_result_carousel',
-    componentName: 'ResultCarouselStack',
-    componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
-    dataSource: 'page.productWorkflow.mockups[].resultCarousel',
+    componentName: 'SeoPageSpecificVisualProof',
+    componentPath: 'src/components/seo/template-page/SeoPageSpecificVisualProof.jsx',
+    dataSource: 'page.pageSpecificVisualProof',
     domMarker: 'page-specific-result',
     minimumAssets: 3,
     acceptanceRules: [
@@ -233,22 +235,20 @@ export const EXACT_SEO_PAGE_BLUEPRINT = {
   requiredSections: [
     'sharedHeader',
     'hero',
+    'anchorNav',
     'quickAnswer',
-    'templateCategories',
-    'templateChoiceGuide',
-    'productWorkflow',
+    'pageRelevantFormats',
     'productCapabilities',
+    'productWorkflow',
     'readyCarouselShowcase',
+    'pageSpecificVisualProof',
     'useCases',
     'faq',
     'related',
     'finalCta',
     'sharedFooter',
   ],
-  optionalSections: [
-    'anchorNav',
-    'examples',
-  ],
+  optionalSections: [],
   forbiddenPatterns: FORBIDDEN_BLUEPRINT_COPY_PATTERNS,
   forbiddenRuntimeWork: [
     'new generic use_case_page',
@@ -346,6 +346,19 @@ export const EXACT_SEO_PAGE_BLUEPRINT = {
       responsiveRules: ['two-column decision grid on md and above', 'single column mobile'],
     }),
     section({
+      id: 'pageRelevantFormats',
+      order: 5,
+      purpose: 'Render page-relevant formats and structure choices in one fixed slot before canonical product proof.',
+      componentName: 'PageRelevantFormatsBlock',
+      componentPath: 'src/components/seo/SeoPageTemplate.jsx',
+      acceptedProps: ['page.templateCategories', 'page.templateChoiceGuide', 'page.categoryCta', 'page.conversion'],
+      copySlots: ['sectionHeading', 'item.title', 'item.body', 'items.task', 'items.template', 'items.structure'],
+      visualSlots: ['componentGeneratedCategoryPreview', 'articleStyleDecisionSurface'],
+      forbiddenFallbacks: ['arbitrary injected section', 'separate layout variant', 'raw section IDs as UI labels'],
+      validationRules: ['fixed slot renders category and choice-guide data', 'page config cannot insert sections between canonical blocks'],
+      responsiveRules: ['inherits existing category and choice-guide responsive rules'],
+    }),
+    section({
       id: 'productWorkflow',
       order: 7,
       purpose: 'Prove the real GoToFlow product flow with steps, editing controls, and result mockups.',
@@ -370,7 +383,7 @@ export const EXACT_SEO_PAGE_BLUEPRINT = {
     }),
     section({
       id: 'productCapabilities',
-      order: 8,
+      order: 6,
       purpose: 'Show canonical verified GoToFlow product capabilities, not use-case scenarios.',
       componentName: 'SeoPageWorkflow',
       componentPath: 'src/components/seo/SeoPageWorkflow.jsx',
@@ -383,7 +396,7 @@ export const EXACT_SEO_PAGE_BLUEPRINT = {
     }),
     section({
       id: 'readyCarouselShowcase',
-      order: 9,
+      order: 8,
       purpose: 'Show finished examples/results with real image assets and a distinct showcase CTA.',
       componentName: 'SeoReadyCarouselShowcase',
       componentPath: 'src/components/seo/template-page/SeoReadyCarouselShowcase.jsx',
@@ -399,8 +412,21 @@ export const EXACT_SEO_PAGE_BLUEPRINT = {
         '/images/niches/ru/content-ru-8.webp',
       ],
       forbiddenFallbacks: ['empty showcase', 'card without image', 'generic results without actual result'],
-      validationRules: ['showcase array is non-empty', 'each item has image, title, body, width, height, alt derived from title', 'showcase CTA differs from final CTA'],
+      validationRules: ['showcase array contains exactly 6 cards', 'each item has image, title, body, width, height, alt derived from title', 'showcase CTA differs from final CTA'],
       responsiveRules: ['max 340px card on mobile', '2-column md', '3-column xl'],
+    }),
+    section({
+      id: 'pageSpecificVisualProof',
+      order: 9,
+      purpose: 'Show visual proof for the exact page intent after the canonical ready-results showcase.',
+      componentName: 'SeoPageSpecificVisualProof',
+      componentPath: 'src/components/seo/template-page/SeoPageSpecificVisualProof.jsx',
+      acceptedProps: ['page.pageSpecificVisualProof'],
+      copySlots: ['eyebrow', 'title', 'description', 'label', 'mode'],
+      visualSlots: ['images'],
+      forbiddenFallbacks: ['workflow result reused as the only proof', 'showcase reused as page-specific proof', 'arbitrary component path'],
+      validationRules: ['3 to 5 page-specific images', 'renders data-seo-proof="page-specific-result"', 'is separate from ready-results showcase'],
+      responsiveRules: ['uses canonical result carousel stack responsive behavior'],
     }),
     section({
       id: 'useCases',
@@ -627,8 +653,10 @@ const ensureReadyShowcaseModule = (errors, context, label, module, contract) => 
   if (!module || typeof module !== 'object') return;
 
   const minimum = module.minimumExamples || contract.minimumExamples || 5;
+  const exact = module.exactExamples || contract.exactExamples || null;
   const examples = asArray(module.examples);
   const assetPaths = collectAssetPaths([module.assetPaths, module.examples]);
+  if (exact && examples.length !== exact) errors.push(`${label}.examples must contain exactly ${exact} examples.`);
   if (examples.length < minimum) errors.push(`${label}.examples must contain at least ${minimum} examples.`);
   if (assetPaths.filter((assetPath) => assetPath.startsWith('/')).length < minimum) {
     errors.push(`${label}.assetPaths must include at least ${minimum} real local image assets.`);
@@ -730,12 +758,7 @@ export const validateSeoProductProofModules = (handoff, context = {}) => {
 const readyImageFrom = (item) => item?.image || item?.src || item?.assetPath || '';
 
 const getRuntimePageSpecificProof = (page) => {
-  const explicit = page?.pageSpecificVisualProof;
-  if (explicit) return explicit;
-  const mockups = asArray(page?.productWorkflow?.mockups);
-  return mockups
-    .map((mockup) => mockup.resultCarousel)
-    .find((resultCarousel) => resultCarousel?.proofType === 'page-specific') || null;
+  return page?.pageSpecificVisualProof || null;
 };
 
 export const validateSeoRuntimeProductProof = ({ page, handoff = null, context = {} }) => {
@@ -748,20 +771,23 @@ export const validateSeoRuntimeProductProof = ({ page, handoff = null, context =
   const requiredKeys = SEO_PRODUCT_PROOF_CONTRACT.pageFamilies[family] || [];
   if (!requiredKeys.length) return errors;
 
-  const sections = asArray(page?.templateSections);
-  if (!sections.includes('productWorkflow')) errors.push(`${label} must include productWorkflow for mandatory product proof.`);
-  if (!sections.includes('productCapabilities')) errors.push(`${label} must include productCapabilities for mandatory product proof.`);
-  if (!sections.includes('readyCarouselShowcase')) errors.push(`${label} must include readyCarouselShowcase for mandatory product proof.`);
-  if (!sections.includes('useCases')) errors.push(`${label} must include useCases for mandatory product SEO proof.`);
-  if (sections.includes('productWorkflow') && sections[sections.indexOf('productWorkflow') + 1] !== 'readyCarouselShowcase') {
-    const allowedNext = sections[sections.indexOf('productWorkflow') + 1] === 'productCapabilities' &&
-      sections[sections.indexOf('productWorkflow') + 2] === 'readyCarouselShowcase';
-    if (!allowedNext) errors.push(`${label} productWorkflow must be followed by productCapabilities and readyCarouselShowcase.`);
+  if (page?.templateSections !== undefined) {
+    errors.push(`${label} carousel product page config must not declare templateSections or section order.`);
   }
 
   if (!page?.productWorkflow || typeof page.productWorkflow !== 'object') {
     errors.push(`${label} missing canonical productWorkflow proof module.`);
+  } else {
+    if (page.productWorkflow.preset !== 'carousel_creation') {
+      errors.push(`${label} productWorkflow.preset must be carousel_creation.`);
+    }
+    if (asArray(page.productWorkflow.mockups).length !== 4) {
+      errors.push(`${label} productWorkflow.mockups must contain exactly 4 product panels.`);
+    }
   }
+
+  const heroImages = asArray(page?.heroCarouselImages);
+  if (heroImages.length !== 3) errors.push(`${label} heroCarouselImages must contain exactly 3 carousel images.`);
 
   const capabilities = page?.productCapabilities;
   const requiredCapabilities = SEO_PRODUCT_PROOF_CONTRACT.canonicalProductCapabilities;
@@ -780,6 +806,8 @@ export const validateSeoRuntimeProductProof = ({ page, handoff = null, context =
 
   const ready = asArray(page?.readyCarouselShowcase);
   const readyMinimum = SEO_PRODUCT_PROOF_CONTRACT.canonicalReadyCarouselShowcase.minimumExamples;
+  const readyExact = SEO_PRODUCT_PROOF_CONTRACT.canonicalReadyCarouselShowcase.exactExamples;
+  if (readyExact && ready.length !== readyExact) errors.push(`${label} readyCarouselShowcase must contain exactly ${readyExact} examples.`);
   if (ready.length < readyMinimum) errors.push(`${label} readyCarouselShowcase must contain at least ${readyMinimum} examples.`);
   const readyImages = ready.map(readyImageFrom).filter(Boolean);
   if (readyImages.length < readyMinimum) errors.push(`${label} readyCarouselShowcase must contain at least ${readyMinimum} real images.`);
@@ -822,21 +850,55 @@ export const validateSeoRuntimeProductProof = ({ page, handoff = null, context =
 
 export const validateRenderedSeoProductProofDom = (snapshot = {}) => {
   const errors = [];
+  const expectedOrder = [
+    'header',
+    'hero',
+    'anchorNav',
+    'quickAnswer',
+    'pageRelevantFormats',
+    'productCapabilities',
+    'productWorkflow',
+    'readyCarouselShowcase',
+    'pageSpecificVisualProof',
+    'useCases',
+    'faq',
+    'related',
+    'finalCta',
+    'footer',
+  ];
+  if (snapshot.headerCount !== undefined && snapshot.headerCount !== 1) errors.push('Rendered DOM must contain exactly one shared header.');
+  if (snapshot.footerCount !== undefined && snapshot.footerCount !== 1) errors.push('Rendered DOM must contain exactly one shared footer.');
+  if (snapshot.heroCarouselCards !== undefined && snapshot.heroCarouselCards !== 3) errors.push('Rendered DOM hero must contain exactly 3 carousel cards.');
+  if (snapshot.heroCarouselImages !== undefined && snapshot.heroCarouselImages !== 3) errors.push('Rendered DOM hero must contain exactly 3 carousel images.');
   if (snapshot.productWorkflowMarkers !== 1) errors.push('Rendered DOM must contain exactly one data-seo-proof="product-workflow" marker.');
   if (snapshot.productCapabilitiesMarkers !== 1) errors.push('Rendered DOM must contain exactly one data-seo-proof="product-capabilities" marker.');
   if ((snapshot.productCapabilityCards || 0) < 6) errors.push('Rendered DOM product capabilities must contain at least 6 capability group cards.');
   if (snapshot.readyResultsShowcaseMarkers !== 1) errors.push('Rendered DOM must contain exactly one data-seo-proof="ready-results-showcase" marker.');
-  if ((snapshot.readyResultCards || 0) < 5) errors.push('Rendered DOM ready-results showcase must contain at least 5 example cards.');
-  if ((snapshot.readyResultImages || 0) < 5) errors.push('Rendered DOM ready-results showcase must contain at least 5 image/previews.');
+  if ((snapshot.readyResultCards || 0) !== 6) errors.push('Rendered DOM ready-results showcase must contain exactly 6 example cards.');
+  if ((snapshot.readyResultImages || 0) !== 6) errors.push('Rendered DOM ready-results showcase must contain exactly 6 image/previews.');
   if (snapshot.readyResultsCtas !== 1) errors.push('Rendered DOM ready-results showcase must contain a CTA.');
   if (snapshot.readyResultsHasPlaceholder === true) errors.push('Rendered DOM ready-results showcase must not contain placeholder visuals.');
   if (snapshot.pageSpecificProofMarkers !== 1) errors.push('Rendered DOM must contain exactly one data-seo-proof="page-specific-result" marker.');
   if ((snapshot.pageSpecificProofImages || 0) < 3) errors.push('Rendered DOM page-specific proof must contain at least 3 visual assets.');
   if (snapshot.pageSpecificProofSharesReadyNode === true) errors.push('Rendered DOM page-specific proof must not share the ready-results showcase node.');
-  if ((snapshot.workflowSteps || 0) < 5) errors.push('Rendered DOM product workflow must contain at least 5 workflow steps.');
+  if ((snapshot.workflowSteps || 0) !== 5) errors.push('Rendered DOM product workflow must contain exactly 5 workflow steps.');
+  if (snapshot.workflowPanels !== undefined && snapshot.workflowPanels !== 4) errors.push('Rendered DOM product workflow must contain exactly 4 product panels.');
   if (snapshot.useCasesMarkers !== 1) errors.push('Rendered DOM must contain exactly one data-seo-section="use-cases" marker.');
+  if (snapshot.relatedMarkers !== undefined && snapshot.relatedMarkers !== 1) errors.push('Rendered DOM must contain related content exactly once.');
+  if (snapshot.finalCtaMarkers !== undefined && snapshot.finalCtaMarkers !== 1) errors.push('Rendered DOM must contain final CTA exactly once.');
   if ((snapshot.visibleFaqCount || 0) < 12 || (snapshot.visibleFaqCount || 0) > 16) errors.push('Rendered DOM FAQ must contain 12 to 16 visible questions.');
   if (snapshot.faqSchemaParity !== true) errors.push('Rendered DOM FAQPage schema must match visible FAQ questions 1:1.');
+  if (Array.isArray(snapshot.sectionOrder)) {
+    const missing = expectedOrder.filter((sectionId) => !snapshot.sectionOrder.includes(sectionId));
+    if (missing.length) errors.push(`Rendered DOM section order is missing: ${missing.join(', ')}.`);
+    const orderIndexes = expectedOrder.map((sectionId) => snapshot.sectionOrder.indexOf(sectionId));
+    const hasBadOrder = orderIndexes.some((index, position) => index < 0 || (position > 0 && index <= orderIndexes[position - 1]));
+    if (hasBadOrder) errors.push('Rendered DOM carousel product component tree is not in the required order.');
+  }
+  if (Array.isArray(snapshot.anchorTargetsMissing) && snapshot.anchorTargetsMissing.length) {
+    errors.push(`Rendered DOM anchor nav links to missing sections: ${snapshot.anchorTargetsMissing.join(', ')}.`);
+  }
+  if (snapshot.legacyTechnicalLabels === true) errors.push('Rendered DOM contains legacy technical labels.');
   return errors;
 };
 

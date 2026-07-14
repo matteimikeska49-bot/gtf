@@ -10,6 +10,7 @@ import {
 } from './helpers/sitemapEligibility.js';
 import { validateSeoPagesContract } from './helpers/validation.js';
 import { SEO_CANONICAL_PRODUCT_CAPABILITIES } from './productTruthRegistry.js';
+import { getSeoCarouselAssets } from './carouselAssetRegistry.js';
 
 export const SEO_PAGE_TYPES = [
   'commercial',
@@ -361,37 +362,17 @@ const seamlessWorkflowStepDescriptions = [
   seamlessWorkflowStepTitles[4],
 ];
 
-const seamlessResultSlides = [
-  {
-    src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp',
-    alt: 'Начало бесшовной карусели Instagram с перетекающей золотой линией и темным фоном',
-  },
-  {
-    src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp',
-    alt: 'Второй слайд бесшовной карусели с продолжением линии через границу слайда',
-  },
-  {
-    src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp',
-    alt: 'Средний слайд бесшовной карусели с общей композицией и безопасными зонами',
-  },
-  {
-    src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-4.webp',
-    alt: 'Четвертый слайд бесшовной карусели с непрерывной графикой между слайдами',
-  },
-  {
-    src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp',
-    alt: 'Финальный слайд бесшовной карусели Instagram с завершением общей визуальной линии',
-  },
-];
+const seamlessResultSlides = getSeoCarouselAssets('workflowResults', 'seamlessInstagramFiveSlides');
+const aiCarouselResultSlides = getSeoCarouselAssets('workflowResults', 'aiCarouselFiveSlides');
 
 const seamlessSectionPolicy = Object.fromEntries([
   'hero',
   'quickAnswer',
-  'templateCategories',
-  'templateChoiceGuide',
-  'productWorkflow',
+  'pageRelevantFormats',
   'productCapabilities',
+  'productWorkflow',
   'readyCarouselShowcase',
+  'pageSpecificVisualProof',
   'useCases',
   'faq',
   'related',
@@ -421,25 +402,15 @@ const seamlessInstagramCarouselDraftPage = {
   commercialValue: 0.8,
   productBridge: seamlessInstagramCarouselHandoff.userJob,
   primaryIntent: seamlessInstagramCarouselHandoff.searchIntent,
+  pageFamily: 'carousel_product_page',
   templateVariant: 'template_page',
-  templateSections: [
-    'hero',
-    'quickAnswer',
-    'templateCategories',
-    'templateChoiceGuide',
-    'productWorkflow',
-    'productCapabilities',
-    'readyCarouselShowcase',
-    'useCases',
-    'faq',
-    'related',
-    'finalCta',
-  ],
   cta: {
     label: seamlessCopySlot('hero', 'primaryCta'),
     href: 'https://app.gotoflow.io',
     action: 'open_app',
   },
+  heroEyebrow: 'Бесшовные карусели',
+  heroSecondaryLinkLabel: 'Посмотреть возможности',
   finalCta: {
     eyebrow: seamlessCopySlot('finalCta', 'eyebrow'),
     title: {
@@ -493,12 +464,26 @@ const seamlessInstagramCarouselDraftPage = {
       href: '/ru/blog/besshovnaya-karusel-v-instagram',
     },
   },
-  heroCarouselImages: seamlessVisualList('hero', 'heroCarouselImages').map((image) => ({
-    src: image.assetPath,
-    alt: image.alt,
-  })),
+  heroCarouselImages: getSeoCarouselAssets('hero', 'seamlessInstagram'),
   heroVisualBadge: 'Бесшовная',
-  templateCategories: seamlessItemsFromSlots('templateCategories'),
+  templateCategories: [
+    {
+      title: 'Бесшовная экспертная серия',
+      body: 'Связанные слайды для объяснения одной темы: обложка, последовательные тезисы, визуальные переходы между соседними слайдами и финальный CTA.',
+    },
+    {
+      title: 'Панорамный продуктовый рассказ',
+      body: 'Подходит для запуска продукта или услуги, где нужно провести читателя через проблему, решение, детали предложения и следующий шаг.',
+    },
+    {
+      title: 'Визуальный гайд',
+      body: 'Формат для инструкции или чек-листа, где каждый слайд продолжает общий визуал и помогает удержать внимание до конца.',
+    },
+    {
+      title: 'История до и после',
+      body: 'Сценарий для кейса: исходная ситуация, процесс, изменение и выводы, собранные в связанную последовательность слайдов.',
+    },
+  ],
   categoryCta: {
     label: seamlessCopySlot('templateCategories', 'categoryCta'),
     href: 'https://app.gotoflow.io',
@@ -566,7 +551,7 @@ const seamlessInstagramCarouselDraftPage = {
         caption: seamlessWorkflowStepTitles[3],
         fallbackVisualType: 'editor_result',
         resultCarousel: {
-          proofType: 'page-specific',
+          proofType: 'workflow-result',
           title: seamlessCopySlot('readyCarouselShowcase', 'sectionHeading'),
           label: 'Бесшовная карусель',
           format: '4:5',
@@ -586,12 +571,20 @@ const seamlessInstagramCarouselDraftPage = {
       note: seamlessCopySlot('productWorkflow', 'description'),
     },
   },
-  readyCarouselShowcase: seamlessItemsFromSlots('readyCarouselShowcase', 5).map((item, index) => ({
-    ...item,
-    image: item.image,
+  pageSpecificVisualProof: {
+    proofType: 'page-specific',
+    eyebrow: 'Доказательство сценария',
+    title: 'Как выглядит бесшовная карусель между соседними слайдами',
+    description: 'Отдельный proof-блок показывает связанные слайды как результат бесшовного режима. Он не заменяет общий showcase готовых каруселей и не утверждает обязательную внешнюю нарезку.',
+    label: 'Бесшовная карусель',
+    format: '4:5',
+    slideCount: seamlessResultSlides.length,
     width: 1080,
     height: 1350,
-  })),
+    mode: 'Связанные слайды',
+    images: seamlessResultSlides,
+  },
+  readyCarouselShowcase: getSeoCarouselAssets('readyShowcase', 'instagramCarousel'),
   readyCarouselShowcaseCta: {
     label: seamlessCopySlot('readyCarouselShowcase', 'showcaseCta'),
     href: 'https://app.gotoflow.io',
@@ -1351,7 +1344,6 @@ const rawSeoPages = [
     path: '/ru/templates/instagram-carousel',
     state: 'indexable_approved',
     templateVariant: 'template_page',
-    templateSections: ['hero', 'quickAnswer', 'templateCategories', 'templateChoiceGuide', 'productWorkflow', 'productCapabilities', 'readyCarouselShowcase', 'useCases', 'faq', 'related', 'finalCta'],
     title: 'Шаблоны каруселей Instagram: структуры и примеры | GoToFlow',
     description: 'Выберите структуру карусели Instagram: чек-лист, гайд, кейс, AIDA/PAS и другие форматы. Создайте и отредактируйте карусель в GoToFlow.',
     h1: 'Шаблоны каруселей Instagram',
@@ -1365,6 +1357,7 @@ const rawSeoPages = [
     ],
     searchIntent: 'template discovery',
     primaryIntent: 'Выбор структуры и шаблона Instagram-карусели перед созданием готовой карусели в GoToFlow.',
+    pageFamily: 'carousel_product_page',
     priority: 0.6,
     commercialValue: 0.65,
     productBridge: 'GoToFlow создаёт карусель с нуля: от идеи и структуры до готовых слайдов, текста, визуальной подачи и CTA. Перед публикацией результат можно проверить и отредактировать.',
@@ -1374,6 +1367,8 @@ const rawSeoPages = [
       action: 'open_app',
       note: 'Выберите структуру, добавьте тему и доработайте результат перед публикацией.',
     },
+    heroEyebrow: 'Шаблоны и структуры',
+    heroSecondaryLinkLabel: 'Посмотреть форматы',
     conversion: {
       destinationType: 'app',
       destinationUrl: 'https://app.gotoflow.io',
@@ -1411,11 +1406,11 @@ const rawSeoPages = [
     sectionPolicy: {
       hero: { enabled: true, reason: 'Required to state template discovery intent and the product CTA.' },
       quickAnswer: { enabled: true, reason: 'Required to define what Instagram carousel templates are.' },
-      templateCategories: { enabled: true, reason: 'Core intent block for structure selection.' },
-      templateChoiceGuide: { enabled: true, reason: 'Helps choose the right template by publishing task.' },
-      productWorkflow: { enabled: true, reason: 'Shows truthful GoToFlow product workflow after structure choice.' },
+      pageRelevantFormats: { enabled: true, reason: 'Core intent block for structure and format selection using typed page data.' },
       productCapabilities: { enabled: true, reason: 'Shows the canonical verified product capabilities shared by product SEO pages.' },
+      productWorkflow: { enabled: true, reason: 'Shows truthful GoToFlow product workflow after structure choice.' },
       readyCarouselShowcase: { enabled: true, reason: 'Shows realistic finished carousel outcomes directly after workflow.' },
+      pageSpecificVisualProof: { enabled: true, reason: 'Shows the page-specific visual proof separately from workflow and showcase.' },
       useCases: { enabled: true, reason: 'Keeps publishing scenarios separate from product capabilities.' },
       faq: { enabled: true, reason: 'Answers template, workflow, publishing, and product-fit questions.' },
       related: { enabled: true, reason: 'Connects to existing product route and real supporting articles.' },
@@ -1442,62 +1437,8 @@ const rawSeoPages = [
       body: 'Шаблоны каруселей Instagram — это готовые структуры слайдов для разных задач: экспертного чек-листа, разбора ошибки, кейса, объяснения проблемы или презентации продукта. В GoToFlow можно выбрать подходящую структуру и создать готовую карусель с обложкой, последовательностью слайдов, текстом, визуальной подачей и финальным CTA.',
       contextualLink: { label: 'Размеры карусели Instagram', href: '/ru/blog/razmer-karuseli-v-instagram' },
     },
-    readyCarouselShowcase: [
-      {
-        title: 'Экспертный разбор',
-        body: 'Карусель с пошаговым объяснением сложной темы. Включает обложку, 5 информационных слайдов с примерами и финальный слайд с призывом сохранить пост.',
-        image: '/images/niches/ru/content-ru-2.webp',
-        width: 2048,
-        height: 2048,
-        type: 'Обучающая',
-        audience: 'Эксперты, наставники',
-      },
-      {
-        title: 'Подборка ошибок',
-        body: 'Популярный формат для привлечения внимания. Структура: обложка с провокацией, разбор каждой ошибки на отдельном слайде, и слайд с правильным решением.',
-        image: '/images/niches/ru/content-ru-3.webp',
-        width: 1792,
-        height: 2400,
-        type: 'Образовательная',
-        audience: 'Эксперты, маркетологи',
-      },
-      {
-        title: 'Продуктовый кейс',
-        body: 'Структура для демонстрации результатов: исходная ситуация, процесс решения, конкретные метрики и призыв к следующему шагу.',
-        image: '/images/niches/ru/content-ru-5.webp',
-        width: 1792,
-        height: 2400,
-        type: 'Продуктовая',
-        audience: 'Агентства, бизнес',
-      },
-      {
-        title: 'Чек-лист с пользой',
-        body: 'Практичная карусель с последовательностью шагов. Обложка с обещанием, 5-7 конкретных пунктов, резюме и CTA к подписке или сохранению.',
-        image: '/images/niches/ru/content-ru-6.webp',
-        width: 2048,
-        height: 2048,
-        type: 'Практическая',
-        audience: 'Предприниматели, эксперты',
-      },
-      {
-        title: 'Мини-гайд',
-        body: 'Пошаговое руководство в формате карусели: введение в тему, 4-6 шагов с визуальными акцентами, итоговый чек-лист и призыв к действию.',
-        image: '/images/niches/ru/content-ru-7.webp',
-        width: 1792,
-        height: 2400,
-        type: 'Обучающая',
-        audience: 'Любая аудитория',
-      },
-      {
-        title: 'Анонс продукта',
-        body: 'Карусель для мягкой продажи: кому подходит, какую задачу решает, что входит в предложение и почему стоит перейти к следующему шагу.',
-        image: '/images/niches/ru/content-ru-8.webp',
-        width: 1792,
-        height: 2400,
-        type: 'Продающая',
-        audience: 'Малый бизнес, фрилансеры',
-      },
-    ],
+    heroCarouselImages: getSeoCarouselAssets('hero', 'instagramTemplates'),
+    readyCarouselShowcase: getSeoCarouselAssets('readyShowcase', 'instagramCarousel'),
     readyCarouselShowcaseCta: {
       label: 'Выбрать структуру и создать карусель',
       href: 'https://app.gotoflow.io',
@@ -1674,7 +1615,7 @@ const rawSeoPages = [
           title: 'Редактор и результат',
           caption: 'Доработайте слайды вручную и получите готовую карусель.',
           resultCarousel: {
-            proofType: 'page-specific',
+            proofType: 'workflow-result',
             title: '5 причин делать карусели с ИИ',
             label: 'Карусель с ИИ',
             format: '4:5',
@@ -1682,28 +1623,7 @@ const rawSeoPages = [
             width: 1122,
             height: 1402,
             mode: 'Ручная правка',
-            images: [
-              {
-                src: '/images/seo-workflow/carousel-result/ai-carousel-1.webp',
-                alt: 'Обложка карусели: 5 причин делать карусели с ИИ',
-              },
-              {
-                src: '/images/seo-workflow/carousel-result/ai-carousel-2.webp',
-                alt: 'Слайд карусели об экономии времени с помощью ИИ',
-              },
-              {
-                src: '/images/seo-workflow/carousel-result/ai-carousel-3.webp',
-                alt: 'Слайд карусели о большем количестве идей и форматов',
-              },
-              {
-                src: '/images/seo-workflow/carousel-result/ai-carousel-4.webp',
-                alt: 'Слайд карусели о повышении вовлечённости',
-              },
-              {
-                src: '/images/seo-workflow/carousel-result/ai-carousel-5.webp',
-                alt: 'Слайд карусели о гибкой настройке визуала',
-              },
-            ],
+            images: aiCarouselResultSlides,
           },
           decorative: false,
           fallbackVisualType: 'editor_result',
@@ -1718,6 +1638,19 @@ const rawSeoPages = [
         'Фон, персонаж, CTA и ручное редактирование',
       ],
       cta: null,
+    },
+    pageSpecificVisualProof: {
+      proofType: 'page-specific',
+      eyebrow: 'Доказательство результата',
+      title: 'Как структура превращается в готовую карусель',
+      description: 'Отдельный proof-блок показывает последовательность готовых слайдов после выбора шаблона, исходника, текстов и визуального направления.',
+      label: 'Карусель по шаблону',
+      format: '4:5',
+      slideCount: aiCarouselResultSlides.length,
+      width: 1122,
+      height: 1402,
+      mode: 'Готовые слайды',
+      images: aiCarouselResultSlides,
     },
     howToUse: [
       {

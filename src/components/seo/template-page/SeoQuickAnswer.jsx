@@ -8,7 +8,7 @@ export const SeoQuickAnswer = ({ page }) => {
   if (!item) return null;
 
   return (
-    <section className="pt-12 pb-6" id="quickAnswer-0">
+    <section className="pt-12 pb-6" id="quick-answer" data-seo-section="quick-answer">
       <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 md:p-8 backdrop-blur-sm">
         <div className="flex items-start gap-4">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500/15 to-orange-500/15 border border-white/10 text-pink-400">

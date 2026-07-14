@@ -1,5 +1,10 @@
 import { isValidSeoPageState } from '../states.js';
-import { getTemplateVariant, hasValidTemplateVariant } from '../templateVariants.js';
+import {
+  CAROUSEL_PRODUCT_SEO_SECTION_ORDER,
+  getTemplateVariant,
+  hasValidTemplateVariant,
+  isCarouselProductSeoPage,
+} from '../templateVariants.js';
 import { isBlockedSeoSchemaType, isValidSeoSchemaType } from '../schema.js';
 import { getRouteOwnershipErrors } from './routeOwnership.js';
 import { getUrlOriginErrors } from './originLedger.js';
@@ -56,11 +61,12 @@ export const getTemplateSectionPresence = (page) => ({
   hero: hasText(page.h1) && hasText(page.heroSubtitle || page.description),
   problem: findSection(page, ['problem', 'pain', 'who-for', 'whoFor']),
   whatItCreates: findSection(page, ['whatItCreates', 'what-it-does', 'what-it-does-for-platform']),
-  useCases: findSection(page, ['useCases', 'use-cases', 'scenario']),
+  useCases: hasItems(page.useCases) || findSection(page, ['useCases', 'use-cases', 'scenario']),
   workflow: findSection(page, ['workflow', 'how-it-works', 'howToUse', 'howToCreate']),
   quickAnswer: Boolean(page.quickAnswer) || findSection(page, ['quickAnswer']),
   examples: hasItems(page.examples) || findSection(page, ['examples']),
   readyCarouselShowcase: hasItems(page.readyCarouselShowcase) || findSection(page, ['readyCarouselShowcase']),
+  pageSpecificVisualProof: Boolean(page.pageSpecificVisualProof?.images?.length) || findSection(page, ['pageSpecificVisualProof']),
   productWorkflow: Boolean(page.productWorkflow) || findSection(page, ['productWorkflow']),
   productCapabilities: Boolean(page.productCapabilities?.groups?.length) || findSection(page, ['productCapabilities']),
   benefits: findSection(page, ['benefits', 'who-for', 'whoFor']) || hasText(page.productBridge),
@@ -69,7 +75,7 @@ export const getTemplateSectionPresence = (page) => ({
   finalCta: Boolean(page.finalCta),
   platformUseCases: findSection(page, ['platformUseCases', 'use-cases', 'useCases']),
   contentFormats: findSection(page, ['contentFormats', 'format', 'vk-format-guidance', 'telegram-format-guidance']),
-  templateCategories: hasItems(page.templates) || findSection(page, ['templateCategories', 'templates']),
+  templateCategories: hasItems(page.templateCategories) || hasItems(page.templates) || findSection(page, ['templateCategories', 'templates']),
   howToUse: findSection(page, ['howToUse', 'workflow']),
   breakdown: findSection(page, ['breakdown', 'examples']),
   howToCreate: findSection(page, ['howToCreate', 'workflow']),
@@ -91,6 +97,42 @@ export const getMissingRequiredTemplateSections = (page) => {
 };
 
 export const getTemplateSectionOrderErrors = (page) => {
+  if (isCarouselProductSeoPage(page)) {
+    const errors = [];
+    if (page.templateSections !== undefined) {
+      errors.push(`${page.id} carousel product pages must not declare templateSections; fixed order is ${CAROUSEL_PRODUCT_SEO_SECTION_ORDER.join(', ')}.`);
+    }
+    const forbiddenFields = [
+      'componentName',
+      'componentPath',
+      'renderer',
+      'rendererId',
+      'layoutVariant',
+      'componentVariant',
+      'arbitrarySections',
+      'sectionOrder',
+    ];
+    forbiddenFields.forEach((field) => {
+      if (page[field] !== undefined) errors.push(`${page.id} carousel product page config must not contain architectural field ${field}.`);
+    });
+    if (Array.isArray(page.sections) && page.sections.length > 0) {
+      errors.push(`${page.id} carousel product page config must not add arbitrary sections.`);
+    }
+    if (!Array.isArray(page.heroCarouselImages) || page.heroCarouselImages.length !== 3) {
+      errors.push(`${page.id} carousel product page must define exactly 3 heroCarouselImages.`);
+    }
+    if (!Array.isArray(page.readyCarouselShowcase) || page.readyCarouselShowcase.length !== 6) {
+      errors.push(`${page.id} carousel product page must define exactly 6 readyCarouselShowcase cards.`);
+    }
+    if (!Array.isArray(page.productWorkflow?.mockups) || page.productWorkflow.mockups.length !== 4) {
+      errors.push(`${page.id} carousel product page must define exactly 4 productWorkflow mockup panels.`);
+    }
+    if (!page.pageSpecificVisualProof?.images?.length) {
+      errors.push(`${page.id} carousel product page must define typed pageSpecificVisualProof data.`);
+    }
+    return errors;
+  }
+
   const variant = getTemplateVariant(page.templateVariant);
   if (!variant || !page.templateSections || !Array.isArray(page.templateSections)) return [];
 

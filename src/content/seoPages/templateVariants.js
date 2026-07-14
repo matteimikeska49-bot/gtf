@@ -113,6 +113,20 @@ export const SEO_TEMPLATE_VARIANTS = {
 
 export const SEO_TEMPLATE_VARIANT_NAMES = Object.keys(SEO_TEMPLATE_VARIANTS);
 
+export const CAROUSEL_PRODUCT_SEO_SECTION_ORDER = [
+  'hero',
+  'quickAnswer',
+  'pageRelevantFormats',
+  'productCapabilities',
+  'productWorkflow',
+  'readyCarouselShowcase',
+  'pageSpecificVisualProof',
+  'useCases',
+  'faq',
+  'related',
+  'finalCta',
+];
+
 export const PAGE_TYPE_TO_TEMPLATE_VARIANT = {
   commercial: 'commercial_tool',
   tool: 'commercial_tool',
@@ -147,6 +161,14 @@ export const resolveTemplateSectionOrder = (variantId, pageSections) => {
   // Return the strict deterministic order, filtering only for sections the page requested
   return masterOrder.filter(section => requestedSections.has(section));
 };
+
+export const isCarouselProductSeoPage = (page = {}) => (
+  page.pageFamily === 'carousel_product_page' &&
+  page.templateVariant === 'template_page' &&
+  page.productWorkflow?.preset === 'carousel_creation' &&
+  Array.isArray(page.readyCarouselShowcase) &&
+  Boolean(page.productCapabilities?.groups?.length)
+);
 
 export const getAllTemplateSectionIds = () => (
   [...new Set(Object.values(SEO_TEMPLATE_VARIANTS).flatMap((variant) => variant.requiredSections))]

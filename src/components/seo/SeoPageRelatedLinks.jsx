@@ -46,7 +46,7 @@ export const SeoPageRelatedLinks = ({ page }) => {
   }
 
   return (
-    <section className="border-t border-white/[0.08] py-16 md:py-20">
+    <section id="related-content" data-seo-section="related-content" className="border-t border-white/[0.08] py-16 md:py-20">
       <div className="mb-8 max-w-3xl">
         <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Связанные материалы</h2>
       </div>

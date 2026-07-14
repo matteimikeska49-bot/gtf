@@ -4,7 +4,7 @@ import { SEO_ANALYTICS_EVENTS } from '../../../content/seoPages/releaseContracts
 import { trackSeoEvent } from '../seoAnalytics';
 
 export const SeoReadyCarouselShowcase = ({ page }) => {
-  const showcase = page.readyCarouselShowcase || [];
+  const showcase = (page.readyCarouselShowcase || []).slice(0, 6);
   if (!showcase.length) return null;
   const showcaseCta = page.readyCarouselShowcaseCta || {
     label: 'Выбрать структуру и создать карусель',

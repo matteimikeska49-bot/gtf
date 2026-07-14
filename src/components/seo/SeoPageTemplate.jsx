@@ -14,7 +14,12 @@ import { SeoTemplateChoiceGuide } from './template-page/SeoTemplateChoiceGuide';
 import { SeoQuickAnswer } from './template-page/SeoQuickAnswer';
 import { SeoPageAnchorNav } from './template-page/SeoPageAnchorNav';
 import { SeoReadyCarouselShowcase } from './template-page/SeoReadyCarouselShowcase';
-import { resolveTemplateSectionOrder } from '../../content/seoPages/templateVariants';
+import { SeoPageSpecificVisualProof } from './template-page/SeoPageSpecificVisualProof';
+import {
+  CAROUSEL_PRODUCT_SEO_SECTION_ORDER,
+  isCarouselProductSeoPage,
+  resolveTemplateSectionOrder,
+} from '../../content/seoPages/templateVariants';
 
 const SECTION_ALIASES = {
   problem: ['problem', 'pain', 'who-for', 'whoFor'],
@@ -95,7 +100,7 @@ const FinalCtaBlock = ({ page }) => {
   const title = finalCta.title || {};
 
   return (
-    <section className="pb-24 md:pb-32">
+    <section id="final-cta" data-seo-section="final-cta" className="pb-24 md:pb-32">
       <div className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.045] p-8 shadow-[0_24px_90px_rgba(0,0,0,0.28)] md:flex md:items-center md:justify-between md:gap-10 md:p-12">
         <div className="absolute right-[-12%] top-[-40%] h-80 w-80 rounded-full bg-pink-500/[0.12] blur-[90px]" />
         <div className="relative max-w-2xl">
@@ -123,6 +128,13 @@ const FinalCtaBlock = ({ page }) => {
   );
 };
 
+const PageRelevantFormatsBlock = ({ page }) => (
+  <section id="page-relevant-formats" data-seo-section="page-relevant-formats">
+    <SeoPageTemplateCategories page={page} />
+    {page.templateChoiceGuide && <SeoTemplateChoiceGuide page={page} />}
+  </section>
+);
+
 const renderVariantSection = (page, requirement) => {
   if (requirement === 'productCapabilities') {
     return (
@@ -132,7 +144,7 @@ const renderVariantSection = (page, requirement) => {
         dataSeoProof="product-capabilities"
         sections={page.productCapabilities?.groups || []}
         eyebrow={page.productCapabilities?.eyebrow || 'Возможности продукта'}
-        heading={page.productCapabilities?.heading || 'Что можно настроить в GoToFlow'}
+        heading="Возможности GoToFlow"
         cardMarker="product-capability"
       />
     );
@@ -154,10 +166,12 @@ const renderVariantSection = (page, requirement) => {
   if (page.templateVariant === 'template_page') {
     if (requirement === 'hero') return null;
     if (requirement === 'quickAnswer') return <SeoQuickAnswer key={requirement} page={page} />;
+    if (requirement === 'pageRelevantFormats') return <PageRelevantFormatsBlock key={requirement} page={page} />;
     if (requirement === 'readyCarouselShowcase') return <SeoReadyCarouselShowcase key={requirement} page={page} />;
     if (requirement === 'templateCategories') return <SeoPageTemplateCategories key={requirement} page={page} />;
     if (requirement === 'examples') return <SeoPageTemplateExamples key={requirement} page={page} />;
     if (requirement === 'templateChoiceGuide') return page.templateChoiceGuide ? <SeoTemplateChoiceGuide key={requirement} page={page} /> : null;
+    if (requirement === 'pageSpecificVisualProof') return <SeoPageSpecificVisualProof key={requirement} page={page} />;
     if (requirement === 'productWorkflow') {
       return page.productWorkflow
         ? <SeoProductWorkflowShowcase key={requirement} page={page} />
@@ -186,7 +200,9 @@ const renderVariantSection = (page, requirement) => {
 };
 
 export const SeoPageTemplate = ({ page }) => {
-  const sectionOrder = resolveTemplateSectionOrder(page.templateVariant, page.templateSections);
+  const sectionOrder = isCarouselProductSeoPage(page)
+    ? CAROUSEL_PRODUCT_SEO_SECTION_ORDER
+    : resolveTemplateSectionOrder(page.templateVariant, page.templateSections);
 
   return (
     <main className="relative z-10 bg-[#050505]">

@@ -712,7 +712,8 @@ export const buildCompleteHandoffFromBlueprint = (overrides = {}) => ({
       required: true,
       componentName: 'SeoReadyCarouselShowcase',
       componentPath: 'src/components/seo/template-page/SeoReadyCarouselShowcase.jsx',
-      minimumExamples: 5,
+      minimumExamples: 6,
+      exactExamples: 6,
       examples: SEO_PRODUCT_PROOF_CONTRACT.canonicalReadyCarouselShowcase.assetPaths.map((assetPath, index) => ({
         title: `Ready carousel proof ${index + 1}`,
         assetPath,
@@ -723,8 +724,9 @@ export const buildCompleteHandoffFromBlueprint = (overrides = {}) => ({
     pageSpecificVisualProof: {
       required: true,
       type: 'page_specific_result_carousel',
-      componentName: 'ResultCarouselStack',
-      componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
+      componentName: 'SeoPageSpecificVisualProof',
+      componentPath: 'src/components/seo/template-page/SeoPageSpecificVisualProof.jsx',
+      dataSource: 'page.pageSpecificVisualProof',
       assetPaths: [
         '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp',
         '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp',

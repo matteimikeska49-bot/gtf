@@ -1,4 +1,11 @@
-import { getAllTemplateSectionIds, getTemplateSectionOrder, resolveTemplateSectionOrder, getTemplateVariant } from '../templateVariants.js';
+import {
+  CAROUSEL_PRODUCT_SEO_SECTION_ORDER,
+  getAllTemplateSectionIds,
+  getTemplateSectionOrder,
+  getTemplateVariant,
+  isCarouselProductSeoPage,
+  resolveTemplateSectionOrder,
+} from '../templateVariants.js';
 import {
   buildProductWorkflowCarouselTypes,
   buildProductWorkflowMockups,
@@ -83,7 +90,9 @@ const SECTION_ALIASES = {
   benefits: ['benefits'],
   examples: ['examples'],
   quickAnswer: ['quickAnswer'],
+  pageRelevantFormats: ['pageRelevantFormats', 'templateCategories', 'templateChoiceGuide'],
   readyCarouselShowcase: ['readyCarouselShowcase'],
+  pageSpecificVisualProof: ['pageSpecificVisualProof'],
   templateChoiceGuide: ['templateChoiceGuide'],
   productCapabilities: ['productCapabilities'],
 };
@@ -153,7 +162,12 @@ export const getStructuredItemsForRequirement = (page, requirement) => {
     templateCategories: page.templateCategories || page.templates,
     promptGroups: page.promptGroups || page.prompts,
     quickAnswer: page.quickAnswer ? (Array.isArray(page.quickAnswer) ? page.quickAnswer : [page.quickAnswer]) : undefined,
+    pageRelevantFormats: [
+      ...asArray(page.templateCategories || page.templates),
+      ...(page.templateChoiceGuide ? [page.templateChoiceGuide] : []),
+    ],
     readyCarouselShowcase: page.readyCarouselShowcase,
+    pageSpecificVisualProof: page.pageSpecificVisualProof ? [page.pageSpecificVisualProof] : undefined,
     productWorkflow: page.productWorkflow ? [page.productWorkflow] : undefined,
     productCapabilities: page.productCapabilities?.groups,
     templateChoiceGuide: page.templateChoiceGuide ? [page.templateChoiceGuide] : undefined,
@@ -171,6 +185,8 @@ const getRequirementText = (page, requirement) => {
   if (requirement === 'faq') return textFrom(page.faq);
   if (requirement === 'related') return textFrom([page.relatedBlogSlugs, page.relatedSeoPaths, page.relatedProductToolPaths, page.contextualLinks]);
   if (requirement === 'finalCta') return textFrom(page.finalCta);
+  if (requirement === 'pageRelevantFormats') return textFrom([page.templateCategories, page.templates, page.templateChoiceGuide]);
+  if (requirement === 'pageSpecificVisualProof') return textFrom(page.pageSpecificVisualProof);
   if (requirement === 'examples') return textFrom(page.examples);
   if (requirement === 'benefits') return textFrom(page.benefits || getSectionsForRequirement(page, requirement));
   if (requirement === 'productWorkflow') return textFrom(page.productWorkflow);
@@ -245,7 +261,9 @@ const validateSectionPolicy = (errors, page, requiredOrder) => {
     return;
   }
 
-  const declaredSections = new Set(asArray(page.templateSections));
+  const declaredSections = new Set(isCarouselProductSeoPage(page)
+    ? requiredOrder
+    : asArray(page.templateSections));
 
   requiredOrder.forEach((sectionId) => {
     const policy = page.sectionPolicy[sectionId];
@@ -444,7 +462,7 @@ const isPlaceholderWorkflowHref = (href) => (
 );
 
 const hasImmediateShowcaseAfterWorkflow = (page) => {
-  const sections = asArray(page.templateSections);
+  const sections = getSeoPageRequirementOrder(page);
   const workflowIndex = sections.indexOf('productWorkflow');
   if (workflowIndex < 0) return false;
   if (sections[workflowIndex + 1] === 'readyCarouselShowcase') return true;
@@ -798,6 +816,12 @@ const validateRequirementContent = (errors, page, requirement, context = {}) => 
     return;
   }
 
+  if (requirement === 'pageRelevantFormats') {
+    validateStructuredItems(errors, page, 'templateCategories', page.templateCategories || page.templates, 'templateCategories');
+    validateTemplateChoiceGuideContent(errors, page, page.templateChoiceGuide);
+    return;
+  }
+
   if (requirement === 'productWorkflow') {
     validateProductWorkflowContent(errors, page, requirement, page.productWorkflow, context);
     return;
@@ -805,6 +829,19 @@ const validateRequirementContent = (errors, page, requirement, context = {}) => 
 
   if (requirement === 'productCapabilities') {
     validateProductCapabilitiesContent(errors, page);
+    return;
+  }
+
+  if (requirement === 'pageSpecificVisualProof') {
+    const proof = page.pageSpecificVisualProof;
+    validateStructuredItems(errors, page, requirement, proof ? [proof] : [], 'pageSpecificVisualProof');
+    if (!Array.isArray(proof?.images) || proof.images.length < 3 || proof.images.length > 5) {
+      errors.push(`${getPageId(page)} pageSpecificVisualProof must contain 3 to 5 images.`);
+    }
+    proof?.images?.forEach((image, index) => {
+      if (!image?.src?.startsWith('/')) errors.push(`${getPageId(page)} pageSpecificVisualProof.images[${index}] must use a local public src.`);
+      if (!hasMeaningfulText(image?.alt, 12)) errors.push(`${getPageId(page)} pageSpecificVisualProof.images[${index}] must have meaningful alt text.`);
+    });
     return;
   }
 
@@ -847,7 +884,11 @@ const validateRequirementContent = (errors, page, requirement, context = {}) => 
   validateSectionObjects(errors, page, requirement, getSectionsForRequirement(page, requirement));
 };
 
-export const getSeoPageRequirementOrder = (page) => resolveTemplateSectionOrder(page.templateVariant, page.templateSections);
+export const getSeoPageRequirementOrder = (page) => (
+  isCarouselProductSeoPage(page)
+    ? CAROUSEL_PRODUCT_SEO_SECTION_ORDER
+    : resolveTemplateSectionOrder(page.templateVariant, page.templateSections)
+);
 
 export const getSeoPageProductionReadinessErrors = (page, context = {}) => {
   if (!isProductionState(page)) return [];
@@ -862,7 +903,11 @@ export const getSeoPageProductionReadinessErrors = (page, context = {}) => {
   }
 
   const declaredOrder = page.templateSections;
-  if (!Array.isArray(declaredOrder)) {
+  if (isCarouselProductSeoPage(page)) {
+    if (declaredOrder !== undefined) {
+      errors.push(`${id} carousel product pages must not define templateSections; the executable template owns section order.`);
+    }
+  } else if (!Array.isArray(declaredOrder)) {
     errors.push(`${id} must define templateSections in the exact approved order for ${page.templateVariant}.`);
   } else {
     if (declaredOrder.join('|') !== requiredOrder.join('|')) {

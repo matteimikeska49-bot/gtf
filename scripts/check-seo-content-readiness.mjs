@@ -524,7 +524,8 @@ const makeBlueprintHandoffFixture = (overrides = {}) => ({
       required: true,
       componentName: 'SeoReadyCarouselShowcase',
       componentPath: 'src/components/seo/template-page/SeoReadyCarouselShowcase.jsx',
-      minimumExamples: 5,
+      minimumExamples: 6,
+      exactExamples: 6,
       examples: SEO_PRODUCT_PROOF_CONTRACT.canonicalReadyCarouselShowcase.assetPaths.map((assetPath, index) => ({
         title: `Ready carousel proof ${index + 1}`,
         assetPath,
@@ -535,8 +536,9 @@ const makeBlueprintHandoffFixture = (overrides = {}) => ({
     pageSpecificVisualProof: {
       required: true,
       type: 'page_specific_result_carousel',
-      componentName: 'ResultCarouselStack',
-      componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
+      componentName: 'SeoPageSpecificVisualProof',
+      componentPath: 'src/components/seo/template-page/SeoPageSpecificVisualProof.jsx',
+      dataSource: 'page.pageSpecificVisualProof',
       assetPaths: [
         '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp',
         '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp',
@@ -666,7 +668,7 @@ expectBlueprintHandoffPass('positive exact blueprint handoff', makeBlueprintHand
   const oneModule = {
     required: true,
     componentName: 'SeoOneProofBlock',
-    componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
+    componentPath: 'src/components/seo/template-page/SeoPageSpecificVisualProof.jsx',
     examples: handoff.productProofModules.canonicalReadyCarouselShowcase.examples,
     assetPaths: handoff.productProofModules.pageSpecificVisualProof.assetPaths,
     cta: 'Create',
@@ -729,8 +731,8 @@ expectBlueprintHandoffPass('positive exact blueprint handoff', makeBlueprintHand
     productCapabilitiesMarkers: 1,
     productCapabilityCards: 7,
     readyResultsShowcaseMarkers: 1,
-    readyResultCards: 5,
-    readyResultImages: 5,
+    readyResultCards: 6,
+    readyResultImages: 6,
     readyResultsCtas: 1,
     pageSpecificProofMarkers: 1,
     pageSpecificProofImages: 5,
