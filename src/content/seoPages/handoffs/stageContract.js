@@ -231,8 +231,6 @@ export const validateStageDiff = ({ stage, changedPaths = [] }) => {
     }
   });
 
-  errors.push(...validateSeoProductProofModules(handoff, context));
-
   return errors;
 };
 
@@ -407,6 +405,8 @@ export const validateHandoffStructure = (handoff, context = {}) => {
       }));
     });
   });
+
+  errors.push(...validateSeoProductProofModules(handoff, context));
 
   return errors;
 };

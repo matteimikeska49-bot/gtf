@@ -284,7 +284,7 @@ addFixture('Production integration with owner approval true passes', 'pass', () 
   validateStageHandoff({
     stage: 'codex_production_integration',
     handoff: buildCompleteHandoffFromBlueprint(),
-    context,
+    context: { ...context, runtimePage: fixtureRuntimePage },
   })
 ));
 
@@ -330,7 +330,7 @@ addFixture('Live complete handoff shape does not affect incomplete fixture', 'pa
       approvedForProductionIntegration: false,
       approvedForTechnicalIntegration: false,
     }),
-    context,
+    context: { ...context, runtimePage: fixtureRuntimePage },
   })
 ));
 

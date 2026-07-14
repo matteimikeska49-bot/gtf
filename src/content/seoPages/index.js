@@ -543,6 +543,7 @@ const seamlessInstagramCarouselDraftPage = {
         caption: seamlessWorkflowStepTitles[3],
         fallbackVisualType: 'editor_result',
         resultCarousel: {
+          proofType: 'page-specific',
           title: seamlessCopySlot('readyCarouselShowcase', 'sectionHeading'),
           label: 'Бесшовная карусель',
           format: '4:5',
@@ -564,7 +565,7 @@ const seamlessInstagramCarouselDraftPage = {
   },
   readyCarouselShowcase: seamlessItemsFromSlots('readyCarouselShowcase', 5).map((item, index) => ({
     ...item,
-    image: seamlessResultSlides[index].src,
+    image: item.image,
     width: 1080,
     height: 1350,
   })),
@@ -1600,6 +1601,7 @@ const rawSeoPages = [
           title: 'Редактор и результат',
           caption: 'Доработайте слайды вручную и получите готовую карусель.',
           resultCarousel: {
+            proofType: 'page-specific',
             title: '5 причин делать карусели с ИИ',
             label: 'Карусель с ИИ',
             format: '4:5',

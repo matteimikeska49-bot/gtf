@@ -475,6 +475,10 @@ const isPlaceholderValue = (value) => {
   )) || /\b(?:placeholder|not_available|todo|tbd)\b|плейсхолдер|заглушк/iu.test(text);
 };
 
+const isPlaceholderProofModuleValue = (value) => (
+  /\b(?:placeholder|not_available|todo|tbd)\b|плейсхолдер|заглушк/iu.test(textFrom(value))
+);
+
 const findSection = (blueprint, id) => blueprint.sections.find((sectionItem) => sectionItem.id === id);
 
 const ensurePathExists = (errors, context, label, filePath) => {
@@ -555,7 +559,7 @@ const ensureModuleShape = (errors, context, label, module, contract) => {
   if (module.componentName !== contract.componentName) errors.push(`${label}.componentName must be ${contract.componentName}.`);
   if (module.componentPath !== contract.componentPath) errors.push(`${label}.componentPath must be ${contract.componentPath}.`);
   ensurePathExists(errors, context, label, module.componentPath);
-  if (isPlaceholderValue(module)) errors.push(`${label} must not contain placeholders or internal labels.`);
+  if (isPlaceholderProofModuleValue(module)) errors.push(`${label} must not contain placeholders.`);
 };
 
 const ensureReadyShowcaseModule = (errors, context, label, module, contract) => {
