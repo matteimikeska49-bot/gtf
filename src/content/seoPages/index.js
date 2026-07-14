@@ -472,9 +472,9 @@ const seamlessInstagramCarouselDraftPage = {
     },
   },
   heroCarouselAssetIds: [
-    'seamless-instagram-hero-slide-1',
-    'seamless-instagram-hero-slide-3',
-    'seamless-instagram-hero-slide-5',
+    'instagram-template-hero-expert-post',
+    'instagram-template-hero-template-cover',
+    'instagram-template-hero-product-case',
   ],
   heroVisualBadge: 'Бесшовная',
   templateCategoriesIntro: {
