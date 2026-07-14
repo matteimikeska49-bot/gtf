@@ -2,9 +2,136 @@ import {
   EXACT_SEO_PAGE_BLUEPRINT,
   EXACT_SEO_PAGE_BLUEPRINT_ID,
 } from '../blueprints/exactSeoPageBlueprint.js';
+import {
+  SEO_CANONICAL_PRODUCT_CAPABILITIES,
+  SEO_REQUIRED_PRODUCT_CAPABILITY_IDS,
+} from '../productTruthRegistry.js';
 
 const requiredBlueprintSections = EXACT_SEO_PAGE_BLUEPRINT.sections
   .filter((section) => EXACT_SEO_PAGE_BLUEPRINT.requiredSections.includes(section.id));
+
+const seamlessHeroCarouselImages = [
+  {
+    type: 'image',
+    assetPath: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp',
+    caption: 'Начальный слайд с общей линией, которая продолжается дальше.',
+    alt: 'Начало бесшовной карусели Instagram с перетекающей визуальной линией',
+  },
+  {
+    type: 'image',
+    assetPath: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp',
+    caption: 'Средний слайд сохраняет визуальную связь с соседними карточками.',
+    alt: 'Средний слайд бесшовной карусели с продолжением общей композиции',
+  },
+  {
+    type: 'image',
+    assetPath: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp',
+    caption: 'Финальный слайд завершает связанную серию и оставляет место для CTA.',
+    alt: 'Финальный слайд бесшовной карусели с завершением визуальной линии',
+  },
+];
+
+const seamlessUseCaseItems = [
+  {
+    title: 'Экспертный гайд',
+    body: 'Подходит для сложной темы, где единая визуальная линия помогает вести читателя от вводного тезиса к выводу.',
+  },
+  {
+    title: 'Пошаговая инструкция',
+    body: 'Каждый шаг получает отдельный слайд, а общий фон и графика удерживают ощущение одного процесса.',
+  },
+  {
+    title: 'Сторителлинг',
+    body: 'Историю запуска, пути автора или изменения проекта можно показать как непрерывное движение через несколько слайдов.',
+  },
+  {
+    title: 'Кейс',
+    body: 'Исходная ситуация, процесс и результат выглядят связно, потому что визуальный контекст не обрывается между карточками.',
+  },
+  {
+    title: 'Продуктовая презентация',
+    body: 'Функции, выгоды и сценарии использования можно показать в одной связанной последовательности с финальным CTA.',
+  },
+  {
+    title: 'Чек-лист',
+    body: 'Пункты проверки остаются отдельными, но общая композиция делает подборку цельной и удобной для сохранения.',
+  },
+  {
+    title: 'Подборка',
+    body: 'Идеи, инструменты или ошибки можно разнести по слайдам и сохранить визуальный ритм всей серии.',
+  },
+  {
+    title: 'Карусель доверия',
+    body: 'Отзывы, аргументы и доказательства можно собрать в спокойную последовательность без разрыва визуального контекста.',
+  },
+];
+
+const seamlessFaqItems = [
+  {
+    question: 'Что такое бесшовная карусель?',
+    answer: 'Бесшовная карусель — это серия отдельных слайдов, где фон, линия или визуальный мотив продолжаются между карточками и создают ощущение единого пространства.',
+  },
+  {
+    question: 'Нужно ли вручную совмещать слайды?',
+    answer: 'Нет. GoToFlow помогает создать связанные слайды с визуальным продолжением между границами карточек. Перед скачиванием вы можете проверить, как они смотрятся рядом.',
+  },
+  {
+    question: 'Нужно ли самостоятельно нарезать изображение?',
+    answer: 'Нет. GoToFlow создает отдельные связанные слайды для карусели; вы можете проверить, отредактировать и скачать результат. Внешняя нарезка изображения не требуется.',
+  },
+  {
+    question: 'Сколько слайдов можно создать?',
+    answer: 'Для Instagram-карусели в GoToFlow доступно до 10 слайдов. Конкретная длина зависит от задачи, исходного материала и выбранной структуры.',
+  },
+  {
+    question: 'Какие исходные материалы можно использовать?',
+    answer: 'Можно начать с темы или готового текста, ссылки, видео, PDF или голосового сообщения. GoToFlow помогает превратить исходник в структуру и текст слайдов.',
+  },
+  {
+    question: 'Можно ли отредактировать текст?',
+    answer: 'Да. Тексты слайдов можно проверить, исправить и перегенерировать до скачивания карусели.',
+  },
+  {
+    question: 'Можно ли изменить дизайн?',
+    answer: 'Да. Можно выбрать AI-стиль или шаблонное направление, настроить фон, персонажа, CTA и вручную доработать слайды в редакторе.',
+  },
+  {
+    question: 'Какие форматы поддерживаются?',
+    answer: 'GoToFlow поддерживает форматы 4:5, 1:1 и 9:16. Для Instagram-карусели обычно выбирают 4:5 или 1:1.',
+  },
+  {
+    question: 'Можно ли использовать собственный промпт?',
+    answer: 'Да. Собственный промпт можно использовать для визуального направления и стиля, если нужно точнее описать желаемую подачу.',
+  },
+  {
+    question: 'Можно ли изменить фон, персонажа и CTA?',
+    answer: 'Да. Эти параметры относятся к доступным настройкам редактора: фон, персонаж и призыв к действию можно адаптировать под задачу карусели.',
+  },
+  {
+    question: 'Чем бесшовная карусель отличается от обычной?',
+    answer: 'В обычной карусели каждый слайд чаще воспринимается как отдельная карточка. В бесшовной версии визуальные элементы продолжаются между слайдами и связывают серию в одну историю.',
+  },
+  {
+    question: 'Для каких задач подходит бесшовная карусель?',
+    answer: 'Она подходит для экспертных гайдов, пошаговых инструкций, сторителлинга, кейсов, продуктовых презентаций, чек-листов, подборок и каруселей доверия.',
+  },
+  {
+    question: 'Можно ли создать карусель без дизайнера?',
+    answer: 'Да. GoToFlow помогает собрать структуру, тексты и визуальное направление, а затем дает возможность вручную проверить и доработать результат.',
+  },
+  {
+    question: 'Сколько времени занимает создание?',
+    answer: 'Время зависит от исходного материала и объема правок. Обычно быстрее начать с темы или готового текста, получить черновую структуру и затем доработать детали.',
+  },
+  {
+    question: 'Публикует ли GoToFlow карусель автоматически?',
+    answer: 'Нет. GoToFlow не публикует карусель автоматически в Instagram. Вы скачиваете готовые слайды и самостоятельно размещаете их в своем аккаунте.',
+  },
+  {
+    question: 'Можно ли перегенерировать текст или отдельные слайды?',
+    answer: 'Да. Перед скачиванием можно перегенерировать текстовые части, исправить слайды и довести карусель до нужной версии.',
+  },
+];
 
 export const seamlessInstagramCarouselHandoff = {
   id: 'ru-use-case-seamless-instagram-carousel-handoff',
@@ -60,32 +187,13 @@ export const seamlessInstagramCarouselHandoff = {
         secondaryCta: 'Смотреть примеры',
       };
       visualSlots = {
-        heroCarouselImages: [
-          {
-            type: 'image',
-            assetPath: '/images/niches/ru/content-ru-9.webp',
-            caption: 'Первый слайд экспертной карусели.',
-            alt: 'Пример начала бесшовной карусели в Instagram',
-          },
-          {
-            type: 'image',
-            assetPath: '/images/niches/ru/content-ru-10.webp',
-            caption: 'Сгенерированная последовательность из 5 слайдов в формате 4:5 (1080x1350). Тема: «Запуск продукта». Общий фон — глубокий темный градиент. Золотая плавная кривая пересекает все карточки, создавая эффект перетекания.',
-            alt: 'Средние слайды с визуальным продолжением',
-          },
-          {
-            type: 'image',
-            assetPath: '/images/niches/ru/content-ru-5.webp',
-            caption: 'Финальный слайд с призывом к действию.',
-            alt: 'Окончание бесшовной карусели с CTA',
-          },
-        ]
+        heroCarouselImages: seamlessHeroCarouselImages,
       };
     } else if (section.id === 'quickAnswer') {
       copySlots = {
         heading: 'Что такое бесшовная карусель?',
         body: 'Это формат поста, где визуальный фон или графика перетекают с одного слайда на другой. В Instagram это создает эффект единого пространства. GoToFlow генерирует последовательность связанных слайдов, так что вам не нужно ничего нарезать вручную.',
-        contextualLink: 'Генератор каруселей Instagram',
+        contextualLink: 'Подробнее о бесшовной карусели',
       };
       visualSlots = {
         componentIcon: {
@@ -131,20 +239,18 @@ export const seamlessInstagramCarouselHandoff = {
       };
     } else if (section.id === 'templateChoiceGuide') {
       copySlots = {
-        eyebrow: 'Настройка',
-        'heading.before': 'Управляйте ',
-        'heading.accent': 'каждой деталью',
-        'heading.after': ' дизайна',
-        description: 'Вам не нужно быть дизайнером. Выбирайте готовые структуры, а GoToFlow сам распределит текст и фон.',
-        'items.task': ['Длинный сторителлинг', 'Инструкция (How-to)', 'Продажа услуги', 'Разбор ошибки', 'Знакомство', 'Отзывы'],
-        'items.template': ['Сплошная история', 'Шаг за шагом', 'Презентация', 'Контраст', 'Визитка', 'Карусель доверия'],
+        eyebrow: 'Настройки',
+        'heading.before': 'Какие параметры ',
+        'heading.accent': 'можно настроить',
+        'heading.after': ' перед скачиванием',
+        description: 'Этот блок про настройки редактора, а не про сценарии применения: исходник, бесшовный тип, стиль, фон, персонаж, CTA и ручная проверка результата.',
+        'items.task': ['Исходный материал', 'Тип карусели', 'Визуальный стиль', 'Редактирование'],
+        'items.template': ['Тема, текст, ссылка, видео, PDF или голосовое', 'Бесшовная карусель', 'AI-стиль или собственный промпт', 'Текст, слайды и CTA'],
         'items.structure': [
-          'Текст распределен по панораме с единым градиентом.',
-          'Крупные цифры на стыках слайдов.',
-          'Яркий первый слайд и акцентный оффер в конце.',
-          'Темный фон с яркими текстовыми блоками.',
-          'Фото автора плавно переходит на второй слайд.',
-          'Цитаты клиентов на едином светлом фоне.'
+          'добавьте контекст и задачу карусели',
+          'выберите визуальное продолжение между слайдами',
+          'задайте направление, фон и персонажа',
+          'проверьте, исправьте и перегенерируйте части результата',
         ],
       };
       visualSlots = {
@@ -161,7 +267,7 @@ export const seamlessInstagramCarouselHandoff = {
         'heading.before': 'Как GoToFlow ',
         'heading.accent': 'собирает ',
         'heading.after': 'карусель',
-        description: 'Пройдите путь от идеи до готовой карусели за несколько кликов.',
+        description: 'Пройдите путь от исходного материала до готовых связанных слайдов, которые можно проверить, отредактировать и скачать.',
         stepOverrides: [
           'Добавьте тему или исходный материал',
           'Выберите бесшовный тип карусели',
@@ -177,8 +283,8 @@ export const seamlessInstagramCarouselHandoff = {
           { type: 'componentRef', componentRef: 'component:FALLBACK_MOCKUPS.source-structure', caption: 'Шаг 1', alt: 'Ввод темы' },
           { type: 'componentRef', componentRef: 'component:FALLBACK_MOCKUPS.text-review', caption: 'Шаг 2', alt: 'Выбор стиля' },
           { type: 'componentRef', componentRef: 'component:FALLBACK_MOCKUPS.visual-route', caption: 'Шаг 3', alt: 'Проверка текста' },
-          { type: 'componentRef', componentRef: 'component:FALLBACK_MOCKUPS.visual-route', caption: 'Шаг 4', alt: 'Скачивание' },
-          { type: 'componentRef', componentRef: 'component:FALLBACK_MOCKUPS.visual-route', caption: 'Шаг 5', alt: 'Публикация' },
+          { type: 'componentRef', componentRef: 'component:FALLBACK_MOCKUPS.visual-route', caption: 'Шаг 4', alt: 'Настройка бесшовного стиля' },
+          { type: 'componentRef', componentRef: 'component:FALLBACK_MOCKUPS.visual-route', caption: 'Шаг 5', alt: 'Скачивание готовых слайдов' },
         ],
         mockups: [
           { type: 'componentRef', componentRef: 'component:FALLBACK_MOCKUPS.source-structure', caption: 'Мокап ввода', alt: 'Интерфейс ввода' },
@@ -193,6 +299,22 @@ export const seamlessInstagramCarouselHandoff = {
           { type: 'image', assetPath: '/images/seo-workflow/carousel-result/ai-carousel-4.webp', caption: 'Слайд 4', alt: 'Результат слайд 4' },
           { type: 'image', assetPath: '/images/seo-workflow/carousel-result/ai-carousel-5.webp', caption: 'Слайд 5. Логическое завершение серии.', alt: 'Результат слайд 5' },
         ]
+      };
+    } else if (section.id === 'productCapabilities') {
+      copySlots = {
+        eyebrow: 'Возможности GoToFlow',
+        heading: 'Что можно настроить в GoToFlow',
+        introCopy: 'GoToFlow создает бесшовную карусель из разных исходников, помогает собрать структуру и текст, выбрать визуальный стиль, настроить фон, персонажа и CTA, затем проверить и отредактировать связанные слайды.',
+        'groups.title': SEO_CANONICAL_PRODUCT_CAPABILITIES.map((group) => group.title),
+        'groups.body': SEO_CANONICAL_PRODUCT_CAPABILITIES.map((group) => group.body),
+      };
+      visualSlots = {
+        capabilityIconCards: {
+          type: 'componentRef',
+          componentRef: 'component:SeoPageWorkflow.productCapabilities',
+          caption: 'Сетка подтвержденных возможностей продукта',
+          alt: 'Возможности GoToFlow для создания каруселей',
+        },
       };
     } else if (section.id === 'readyCarouselShowcase') {
       copySlots = {
@@ -220,20 +342,24 @@ export const seamlessInstagramCarouselHandoff = {
           { type: 'image', assetPath: '/images/niches/ru/content-ru-7.webp', caption: 'Чек-лист', alt: 'Пример чек-листа в Instagram' },
         ]
       };
+    } else if (section.id === 'useCases') {
+      copySlots = {
+        heading: 'Для каких задач подходит бесшовная карусель',
+        'item.title': seamlessUseCaseItems.map((item) => item.title),
+        'item.body': seamlessUseCaseItems.map((item) => item.body),
+      };
+      visualSlots = {
+        useCaseCards: {
+          type: 'componentRef',
+          componentRef: 'component:SeoPageWorkflow.useCases',
+          caption: 'Сценарии применения бесшовной карусели',
+          alt: 'Сценарии использования бесшовной карусели',
+        },
+      };
     } else if (section.id === 'faq') {
       copySlots = {
-        question: [
-          'Нужно ли вручную нарезать или совмещать слайды?',
-          'Сколько слайдов можно сделать в бесшовном формате?',
-          'Можно ли отредактировать текст и дизайн?',
-          'GoToFlow публикует карусель автоматически в Instagram?'
-        ],
-        answer: [
-          'Нет. GoToFlow создаёт готовую последовательность отдельных слайдов с визуальным продолжением между ними. Вы можете проверить текст и дизайн, внести правки и скачать готовую карусель.',
-          'В Instagram максимальный лимит для одного поста — 10 слайдов. GoToFlow позволяет создать карусель длиной от 5 до 10 слайдов в рекомендуемых форматах (4:5 или 1:1).',
-          'Да, вы можете редактировать текст, менять настройки шаблона, переключать ИИ-стили и заменять фон прямо в платформе.',
-          'Нет. GoToFlow выдает вам готовые файлы-слайды. Вы самостоятельно загружаете их в Instagram и публикуете.'
-        ],
+        question: seamlessFaqItems.map((item) => item.question),
+        answer: seamlessFaqItems.map((item) => item.answer),
       };
       visualSlots = {
         accordionChevron: { type: 'componentRef', componentRef: 'component:SeoPageFAQ.chevron', caption: 'Стрелка вниз', alt: 'Развернуть ответ' }
@@ -305,24 +431,30 @@ export const seamlessInstagramCarouselHandoff = {
     'Unverified engagement percentages.',
     'quarantined_review',
   ],
-  FAQ: [
-    {
-      question: 'Нужно ли вручную нарезать или совмещать слайды?',
-      answer: 'Нет. GoToFlow создаёт готовую последовательность отдельных слайдов с визуальным продолжением между ними. Вы можете проверить текст и дизайн, внести правки и скачать готовую карусель.',
-    },
-    {
-      question: 'Сколько слайдов можно сделать в бесшовном формате?',
-      answer: 'В Instagram максимальный лимит для одного поста — 10 слайдов. GoToFlow позволяет создать карусель длиной от 5 до 10 слайдов в рекомендуемых форматах (4:5 или 1:1).',
-    },
-    {
-      question: 'Можно ли отредактировать текст и дизайн?',
-      answer: 'Да, вы можете редактировать текст, менять настройки шаблона, переключать ИИ-стили и заменять фон прямо в платформе.',
-    },
-    {
-      question: 'GoToFlow публикует карусель автоматически в Instagram?',
-      answer: 'Нет. GoToFlow выдает вам готовые файлы-слайды. Вы самостоятельно загружаете их в Instagram и публикуете.',
-    }
-  ],
+  productCapabilities: {
+    required: true,
+    componentName: 'SeoPageWorkflow',
+    componentPath: 'src/components/seo/SeoPageWorkflow.jsx',
+    canonicalDataSource: 'SEO_CANONICAL_PRODUCT_CAPABILITIES',
+    highlightedCapabilities: ['seamlessCarousels', 'formats4511916', 'upTo10Slides', 'slideEditing'],
+    introCopy: 'GoToFlow создает бесшовную карусель из разных исходников, помогает собрать структуру и текст, выбрать визуальный стиль, настроить фон, персонажа и CTA, затем проверить и отредактировать связанные слайды.',
+    groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,
+    capabilityIds: SEO_REQUIRED_PRODUCT_CAPABILITY_IDS,
+  },
+  useCases: {
+    required: true,
+    componentName: 'SeoPageWorkflow',
+    componentPath: 'src/components/seo/SeoPageWorkflow.jsx',
+    items: seamlessUseCaseItems,
+  },
+  FAQ: seamlessFaqItems,
+  faqContract: {
+    minimum: 12,
+    maximum: 16,
+    items: seamlessFaqItems,
+    uniqueIntentRequired: true,
+    visibleSchemaParityRequired: true,
+  },
   relatedLinks: [
     {
       status: 'verified',
@@ -355,6 +487,17 @@ export const seamlessInstagramCarouselHandoff = {
       dataSource: 'page.productWorkflow',
       copySlots: ['eyebrow', 'heading.before', 'heading.accent', 'heading.after', 'description', 'stepOverrides', 'featureChips', 'cta'],
       visualSlots: ['workflowSteps', 'mockups', 'resultCarousel'],
+    },
+    canonicalProductCapabilities: {
+      required: true,
+      componentName: 'SeoPageWorkflow',
+      componentPath: 'src/components/seo/SeoPageWorkflow.jsx',
+      canonicalDataSource: 'SEO_CANONICAL_PRODUCT_CAPABILITIES',
+      dataSource: 'page.productCapabilities',
+      groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,
+      capabilityIds: SEO_REQUIRED_PRODUCT_CAPABILITY_IDS,
+      highlightedCapabilities: ['seamlessCarousels', 'formats4511916', 'upTo10Slides', 'slideEditing'],
+      introCopy: 'GoToFlow создает бесшовную карусель из разных исходников, помогает собрать структуру и текст, выбрать визуальный стиль, настроить фон, персонажа и CTA, затем проверить и отредактировать связанные слайды.',
     },
     canonicalReadyCarouselShowcase: {
       required: true,

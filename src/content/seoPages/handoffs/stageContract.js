@@ -7,6 +7,10 @@ import {
   validateSeoProductProofModules,
   validateSeoRuntimeProductProof,
 } from '../blueprints/exactSeoPageBlueprint.js';
+import {
+  SEO_CANONICAL_PRODUCT_CAPABILITIES,
+  SEO_REQUIRED_PRODUCT_CAPABILITY_IDS,
+} from '../productTruthRegistry.js';
 
 export const SEO_PRODUCTION_STAGES = [
   'gemini_content_design',
@@ -277,6 +281,101 @@ const hasProductionApproval = (handoff) => (
   handoff.approvedForTechnicalIntegration === true
 );
 
+const normalizeText = (value) => String(value || '').trim().replace(/\s+/gu, ' ').toLowerCase();
+
+const canonicalFaqPairs = (items = []) => items.map((item) => ({
+  question: normalizeText(item?.question),
+  answer: normalizeText(item?.answer),
+}));
+
+const routeFromRelated = (item) => item?.route || item?.path || item?.href || '';
+
+const capabilityIdsFrom = (value) => {
+  if (!value) return [];
+  if (Array.isArray(value)) return value.flatMap(capabilityIdsFrom);
+  if (typeof value === 'object') return [
+    ...(Array.isArray(value.capabilityIds) ? value.capabilityIds : []),
+    ...capabilityIdsFrom(value.groups),
+    ...capabilityIdsFrom(value.highlightedCapabilities),
+  ];
+  return [];
+};
+
+const validateFaqContract = (handoff, label) => {
+  const errors = [];
+  const faq = Array.isArray(handoff.FAQ) ? handoff.FAQ : [];
+  const contract = handoff.faqContract || {};
+  const minimum = contract.minimum ?? 12;
+  const maximum = contract.maximum ?? 16;
+
+  if (faq.length < minimum || faq.length > maximum) {
+    errors.push(`${label}.FAQ must contain ${minimum} to ${maximum} items; got ${faq.length}.`);
+  }
+
+  const normalizedQuestions = faq.map((item) => normalizeText(item.question)).filter(Boolean);
+  if (new Set(normalizedQuestions).size !== normalizedQuestions.length) {
+    errors.push(`${label}.FAQ must contain unique questions by intent.`);
+  }
+
+  if (Array.isArray(contract.items)) {
+    const faqPairs = canonicalFaqPairs(faq);
+    const contractPairs = canonicalFaqPairs(contract.items);
+    if (JSON.stringify(faqPairs) !== JSON.stringify(contractPairs)) {
+      errors.push(`${label}.faqContract.items must match FAQ questions and answers 1:1.`);
+    }
+  }
+
+  return errors;
+};
+
+const validateHandoffRuntimeParity = ({ handoff, page }) => {
+  const errors = [];
+  const label = handoff?.id || handoff?.route || 'handoff';
+  if (!page) return [`${label} requires runtimePage context for handoff/runtime parity validation.`];
+
+  if (JSON.stringify(canonicalFaqPairs(page.faq || [])) !== JSON.stringify(canonicalFaqPairs(handoff.FAQ || []))) {
+    errors.push(`${label} runtime FAQ must match handoff FAQ questions, answers, order, and count.`);
+  }
+
+  const handoffUseCases = (handoff.useCases?.items || []).map((item) => ({
+    title: normalizeText(item.title),
+    body: normalizeText(item.body),
+  }));
+  const runtimeUseCases = (page.useCases || []).map((item) => ({
+    title: normalizeText(item.title),
+    body: normalizeText(item.body),
+  }));
+  if (JSON.stringify(runtimeUseCases) !== JSON.stringify(handoffUseCases)) {
+    errors.push(`${label} runtime useCases must match handoff useCases items exactly.`);
+  }
+
+  const runtimeCapabilityIds = new Set(capabilityIdsFrom(page.productCapabilities));
+  const handoffCapabilityIds = new Set(capabilityIdsFrom(handoff.productCapabilities));
+  SEO_REQUIRED_PRODUCT_CAPABILITY_IDS.forEach((capabilityId) => {
+    if (!runtimeCapabilityIds.has(capabilityId)) {
+      errors.push(`${label} runtime productCapabilities missing canonical id ${capabilityId}.`);
+    }
+    if (!handoffCapabilityIds.has(capabilityId)) {
+      errors.push(`${label} handoff productCapabilities missing canonical id ${capabilityId}.`);
+    }
+  });
+
+  const handoffRelatedRoutes = (handoff.relatedLinks || []).map(routeFromRelated).filter(Boolean).sort();
+  const runtimeRelatedRoutes = [
+    ...(page.relatedSeoPaths || []),
+    ...(page.relatedProductToolPaths || []),
+    ...(page.relatedBlogSlugs || []).map((slug) => `/ru/blog/${slug}`),
+    ...(page.contextualLinks || []).map((link) => link.href).filter((href) => href?.startsWith('/ru/')),
+  ].filter(Boolean).sort();
+  handoffRelatedRoutes.forEach((route) => {
+    if (!runtimeRelatedRoutes.includes(route)) {
+      errors.push(`${label} runtime related links must include handoff route ${route}.`);
+    }
+  });
+
+  return errors;
+};
+
 const validateCopySlotValue = ({ value, allowDraftAwaiting, label, errors }) => {
   if (allowDraftAwaiting && isAwaitingGemini(value)) return;
   if (!hasHumanText(textFrom(value))) {
@@ -339,6 +438,9 @@ export const validateHandoffStructure = (handoff, context = {}) => {
     'ProductTruthClaims',
     'forbiddenClaims',
     'FAQ',
+    'productCapabilities',
+    'useCases',
+    'faqContract',
     'relatedLinks',
     'ownerReviewStatus',
     'handoffComplete',
@@ -354,6 +456,32 @@ export const validateHandoffStructure = (handoff, context = {}) => {
       errors.push(`${label} missing required handoff field ${field}.`);
     }
   });
+
+  errors.push(...validateFaqContract(handoff, label));
+
+  const productCapabilities = handoff.productCapabilities || {};
+  const handoffCapabilityIds = new Set(capabilityIdsFrom(productCapabilities));
+  if (productCapabilities.required !== true) {
+    errors.push(`${label}.productCapabilities.required must be true.`);
+  }
+  if (productCapabilities.componentName !== 'SeoPageWorkflow') {
+    errors.push(`${label}.productCapabilities.componentName must be SeoPageWorkflow.`);
+  }
+  if (productCapabilities.componentPath !== 'src/components/seo/SeoPageWorkflow.jsx') {
+    errors.push(`${label}.productCapabilities.componentPath must be src/components/seo/SeoPageWorkflow.jsx.`);
+  }
+  if (productCapabilities.canonicalDataSource !== 'SEO_CANONICAL_PRODUCT_CAPABILITIES') {
+    errors.push(`${label}.productCapabilities.canonicalDataSource must be SEO_CANONICAL_PRODUCT_CAPABILITIES.`);
+  }
+  SEO_REQUIRED_PRODUCT_CAPABILITY_IDS.forEach((capabilityId) => {
+    if (!handoffCapabilityIds.has(capabilityId)) {
+      errors.push(`${label}.productCapabilities missing canonical capability id ${capabilityId}.`);
+    }
+  });
+
+  if (handoff.useCases?.required !== true || !Array.isArray(handoff.useCases?.items) || handoff.useCases.items.length < 6) {
+    errors.push(`${label}.useCases must define at least 6 page-specific items separate from capabilities.`);
+  }
 
   if (handoff.route === '/ru/use-cases/besshovnaya-karusel-instagram' && handoff.runtimeImported === true) {
     errors.push(`${label} must not be runtimeImported before Codex technical integration.`);
@@ -467,6 +595,10 @@ export const validateStageHandoff = ({ stage, handoff, context = {} }) => {
         page: context.runtimePage,
         context,
       }));
+      errors.push(...validateHandoffRuntimeParity({
+        handoff,
+        page: context.runtimePage,
+      }));
     } else {
       errors.push(`${label} requires runtimePage context for draft preview product proof validation.`);
     }
@@ -490,6 +622,23 @@ export const validateStageHandoff = ({ stage, handoff, context = {} }) => {
 
   return errors;
 };
+
+const fixtureFaqItems = Array.from({ length: 12 }, (_, index) => ({
+  question: `Fixture FAQ question ${index + 1}?`,
+  answer: `Fixture FAQ answer ${index + 1} explains the product workflow, review boundary, and safe publishing step.`,
+}));
+
+const fixtureUseCases = [
+  'Expert guide',
+  'Step-by-step tutorial',
+  'Storytelling carousel',
+  'Case study',
+  'Product presentation',
+  'Checklist',
+].map((title, index) => ({
+  title,
+  body: `Fixture use case ${index + 1} with page-specific audience, task, and result detail.`,
+}));
 
 export const buildCompleteHandoffFromBlueprint = (overrides = {}) => ({
   id: 'fixture-complete-owner-approved-handoff',
@@ -522,6 +671,22 @@ export const buildCompleteHandoffFromBlueprint = (overrides = {}) => ({
     description: 'Complete fixture metadata used only by the handoff checker.',
   },
   ProductTruthClaims: ['GoToFlow helps prepare carousel content for owner review.'],
+  productCapabilities: {
+    required: true,
+    componentName: 'SeoPageWorkflow',
+    componentPath: 'src/components/seo/SeoPageWorkflow.jsx',
+    canonicalDataSource: 'SEO_CANONICAL_PRODUCT_CAPABILITIES',
+    highlightedCapabilities: ['seamlessCarousels', 'formats4511916'],
+    introCopy: 'Fixture canonical product capabilities for the exact blueprint.',
+    groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,
+    capabilityIds: SEO_REQUIRED_PRODUCT_CAPABILITY_IDS,
+  },
+  useCases: {
+    required: true,
+    componentName: 'SeoPageWorkflow',
+    componentPath: 'src/components/seo/SeoPageWorkflow.jsx',
+    items: fixtureUseCases,
+  },
   productProofFamily: 'carousel',
   productProofModules: {
     canonicalProductWorkflow: {
@@ -531,6 +696,17 @@ export const buildCompleteHandoffFromBlueprint = (overrides = {}) => ({
       dataSource: 'page.productWorkflow',
       copySlots: ['eyebrow', 'heading.before', 'heading.accent', 'heading.after', 'description', 'stepOverrides', 'featureChips', 'cta'],
       visualSlots: ['workflowSteps', 'mockups', 'resultCarousel'],
+    },
+    canonicalProductCapabilities: {
+      required: true,
+      componentName: 'SeoPageWorkflow',
+      componentPath: 'src/components/seo/SeoPageWorkflow.jsx',
+      canonicalDataSource: 'SEO_CANONICAL_PRODUCT_CAPABILITIES',
+      dataSource: 'page.productCapabilities',
+      groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,
+      capabilityIds: SEO_REQUIRED_PRODUCT_CAPABILITY_IDS,
+      highlightedCapabilities: ['seamlessCarousels', 'formats4511916'],
+      introCopy: 'Fixture canonical product capabilities for the exact blueprint.',
     },
     canonicalReadyCarouselShowcase: {
       required: true,
@@ -564,12 +740,14 @@ export const buildCompleteHandoffFromBlueprint = (overrides = {}) => ({
     },
   },
   forbiddenClaims: ['automatic publishing', 'unsupported export guarantees'],
-  FAQ: [
-    {
-      question: 'How is the handoff reviewed?',
-      answer: 'The owner reviews copy, visuals, Product Truth, and release readiness before integration.',
-    },
-  ],
+  FAQ: fixtureFaqItems,
+  faqContract: {
+    minimum: 12,
+    maximum: 16,
+    items: fixtureFaqItems,
+    uniqueIntentRequired: true,
+    visibleSchemaParityRequired: true,
+  },
   relatedLinks: [
     {
       label: 'Instagram carousel template',

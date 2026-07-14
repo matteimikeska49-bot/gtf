@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'fs';
 import path from 'path';
 import puppeteer from 'puppeteer';
 import { getSeoPageRecordByPath } from '../src/content/seoPages/index.js';
+import { validateRenderedSeoProductProofDom } from '../src/content/seoPages/blueprints/exactSeoPageBlueprint.js';
 import {
   SEO_ACCESSIBILITY_POLICY,
   SEO_PERFORMANCE_POLICY,
@@ -28,6 +29,36 @@ const getHtmlFromDist = () => {
 };
 
 const countMatches = (html, pattern) => (html.match(pattern) || []).length;
+
+const normalizeText = (value) => String(value || '').trim().replace(/\s+/gu, ' ');
+
+const faqQuestionsFromJsonLd = (value) => {
+  if (!value) return [];
+  if (Array.isArray(value)) return value.flatMap(faqQuestionsFromJsonLd);
+  if (typeof value !== 'object') return [];
+  const type = value['@type'];
+  const types = Array.isArray(type) ? type : [type];
+  const ownQuestions = types.includes('FAQPage')
+    ? (value.mainEntity || []).map((entry) => normalizeText(entry?.name)).filter(Boolean)
+    : [];
+  const nestedQuestions = Object.values(value).flatMap(faqQuestionsFromJsonLd);
+  return [...ownQuestions, ...nestedQuestions];
+};
+
+const collectFaqSchemaQuestionsFromHtml = (html) => (
+  [...html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/giu)]
+    .flatMap((match) => {
+      try {
+        return faqQuestionsFromJsonLd(JSON.parse(match[1]));
+      } catch {
+        return [];
+      }
+    })
+);
+
+const questionsMatch = (left, right) => (
+  JSON.stringify(left.map(normalizeText)) === JSON.stringify(right.map(normalizeText))
+);
 
 const validateHtml = (html, sourceLabel) => {
   if (!html) {
@@ -66,6 +97,28 @@ const validateHtml = (html, sourceLabel) => {
   if (htmlBytes > SEO_PERFORMANCE_POLICY.maxHtmlBytes) {
     warnings.push(`${sourceLabel} HTML is larger than ${SEO_PERFORMANCE_POLICY.maxHtmlBytes} bytes: ${htmlBytes}.`);
   }
+
+  if (pageRecord?.templateVariant === 'template_page') {
+    const visibleFaqCount = countMatches(html, /data-seo-faq-item=["']true["']/gi);
+    const faqSchemaQuestions = collectFaqSchemaQuestionsFromHtml(html);
+    const expectedFaqQuestions = (pageRecord.faq || []).map((item) => item.question);
+    const proofErrors = validateRenderedSeoProductProofDom({
+      productWorkflowMarkers: countMatches(html, /data-seo-proof=["']product-workflow["']/gi),
+      productCapabilitiesMarkers: countMatches(html, /data-seo-proof=["']product-capabilities["']/gi),
+      productCapabilityCards: countMatches(html, /data-seo-proof-card=["']product-capability["']/gi),
+      readyResultsShowcaseMarkers: countMatches(html, /data-seo-proof=["']ready-results-showcase["']/gi),
+      readyResultCards: countMatches(html, /data-seo-proof-card=["']ready-carousel["']/gi),
+      readyResultImages: countMatches(html, /data-seo-proof-image=["']ready-carousel["']/gi),
+      readyResultsCtas: countMatches(html, /data-seo-proof-cta=["']ready-results-showcase["']/gi),
+      pageSpecificProofMarkers: countMatches(html, /data-seo-proof=["']page-specific-result["']/gi),
+      pageSpecificProofImages: countMatches(html, /data-seo-proof-image=["']page-specific-result["']/gi),
+      workflowSteps: countMatches(html, /data-workflow-step/gi),
+      useCasesMarkers: countMatches(html, /data-seo-section=["']use-cases["']/gi),
+      visibleFaqCount,
+      faqSchemaParity: questionsMatch(faqSchemaQuestions, expectedFaqQuestions),
+    });
+    errors.push(...proofErrors.map((error) => `${sourceLabel}: ${error}`));
+  }
 };
 
 const validateRuntime = async () => {
@@ -85,6 +138,32 @@ const validateRuntime = async () => {
 
     const result = await page.evaluate(() => {
       const visible = (selector) => Boolean(document.querySelector(selector));
+      const faqQuestionsFromJsonLd = (value) => {
+        if (!value) return [];
+        if (Array.isArray(value)) return value.flatMap(faqQuestionsFromJsonLd);
+        if (typeof value !== 'object') return [];
+        const type = value['@type'];
+        const types = Array.isArray(type) ? type : [type];
+        const ownQuestions = types.includes('FAQPage')
+          ? (value.mainEntity || []).map((entry) => String(entry?.name || '').trim()).filter(Boolean)
+          : [];
+        const nestedQuestions = Object.values(value).flatMap(faqQuestionsFromJsonLd);
+        return [...ownQuestions, ...nestedQuestions];
+      };
+      const visibleFaqQuestions = [...document.querySelectorAll('[data-seo-faq-item="true"]')]
+        .map((item) => item.getAttribute('data-seo-faq-question') || item.textContent.trim())
+        .map((item) => item.trim())
+        .filter(Boolean);
+      const faqSchemaQuestions = [...document.querySelectorAll('script[type="application/ld+json"]')]
+        .flatMap((script) => {
+          try {
+            return faqQuestionsFromJsonLd(JSON.parse(script.textContent));
+          } catch {
+            return [];
+          }
+        });
+      const sameQuestions = (left, right) => JSON.stringify(left.map((item) => item.replace(/\s+/g, ' ').trim())) ===
+        JSON.stringify(right.map((item) => item.replace(/\s+/g, ' ').trim()));
       const linksWithoutNames = [...document.querySelectorAll('a')].filter((link) => !link.textContent.trim() && !link.getAttribute('aria-label')).length;
       const buttonsWithoutNames = [...document.querySelectorAll('button')].filter((button) => !button.textContent.trim() && !button.getAttribute('aria-label')).length;
       const imagesWithoutAlt = [...document.querySelectorAll('img')].filter((img) => !img.hasAttribute('alt')).length;
@@ -107,6 +186,21 @@ const validateRuntime = async () => {
         articleSchemaUsed: [...document.querySelectorAll('script[type="application/ld+json"]')].some((script) => script.textContent.includes('"Article"')),
         blogPostingSchemaUsed: [...document.querySelectorAll('script[type="application/ld+json"]')].some((script) => script.textContent.includes('"BlogPosting"')),
         faqSchemaUsed: [...document.querySelectorAll('script[type="application/ld+json"]')].some((script) => script.textContent.includes('"FAQPage"')),
+        proofSnapshot: {
+          productWorkflowMarkers: document.querySelectorAll('[data-seo-proof="product-workflow"]').length,
+          productCapabilitiesMarkers: document.querySelectorAll('[data-seo-proof="product-capabilities"]').length,
+          productCapabilityCards: document.querySelectorAll('[data-seo-proof-card="product-capability"]').length,
+          readyResultsShowcaseMarkers: document.querySelectorAll('[data-seo-proof="ready-results-showcase"]').length,
+          readyResultCards: document.querySelectorAll('[data-seo-proof-card="ready-carousel"]').length,
+          readyResultImages: document.querySelectorAll('[data-seo-proof-image="ready-carousel"]').length,
+          readyResultsCtas: document.querySelectorAll('[data-seo-proof-cta="ready-results-showcase"]').length,
+          pageSpecificProofMarkers: document.querySelectorAll('[data-seo-proof="page-specific-result"]').length,
+          pageSpecificProofImages: document.querySelectorAll('[data-seo-proof-image="page-specific-result"]').length,
+          workflowSteps: document.querySelectorAll('[data-workflow-step]').length,
+          useCasesMarkers: document.querySelectorAll('[data-seo-section="use-cases"]').length,
+          visibleFaqCount: visibleFaqQuestions.length,
+          faqSchemaParity: sameQuestions(visibleFaqQuestions, faqSchemaQuestions),
+        },
         imagesWithoutAlt,
         linksWithoutNames,
         buttonsWithoutNames,
@@ -135,6 +229,10 @@ const validateRuntime = async () => {
     if (result.buttonsWithoutNames) errors.push(`Runtime has buttons without accessible names: ${result.buttonsWithoutNames}.`);
     if (result.tapTargetsTooSmall) warnings.push(`Runtime has tap targets below 44px: ${result.tapTargetsTooSmall}.`);
     if (result.scrollWidth > result.clientWidth) errors.push(`Runtime has horizontal overflow on mobile: ${result.scrollWidth} > ${result.clientWidth}.`);
+    if (pageRecord?.templateVariant === 'template_page') {
+      const proofErrors = validateRenderedSeoProductProofDom(result.proofSnapshot);
+      errors.push(...proofErrors.map((error) => `Runtime: ${error}`));
+    }
 
     const html = await page.content();
     validateHtml(html, `runtime ${url}`);

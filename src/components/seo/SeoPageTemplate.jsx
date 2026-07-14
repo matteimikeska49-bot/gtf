@@ -33,6 +33,7 @@ const SECTION_ALIASES = {
   howToUsePrompts: ['howToUsePrompts'],
   scenario: ['scenario'],
   templateCategories: ['templateCategories', 'templates'],
+  productCapabilities: ['productCapabilities'],
 };
 
 const SECTION_HEADINGS = {
@@ -52,6 +53,7 @@ const SECTION_HEADINGS = {
   howToUsePrompts: ['Prompt workflow', 'Как использовать промпты'],
   scenario: ['Scenario', 'Сценарий использования'],
   templateCategories: ['Template categories', 'Категории шаблонов'],
+  productCapabilities: ['Product capabilities', 'Что умеет GoToFlow'],
 };
 
 const toSection = (item, prefix, index) => ({
@@ -122,6 +124,33 @@ const FinalCtaBlock = ({ page }) => {
 };
 
 const renderVariantSection = (page, requirement) => {
+  if (requirement === 'productCapabilities') {
+    return (
+      <SeoPageWorkflow
+        key={requirement}
+        id="product-capabilities"
+        dataSeoProof="product-capabilities"
+        sections={page.productCapabilities?.groups || []}
+        eyebrow={page.productCapabilities?.eyebrow || 'Возможности продукта'}
+        heading={page.productCapabilities?.heading || 'Что можно настроить в GoToFlow'}
+        cardMarker="product-capability"
+      />
+    );
+  }
+
+  if (requirement === 'useCases') {
+    return (
+      <SeoPageWorkflow
+        key={requirement}
+        id="use-cases"
+        dataSeoSection="use-cases"
+        sections={getSectionsForRequirement(page, requirement)}
+        eyebrow={page.useCasesIntro?.eyebrow || 'Сценарии'}
+        heading={page.useCasesIntro?.heading || 'Для каких задач подходит бесшовная карусель'}
+      />
+    );
+  }
+
   if (page.templateVariant === 'template_page') {
     if (requirement === 'hero') return null;
     if (requirement === 'quickAnswer') return <SeoQuickAnswer key={requirement} page={page} />;

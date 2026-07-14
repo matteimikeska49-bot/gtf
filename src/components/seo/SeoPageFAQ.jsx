@@ -9,7 +9,7 @@ export const SeoPageFAQ = ({ items = [], page }) => {
   if (!items.length) return null;
 
   return (
-    <section id="faq-section" className="border-t border-white/[0.08] py-16 md:py-20">
+    <section id="faq-section" data-seo-section="faq" className="border-t border-white/[0.08] py-16 md:py-20">
       <div className="mb-8 max-w-3xl">
         <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
           Частые{' '}
@@ -23,6 +23,8 @@ export const SeoPageFAQ = ({ items = [], page }) => {
           return (
             <button
               key={item.question}
+              data-seo-faq-item="true"
+              data-seo-faq-question={item.question}
               type="button"
               onClick={() => {
                 setOpenIndex(isOpen ? null : index);

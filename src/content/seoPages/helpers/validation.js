@@ -62,6 +62,7 @@ export const getTemplateSectionPresence = (page) => ({
   examples: hasItems(page.examples) || findSection(page, ['examples']),
   readyCarouselShowcase: hasItems(page.readyCarouselShowcase) || findSection(page, ['readyCarouselShowcase']),
   productWorkflow: Boolean(page.productWorkflow) || findSection(page, ['productWorkflow']),
+  productCapabilities: Boolean(page.productCapabilities?.groups?.length) || findSection(page, ['productCapabilities']),
   benefits: findSection(page, ['benefits', 'who-for', 'whoFor']) || hasText(page.productBridge),
   faq: hasItems(page.faq),
   related: hasItems(page.relatedBlogSlugs) || hasItems(page.relatedSeoPaths) || hasItems(page.relatedProductToolPaths),

@@ -46,6 +46,73 @@ export const SEO_PRODUCT_TRUTH_REGISTRY = {
   ],
 };
 
+export const SEO_CANONICAL_PRODUCT_CAPABILITIES = [
+  {
+    id: 'content-sources',
+    title: 'Источники контента',
+    body: 'Начните с темы или готового текста, ссылки, видео, PDF или голосового сообщения.',
+    capabilityIds: ['topicText', 'link', 'video', 'pdf', 'voice'],
+  },
+  {
+    id: 'ai-structure-text',
+    title: 'AI-структура и текст',
+    body: 'GoToFlow помогает собрать структуру, разложить мысль по слайдам и подготовить редактируемые тексты.',
+    capabilityIds: ['aiStructureText'],
+  },
+  {
+    id: 'templates-styles',
+    title: 'Шаблоны и стили',
+    body: 'Можно выбрать готовую структуру, AI-стиль или добавить собственный промпт для визуального направления.',
+    capabilityIds: ['templates', 'aiStyle', 'customPrompt'],
+  },
+  {
+    id: 'visual-controls',
+    title: 'Фон, персонаж и CTA',
+    body: 'В редакторе доступны настройки фона, персонажа и призыва к действию внутри карусели.',
+    capabilityIds: ['background', 'character', 'cta'],
+  },
+  {
+    id: 'editing-regeneration',
+    title: 'Редактирование и перегенерация',
+    body: 'Проверяйте текст, редактируйте слайды и перегенерируйте части результата перед публикацией.',
+    capabilityIds: ['textEditing', 'slideEditing', 'regeneration'],
+  },
+  {
+    id: 'carousel-types',
+    title: 'Типы каруселей',
+    body: 'Поддерживаются бесшовные и анимированные карусели.',
+    capabilityIds: ['seamlessCarousels', 'animatedCarousels'],
+  },
+  {
+    id: 'formats-slides',
+    title: 'Форматы и слайды',
+    body: 'Работайте с форматами 4:5, 1:1 и 9:16; для Instagram-карусели доступно до 10 слайдов.',
+    capabilityIds: ['formats4511916', 'upTo10Slides'],
+  },
+];
+
+export const SEO_REQUIRED_PRODUCT_CAPABILITY_IDS = [
+  'topicText',
+  'link',
+  'video',
+  'pdf',
+  'voice',
+  'aiStructureText',
+  'templates',
+  'aiStyle',
+  'customPrompt',
+  'background',
+  'character',
+  'cta',
+  'textEditing',
+  'slideEditing',
+  'regeneration',
+  'seamlessCarousels',
+  'animatedCarousels',
+  'formats4511916',
+  'upTo10Slides',
+];
+
 export const getSeoProductFeatureStatus = (group, id) => (
   SEO_PRODUCT_TRUTH_REGISTRY[group]?.[id]?.status || 'unknown'
 );

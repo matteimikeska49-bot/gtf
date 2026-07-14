@@ -5,6 +5,7 @@ import {
   validateSeoPages,
 } from '../src/content/seoPages/index.js';
 import { PROTECTED_SEO_ROUTES } from '../src/content/seoPages/protectedRoutes.js';
+import { SEO_CANONICAL_PRODUCT_CAPABILITIES } from '../src/content/seoPages/productTruthRegistry.js';
 import { stateAllowsRouting } from '../src/content/seoPages/states.js';
 import {
   getSeoContentReadinessErrors,
@@ -88,6 +89,23 @@ const buildPath = (pageType, slug) => {
 };
 
 const item = (title, body) => ({ title, body });
+
+const fixtureFaqItems = (suffix) => Array.from({ length: 12 }, (_, index) => ({
+  question: `How should ${suffix} fixture question ${index + 1} be reviewed?`,
+  answer: `Review fixture answer ${index + 1} for ${suffix}: verify facts, adapt wording, check product truth, and keep release approval separate from drafting.`,
+}));
+
+const fixtureUseCases = (suffix) => [
+  'Expert guide',
+  'Step-by-step tutorial',
+  'Storytelling carousel',
+  'Case study',
+  'Product presentation',
+  'Checklist',
+].map((title, index) => item(
+  `${title} ${suffix}`,
+  `Concrete ${title.toLowerCase()} use case for ${suffix} with audience, goal, source material, and expected GoToFlow output ${index + 1}.`
+));
 
 const section = (id, title, body, bullets = []) => ({
   id,
@@ -196,8 +214,8 @@ const makeCompletePage = (variant, suffix = variant) => {
       cannibalizationBoundary: `Fixture boundary for ${suffix}.`,
     },
     faqPolicy: {
-      minItems: 1,
-      maxItems: 12,
+      minItems: variant === 'template_page' ? 12 : 1,
+      maxItems: 16,
       requireUniqueQuestions: true,
       requireVisibleSchemaParity: true,
     },
@@ -209,9 +227,7 @@ const makeCompletePage = (variant, suffix = variant) => {
       },
     ])),
     sections: baseSectionsForVariant(variant, suffix),
-    useCases: [
-      item(`Use case ${suffix}`, `Concrete use case explanation for ${suffix} with audience, goal, and expected content output.`),
-    ],
+    useCases: fixtureUseCases(suffix),
     platformUseCases: [
       item(`Platform use case ${suffix}`, `Platform-specific use case explanation for ${suffix} with a clear channel context.`),
     ],
@@ -314,6 +330,15 @@ const makeCompletePage = (variant, suffix = variant) => {
       },
     } : {}),
     ...(variant === 'template_page' ? {
+      productCapabilities: {
+        eyebrow: `Capabilities ${suffix}`,
+        heading: `What GoToFlow supports for ${suffix}`,
+        introCopy: `Canonical product capabilities for ${suffix} using the approved GoToFlow product truth registry.`,
+        highlightedCapabilities: ['seamlessCarousels', 'formats4511916'],
+        groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,
+      },
+    } : {}),
+    ...(variant === 'template_page' ? {
       templateChoiceGuide: {
         eyebrow: `Choice guide ${suffix}`,
         title: {
@@ -333,12 +358,7 @@ const makeCompletePage = (variant, suffix = variant) => {
     benefits: [
       item(`Benefit ${suffix}`, `Useful benefit explanation for ${suffix} that avoids fake outcomes and absolute promises.`),
     ],
-    faq: [
-      {
-        question: `How should ${suffix} be reviewed before publishing?`,
-        answer: `Review the generated draft for ${suffix}, verify facts, adapt tone, and keep the page noindex until later approval.`,
-      },
-    ],
+    faq: fixtureFaqItems(suffix),
     relatedBlogSlugs: ['supporting-blog'],
     relatedSeoPages: [],
     relatedSeoPaths: [],
@@ -488,6 +508,17 @@ const makeBlueprintHandoffFixture = (overrides = {}) => ({
       dataSource: 'page.productWorkflow',
       copySlots: ['eyebrow', 'heading.before', 'heading.accent', 'heading.after', 'description', 'stepOverrides', 'featureChips', 'cta'],
       visualSlots: ['workflowSteps', 'mockups', 'resultCarousel'],
+    },
+    canonicalProductCapabilities: {
+      required: true,
+      componentName: 'SeoPageWorkflow',
+      componentPath: 'src/components/seo/SeoPageWorkflow.jsx',
+      canonicalDataSource: 'SEO_CANONICAL_PRODUCT_CAPABILITIES',
+      dataSource: 'page.productCapabilities',
+      groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,
+      capabilityIds: SEO_CANONICAL_PRODUCT_CAPABILITIES.flatMap((group) => group.capabilityIds),
+      highlightedCapabilities: ['seamlessCarousels', 'formats4511916'],
+      introCopy: 'Fixture canonical product capabilities for the exact blueprint.',
     },
     canonicalReadyCarouselShowcase: {
       required: true,
@@ -653,6 +684,8 @@ expectBlueprintHandoffPass('positive exact blueprint handoff', makeBlueprintHand
 {
   const result = validateRenderedSeoProductProofDom({
     productWorkflowMarkers: 1,
+    productCapabilitiesMarkers: 1,
+    productCapabilityCards: 7,
     readyResultsShowcaseMarkers: 0,
     readyResultCards: 0,
     readyResultImages: 0,
@@ -660,6 +693,9 @@ expectBlueprintHandoffPass('positive exact blueprint handoff', makeBlueprintHand
     pageSpecificProofMarkers: 1,
     pageSpecificProofImages: 5,
     workflowSteps: 5,
+    useCasesMarkers: 1,
+    visibleFaqCount: 12,
+    faqSchemaParity: true,
   });
   if (!result.length) errors.push('rendered DOM missing canonical marker should fail but passed.');
   else blueprintFixturesPassed += 1;
@@ -669,6 +705,8 @@ expectBlueprintHandoffPass('positive exact blueprint handoff', makeBlueprintHand
 {
   const result = validateRenderedSeoProductProofDom({
     productWorkflowMarkers: 1,
+    productCapabilitiesMarkers: 1,
+    productCapabilityCards: 7,
     readyResultsShowcaseMarkers: 1,
     readyResultCards: 5,
     readyResultImages: 0,
@@ -676,6 +714,9 @@ expectBlueprintHandoffPass('positive exact blueprint handoff', makeBlueprintHand
     pageSpecificProofMarkers: 1,
     pageSpecificProofImages: 5,
     workflowSteps: 5,
+    useCasesMarkers: 1,
+    visibleFaqCount: 12,
+    faqSchemaParity: true,
   });
   if (!result.length) errors.push('rendered DOM marker but no real images should fail but passed.');
   else blueprintFixturesPassed += 1;
@@ -685,6 +726,8 @@ expectBlueprintHandoffPass('positive exact blueprint handoff', makeBlueprintHand
 {
   const result = validateRenderedSeoProductProofDom({
     productWorkflowMarkers: 1,
+    productCapabilitiesMarkers: 1,
+    productCapabilityCards: 7,
     readyResultsShowcaseMarkers: 1,
     readyResultCards: 5,
     readyResultImages: 5,
@@ -692,6 +735,9 @@ expectBlueprintHandoffPass('positive exact blueprint handoff', makeBlueprintHand
     pageSpecificProofMarkers: 1,
     pageSpecificProofImages: 5,
     workflowSteps: 5,
+    useCasesMarkers: 1,
+    visibleFaqCount: 12,
+    faqSchemaParity: true,
   });
   if (result.length) errors.push(`rendered DOM product proof positive fixture should pass but failed:\n${result.join('\n')}`);
   else blueprintFixturesPassed += 1;

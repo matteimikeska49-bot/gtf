@@ -5,6 +5,7 @@ import {
   buildProductWorkflowSteps,
   getProductWorkflowPreset,
 } from '../workflowPresets.js';
+import { SEO_REQUIRED_PRODUCT_CAPABILITY_IDS } from '../productTruthRegistry.js';
 import { stateAllowsRouting } from '../states.js';
 import {
   SEO_APP_ORIGIN,
@@ -84,6 +85,7 @@ const SECTION_ALIASES = {
   quickAnswer: ['quickAnswer'],
   readyCarouselShowcase: ['readyCarouselShowcase'],
   templateChoiceGuide: ['templateChoiceGuide'],
+  productCapabilities: ['productCapabilities'],
 };
 
 const STRUCTURED_SECTION_IDS = new Set([
@@ -153,6 +155,7 @@ export const getStructuredItemsForRequirement = (page, requirement) => {
     quickAnswer: page.quickAnswer ? (Array.isArray(page.quickAnswer) ? page.quickAnswer : [page.quickAnswer]) : undefined,
     readyCarouselShowcase: page.readyCarouselShowcase,
     productWorkflow: page.productWorkflow ? [page.productWorkflow] : undefined,
+    productCapabilities: page.productCapabilities?.groups,
     templateChoiceGuide: page.templateChoiceGuide ? [page.templateChoiceGuide] : undefined,
   };
 
@@ -171,8 +174,14 @@ const getRequirementText = (page, requirement) => {
   if (requirement === 'examples') return textFrom(page.examples);
   if (requirement === 'benefits') return textFrom(page.benefits || getSectionsForRequirement(page, requirement));
   if (requirement === 'productWorkflow') return textFrom(page.productWorkflow);
+  if (requirement === 'productCapabilities') return textFrom(page.productCapabilities);
   return textFrom([getStructuredItemsForRequirement(page, requirement), getSectionsForRequirement(page, requirement)]);
 };
+
+const isProductSeoPage = (page) => (
+  ['template_page', 'commercial_tool', 'platform_page'].includes(page?.templateVariant) ||
+  ['template', 'tool', 'commercial', 'platform', 'useCase'].includes(page?.pageType)
+);
 
 const validateTextField = (errors, page, field, minLength = 12) => {
   if (!hasMeaningfulText(page[field], minLength)) {
@@ -200,6 +209,12 @@ const validateFaqPolicy = (errors, page) => {
     ...SEO_DEFAULT_FAQ_POLICY,
     ...(page.faqPolicy || {}),
   };
+  if (isProductSeoPage(page)) {
+    policy.minItems = Math.max(policy.minItems || 0, 12);
+    policy.maxItems = Math.min(policy.maxItems || 16, 16);
+    policy.requireUniqueQuestions = true;
+    policy.requireVisibleSchemaParity = true;
+  }
   const faq = asArray(page.faq);
 
   if (faq.length < policy.minItems || faq.length > policy.maxItems) {
@@ -215,6 +230,11 @@ const validateFaqPolicy = (errors, page) => {
 
   if (policy.requireVisibleSchemaParity && !page.schemaType) {
     errors.push(`${id} FAQ schema parity requires a declared schemaType.`);
+  }
+
+  const normalizedQuestions = faq.map((item) => normalizeSeoText(item.question));
+  if (new Set(normalizedQuestions).size !== normalizedQuestions.length) {
+    errors.push(`${id} FAQ questions must be unique after normalization.`);
   }
 };
 
@@ -426,7 +446,10 @@ const isPlaceholderWorkflowHref = (href) => (
 const hasImmediateShowcaseAfterWorkflow = (page) => {
   const sections = asArray(page.templateSections);
   const workflowIndex = sections.indexOf('productWorkflow');
-  return workflowIndex >= 0 && sections[workflowIndex + 1] === 'readyCarouselShowcase';
+  if (workflowIndex < 0) return false;
+  if (sections[workflowIndex + 1] === 'readyCarouselShowcase') return true;
+  return sections[workflowIndex + 1] === 'productCapabilities' &&
+    sections[workflowIndex + 2] === 'readyCarouselShowcase';
 };
 
 const validateWorkflowTitle = (errors, page, workflow) => {
@@ -694,6 +717,54 @@ const validateTemplateChoiceGuideContent = (errors, page, guide) => {
   }
 };
 
+const validateProductCapabilitiesContent = (errors, page) => {
+  const id = getPageId(page);
+  const capabilities = page.productCapabilities;
+
+  if (!capabilities || typeof capabilities !== 'object') {
+    errors.push(`${id} productCapabilities must be defined for product SEO pages.`);
+    return;
+  }
+
+  if (!hasMeaningfulText(capabilities.eyebrow, 4)) {
+    errors.push(`${id} productCapabilities eyebrow must contain meaningful text.`);
+  }
+  if (!hasMeaningfulText(capabilities.heading, 12)) {
+    errors.push(`${id} productCapabilities heading must contain meaningful text.`);
+  }
+  if (!hasMeaningfulText(capabilities.introCopy, 30)) {
+    errors.push(`${id} productCapabilities introCopy must contain meaningful Product Truth context.`);
+  }
+
+  const groups = asArray(capabilities.groups);
+  if (groups.length < 6 || groups.length > 8) {
+    errors.push(`${id} productCapabilities groups must contain 6 to 8 canonical groups; got ${groups.length}.`);
+  }
+
+  const capabilityIds = new Set(groups.flatMap((group) => asArray(group.capabilityIds)));
+  const missingIds = SEO_REQUIRED_PRODUCT_CAPABILITY_IDS.filter((capabilityId) => !capabilityIds.has(capabilityId));
+  if (missingIds.length > 0) {
+    errors.push(`${id} productCapabilities missing canonical capability ids: ${missingIds.join(', ')}.`);
+  }
+
+  groups.forEach((group, index) => {
+    if (!hasMeaningfulText(group.id, 3)) errors.push(`${id} productCapabilities.groups[${index}] must have an id.`);
+    if (!hasMeaningfulText(group.title, 4)) errors.push(`${id} productCapabilities.groups[${index}] must have a title.`);
+    if (!hasMeaningfulText(group.body, 20)) errors.push(`${id} productCapabilities.groups[${index}] must have a meaningful body.`);
+    if (!Array.isArray(group.capabilityIds) || group.capabilityIds.length < 1) {
+      errors.push(`${id} productCapabilities.groups[${index}] must list canonical capabilityIds.`);
+    }
+  });
+
+  const capabilitiesText = textFrom(capabilities);
+  if (RAW_HTML_PATTERN.test(capabilitiesText)) {
+    errors.push(`${id} productCapabilities must not contain raw HTML or JSX.`);
+  }
+  if (hasPlaceholderText(capabilities)) {
+    errors.push(`${id} productCapabilities must not contain placeholders.`);
+  }
+};
+
 const validateRequirementContent = (errors, page, requirement, context = {}) => {
   if (requirement === 'hero') {
     validateTextField(errors, page, 'h1', 4);
@@ -729,6 +800,11 @@ const validateRequirementContent = (errors, page, requirement, context = {}) => 
 
   if (requirement === 'productWorkflow') {
     validateProductWorkflowContent(errors, page, requirement, page.productWorkflow, context);
+    return;
+  }
+
+  if (requirement === 'productCapabilities') {
+    validateProductCapabilitiesContent(errors, page);
     return;
   }
 

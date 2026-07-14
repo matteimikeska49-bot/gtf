@@ -2,6 +2,7 @@ import { execFileSync } from 'child_process';
 import { existsSync } from 'fs';
 import path from 'path';
 import { getSeoPageByPath } from '../src/content/seoPages/index.js';
+import { SEO_CANONICAL_PRODUCT_CAPABILITIES } from '../src/content/seoPages/productTruthRegistry.js';
 import seamlessInstagramCarouselHandoff from '../src/content/seoPages/handoffs/seamlessInstagramCarouselHandoff.js';
 import {
   SEO_PRODUCTION_STAGES,
@@ -38,11 +39,28 @@ const context = {
 
 const stageRuntimePage = getSeoPageByPath(seamlessInstagramCarouselHandoff.route);
 
+const fixtureFaqItems = Array.from({ length: 12 }, (_, index) => ({
+  question: `Fixture FAQ question ${index + 1}?`,
+  answer: `Fixture FAQ answer ${index + 1} explains the product workflow, review boundary, and safe publishing step.`,
+}));
+
+const fixtureUseCases = [
+  'Expert guide',
+  'Step-by-step tutorial',
+  'Storytelling carousel',
+  'Case study',
+  'Product presentation',
+  'Checklist',
+].map((title, index) => ({
+  title,
+  body: `Fixture use case ${index + 1} with page-specific audience, task, and result detail.`,
+}));
+
 const fixtureRuntimePage = {
   id: 'fixture-runtime-product-proof',
   path: '/ru/use-cases/fixture-complete-handoff',
   templateVariant: 'template_page',
-  templateSections: ['hero', 'quickAnswer', 'templateCategories', 'templateChoiceGuide', 'productWorkflow', 'readyCarouselShowcase', 'faq', 'related', 'finalCta'],
+  templateSections: ['hero', 'quickAnswer', 'templateCategories', 'templateChoiceGuide', 'productWorkflow', 'productCapabilities', 'readyCarouselShowcase', 'useCases', 'faq', 'related', 'finalCta'],
   productWorkflow: {
     preset: 'carousel_creation',
     mockups: [
@@ -66,6 +84,11 @@ const fixtureRuntimePage = {
       },
     ],
   },
+  productCapabilities: {
+    groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,
+    highlightedCapabilities: ['seamlessCarousels', 'formats4511916'],
+    introCopy: 'Fixture canonical product capabilities for the exact blueprint.',
+  },
   readyCarouselShowcase: [
     { title: 'Ready 1', image: '/images/niches/ru/content-ru-2.webp' },
     { title: 'Ready 2', image: '/images/niches/ru/content-ru-3.webp' },
@@ -77,6 +100,12 @@ const fixtureRuntimePage = {
     label: 'Create',
     href: 'https://app.gotoflow.io',
   },
+  useCases: fixtureUseCases,
+  faq: fixtureFaqItems,
+  relatedSeoPaths: ['/ru/templates/instagram-carousel'],
+  relatedProductToolPaths: [],
+  relatedBlogSlugs: [],
+  contextualLinks: [],
 };
 
 const gitLines = (argsList) => {

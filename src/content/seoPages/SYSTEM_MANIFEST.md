@@ -144,8 +144,8 @@ Implemented rule sources:
 - SEO pages use centralized template variants.
 - Variants define a strict deterministic order of `supportedSections` combining `requiredSections` and `optionalSections`.
 - Pages must explicitly declare `templateSections` and populate the necessary data.
-- `template_page` narrative order is structure -> product process -> real result -> action -> FAQ -> related content -> final CTA.
-- For `template_page`, `readyCarouselShowcase` follows `productWorkflow` and appears before `faq` and `related`.
+- `template_page` narrative order is structure -> product process -> canonical product capabilities -> real result -> page-specific use cases -> FAQ -> related content -> final CTA.
+- For `template_page`, `productCapabilities` follows `productWorkflow`, `readyCarouselShowcase` follows `productCapabilities`, and `useCases` appears before `faq` and `related`.
 - Validation enforces the presence of all required sections and silently ignores omitted optional sections without failing readiness.
 - No one-off custom layouts.
 - No blog/article layout for commercial SEO pages.
@@ -254,17 +254,22 @@ The readiness checker imports the blueprint and proves both a valid handoff fixt
 
 ## Mandatory Product Proof Modules
 
-Every future exact-blueprint product SEO page must carry three proof modules before it can enter `noindex_review`:
+Every future exact-blueprint product SEO page must carry the full mandatory product-page module set before it can enter `noindex_review`:
 
 - canonical product workflow: `SeoProductWorkflowShowcase` from `src/components/seo/template-page/SeoProductWorkflowShowcase.jsx`, rendered with `data-seo-proof="product-workflow"`, real workflow steps, product interface mockups, and no text-card substitute.
+- canonical product capabilities: `SeoPageWorkflow` from `src/components/seo/SeoPageWorkflow.jsx`, rendered with `data-seo-proof="product-capabilities"`, backed by `SEO_CANONICAL_PRODUCT_CAPABILITIES` from `src/content/seoPages/productTruthRegistry.js`, and preserving every required capability ID.
 - canonical ready results showcase: `SeoReadyCarouselShowcase` from `src/components/seo/template-page/SeoReadyCarouselShowcase.jsx`, rendered with `data-seo-proof="ready-results-showcase"`, at least five result/example cards, at least five real local images/previews, non-empty src/alt data, a CTA, and no placeholder or page-specific handoff assets reused as the canonical gallery.
 - page-specific visual proof: a separate page-specific result block rendered with `data-seo-proof="page-specific-result"`, using local assets tied to the target query and not sharing the same DOM node or image set as the ready-results showcase.
+- separate use cases: rendered with `data-seo-section="use-cases"` and kept distinct from product capabilities and editing controls.
+- FAQ: rendered with `data-seo-section="faq"`, 12 to 16 unique product SEO questions, and FAQPage schema matching visible questions, answers, order, and count 1:1.
+- related links: approved related blog/product/SEO targets only.
+- final CTA: page-specific, truthful, and tied to the approved product action.
 
-Carousel product pages require `canonicalProductWorkflow`, `canonicalReadyCarouselShowcase`, and `pageSpecificVisualProof` in `productProofModules`.
+Carousel product pages require `canonicalProductWorkflow`, `canonicalProductCapabilities`, `canonicalReadyCarouselShowcase`, and `pageSpecificVisualProof` in `productProofModules`.
 
-Post/content product pages require `canonicalProductWorkflow`, `canonicalReadyResultsShowcase`, and `pageSpecificVisualProof` in `productProofModules`.
+Post/content product pages require `canonicalProductWorkflow`, `canonicalProductCapabilities`, `canonicalReadyResultsShowcase`, and `pageSpecificVisualProof` in `productProofModules`.
 
-`handoffComplete`, `draftPreviewIntegrationAllowed`, `draftPreviewIntegrated`, and `productionIntegrationCompleted` are blocked unless product proof modules are present, component paths match the blueprint, assets exist, rendered proof markers validate, and runtime data matches the handoff. The stage checker for `codex_draft_preview_integration` must receive the runtime page and fail when Codex skips or substitutes any mandatory proof module.
+`handoffComplete`, `draftPreviewIntegrationAllowed`, `draftPreviewIntegrated`, `productionIntegrationCompleted`, and `approvedForRelease` are blocked unless product proof modules are present, component paths match the blueprint, assets exist, rendered proof markers validate, FAQ count/parity validates, and runtime data matches the handoff. The stage checker for `codex_draft_preview_integration` must receive the runtime page and fail when Codex skips, shortens, or substitutes any mandatory proof module.
 
 ## CTA Contract
 

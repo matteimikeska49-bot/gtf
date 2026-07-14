@@ -9,6 +9,7 @@ import {
   getSeoPagesEligibleForPrerender,
 } from './helpers/sitemapEligibility.js';
 import { validateSeoPagesContract } from './helpers/validation.js';
+import { SEO_CANONICAL_PRODUCT_CAPABILITIES } from './productTruthRegistry.js';
 
 export const SEO_PAGE_TYPES = [
   'commercial',
@@ -303,6 +304,14 @@ const seamlessHandoffSection = (sectionId) => (
   seamlessInstagramCarouselHandoff.sections.find((section) => section.id === sectionId)
 );
 
+const buildCanonicalProductCapabilities = ({ heading, introCopy, highlightedCapabilities = [] } = {}) => ({
+  eyebrow: 'Возможности GoToFlow',
+  heading: heading || 'Что можно настроить в GoToFlow',
+  introCopy: introCopy || 'Этот блок показывает подтвержденные возможности продукта: источники, AI-структуру, шаблоны, визуальные настройки, редактирование, типы каруселей и форматы.',
+  highlightedCapabilities,
+  groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,
+});
+
 const seamlessCopySlot = (sectionId, slotName, fallback = '') => (
   seamlessHandoffSection(sectionId)?.copySlots?.[slotName] ?? fallback
 );
@@ -381,7 +390,9 @@ const seamlessSectionPolicy = Object.fromEntries([
   'templateCategories',
   'templateChoiceGuide',
   'productWorkflow',
+  'productCapabilities',
   'readyCarouselShowcase',
+  'useCases',
   'faq',
   'related',
   'finalCta',
@@ -417,7 +428,9 @@ const seamlessInstagramCarouselDraftPage = {
     'templateCategories',
     'templateChoiceGuide',
     'productWorkflow',
+    'productCapabilities',
     'readyCarouselShowcase',
+    'useCases',
     'faq',
     'related',
     'finalCta',
@@ -465,8 +478,8 @@ const seamlessInstagramCarouselDraftPage = {
     cannibalizationBoundary: seamlessInstagramCarouselHandoff.articleBoundary,
   },
   faqPolicy: {
-    minItems: 4,
-    maxItems: 8,
+    minItems: 12,
+    maxItems: 16,
     requireUniqueQuestions: true,
     requireVisibleSchemaParity: true,
   },
@@ -477,9 +490,14 @@ const seamlessInstagramCarouselDraftPage = {
     body: seamlessCopySlot('quickAnswer', 'body'),
     contextualLink: {
       label: seamlessCopySlot('quickAnswer', 'contextualLink'),
-      href: '/ru/blog/kak-narezat-foto-dlya-karuseli',
+      href: '/ru/blog/besshovnaya-karusel-v-instagram',
     },
   },
+  heroCarouselImages: seamlessVisualList('hero', 'heroCarouselImages').map((image) => ({
+    src: image.assetPath,
+    alt: image.alt,
+  })),
+  heroVisualBadge: 'Бесшовная',
   templateCategories: seamlessItemsFromSlots('templateCategories'),
   categoryCta: {
     label: seamlessCopySlot('templateCategories', 'categoryCta'),
@@ -487,14 +505,19 @@ const seamlessInstagramCarouselDraftPage = {
     action: 'open_app',
   },
   templateChoiceGuide: {
-    eyebrow: seamlessCopySlot('templateChoiceGuide', 'eyebrow'),
+    eyebrow: 'Настройки',
     title: {
-      before: seamlessCopySlot('templateChoiceGuide', 'heading.before'),
-      accent: seamlessCopySlot('templateChoiceGuide', 'heading.accent'),
-      after: seamlessCopySlot('templateChoiceGuide', 'heading.after'),
+      before: 'Какие параметры ',
+      accent: 'можно настроить',
+      after: ' перед скачиванием',
     },
-    description: seamlessCopySlot('templateChoiceGuide', 'description'),
-    items: seamlessGuideItems,
+    description: 'Этот блок про настройки редактора, а не про сценарии применения: исходник, бесшовный тип, стиль, фон, персонаж, CTA и ручная проверка результата.',
+    items: [
+      { id: 'source', task: 'Исходный материал', template: 'Тема, текст, ссылка, видео, PDF или голосовое', structure: 'добавьте контекст и задачу карусели' },
+      { id: 'seamless-type', task: 'Тип карусели', template: 'Бесшовная карусель', structure: 'выберите визуальное продолжение между слайдами' },
+      { id: 'style', task: 'Визуальный стиль', template: 'AI-стиль или собственный промпт', structure: 'задайте направление, фон и персонажа' },
+      { id: 'editing', task: 'Редактирование', template: 'Текст, слайды и CTA', structure: 'проверьте, исправьте и перегенерируйте части результата' },
+    ],
   },
   productWorkflow: {
     preset: 'carousel_creation',
@@ -539,7 +562,7 @@ const seamlessInstagramCarouselDraftPage = {
       },
       {
         id: 'editor-result',
-        title: 'Готовая панорама',
+        title: 'Готовые связанные слайды',
         caption: seamlessWorkflowStepTitles[3],
         fallbackVisualType: 'editor_result',
         resultCarousel: {
@@ -550,7 +573,7 @@ const seamlessInstagramCarouselDraftPage = {
           slideCount: seamlessResultSlides.length,
           width: 1080,
           height: 1350,
-          mode: 'Панорама',
+          mode: 'Связанные слайды',
           images: seamlessResultSlides,
         },
       },
@@ -575,12 +598,25 @@ const seamlessInstagramCarouselDraftPage = {
     action: 'open_app',
     note: seamlessCopySlot('readyCarouselShowcase', 'sectionBody'),
   },
+  productCapabilities: buildCanonicalProductCapabilities({
+    heading: 'Что можно настроить в GoToFlow',
+    introCopy: 'GoToFlow создает бесшовную карусель из разных исходников, помогает собрать структуру и текст, выбрать визуальный стиль, настроить фон, персонажа и CTA, затем проверить и отредактировать связанные слайды.',
+    highlightedCapabilities: ['seamlessCarousels', 'formats4511916', 'upTo10Slides', 'slideEditing'],
+  }),
+  useCasesIntro: {
+    eyebrow: 'Сценарии',
+    heading: 'Для каких задач подходит бесшовная карусель',
+  },
+  useCases: seamlessCopyList('useCases', 'item.title').map((title, index) => ({
+    title,
+    body: seamlessCopyList('useCases', 'item.body')[index],
+  })),
   faq: seamlessInstagramCarouselHandoff.FAQ,
   relatedSeoPages: [],
   relatedSeoPaths: ['/ru/templates/instagram-carousel'],
   relatedProductToolPaths: ['/ru/generator-karuselej-instagram'],
   contextualLinks: [],
-  relatedBlogSlugs: ['kak-narezat-foto-dlya-karuseli'],
+  relatedBlogSlugs: ['besshovnaya-karusel-v-instagram'],
   breadcrumbs: [
     ruHomeBreadcrumb,
     { label: 'Сценарии использования', path: '/ru/use-cases' },
@@ -1315,7 +1351,7 @@ const rawSeoPages = [
     path: '/ru/templates/instagram-carousel',
     state: 'indexable_approved',
     templateVariant: 'template_page',
-    templateSections: ['hero', 'quickAnswer', 'templateCategories', 'templateChoiceGuide', 'productWorkflow', 'readyCarouselShowcase', 'faq', 'related', 'finalCta'],
+    templateSections: ['hero', 'quickAnswer', 'templateCategories', 'templateChoiceGuide', 'productWorkflow', 'productCapabilities', 'readyCarouselShowcase', 'useCases', 'faq', 'related', 'finalCta'],
     title: 'Шаблоны каруселей Instagram: структуры и примеры | GoToFlow',
     description: 'Выберите структуру карусели Instagram: чек-лист, гайд, кейс, AIDA/PAS и другие форматы. Создайте и отредактируйте карусель в GoToFlow.',
     h1: 'Шаблоны каруселей Instagram',
@@ -1367,8 +1403,8 @@ const rawSeoPages = [
       cannibalizationBoundary: 'This page owns commercial template-selection intent for choosing an Instagram carousel structure and moving into GoToFlow. The supporting article /ru/blog/shablony-karuseley-v-instagram owns detailed informational explanation, educational guidance, broader examples, and how-to context. Generator intent remains owned by /ru/generator-karuselej-instagram and related product/tool routes.',
     },
     faqPolicy: {
-      minItems: 11,
-      maxItems: 15,
+      minItems: 12,
+      maxItems: 16,
       requireUniqueQuestions: true,
       requireVisibleSchemaParity: true,
     },
@@ -1378,7 +1414,9 @@ const rawSeoPages = [
       templateCategories: { enabled: true, reason: 'Core intent block for structure selection.' },
       templateChoiceGuide: { enabled: true, reason: 'Helps choose the right template by publishing task.' },
       productWorkflow: { enabled: true, reason: 'Shows truthful GoToFlow product workflow after structure choice.' },
+      productCapabilities: { enabled: true, reason: 'Shows the canonical verified product capabilities shared by product SEO pages.' },
       readyCarouselShowcase: { enabled: true, reason: 'Shows realistic finished carousel outcomes directly after workflow.' },
+      useCases: { enabled: true, reason: 'Keeps publishing scenarios separate from product capabilities.' },
       faq: { enabled: true, reason: 'Answers template, workflow, publishing, and product-fit questions.' },
       related: { enabled: true, reason: 'Connects to existing product route and real supporting articles.' },
       finalCta: { enabled: true, reason: 'Provides final app conversion action for the approved indexable template page.' },
@@ -1466,6 +1504,41 @@ const rawSeoPages = [
       action: 'open_app',
       note: 'Перед публикацией результат можно проверить и отредактировать.',
     },
+    productCapabilities: buildCanonicalProductCapabilities({
+      heading: 'Что можно настроить в GoToFlow',
+      introCopy: 'GoToFlow поддерживает разные исходники, AI-структуру и текст, шаблоны, стили, промпты, фон, персонажа, CTA, редактирование, перегенерацию, бесшовные и анимированные карусели, форматы 4:5, 1:1 и 9:16 и до 10 слайдов для Instagram-карусели.',
+      highlightedCapabilities: ['templates', 'aiStructureText', 'textEditing', 'formats4511916'],
+    }),
+    useCasesIntro: {
+      eyebrow: 'Сценарии',
+      heading: 'Для каких задач подходят шаблоны каруселей',
+    },
+    useCases: [
+      {
+        title: 'Экспертный гайд',
+        body: 'Разложите сложную тему на последовательность слайдов с понятным входом, аргументами, примерами и финальным выводом.',
+      },
+      {
+        title: 'Пошаговая инструкция',
+        body: 'Соберите процесс в формате шагов: от обложки и списка действий до короткого резюме и CTA.',
+      },
+      {
+        title: 'Разбор ошибки',
+        body: 'Покажите распространенную ошибку, последствия и корректный подход, который читатель может применить.',
+      },
+      {
+        title: 'Кейс или до-после',
+        body: 'Оформите исходную ситуацию, процесс решения, результат и выводы без неподтвержденных гарантий.',
+      },
+      {
+        title: 'Продуктовая презентация',
+        body: 'Покажите задачу аудитории, ценность продукта, ключевые функции и следующий шаг в одном понятном сценарии.',
+      },
+      {
+        title: 'Чек-лист или подборка',
+        body: 'Соберите критерии, идеи, инструменты или пункты проверки в формат, который удобно сохранить.',
+      },
+    ],
     templateCategories: [
       {
         title: 'Экспертный чек-лист',
@@ -1704,6 +1777,10 @@ const rawSeoPages = [
       {
         question: 'Что проверить перед публикацией карусели?',
         answer: 'Убедитесь, что каждый слайд ведёт к следующему, тезисы не повторяются, обложка цепляет внимание, финальный CTA соответствует цели и обещания реалистичны.',
+      },
+      {
+        question: 'Можно ли перегенерировать текст или отдельные слайды?',
+        answer: 'Да. В GoToFlow можно проверить текст, изменить формулировки, перегенерировать отдельные части результата и доработать слайды перед публикацией.',
       },
     ],
     relatedSeoPages: [],
