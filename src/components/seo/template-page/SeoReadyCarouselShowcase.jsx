@@ -13,6 +13,7 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
     note: 'Перед публикацией результат можно проверить и отредактировать.',
   };
   const showcaseCardHref = getAppUrlWithRef(showcaseCta.href);
+  const intro = page.readyCarouselShowcaseIntro || {};
 
   return (
     <section
@@ -21,12 +22,16 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
       className="border-t border-white/[0.08] py-14 md:py-20"
     >
       <div className="mb-9 max-w-3xl">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">Готовый результат</p>
-        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
-          Посмотрите, какие карусели можно создать в{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">GoToFlow</span>
-        </h2>
-        <p className="mt-4 text-zinc-400 leading-relaxed">Готовая структура, текст по слайдам, визуальная подача и CTA — результат, который можно сразу забирать в работу.</p>
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">{intro.eyebrow || 'Готовый результат'}</p>
+        {intro.heading ? (
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">{intro.heading}</h2>
+        ) : (
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
+            Посмотрите, какие карусели можно создать в{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">GoToFlow</span>
+          </h2>
+        )}
+        <p className="mt-4 text-zinc-400 leading-relaxed">{intro.body || 'Готовая структура, текст по слайдам, визуальная подача и CTA — результат, который можно сразу забирать в работу.'}</p>
       </div>
 
       <div className="mx-auto grid max-w-[340px] grid-cols-[minmax(0,340px)] justify-center gap-4 md:max-w-[696px] md:grid-cols-[repeat(2,minmax(0,340px))] xl:max-w-[1052px] xl:grid-cols-[repeat(3,minmax(0,340px))]">

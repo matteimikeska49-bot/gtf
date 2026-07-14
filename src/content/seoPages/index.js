@@ -327,6 +327,13 @@ const seamlessVisualList = (sectionId, slotName) => {
   return Array.isArray(value) ? value : [];
 };
 
+const seamlessImagesFromVisualSlot = (sectionId, slotName) => (
+  seamlessVisualList(sectionId, slotName).map((item) => ({
+    src: item.assetPath,
+    alt: item.alt,
+  }))
+);
+
 const seamlessItemsFromSlots = (sectionId, limit = Infinity) => {
   const titles = seamlessCopyList(sectionId, 'item.title');
   const bodies = seamlessCopyList(sectionId, 'item.body');
@@ -345,12 +352,19 @@ const seamlessItemsFromSlots = (sectionId, limit = Infinity) => {
   }));
 };
 
-const seamlessGuideItems = seamlessCopyList('templateChoiceGuide', 'items.task').map((task, index) => ({
+const seamlessGuideItems = seamlessCopyList('pageRelevantFormats', 'items.task').map((task, index) => ({
   id: `seamless-guide-${index + 1}`,
   task,
-  template: seamlessCopyList('templateChoiceGuide', 'items.template')[index],
-  structure: seamlessCopyList('templateChoiceGuide', 'items.structure')[index],
+  template: seamlessCopyList('pageRelevantFormats', 'items.template')[index],
+  structure: seamlessCopyList('pageRelevantFormats', 'items.structure')[index],
 }));
+
+const seamlessRelatedCards = seamlessCopyList('related', 'relatedCard.title').map((title, index) => ({
+  href: seamlessInstagramCarouselHandoff.relatedLinks[index]?.route,
+  title,
+  description: seamlessCopyList('related', 'relatedCard.description')[index],
+  type: seamlessInstagramCarouselHandoff.relatedLinks[index]?.allowedTargetTypes?.[0],
+})).filter((item) => item.href && item.title);
 
 const seamlessWorkflowStepKeys = ['source', 'structure', 'textReview', 'visualRoute', 'editorResult'];
 const seamlessWorkflowStepTitles = seamlessCopyList('productWorkflow', 'stepOverrides');
@@ -409,8 +423,8 @@ const seamlessInstagramCarouselDraftPage = {
     href: 'https://app.gotoflow.io',
     action: 'open_app',
   },
-  heroEyebrow: 'Бесшовные карусели',
-  heroSecondaryLinkLabel: 'Посмотреть возможности',
+  heroEyebrow: seamlessCopySlot('hero', 'eyebrow'),
+  heroSecondaryLinkLabel: seamlessCopySlot('hero', 'secondaryCta'),
   finalCta: {
     eyebrow: seamlessCopySlot('finalCta', 'eyebrow'),
     title: {
@@ -464,28 +478,15 @@ const seamlessInstagramCarouselDraftPage = {
       href: '/ru/blog/besshovnaya-karusel-v-instagram',
     },
   },
-  heroCarouselImages: getSeoCarouselAssets('hero', 'seamlessInstagram'),
+  heroCarouselImages: seamlessImagesFromVisualSlot('hero', 'heroCarouselImages'),
   heroVisualBadge: 'Бесшовная',
-  templateCategories: [
-    {
-      title: 'Бесшовная экспертная серия',
-      body: 'Связанные слайды для объяснения одной темы: обложка, последовательные тезисы, визуальные переходы между соседними слайдами и финальный CTA.',
-    },
-    {
-      title: 'Панорамный продуктовый рассказ',
-      body: 'Подходит для запуска продукта или услуги, где нужно провести читателя через проблему, решение, детали предложения и следующий шаг.',
-    },
-    {
-      title: 'Визуальный гайд',
-      body: 'Формат для инструкции или чек-листа, где каждый слайд продолжает общий визуал и помогает удержать внимание до конца.',
-    },
-    {
-      title: 'История до и после',
-      body: 'Сценарий для кейса: исходная ситуация, процесс, изменение и выводы, собранные в связанную последовательность слайдов.',
-    },
-  ],
+  templateCategoriesIntro: {
+    eyebrow: seamlessCopySlot('pageRelevantFormats', 'sectionEyebrow'),
+    heading: seamlessCopySlot('pageRelevantFormats', 'sectionHeading'),
+  },
+  templateCategories: seamlessItemsFromSlots('pageRelevantFormats', 4),
   categoryCta: {
-    label: seamlessCopySlot('templateCategories', 'categoryCta'),
+    label: seamlessCopySlot('pageRelevantFormats', 'categoryCta'),
     href: 'https://app.gotoflow.io',
     action: 'open_app',
   },
@@ -573,18 +574,23 @@ const seamlessInstagramCarouselDraftPage = {
   },
   pageSpecificVisualProof: {
     proofType: 'page-specific',
-    eyebrow: 'Доказательство сценария',
-    title: 'Как выглядит бесшовная карусель между соседними слайдами',
-    description: 'Отдельный proof-блок показывает связанные слайды как результат бесшовного режима. Он не заменяет общий showcase готовых каруселей и не утверждает обязательную внешнюю нарезку.',
-    label: 'Бесшовная карусель',
+    eyebrow: seamlessCopySlot('pageSpecificVisualProof', 'eyebrow'),
+    title: seamlessCopySlot('pageSpecificVisualProof', 'title'),
+    description: seamlessCopySlot('pageSpecificVisualProof', 'description'),
+    label: seamlessCopySlot('pageSpecificVisualProof', 'label'),
     format: '4:5',
     slideCount: seamlessResultSlides.length,
     width: 1080,
     height: 1350,
-    mode: 'Связанные слайды',
+    mode: seamlessCopySlot('pageSpecificVisualProof', 'mode'),
     images: seamlessResultSlides,
   },
-  readyCarouselShowcase: getSeoCarouselAssets('readyShowcase', 'instagramCarousel'),
+  readyCarouselShowcaseIntro: {
+    eyebrow: seamlessCopySlot('readyCarouselShowcase', 'sectionEyebrow'),
+    heading: seamlessCopySlot('readyCarouselShowcase', 'sectionHeading'),
+    body: seamlessCopySlot('readyCarouselShowcase', 'sectionBody'),
+  },
+  readyCarouselShowcase: seamlessItemsFromSlots('readyCarouselShowcase', 6),
   readyCarouselShowcaseCta: {
     label: seamlessCopySlot('readyCarouselShowcase', 'showcaseCta'),
     href: 'https://app.gotoflow.io',
@@ -592,8 +598,8 @@ const seamlessInstagramCarouselDraftPage = {
     note: seamlessCopySlot('readyCarouselShowcase', 'sectionBody'),
   },
   productCapabilities: buildCanonicalProductCapabilities({
-    heading: 'Что можно настроить в GoToFlow',
-    introCopy: 'GoToFlow создает бесшовную карусель из разных исходников, помогает собрать структуру и текст, выбрать визуальный стиль, настроить фон, персонажа и CTA, затем проверить и отредактировать связанные слайды.',
+    heading: seamlessCopySlot('productCapabilities', 'heading'),
+    introCopy: seamlessCopySlot('productCapabilities', 'introCopy', seamlessInstagramCarouselHandoff.productProofModules.canonicalProductCapabilities.introCopy),
     highlightedCapabilities: ['seamlessCarousels', 'formats4511916', 'upTo10Slides', 'slideEditing'],
   }),
   useCasesIntro: {
@@ -605,6 +611,10 @@ const seamlessInstagramCarouselDraftPage = {
     body: seamlessCopyList('useCases', 'item.body')[index],
   })),
   faq: seamlessInstagramCarouselHandoff.FAQ,
+  relatedIntro: {
+    eyebrow: seamlessCopySlot('related', 'eyebrow'),
+  },
+  relatedCards: seamlessRelatedCards,
   relatedSeoPages: [],
   relatedSeoPaths: ['/ru/templates/instagram-carousel'],
   relatedProductToolPaths: ['/ru/generator-karuselej-instagram'],

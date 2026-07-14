@@ -33,6 +33,7 @@ const PRODUCT_CARDS_MAP = {
 };
 
 export const SeoPageRelatedLinks = ({ page }) => {
+  const customCards = page.relatedCards || [];
   const relatedSeoPages = (page.relatedSeoPaths || [])
     .map((routePath) => getSeoPageByPath(routePath))
     .filter(Boolean);
@@ -41,29 +42,38 @@ export const SeoPageRelatedLinks = ({ page }) => {
     .map((slug) => getMarkdownArticleBySlug(slug, { publicOnly: true }))
     .filter(Boolean);
 
-  if (!relatedSeoPages.length && !relatedBlogArticles.length && !page.relatedProductToolPaths?.length) {
+  if (!customCards.length && !relatedSeoPages.length && !relatedBlogArticles.length && !page.relatedProductToolPaths?.length) {
     return null;
   }
 
   return (
     <section id="related-content" data-seo-section="related-content" className="border-t border-white/[0.08] py-16 md:py-20">
       <div className="mb-8 max-w-3xl">
+        {page.relatedIntro?.eyebrow && (
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">
+            {page.relatedIntro.eyebrow}
+          </p>
+        )}
         <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Связанные материалы</h2>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        {relatedSeoPages.map((item) => (
+        {customCards.map((item) => (
+          <RelatedCard key={item.href} page={page} linkType={item.type || 'contract_related'} to={item.href} title={item.title} description={item.description} />
+        ))}
+
+        {!customCards.length && relatedSeoPages.map((item) => (
           <RelatedCard key={item.id} page={page} linkType="seo_page" to={item.path} title={item.h1} description={item.description} />
         ))}
 
-        {relatedBlogArticles.map((article) => {
+        {!customCards.length && relatedBlogArticles.map((article) => {
           const routePath = article.language === 'ru' ? `/ru/blog/${article.slug}` : `/blog/${article.slug}`;
           return (
             <RelatedCard key={article.slug} page={page} linkType="blog_article" to={routePath} title={article.title} description={article.description} />
           );
         })}
 
-        {page.relatedProductToolPaths?.map((routePath) => {
+        {!customCards.length && page.relatedProductToolPaths?.map((routePath) => {
           const info = PRODUCT_CARDS_MAP[routePath] || { title: 'Инструмент GoToFlow', description: 'Перейти к продукту' };
           return (
             <RelatedCard key={routePath} page={page} linkType="product_tool" to={routePath} title={info.title} description={info.description} />

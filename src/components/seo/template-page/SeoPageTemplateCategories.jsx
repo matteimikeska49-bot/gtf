@@ -94,15 +94,22 @@ export const SeoPageTemplateCategories = ({ page }) => {
   if (!categories.length) return null;
   const ctaHref = page.categoryCta?.href || page.conversion?.destinationUrl || SEO_APP_ORIGIN;
   const ctaLabel = page.categoryCta?.label || 'Создать в GoToFlow';
+  const intro = page.templateCategoriesIntro || {};
+  const eyebrow = intro.eyebrow || 'Категории';
+  const heading = intro.heading;
 
   return (
     <section id="template-categories" className="border-t border-white/[0.08] py-16 md:py-24">
       <div className="mb-10 max-w-3xl">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">Категории</p>
-        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
-          Популярные форматы{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">шаблонов</span>
-        </h2>
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">{eyebrow}</p>
+        {heading ? (
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">{heading}</h2>
+        ) : (
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
+            Популярные форматы{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">шаблонов</span>
+          </h2>
+        )}
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">

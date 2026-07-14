@@ -144,7 +144,7 @@ const renderVariantSection = (page, requirement) => {
         dataSeoProof="product-capabilities"
         sections={page.productCapabilities?.groups || []}
         eyebrow={page.productCapabilities?.eyebrow || 'Возможности продукта'}
-        heading="Возможности GoToFlow"
+        heading={page.productCapabilities?.heading || 'Возможности GoToFlow'}
         cardMarker="product-capability"
       />
     );
