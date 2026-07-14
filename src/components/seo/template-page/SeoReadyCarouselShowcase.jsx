@@ -24,14 +24,14 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
       <div className="mb-9 max-w-3xl">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">{intro.eyebrow || 'Готовый результат'}</p>
         {intro.heading ? (
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">{intro.heading}</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>{intro.heading}</h2>
         ) : (
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>
             Посмотрите, какие карусели можно создать в{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">GoToFlow</span>
           </h2>
         )}
-        <p className="mt-4 text-zinc-400 leading-relaxed">{intro.body || 'Готовая структура, текст по слайдам, визуальная подача и CTA — результат, который можно сразу забирать в работу.'}</p>
+        <p className="mt-4 text-zinc-400 leading-relaxed" style={{ textWrap: 'pretty' }}>{intro.body || 'Готовая структура, текст по слайдам, визуальная подача и CTA — результат, который можно сразу забирать в работу.'}</p>
       </div>
 
       <div className="mx-auto grid max-w-[340px] grid-cols-[minmax(0,340px)] justify-center gap-4 md:max-w-[696px] md:grid-cols-[repeat(2,minmax(0,340px))] xl:max-w-[1052px] xl:grid-cols-[repeat(3,minmax(0,340px))]">
@@ -82,8 +82,8 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
 
             {/* Content */}
             <div className="flex flex-1 flex-col p-4">
-              <h3 className="mb-2 text-[17px] font-semibold leading-snug text-white">{item.title}</h3>
-              <p className="mb-3 line-clamp-4 text-[14px] leading-6 text-zinc-400">{item.body}</p>
+              <h3 className="mb-2 text-[17px] font-semibold leading-snug text-white" style={{ textWrap: 'balance' }}>{item.title}</h3>
+              <p className="mb-3 line-clamp-4 text-[14px] leading-6 text-zinc-400" style={{ textWrap: 'pretty' }}>{item.body}</p>
               {item.audience && (
                 <p className="mt-auto line-clamp-2 text-[13px] leading-5 text-zinc-400">
                   <span className="text-zinc-500">Кому подходит:</span> {item.audience}

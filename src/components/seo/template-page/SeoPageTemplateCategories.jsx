@@ -103,9 +103,9 @@ export const SeoPageTemplateCategories = ({ page }) => {
       <div className="mb-10 max-w-3xl">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">{eyebrow}</p>
         {heading ? (
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">{heading}</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>{heading}</h2>
         ) : (
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>
             Популярные форматы{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">шаблонов</span>
           </h2>
@@ -134,8 +134,8 @@ export const SeoPageTemplateCategories = ({ page }) => {
               </div>
             </div>
 
-            <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-            <p className="mt-3 text-sm leading-6 text-zinc-400">{item.body || item.description}</p>
+            <h3 className="text-xl font-semibold leading-snug text-white" style={{ textWrap: 'balance' }}>{item.title}</h3>
+            <p className="mt-3 text-sm leading-6 text-zinc-400" style={{ textWrap: 'pretty' }}>{item.body || item.description}</p>
 
             <div className="mt-auto pt-6 flex items-center gap-2 text-sm font-semibold text-pink-300">
               <span>{ctaLabel}</span>

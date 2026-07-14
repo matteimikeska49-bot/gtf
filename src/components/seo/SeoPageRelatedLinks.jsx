@@ -13,12 +13,12 @@ const RelatedCard = ({ to, title, description, page, linkType }) => (
       link_label: title,
       target_url: to,
     })}
-    className="group block min-h-11 rounded-2xl border border-white/[0.08] bg-white/[0.035] p-5 transition-colors hover:border-pink-400/30 hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60"
+    className="group block min-h-11 rounded-2xl border border-white/[0.08] bg-[#0a0a0a] p-5 transition-colors hover:border-pink-400/30 hover:bg-white/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60"
   >
     <div className="flex items-start justify-between gap-4">
-      <div>
-        <h3 className="text-base font-semibold text-white">{title}</h3>
-        {description && <p className="mt-2 text-sm leading-6 text-zinc-400">{description}</p>}
+      <div className="min-w-0">
+        <h3 className="text-base font-semibold leading-snug text-white" style={{ textWrap: 'balance' }}>{title}</h3>
+        {description && <p className="mt-2 text-sm leading-6 text-zinc-400" style={{ textWrap: 'pretty' }}>{description}</p>}
       </div>
       <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-zinc-500 transition-transform group-hover:translate-x-1 group-hover:text-pink-300" />
     </div>
@@ -54,7 +54,9 @@ export const SeoPageRelatedLinks = ({ page }) => {
             {page.relatedIntro.eyebrow}
           </p>
         )}
-        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Связанные материалы</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>
+          Связанные материалы
+        </h2>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">

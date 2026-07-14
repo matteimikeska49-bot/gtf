@@ -11,7 +11,7 @@ export const SeoPageFAQ = ({ items = [], page }) => {
   return (
     <section id="faq-section" data-seo-section="faq" className="border-t border-white/[0.08] py-16 md:py-20">
       <div className="mb-8 max-w-3xl">
-        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>
           Частые{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">вопросы</span>
         </h2>
@@ -40,10 +40,10 @@ export const SeoPageFAQ = ({ items = [], page }) => {
               className="rounded-2xl border border-white/[0.08] bg-white/[0.035] p-5 text-left transition-colors hover:border-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-500/50"
             >
               <span className="flex items-start justify-between gap-5">
-                <span className="text-base font-semibold leading-6 text-white">{item.question}</span>
+                <span className="text-base font-semibold leading-6 text-white" style={{ textWrap: 'balance' }}>{item.question}</span>
                 <ChevronDown className={`mt-1 h-4 w-4 shrink-0 text-zinc-500 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
               </span>
-              {isOpen && <span id={answerId} className="mt-4 block text-sm leading-7 text-zinc-400">{item.answer}</span>}
+              {isOpen && <span id={answerId} className="mt-4 block text-sm leading-7 text-zinc-400" style={{ textWrap: 'pretty' }}>{item.answer}</span>}
             </button>
           );
         })}

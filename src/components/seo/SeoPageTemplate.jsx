@@ -109,7 +109,7 @@ const FinalCtaBlock = ({ page }) => {
               {finalCta.eyebrow}
             </p>
           )}
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl" style={{ textWrap: 'balance' }}>
             {title.before}
             {title.accent && (
               <span className="bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
@@ -118,7 +118,7 @@ const FinalCtaBlock = ({ page }) => {
             )}
             {title.after}
           </h2>
-          <p className="mt-4 text-sm leading-7 text-zinc-400">{finalCta.description}</p>
+          <p className="mt-4 text-sm leading-7 text-zinc-400" style={{ textWrap: 'pretty' }}>{finalCta.description}</p>
         </div>
         <div className="relative mt-7 shrink-0 md:mt-0">
           <SeoPageCTA cta={finalCta.primaryAction} page={page} ctaPosition="final" compact />
@@ -145,7 +145,9 @@ const renderVariantSection = (page, requirement) => {
         sections={page.productCapabilities?.groups || []}
         eyebrow={page.productCapabilities?.eyebrow || 'Возможности продукта'}
         heading={page.productCapabilities?.heading || 'Возможности GoToFlow'}
+        description={page.productCapabilities?.introCopy}
         cardMarker="product-capability"
+        variant="compact-list"
       />
     );
   }
@@ -159,6 +161,7 @@ const renderVariantSection = (page, requirement) => {
         sections={getSectionsForRequirement(page, requirement)}
         eyebrow={page.useCasesIntro?.eyebrow || 'Сценарии'}
         heading={page.useCasesIntro?.heading || 'Для каких задач подходит бесшовная карусель'}
+        variant="compact-list"
       />
     );
   }
