@@ -2,7 +2,10 @@ import {
   EXACT_SEO_PAGE_BLUEPRINT,
   EXACT_SEO_PAGE_BLUEPRINT_ID,
   FORBIDDEN_BLUEPRINT_COPY_PATTERNS,
+  SEO_PRODUCT_PROOF_CONTRACT,
   getSeoBlueprintById,
+  validateSeoProductProofModules,
+  validateSeoRuntimeProductProof,
 } from '../blueprints/exactSeoPageBlueprint.js';
 
 export const SEO_PRODUCTION_STAGES = [
@@ -227,6 +230,8 @@ export const validateStageDiff = ({ stage, changedPaths = [] }) => {
       }
     }
   });
+
+  errors.push(...validateSeoProductProofModules(handoff, context));
 
   return errors;
 };
@@ -456,6 +461,15 @@ export const validateStageHandoff = ({ stage, handoff, context = {} }) => {
 
   if (normalizedStage === 'codex_draft_preview_integration') {
     errors.push(...validateDraftPreviewSafety(handoff, label));
+    if (context.runtimePage) {
+      errors.push(...validateSeoRuntimeProductProof({
+        handoff,
+        page: context.runtimePage,
+        context,
+      }));
+    } else {
+      errors.push(`${label} requires runtimePage context for draft preview product proof validation.`);
+    }
   }
 
   if (contract.requiresCompleteHandoff && !isCompleteHandoff(handoff)) {
@@ -508,6 +522,47 @@ export const buildCompleteHandoffFromBlueprint = (overrides = {}) => ({
     description: 'Complete fixture metadata used only by the handoff checker.',
   },
   ProductTruthClaims: ['GoToFlow helps prepare carousel content for owner review.'],
+  productProofFamily: 'carousel',
+  productProofModules: {
+    canonicalProductWorkflow: {
+      required: true,
+      componentName: 'SeoProductWorkflowShowcase',
+      componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
+      dataSource: 'page.productWorkflow',
+      copySlots: ['eyebrow', 'heading.before', 'heading.accent', 'heading.after', 'description', 'stepOverrides', 'featureChips', 'cta'],
+      visualSlots: ['workflowSteps', 'mockups', 'resultCarousel'],
+    },
+    canonicalReadyCarouselShowcase: {
+      required: true,
+      componentName: 'SeoReadyCarouselShowcase',
+      componentPath: 'src/components/seo/template-page/SeoReadyCarouselShowcase.jsx',
+      minimumExamples: 5,
+      examples: SEO_PRODUCT_PROOF_CONTRACT.canonicalReadyCarouselShowcase.assetPaths.map((assetPath, index) => ({
+        title: `Ready carousel proof ${index + 1}`,
+        assetPath,
+      })),
+      assetPaths: SEO_PRODUCT_PROOF_CONTRACT.canonicalReadyCarouselShowcase.assetPaths,
+      cta: 'Create this carousel',
+    },
+    pageSpecificVisualProof: {
+      required: true,
+      type: 'page_specific_result_carousel',
+      componentName: 'ResultCarouselStack',
+      componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
+      assetPaths: [
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-4.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp',
+      ],
+      acceptanceRules: [
+        'Rendered page-specific proof marker exists.',
+        'Ready-result showcase marker exists separately.',
+        'Local page-specific assets render.',
+      ],
+    },
+  },
   forbiddenClaims: ['automatic publishing', 'unsupported export guarantees'],
   FAQ: [
     {

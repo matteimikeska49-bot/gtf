@@ -15,7 +15,11 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
   const showcaseCardHref = getAppUrlWithRef(showcaseCta.href);
 
   return (
-    <section id="ready-carousel-showcase" className="border-t border-white/[0.08] py-14 md:py-20">
+    <section
+      id="ready-carousel-showcase"
+      data-seo-proof="ready-results-showcase"
+      className="border-t border-white/[0.08] py-14 md:py-20"
+    >
       <div className="mb-9 max-w-3xl">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">Готовый результат</p>
         <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
@@ -29,6 +33,7 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
         {showcase.map((item, index) => (
           <a
             key={index}
+            data-seo-proof-card="ready-carousel"
             href={showcaseCardHref}
             onClick={() => trackSeoEvent(SEO_ANALYTICS_EVENTS.showcaseCardClick, page, {
               showcase_index: index,
@@ -43,6 +48,7 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
             {item.image && (
               <div className="relative h-[300px] w-full overflow-hidden bg-zinc-950 sm:h-[320px] xl:h-[330px]">
                 <img
+                  data-seo-proof-image="ready-carousel"
                   src={item.image}
                   alt={`Пример карусели: ${item.title}`}
                   width={item.width}
@@ -84,7 +90,7 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
       </div>
 
       {/* Section CTA */}
-      <div className="mt-9 flex flex-col items-center gap-3">
+      <div data-seo-proof-cta="ready-results-showcase" className="mt-9 flex flex-col items-center gap-3">
         <SeoPageCTA cta={showcaseCta} page={page} ctaPosition="showcase" />
         {showcaseCta.note && (
           <p className="text-sm text-zinc-400">{showcaseCta.note}</p>

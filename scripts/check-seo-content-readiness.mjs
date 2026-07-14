@@ -16,6 +16,8 @@ import {
   EXACT_SEO_PAGE_BLUEPRINT,
   EXACT_SEO_PAGE_BLUEPRINT_ID,
   SEO_HANDOFF_STATUSES,
+  SEO_PRODUCT_PROOF_CONTRACT,
+  validateRenderedSeoProductProofDom,
   validateSeoBlueprintCatalog,
   validateSeoPageHandoff,
 } from '../src/content/seoPages/blueprints/exactSeoPageBlueprint.js';
@@ -239,7 +241,12 @@ const makeCompletePage = (variant, suffix = variant) => {
       item(`Quick answer ${suffix}`, `Clear, direct answer for ${suffix}.`),
     ],
     readyCarouselShowcase: [
-      item(`Ready carousel showcase ${suffix}`, `Demonstration of the final product for ${suffix}.`),
+      ...SEO_PRODUCT_PROOF_CONTRACT.canonicalReadyCarouselShowcase.assetPaths.map((imagePath, index) => ({
+        ...item(`Ready carousel showcase ${suffix} ${index + 1}`, `Demonstration of the final product for ${suffix} with a concrete finished carousel visual.`),
+        image: imagePath,
+        width: 1080,
+        height: 1350,
+      })),
     ],
     readyCarouselShowcaseCta: {
       label: `Choose structure ${suffix}`,
@@ -277,7 +284,25 @@ const makeCompletePage = (variant, suffix = variant) => {
           { id: 'source-structure', title: `Source and structure ${suffix}`, caption: `Source and structure mockup for ${suffix}.`, fallbackVisualType: 'source_structure' },
           { id: 'text-review', title: `Text review ${suffix}`, caption: `Text review mockup for ${suffix}.`, fallbackVisualType: 'text_review' },
           { id: 'visual-route', title: `Visual route ${suffix}`, caption: `AI or template route mockup for ${suffix}.`, fallbackVisualType: 'ai_template' },
-          { id: 'editor-result', title: `Editor result ${suffix}`, caption: `Editor and complete carousel mockup for ${suffix}.`, fallbackVisualType: 'editor_result' },
+          {
+            id: 'editor-result',
+            title: `Editor result ${suffix}`,
+            caption: `Editor and complete carousel mockup for ${suffix}.`,
+            fallbackVisualType: 'editor_result',
+            resultCarousel: {
+              proofType: 'page-specific',
+              title: `Page-specific result ${suffix}`,
+              label: `Result ${suffix}`,
+              slideCount: 5,
+              images: [
+                { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp', alt: `Page-specific proof slide 1 ${suffix}` },
+                { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp', alt: `Page-specific proof slide 2 ${suffix}` },
+                { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp', alt: `Page-specific proof slide 3 ${suffix}` },
+                { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-4.webp', alt: `Page-specific proof slide 4 ${suffix}` },
+                { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp', alt: `Page-specific proof slide 5 ${suffix}` },
+              ],
+            },
+          },
         ],
         featureChips: [`Source ${suffix}`, `Structure ${suffix}`, `Text review ${suffix}`, `Visual route ${suffix}`],
         cta: {
@@ -454,6 +479,47 @@ const makeBlueprintHandoffFixture = (overrides = {}) => ({
     codex: 'technical_review_after_owner_approval',
     humanOwner: SEO_HANDOFF_STATUSES,
   },
+  productProofFamily: 'carousel',
+  productProofModules: {
+    canonicalProductWorkflow: {
+      required: true,
+      componentName: 'SeoProductWorkflowShowcase',
+      componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
+      dataSource: 'page.productWorkflow',
+      copySlots: ['eyebrow', 'heading.before', 'heading.accent', 'heading.after', 'description', 'stepOverrides', 'featureChips', 'cta'],
+      visualSlots: ['workflowSteps', 'mockups', 'resultCarousel'],
+    },
+    canonicalReadyCarouselShowcase: {
+      required: true,
+      componentName: 'SeoReadyCarouselShowcase',
+      componentPath: 'src/components/seo/template-page/SeoReadyCarouselShowcase.jsx',
+      minimumExamples: 5,
+      examples: SEO_PRODUCT_PROOF_CONTRACT.canonicalReadyCarouselShowcase.assetPaths.map((assetPath, index) => ({
+        title: `Ready carousel proof ${index + 1}`,
+        assetPath,
+      })),
+      assetPaths: SEO_PRODUCT_PROOF_CONTRACT.canonicalReadyCarouselShowcase.assetPaths,
+      cta: 'Create this carousel',
+    },
+    pageSpecificVisualProof: {
+      required: true,
+      type: 'page_specific_result_carousel',
+      componentName: 'ResultCarouselStack',
+      componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
+      assetPaths: [
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-4.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp',
+      ],
+      acceptanceRules: [
+        'Rendered page-specific proof marker exists.',
+        'Ready-result showcase marker exists separately.',
+        'Local page-specific assets render.',
+      ],
+    },
+  },
   sections: blueprintRequiredSections().map(buildBlueprintHandoffSection),
   ...overrides,
 });
@@ -486,6 +552,151 @@ const mutateBlueprintHandoffSection = (handoff, sectionId, mutate) => {
 };
 
 expectBlueprintHandoffPass('positive exact blueprint handoff', makeBlueprintHandoffFixture());
+
+{
+  const handoff = makeBlueprintHandoffFixture({
+    id: 'fixture-post-generator-product-proof-handoff',
+    route: '/ru/use-cases/fixture-post-generator',
+    productProofFamily: 'content',
+    primaryQuery: 'генератор постов fixture',
+  });
+  handoff.productProofModules.canonicalReadyResultsShowcase = {
+    ...handoff.productProofModules.canonicalReadyCarouselShowcase,
+    required: true,
+    componentName: 'SeoReadyCarouselShowcase',
+    componentPath: 'src/components/seo/template-page/SeoReadyCarouselShowcase.jsx',
+  };
+  delete handoff.productProofModules.canonicalReadyCarouselShowcase;
+  expectBlueprintHandoffPass('post generator workflow ready results and proof', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture({ productProofModules: {} });
+  expectBlueprintHandoffFail('product proof missing all modules', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  delete handoff.productProofModules.canonicalReadyCarouselShowcase;
+  expectBlueprintHandoffFail('carousel page without ready carousel proof', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  handoff.productProofModules.canonicalReadyCarouselShowcase.examples = [];
+  handoff.productProofModules.canonicalReadyCarouselShowcase.assetPaths = [];
+  expectBlueprintHandoffFail('carousel page only page-specific proof no ready carousels', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  handoff.productProofModules.canonicalReadyCarouselShowcase.examples = handoff.productProofModules.canonicalReadyCarouselShowcase.examples.slice(0, 3);
+  handoff.productProofModules.canonicalReadyCarouselShowcase.assetPaths = handoff.productProofModules.canonicalReadyCarouselShowcase.assetPaths.slice(0, 3);
+  expectBlueprintHandoffFail('ready carousel showcase with three examples', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  handoff.productProofModules.canonicalReadyCarouselShowcase.examples = Array.from({ length: 5 }, (_, index) => ({
+    title: `Placeholder ${index + 1}`,
+    assetPath: `/images/placeholder-${index + 1}.webp`,
+  }));
+  handoff.productProofModules.canonicalReadyCarouselShowcase.assetPaths = handoff.productProofModules.canonicalReadyCarouselShowcase.examples.map((item) => item.assetPath);
+  expectBlueprintHandoffFail('ready carousel showcase with five placeholders', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  handoff.productProofModules.canonicalReadyCarouselShowcase.componentPath = 'src/components/seo/template-page/WrongShowcase.jsx';
+  expectBlueprintHandoffFail('ready carousel showcase wrong componentPath', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  delete handoff.productProofModules.canonicalProductWorkflow;
+  expectBlueprintHandoffFail('workflow proof absent', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  handoff.productProofModules.canonicalProductWorkflow.componentName = 'SeoTextCards';
+  handoff.productProofModules.canonicalProductWorkflow.componentPath = 'src/components/seo/SeoPageSection.jsx';
+  expectBlueprintHandoffFail('workflow replaced by text cards', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  delete handoff.productProofModules.pageSpecificVisualProof;
+  expectBlueprintHandoffFail('page-specific visual proof absent', handoff);
+}
+
+{
+  const handoff = makeBlueprintHandoffFixture();
+  const oneModule = {
+    required: true,
+    componentName: 'SeoOneProofBlock',
+    componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
+    examples: handoff.productProofModules.canonicalReadyCarouselShowcase.examples,
+    assetPaths: handoff.productProofModules.pageSpecificVisualProof.assetPaths,
+    cta: 'Create',
+    acceptanceRules: ['Marker exists.', 'Assets render.', 'Separate showcase exists.'],
+    type: 'page_specific_result_carousel',
+    copySlots: ['eyebrow', 'heading.before', 'heading.accent', 'heading.after', 'description', 'stepOverrides', 'featureChips', 'cta'],
+    visualSlots: ['workflowSteps', 'mockups', 'resultCarousel'],
+  };
+  handoff.productProofModules.canonicalProductWorkflow = oneModule;
+  handoff.productProofModules.canonicalReadyCarouselShowcase = oneModule;
+  handoff.productProofModules.pageSpecificVisualProof = oneModule;
+  expectBlueprintHandoffFail('one component declared as workflow ready and proof', handoff);
+}
+
+{
+  const result = validateRenderedSeoProductProofDom({
+    productWorkflowMarkers: 1,
+    readyResultsShowcaseMarkers: 0,
+    readyResultCards: 0,
+    readyResultImages: 0,
+    readyResultsCtas: 0,
+    pageSpecificProofMarkers: 1,
+    pageSpecificProofImages: 5,
+    workflowSteps: 5,
+  });
+  if (!result.length) errors.push('rendered DOM missing canonical marker should fail but passed.');
+  else blueprintFixturesPassed += 1;
+  blueprintFixturesTested += 1;
+}
+
+{
+  const result = validateRenderedSeoProductProofDom({
+    productWorkflowMarkers: 1,
+    readyResultsShowcaseMarkers: 1,
+    readyResultCards: 5,
+    readyResultImages: 0,
+    readyResultsCtas: 1,
+    pageSpecificProofMarkers: 1,
+    pageSpecificProofImages: 5,
+    workflowSteps: 5,
+  });
+  if (!result.length) errors.push('rendered DOM marker but no real images should fail but passed.');
+  else blueprintFixturesPassed += 1;
+  blueprintFixturesTested += 1;
+}
+
+{
+  const result = validateRenderedSeoProductProofDom({
+    productWorkflowMarkers: 1,
+    readyResultsShowcaseMarkers: 1,
+    readyResultCards: 5,
+    readyResultImages: 5,
+    readyResultsCtas: 1,
+    pageSpecificProofMarkers: 1,
+    pageSpecificProofImages: 5,
+    workflowSteps: 5,
+  });
+  if (result.length) errors.push(`rendered DOM product proof positive fixture should pass but failed:\n${result.join('\n')}`);
+  else blueprintFixturesPassed += 1;
+  blueprintFixturesTested += 1;
+}
 
 [
   ['forbidden USE_CASE_PAGE visible token', 'USE_CASE_PAGE'],

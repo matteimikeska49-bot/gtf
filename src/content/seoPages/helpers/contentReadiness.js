@@ -15,6 +15,7 @@ import {
   SEO_REQUIRED_SECTION_RELEVANCE_FIELDS,
   SEO_REVIEW_METADATA_FIELDS,
 } from '../releaseContracts.js';
+import { validateSeoRuntimeProductProof } from '../blueprints/exactSeoPageBlueprint.js';
 
 export const PRODUCTION_READY_STATES = ['noindex_review', 'indexable_approved'];
 
@@ -834,6 +835,7 @@ export const getSeoPageProductionReadinessErrors = (page, context = {}) => {
   errors.push(...getSeoPageCtaErrors(page, context));
   errors.push(...getSeoPageInternalLinkErrors(page, context));
   errors.push(...getSeoMetadataReadinessErrors(page));
+  errors.push(...validateSeoRuntimeProductProof({ page, context }));
 
   return errors;
 };

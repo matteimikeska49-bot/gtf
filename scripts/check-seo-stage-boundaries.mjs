@@ -1,6 +1,7 @@
 import { execFileSync } from 'child_process';
 import { existsSync } from 'fs';
 import path from 'path';
+import { getSeoPageByPath } from '../src/content/seoPages/index.js';
 import seamlessInstagramCarouselHandoff from '../src/content/seoPages/handoffs/seamlessInstagramCarouselHandoff.js';
 import {
   SEO_PRODUCTION_STAGES,
@@ -33,6 +34,49 @@ const context = {
     assetPath.startsWith('/') &&
     existsSync(path.join(process.cwd(), 'public', assetPath.replace(/^\//u, '')))
   ),
+};
+
+const stageRuntimePage = getSeoPageByPath(seamlessInstagramCarouselHandoff.route);
+
+const fixtureRuntimePage = {
+  id: 'fixture-runtime-product-proof',
+  path: '/ru/use-cases/fixture-complete-handoff',
+  templateVariant: 'template_page',
+  templateSections: ['hero', 'quickAnswer', 'templateCategories', 'templateChoiceGuide', 'productWorkflow', 'readyCarouselShowcase', 'faq', 'related', 'finalCta'],
+  productWorkflow: {
+    preset: 'carousel_creation',
+    mockups: [
+      { id: 'source-structure', title: 'Source', caption: 'Source proof', fallbackVisualType: 'source_structure' },
+      { id: 'text-review', title: 'Text', caption: 'Text proof', fallbackVisualType: 'text_review' },
+      { id: 'visual-route', title: 'Visual', caption: 'Visual proof', fallbackVisualType: 'ai_template' },
+      {
+        id: 'editor-result',
+        title: 'Result',
+        caption: 'Page proof',
+        resultCarousel: {
+          proofType: 'page-specific',
+          images: [
+            { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp', alt: 'Page proof 1' },
+            { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp', alt: 'Page proof 2' },
+            { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp', alt: 'Page proof 3' },
+            { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-4.webp', alt: 'Page proof 4' },
+            { src: '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp', alt: 'Page proof 5' },
+          ],
+        },
+      },
+    ],
+  },
+  readyCarouselShowcase: [
+    { title: 'Ready 1', image: '/images/niches/ru/content-ru-2.webp' },
+    { title: 'Ready 2', image: '/images/niches/ru/content-ru-3.webp' },
+    { title: 'Ready 3', image: '/images/niches/ru/content-ru-5.webp' },
+    { title: 'Ready 4', image: '/images/niches/ru/content-ru-6.webp' },
+    { title: 'Ready 5', image: '/images/niches/ru/content-ru-7.webp' },
+  ],
+  readyCarouselShowcaseCta: {
+    label: 'Create',
+    href: 'https://app.gotoflow.io',
+  },
 };
 
 const gitLines = (argsList) => {
@@ -152,7 +196,7 @@ addFixture('Incomplete handoff blocks draft preview integration', 'fail', () => 
   validateStageHandoff({
     stage: 'codex_draft_preview_integration',
     handoff: incompleteHandoffFixture,
-    context,
+    context: { ...context, runtimePage: fixtureRuntimePage },
   })
 ));
 
@@ -165,7 +209,7 @@ addFixture('Complete handoff with owner approval false allows draft preview', 'p
   return validateStageHandoff({
     stage: 'codex_draft_preview_integration',
     handoff,
-    context,
+    context: { ...context, runtimePage: fixtureRuntimePage },
   });
 });
 
@@ -177,7 +221,7 @@ addFixture('Draft preview adding route to sitemap fails', 'fail', () => (
       approvedForProductionIntegration: false,
       sitemapIncluded: true,
     }),
-    context,
+    context: { ...context, runtimePage: fixtureRuntimePage },
   })
 ));
 
@@ -191,7 +235,7 @@ addFixture('Draft preview setting indexable state fails', 'fail', () => (
       indexable: true,
       indexationApproved: true,
     }),
-    context,
+    context: { ...context, runtimePage: fixtureRuntimePage },
   })
 ));
 
@@ -203,7 +247,24 @@ addFixture('Draft preview modifying approved copy fails', 'fail', () => (
       approvedForProductionIntegration: false,
       approvedCopyModified: true,
     }),
-    context,
+    context: { ...context, runtimePage: fixtureRuntimePage },
+  })
+));
+
+addFixture('Draft preview runtime skipped required product proof module fails', 'fail', () => (
+  validateStageHandoff({
+    stage: 'codex_draft_preview_integration',
+    handoff: buildCompleteHandoffFromBlueprint({
+      ownerVisualApprovalReceived: false,
+      approvedForProductionIntegration: false,
+    }),
+    context: {
+      ...context,
+      runtimePage: {
+        ...fixtureRuntimePage,
+        readyCarouselShowcase: [],
+      },
+    },
   })
 ));
 
@@ -215,7 +276,7 @@ addFixture('Production integration with owner approval false fails', 'fail', () 
       approvedForProductionIntegration: false,
       approvedForTechnicalIntegration: false,
     }),
-    context,
+    context: { ...context, runtimePage: fixtureRuntimePage },
   })
 ));
 
@@ -306,7 +367,7 @@ if (!fixtureOnly && errors.length === 0) {
   errors.push(...validateStageHandoff({
     stage,
     handoff: seamlessInstagramCarouselHandoff,
-    context,
+    context: { ...context, runtimePage: stageRuntimePage },
   }));
 }
 

@@ -286,9 +286,12 @@ const RESULT_SLIDE_LAYOUT = [
 const ResultCarouselStack = ({ resultCarousel }) => {
   const images = resultCarousel?.images || [];
   if (images.length === 0) return <EditorResultFallback />;
+  const proofAttributes = resultCarousel.proofType === 'page-specific'
+    ? { 'data-seo-proof': 'page-specific-result' }
+    : {};
 
   return (
-    <div className="overflow-hidden rounded-xl border border-white/[0.055] bg-black/35 p-2.5">
+    <div {...proofAttributes} className="overflow-hidden rounded-xl border border-white/[0.055] bg-black/35 p-2.5">
       <div className="mb-2 flex flex-wrap items-center gap-1.5 text-[9px] text-zinc-400">
         {resultCarousel.label && (
           <span className="rounded-md border border-orange-300/15 bg-orange-300/10 px-1.5 py-0.5 font-bold uppercase tracking-[0.10em] text-orange-100">
@@ -331,6 +334,7 @@ const ResultCarouselStack = ({ resultCarousel }) => {
               return (
                 <img
                   key={image.src}
+                  data-seo-proof-image={resultCarousel.proofType === 'page-specific' ? 'page-specific-result' : undefined}
                   src={image.src}
                   alt={layout.decorative ? '' : image.alt}
                   width={1122}
@@ -386,7 +390,11 @@ export const SeoProductWorkflowShowcase = ({ page }) => {
   const title = workflow.title || {};
 
   return (
-    <section id="product-workflow" className="border-t border-white/[0.08] py-14 md:py-20">
+    <section
+      id="product-workflow"
+      data-seo-proof="product-workflow"
+      className="border-t border-white/[0.08] py-14 md:py-20"
+    >
       {/* ── Section heading ── */}
       <div className="mb-10 max-w-3xl">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pink-300">{workflow.eyebrow}</p>
@@ -425,7 +433,11 @@ export const SeoProductWorkflowShowcase = ({ page }) => {
       {/* ── Product mockups 2×2 grid ── */}
       <div className="grid gap-3.5 sm:grid-cols-2">
         {mockups.map((mockup, index) => (
-          <article key={mockup.id} className="overflow-hidden rounded-xl border border-white/[0.065] bg-white/[0.022]">
+          <article
+            key={mockup.id}
+            data-seo-proof-card="product-workflow-mockup"
+            className="overflow-hidden rounded-xl border border-white/[0.065] bg-white/[0.022]"
+          >
             <div className="flex items-center gap-2.5 px-3.5 pt-3.5">
               <span className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-pink-500 to-orange-500 text-[11px] font-black text-white">{index + 1}</span>
               <h3 className="text-[15px] font-bold leading-snug text-white">{mockup.title}</h3>

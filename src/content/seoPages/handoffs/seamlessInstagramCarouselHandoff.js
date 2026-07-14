@@ -346,6 +346,57 @@ export const seamlessInstagramCarouselHandoff = {
       anchor: 'Шаблоны Instagram-каруселей'
     }
   ],
+  productProofFamily: 'carousel',
+  productProofModules: {
+    canonicalProductWorkflow: {
+      required: true,
+      componentName: 'SeoProductWorkflowShowcase',
+      componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
+      dataSource: 'page.productWorkflow',
+      copySlots: ['eyebrow', 'heading.before', 'heading.accent', 'heading.after', 'description', 'stepOverrides', 'featureChips', 'cta'],
+      visualSlots: ['workflowSteps', 'mockups', 'resultCarousel'],
+    },
+    canonicalReadyCarouselShowcase: {
+      required: true,
+      componentName: 'SeoReadyCarouselShowcase',
+      componentPath: 'src/components/seo/template-page/SeoReadyCarouselShowcase.jsx',
+      minimumExamples: 5,
+      examples: [
+        { title: 'Экспертная карусель о маркетинге', assetPath: '/images/niches/ru/content-ru-2.webp' },
+        { title: 'Пошаговый гайд по Reels', assetPath: '/images/niches/ru/content-ru-3.webp' },
+        { title: 'Сторителлинг о запуске бизнеса', assetPath: '/images/niches/ru/content-ru-5.webp' },
+        { title: 'Продуктовая презентация приложения', assetPath: '/images/niches/ru/content-ru-6.webp' },
+        { title: 'Чек-лист проверки сайта', assetPath: '/images/niches/ru/content-ru-7.webp' },
+      ],
+      assetPaths: [
+        '/images/niches/ru/content-ru-2.webp',
+        '/images/niches/ru/content-ru-3.webp',
+        '/images/niches/ru/content-ru-5.webp',
+        '/images/niches/ru/content-ru-6.webp',
+        '/images/niches/ru/content-ru-7.webp',
+      ],
+      cta: 'Создать такую карусель',
+    },
+    pageSpecificVisualProof: {
+      required: true,
+      type: 'page_specific_result_carousel',
+      componentName: 'ResultCarouselStack',
+      componentPath: 'src/components/seo/template-page/SeoProductWorkflowShowcase.jsx',
+      assetPaths: [
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-1.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-2.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-3.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-4.webp',
+        '/images/seo-handoffs/seamless-instagram-carousel/seamless-slide-5.webp',
+      ],
+      acceptanceRules: [
+        'Rendered DOM contains data-seo-proof="page-specific-result".',
+        'The page-specific seamless proof is separate from the ready-results showcase marker.',
+        'At least three local seamless slide assets render with non-empty src values.',
+        'The ready-results showcase still contains at least five canonical finished-carousel examples.',
+      ],
+    },
+  },
   ownerComments: [],
 };
 

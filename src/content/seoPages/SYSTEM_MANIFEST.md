@@ -252,6 +252,20 @@ Forbidden visible strings and patterns include:
 
 The readiness checker imports the blueprint and proves both a valid handoff fixture and failing handoff fixtures. Future blueprint changes must update the checker fixtures in the same commit.
 
+## Mandatory Product Proof Modules
+
+Every future exact-blueprint product SEO page must carry three proof modules before it can enter `noindex_review`:
+
+- canonical product workflow: `SeoProductWorkflowShowcase` from `src/components/seo/template-page/SeoProductWorkflowShowcase.jsx`, rendered with `data-seo-proof="product-workflow"`, real workflow steps, product interface mockups, and no text-card substitute.
+- canonical ready results showcase: `SeoReadyCarouselShowcase` from `src/components/seo/template-page/SeoReadyCarouselShowcase.jsx`, rendered with `data-seo-proof="ready-results-showcase"`, at least five result/example cards, at least five real local images/previews, non-empty src/alt data, a CTA, and no placeholder or page-specific handoff assets reused as the canonical gallery.
+- page-specific visual proof: a separate page-specific result block rendered with `data-seo-proof="page-specific-result"`, using local assets tied to the target query and not sharing the same DOM node or image set as the ready-results showcase.
+
+Carousel product pages require `canonicalProductWorkflow`, `canonicalReadyCarouselShowcase`, and `pageSpecificVisualProof` in `productProofModules`.
+
+Post/content product pages require `canonicalProductWorkflow`, `canonicalReadyResultsShowcase`, and `pageSpecificVisualProof` in `productProofModules`.
+
+`handoffComplete`, `draftPreviewIntegrationAllowed`, `draftPreviewIntegrated`, and `productionIntegrationCompleted` are blocked unless product proof modules are present, component paths match the blueprint, assets exist, rendered proof markers validate, and runtime data matches the handoff. The stage checker for `codex_draft_preview_integration` must receive the runtime page and fail when Codex skips or substitutes any mandatory proof module.
+
 ## CTA Contract
 
 - Production-ready SEO pages must define page-specific `finalCta` data instead of relying on a universal generic fallback.
