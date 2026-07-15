@@ -1,107 +1,200 @@
-# Upgrade Plan: Legacy RU SEO Pages
+# Legacy RU SEO Pages Upgrade Specification
 
-Этот документ содержит аудит и план улучшений для шести старых (legacy) RU SEO-страниц инструментов на основе стандартов новой **GoToFlow Carousel Page Production System**. 
+Этот документ содержит точные инструкции для пакетного обновления старых RU SEO-страниц. Цель — добавить недостающие SEO-блоки (Quick Answer, Formats, Related Links) в рамках текущего дизайна, без изменения `GoToFlow SEO Publishing Platform` и без глобального редизайна.
 
-**Цель:** Точечное улучшение конверсии, SEO-метрик и UX на старых страницах без их полного переписывания, изменения дизайна, замены базовой структуры Hero или перехода на новый шаблон `CarouselProductSeoPageTemplate`.
+## 1. /ru/ii-generator-karuseley (RuAICarouselGeneratorPage)
+**Primary Search Intent:** ИИ-генератор каруселей, нейросеть для каруселей. Фокус на ИИ (генерация текста, структура, AI-стиль).
+**Чем отличается от соседних URL:** Делает акцент на самом ИИ, а не на платформе публикации.
+**Приоритет:** P1
+**Остается без изменений:** Hero layout, How It Works, Comparison, Showcase, Differentiation, Bottom CTA. Mobile sticky nav не добавляется.
+
+### Изменения к реализации (P1)
+
+**1. Добавление Formats Coverage (Product Capabilities)**
+*   **Блок:** Добавить блок форматов над "Почему GoToFlow".
+*   **Exact H2:** `## Популярные форматы каруселей, которые создает ИИ`
+*   **Exact Intro:** `Нейросеть не просто пишет текст, она понимает контентные форматы и подстраивает структуру под вашу задачу.`
+*   **Контент (6 форматов):**
+    1.  **AI-текст на основе видео:** ИИ анализирует ссылку на видео и выдает готовую раскадровку.
+    2.  **Раскадровка длинных статей:** Превращение лонгридов в емкие слайды для соцсетей.
+    3.  **AI-персонажи для бренда:** Добавление уникального визуального стиля через нейросеть.
+    4.  **Образовательная подборка:** Структурированный обучающий контент с ИИ-пояснениями.
+    5.  **Сторителлинг с AI-визуалом:** ИИ помогает выстроить драматургию от первого до последнего слайда.
+    6.  **Анонс вебинара:** Цепляющие слайды для генерации лидов.
+
+**2. Добавление Related Links (Перелинковка)**
+*   **Блок:** Разместить блок ссылок под FAQ.
+*   **Exact H2:** `## Больше инструментов для соцсетей`
+*   **Ссылки:**
+    *   `[Генератор каруселей Instagram](/ru/generator-karuselej-instagram)`
+    *   `[Шаблоны каруселей](/ru/templates/instagram-carousel)`
+    *   `[Текст в карусель](/ru/use-cases/tekst-v-karusel)`
+*   **SEO-причина:** Передача веса на кластер Instagram и продуктовые use-cases.
+
+**3. FAQ**
+*   **Текущее количество:** 8
+*   **Решение:** FAQ оставить без изменений.
 
 ---
 
-## 10 критериев аудита
+## 2. /ru/ii-generator-kontenta (AIContentPageRu)
+**Primary Search Intent:** ИИ-генератор контента (hub-page).
+**Чем отличается от соседних URL:** Охватывает разные типы контента (посты, Reels, карусели), а не только один формат.
+**Приоритет:** P1
+**Остается без изменений:** Hero layout, Problem, Showcase, Differentiation. Mobile sticky nav не добавляется.
 
-Каждая страница проверялась по следующим стандартам:
-1. **Quick Answer Block:** Наличие выделенного блока с прямым текстом для Google Featured Snippets сразу после Hero.
-2. **Contextual CTAs:** Тексты на кнопках (CTA) должны отражать конкретную задачу (а не просто "Начать").
-3. **Mobile Sticky Navigation:** Наличие плавающего мобильного меню (anchor links) с корректным offset.
-4. **Hero Asset Alignment:** Точечная оптимизация визуального ассета первого экрана под интент страницы (без перестройки самого Hero).
-5. **Formats Coverage (Cross-linking):** Блок визуальных карточек, перенаправляющий на смежные форматы и кейсы.
-6. **Related Links:** Навигационный блок релевантных ссылок (статьи, шаблоны, промпты) перед футером.
-7. **FAQ Internal Linking:** Встроенные контекстные ссылки внутри ответов FAQ.
-8. **Config-Driven Content:** Вынос контентных массивов (FAQ, Cards, Steps) из JSX-разметки.
-9. **Content & Design Contract:** Наличие задокументированного MD-контракта с текстами.
-10. **Semantic Hierarchy:** Правильная вложенность заголовков (H1 -> H2 -> H3).
+### Изменения к реализации (P1)
+
+**1. Добавление Formats Coverage**
+*   **Блок:** Вставка после Showcase.
+*   **Exact H2:** `## Какой контент создает нейросеть`
+*   **Exact Intro:** `GoToFlow поддерживает ключевые форматы для Instagram, LinkedIn и других платформ.`
+*   **Контент (6 форматов):**
+    1.  **Карусели:** Экспертные карусели с текстом и дизайном.
+    2.  **Посты:** Продающие и вовлекающие посты с сильными хуками.
+    3.  **Сценарии Reels/Shorts:** Раскадровка и текст для коротких видео.
+    4.  **B2B-контент:** Профессиональные инсайты для LinkedIn.
+    5.  **Экспертные статьи:** Структурированные лонгриды и гайды.
+    6.  **Рекламные креативы:** Тексты для таргетированной рекламы.
+
+**2. Добавление Related Links (Contextual Hub Linking)**
+*   **Блок:** После SEO Block.
+*   **Exact H2:** `## Узкие AI-генераторы`
+*   **Ссылки:**
+    *   `[Генератор каруселей с ИИ](/ru/ii-generator-karuseley)`
+    *   `[Генератор постов Instagram](/ru/ii-generator-postov-dlya-instagram)`
+    *   `[Генератор постов LinkedIn](/ru/ii-generator-postov-dlya-linkedin)`
+*   **SEO-причина:** Поддержка hub-структуры и распределение веса.
+
+**3. FAQ**
+*   **Текущее количество:** 7
+*   **Решение:** FAQ оставить без изменений.
 
 ---
 
-## 1. /ru/ii-generator-karuseley
-**Компонент:** `RuAICarouselGeneratorPage`
+## 3. /ru/generator-karuselej-instagram (RuAICarouselGeneratorPage с isInsta)
+**Primary Search Intent:** Генератор каруселей Instagram. Commercial hub для Instagram cluster.
+**Чем отличается от соседних URL:** Фокус на платформе (Instagram), а не на самой технологии ИИ.
+**Приоритет:** P0 (из-за каннибализации FAQ и интента в одном файле)
+**Остается без изменений:** Визуальный дизайн, Hero.
 
-- [ ] 1. **Quick Answer Block:** Отсутствует. Необходимо добавить SEO-блок ответов.
-- [ ] 2. **Contextual CTAs:** Используются общие призывы. Заменить на специфичные ("Создать ИИ-карусель").
-- [ ] 3. **Mobile Sticky Navigation:** Отсутствует. Добавить мобильную навигацию по странице.
-- [ ] 4. **Hero Asset Alignment:** Мокап абстрактный, необходимо обновить изображение для соответствия интенту.
-- [ ] 5. **Formats Coverage:** Отсутствует. Внедрить правило "Formats Coverage Rule".
-- [ ] 6. **Related Links:** Нет релевантной перелинковки в конце страницы.
-- [ ] 7. **FAQ Internal Linking:** В ответах FAQ нет ссылок на блог или другие страницы.
-- [ ] 8. **Config-Driven Content:** Данные захардкожены внутри компонента. Требуется вынос.
-- [ ] 9. **Content Contract:** Markdown контракт отсутствует.
-- [ ] 10. **Semantic Hierarchy:** Отсутствует строгая связка между H2 и текстами-ответами.
+### Изменения к реализации (P0/P1)
 
-## 2. /ru/ii-generator-kontenta
-**Компонент:** `AIContentPageRu`
+**1. Разделение FAQ (P0 - Product Truth Conflict)**
+*   Текущий FAQ общий с `/ru/ii-generator-karuseley`. Нужно передавать массив FAQ динамически.
+*   **Exact Новые Вопросы (вместо текущих 8, использовать эти 6 для Instagram):**
+    1.  **Q:** Поддерживает ли генератор форматы 4:5 и 1:1 для Instagram? **A:** Да, вы можете выбрать идеальное соотношение сторон для ленты Instagram: квадратное (1:1) или портретное (4:5).
+    2.  **Q:** Сколько слайдов можно создать? **A:** Генератор поддерживает до 10 слайдов в одной карусели — это лимит Instagram. Мы рекомендуем использовать 5-8 слайдов для лучшего удержания.
+    3.  **Q:** Можно ли использовать свои шрифты? **A:** В текущей версии используются заранее подобранные конверсионные шрифтовые пары, чтобы карусель гарантированно хорошо читалась на мобильных экранах.
+    4.  **Q:** Готовая карусель будет бесшовной? **A:** Да, генератор умеет создавать эффект бесшовного перехода между слайдами.
+    5.  **Q:** Как скачать результат? **A:** Вы получаете готовый ZIP-архив с изображениями высокого разрешения или один PDF-файл.
+    6.  **Q:** Обязательно ли писать промпт самому? **A:** Нет, достаточно вставить ссылку на статью или просто написать тему (например, "Ошибки таргета"), и ИИ сам создаст правильную структуру для Instagram.
+*   **SEO-причина:** Очистка страницы от лишнего интента и привязка к Instagram-специфике.
 
-- [ ] 1. **Quick Answer Block:** Отсутствует.
-- [ ] 2. **Contextual CTAs:** Кнопки не отражают интент "генератора контента".
-- [ ] 3. **Mobile Sticky Navigation:** Отсутствует.
-- [ ] 4. **Hero Asset Alignment:** Требует точечной корректировки под задачу контента.
-- [ ] 5. **Formats Coverage:** Блок смежных форматов не интегрирован.
-- [ ] 6. **Related Links:** Нет ссылок на шаблоны и промпты.
-- [ ] 7. **FAQ Internal Linking:** Отсутствует.
-- [ ] 8. **Config-Driven Content:** Массивы данных жестко прописаны в JSX.
-- [ ] 9. **Content Contract:** Не существует.
-- [ ] 10. **Semantic Hierarchy:** Необходимо актуализировать SEO-заголовки.
+**2. Добавление Formats Coverage (P1)**
+*   **Exact H2:** `## Идеи и форматы Инстаграм-каруселей`
+*   **Контент (6 форматов):** Экспертный разбор, Чек-лист, До/После, История бренда, Подборка инструментов, Пошаговая инструкция.
 
-## 3. /ru/generator-karuselej-instagram
-**Компонент:** `RuAICarouselGeneratorPage`
+**3. Добавление Related Links (P1)**
+*   **Ссылки:**
+    *   `[Бесшовная карусель Instagram](/ru/use-cases/besshovnaya-karusel-instagram)`
+    *   `[Текст в карусель](/ru/use-cases/tekst-v-karusel)`
+    *   `[Шаблоны каруселей](/ru/templates/instagram-carousel)`
 
-- [ ] 1. **Quick Answer Block:** Отсутствует.
-- [ ] 2. **Contextual CTAs:** Должны указывать на "Instagram" (сейчас общие).
-- [ ] 3. **Mobile Sticky Navigation:** Отсутствует.
-- [ ] 4. **Hero Asset Alignment:** Ассет должен отражать Instagram-специфику, а не базовый вид.
-- [ ] 5. **Formats Coverage:** Отсутствует.
-- [ ] 6. **Related Links:** Отсутствует.
-- [ ] 7. **FAQ Internal Linking:** Нет ссылок на специфичные Instagram-статьи.
-- [ ] 8. **Config-Driven Content:** Захардкожено.
-- [ ] 9. **Content Contract:** Не существует.
-- [ ] 10. **Semantic Hierarchy:** Заголовки общие, без Instagram-интента в H2-подразделах.
+---
 
-## 4. /ru/ii-generator-postov-dlya-instagram
-**Компонент:** `InstagramPostPageRu`
+## 4. /ru/ii-generator-postov-dlya-instagram (InstagramPostPageRu)
+**Primary Search Intent:** Написать пост для Instagram с помощью ИИ.
+**Чем отличается от соседних URL:** Строго посты (текст), а не карусели (изображения).
+**Приоритет:** P1
+**Остается без изменений:** Макет, Hero, Showcase.
 
-- [ ] 1. **Quick Answer Block:** Отсутствует.
-- [ ] 2. **Contextual CTAs:** Слишком универсальные ("Начать").
-- [ ] 3. **Mobile Sticky Navigation:** Не реализовано.
-- [ ] 4. **Hero Asset Alignment:** Абстрактные элементы в Hero.
-- [ ] 5. **Formats Coverage:** Нет ссылок на карусели или контент.
-- [ ] 6. **Related Links:** Отсутствует.
-- [ ] 7. **FAQ Internal Linking:** Отсутствует.
-- [ ] 8. **Config-Driven Content:** Контент внутри функции рендера.
-- [ ] 9. **Content Contract:** Отсутствует.
-- [ ] 10. **Semantic Hierarchy:** SEO-заголовки требуют ревизии.
+### Изменения к реализации (P1)
 
-## 5. /ru/generator-karuselej-linkedin
-**Компонент:** `LinkedInCarouselPageRu`
+**1. Добавление Formats Coverage**
+*   **Exact H2:** `## 6 форматов постов, которые собирает ИИ`
+*   **Контент:** Экспертный пост, Продающий пост, Анонс, История, Подборка, Вовлекающий пост.
 
-- [ ] 1. **Quick Answer Block:** Отсутствует прямой текстовый ответ после Hero.
-- [ ] 2. **Contextual CTAs:** "Создать карусель" — необходимо расширить до LinkedIn контекста.
-- [ ] 3. **Mobile Sticky Navigation:** Отсутствует (длинный мобильный скролл).
-- [ ] 4. **Hero Asset Alignment:** Используются общие мокапы и абстрактные свечения.
-- [ ] 5. **Formats Coverage:** Блок Formats отсутствует.
-- [ ] 6. **Related Links:** Отсутствует перелинковка перед футером.
-- [ ] 7. **FAQ Internal Linking:** В FAQ нет ссылок на гайды по LinkedIn (например, PDF-экспорт).
-- [ ] 8. **Config-Driven Content:** `carouselCards`, `problemCards` и `hiwSteps` находятся прямо в JSX.
-- [ ] 9. **Content Contract:** Нет `.md` файла в директории `handoffs`.
-- [ ] 10. **Semantic Hierarchy:** Нужно выровнять структуру H2.
+**2. Добавление Related Links**
+*   **Ссылки:**
+    *   `[Генератор каруселей Instagram](/ru/generator-karuselej-instagram)`
+    *   `[AI Генератор контента](/ru/ii-generator-kontenta)`
 
-## 6. /ru/ii-generator-postov-dlya-linkedin
-**Компонент:** `LinkedInPostPageRu`
+**3. Улучшение FAQ**
+*   **Текущее количество:** 5
+*   **Решение:** Увеличить FAQ.
+*   **Exact Новые Вопросы (добавить к текущим):**
+    *   **Q:** Сохраняет ли ИИ абзацы и пробелы для Instagram? **A:** Да, сгенерированный текст уже отформатирован с нужными отступами и эмодзи. Вам не нужен "секретный пробел".
+    *   **Q:** Пишет ли ИИ хештеги? **A:** Да, генератор автоматически подбирает релевантные и среднечастотные хештеги для лучшего органического охвата.
+*   **SEO-причина:** Расширение LSI и покрытие микро-запросов пользователей Instagram.
 
-- [ ] 1. **Quick Answer Block:** Отсутствует.
-- [ ] 2. **Contextual CTAs:** Общие призывы к действию.
-- [ ] 3. **Mobile Sticky Navigation:** Отсутствует.
-- [ ] 4. **Hero Asset Alignment:** Мокапы не отображают LinkedIn интерфейс или посты.
-- [ ] 5. **Formats Coverage:** Нет кросс-линковки.
-- [ ] 6. **Related Links:** Нет ссылок на статьи о LinkedIn.
-- [ ] 7. **FAQ Internal Linking:** Нет ссылок.
-- [ ] 8. **Config-Driven Content:** Контент внутри компонента.
-- [ ] 9. **Content Contract:** Отсутствует.
-- [ ] 10. **Semantic Hierarchy:** SEO-блок содержит H2, но в целом структура недостаточна.
+---
+
+## 5. /ru/generator-karuselej-linkedin (LinkedInCarouselPageRu)
+**Primary Search Intent:** Генератор каруселей LinkedIn, создать карусель LinkedIn (PDF).
+**Чем отличается от соседних URL:** Строго LinkedIn специфика (B2B, PDF экспорт, деловой стиль).
+**Приоритет:** P0 (из-за Assets)
+**Остается без изменений:** Макет, Hero.
+
+### Изменения к реализации (P0/P1)
+
+**1. Исправление Assets (P0 - Visual Conflict)**
+*   **Проблема:** В массиве `carouselCards` используются Instagram assets `/images/niches/ru/content-ru-...webp`.
+*   **Решение:** Visual Blocker. Если в проекте нет `linkedin-ru-X.webp`, массив `carouselCards` необходимо временно скрыть на этой странице или заменить на generic абстрактные мокапы, чтобы не показывать Instagram UI пользователям LinkedIn.
+
+**2. Добавление Formats Coverage (P1)**
+*   **Exact H2:** `## B2B форматы для LinkedIn`
+*   **Контент:** Экспертный разбор, B2B-кейс, Профессиональная инструкция, Отраслевой инсайт, Разбор ошибки, Продуктовый документ.
+*   **SEO-причина:** Выделение B2B интента.
+
+**3. Улучшение FAQ (P1)**
+*   **Текущее количество:** 5
+*   **Решение:** Добавить 2 специфичных вопроса.
+*   **Exact Новые Вопросы:**
+    *   **Q:** В каком формате скачивается карусель для LinkedIn? **A:** LinkedIn поддерживает карусели в формате PDF-документов. GoToFlow генерирует готовый многостраничный PDF для моментальной загрузки.
+    *   **Q:** Подходит ли ИИ для делового tone of voice? **A:** Да, для LinkedIn генератор использует более сдержанный, профессиональный стиль текста, без излишка эмодзи.
+
+**4. Related Links**
+*   **Ссылки:**
+    *   `[Генератор постов LinkedIn](/ru/ii-generator-postov-dlya-linkedin)`
+
+---
+
+## 6. /ru/ii-generator-postov-dlya-linkedin (LinkedInPostPageRu)
+**Primary Search Intent:** Генератор постов LinkedIn, написать профессиональный пост LinkedIn.
+**Чем отличается от соседних URL:** Строго текст постов для B2B.
+**Приоритет:** P1
+**Остается без изменений:** Макет, Hero.
+
+### Изменения к реализации (P1)
+
+**1. Добавление Formats Coverage**
+*   **Exact H2:** `## Виды постов для LinkedIn`
+*   **Контент:** Экспертный пост, Карьерный инсайт, B2B-кейс, Профессиональная история, Отраслевой комментарий, Продуктовый анонс.
+
+**2. Related Links**
+*   **Ссылки:**
+    *   `[Генератор каруселей LinkedIn](/ru/generator-karuselej-linkedin)`
+
+**3. FAQ**
+*   **Текущее количество:** 5
+*   **Решение:** FAQ оставить без изменений.
+
+---
+
+## Итоговая Internal Linking Map
+
+| Source URL | Target URL | Anchor | Место вставки | Причина |
+| :--- | :--- | :--- | :--- | :--- |
+| `/ru/ii-generator-karuseley` | `/ru/generator-karuselej-instagram` | Генератор каруселей Instagram | Секция "Больше инструментов" | Распределение веса на Hub |
+| `/ru/ii-generator-karuseley` | `/ru/templates/instagram-carousel` | Шаблоны каруселей | Секция "Больше инструментов" | Связь с Content Contract |
+| `/ru/ii-generator-karuseley` | `/ru/use-cases/tekst-v-karusel` | Текст в карусель | Секция "Больше инструментов" | Продвижение use-case |
+| `/ru/ii-generator-kontenta` | `/ru/ii-generator-karuseley` | Генератор каруселей с ИИ | Секция "Узкие AI-генераторы" | Hub linking |
+| `/ru/ii-generator-kontenta` | `/ru/ii-generator-postov-dlya-instagram` | Генератор постов Instagram | Секция "Узкие AI-генераторы" | Hub linking |
+| `/ru/ii-generator-kontenta` | `/ru/ii-generator-postov-dlya-linkedin` | Генератор постов LinkedIn | Секция "Узкие AI-генераторы" | Hub linking |
+| `/ru/generator-karuselej-instagram` | `/ru/use-cases/besshovnaya-karusel-instagram` | Бесшовная карусель Instagram | Секция "Больше инструментов" | Специфика дизайна Instagram |
+| `/ru/generator-karuselej-instagram` | `/ru/templates/instagram-carousel` | Шаблоны каруселей | Секция "Больше инструментов" | Связь с Content Contract |
+| `/ru/generator-karuselej-instagram` | `/ru/use-cases/tekst-v-karusel` | Текст в карусель | Секция "Больше инструментов" | Связь с Content Contract |
+| `/ru/ii-generator-postov-dlya-instagram` | `/ru/generator-karuselej-instagram` | Генератор каруселей Instagram | Секция "Больше инструментов" | Cross-linking в Instagram кластере |
+| `/ru/generator-karuselej-linkedin` | `/ru/ii-generator-postov-dlya-linkedin` | Генератор постов LinkedIn | Секция "Больше инструментов" | Cross-linking в LinkedIn кластере |
+| `/ru/ii-generator-postov-dlya-linkedin` | `/ru/generator-karuselej-linkedin` | Генератор каруселей LinkedIn | Секция "Больше инструментов" | Cross-linking в LinkedIn кластере |
