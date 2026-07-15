@@ -373,6 +373,20 @@ const seamlessResultSlides = getSeoCarouselAssets('workflowResults', 'seamlessIn
 const aiCarouselResultSlides = getSeoCarouselAssets('workflowResults', 'aiCarouselFiveSlides');
 
 const textToCarouselReadyShowcaseAssets = getSeoCarouselAssets('readyShowcase', 'instagramCarousel');
+const postGeneratorProofImages = [
+  {
+    src: '/images/niches/ru/content-ru-10.webp',
+    alt: 'Пример готового визуального поста с заголовком и текстовым блоком',
+  },
+  {
+    src: '/images/niches/ru/content-ru-9.webp',
+    alt: 'Пример оформленного поста с визуальным акцентом и кратким текстом',
+  },
+  {
+    src: '/images/niches/ru/content-ru-5.webp',
+    alt: 'Пример готового материала для публикации в социальной сети',
+  },
+];
 
 const textToCarouselReadyShowcaseTitles = [
   'Экспертный пост из заметок',
@@ -1389,7 +1403,7 @@ const videoToCarouselDraftPage = {
 const vkPostGeneratorFaq = [
   { question: 'Может ли ИИ написать пост с нуля?', answer: 'Да, достаточно ввести короткую тему или пару ключевых слов, и система сгенерирует полноценный текст.' },
   { question: 'Пишет ли генератор продающие посты?', answer: 'Да, алгоритм знает популярные маркетинговые формулы и умеет мягко подводить читателя к нужному действию.' },
-  { question: 'Генерируется только текст или картинки тоже?', answer: 'GoToFlow генерирует не только текст, но и визуальное сопровождение: картинку или серию слайдов (карусель) с вашим текстом.' },
+  { question: 'Генерируется только текст или картинки тоже?', answer: 'GoToFlow генерирует не только текст, но и визуальное сопровождение: картинку или карточку с вашим текстом.' },
   { question: 'Можно ли задать свой стиль общения (Tone of Voice)?', answer: 'Конечно. Вы можете указать, чтобы пост был написан строго, с юмором, дружелюбно или дерзко.' },
   { question: 'Подходит ли это для личной страницы и паблика?', answer: 'Генератор универсален. Он отлично справляется с контентом как для личных брендов, так и для коммерческих сообществ.' },
   { question: 'Умеет ли ИИ расставлять эмодзи?', answer: 'Да, система автоматически добавит релевантные эмодзи, чтобы текст легко читался, не перегружая его.' },
@@ -1398,7 +1412,7 @@ const vkPostGeneratorFaq = [
   { question: 'Можно ли вставить свой черновик для улучшения?', answer: 'Да, вставьте сырой текст, и система отредактирует его, исправит ошибки и улучшит структуру.' },
   { question: 'Уникален ли генерируемый текст?', answer: 'ИИ каждый раз создает уникальный контент. Вам не нужно переживать о плагиате или снижении охватов из-за неуникального текста.' },
   { question: 'Сколько постов можно сгенерировать за один раз?', answer: 'Вы генерируете посты по одному, чтобы максимально точно настроить параметры каждого конкретного материала.' },
-  { question: 'Какого размера получаются картинки?', answer: 'Вы можете выбрать квадратный формат (1:1), который отлично смотрится в ленте ВК как с мобильного, так и с компьютера.' },
+  { question: 'Какого размера получаются картинки?', answer: 'Готовый визуал адаптирован для публикации во ВКонтакте и хорошо смотрится в ленте как с мобильного, так и с компьютера.' },
   { question: 'Нужно ли мне разбираться в промптах?', answer: 'Нет, интерфейс интуитивно понятен. Вам не нужно быть специалистом по нейросетям, чтобы получить отличный результат.' },
   { question: 'Могу ли я загрузить свой логотип на картинку к посту?', answer: 'Да, в визуальном редакторе можно добавить логотип, поменять шрифты и фирменные цвета.' },
   { question: 'Безопасно ли использовать ИИ для ведения группы ВК?', answer: 'Абсолютно. Алгоритмы ВКонтакте не пессимизируют качественный авторский контент, даже если он был создан с помощью нейросетей.' },
@@ -1406,14 +1420,14 @@ const vkPostGeneratorFaq = [
 
 const telegramPostGeneratorFaq = [
   { question: 'Учитывает ли ИИ специфику Telegram?', answer: 'Да, алгоритм понимает, что в Telegram пользователи читают с экранов смартфонов. Он делает абзацы короткими, добавляет "воздух" и списки.' },
-  { question: 'Пишет ли генератор длинные лонгриды (статьи)?', answer: 'По умолчанию генератор нацелен на стандартный формат поста для канала. Если вам нужна большая статья, лучше использовать формат "Текст в карусель" для выжимки главного.' },
+  { question: 'Пишет ли генератор длинные лонгриды (статьи)?', answer: 'По умолчанию генератор нацелен на стандартный формат поста для канала. Если нужна большая статья, лучше заранее задать желаемый объем и структуру текста.' },
   { question: 'Можно ли скопировать сгенерированный текст с сохранением форматирования?', answer: 'Да, текст генерируется таким образом, что при копировании в мессенджер сохраняются отступы и абзацы.' },
   { question: 'Умеет ли ИИ использовать эмодзи вместо буллитов?', answer: 'Да, система автоматически добавляет релевантные эмодзи для списков и акцентов, чтобы сделать пост более живым.' },
-  { question: 'Создает ли генератор картинки к постам?', answer: 'Да. GoToFlow не только пишет текст, но и генерирует визуальное сопровождение (одиночную карточку или карусель), оформленное в вашем фирменном стиле.' },
+  { question: 'Создает ли генератор картинки к постам?', answer: 'Да. GoToFlow не только пишет текст, но и помогает подготовить визуальное сопровождение, оформленное в вашем фирменном стиле.' },
   { question: 'Подходит ли это для новостных каналов?', answer: 'Отлично подходит. Вы можете закинуть ссылку на новость или сырой факт, и ИИ перепишет это в понятную новостную сводку.' },
   { question: 'А если у меня канал с мемами, ИИ справится?', answer: 'Вы можете задать нейросети юмористический тон (Tone of Voice), и она напишет текст с нужным настроением.' },
   { question: 'Нужно ли платить за каждый сгенерированный пост?', answer: 'Использование генератора входит в подписку GoToFlow. Вы можете создавать контент в рамках вашего тарифа без доплат за каждый пост.' },
-  { question: 'Сохраняет ли система историю сгенерированных постов?', answer: 'На данный момент вы скачиваете готовый результат в виде архива, который всегда остается у вас на устройстве.' },
+  { question: 'Сохраняет ли система историю сгенерированных постов?', answer: 'Готовый текст и визуал можно забрать из результата генерации и сохранить в своем рабочем процессе перед публикацией.' },
   { question: 'Можно ли использовать инструмент с телефона?', answer: 'Да, интерфейс GoToFlow адаптирован для мобильных устройств, поэтому вы можете вести канал прямо со смартфона.' },
   { question: 'Напишет ли ИИ продающий пост для запуска курса?', answer: 'Да, выберите соответствующий шаблон или укажите это в промпте, и система использует продающие формулы копирайтинга.' },
   { question: 'Какая тематика поддерживается?', answer: 'Любая. От криптовалюты и IT до психологии, кулинарии и бьюти-сферы.' },
@@ -1514,9 +1528,9 @@ const buildPostGeneratorDraftPage = ({
   heroEyebrow,
   heroSecondaryLinkLabel: secondaryCtaLabel,
   heroCarouselAssetIds: [
-    'neutral-post-generator-hero-slide-1',
-    'neutral-post-generator-hero-slide-2',
-    'neutral-post-generator-hero-slide-3',
+    'instagram-template-hero-product-case',
+    'instagram-template-hero-expert-post',
+    'instagram-template-hero-template-cover',
   ],
   heroVisualBadge: heroEyebrow,
   heroPromptExample: promptExample,
@@ -1566,10 +1580,10 @@ const buildPostGeneratorDraftPage = ({
     },
     description: productBridge,
     carouselTypes: [
-      { id: 'ai', label: 'AI-визуал', availability: 'available', active: true },
-      { id: 'template', label: 'Готовый сценарий', availability: 'available' },
-      { id: 'seamless', label: 'Серия слайдов', availability: 'available' },
-      { id: 'animated', label: 'Визуальная карточка', availability: 'available' },
+      { id: 'ai', label: 'Тема', availability: 'available', active: true },
+      { id: 'template', label: 'Тон', availability: 'available' },
+      { id: 'seamless', label: 'Текст', availability: 'available' },
+      { id: 'animated', label: 'Визуал', availability: 'available' },
     ],
     stepOverrides: {
       source: {
@@ -1581,16 +1595,16 @@ const buildPostGeneratorDraftPage = ({
         description: workflowSteps[1]?.body,
       },
       textReview: {
-        title: quickAnswerTitle,
-        description: quickAnswerBody,
-      },
-      visualRoute: {
         title: workflowSteps[2]?.title,
         description: workflowSteps[2]?.body,
       },
-      editorResult: {
+      visualRoute: {
         title: workflowSteps[3]?.title,
         description: workflowSteps[3]?.body,
+      },
+      editorResult: {
+        title: workflowSteps[4]?.title,
+        description: workflowSteps[4]?.body,
       },
     },
     mockups: [
@@ -1602,30 +1616,28 @@ const buildPostGeneratorDraftPage = ({
       },
       {
         id: 'text-review',
-        title: workflowSteps[1]?.title,
-        caption: workflowSteps[1]?.body,
+        title: workflowSteps[2]?.title,
+        caption: workflowSteps[2]?.body,
         fallbackVisualType: 'text_review',
       },
       {
         id: 'visual-route',
-        title: workflowSteps[2]?.title,
-        caption: workflowSteps[2]?.body,
+        title: workflowSteps[3]?.title,
+        caption: workflowSteps[3]?.body,
         fallbackVisualType: 'ai_template',
       },
       {
         id: 'editor-result',
-        title: workflowSteps[3]?.title,
-        caption: workflowSteps[3]?.body,
+        title: workflowSteps[4]?.title,
+        caption: workflowSteps[4]?.body,
         resultCarousel: {
           proofType: 'workflow-result',
           title: visualProofTitle,
           label: heroEyebrow,
-          format: '4:5',
-          slideCount: aiCarouselResultSlides.length,
           width: 1122,
           height: 1402,
-          mode: 'Готовый визуал',
-          images: aiCarouselResultSlides,
+          mode: 'Готовый пост',
+          images: postGeneratorProofImages,
         },
         fallbackVisualType: 'editor_result',
       },
@@ -1638,15 +1650,54 @@ const buildPostGeneratorDraftPage = ({
       note: quickAnswerBody,
     },
   },
-  productCapabilities: buildCanonicalProductCapabilities({
+  productCapabilities: {
+    eyebrow: 'Параметры поста',
     heading: {
-      before: 'Какие параметры можно настроить ',
+      before: 'Что можно настроить ',
       accent: `для ${platform}`,
       after: '',
     },
     introCopy: productBridge,
-    highlightedCapabilities: ['topicText', 'aiStructureText', 'templates', 'textEditing', 'cta', 'formats4511916'],
-  }),
+    highlightedCapabilities: ['topicText', 'link', 'aiStructureText', 'textEditing', 'regeneration', 'cta'],
+    groups: [
+      {
+        id: 'post-source',
+        title: 'Исходная идея',
+        body: 'Введите тему, черновик, ссылку на материал, заметки, голосовую мысль или файл с исходной информацией для будущего поста.',
+        capabilityIds: ['topicText', 'link', 'video', 'pdf', 'voice'],
+      },
+      {
+        id: 'post-structure',
+        title: 'Структура текста',
+        body: 'GoToFlow помогает выбрать подачу, выстроить логику публикации, подготовить заголовок, основные абзацы и финальный призыв.',
+        capabilityIds: ['aiStructureText', 'templates'],
+      },
+      {
+        id: 'post-tone',
+        title: 'Тон и промпт',
+        body: 'Можно задать стиль общения, уточнить задачу, добавить контекст аудитории и попросить систему переписать текст в нужной манере.',
+        capabilityIds: ['customPrompt', 'regeneration'],
+      },
+      {
+        id: 'post-visual',
+        title: 'Визуальное сопровождение',
+        body: 'Инструмент помогает подобрать оформление, фон, стиль изображения и персонажа, чтобы пост выглядел цельно рядом с текстом.',
+        capabilityIds: ['aiStyle', 'background', 'character', 'formats4511916'],
+      },
+      {
+        id: 'post-editing',
+        title: 'Редактирование',
+        body: 'Перед публикацией можно поправить текст, заменить формулировки, доработать визуальные элементы и перегенерировать слабые места.',
+        capabilityIds: ['textEditing', 'slideEditing'],
+      },
+      {
+        id: 'post-action',
+        title: 'Призыв к действию',
+        body: 'Добавьте финальный вопрос, приглашение к комментарию, переход по ссылке или другой CTA, который подходит цели публикации.',
+        capabilityIds: ['cta', 'seamlessCarousels', 'animatedCarousels', 'upTo10Slides'],
+      },
+    ],
+  },
   readyCarouselShowcaseIntro: {
     eyebrow: 'Готовые примеры',
     heading: {
@@ -1660,7 +1711,7 @@ const buildPostGeneratorDraftPage = ({
     ...item,
     title: formats[index]?.title || item.title,
     body: formats[index]?.body || item.body,
-    type: heroEyebrow,
+    type: 'Готовый пост',
     audience: platform,
   })),
   readyCarouselShowcaseCta: {
@@ -1680,14 +1731,12 @@ const buildPostGeneratorDraftPage = ({
     title: visualProofTitle,
     description: visualProofDescription,
     label: heroEyebrow,
-    format: '4:5',
-    slideCount: aiCarouselResultSlides.length,
     width: 1122,
     height: 1402,
-    mode: 'Готовый визуал',
+    mode: 'Готовый пост',
     inputLabel: visualProofInputLabel,
     inputCopy: visualProofInputCopy,
-    images: aiCarouselResultSlides,
+    images: postGeneratorProofImages,
   },
   useCasesIntro: {
     eyebrow: 'Сценарии',
@@ -1777,14 +1826,15 @@ const vkPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   ctaLabel: 'Сгенерировать пост',
   secondaryCtaLabel: 'Примеры постов',
   quickAnswerTitle: 'Как работает генератор постов для ВКонтакте?',
-  quickAnswerBody: 'Просто напишите тему или вставьте свои сырые заметки. Наш искусственный интеллект проанализирует контекст, подберет нужный tone-of-voice и напишет готовый пост. Дополнительно система сгенерирует стильную картинку или карусель, чтобы ваш пост собрал максимум охватов в ленте ВК.',
-  productBridge: 'GoToFlow выступает как единое окно для создания контента. Алгоритм не просто "пишет текст" – он собирает полноценную единицу контента: связный текст, разбитый на читаемые абзацы, плюс сгенерированный визуальный ряд (одиночная картинка или серия слайдов), полностью готовый к скачиванию в ZIP-архиве и публикации во ВКонтакте.',
-  workflowTitle: 'Как создать пост для ВК за 4 шага',
+  quickAnswerBody: 'Просто напишите тему или вставьте свои сырые заметки. Наш искусственный интеллект проанализирует контекст, подберет нужный tone-of-voice и напишет готовый пост. Дополнительно система подготовит визуальное сопровождение, чтобы публикация выглядела цельно в ленте ВК.',
+  productBridge: 'GoToFlow выступает как единое окно для создания контента. Алгоритм не просто пишет текст: он помогает собрать полноценный пост для ВКонтакте с понятным заголовком, читаемыми абзацами, подходящим тоном, визуальным сопровождением и призывом к действию.',
+  workflowTitle: 'Как создать пост для ВК за 5 шагов',
   workflowSteps: [
-    { title: 'Ввод темы', body: 'Опишите идею своими словами или вставьте черновик текста.' },
-    { title: 'AI-генерация текста', body: 'ИИ напишет структурированный пост с заголовком и призывом к действию.' },
-    { title: 'Подбор визуала', body: 'Система автоматически сверстает картинку или карусель под ваш текст.' },
-    { title: 'Скачивание и публикация', body: 'Скачайте готовые материалы архивом и опубликуйте на своей стене или в сообществе ВК.' },
+    { title: 'Тема', body: 'Опишите идею своими словами или вставьте черновик текста.' },
+    { title: 'ИИ создает текст', body: 'Система пишет структурированный пост с заголовком, абзацами и призывом к действию.' },
+    { title: 'Редактирование', body: 'Проверьте смысл, тон, формулировки и при необходимости перегенерируйте слабые места.' },
+    { title: 'Подбор визуала', body: 'GoToFlow помогает подобрать изображение или карточку, которая поддерживает смысл публикации.' },
+    { title: 'Готовый пост', body: 'Скопируйте текст, заберите визуал и опубликуйте материал на стене или в сообществе ВК.' },
   ],
   formatsTitle: 'Что умеет генерировать ИИ',
   formats: [
@@ -1798,7 +1848,7 @@ const vkPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   visualProofTitle: 'От идеи к готовому посту в ленте',
   visualProofInputLabel: 'Подсказка',
   visualProofInputCopy: 'Расскажи про наш новый курс по дизайну',
-  visualProofDescription: 'Слева — простая текстовая подсказка в поле ввода, справа — готовый результат из workflowResults.aiCarouselFiveSlides, имитирующий вид стильного контента во ВКонтакте.',
+  visualProofDescription: 'Слева — простая текстовая подсказка в поле ввода, справа — готовый пост для ВКонтакте: заголовок, читаемый текст, визуальный акцент и понятный CTA.',
   finalCtaTitle: 'Напишите свой лучший пост прямо сейчас',
   finalCtaDescription: 'Хватит ломать голову над формулировками и дизайном. Начните собирать лайки и комментарии уже сегодня.',
   finalCtaLabel: 'Создать пост для ВКонтакте',
@@ -1806,8 +1856,8 @@ const vkPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   relatedHeading: 'Другие инструменты',
   relatedCards: [
     { href: '/ru/telegram-post-generator', title: 'ИИ генератор постов для Telegram', type: 'seo_page' },
-    { href: '/ru/use-cases/tekst-v-karusel', title: 'Текст в карусель', type: 'seo_page' },
-    { href: '/ru/ai-generator-karuselej', title: 'AI-генератор каруселей', type: 'product_tool' },
+    { href: '/ru/generator-kontenta', title: 'AI-генератор контента', type: 'product_tool' },
+    { href: '/ru/generator-postov-instagram', title: 'Генератор постов Instagram', type: 'product_tool' },
   ],
   primaryKeyword: 'генератор постов вконтакте',
   secondaryKeywords: ['написать пост вк нейросетью', 'ИИ генератор постов для ВКонтакте', 'создать пост ВК онлайн'],
@@ -1829,14 +1879,15 @@ const telegramPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   ctaLabel: 'Создать пост для Telegram',
   secondaryCtaLabel: 'Посмотреть примеры',
   quickAnswerTitle: 'Как написать пост для Telegram-канала с ИИ?',
-  quickAnswerBody: 'Введите свою идею, наброски или тему в поле ввода. Искусственный интеллект изучит контекст и напишет пост, идеально подходящий под формат Telegram: с короткими абзацами, уместными эмодзи и четкой структурой. В дополнение система создаст графическую карточку, чтобы ваш пост не затерялся в мессенджере.',
-  productBridge: 'GoToFlow решает задачу комплексной подготовки поста. Это не просто чат-бот для текста. Система выдает готовый продукт: проработанный текстовый блок, сверстанный по законам Telegram (воздух между абзацами, списки), плюс сгенерированную картинку или карточки-карусели. Всё это скачивается одним архивом, готовым к отправке в канал.',
-  workflowTitle: 'Генерация поста за 4 простых шага',
+  quickAnswerBody: 'Введите свою идею, наброски или тему в поле ввода. Искусственный интеллект изучит контекст и напишет пост, подходящий под формат Telegram: с короткими абзацами, уместными эмодзи, четкой структурой и визуальной карточкой для ленты канала.',
+  productBridge: 'GoToFlow решает задачу комплексной подготовки поста. Это не просто чат-бот для текста: система помогает собрать проработанный текстовый блок для Telegram с воздухом между абзацами, списками, акцентами, визуальным сопровождением и финальным CTA.',
+  workflowTitle: 'Генерация поста за 5 простых шагов',
   workflowSteps: [
-    { title: 'Задайте тему', body: 'Опишите, о чем хотите рассказать, или вставьте ссылку на источник.' },
-    { title: 'AI-написание текста', body: 'Нейросеть сгенерирует текст нужного объема с правильным форматированием.' },
-    { title: 'Настройка визуала', body: 'Выберите дизайн картинки, которая будет сопровождать ваш пост.' },
-    { title: 'Скачивание', body: 'Скачайте готовый архив, скопируйте текст и отправьте в свой канал.' },
+    { title: 'Тема', body: 'Опишите, о чем хотите рассказать, или вставьте ссылку на источник.' },
+    { title: 'ИИ создает текст', body: 'Нейросеть готовит текст нужного объема с короткими абзацами и понятным форматированием.' },
+    { title: 'Редактирование', body: 'Проверьте акценты, тон, эмодзи, списки и при необходимости уточните запрос.' },
+    { title: 'Подбор визуала', body: 'Выберите изображение или карточку, которая будет сопровождать пост в канале.' },
+    { title: 'Готовый пост', body: 'Скопируйте текст, заберите визуал и отправьте готовый материал в свой Telegram-канал.' },
   ],
   formatsTitle: 'Какие форматы постов можно создать',
   formats: [
@@ -1850,7 +1901,7 @@ const telegramPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   visualProofTitle: 'Идеальный формат для мессенджера',
   visualProofInputLabel: 'Хаотичные заметки',
   visualProofInputCopy: 'Идея, наброски, факты и короткие тезисы для канала',
-  visualProofDescription: 'Слева — хаотичные заметки, справа — результат: красивый текст с правильными отступами и эмодзи + стильная карточка из workflowResults.aiCarouselFiveSlides.',
+  visualProofDescription: 'Слева — хаотичные заметки, справа — готовый Telegram-пост: короткие абзацы, акценты, эмодзи, визуальная карточка и финальный CTA.',
   finalCtaTitle: 'Порадуйте подписчиков новым контентом',
   finalCtaDescription: 'Перестаньте откладывать ведение канала из-за нехватки времени. Создайте крутой пост прямо сейчас.',
   finalCtaLabel: 'Сгенерировать пост в Telegram',
@@ -1858,8 +1909,8 @@ const telegramPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   relatedHeading: 'Связанные инструменты',
   relatedCards: [
     { href: '/ru/vk-post-generator', title: 'ИИ генератор постов для ВКонтакте', type: 'seo_page' },
-    { href: '/ru/use-cases/tekst-v-karusel', title: 'Текст в карусель', type: 'seo_page' },
-    { href: '/ru/ai-generator-karuselej', title: 'AI-генератор каруселей', type: 'product_tool' },
+    { href: '/ru/generator-kontenta', title: 'AI-генератор контента', type: 'product_tool' },
+    { href: '/ru/generator-postov-instagram', title: 'Генератор постов Instagram', type: 'product_tool' },
   ],
   primaryKeyword: 'генератор постов telegram',
   secondaryKeywords: ['написать пост в телеграм канал', 'нейросеть для телеграм постов', 'ИИ генератор постов для Telegram'],
