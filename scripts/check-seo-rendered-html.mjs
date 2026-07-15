@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from 'fs';
 import path from 'path';
 import puppeteer from 'puppeteer';
-import { getSeoPageRecordByPath } from '../src/content/seoPages/index.js';
+import { getSeoPageRecordByPath, getSeoPagesForPrerender } from '../src/content/seoPages/index.js';
 import { validateRenderedSeoProductProofDom } from '../src/content/seoPages/blueprints/exactSeoPageBlueprint.js';
 import {
   SEO_ACCESSIBILITY_POLICY,
@@ -13,10 +13,17 @@ process.argv.slice(2).forEach((arg, index, list) => {
   if (arg.startsWith('--')) args.set(arg.replace(/^--/, ''), list[index + 1] || true);
 });
 
-const targetPath = args.get('path') || '/ru/templates/instagram-carousel';
+const explicitPath = args.get('path');
+const explicitPaths = args.get('paths')
+  ? String(args.get('paths')).split(',').map((item) => item.trim()).filter(Boolean)
+  : null;
 const url = args.get('url');
 const dist = args.get('dist');
-const pageRecord = getSeoPageRecordByPath(targetPath);
+const targetPaths = explicitPaths
+  || (explicitPath ? [explicitPath] : null)
+  || (url ? [new URL(url).pathname] : getSeoPagesForPrerender().map((page) => page.path));
+let targetPath = targetPaths[0];
+let pageRecord = getSeoPageRecordByPath(targetPath);
 const errors = [];
 const warnings = [];
 
@@ -333,8 +340,18 @@ const validateRuntime = async () => {
   }
 };
 
-if (dist) {
-  validateHtml(getHtmlFromDist(), `dist ${dist}`);
+for (const path of targetPaths) {
+  targetPath = path;
+  pageRecord = getSeoPageRecordByPath(targetPath);
+
+  if (!pageRecord) {
+    errors.push(`No SEO page registry record found for ${targetPath}.`);
+    continue;
+  }
+
+  if (dist) {
+    validateHtml(getHtmlFromDist(), `dist ${dist} ${targetPath}`);
+  }
 }
 await validateRuntime();
 
@@ -343,7 +360,7 @@ if (!dist && !url) {
 }
 
 console.log('SEO rendered HTML gate');
-console.log(`- path: ${targetPath}`);
+console.log(`- paths: ${targetPaths.join(', ')}`);
 console.log(`- dist checked: ${dist || 'not provided'}`);
 console.log(`- runtime checked: ${url || 'not provided'}`);
 console.log(`- warnings: ${warnings.length}`);
