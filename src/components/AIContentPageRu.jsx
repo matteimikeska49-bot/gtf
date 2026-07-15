@@ -9,9 +9,9 @@ import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
 import { TestimonialsSection } from './TestimonialsSection';
 import { useIsMobile } from '../hooks/useIsMobile';
-import { ProductRelatedResources } from './ProductRelatedResources';
 
 const CTA_URL = 'https://app.gotoflow.io';
+const getCurrentPath = () => (typeof window !== 'undefined' ? window.location.pathname : '');
 
 /* ── SEO Head (RU) ── */
 export const SEOHeadRu = () => {
@@ -147,6 +147,56 @@ export const CarouselShowcaseRu = () => (
       </div>
     </div>
     <style>{`@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
+  </section>
+);
+
+const contentFormats = [
+  { title: 'Карусели', text: 'Экспертные карусели с текстом и дизайном.' },
+  { title: 'Посты', text: 'Продающие и вовлекающие посты с сильными хуками.' },
+  { title: 'Сценарии Reels/Shorts', text: 'Раскадровка и текст для коротких видео.' },
+  { title: 'B2B-контент', text: 'Профессиональные инсайты для LinkedIn.' },
+  { title: 'Экспертные статьи', text: 'Структурированные лонгриды и гайды.' },
+  { title: 'Рекламные креативы', text: 'Тексты для таргетированной рекламы.' },
+];
+
+const ContentFormatsRu = () => (
+  getCurrentPath() === '/ru/ii-generator-kontenta' ? <section className="py-24 md:py-32 px-6 relative z-10 w-full bg-[#050505]">
+    <div className="max-w-6xl mx-auto">
+      <div className="text-center mb-14">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 text-balance">Какой контент создает нейросеть</h2>
+        <p className="text-base md:text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed font-medium text-balance">GoToFlow поддерживает ключевые форматы для Instagram, LinkedIn и других платформ. Визуальные карусели можно скачать в PNG или PDF, а текстовые форматы скопировать в буфер обмена.</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {contentFormats.map((format) => (
+          <div key={format.title} className="group relative bg-white/[0.03] border border-white/[0.07] backdrop-blur-2xl rounded-2xl p-7 md:p-8 overflow-hidden transition-[transform,background-color,border-color] duration-500 ease-out hover:-translate-y-1.5 hover:bg-white/[0.06] hover:border-white/[0.14] transform-gpu">
+            <h3 className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-3 tracking-tight leading-snug relative z-10">{format.title}</h3>
+            <p className="text-zinc-400 leading-relaxed text-[0.95rem] relative z-10 transition-colors duration-300 group-hover:text-zinc-300">{format.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section> : null
+);
+
+const NarrowAiGeneratorsRu = () => (
+  <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
+    <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
+      <h2 className="text-white font-medium mb-4 text-base md:text-lg">{getCurrentPath() === '/ru/ii-generator-kontenta' ? 'Узкие AI-генераторы' : 'Другие инструменты:'}</h2>
+      <ul className="space-y-3 text-sm md:text-base">
+        {getCurrentPath() === '/ru/ii-generator-kontenta' ? (
+          <>
+        <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ii-generator-karuseley" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор каруселей с ИИ</Link></li>
+        <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ii-generator-postov-dlya-instagram" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор постов Instagram</Link></li>
+        <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ii-generator-postov-dlya-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор постов LinkedIn</Link></li>
+          </>
+        ) : (
+          <>
+        <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ai-generator-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор каруселей</Link></li>
+        <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-karuselej-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Карусели для LinkedIn</Link></li>
+          </>
+        )}
+      </ul>
+    </div>
   </section>
 );
 
@@ -503,20 +553,13 @@ export const AIContentPageRu = () => (
     <Header />
     <CarouselHeroRu />
     <CarouselShowcaseRu />
+    <ContentFormatsRu />
     <CarouselProblemRu />
     <CarouselComparisonRu />
     <CarouselHowItWorksRu />
     <CarouselDifferentiationRu />
     <CarouselSEOBlockRu />
-    <ProductRelatedResources blocks={[
-      {
-        title: "Другие инструменты:",
-        links: [
-          { url: "/ru/ai-generator-karuselej", label: "Генератор каруселей" },
-          { url: "/ru/generator-karuselej-linkedin", label: "Карусели для LinkedIn" }
-        ]
-      }
-    ]} />
+    <NarrowAiGeneratorsRu />
     <TestimonialsSection />
     <CarouselFAQRu />
     <CarouselBottomCTARu />

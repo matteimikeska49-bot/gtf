@@ -15,6 +15,7 @@ import { useIsMobile } from '../hooks/useIsMobile';
 
 
 const CTA_URL = 'https://app.gotoflow.io';
+const getCurrentPath = () => (typeof window !== 'undefined' ? window.location.pathname : '');
 
 /* ── SEO Head (RU) ── */
 export const SEOHeadRu = () => {
@@ -151,6 +152,25 @@ export const CarouselShowcaseRu = () => (
     </div>
     <style>{`@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
   </section>
+);
+
+const postFormats = ['Экспертный пост', 'Продающий пост', 'Анонс', 'История', 'Подборка', 'Вовлекающий пост'];
+
+const PostFormatsRu = () => (
+  getCurrentPath() === '/ru/ii-generator-postov-dlya-instagram' ? <section className="py-24 md:py-32 px-6 relative z-10 w-full bg-[#050505]">
+    <div className="max-w-6xl mx-auto">
+      <div className="text-center mb-14">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 text-balance">6 форматов постов, которые собирает ИИ</h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {postFormats.map((format) => (
+          <div key={format} className="group relative bg-white/[0.03] border border-white/[0.07] backdrop-blur-2xl rounded-2xl p-7 md:p-8 overflow-hidden transition-[transform,background-color,border-color] duration-500 ease-out hover:-translate-y-1.5 hover:bg-white/[0.06] hover:border-white/[0.14] transform-gpu">
+            <h3 className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 tracking-tight leading-snug relative z-10">{format}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section> : null
 );
 
 /* ── Problem (RU) ── */
@@ -415,12 +435,17 @@ export const CarouselSEOBlockRu = () => (
 );
 
 /* ── FAQ (RU) ── */
-const faqItems = [
+const baseFaqItems = [
   { q: 'Что такое генератор постов?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания каруселей. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
   { q: 'Можно ли создать пост с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram* и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу пост сохраняли и репостили.' },
   { q: 'Где найти идеи для каруселей?', a: <>Если вам нужно вдохновение, изучите наши <a href="/ru/blog/shablony-karuseley-v-instagram" className="text-pink-400 hover:underline">шаблоны каруселей</a> или <a href="/ru/blog/prompty-dlya-karuseley-v-instagram" className="text-pink-400 hover:underline">промпты для нейросетей</a>.</> },
   { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
   { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva — ручной дизайн-редактор. GoToFlow — workflow для контента: идея, структура, текст, визуальная подача, готовый результат и CTA.' },
+];
+
+const instagramPostFaqAdditions = [
+  { q: 'Сохраняет ли ИИ абзацы и пробелы для Instagram?', a: 'Да, сгенерированный текст уже отформатирован с нужными отступами и эмодзи. Вам не нужен "секретный пробел".' },
+  { q: 'Пишет ли ИИ хештеги?', a: 'Да, генератор автоматически подбирает релевантные и среднечастотные хештеги для лучшего органического охвата.' },
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
@@ -438,6 +463,9 @@ const FAQItem = ({ item, isOpen, onClick }) => (
 export const CarouselFAQRu = () => {
   const [openIdx, setOpenIdx] = useState(null);
   const isMobile = useIsMobile();
+  const faqItems = getCurrentPath() === '/ru/ii-generator-postov-dlya-instagram'
+    ? [...baseFaqItems, ...instagramPostFaqAdditions]
+    : baseFaqItems;
   return (
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
       <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
@@ -504,6 +532,7 @@ export const InstagramPostPageRu = () => (
     <Header />
     <CarouselHeroRu />
     <CarouselShowcaseRu />
+    <PostFormatsRu />
     <CarouselProblemRu />
     <CarouselComparisonRu />
     <CarouselHowItWorksRu />
@@ -511,10 +540,19 @@ export const InstagramPostPageRu = () => (
     <CarouselSEOBlockRu />
     <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
       <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
-        <h3 className="text-white font-medium mb-4 text-base md:text-lg">Расширьте возможности контента:</h3>
+        <h2 className="text-white font-medium mb-4 text-base md:text-lg">{getCurrentPath() === '/ru/ii-generator-postov-dlya-instagram' ? 'Больше инструментов' : 'Расширьте возможности контента:'}</h2>
         <ul className="space-y-3 text-sm md:text-base">
+          {getCurrentPath() === '/ru/ii-generator-postov-dlya-instagram' ? (
+            <>
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-karuselej-instagram" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор каруселей Instagram</Link></li>
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ii-generator-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">AI Генератор контента</Link></li>
+            </>
+          ) : (
+            <>
             <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ai-generator-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Карусели</Link></li>
             <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор контента</Link></li>
+            </>
+          )}
         </ul>
       </div>
     </section>

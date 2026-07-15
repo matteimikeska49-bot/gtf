@@ -9,7 +9,6 @@ import { CookieBanner } from './CookieBanner';
 import { TestimonialsSection } from './TestimonialsSection';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '../hooks/useIsMobile';
-import { ProductRelatedResources } from './ProductRelatedResources';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -139,6 +138,36 @@ export const LICarouselShowcaseRu = () => (
       </div>
     </div>
     <style>{`@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
+  </section>
+);
+
+const linkedInFormats = ['Экспертный разбор', 'B2B-кейс', 'Профессиональная инструкция', 'Отраслевой инсайт', 'Разбор ошибки', 'Продуктовый документ'];
+
+const LinkedInFormatsRu = () => (
+  <section className="py-24 md:py-32 px-6 relative z-10 w-full bg-[#050505]">
+    <div className="max-w-6xl mx-auto">
+      <div className="text-center mb-14">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 text-balance">B2B форматы для LinkedIn</h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {linkedInFormats.map((format) => (
+          <div key={format} className="group relative bg-white/[0.03] border border-white/[0.07] backdrop-blur-2xl rounded-2xl p-7 md:p-8 overflow-hidden transition-[transform,background-color,border-color] duration-500 ease-out hover:-translate-y-1.5 hover:bg-white/[0.06] hover:border-white/[0.14] transform-gpu">
+            <h3 className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 tracking-tight leading-snug relative z-10">{format}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const LinkedInRelatedLinksRu = () => (
+  <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
+    <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
+      <h2 className="text-white font-medium mb-4 text-base md:text-lg">Больше инструментов</h2>
+      <ul className="space-y-3 text-sm md:text-base">
+        <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ii-generator-postov-dlya-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор постов LinkedIn</Link></li>
+      </ul>
+    </div>
   </section>
 );
 
@@ -411,6 +440,9 @@ const faqItems = [
   { q: 'Можно ли создать карусель с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для LinkedIn и Instagram. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу карусель сохраняли и репостили.' },
   { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
   { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva — ручной дизайн-редактор. GoToFlow — end-to-end workflow для каруселей: идея, сценарий, структура, текст, визуальная подача, слайды и CTA.' }
+  ,
+  { q: 'В каком формате можно скачать карусель для LinkedIn?', a: 'Готовую карусель можно скачать отдельными слайдами в PNG или выгрузить как многостраничный PDF. Перед скачиванием можно отредактировать текст, структуру и дизайн слайдов.' },
+  { q: 'Подходит ли ИИ для делового tone of voice?', a: 'Да, для LinkedIn генератор использует более сдержанный, профессиональный стиль текста, без излишка эмодзи.' }
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
@@ -502,22 +534,9 @@ export const LinkedInCarouselPageRu = () => (
     <LICarouselHowItWorksRu />
     <LICarouselDifferentiationRu />
     <LICarouselShowcaseRu />
+    <LinkedInFormatsRu />
     <LICarouselSEOBlockRu />
-    <ProductRelatedResources blocks={[
-      {
-        title: "Полезные материалы:",
-        links: [
-          { url: "/ru/blog/idei-karuselej-linkedin", label: "Идеи для каруселей в LinkedIn" }
-        ]
-      },
-      {
-        title: "Другие инструменты:",
-        links: [
-          { url: "/ru/generator-kontenta", label: "AI Генератор контента" },
-          { url: "/ru/ai-generator-karuselej", label: "Карусели для Instagram" }
-        ]
-      }
-    ]} />
+    <LinkedInRelatedLinksRu />
     <TestimonialsSection />
     <LICarouselFAQRu />
     <LICarouselBottomCTARu />
