@@ -7,7 +7,7 @@
 ---
 
 ## SEO Meta
-- **Title:** ИИ генератор постов для Telegram: Написать пост в канал | GoToFlow
+- **Title:** ИИ-генератор постов для Telegram онлайн — GoToFlow
 - **Meta Description:** Создавайте вовлекающие посты для Telegram-канала с помощью ИИ. Генератор пишет тексты с нужным тоном, добавляет правильную разметку, эмодзи и создает визуал.
 
 ---
@@ -18,10 +18,7 @@
 - **Description:** Ведение Telegram-канала отнимает много времени? Доверьте рутину ИИ. GoToFlow сгенерирует идеальный пост на любую тему, добавит нужные смыслы, расставит акценты и подготовит стильное изображение для привлечения внимания в ленте.
 - **Primary CTA:** Создать пост для Telegram
 - **Secondary CTA:** Посмотреть примеры
-- **Изображения (Approved Hero Assets):**
-  - Слайд 1 (Слева): `instagram-template-hero-product-case`
-  - Слайд 2 (По центру): `instagram-template-hero-expert-post`
-  - Слайд 3 (Справа): `instagram-template-hero-template-cover`
+- **Изображения (Approved Hero Assets):** Использовать существующий нейтральный Hero visual pattern RU post-generator family (сохранить layout, размеры, spacing и анимации, page-specific различие обеспечивается через copy). Не использовать Instagram-specific carousel images.
 
 ---
 

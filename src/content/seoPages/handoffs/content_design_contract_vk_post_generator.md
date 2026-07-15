@@ -7,7 +7,7 @@
 ---
 
 ## SEO Meta
-- **Title:** ИИ генератор постов для ВКонтакте (ВК): Создать пост онлайн | GoToFlow
+- **Title:** ИИ-генератор постов для ВКонтакте онлайн — GoToFlow
 - **Meta Description:** Сгенерируйте вовлекающий пост для ВКонтакте с помощью ИИ. Создавайте продающие, экспертные посты и новости с картинками за пару кликов.
 
 ---
@@ -18,10 +18,7 @@
 - **Description:** Забудьте про страх чистого листа. Опишите свою идею или дайте ссылку на исходник, и GoToFlow сгенерирует идеальный пост для ВКонтакте с цепляющим заголовком, правильной структурой и готовым визуалом.
 - **Primary CTA:** Сгенерировать пост
 - **Secondary CTA:** Примеры постов
-- **Изображения (Approved Hero Assets):**
-  - Слайд 1 (Слева): `instagram-template-hero-product-case`
-  - Слайд 2 (По центру): `instagram-template-hero-expert-post`
-  - Слайд 3 (Справа): `instagram-template-hero-template-cover`
+- **Изображения (Approved Hero Assets):** Использовать существующий нейтральный Hero visual pattern RU post-generator family (сохранить layout, размеры, spacing и анимации, page-specific различие обеспечивается через copy). Не использовать Instagram-specific carousel images.
 
 ---
 
