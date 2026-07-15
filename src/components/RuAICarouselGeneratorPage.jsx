@@ -45,8 +45,8 @@ const legacyFormatsPages = {
     id: 'ru-generator-karuselej-instagram',
     path: '/ru/generator-karuselej-instagram',
     templateCategoriesIntro: {
-      eyebrow: 'ФОРМАТЫ INSTAGRAM',
-      heading: { before: 'Какие карусели можно создать ', accent: 'для Instagram', after: '' },
+      eyebrow: 'ФОРМАТЫ КАРУСЕЛЕЙ',
+      heading: { before: 'Какие карусели можно создать ', accent: 'для Instagram, LinkedIn и соцсетей', after: '' },
     },
     templateCategories: buildFormatCards([
       'Автоматически',
@@ -57,7 +57,7 @@ const legacyFormatsPages = {
       'Любая идея',
     ]),
     categoryCta: {
-      label: 'Создать карусель Instagram',
+      label: 'Создать карусель с ИИ',
       href: CTA_URL,
     },
   },
