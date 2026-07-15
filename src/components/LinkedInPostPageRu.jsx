@@ -10,12 +10,34 @@ import { MainLayout } from './MainLayout';
 import { CookieBanner } from './CookieBanner';
 import { TestimonialsSection } from './TestimonialsSection';
 import { useIsMobile } from '../hooks/useIsMobile';
+import { SeoPageTemplateCategories } from './seo/template-page/SeoPageTemplateCategories';
 
 
 
 
 
 const CTA_URL = 'https://app.gotoflow.io';
+
+const linkedInPostFormatsPage = {
+  id: 'ru-ii-generator-postov-dlya-linkedin',
+  path: '/ru/ii-generator-postov-dlya-linkedin',
+  templateCategoriesIntro: {
+    eyebrow: 'Поддерживаемые форматы',
+    heading: 'Какие посты можно создать для LinkedIn',
+  },
+  templateCategories: [
+    'Экспертный пост',
+    'Карьерный инсайт',
+    'B2B-кейс',
+    'Профессиональная история',
+    'Отраслевой комментарий',
+    'Любая идея',
+  ].map((title) => ({ title, body: '' })),
+  categoryCta: {
+    label: 'Создать пост LinkedIn',
+    href: CTA_URL,
+  },
+};
 
 /* ── SEO Head (RU) ── */
 export const SEOHeadRu = () => {
@@ -142,25 +164,6 @@ export const CarouselShowcaseRu = () => (
       </div>
     </div>
     <style>{`@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
-  </section>
-);
-
-const linkedInPostFormats = ['Экспертный пост', 'Карьерный инсайт', 'B2B-кейс', 'Профессиональная история', 'Отраслевой комментарий', 'Продуктовый анонс'];
-
-const LinkedInPostFormatsRu = () => (
-  <section className="py-24 md:py-32 px-6 relative z-10 w-full bg-[#050505]">
-    <div className="max-w-6xl mx-auto">
-      <div className="text-center mb-14">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 text-balance">Виды постов для LinkedIn</h2>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-        {linkedInPostFormats.map((format) => (
-          <div key={format} className="group relative bg-white/[0.03] border border-white/[0.07] backdrop-blur-2xl rounded-2xl p-7 md:p-8 overflow-hidden transition-[transform,background-color,border-color] duration-500 ease-out hover:-translate-y-1.5 hover:bg-white/[0.06] hover:border-white/[0.14] transform-gpu">
-            <h3 className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 tracking-tight leading-snug relative z-10">{format}</h3>
-          </div>
-        ))}
-      </div>
-    </div>
   </section>
 );
 
@@ -515,7 +518,7 @@ export const LinkedInPostPageRu = () => (
     <Header />
     <CarouselHeroRu />
     <CarouselShowcaseRu />
-    <LinkedInPostFormatsRu />
+    <SeoPageTemplateCategories page={linkedInPostFormatsPage} />
     <CarouselProblemRu />
     <CarouselComparisonRu />
     <CarouselHowItWorksRu />
@@ -523,9 +526,10 @@ export const LinkedInPostPageRu = () => (
     <CarouselSEOBlockRu />
     <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
       <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
-        <h2 className="text-white font-medium mb-4 text-base md:text-lg">Больше инструментов</h2>
+        <h3 className="text-white font-medium mb-4 text-base md:text-lg">Расширьте возможности контента:</h3>
         <ul className="space-y-3 text-sm md:text-base">
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-karuselej-linkedin" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор каруселей LinkedIn</Link></li>
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ai-generator-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Карусели</Link></li>
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор контента</Link></li>
         </ul>
       </div>
     </section>

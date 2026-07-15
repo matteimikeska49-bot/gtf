@@ -14,8 +14,58 @@ import { TestimonialsSection } from './TestimonialsSection';
 import { ProductRelatedResources } from './ProductRelatedResources';
 import { getAppUrlWithRef } from '../utils/url';
 import { useIsMobile } from '../hooks/useIsMobile';
+import { SeoPageTemplateCategories } from './seo/template-page/SeoPageTemplateCategories';
 
 const CTA_URL = 'https://app.gotoflow.io';
+
+const buildFormatCards = (titles) => titles.map((title) => ({ title, body: '' }));
+
+const legacyFormatsPages = {
+  '/ru/ii-generator-karuseley': {
+    id: 'ru-ii-generator-karuseley',
+    path: '/ru/ii-generator-karuseley',
+    templateCategoriesIntro: {
+      eyebrow: 'Поддерживаемые форматы',
+      heading: 'Какие карусели можно создать с помощью ИИ',
+    },
+    templateCategories: buildFormatCards([
+      'Автоматически',
+      'Строго по готовому сценарию',
+      'Экспертный разбор',
+      'Чек-лист',
+      'Проблема и решение',
+      'Любая идея',
+    ]),
+    categoryCta: {
+      label: 'Создать карусель с ИИ',
+      href: CTA_URL,
+    },
+  },
+  '/ru/generator-karuselej-instagram': {
+    id: 'ru-generator-karuselej-instagram',
+    path: '/ru/generator-karuselej-instagram',
+    templateCategoriesIntro: {
+      eyebrow: 'Поддерживаемые форматы',
+      heading: 'Какие карусели можно создать для Instagram',
+    },
+    templateCategories: buildFormatCards([
+      'Автоматически',
+      'Строго по готовому сценарию',
+      'Экспертный чек-лист',
+      'Проблема и решение',
+      'Разбор ошибки',
+      'Любая идея',
+    ]),
+    categoryCta: {
+      label: 'Создать карусель Instagram',
+      href: CTA_URL,
+    },
+  },
+};
+
+const getLegacyFormatsPage = () => (
+  typeof window === 'undefined' ? null : legacyFormatsPages[window.location.pathname] || null
+);
 
 /* ── SEO Head ── */
 const RuSEOHead = () => {
@@ -466,97 +516,6 @@ const RuCarouselSEOBlock = () => (
   </section>
 );
 
-const getCurrentPath = () => (typeof window !== 'undefined' ? window.location.pathname : '');
-
-const aiCarouselFormats = [
-  { title: 'AI-текст на основе видео', text: 'ИИ анализирует ссылку на видео и выдает готовую раскадровку.' },
-  { title: 'Раскадровка длинных статей', text: 'Превращение лонгридов в емкие слайды для соцсетей.' },
-  { title: 'AI-персонажи для бренда', text: 'Добавление уникального визуального стиля через нейросеть.' },
-  { title: 'Образовательная подборка', text: 'Структурированный обучающий контент с ИИ-пояснениями.' },
-  { title: 'Сторителлинг с AI-визуалом', text: 'ИИ помогает выстроить драматургию от первого до последнего слайда.' },
-  { title: 'Анонс вебинара', text: 'Цепляющие слайды для генерации лидов.' },
-];
-
-const instagramCarouselFormats = [
-  { title: 'Экспертный разбор' },
-  { title: 'Чек-лист' },
-  { title: 'До/После' },
-  { title: 'История бренда' },
-  { title: 'Подборка инструментов' },
-  { title: 'Пошаговая инструкция' },
-];
-
-const instagramFaqItems = [
-  { q: 'Поддерживает ли генератор форматы 4:5 и 1:1 для Instagram?', a: 'Да, вы можете выбрать идеальное соотношение сторон для ленты Instagram: квадратное (1:1) или портретное (4:5).' },
-  { q: 'Сколько слайдов можно создать?', a: 'Генератор поддерживает до 10 слайдов в одной карусели — это лимит Instagram. Мы рекомендуем использовать 5-8 слайдов для лучшего удержания.' },
-  { q: 'Можно ли использовать свои шрифты?', a: 'В текущей версии используются заранее подобранные конверсионные шрифтовые пары, чтобы карусель гарантированно хорошо читалась на мобильных экранах.' },
-  { q: 'Готовая карусель будет бесшовной?', a: 'Да, генератор умеет создавать эффект бесшовного перехода между слайдами.' },
-  { q: 'Как скачать готовую карусель?', a: 'После редактирования готовые слайды можно скачать в PNG или выгрузить карусель в PDF. GoToFlow позволяет выбрать формат 4:5, 1:1 или 9:16 и подготовить до 10 слайдов для дальнейшей публикации.' },
-  { q: 'Обязательно ли писать промпт самому?', a: 'Нет, достаточно вставить ссылку на статью или просто написать тему (например, "Ошибки таргета"), и ИИ сам создаст правильную структуру для Instagram.' },
-];
-
-const RuCarouselFormats = () => {
-  const isInstagram = getCurrentPath() === '/ru/generator-karuselej-instagram';
-  const formats = isInstagram ? instagramCarouselFormats : aiCarouselFormats;
-  const title = isInstagram ? 'Идеи и форматы Инстаграм-каруселей' : 'Популярные форматы каруселей, которые создает ИИ';
-  const intro = isInstagram ? null : 'Нейросеть не просто пишет текст, она понимает контентные форматы и подстраивает структуру под вашу задачу. После генерации вы можете отредактировать результат и скачать готовую карусель в PNG или многостраничном PDF.';
-
-  if (getCurrentPath() === '/ru/ai-generator-karuselej') return null;
-
-  return (
-    <section className="py-24 md:py-32 px-6 relative z-10 w-full bg-[#050505]">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 text-balance">{title}</h2>
-          {intro && <p className="text-base md:text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed font-medium text-balance">{intro}</p>}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {formats.map((format) => (
-            <div key={format.title} className="group relative bg-white/[0.03] border border-white/[0.07] backdrop-blur-2xl rounded-2xl p-7 md:p-8 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-1.5 hover:bg-white/[0.06] hover:border-white/[0.14]">
-              <h3 className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-3 tracking-tight leading-snug relative z-10">{format.title}</h3>
-              {format.text && <p className="text-zinc-400 leading-relaxed text-[0.95rem] relative z-10 transition-colors duration-300 group-hover:text-zinc-300">{format.text}</p>}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const RuCarouselRelatedLinks = () => {
-  const isInstagram = getCurrentPath() === '/ru/generator-karuselej-instagram';
-  const isAiCarousel = getCurrentPath() === '/ru/ii-generator-karuseley';
-  if (!isInstagram && !isAiCarousel) return null;
-
-  const links = isInstagram
-    ? [
-        { url: '/ru/use-cases/besshovnaya-karusel-instagram', label: 'Бесшовная карусель Instagram' },
-        { url: '/ru/use-cases/tekst-v-karusel', label: 'Текст в карусель' },
-        { url: '/ru/templates/instagram-carousel', label: 'Шаблоны каруселей' },
-      ]
-    : [
-        { url: '/ru/generator-karuselej-instagram', label: 'Генератор каруселей Instagram' },
-        { url: '/ru/templates/instagram-carousel', label: 'Шаблоны каруселей' },
-        { url: '/ru/use-cases/tekst-v-karusel', label: 'Текст в карусель' },
-      ];
-
-  return (
-    <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
-      <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
-        <h2 className="text-white font-medium mb-4 text-base md:text-lg">Больше инструментов для соцсетей</h2>
-        <ul className="space-y-3 text-sm md:text-base">
-          {links.map((link) => (
-            <li key={link.url} className="flex items-center gap-2">
-              <span className="text-pink-500">•</span>
-              <Link to={link.url} className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">{link.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-};
-
 /* ── FAQ ── */
 const faqItems = [
   { q: 'Что такое ИИ-генератор каруселей?', a: 'ИИ-генератор каруселей помогает собрать готовую серию слайдов: идею, сценарий, структуру, текст по слайдам, визуальную подачу и CTA.' },
@@ -584,7 +543,6 @@ const FAQItem = ({ item, isOpen, onClick }) => (
 const RuCarouselFAQ = () => {
   const [openIdx, setOpenIdx] = useState(null);
   const isMobile = useIsMobile();
-  const currentFaqItems = getCurrentPath() === '/ru/generator-karuselej-instagram' ? instagramFaqItems : faqItems;
   return (
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
       <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
@@ -594,7 +552,7 @@ const RuCarouselFAQ = () => {
           <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">Всё, что нужно знать о создании каруселей с ИИ</p>
         </motion.div>
         <div className="max-w-3xl mx-auto space-y-4">
-          {currentFaqItems.map((item,i) => <FAQItem key={i} item={item} isOpen={openIdx===i} onClick={()=>setOpenIdx(openIdx===i?null:i)}/>)}
+          {faqItems.map((item,i) => <FAQItem key={i} item={item} isOpen={openIdx===i} onClick={()=>setOpenIdx(openIdx===i?null:i)}/>)}
         </div>
       </div>
     </section>
@@ -646,6 +604,8 @@ const RuCarouselBottomCTA = () => {
 };
 
 export const RuAICarouselGeneratorPage = () => {
+  const legacyFormatsPage = getLegacyFormatsPage();
+
   return (
     <MainLayout>
       <RuSEOHead />
@@ -653,14 +613,14 @@ export const RuAICarouselGeneratorPage = () => {
 
       <RuCarouselHero />
       <RuCarouselShowcase />
+      {legacyFormatsPage && <SeoPageTemplateCategories page={legacyFormatsPage} />}
       <RuCarouselProblem />
       <RuCarouselComparison />
       <RuCarouselHowItWorks />
-      <RuCarouselFormats />
       <RuCarouselDifferentiation />
       <RuCarouselSEOBlock />
 
-      {getCurrentPath() === '/ru/ai-generator-karuselej' && <ProductRelatedResources blocks={[
+      <ProductRelatedResources blocks={[
         {
           title: "Создавайте разный контент с ИИ:",
           links: [
@@ -676,11 +636,10 @@ export const RuAICarouselGeneratorPage = () => {
             { url: "/ru/blog/prompty-dlya-karuseley-v-instagram", label: "Шаблоны каруселей" }
           ]
         }
-      ]} />}
+      ]} />
 
       <TestimonialsSection />
       <RuCarouselFAQ />
-      <RuCarouselRelatedLinks />
       <RuCarouselBottomCTA />
 
       <Footer />
