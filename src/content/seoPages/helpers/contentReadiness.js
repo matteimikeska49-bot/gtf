@@ -144,6 +144,21 @@ const asArray = (value) => (Array.isArray(value) ? value : []);
 
 const getPageId = (page) => page?.id || page?.path || '(missing id)';
 
+const CAROUSEL_FORMAT_CANONICAL_CARDS = [
+  {
+    title: 'Автоматически',
+    body: 'GoToFlow самостоятельно подбирает подходящую структуру под тему и исходный материал.',
+  },
+  {
+    title: 'Строго по готовому сценарию',
+    body: 'GoToFlow следует выбранной структуре без самостоятельной смены логики подачи.',
+  },
+  {
+    title: 'Любая идея',
+    body: 'Если нужного сценария нет в списке, пользователь может задать собственную тему или идею.',
+  },
+];
+
 export const getSectionsForRequirement = (page, requirement) => {
   const aliases = SECTION_ALIASES[requirement] || [requirement];
   return asArray(page.sections).filter((section) => aliases.includes(section.id));
@@ -414,6 +429,51 @@ const validateStructuredItems = (errors, page, requirement, items, label, { minI
     }
 
     seen.add(normalized);
+  });
+};
+
+const validateCarouselFormatsCoverage = (errors, page, requiredOrder) => {
+  if (!isCarouselProductSeoPage(page)) return;
+
+  const id = getPageId(page);
+  const formats = asArray(page.templateCategories || page.templates);
+
+  if (!requiredOrder.includes('pageRelevantFormats')) {
+    errors.push(`${id} carousel Formats must use the existing pageRelevantFormats card pattern.`);
+  }
+
+  if (formats.length !== 6) {
+    errors.push(`${id} Formats Coverage Rule v1.1 requires exactly 6 Formats cards; found ${formats.length}.`);
+    return;
+  }
+
+  const titleKeys = formats.map((item) => normalizeSeoText(item?.title));
+  if (new Set(titleKeys).size !== titleKeys.length) {
+    errors.push(`${id} Formats cards must not contain duplicate titles.`);
+  }
+
+  const bodyKeys = formats.map((item) => normalizeSeoText(item?.body || item?.description));
+  if (new Set(bodyKeys).size !== bodyKeys.length) {
+    errors.push(`${id} Formats cards must not contain semantic duplicate descriptions.`);
+  }
+
+  formats.forEach((item, index) => {
+    if (!hasMeaningfulText(item?.title, 4)) {
+      errors.push(`${id} Formats card ${index + 1} must have a title.`);
+    }
+    if (!hasMeaningfulText(item?.body || item?.description, 12)) {
+      errors.push(`${id} Formats card ${index + 1} must have a description.`);
+    }
+  });
+
+  CAROUSEL_FORMAT_CANONICAL_CARDS.forEach((canonical, index) => {
+    const item = formats[index];
+    if (normalizeSeoText(item?.title) !== normalizeSeoText(canonical.title)) {
+      errors.push(`${id} Formats card ${index + 1} must be canonical "${canonical.title}".`);
+    }
+    if (normalizeSeoText(item?.body || item?.description) !== normalizeSeoText(canonical.body)) {
+      errors.push(`${id} Formats card ${index + 1} must use the approved canonical description for "${canonical.title}".`);
+    }
   });
 };
 
@@ -907,6 +967,7 @@ export const getSeoPageProductionReadinessErrors = (page, context = {}) => {
     if (declaredOrder !== undefined) {
       errors.push(`${id} carousel product pages must not define templateSections; the executable template owns section order.`);
     }
+    validateCarouselFormatsCoverage(errors, page, requiredOrder);
   } else if (!Array.isArray(declaredOrder)) {
     errors.push(`${id} must define templateSections in the exact approved order for ${page.templateVariant}.`);
   } else {
