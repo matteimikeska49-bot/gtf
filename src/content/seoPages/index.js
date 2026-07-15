@@ -961,8 +961,8 @@ const videoToCarouselFaq = [
     answer: 'Вы вставляете ссылку на YouTube-видео, а ИИ автоматически распознает речь, анализирует текст и генерирует на его основе слайды для карусели.',
   },
   {
-    question: 'Нужно ли мне самому печатать текст из видео?',
-    answer: 'Нет, система берет на себя транскрибацию и делает текстовую выжимку в автоматизированном режиме.',
+    question: 'Нужно ли вручную разбирать видео перед созданием карусели?',
+    answer: 'Нет, заранее разбирать видео вручную не обязательно. GoToFlow помогает выделить ключевые мысли, собрать структуру и подготовить текст слайдов. Перед скачиванием результат можно проверить, отредактировать или перегенерировать отдельные элементы.',
   },
   {
     question: 'Какие источники видео поддерживаются?',
@@ -1666,8 +1666,8 @@ const buildPostGeneratorDraftPage = ({
 const vkPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   id: 'ru-tool-vk-post-generator',
   slug: 'vk-post-generator',
-  contractTitle: 'ИИ генератор постов для ВКонтакте (ВК): Создать пост онлайн | GoToFlow',
-  title: 'ИИ генератор постов для ВКонтакте: создать пост | GoToFlow',
+  contractTitle: 'ИИ-генератор постов для ВКонтакте онлайн — GoToFlow',
+  title: 'ИИ-генератор постов для ВКонтакте онлайн — GoToFlow',
   description: 'Сгенерируйте вовлекающий пост для ВКонтакте с помощью ИИ. Создавайте продающие, экспертные посты и новости с картинками за пару кликов.',
   h1: 'ИИ генератор постов для ВКонтакте',
   heroEyebrow: 'Генератор постов ВК',
@@ -1718,8 +1718,8 @@ const vkPostGeneratorDraftPage = buildPostGeneratorDraftPage({
 const telegramPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   id: 'ru-tool-telegram-post-generator',
   slug: 'telegram-post-generator',
-  contractTitle: 'ИИ генератор постов для Telegram: Написать пост в канал | GoToFlow',
-  title: 'ИИ генератор постов для Telegram: пост в канал | GoToFlow',
+  contractTitle: 'ИИ-генератор постов для Telegram онлайн — GoToFlow',
+  title: 'ИИ-генератор постов для Telegram онлайн — GoToFlow',
   description: 'Создавайте вовлекающие посты для Telegram-канала с помощью ИИ. Генератор пишет тексты с нужным тоном, добавляет правильную разметку, эмодзи и создает визуал.',
   h1: 'ИИ генератор постов для Telegram',
   heroEyebrow: 'Генератор постов Telegram',
