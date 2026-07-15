@@ -614,8 +614,8 @@ export const RuAICarouselGeneratorPage = () => {
       <RuCarouselHero />
       <RuCarouselShowcase />
       {legacyFormatsPage && (
-        <section className="px-6">
-          <div className="mx-auto max-w-7xl">
+        <section className="px-6 w-full relative z-10 bg-[#050505]">
+          <div className="max-w-6xl mx-auto relative z-10">
             <SeoPageTemplateCategories page={legacyFormatsPage} />
           </div>
         </section>
