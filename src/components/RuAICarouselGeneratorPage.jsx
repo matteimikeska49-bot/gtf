@@ -25,8 +25,8 @@ const legacyFormatsPages = {
     id: 'ru-ii-generator-karuseley',
     path: '/ru/ii-generator-karuseley',
     templateCategoriesIntro: {
-      eyebrow: 'Поддерживаемые форматы',
-      heading: 'Какие карусели можно создать с помощью ИИ',
+      eyebrow: 'ПОПУЛЯРНЫЕ ФОРМАТЫ',
+      heading: { before: 'Какие карусели можно создать ', accent: 'с помощью ИИ', after: '' },
     },
     templateCategories: buildFormatCards([
       'Автоматически',
@@ -45,8 +45,8 @@ const legacyFormatsPages = {
     id: 'ru-generator-karuselej-instagram',
     path: '/ru/generator-karuselej-instagram',
     templateCategoriesIntro: {
-      eyebrow: 'Поддерживаемые форматы',
-      heading: 'Какие карусели можно создать для Instagram',
+      eyebrow: 'ФОРМАТЫ INSTAGRAM',
+      heading: { before: 'Какие карусели можно создать ', accent: 'для Instagram', after: '' },
     },
     templateCategories: buildFormatCards([
       'Автоматически',
@@ -613,7 +613,13 @@ export const RuAICarouselGeneratorPage = () => {
 
       <RuCarouselHero />
       <RuCarouselShowcase />
-      {legacyFormatsPage && <SeoPageTemplateCategories page={legacyFormatsPage} />}
+      {legacyFormatsPage && (
+        <section className="px-6">
+          <div className="mx-auto max-w-7xl">
+            <SeoPageTemplateCategories page={legacyFormatsPage} />
+          </div>
+        </section>
+      )}
       <RuCarouselProblem />
       <RuCarouselComparison />
       <RuCarouselHowItWorks />

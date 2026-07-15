@@ -22,8 +22,8 @@ const linkedInPostFormatsPage = {
   id: 'ru-ii-generator-postov-dlya-linkedin',
   path: '/ru/ii-generator-postov-dlya-linkedin',
   templateCategoriesIntro: {
-    eyebrow: 'Поддерживаемые форматы',
-    heading: 'Какие посты можно создать для LinkedIn',
+    eyebrow: 'ФОРМАТЫ ПОСТОВ',
+    heading: { before: 'Какие посты можно создать ', accent: 'для LinkedIn', after: '' },
   },
   templateCategories: [
     'Экспертный пост',
@@ -518,7 +518,13 @@ export const LinkedInPostPageRu = () => (
     <Header />
     <CarouselHeroRu />
     <CarouselShowcaseRu />
-    <SeoPageTemplateCategories page={linkedInPostFormatsPage} />
+      {linkedInPostFormatsPage && (
+        <section className="px-6">
+          <div className="mx-auto max-w-7xl">
+            <SeoPageTemplateCategories page={linkedInPostFormatsPage} />
+          </div>
+        </section>
+      )}
     <CarouselProblemRu />
     <CarouselComparisonRu />
     <CarouselHowItWorksRu />

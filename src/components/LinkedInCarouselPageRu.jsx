@@ -18,8 +18,8 @@ const linkedInCarouselFormatsPage = {
   id: 'ru-generator-karuselej-linkedin',
   path: '/ru/generator-karuselej-linkedin',
   templateCategoriesIntro: {
-    eyebrow: 'Поддерживаемые форматы',
-    heading: 'Какие карусели можно создать для LinkedIn',
+    eyebrow: 'ФОРМАТЫ LINKEDIN',
+    heading: { before: 'Какие карусели можно создать ', accent: 'для LinkedIn', after: '' },
   },
   templateCategories: [
     'Экспертный разбор',
@@ -524,7 +524,13 @@ export const LinkedInCarouselPageRu = () => (
     <LICarouselHowItWorksRu />
     <LICarouselDifferentiationRu />
     <LICarouselShowcaseRu />
-    <SeoPageTemplateCategories page={linkedInCarouselFormatsPage} />
+    {linkedInCarouselFormatsPage && (
+        <section className="px-6">
+          <div className="mx-auto max-w-7xl">
+            <SeoPageTemplateCategories page={linkedInCarouselFormatsPage} />
+          </div>
+        </section>
+      )}
     <LICarouselSEOBlockRu />
     <ProductRelatedResources blocks={[
       {

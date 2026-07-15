@@ -21,8 +21,8 @@ const instagramPostFormatsPage = {
   id: 'ru-ii-generator-postov-dlya-instagram',
   path: '/ru/ii-generator-postov-dlya-instagram',
   templateCategoriesIntro: {
-    eyebrow: 'Поддерживаемые форматы',
-    heading: 'Какие посты можно создать для Instagram',
+    eyebrow: 'ФОРМАТЫ ПОСТОВ',
+    heading: { before: 'Какие посты можно создать ', accent: 'для Instagram', after: '' },
   },
   templateCategories: [
     'Экспертный пост',
@@ -535,7 +535,13 @@ export const InstagramPostPageRu = () => {
       <Header />
       <CarouselHeroRu />
       <CarouselShowcaseRu />
-      {formatsPage && <SeoPageTemplateCategories page={formatsPage} />}
+      {formatsPage && (
+        <section className="px-6">
+          <div className="mx-auto max-w-7xl">
+            <SeoPageTemplateCategories page={formatsPage} />
+          </div>
+        </section>
+      )}
       <CarouselProblemRu />
       <CarouselComparisonRu />
       <CarouselHowItWorksRu />

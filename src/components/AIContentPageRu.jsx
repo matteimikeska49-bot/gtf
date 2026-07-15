@@ -18,8 +18,8 @@ const aiContentFormatsPage = {
   id: 'ru-ii-generator-kontenta',
   path: '/ru/ii-generator-kontenta',
   templateCategoriesIntro: {
-    eyebrow: 'Поддерживаемые форматы',
-    heading: 'Какой контент можно создать в GoToFlow',
+    eyebrow: 'ФОРМАТЫ КОНТЕНТА',
+    heading: { before: 'Какой контент можно создать ', accent: 'в GoToFlow', after: '' },
   },
   templateCategories: [
     'Карусели',
@@ -534,7 +534,13 @@ export const AIContentPageRu = () => {
       <Header />
       <CarouselHeroRu />
       <CarouselShowcaseRu />
-      {formatsPage && <SeoPageTemplateCategories page={formatsPage} />}
+      {formatsPage && (
+        <section className="px-6">
+          <div className="mx-auto max-w-7xl">
+            <SeoPageTemplateCategories page={formatsPage} />
+          </div>
+        </section>
+      )}
       <CarouselProblemRu />
       <CarouselComparisonRu />
       <CarouselHowItWorksRu />
