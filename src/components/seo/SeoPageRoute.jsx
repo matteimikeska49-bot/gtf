@@ -3,12 +3,12 @@ import { useLocation, useParams } from 'react-router-dom';
 import { CookieBanner } from '../CookieBanner';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
+import { InstagramPostPageRu } from '../InstagramPostPageRu';
 import { MainLayout } from '../MainLayout';
 import { NotFoundPage } from '../NotFoundPage';
 import { getSeoPageByRoute } from '../../content/seoPages';
 import { SeoPageHead } from './SeoPageHead';
 import { SeoPageTemplate } from './SeoPageTemplate';
-import { PostGeneratorSeoPage } from './PostGeneratorSeoPage';
 import { SEO_ANALYTICS_EVENTS } from '../../content/seoPages/releaseContracts';
 import { trackSeoEvent } from './seoAnalytics';
 
@@ -33,15 +33,15 @@ export const SeoPageRoute = ({ pageType, pageTypes, slug: propSlug, language = '
     return <NotFoundPage />;
   }
 
+  if (page.pageFamily === 'ru_post_generator_page') {
+    return <InstagramPostPageRu pagePath={page.path} />;
+  }
+
   return (
     <MainLayout>
       <SeoPageHead page={page} />
       <Header />
-      {page.pageFamily === 'ru_post_generator_page' ? (
-        <PostGeneratorSeoPage page={page} />
-      ) : (
-        <SeoPageTemplate page={page} />
-      )}
+      <SeoPageTemplate page={page} />
       <Footer />
       <CookieBanner />
     </MainLayout>

@@ -10,12 +10,136 @@ import { CookieBanner } from './CookieBanner';
 import { TestimonialsSection } from './TestimonialsSection';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { SeoPageTemplateCategories } from './seo/template-page/SeoPageTemplateCategories';
+import { getSeoPageByPath } from '../content/seoPages';
+import {
+  buildSchema,
+  getBreadcrumbSchema,
+  getFAQPageSchema,
+  getOrganizationSchema,
+  getSoftwareSchema,
+  getWebPageSchema,
+  getWebSiteSchema,
+} from '../utils/schemaGenerator';
 
 
 
 
 
 const CTA_URL = 'https://app.gotoflow.io';
+
+const defaultPostPageConfig = {
+  path: '/ru/generator-postov-instagram',
+  title: 'Генератор постов Instagram с AI — идеи, подписи и карусели | GoToFlow',
+  description: 'Создавайте посты, подписи, идеи и карусели для Instagram с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.',
+  h1: <>Генератор постов для Instagram* с ИИ —<br className="hidden md:block" /> <span className="text-gradient-brand">готовый пост за 60 секунд</span></>,
+  h1Text: 'Генератор постов для Instagram* с ИИ — готовый пост за 60 секунд',
+  heroEyebrow: 'Генератор постов для Instagram',
+  heroSubtitle: <>От идеи до готовых слайдов — структура, текст и логика посты генерируются автоматически.<br className="hidden md:block" /> Без навыков дизайна, без команды, без шаблонов.</>,
+  heroCta: 'Создать пост',
+  secondaryCta: 'Примеры постов',
+  proofTitle: <>Примеры каруселей, <span className="text-gradient-brand">созданных с помощью ИИ</span></>,
+  proofMode: 'image',
+  quickAnswer: null,
+  productBridgeTitle: 'Что такое генератор постов с ИИ',
+  productBridge: [
+    <>Генератор постов с ИИ — это инструмент, который автоматически создает <strong className="text-zinc-200">пост Instagram</strong> и других соцсетей. Вместо того чтобы писать каждый слайд вручную, вы просто вводите тему или идею, и ИИ выдает структурированный пост с сильным хуком, готовый к публикации.</>,
+    <>Наш генератор постов работает не как обычные шаблоны. ИИ анализирует контекст, применяет проверенные контентные фреймворки и <strong className="text-zinc-200">создает пост</strong> с четкой целью для каждого слайда — от цепляющего заголовка до призыва к действию (CTA) в конце.</>,
+    'Создать пост с помощью ИИ — значит ускорить производство контента, получить стабильное качество и возможность тестировать разные подходы. Будь вы эксперт или фаундер, генератор забирает на себя самую сложную часть работы.',
+  ],
+  workflowTitle: <>От идеи до готового поста за <span className="text-gradient-brand">3 простых шага</span></>,
+  workflowSubtitle: 'ИИ делает всю тяжёлую работу — вы принимаете финальное решение.',
+  workflowSteps: [
+    { icon: CornerDownLeft, number: 1, title: 'Введите тему или ссылку', desc: 'Введите тему, URL или идею. ИИ изучит контекст и подготовит пост.', micro: 'input' },
+    { icon: Sparkles, number: 2, title: 'ИИ создаёт пост', desc: 'ИИ собирает хук, структуру, текст, визуальную подачу и CTA.', micro: 'progress' },
+    { icon: Download, number: 3, title: 'Получите готовые слайды', desc: 'Проверьте, отредактируйте при необходимости и скачайте готовый пост.', micro: 'export' },
+  ],
+  inputMockupLines: ['https://competitor.com/post/...', 'Тема: 5 ошибок в ценообразовании SaaS'],
+  exportLabel: 'Скачать пост',
+  relatedTitle: 'Расширьте возможности контента:',
+  relatedLinks: [
+    { href: '/ru/ai-generator-karuselej', title: 'Карусели' },
+    { href: '/ru/generator-kontenta', title: 'Генератор контента' },
+  ],
+  faqItems: [
+    { q: 'Что такое генератор постов?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания каруселей. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
+    { q: 'Можно ли создать пост с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram* и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу пост сохраняли и репостили.' },
+    { q: 'Где найти идеи для каруселей?', a: <>Если вам нужно вдохновение, изучите наши <a href="/ru/blog/shablony-karuseley-v-instagram" className="text-pink-400 hover:underline">шаблоны каруселей</a> или <a href="/ru/blog/prompty-dlya-karuseley-v-instagram" className="text-pink-400 hover:underline">промпты для нейросетей</a>.</> },
+    { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
+    { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva — ручной дизайн-редактор. GoToFlow — workflow для контента: идея, структура, текст, визуальная подача, готовый результат и CTA.' },
+  ],
+  bottomTitle: <>Готовый пост за 60 секунд. <span className="text-gradient-brand">Без дизайна.</span><br/><span className="text-zinc-400 font-semibold" style={{fontSize:'0.78em'}}>Без команды.</span></>,
+  bottomDescription: 'Присоединяйтесь к тысячам креаторов и предпринимателей, которые создают вовлекающие посты за секунды с помощью ИИ GoToFlow.',
+  bottomCta: 'Создать пост',
+  bottomChips: ['Ваш Tone of Voice','Готово за 60 секунд','Для любой ниши'],
+  noindex: false,
+};
+
+const textFromReact = (value) => {
+  if (typeof value === 'string') return value;
+  if (Array.isArray(value)) return value.map(textFromReact).join('');
+  if (value && typeof value === 'object' && 'props' in value) return textFromReact(value.props.children);
+  return '';
+};
+
+const faqAnswerText = (answer) => textFromReact(answer);
+
+const buildRegistryPostPageConfig = (path) => {
+  const page = getSeoPageByPath(path);
+  if (!page) return defaultPostPageConfig;
+  const workflowSteps = Object.values(page.productWorkflow?.stepOverrides || {}).map((step, index) => ({
+    icon: index === 0 ? CornerDownLeft : index === 1 ? Sparkles : index === 2 ? Settings2 : Download,
+    number: index + 1,
+    title: step.title,
+    desc: step.body || step.description,
+    micro: index === 0 ? 'input' : index === Object.values(page.productWorkflow?.stepOverrides || {}).length - 1 ? 'export' : 'progress',
+  }));
+
+  return {
+    ...defaultPostPageConfig,
+    path: page.path,
+    title: page.title,
+    contractTitle: page.contractTitle,
+    description: page.description,
+    h1: page.h1,
+    h1Text: page.h1,
+    heroEyebrow: page.heroEyebrow,
+    heroSubtitle: page.heroSubtitle,
+    heroCta: page.cta?.label || page.finalCta?.primaryAction?.label || defaultPostPageConfig.heroCta,
+    secondaryCta: page.heroSecondaryLinkLabel || defaultPostPageConfig.secondaryCta,
+    proofTitle: page.pageSpecificVisualProof?.heading?.accent || page.pageSpecificVisualProof?.title || defaultPostPageConfig.proofTitle,
+    proofDescription: page.pageSpecificVisualProof?.description,
+    proofInputLabel: page.pageSpecificVisualProof?.inputLabel,
+    proofInputCopy: page.pageSpecificVisualProof?.inputCopy,
+    proofMode: 'text',
+    quickAnswer: page.quickAnswer,
+    productBridgeTitle: 'Product Truth',
+    productBridge: [page.productBridge],
+    workflowTitle: page.productWorkflow?.title?.accent || defaultPostPageConfig.workflowTitle,
+    workflowSubtitle: page.productWorkflow?.description || 'ИИ делает всю тяжёлую работу — вы принимаете финальное решение.',
+    workflowSteps: workflowSteps.length ? workflowSteps : defaultPostPageConfig.workflowSteps,
+    inputMockupLines: [page.heroPromptExample || page.pageSpecificVisualProof?.inputCopy || 'Тема поста', page.heroResultExample || 'Готовый пост'],
+    exportLabel: page.finalCta?.primaryAction?.label || page.cta?.label || defaultPostPageConfig.exportLabel,
+    relatedTitle: page.relatedIntro?.title || page.relatedIntro?.heading?.accent || defaultPostPageConfig.relatedTitle,
+    relatedLinks: (page.relatedCards || []).map((item) => ({ href: item.href, title: item.title })),
+    faqItems: (page.faq || []).map((item) => ({ q: item.question, a: item.answer })),
+    bottomTitle: page.finalCta?.title?.accent || page.finalCta?.title?.before || defaultPostPageConfig.bottomTitle,
+    bottomDescription: page.finalCta?.description || defaultPostPageConfig.bottomDescription,
+    bottomCta: page.finalCta?.primaryAction?.label || page.cta?.label || defaultPostPageConfig.bottomCta,
+    bottomChips: (page.templateCategories || []).slice(0, 3).map((item) => item.title),
+    formatsPage: {
+      id: page.id,
+      path: page.path,
+      templateCategoriesIntro: page.templateCategoriesIntro,
+      templateCategories: page.templateCategories,
+      categoryCta: {
+        label: page.cta?.label || page.finalCta?.primaryAction?.label || 'Создать пост',
+        href: CTA_URL,
+      },
+    },
+    noindex: page.noindex,
+    page,
+  };
+};
 
 const instagramPostFormatsPage = {
   id: 'ru-ii-generator-postov-dlya-instagram',
@@ -45,16 +169,11 @@ const getInstagramPostFormatsPage = () => (
 );
 
 /* ── SEO Head (RU) ── */
-export const SEOHeadRu = () => {
+export const SEOHeadRu = ({ config = defaultPostPageConfig }) => {
   useEffect(() => {
-    const isIiGenerator = window.location.pathname === '/ru/ii-generator-postov-dlya-instagram';
-    const pageTitle = isIiGenerator 
-      ? 'ИИ-генератор постов для Instagram | Создать пост с ИИ'
-      : 'Генератор постов Instagram с AI — идеи, подписи и карусели | GoToFlow';
-    const pageDesc = isIiGenerator
-      ? 'Создавайте вовлекающие посты для Instagram с помощью ИИ. Быстрая генерация контента.'
-      : 'Создавайте посты, подписи, идеи и карусели для Instagram с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.';
-    const canonicalUrl = `https://gotoflow.io${window.location.pathname}`;
+    const pageTitle = config.title;
+    const pageDesc = config.description;
+    const canonicalUrl = `https://gotoflow.io${config.path || window.location.pathname}`;
 
     document.title = pageTitle;
     const setMeta = (name, content, prop = false) => {
@@ -80,19 +199,47 @@ export const SEOHeadRu = () => {
     setMeta('twitter:title', pageTitle, true);
     setMeta('twitter:description', pageDesc, true);
     setMeta('twitter:url', canonicalUrl, true);
+    if (config.noindex) setMeta('robots', 'noindex,follow');
     
     setLink('canonical', canonicalUrl);
-    setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'en' });
-    setLink('alternate', 'https://gotoflow.io/ru/generator-postov-instagram', { hreflang: 'ru' });
-    setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'x-default' });
+    if (config.path === '/ru/generator-postov-instagram') {
+      setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'en' });
+      setLink('alternate', 'https://gotoflow.io/ru/generator-postov-instagram', { hreflang: 'ru' });
+      setLink('alternate', 'https://gotoflow.io/ai-instagram-post-generator', { hreflang: 'x-default' });
+    }
+
+    const schemaItems = [
+      getOrganizationSchema(),
+      getWebSiteSchema('ru'),
+      getWebPageSchema(config.path, pageTitle, pageDesc, 'ru'),
+      getSoftwareSchema(config.path, pageTitle, pageDesc, 'ru'),
+      getBreadcrumbSchema([
+        { name: 'Главная', path: '/ru' },
+        { name: config.h1Text || pageTitle, path: config.path },
+      ], config.path),
+    ];
+    if (config.faqItems?.length) {
+      schemaItems.push(getFAQPageSchema(config.faqItems.map((item) => ({ q: item.q, a: faqAnswerText(item.a) })), config.path));
+    }
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'post-generator-seo-ld-json';
+    script.text = JSON.stringify(buildSchema(schemaItems));
+    document.getElementById('post-generator-seo-ld-json')?.remove();
+    document.head.appendChild(script);
+
     document.documentElement.lang = 'ru';
-    return () => { document.title = 'GoToFlow'; document.documentElement.lang = 'en'; };
-  }, []);
+    return () => {
+      document.title = 'GoToFlow';
+      document.documentElement.lang = 'en';
+      document.getElementById('post-generator-seo-ld-json')?.remove();
+    };
+  }, [config]);
   return null;
 };
 
 /* ── Hero (RU) ── */
-export const CarouselHeroRu = () => {
+export const CarouselHeroRu = ({ config = defaultPostPageConfig }) => {
   const isMobile = useIsMobile();
   return (
   <section className="pt-32 pb-16 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
@@ -101,22 +248,22 @@ export const CarouselHeroRu = () => {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mt-4 md:mt-0 mb-8">
         <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm">
           <span className="relative flex h-2 w-2 shrink-0"><span className="md:animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-60" /><span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500" /></span>
-          <span className="text-sm text-zinc-300 whitespace-nowrap">Генератор постов для Instagram</span>
+          <span className="text-sm text-zinc-300 whitespace-nowrap">{config.heroEyebrow}</span>
         </div>
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="max-w-3xl mx-auto w-full">
         <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
-          Генератор постов для Instagram* с ИИ —<br className="hidden md:block" /> <span className="text-gradient-brand">готовый пост за 60 секунд</span>
+          {config.h1}
         </h1>
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance">
-        От идеи до готовых слайдов — структура, текст и логика посты генерируются автоматически.<br className="hidden md:block" /> Без навыков дизайна, без команды, без шаблонов.
+        {config.heroSubtitle}
       </motion.p>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }} className="flex flex-col items-center gap-4 w-full sm:w-auto">
-        <button onClick={() => window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
-          Создать пост <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </button>
-        <p className="text-sm text-zinc-500 flex flex-wrap justify-center gap-x-3 gap-y-1"><span>✓ Без привязки карты</span><span className="text-zinc-700">•</span><span>✓ Первый пост за 60 секунд</span></p>
+        <a href={getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
+          {config.heroCta} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </a>
+        <a href="#post-generator-proof" className="text-sm text-zinc-500 hover:text-pink-300 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">{config.secondaryCta}</a>
       </motion.div>
     </div>
   </section>
@@ -153,8 +300,36 @@ const SlideCard = ({ card }) => (
   </div>
 );
 
-export const CarouselShowcaseRu = () => (
-  <section className="py-24 md:py-32 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#0a0a0a] to-[#050505]">
+const TextProofCard = ({ title, body }) => (
+  <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-5 flex flex-col gap-4 min-h-[220px]">
+    <div className="flex items-center gap-2">
+      <div className="h-8 w-8 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center"><Sparkles className="h-4 w-4 text-pink-300" /></div>
+      <span className="text-xs font-bold uppercase tracking-[0.16em] text-zinc-500">GoToFlow</span>
+    </div>
+    <h3 className="text-lg font-bold text-white leading-snug">{title}</h3>
+    <p className="text-sm leading-relaxed text-zinc-400">{body}</p>
+    <div className="mt-auto flex flex-col gap-2">
+      <div className="h-2 w-5/6 rounded-full bg-white/[0.07]" />
+      <div className="h-2 w-2/3 rounded-full bg-white/[0.05]" />
+    </div>
+  </div>
+);
+
+export const QuickAnswerRu = ({ config = defaultPostPageConfig }) => {
+  if (!config.quickAnswer) return null;
+  return (
+    <section id="quick-answer" className="py-20 md:py-24 px-6 relative z-10 w-full bg-[#050505]">
+      <div className="max-w-3xl mx-auto rounded-[2rem] border border-white/[0.07] bg-white/[0.025] p-7 md:p-9">
+        <p className="text-xs uppercase tracking-[0.18em] text-pink-300 font-bold mb-4">Quick Answer</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-4">{config.quickAnswer.title}</h2>
+        <p className="text-zinc-400 leading-relaxed text-base md:text-lg">{config.quickAnswer.body}</p>
+      </div>
+    </section>
+  );
+};
+
+export const CarouselShowcaseRu = ({ config = defaultPostPageConfig }) => (
+  <section id="post-generator-proof" className="py-24 md:py-32 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#0a0a0a] to-[#050505]">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-pink-600/8 blur-[60px] md:blur-[140px] rounded-full pointer-events-none" />
     <div className="relative z-10">
       <div className="flex justify-center mb-6">
@@ -168,12 +343,17 @@ export const CarouselShowcaseRu = () => (
           <span className="text-sm text-zinc-300 font-medium tracking-tight"><span className="text-white font-semibold">+10k</span> уже создают посты</span>
         </div>
       </div>
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-16 px-6">
-        Примеры каруселей, <span className="text-gradient-brand">созданных с помощью ИИ</span>
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-5 px-6">
+        {config.proofTitle}
       </h2>
+      {config.proofDescription && (
+        <p className="text-zinc-400 text-center max-w-2xl mx-auto mb-12 px-6 leading-relaxed">{config.proofDescription}</p>
+      )}
       <div className="relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}>
         <div className="flex items-center gap-5" style={{ animation: 'marquee-scroll 35s linear infinite', width: 'max-content', willChange: 'transform' }}>
-          {[...carouselCards, ...carouselCards].map((card, i) => <SlideCard key={`${card.id}-${i}`} card={card} />)}
+          {config.proofMode === 'text'
+            ? [...(config.formatsPage?.templateCategories || []), ...(config.formatsPage?.templateCategories || [])].map((card, i) => <TextProofCard key={`${card.title}-${i}`} title={card.title} body={card.body} />)
+            : [...carouselCards, ...carouselCards].map((card, i) => <SlideCard key={`${card.id}-${i}`} card={card} />)}
         </div>
       </div>
     </div>
@@ -288,16 +468,14 @@ export const CarouselComparisonRu = () => {
 
 
 /* ── HowItWorks (RU) ── */
-const InputMockup = () => (
+const InputMockup = ({ lines = defaultPostPageConfig.inputMockupLines }) => (
   <div className="mt-6 flex flex-col gap-2 w-full max-w-xs">
-    <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/[0.05] border border-white/20">
-      <span className="text-xs text-zinc-500 flex-1 truncate font-mono">https://competitor.com/post/...</span>
-      <div className="shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center"><CornerDownLeft className="w-3 h-3 text-zinc-400"/></div>
-    </div>
-    <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/[0.05] border border-white/20">
-      <span className="text-xs text-zinc-500 flex-1 truncate font-mono">Тема: 5 ошибок в ценообразовании SaaS</span>
-      <div className="shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center"><CornerDownLeft className="w-3 h-3 text-zinc-400"/></div>
-    </div>
+    {lines.map((line) => (
+      <div key={line} className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/[0.05] border border-white/20">
+        <span className="text-xs text-zinc-500 flex-1 truncate font-mono">{line}</span>
+        <div className="shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center"><CornerDownLeft className="w-3 h-3 text-zinc-400"/></div>
+      </div>
+    ))}
   </div>
 );
 
@@ -316,30 +494,24 @@ const ProgressMockup = () => {
   );
 };
 
-const ExportMockup = () => (
+const ExportMockup = ({ label = defaultPostPageConfig.exportLabel }) => (
   <div className="mt-6">
     <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-pink-500/50 bg-pink-500/10 shadow-[0_0_20px_rgba(236,72,153,0.2)] text-pink-300 text-xs font-semibold tracking-wide transition-all hover:shadow-[0_0_28px_rgba(236,72,153,0.4)] group">
-      <Download className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform duration-300"/> Скачать пост
+      <Download className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform duration-300"/> {label}
     </button>
   </div>
 );
 
-const hiwSteps = [
-  { icon: CornerDownLeft, number: 1, title: 'Введите тему или ссылку', desc: 'Введите тему, URL или идею. ИИ изучит контекст и подготовит пост.', micro: <InputMockup/> },
-  { icon: Sparkles, number: 2, title: 'ИИ создаёт пост', desc: 'ИИ собирает хук, структуру, текст, визуальную подачу и CTA.', micro: <ProgressMockup/> },
-  { icon: Download, number: 3, title: 'Получите готовые слайды', desc: 'Проверьте, отредактируйте при необходимости и скачайте готовый пост.', micro: <ExportMockup/> },
-];
-
-export const CarouselHowItWorksRu = () => {
+export const CarouselHowItWorksRu = ({ config = defaultPostPageConfig }) => {
   const isMobile = useIsMobile();
   return (
-  <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-black">
+  <section id="product-workflow" className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-black">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-orange-500/15 blur-[60px] md:blur-[120px] -z-10 pointer-events-none rounded-full"/>
     <div className="max-w-7xl mx-auto bg-[#050505]/60 border border-white/[0.08] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-2xl relative z-10 shadow-[0_30px_100px_-15px_rgba(0,0,0,1),0_0_40px_rgba(236,72,153,0.15)]">
       <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}} className="text-center mb-16 flex flex-col items-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Sparkles className="w-3.5 h-3.5"/>Как это работает</div>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">От идеи до готового поста за <span className="text-gradient-brand">3 простых шага</span></h2>
-        <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed text-balance">ИИ делает всю тяжёлую работу — вы принимаете финальное решение.</p>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight text-balance">{config.workflowTitle}</h2>
+        <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed text-balance">{config.workflowSubtitle}</p>
       </motion.div>
       <div className="relative mt-12 max-w-5xl mx-auto">
         <div className="absolute -inset-4 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-orange-500/20 blur-[30px] md:blur-[50px] md:blur-[100px] -z-10 pointer-events-none rounded-[3rem]"/>
@@ -347,8 +519,8 @@ export const CarouselHowItWorksRu = () => {
         <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px overflow-hidden"><motion.div animate={{x:['-100%','200%']}} transition={{duration:3,repeat:Infinity,ease:'linear'}} className="w-1/3 h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-80 shadow-[0_0_15px_#ffffff]"/></div>
         <div className="md:hidden absolute left-[3.25rem] top-[10%] bottom-[10%] w-px bg-gradient-to-b from-transparent via-zinc-600/50 to-transparent"/>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-6 relative z-10">
-          {hiwSteps.map((step,i) => (
-            <motion.div key={i} initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7,delay:i*0.2}} className={`relative group flex flex-col md:items-center text-left md:text-center ${i===1?'lg:scale-105':''}`}>
+          {config.workflowSteps.map((step,i) => (
+            <motion.div key={i} data-workflow-step initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.7,delay:i*0.2}} className={`relative group flex flex-col md:items-center text-left md:text-center ${i===1?'lg:scale-105':''}`}>
               <div className={`relative w-16 h-16 flex items-center justify-center rounded-2xl border shrink-0 mb-10 z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500 mx-0 md:mx-auto ${i===1?'border-pink-500/50 bg-[#0a0a0a] shadow-[0_0_15px_rgba(236,72,153,0.3)]':'border-white/10 bg-[#0a0a0a] group-hover:border-pink-500/40'}`}>
                 <step.icon className={`w-6 h-6 relative z-10 ${i===1?'text-pink-300':'text-zinc-100'}`}/>
                 <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#050505] border border-white/10 flex items-center justify-center text-xs font-bold text-zinc-400">{step.number}</div>
@@ -358,7 +530,9 @@ export const CarouselHowItWorksRu = () => {
                 {i===1&&<div className="absolute inset-0 bg-gradient-to-b from-pink-500/5 to-transparent pointer-events-none"/>}
                 <h3 className="text-2xl font-bold text-white mb-3 tracking-tight relative z-10">{step.title}</h3>
                 <p className="text-zinc-400 font-medium leading-relaxed text-sm relative z-10">{step.desc}</p>
-                <div className="relative z-10 flex md:justify-center">{step.micro}</div>
+                <div className="relative z-10 flex md:justify-center">
+                  {step.micro === 'input' ? <InputMockup lines={config.inputMockupLines} /> : step.micro === 'export' ? <ExportMockup label={config.exportLabel} /> : <ProgressMockup />}
+                </div>
               </div>
             </motion.div>
           ))}
@@ -429,30 +603,20 @@ export const CarouselDifferentiationRu = () => {
 };
 
 /* ── SEO Text Block (RU) ── */
-export const CarouselSEOBlockRu = () => (
+export const CarouselSEOBlockRu = ({ config = defaultPostPageConfig }) => (
   <section className="py-20 md:py-28 px-6 relative z-10 w-full bg-[#050505]">
     <div className="max-w-3xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Что такое генератор постов с ИИ</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">{config.productBridgeTitle}</h2>
       <div className="text-zinc-400 leading-relaxed space-y-4 text-base">
-        <p>Генератор постов с ИИ — это инструмент, который автоматически создает <strong className="text-zinc-200">пост Instagram</strong> и других соцсетей. Вместо того чтобы писать каждый слайд вручную, вы просто вводите тему или идею, и ИИ выдает структурированный пост с сильным хуком, готовый к публикации.</p>
-        <p>Наш генератор постов работает не как обычные шаблоны. ИИ анализирует контекст, применяет проверенные контентные фреймворки и <strong className="text-zinc-200">создает пост</strong> с четкой целью для каждого слайда — от цепляющего заголовка до призыва к действию (CTA) в конце.</p>
-        <p>Создать пост с помощью ИИ — значит ускорить производство контента, получить стабильное качество и возможность тестировать разные подходы. Будь вы эксперт или фаундер, генератор забирает на себя самую сложную часть работы.</p>
+        {config.productBridge.map((item, index) => <p key={index}>{item}</p>)}
       </div>
     </div>
   </section>
 );
 
 /* ── FAQ (RU) ── */
-const faqItems = [
-  { q: 'Что такое генератор постов?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания каруселей. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
-  { q: 'Можно ли создать пост с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram* и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу пост сохраняли и репостили.' },
-  { q: 'Где найти идеи для каруселей?', a: <>Если вам нужно вдохновение, изучите наши <a href="/ru/blog/shablony-karuseley-v-instagram" className="text-pink-400 hover:underline">шаблоны каруселей</a> или <a href="/ru/blog/prompty-dlya-karuseley-v-instagram" className="text-pink-400 hover:underline">промпты для нейросетей</a>.</> },
-  { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
-  { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva — ручной дизайн-редактор. GoToFlow — workflow для контента: идея, структура, текст, визуальная подача, готовый результат и CTA.' },
-];
-
 const FAQItem = ({ item, isOpen, onClick }) => (
-  <div className={`rounded-2xl border transition-colors duration-300 overflow-hidden cursor-pointer ${isOpen?'border-pink-500/30 bg-white/[0.03]':'border-white/[0.05] bg-white/[0.01] hover:border-white/10'}`} onClick={onClick}>
+  <div data-seo-faq-item="true" data-seo-faq-question={item.q} className={`rounded-2xl border transition-colors duration-300 overflow-hidden cursor-pointer ${isOpen?'border-pink-500/30 bg-white/[0.03]':'border-white/[0.05] bg-white/[0.01] hover:border-white/10'}`} onClick={onClick}>
     <div className="flex items-center justify-between gap-4 p-6">
       <span className={`font-semibold text-base leading-snug transition-colors ${isOpen?'text-white':'text-zinc-200'}`}>{item.q}</span>
       <motion.div animate={{rotate:isOpen?180:0}} transition={{duration:0.3}} className="shrink-0 w-8 h-8 rounded-full border border-white/10 flex items-center justify-center bg-white/[0.03]">
@@ -463,11 +627,11 @@ const FAQItem = ({ item, isOpen, onClick }) => (
   </div>
 );
 
-export const CarouselFAQRu = () => {
+export const CarouselFAQRu = ({ config = defaultPostPageConfig }) => {
   const [openIdx, setOpenIdx] = useState(null);
   const isMobile = useIsMobile();
   return (
-    <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
+    <section id="faq-section" className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
       <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
         <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}} className="text-center mb-14 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">FAQ</div>
@@ -475,7 +639,7 @@ export const CarouselFAQRu = () => {
           <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">Всё, что нужно знать про генерацию каруселей</p>
         </motion.div>
         <div className="max-w-3xl mx-auto space-y-4">
-          {faqItems.map((item,i) => <FAQItem key={i} item={item} isOpen={openIdx===i} onClick={()=>setOpenIdx(openIdx===i?null:i)}/>)}
+          {config.faqItems.map((item,i) => <FAQItem key={i} item={item} isOpen={openIdx===i} onClick={()=>setOpenIdx(openIdx===i?null:i)}/>)}
         </div>
       </div>
     </section>
@@ -483,13 +647,13 @@ export const CarouselFAQRu = () => {
 };
 
 /* ── Bottom CTA (RU) ── */
-export const CarouselBottomCTARu = () => {
+export const CarouselBottomCTARu = ({ config = defaultPostPageConfig }) => {
   const [hover, setHover] = useState(false);
   const ref = useRef(null);
   const isMobile = useIsMobile();
   const inView = useInView(ref, { once: true, margin: isMobile ? '0px' : '-100px' });
   return (
-    <section ref={ref} className="relative w-full overflow-hidden isolate" style={{background:'#050505'}}>
+    <section id="final-cta" ref={ref} className="relative w-full overflow-hidden isolate" style={{background:'#050505'}}>
       <div className="absolute inset-0 pointer-events-none bg-[#050505]"/>
       <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-24 md:py-32">
         <motion.div initial={{opacity:0,y:35}} animate={inView?{opacity:1,y:0}:{}} transition={{duration: isMobile ? 0.6 : 0.9}} className="relative">
@@ -501,18 +665,18 @@ export const CarouselBottomCTARu = () => {
                 <span className="text-[10px] font-semibold text-zinc-500 tracking-[0.1em] uppercase">Начать бесплатно</span>
               </div>
               <h2 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-6 max-w-2xl">
-                Готовый пост за 60 секунд. <span className="text-gradient-brand">Без дизайна.</span><br/><span className="text-zinc-400 font-semibold" style={{fontSize:'0.78em'}}>Без команды.</span>
+                {config.bottomTitle}
               </h2>
-              <p className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg leading-[1.75] font-medium mb-12">Присоединяйтесь к тысячам креаторов и предпринимателей, которые создают вовлекающие посты за секунды с помощью ИИ GoToFlow.</p>
+              <p className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg leading-[1.75] font-medium mb-12">{config.bottomDescription}</p>
               <div className="relative group mb-5">
-                <button onClick={()=>window.location.href = getAppUrlWithRef(CTA_URL)} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="relative z-10 flex items-center justify-center gap-2.5 px-9 py-3.5 rounded-[14px] font-semibold text-white text-[15px] overflow-hidden cursor-pointer" style={{background:'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',border:'1px solid rgba(255,255,255,0.18)',boxShadow:hover?'0 14px 55px rgba(236,72,153,0.5), inset 0 1px 0 rgba(255,255,255,0.25)':'0 8px 35px rgba(236,72,153,0.25), inset 0 1px 0 rgba(255,255,255,0.15)',transform:hover?'translateY(-2px) scale(1.04)':'translateY(0) scale(1)',transition:'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)'}}>
-                  <span className="relative z-30 tracking-[0.01em]">Создать пост &rarr;</span>
+                <a href={getAppUrlWithRef(CTA_URL)} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="relative z-10 flex items-center justify-center gap-2.5 px-9 py-3.5 rounded-[14px] font-semibold text-white text-[15px] overflow-hidden cursor-pointer" style={{background:'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',border:'1px solid rgba(255,255,255,0.18)',boxShadow:hover?'0 14px 55px rgba(236,72,153,0.5), inset 0 1px 0 rgba(255,255,255,0.25)':'0 8px 35px rgba(236,72,153,0.25), inset 0 1px 0 rgba(255,255,255,0.15)',transform:hover?'translateY(-2px) scale(1.04)':'translateY(0) scale(1)',transition:'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)'}}>
+                  <span className="relative z-30 tracking-[0.01em]">{config.bottomCta} &rarr;</span>
                   <ArrowRight className="relative z-30 w-[17px] h-[17px]" style={{opacity:hover?1:0.65,transform:hover?'translateX(3px)':'translateX(0)',transition:'all 0.3s'}}/>
-                </button>
+                </a>
               </div>
               <p className="text-xs text-zinc-500 font-medium tracking-[0.06em] mb-12">Бесплатно • Без привязки карты</p>
               <div className="flex flex-wrap justify-center gap-2.5">
-                {['Ваш Tone of Voice','Готово за 60 секунд','Для любой ниши'].map(t=>(
+                {config.bottomChips.map(t=>(
                   <div key={t} className="flex items-center gap-1.5 px-3.5 py-[6px] rounded-full border border-white/[0.05] bg-white/[0.02] hover:border-pink-500/15 transition-all duration-300">
                     <Check className="w-3 h-3 text-pink-500/50 shrink-0"/><span className="text-[10px] sm:text-[11px] text-zinc-600 font-medium whitespace-nowrap">{t}</span>
                   </div>
@@ -526,15 +690,17 @@ export const CarouselBottomCTARu = () => {
   );
 };
 
-export const InstagramPostPageRu = () => {
-  const formatsPage = getInstagramPostFormatsPage();
+export const InstagramPostPageRu = ({ pagePath }) => {
+  const config = pagePath ? buildRegistryPostPageConfig(pagePath) : defaultPostPageConfig;
+  const formatsPage = config.formatsPage || getInstagramPostFormatsPage();
 
   return (
     <MainLayout>
-      <SEOHeadRu />
+      <SEOHeadRu config={config} />
       <Header />
-      <CarouselHeroRu />
-      <CarouselShowcaseRu />
+      <CarouselHeroRu config={config} />
+      <QuickAnswerRu config={config} />
+      <CarouselShowcaseRu config={config} />
       {formatsPage && (
         <section className="px-6">
           <div className="mx-auto max-w-7xl">
@@ -544,21 +710,22 @@ export const InstagramPostPageRu = () => {
       )}
       <CarouselProblemRu />
       <CarouselComparisonRu />
-      <CarouselHowItWorksRu />
+      <CarouselHowItWorksRu config={config} />
       <CarouselDifferentiationRu />
-      <CarouselSEOBlockRu />
-      <section className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
+      <CarouselSEOBlockRu config={config} />
+      <section id="related-content" className="py-6 px-6 bg-[#050505] relative z-10 w-full flex justify-center">
         <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
-          <h3 className="text-white font-medium mb-4 text-base md:text-lg">Расширьте возможности контента:</h3>
+          <h3 className="text-white font-medium mb-4 text-base md:text-lg">{config.relatedTitle}</h3>
           <ul className="space-y-3 text-sm md:text-base">
-              <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ai-generator-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Карусели</Link></li>
-              <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор контента</Link></li>
+            {config.relatedLinks.map((item) => (
+              <li key={item.href} className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to={item.href} className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">{item.title}</Link></li>
+            ))}
           </ul>
         </div>
       </section>
       <TestimonialsSection />
-      <CarouselFAQRu />
-      <CarouselBottomCTARu />
+      <CarouselFAQRu config={config} />
+      <CarouselBottomCTARu config={config} />
       <Footer />
       <CookieBanner />
     </MainLayout>

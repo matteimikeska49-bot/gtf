@@ -1109,15 +1109,15 @@ const videoToCarouselDraftPage = {
   },
   templateCategories: [
     {
-      title: 'Автоматически',
+      title: '🤖 Автоматически',
       body: 'GoToFlow самостоятельно подбирает подходящую структуру под тему и исходный материал.',
     },
     {
-      title: 'Строго по готовому сценарию',
+      title: '📝 Строго по готовому сценарию',
       body: 'GoToFlow следует выбранной структуре без самостоятельной смены логики подачи.',
     },
     {
-      title: 'Любая идея',
+      title: '💡 Любая идея',
       body: 'Если нужного сценария нет в списке, пользователь может задать собственную тему или идею.',
     },
     {
@@ -1425,6 +1425,7 @@ const telegramPostGeneratorFaq = [
 const buildPostGeneratorDraftPage = ({
   id,
   slug,
+  contractTitle,
   title,
   description,
   h1,
@@ -1461,6 +1462,7 @@ const buildPostGeneratorDraftPage = ({
   pageType: 'tool',
   slug,
   path: `/ru/${slug}`,
+  contractTitle,
   title,
   description,
   h1,
@@ -1664,6 +1666,7 @@ const buildPostGeneratorDraftPage = ({
 const vkPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   id: 'ru-tool-vk-post-generator',
   slug: 'vk-post-generator',
+  contractTitle: 'ИИ генератор постов для ВКонтакте (ВК): Создать пост онлайн | GoToFlow',
   title: 'ИИ генератор постов для ВКонтакте: создать пост | GoToFlow',
   description: 'Сгенерируйте вовлекающий пост для ВКонтакте с помощью ИИ. Создавайте продающие, экспертные посты и новости с картинками за пару кликов.',
   h1: 'ИИ генератор постов для ВКонтакте',
@@ -1715,6 +1718,7 @@ const vkPostGeneratorDraftPage = buildPostGeneratorDraftPage({
 const telegramPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   id: 'ru-tool-telegram-post-generator',
   slug: 'telegram-post-generator',
+  contractTitle: 'ИИ генератор постов для Telegram: Написать пост в канал | GoToFlow',
   title: 'ИИ генератор постов для Telegram: пост в канал | GoToFlow',
   description: 'Создавайте вовлекающие посты для Telegram-канала с помощью ИИ. Генератор пишет тексты с нужным тоном, добавляет правильную разметку, эмодзи и создает визуал.',
   h1: 'ИИ генератор постов для Telegram',
