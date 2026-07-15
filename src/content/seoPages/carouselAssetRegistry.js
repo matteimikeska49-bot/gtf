@@ -21,6 +21,26 @@ const carouselHeroAsset = ({
 
 export const SEO_CAROUSEL_ASSET_REGISTRY = {
   hero: {
+    neutralPostGenerator: [
+      carouselHeroAsset({
+        id: 'neutral-post-generator-hero-slide-1',
+        assetPath: '/images/seo-workflow/carousel-result/ai-carousel-1.webp',
+        alt: 'Пример готового визуального поста с обложкой и структурой',
+        intentTags: ['carousel', 'content', 'post', 'vk', 'telegram'],
+      }),
+      carouselHeroAsset({
+        id: 'neutral-post-generator-hero-slide-2',
+        assetPath: '/images/seo-workflow/carousel-result/ai-carousel-2.webp',
+        alt: 'Пример слайда для визуального сопровождения поста',
+        intentTags: ['carousel', 'content', 'post', 'vk', 'telegram'],
+      }),
+      carouselHeroAsset({
+        id: 'neutral-post-generator-hero-slide-3',
+        assetPath: '/images/seo-workflow/carousel-result/ai-carousel-3.webp',
+        alt: 'Пример структурированного контента для публикации',
+        intentTags: ['carousel', 'content', 'post', 'vk', 'telegram'],
+      }),
+    ],
     instagramTemplates: [
       carouselHeroAsset({
         id: 'instagram-template-hero-expert-post',

@@ -1474,9 +1474,8 @@ const buildPostGeneratorDraftPage = ({
   commercialValue: 0.78,
   productBridge,
   primaryIntent,
-  pageFamily: 'ru_post_generator_page',
-  templateVariant: 'commercial_tool',
-  templateSections: ['hero', 'problem', 'whatItCreates', 'useCases', 'workflow', 'examples', 'benefits', 'faq', 'related', 'finalCta'],
+  pageFamily: 'carousel_product_page',
+  templateVariant: 'template_page',
   cta: {
     label: ctaLabel,
     href: 'https://app.gotoflow.io',
@@ -1505,15 +1504,21 @@ const buildPostGeneratorDraftPage = ({
     productRoute: 'https://app.gotoflow.io',
     cannibalizationBoundary: `This route owns ${platform} post generation intent only; carousel and broad content generator routes keep their own intent.`,
   },
-  sectionPolicy: Object.fromEntries(['hero', 'problem', 'whatItCreates', 'useCases', 'workflow', 'examples', 'benefits', 'faq', 'related', 'finalCta'].map((sectionId) => [
+  sectionPolicy: Object.fromEntries(['hero', 'quickAnswer', 'pageRelevantFormats', 'productWorkflow', 'productCapabilities', 'readyCarouselShowcase', 'pageSpecificVisualProof', 'useCases', 'faq', 'related', 'finalCta'].map((sectionId) => [
     sectionId,
     {
       enabled: true,
-      reason: `Section is required by the existing commercial_tool registry contract and populated from the approved ${platform} post-generator content contract.`,
+      reason: `Section is required by the Carousel Page Production System and populated from the approved ${platform} post-generator content contract.`,
     },
   ])),
   heroEyebrow,
   heroSecondaryLinkLabel: secondaryCtaLabel,
+  heroCarouselAssetIds: [
+    'neutral-post-generator-hero-slide-1',
+    'neutral-post-generator-hero-slide-2',
+    'neutral-post-generator-hero-slide-3',
+  ],
+  heroVisualBadge: heroEyebrow,
   heroPromptExample: promptExample,
   heroResultExample: resultExample,
   quickAnswer: {
@@ -1521,6 +1526,7 @@ const buildPostGeneratorDraftPage = ({
     body: quickAnswerBody,
   },
   productTruthTitle: 'Product Truth',
+  sections: [],
   templateCategoriesIntro: {
     eyebrow: 'Форматы постов',
     heading: {
@@ -1530,29 +1536,155 @@ const buildPostGeneratorDraftPage = ({
     },
   },
   templateCategories: formats.map(({ title: itemTitle, body }) => ({ title: itemTitle, body })),
+  categoryCta: {
+    label: ctaLabel,
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+  },
+  templateChoiceGuide: {
+    eyebrow: 'Выбор формата',
+    title: {
+      before: 'Как выбрать формат ',
+      accent: `для ${platform}`,
+      after: '',
+    },
+    description: quickAnswerBody,
+    items: formats.slice(0, 4).map((format, index) => ({
+      id: `${slug}-format-guide-${index + 1}`,
+      task: format.title,
+      template: format.title,
+      structure: format.body,
+    })),
+  },
   productWorkflow: {
-    preset: 'post_generation',
+    preset: 'carousel_creation',
     eyebrow: 'Как это работает',
     title: {
-      before: '',
+      before: 'Процесс: ',
       accent: workflowTitle,
       after: '',
     },
-    description: '',
-    stepOverrides: Object.fromEntries(workflowSteps.map((step, index) => [
-      `step${index + 1}`,
-      { title: step.title, body: step.body },
-    ])),
+    description: productBridge,
+    carouselTypes: [
+      { id: 'ai', label: 'AI-визуал', availability: 'available', active: true },
+      { id: 'template', label: 'Готовый сценарий', availability: 'available' },
+      { id: 'seamless', label: 'Серия слайдов', availability: 'available' },
+      { id: 'animated', label: 'Визуальная карточка', availability: 'available' },
+    ],
+    stepOverrides: {
+      source: {
+        title: workflowSteps[0]?.title,
+        description: workflowSteps[0]?.body,
+      },
+      structure: {
+        title: workflowSteps[1]?.title,
+        description: workflowSteps[1]?.body,
+      },
+      textReview: {
+        title: quickAnswerTitle,
+        description: quickAnswerBody,
+      },
+      visualRoute: {
+        title: workflowSteps[2]?.title,
+        description: workflowSteps[2]?.body,
+      },
+      editorResult: {
+        title: workflowSteps[3]?.title,
+        description: workflowSteps[3]?.body,
+      },
+    },
+    mockups: [
+      {
+        id: 'source-structure',
+        title: workflowSteps[0]?.title,
+        caption: workflowSteps[0]?.body,
+        fallbackVisualType: 'source_structure',
+      },
+      {
+        id: 'text-review',
+        title: workflowSteps[1]?.title,
+        caption: workflowSteps[1]?.body,
+        fallbackVisualType: 'text_review',
+      },
+      {
+        id: 'visual-route',
+        title: workflowSteps[2]?.title,
+        caption: workflowSteps[2]?.body,
+        fallbackVisualType: 'ai_template',
+      },
+      {
+        id: 'editor-result',
+        title: workflowSteps[3]?.title,
+        caption: workflowSteps[3]?.body,
+        resultCarousel: {
+          proofType: 'workflow-result',
+          title: visualProofTitle,
+          label: heroEyebrow,
+          format: '4:5',
+          slideCount: aiCarouselResultSlides.length,
+          width: 1122,
+          height: 1402,
+          mode: 'Готовый визуал',
+          images: aiCarouselResultSlides,
+        },
+        fallbackVisualType: 'editor_result',
+      },
+    ],
+    featureChips: workflowSteps.map((step) => step.title),
+    cta: {
+      label: ctaLabel,
+      href: 'https://app.gotoflow.io',
+      action: 'open_app',
+      note: quickAnswerBody,
+    },
+  },
+  productCapabilities: buildCanonicalProductCapabilities({
+    heading: {
+      before: 'Какие параметры можно настроить ',
+      accent: `для ${platform}`,
+      after: '',
+    },
+    introCopy: productBridge,
+    highlightedCapabilities: ['topicText', 'aiStructureText', 'templates', 'textEditing', 'cta', 'formats4511916'],
+  }),
+  readyCarouselShowcaseIntro: {
+    eyebrow: 'Готовые примеры',
+    heading: {
+      before: 'Какие посты можно создать ',
+      accent: `для ${platform}`,
+      after: '',
+    },
+    body: quickAnswerBody,
+  },
+  readyCarouselShowcase: textToCarouselReadyShowcase.map((item, index) => ({
+    ...item,
+    title: formats[index]?.title || item.title,
+    body: formats[index]?.body || item.body,
+    type: heroEyebrow,
+    audience: platform,
+  })),
+  readyCarouselShowcaseCta: {
+    label: ctaLabel,
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+    note: productBridge,
   },
   pageSpecificVisualProof: {
-    proofType: 'post-generator-page-specific',
+    proofType: 'page-specific',
     eyebrow: 'Доказательство работы',
     heading: {
       before: '',
       accent: visualProofTitle,
       after: '',
     },
+    title: visualProofTitle,
     description: visualProofDescription,
+    label: heroEyebrow,
+    format: '4:5',
+    slideCount: aiCarouselResultSlides.length,
+    width: 1122,
+    height: 1402,
+    mode: 'Готовый визуал',
     inputLabel: visualProofInputLabel,
     inputCopy: visualProofInputCopy,
     images: aiCarouselResultSlides,
@@ -1568,40 +1700,10 @@ const buildPostGeneratorDraftPage = ({
   useCases: formats.slice(3).map((format) => ({
     title: format.title,
     body: format.body,
-  })),
-  sections: [
-    {
-      id: 'problem',
-      title: 'Страх чистого листа',
-      body: heroSubtitle,
-      bullets: [promptExample, resultExample],
-    },
-    {
-      id: 'what-it-does',
-      title: quickAnswerTitle,
-      body: quickAnswerBody,
-      bullets: formats.slice(0, 3).map((format) => format.title),
-    },
-    {
-      id: 'use-cases',
-      title: `Сценарии для ${platform}`,
-      body: formats.slice(3).map((format) => `${format.title}: ${format.body}`).join(' '),
-      bullets: formats.slice(3).map((format) => format.title),
-    },
-    {
-      id: 'workflow',
-      title: workflowTitle,
-      body: workflowSteps.map((step) => `${step.title}: ${step.body}`).join(' '),
-      bullets: workflowSteps.map((step) => step.title),
-    },
-  ],
-  examples: formats.slice(3).map((format) => ({ title: format.title, body: format.body })),
-  benefits: [
-    {
-      title: visualProofTitle,
-      body: visualProofDescription,
-    },
-  ],
+  })).concat(formats.slice(0, 3).map((format) => ({
+    title: format.title,
+    body: format.body,
+  }))),
   finalCta: {
     eyebrow: 'Начать бесплатно',
     title: {
@@ -1650,7 +1752,7 @@ const buildPostGeneratorDraftPage = ({
   createdFromActionMapRowIds: [`content-design-contract-${slug}-2026-07-15`],
   notes: [
     'Local draft only; owner visual approval is intentionally false.',
-    'Rendered through the RU post-generator SEO page family using existing post-generator visual patterns.',
+    'Rendered through CarouselProductSeoPageTemplate via the carousel_product_page family using existing production visual patterns.',
   ],
   review: waveOneLocalDraftReview,
   lastUpdated: '2026-07-15',
@@ -1686,9 +1788,9 @@ const vkPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   ],
   formatsTitle: 'Что умеет генерировать ИИ',
   formats: [
-    { title: 'Автоматически', body: 'Доверьтесь ИИ — он сам подберет оптимальный стиль и формат для вашей темы.' },
-    { title: 'Строго по готовому сценарию', body: 'Используйте проверенные копирайтерские формулы, такие как AIDA, без отклонений.' },
-    { title: 'Любая идея', body: 'Полная свобода: задайте уникальный промпт и тон для нестандартной задачи.' },
+    { title: 'Автоматически', body: 'GoToFlow самостоятельно подбирает подходящую структуру под тему и исходный материал.' },
+    { title: 'Строго по готовому сценарию', body: 'GoToFlow следует выбранной структуре без самостоятельной смены логики подачи.' },
+    { title: 'Любая идея', body: 'Если нужного сценария нет в списке, пользователь может задать собственную тему или идею.' },
     { title: 'Продающий пост', body: 'Генерация постов, нацеленных на конверсию: акции, анонсы продуктов и спецпредложения.' },
     { title: 'Экспертный пост', body: 'Демонстрация экспертизы: полезные советы, разбор кейсов и ответы на вопросы аудитории.' },
     { title: 'Новость компании', body: 'Информационные посты: обновления, достижения и важные события в вашем бизнесе.' },
@@ -1738,9 +1840,9 @@ const telegramPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   ],
   formatsTitle: 'Какие форматы постов можно создать',
   formats: [
-    { title: 'Автоматически', body: 'ИИ сам определяет лучшую подачу материала в зависимости от введенной темы.' },
-    { title: 'Строго по готовому сценарию', body: 'Используйте заданные жесткие структуры без риска ухода нейросети от темы.' },
-    { title: 'Любая идея', body: 'Настройте свободный промпт для нестандартного контента.' },
+    { title: 'Автоматически', body: 'GoToFlow самостоятельно подбирает подходящую структуру под тему и исходный материал.' },
+    { title: 'Строго по готовому сценарию', body: 'GoToFlow следует выбранной структуре без самостоятельной смены логики подачи.' },
+    { title: 'Любая идея', body: 'Если нужного сценария нет в списке, пользователь может задать собственную тему или идею.' },
     { title: 'Экспертный пост', body: 'Разбор сложных тем простым языком, демонстрация профессионализма для удержания лояльной аудитории.' },
     { title: 'Дайджест', body: 'Подборка полезных ссылок, новостей или инструментов за неделю в удобном списочном формате.' },
     { title: 'Пост для канала', body: 'Короткий, вовлекающий формат для поддержания активности и общения с подписчиками.' },

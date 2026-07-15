@@ -3,7 +3,6 @@ import { useLocation, useParams } from 'react-router-dom';
 import { CookieBanner } from '../CookieBanner';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
-import { InstagramPostPageRu } from '../InstagramPostPageRu';
 import { MainLayout } from '../MainLayout';
 import { NotFoundPage } from '../NotFoundPage';
 import { getSeoPageByRoute } from '../../content/seoPages';
@@ -31,10 +30,6 @@ export const SeoPageRoute = ({ pageType, pageTypes, slug: propSlug, language = '
 
   if (!page) {
     return <NotFoundPage />;
-  }
-
-  if (page.pageFamily === 'ru_post_generator_page') {
-    return <InstagramPostPageRu pagePath={page.path} />;
   }
 
   return (
