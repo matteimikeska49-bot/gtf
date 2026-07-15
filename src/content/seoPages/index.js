@@ -920,6 +920,849 @@ const textToCarouselDraftPage = {
   }),
 };
 
+const localDraftLifecycle = {
+  state: 'noindex_review',
+  published: true,
+  indexable: false,
+  noindex: true,
+  sitemapEligible: false,
+  sitemapIncluded: false,
+  indexationApproved: false,
+  indexationApproval: {
+    approved: false,
+    approvedBy: '',
+    approvedAt: '',
+    notes: 'Local draft remains noindex until owner visual approval and a separate production/indexation decision.',
+  },
+  approvedByHuman: false,
+  routeReviewApproved: true,
+  ownerVisualApprovalReceived: false,
+  productionIntegrationCompleted: false,
+  approvedForRelease: false,
+  contentReviewedByHuman: true,
+  uniquenessReviewedByHuman: true,
+  internalLinksReviewedByHuman: true,
+  ctaReviewedByHuman: true,
+  productClaimsReviewedByHuman: true,
+};
+
+const waveOneLocalDraftReview = {
+  owner: 'GoToFlow',
+  contentReviewedAt: '',
+  productClaimsReviewedAt: '',
+  assetsReviewedAt: '',
+  seoReviewedAt: '',
+  productVersion: 'wave-1-local-draft',
+};
+
+const videoToCarouselFaq = [
+  {
+    question: 'Как работает функция "видео в карусель"?',
+    answer: 'Вы вставляете ссылку на YouTube-видео, а ИИ автоматически распознает речь, анализирует текст и генерирует на его основе слайды для карусели.',
+  },
+  {
+    question: 'Нужно ли мне самому печатать текст из видео?',
+    answer: 'Нет, система берет на себя транскрибацию и делает текстовую выжимку в автоматизированном режиме.',
+  },
+  {
+    question: 'Какие источники видео поддерживаются?',
+    answer: 'В данный момент вы можете добавить ссылку на YouTube-видео.',
+  },
+  {
+    question: 'Сколько времени занимает процесс?',
+    answer: 'Извлечение текста и генерация базового дизайна занимают всего несколько минут в зависимости от длины видео.',
+  },
+  {
+    question: 'Можно ли использовать длинные подкасты?',
+    answer: 'Да, ИИ способен обработать длинное видео и выбрать из него самые важные мысли для карусели.',
+  },
+  {
+    question: 'Сохраняется ли смысл оригинального видео?',
+    answer: 'Да, алгоритмы настроены на точную передачу смысла и выделение ключевых тезисов без искажения фактов.',
+  },
+  {
+    question: 'Можно ли выбрать, какие именно моменты из видео использовать?',
+    answer: 'Вы можете задать ИИ направление или отредактировать транскрибацию вручную перед тем, как система распределит текст по слайдам.',
+  },
+  {
+    question: 'Нужно ли мне уметь дизайнить?',
+    answer: 'Нет, GoToFlow предлагает готовые стильные шаблоны, и вам нужно лишь выбрать подходящий визуал.',
+  },
+  {
+    question: 'Можно ли исправить ошибки ИИ в тексте?',
+    answer: 'Конечно, вы получаете полный контроль над результатом и можете изменить текст на любом слайде в редакторе.',
+  },
+  {
+    question: 'Сколько карточек получается из одного видео?',
+    answer: 'По умолчанию мы рекомендуем от 5 до 10 слайдов, но вы можете гибко настроить желаемый объем.',
+  },
+  {
+    question: 'В каком формате скачивается готовая карусель?',
+    answer: 'Вы скачиваете ZIP-архив с картинками (PNG/JPG) высокого качества, которые можно сразу публиковать.',
+  },
+  {
+    question: 'Подходит ли это для обучающих видео?',
+    answer: 'Это идеальный сценарий. Вы можете легко переупаковать сложный видеоурок в понятный чек-лист в карусели.',
+  },
+  {
+    question: 'Можно ли добавить свои картинки на слайды?',
+    answer: 'Да, визуальный редактор GoToFlow позволяет заменять фоны, персонажей и добавлять свои графические элементы.',
+  },
+  {
+    question: 'Могу ли я поменять пропорции картинок?',
+    answer: 'Да, в настройках доступны популярные форматы 1:1 (квадрат) и 4:5 (портрет для Instagram), а также 9:16 (для сторис).',
+  },
+  {
+    question: 'Нужно ли устанавливать программу на компьютер?',
+    answer: 'Нет, GoToFlow работает прямо в браузере и не требует установки.',
+  },
+];
+
+const videoToCarouselDraftPage = {
+  id: 'ru-use-case-video-v-karusel',
+  language: 'ru',
+  pageType: 'useCase',
+  slug: 'video-v-karusel',
+  path: '/ru/use-cases/video-v-karusel',
+  title: 'Видео в карусель: ИИ-конвертер видео для Instagram | GoToFlow',
+  description: 'Превратите любое видео в готовую карусель для Instagram. GoToFlow автоматически транскрибирует видео, выделяет главные мысли и создает стильные слайды без ручной верстки.',
+  h1: 'Превратите видео в готовую карусель',
+  heroSubtitle: 'Вставьте ссылку на YouTube-видео, и GoToFlow автоматически расшифрует речь, выделит ключевые тезисы и распределит их по стильным карточкам с единым дизайном. Никакой ручной работы с таймкодами и текстом.',
+  primaryKeyword: 'видео в карусель',
+  secondaryKeywords: ['ИИ-конвертер видео в карусель', 'создать карусель из видео', 'youtube видео в карусель'],
+  searchIntent: 'Превратить видео в готовую карусель',
+  priority: 0.7,
+  commercialValue: 0.78,
+  productBridge: 'GoToFlow берет на себя весь цикл работы с видео-исходником: от автоматической транскрибации речи по ссылке на YouTube до смысловой выжимки и верстки в графические слайды выбранного формата (4:5, 1:1, 9:16). Пользователь получает ZIP-архив с пронумерованными изображениями.',
+  primaryIntent: 'Видео превращается в готовую карусель Instagram с AI-транскрибацией, смысловой выжимкой и редактируемыми слайдами.',
+  pageFamily: 'carousel_product_page',
+  templateVariant: 'template_page',
+  cta: {
+    label: 'Создать карусель из видео',
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+  },
+  heroEyebrow: 'Видео в карусель',
+  heroSecondaryLinkLabel: 'Смотреть примеры',
+  finalCta: {
+    eyebrow: 'Начните сейчас',
+    title: {
+      before: 'Переупакуйте свое ',
+      accent: 'видео прямо сейчас',
+      after: '',
+    },
+    description: 'Не тратьте время на переслушивание и ручную верстку. GoToFlow сделает карусель за вас.',
+    primaryAction: {
+      label: 'Вставить видео',
+      href: 'https://app.gotoflow.io',
+      action: 'open_app',
+    },
+  },
+  conversion: {
+    destinationType: 'app',
+    destinationUrl: 'https://app.gotoflow.io',
+    targetAction: 'convert_video_to_carousel',
+    pageEntity: 'video_to_carousel',
+    appDeepLinkVerified: false,
+    appDeepLinkNotes: 'No verified page-specific app deep link is documented in this repo; conversion CTAs use the app origin.',
+  },
+  seoBrief: {
+    pageEntity: 'video_to_carousel_use_case',
+    primaryQuery: 'видео в карусель',
+    primaryIntent: 'Превратить видео в готовую карусель',
+    userJob: 'Вставить YouTube-видео и получить готовую редактируемую карусель.',
+    uniqueAngle: 'Input-source use-case page focused on video-to-carousel conversion.',
+    audience: 'Эксперты, авторы, SMM-команды и владельцы контента, которым нужно переупаковать видео в Instagram-карусель.',
+    contentType: 'production use-case SEO page',
+    platform: 'Instagram',
+    language: 'ru',
+    country: 'RU',
+    conversionAction: 'convert_video_to_carousel',
+    productRoute: 'https://app.gotoflow.io',
+    cannibalizationBoundary: 'This route owns commercial video-to-carousel conversion intent; carousel generators keep broad carousel creation intent.',
+  },
+  faqPolicy: {
+    minItems: 15,
+    maxItems: 15,
+    requireUniqueQuestions: true,
+    requireVisibleSchemaParity: true,
+  },
+  sectionPolicy: textToCarouselSectionPolicy,
+  sections: [],
+  quickAnswer: {
+    title: 'Как превратить видео в карусель?',
+    body: 'Просто скопируйте ссылку на YouTube-видео в GoToFlow. ИИ сам распознает аудио, проанализирует смысл, выжмет главные мысли и упакует их в красивые слайды. Вам останется только проверить результат, при желании поменять дизайн и скачать архив для публикации.',
+  },
+  heroCarouselAssetIds: [
+    'instagram-template-hero-product-case',
+    'instagram-template-hero-expert-post',
+    'instagram-template-hero-template-cover',
+  ],
+  heroVisualBadge: 'Видео',
+  templateCategoriesIntro: {
+    eyebrow: 'Поддерживаемые форматы',
+    heading: {
+      before: 'Как именно ИИ ',
+      accent: 'обрабатывает видео',
+      after: '',
+    },
+  },
+  templateCategories: [
+    {
+      title: 'Автоматически',
+      body: 'GoToFlow самостоятельно подбирает подходящую структуру под тему и исходный материал.',
+    },
+    {
+      title: 'Строго по готовому сценарию',
+      body: 'GoToFlow следует выбранной структуре без самостоятельной смены логики подачи.',
+    },
+    {
+      title: 'Любая идея',
+      body: 'Если нужного сценария нет в списке, пользователь может задать собственную тему или идею.',
+    },
+    {
+      title: 'Видеоурок',
+      body: 'Идеально для переупаковки обучающих материалов в пошаговую карусель.',
+    },
+    {
+      title: 'Интервью',
+      body: 'Превратите цитаты и ответы гостя в серию стильных карточек.',
+    },
+    {
+      title: 'Разбор видео',
+      body: 'Сделайте текстовую рецензию или выжимку главного из длинного подкаста.',
+    },
+  ],
+  categoryCta: {
+    label: 'Создать карусель из видео',
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+  },
+  templateChoiceGuide: {
+    eyebrow: 'Подготовка видео',
+    title: {
+      before: 'Какие видео дают ',
+      accent: 'лучший результат',
+      after: ' в карусели',
+    },
+    description: 'Лучше всего работают видео с понятной темой, голосовой дорожкой и полезной структурой. GoToFlow помогает расшифровать речь, выделить главное и распределить материал по слайдам.',
+    items: [
+      {
+        id: 'video-lesson',
+        task: 'Есть обучающий материал',
+        template: 'Пошаговая карусель',
+        structure: 'видеоурок легче превратить в последовательность шагов и выводов',
+      },
+      {
+        id: 'interview',
+        task: 'Есть интервью',
+        template: 'Цитаты и ответы',
+        structure: 'ответы гостя можно упаковать в серию коротких карточек',
+      },
+      {
+        id: 'long-video',
+        task: 'Есть длинное видео',
+        template: 'Смысловая выжимка',
+        structure: 'ИИ сокращает лишнюю воду и оставляет ключевые мысли',
+      },
+      {
+        id: 'review',
+        task: 'Нужен разбор',
+        template: 'Рецензия или конспект',
+        structure: 'подходит для подкастов, выступлений и аналитических видео',
+      },
+    ],
+  },
+  productWorkflow: {
+    preset: 'carousel_creation',
+    eyebrow: 'Процесс',
+    title: {
+      before: 'Как работает конвертация ',
+      accent: 'видео в слайды',
+      after: '',
+    },
+    description: 'Вставьте ссылку на YouTube-видео, проверьте выделенные мысли, настройте визуальный стиль и скачайте готовую карусель для Instagram.',
+    carouselTypes: [
+      { id: 'ai', label: 'AI-карусель', availability: 'available', active: true },
+      { id: 'template', label: 'Шаблонная', availability: 'available' },
+      { id: 'seamless', label: 'Бесшовная', availability: 'available' },
+      { id: 'animated', label: 'Анимированная', availability: 'available' },
+    ],
+    stepOverrides: {
+      source: {
+        title: 'Вставка ссылки',
+        description: 'Скопируйте ссылку на YouTube-видео в поле ввода.',
+      },
+      structure: {
+        title: 'AI-транскрибация и анализ',
+        description: 'Система автоматически распознает речь и извлекает из нее текст.',
+      },
+      textReview: {
+        title: 'Смысловая выжимка',
+        description: 'ИИ сокращает лишнюю воду и делит полезный контент на карточки.',
+      },
+      visualRoute: {
+        title: 'Дизайн и верстка',
+        description: 'Выберите визуальный шаблон, шрифты и настройте цвета под свой бренд.',
+      },
+      editorResult: {
+        title: 'Скачивание',
+        description: 'Получите готовые картинки в ZIP-архиве, готовые к публикации.',
+      },
+    },
+    mockups: [
+      {
+        id: 'source-structure',
+        title: 'Видео и транскрибация',
+        caption: 'Видеоссылка, распознанная речь и выделенные ключевые мысли.',
+        fallbackVisualType: 'source_structure',
+      },
+      {
+        id: 'text-review',
+        title: 'Смысловая структура',
+        caption: 'Проверьте тезисы и распределение по будущим карточкам.',
+        fallbackVisualType: 'text_review',
+      },
+      {
+        id: 'visual-route',
+        title: 'Дизайн и настройки',
+        caption: 'Выберите шаблон, фон, шрифты и персонажа под ваш визуальный стиль.',
+        fallbackVisualType: 'ai_template',
+      },
+      {
+        id: 'editor-result',
+        title: 'Готовые слайды',
+        caption: 'Готовые слайды из утвержденной группы workflowResults.aiCarouselFiveSlides.',
+        resultCarousel: {
+          proofType: 'workflow-result',
+          title: 'Из видео в готовые слайды',
+          label: 'Видео в карусель',
+          format: '4:5',
+          slideCount: aiCarouselResultSlides.length,
+          width: 1122,
+          height: 1402,
+          mode: 'Готовая карусель',
+          images: aiCarouselResultSlides,
+        },
+        fallbackVisualType: 'editor_result',
+      },
+    ],
+    featureChips: [
+      'Вставка ссылки',
+      'AI-транскрибация',
+      'Смысловая выжимка',
+      'Дизайн и верстка',
+      'Скачивание',
+    ],
+    cta: {
+      label: 'Создать карусель из видео',
+      href: 'https://app.gotoflow.io',
+      action: 'open_app',
+      note: 'Вставьте ссылку на видео, проверьте структуру и доработайте готовые слайды перед публикацией.',
+    },
+  },
+  productCapabilities: buildCanonicalProductCapabilities({
+    heading: {
+      before: 'Какие параметры можно настроить ',
+      accent: 'перед скачиванием',
+      after: '',
+    },
+    introCopy: 'Искусственный интеллект делает основную работу, но вы полностью контролируете финальный результат карусели.',
+    highlightedCapabilities: ['video', 'aiStructureText', 'templates', 'textEditing', 'formats4511916', 'upTo10Slides'],
+  }),
+  readyCarouselShowcaseIntro: {
+    eyebrow: 'Примеры каруселей',
+    heading: {
+      before: 'Посмотрите, какие карусели ',
+      accent: 'получаются из видео',
+      after: '',
+    },
+    body: 'Примеры показывают готовую структуру, заголовки, короткие смысловые блоки и визуальный дизайн после обработки видео-исходника.',
+  },
+  readyCarouselShowcase: textToCarouselReadyShowcase,
+  readyCarouselShowcaseCta: {
+    label: 'Создать карусель из видео',
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+    note: 'Перед публикацией результат можно проверить и отредактировать.',
+  },
+  pageSpecificVisualProof: {
+    proofType: 'page-specific',
+    eyebrow: 'Доказательство работы',
+    heading: {
+      before: 'Из длинного видео — ',
+      accent: 'в емкую карусель',
+      after: '',
+    },
+    title: 'Видео, ключевые мысли, структура и готовые слайды',
+    description: 'Существующий proof pattern показывает путь от видео и панели транскрибации к выделенным ключевым мыслям, структуре и готовым слайдам GoToFlow из утвержденной группы workflowResults.aiCarouselFiveSlides.',
+    label: 'Видео в карусель',
+    format: '4:5',
+    slideCount: aiCarouselResultSlides.length,
+    width: 1122,
+    height: 1402,
+    mode: 'Готовые слайды',
+    images: aiCarouselResultSlides,
+  },
+  useCasesIntro: {
+    eyebrow: 'Сценарии',
+    heading: {
+      before: 'Какие видео можно ',
+      accent: 'переупаковать в карусель',
+      after: '',
+    },
+  },
+  useCases: [
+    { title: 'Видеоурок → Карусель', body: 'Переупакуйте обучающий материал в пошаговую карусель.' },
+    { title: 'Интервью → Цитаты', body: 'Превратите ответы гостя в серию стильных карточек.' },
+    { title: 'Подкаст → Выжимка', body: 'Сократите длинный разговор до главных мыслей.' },
+    { title: 'Разбор → Слайды', body: 'Сделайте текстовую рецензию или конспект видео.' },
+    { title: 'Выступление → Конспект', body: 'Сохраните ключевые тезисы из доклада в визуальном формате.' },
+    { title: 'YouTube-видео → Instagram', body: 'Подготовьте материал для публикации в Instagram без ручной транскрибации.' },
+  ],
+  faq: videoToCarouselFaq,
+  relatedIntro: {
+    eyebrow: 'Связанные материалы',
+    heading: {
+      before: 'Что еще ',
+      accent: 'попробовать',
+      after: '',
+    },
+  },
+  relatedCards: [
+    {
+      href: '/ru/ai-generator-karuselej',
+      title: 'AI-генератор каруселей',
+      description: 'Создавайте карусели с ИИ.',
+      type: 'product_tool',
+    },
+    {
+      href: '/ru/use-cases/tekst-v-karusel',
+      title: 'Текст в карусель',
+      description: 'Переупаковка готового текста.',
+      type: 'seo_page',
+    },
+    {
+      href: '/ru/use-cases/besshovnaya-karusel-instagram',
+      title: 'Бесшовная карусель для Instagram',
+      description: 'Сценарий для непрерывного визуального эффекта.',
+      type: 'seo_page',
+    },
+  ],
+  relatedSeoPages: ['ru-use-case-tekst-v-karusel', 'ru-use-case-besshovnaya-karusel-instagram'],
+  relatedSeoPaths: ['/ru/use-cases/tekst-v-karusel', '/ru/use-cases/besshovnaya-karusel-instagram'],
+  relatedProductToolPaths: ['/ru/ai-generator-karuselej'],
+  contextualLinks: [],
+  relatedBlogSlugs: [],
+  breadcrumbs: [
+    ruHomeBreadcrumb,
+    { label: 'Карусели Instagram', path: '/ru/templates/instagram-carousel' },
+    { label: 'Видео в карусель', path: '/ru/use-cases/video-v-karusel' },
+  ],
+  schemaType: 'WebPage',
+  designReference: '/ru',
+  urlOrigin: 'seo_registry_candidate',
+  urlOriginEvidence: [
+    'src/content/seoPages/handoffs/content_design_contract_video_v_karusel.md',
+  ],
+  intentOwner: 'ru-use-case-video-v-karusel',
+  routeOwner: 'ru-use-case-video-v-karusel',
+  canonicalOwner: '/ru/use-cases/video-v-karusel',
+  riskLevel: 'medium',
+  manualReviewReason: 'Local draft implementation. Owner visual approval is required before production integration, indexation, sitemap inclusion, push, or deploy.',
+  createdFromActionMapRowIds: ['content-design-contract-video-v-karusel-2026-07-15'],
+  notes: [
+    'Local draft only; owner visual approval is intentionally false.',
+    'GoToFlow SEO Publishing Platform is not part of this page integration.',
+  ],
+  review: waveOneLocalDraftReview,
+  lastUpdated: '2026-07-15',
+  ownershipDecision: ownershipDecision({
+    decision: 'safe_new_registry_page',
+    reason: 'No exact protected route collision found for the video-to-carousel use-case path; existing generator owners remain separate.',
+    existingOwnerStatus: 'Existing carousel generator routes keep broad generator intent; this route owns video-to-carousel conversion intent.',
+    intentOverlapPaths: ['/ru/ii-generator-karuseley', '/ru/generator-karuselej-instagram'],
+  }),
+  ...localDraftLifecycle,
+};
+
+const vkPostGeneratorFaq = [
+  { question: 'Может ли ИИ написать пост с нуля?', answer: 'Да, достаточно ввести короткую тему или пару ключевых слов, и система сгенерирует полноценный текст.' },
+  { question: 'Пишет ли генератор продающие посты?', answer: 'Да, алгоритм знает популярные маркетинговые формулы и умеет мягко подводить читателя к нужному действию.' },
+  { question: 'Генерируется только текст или картинки тоже?', answer: 'GoToFlow генерирует не только текст, но и визуальное сопровождение: картинку или серию слайдов (карусель) с вашим текстом.' },
+  { question: 'Можно ли задать свой стиль общения (Tone of Voice)?', answer: 'Конечно. Вы можете указать, чтобы пост был написан строго, с юмором, дружелюбно или дерзко.' },
+  { question: 'Подходит ли это для личной страницы и паблика?', answer: 'Генератор универсален. Он отлично справляется с контентом как для личных брендов, так и для коммерческих сообществ.' },
+  { question: 'Умеет ли ИИ расставлять эмодзи?', answer: 'Да, система автоматически добавит релевантные эмодзи, чтобы текст легко читался, не перегружая его.' },
+  { question: 'Можно ли использовать хэштеги?', answer: 'По запросу ИИ подберет и добавит популярные хэштеги для увеличения охватов во ВКонтакте.' },
+  { question: 'Что делать, если мне не понравился сгенерированный вариант?', answer: 'Вы можете перегенерировать текст одним кликом или внести ручные правки во встроенном редакторе.' },
+  { question: 'Можно ли вставить свой черновик для улучшения?', answer: 'Да, вставьте сырой текст, и система отредактирует его, исправит ошибки и улучшит структуру.' },
+  { question: 'Уникален ли генерируемый текст?', answer: 'ИИ каждый раз создает уникальный контент. Вам не нужно переживать о плагиате или снижении охватов из-за неуникального текста.' },
+  { question: 'Сколько постов можно сгенерировать за один раз?', answer: 'Вы генерируете посты по одному, чтобы максимально точно настроить параметры каждого конкретного материала.' },
+  { question: 'Какого размера получаются картинки?', answer: 'Вы можете выбрать квадратный формат (1:1), который отлично смотрится в ленте ВК как с мобильного, так и с компьютера.' },
+  { question: 'Нужно ли мне разбираться в промптах?', answer: 'Нет, интерфейс интуитивно понятен. Вам не нужно быть специалистом по нейросетям, чтобы получить отличный результат.' },
+  { question: 'Могу ли я загрузить свой логотип на картинку к посту?', answer: 'Да, в визуальном редакторе можно добавить логотип, поменять шрифты и фирменные цвета.' },
+  { question: 'Безопасно ли использовать ИИ для ведения группы ВК?', answer: 'Абсолютно. Алгоритмы ВКонтакте не пессимизируют качественный авторский контент, даже если он был создан с помощью нейросетей.' },
+];
+
+const telegramPostGeneratorFaq = [
+  { question: 'Учитывает ли ИИ специфику Telegram?', answer: 'Да, алгоритм понимает, что в Telegram пользователи читают с экранов смартфонов. Он делает абзацы короткими, добавляет "воздух" и списки.' },
+  { question: 'Пишет ли генератор длинные лонгриды (статьи)?', answer: 'По умолчанию генератор нацелен на стандартный формат поста для канала. Если вам нужна большая статья, лучше использовать формат "Текст в карусель" для выжимки главного.' },
+  { question: 'Можно ли скопировать сгенерированный текст с сохранением форматирования?', answer: 'Да, текст генерируется таким образом, что при копировании в мессенджер сохраняются отступы и абзацы.' },
+  { question: 'Умеет ли ИИ использовать эмодзи вместо буллитов?', answer: 'Да, система автоматически добавляет релевантные эмодзи для списков и акцентов, чтобы сделать пост более живым.' },
+  { question: 'Создает ли генератор картинки к постам?', answer: 'Да. GoToFlow не только пишет текст, но и генерирует визуальное сопровождение (одиночную карточку или карусель), оформленное в вашем фирменном стиле.' },
+  { question: 'Подходит ли это для новостных каналов?', answer: 'Отлично подходит. Вы можете закинуть ссылку на новость или сырой факт, и ИИ перепишет это в понятную новостную сводку.' },
+  { question: 'А если у меня канал с мемами, ИИ справится?', answer: 'Вы можете задать нейросети юмористический тон (Tone of Voice), и она напишет текст с нужным настроением.' },
+  { question: 'Нужно ли платить за каждый сгенерированный пост?', answer: 'Использование генератора входит в подписку GoToFlow. Вы можете создавать контент в рамках вашего тарифа без доплат за каждый пост.' },
+  { question: 'Сохраняет ли система историю сгенерированных постов?', answer: 'На данный момент вы скачиваете готовый результат в виде архива, который всегда остается у вас на устройстве.' },
+  { question: 'Можно ли использовать инструмент с телефона?', answer: 'Да, интерфейс GoToFlow адаптирован для мобильных устройств, поэтому вы можете вести канал прямо со смартфона.' },
+  { question: 'Напишет ли ИИ продающий пост для запуска курса?', answer: 'Да, выберите соответствующий шаблон или укажите это в промпте, и система использует продающие формулы копирайтинга.' },
+  { question: 'Какая тематика поддерживается?', answer: 'Любая. От криптовалюты и IT до психологии, кулинарии и бьюти-сферы.' },
+  { question: 'Можно ли попросить ИИ добавить призыв к комментариям в конце?', answer: 'Да, система автоматически добавляет вовлекающие вопросы или призывы к действию, чтобы повысить ER (Engagement Rate).' },
+  { question: 'Уникален ли текст? Не будет ли проблем с авторским правом?', answer: 'Весь сгенерированный текст полностью уникален.' },
+  { question: 'Что, если ИИ написал не то, что я хотел?', answer: 'Вы всегда можете уточнить свой запрос и нажать кнопку перегенерации, либо вручную поправить пару слов перед скачиванием.' },
+];
+
+const buildPostGeneratorDraftPage = ({
+  id,
+  slug,
+  title,
+  description,
+  h1,
+  heroEyebrow,
+  heroSubtitle,
+  ctaLabel,
+  secondaryCtaLabel,
+  quickAnswerTitle,
+  quickAnswerBody,
+  productBridge,
+  workflowTitle,
+  workflowSteps,
+  formatsTitle,
+  formats,
+  visualProofTitle,
+  visualProofInputLabel,
+  visualProofInputCopy,
+  visualProofDescription,
+  finalCtaTitle,
+  finalCtaDescription,
+  finalCtaLabel,
+  faq,
+  relatedHeading,
+  relatedCards,
+  primaryKeyword,
+  secondaryKeywords,
+  primaryIntent,
+  platform,
+  promptExample,
+  resultExample,
+}) => ({
+  id,
+  language: 'ru',
+  pageType: 'tool',
+  slug,
+  path: `/ru/${slug}`,
+  title,
+  description,
+  h1,
+  heroSubtitle,
+  primaryKeyword,
+  secondaryKeywords,
+  searchIntent: primaryIntent,
+  priority: 0.68,
+  commercialValue: 0.78,
+  productBridge,
+  primaryIntent,
+  pageFamily: 'ru_post_generator_page',
+  templateVariant: 'commercial_tool',
+  templateSections: ['hero', 'problem', 'whatItCreates', 'useCases', 'workflow', 'examples', 'benefits', 'faq', 'related', 'finalCta'],
+  cta: {
+    label: ctaLabel,
+    href: 'https://app.gotoflow.io',
+    action: 'open_app',
+  },
+  conversion: {
+    destinationType: 'app',
+    destinationUrl: 'https://app.gotoflow.io',
+    targetAction: `create_${slug.replace(/-/g, '_')}`,
+    pageEntity: slug.replace(/-/g, '_'),
+    appDeepLinkVerified: false,
+    appDeepLinkNotes: 'No verified page-specific app deep link is documented in this repo; conversion CTAs use the app origin.',
+  },
+  seoBrief: {
+    pageEntity: `${slug.replace(/-/g, '_')}_tool_page`,
+    primaryQuery: primaryKeyword,
+    primaryIntent,
+    userJob: `Создать пост для ${platform} из темы, заметок или исходного материала.`,
+    uniqueAngle: `Platform-specific post generator draft for ${platform}.`,
+    audience: `Авторы, эксперты, SMM-команды и бизнесы, которые ведут ${platform}.`,
+    contentType: 'local draft product SEO page',
+    platform,
+    language: 'ru',
+    country: 'RU',
+    conversionAction: `create_${slug.replace(/-/g, '_')}`,
+    productRoute: 'https://app.gotoflow.io',
+    cannibalizationBoundary: `This route owns ${platform} post generation intent only; carousel and broad content generator routes keep their own intent.`,
+  },
+  sectionPolicy: Object.fromEntries(['hero', 'problem', 'whatItCreates', 'useCases', 'workflow', 'examples', 'benefits', 'faq', 'related', 'finalCta'].map((sectionId) => [
+    sectionId,
+    {
+      enabled: true,
+      reason: `Section is required by the existing commercial_tool registry contract and populated from the approved ${platform} post-generator content contract.`,
+    },
+  ])),
+  heroEyebrow,
+  heroSecondaryLinkLabel: secondaryCtaLabel,
+  heroPromptExample: promptExample,
+  heroResultExample: resultExample,
+  quickAnswer: {
+    title: quickAnswerTitle,
+    body: quickAnswerBody,
+  },
+  productTruthTitle: 'Product Truth',
+  templateCategoriesIntro: {
+    eyebrow: 'Форматы постов',
+    heading: {
+      before: '',
+      accent: formatsTitle,
+      after: '',
+    },
+  },
+  templateCategories: formats.map(({ title: itemTitle, body }) => ({ title: itemTitle, body })),
+  productWorkflow: {
+    preset: 'post_generation',
+    eyebrow: 'Как это работает',
+    title: {
+      before: '',
+      accent: workflowTitle,
+      after: '',
+    },
+    description: '',
+    stepOverrides: Object.fromEntries(workflowSteps.map((step, index) => [
+      `step${index + 1}`,
+      { title: step.title, body: step.body },
+    ])),
+  },
+  pageSpecificVisualProof: {
+    proofType: 'post-generator-page-specific',
+    eyebrow: 'Доказательство работы',
+    heading: {
+      before: '',
+      accent: visualProofTitle,
+      after: '',
+    },
+    description: visualProofDescription,
+    inputLabel: visualProofInputLabel,
+    inputCopy: visualProofInputCopy,
+    images: aiCarouselResultSlides,
+  },
+  useCasesIntro: {
+    eyebrow: 'Сценарии',
+    heading: {
+      before: 'Какие задачи закрывает ',
+      accent: platform,
+      after: '',
+    },
+  },
+  useCases: formats.slice(3).map((format) => ({
+    title: format.title,
+    body: format.body,
+  })),
+  sections: [
+    {
+      id: 'problem',
+      title: 'Страх чистого листа',
+      body: heroSubtitle,
+      bullets: [promptExample, resultExample],
+    },
+    {
+      id: 'what-it-does',
+      title: quickAnswerTitle,
+      body: quickAnswerBody,
+      bullets: formats.slice(0, 3).map((format) => format.title),
+    },
+    {
+      id: 'use-cases',
+      title: `Сценарии для ${platform}`,
+      body: formats.slice(3).map((format) => `${format.title}: ${format.body}`).join(' '),
+      bullets: formats.slice(3).map((format) => format.title),
+    },
+    {
+      id: 'workflow',
+      title: workflowTitle,
+      body: workflowSteps.map((step) => `${step.title}: ${step.body}`).join(' '),
+      bullets: workflowSteps.map((step) => step.title),
+    },
+  ],
+  examples: formats.slice(3).map((format) => ({ title: format.title, body: format.body })),
+  benefits: [
+    {
+      title: visualProofTitle,
+      body: visualProofDescription,
+    },
+  ],
+  finalCta: {
+    eyebrow: 'Начать бесплатно',
+    title: {
+      before: '',
+      accent: finalCtaTitle,
+      after: '',
+    },
+    description: finalCtaDescription,
+    primaryAction: {
+      label: finalCtaLabel,
+      href: 'https://app.gotoflow.io',
+      action: 'open_app',
+    },
+  },
+  faqPolicy: {
+    minItems: 15,
+    maxItems: 15,
+    requireUniqueQuestions: true,
+    requireVisibleSchemaParity: true,
+  },
+  faq,
+  relatedIntro: {
+    title: relatedHeading,
+  },
+  relatedCards,
+  relatedSeoPages: relatedCards.filter((card) => card.type === 'seo_page').map((card) => card.href),
+  relatedSeoPaths: relatedCards.filter((card) => card.type === 'seo_page').map((card) => card.href),
+  relatedProductToolPaths: relatedCards.filter((card) => card.type === 'product_tool').map((card) => card.href),
+  contextualLinks: [],
+  relatedBlogSlugs: [],
+  breadcrumbs: [
+    ruHomeBreadcrumb,
+    { label: heroEyebrow, path: `/ru/${slug}` },
+  ],
+  schemaType: 'WebApplication',
+  designReference: '/ru',
+  urlOrigin: 'seo_registry_candidate',
+  urlOriginEvidence: [
+    `src/content/seoPages/handoffs/content_design_contract_${slug.replace(/-/g, '_')}.md`,
+  ],
+  intentOwner: id,
+  routeOwner: id,
+  canonicalOwner: `/ru/${slug}`,
+  riskLevel: 'medium',
+  manualReviewReason: 'Local draft implementation. Owner visual approval is required before production integration, indexation, sitemap inclusion, push, or deploy.',
+  createdFromActionMapRowIds: [`content-design-contract-${slug}-2026-07-15`],
+  notes: [
+    'Local draft only; owner visual approval is intentionally false.',
+    'Rendered through the RU post-generator SEO page family using existing post-generator visual patterns.',
+  ],
+  review: waveOneLocalDraftReview,
+  lastUpdated: '2026-07-15',
+  ownershipDecision: ownershipDecision({
+    decision: 'safe_new_registry_page',
+    reason: `No exact protected route collision found; this route owns ${platform} post generation intent.`,
+    existingOwnerStatus: 'No exact existing protected RU product/tool route owner found.',
+    intentOverlapPaths: ['/ru/generator-postov-instagram'],
+  }),
+  ...localDraftLifecycle,
+});
+
+const vkPostGeneratorDraftPage = buildPostGeneratorDraftPage({
+  id: 'ru-tool-vk-post-generator',
+  slug: 'vk-post-generator',
+  title: 'ИИ генератор постов для ВКонтакте: создать пост | GoToFlow',
+  description: 'Сгенерируйте вовлекающий пост для ВКонтакте с помощью ИИ. Создавайте продающие, экспертные посты и новости с картинками за пару кликов.',
+  h1: 'ИИ генератор постов для ВКонтакте',
+  heroEyebrow: 'Генератор постов ВК',
+  heroSubtitle: 'Забудьте про страх чистого листа. Опишите свою идею или дайте ссылку на исходник, и GoToFlow сгенерирует идеальный пост для ВКонтакте с цепляющим заголовком, правильной структурой и готовым визуалом.',
+  ctaLabel: 'Сгенерировать пост',
+  secondaryCtaLabel: 'Примеры постов',
+  quickAnswerTitle: 'Как работает генератор постов для ВКонтакте?',
+  quickAnswerBody: 'Просто напишите тему или вставьте свои сырые заметки. Наш искусственный интеллект проанализирует контекст, подберет нужный tone-of-voice и напишет готовый пост. Дополнительно система сгенерирует стильную картинку или карусель, чтобы ваш пост собрал максимум охватов в ленте ВК.',
+  productBridge: 'GoToFlow выступает как единое окно для создания контента. Алгоритм не просто "пишет текст" – он собирает полноценную единицу контента: связный текст, разбитый на читаемые абзацы, плюс сгенерированный визуальный ряд (одиночная картинка или серия слайдов), полностью готовый к скачиванию в ZIP-архиве и публикации во ВКонтакте.',
+  workflowTitle: 'Как создать пост для ВК за 4 шага',
+  workflowSteps: [
+    { title: 'Ввод темы', body: 'Опишите идею своими словами или вставьте черновик текста.' },
+    { title: 'AI-генерация текста', body: 'ИИ напишет структурированный пост с заголовком и призывом к действию.' },
+    { title: 'Подбор визуала', body: 'Система автоматически сверстает картинку или карусель под ваш текст.' },
+    { title: 'Скачивание и публикация', body: 'Скачайте готовые материалы архивом и опубликуйте на своей стене или в сообществе ВК.' },
+  ],
+  formatsTitle: 'Что умеет генерировать ИИ',
+  formats: [
+    { title: 'Автоматически', body: 'Доверьтесь ИИ — он сам подберет оптимальный стиль и формат для вашей темы.' },
+    { title: 'Строго по готовому сценарию', body: 'Используйте проверенные копирайтерские формулы, такие как AIDA, без отклонений.' },
+    { title: 'Любая идея', body: 'Полная свобода: задайте уникальный промпт и тон для нестандартной задачи.' },
+    { title: 'Продающий пост', body: 'Генерация постов, нацеленных на конверсию: акции, анонсы продуктов и спецпредложения.' },
+    { title: 'Экспертный пост', body: 'Демонстрация экспертизы: полезные советы, разбор кейсов и ответы на вопросы аудитории.' },
+    { title: 'Новость компании', body: 'Информационные посты: обновления, достижения и важные события в вашем бизнесе.' },
+  ],
+  visualProofTitle: 'От идеи к готовому посту в ленте',
+  visualProofInputLabel: 'Подсказка',
+  visualProofInputCopy: 'Расскажи про наш новый курс по дизайну',
+  visualProofDescription: 'Слева — простая текстовая подсказка в поле ввода, справа — готовый результат из workflowResults.aiCarouselFiveSlides, имитирующий вид стильного контента во ВКонтакте.',
+  finalCtaTitle: 'Напишите свой лучший пост прямо сейчас',
+  finalCtaDescription: 'Хватит ломать голову над формулировками и дизайном. Начните собирать лайки и комментарии уже сегодня.',
+  finalCtaLabel: 'Создать пост для ВКонтакте',
+  faq: vkPostGeneratorFaq,
+  relatedHeading: 'Другие инструменты',
+  relatedCards: [
+    { href: '/ru/telegram-post-generator', title: 'ИИ генератор постов для Telegram', type: 'seo_page' },
+    { href: '/ru/use-cases/tekst-v-karusel', title: 'Текст в карусель', type: 'seo_page' },
+    { href: '/ru/ai-generator-karuselej', title: 'AI-генератор каруселей', type: 'product_tool' },
+  ],
+  primaryKeyword: 'генератор постов вконтакте',
+  secondaryKeywords: ['написать пост вк нейросетью', 'ИИ генератор постов для ВКонтакте', 'создать пост ВК онлайн'],
+  primaryIntent: 'ИИ генератор постов для ВКонтакте',
+  platform: 'ВКонтакте',
+  promptExample: 'Расскажи про наш новый курс по дизайну',
+  resultExample: 'Готовый пост для ВК: заголовок, абзацы, визуальная структура и CTA для сообщества.',
+});
+
+const telegramPostGeneratorDraftPage = buildPostGeneratorDraftPage({
+  id: 'ru-tool-telegram-post-generator',
+  slug: 'telegram-post-generator',
+  title: 'ИИ генератор постов для Telegram: пост в канал | GoToFlow',
+  description: 'Создавайте вовлекающие посты для Telegram-канала с помощью ИИ. Генератор пишет тексты с нужным тоном, добавляет правильную разметку, эмодзи и создает визуал.',
+  h1: 'ИИ генератор постов для Telegram',
+  heroEyebrow: 'Генератор постов Telegram',
+  heroSubtitle: 'Ведение Telegram-канала отнимает много времени? Доверьте рутину ИИ. GoToFlow сгенерирует идеальный пост на любую тему, добавит нужные смыслы, расставит акценты и подготовит стильное изображение для привлечения внимания в ленте.',
+  ctaLabel: 'Создать пост для Telegram',
+  secondaryCtaLabel: 'Посмотреть примеры',
+  quickAnswerTitle: 'Как написать пост для Telegram-канала с ИИ?',
+  quickAnswerBody: 'Введите свою идею, наброски или тему в поле ввода. Искусственный интеллект изучит контекст и напишет пост, идеально подходящий под формат Telegram: с короткими абзацами, уместными эмодзи и четкой структурой. В дополнение система создаст графическую карточку, чтобы ваш пост не затерялся в мессенджере.',
+  productBridge: 'GoToFlow решает задачу комплексной подготовки поста. Это не просто чат-бот для текста. Система выдает готовый продукт: проработанный текстовый блок, сверстанный по законам Telegram (воздух между абзацами, списки), плюс сгенерированную картинку или карточки-карусели. Всё это скачивается одним архивом, готовым к отправке в канал.',
+  workflowTitle: 'Генерация поста за 4 простых шага',
+  workflowSteps: [
+    { title: 'Задайте тему', body: 'Опишите, о чем хотите рассказать, или вставьте ссылку на источник.' },
+    { title: 'AI-написание текста', body: 'Нейросеть сгенерирует текст нужного объема с правильным форматированием.' },
+    { title: 'Настройка визуала', body: 'Выберите дизайн картинки, которая будет сопровождать ваш пост.' },
+    { title: 'Скачивание', body: 'Скачайте готовый архив, скопируйте текст и отправьте в свой канал.' },
+  ],
+  formatsTitle: 'Какие форматы постов можно создать',
+  formats: [
+    { title: 'Автоматически', body: 'ИИ сам определяет лучшую подачу материала в зависимости от введенной темы.' },
+    { title: 'Строго по готовому сценарию', body: 'Используйте заданные жесткие структуры без риска ухода нейросети от темы.' },
+    { title: 'Любая идея', body: 'Настройте свободный промпт для нестандартного контента.' },
+    { title: 'Экспертный пост', body: 'Разбор сложных тем простым языком, демонстрация профессионализма для удержания лояльной аудитории.' },
+    { title: 'Дайджест', body: 'Подборка полезных ссылок, новостей или инструментов за неделю в удобном списочном формате.' },
+    { title: 'Пост для канала', body: 'Короткий, вовлекающий формат для поддержания активности и общения с подписчиками.' },
+  ],
+  visualProofTitle: 'Идеальный формат для мессенджера',
+  visualProofInputLabel: 'Хаотичные заметки',
+  visualProofInputCopy: 'Идея, наброски, факты и короткие тезисы для канала',
+  visualProofDescription: 'Слева — хаотичные заметки, справа — результат: красивый текст с правильными отступами и эмодзи + стильная карточка из workflowResults.aiCarouselFiveSlides.',
+  finalCtaTitle: 'Порадуйте подписчиков новым контентом',
+  finalCtaDescription: 'Перестаньте откладывать ведение канала из-за нехватки времени. Создайте крутой пост прямо сейчас.',
+  finalCtaLabel: 'Сгенерировать пост в Telegram',
+  faq: telegramPostGeneratorFaq,
+  relatedHeading: 'Связанные инструменты',
+  relatedCards: [
+    { href: '/ru/vk-post-generator', title: 'ИИ генератор постов для ВКонтакте', type: 'seo_page' },
+    { href: '/ru/use-cases/tekst-v-karusel', title: 'Текст в карусель', type: 'seo_page' },
+    { href: '/ru/ai-generator-karuselej', title: 'AI-генератор каруселей', type: 'product_tool' },
+  ],
+  primaryKeyword: 'генератор постов telegram',
+  secondaryKeywords: ['написать пост в телеграм канал', 'нейросеть для телеграм постов', 'ИИ генератор постов для Telegram'],
+  primaryIntent: 'ИИ генератор постов для Telegram',
+  platform: 'Telegram',
+  promptExample: 'Наброски для поста в канал: запуск, польза, дедлайн',
+  resultExample: 'Готовый Telegram-пост: короткие абзацы, акценты, визуальная карточка и финальный CTA.',
+});
+
 const seamlessSectionPolicy = Object.fromEntries([
   'hero',
   'quickAnswer',
@@ -2421,6 +3264,19 @@ const rawSeoPages = [
   },
 ];
 
+const waveOneLocalDraftPages = [
+  videoToCarouselDraftPage,
+  vkPostGeneratorDraftPage,
+  telegramPostGeneratorDraftPage,
+];
+
+const waveOneLocalDraftIds = new Set(waveOneLocalDraftPages.map((page) => page.id));
+
+const seoPagesSource = [
+  ...waveOneLocalDraftPages,
+  ...rawSeoPages.filter((page) => !waveOneLocalDraftIds.has(page.id)),
+];
+
 const decisionToDefaultState = (decision) => {
   if (decision === 'safe_new_registry_page') return 'quarantined_review';
   return 'planning_only';
@@ -2437,7 +3293,7 @@ const normalizeLegacySeoPage = (page) => {
     .map((idOrPath) => (
       typeof idOrPath === 'string' && idOrPath.startsWith('/')
         ? idOrPath
-        : rawSeoPages.find((candidate) => candidate.id === idOrPath)?.path
+        : seoPagesSource.find((candidate) => candidate.id === idOrPath)?.path
     ))
     .filter(Boolean);
 
@@ -2471,7 +3327,7 @@ const normalizeLegacySeoPage = (page) => {
   };
 };
 
-export const seoPages = rawSeoPages.map(normalizeLegacySeoPage);
+export const seoPages = seoPagesSource.map(normalizeLegacySeoPage);
 
 const requiredSeoPageFields = [
   'id',

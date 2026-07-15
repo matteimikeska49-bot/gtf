@@ -8,6 +8,7 @@ import { NotFoundPage } from '../NotFoundPage';
 import { getSeoPageByRoute } from '../../content/seoPages';
 import { SeoPageHead } from './SeoPageHead';
 import { SeoPageTemplate } from './SeoPageTemplate';
+import { PostGeneratorSeoPage } from './PostGeneratorSeoPage';
 import { SEO_ANALYTICS_EVENTS } from '../../content/seoPages/releaseContracts';
 import { trackSeoEvent } from './seoAnalytics';
 
@@ -36,7 +37,11 @@ export const SeoPageRoute = ({ pageType, pageTypes, slug: propSlug, language = '
     <MainLayout>
       <SeoPageHead page={page} />
       <Header />
-      <SeoPageTemplate page={page} />
+      {page.pageFamily === 'ru_post_generator_page' ? (
+        <PostGeneratorSeoPage page={page} />
+      ) : (
+        <SeoPageTemplate page={page} />
+      )}
       <Footer />
       <CookieBanner />
     </MainLayout>

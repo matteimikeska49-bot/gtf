@@ -261,7 +261,7 @@ const validateRuntime = async () => {
         hasFaq: visible('#faq-section'),
         hasReadyShowcase: visible('#ready-carousel-showcase'),
         hasProductWorkflow: visible('#product-workflow'),
-        hasFinalCta: Boolean([...document.querySelectorAll('a')].find((link) => /Создать карусель в GoToFlow/i.test(link.textContent))),
+        hasFinalCta: visible('#final-cta a[href^="https://app.gotoflow.io"], #final-cta button'),
         canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href') || '',
         lang: document.documentElement.getAttribute('lang') || '',
         description: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
@@ -312,7 +312,7 @@ const validateRuntime = async () => {
     if (result.h1Count !== 1) errors.push(`Runtime must contain exactly one h1; got ${result.h1Count}.`);
     if (!result.hasHeroCta) errors.push('Runtime is missing app-origin CTA.');
     if (!result.hasFaq) errors.push('Runtime is missing FAQ section.');
-    if (!result.hasReadyShowcase) errors.push('Runtime is missing ready carousel showcase.');
+    if (pageRecord?.templateVariant === 'template_page' && !result.hasReadyShowcase) errors.push('Runtime is missing ready carousel showcase.');
     if (!result.hasProductWorkflow) errors.push('Runtime is missing product workflow.');
     if (!result.hasFinalCta) errors.push('Runtime is missing final CTA.');
     if (result.canonical !== `https://gotoflow.io${targetPath}`) errors.push(`Runtime canonical mismatch: ${result.canonical || '(missing)'}.`);
