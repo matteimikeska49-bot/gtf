@@ -46,7 +46,7 @@
 ## 5. Metadata
 - **SEO Title:** Canva для каруселей: лучшие аналоги и альтернативы | GoToFlow
 - **Meta Description:** Ищете альтернативу Canva для Instagram? Узнайте, почему специализированный AI-генератор GoToFlow собирает карусели быстрее и качественнее.
-- **H1:** GoToFlow — умная альтернатива Canva для создания каруселей
+- **H1:** GoToFlow — быстрая альтернатива Canva для верстки постов-каруселей
 - **Canonical:** `https://gotoflow.com/ru/alternatives/canva-dlya-karuseley`
 - **Primary keyword:** gotoflow — умная альтернатива canva для создания каруселей
 - **Secondary keywords:** создание карусели, генератор каруселей, ai для постов
@@ -54,7 +54,7 @@
 ---
 
 ## 6. Hero
-- **Eyebrow:** Аналог Canva
+- **Eyebrow:** Сравнение сервисов
 - **H1:** GoToFlow — умная альтернатива Canva для создания каруселей
 - **Description:** Ищете альтернативу Canva для Instagram? Узнайте, почему специализированный AI-генератор GoToFlow собирает карусели быстрее и качественнее.
 - **Primary CTA:** Создать карусель
