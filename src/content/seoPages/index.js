@@ -373,20 +373,6 @@ const seamlessResultSlides = getSeoCarouselAssets('workflowResults', 'seamlessIn
 const aiCarouselResultSlides = getSeoCarouselAssets('workflowResults', 'aiCarouselFiveSlides');
 
 const textToCarouselReadyShowcaseAssets = getSeoCarouselAssets('readyShowcase', 'instagramCarousel');
-const postGeneratorProofImages = [
-  {
-    src: '/images/niches/ru/content-ru-10.webp',
-    alt: 'Пример готового визуального поста с заголовком и текстовым блоком',
-  },
-  {
-    src: '/images/niches/ru/content-ru-9.webp',
-    alt: 'Пример оформленного поста с визуальным акцентом и кратким текстом',
-  },
-  {
-    src: '/images/niches/ru/content-ru-5.webp',
-    alt: 'Пример готового материала для публикации в социальной сети',
-  },
-];
 
 const textToCarouselReadyShowcaseTitles = [
   'Экспертный пост из заметок',
@@ -1544,9 +1530,15 @@ const buildPostGeneratorDraftPage = ({
   templateCategoriesIntro: {
     eyebrow: 'Форматы постов',
     heading: {
-      before: '',
-      accent: formatsTitle,
-      after: '',
+      before: formatsTitle.includes('Что умеет')
+        ? 'Что умеет '
+        : 'Какие форматы ',
+      accent: formatsTitle.includes('Что умеет')
+        ? 'генерировать ИИ'
+        : 'постов',
+      after: formatsTitle.includes('Что умеет')
+        ? ''
+        : ' можно создать',
     },
   },
   templateCategories: formats.map(({ title: itemTitle, body }) => ({ title: itemTitle, body })),
@@ -1574,16 +1566,16 @@ const buildPostGeneratorDraftPage = ({
     preset: 'carousel_creation',
     eyebrow: 'Как это работает',
     title: {
-      before: 'Процесс: ',
-      accent: workflowTitle,
+      before: 'Как работает генерация ',
+      accent: `поста для ${platform}`,
       after: '',
     },
     description: productBridge,
     carouselTypes: [
-      { id: 'ai', label: 'Тема', availability: 'available', active: true },
-      { id: 'template', label: 'Тон', availability: 'available' },
-      { id: 'seamless', label: 'Текст', availability: 'available' },
-      { id: 'animated', label: 'Визуал', availability: 'available' },
+      { id: 'ai', label: 'AI-карусель', availability: 'available', active: true },
+      { id: 'template', label: 'Шаблонная', availability: 'available' },
+      { id: 'seamless', label: 'Бесшовная', availability: 'available' },
+      { id: 'animated', label: 'Анимированная', availability: 'available' },
     ],
     stepOverrides: {
       source: {
@@ -1634,10 +1626,12 @@ const buildPostGeneratorDraftPage = ({
           proofType: 'workflow-result',
           title: visualProofTitle,
           label: heroEyebrow,
+          format: '4:5',
+          slideCount: aiCarouselResultSlides.length,
           width: 1122,
           height: 1402,
           mode: 'Готовый пост',
-          images: postGeneratorProofImages,
+          images: aiCarouselResultSlides,
         },
         fallbackVisualType: 'editor_result',
       },
@@ -1653,7 +1647,7 @@ const buildPostGeneratorDraftPage = ({
   productCapabilities: {
     eyebrow: 'Параметры поста',
     heading: {
-      before: 'Что можно настроить ',
+      before: 'Какие параметры можно настроить ',
       accent: `для ${platform}`,
       after: '',
     },
@@ -1694,6 +1688,12 @@ const buildPostGeneratorDraftPage = ({
         id: 'post-action',
         title: 'Призыв к действию',
         body: 'Добавьте финальный вопрос, приглашение к комментарию, переход по ссылке или другой CTA, который подходит цели публикации.',
+        capabilityIds: ['cta'],
+      },
+      {
+        id: 'post-output',
+        title: 'Готовый результат',
+        body: 'После проверки текста и визуального сопровождения вы получаете материал, который можно перенести в редакционный план и подготовить к публикации.',
         capabilityIds: ['cta', 'seamlessCarousels', 'animatedCarousels', 'upTo10Slides'],
       },
     ],
@@ -1701,8 +1701,8 @@ const buildPostGeneratorDraftPage = ({
   readyCarouselShowcaseIntro: {
     eyebrow: 'Готовые примеры',
     heading: {
-      before: 'Какие посты можно создать ',
-      accent: `для ${platform}`,
+      before: 'Какие посты можно ',
+      accent: `создать для ${platform}`,
       after: '',
     },
     body: quickAnswerBody,
@@ -1724,25 +1724,33 @@ const buildPostGeneratorDraftPage = ({
     proofType: 'page-specific',
     eyebrow: 'Доказательство работы',
     heading: {
-      before: '',
-      accent: visualProofTitle,
-      after: '',
+      before: visualProofTitle.includes('мессенджера')
+        ? 'Как заметки становятся '
+        : 'От идеи — ',
+      accent: visualProofTitle.includes('мессенджера')
+        ? 'готовым постом'
+        : 'готовым постом',
+      after: visualProofTitle.includes('мессенджера')
+        ? ''
+        : ' в ленте',
     },
     title: visualProofTitle,
     description: visualProofDescription,
     label: heroEyebrow,
+    format: '4:5',
+    slideCount: aiCarouselResultSlides.length,
     width: 1122,
     height: 1402,
     mode: 'Готовый пост',
     inputLabel: visualProofInputLabel,
     inputCopy: visualProofInputCopy,
-    images: postGeneratorProofImages,
+    images: aiCarouselResultSlides,
   },
   useCasesIntro: {
     eyebrow: 'Сценарии',
     heading: {
       before: 'Какие задачи закрывает ',
-      accent: platform,
+      accent: `${platform}-пост`,
       after: '',
     },
   },
@@ -1756,9 +1764,15 @@ const buildPostGeneratorDraftPage = ({
   finalCta: {
     eyebrow: 'Начать бесплатно',
     title: {
-      before: '',
-      accent: finalCtaTitle,
-      after: '',
+      before: platform === 'Telegram'
+        ? 'Порадуйте подписчиков '
+        : 'Напишите свой ',
+      accent: platform === 'Telegram'
+        ? 'новым контентом'
+        : 'лучший пост',
+      after: platform === 'Telegram'
+        ? ''
+        : ' прямо сейчас',
     },
     description: finalCtaDescription,
     primaryAction: {
