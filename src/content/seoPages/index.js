@@ -1001,14 +1001,14 @@ const contractDraftPreviewSpecs = [
     contractTitle: "Canva для каруселей: лучшие аналоги и альтернативы | GoToFlow",
     title: "Canva для каруселей: лучшие аналоги и альтернативы | GoToFlow",
     description: "Ищете альтернативу Canva для Instagram? Узнайте, почему специализированный AI-генератор GoToFlow собирает карусели быстрее и качественнее.",
-    h1: "GoToFlow — умная альтернатива Canva для создания каруселей",
+    h1: "GoToFlow — быстрая альтернатива Canva для верстки постов-каруселей",
     primaryKeyword: "gotoflow — умная альтернатива canva для создания каруселей",
     secondaryKeywords: [
       "создание карусели",
       "генератор каруселей",
       "ai для постов"
     ],
-    heroEyebrow: "Аналог Canva",
+    heroEyebrow: "Сравнение сервисов",
     heroSubtitle: "Ищете альтернативу Canva для Instagram? Узнайте, почему специализированный AI-генератор GoToFlow собирает карусели быстрее и качественнее.",
     ctaLabel: "Создать карусель",
     secondaryCtaLabel: "Смотреть примеры",
@@ -1116,8 +1116,8 @@ const contractDraftPreviewSpecs = [
     ],
     faq: [
       {
-        question: "Заменяет ли GoToFlow Canva?",
-        answer: "Для создания постов-каруселей — да, он делает это в 5 раз быстрее."
+        question: "Когда GoToFlow удобнее Canva?",
+        answer: "GoToFlow закрывает сценарий быстрой сборки постов-каруселей, но не является полной заменой Canva для всех задач дизайна."
       },
       {
         question: "Нужно ли расставлять элементы вручную?",
@@ -1141,11 +1141,11 @@ const contractDraftPreviewSpecs = [
       },
       {
         question: "Подходит ли для текста на русском?",
-        answer: "В отличие от многих западных аналогов, ИИ идеально работает с русским."
+        answer: "В отличие от многих западных аналогов, ИИ работает с русским текстом и помогает подготовить структуру карусели."
       },
       {
         question: "Нужен ли VPN?",
-        answer: "Нет, сервис работает без ограничений."
+        answer: "Сервис работает в браузере; доступность зависит от обычных технических условий."
       },
       {
         question: "Можно ли делиться проектами?",
@@ -1198,7 +1198,7 @@ const contractDraftPreviewSpecs = [
     },
     productTruth: {
       allowed: "ИИ может разбивать текст на карточки, есть готовые шаблоны, скачивание в ZIP, форматы 4:5 и 1:1, базовая настройка цветов.",
-      forbidden: "Нельзя обещать автопостинг в Instagram, полную замену дизайнеру для сложной графики, генерацию видео-каруселей, автоматическую загрузку шрифтов по URL."
+      forbidden: "Нельзя обещать прямую публикацию в соцсети, замену сложной дизайнерской работы, генерацию видеоформатов, автоматическую загрузку шрифтов по URL."
     }
   },
   {
@@ -1211,14 +1211,14 @@ const contractDraftPreviewSpecs = [
     contractTitle: "Посты-карусели для бьюти-мастеров и салонов | GoToFlow",
     title: "Посты-карусели для бьюти-мастеров и салонов | GoToFlow",
     description: "Привлекайте новых клиентов с помощью красивых каруселей. Публикуйте экспертные советы, разборы процедур и прайс-листы в стильном дизайне.",
-    h1: "Продающие карусели для бьюти-мастеров",
+    h1: "Для каких задач бьюти-мастеру подходят карусели",
     primaryKeyword: "продающие карусели для бьюти-мастеров",
     secondaryKeywords: [
       "создание карусели",
       "генератор каруселей",
       "ai для постов"
     ],
-    heroEyebrow: "Для бьюти-сферы",
+    heroEyebrow: "Форматы контента",
     heroSubtitle: "Привлекайте новых клиентов с помощью красивых каруселей. Публикуйте экспертные советы, разборы процедур и прайс-листы в стильном дизайне.",
     ctaLabel: "Создать карусель",
     secondaryCtaLabel: "Смотреть примеры",
@@ -1262,8 +1262,8 @@ const contractDraftPreviewSpecs = [
         body: "ИИ напишет грамотный текст, расставит акценты и боли клиентов"
       },
       {
-        title: "Редактирование прайса",
-        body: "Добавьте точные цены и условия приема"
+        title: "Проверка текста",
+        body: "Уточните формулировки, акценты и факты перед оформлением"
       },
       {
         title: "Эстетичный дизайн",
@@ -1327,7 +1327,7 @@ const contractDraftPreviewSpecs = [
     faq: [
       {
         question: "Подойдет ли сервис для мастера маникюра?",
-        answer: "Идеально. Вы сможете публиковать советы по уходу за ногтями и прайсы."
+        answer: "Подходит. Вы сможете публиковать советы по уходу за ногтями и прайсы."
       },
       {
         question: "Нужно ли мне уметь красиво писать?",
@@ -1351,7 +1351,7 @@ const contractDraftPreviewSpecs = [
       },
       {
         question: "Сколько стоит использование сервиса?",
-        answer: "Инструмент заменяет дизайнера, стоимость подписки окупается с одной записи."
+        answer: "Инструмент помогает снизить ручную работу с текстом и оформлением; экономику использования стоит оценивать по своим задачам."
       },
       {
         question: "Поймет ли ИИ бьюти-термины?",
@@ -1367,7 +1367,7 @@ const contractDraftPreviewSpecs = [
       },
       {
         question: "Поможет ли сервис выделиться на фоне конкурентов?",
-        answer: "Безусловно. Единый визуальный стиль делает ваш аккаунт премиальным."
+        answer: "Может помочь. Единый визуальный стиль делает ваш аккаунт премиальным."
       },
       {
         question: "Как скачиваются изображения?",
@@ -1408,7 +1408,7 @@ const contractDraftPreviewSpecs = [
     },
     productTruth: {
       allowed: "ИИ может разбивать текст на карточки, есть готовые шаблоны, скачивание в ZIP, форматы 4:5 и 1:1, базовая настройка цветов.",
-      forbidden: "Нельзя обещать автопостинг в Instagram, полную замену дизайнеру для сложной графики, генерацию видео-каруселей, автоматическую загрузку шрифтов по URL."
+      forbidden: "Нельзя обещать прямую публикацию в соцсети, замену сложной дизайнерской работы, генерацию видеоформатов, автоматическую загрузку шрифтов по URL."
     }
   },
   {
@@ -1421,14 +1421,14 @@ const contractDraftPreviewSpecs = [
     contractTitle: "Экспертные карусели: упаковка знаний для соцсетей | GoToFlow",
     title: "Экспертные карусели: упаковка знаний для соцсетей | GoToFlow",
     description: "Делитесь опытом профессионально. Инструмент для экспертов, помогающий упаковать ваши знания в стильные и читабельные карусели для продвижения личного бренда.",
-    h1: "Экспертные карусели за несколько минут",
+    h1: "Как эксперту использовать карусели",
     primaryKeyword: "экспертные карусели за несколько минут",
     secondaryKeywords: [
       "создание карусели",
       "генератор каруселей",
       "ai для постов"
     ],
-    heroEyebrow: "Для экспертов",
+    heroEyebrow: "Упаковка экспертности",
     heroSubtitle: "Делитесь опытом профессионально. Инструмент для экспертов, помогающий упаковать ваши знания в стильные и читабельные карусели для продвижения личного бренда.",
     ctaLabel: "Создать карусель",
     secondaryCtaLabel: "Смотреть примеры",
@@ -1569,7 +1569,7 @@ const contractDraftPreviewSpecs = [
       },
       {
         question: "Подходит ли это для узких ниш (медицина, финансы)?",
-        answer: "Абсолютно. ИИ работает с любыми текстами, если вы задаете правильный исходник."
+        answer: "Да. ИИ работает с любыми текстами, если вы задаете правильный исходник."
       },
       {
         question: "Можно ли использовать терминологию?",
@@ -1577,14 +1577,14 @@ const contractDraftPreviewSpecs = [
       },
       {
         question: "Смогу ли я отказаться от услуг копирайтера?",
-        answer: "Для постов-каруселей — да. Сервис полностью берет на себя редактуру."
+        answer: "Для постов-каруселей — да. Сервис помогает с редактурой."
       },
       {
         question: "Как быстро я получу результат?",
-        answer: "Оформление экспертного поста занимает около 2 минут."
+        answer: "Время подготовки зависит от объема исходника, количества правок и выбранного визуального стиля."
       },
       {
-        question: "Можно ли настроить цвета под мой брендбук?",
+        question: "Можно ли настроить цвета под мой визуальный стиль?",
         answer: "Да, доступна палитра с вводом точных HEX-кодов."
       },
       {
@@ -1618,7 +1618,7 @@ const contractDraftPreviewSpecs = [
     },
     productTruth: {
       allowed: "ИИ может разбивать текст на карточки, есть готовые шаблоны, скачивание в ZIP, форматы 4:5 и 1:1, базовая настройка цветов.",
-      forbidden: "Нельзя обещать автопостинг в Instagram, полную замену дизайнеру для сложной графики, генерацию видео-каруселей, автоматическую загрузку шрифтов по URL."
+      forbidden: "Нельзя обещать прямую публикацию в соцсети, замену сложной дизайнерской работы, генерацию видеоформатов, автоматическую загрузку шрифтов по URL."
     }
   },
   {
@@ -1631,14 +1631,14 @@ const contractDraftPreviewSpecs = [
     contractTitle: "Создание каруселей для SMM-специалистов | GoToFlow",
     title: "Создание каруселей для SMM-специалистов | GoToFlow",
     description: "Масштабируйте производство контента. Генерируйте структуру и дизайн каруселей для десятков клиентов в несколько раз быстрее с помощью нейросетей.",
-    h1: "Автоматизация создания каруселей для SMM",
+    h1: "Какие задачи SMM решают карусели",
     primaryKeyword: "автоматизация создания каруселей для smm",
     secondaryKeywords: [
       "создание карусели",
       "генератор каруселей",
       "ai для постов"
     ],
-    heroEyebrow: "Для SMM-специалистов",
+    heroEyebrow: "Контент-производство",
     heroSubtitle: "Масштабируйте производство контента. Генерируйте структуру и дизайн каруселей для десятков клиентов в несколько раз быстрее с помощью нейросетей.",
     ctaLabel: "Создать карусель",
     secondaryCtaLabel: "Смотреть примеры",
@@ -1686,12 +1686,12 @@ const contractDraftPreviewSpecs = [
         body: "Отредактируйте тексты, чтобы они идеально подходили ЦА"
       },
       {
-        title: "Применение брендбука",
+        title: "Применение визуального стиля",
         body: "Выберите шаблон и цвета конкретного проекта/клиента"
       },
       {
-        title: "Экспорт пачки постов",
-        body: "Скачайте результат и загрузите в автопостинг"
+        title: "Экспорт готовой карусели",
+        body: "Скачайте изображения и передайте их для публикации"
       }
     ],
     parameters: [
@@ -1828,7 +1828,7 @@ const contractDraftPreviewSpecs = [
     },
     productTruth: {
       allowed: "ИИ может разбивать текст на карточки, есть готовые шаблоны, скачивание в ZIP, форматы 4:5 и 1:1, базовая настройка цветов.",
-      forbidden: "Нельзя обещать автопостинг в Instagram, полную замену дизайнеру для сложной графики, генерацию видео-каруселей, автоматическую загрузку шрифтов по URL."
+      forbidden: "Нельзя обещать прямую публикацию в соцсети, замену сложной дизайнерской работы, генерацию видеоформатов, автоматическую загрузку шрифтов по URL."
     }
   },
   {
@@ -1840,16 +1840,16 @@ const contractDraftPreviewSpecs = [
     primaryIntentType: "ALTERNATIVE",
     contractTitle: "ChatGPT для каруселей: лучшая визуальная альтернатива | GoToFlow",
     title: "ChatGPT для каруселей: лучшая визуальная альтернатива | GoToFlow",
-    description: "ChatGPT пишет отличные тексты, но не делает картинки. GoToFlow объединяет генерацию текста и автоматический дизайн слайдов для идеальных каруселей.",
-    h1: "Альтернатива ChatGPT: текст и дизайн карусели в одном окне",
+    description: "ChatGPT помогает с текстом и идеями. GoToFlow удобен, когда нужно собрать структуру, тексты слайдов и визуальное оформление карусели в одном рабочем процессе.",
+    h1: "Генератор каруселей: встроенный ИИ вместо копирования из ChatGPT",
     primaryKeyword: "альтернатива chatgpt: текст и дизайн карусели в одном окне",
     secondaryKeywords: [
       "создание карусели",
       "генератор каруселей",
       "ai для постов"
     ],
-    heroEyebrow: "Аналог ChatGPT",
-    heroSubtitle: "ChatGPT пишет отличные тексты, но не делает картинки. GoToFlow объединяет генерацию текста и автоматический дизайн слайдов для идеальных каруселей.",
+    heroEyebrow: "ИИ и Дизайн",
+    heroSubtitle: "ChatGPT помогает с текстом и идеями. GoToFlow удобен, когда нужно собрать структуру, тексты слайдов и визуальное оформление карусели в одном рабочем процессе.",
     ctaLabel: "Создать карусель",
     secondaryCtaLabel: "Смотреть примеры",
     quickAnswer: {
@@ -1960,12 +1960,12 @@ const contractDraftPreviewSpecs = [
         answer: "Мы используем передовые LLM для текста и собственные алгоритмы для дизайна."
       },
       {
-        question: "Нужен ли мне аккаунт ChatGPT?",
-        answer: "Нет, весь ИИ-функционал встроен прямо в GoToFlow."
+        question: "Можно ли использовать GoToFlow вместо ручного копирования из ChatGPT?",
+        answer: "Да. GoToFlow позволяет работать с идеей, структурой, текстом и визуальным оформлением в одном интерфейсе."
       },
       {
         question: "Почему это удобнее ChatGPT?",
-        answer: "ChatGPT выдает только текст, а мы даем готовую картинку для Instagram."
+        answer: "ChatGPT полезен для идей и черновиков, а GoToFlow помогает довести карусель до структуры, текстовых слайдов и визуального результата."
       },
       {
         question: "Безопасны ли мои запросы?",
@@ -2005,7 +2005,7 @@ const contractDraftPreviewSpecs = [
       },
       {
         question: "Помогает ли это с охватами?",
-        answer: "Идеальная структура и легкость чтения повышают удержание аудитории."
+        answer: "Понятная структура и легкость чтения помогают удерживать внимание аудитории."
       },
       {
         question: "Есть ли лимиты на генерацию?",
@@ -2038,7 +2038,7 @@ const contractDraftPreviewSpecs = [
     },
     productTruth: {
       allowed: "ИИ может разбивать текст на карточки, есть готовые шаблоны, скачивание в ZIP, форматы 4:5 и 1:1, базовая настройка цветов.",
-      forbidden: "Нельзя обещать автопостинг в Instagram, полную замену дизайнеру для сложной графики, генерацию видео-каруселей, автоматическую загрузку шрифтов по URL."
+      forbidden: "Нельзя обещать прямую публикацию в соцсети, замену сложной дизайнерской работы, генерацию видеоформатов, автоматическую загрузку шрифтов по URL."
     }
   },
   {
@@ -2051,14 +2051,14 @@ const contractDraftPreviewSpecs = [
     contractTitle: "Примеры Instagram каруселей: идеи и вдохновение | GoToFlow",
     title: "Примеры Instagram каруселей: идеи и вдохновение | GoToFlow",
     description: "Более 50 примеров эффективных Instagram каруселей для бизнеса и экспертов. Вдохновитесь идеями и создайте свою идеальную карусель с помощью нейросети.",
-    h1: "Примеры и идеи для продающих Instagram каруселей",
+    h1: "Примеры постов-каруселей: разбор работающих форматов",
     primaryKeyword: "примеры и идеи для продающих instagram каруселей",
     secondaryKeywords: [
       "создание карусели",
       "генератор каруселей",
       "ai для постов"
     ],
-    heroEyebrow: "Примеры каруселей",
+    heroEyebrow: "Идеи и форматы",
     heroSubtitle: "Более 50 примеров эффективных Instagram каруселей для бизнеса и экспертов. Вдохновитесь идеями и создайте свою идеальную карусель с помощью нейросети.",
     ctaLabel: "Создать карусель",
     secondaryCtaLabel: "Смотреть примеры",
@@ -2248,7 +2248,7 @@ const contractDraftPreviewSpecs = [
     },
     productTruth: {
       allowed: "ИИ может разбивать текст на карточки, есть готовые шаблоны, скачивание в ZIP, форматы 4:5 и 1:1, базовая настройка цветов.",
-      forbidden: "Нельзя обещать автопостинг в Instagram, полную замену дизайнеру для сложной графики, генерацию видео-каруселей, автоматическую загрузку шрифтов по URL."
+      forbidden: "Нельзя обещать прямую публикацию в соцсети, замену сложной дизайнерской работы, генерацию видеоформатов, автоматическую загрузку шрифтов по URL."
     }
   },
   {
@@ -2261,14 +2261,14 @@ const contractDraftPreviewSpecs = [
     contractTitle: "Промпты для создания каруселей в Instagram с AI | GoToFlow",
     title: "Промпты для создания каруселей в Instagram с AI | GoToFlow",
     description: "Точные и проверенные промпты для создания контента. Скопируйте готовый запрос, вставьте в AI-генератор и получите идеальную структуру карусели.",
-    h1: "Готовые промпты для генерации каруселей",
+    h1: "Готовые промпты для генерации каруселей с помощью ИИ",
     primaryKeyword: "готовые промпты для генерации каруселей",
     secondaryKeywords: [
       "создание карусели",
       "генератор каруселей",
       "ai для постов"
     ],
-    heroEyebrow: "Библиотека промптов",
+    heroEyebrow: "База промптов",
     heroSubtitle: "Точные и проверенные промпты для создания контента. Скопируйте готовый запрос, вставьте в AI-генератор и получите идеальную структуру карусели.",
     ctaLabel: "Создать карусель",
     secondaryCtaLabel: "Смотреть примеры",
@@ -2381,7 +2381,7 @@ const contractDraftPreviewSpecs = [
       },
       {
         question: "Нужно ли оплачивать работу дизайнера?",
-        answer: "Нет, инструмент полностью заменяет ручной труд дизайнера по соцсетям."
+        answer: "Нет. Инструмент помогает быстрее подготовить структуру и визуальное оформление, но финальный результат стоит проверить вручную."
       },
       {
         question: "Безопасно ли это использовать?",
@@ -2458,7 +2458,7 @@ const contractDraftPreviewSpecs = [
     },
     productTruth: {
       allowed: "ИИ может разбивать текст на карточки, есть готовые шаблоны, скачивание в ZIP, форматы 4:5 и 1:1, базовая настройка цветов.",
-      forbidden: "Нельзя обещать автопостинг в Instagram, полную замену дизайнеру для сложной графики, генерацию видео-каруселей, автоматическую загрузку шрифтов по URL."
+      forbidden: "Нельзя обещать прямую публикацию в соцсети, замену сложной дизайнерской работы, генерацию видеоформатов, автоматическую загрузку шрифтов по URL."
     }
   },
   {
@@ -2471,14 +2471,14 @@ const contractDraftPreviewSpecs = [
     contractTitle: "Лучшие сервисы для создания каруселей | Сравнение и обзор",
     title: "Лучшие сервисы для создания каруселей | Сравнение и обзор",
     description: "Ищете лучший сервис для создания каруселей? Сравните популярные AI-инструменты, узнайте их плюсы и минусы, и выберите оптимальный вариант для Instagram и Telegram.",
-    h1: "Лучшие сервисы для создания каруселей в 2026 году",
+    h1: "Выбор сервиса для создания постов-каруселей: функции и критерии",
     primaryKeyword: "лучшие сервисы для создания каруселей в 2026 году",
     secondaryKeywords: [
       "создание карусели",
       "генератор каруселей",
       "ai для постов"
     ],
-    heroEyebrow: "Сравнение сервисов",
+    heroEyebrow: "Сравнение форматов",
     heroSubtitle: "Ищете лучший сервис для создания каруселей? Сравните популярные AI-инструменты, узнайте их плюсы и минусы, и выберите оптимальный вариант для Instagram и Telegram.",
     ctaLabel: "Создать карусель",
     secondaryCtaLabel: "Смотреть примеры",
@@ -2611,7 +2611,7 @@ const contractDraftPreviewSpecs = [
       },
       {
         question: "Сколько времени экономит инструмент?",
-        answer: "В среднем вы экономите от 1 до 2 часов на каждом посте."
+        answer: "Экономия времени зависит от объема исходника, правок и требований к визуальному стилю."
       },
       {
         question: "Можно ли импортировать готовые статьи?",
@@ -2631,7 +2631,7 @@ const contractDraftPreviewSpecs = [
       },
       {
         question: "Как быстро работает генерация?",
-        answer: "Обычно процесс занимает не более 60 секунд."
+        answer: "Скорость генерации зависит от объема исходного материала и сложности результата."
       },
       {
         question: "Есть ли лимиты на количество слайдов?",
@@ -2668,7 +2668,7 @@ const contractDraftPreviewSpecs = [
     },
     productTruth: {
       allowed: "ИИ может разбивать текст на карточки, есть готовые шаблоны, скачивание в ZIP, форматы 4:5 и 1:1, базовая настройка цветов.",
-      forbidden: "Нельзя обещать автопостинг в Instagram, полную замену дизайнеру для сложной графики, генерацию видео-каруселей, автоматическую загрузку шрифтов по URL."
+      forbidden: "Нельзя обещать прямую публикацию в соцсети, замену сложной дизайнерской работы, генерацию видеоформатов, автоматическую загрузку шрифтов по URL."
     }
   },
   {
@@ -2681,14 +2681,14 @@ const contractDraftPreviewSpecs = [
     contractTitle: "Контент для соцсетей бизнеса: создание каруселей | GoToFlow",
     title: "Контент для соцсетей бизнеса: создание каруселей | GoToFlow",
     description: "Создавайте продающий контент для социальных сетей вашего бизнеса без дизайнера. AI автоматически сгенерирует структуру и дизайн бизнес-карусели.",
-    h1: "Карусели для бизнеса: продажи и вовлечение",
+    h1: "Как бизнесу использовать карусели в соцсетях",
     primaryKeyword: "карусели для бизнеса: продажи и вовлечение",
     secondaryKeywords: [
       "создание карусели",
       "генератор каруселей",
       "ai для постов"
     ],
-    heroEyebrow: "Для бизнеса",
+    heroEyebrow: "Бизнес-задачи",
     heroSubtitle: "Создавайте продающий контент для социальных сетей вашего бизнеса без дизайнера. AI автоматически сгенерирует структуру и дизайн бизнес-карусели.",
     ctaLabel: "Создать карусель",
     secondaryCtaLabel: "Смотреть примеры",
@@ -2812,8 +2812,8 @@ const contractDraftPreviewSpecs = [
         answer: "Мы не используем ваши тексты для открытого обучения моделей."
       },
       {
-        question: "Смогу ли я уволить дизайнера?",
-        answer: "Наш инструмент закроет 90% задач по ежедневным карточкам и постам."
+        question: "Можно ли сократить ручную работу дизайнера?",
+        answer: "GoToFlow помогает закрывать типовые задачи по ежедневным карточкам и постам, но сложные дизайн-задачи остаются зоной ручной проверки."
       },
       {
         question: "Как добавить логотип компании на каждый слайд?",
@@ -2837,7 +2837,7 @@ const contractDraftPreviewSpecs = [
       },
       {
         question: "Подойдет ли для товарного бизнеса?",
-        answer: "Абсолютно. Отлично работает для обзоров одежды, косметики и техники."
+        answer: "Да. Отлично работает для обзоров одежды, косметики и техники."
       },
       {
         question: "Как быстро окупается сервис?",
@@ -2878,7 +2878,7 @@ const contractDraftPreviewSpecs = [
     },
     productTruth: {
       allowed: "ИИ может разбивать текст на карточки, есть готовые шаблоны, скачивание в ZIP, форматы 4:5 и 1:1, базовая настройка цветов.",
-      forbidden: "Нельзя обещать автопостинг в Instagram, полную замену дизайнеру для сложной графики, генерацию видео-каруселей, автоматическую загрузку шрифтов по URL."
+      forbidden: "Нельзя обещать прямую публикацию в соцсети, замену сложной дизайнерской работы, генерацию видеоформатов, автоматическую загрузку шрифтов по URL."
     }
   }
 ];
@@ -2891,9 +2891,92 @@ const contractCarouselHeroAssetIds = [
 
 const contractWorkflowStepKeys = ['source', 'structure', 'textReview', 'visualRoute', 'editorResult'];
 
+const contractUnifiedWorkflowSteps = [
+  {
+    title: 'Ввод темы или исходного материала',
+    body: 'Напишите тему, вставьте текст, заметки или ссылку на материал в поле ввода GoToFlow.',
+  },
+  {
+    title: 'Создание структуры и текстов слайдов',
+    body: 'GoToFlow выделяет ключевые тезисы, собирает логику подачи и готовит тексты будущих слайдов.',
+  },
+  {
+    title: 'Проверка и редактирование результата',
+    body: 'Проверьте сценарий, уточните формулировки, поправьте акценты и сохраните нужный смысл.',
+  },
+  {
+    title: 'Выбор шаблона и визуального стиля',
+    body: 'Выберите существующий шаблон, визуальный стиль, цвета и оформление под задачу публикации.',
+  },
+  {
+    title: 'Экспорт готовой карусели',
+    body: 'Скачайте готовые изображения и используйте их для публикации в выбранной соцсети.',
+  },
+];
+
 const expandContractItems = (primaryItems, fallbackItems, count) => {
   const items = [...primaryItems, ...fallbackItems];
   return items.slice(0, count);
+};
+
+const contractShowcaseIntroByType = {
+  alternative: {
+    eyebrow: 'Сравнение сценариев',
+    heading: { before: 'Когда выбрать ', accent: 'GoToFlow', after: '' },
+  },
+  example: {
+    eyebrow: 'Разборы примеров',
+    heading: { before: 'Как устроены ', accent: 'готовые примеры', after: '' },
+  },
+  prompt: {
+    eyebrow: 'Готовые промпты',
+    heading: { before: 'Промпты, которые ', accent: 'можно адаптировать', after: '' },
+  },
+  tool: {
+    eyebrow: 'Критерии сравнения',
+    heading: { before: 'Как сравнивать ', accent: 'сервисы', after: '' },
+  },
+};
+
+const buildIntentShowcaseItems = (spec) => {
+  const pageSpecificFormats = spec.formats.slice(3);
+
+  if (spec.pageType === 'prompt') {
+    return pageSpecificFormats.concat(spec.examples).slice(0, 6).map((item) => ({
+      title: `Промпт: ${item.title}`,
+      body: `Готовый промпт: "Создай карусель на тему {тема} для {аудитория}. Сохрани хук, последовательность слайдов, короткие тексты и финальный CTA". Переменные для замены: {тема}, {аудитория}, {тон}. Ожидаемый результат: структура, тексты слайдов и способ использования в GoToFlow.`,
+    }));
+  }
+
+  if (spec.pageType === 'example') {
+    return spec.examples.concat(pageSpecificFormats).slice(0, 6).map((item, index) => ({
+      title: item.title,
+      body: `Задача: показать формат "${item.title}" из Contract. Структура: хук, последовательность смысловых слайдов, доказательство или пример, финальный CTA. Адаптация: замените тему, аудиторию и детали под свой материал перед генерацией в GoToFlow.`,
+      type: index < spec.examples.length ? 'Разбор примера' : 'Формат примера',
+    }));
+  }
+
+  if (spec.pageType === 'alternative') {
+    return pageSpecificFormats.concat(spec.parameters).slice(0, 6).map((item) => ({
+      title: item.title,
+      body: `Критерий сравнения из Contract: ${item.body}. GoToFlow подходит, когда нужно быстро собрать структуру, тексты слайдов и визуальное оформление карусели; универсальные редакторы остаются нужными для отдельных дизайн-задач.`,
+      type: 'Критерий',
+    }));
+  }
+
+  if (spec.pageType === 'tool') {
+    return pageSpecificFormats.concat(spec.parameters).slice(0, 6).map((item) => ({
+      title: item.title,
+      body: `Критерий выбора из Contract: ${item.body}. Сравнивайте сервисы по задаче, исходным материалам, редактированию, визуальному стилю и способу экспорта без выдуманных цен, рейтингов или отзывов.`,
+      type: 'Критерий',
+    }));
+  }
+
+  return expandContractItems(
+    spec.examples.map((item) => ({ title: item.title, body: spec.quickAnswer.body })),
+    pageSpecificFormats.map((item) => ({ title: item.title, body: item.body })),
+    6,
+  );
 };
 
 const titlePartsFromPlainHeading = (heading, fallbackAccent) => {
@@ -2912,16 +2995,16 @@ const titlePartsFromPlainHeading = (heading, fallbackAccent) => {
 
 const buildContractDraftPreviewPage = (spec) => {
   const targetAction = spec.path.split('/').filter(Boolean).slice(1).join('_').replace(/-/g, '_');
-  const showcaseItems = expandContractItems(
-    spec.examples.map((item) => ({ title: item.title, body: spec.quickAnswer.body })),
-    spec.formats.slice(3).map((item) => ({ title: item.title, body: item.body })),
-    6,
-  );
+  const showcaseItems = buildIntentShowcaseItems(spec);
   const useCaseItems = expandContractItems(
     spec.useCases,
     spec.formats.slice(3).map((item) => ({ title: item.title, body: item.body })),
     6,
   );
+  const showcaseIntro = contractShowcaseIntroByType[spec.pageType] || {
+    eyebrow: 'Готовые примеры',
+    heading: { before: 'Галерея ', accent: 'готовых решений', after: '' },
+  };
 
   return {
     id: spec.id,
@@ -2997,7 +3080,7 @@ const buildContractDraftPreviewPage = (spec) => {
     },
     templateChoiceGuide: {
       eyebrow: 'Выбор сценария',
-      title: { before: 'Как выбрать ', accent: 'подходящий формат', after: '' },
+      title: titlePartsFromPlainHeading(spec.h1, spec.heroEyebrow),
       description: spec.quickAnswer.body,
       items: spec.formats.slice(0, 4).map((format, index) => ({
         id: spec.slug + '-format-guide-' + (index + 1),
@@ -3009,8 +3092,8 @@ const buildContractDraftPreviewPage = (spec) => {
     productWorkflow: {
       preset: 'carousel_creation',
       eyebrow: 'Процесс',
-      title: { before: 'Как работает ', accent: spec.heroEyebrow.toLowerCase(), after: '' },
-      description: spec.workflowSteps.map((step) => step.body).join(' '),
+      title: { before: 'Единый процесс ', accent: 'GoToFlow', after: '' },
+      description: 'Единый workflow для всех девяти страниц: ввод темы или исходного материала, создание структуры и текстов слайдов, проверка и редактирование результата, выбор шаблона и визуального стиля, экспорт готовой карусели.',
       carouselTypes: [
         { id: 'ai', label: 'AI-карусель', availability: 'available', active: true },
         { id: 'template', label: 'Шаблонная', availability: 'available' },
@@ -3020,33 +3103,33 @@ const buildContractDraftPreviewPage = (spec) => {
       stepOverrides: Object.fromEntries(contractWorkflowStepKeys.map((key, index) => [
         key,
         {
-          title: spec.workflowSteps[index]?.title,
-          description: spec.workflowSteps[index]?.body,
+          title: contractUnifiedWorkflowSteps[index]?.title,
+          description: contractUnifiedWorkflowSteps[index]?.body,
         },
       ])),
       mockups: [
         {
           id: 'source-structure',
-          title: spec.workflowSteps[0]?.title,
-          caption: spec.workflowSteps[0]?.body,
+          title: contractUnifiedWorkflowSteps[0]?.title,
+          caption: contractUnifiedWorkflowSteps[0]?.body,
           fallbackVisualType: 'source_structure',
         },
         {
           id: 'text-review',
-          title: spec.workflowSteps[2]?.title,
-          caption: spec.workflowSteps[2]?.body,
+          title: contractUnifiedWorkflowSteps[2]?.title,
+          caption: contractUnifiedWorkflowSteps[2]?.body,
           fallbackVisualType: 'text_review',
         },
         {
           id: 'visual-route',
-          title: spec.workflowSteps[3]?.title,
-          caption: spec.workflowSteps[3]?.body,
+          title: contractUnifiedWorkflowSteps[3]?.title,
+          caption: contractUnifiedWorkflowSteps[3]?.body,
           fallbackVisualType: 'ai_template',
         },
         {
           id: 'editor-result',
-          title: spec.workflowSteps[4]?.title,
-          caption: spec.workflowSteps[4]?.body,
+          title: contractUnifiedWorkflowSteps[4]?.title,
+          caption: contractUnifiedWorkflowSteps[4]?.body,
           resultCarousel: {
             proofType: 'workflow-result',
             title: 'Готовая карусель',
@@ -3061,7 +3144,7 @@ const buildContractDraftPreviewPage = (spec) => {
           fallbackVisualType: 'editor_result',
         },
       ],
-      featureChips: spec.workflowSteps.map((step) => step.title),
+      featureChips: contractUnifiedWorkflowSteps.map((step) => step.title),
       cta: {
         label: spec.ctaLabel,
         href: 'https://app.gotoflow.io',
@@ -3070,20 +3153,20 @@ const buildContractDraftPreviewPage = (spec) => {
       },
     },
     productCapabilities: buildCanonicalProductCapabilities({
-      heading: { before: 'Какие параметры ', accent: 'можно настроить', after: '' },
+      heading: { before: 'Какие возможности ', accent: 'подтверждены Contract', after: '' },
       introCopy: spec.parameters.map((item) => item.title + ': ' + item.body).join(' '),
       highlightedCapabilities: ['topicText', 'aiStructureText', 'templates', 'textEditing', 'formats4511916', 'upTo10Slides'],
     }),
     readyCarouselShowcaseIntro: {
-      eyebrow: 'Готовые примеры',
-      heading: { before: 'Галерея ', accent: 'готовых решений', after: '' },
-      body: spec.examples.map((item) => item.title).join(', '),
+      eyebrow: showcaseIntro.eyebrow,
+      heading: showcaseIntro.heading,
+      body: showcaseItems.map((item) => item.title).join(', '),
     },
     readyCarouselShowcase: textToCarouselReadyShowcase.map((item, index) => ({
       ...item,
       title: showcaseItems[index]?.title || item.title,
       body: showcaseItems[index]?.body || item.body,
-      type: 'Готовая карусель',
+      type: showcaseItems[index]?.type || 'Готовая карусель',
       audience: spec.heroEyebrow,
     })),
     readyCarouselShowcaseCta: {
@@ -3108,7 +3191,7 @@ const buildContractDraftPreviewPage = (spec) => {
     },
     useCasesIntro: {
       eyebrow: 'Сценарии',
-      heading: { before: 'Для каких задач ', accent: 'подходит страница', after: '' },
+      heading: titlePartsFromPlainHeading(spec.h1, spec.heroEyebrow),
     },
     useCases: useCaseItems,
     faq: spec.faq,
@@ -3625,7 +3708,7 @@ const telegramPostGeneratorFaq = [
   { question: 'Пишет ли генератор длинные лонгриды (статьи)?', answer: 'По умолчанию генератор нацелен на стандартный формат поста для канала. Если нужна большая статья, лучше заранее задать желаемый объем и структуру текста.' },
   { question: 'Можно ли скопировать сгенерированный текст с сохранением форматирования?', answer: 'Да, текст генерируется таким образом, что при копировании в мессенджер сохраняются отступы и абзацы.' },
   { question: 'Умеет ли ИИ использовать эмодзи вместо буллитов?', answer: 'Да, система автоматически добавляет релевантные эмодзи для списков и акцентов, чтобы сделать пост более живым.' },
-  { question: 'Создает ли генератор картинки к постам?', answer: 'Да. GoToFlow не только пишет текст, но и помогает подготовить визуальное сопровождение, оформленное в вашем фирменном стиле.' },
+  { question: 'Создает ли генератор картинки к постам?', answer: 'Да. GoToFlow помогает подготовить текст и визуальное сопровождение, оформленное в вашем фирменном стиле.' },
   { question: 'Подходит ли генератор для ТГ-канала?', answer: 'Отлично подходит. Вы можете закинуть ссылку на новость или сырой факт, и ИИ перепишет это в понятную новостную сводку.' },
   { question: 'А если у меня канал с мемами, ИИ справится?', answer: 'Вы можете задать нейросети юмористический тон (Tone of Voice), и она напишет текст с нужным настроением.' },
   { question: 'Нужно ли платить за каждый сгенерированный пост?', answer: 'Использование генератора входит в подписку GoToFlow. Вы можете создавать контент в рамках вашего тарифа без доплат за каждый пост.' },
