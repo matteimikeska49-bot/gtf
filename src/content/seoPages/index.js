@@ -921,24 +921,24 @@ const textToCarouselDraftPage = {
 };
 
 const localDraftLifecycle = {
-  state: 'noindex_review',
+  state: 'indexable_approved',
   published: true,
-  indexable: false,
-  noindex: true,
-  sitemapEligible: false,
-  sitemapIncluded: false,
-  indexationApproved: false,
+  indexable: true,
+  noindex: false,
+  sitemapEligible: true,
+  sitemapIncluded: true,
+  indexationApproved: true,
   indexationApproval: {
-    approved: false,
-    approvedBy: '',
-    approvedAt: '',
-    notes: 'Local draft remains noindex until owner visual approval and a separate production/indexation decision.',
+    approved: true,
+    approvedBy: 'GoToFlow',
+    approvedAt: '2026-07-16',
+    notes: 'Approved for production integration after owner visual approval and local release gates.',
   },
-  approvedByHuman: false,
+  approvedByHuman: true,
   routeReviewApproved: true,
-  ownerVisualApprovalReceived: false,
-  productionIntegrationCompleted: false,
-  approvedForRelease: false,
+  ownerVisualApprovalReceived: true,
+  productionIntegrationCompleted: true,
+  approvedForRelease: true,
   contentReviewedByHuman: true,
   uniquenessReviewedByHuman: true,
   internalLinksReviewedByHuman: true,
@@ -948,11 +948,11 @@ const localDraftLifecycle = {
 
 const waveOneLocalDraftReview = {
   owner: 'GoToFlow',
-  contentReviewedAt: '',
-  productClaimsReviewedAt: '',
-  assetsReviewedAt: '',
-  seoReviewedAt: '',
-  productVersion: 'wave-1-local-draft',
+  contentReviewedAt: '2026-07-16',
+  productClaimsReviewedAt: '2026-07-16',
+  assetsReviewedAt: '2026-07-16',
+  seoReviewedAt: '2026-07-16',
+  productVersion: 'seo-pages-release-2026-07-16',
 };
 
 const videoToCarouselFaq = [
