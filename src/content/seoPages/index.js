@@ -928,7 +928,7 @@ const textToCarouselDraftPage = {
   }),
 };
 
-const localDraftLifecycle = {
+const approvedReleaseLifecycle = {
   state: 'indexable_approved',
   published: true,
   indexable: true,
@@ -1036,6 +1036,7 @@ const contractDraftPreviewSpecs = [
     pageType: "alternative",
     slug: "canva-dlya-karuseley",
     primaryIntentType: "ALTERNATIVE",
+    sectionPolicy: canvaSectionPolicy,
     contractTitle: "Аналог Canva для создания постов-каруселей | GoToFlow",
     title: "Аналог Canva для создания постов-каруселей | GoToFlow",
     description: "Ищете аналог Canva для создания постов-каруселей? Добавьте тему или текст и получите структуру, оформление и готовые слайды в GoToFlow.",
@@ -1355,6 +1356,9 @@ const contractDraftPreviewSpecs = [
       forbidden: "Нельзя обещать прямую публикацию в соцсети, замену сложной дизайнерской работы, генерацию видеоформатов, автоматическую загрузку шрифтов по URL."
     }
   },
+];
+
+const contractApprovedReleaseSpecs = [
   {
     id: "ru-use-case-carousels-for-beauty",
     sourceFile: "src/content/seoPages/handoffs/content_design_contract_carousels_for_beauty.md",
@@ -3662,9 +3666,19 @@ const titlePartsFromPlainHeading = (heading, fallbackAccent) => {
   };
 };
 
-const buildContractDraftPreviewPage = (spec) => {
+const buildContractProductPage = ({
+  spec,
+  lifecycle,
+  review,
+  sectionPolicy = textToCarouselSectionPolicy,
+  manualReviewReason = 'Local noindex draft preview from complete Content Design Contract. Owner visual approval is required before production integration, indexation, sitemap inclusion, push, or deploy.',
+  notes = [
+    'Local noindex draft preview only; not approved for release.',
+    'Rendered through CarouselProductSeoPageTemplate with existing production components and mockups.',
+  ],
+  ownershipReason = 'Content Design Contract marks this URL as isolated by intent; draft remains noindex until owner approval.',
+}) => {
   const targetAction = spec.path.split('/').filter(Boolean).slice(1).join('_').replace(/-/g, '_');
-  const isCanvaPage = spec.id === 'ru-alternative-canva-dlya-karuseley';
   const showcaseItems = buildIntentShowcaseItems(spec);
   const useCaseItems = expandContractItems(
     spec.useCases,
@@ -3728,9 +3742,9 @@ const buildContractDraftPreviewPage = (spec) => {
       country: 'RU',
       conversionAction: targetAction,
       productRoute: 'https://app.gotoflow.io',
-      cannibalizationBoundary: isCanvaPage
-        ? 'This noindex Canva page remains outside sitemap/indexation until owner approval.'
-        : 'This noindex draft follows its Content Design Contract and remains outside sitemap/indexation until owner approval.',
+      cannibalizationBoundary: lifecycle.noindex === true
+        ? 'This noindex draft follows its Content Design Contract and remains outside sitemap/indexation until owner approval.'
+        : 'This approved release page is indexable after owner approval and local release gates.',
     },
     faqPolicy: {
       minItems: 15,
@@ -3738,7 +3752,7 @@ const buildContractDraftPreviewPage = (spec) => {
       requireUniqueQuestions: true,
       requireVisibleSchemaParity: true,
     },
-    sectionPolicy: isCanvaPage ? canvaSectionPolicy : textToCarouselSectionPolicy,
+    sectionPolicy: spec.sectionPolicy || sectionPolicy,
     sections: [],
     heroEyebrow: spec.heroEyebrow,
     heroHighlightFragment: spec.heroHighlightFragment,
@@ -3910,36 +3924,46 @@ const buildContractDraftPreviewPage = (spec) => {
     routeOwner: spec.id,
     canonicalOwner: spec.path,
     riskLevel: 'medium',
-    manualReviewReason: isCanvaPage
-      ? 'Local noindex Canva production-page config. Owner visual approval is required before production integration, indexation, sitemap inclusion, push, or deploy.'
-      : 'Local noindex draft preview from complete Content Design Contract. Owner visual approval is required before production integration, indexation, sitemap inclusion, push, or deploy.',
+    manualReviewReason,
     createdFromActionMapRowIds: [spec.sourceFile.replace('src/content/seoPages/handoffs/', '').replace('.md', '') + '-2026-07-16'],
-    notes: isCanvaPage ? [
-      'Local noindex Canva production-page config only; not approved for release.',
-      'Rendered through CarouselProductSeoPageTemplate with existing production components and mockups.',
-      'Allowed product claims: ' + spec.productTruth.allowed,
-      'Forbidden product claims: ' + spec.productTruth.forbidden,
-    ] : [
-      'Local noindex draft preview only; not approved for release.',
-      'Rendered through CarouselProductSeoPageTemplate with existing production components and mockups.',
+    notes: [
+      ...notes,
       'Product Truth allowed claims: ' + spec.productTruth.allowed,
       'Product Truth forbidden claims: ' + spec.productTruth.forbidden,
     ],
-    review: contractDraftPreviewReview,
+    review,
     lastUpdated: '2026-07-16',
     ownershipDecision: ownershipDecision({
       decision: 'safe_new_registry_page',
-      reason: spec.workflowHeading
-        ? 'Approved Canva intent marks this URL as isolated; draft remains noindex until owner approval.'
-        : 'Content Design Contract marks this URL as isolated by intent; draft remains noindex until owner approval.',
+      reason: ownershipReason,
       existingOwnerStatus: 'No exact existing protected RU product/tool route owner found for this draft path.',
       intentOverlapPaths: spec.relatedCards.map((card) => card.href),
     }),
-    ...contractDraftPreviewLifecycle,
+    ...lifecycle,
   };
 };
 
+const buildContractDraftPreviewPage = (spec) => buildContractProductPage({
+  spec,
+  lifecycle: contractDraftPreviewLifecycle,
+  review: contractDraftPreviewReview,
+});
+
+const buildContractApprovedReleasePage = (spec) => buildContractProductPage({
+  spec,
+  lifecycle: approvedReleaseLifecycle,
+  review: waveOneLocalDraftReview,
+  sectionPolicy: textToCarouselSectionPolicy,
+  manualReviewReason: 'Approved release implementation from complete Content Design Contract after owner visual approval and local release gates.',
+  notes: [
+    'Approved release page; owner visual approval and local release gates completed.',
+    'Rendered through CarouselProductSeoPageTemplate with existing production components and mockups.',
+  ],
+  ownershipReason: 'Content Design Contract marks this URL as isolated by intent; approved release remains indexable after owner approval and local release gates.',
+});
+
 const contractDraftPreviewPages = contractDraftPreviewSpecs.map(buildContractDraftPreviewPage);
+const contractApprovedReleasePages = contractApprovedReleaseSpecs.map(buildContractApprovedReleasePage);
 
 const videoToCarouselFaq = [
   {
@@ -4369,7 +4393,7 @@ const videoToCarouselDraftPage = {
     existingOwnerStatus: 'Existing carousel generator routes keep broad generator intent; this route owns video-to-carousel conversion intent.',
     intentOverlapPaths: ['/ru/ii-generator-karuseley', '/ru/generator-karuselej-instagram'],
   }),
-  ...localDraftLifecycle,
+  ...approvedReleaseLifecycle,
 };
 
 const vkPostGeneratorFaq = [
@@ -4810,7 +4834,7 @@ const buildPostGeneratorDraftPage = ({
     existingOwnerStatus: 'No exact existing protected RU product/tool route owner found.',
     intentOverlapPaths: ['/ru/generator-postov-instagram'],
   }),
-  ...localDraftLifecycle,
+  ...approvedReleaseLifecycle,
 });
 
 const vkPostGeneratorDraftPage = buildPostGeneratorDraftPage({
@@ -6433,11 +6457,17 @@ const waveOneLocalDraftPages = [
 
 const waveOneLocalDraftIds = new Set(waveOneLocalDraftPages.map((page) => page.id));
 const contractDraftPreviewIds = new Set(contractDraftPreviewPages.map((page) => page.id));
+const contractApprovedReleaseIds = new Set(contractApprovedReleasePages.map((page) => page.id));
 
 const seoPagesSource = [
   ...waveOneLocalDraftPages,
   ...contractDraftPreviewPages,
-  ...rawSeoPages.filter((page) => !waveOneLocalDraftIds.has(page.id) && !contractDraftPreviewIds.has(page.id)),
+  ...contractApprovedReleasePages,
+  ...rawSeoPages.filter((page) => (
+    !waveOneLocalDraftIds.has(page.id) &&
+    !contractDraftPreviewIds.has(page.id) &&
+    !contractApprovedReleaseIds.has(page.id)
+  )),
 ];
 
 const decisionToDefaultState = (decision) => {
