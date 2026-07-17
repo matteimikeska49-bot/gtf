@@ -40,7 +40,7 @@ const HeroCarouselComposition = ({ images = [], badge = 'Шаблон' }) => {
 );
 };
 
-const renderH1 = (text) => {
+const renderH1 = (text, highlightFragment) => {
   if (!text) return null;
   /* Accent the keyword phrase while keeping rendering generic */
   const accentMap = {
@@ -48,8 +48,11 @@ const renderH1 = (text) => {
     'LinkedIn': 'LinkedIn',
     'Telegram': 'Telegram',
   };
+  const highlightMap = highlightFragment
+    ? { [highlightFragment]: highlightFragment }
+    : accentMap;
 
-  for (const [keyword, display] of Object.entries(accentMap)) {
+  for (const [keyword, display] of Object.entries(highlightMap)) {
     if (text.includes(keyword)) {
       const parts = text.split(keyword);
       if (parts.length === 2) {
@@ -93,7 +96,7 @@ export const SeoPageTemplateHero = ({ page }) => {
             </div>
 
             <h1 className="text-4xl font-black leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {renderH1(page.h1)}
+              {renderH1(page.h1, page.heroHighlightFragment)}
             </h1>
 
             <p className="mt-6 text-lg leading-8 text-zinc-400">

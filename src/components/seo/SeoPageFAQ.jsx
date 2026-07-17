@@ -8,11 +8,12 @@ export const SeoPageFAQ = ({ items = [], page }) => {
   const [openIndex, setOpenIndex] = useState(0);
   const faqIdPrefix = useId();
   if (!items.length) return null;
+  const faqHeading = page?.faqHeading || { before: 'Частые ', accent: 'вопросы', after: '' };
 
   return (
     <section id="faq-section" data-seo-section="faq" className="border-t border-white/[0.08] py-16 md:py-20">
       <SeoSectionHeading
-        heading={{ before: 'Частые ', accent: 'вопросы', after: '' }}
+        heading={faqHeading}
         sectionId="faq"
         className="mb-8 max-w-3xl"
       />

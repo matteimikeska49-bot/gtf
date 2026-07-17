@@ -1016,6 +1016,7 @@ const contractDraftPreviewSpecs = [
       "создание каруселей без ручной верстки в Canva"
     ],
     heroEyebrow: "АНАЛОГ CANVA ДЛЯ КАРУСЕЛЕЙ",
+    heroHighlightFragment: "Canva",
     heroSubtitle: "GoToFlow — сервис для быстрого создания постов-каруселей без ручной верстки каждого слайда. Добавьте тему, заметки или готовый текст, отредактируйте результат и скачайте карусель для публикации.",
     ctaLabel: "Создать карусель",
     secondaryCtaLabel: "Посмотреть примеры",
@@ -1298,6 +1299,7 @@ const contractDraftPreviewSpecs = [
         answer: "Универсальный редактор требует самостоятельной расстановки всех графических элементов и работы с каждым слоем, а генератор делает это автоматически на основе вашего контента."
       }
     ],
+    faqHeading: { before: "Частые вопросы об аналоге ", accent: "Canva", after: " для каруселей" },
     relatedHeading: "Другие инструменты для создания каруселей",
     relatedCards: [
       {
@@ -3235,6 +3237,7 @@ const buildContractDraftPreviewPage = (spec) => {
     sectionPolicy: spec.workflowHeading ? canvaSectionPolicy : textToCarouselSectionPolicy,
     sections: [],
     heroEyebrow: spec.heroEyebrow,
+    heroHighlightFragment: spec.heroHighlightFragment,
     heroSecondaryLinkLabel: spec.secondaryCtaLabel,
     heroCarouselAssetIds: contractCarouselHeroAssetIds,
     heroVisualBadge: spec.heroEyebrow,
@@ -3365,6 +3368,7 @@ const buildContractDraftPreviewPage = (spec) => {
     },
     useCases: useCaseItems,
     faq: spec.faq,
+    faqHeading: spec.faqHeading,
     relatedIntro: {
       eyebrow: 'Связанные материалы',
       heading: titlePartsFromPlainHeading(spec.relatedHeading, 'материалы'),
