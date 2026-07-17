@@ -17,17 +17,191 @@ import { fileURLToPath } from 'url';
 import puppeteer from 'puppeteer';
 import { readdir, readFile } from 'fs/promises';
 import http from 'http';
-import { setTimeout as delay } from 'timers/promises';
 import { getSeoPagesForPrerender, getSeoPagesForSitemap } from './src/content/seoPages/index.js';
+import { getRouteAliasTarget, getRouteCanonicalPath } from './src/routes/routeAliases.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = process.env.PRERENDER_DIST_DIR
   ? path.resolve(process.env.PRERENDER_DIST_DIR)
   : path.join(__dirname, 'dist');
 const PREVIEW_HOST = '127.0.0.1';
+const PUBLIC_ORIGIN = 'https://gotoflow.io';
 const NAVIGATION_ATTEMPTS = 3;
 const NAVIGATION_TIMEOUT_MS = 60000;
 const PREVIEW_READY_TIMEOUT_MS = 30000;
+
+const ROOT_FALLBACK_TITLE = 'AI Content Generator for Social Media — Create Posts, Carousels & Reels Fast | GoToFlow';
+
+const normalizeRoutePath = (routePath) => {
+  if (!routePath || routePath === '/') return '/';
+  return `/${String(routePath).replace(/^\/+/, '').replace(/\/+$/, '')}`;
+};
+
+const canonicalUrlForPath = (routePath) => {
+  const normalized = normalizeRoutePath(routePath);
+  return `${PUBLIC_ORIGIN}${normalized === '/' ? '/' : normalized}`;
+};
+
+const classifyRoute = (route, seoPageByPath) => {
+  const normalizedRoute = normalizeRoutePath(route);
+  const seoPage = seoPageByPath.get(normalizedRoute);
+
+  if (seoPage) {
+    return {
+      type: 'seo',
+      route: normalizedRoute,
+      expectedPath: normalizedRoute,
+      expectedCanonical: canonicalUrlForPath(seoPage.path),
+      expectedTitle: seoPage.title,
+      expectedH1: seoPage.h1,
+      expectedRobots: seoPage.noindex === true ? 'noindex, nofollow' : 'index, follow',
+      page: seoPage,
+    };
+  }
+
+  const aliasTarget = getRouteAliasTarget(normalizedRoute);
+  if (aliasTarget) {
+    return {
+      type: 'alias',
+      route: normalizedRoute,
+      expectedPath: normalizeRoutePath(aliasTarget),
+      expectedCanonical: canonicalUrlForPath(getRouteCanonicalPath(normalizedRoute)),
+    };
+  }
+
+  const canonicalPath = getRouteCanonicalPath(normalizedRoute);
+  const isStaticContentRoute = (
+    normalizedRoute === '/' ||
+    normalizedRoute === '/ru' ||
+    normalizedRoute === '/blog' ||
+    normalizedRoute === '/ru/blog' ||
+    normalizedRoute.startsWith('/blog/') ||
+    normalizedRoute.startsWith('/ru/blog/') ||
+    [
+      '/privacy-policy',
+      '/ru/politika',
+      '/refund-policy',
+      '/terms-of-service',
+      '/personal-data-consent',
+      '/ru/polzovatelskoe-soglashenie',
+      '/ru/soglasie-na-obrabotku-personalnyh-dannyh',
+      '/ru/ugc-creator-terms',
+    ].includes(normalizedRoute)
+  );
+
+  return {
+    type: isStaticContentRoute ? 'static' : 'application',
+    route: normalizedRoute,
+    expectedPath: normalizedRoute,
+    expectedCanonical: canonicalUrlForPath(canonicalPath),
+  };
+};
+
+const getBrowserRouteState = () => {
+  const root = document.getElementById('root');
+  const rootText = root?.textContent?.replace(/\s+/g, ' ').trim() || '';
+  const h1Texts = [...document.querySelectorAll('h1')]
+    .map((item) => item.textContent.replace(/\s+/g, ' ').trim())
+    .filter(Boolean);
+  const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || '';
+  const robots = document.querySelector('meta[name="robots"]')?.getAttribute('content') || '';
+  const title = document.title || '';
+  const pathname = window.location.pathname || '/';
+  const notFound = /not found|404|страница не найдена/i.test(rootText);
+
+  return {
+    pathname,
+    title,
+    canonical,
+    robots,
+    h1Texts,
+    h1Count: h1Texts.length,
+    htmlLang: document.documentElement.getAttribute('lang') || '',
+    hasRootContent: Boolean(root && rootText.length > 0),
+    notFound,
+  };
+};
+
+const getReadinessErrors = (state, contract) => {
+  const errors = [];
+
+  if (!state.hasRootContent) errors.push('React root is empty');
+  if (state.notFound) errors.push('rendered Not Found content');
+  if (!state.title || state.title === 'Vite + React') errors.push(`title is not ready (${state.title || 'missing'})`);
+  if (contract.route !== '/' && state.title === ROOT_FALLBACK_TITLE && state.canonical === canonicalUrlForPath('/')) {
+    errors.push('rendered root shell instead of target route');
+  }
+  if (state.canonical !== contract.expectedCanonical) {
+    errors.push(`canonical mismatch: expected ${contract.expectedCanonical}, got ${state.canonical || 'missing'}`);
+  }
+
+  if (contract.type === 'alias') {
+    if (normalizeRoutePath(state.pathname) !== contract.expectedPath) {
+      errors.push(`alias did not navigate: expected path ${contract.expectedPath}, got ${state.pathname || 'missing'}`);
+    }
+    return errors;
+  }
+
+  if (normalizeRoutePath(state.pathname) !== contract.expectedPath) {
+    errors.push(`route path mismatch: expected ${contract.expectedPath}, got ${state.pathname || 'missing'}`);
+  }
+
+  if (contract.type === 'seo') {
+    if (state.h1Count !== 1) errors.push(`expected exactly one H1, got ${state.h1Count}`);
+    if (state.h1Texts[0] !== contract.expectedH1) {
+      errors.push(`H1 mismatch: expected "${contract.expectedH1}", got "${state.h1Texts[0] || ''}"`);
+    }
+    if (state.title !== contract.expectedTitle) {
+      errors.push(`title mismatch: expected "${contract.expectedTitle}", got "${state.title}"`);
+    }
+    if (contract.page.language && state.htmlLang !== contract.page.language) {
+      errors.push(`html lang mismatch: expected ${contract.page.language}, got ${state.htmlLang || 'missing'}`);
+    }
+    if (contract.page.noindex === true) {
+      if (!/noindex/i.test(state.robots) || !/nofollow/i.test(state.robots)) {
+        errors.push(`robots mismatch: expected noindex, nofollow, got "${state.robots || 'missing'}"`);
+      }
+    } else if (!/index,\s*follow/i.test(state.robots) || /noindex/i.test(state.robots)) {
+      errors.push(`robots mismatch: expected index, follow, got "${state.robots || 'missing'}"`);
+    }
+  }
+
+  return errors;
+};
+
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const waitForRouteReady = async (page, contract, timeoutMs = 15000) => {
+  const started = Date.now();
+  let lastState = null;
+  let lastErrors = [];
+
+  while (Date.now() - started < timeoutMs) {
+    lastState = await page.evaluate(getBrowserRouteState).catch((error) => ({
+      evaluateError: error.message,
+      hasRootContent: false,
+      h1Texts: [],
+      h1Count: 0,
+    }));
+    lastErrors = lastState.evaluateError
+      ? [`could not inspect route: ${lastState.evaluateError}`]
+      : getReadinessErrors(lastState, contract);
+
+    if (lastErrors.length === 0) {
+      return lastState;
+    }
+
+    await wait(250);
+  }
+
+  throw new Error(
+    [
+      `Prerender ready condition failed for ${contract.route} (${contract.type})`,
+      ...lastErrors,
+      `state=${JSON.stringify(lastState)}`,
+    ].join('; ')
+  );
+};
 
 /* ── Routes to prerender ── */
 const ROUTES = [
@@ -275,9 +449,10 @@ async function preparePage(page, baseHostname) {
   });
 }
 
-async function prerenderRoute(browser, route, baseUrl) {
+async function prerenderRoute(browser, route, baseUrl, seoPageByPath) {
   const url = `${baseUrl}${route}`;
   let page = null;
+  const contract = classifyRoute(route, seoPageByPath);
 
   try {
     page = await browser.newPage();
@@ -285,19 +460,9 @@ async function prerenderRoute(browser, route, baseUrl) {
       window.__GTF_PRERENDER_ROUTE = currentRoute;
     }, route);
     await preparePage(page, PREVIEW_HOST);
+
     await page.goto(url, { waitUntil: 'networkidle2', timeout: NAVIGATION_TIMEOUT_MS });
-
-    await page.waitForFunction(
-      () => document.title && document.title !== 'Vite + React',
-      { timeout: 10000 }
-    ).catch(() => {});
-
-    await page.waitForFunction(
-      () => document.querySelector('link[rel="canonical"]')?.getAttribute('href'),
-      { timeout: 10000 }
-    ).catch(() => {});
-
-    await delay(500);
+    await waitForRouteReady(page, contract);
 
     await page.evaluate(() => {
       document
@@ -307,9 +472,9 @@ async function prerenderRoute(browser, route, baseUrl) {
 
     let html = await page.content();
 
-    // Inject meta refresh for specific alias routes to act as a soft 301 for SEO
-    if (route === '/carousel-maker') {
-      html = html.replace('<head>', '<head>\n    <meta http-equiv="refresh" content="0; url=/ai-carousel-maker">');
+    const aliasTarget = getRouteAliasTarget(contract.route);
+    if (aliasTarget) {
+      html = html.replace('<head>', `<head>\n    <meta http-equiv="refresh" content="0; url=${aliasTarget}">`);
     }
 
     const filePath = await writeHtml(route, html);
@@ -334,6 +499,7 @@ async function prerenderRoute(browser, route, baseUrl) {
   const seoPagesToPrerender = getSeoPagesForPrerender();
   const seoPagesToSitemap = getSeoPagesForSitemap();
   const seoRoutesToPrerender = seoPagesToPrerender.map((page) => page.path);
+  const seoPageByPath = new Map(seoPagesToPrerender.map((page) => [page.path, page]));
 
   if (routesToPrerender.length > 0) {
     console.log(`📚  Found ${routesToPrerender.length} dynamic markdown articles: ${routesToPrerender.join(', ')}`);
@@ -341,7 +507,7 @@ async function prerenderRoute(browser, route, baseUrl) {
   }
 
   if (seoRoutesToPrerender.length > 0) {
-    console.log(`🧭  Found ${seoRoutesToPrerender.length} indexable SEO pages: ${seoRoutesToPrerender.join(', ')}`);
+    console.log(`🧭  Found ${seoRoutesToPrerender.length} routable SEO pages: ${seoRoutesToPrerender.join(', ')}`);
     ROUTES.push(...seoRoutesToPrerender);
   }
 
@@ -373,7 +539,7 @@ async function prerenderRoute(browser, route, baseUrl) {
           }
 
           if (attempt > 1) console.log(`  ↻  Retrying ${route} (attempt ${attempt}/${NAVIGATION_ATTEMPTS})...`);
-          const result = await prerenderRoute(browser, route, BASE);
+          const result = await prerenderRoute(browser, route, BASE, seoPageByPath);
 
           results.push(result);
           console.log(`  ✅  ${route}\n      title: ${result.title}\n      canonical: ${result.canonical}\n      → ${result.filePath}`);

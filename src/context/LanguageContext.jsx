@@ -36,7 +36,14 @@ function getPreferredLang() {
   return 'EN';
 }
 
+function isPrerendering() {
+  return Boolean(window.__GTF_PRERENDER_ROUTE);
+}
+
 function getInitialLang(pathname) {
+  if (isPrerendering()) {
+    return getRouteLang(pathname) || 'EN';
+  }
   return getRouteLang(pathname) || getPreferredLang();
 }
 
@@ -59,6 +66,11 @@ export const LanguageProvider = ({ children }) => {
 
     if (routeLang) {
       setLangState(routeLang);
+      return;
+    }
+
+    if (isPrerendering()) {
+      setLangState('EN');
       return;
     }
 

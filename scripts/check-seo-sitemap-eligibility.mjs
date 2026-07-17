@@ -21,7 +21,7 @@ for (const page of pages) {
     errors.push(`${page.id}: ${page.state} page appears in SEO sitemap helper output`);
   }
 
-  if (['planning_only', 'quarantined_review', 'noindex_review'].includes(page.state) && inHelperPrerender) {
+  if (['planning_only', 'quarantined_review'].includes(page.state) && inHelperPrerender) {
     errors.push(`${page.id}: ${page.state} page appears in SEO prerender helper output`);
   }
 

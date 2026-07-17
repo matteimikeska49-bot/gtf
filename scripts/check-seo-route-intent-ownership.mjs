@@ -330,8 +330,33 @@ const validateRouteOwnership = (inventory) => {
       errors.push(`${page.path}: noindex routeable registry review page is present in dist/sitemap.xml.`);
     }
 
+    if (!isRouteAllowed && prerenderPages.has(page.path)) {
+      errors.push(`${page.path}: unroutable page is present in SEO prerender helper output.`);
+    }
+
     if (page.noindex === true && prerenderPages.has(page.path)) {
-      errors.push(`${page.path}: noindex registry page is present in SEO prerender helper output.`);
+      const isAllowedPreview = (
+        isRouteAllowed &&
+        page.state === 'noindex_review' &&
+        page.sitemapEligible !== true &&
+        page.indexable !== true
+      );
+
+      if (!isAllowedPreview) {
+        errors.push(`${page.path}: noindex registry page is present in SEO prerender helper output without a valid preview lifecycle state.`);
+      }
+    }
+
+    if (page.state === 'noindex_review' && sitemapPages.has(page.path)) {
+      errors.push(`${page.path}: noindex_review registry page is present in SEO sitemap helper output.`);
+    }
+
+    if (page.state === 'noindex_review' && page.indexable === true) {
+      errors.push(`${page.path}: noindex_review registry page cannot be indexable.`);
+    }
+
+    if (page.approvedForRelease === false && page.noindex === false) {
+      errors.push(`${page.path}: registry page with approvedForRelease=false cannot be indexable (must remain noindex).`);
     }
 
     if (page.published === false && publishedPages.has(page.path)) {

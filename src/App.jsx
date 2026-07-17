@@ -66,6 +66,7 @@ const LandingPage = () => (
 
 import { ScrollToTop } from './components/ScrollToTop';
 import { RouteSchemaInjector } from './components/RouteSchemaInjector';
+import { getRouteAliasTarget } from './routes/routeAliases';
 
 function App() {
   return (
@@ -76,7 +77,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/ru" element={<LandingPage />} />
         <Route path="/ai-carousel-maker" element={<CarouselPage />} />
-        <Route path="/carousel-maker" element={<Navigate to="/ai-carousel-maker" replace />} />
+        <Route path="/carousel-maker" element={<Navigate to={getRouteAliasTarget('/carousel-maker')} replace />} />
         <Route path="/ai-instagram-post-generator" element={<InstagramPostPage />} />
         <Route path="/ai-linkedin-post-generator" element={<LinkedInPostPage />} />
         <Route path="/instagram-carousel-maker" element={<CarouselPage />} />
@@ -86,7 +87,7 @@ function App() {
         <Route path="/ru/ii-generator-karuseley" element={<RuAICarouselGeneratorPage />} />
         <Route path="/ru/generator-karuselej-instagram" element={<RuAICarouselGeneratorPage />} />
         <Route path="/ai-content-generator" element={<AIContentPage />} />
-        <Route path="/ai-post-maker" element={<Navigate to="/ai-instagram-post-generator" replace />} />
+        <Route path="/ai-post-maker" element={<Navigate to={getRouteAliasTarget('/ai-post-maker')} replace />} />
         <Route path="/ru/generator-kontenta" element={<AIContentPageRu />} />
         <Route path="/ru/ii-generator-kontenta" element={<AIContentPageRu />} />
         <Route path="/ru/generator-postov-instagram" element={<InstagramPostPageRu />} />
@@ -122,11 +123,11 @@ function App() {
         <Route path="/ru/blog" element={<BlogPageRu />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/ru/politika" element={<PrivacyPolicyPage />} />
-        <Route path="/politika" element={<Navigate to="/ru/politika" replace />} />
+        <Route path="/politika" element={<Navigate to={getRouteAliasTarget('/politika')} replace />} />
         <Route path="/ru/polzovatelskoe-soglashenie" element={<RuTermsOfServicePage />} />
         <Route path="/ru/soglasie-na-obrabotku-personalnyh-dannyh" element={<RuPersonalDataConsentPage />} />
         <Route path="/ru/ugc-creator-terms" element={<UgcCreatorTermsRu />} />
-        <Route path="/carousel/create" element={<Navigate to="/ai-carousel-maker" replace />} />
+        <Route path="/carousel/create" element={<Navigate to={getRouteAliasTarget('/carousel/create')} replace />} />
         <Route path="/refund-policy" element={<RefundPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/personal-data-consent" element={<PersonalDataConsentPage />} />
