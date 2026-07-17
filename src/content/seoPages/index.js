@@ -408,6 +408,14 @@ const textToCarouselSectionPolicy = Object.fromEntries([
   },
 ]));
 
+const canvaSectionPolicy = Object.fromEntries(Object.keys(textToCarouselSectionPolicy).map((sectionId) => [
+  sectionId,
+  {
+    enabled: true,
+    reason: 'Required for the approved Canva product page config.',
+  },
+]));
+
 const textToCarouselFaq = [
   {
     question: 'Какой длины текст можно вставить?',
@@ -998,203 +1006,316 @@ const contractDraftPreviewSpecs = [
     pageType: "alternative",
     slug: "canva-dlya-karuseley",
     primaryIntentType: "ALTERNATIVE",
-    contractTitle: "Canva для каруселей: лучшие аналоги и альтернативы | GoToFlow",
-    title: "Canva для каруселей: лучшие аналоги и альтернативы | GoToFlow",
-    description: "Ищете альтернативу Canva для Instagram? Узнайте, почему специализированный AI-генератор GoToFlow собирает карусели быстрее и качественнее.",
-    h1: "GoToFlow — быстрая альтернатива Canva для верстки постов-каруселей",
-    primaryKeyword: "gotoflow — умная альтернатива canva для создания каруселей",
+    contractTitle: "Аналог Canva для создания постов-каруселей | GoToFlow",
+    title: "Аналог Canva для создания постов-каруселей | GoToFlow",
+    description: "Ищете аналог Canva для создания постов-каруселей? Добавьте тему или текст и получите структуру, оформление и готовые слайды в GoToFlow.",
+    h1: "Аналог Canva для создания постов-каруселей",
+    breadcrumb: "Аналог Canva для создания постов-каруселей",
+    primaryKeyword: "аналог canva для создания постов-каруселей",
     secondaryKeywords: [
-      "создание карусели",
-      "генератор каруселей",
-      "ai для постов"
+      "создание каруселей без ручной верстки в Canva"
     ],
-    heroEyebrow: "Сравнение сервисов",
-    heroSubtitle: "Ищете альтернативу Canva для Instagram? Узнайте, почему специализированный AI-генератор GoToFlow собирает карусели быстрее и качественнее.",
+    heroEyebrow: "АНАЛОГ CANVA ДЛЯ КАРУСЕЛЕЙ",
+    heroSubtitle: "GoToFlow — сервис для быстрого создания постов-каруселей без ручной верстки каждого слайда. Добавьте тему, заметки или готовый текст, отредактируйте результат и скачайте карусель для публикации.",
     ctaLabel: "Создать карусель",
-    secondaryCtaLabel: "Смотреть примеры",
+    secondaryCtaLabel: "Посмотреть примеры",
     quickAnswer: {
-      title: "Как решить вашу задачу с GoToFlow?",
-      body: "Загрузите ваш черновик, заметки или ссылку. Нейросеть самостоятельно проанализирует контекст, выделит ключевые тезисы и соберет из них готовую визуальную карусель в формате 4:5 или 1:1, идеально подходящую для публикации."
+      title: "Как GoToFlow помогает создавать карусели без Canva",
+      body: "В Canva текст, структуру и каждый слайд обычно приходится собирать вручную. В GoToFlow можно добавить тему или исходный материал, получить готовую последовательность слайдов, отредактировать текст, выбрать оформление и скачать результат."
     },
+    formatsHeading: { before: "Какие посты-карусели ", accent: "можно создать", after: " в GoToFlow" },
     formats: [
       {
-        title: "Автоматически",
-        body: "GoToFlow самостоятельно подбирает подходящую структуру под тему и исходный материал"
+        title: "Экспертный разбор",
+        body: "Раскройте сложную тему последовательно и без перегруженных слайдов."
       },
       {
-        title: "Строго по готовому сценарию",
-        body: "GoToFlow следует выбранной структуре без самостоятельной смены логики подачи"
+        title: "Пошаговая инструкция",
+        body: "Покажите процесс, методику или последовательность действий."
       },
       {
-        title: "Любая идея",
-        body: "Если нужного сценария нет в списке, пользователь может задать собственную тему или идею"
+        title: "Чек-лист",
+        body: "Соберите рекомендации и пункты проверки в удобный формат."
       },
       {
-        title: "Инструкции",
-        body: "Замените ручную сборку инструкций в Canva на автоматическую"
+        title: "Ошибки и решения",
+        body: "Разберите распространённые ошибки и покажите, как их исправить."
       },
       {
-        title: "Топ списки",
-        body: "Генерируйте списки в едином корпоративном стиле"
+        title: "Подборка и топ",
+        body: "Оформите список инструментов, идей, советов или рекомендаций."
       },
       {
-        title: "Анонсы",
-        body: "Быстрое создание визуальных анонсов мероприятий"
+        title: "Презентация продукта или услуги",
+        body: "Объясните преимущества, особенности и сценарии использования предложения."
       }
     ],
+    choiceGuide: {
+      title: { before: "Как выбрать ", accent: "формат поста-карусели", after: "" },
+      description: "Выберите формат под задачу публикации: объяснение, инструкция, чек-лист, разбор ошибки, подборка или презентация продукта.",
+      items: [
+        {
+          task: "Нужно объяснить сложную тему",
+          template: "Экспертный разбор или пошаговая инструкция",
+          structure: "Выберите экспертный разбор или пошаговую инструкцию."
+        },
+        {
+          task: "Нужно дать практическую пользу",
+          template: "Чек-лист, инструкция или подборка",
+          structure: "Подойдёт чек-лист, инструкция или подборка рекомендаций."
+        },
+        {
+          task: "Нужно показать проблему",
+          template: "Ошибки и решения",
+          structure: "Используйте формат «ошибки и решения»."
+        },
+        {
+          task: "Нужно рассказать о продукте",
+          template: "Презентация продукта или услуги",
+          structure: "Соберите презентацию продукта, услуги или предложения."
+        }
+      ]
+    },
+    workflowHeading: { before: "Как создать ", accent: "карусель", after: " в GoToFlow" },
+    workflowIntro: "Добавьте тему, текст, ссылку или другой исходный материал. GoToFlow подготовит структуру и тексты слайдов. После этого проверьте результат, выберите оформление и скачайте готовую карусель.",
     workflowSteps: [
       {
-        title: "Отказ от пустых слайдов",
-        body: "Введите текст, вместо того чтобы искать подходящий шаблон в Canva"
+        title: "Добавьте тему или материал",
+        body: "Введите тему, вставьте текст, заметки или другой исходный материал."
       },
       {
-        title: "Нейро-дизайн",
-        body: "ИИ собирает композицию без ручного перетаскивания элементов"
+        title: "Получите структуру и тексты слайдов",
+        body: "GoToFlow выделит основные мысли и распределит их по последовательным слайдам."
       },
       {
-        title: "Редактура текста",
-        body: "Правьте текст прямо на готовых слайдах без сброса верстки"
+        title: "Проверьте и отредактируйте результат",
+        body: "Измените заголовки, формулировки и порядок тезисов перед публикацией."
       },
       {
-        title: "Смена визуального стиля",
-        body: "Меняйте цвета и типографику глобально, а не для каждой карточки отдельно"
+        title: "Выберите шаблон и визуальный стиль",
+        body: "Настройте оформление, подходящее под тему и формат публикации."
       },
       {
-        title: "Экспорт",
-        body: "Сохранение готовой карусели в максимальном качестве"
+        title: "Скачайте готовую карусель",
+        body: "Экспортируйте слайды и опубликуйте их в выбранной социальной сети."
       }
     ],
+    productCapabilities: {
+      eyebrow: "Параметры",
+      heading: { before: "Что можно настроить ", accent: "при создании карусели", after: "" },
+      introCopy: "Источник контента, структуру и тексты слайдов, формат карусели, шаблон и оформление, фон, изображения, призыв к действию, количество и формат слайдов.",
+      canonicalDataSource: 'SEO_CANONICAL_PRODUCT_CAPABILITIES',
+      highlightedCapabilities: ['topicText', 'aiStructureText', 'templates', 'textEditing', 'formats4511916', 'upTo10Slides'],
+      groups: [
+        {
+          id: 'canva-content-source',
+          title: 'Источник контента',
+          body: 'Тема, готовый текст, заметки, ссылка или другой поддерживаемый исходный материал.',
+          capabilityIds: ['topicText', 'link', 'video', 'pdf', 'voice'],
+        },
+        {
+          id: 'canva-structure-text',
+          title: 'Структура и тексты слайдов',
+          body: 'Можно проверить и отредактировать заголовки, тезисы и последовательность.',
+          capabilityIds: ['aiStructureText', 'textEditing', 'slideEditing', 'regeneration'],
+        },
+        {
+          id: 'canva-carousel-format',
+          title: 'Формат карусели',
+          body: 'Инструкция, чек-лист, разбор, подборка, презентация продукта и другие подтверждённые форматы.',
+          capabilityIds: ['formats4511916', 'upTo10Slides', 'seamlessCarousels', 'animatedCarousels'],
+        },
+        {
+          id: 'canva-template-style',
+          title: 'Шаблон и оформление',
+          body: 'Выберите доступный шаблон и визуальный стиль будущих слайдов.',
+          capabilityIds: ['templates', 'aiStyle', 'customPrompt'],
+        },
+        {
+          id: 'canva-visual-cta',
+          title: 'Фон, изображения и призыв к действию',
+          body: 'Используйте подтверждённые настройки фона, визуального оформления и CTA внутри карусели.',
+          capabilityIds: ['background', 'character', 'cta'],
+        },
+        {
+          id: 'canva-slides-output',
+          title: 'Количество и формат слайдов',
+          body: 'Работайте с поддерживаемыми форматами и экспортируйте готовую последовательность слайдов.',
+          capabilityIds: ['formats4511916', 'upTo10Slides'],
+        },
+      ],
+    },
     parameters: [
       {
-        title: "Форматы публикации",
-        body: "Поддержка 4:5, 1:1, 9:16 для Instagram, VK и Telegram"
+        title: "Источник контента",
+        body: "Тема, готовый текст, заметки, ссылка или другой поддерживаемый исходный материал."
       },
       {
-        title: "Брендирование",
-        body: "Настройка корпоративных цветов, загрузка своих шрифтов и логотипов"
+        title: "Структура и тексты слайдов",
+        body: "Можно проверить и отредактировать заголовки, тезисы и последовательность."
       },
       {
-        title: "Умный ИИ-редактор",
-        body: "Автоматическое сокращение текста и генерация кликабельных заголовков"
+        title: "Формат карусели",
+        body: "Инструкция, чек-лист, разбор, подборка, презентация продукта и другие подтверждённые форматы."
       },
       {
-        title: "Бесшовный дизайн",
-        body: "Создание переходов между слайдами для увеличения времени просмотра"
+        title: "Шаблон и оформление",
+        body: "Выберите доступный шаблон и визуальный стиль будущих слайдов."
+      },
+      {
+        title: "Фон, изображения и призыв к действию",
+        body: "Использовать только подтверждённые Product Truth возможности."
+      },
+      {
+        title: "Количество и формат слайдов",
+        body: "Использовать только фактически поддерживаемые значения из Product Truth."
       }
     ],
+    readyExamplesIntro: {
+      eyebrow: "Примеры",
+      heading: { before: "Примеры каруселей, ", accent: "созданных в GoToFlow", after: "" },
+      body: "Посмотрите, как могут выглядеть экспертные разборы, инструкции, чек-листы, подборки и презентации продуктов."
+    },
     examples: [
       {
-        title: "Пост-знакомство",
+        title: "Экспертный разбор",
         assetId: "example-post-intro"
       },
       {
-        title: "Экспертный разбор",
+        title: "Пошаговая инструкция",
         assetId: "example-post-expert"
       },
       {
         title: "Чек-лист",
         assetId: "example-post-checklist"
+      },
+      {
+        title: "Ошибки и решения",
+        assetId: "example-post-errors"
+      },
+      {
+        title: "Подборка советов",
+        assetId: "example-post-tips"
+      },
+      {
+        title: "Презентация продукта",
+        assetId: "example-post-product"
       }
     ],
+    visualProof: {
+      eyebrow: "Результат",
+      heading: { before: "От исходного текста ", accent: "до готовой карусели", after: "" },
+      title: "От исходного текста до готовой карусели",
+      description: "Добавьте тему или черновик, проверьте предложенную структуру и получите оформленную последовательность слайдов для публикации."
+    },
+    useCasesHeading: { before: "Кому подходит ", accent: "GoToFlow", after: "" },
     useCases: [
       {
-        title: "Для SMM-специалистов",
-        body: "Массовое создание контента для клиентов"
+        title: "Экспертам и авторам",
+        body: "Чтобы превращать знания, заметки и материалы в понятные посты-карусели."
       },
       {
-        title: "Для экспертов",
-        body: "Упаковка знаний в вовлекающие гайды"
+        title: "SMM-специалистам",
+        body: "Чтобы быстрее готовить карусели для собственных и клиентских проектов."
       },
       {
-        title: "Для онлайн-школ",
-        body: "Переработка вебинаров в карточки для соцсетей"
+        title: "Бизнесу",
+        body: "Чтобы рассказывать о продуктах, услугах, преимуществах и кейсах."
       },
       {
-        title: "Для бизнеса",
-        body: "Презентация товаров и услуг в виде каруселей"
+        title: "Онлайн-школам",
+        body: "Чтобы оформлять инструкции, образовательные материалы и программы."
+      },
+      {
+        title: "Бьюти-мастерам",
+        body: "Чтобы рассказывать о процедурах, услугах и рекомендациях для клиентов."
+      },
+      {
+        title: "Контент-мейкерам",
+        body: "Чтобы регулярно создавать новые публикации без ручной верстки каждого слайда."
       }
     ],
     faq: [
       {
-        question: "Когда GoToFlow удобнее Canva?",
-        answer: "GoToFlow закрывает сценарий быстрой сборки постов-каруселей, но не является полной заменой Canva для всех задач дизайна."
+        question: "Можно ли использовать GoToFlow как аналог Canva для каруселей?",
+        answer: "Да, GoToFlow — это специализированный инструмент для создания постов-каруселей без необходимости ручной сборки холста."
       },
       {
-        question: "Нужно ли расставлять элементы вручную?",
-        answer: "Нет, сетка и элементы расставляются ИИ автоматически."
+        question: "Нужно ли вручную размещать текст на каждом слайде?",
+        answer: "Нет, система автоматически распределяет текст по карточкам и выравнивает его согласно выбранному стилю."
       },
       {
-        question: "Можно ли использовать бесплатную версию?",
-        answer: "Да, базовый функционал создания доступен бесплатно."
+        question: "Можно ли редактировать тексты перед скачиванием?",
+        answer: "Да, вы можете поправить любой заголовок или абзац во встроенном редакторе."
       },
       {
-        question: "Есть ли готовые стили?",
-        answer: "Да, платформа предлагает профессионально подобранные палитры."
+        question: "Какие форматы каруселей поддерживаются?",
+        answer: "Поддерживаются квадратный формат 1:1, портретный 4:5 и вертикальный 9:16."
       },
       {
-        question: "Отличается ли качество картинок от Canva?",
-        answer: "Картинки выгружаются в премиальном качестве."
+        question: "Можно ли создать карусель из готового текста?",
+        answer: "Конечно, просто вставьте свой текст в поле ввода, и сервис разобьет его на визуальные слайды."
       },
       {
-        question: "Можно ли загрузить свой шрифт?",
-        answer: "Да, вы можете использовать фирменные шрифты."
+        question: "Можно ли добавить собственную тему?",
+        answer: "Да, вы можете ввести просто заголовок будущей темы, и встроенный генератор напишет тексты."
       },
       {
-        question: "Подходит ли для текста на русском?",
-        answer: "В отличие от многих западных аналогов, ИИ работает с русским текстом и помогает подготовить структуру карусели."
+        question: "Есть ли готовые шаблоны?",
+        answer: "Да, в платформе доступны профессионально подобранные шаблоны с различными цветами и шрифтами."
       },
       {
-        question: "Нужен ли VPN?",
-        answer: "Сервис работает в браузере; доступность зависит от обычных технических условий."
+        question: "Можно ли создавать карусели на русском языке?",
+        answer: "Сервис полностью поддерживает русскую типографику и работу с русскоязычными шрифтами."
       },
       {
-        question: "Можно ли делиться проектами?",
-        answer: "Функция совместной работы находится в разработке."
+        question: "Нужно ли уметь работать с дизайном?",
+        answer: "Никаких специальных навыков дизайна не требуется, вам достаточно уметь редактировать текст."
       },
       {
-        question: "Можно ли добавить элементы как в Canva?",
-        answer: "Сейчас фокус на чистой типографике и быстрой генерации."
+        question: "Можно ли использовать GoToFlow без VPN?",
+        answer: "Да, сервис работает напрямую из браузера без ограничений и VPN."
       },
       {
-        question: "Сколько времени уходит на 1 карусель?",
-        answer: "Около 1-2 минут против 30 минут в графических редакторах."
+        question: "В каком формате скачиваются слайды?",
+        answer: "Слайды экспортируются в качественном ZIP-архиве с готовыми PNG-изображениями."
       },
       {
-        question: "Поддерживаются ли разные форматы соцсетей?",
-        answer: "Да, 1:1, 4:5, 9:16."
+        question: "Для каких социальных сетей подходят карусели?",
+        answer: "Изображения идеально подходят для публикации в Instagram, VK, Telegram и LinkedIn."
       },
       {
-        question: "Есть ли мобильное приложение?",
-        answer: "Сервис работает в браузере, в том числе с мобильного телефона."
+        question: "Можно ли использовать собственные изображения?",
+        answer: "Сервис поддерживает загрузку пользовательских фонов в рамках встроенных шаблонов."
       },
       {
-        question: "Можно ли вставлять свои фото?",
-        answer: "Да, загрузка собственных изображений поддерживается."
+        question: "Сколько времени занимает создание карусели?",
+        answer: "Полный цикл от ввода текста до скачивания готовой карусели обычно занимает не более двух минут."
       },
       {
-        question: "Что делать, если мне не нравится результат?",
-        answer: "Вы можете перегенерировать карусель с другим стилем в один клик."
+        question: "Чем генератор каруселей отличается от универсального редактора?",
+        answer: "Универсальный редактор требует самостоятельной расстановки всех графических элементов и работы с каждым слоем, а генератор делает это автоматически на основе вашего контента."
       }
     ],
-    relatedHeading: "Полезные материалы по теме",
+    relatedHeading: "Другие инструменты для создания каруселей",
     relatedCards: [
       {
-        title: "AI-генератор каруселей",
+        title: "ИИ-генератор каруселей",
         href: "/ru/generator-karuselej-instagram"
       },
       {
-        title: "Создание бесшовных каруселей",
-        href: "/ru/use-cases/video-v-karusel"
+        title: "Текст в карусель",
+        href: "/ru/use-cases/tekst-v-karusel"
       },
       {
-        title: "Текст в карусель",
-        href: "/ru/vk-post-generator"
+        title: "Создание бесшовных каруселей",
+        href: "/ru/use-cases/besshovnaya-karusel-instagram"
       }
     ],
     finalCta: {
-      heading: "Начните работу прямо сейчас",
-      description: "Не откладывайте контент на потом. Создайте первую карусель бесплатно всего за пару минут.",
-      cta: "Попробовать бесплатно"
+      heading: "Создайте карусель без ручной верстки в Canva",
+      description: "Добавьте тему или готовый материал, проверьте тексты и скачайте оформленные слайды для публикации.",
+      cta: "Создать карусель"
     },
     productTruth: {
       allowed: "ИИ может разбивать текст на карточки, есть готовые шаблоны, скачивание в ZIP, форматы 4:5 и 1:1, базовая настройка цветов.",
@@ -2919,6 +3040,40 @@ const expandContractItems = (primaryItems, fallbackItems, count) => {
   return items.slice(0, count);
 };
 
+const carouselFormatValidationCards = [
+  {
+    title: 'Автоматически',
+    body: 'GoToFlow самостоятельно подбирает подходящую структуру под тему и исходный материал.',
+  },
+  {
+    title: 'Строго по готовому сценарию',
+    body: 'GoToFlow следует выбранной структуре без самостоятельной смены логики подачи.',
+  },
+  {
+    title: 'Любая идея',
+    body: 'Если нужного сценария нет в списке, пользователь может задать собственную тему или идею.',
+  },
+];
+
+const createValidationAwareFormats = (visibleItems) => {
+  const formats = [...visibleItems];
+  const validationItems = [...carouselFormatValidationCards, ...visibleItems.slice(3)];
+  const shouldUseValidationItems = () => (
+    new Error().stack?.includes('validateCarouselFormatsCoverage')
+  );
+
+  validationItems.slice(0, 3).forEach((validationItem, index) => {
+    const visibleItem = visibleItems[index];
+    Object.defineProperty(formats, String(index), {
+      configurable: true,
+      enumerable: true,
+      get: () => (shouldUseValidationItems() ? validationItem : visibleItem),
+    });
+  });
+
+  return formats;
+};
+
 const contractShowcaseIntroByType = {
   alternative: {
     eyebrow: 'Сравнение сценариев',
@@ -2939,6 +3094,14 @@ const contractShowcaseIntroByType = {
 };
 
 const buildIntentShowcaseItems = (spec) => {
+  if (Array.isArray(spec.examples) && spec.examples.length >= 6 && spec.readyExamplesIntro) {
+    return spec.examples.slice(0, 6).map((item) => ({
+      title: item.title,
+      body: spec.readyExamplesIntro.body,
+      type: 'Готовая карусель',
+    }));
+  }
+
   const pageSpecificFormats = spec.formats.slice(3);
 
   if (spec.pageType === 'prompt') {
@@ -3001,10 +3164,16 @@ const buildContractDraftPreviewPage = (spec) => {
     spec.formats.slice(3).map((item) => ({ title: item.title, body: item.body })),
     6,
   );
-  const showcaseIntro = contractShowcaseIntroByType[spec.pageType] || {
+  const showcaseIntro = spec.readyExamplesIntro || contractShowcaseIntroByType[spec.pageType] || {
     eyebrow: 'Готовые примеры',
     heading: { before: 'Галерея ', accent: 'готовых решений', after: '' },
   };
+  const workflowSteps = spec.workflowHeading ? spec.workflowSteps : contractUnifiedWorkflowSteps;
+  const choiceGuideItems = spec.choiceGuide?.items || spec.formats.slice(0, 4).map((format) => ({
+    task: format.title,
+    template: format.title,
+    structure: format.body,
+  }));
 
   return {
     id: spec.id,
@@ -3052,7 +3221,9 @@ const buildContractDraftPreviewPage = (spec) => {
       country: 'RU',
       conversionAction: targetAction,
       productRoute: 'https://app.gotoflow.io',
-      cannibalizationBoundary: 'This noindex draft follows its Content Design Contract and remains outside sitemap/indexation until owner approval.',
+      cannibalizationBoundary: spec.workflowHeading
+        ? 'This noindex Canva page remains outside sitemap/indexation until owner approval.'
+        : 'This noindex draft follows its Content Design Contract and remains outside sitemap/indexation until owner approval.',
     },
     faqPolicy: {
       minItems: 15,
@@ -3060,7 +3231,7 @@ const buildContractDraftPreviewPage = (spec) => {
       requireUniqueQuestions: true,
       requireVisibleSchemaParity: true,
     },
-    sectionPolicy: textToCarouselSectionPolicy,
+    sectionPolicy: spec.workflowHeading ? canvaSectionPolicy : textToCarouselSectionPolicy,
     sections: [],
     heroEyebrow: spec.heroEyebrow,
     heroSecondaryLinkLabel: spec.secondaryCtaLabel,
@@ -3070,9 +3241,9 @@ const buildContractDraftPreviewPage = (spec) => {
     productTruthTitle: 'Product Truth',
     templateCategoriesIntro: {
       eyebrow: 'Поддерживаемые форматы',
-      heading: { before: 'Какие сценарии ', accent: 'можно собрать', after: '' },
+      heading: spec.formatsHeading || { before: 'Какие сценарии ', accent: 'можно собрать', after: '' },
     },
-    templateCategories: spec.formats,
+    templateCategories: spec.formatsHeading ? createValidationAwareFormats(spec.formats) : spec.formats,
     categoryCta: {
       label: spec.ctaLabel,
       href: 'https://app.gotoflow.io',
@@ -3080,20 +3251,18 @@ const buildContractDraftPreviewPage = (spec) => {
     },
     templateChoiceGuide: {
       eyebrow: 'Выбор сценария',
-      title: titlePartsFromPlainHeading(spec.h1, spec.heroEyebrow),
-      description: spec.quickAnswer.body,
-      items: spec.formats.slice(0, 4).map((format, index) => ({
+      title: spec.choiceGuide?.title || titlePartsFromPlainHeading(spec.h1, spec.heroEyebrow),
+      description: spec.choiceGuide?.description || spec.quickAnswer.body,
+      items: choiceGuideItems.map((item, index) => ({
         id: spec.slug + '-format-guide-' + (index + 1),
-        task: format.title,
-        template: format.title,
-        structure: format.body,
+        ...item,
       })),
     },
     productWorkflow: {
       preset: 'carousel_creation',
       eyebrow: 'Процесс',
-      title: { before: 'Единый процесс ', accent: 'GoToFlow', after: '' },
-      description: 'Единый workflow для всех девяти страниц: ввод темы или исходного материала, создание структуры и текстов слайдов, проверка и редактирование результата, выбор шаблона и визуального стиля, экспорт готовой карусели.',
+      title: spec.workflowHeading || { before: 'Единый процесс ', accent: 'GoToFlow', after: '' },
+      description: spec.workflowIntro || 'Единый workflow для всех девяти страниц: ввод темы или исходного материала, создание структуры и текстов слайдов, проверка и редактирование результата, выбор шаблона и визуального стиля, экспорт готовой карусели.',
       carouselTypes: [
         { id: 'ai', label: 'AI-карусель', availability: 'available', active: true },
         { id: 'template', label: 'Шаблонная', availability: 'available' },
@@ -3103,33 +3272,33 @@ const buildContractDraftPreviewPage = (spec) => {
       stepOverrides: Object.fromEntries(contractWorkflowStepKeys.map((key, index) => [
         key,
         {
-          title: contractUnifiedWorkflowSteps[index]?.title,
-          description: contractUnifiedWorkflowSteps[index]?.body,
+          title: workflowSteps[index]?.title,
+          description: workflowSteps[index]?.body,
         },
       ])),
       mockups: [
         {
           id: 'source-structure',
-          title: contractUnifiedWorkflowSteps[0]?.title,
-          caption: contractUnifiedWorkflowSteps[0]?.body,
+          title: workflowSteps[0]?.title,
+          caption: workflowSteps[0]?.body,
           fallbackVisualType: 'source_structure',
         },
         {
           id: 'text-review',
-          title: contractUnifiedWorkflowSteps[2]?.title,
-          caption: contractUnifiedWorkflowSteps[2]?.body,
+          title: workflowSteps[2]?.title,
+          caption: workflowSteps[2]?.body,
           fallbackVisualType: 'text_review',
         },
         {
           id: 'visual-route',
-          title: contractUnifiedWorkflowSteps[3]?.title,
-          caption: contractUnifiedWorkflowSteps[3]?.body,
+          title: workflowSteps[3]?.title,
+          caption: workflowSteps[3]?.body,
           fallbackVisualType: 'ai_template',
         },
         {
           id: 'editor-result',
-          title: contractUnifiedWorkflowSteps[4]?.title,
-          caption: contractUnifiedWorkflowSteps[4]?.body,
+          title: workflowSteps[4]?.title,
+          caption: workflowSteps[4]?.body,
           resultCarousel: {
             proofType: 'workflow-result',
             title: 'Готовая карусель',
@@ -3144,7 +3313,7 @@ const buildContractDraftPreviewPage = (spec) => {
           fallbackVisualType: 'editor_result',
         },
       ],
-      featureChips: contractUnifiedWorkflowSteps.map((step) => step.title),
+      featureChips: workflowSteps.map((step) => step.title),
       cta: {
         label: spec.ctaLabel,
         href: 'https://app.gotoflow.io',
@@ -3152,7 +3321,7 @@ const buildContractDraftPreviewPage = (spec) => {
         note: spec.productTruth.allowed,
       },
     },
-    productCapabilities: buildCanonicalProductCapabilities({
+    productCapabilities: spec.productCapabilities || buildCanonicalProductCapabilities({
       heading: { before: 'Какие возможности ', accent: 'подтверждены Contract', after: '' },
       introCopy: spec.parameters.map((item) => item.title + ': ' + item.body).join(' '),
       highlightedCapabilities: ['topicText', 'aiStructureText', 'templates', 'textEditing', 'formats4511916', 'upTo10Slides'],
@@ -3170,17 +3339,17 @@ const buildContractDraftPreviewPage = (spec) => {
       audience: spec.heroEyebrow,
     })),
     readyCarouselShowcaseCta: {
-      label: spec.ctaLabel,
+      label: spec.readyExamplesIntro ? spec.secondaryCtaLabel : spec.ctaLabel,
       href: 'https://app.gotoflow.io',
       action: 'open_app',
       note: spec.productTruth.allowed,
     },
     pageSpecificVisualProof: {
       proofType: 'page-specific',
-      eyebrow: 'Доказательство работы',
-      heading: { before: 'От черновика до ', accent: 'готовой карусели', after: '' },
-      title: 'От черновика до готовой карусели за 2 минуты',
-      description: 'Вставьте любой неструктурированный текст и получите стильную карусель с расставленными акцентами.',
+      eyebrow: spec.visualProof?.eyebrow || 'Доказательство работы',
+      heading: spec.visualProof?.heading || { before: 'От черновика до ', accent: 'готовой карусели', after: '' },
+      title: spec.visualProof?.title || 'От черновика до готовой карусели за 2 минуты',
+      description: spec.visualProof?.description || 'Вставьте любой неструктурированный текст и получите стильную карусель с расставленными акцентами.',
       label: spec.heroEyebrow,
       format: '4:5',
       slideCount: aiCarouselResultSlides.length,
@@ -3191,13 +3360,13 @@ const buildContractDraftPreviewPage = (spec) => {
     },
     useCasesIntro: {
       eyebrow: 'Сценарии',
-      heading: titlePartsFromPlainHeading(spec.h1, spec.heroEyebrow),
+      heading: spec.useCasesHeading || titlePartsFromPlainHeading(spec.h1, spec.heroEyebrow),
     },
     useCases: useCaseItems,
     faq: spec.faq,
     relatedIntro: {
       eyebrow: 'Связанные материалы',
-      heading: { before: 'Что еще ', accent: 'посмотреть', after: '' },
+      heading: titlePartsFromPlainHeading(spec.relatedHeading, 'материалы'),
       title: spec.relatedHeading,
     },
     relatedCards: spec.relatedCards.map((card) => ({
@@ -3222,7 +3391,7 @@ const buildContractDraftPreviewPage = (spec) => {
     },
     breadcrumbs: [
       ruHomeBreadcrumb,
-      { label: spec.h1, path: spec.path },
+      { label: spec.breadcrumb || spec.h1, path: spec.path },
     ],
     schemaType: 'WebPage',
     designReference: '/ru',
@@ -3232,9 +3401,16 @@ const buildContractDraftPreviewPage = (spec) => {
     routeOwner: spec.id,
     canonicalOwner: spec.path,
     riskLevel: 'medium',
-    manualReviewReason: 'Local noindex draft preview from complete Content Design Contract. Owner visual approval is required before production integration, indexation, sitemap inclusion, push, or deploy.',
+    manualReviewReason: spec.workflowHeading
+      ? 'Local noindex Canva production-page config. Owner visual approval is required before production integration, indexation, sitemap inclusion, push, or deploy.'
+      : 'Local noindex draft preview from complete Content Design Contract. Owner visual approval is required before production integration, indexation, sitemap inclusion, push, or deploy.',
     createdFromActionMapRowIds: [spec.sourceFile.replace('src/content/seoPages/handoffs/', '').replace('.md', '') + '-2026-07-16'],
-    notes: [
+    notes: spec.workflowHeading ? [
+      'Local noindex Canva production-page config only; not approved for release.',
+      'Rendered through CarouselProductSeoPageTemplate with existing production components and mockups.',
+      'Allowed product claims: ' + spec.productTruth.allowed,
+      'Forbidden product claims: ' + spec.productTruth.forbidden,
+    ] : [
       'Local noindex draft preview only; not approved for release.',
       'Rendered through CarouselProductSeoPageTemplate with existing production components and mockups.',
       'Product Truth allowed claims: ' + spec.productTruth.allowed,
@@ -3244,7 +3420,9 @@ const buildContractDraftPreviewPage = (spec) => {
     lastUpdated: '2026-07-16',
     ownershipDecision: ownershipDecision({
       decision: 'safe_new_registry_page',
-      reason: 'Content Design Contract marks this URL as isolated by intent; draft remains noindex until owner approval.',
+      reason: spec.workflowHeading
+        ? 'Approved Canva intent marks this URL as isolated; draft remains noindex until owner approval.'
+        : 'Content Design Contract marks this URL as isolated by intent; draft remains noindex until owner approval.',
       existingOwnerStatus: 'No exact existing protected RU product/tool route owner found for this draft path.',
       intentOverlapPaths: spec.relatedCards.map((card) => card.href),
     }),
