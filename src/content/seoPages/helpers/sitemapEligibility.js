@@ -25,4 +25,4 @@ export const isSeoPageSitemapEligible = (page) => (
 
 export const getSeoPagesEligibleForSitemap = (pages) => pages.filter(isSeoPageSitemapEligible);
 
-export const getSeoPagesEligibleForPrerender = (pages) => pages.filter(isSeoPageSitemapEligible);
+export const getSeoPagesEligibleForPrerender = (pages) => pages.filter(isSeoPageRoutable);
