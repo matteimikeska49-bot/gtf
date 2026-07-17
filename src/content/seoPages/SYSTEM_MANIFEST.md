@@ -208,6 +208,7 @@ Gemini responsibilities:
 - Select real local visual assets or approved component visual references for every required visual slot.
 - Draft metadata, FAQ, CTA, related links, Product Truth claims, and localhost review notes.
 - Fix owner feedback before Codex integration.
+- REQUIRED MANUAL GUARDRAIL: A human reviewer MUST manually verify that the generated H1 does NOT contain informational patterns (e.g. "Как создать...", "Что такое...") without explicit confirmation in the Demand Master (check the Score v2 and Primary queries).
 
 Gemini is forbidden to:
 
