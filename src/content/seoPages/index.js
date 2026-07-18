@@ -1028,8 +1028,7 @@ const buildContractCarouselTypeGuide = ({ title, description }) => ({
   items: contractCarouselTypeGuideItems,
 });
 
-const contractDraftPreviewSpecs = [
-  {
+const canvaContractSpec = {
     id: "ru-alternative-canva-dlya-karuseley",
     sourceFile: "src/content/seoPages/handoffs/content_design_contract_canva_dlya_karuseley.md",
     path: "/ru/alternatives/canva-dlya-karuseley",
@@ -1355,10 +1354,12 @@ const contractDraftPreviewSpecs = [
       allowed: "ИИ может разбивать текст на карточки, есть готовые шаблоны, скачивание в ZIP, форматы 4:5 и 1:1, базовая настройка цветов.",
       forbidden: "Нельзя обещать прямую публикацию в соцсети, замену сложной дизайнерской работы, генерацию видеоформатов, автоматическую загрузку шрифтов по URL."
     }
-  },
-];
+};
+
+const contractDraftPreviewSpecs = [];
 
 const contractApprovedReleaseSpecs = [
+  canvaContractSpec,
   {
     id: "ru-use-case-carousels-for-beauty",
     sourceFile: "src/content/seoPages/handoffs/content_design_contract_carousels_for_beauty.md",
