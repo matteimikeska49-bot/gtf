@@ -436,7 +436,8 @@ const validateCarouselFormatsCoverage = (errors, page, requiredOrder) => {
   if (!isCarouselProductSeoPage(page)) return;
 
   const id = getPageId(page);
-  const formats = asArray(page.templateCategories || page.templates);
+  const visibleFormats = asArray(page.templateCategories || page.templates);
+  const formats = asArray(visibleFormats.__seoValidationItems || visibleFormats);
 
   if (!requiredOrder.includes('pageRelevantFormats')) {
     errors.push(`${id} carousel Formats must use the existing pageRelevantFormats card pattern.`);

@@ -11,6 +11,9 @@ export const SEO_PRODUCT_TRUTH_REGISTRY = {
     video: { status: 'available', evidence: 'docs/product/gotoflow-capabilities.md section 2.1.' },
     pdf: { status: 'available', evidence: 'docs/product/gotoflow-capabilities.md section 2.1.' },
     voice: { status: 'available', evidence: 'docs/product/gotoflow-capabilities.md section 2.1.' },
+    image: { status: 'available', evidence: 'docs/product/gotoflow-capabilities.md section 2.1.' },
+    screenshot: { status: 'available', evidence: 'docs/product/gotoflow-capabilities.md section 2.1.' },
+    userPhoto: { status: 'available', evidence: 'docs/product/gotoflow-capabilities.md sections 2 and 2.1.' },
   },
   supportedOutputs: {
     completeCarousel: { status: 'available', evidence: 'docs/product/gotoflow-capabilities.md sections 1, 2, and 4.' },
@@ -50,8 +53,8 @@ export const SEO_CANONICAL_PRODUCT_CAPABILITIES = [
   {
     id: 'content-sources',
     title: 'Источники контента',
-    body: 'Начните с темы или готового текста, ссылки, видео, PDF или голосового сообщения.',
-    capabilityIds: ['topicText', 'link', 'video', 'pdf', 'voice'],
+    body: 'Начните с темы или готового текста, ссылки, видео, PDF, голосового сообщения, изображения, скриншота или своих фото.',
+    capabilityIds: ['topicText', 'link', 'video', 'pdf', 'voice', 'image', 'screenshot', 'userPhoto'],
   },
   {
     id: 'ai-structure-text',

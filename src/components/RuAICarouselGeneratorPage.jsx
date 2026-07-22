@@ -15,6 +15,7 @@ import { ProductRelatedResources } from './ProductRelatedResources';
 import { getAppUrlWithRef } from '../utils/url';
 import { useIsMobile } from '../hooks/useIsMobile';
 import { SeoPageTemplateCategories } from './seo/template-page/SeoPageTemplateCategories';
+import { ruAiCarouselFaqItems, ruInstagramCarouselFaqItems } from '../data/faqSchemaData';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -46,18 +47,18 @@ const legacyFormatsPages = {
     path: '/ru/generator-karuselej-instagram',
     templateCategoriesIntro: {
       eyebrow: 'ФОРМАТЫ КАРУСЕЛЕЙ',
-      heading: { before: 'Какие карусели можно создать ', accent: 'для Instagram, LinkedIn и соцсетей', after: '' },
+      heading: { before: 'Какие Instagram-карусели можно ', accent: 'подготовить для ленты', after: '' },
     },
     templateCategories: buildFormatCards([
-      'Автоматически',
-      'Строго по готовому сценарию',
+      'Пост-карусель 4:5',
+      'Квадратная серия 1:1',
       'Экспертный чек-лист',
-      'Проблема и решение',
       'Разбор ошибки',
-      'Любая идея',
+      'Мини-гайд для сохранений',
+      'Анонс продукта',
     ]),
     categoryCta: {
-      label: 'Создать карусель с ИИ',
+      label: 'Создать Instagram-карусель',
       href: CTA_URL,
     },
   },
@@ -67,13 +68,19 @@ const getLegacyFormatsPage = () => (
   typeof window === 'undefined' ? null : legacyFormatsPages[window.location.pathname] || null
 );
 
+const getCurrentPath = () => (
+  typeof window === 'undefined' ? '/ru/ii-generator-karuseley' : window.location.pathname
+);
+
+const isInstagramCarouselPath = () => getCurrentPath() === '/ru/generator-karuselej-instagram';
+
 /* ── SEO Head ── */
 const RuSEOHead = () => {
   useEffect(() => {
     const isInsta = window.location.pathname === '/ru/generator-karuselej-instagram';
     const canonicalUrl = isInsta ? 'https://gotoflow.io/ru/generator-karuselej-instagram' : 'https://gotoflow.io/ru/ii-generator-karuseley';
-    const pageTitle = isInsta ? 'Генератор каруселей Инстаграм с ИИ | Создать карусель онлайн' : 'ИИ-генератор каруселей — создать карусель с ИИ | GoToFlow';
-    const pageDescription = isInsta ? 'Быстро создавайте вовлекающие Инстаграм карусели с помощью нейросетей онлайн.' : 'Создавайте карусели с ИИ в GoToFlow: идея, сценарий, структура, текст по слайдам, визуальный стиль, свои фото, AI-персонажи, слайды и CTA за пару минут.';
+    const pageTitle = isInsta ? 'Генератор каруселей для Instagram с ИИ | Создать карусель онлайн' : 'ИИ-генератор каруселей — создать карусель с ИИ | GoToFlow';
+    const pageDescription = isInsta ? 'Создавайте Instagram-карусели в GoToFlow: структура поста для ленты, текст по слайдам, визуальная подача, CTA, редактирование и скачивание перед ручной публикацией.' : 'Создавайте карусели с ИИ в GoToFlow: идея, текст, ссылка или другой источник превращаются в структуру, текст по слайдам, визуальный стиль и готовые слайды.';
     
     document.title = pageTitle;
     const setMeta = (name, content, prop = false) => {
@@ -111,8 +118,32 @@ const RuSEOHead = () => {
 };
 
 /* ── Hero ── */
+const heroCopy = {
+  ai: {
+    eyebrow: 'ИИ для каруселей',
+    heading: (
+      <>
+        ИИ-генератор каруселей для Instagram, <br className="hidden md:block" /> LinkedIn <span className="text-gradient-brand">и соцсетей</span>
+      </>
+    ),
+    subtitle: 'GoToFlow создаёт готовую карусель от идеи до финального результата: помогает найти тему, собрать сценарий и структуру, написать текст, оформить визуальную подачу, сделать слайды и CTA — за пару минут.',
+    cta: 'Создать карусель с ИИ',
+  },
+  instagram: {
+    eyebrow: 'Карусели Instagram',
+    heading: (
+      <>
+        Генератор каруселей для Instagram <br className="hidden md:block" /> <span className="text-gradient-brand">с ИИ</span>
+      </>
+    ),
+    subtitle: 'GoToFlow помогает подготовить Instagram-карусель как готовый пост для ленты: структура, текст по слайдам, визуальная подача, формат 4:5 или 1:1, CTA, редактирование и скачивание перед ручной публикацией.',
+    cta: 'Создать карусель Instagram',
+  },
+};
+
 const RuCarouselHero = () => {
   const isMobile = useIsMobile();
+  const copy = isInstagramCarouselPath() ? heroCopy.instagram : heroCopy.ai;
   return (
     <section className="pt-32 pb-16 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] md:w-[1200px] h-[700px] md:h-[900px] bg-[#ec4899]/[0.07] blur-[80px] md:blur-[150px] rounded-full pointer-events-none" />
@@ -120,20 +151,20 @@ const RuCarouselHero = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mt-4 md:mt-0 mb-8">
           <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm">
             <span className="relative flex h-2 w-2 shrink-0"><span className="md:animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-60" /><span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500" /></span>
-            <span className="text-sm text-zinc-300 whitespace-nowrap">ИИ для каруселей</span>
+            <span className="text-sm text-zinc-300 whitespace-nowrap">{copy.eyebrow}</span>
           </div>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="max-w-4xl mx-auto w-full">
           <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
-            ИИ-генератор каруселей для Instagram, <br className="hidden md:block" /> LinkedIn <span className="text-gradient-brand">и соцсетей</span>
+            {copy.heading}
           </h1>
         </motion.div>
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-sm md:text-[0.92rem] text-zinc-500 max-w-2xl mx-auto mb-12 leading-[1.75] font-medium text-balance">
-          GoToFlow создаёт готовую карусель от идеи до финального результата: помогает найти тему, собрать сценарий и структуру, написать текст, оформить визуальную подачу, сделать слайды и CTA — за пару минут.
+          {copy.subtitle}
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }} className="flex flex-col items-center gap-4 w-full sm:w-auto">
           <button onClick={() => window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
-            Создать карусель с ИИ <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            {copy.cta} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
           <p className="text-sm text-zinc-500 flex flex-wrap justify-center gap-x-3 gap-y-1"><span>✓ Без привязки карты</span><span className="text-zinc-700">•</span><span>✓ Первая карусель за 60 секунд</span></p>
         </motion.div>
@@ -143,23 +174,42 @@ const RuCarouselHero = () => {
 };
 
 /* ── Showcase ── */
-const carouselCards = [
-  { id: 2, format: 'reel', likes: '8.1K', views: '20K', label: 'Пример карусели 2', image: '/images/niches/ru/content-ru-2.webp' },
-  { id: 3, format: 'reel', likes: '1.8K', views: '5K', label: 'Пример карусели 3', image: '/images/niches/ru/content-ru-3.webp' },
-  { id: 5, format: 'reel', likes: '6.7K', views: '18K', label: 'Пример карусели 5', image: '/images/niches/ru/content-ru-5.webp' },
-  { id: 6, format: 'reel', likes: '5.9K', views: '14K', label: 'Пример карусели 6', image: '/images/niches/ru/content-ru-6.webp' },
-  { id: 7, format: 'reel', likes: '2.4K', views: '7K', label: 'Пример карусели 7', image: '/images/niches/ru/content-ru-7.webp' },
-  { id: 8, format: 'reel', likes: '980', views: '3.2K', label: 'Пример карусели 8', image: '/images/niches/ru/content-ru-8.webp' },
-  { id: 9, format: 'reel', likes: '10K', views: '25K', label: 'Пример карусели 9', image: '/images/niches/ru/content-ru-9.webp' },
-  { id: 10, format: 'reel', likes: '7.2K', views: '15K', label: 'Пример карусели 10', image: '/images/niches/ru/content-ru-10.webp' },
-];
+const carouselCardsByRoute = {
+  ai: [
+    { id: 1, likes: '4.2K', views: '11K', label: 'Идея в карусель', image: '/images/niches/ru/content-ru-1.webp' },
+    { id: 4, likes: '3.8K', views: '9K', label: 'Ссылка в структуру', image: '/images/niches/ru/content-ru-4.webp' },
+    { id: 7, likes: '2.4K', views: '7K', label: 'Мини-гайд', image: '/images/niches/ru/content-ru-7.webp' },
+    { id: 8, likes: '980', views: '3.2K', label: 'Анонс продукта', image: '/images/niches/ru/content-ru-8.webp' },
+    { id: 9, likes: '10K', views: '25K', label: 'Экспертный разбор', image: '/images/niches/ru/content-ru-9.webp' },
+    { id: 10, likes: '7.2K', views: '15K', label: 'Кейс для соцсетей', image: '/images/niches/ru/content-ru-10.webp' },
+  ],
+  instagram: [
+    { id: 2, likes: '8.1K', views: '20K', label: 'Instagram-пост 4:5', image: '/images/niches/ru/content-ru-2.webp' },
+    { id: 3, likes: '1.8K', views: '5K', label: 'Карусель для ленты', image: '/images/niches/ru/content-ru-3.webp' },
+    { id: 5, likes: '6.7K', views: '18K', label: 'Обложка и слайды', image: '/images/niches/ru/content-ru-5.webp' },
+    { id: 6, likes: '5.9K', views: '14K', label: 'Чек-лист Instagram', image: '/images/niches/ru/content-ru-6.webp' },
+    { id: 7, likes: '2.4K', views: '7K', label: 'Гайд для сохранений', image: '/images/niches/ru/content-ru-7.webp' },
+    { id: 8, likes: '980', views: '3.2K', label: 'Продуктовая серия', image: '/images/niches/ru/content-ru-8.webp' },
+  ],
+};
 
-const SlideCard = ({ card }) => (
+const showcaseCopyByRoute = {
+  ai: {
+    title: <>Разные сценарии, <span className="text-gradient-brand">собранные с ИИ</span></>,
+    badge: 'Карусель',
+  },
+  instagram: {
+    title: <>Примеры для Instagram, <span className="text-gradient-brand">готовые к ленте</span></>,
+    badge: 'Instagram',
+  },
+};
+
+const SlideCard = ({ card, badge }) => (
   <div className="shrink-0 w-[280px] md:w-[320px] bg-white/[0.02] border border-white/[0.06] rounded-2xl p-3 flex flex-col gap-3">
     <div className="relative w-full aspect-[4/5] rounded-xl bg-[#111] overflow-hidden">
       <img src={card.image} alt={`Сгенерировано ИИ ${card.label}`} className="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
       <div className="absolute inset-0 md:animate-pulse bg-gradient-to-br from-white/5 via-transparent to-white/[0.02] z-[1]" />
-      <span className="absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full z-[2] bg-violet-500/20 text-violet-300">Карусель</span>
+      <span className="absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full z-[2] bg-violet-500/20 text-violet-300">{badge}</span>
     </div>
     <div className="flex flex-col gap-2 px-1">
       <div className="h-2.5 w-3/4 rounded-full bg-white/[0.06]" />
@@ -172,33 +222,39 @@ const SlideCard = ({ card }) => (
   </div>
 );
 
-const RuCarouselShowcase = () => (
-  <section className="py-24 md:py-32 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#0a0a0a] to-[#050505]">
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-pink-600/8 blur-[60px] md:blur-[140px] rounded-full pointer-events-none" />
-    <div className="relative z-10">
-      <div className="flex justify-center mb-6">
-        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-lg shadow-black/20">
-          <div className="flex -space-x-2">
-            {["https://randomuser.me/api/portraits/men/32.jpg","https://randomuser.me/api/portraits/women/44.jpg","https://randomuser.me/api/portraits/men/46.jpg","https://randomuser.me/api/portraits/women/68.jpg"].map((src,i)=>(
-              <img key={i} src={src} alt="Пользователь GoToFlow" className="w-6 h-6 rounded-full border-2 border-[#121212] object-cover bg-zinc-800" style={{zIndex:4-i}} />
-            ))}
+const RuCarouselShowcase = () => {
+  const routeKey = isInstagramCarouselPath() ? 'instagram' : 'ai';
+  const cards = carouselCardsByRoute[routeKey];
+  const copy = showcaseCopyByRoute[routeKey];
+
+  return (
+    <section className="py-24 md:py-32 relative z-10 w-full overflow-hidden bg-gradient-to-b from-[#050505] via-[#0a0a0a] to-[#050505]">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-pink-600/8 blur-[60px] md:blur-[140px] rounded-full pointer-events-none" />
+      <div className="relative z-10">
+        <div className="flex justify-center mb-6">
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-lg shadow-black/20">
+            <div className="flex -space-x-2">
+              {["https://randomuser.me/api/portraits/men/32.jpg","https://randomuser.me/api/portraits/women/44.jpg","https://randomuser.me/api/portraits/men/46.jpg","https://randomuser.me/api/portraits/women/68.jpg"].map((src,i)=>(
+                <img key={i} src={src} alt="Пользователь GoToFlow" className="w-6 h-6 rounded-full border-2 border-[#121212] object-cover bg-zinc-800" style={{zIndex:4-i}} />
+              ))}
+            </div>
+            <div className="flex gap-0.5">{[...Array(5)].map((_,i)=>(<Star key={i} className="w-3.5 h-3.5 fill-yellow-500 text-yellow-500 drop-shadow-sm" />))}</div>
+            <span className="text-sm text-zinc-300 font-medium tracking-tight"><span className="text-white font-semibold">+10 000</span> уже создают карусели</span>
           </div>
-          <div className="flex gap-0.5">{[...Array(5)].map((_,i)=>(<Star key={i} className="w-3.5 h-3.5 fill-yellow-500 text-yellow-500 drop-shadow-sm" />))}</div>
-          <span className="text-sm text-zinc-300 font-medium tracking-tight"><span className="text-white font-semibold">+10 000</span> уже создают карусели</span>
+        </div>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-16 px-6">
+          {copy.title}
+        </h2>
+        <div className="relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}>
+          <div className="flex items-center gap-5" style={{ animation: 'marquee-scroll 35s linear infinite', width: 'max-content' }}>
+            {[...cards, ...cards].map((card, i) => <SlideCard key={`${card.id}-${i}`} card={card} badge={copy.badge} />)}
+          </div>
         </div>
       </div>
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-16 px-6">
-        Реальные карусели, <span className="text-gradient-brand">созданные с ИИ</span>
-      </h2>
-      <div className="relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}>
-        <div className="flex items-center gap-5" style={{ animation: 'marquee-scroll 35s linear infinite', width: 'max-content' }}>
-          {[...carouselCards, ...carouselCards].map((card, i) => <SlideCard key={`${card.id}-${i}`} card={card} />)}
-        </div>
-      </div>
-    </div>
-    <style>{`@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
-  </section>
-);
+      <style>{`@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
+    </section>
+  );
+};
 
 /* ── Problem ── */
 const problemCards = [
@@ -504,30 +560,39 @@ const RuCarouselDifferentiation = () => {
 };
 
 /* ── SEO Block ── */
-const RuCarouselSEOBlock = () => (
-  <section className="py-20 md:py-28 px-6 relative z-10 w-full bg-[#050505]">
-    <div className="max-w-3xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">Краткий ответ</h2>
-      <div className="text-zinc-400 leading-relaxed space-y-4 text-base">
-        <p>ИИ-генератор каруселей — это инструмент, который помогает не просто написать текст, а собрать готовую карусель: идею, сценарий, структуру, текст по слайдам, визуальный стиль, слайды и CTA. GoToFlow делает этот процесс внутри одного workflow.</p>
-        <p>GoToFlow — это не обычный AI-чат и не ручной дизайн-редактор. Это end-to-end система создания каруселей: от нуля до готового результата за пару минут. В отличие от ChatGPT или Canva, GoToFlow заточен именно под формат каруселей.</p>
+const seoBlockCopy = {
+  ai: {
+    title: 'Краткий ответ',
+    paragraphs: [
+      'ИИ-генератор каруселей — это инструмент, который помогает не просто написать текст, а собрать готовую карусель: идею, сценарий, структуру, текст по слайдам, визуальный стиль, слайды и CTA.',
+      'GoToFlow — это не обычный AI-чат и не ручной дизайн-редактор. ИИ помогает пройти весь путь: понять идею, выстроить последовательность слайдов, написать короткие тексты, подобрать визуальную подачу и подготовить результат к скачиванию.',
+    ],
+  },
+  instagram: {
+    title: 'Краткий ответ',
+    paragraphs: [
+      'Генератор каруселей для Instagram помогает быстро собрать пост для ленты: обложку, последовательность слайдов, короткий текст, визуальную подачу и финальный CTA.',
+      'Выберите формат 4:5 или 1:1, проверьте количество слайдов, отредактируйте текст и скачайте готовую серию. Публикацию в Instagram вы делаете вручную после финальной проверки.',
+    ],
+  },
+};
+
+const RuCarouselSEOBlock = () => {
+  const copy = isInstagramCarouselPath() ? seoBlockCopy.instagram : seoBlockCopy.ai;
+
+  return (
+    <section className="py-20 md:py-28 px-6 relative z-10 w-full bg-[#050505]">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">{copy.title}</h2>
+        <div className="text-zinc-400 leading-relaxed space-y-4 text-base">
+          {copy.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 /* ── FAQ ── */
-const faqItems = [
-  { q: 'Что такое ИИ-генератор каруселей?', a: 'ИИ-генератор каруселей помогает собрать готовую серию слайдов: идею, сценарий, структуру, текст по слайдам, визуальную подачу и CTA.' },
-  { q: 'Можно ли создать пост-карусель онлайн без скачивания программ?', a: 'Да. GoToFlow работает полностью онлайн в браузере. Вам не нужно устанавливать тяжелые редакторы или скачивать приложения. Вы можете создать пост-карусель онлайн за пару минут с любого устройства.' },
-  { q: 'Можно ли создать карусель без готовой идеи?', a: 'Да. В GoToFlow можно начать с нуля: использовать анализ конкурентов, виральные видео, ссылку, тему или короткое описание задачи.' },
-  { q: 'Можно ли использовать свой текст?', a: 'Да. Вы можете загрузить или вставить свой текст, а GoToFlow поможет разложить его по слайдам, усилить структуру и добавить CTA.' },
-  { q: 'Можно ли загрузить свои фото?', a: 'Да. GoToFlow поддерживает сценарии, где пользовательские фотографии и визуальные предпочтения становятся частью карусели.' },
-  { q: 'GoToFlow заменяет Canva или ChatGPT?', a: 'У инструментов разный фокус. ChatGPT и Gemini помогают с отдельными частями, Canva удобна для ручного дизайна, а GoToFlow закрывает полный workflow карусели: от идеи до готовых слайдов.' },
-  { q: 'Можно ли сделать карусель для Instagram и LinkedIn?', a: 'Да. GoToFlow подходит для каруселей под Instagram, LinkedIn и другие соцсети, где важны структура, читаемость и визуальная подача.' },
-  { q: 'Можно ли управлять сценарием и текстом по слайдам?', a: 'Да. Вы можете задавать тему, сценарий, стиль и материалы, а затем проверять текст, логику слайдов и CTA перед публикацией.' },
-];
-
 const FAQItem = ({ item, isOpen, onClick }) => (
   <div className={`rounded-2xl border transition-colors duration-300 overflow-hidden cursor-pointer ${isOpen?'border-pink-500/30 bg-white/[0.03]':'border-white/[0.05] bg-white/[0.01] hover:border-white/10'}`} onClick={onClick}>
     <div className="flex items-center justify-between gap-4 p-6">
@@ -543,6 +608,7 @@ const FAQItem = ({ item, isOpen, onClick }) => (
 const RuCarouselFAQ = () => {
   const [openIdx, setOpenIdx] = useState(null);
   const isMobile = useIsMobile();
+  const faqItems = isInstagramCarouselPath() ? ruInstagramCarouselFaqItems : ruAiCarouselFaqItems;
   return (
     <section className="py-24 md:py-32 px-6 relative z-10 w-full overflow-hidden bg-[#050505]">
       <div className="max-w-7xl mx-auto bg-white/[0.02] border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 lg:p-16 backdrop-blur-sm relative z-10">
@@ -557,6 +623,47 @@ const RuCarouselFAQ = () => {
       </div>
     </section>
   );
+};
+
+const relatedResourceBlocks = {
+  ai: [
+    {
+      title: 'Создавайте разный контент с ИИ:',
+      links: [
+        { url: '/ru/generator-karuselej-instagram', label: 'Карусели для Instagram' },
+        { url: '/ru/use-cases/tekst-v-karusel', label: 'Текст в карусель' },
+        { url: '/ru/use-cases/foto-v-karusel', label: 'Фото в карусель' },
+        { url: '/ru/generator-karuselej-linkedin', label: 'Карусели для LinkedIn' },
+      ],
+    },
+    {
+      title: 'Полезные материалы:',
+      links: [
+        { url: '/ru/blog/ii-dlya-karuseley', label: 'Как использовать ИИ для каруселей' },
+        { url: '/ru/templates/instagram-carousel', label: 'Шаблоны каруселей' },
+        { url: '/ru/prompts/instagram-carousel', label: 'Промпты для каруселей' },
+      ],
+    },
+  ],
+  instagram: [
+    {
+      title: 'Уточните сценарий Instagram-карусели:',
+      links: [
+        { url: '/ru/templates/instagram-carousel', label: 'Шаблоны Instagram-каруселей' },
+        { url: '/ru/use-cases/tekst-v-karusel', label: 'Текст в карусель' },
+        { url: '/ru/use-cases/foto-v-karusel', label: 'Фото в карусель' },
+        { url: '/ru/use-cases/besshovnaya-karusel-instagram', label: 'Бесшовная карусель' },
+      ],
+    },
+    {
+      title: 'Полезные уточнения:',
+      links: [
+        { url: '/ru/prompts/instagram-carousel', label: 'Промпты для каруселей' },
+        { url: '/ru/blog/razmer-karuseli-v-instagram', label: 'Размеры карусели Instagram' },
+        { url: '/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii', label: 'Как сделать карусель с ИИ' },
+      ],
+    },
+  ],
 };
 
 /* ── Bottom CTA ── */
@@ -605,6 +712,7 @@ const RuCarouselBottomCTA = () => {
 
 export const RuAICarouselGeneratorPage = () => {
   const legacyFormatsPage = getLegacyFormatsPage();
+  const resources = isInstagramCarouselPath() ? relatedResourceBlocks.instagram : relatedResourceBlocks.ai;
 
   return (
     <MainLayout>
@@ -626,23 +734,7 @@ export const RuAICarouselGeneratorPage = () => {
       <RuCarouselDifferentiation />
       <RuCarouselSEOBlock />
 
-      <ProductRelatedResources blocks={[
-        {
-          title: "Создавайте разный контент с ИИ:",
-          links: [
-            { url: "/ru/generator-karuselej-linkedin", label: "Карусели для LinkedIn" },
-            { url: "/ru/generator-postov-instagram", label: "Посты для Instagram" },
-            { url: "/ru/generator-kontenta", label: "Любой контент" }
-          ]
-        },
-        {
-          title: "Полезные материалы:",
-          links: [
-            { url: "/ru/blog/ii-dlya-karuseley", label: "Как использовать ИИ для каруселей" },
-            { url: "/ru/blog/prompty-dlya-karuseley-v-instagram", label: "Шаблоны каруселей" }
-          ]
-        }
-      ]} />
+      <ProductRelatedResources blocks={resources} />
 
       <TestimonialsSection />
       <RuCarouselFAQ />
