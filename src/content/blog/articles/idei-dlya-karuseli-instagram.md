@@ -59,7 +59,7 @@ faq:
 explore:
   tools:
     - title: "AI Генератор каруселей"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Создавайте красивые готовые карусели из исходного текста за пару минут."
   guides:
     - title: "Промпты для каруселей в Инстаграм"
@@ -71,7 +71,7 @@ finalCta:
   buttonText: "Создать карусель"
   microcopy: "Попробуйте бесплатно — Навыки дизайна не нужны"
   secondaryText: "Смотреть функции →"
-  secondaryHref: "/ru/ai-generator-karuselej"
+  secondaryHref: "/ru/ii-generator-karuseley"
 ---
 
 # Идеи для карусели в Инстаграм: Форматы, которые работают

@@ -15,7 +15,7 @@ const mockupRegistry = JSON.parse(fs.readFileSync(mockupRegistryPath, 'utf8'));
 const mockupDecisions = fs.existsSync(mockupDecisionsPath) ? JSON.parse(fs.readFileSync(mockupDecisionsPath, 'utf8')) : [];
 
 const EN_PRODUCTS = ['/', '/ai-carousel-maker', '/ai-content-generator', '/ai-instagram-post-generator', '/ai-post-maker', '/linkedin-carousel-maker', '/carousel/create'];
-const RU_PRODUCTS = ['/ru', '/ru/ai-generator-karuselej', '/ru/ii-generator-karuseley', '/ru/generator-kontenta', '/ru/generator-postov-instagram', '/ru/generator-karuselej-linkedin'];
+const RU_PRODUCTS = ['/ru', '/ru/ii-generator-karuseley', '/ru/ii-generator-karuseley', '/ru/generator-kontenta', '/ru/generator-postov-instagram', '/ru/generator-karuselej-linkedin'];
 
 const files = fs.readdirSync(articlesDir).filter(f => f.endsWith('.md') && f !== '_template.md');
 

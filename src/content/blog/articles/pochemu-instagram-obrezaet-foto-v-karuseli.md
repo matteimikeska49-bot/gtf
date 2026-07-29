@@ -13,7 +13,7 @@ intentId: "ru:pochemu-instagram-obrezaet-foto-v-karuseli"
 clusterId: "ru:instagram-carousel"
 articleRole: "technical_guide"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ai-generator-karuselej"
+relatedProductRoute: "/ru/ii-generator-karuseley"
 secondaryKeywords:
   - "инстаграм обрезает фото в карусели"
   - "как загрузить карусель без обрезки"
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Соберите слайды в едином формате."
   guides:
     - title: "Фото разного формата в карусели"
@@ -127,7 +127,7 @@ type: checklist
 
 Подробнее про такой сценарий: [как совместить горизонтальные и вертикальные фото в карусели](/ru/blog/gorizontalnye-i-vertikalnye-foto-v-karuseli).
 
-## Как [GoToFlow](/ru/ai-generator-karuselej) помогает
+## Как [GoToFlow](/ru/ii-generator-karuseley) помогает
 
 GoToFlow помогает создавать карусель как последовательность слайдов с единой визуальной логикой. Это полезно, когда вы хотите не просто загрузить набор фото, а добавить текст, структуру, визуальную подачу и CTA.
 

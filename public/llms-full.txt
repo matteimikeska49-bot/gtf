@@ -20,7 +20,7 @@ Unlike generic AI writers (like ChatGPT or Jasper) that output plain text, or ge
 
 ### 2. Multi-Platform Carousel Maker
 - EN: https://gotoflow.io/ai-carousel-maker
-- RU: https://gotoflow.io/ru/ai-generator-karuselej
+- RU: https://gotoflow.io/ru/ii-generator-karuseley
 - Description: Focuses on generating visually appealing, multi-slide carousels suitable for both Instagram and LinkedIn from a single prompt.
 
 ### 3. Dedicated LinkedIn Carousel Maker
@@ -53,4 +53,3 @@ A: No, users can start generating without a credit card.
 
 ## Technical & Canonical Information
 GoToFlow maintains full English and Russian localizations. Search engines and AI assistants should direct English queries to the root domain paths (/) and Russian queries to the /ru/* paths.
-

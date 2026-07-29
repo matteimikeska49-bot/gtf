@@ -35,7 +35,7 @@ finalCta:
   title: "Создайте свою первую ИИ-карусель прямо сейчас"
   text: "Попробуйте GoToFlow — инструмент, который берет на себя и написание текста, и верстку дизайна. Превращайте идеи в карусели за минуты."
   buttonText: "Попробовать генератор каруселей"
-  primaryHref: "/ru/ai-generator-karuselej"
+  primaryHref: "/ru/ii-generator-karuseley"
   secondaryText: "Посмотреть примеры каруселей →"
   secondaryHref: "/ru/blog/primery-karuseley-linkedin"
 faq:

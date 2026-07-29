@@ -534,7 +534,7 @@ export const LinkedInPostPageRu = () => (
       <div className="max-w-3xl w-full p-6 md:p-8 rounded-2xl border border-white/[0.05] bg-white/[0.02]">
         <h3 className="text-white font-medium mb-4 text-base md:text-lg">Расширьте возможности контента:</h3>
         <ul className="space-y-3 text-sm md:text-base">
-            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ai-generator-karuselej" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Карусели</Link></li>
+            <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/ii-generator-karuseley" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Карусели</Link></li>
             <li className="flex items-center gap-2"><span className="text-pink-500">•</span><Link to="/ru/generator-kontenta" className="text-zinc-300 hover:text-pink-400 transition-colors underline underline-offset-4 decoration-white/10 hover:decoration-pink-400/50">Генератор контента</Link></li>
         </ul>
       </div>

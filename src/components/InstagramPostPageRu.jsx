@@ -29,43 +29,53 @@ const CTA_URL = 'https://app.gotoflow.io';
 
 const defaultPostPageConfig = {
   path: '/ru/generator-postov-instagram',
-  title: 'Генератор постов Instagram с AI — идеи, подписи и карусели | GoToFlow',
-  description: 'Создавайте посты, подписи, идеи и карусели для Instagram с помощью AI. Быстрая генерация контента для брендов, экспертов и бизнеса.',
-  h1: <>Генератор постов для Instagram* с ИИ —<br className="hidden md:block" /> <span className="text-gradient-brand">готовый пост за 60 секунд</span></>,
-  h1Text: 'Генератор постов для Instagram* с ИИ — готовый пост за 60 секунд',
+  title: 'Генератор постов для Instagram с ИИ | GoToFlow',
+  description: 'Подготовьте пост для Instagram с ИИ: идея, хук, основной текст, визуальная подача и CTA с возможностью редактирования перед публикацией.',
+  h1: <>Генератор постов для Instagram* <br className="hidden md:block" /> <span className="text-gradient-brand">с помощью ИИ</span></>,
+  h1Text: 'Генератор постов для Instagram* с помощью ИИ',
   heroEyebrow: 'Генератор постов для Instagram',
-  heroSubtitle: <>От идеи до готовых слайдов — структура, текст и логика посты генерируются автоматически.<br className="hidden md:block" /> Без навыков дизайна, без команды, без шаблонов.</>,
+  heroSubtitle: <>GoToFlow помогает превратить тему или черновик в пост для Instagram: придумать хук, собрать основной текст, визуальную подачу и CTA, а затем отредактировать материал перед ручной публикацией.</>,
   heroCta: 'Создать пост',
   secondaryCta: 'Примеры постов',
-  proofTitle: <>Примеры каруселей, <span className="text-gradient-brand">созданных с помощью ИИ</span></>,
+  proofTitle: <>Примеры визуальной подачи <span className="text-gradient-brand">для постов Instagram*</span></>,
   proofMode: 'image',
   quickAnswer: null,
   productBridgeTitle: 'Что такое генератор постов с ИИ',
   productBridge: [
-    <>Генератор постов с ИИ — это инструмент, который автоматически создает <strong className="text-zinc-200">пост Instagram</strong> и других соцсетей. Вместо того чтобы писать каждый слайд вручную, вы просто вводите тему или идею, и ИИ выдает структурированный пост с сильным хуком, готовый к публикации.</>,
-    <>Наш генератор постов работает не как обычные шаблоны. ИИ анализирует контекст, применяет проверенные контентные фреймворки и <strong className="text-zinc-200">создает пост</strong> с четкой целью для каждого слайда — от цепляющего заголовка до призыва к действию (CTA) в конце.</>,
-    'Создать пост с помощью ИИ — значит ускорить производство контента, получить стабильное качество и возможность тестировать разные подходы. Будь вы эксперт или фаундер, генератор забирает на себя самую сложную часть работы.',
+    <>Генератор постов с ИИ помогает перейти от темы или черновика к понятной публикации для Instagram*: сформулировать <strong className="text-zinc-200">хук, основную мысль и CTA</strong>, а также продумать визуальную подачу.</>,
+    <>GoToFlow учитывает цель поста и контекст исходного материала. Результат можно проверить, отредактировать и адаптировать под голос автора или бренда до публикации.</>,
+    'Эта страница отвечает за обычный Instagram-пост. Для последовательности из нескольких карточек используется отдельный генератор каруселей Instagram.',
   ],
   workflowTitle: <>От идеи до готового поста за <span className="text-gradient-brand">3 простых шага</span></>,
   workflowSubtitle: 'ИИ делает всю тяжёлую работу — вы принимаете финальное решение.',
   workflowSteps: [
     { icon: CornerDownLeft, number: 1, title: 'Введите тему или ссылку', desc: 'Введите тему, URL или идею. ИИ изучит контекст и подготовит пост.', micro: 'input' },
     { icon: Sparkles, number: 2, title: 'ИИ создаёт пост', desc: 'ИИ собирает хук, структуру, текст, визуальную подачу и CTA.', micro: 'progress' },
-    { icon: Download, number: 3, title: 'Получите готовые слайды', desc: 'Проверьте, отредактируйте при необходимости и скачайте готовый пост.', micro: 'export' },
+    { icon: Download, number: 3, title: 'Проверьте готовый пост', desc: 'Отредактируйте текст и визуальную подачу, затем скачайте материал для ручной публикации.', micro: 'export' },
   ],
   inputMockupLines: ['https://competitor.com/post/...', 'Тема: 5 ошибок в ценообразовании SaaS'],
   exportLabel: 'Скачать пост',
   relatedTitle: 'Расширьте возможности контента:',
   relatedLinks: [
-    { href: '/ru/ai-generator-karuselej', title: 'Карусели' },
+    { href: '/ru/ii-generator-karuseley', title: 'ИИ-генератор каруселей' },
+    { href: '/ru/generator-karuselej-instagram', title: 'Карусели для Instagram' },
     { href: '/ru/generator-kontenta', title: 'Генератор контента' },
   ],
   faqItems: [
-    { q: 'Что такое генератор постов?', a: 'Это инструмент, который использует искусственный интеллект для автоматического создания каруселей. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет каждый слайд текстом — за считанные секунды.' },
-    { q: 'Можно ли создать пост с помощью ИИ?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram* и LinkedIn. ИИ пишет цепляющий текст, логично выстраивает слайды и делает всё, чтобы вашу пост сохраняли и репостили.' },
-    { q: 'Где найти идеи для каруселей?', a: <>Если вам нужно вдохновение, изучите наши <a href="/ru/blog/shablony-karuseley-v-instagram" className="text-pink-400 hover:underline">шаблоны каруселей</a> или <a href="/ru/blog/prompty-dlya-karuseley-v-instagram" className="text-pink-400 hover:underline">промпты для нейросетей</a>.</> },
-    { q: 'Нужно ли уметь дизайн?', a: 'Нет. GoToFlow создан для тех, кто хочет получать качественный контент для каруселей без навыков дизайна и профессионального копирайтинга.' },
-    { q: 'Чем это лучше Canva?', a: 'Это разные инструменты. Canva — ручной дизайн-редактор. GoToFlow — workflow для контента: идея, структура, текст, визуальная подача, готовый результат и CTA.' },
+    { q: 'Что делает генератор постов для Instagram?', a: 'Он помогает превратить тему или черновик в основу публикации: хук, основной текст, визуальную подачу и CTA.' },
+    { q: 'Можно ли начать с одной идеи?', a: 'Да. Опишите тему, аудиторию и цель поста, чтобы ИИ предложил связный вариант для дальнейшей редакции.' },
+    { q: 'Можно ли использовать свой черновик?', a: 'Да. Вставьте готовый текст или заметки, затем проверьте структуру и отредактируйте формулировки под свой стиль.' },
+    { q: 'Можно ли начать со ссылки на источник?', a: 'Да. Ссылка может быть исходным материалом, но факты и итоговые формулировки нужно проверить перед публикацией.' },
+    { q: 'Можно ли сохранить свой tone of voice?', a: 'Можно задать желаемую подачу и вручную отредактировать результат, чтобы он звучал естественно для вашего аккаунта.' },
+    { q: 'Помогает ли ИИ с первым предложением?', a: 'Да. GoToFlow помогает сформулировать хук, который сразу обозначает тему и пользу публикации.' },
+    { q: 'Можно ли добавить призыв к действию?', a: 'Да. В финале можно подготовить CTA для комментария, сохранения или другого уместного действия.' },
+    { q: 'Помогает ли GoToFlow с визуальной подачей?', a: 'Да. Сервис помогает связать текст с визуальным направлением и подготовить материал в едином стиле.' },
+    { q: 'Можно ли отредактировать результат?', a: 'Да. Проверьте текст, визуальную подачу и CTA и внесите изменения до скачивания.' },
+    { q: 'GoToFlow публикует пост в Instagram автоматически?', a: 'Нет. Готовый материал нужно проверить, скачать и опубликовать в Instagram вручную.' },
+    { q: 'Подходит ли генератор экспертам и брендам?', a: 'Да. Его можно использовать для экспертных объяснений, анонсов, продуктовых публикаций и постов личного бренда.' },
+    { q: 'Чем эта страница отличается от генератора каруселей Instagram?', a: 'Здесь основной результат — отдельный пост Instagram. Генератор каруселей отвечает за последовательность из нескольких связанных слайдов.' },
+    { q: 'Нужно ли проверять факты в тексте?', a: 'Да. Имена, цифры, условия предложения и другие важные детали нужно проверять перед публикацией.' },
+    { q: 'Что можно скачать после подготовки поста?', a: 'Скачайте подготовленный визуальный материал и используйте отредактированный текст при ручной публикации.' },
   ],
   bottomTitle: <>Готовый пост за 60 секунд. <span className="text-gradient-brand">Без дизайна.</span><br/><span className="text-zinc-400 font-semibold" style={{fontSize:'0.78em'}}>Без команды.</span></>,
   bottomDescription: 'Присоединяйтесь к тысячам креаторов и предпринимателей, которые создают вовлекающие посты за секунды с помощью ИИ GoToFlow.',
@@ -142,8 +152,8 @@ const buildRegistryPostPageConfig = (path) => {
 };
 
 const instagramPostFormatsPage = {
-  id: 'ru-ii-generator-postov-dlya-instagram',
-  path: '/ru/ii-generator-postov-dlya-instagram',
+  id: 'ru-generator-postov-instagram',
+  path: '/ru/generator-postov-instagram',
   templateCategoriesIntro: {
     eyebrow: 'ФОРМАТЫ ПОСТОВ',
     heading: { before: 'Какие посты можно создать ', accent: 'для Instagram', after: '' },
@@ -163,7 +173,7 @@ const instagramPostFormatsPage = {
 };
 
 const getInstagramPostFormatsPage = () => (
-  typeof window !== 'undefined' && window.location.pathname === '/ru/ii-generator-postov-dlya-instagram'
+  typeof window !== 'undefined' && window.location.pathname === '/ru/generator-postov-instagram'
     ? instagramPostFormatsPage
     : null
 );
@@ -364,8 +374,8 @@ export const CarouselShowcaseRu = ({ config = defaultPostPageConfig }) => (
 /* ── Problem (RU) ── */
 const problemCards = [
   { title: "Тратите 3 часа → один пост", text: "Написать хуки, продумать структуру и подготовить текст занимает много времени — особенно если результат обычного ИИ приходится полностью переписывать." },
-  { title: "Первый слайд не останавливает скролл", text: "Слабые хуки — и никто не свайпает дальше. Пост умирает на первом слайде, даже если дальше всё хорошо." },
-  { title: "Структура разваливается", text: "Нет логики между слайдами. Смысл рассеян, читатель уходит, вовлечённость падает." },
+  { title: "Первое предложение не цепляет", text: "Слабый хук не объясняет, зачем читать дальше, даже если основная мысль поста полезна." },
+  { title: "Текст теряет фокус", text: "В публикации смешиваются несколько мыслей, и читателю сложно понять главный вывод." },
   { title: "Слишком много инструментов", text: "ChatGPT для текста, Canva для дизайна, заметки для идей — переключения убивают продуктивность." },
 ];
 
@@ -377,10 +387,10 @@ export const CarouselProblemRu = () => {
     <section ref={ref} className="relative z-10 py-24 md:py-32 w-full flex flex-col items-center bg-[#050505]">
       <motion.div animate={{ opacity: [0.35,0.55,0.35], scale: [1,1.05,1] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }} className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[450px] rounded-full -z-10 pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(236,72,153,0.14) 0%, rgba(249,115,22,0.07) 50%, transparent 75%)', filter: 'blur(100px)' }} />
       <motion.h2 initial={{ opacity:0,y:12 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.7 }} className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight text-center relative z-20 px-6">
-        Создание каруселей превратилось в <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">хаос?</span>
+        Подготовка постов превратилась в <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">хаос?</span>
       </motion.h2>
       <motion.p initial={{ opacity:0,y:12 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.7,delay:0.08 }} className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto text-center mb-16 relative z-20 px-6">
-        Вы тратите часы на слайды, но результат всё равно не конвертирует
+        Идея есть, но хук, текст и визуальная подача не складываются в цельную публикацию
       </motion.p>
       <motion.div initial={{ opacity:0,y:30 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration: isMobile ? 0.6 : 0.8,delay:0.15 }} className="relative w-full max-w-6xl mx-auto px-4 z-10">
         <div className="relative bg-white/[0.02] border border-white/[0.05] backdrop-blur-xl rounded-[2rem] p-6 md:p-10 lg:p-12 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden">
@@ -412,7 +422,7 @@ export const CarouselComparisonRu = () => {
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-5">
           Старый процесс vs <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">GoToFlow</span>
         </h2>
-        <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-medium">Поиск идей, написание хуков, структура слайдов и копирайтинг обычно живут в 4+ разных инструментах. В GoToFlow это один процесс создания посты.</p>
+        <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-medium">Поиск идеи, написание хука, основной текст и визуальная подача часто живут в разных инструментах. В GoToFlow это один процесс подготовки поста.</p>
       </motion.div>
       <motion.div initial={{ opacity:0,y:56 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ duration: isMobile ? 0.6 : 0.9 }} className="relative">
         <div className="relative rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 lg:p-14">
@@ -433,7 +443,7 @@ export const CarouselComparisonRu = () => {
               <div className="rounded-2xl p-6 md:p-8 flex flex-col h-full" style={{ background:'rgba(5,5,5,0.6)', border:'1px solid rgba(255,255,255,0.03)', boxShadow:'inset 0 4px 24px rgba(0,0,0,0.4)' }}>
                 <p className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-600 mb-8 text-center">Обычный путь</p>
                 <div className="flex flex-col gap-5 flex-1">
-                  {['Пишете хуки вручную в ChatGPT','Структурируете слайды в отдельном документе','Каждый раз собираете дизайн в Canva с нуля','Получаете сырой AI-текст и переписываете слайд за слайдом','Нет системы — каждый пост начинается с нуля'].map((t,i)=>(
+                  {['Пишете хук отдельно от основного текста','Храните черновик и визуальные идеи в разных местах','Каждый раз собираете оформление с нуля','Получаете сырой AI-текст и полностью переписываете его','Нет системы — каждый пост начинается с нуля'].map((t,i)=>(
                     <div key={i} className="flex items-start gap-4"><div className="shrink-0 mt-1 w-5 h-5 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center"><X className="w-3 h-3 text-zinc-600"/></div><p className="text-sm md:text-base text-zinc-500 leading-relaxed">{t}</p></div>
                   ))}
                 </div>
@@ -441,7 +451,7 @@ export const CarouselComparisonRu = () => {
               <div className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-colors duration-500" style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', boxShadow:'0 20px 40px -10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)', backdropFilter:'blur(16px)' }}>
                 <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-10">GoToFlow</p>
                 <div className="flex flex-col gap-5 flex-1 relative z-10">
-                  {['Введите тему или вставьте ссылку — получите готовый пост','ИИ пишет хук, структурирует слайды и заполняет текст','Получите готовый к публикации пост в один клик','Мгновенно генерируйте несколько вариантов','Ваш tone of voice сохраняется в каждом слайде'].map((t,i)=>(
+                  {['Введите тему, черновик или ссылку на источник','ИИ помогает собрать хук, основную мысль и CTA','Проверьте текст и визуальную подачу в одном процессе','Отредактируйте результат под задачу публикации','Сохраните свой tone of voice перед скачиванием'].map((t,i)=>(
                     <div key={i} className="flex items-start gap-4"><div className="shrink-0 mt-1 w-5 h-5 rounded-full border border-pink-500/30 bg-[rgba(244,63,94,0.1)] flex items-center justify-center"><Check className="w-3 h-3 text-pink-400" strokeWidth={3}/></div><p className="text-sm md:text-base text-white font-medium leading-relaxed">{t}</p></div>
                   ))}
                 </div>
@@ -561,8 +571,8 @@ const ScreenshotCard = ({ imageId, className = '', delay = 0 }) => {
 
 const diffPoints = [
   { icon: Fingerprint, title: 'Ваш стиль, а не шаблонный текст', desc: 'GoToFlow сохраняет ваш tone of voice, поэтому каждый пост звучит так, будто его написали вы.' },
-  { icon: Settings2, title: 'Контроль каждого слайда', desc: 'Задавайте темы, направляйте хук, корректируйте структуру и тексты так, как нужно вам.' },
-  { icon: Zap, title: 'Готовый пост, а не просто текст', desc: 'Получите готовый структурированный пост — а не блок текста, который нужно вручную разбивать на слайды.' },
+  { icon: Settings2, title: 'Контроль текста и подачи', desc: 'Направляйте хук, корректируйте основную мысль, визуальные акценты и CTA так, как нужно вам.' },
+  { icon: Zap, title: 'Цельный материал для публикации', desc: 'Получите согласованные текст и визуальную подачу, проверьте их и скачайте результат перед ручной публикацией.' },
 ];
 
 export const CarouselDifferentiationRu = () => {
@@ -575,7 +585,7 @@ export const CarouselDifferentiationRu = () => {
         <motion.div initial={{opacity:0,x: isMobile ? 0 : -40, y: isMobile ? 24 : 0}} whileInView={{opacity:1,x:0,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md"><Fingerprint className="w-3.5 h-3.5"/>Почему GoToFlow</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-[1.15] text-balance">GoToFlow <span className="text-gradient-brand">создаёт контент</span><br className="hidden lg:block"/> а не просто дизайн</h2>
-          <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed text-balance mb-12">Пока другие сервисы дают вам пустой холст, GoToFlow генерирует полный пост — структуру слайдов, тексты и логику — используя ИИ.</p>
+          <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed text-balance mb-12">GoToFlow помогает собрать пост как цельный материал: от темы и хука до основного текста, визуальной подачи и CTA.</p>
         </motion.div>
         <div className="flex flex-col gap-4">
           {diffPoints.map((p,i) => (
@@ -636,7 +646,7 @@ export const CarouselFAQRu = ({ config = defaultPostPageConfig }) => {
         <motion.div initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration: isMobile ? 0.6 : 0.8}} className="text-center mb-14 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs tracking-widest uppercase font-bold mb-8 backdrop-blur-md">FAQ</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight text-balance">Частые <span className="text-gradient-brand">вопросы</span></h2>
-          <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">Всё, что нужно знать про генерацию каруселей</p>
+          <p className="text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed text-balance">Всё, что нужно знать о подготовке постов для Instagram*</p>
         </motion.div>
         <div className="max-w-3xl mx-auto space-y-4">
           {config.faqItems.map((item,i) => <FAQItem key={i} item={item} isOpen={openIdx===i} onClick={()=>setOpenIdx(openIdx===i?null:i)}/>)}

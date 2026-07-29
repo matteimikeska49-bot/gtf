@@ -154,7 +154,7 @@ export const LanguageProvider = ({ children }) => {
   /* ── Route pair map (EN ↔ RU) ── */
   const routePairs = [
     ['/', '/ru'],
-    ['/ai-carousel-maker', '/ru/ai-generator-karuselej'],
+    ['/ai-carousel-maker', '/ru/ii-generator-karuseley'],
     ['/ai-content-generator', '/ru/generator-kontenta'],
     ['/ai-instagram-post-generator', '/ru/generator-postov-instagram'],
     ['/linkedin-carousel-maker', '/ru/generator-karuselej-linkedin'],

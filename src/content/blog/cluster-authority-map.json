@@ -267,7 +267,7 @@
     "clusterId": "ru:ai-carousel-generator",
     "clusterName": "RU AI Carousel Generator",
     "language": "ru",
-    "productRoute": "/ru/ai-generator-karuselej",
+    "productRoute": "/ru/ii-generator-karuseley",
     "hubArticle": "tekst-v-karusel-neyroset",
     "hubSlug": "tekst-v-karusel-neyroset",
     "articleRoles": [
@@ -304,7 +304,7 @@
       "sameLanguageOnly": true,
       "recommendedLinks": [
         "/ru/blog/tekst-v-karusel-neyroset",
-        "/ru/ai-generator-karuselej"
+        "/ru/ii-generator-karuseley"
       ]
     },
     "notes": "RU equivalent cluster",
@@ -388,7 +388,7 @@
     "clusterId": "ru:instagram-carousel",
     "clusterName": "RU Instagram Carousel",
     "language": "ru",
-    "productRoute": "/ru/ai-generator-karuselej",
+    "productRoute": "/ru/ii-generator-karuseley",
     "hubArticle": "kak-sdelat-karusel-dlya-instagram-s-ii",
     "hubSlug": "kak-sdelat-karusel-dlya-instagram-s-ii",
     "articleRoles": [

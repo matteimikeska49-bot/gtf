@@ -10,7 +10,7 @@ cluster: "ai_carousel"
 articleType: "guide"
 pageType: "blog_post"
 funnelStage: "MOFU"
-relatedProductRoute: "/ru/ai-generator-karuselej"
+relatedProductRoute: "/ru/ii-generator-karuseley"
 productFit: "YES"
 productFitExplanation: "GoToFlow — это ИИ для каруселей, что точно соответствует теме статьи."
 requiredVisualBlock: ":::mockup"
@@ -107,7 +107,7 @@ finalCta:
 
 ## Обзор процесса в GoToFlow
 
-Платформа [GoToFlow](/ru/ai-generator-karuselej) создана, чтобы упростить создание экспертного контента.
+Платформа [GoToFlow](/ru/ii-generator-karuseley) создана, чтобы упростить создание экспертного контента.
 
 Как работает ИИ-генератор каруселей:
 - Вы вставляете исходный текст, ссылку на статью, видео, тему или просто идею.

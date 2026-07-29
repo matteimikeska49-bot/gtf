@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "AI-генератор каруселей"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Создавайте карусели из темы, текста, ссылки, видео, PDF или изображения."
   guides:
     - title: "Лучшие AI-генераторы каруселей"

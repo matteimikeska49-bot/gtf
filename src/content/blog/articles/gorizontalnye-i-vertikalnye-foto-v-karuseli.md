@@ -13,7 +13,7 @@ intentId: "ru:gorizontalnye-i-vertikalnye-foto-v-karuseli"
 clusterId: "ru:instagram-carousel"
 articleRole: "technical_guide"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ai-generator-karuselej"
+relatedProductRoute: "/ru/ii-generator-karuseley"
 secondaryKeywords:
   - "фото разного формата в карусели"
   - "как не обрезать фото в карусели"
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Соберите слайды с единой визуальной логикой."
   guides:
     - title: "Почему Инстаграм обрезает фото"
@@ -125,7 +125,7 @@ type: checklist
 Слайды должны выглядеть как серия, а не случайная галерея.
 :::
 
-## Где помогает [GoToFlow](/ru/ai-generator-karuselej)
+## Где помогает [GoToFlow](/ru/ii-generator-karuseley)
 
 GoToFlow можно использовать, когда фото нужно не просто загрузить, а встроить в карусельную историю: добавить структуру, подписи, визуальную подачу и CTA. В систему можно принести изображения, скриншоты, тему или текст, а затем проверить, как они работают в слайдах.
 
@@ -168,7 +168,7 @@ type: examples
 
 ## Где помогает GoToFlow
 
-[GoToFlow](/ru/ai-generator-karuselej) полезен, когда фотографии нужно встроить в смысловую карусель: добавить хук, подписи, порядок, визуальную подачу и CTA. Это не просто загрузка галереи, а превращение материалов в историю.
+[GoToFlow](/ru/ii-generator-karuseley) полезен, когда фотографии нужно встроить в смысловую карусель: добавить хук, подписи, порядок, визуальную подачу и CTA. Это не просто загрузка галереи, а превращение материалов в историю.
 
 Например, у вас есть набор фото с процесса работы. Система может помочь разложить их по логике: проблема, подготовка, шаги, результат, вывод. После этого вы проверяете, какие кадры лучше вписать в единый холст, где добавить поля, а где использовать подпись.
 

@@ -31,7 +31,7 @@ GoToFlow is built for brands, marketers, creators, agencies, founders, and busin
 ### Russian Pages
 
 - [GoToFlow in Russian](https://gotoflow.io/ru)
-- [AI Generator Karuselej](https://gotoflow.io/ru/ai-generator-karuselej)
+- [ИИ-генератор каруселей](https://gotoflow.io/ru/ii-generator-karuseley)
 - [Generator Kontenta](https://gotoflow.io/ru/generator-kontenta)
 - [Generator Postov Instagram](https://gotoflow.io/ru/generator-postov-instagram)
 - [Generator Karuselej Instagram](https://gotoflow.io/ru/generator-karuselej-instagram)

@@ -14,7 +14,7 @@ let conflicts = [];
 // 1. Read markdown articles and their metadata
 const articles = [];
 const publicRoutes = new Set([
-  '/', '/ru', '/ai-carousel-maker', '/ru/ai-generator-karuselej', '/ru/ii-generator-karuseley',
+  '/', '/ru', '/ai-carousel-maker', '/ru/ii-generator-karuseley', '/ru/ii-generator-karuseley',
   '/ai-content-generator', '/ru/generator-kontenta', 
   '/ai-instagram-post-generator', '/ai-post-maker', '/ru/generator-postov-instagram', 
   '/linkedin-carousel-maker', '/ru/generator-karuselej-linkedin', 
@@ -27,7 +27,7 @@ const publicRoutes = new Set([
 ]);
 
 const EN_PRODUCTS = ['/', '/ai-carousel-maker', '/ai-content-generator', '/ai-instagram-post-generator', '/ai-post-maker', '/linkedin-carousel-maker', '/carousel/create'];
-const RU_PRODUCTS = ['/ru', '/ru/ai-generator-karuselej', '/ru/ii-generator-karuseley', '/ru/generator-kontenta', '/ru/generator-postov-instagram', '/ru/generator-karuselej-linkedin'];
+const RU_PRODUCTS = ['/ru', '/ru/ii-generator-karuseley', '/ru/ii-generator-karuseley', '/ru/generator-kontenta', '/ru/generator-postov-instagram', '/ru/generator-karuselej-linkedin'];
 
 try {
   const files = fs.readdirSync(ARTICLES_DIR);

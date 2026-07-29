@@ -41,7 +41,11 @@ if (existsSync(blogDir)) {
 
 const buildContext = (pages) => ({
   blogSlugExists: (slug) => publicBlogSlugs.has(slug),
-  getSeoPageByPath: (routePath) => pages.find((page) => page.path === routePath) || null,
+  getSeoPageByPath: (routePath) => (
+    protectedPaths.has(routePath)
+      ? null
+      : pages.find((page) => page.path === routePath) || null
+  ),
   assetExists: (assetPath) => (
     typeof assetPath === 'string' &&
     assetPath.startsWith('/') &&
@@ -420,7 +424,7 @@ const makeCompletePage = (variant, suffix = variant) => {
     relatedBlogSlugs: ['supporting-blog'],
     relatedSeoPages: [],
     relatedSeoPaths: [],
-    relatedProductToolPaths: ['/ru/ai-generator-karuselej'],
+    relatedProductToolPaths: ['/ru/ii-generator-karuseley'],
     contextualLinks: [],
     breadcrumbs: [
       { label: 'Главная', path: '/ru' },

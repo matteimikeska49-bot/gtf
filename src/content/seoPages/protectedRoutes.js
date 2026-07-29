@@ -1,7 +1,7 @@
 export const PROTECTED_RU_PRODUCT_TOOL_ROUTES = {
   '/ru/ai-generator-karuselej': {
-    owner: 'App.jsx:RuAICarouselGeneratorPage',
-    reason: 'Existing sitemap/indexable RU carousel product/tool page.',
+    owner: 'App.jsx:Navigate',
+    reason: 'Legacy RU carousel product URL redirects to /ru/ii-generator-karuseley.',
   },
   '/ru/generator-karuselej-instagram': {
     owner: 'App.jsx:RuAICarouselGeneratorPage',
@@ -16,16 +16,16 @@ export const PROTECTED_RU_PRODUCT_TOOL_ROUTES = {
     reason: 'Existing sitemap/indexable RU content generator product/tool page.',
   },
   '/ru/ii-generator-kontenta': {
-    owner: 'App.jsx:AIContentPageRu',
-    reason: 'Existing RU AI content generator product/tool alias route.',
+    owner: 'App.jsx:Navigate',
+    reason: 'Legacy RU content generator URL redirects to /ru/generator-kontenta.',
   },
   '/ru/generator-postov-instagram': {
     owner: 'App.jsx:InstagramPostPageRu',
     reason: 'Existing sitemap/indexable RU Instagram post generator product/tool page.',
   },
   '/ru/ii-generator-postov-dlya-instagram': {
-    owner: 'App.jsx:InstagramPostPageRu',
-    reason: 'Existing RU AI Instagram post generator product/tool alias route.',
+    owner: 'App.jsx:Navigate',
+    reason: 'Legacy RU Instagram post URL redirects to /ru/generator-postov-instagram.',
   },
   '/ru/generator-karuselej-linkedin': {
     owner: 'App.jsx:LinkedInCarouselPageRu',

@@ -631,17 +631,18 @@ const relatedResourceBlocks = {
       title: 'Создавайте разный контент с ИИ:',
       links: [
         { url: '/ru/generator-karuselej-instagram', label: 'Карусели для Instagram' },
-        { url: '/ru/use-cases/tekst-v-karusel', label: 'Текст в карусель' },
-        { url: '/ru/use-cases/foto-v-karusel', label: 'Фото в карусель' },
         { url: '/ru/generator-karuselej-linkedin', label: 'Карусели для LinkedIn' },
+        { url: '/ru/use-cases/tekst-v-karusel', label: 'Текст в карусель' },
+        { url: '/ru/use-cases/video-v-karusel', label: 'Видео в карусель' },
       ],
     },
     {
-      title: 'Полезные материалы:',
+      title: 'Сценарии использования:',
       links: [
-        { url: '/ru/blog/ii-dlya-karuseley', label: 'Как использовать ИИ для каруселей' },
-        { url: '/ru/templates/instagram-carousel', label: 'Шаблоны каруселей' },
-        { url: '/ru/prompts/instagram-carousel', label: 'Промпты для каруселей' },
+        { url: '/ru/use-cases/besshovnaya-karusel-instagram', label: 'Бесшовные карусели' },
+        { url: '/ru/use-cases/carousels-for-smm', label: 'Карусели для SMM' },
+        { url: '/ru/use-cases/carousels-for-experts', label: 'Карусели для экспертов' },
+        { url: '/ru/use-cases/carousels-for-beauty', label: 'Карусели для бьюти' },
       ],
     },
   ],
@@ -651,7 +652,7 @@ const relatedResourceBlocks = {
       links: [
         { url: '/ru/templates/instagram-carousel', label: 'Шаблоны Instagram-каруселей' },
         { url: '/ru/use-cases/tekst-v-karusel', label: 'Текст в карусель' },
-        { url: '/ru/use-cases/foto-v-karusel', label: 'Фото в карусель' },
+        { url: '/ru/use-cases/video-v-karusel', label: 'Видео в карусель' },
         { url: '/ru/use-cases/besshovnaya-karusel-instagram', label: 'Бесшовная карусель' },
       ],
     },

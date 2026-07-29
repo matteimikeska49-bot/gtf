@@ -13,7 +13,7 @@ intentId: "ru:kak-narezat-foto-dlya-karuseli"
 clusterId: "ru:instagram-carousel"
 articleRole: "technical_guide"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ai-generator-karuselej"
+relatedProductRoute: "/ru/ii-generator-karuseley"
 secondaryKeywords:
   - "нарезать фото для инстаграм карусели"
   - "разделить изображение на слайды"
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Создавайте отдельные слайды без ручной нарезки панорамы."
   guides:
     - title: "Бесшовная карусель в Инстаграм"
@@ -141,7 +141,7 @@ type: mistakes
 
 Для обучающих, экспертных и продающих каруселей бесшовная панорама не всегда нужна. Часто лучше сделать отдельные слайды: хук, проблема, шаги, пример, вывод и CTA.
 
-[GoToFlow](/ru/ai-generator-karuselej) помогает собрать такой результат из темы, текста, ссылки, видео, PDF, изображения или скриншота. Система формирует структуру, текст по слайдам, визуальную подачу и CTA, а вы проверяете содержание и читаемость.
+[GoToFlow](/ru/ii-generator-karuseley) помогает собрать такой результат из темы, текста, ссылки, видео, PDF, изображения или скриншота. Система формирует структуру, текст по слайдам, визуальную подачу и CTA, а вы проверяете содержание и читаемость.
 
 :::mockup{slot="result-preview"}
 :::

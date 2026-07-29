@@ -59,7 +59,6 @@ export const faqSchemaData = {
     { q: 'How long does it take to generate a carousel?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full carousel structure with copy for every slide.' },
     { q: 'Do I need to be a good writer to use GoToFlow?', a: 'No. GoToFlow is designed for people who want great carousel content without being professional copywriters. Just describe your topic and the AI handles the rest.' }
   ],
-  "/ru/ai-generator-karuselej": ruAiCarouselFaqItems,
   "/ru/ii-generator-karuseley": ruAiCarouselFaqItems,
   "/ru/generator-karuselej-instagram": ruInstagramCarouselFaqItems,
   "/ai-content-generator": [

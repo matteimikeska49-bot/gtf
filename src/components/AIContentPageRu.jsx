@@ -15,8 +15,8 @@ import { SeoPageTemplateCategories } from './seo/template-page/SeoPageTemplateCa
 const CTA_URL = 'https://app.gotoflow.io';
 
 const aiContentFormatsPage = {
-  id: 'ru-ii-generator-kontenta',
-  path: '/ru/ii-generator-kontenta',
+  id: 'ru-generator-kontenta',
+  path: '/ru/generator-kontenta',
   templateCategoriesIntro: {
     eyebrow: 'ФОРМАТЫ КОНТЕНТА',
     heading: { before: 'Какой контент можно создать ', accent: 'в GoToFlow', after: '' },
@@ -36,7 +36,7 @@ const aiContentFormatsPage = {
 };
 
 const getAiContentFormatsPage = () => (
-  typeof window !== 'undefined' && window.location.pathname === '/ru/ii-generator-kontenta'
+  typeof window !== 'undefined' && window.location.pathname === '/ru/generator-kontenta'
     ? aiContentFormatsPage
     : null
 );
@@ -44,14 +44,9 @@ const getAiContentFormatsPage = () => (
 /* ── SEO Head (RU) ── */
 export const SEOHeadRu = () => {
   useEffect(() => {
-    const isIiGenerator = window.location.pathname === '/ru/ii-generator-kontenta';
-    const pageTitle = isIiGenerator 
-      ? 'ИИ-генератор контента для соцсетей | GoToFlow'
-      : 'AI-генератор контента для соцсетей — посты, карусели и Reels | GoToFlow';
-    const pageDesc = isIiGenerator
-      ? 'Создавайте качественный контент для соцсетей с помощью ИИ. Быстрая генерация постов и каруселей.'
-      : 'Создавайте посты, карусели, сценарии Reels и идеи для соцсетей с помощью AI. GoToFlow помогает быстро делать контент под ваш стиль.';
-    const canonicalUrl = `https://gotoflow.io${window.location.pathname}`;
+    const pageTitle = 'ИИ-генератор контента для соцсетей | GoToFlow';
+    const pageDesc = 'Создавайте контент для соцсетей с ИИ: идеи, структура, текст, визуальная подача, посты и карусели в одном рабочем процессе.';
+    const canonicalUrl = 'https://gotoflow.io/ru/generator-kontenta';
 
     document.title = pageTitle;
     const setMeta = (name, content, prop = false) => {
@@ -103,11 +98,11 @@ export const CarouselHeroRu = () => {
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="max-w-3xl mx-auto w-full">
         <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
-          Генератор контента с ИИ —<br className="hidden md:block" /> <span className="text-gradient-brand">создавайте посты за секунды</span>
+          ИИ-генератор контента <br className="hidden md:block" /> <span className="text-gradient-brand">для социальных сетей</span>
         </h1>
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance">
-        От идеи до готовых слайдов — структура, текст и логика контента генерируются автоматически.<br className="hidden md:block" /> Без навыков дизайна, без команды, без шаблонов.
+        Начните с идеи, темы или исходного материала. GoToFlow помогает собрать структуру, текст и визуальную подачу для постов и каруселей, а затем отредактировать результат перед публикацией.
       </motion.p>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }} className="flex flex-col items-center gap-4 w-full sm:w-auto">
         <button onClick={() => window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
@@ -550,8 +545,10 @@ export const AIContentPageRu = () => {
         {
           title: "Другие инструменты:",
           links: [
-            { url: "/ru/ai-generator-karuselej", label: "Генератор каруселей" },
-            { url: "/ru/generator-karuselej-linkedin", label: "Карусели для LinkedIn" }
+            { url: "/ru/generator-postov-instagram", label: "Посты для Instagram" },
+            { url: "/ru/vk-post-generator", label: "Посты для ВКонтакте" },
+            { url: "/ru/telegram-post-generator", label: "Посты для Telegram" },
+            { url: "/ru/ii-generator-karuseley", label: "ИИ-генератор каруселей" }
           ]
         }
       ]} />

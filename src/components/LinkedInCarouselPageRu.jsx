@@ -543,7 +543,7 @@ export const LinkedInCarouselPageRu = () => (
         title: "Другие инструменты:",
         links: [
           { url: "/ru/generator-kontenta", label: "AI Генератор контента" },
-          { url: "/ru/ai-generator-karuselej", label: "Карусели для Instagram" }
+          { url: "/ru/ii-generator-karuseley", label: "ИИ-генератор каруселей" }
         ]
       }
     ]} />

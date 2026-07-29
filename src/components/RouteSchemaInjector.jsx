@@ -35,13 +35,6 @@ const ROUTES_CONFIG = {
     type: 'software',
     crumbs: [{ name: 'Home', path: '/' }, { name: 'AI Carousel Maker', path: '/ai-carousel-maker' }]
   },
-  '/ru/ai-generator-karuselej': {
-    title: 'AI-генератор каруселей — создать карусель за 60 секунд | GoToFlow',
-    desc: 'Создавайте профессиональные карусели для LinkedIn и Instagram с помощью ИИ за секунды.',
-    lang: 'ru',
-    type: 'software',
-    crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Генератор каруселей', path: '/ru/ai-generator-karuselej' }]
-  },
   '/ru/ii-generator-karuseley': {
     title: 'ИИ-генератор каруселей — создать карусель с ИИ | GoToFlow',
     desc: 'Создавайте карусели с ИИ в GoToFlow: идея, сценарий, структура, текст по слайдам, визуальный стиль, свои фото, AI-персонажи, слайды и CTA за пару минут.',
@@ -64,8 +57,8 @@ const ROUTES_CONFIG = {
     crumbs: [{ name: 'Home', path: '/' }, { name: 'AI Content Generator', path: '/ai-content-generator' }]
   },
   '/ru/generator-kontenta': {
-    title: 'AI-генератор контента для соцсетей — посты, карусели и Reels | GoToFlow',
-    desc: 'Генерируйте качественные посты, карусели и сценарии для соцсетей с помощью ИИ.',
+    title: 'ИИ-генератор контента для соцсетей | GoToFlow',
+    desc: 'Создавайте контент для соцсетей с ИИ: идеи, структура, текст, визуальная подача, посты и карусели в одном рабочем процессе.',
     lang: 'ru',
     type: 'software',
     crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Генератор контента', path: '/ru/generator-kontenta' }]
@@ -78,25 +71,12 @@ const ROUTES_CONFIG = {
     crumbs: [{ name: 'Home', path: '/' }, { name: 'Instagram Post Generator', path: '/ai-instagram-post-generator' }]
   },
   '/ru/generator-postov-instagram': {
-    title: 'Генератор постов Instagram с AI — идеи, подписи и карусели | GoToFlow',
-    desc: 'Генерируйте посты, подписи и карусели для Instagram с помощью ИИ.',
+    title: 'Генератор постов для Instagram с ИИ | GoToFlow',
+    desc: 'Подготовьте пост для Instagram с ИИ: идея, хук, основной текст, визуальная подача и CTA с возможностью редактирования перед публикацией.',
     lang: 'ru',
     type: 'software',
+    ownsFaqSchema: true,
     crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'Генератор постов Instagram', path: '/ru/generator-postov-instagram' }]
-  },
-  '/ru/ii-generator-kontenta': {
-    title: 'ИИ-генератор контента для соцсетей | GoToFlow',
-    desc: 'Создавайте качественный контент для соцсетей с помощью ИИ. Быстрая генерация постов и каруселей.',
-    lang: 'ru',
-    type: 'software',
-    crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'ИИ-генератор контента', path: '/ru/ii-generator-kontenta' }]
-  },
-  '/ru/ii-generator-postov-dlya-instagram': {
-    title: 'ИИ-генератор постов для Instagram | Создать пост с ИИ',
-    desc: 'Создавайте вовлекающие посты для Instagram с помощью ИИ. Быстрая генерация контента.',
-    lang: 'ru',
-    type: 'software',
-    crumbs: [{ name: 'Главная', path: '/ru' }, { name: 'ИИ-генератор постов для Instagram', path: '/ru/ii-generator-postov-dlya-instagram' }]
   },
   '/ru/ii-generator-postov-dlya-linkedin': {
     title: 'ИИ-генератор постов для LinkedIn | Создать пост с ИИ',
@@ -204,7 +184,7 @@ export const RouteSchemaInjector = () => {
       items.push(getBreadcrumbSchema(config.crumbs, path));
     }
 
-    if (faqSchemaData[path] && faqSchemaData[path].length > 0) {
+    if (!config.ownsFaqSchema && faqSchemaData[path] && faqSchemaData[path].length > 0) {
       items.push(getFAQPageSchema(faqSchemaData[path], path));
     }
 

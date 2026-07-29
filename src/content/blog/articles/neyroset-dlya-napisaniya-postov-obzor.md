@@ -29,7 +29,7 @@ faq:
 explore:
   tools:
     - title: "ИИ Генератор Контента"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Создавайте посты и карусели с помощью нашего ИИ-помощника."
   guides:
     - title: "Как написать экспертный пост"
@@ -39,7 +39,7 @@ finalCta:
   title: "Соберите готовую карусель в GoToFlow"
   text: "Начните с идеи или источника — GoToFlow подготовит структуру, текст по слайдам, визуальную подачу, CTA и готовую карусель для экспорта."
   buttonText: "Создать карусель"
-  href: "/ru/ai-generator-karuselej"
+  href: "/ru/ii-generator-karuseley"
   microcopy: "Это быстро и бесплатно"
   secondaryText: "Как делать карусели →"
   secondaryHref: "/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii"

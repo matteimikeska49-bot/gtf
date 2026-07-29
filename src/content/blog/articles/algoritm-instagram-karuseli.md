@@ -13,7 +13,7 @@ intentId: "ru:algoritm-instagram-karuseli"
 clusterId: "ru:instagram-carousel"
 articleRole: "guide"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ai-generator-karuselej"
+relatedProductRoute: "/ru/ii-generator-karuseley"
 secondaryKeywords:
   - "алгоритм инстаграм карусели"
   - "карусели в рекомендациях"
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Соберите структуру, слайды и визуальную подачу."
   guides:
     - title: "Как повысить охваты с помощью каруселей"
@@ -112,7 +112,7 @@ type: takeaways
 - Элемент: Длина текста; Почему важен: Влияет на читаемость с телефона
 - Элемент: CTA; Почему важен: Подсказывает, что сделать после просмотра
 
-[GoToFlow](/ru/ai-generator-karuselej) помогает быстрее собрать такую структуру: от темы, текста, ссылки, видео, PDF или изображения к слайдам, визуальной подаче и CTA. Дальше важно проверить смысл и убрать всё, что не помогает читателю.
+[GoToFlow](/ru/ii-generator-karuseley) помогает быстрее собрать такую структуру: от темы, текста, ссылки, видео, PDF или изображения к слайдам, визуальной подаче и CTA. Дальше важно проверить смысл и убрать всё, что не помогает читателю.
 
 ## Ошибки в разговоре про алгоритмы
 

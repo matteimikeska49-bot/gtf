@@ -6,6 +6,11 @@ RewriteRule ^politika/?$ /ru/politika [R=301,L]
 # Old carousel create URL -> AI carousel maker
 RewriteRule ^carousel/create/?$ /ai-carousel-maker [R=301,L]
 
+# Duplicate RU product URLs -> canonical intent owners
+RewriteRule ^ru/ai-generator-karuselej/?$ /ru/ii-generator-karuseley [R=301,L]
+RewriteRule ^ru/ii-generator-kontenta/?$ /ru/generator-kontenta [R=301,L]
+RewriteRule ^ru/ii-generator-postov-dlya-instagram/?$ /ru/generator-postov-instagram [R=301,L]
+
 # Serve existing files and folders directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d

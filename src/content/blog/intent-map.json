@@ -371,7 +371,7 @@
     "updateInsteadOfCreateRules": [
       "Instagram carousel video requirement questions should update this owner article unless fresh platform validation supports a separate specs page."
     ],
-    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Existing technical guide expanded to resolve deferred Batch 3 video-requirements intent without unsupported standalone platform specs.",
     "lastReviewed": "2026-07-04"
   },
@@ -1090,7 +1090,7 @@
     "updateInsteadOfCreateRules": [
       "обновлять опубликованную статью с шаблонами вместо создания near-duplicate"
     ],
-    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Legacy published template article aligned for release gate on 2026-07-03.",
     "lastReviewed": "2026-07-03"
   },
@@ -1182,7 +1182,7 @@
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
-    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; monitor demand and cannibalization post-publish.",
     "lastReviewed": "2026-07-04"
   },
@@ -1200,7 +1200,7 @@
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
-    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; monitor demand and cannibalization post-publish.",
     "lastReviewed": "2026-07-04"
   },
@@ -1218,7 +1218,7 @@
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
-    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; monitor demand and cannibalization post-publish.",
     "lastReviewed": "2026-07-04"
   },
@@ -1236,7 +1236,7 @@
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
-    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; monitor demand and cannibalization post-publish.",
     "lastReviewed": "2026-07-04"
   },
@@ -1254,7 +1254,7 @@
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
-    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; monitor demand and cannibalization post-publish.",
     "lastReviewed": "2026-07-04"
   },
@@ -1272,7 +1272,7 @@
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
-    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; monitor demand and cannibalization post-publish.",
     "lastReviewed": "2026-07-04"
   },
@@ -1308,7 +1308,7 @@
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
-    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; monitor demand and cannibalization post-publish.",
     "lastReviewed": "2026-07-04"
   },
@@ -1352,7 +1352,7 @@
     "updateInsteadOfCreateRules": [
       "Midjourney carousel-specific questions should update this owner instead of creating a standalone article unless fresh platform research supports a distinct page."
     ],
-    "relatedProductRoute": "/ru/ai-generator-karuselej",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
     "notes": "Existing article expanded to cover deferred Batch 3 Midjourney carousel intent without unsupported tool/platform claims.",
     "lastReviewed": "2026-07-04"
   },

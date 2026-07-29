@@ -77,7 +77,7 @@ finalCta:
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
   secondaryText: "Генератор каруселей →"
-  secondaryHref: "/ru/ai-generator-karuselej"
+  secondaryHref: "/ru/ii-generator-karuseley"
 ---
 
 # Как оформить отзывы клиентов в продающую карусель с ИИ

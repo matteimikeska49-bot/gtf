@@ -52,7 +52,7 @@ faq:
 explore:
   tools:
     - title: "AI Генератор каруселей"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Создавайте стильные карусели автоматически."
   guides:
     - title: "Идеи для каруселей"
@@ -62,10 +62,10 @@ finalCta:
   title: "Создайте свою карусель в GoToFlow"
   text: "Возьмите идею из примеров и превратите её в структуру, текст по слайдам, визуальный дизайн, CTA и готовую карусель для экспорта."
   buttonText: "Попробовать бесплатно"
-  href: "/ru/ai-generator-karuselej"
+  href: "/ru/ii-generator-karuseley"
   microcopy: "Навыки дизайна не нужны"
   secondaryText: "Узнать больше →"
-  secondaryHref: "/ru/ai-generator-karuselej"
+  secondaryHref: "/ru/ii-generator-karuseley"
 ---
 
 # Лучшие примеры каруселей в Инстаграм для вдохновения

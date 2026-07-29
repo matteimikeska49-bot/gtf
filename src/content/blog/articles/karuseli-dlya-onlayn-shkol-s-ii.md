@@ -77,7 +77,7 @@ finalCta:
   href: "/ru/ii-generator-karuseley"
   microcopy: "Бесплатно — привязка карты не требуется"
   secondaryText: "Создать карусель онлайн →"
-  secondaryHref: "/ru/ai-generator-karuselej"
+  secondaryHref: "/ru/ii-generator-karuseley"
 ---
 
 # Карусели для онлайн-школ с ИИ: как привлекать учеников через образовательный контент

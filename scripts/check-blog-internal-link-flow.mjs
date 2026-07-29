@@ -25,7 +25,7 @@ let errors = [];
 
 const d53Topics = ['text-to-carousel-ai', 'instagram-carousel-hooks', 'tekst-v-karusel-neyroset', 'content-calendar-to-carousel', 'b2b-keysy-v-linkedin-karusel'];
 const validPublicRoutes = new Set([
-  '/', '/ru', '/ai-carousel-maker', '/ru/ai-generator-karuselej', '/ru/ii-generator-karuseley',
+  '/', '/ru', '/ai-carousel-maker', '/ru/ii-generator-karuseley', '/ru/ii-generator-karuseley',
   '/ai-content-generator', '/ru/generator-kontenta', 
   '/ai-instagram-post-generator', '/ai-post-maker', '/ru/generator-postov-instagram', 
   '/linkedin-carousel-maker', '/ru/generator-karuselej-linkedin', 

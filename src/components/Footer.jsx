@@ -50,9 +50,9 @@ export const Footer = () => {
                 {lang === 'RU' ? (
                   <>
                     <Link to="/ru/ii-generator-karuseley" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">ИИ-генератор каруселей</Link>
-                    <Link to="/ru/ii-generator-kontenta" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Генератор контента</Link>
+                    <Link to="/ru/generator-kontenta" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Генератор контента</Link>
                     <Link to="/ru/generator-karuselej-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Карусели Instagram</Link>
-                    <Link to="/ru/ii-generator-postov-dlya-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Посты Instagram</Link>
+                    <Link to="/ru/generator-postov-instagram" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Посты Instagram</Link>
                     <Link to="/ru/generator-karuselej-linkedin" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Карусели LinkedIn</Link>
                     <Link to="/ru/ii-generator-postov-dlya-linkedin" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Посты LinkedIn</Link>
                   </>

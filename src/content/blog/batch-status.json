@@ -193,7 +193,7 @@
     "productionUrl": null,
     "pageType": "product_seo_page_candidate",
     "existingRouteOverlap": [
-      "/ru/ai-generator-karuselej"
+      "/ru/ii-generator-karuseley"
     ],
     "decisionNeeded": true,
     "decisionNote": "Decision needed: strengthen existing RU product route vs create new product SEO route vs merge with existing route.",

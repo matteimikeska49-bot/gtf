@@ -83,15 +83,15 @@ function App() {
         <Route path="/instagram-carousel-maker" element={<CarouselPage />} />
         
         {/* RU Tool Pages (200 OK SEO structure) */}
-        <Route path="/ru/ai-generator-karuselej" element={<RuAICarouselGeneratorPage />} />
+        <Route path="/ru/ai-generator-karuselej" element={<Navigate to={getRouteAliasTarget('/ru/ai-generator-karuselej')} replace />} />
         <Route path="/ru/ii-generator-karuseley" element={<RuAICarouselGeneratorPage />} />
         <Route path="/ru/generator-karuselej-instagram" element={<RuAICarouselGeneratorPage />} />
         <Route path="/ai-content-generator" element={<AIContentPage />} />
         <Route path="/ai-post-maker" element={<Navigate to={getRouteAliasTarget('/ai-post-maker')} replace />} />
         <Route path="/ru/generator-kontenta" element={<AIContentPageRu />} />
-        <Route path="/ru/ii-generator-kontenta" element={<AIContentPageRu />} />
+        <Route path="/ru/ii-generator-kontenta" element={<Navigate to={getRouteAliasTarget('/ru/ii-generator-kontenta')} replace />} />
         <Route path="/ru/generator-postov-instagram" element={<InstagramPostPageRu />} />
-        <Route path="/ru/ii-generator-postov-dlya-instagram" element={<InstagramPostPageRu />} />
+        <Route path="/ru/ii-generator-postov-dlya-instagram" element={<Navigate to={getRouteAliasTarget('/ru/ii-generator-postov-dlya-instagram')} replace />} />
         <Route path="/linkedin-carousel-maker" element={<LinkedInCarouselPage />} />
         <Route path="/ru/generator-karuselej-linkedin" element={<LinkedInCarouselPageRu />} />
         <Route path="/ru/ii-generator-postov-dlya-linkedin" element={<LinkedInPostPageRu />} />

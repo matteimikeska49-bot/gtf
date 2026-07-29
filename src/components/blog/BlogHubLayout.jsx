@@ -416,7 +416,7 @@ const BottomWorkflowBlock = ({ isRu }) => {
           centered={true}
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-          <Link to={isRu ? "/ru/ai-generator-karuselej" : "/ai-carousel-maker"} className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-orange-500/30 hover:bg-white/[0.04] transition-all group flex flex-col items-center text-center">
+          <Link to={isRu ? "/ru/ii-generator-karuseley" : "/ai-carousel-maker"} className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-orange-500/30 hover:bg-white/[0.04] transition-all group flex flex-col items-center text-center">
             <h3 className="text-white font-medium mb-1 group-hover:text-orange-400 transition-colors">
               {isRu ? 'Генератор каруселей' : 'Create AI carousels'}
             </h3>

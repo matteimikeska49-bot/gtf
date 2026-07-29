@@ -42,7 +42,7 @@ explore:
     - title: "Генератор постов Instagram"
       href: "/ru/generator-postov-instagram"
     - title: "AI-Генератор каруселей"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
     - title: "AI Генератор контента"
       href: "/ru/generator-kontenta"
     - title: "Генератор каруселей LinkedIn"

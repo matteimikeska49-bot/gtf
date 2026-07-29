@@ -13,7 +13,7 @@ intentId: "ru:mnogostranichnye-karuseli-prezentacii"
 clusterId: "ru:instagram-carousel"
 articleRole: "how_to"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ai-generator-karuselej"
+relatedProductRoute: "/ru/ii-generator-karuseley"
 secondaryKeywords:
   - "презентация в карусель"
   - "pdf в карусель"
@@ -106,7 +106,7 @@ type: workflow
 - Слайд: 7; Роль: Пример; Что написать: Короткая иллюстрация
 - Слайд: 8; Роль: CTA; Что написать: Что сделать дальше
 
-## Где помогает [GoToFlow](/ru/ai-generator-karuselej)
+## Где помогает [GoToFlow](/ru/ii-generator-karuseley)
 
 GoToFlow можно использовать, если у вас есть PDF, текст, ссылка, видео, изображение, скриншот или заметки. Система помогает выделить смысл, собрать структуру, написать короткий текст по слайдам, сформировать визуальную подачу и добавить CTA.
 

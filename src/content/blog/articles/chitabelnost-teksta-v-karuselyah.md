@@ -13,7 +13,7 @@ intentId: "ru:chitabelnost-teksta-v-karuselyah"
 clusterId: "ru:instagram-carousel"
 articleRole: "guide"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ai-generator-karuselej"
+relatedProductRoute: "/ru/ii-generator-karuseley"
 secondaryKeywords:
   - "читабельность текста в карусели"
   - "текст на слайдах инстаграм"
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Соберите слайды с коротким текстом и визуальной логикой."
   guides:
     - title: "Трендовые шрифты для каруселей"
@@ -113,7 +113,7 @@ type: tips
 - Было: "В этой статье мы подробно рассмотрим основные ошибки, которые часто допускают начинающие авторы при создании каруселей"; Лучше: "5 ошибок, из-за которых карусель не читают"
 - Было: "Необходимо обратить внимание на то, что слишком маленький размер шрифта снижает удобство чтения"; Лучше: "Мелкий шрифт убивает дочитывание"
 
-## Где помогает [GoToFlow](/ru/ai-generator-karuselej)
+## Где помогает [GoToFlow](/ru/ii-generator-karuseley)
 
 GoToFlow помогает разложить тему на короткие слайды, подобрать визуальную подачу и собрать карусельный результат. Это особенно полезно, когда исходник длинный: статья, PDF, заметка, видео или сценарий. Но финальную проверку всё равно стоит сделать глазами: открыть результат на телефоне и прочитать как обычный пользователь.
 

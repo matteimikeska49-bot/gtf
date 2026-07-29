@@ -34,7 +34,7 @@ intentId: "ru:tekst-v-karusel"
 clusterId: "ru:ai-carousel-generator"
 articleRole: "supporting"
 hubSlug: "tekst-v-karusel-neyroset"
-relatedProductRoute: "/ru/ai-generator-karuselej"
+relatedProductRoute: "/ru/ii-generator-karuseley"
 productFit: "YES"
 productFitExplanation: "GoToFlow creates carousel structures from copy."
 requiredVisualBlock: "none"
@@ -116,7 +116,7 @@ type: takeaways
 > [!tip]
 > **Соберите карусель быстрее**
 > GoToFlow — это end-to-end система, которая автоматически разбивает ваш текст по слайдам, подбирает визуальный стиль и добавляет CTA.
-> [Попробовать ИИ-генератор каруселей](/ru/ai-generator-karuselej)
+> [Попробовать ИИ-генератор каруселей](/ru/ii-generator-karuseley)
 
 ## Хуки: как заставить пользователя свайпнуть
 

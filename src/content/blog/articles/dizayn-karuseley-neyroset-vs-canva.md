@@ -52,7 +52,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Инструмент для автоматической верстки каруселей по тексту."
   guides:
     - title: "Промпты для каруселей"
@@ -65,7 +65,7 @@ finalCta:
   href: "/ru/ii-generator-karuseley"
   microcopy: "Попробуйте бесплатно"
   secondaryText: "Узнать больше →"
-  secondaryHref: "/ru/ai-generator-karuselej"
+  secondaryHref: "/ru/ii-generator-karuseley"
 ---
 
 # Дизайн каруселей: Нейросеть против Canva. Какой процесс быстрее?

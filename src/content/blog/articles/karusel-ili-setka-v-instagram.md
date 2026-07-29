@@ -13,7 +13,7 @@ intentId: "ru:karusel-ili-setka-v-instagram"
 clusterId: "ru:instagram-carousel"
 articleRole: "comparison"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ai-generator-karuselej"
+relatedProductRoute: "/ru/ii-generator-karuseley"
 secondaryKeywords:
   - "карусель или одно фото"
   - "какой формат поста выбрать"
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ai-generator-karuselej"
+      href: "/ru/ii-generator-karuseley"
       description: "Создайте серию слайдов из темы или источника."
   guides:
     - title: "Как повысить охваты с помощью каруселей"
@@ -105,7 +105,7 @@ type: best-for
 
 Карусель раскрывает тему постепенно. Она подходит для инструкций, экспертных разборов, мини-презентаций, подборок, ошибок и сравнений. Читатель не получает всю информацию сразу, а проходит по логике слайдов.
 
-[GoToFlow](/ru/ai-generator-karuselej) помогает быстро собрать такую последовательность: из темы, текста, ссылки, видео, PDF или изображения можно получить структуру, текст по слайдам, визуальную подачу и CTA.
+[GoToFlow](/ru/ii-generator-karuseley) помогает быстро собрать такую последовательность: из темы, текста, ссылки, видео, PDF или изображения можно получить структуру, текст по слайдам, визуальную подачу и CTA.
 
 :::mockup{slot="result-preview"}
 :::

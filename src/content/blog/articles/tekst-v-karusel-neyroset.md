@@ -13,7 +13,7 @@ intentId: "ru:tekst-v-karusel"
 clusterId: "ru:ai-carousel-generator"
 articleRole: "hub"
 hubSlug: "tekst-v-karusel-neyroset"
-relatedProductRoute: "/ru/ai-generator-karuselej"
+relatedProductRoute: "/ru/ii-generator-karuseley"
 published: true
 noindex: false
 preview: false
@@ -61,10 +61,10 @@ explore:
 finalCta:
   title: "Создать карусель из текста"
   text: "Хватит тратить часы на дизайн в Canva. Вставьте текст, и нейросеть сделает всю работу за вас."
-  buttonHref: "/ru/ai-generator-karuselej"
+  buttonHref: "/ru/ii-generator-karuseley"
   buttonText: "Попробовать бесплатно"
   secondaryText: "Генератор каруселей →"
-  secondaryHref: "/ru/ai-generator-karuselej"
+  secondaryHref: "/ru/ii-generator-karuseley"
 
 ---
 
@@ -75,7 +75,7 @@ finalCta:
 
 Люди в соцсетях не любят читать длинные полотна текста. Разбивая информацию на визуальные слайды, вы значительно увеличиваете охваты и вовлеченность.
 
-Используя [нейросеть для генерации каруселей](/ru/ai-generator-karuselej), вы можете автоматизировать этот процесс.
+Используя [нейросеть для генерации каруселей](/ru/ii-generator-karuseley), вы можете автоматизировать этот процесс.
 
 ### Инструкция: Текст в карусель за 3 шага
 

@@ -5,7 +5,7 @@ primaryKeyword: midjourney для постов
 slug: "kak-ispolzovat-midjourney-dlya-postov"
 articleType: "how_to"
 canonical: "https://gotoflow.io/ru/blog/kak-ispolzovat-midjourney-dlya-postov"
-relatedProductRoute: "/ru/ai-generator-karuselej"
+relatedProductRoute: "/ru/ii-generator-karuseley"
 createdAt: '2026-06-12'
 updatedAt: "2026-07-05"
 published: true

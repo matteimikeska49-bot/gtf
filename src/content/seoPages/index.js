@@ -195,13 +195,13 @@ export const SEO_MIGRATION_REQUIRED_FIELDS = [
 
 export const EXISTING_RU_ROUTE_OWNERS = {
   '/ru': 'App.jsx:LandingPage',
-  '/ru/ai-generator-karuselej': 'App.jsx:RuAICarouselGeneratorPage',
+  '/ru/ai-generator-karuselej': 'App.jsx:Navigate to /ru/ii-generator-karuseley',
   '/ru/ii-generator-karuseley': 'App.jsx:RuAICarouselGeneratorPage historical product/tool route',
   '/ru/generator-karuselej-instagram': 'App.jsx:RuAICarouselGeneratorPage',
   '/ru/generator-kontenta': 'App.jsx:AIContentPageRu',
-  '/ru/ii-generator-kontenta': 'App.jsx:AIContentPageRu',
+  '/ru/ii-generator-kontenta': 'App.jsx:Navigate to /ru/generator-kontenta',
   '/ru/generator-postov-instagram': 'App.jsx:InstagramPostPageRu',
-  '/ru/ii-generator-postov-dlya-instagram': 'App.jsx:InstagramPostPageRu',
+  '/ru/ii-generator-postov-dlya-instagram': 'App.jsx:Navigate to /ru/generator-postov-instagram',
   '/ru/generator-karuselej-linkedin': 'App.jsx:LinkedInCarouselPageRu',
   '/ru/ii-generator-postov-dlya-linkedin': 'App.jsx:LinkedInPostPageRu',
   '/ru/blog': 'App.jsx:BlogPageRu',
@@ -233,15 +233,15 @@ const p0OwnershipDecisions = {
   generatorKaruseley: ownershipDecision({
     decision: 'update_existing_page_instead',
     reason: 'Overlaps the existing RU carousel product family and should be resolved as an update to existing route owners before registry routing.',
-    existingOwnerStatus: 'Existing product/tool family: /ru/ai-generator-karuselej, /ru/ii-generator-karuseley, /ru/generator-karuselej-instagram.',
-    intentOverlapPaths: ['/ru/ai-generator-karuselej', '/ru/ii-generator-karuseley', '/ru/generator-karuselej-instagram'],
+    existingOwnerStatus: 'Existing product/tool family: /ru/ii-generator-karuseley and /ru/generator-karuselej-instagram.',
+    intentOverlapPaths: ['/ru/ii-generator-karuseley', '/ru/generator-karuselej-instagram'],
   }),
   iiGeneratorKaruseley: ownershipDecision({
     decision: 'explicit_migration_required',
     reason: 'Exact route collision with the existing/historical RU product/tool route owner.',
     existingOwnerStatus: 'Existing route owner wins: App.jsx:RuAICarouselGeneratorPage plus legacy schema, FAQ schema, canonical fallback, and blog CTA evidence.',
     migrationRequired: true,
-    intentOverlapPaths: ['/ru/ai-generator-karuselej', '/ru/generator-karuselej-instagram', '/ru/blog/luchshie-ai-generatory-karuselej'],
+    intentOverlapPaths: ['/ru/ii-generator-karuseley', '/ru/generator-karuselej-instagram', '/ru/blog/luchshie-ai-generatory-karuselej'],
     migration: {
       oldRouteOwner: 'App.jsx:RuAICarouselGeneratorPage historical product/tool route',
       newRouteOwner: 'SEO registry page ru-commercial-ii-generator-karuseley',
@@ -256,8 +256,8 @@ const p0OwnershipDecisions = {
   generatorPostovDlyaSocsetey: ownershipDecision({
     decision: 'update_existing_page_instead',
     reason: 'Overlaps existing RU content/product generator routes and should be resolved with those owners before registry routing.',
-    existingOwnerStatus: 'Existing product/tool family: /ru/generator-kontenta, /ru/ii-generator-kontenta, /ru/generator-postov-instagram.',
-    intentOverlapPaths: ['/ru/generator-kontenta', '/ru/ii-generator-kontenta', '/ru/generator-postov-instagram'],
+    existingOwnerStatus: 'Existing product/tool family: /ru/generator-kontenta and /ru/generator-postov-instagram.',
+    intentOverlapPaths: ['/ru/generator-kontenta', '/ru/generator-postov-instagram'],
   }),
   instagramCarouselGenerator: ownershipDecision({
     decision: 'update_existing_page_instead',
@@ -268,8 +268,8 @@ const p0OwnershipDecisions = {
   instagramPostGenerator: ownershipDecision({
     decision: 'update_existing_page_instead',
     reason: 'Overlaps existing Instagram post generator routes.',
-    existingOwnerStatus: 'Existing product/tool routes: /ru/generator-postov-instagram and /ru/ii-generator-postov-dlya-instagram.',
-    intentOverlapPaths: ['/ru/generator-postov-instagram', '/ru/ii-generator-postov-dlya-instagram'],
+    existingOwnerStatus: 'Existing product/tool route: /ru/generator-postov-instagram.',
+    intentOverlapPaths: ['/ru/generator-postov-instagram'],
   }),
   vkPostGenerator: ownershipDecision({
     decision: 'safe_new_registry_page',
@@ -839,7 +839,7 @@ const textToCarouselDraftPage = {
   },
   relatedCards: [
     {
-      href: '/ru/ai-generator-karuselej',
+      href: '/ru/ii-generator-karuseley',
       title: 'AI-генератор каруселей',
       description: 'Генерация с нуля по теме.',
       type: 'product_tool',
@@ -857,21 +857,21 @@ const textToCarouselDraftPage = {
       type: 'seo_page',
     },
     {
-      href: '/ru/use-cases/foto-v-karusel',
-      title: 'Фото в карусель',
-      description: 'Отдельный сценарий для собственных фото и изображений.',
-      type: 'seo_page',
-    },
-    {
       href: '/ru/use-cases/besshovnaya-karusel-instagram',
       title: 'Бесшовная карусель',
       description: 'Специальный эффект.',
       type: 'seo_page',
     },
+    {
+      href: '/ru/use-cases/video-v-karusel',
+      title: 'Видео в карусель',
+      description: 'Переупаковка видео в последовательность слайдов.',
+      type: 'seo_page',
+    },
   ],
   relatedSeoPages: [],
-  relatedSeoPaths: ['/ru/templates/instagram-carousel', '/ru/use-cases/foto-v-karusel', '/ru/use-cases/besshovnaya-karusel-instagram'],
-  relatedProductToolPaths: ['/ru/ai-generator-karuselej', '/ru/generator-karuselej-instagram'],
+  relatedSeoPaths: ['/ru/templates/instagram-carousel', '/ru/use-cases/video-v-karusel', '/ru/use-cases/besshovnaya-karusel-instagram'],
+  relatedProductToolPaths: ['/ru/ii-generator-karuseley', '/ru/generator-karuselej-instagram'],
   contextualLinks: [],
   relatedBlogSlugs: [],
   breadcrumbs: [
@@ -930,7 +930,7 @@ const textToCarouselDraftPage = {
     decision: 'safe_new_registry_page',
     reason: 'No exact protected route collision found for the text-to-carousel use-case path; existing generator and article owners remain separate.',
     existingOwnerStatus: 'Existing generator routes keep broad generator intent; the supporting article keeps informational how-to intent.',
-    intentOverlapPaths: ['/ru/ai-generator-karuselej', '/ru/generator-karuselej-instagram', '/ru/blog/tekst-v-karusel-neyroset'],
+    intentOverlapPaths: ['/ru/ii-generator-karuseley', '/ru/generator-karuselej-instagram', '/ru/blog/tekst-v-karusel-neyroset'],
   }),
 };
 
@@ -4577,7 +4577,7 @@ const videoToCarouselDraftPage = {
   },
   relatedCards: [
     {
-      href: '/ru/ai-generator-karuselej',
+      href: '/ru/ii-generator-karuseley',
       title: 'AI-генератор каруселей',
       description: 'Создавайте карусели с ИИ.',
       type: 'product_tool',
@@ -4597,7 +4597,7 @@ const videoToCarouselDraftPage = {
   ],
   relatedSeoPages: ['ru-use-case-tekst-v-karusel', 'ru-use-case-besshovnaya-karusel-instagram'],
   relatedSeoPaths: ['/ru/use-cases/tekst-v-karusel', '/ru/use-cases/besshovnaya-karusel-instagram'],
-  relatedProductToolPaths: ['/ru/ai-generator-karuselej'],
+  relatedProductToolPaths: ['/ru/ii-generator-karuseley'],
   contextualLinks: [],
   relatedBlogSlugs: [],
   breadcrumbs: [
@@ -6631,7 +6631,7 @@ const rawSeoPages = [
     contextualLinks: [
       {
         label: 'ИИ генератор каруселей',
-        href: '/ru/ai-generator-karuselej',
+        href: '/ru/ii-generator-karuseley',
       },
     ],
     relatedBlogSlugs: ['shablony-karuseley-v-instagram', 'kak-sdelat-karusel-dlya-instagram-s-ii', 'razmer-karuseli-v-instagram'],
@@ -6803,45 +6803,9 @@ const productionWaveTwoExpansions = {
       answer: 'Да. Добавьте ссылку на YouTube-видео, проверьте расшифровку и смысловую выжимку, затем настройте оформление и скачайте слайды для ручной публикации в Instagram.',
     },
     relatedCards: [
-      { href: '/ru/tools/luchshie-servisy-dlya-karuseley', title: 'Сервисы для создания каруселей', type: 'seo_page' },
-      { href: '/ru/alternatives/chatgpt-dlya-karuseley', title: 'Карусели без переноса из ChatGPT', type: 'seo_page' },
+      { href: '/ru/ii-generator-karuseley', title: 'ИИ-генератор каруселей', type: 'product_tool' },
+      { href: '/ru/generator-karuselej-instagram', title: 'Карусели для Instagram', type: 'product_tool' },
       { href: '/ru/use-cases/tekst-v-karusel', title: 'Текст в карусель', type: 'seo_page' },
-    ],
-  },
-  '/ru/vk-post-generator': {
-    decision: 'MERGE_EXPAND',
-    packetIds: ['PKT_0227', 'PKT_0166', 'PKT_0581', 'PKT_0630'],
-    queryClusters: ['создать карусель для VK', 'карусели для VK', 'карусель из текста для VK', 'слайды из текста для VK'],
-    quickAnswer: {
-      title: 'Как подготовить пост или карточки для ВК',
-      body: 'Опишите тему сообщества, рубрику и цель публикации. GoToFlow поможет собрать текст поста, короткие смысловые блоки и визуальные карточки, если для ВК нужен формат серии изображений. Публикацию и финальную проверку вы делаете вручную.',
-    },
-    faqReplacement: {
-      question: 'Можно ли сделать карусель или карточки для ВК?',
-      answer: 'Да. GoToFlow можно использовать для серии изображений с тезисами, объяснениями или шагами для сообщества ВКонтакте. Это подготовка материалов для ручной публикации, а не автоматический постинг во ВК.',
-    },
-    relatedCards: [
-      { href: '/ru/telegram-post-generator', title: 'Генератор постов Telegram', type: 'seo_page' },
-      { href: '/ru/use-cases/social-content-for-business', title: 'Контент для бизнеса', type: 'seo_page' },
-      { href: '/ru/tools/luchshie-servisy-dlya-karuseley', title: 'Сервисы для каруселей', type: 'seo_page' },
-    ],
-  },
-  '/ru/telegram-post-generator': {
-    decision: 'EXPAND',
-    packetIds: ['PKT_0607'],
-    queryClusters: ['создать карусель для Telegram'],
-    quickAnswer: {
-      title: 'Как подготовить пост или серию карточек для Telegram',
-      body: 'Введите тему, тезисы или ссылку на источник. GoToFlow поможет написать пост для канала и, когда нужна визуальная подача, подготовить карточки с короткими смысловыми блоками. Финальную публикацию в Telegram вы выполняете самостоятельно.',
-    },
-    faqReplacement: {
-      question: 'Можно ли подготовить карусель для Telegram?',
-      answer: 'Можно подготовить серию визуальных карточек или изображений для поста в Telegram-канале. GoToFlow помогает со структурой, текстом и визуальной подачей, но не публикует материал автоматически.',
-    },
-    relatedCards: [
-      { href: '/ru/vk-post-generator', title: 'Генератор постов ВК', type: 'seo_page' },
-      { href: '/ru/use-cases/social-content-for-business', title: 'Контент для бизнеса', type: 'seo_page' },
-      { href: '/ru/tools/luchshie-servisy-dlya-karuseley', title: 'Сервисы для каруселей', type: 'seo_page' },
     ],
   },
   '/ru/use-cases/carousels-for-smm': {
@@ -6857,9 +6821,9 @@ const productionWaveTwoExpansions = {
       answer: 'Да. SMM-специалист может начинать с разных брифов, тем и исходных материалов, а затем редактировать текст, стиль и CTA под конкретный бренд перед скачиванием.',
     },
     relatedCards: [
-      { href: '/ru/tools/luchshie-servisy-dlya-karuseley', title: 'Сервисы для каруселей', type: 'seo_page' },
+      { href: '/ru/ii-generator-karuseley', title: 'ИИ-генератор каруселей', type: 'product_tool' },
+      { href: '/ru/generator-kontenta', title: 'Генератор контента', type: 'product_tool' },
       { href: '/ru/use-cases/carousels-for-experts', title: 'Карусели для экспертов', type: 'seo_page' },
-      { href: '/ru/use-cases/social-content-for-business', title: 'Контент для бизнеса', type: 'seo_page' },
     ],
   },
   '/ru/use-cases/carousels-for-beauty': {
@@ -6875,9 +6839,9 @@ const productionWaveTwoExpansions = {
       answer: 'Да. Можно использовать фото работ, описание услуги, прайс или советы по уходу как основу карусели. Перед публикацией проверьте цены, ограничения процедуры и права на изображения.',
     },
     relatedCards: [
+      { href: '/ru/generator-karuselej-instagram', title: 'Карусели для Instagram', type: 'product_tool' },
+      { href: '/ru/generator-kontenta', title: 'Генератор контента', type: 'product_tool' },
       { href: '/ru/use-cases/carousels-for-smm', title: 'Карусели для SMM', type: 'seo_page' },
-      { href: '/ru/use-cases/social-content-for-business', title: 'Контент для бизнеса', type: 'seo_page' },
-      { href: '/ru/use-cases/foto-v-karusel', title: 'Фото в карусель', type: 'seo_page' },
     ],
   },
   '/ru/use-cases/carousels-for-experts': {
@@ -6893,9 +6857,9 @@ const productionWaveTwoExpansions = {
       answer: 'Да. Добавьте текст, тезисы или заметки, а затем проверьте структуру, факты и формулировки. Это удобно для гайдов, разборов ошибок, чек-листов и объясняющих экспертных публикаций.',
     },
     relatedCards: [
+      { href: '/ru/ii-generator-karuseley', title: 'ИИ-генератор каруселей', type: 'product_tool' },
+      { href: '/ru/generator-kontenta', title: 'Генератор контента', type: 'product_tool' },
       { href: '/ru/use-cases/carousels-for-smm', title: 'Карусели для SMM', type: 'seo_page' },
-      { href: '/ru/use-cases/social-content-for-business', title: 'Контент для бизнеса', type: 'seo_page' },
-      { href: '/ru/use-cases/video-v-karusel', title: 'Видео в карусель', type: 'seo_page' },
     ],
   },
   '/ru/use-cases/social-content-for-business': {
@@ -6911,8 +6875,8 @@ const productionWaveTwoExpansions = {
       answer: 'Да. Добавьте описание продукта, преимущества, кейс или ответы на частые вопросы. GoToFlow поможет разложить материал по слайдам, но факты, цены, юридические формулировки и оффер нужно проверить вручную.',
     },
     relatedCards: [
-      { href: '/ru/tools/luchshie-servisy-dlya-karuseley', title: 'Сервисы для каруселей', type: 'seo_page' },
-      { href: '/ru/use-cases/carousels-for-smm', title: 'Карусели для SMM', type: 'seo_page' },
+      { href: '/ru/generator-kontenta', title: 'Генератор контента', type: 'product_tool' },
+      { href: '/ru/ii-generator-karuseley', title: 'ИИ-генератор каруселей', type: 'product_tool' },
       { href: '/ru/vk-post-generator', title: 'Генератор постов ВК', type: 'seo_page' },
     ],
   },
@@ -6950,8 +6914,15 @@ const applyProductionWaveTwoExpansion = (page) => {
     quickAnswer: expansion.quickAnswer || page.quickAnswer,
     productTruthTitle: 'Что умеет GoToFlow',
     relatedCards: expansion.relatedCards,
-    relatedSeoPages: expansion.relatedCards.map((card) => card.href),
-    relatedSeoPaths: expansion.relatedCards.map((card) => card.href),
+    relatedSeoPages: expansion.relatedCards
+      .filter((card) => card.type !== 'product_tool')
+      .map((card) => card.href),
+    relatedSeoPaths: expansion.relatedCards
+      .filter((card) => card.type !== 'product_tool')
+      .map((card) => card.href),
+    relatedProductToolPaths: expansion.relatedCards
+      .filter((card) => card.type === 'product_tool')
+      .map((card) => card.href),
     createdFromActionMapRowIds: [
       ...(page.createdFromActionMapRowIds || []),
       ...expansion.packetIds,
