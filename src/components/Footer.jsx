@@ -63,7 +63,7 @@ export const Footer = () => {
                     <Link to="/instagram-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Instagram Carousels</Link>
                     <Link to="/ai-instagram-post-generator" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">Instagram Posts</Link>
                     <Link to="/linkedin-carousel-maker" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">LinkedIn Carousels</Link>
-                    <Link to="/ai-linkedin-post-generator" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">LinkedIn Posts</Link>
+                    <Link to="/linkedin-post-generator" className="text-[13px] text-zinc-400 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60">LinkedIn Posts</Link>
                   </>
                 )}
               </nav>

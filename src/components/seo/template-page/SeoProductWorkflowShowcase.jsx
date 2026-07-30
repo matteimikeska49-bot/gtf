@@ -81,15 +81,12 @@ const WorkflowStep = ({ step, index, className = '' }) => {
 
 /* ─── Product mockup visuals ─── */
 
-const SourceStructureMockup = ({ carouselTypes = [] }) => {
-  const sources = [
-    ['Тема / текст', Type],
-    ['Ссылка', Link2],
-    ['Видео', Video],
-    ['PDF', FileText],
-    ['Голосовое', Mic],
-  ];
-  const structures = ['Экспертный разбор', 'Гайд', 'Чек-лист', 'Кейс / история', 'AIDA/PAS'];
+const SourceStructureMockup = ({ carouselTypes = [], visualData = {} }) => {
+  const sourceIcons = [Type, Link2, Video, FileText, Mic];
+  const sources = (visualData.sources || ['Тема / текст', 'Ссылка', 'Видео', 'PDF', 'Голосовое'])
+    .slice(0, 5)
+    .map((label, index) => [label, sourceIcons[index % sourceIcons.length]]);
+  const structures = (visualData.structures || ['Экспертный разбор', 'Гайд', 'Чек-лист', 'Кейс / история', 'Структура по задаче']).slice(0, 5);
 
   return (
     <div className="overflow-hidden rounded-xl border border-white/[0.055] bg-black/35 p-2.5">
@@ -106,7 +103,7 @@ const SourceStructureMockup = ({ carouselTypes = [] }) => {
 
       <div className="grid grid-cols-2 gap-2">
         <div className="rounded-lg border border-white/[0.045] bg-white/[0.018] p-2">
-          <p className="mb-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">Исходник</p>
+          <p className="mb-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">{visualData.sourceLabel || 'Исходник'}</p>
           <div className="space-y-1">
             {sources.map(([label, Icon], index) => (
               <div
@@ -124,7 +121,7 @@ const SourceStructureMockup = ({ carouselTypes = [] }) => {
           </div>
         </div>
         <div className="rounded-lg border border-white/[0.045] bg-white/[0.018] p-2">
-          <p className="mb-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">Структура</p>
+          <p className="mb-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">{visualData.structureLabel || 'Структура'}</p>
           <div className="space-y-1">
             {structures.map((label, index) => (
               <div
@@ -146,35 +143,34 @@ const SourceStructureMockup = ({ carouselTypes = [] }) => {
   );
 };
 
-const TextReviewMockup = () => (
+const TextReviewMockup = ({ visualData = {} }) => (
   <div className="overflow-hidden rounded-xl border border-white/[0.055] bg-black/35">
     <div className="flex border-b border-white/[0.06] text-[9px] font-bold uppercase tracking-[0.10em] text-zinc-500">
-      <span className="px-2.5 py-1.5">Тип</span>
-      <span className="px-2.5 py-1.5">Бриф</span>
-      <span className="border-b-2 border-pink-400 px-2.5 py-1.5 text-white">Тексты</span>
+      {(visualData.tabs || ['Тип', 'Бриф', 'Тексты']).map((tab, index) => (
+        <span key={tab} className={index === 2 ? 'border-b-2 border-pink-400 px-2.5 py-1.5 text-white' : 'px-2.5 py-1.5'}>{tab}</span>
+      ))}
     </div>
     <div className="p-2.5">
       <div className="mb-2 flex items-center justify-between gap-2">
-        <span className="rounded-md border border-emerald-400/15 bg-emerald-400/10 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.08em] text-emerald-200">Редактируемо</span>
+        <span className="rounded-md border border-emerald-400/15 bg-emerald-400/10 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.08em] text-emerald-200">{visualData.editableLabel || 'Редактируемо'}</span>
         <span className="inline-flex items-center gap-1 rounded-md border border-white/[0.06] bg-white/[0.03] px-1.5 py-0.5 text-[9px] text-zinc-400">
           <RefreshCcw className="h-2.5 w-2.5" aria-hidden="true" />
-          Перегенерировать
+          {visualData.regenerateLabel || 'Перегенерировать'}
         </span>
       </div>
       <div className="rounded-lg border border-white/[0.055] bg-white/[0.028] p-2.5">
-        <p className="mb-1.5 text-[13px] font-bold leading-snug text-white">Как эксперту упаковать услугу в 7 слайдов</p>
+        <p className="mb-1.5 text-[13px] font-bold leading-snug text-white">{visualData.title || 'Структура редактируемого результата'}</p>
         <ol className="space-y-1 text-[11px] leading-4 text-zinc-400">
-          <li>1. Главная боль клиента</li>
-          <li>2. Что меняется после работы</li>
-          <li>3. Доказательство через пример</li>
-          <li>4. CTA на консультацию</li>
+          {(visualData.items || ['Основная мысль', 'Пояснение', 'Проверяемые детали', 'Финальный CTA']).slice(0, 4).map((item, index) => (
+            <li key={item}>{index + 1}. {item}</li>
+          ))}
         </ol>
       </div>
     </div>
   </div>
 );
 
-const VisualRouteMockup = ({ carouselTypes = [] }) => {
+const VisualRouteMockup = ({ carouselTypes = [], visualData = {} }) => {
   const otherTypes = carouselTypes.filter((type) => ['seamless', 'animated'].includes(type.id));
 
   return (
@@ -182,10 +178,10 @@ const VisualRouteMockup = ({ carouselTypes = [] }) => {
       <div className="rounded-lg border border-white/[0.045] bg-white/[0.02] p-2.5">
         <div className="mb-1.5 flex items-center gap-1.5">
           <Wand2 className="h-3.5 w-3.5 text-pink-300" aria-hidden="true" />
-          <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-300">AI</p>
+          <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-300">{visualData.primaryTitle || 'AI'}</p>
         </div>
         <div className="grid grid-cols-2 gap-1.5 text-[11px] text-zinc-400">
-          {['Готовый стиль', 'Свой промпт', 'Персонаж', 'Перегенерация'].map((item) => (
+          {(visualData.primaryItems || ['Готовый стиль', 'Свой промпт', 'Персонаж', 'Перегенерация']).slice(0, 4).map((item) => (
             <div
               key={item}
               className="rounded-md border border-white/[0.04] bg-black/20 px-2 py-1.5"
@@ -198,10 +194,10 @@ const VisualRouteMockup = ({ carouselTypes = [] }) => {
       <div className="rounded-lg border border-white/[0.045] bg-white/[0.02] p-2.5">
         <div className="mb-1.5 flex items-center gap-1.5">
           <Image className="h-3.5 w-3.5 text-orange-300" aria-hidden="true" />
-          <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-300">Шаблон</p>
+          <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-300">{visualData.secondaryTitle || 'Шаблон'}</p>
         </div>
         <div className="grid grid-cols-2 gap-1.5 text-[11px] text-zinc-400">
-          {['Формат', 'Стиль шаблона', 'Фон', 'CTA'].map((item) => (
+          {(visualData.secondaryItems || ['Формат', 'Стиль шаблона', 'Фон', 'CTA']).slice(0, 4).map((item) => (
             <div
               key={item}
               className="rounded-md border border-white/[0.04] bg-black/20 px-2 py-1.5"
@@ -212,7 +208,7 @@ const VisualRouteMockup = ({ carouselTypes = [] }) => {
         </div>
       </div>
       <div className="rounded-lg border border-white/[0.045] bg-white/[0.02] p-2.5">
-        <p className="mb-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-300">Другие типы</p>
+        <p className="mb-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-300">{visualData.otherTypesLabel || 'Другие типы'}</p>
         <div className="flex flex-wrap gap-1.5 text-[11px]">
           {otherTypes.map((type) => (
             <span
@@ -228,26 +224,36 @@ const VisualRouteMockup = ({ carouselTypes = [] }) => {
   );
 };
 
-const EditorResultFallback = () => (
+const EditorResultFallback = ({ visualData = {}, proofType }) => (
   <div className="rounded-xl border border-white/[0.055] bg-black/35 p-2.5">
     <div className="mb-2 flex items-center gap-1.5 text-[9px] text-zinc-400">
-      <span className="rounded-md border border-white/[0.055] bg-white/[0.035] px-1.5 py-0.5">4:5</span>
-      <span className="rounded-md border border-white/[0.055] bg-white/[0.035] px-1.5 py-0.5">5 слайдов</span>
-      <span className="rounded-md border border-pink-400/18 bg-pink-500/10 px-1.5 py-0.5 text-pink-100">Редактор</span>
+      {visualData.variant !== 'text-draft' && (
+        <>
+          <span className="rounded-md border border-white/[0.055] bg-white/[0.035] px-1.5 py-0.5">4:5</span>
+          <span className="rounded-md border border-white/[0.055] bg-white/[0.035] px-1.5 py-0.5">5 слайдов</span>
+        </>
+      )}
+      <span className="rounded-md border border-pink-400/18 bg-pink-500/10 px-1.5 py-0.5 text-pink-100">{visualData.editableLabel || 'Редактор'}</span>
     </div>
     <div className="grid grid-cols-[52px_1fr] gap-2">
       <div className="space-y-1.5">
         {['01', '02', '03', '05'].map((item, index) => (
-          <div key={item} className={`rounded-md border px-1.5 py-2 text-center text-[9px] font-bold ${index === 0 ? 'border-pink-400/25 bg-pink-500/10 text-white' : 'border-white/[0.055] bg-white/[0.03] text-zinc-400'}`}>{item}</div>
+          <div
+            key={item}
+            data-seo-proof-image={proofType === 'page-specific' && index < 3 ? 'page-specific-result' : undefined}
+            className={`rounded-md border px-1.5 py-2 text-center text-[9px] font-bold ${index === 0 ? 'border-pink-400/25 bg-pink-500/10 text-white' : 'border-white/[0.055] bg-white/[0.03] text-zinc-400'}`}
+          >
+            {item}
+          </div>
         ))}
       </div>
       <div className="overflow-hidden rounded-lg border border-white/[0.07] bg-gradient-to-br from-fuchsia-950 via-zinc-950 to-orange-950 p-3">
-        <p className="mb-2.5 text-[9px] font-bold uppercase tracking-[0.12em] text-orange-200">Карусель с ИИ</p>
-        <p className="text-[18px] font-black leading-tight text-white">5 причин делать карусели с ИИ</p>
-        <div className="mt-3 grid grid-cols-3 gap-1.5">
-          <div className="h-10 rounded-md bg-pink-400/25" />
-          <div className="h-10 rounded-md bg-orange-300/25" />
-          <div className="h-10 rounded-md bg-white/10" />
+        <p className="mb-2.5 text-[9px] font-bold uppercase tracking-[0.12em] text-orange-200">{visualData.editableLabel || 'Редактируемый результат'}</p>
+        <p className="text-[18px] font-black leading-tight text-white">{visualData.title || 'Проверьте результат перед использованием'}</p>
+        <div className="mt-3 space-y-1.5 text-[10px] leading-4 text-zinc-300">
+          {(visualData.items || ['Структура', 'Формулировки', 'Факты и детали']).slice(0, 3).map((item) => (
+            <p key={item} className="rounded-md bg-white/[0.06] px-2 py-1">{item}</p>
+          ))}
         </div>
       </div>
     </div>
@@ -286,10 +292,17 @@ const RESULT_SLIDE_LAYOUT = [
 
 export const ResultCarouselStack = ({ resultCarousel }) => {
   const images = resultCarousel?.images || [];
-  if (images.length === 0) return <EditorResultFallback />;
-  const proofAttributes = resultCarousel.proofType === 'page-specific'
+  const proofAttributes = resultCarousel?.proofType === 'page-specific'
     ? { 'data-seo-proof': 'page-specific-result' }
     : {};
+  if (resultCarousel?.variant === 'text-draft') {
+    return (
+      <div {...proofAttributes}>
+        <EditorResultFallback visualData={resultCarousel.textDraft} proofType={resultCarousel.proofType} />
+      </div>
+    );
+  }
+  if (images.length === 0) return <EditorResultFallback />;
 
   return (
     <div {...proofAttributes} className="overflow-hidden rounded-xl border border-white/[0.055] bg-black/35 p-2.5">
@@ -378,7 +391,7 @@ const MockupVisual = ({ mockup, carouselTypes }) => {
   }
 
   const Fallback = FALLBACK_MOCKUPS[mockup.id] || EditorResultFallback;
-  return <Fallback carouselTypes={carouselTypes} />;
+  return <Fallback carouselTypes={carouselTypes} visualData={mockup.visualData} />;
 };
 
 export const SeoProductWorkflowShowcase = ({ page }) => {

@@ -213,7 +213,6 @@ const ROUTES = [
   '/ai-content-generator',
   '/ru/generator-kontenta',
   '/ai-instagram-post-generator',
-  '/ai-linkedin-post-generator',
   '/instagram-carousel-maker',
   '/ai-post-maker',
   '/ru/generator-postov-instagram',

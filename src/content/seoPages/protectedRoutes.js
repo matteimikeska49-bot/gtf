@@ -46,9 +46,21 @@ export const PROTECTED_RU_SYSTEM_ROUTES = {
   '/ru/ugc-creator-terms': { owner: 'App.jsx:UgcCreatorTermsRu', reason: 'Legal/terms route.' },
 };
 
+export const PROTECTED_EN_PRODUCT_TOOL_ROUTES = {
+  '/ai-content-generator': {
+    owner: 'App.jsx:AIContentPage',
+    reason: 'Existing English general content generator route.',
+  },
+  '/linkedin-carousel-maker': {
+    owner: 'App.jsx:LinkedInCarouselPage',
+    reason: 'Existing English LinkedIn document-carousel owner.',
+  },
+};
+
 export const PROTECTED_SEO_ROUTES = {
   ...PROTECTED_RU_SYSTEM_ROUTES,
   ...PROTECTED_RU_PRODUCT_TOOL_ROUTES,
+  ...PROTECTED_EN_PRODUCT_TOOL_ROUTES,
 };
 
 export const getProtectedRouteOwner = (routePath) => PROTECTED_SEO_ROUTES[routePath] || null;

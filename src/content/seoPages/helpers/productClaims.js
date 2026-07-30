@@ -10,7 +10,7 @@ const SAFE_WORDING_PATTERNS = [
   /helps\s+structure/iu,
 ];
 
-const NEGATION_PATTERN = /\b(?:не|нет|нельзя|not|does\s+not|do\s+not|cannot|can't|without\s+claiming)\b/iu;
+const NEGATION_PATTERN = /(?:^|[\s.,;:!?()])(?:не|нет|нельзя|no|not|does\s+not|do\s+not|cannot|can't|without\s+claiming)(?=$|[\s.,;:!?()])/iu;
 const QUESTION_PATTERN = /\?\s*$/u;
 
 const BLOCKED_CLAIM_PATTERNS = [

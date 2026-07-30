@@ -71,7 +71,7 @@ const sectionOrderFromHtml = (html) => {
   const markers = [
     ['header', /<header\b/i],
     ['hero', /data-seo-hero-carousel=["']true["']/i],
-    ['anchorNav', /aria-label=["']Навигация по странице["']/i],
+    ['anchorNav', /data-seo-anchor-nav-list/i],
     ['quickAnswer', /id=["']quick-answer["']/i],
     ['pageRelevantFormats', /id=["']page-relevant-formats["']/i],
     ['productWorkflow', /id=["']product-workflow["']/i],
@@ -231,7 +231,7 @@ const validateRuntime = async () => {
       const sectionOrder = [
         ['header', 'header'],
         ['hero', '[data-seo-hero-carousel="true"]'],
-        ['anchorNav', 'nav[aria-label="Навигация по странице"]'],
+        ['anchorNav', 'nav[data-seo-anchor-nav-list]'],
         ['quickAnswer', '#quick-answer'],
         ['pageRelevantFormats', '#page-relevant-formats'],
         ['productWorkflow', '#product-workflow'],

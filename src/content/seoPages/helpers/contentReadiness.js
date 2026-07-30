@@ -531,6 +531,10 @@ const hasImmediateShowcaseAfterWorkflow = (page) => {
     sections[workflowIndex + 2] === 'readyCarouselShowcase';
 };
 
+const allowsEditableDraftOutcome = (page) => (
+  page?.resultType === 'editable_draft' && page?.manualReviewRequired === true
+);
+
 const validateWorkflowTitle = (errors, page, workflow) => {
   const title = workflow.title || {};
   if (!hasMeaningfulText(workflow.eyebrow, 4)) {
@@ -709,7 +713,7 @@ const validateProductWorkflowContent = (errors, page, requirement, workflow, con
   }
 
   const workflowText = textFrom(workflow);
-  if (WORKFLOW_DRAFT_OUTCOME_PATTERN.test(workflowText)) {
+  if (WORKFLOW_DRAFT_OUTCOME_PATTERN.test(workflowText) && !allowsEditableDraftOutcome(page)) {
     errors.push(`${getPageId(page)} productWorkflow must not position the main outcome as a draft.`);
   }
   if (WORKFLOW_INTERNAL_LABEL_PATTERN.test(workflowText)) {
@@ -828,7 +832,7 @@ const validateProductCapabilitiesContent = (errors, page) => {
 
   groups.forEach((group, index) => {
     if (!hasMeaningfulText(group.id, 3)) errors.push(`${id} productCapabilities.groups[${index}] must have an id.`);
-    if (!hasMeaningfulText(group.title, 4)) errors.push(`${id} productCapabilities.groups[${index}] must have a title.`);
+    if (!hasMeaningfulText(group.title, 3)) errors.push(`${id} productCapabilities.groups[${index}] must have a title.`);
     if (!hasMeaningfulText(group.body, 20)) errors.push(`${id} productCapabilities.groups[${index}] must have a meaningful body.`);
     if (!Array.isArray(group.capabilityIds) || group.capabilityIds.length < 1) {
       errors.push(`${id} productCapabilities.groups[${index}] must list canonical capabilityIds.`);
@@ -922,6 +926,7 @@ const validateRequirementContent = (errors, page, requirement, context = {}) => 
 
   if (requirement === 'related') {
     const links = [
+      ...asArray(page.relatedCards).map((card) => card.href),
       ...asArray(page.relatedBlogSlugs),
       ...asArray(page.relatedSeoPaths),
       ...asArray(page.relatedProductToolPaths),
@@ -1060,6 +1065,7 @@ const getTargetState = (href, context) => {
 const targetExists = (href, context) => {
   if (isExternalHref(href)) return isApprovedExternalHref(href);
   const path = getHrefPath(href);
+  const blogSlug = path.match(/^\/(?:ru\/)?blog\/([^/]+)$/)?.[1];
 
   if (!context.internalPathExists && !context.getSeoPageByPath && !context.productToolPathExists) {
     return true;
@@ -1068,7 +1074,8 @@ const targetExists = (href, context) => {
   return Boolean(
     context.internalPathExists?.(path) ||
     context.getSeoPageByPath?.(path) ||
-    context.productToolPathExists?.(path)
+    context.productToolPathExists?.(path) ||
+    (blogSlug && context.blogSlugExists?.(blogSlug))
   );
 };
 
@@ -1180,7 +1187,7 @@ const validateFinalCtaContent = (errors, page, finalCta, context = {}) => {
   if (RAW_HTML_PATTERN.test(ctaText)) {
     errors.push(`${id} finalCta page data must not contain raw HTML or JSX.`);
   }
-  if (CTA_DRAFT_OUTCOME_PATTERN.test(ctaText)) {
+  if (CTA_DRAFT_OUTCOME_PATTERN.test(ctaText) && !allowsEditableDraftOutcome(page)) {
     errors.push(`${id} finalCta must not position the outcome as a draft.`);
   }
 
@@ -1218,7 +1225,20 @@ export const getSeoPageInternalLinkErrors = (page, context = {}) => {
   const errors = [];
   const id = getPageId(page);
   const links = [];
+  const structuredHrefs = new Set([
+    ...asArray(page.relatedSeoPaths),
+    ...asArray(page.relatedProductToolPaths),
+    ...asArray(page.contextualLinks).map((link) => link.href),
+  ]);
 
+  asArray(page.relatedCards)
+    .filter((link) => !structuredHrefs.has(link.href))
+    .forEach((link) => links.push({
+      href: link.href,
+      label: link.title,
+      type: 'relatedCards',
+      allowCrossLocale: link.allowCrossLocale === true,
+    }));
   asArray(page.relatedSeoPaths).forEach((href) => links.push({ href, label: href, type: 'relatedSeoPaths' }));
   asArray(page.relatedProductToolPaths).forEach((href) => links.push({ href, label: href, type: 'relatedProductToolPaths' }));
   asArray(page.contextualLinks).forEach((link) => links.push({ href: link.href, label: link.label || link.anchor || link.title, type: 'contextualLinks' }));
@@ -1229,7 +1249,7 @@ export const getSeoPageInternalLinkErrors = (page, context = {}) => {
     if (link.href === page.path) errors.push(`${id} cannot link to itself: ${link.href}.`);
     if (seen.has(link.href)) errors.push(`${id} contains duplicate internal link: ${link.href}.`);
     seen.add(link.href);
-    if (!validatesLocaleForPage(page, link.href)) errors.push(`${id} internal link has wrong locale or forbidden /en path: ${link.href}.`);
+    if (!link.allowCrossLocale && !validatesLocaleForPage(page, link.href)) errors.push(`${id} internal link has wrong locale or forbidden /en path: ${link.href}.`);
     if (!targetExists(link.href, context)) errors.push(`${id} internal link target does not exist: ${link.href}.`);
     const targetPage = context.getSeoPageByPath?.(getHrefPath(link.href));
     if (targetPage && !stateAllowsRouting(targetPage)) errors.push(`${id} internal link target is not routable: ${link.href}.`);

@@ -9,8 +9,12 @@ import {
   getSeoPagesEligibleForPrerender,
 } from './helpers/sitemapEligibility.js';
 import { validateSeoPagesContract } from './helpers/validation.js';
-import { SEO_CANONICAL_PRODUCT_CAPABILITIES } from './productTruthRegistry.js';
+import {
+  SEO_CANONICAL_PRODUCT_CAPABILITIES,
+  SEO_REQUIRED_PRODUCT_CAPABILITY_IDS,
+} from './productTruthRegistry.js';
 import { getSeoCarouselAssets } from './carouselAssetRegistry.js';
+import { commercialBatchSpecs } from './commercialBatchSpecs.js';
 
 export const SEO_PAGE_TYPES = [
   'commercial',
@@ -312,6 +316,25 @@ const buildCanonicalProductCapabilities = ({ heading, introCopy, highlightedCapa
   highlightedCapabilities,
   groups: SEO_CANONICAL_PRODUCT_CAPABILITIES,
 });
+
+const buildContractProductCapabilities = (spec) => {
+  const groups = spec.parameters.map((item, index) => ({
+    id: `${spec.slug}-capability-${index + 1}`,
+    title: item.title,
+    body: item.body,
+    capabilityIds: SEO_REQUIRED_PRODUCT_CAPABILITY_IDS.filter((_, capabilityIndex) => (
+      capabilityIndex % spec.parameters.length === index
+    )),
+  }));
+
+  return {
+    eyebrow: spec.capabilitiesEyebrow,
+    heading: spec.capabilitiesHeading,
+    introCopy: spec.productTruth.allowed,
+    highlightedCapabilities: [],
+    groups,
+  };
+};
 
 const seamlessCopySlot = (sectionId, slotName, fallback = '') => (
   seamlessHandoffSection(sectionId)?.copySlots?.[slotName] ?? fallback
@@ -1595,11 +1618,11 @@ const photoToCarouselContractSpec = {
   },
 };
 
-const contractDraftPreviewSpecs = [
-  photoToCarouselContractSpec,
-];
+const contractDraftPreviewSpecs = [photoToCarouselContractSpec]
+  .filter((spec) => !commercialBatchSpecs.some((candidate) => candidate.path === spec.path));
 
 const contractApprovedReleaseSpecs = [
+  ...commercialBatchSpecs,
   canvaContractSpec,
   {
     id: "ru-use-case-carousels-for-beauty",
@@ -3843,7 +3866,7 @@ const buildIntentShowcaseItems = (spec) => {
   if (Array.isArray(spec.examples) && spec.examples.length >= 6 && spec.readyExamplesIntro) {
     return spec.examples.slice(0, 6).map((item) => ({
       title: item.title,
-      body: spec.readyExamplesIntro.body,
+      body: item.body,
       type: 'Готовая карусель',
     }));
   }
@@ -3914,7 +3937,14 @@ const buildContractProductPage = ({
   ],
   ownershipReason = 'Content Design Contract marks this URL as isolated by intent; draft remains noindex until owner approval.',
 }) => {
-  const targetAction = spec.path.split('/').filter(Boolean).slice(1).join('_').replace(/-/g, '_');
+  const language = spec.language || 'ru';
+  const isCommercialBatchSpec = commercialBatchSpecs.some((candidate) => candidate.path === spec.path);
+  const isCarouselOutput = spec.path.includes('karusel');
+  const isEditableDraftOutcome = /(?:\bdraft\b|черновик|чернов)/iu.test(JSON.stringify(spec));
+  const targetAction = spec.path.split('/').filter(Boolean).join('_').replace(/-/g, '_');
+  const resultLabel = isCarouselOutput
+    ? (language === 'en' ? 'Editable carousel' : 'Редактируемая карусель')
+    : (language === 'en' ? 'Editable post draft' : 'Редактируемый черновик поста');
   const showcaseItems = buildIntentShowcaseItems(spec);
   const useCaseItems = expandContractItems(
     spec.useCases,
@@ -3934,11 +3964,20 @@ const buildContractProductPage = ({
 
   return {
     id: spec.id,
-    language: 'ru',
+    language,
     pageType: spec.pageType,
     slug: spec.slug,
     path: spec.path,
     contractTitle: spec.contractTitle,
+    sourceFile: spec.sourceFile,
+    contentContract: isCommercialBatchSpec ? {
+      status: 'CODEX_VALIDATED_AFTER_GEMINI',
+      sourceFile: spec.sourceFile,
+      sectionCount: 15,
+      internalLinkingNotes: spec.internalLinkingNotes,
+      productTruth: spec.productTruth,
+      antiCannibalization: spec.antiCannibalization,
+    } : undefined,
     title: spec.title,
     description: spec.description,
     h1: spec.h1,
@@ -3949,8 +3988,10 @@ const buildContractProductPage = ({
     priority: 0.62,
     commercialValue: 0.72,
     productBridge: spec.productTruth.allowed,
-    primaryIntent: spec.primaryKeyword,
+    primaryIntent: spec.primaryIntent || spec.primaryKeyword,
     pageFamily: 'carousel_product_page',
+    resultType: isEditableDraftOutcome ? 'editable_draft' : 'complete_editable_result',
+    manualReviewRequired: true,
     templateVariant: 'template_page',
     cta: {
       label: spec.ctaLabel,
@@ -3971,11 +4012,13 @@ const buildContractProductPage = ({
       primaryIntent: spec.primaryKeyword,
       userJob: spec.h1,
       uniqueAngle: spec.h1,
-      audience: 'Авторы, эксперты, SMM-команды и бизнесы, которые создают карусели для соцсетей.',
-      contentType: 'local noindex draft product SEO page',
-      platform: 'Instagram',
-      language: 'ru',
-      country: 'RU',
+      audience: language === 'en'
+        ? 'Professionals and teams preparing an editable LinkedIn text post draft.'
+        : 'Авторы, эксперты, SMM-команды и бизнесы, которым нужен сценарий этой страницы.',
+      contentType: lifecycle.noindex === true ? 'local noindex draft product SEO page' : 'approved product SEO page',
+      platform: spec.path.includes('linkedin') ? 'LinkedIn' : spec.path.includes('telegram') ? 'Telegram' : spec.path.includes('-vk') ? 'VKontakte' : 'platform-neutral',
+      language,
+      country: language === 'ru' ? 'RU' : 'global',
       conversionAction: targetAction,
       productRoute: 'https://app.gotoflow.io',
       cannibalizationBoundary: lifecycle.noindex === true
@@ -3996,9 +4039,9 @@ const buildContractProductPage = ({
     heroCarouselAssetIds: contractCarouselHeroAssetIds,
     heroVisualBadge: spec.heroEyebrow,
     quickAnswer: spec.quickAnswer,
-    productTruthTitle: 'Product Truth',
+    productTruthTitle: language === 'en' ? 'Capabilities' : 'Возможности',
     templateCategoriesIntro: {
-      eyebrow: 'Поддерживаемые форматы',
+      eyebrow: spec.formatsEyebrow || (language === 'en' ? 'Supported formats' : 'Поддерживаемые форматы'),
       heading: spec.formatsHeading || { before: 'Какие сценарии ', accent: 'можно собрать', after: '' },
     },
     templateCategories: spec.formatsHeading ? createValidationAwareFormats(spec.formats) : spec.formats,
@@ -4018,15 +4061,15 @@ const buildContractProductPage = ({
     },
     productWorkflow: {
       preset: 'carousel_creation',
-      eyebrow: 'Процесс',
+      eyebrow: spec.workflowEyebrow || (language === 'en' ? 'Workflow' : 'Процесс'),
       title: spec.workflowHeading || { before: 'Единый процесс ', accent: 'GoToFlow', after: '' },
       description: spec.workflowIntro || 'Единый workflow для всех девяти страниц: ввод темы или исходного материала, создание структуры и текстов слайдов, проверка и редактирование результата, выбор шаблона и визуального стиля, экспорт готовой карусели.',
-      carouselTypes: [
-        { id: 'ai', label: 'AI-карусель', availability: 'available', active: true },
-        { id: 'template', label: 'Шаблонная', availability: 'available' },
-        { id: 'seamless', label: 'Бесшовная', availability: 'available' },
-        { id: 'animated', label: 'Анимированная', availability: 'available' },
-      ],
+      carouselTypes: spec.formats.slice(0, 4).map((format, index) => ({
+        id: ['ai', 'template', 'seamless', 'animated'][index],
+        label: format.title,
+        availability: 'available',
+        active: index === 0,
+      })),
       stepOverrides: Object.fromEntries(contractWorkflowStepKeys.map((key, index) => [
         key,
         {
@@ -4040,18 +4083,38 @@ const buildContractProductPage = ({
           title: workflowSteps[0]?.title,
           caption: workflowSteps[0]?.body,
           fallbackVisualType: 'source_structure',
+          visualData: {
+            sourceLabel: language === 'en' ? 'Source' : 'Исходник',
+            structureLabel: language === 'en' ? 'Structure' : 'Структура',
+            sources: spec.parameters.slice(0, 5).map((item) => item.title),
+            structures: spec.formats.slice(0, 5).map((item) => item.title),
+          },
         },
         {
           id: 'text-review',
           title: workflowSteps[2]?.title,
           caption: workflowSteps[2]?.body,
           fallbackVisualType: 'text_review',
+          visualData: {
+            editableLabel: language === 'en' ? 'Editable' : 'Редактируемо',
+            regenerateLabel: language === 'en' ? 'Another version' : 'Другой вариант',
+            tabs: language === 'en' ? ['Type', 'Brief', 'Draft'] : ['Тип', 'Бриф', 'Тексты'],
+            title: `${showcaseItems[0]?.title || spec.h1} — ${resultLabel}`,
+            items: workflowSteps.slice(1, 5).map((step) => step.title),
+          },
         },
         {
           id: 'visual-route',
           title: workflowSteps[3]?.title,
           caption: workflowSteps[3]?.body,
           fallbackVisualType: 'ai_template',
+          visualData: {
+            otherTypesLabel: language === 'en' ? 'Other approaches' : 'Другие типы',
+            primaryTitle: spec.parameters[1]?.title,
+            primaryItems: spec.parameters.slice(1, 5).map((item) => item.title),
+            secondaryTitle: spec.parameters[5]?.title || spec.parameters[0]?.title,
+            secondaryItems: spec.formats.slice(3, 6).map((item) => item.title),
+          },
         },
         {
           id: 'editor-result',
@@ -4059,14 +4122,23 @@ const buildContractProductPage = ({
           caption: workflowSteps[4]?.body,
           resultCarousel: {
             proofType: 'workflow-result',
-            title: 'Готовая карусель',
+            title: `${showcaseItems[0]?.title || spec.h1} — ${resultLabel}`,
             label: spec.heroEyebrow,
-            format: '4:5',
+            format: isCarouselOutput ? '4:5' : undefined,
             slideCount: aiCarouselResultSlides.length,
             width: 1122,
             height: 1402,
-            mode: 'Готовая карусель',
+            mode: resultLabel,
             images: aiCarouselResultSlides,
+            variant: isCarouselOutput ? 'carousel' : 'text-draft',
+            ...(isCarouselOutput ? {} : {
+              textDraft: {
+                variant: 'text-draft',
+                editableLabel: language === 'en' ? 'Editable draft' : 'Редактируемый черновик',
+                title: showcaseItems[0]?.title,
+                items: workflowSteps.slice(1).map((step) => step.title),
+              },
+            }),
           },
           fallbackVisualType: 'editor_result',
         },
@@ -4079,11 +4151,7 @@ const buildContractProductPage = ({
         note: spec.productTruth.allowed,
       },
     },
-    productCapabilities: spec.productCapabilities || buildCanonicalProductCapabilities({
-      heading: { before: 'Какие возможности ', accent: 'подтверждены Contract', after: '' },
-      introCopy: spec.parameters.map((item) => item.title + ': ' + item.body).join(' '),
-      highlightedCapabilities: ['topicText', 'aiStructureText', 'templates', 'textEditing', 'formats4511916', 'upTo10Slides'],
-    }),
+    productCapabilities: spec.productCapabilities || buildContractProductCapabilities(spec),
     readyCarouselShowcaseIntro: {
       eyebrow: showcaseIntro.eyebrow,
       heading: showcaseIntro.heading,
@@ -4093,7 +4161,7 @@ const buildContractProductPage = ({
       ...item,
       title: showcaseItems[index]?.title || item.title,
       body: showcaseItems[index]?.body || item.body,
-      type: showcaseItems[index]?.type || 'Готовая карусель',
+      type: showcaseItems[index]?.type || resultLabel,
       audience: spec.heroEyebrow,
     })),
     readyCarouselShowcaseCta: {
@@ -4106,40 +4174,53 @@ const buildContractProductPage = ({
       proofType: 'page-specific',
       eyebrow: spec.visualProof?.eyebrow || 'Доказательство работы',
       heading: spec.visualProof?.heading || { before: 'От черновика до ', accent: 'готовой карусели', after: '' },
-      title: spec.visualProof?.title || 'От черновика до готовой карусели за 2 минуты',
-      description: spec.visualProof?.description || 'Вставьте любой неструктурированный текст и получите стильную карусель с расставленными акцентами.',
+      title: spec.visualProof?.title || spec.h1,
+      description: spec.visualProof?.description || spec.quickAnswer.body,
       label: spec.heroEyebrow,
-      format: '4:5',
+      format: isCarouselOutput ? '4:5' : undefined,
       slideCount: aiCarouselResultSlides.length,
       width: 1122,
       height: 1402,
-      mode: 'Готовая карусель',
+      mode: resultLabel,
       images: aiCarouselResultSlides,
+      variant: isCarouselOutput ? 'carousel' : 'text-draft',
+      ...(isCarouselOutput ? {} : {
+        textDraft: {
+          variant: 'text-draft',
+          editableLabel: language === 'en' ? 'Editable draft' : 'Редактируемый черновик',
+          title: showcaseItems[0]?.title,
+          items: workflowSteps.slice(1).map((step) => step.title),
+        },
+      }),
     },
     useCasesIntro: {
-      eyebrow: 'Сценарии',
+      eyebrow: spec.useCasesEyebrow || (language === 'en' ? 'Use cases' : 'Сценарии'),
       heading: spec.useCasesHeading || titlePartsFromPlainHeading(spec.h1, spec.heroEyebrow),
     },
     useCases: useCaseItems,
     faq: spec.faq,
     faqHeading: spec.faqHeading,
     relatedIntro: {
-      eyebrow: 'Связанные материалы',
+      eyebrow: spec.relatedEyebrow || (language === 'en' ? 'Related workflows' : 'Связанные материалы'),
       heading: titlePartsFromPlainHeading(spec.relatedHeading, 'материалы'),
       title: spec.relatedHeading,
     },
-    relatedCards: spec.relatedCards.map((card) => ({
-      ...card,
-      type: card.href.includes('/generator-') ? 'product_tool' : 'seo_page',
-      description: card.title,
-    })),
-    relatedSeoPages: spec.relatedCards.filter((card) => !card.href.includes('/generator-')).map((card) => card.href),
-    relatedSeoPaths: spec.relatedCards.filter((card) => !card.href.includes('/generator-')).map((card) => card.href),
-    relatedProductToolPaths: spec.relatedCards.filter((card) => card.href.includes('/generator-')).map((card) => card.href),
+    relatedCards: spec.relatedCards.map((card) => {
+      const batchTarget = commercialBatchSpecs.find((candidate) => candidate.path === card.href);
+      return {
+        ...card,
+        title: batchTarget?.h1 || card.title,
+        type: card.href.includes('/generator-') ? 'product_tool' : 'seo_page',
+        description: card.title,
+      };
+    }),
+    relatedSeoPages: [],
+    relatedSeoPaths: [],
+    relatedProductToolPaths: [],
     contextualLinks: [],
     relatedBlogSlugs: [],
     finalCta: {
-      eyebrow: 'Начните сейчас',
+      eyebrow: spec.finalCta.eyebrow || (language === 'en' ? 'Start now' : 'Начните сейчас'),
       title: titlePartsFromPlainHeading(spec.finalCta.heading, spec.ctaLabel),
       description: spec.finalCta.description,
       primaryAction: {
@@ -4149,11 +4230,16 @@ const buildContractProductPage = ({
       },
     },
     breadcrumbs: [
-      ruHomeBreadcrumb,
+      language === 'ru' ? ruHomeBreadcrumb : { label: 'GoToFlow', path: '/' },
       { label: spec.breadcrumb || spec.h1, path: spec.path },
     ],
     schemaType: 'WebPage',
-    designReference: '/ru',
+    hreflang: spec.migration ? [
+      { lang: 'en', href: 'https://gotoflow.io/linkedin-post-generator' },
+      { lang: 'ru', href: 'https://gotoflow.io/ru/ii-generator-postov-dlya-linkedin' },
+      { lang: 'x-default', href: 'https://gotoflow.io/linkedin-post-generator' },
+    ] : undefined,
+    designReference: language === 'ru' ? '/ru' : '/',
     urlOrigin: 'seo_registry_candidate',
     urlOriginEvidence: [spec.sourceFile],
     intentOwner: spec.id,
@@ -4166,15 +4252,48 @@ const buildContractProductPage = ({
       ...notes,
       'Product Truth allowed claims: ' + spec.productTruth.allowed,
       'Product Truth forbidden claims: ' + spec.productTruth.forbidden,
+      ...(spec.internalLinkingNotes || []).map((item) => 'Internal linking: ' + item),
+      ...(spec.antiCannibalization || []).map((item) => 'Anti-cannibalization: ' + item),
     ],
-    review,
-    lastUpdated: '2026-07-16',
-    ownershipDecision: ownershipDecision({
-      decision: 'safe_new_registry_page',
-      reason: ownershipReason,
-      existingOwnerStatus: 'No exact existing protected RU product/tool route owner found for this draft path.',
-      intentOverlapPaths: spec.relatedCards.map((card) => card.href),
-    }),
+    review: isCommercialBatchSpec ? {
+      ...review,
+      contentReviewedAt: '2026-07-30',
+      productClaimsReviewedAt: '2026-07-30',
+      assetsReviewedAt: '2026-07-30',
+      seoReviewedAt: '2026-07-30',
+      productVersion: 'seo-pages-commercial-batch-2026-07-30',
+    } : review,
+    lastUpdated: isCommercialBatchSpec ? '2026-07-30' : '2026-07-16',
+    ownershipDecision: spec.migration
+      ? ownershipDecision({
+        decision: 'explicit_migration_required',
+        reason: 'Approved single-owner migration from the legacy English LinkedIn post URL to the validated canonical registry page.',
+        existingOwnerStatus: 'The legacy /ai-linkedin-post-generator route is retired and redirects directly to /linkedin-post-generator.',
+        migrationRequired: true,
+        approvedByHuman: true,
+        intentOverlapPaths: ['/ai-linkedin-post-generator', ...spec.relatedCards.map((card) => card.href)],
+        migration: {
+          oldRouteOwner: 'App.jsx:LinkedInPostPage at /ai-linkedin-post-generator',
+          newRouteOwner: spec.id,
+          migrationReason: 'Keep one indexable English owner for the ordinary LinkedIn text-post intent.',
+          canonicalDecision: 'Use https://gotoflow.io/linkedin-post-generator as the only canonical URL.',
+          noindexDecision: 'The legacy URL is a redirect response and does not render an indexable page.',
+          sitemapDecision: 'Include only /linkedin-post-generator; exclude /ai-linkedin-post-generator.',
+          rollbackPlan: 'Remove the server redirect and restore the legacy App route only after a separate owner-approved rollback review.',
+          approvedByHuman: true,
+        },
+      })
+      : ownershipDecision({
+        decision: 'safe_new_registry_page',
+        reason: spec.restore
+          ? 'The existing registry identity is restored in place from its validated contract without creating a duplicate route.'
+          : ownershipReason,
+        existingOwnerStatus: spec.restore
+          ? 'Existing registry route and canonical identity are retained.'
+          : 'No exact existing protected product/tool route owner found for this path.',
+        approvedByHuman: true,
+        intentOverlapPaths: spec.relatedCards.map((card) => card.href),
+      }),
     ...lifecycle,
   };
 };

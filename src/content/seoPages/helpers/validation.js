@@ -138,7 +138,7 @@ export const getTemplateSectionPresence = (page) => ({
   productCapabilities: Boolean(page.productCapabilities?.groups?.length) || findSection(page, ['productCapabilities']),
   benefits: findSection(page, ['benefits', 'who-for', 'whoFor']) || hasText(page.productBridge),
   faq: hasItems(page.faq),
-  related: hasItems(page.relatedBlogSlugs) || hasItems(page.relatedSeoPaths) || hasItems(page.relatedProductToolPaths),
+  related: hasItems(page.relatedCards) || hasItems(page.relatedBlogSlugs) || hasItems(page.relatedSeoPaths) || hasItems(page.relatedProductToolPaths),
   finalCta: Boolean(page.finalCta),
   platformUseCases: findSection(page, ['platformUseCases', 'use-cases', 'useCases']),
   contentFormats: findSection(page, ['contentFormats', 'format', 'vk-format-guidance', 'telegram-format-guidance']),

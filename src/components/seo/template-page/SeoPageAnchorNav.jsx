@@ -11,6 +11,16 @@ const CAROUSEL_NAV_ITEMS = [
   { id: 'faq-section', label: 'Вопросы' },
 ];
 
+const EN_CAROUSEL_NAV_ITEMS = [
+  { id: 'page-relevant-formats', label: 'Formats' },
+  { id: 'product-workflow', label: 'Workflow' },
+  { id: 'product-capabilities', label: 'Capabilities' },
+  { id: 'ready-carousel-showcase', label: 'Examples' },
+  { id: 'page-specific-proof', label: 'Result' },
+  { id: 'use-cases', label: 'Use cases' },
+  { id: 'faq-section', label: 'FAQ' },
+];
+
 const TEMPLATE_NAV_ITEMS = [
   { id: 'template-categories', label: 'Форматы' },
   { id: 'template-choice-guide', label: 'Как выбрать' },
@@ -20,7 +30,10 @@ const TEMPLATE_NAV_ITEMS = [
 ];
 
 export const SeoPageAnchorNav = ({ page }) => {
-  const navItems = isCarouselProductSeoPage(page) ? CAROUSEL_NAV_ITEMS : TEMPLATE_NAV_ITEMS;
+  const isEnglish = page.language === 'en';
+  const navItems = isCarouselProductSeoPage(page)
+    ? (isEnglish ? EN_CAROUSEL_NAV_ITEMS : CAROUSEL_NAV_ITEMS)
+    : TEMPLATE_NAV_ITEMS;
   const navRef = useRef(null);
   const itemRefs = useRef({});
   const [activeId, setActiveId] = useState(navItems[0]?.id);
@@ -85,11 +98,12 @@ export const SeoPageAnchorNav = ({ page }) => {
     <div data-seo-anchor-nav className="sticky top-16 z-40 w-full border-b border-white/[0.08] bg-[#050505]/80 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <nav
+          data-seo-anchor-nav-list
           ref={navRef}
           className="flex flex-nowrap items-center gap-1.5 overflow-x-auto overscroll-x-contain whitespace-nowrap py-1.5 [scrollbar-width:none] md:flex-wrap md:gap-3 md:overflow-visible md:py-3 [&::-webkit-scrollbar]:hidden"
-          aria-label="Навигация по странице"
+          aria-label={isEnglish ? 'Page navigation' : 'Навигация по странице'}
         >
-          <span className="inline-flex min-h-9 shrink-0 items-center text-[13px] font-medium text-zinc-500 md:min-h-11 md:text-sm">На странице:</span>
+          <span className="inline-flex min-h-9 shrink-0 items-center text-[13px] font-medium text-zinc-500 md:min-h-11 md:text-sm">{isEnglish ? 'On this page:' : 'На странице:'}</span>
           {navItems.map((item) => (
             <a
               key={item.id}

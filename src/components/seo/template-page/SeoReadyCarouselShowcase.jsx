@@ -7,8 +7,10 @@ import { SeoSectionHeading } from '../SeoSectionHeading';
 export const SeoReadyCarouselShowcase = ({ page }) => {
   const showcase = (page.readyCarouselShowcase || []).slice(0, 6);
   if (!showcase.length) return null;
+  const isTextDraft = page.resultType === 'editable_draft';
+  const isEnglish = page.language === 'en';
   const showcaseCta = page.readyCarouselShowcaseCta || {
-    label: 'Выбрать структуру и создать карусель',
+    label: isEnglish ? 'Prepare a draft' : 'Подготовить результат',
     href: 'https://app.gotoflow.io',
     action: 'open_app',
     note: 'Перед публикацией результат можно проверить и отредактировать.',
@@ -52,12 +54,12 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
             className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] transition-all duration-300 hover:-translate-y-1 hover:border-pink-500/30 hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-500/50"
           >
             {/* Real carousel image */}
-            {item.image && (
+            {item.image && !isTextDraft && (
               <div className="relative h-[300px] w-full overflow-hidden bg-zinc-950 sm:h-[320px] xl:h-[330px]">
                 <img
                   data-seo-proof-image="ready-carousel"
                   src={item.image}
-                  alt={`Пример карусели: ${item.title}`}
+                  alt={isEnglish ? `Example: ${item.title}` : `Пример: ${item.title}`}
                   width={item.width}
                   height={item.height}
                   className="absolute inset-0 h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
@@ -76,8 +78,25 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
                 {/* Hover overlay CTA */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
                   <span className="rounded-full bg-gradient-to-r from-pink-500 to-orange-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg">
-                    Создать карусель в GoToFlow
+                    {page.cta?.label || (isEnglish ? 'Open GoToFlow' : 'Открыть GoToFlow')}
                   </span>
+                </div>
+              </div>
+            )}
+
+            {isTextDraft && (
+              <div
+                data-seo-proof-image="ready-carousel"
+                className="relative min-h-[210px] border-b border-white/[0.06] bg-gradient-to-br from-zinc-950 via-black to-fuchsia-950/40 p-5"
+              >
+                <span className="inline-flex rounded-full border border-emerald-300/15 bg-emerald-300/10 px-3 py-1 text-[11px] font-semibold text-emerald-100">
+                  {isEnglish ? 'Editable draft' : 'Редактируемый черновик'}
+                </span>
+                <p className="mt-5 text-lg font-bold leading-snug text-white">{item.title}</p>
+                <div className="mt-4 space-y-2" aria-hidden="true">
+                  <div className="h-2 w-full rounded-full bg-white/10" />
+                  <div className="h-2 w-[88%] rounded-full bg-white/10" />
+                  <div className="h-2 w-[72%] rounded-full bg-white/10" />
                 </div>
               </div>
             )}
@@ -88,7 +107,7 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
               <p className="mb-3 line-clamp-4 text-[14px] leading-6 text-zinc-400" style={{ textWrap: 'pretty' }}>{item.body}</p>
               {item.audience && (
                 <p className="mt-auto line-clamp-2 text-[13px] leading-5 text-zinc-400">
-                  <span className="text-zinc-500">Кому подходит:</span> {item.audience}
+                  <span className="text-zinc-500">{isEnglish ? 'Best for:' : 'Кому подходит:'}</span> {item.audience}
                 </p>
               )}
             </div>
