@@ -14,8 +14,11 @@ This document provides a single source of truth for what capabilities GoToFlow a
 | Capability | Allowed Wording | Forbidden Wording |
 |---|---|---|
 | AI Generation | "GoToFlow can generate carousel content and visuals with AI" | "Guaranteed reach", "Guaranteed to stop the scroll", "Algorithm boost" |
-| PDF to Carousel | "Paste or extract text from a PDF/report and turn it into a carousel" | "Upload a PDF", "Extracts any PDF automatically" |
+| PDF to Carousel | "Manually copy or extract text from a PDF/report, then paste it to turn the content into a carousel" | "Upload a PDF", "Extracts any PDF automatically" |
 | Social Publishing | "Download the PDF and post manually" | "Publish directly to LinkedIn/Instagram", "One-click scheduling" |
+
+**Direct PDF file upload is NOT supported.**
+**Automatic PDF parsing or text extraction is NOT supported.**
 
 ## How to Write Safe Claims
 1. **Focus on the UI reality**: If there is no upload button, don't say "upload". Say "paste text".

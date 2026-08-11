@@ -6,7 +6,7 @@
     "description": "GoToFlow creates full-cycle carousel workflows from source inputs into structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.",
     "allowedClaims": [
       "GoToFlow can generate carousel content and visuals with AI",
-      "GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, PDF, image, screenshot, or user photo into a carousel workflow",
+      "GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, manually copied text from a PDF, image, screenshot, or user photo into a carousel workflow",
       "create Instagram carousel-style content",
       "create LinkedIn carousel/document-style content"
     ],
@@ -116,25 +116,27 @@
     "capabilityId": "pdfToCarousel",
     "label": "PDF to Carousel",
     "status": "supported",
-    "description": "GoToFlow can use a PDF as an input for a carousel workflow.",
+    "description": "GoToFlow can use text manually copied or extracted by the user from a PDF as input for a carousel workflow.",
     "allowedClaims": [
-      "turn a PDF into a carousel workflow",
-      "use a PDF as source material for a carousel"
+      "turn manually copied text from a PDF into a carousel workflow",
+      "use manually copied text from a PDF as source material for a carousel"
     ],
     "forbiddenClaims": [
+      "direct PDF file upload",
+      "automatic PDF parsing or extraction",
       "perfect PDF extraction",
       "guaranteed PDF extraction accuracy",
       "unlimited PDF input size"
     ],
     "saferAlternatives": [
-      "use a PDF as source material for a carousel workflow"
+      "use manually copied text from a PDF as source material for a carousel workflow"
     ],
     "relatedRoutes": ["/"],
     "relatedArticleTypes": ["how-to"],
     "relatedKeywords": ["pdf to carousel"],
     "evidence": {
       "source": "Manual extraction",
-      "notes": "No direct file upload API yet"
+      "notes": "Direct PDF file upload, parsing, OCR, and automatic extraction are not supported"
     },
     "lastVerified": "2026-06-08",
     "reviewRequiredBeforeClaiming": true

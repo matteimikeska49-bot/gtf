@@ -67,7 +67,7 @@ GoToFlow can create carousel workflows from:
 4. Link, including Reels, YouTube, or TikTok source links.
 5. Video, including Reels, YouTube, or TikTok video.
 6. Audio / voice.
-7. PDF.
+7. Text manually copied or extracted from PDF.
 8. Images / screenshots.
 9. User photos.
 
@@ -76,7 +76,7 @@ GoToFlow is a full-cycle carousel creation system: it can turn the input into st
 Dashboard source phrases:
 
 ```text
-VIDEO / REELS / AUDIO / PDF
+VIDEO / REELS / AUDIO / MANUALLY COPIED TEXT FROM PDF
 ```
 
 ```text
@@ -90,13 +90,13 @@ AI сам посмотрит видео, сделает транскрипцию
 Correct EN positioning:
 
 ```text
-GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, PDF, image, screenshot, or user photo into a carousel workflow: structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.
+GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, manually copied text from a PDF, image, screenshot, or user photo into a carousel workflow: structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.
 ```
 
 Correct RU positioning:
 
 ```text
-GoToFlow помогает превратить тему, сценарий, текст, ссылку, Reels, видео из YouTube или TikTok, аудио, PDF, изображение, скриншот или свои фото в карусель: структура, текст по слайдам, визуальная логика, CTA и готовая к публикации карусель.
+GoToFlow помогает превратить тему, сценарий, текст, ссылку, Reels, видео из YouTube или TikTok, аудио, вручную скопированный текст из PDF, изображение, скриншот или свои фото в карусель: структура, текст по слайдам, визуальная логика, CTA и готовая к публикации карусель.
 ```
 
 Нельзя описывать GoToFlow как:
@@ -126,7 +126,7 @@ tool where user must first transcribe video somewhere else
 ```
 
 ```text
-tool where user must first extract key takeaways manually
+tool that automatically parses or extracts content from a PDF file
 ```
 
 ---
