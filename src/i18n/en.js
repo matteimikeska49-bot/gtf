@@ -119,7 +119,7 @@ export const en = {
       },
       {
         title: "From Idea to Carousel",
-        desc: "Build a ready-to-post carousel from a topic, idea, PDF, link, or video — in 60 seconds."
+        desc: "Build a ready-to-post carousel from a topic, idea, text manually copied from a PDF, link, or video — in 60 seconds."
       },
       {
         title: "Strong Reels Search",

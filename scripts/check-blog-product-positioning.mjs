@@ -17,9 +17,9 @@ const SOURCE_OF_TRUTH = path.join(ROOT, 'docs/product/gotoflow-capabilities.md')
 const REQUIRED_SOURCE_PHRASES = [
   'GoToFlow — это end-to-end система создания каруселей',
   'GoToFlow input capabilities',
-  'VIDEO / REELS / AUDIO / PDF',
+  'VIDEO / REELS / AUDIO / MANUALLY COPIED TEXT FROM PDF',
   'AI сам посмотрит видео, сделает транскрипцию и выделит суть',
-  'GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, PDF, image, screenshot, or user photo',
+  'GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, manually copied text from a PDF, image, screenshot, or user photo',
   'GoToFlow product-positive comparison rule',
   'Do not position GoToFlow outputs as drafts.',
   'Нельзя писать',
