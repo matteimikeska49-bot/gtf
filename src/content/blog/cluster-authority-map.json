@@ -533,12 +533,57 @@
         "status": "published",
         "canonicalRisk": "medium",
         "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "kontent-voronka-dlya-socsetey",
+        "url": "/ru/blog/kontent-voronka-dlya-socsetey",
+        "role": "supporting",
+        "intentId": "ru:kontent-voronka-dlya-socsetey",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "rubriki-dlya-socsetey",
+        "url": "/ru/blog/rubriki-dlya-socsetey",
+        "role": "supporting",
+        "intentId": "ru:rubriki-dlya-socsetey",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "audit-kontenta-dlya-socsetey",
+        "url": "/ru/blog/audit-kontenta-dlya-socsetey",
+        "role": "supporting",
+        "intentId": "ru:audit-kontenta-dlya-socsetey",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "b2b-kontent-dlya-socsetey",
+        "url": "/ru/blog/b2b-kontent-dlya-socsetey",
+        "role": "supporting",
+        "intentId": "ru:b2b-kontent-dlya-socsetey",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "kontent-dlya-lichnogo-brenda",
+        "url": "/ru/blog/kontent-dlya-lichnogo-brenda",
+        "role": "supporting",
+        "intentId": "ru:kontent-dlya-lichnogo-brenda",
+        "priorityTier": "P1",
+        "status": "draft_preview"
       }
     ],
     "supportingArticles": [
       "ii-post-dlya-socsetej",
       "ii-tekst-dlya-posta",
-      "generator-vizualnyh-postov-ai"
+      "generator-vizualnyh-postov-ai",
+      "kontent-voronka-dlya-socsetey",
+      "rubriki-dlya-socsetey",
+      "audit-kontenta-dlya-socsetey",
+      "b2b-kontent-dlya-socsetey",
+      "kontent-dlya-lichnogo-brenda"
     ],
     "lastReviewed": "2026-07-04"
   },
@@ -683,6 +728,30 @@
         "status": "published",
         "canonicalRisk": "low",
         "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "analiz-kontenta-konkurentov-v-socsetyah",
+        "url": "/ru/blog/analiz-kontenta-konkurentov-v-socsetyah",
+        "role": "supporting",
+        "intentId": "ru:analiz-kontenta-konkurentov-v-socsetyah",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "pererabotka-kontenta-dlya-socsetey",
+        "url": "/ru/blog/pererabotka-kontenta-dlya-socsetey",
+        "role": "supporting",
+        "intentId": "ru:pererabotka-kontenta-dlya-socsetey",
+        "priorityTier": "P1",
+        "status": "draft_preview"
+      },
+      {
+        "slug": "infografika-dlya-socsetey",
+        "url": "/ru/blog/infografika-dlya-socsetey",
+        "role": "supporting",
+        "intentId": "ru:infografika-dlya-socsetey",
+        "priorityTier": "P1",
+        "status": "draft_preview"
       }
     ],
     "supportingArticles": [
@@ -701,7 +770,10 @@
       "gde-delat-posty-karuseli-s-ii",
       "konstruktor-karuseley-onlayn",
       "kak-sozdat-karusel-s-chatgpt",
-      "massovoe-sozdanie-karuseley-s-ii"
+      "massovoe-sozdanie-karuseley-s-ii",
+      "analiz-kontenta-konkurentov-v-socsetyah",
+      "pererabotka-kontenta-dlya-socsetey",
+      "infografika-dlya-socsetey"
     ],
     "missingTopics": [],
     "internalLinkingRules": {
@@ -825,6 +897,14 @@
         "status": "published",
         "canonicalRisk": "medium",
         "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+      },
+      {
+        "slug": "kontent-plan-dlya-vk",
+        "url": "/ru/blog/kontent-plan-dlya-vk",
+        "role": "supporting",
+        "intentId": "ru:kontent-plan-dlya-vk",
+        "priorityTier": "P1",
+        "status": "draft_preview"
       }
     ],
     "supportingArticles": [
@@ -832,7 +912,8 @@
       "temy-postov-dlya-gruppy-vkontakte",
       "krasivye-posty-dlya-vk-oformlenie",
       "generator-karuseley-dlya-vk",
-      "pervyy-post-vkontakte-s-ii"
+      "pervyy-post-vkontakte-s-ii",
+      "kontent-plan-dlya-vk"
     ],
     "missingTopics": [],
     "internalLinkingRules": {
@@ -905,6 +986,14 @@
         "status": "draft_preview",
         "canonicalRisk": "medium",
         "notes": "Draft from ru-vk-instagram-batch-1"
+      },
+      {
+        "slug": "post-znakomstvo-v-instagram",
+        "url": "/ru/blog/post-znakomstvo-v-instagram",
+        "role": "supporting",
+        "intentId": "ru:post-znakomstvo-v-instagram",
+        "priorityTier": "P1",
+        "status": "draft_preview"
       }
     ],
     "supportingArticles": [
@@ -912,7 +1001,8 @@
       "razmer-posta-v-instagram-v-pikselih",
       "kakie-posty-delat-v-instagram-idei",
       "foto-dlya-posta-instagram-vizual-s-ii",
-      "tekst-i-foto-dlya-posta-instagram"
+      "tekst-i-foto-dlya-posta-instagram",
+      "post-znakomstvo-v-instagram"
     ],
     "missingTopics": [],
     "internalLinkingRules": {
