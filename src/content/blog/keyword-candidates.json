@@ -9483,7 +9483,7 @@
       "dateRange": "2026-07-30..2026-08-13",
       "source": "yandex_webmaster_api"
     },
-    "status": "draft_preview",
+    "status": "published",
     "requiresDemandRefresh": false
   },
   {
@@ -9511,7 +9511,7 @@
       "dateRange": "2026-07-30..2026-08-13",
       "source": "yandex_webmaster_api"
     },
-    "status": "draft_preview",
+    "status": "published",
     "requiresDemandRefresh": false
   },
   {
@@ -9539,7 +9539,7 @@
       "dateRange": "2026-07-30..2026-08-13",
       "source": "yandex_webmaster_api"
     },
-    "status": "draft_preview",
+    "status": "published",
     "requiresDemandRefresh": false
   },
   {
@@ -9567,7 +9567,7 @@
       "dateRange": "2026-07-30..2026-08-13",
       "source": "yandex_webmaster_api"
     },
-    "status": "draft_preview",
+    "status": "published",
     "requiresDemandRefresh": false
   },
   {
@@ -9595,7 +9595,7 @@
       "dateRange": "2026-07-30..2026-08-13",
       "source": "yandex_webmaster_api"
     },
-    "status": "draft_preview",
+    "status": "published",
     "requiresDemandRefresh": false
   },
   {
@@ -9623,7 +9623,7 @@
       "dateRange": "2026-07-30..2026-08-13",
       "source": "yandex_webmaster_api"
     },
-    "status": "draft_preview",
+    "status": "published",
     "requiresDemandRefresh": false
   },
   {
@@ -9651,7 +9651,7 @@
       "dateRange": "2026-07-30..2026-08-13",
       "source": "yandex_webmaster_api"
     },
-    "status": "draft_preview",
+    "status": "published",
     "requiresDemandRefresh": false
   },
   {
@@ -9679,7 +9679,7 @@
       "dateRange": "2026-07-30..2026-08-13",
       "source": "yandex_webmaster_api"
     },
-    "status": "draft_preview",
+    "status": "published",
     "requiresDemandRefresh": false
   },
   {
@@ -9707,7 +9707,7 @@
       "dateRange": "2026-07-30..2026-08-13",
       "source": "yandex_webmaster_api"
     },
-    "status": "draft_preview",
+    "status": "published",
     "requiresDemandRefresh": false
   },
   {
@@ -9735,7 +9735,7 @@
       "dateRange": "2026-07-30..2026-08-13",
       "source": "yandex_webmaster_api"
     },
-    "status": "draft_preview",
+    "status": "published",
     "requiresDemandRefresh": false
   }
 ]

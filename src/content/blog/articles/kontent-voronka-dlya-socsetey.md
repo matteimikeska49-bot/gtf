@@ -26,10 +26,10 @@ faqFormat: "structured"
 qualityGateStatus: "passed"
 mockupStatus: "not_available"
 mockupReason: "A strategic funnel framework is explained more truthfully through editorial examples than a UI screenshot."
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/kontent-voronka-dlya-socsetey"
 createdAt: "2026-08-13"
 updatedAt: "2026-08-13"

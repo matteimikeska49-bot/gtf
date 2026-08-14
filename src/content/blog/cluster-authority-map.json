@@ -540,7 +540,7 @@
         "role": "supporting",
         "intentId": "ru:kontent-voronka-dlya-socsetey",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "rubriki-dlya-socsetey",
@@ -548,7 +548,7 @@
         "role": "supporting",
         "intentId": "ru:rubriki-dlya-socsetey",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "audit-kontenta-dlya-socsetey",
@@ -556,7 +556,7 @@
         "role": "supporting",
         "intentId": "ru:audit-kontenta-dlya-socsetey",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "b2b-kontent-dlya-socsetey",
@@ -564,7 +564,7 @@
         "role": "supporting",
         "intentId": "ru:b2b-kontent-dlya-socsetey",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "kontent-dlya-lichnogo-brenda",
@@ -572,7 +572,7 @@
         "role": "supporting",
         "intentId": "ru:kontent-dlya-lichnogo-brenda",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       }
     ],
     "supportingArticles": [
@@ -735,7 +735,7 @@
         "role": "supporting",
         "intentId": "ru:analiz-kontenta-konkurentov-v-socsetyah",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "pererabotka-kontenta-dlya-socsetey",
@@ -743,7 +743,7 @@
         "role": "supporting",
         "intentId": "ru:pererabotka-kontenta-dlya-socsetey",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "infografika-dlya-socsetey",
@@ -751,7 +751,7 @@
         "role": "supporting",
         "intentId": "ru:infografika-dlya-socsetey",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       }
     ],
     "supportingArticles": [
@@ -904,7 +904,7 @@
         "role": "supporting",
         "intentId": "ru:kontent-plan-dlya-vk",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       }
     ],
     "supportingArticles": [
@@ -993,7 +993,7 @@
         "role": "supporting",
         "intentId": "ru:post-znakomstvo-v-instagram",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       }
     ],
     "supportingArticles": [
