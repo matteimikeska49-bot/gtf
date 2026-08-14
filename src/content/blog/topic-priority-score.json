@@ -2537,5 +2537,285 @@
     "priorityTier": "P3",
     "scoringReason": "Published after Codex Prompt 3 QA; exact demand refresh remains post-publish work.",
     "scoringLastUpdated": "2026-07-04"
+  },
+  {
+    "targetSlug": "post-znakomstvo-v-instagram",
+    "title": "Пост-знакомство в Instagram: структура, примеры и готовый шаблон",
+    "language": "ru",
+    "primaryKeyword": "пост знакомство в инстаграм",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 93,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 7,
+      "difficultyScore": 7,
+      "productFitScore": 7,
+      "businessValueScore": 7,
+      "cannibalizationSafetyScore": 9,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 72
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Clean platform-specific introduction intent with an immediate post and carousel conversion path.",
+    "scoringLastUpdated": "2026-08-13"
+  },
+  {
+    "targetSlug": "analiz-kontenta-konkurentov-v-socsetyah",
+    "title": "Как анализировать контент конкурентов в соцсетях и находить идеи для постов",
+    "language": "ru",
+    "primaryKeyword": "анализ контента конкурентов",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 147,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 7,
+      "difficultyScore": 6,
+      "productFitScore": 10,
+      "businessValueScore": 9,
+      "cannibalizationSafetyScore": 9,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 81
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Real demand, direct competitor-research Product Truth fit, clean ownership and a strong carousel conversion bridge.",
+    "scoringLastUpdated": "2026-08-13"
+  },
+  {
+    "targetSlug": "kontent-voronka-dlya-socsetey",
+    "title": "Контент-воронка для соцсетей: как вести читателя от охвата к заявке",
+    "language": "ru",
+    "primaryKeyword": "контент воронка для соцсетей",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 324,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 8,
+      "difficultyScore": 6,
+      "productFitScore": 8,
+      "businessValueScore": 9,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 78
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Highest-demand planning topic in the batch with a clear cross-channel boundary and conversion sequence.",
+    "scoringLastUpdated": "2026-08-13"
+  },
+  {
+    "targetSlug": "kontent-plan-dlya-vk",
+    "title": "Контент-план для ВКонтакте: рубрики, частота и пример на месяц",
+    "language": "ru",
+    "primaryKeyword": "контент план для вк",
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 188,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 7,
+      "difficultyScore": 7,
+      "productFitScore": 8,
+      "businessValueScore": 8,
+      "cannibalizationSafetyScore": 9,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 76
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Platform-specific planning demand with clean boundaries from topic lists and the first-post owner.",
+    "scoringLastUpdated": "2026-08-13"
+  },
+  {
+    "targetSlug": "rubriki-dlya-socsetey",
+    "title": "Рубрики для соцсетей: как собрать устойчивую систему контента",
+    "language": "ru",
+    "primaryKeyword": "рубрики для соцсетей",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 110,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 7,
+      "difficultyScore": 7,
+      "productFitScore": 8,
+      "businessValueScore": 7,
+      "cannibalizationSafetyScore": 9,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 74
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Clear taxonomy intent, solid demand and a repeatable path from rubric to finished content.",
+    "scoringLastUpdated": "2026-08-13"
+  },
+  {
+    "targetSlug": "audit-kontenta-dlya-socsetey",
+    "title": "Аудит контента для соцсетей: как найти сильные темы для повторного использования",
+    "language": "ru",
+    "primaryKeyword": "аудит контента",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 135,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 7,
+      "difficultyScore": 7,
+      "productFitScore": 7,
+      "businessValueScore": 7,
+      "cannibalizationSafetyScore": 9,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 72
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Useful own-library diagnosis intent with strict non-SEO boundaries and a realistic reuse conversion path.",
+    "scoringLastUpdated": "2026-08-13"
+  },
+  {
+    "targetSlug": "pererabotka-kontenta-dlya-socsetey",
+    "title": "Переработка контента: как превратить один материал в серию постов и каруселей",
+    "language": "ru",
+    "primaryKeyword": "переработка контента",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 37,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 7,
+      "difficultyScore": 7,
+      "productFitScore": 10,
+      "businessValueScore": 8,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 79
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Lower demand is outweighed by exceptional Product Truth fit and a clean hub/spoke boundary across source types.",
+    "scoringLastUpdated": "2026-08-13"
+  },
+  {
+    "targetSlug": "infografika-dlya-socsetey",
+    "title": "Инфографика для соцсетей: как превратить сложную мысль в понятную карусель",
+    "language": "ru",
+    "primaryKeyword": "инфографика для соцсетей",
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 82,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 7,
+      "difficultyScore": 7,
+      "productFitScore": 9,
+      "businessValueScore": 8,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 77
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Strong information-architecture fit with clean boundaries from design galleries, fonts and chart-generation claims.",
+    "scoringLastUpdated": "2026-08-13"
+  },
+  {
+    "targetSlug": "b2b-kontent-dlya-socsetey",
+    "title": "B2B-контент для соцсетей: как объяснять сложный продукт через посты и карусели",
+    "language": "ru",
+    "primaryKeyword": "b2b контент",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 168,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 7,
+      "difficultyScore": 6,
+      "productFitScore": 8,
+      "businessValueScore": 9,
+      "cannibalizationSafetyScore": 9,
+      "mockupReadinessScore": 5,
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 77
+    },
+    "priorityTier": "P1",
+    "scoringReason": "Commercially relevant audience intent with no RU cross-channel owner and a direct proof-led content path.",
+    "scoringLastUpdated": "2026-08-13"
+  },
+  {
+    "targetSlug": "kontent-dlya-lichnogo-brenda",
+    "title": "Контент для личного бренда: темы, форматы и система публикаций",
+    "language": "ru",
+    "primaryKeyword": "контент для личного бренда",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "topicStatus": "draft_preview",
+    "keywordEvidence": {
+      "source": "yandex_wordstat_manual",
+      "confidence": "high",
+      "exactVolumeKnown": true,
+      "volume": 319,
+      "trend": "unknown"
+    },
+    "scores": {
+      "demandScore": 8,
+      "difficultyScore": 6,
+      "productFitScore": 8,
+      "businessValueScore": 8,
+      "cannibalizationSafetyScore": 8,
+      "mockupReadinessScore": 6,
+      "dataConfidenceScore": 9,
+      "finalPriorityScore": 77
+    },
+    "priorityTier": "P1",
+    "scoringReason": "High demand and clear strategic boundary from the existing personal-brand carousel execution article.",
+    "scoringLastUpdated": "2026-08-13"
   }
 ]

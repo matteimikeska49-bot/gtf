@@ -1381,5 +1381,275 @@
     "relatedProductRoute": "/ru/generator-postov-instagram",
     "notes": "Existing content planning article expanded to resolve deferred Batch 3 content-matrix intent without a thin duplicate page.",
     "lastReviewed": "2026-07-04"
+  },
+  {
+    "intentId": "ru:post-znakomstvo-v-instagram",
+    "language": "ru",
+    "cluster": "ru:instagram-content",
+    "searchIntent": "write a structured Instagram introduction post with examples",
+    "intentType": "how-to",
+    "ownerUrl": "/ru/blog/post-znakomstvo-v-instagram",
+    "ownerSlug": "post-znakomstvo-v-instagram",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "pervyy-post-v-instagram",
+      "post-znakomstvo-dlya-instagram"
+    ],
+    "allowedSupportingAngles": [
+      "carousel introduction execution",
+      "personal-brand positioning"
+    ],
+    "updateInsteadOfCreateRules": [
+      "New Instagram introduction examples and templates update this owner."
+    ],
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "notes": "Instagram-only introduction intent; VK first-post owner remains separate.",
+    "lastReviewed": "2026-08-13"
+  },
+  {
+    "intentId": "ru:analiz-kontenta-konkurentov-v-socsetyah",
+    "language": "ru",
+    "cluster": "ru:ii-carousel-generator",
+    "searchIntent": "analyze competitors' social posts to identify original content opportunities",
+    "intentType": "workflow",
+    "ownerUrl": "/ru/blog/analiz-kontenta-konkurentov-v-socsetyah",
+    "ownerSlug": "analiz-kontenta-konkurentov-v-socsetyah",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "analiz-konkurentov-v-socsetyah",
+      "idei-iz-kontenta-konkurentov"
+    ],
+    "allowedSupportingAngles": [
+      "platform-specific analytics",
+      "topic ideation"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Generic social competitor-content analysis updates this owner."
+    ],
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "notes": "Research and insight extraction, not a competitor-monitoring tools list.",
+    "lastReviewed": "2026-08-13"
+  },
+  {
+    "intentId": "ru:kontent-voronka-dlya-socsetey",
+    "language": "ru",
+    "cluster": "ru:social-content",
+    "searchIntent": "build a social content sequence from attention to action",
+    "intentType": "workflow",
+    "ownerUrl": "/ru/blog/kontent-voronka-dlya-socsetey",
+    "ownerSlug": "kontent-voronka-dlya-socsetey",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "voronka-kontenta-v-socsetyah",
+      "kontentnaya-voronka"
+    ],
+    "allowedSupportingAngles": [
+      "Instagram carousel autofunnel",
+      "CTA design"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Cross-channel content-funnel frameworks update this owner."
+    ],
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "notes": "Cross-channel architecture; Instagram carousel mechanics stay with avtovoronka-v-instagram-cherez-karuseli.",
+    "lastReviewed": "2026-08-13"
+  },
+  {
+    "intentId": "ru:kontent-plan-dlya-vk",
+    "language": "ru",
+    "cluster": "ru:vk-content",
+    "searchIntent": "create a monthly content plan for a VK community",
+    "intentType": "workflow",
+    "ownerUrl": "/ru/blog/kontent-plan-dlya-vk",
+    "ownerSlug": "kontent-plan-dlya-vk",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "kontent-plan-vkontakte",
+      "kontent-plan-dlya-gruppy-vk"
+    ],
+    "allowedSupportingAngles": [
+      "VK topic ideas",
+      "first VK post",
+      "VK carousel generation"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Monthly VK calendar templates and planning workflows update this owner."
+    ],
+    "relatedProductRoute": "/ru/generator-kontenta",
+    "notes": "Owns calendar/planning intent, not the topic-list or first-post intents.",
+    "lastReviewed": "2026-08-13"
+  },
+  {
+    "intentId": "ru:rubriki-dlya-socsetey",
+    "language": "ru",
+    "cluster": "ru:social-content",
+    "searchIntent": "choose repeatable content rubrics for social channels",
+    "intentType": "workflow",
+    "ownerUrl": "/ru/blog/rubriki-dlya-socsetey",
+    "ownerSlug": "rubriki-dlya-socsetey",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "rubriki-kontenta-dlya-socsetey",
+      "kak-pridumat-rubriki"
+    ],
+    "allowedSupportingAngles": [
+      "platform-specific rubrics",
+      "content plan"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Generic social rubric lists and selection frameworks update this owner."
+    ],
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "notes": "Taxonomy intent; it does not own calendars or generic idea lists.",
+    "lastReviewed": "2026-08-13"
+  },
+  {
+    "intentId": "ru:audit-kontenta-dlya-socsetey",
+    "language": "ru",
+    "cluster": "ru:social-content",
+    "searchIntent": "audit an owned social content library and identify reusable material",
+    "intentType": "workflow",
+    "ownerUrl": "/ru/blog/audit-kontenta-dlya-socsetey",
+    "ownerSlug": "audit-kontenta-dlya-socsetey",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "audit-kontenta",
+      "audit-kontenta-socsetey"
+    ],
+    "allowedSupportingAngles": [
+      "competitor content analysis",
+      "content repurposing"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Editorial audits of owned social content update this owner."
+    ],
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "notes": "Excludes technical SEO/site audits and competitor analysis.",
+    "lastReviewed": "2026-08-13"
+  },
+  {
+    "intentId": "ru:pererabotka-kontenta-dlya-socsetey",
+    "language": "ru",
+    "cluster": "ru:ii-carousel-generator",
+    "searchIntent": "repurpose one source into multiple social formats",
+    "intentType": "workflow-hub",
+    "ownerUrl": "/ru/blog/pererabotka-kontenta-dlya-socsetey",
+    "ownerSlug": "pererabotka-kontenta-dlya-socsetey",
+    "ownerRole": "supporting",
+    "supportingUrls": [
+      "/ru/blog/kak-sdelat-karusel-iz-video-s-ii",
+      "/ru/blog/kak-peredelat-statyu-v-karusel-linkedin"
+    ],
+    "supportingSlugs": [
+      "kak-sdelat-karusel-iz-video-s-ii",
+      "kak-peredelat-statyu-v-karusel-linkedin"
+    ],
+    "forbiddenNearDuplicates": [
+      "pereupakovka-kontenta",
+      "povtornoe-ispolzovanie-kontenta"
+    ],
+    "allowedSupportingAngles": [
+      "video to carousel",
+      "article to LinkedIn carousel",
+      "PDF to carousel"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Generic cross-format repurposing strategies update this owner; source-specific procedures remain spokes."
+    ],
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "notes": "Strategy hub with explicit source-specific boundaries.",
+    "lastReviewed": "2026-08-13"
+  },
+  {
+    "intentId": "ru:infografika-dlya-socsetey",
+    "language": "ru",
+    "cluster": "ru:ii-carousel-generator",
+    "searchIntent": "turn complex information into clear social infographic cards or carousel slides",
+    "intentType": "how-to",
+    "ownerUrl": "/ru/blog/infografika-dlya-socsetey",
+    "ownerSlug": "infografika-dlya-socsetey",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "kak-sdelat-infografiku-dlya-socsetey",
+      "informacionnaya-karusel"
+    ],
+    "allowedSupportingAngles": [
+      "readability",
+      "fonts",
+      "carousel examples"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Social infographic information-hierarchy guidance updates this owner."
+    ],
+    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "notes": "No automatic charting or data-visualization capability claims.",
+    "lastReviewed": "2026-08-13"
+  },
+  {
+    "intentId": "ru:b2b-kontent-dlya-socsetey",
+    "language": "ru",
+    "cluster": "ru:social-content",
+    "searchIntent": "build social content for a complex B2B offer",
+    "intentType": "workflow",
+    "ownerUrl": "/ru/blog/b2b-kontent-dlya-socsetey",
+    "ownerSlug": "b2b-kontent-dlya-socsetey",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "kontent-dlya-b2b",
+      "b2b-kontent-marketing"
+    ],
+    "allowedSupportingAngles": [
+      "B2B case carousel",
+      "LinkedIn carousel",
+      "expert content"
+    ],
+    "updateInsteadOfCreateRules": [
+      "RU cross-channel B2B content strategy updates this owner."
+    ],
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "notes": "Cross-channel RU owner; LinkedIn-only and case-format procedures remain separate.",
+    "lastReviewed": "2026-08-13"
+  },
+  {
+    "intentId": "ru:kontent-dlya-lichnogo-brenda",
+    "language": "ru",
+    "cluster": "ru:social-content",
+    "searchIntent": "build a repeatable content system for a personal brand",
+    "intentType": "workflow",
+    "ownerUrl": "/ru/blog/kontent-dlya-lichnogo-brenda",
+    "ownerSlug": "kontent-dlya-lichnogo-brenda",
+    "ownerRole": "supporting",
+    "supportingUrls": [],
+    "supportingSlugs": [],
+    "forbiddenNearDuplicates": [
+      "kontent-plan-dlya-lichnogo-brenda",
+      "temy-dlya-lichnogo-brenda"
+    ],
+    "allowedSupportingAngles": [
+      "personal-brand carousel execution",
+      "Instagram introduction post"
+    ],
+    "updateInsteadOfCreateRules": [
+      "Broad personal-brand content systems and topic matrices update this owner."
+    ],
+    "relatedProductRoute": "/ru/generator-postov-instagram",
+    "notes": "Strategy owner; carousel execution remains a supporting article.",
+    "lastReviewed": "2026-08-13"
   }
 ]
