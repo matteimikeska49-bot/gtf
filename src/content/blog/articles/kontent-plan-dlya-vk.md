@@ -26,10 +26,10 @@ faqFormat: "structured"
 qualityGateStatus: "passed"
 mockupStatus: "not_available"
 mockupReason: "A planning table and editorial workflow explain the intent without an exact product UI mockup."
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/kontent-plan-dlya-vk"
 createdAt: "2026-08-13"
 updatedAt: "2026-08-13"

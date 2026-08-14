@@ -26,10 +26,10 @@ faqFormat: "structured"
 qualityGateStatus: "passed"
 mockupStatus: "not_available"
 mockupReason: "The audit method relies on an editorial inventory rather than an exact product interface."
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/audit-kontenta-dlya-socsetey"
 createdAt: "2026-08-13"
 updatedAt: "2026-08-13"

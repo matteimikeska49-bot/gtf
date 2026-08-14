@@ -26,10 +26,10 @@ faqFormat: "structured"
 qualityGateStatus: "passed"
 mockupStatus: "not_available"
 mockupReason: "The article teaches a text-first framework; no truthful product UI mockup is required."
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/post-znakomstvo-v-instagram"
 createdAt: "2026-08-13"
 updatedAt: "2026-08-13"

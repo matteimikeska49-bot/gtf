@@ -26,10 +26,10 @@ faqFormat: "structured"
 qualityGateStatus: "passed"
 mockupStatus: "not_available"
 mockupReason: "The workflow is analytical and does not require an exact product screenshot to explain truthfully."
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/analiz-kontenta-konkurentov-v-socsetyah"
 createdAt: "2026-08-13"
 updatedAt: "2026-08-13"

@@ -26,10 +26,10 @@ faqFormat: "structured"
 qualityGateStatus: "passed"
 mockupStatus: "not_available"
 mockupReason: "The strategic framework does not require an exact product UI image."
-published: false
-noindex: true
-preview: true
-approvedForPublish: false
+published: true
+noindex: false
+preview: false
+approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/b2b-kontent-dlya-socsetey"
 createdAt: "2026-08-13"
 updatedAt: "2026-08-13"
