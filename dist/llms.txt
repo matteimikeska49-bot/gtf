@@ -25,7 +25,7 @@ GoToFlow is built for brands, marketers, creators, agencies, founders, and busin
 - [Instagram Carousel Maker](https://gotoflow.io/instagram-carousel-maker)
 - [AI Instagram Post Generator](https://gotoflow.io/ai-instagram-post-generator)
 - [LinkedIn Carousel Maker](https://gotoflow.io/linkedin-carousel-maker)
-- [AI LinkedIn Post Generator](https://gotoflow.io/linkedin-post-generator)
+- [AI LinkedIn Post Generator](https://gotoflow.io/ai-linkedin-post-generator)
 - [GoToFlow Blog](https://gotoflow.io/blog)
 
 ### Russian Pages
