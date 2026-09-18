@@ -52,6 +52,7 @@ export const SEOHead = () => {
 /* ── Hero ── */
 export const CarouselHero = () => {
   const isMobile = useIsMobile();
+  const isInstagram = window.location.pathname === '/instagram-carousel-maker';
   return (
   <section className="pt-32 pb-16 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
     <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] md:w-[1200px] h-[700px] md:h-[900px] bg-[#ec4899]/[0.07] blur-[80px] md:blur-[150px] rounded-full pointer-events-none" />
@@ -64,7 +65,7 @@ export const CarouselHero = () => {
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="max-w-3xl mx-auto w-full">
         <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
-          AI Carousel Maker —<br className="hidden md:block" /> Create Ready-to-Publish<br className="hidden md:block" /> <span className="text-gradient-brand">Carousels in 60 Seconds</span>
+          {isInstagram ? 'Instagram Carousel Maker' : 'AI Carousel Maker'} —<br className="hidden md:block" /> Create Ready-to-Publish<br className="hidden md:block" /> <span className="text-gradient-brand">Carousels in 60 Seconds</span>
         </h1>
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance">
