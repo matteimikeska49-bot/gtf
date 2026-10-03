@@ -328,7 +328,7 @@
   {
     "intentId": "ru:karusel-dlya-instagram",
     "language": "ru",
-    "cluster": "ru:instagram-carousel",
+    "cluster": "ru:instagram-carousel-overview",
     "searchIntent": "Instagram carousel guide and examples",
     "intentType": "informational",
     "ownerUrl": "/ru/blog/karusel-dlya-instagram"

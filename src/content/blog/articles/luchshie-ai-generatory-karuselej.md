@@ -41,6 +41,7 @@ finalCta:
   title: "Создавайте карусели за минуты"
   description: "Сделайте структурированные карусели с помощью AI."
   buttonText: "Попробовать GoToFlow"
+  primaryHref: "/ru/ii-generator-karuseley"
   href: "/ru/ii-generator-karuseley"
   secondaryText: "Хуки для карусели Instagram →"
   secondaryHref: "/ru/blog/huki-dlya-karuseli-instagram"
@@ -171,7 +172,7 @@ GoToFlow помогает пройти путь от идеи, ссылки, в�
 
 Вставьте тему, ссылку или видео и получите структуру, текст и готовый результат.
 
-[Попробовать GoToFlow AI Carousel Maker](/ru/generator-karuselej-linkedin)
+[Попробовать ИИ-генератор каруселей GoToFlow](/ru/ii-generator-karuseley)
 
 ---
 
@@ -422,6 +423,6 @@ Instagram чаще требует более визуального, быстр�
 
 Создайте карусель из темы, ссылки или видео быстрее.
 
-[Попробовать GoToFlow AI Carousel Maker](/ru/generator-karuselej-linkedin)
+[Попробовать ИИ-генератор каруселей GoToFlow](/ru/ii-generator-karuseley)
 
 [Превратите любую идею в структурированную карусель быстрее](/ru/ii-generator-karuseley)

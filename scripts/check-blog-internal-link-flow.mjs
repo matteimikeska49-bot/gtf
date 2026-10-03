@@ -9,6 +9,7 @@ const articlesDir = path.join(ROOT_DIR, 'src/content/blog/articles');
 const clusterMapPath = path.join(ROOT_DIR, 'src/content/blog/cluster-authority-map.json');
 const intentMapPath = path.join(ROOT_DIR, 'src/content/blog/intent-map.json');
 const batchStatusPath = path.join(ROOT_DIR, 'src/content/blog/batch-status.json');
+const appRoutesPath = path.join(ROOT_DIR, 'src/App.jsx');
 
 const clusterMap = JSON.parse(fs.readFileSync(clusterMapPath, 'utf8'));
 const intentMap = JSON.parse(fs.readFileSync(intentMapPath, 'utf8'));
@@ -34,6 +35,12 @@ const validPublicRoutes = new Set([
   '/ru/ugc-creator-terms', '/refund-policy', '/terms-of-service', 
   '/personal-data-consent', '/pricing', '/carousel/create'
 ]);
+
+const appRoutesSource = fs.readFileSync(appRoutesPath, 'utf8');
+for (const match of appRoutesSource.matchAll(/<Route\s+path=["']([^"']+)["']/g)) {
+  const route = match[1];
+  if (!route.includes(':') && route !== '*') validPublicRoutes.add(route);
+}
 
 function extractData(content) {
   const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);

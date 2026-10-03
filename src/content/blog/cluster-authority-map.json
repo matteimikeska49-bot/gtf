@@ -393,12 +393,6 @@
     "hubSlug": "kak-sdelat-karusel-dlya-instagram-s-ii",
     "articleRoles": [
       {
-        "slug": "karusel-dlya-instagram",
-        "url": "/ru/blog/karusel-dlya-instagram",
-        "role": "pillar",
-        "canonicalRisk": "low"
-      },
-      {
         "slug": "besshovnaya-karusel-v-instagram",
         "url": "/ru/blog/besshovnaya-karusel-v-instagram",
         "role": "guide",
@@ -491,6 +485,25 @@
       "mnogostranichnye-karuseli-prezentacii"
     ],
     "lastReviewed": "2026-07-04"
+  },
+  {
+    "clusterId": "ru:instagram-carousel-overview",
+    "clusterName": "RU Instagram Carousel Overview",
+    "language": "ru",
+    "productRoute": "/ru/generator-karuselej-instagram",
+    "hubArticle": "karusel-dlya-instagram",
+    "hubSlug": "karusel-dlya-instagram",
+    "articleRoles": [
+      {
+        "slug": "karusel-dlya-instagram",
+        "url": "/ru/blog/karusel-dlya-instagram",
+        "role": "pillar",
+        "canonicalRisk": "low"
+      }
+    ],
+    "supportingArticles": [],
+    "notes": "Dedicated overview boundary supports the Instagram-specific commercial owner without changing technical crop or size owners.",
+    "lastReviewed": "2026-10-03"
   },
   {
     "clusterId": "ru:social-content",

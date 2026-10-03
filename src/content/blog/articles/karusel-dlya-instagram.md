@@ -10,7 +10,7 @@ cluster: "instagram_carousel"
 articleType: "guide"
 pageType: "blog_post"
 funnelStage: "TOFU"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 productFit: "YES"
 productFitExplanation: "GoToFlow создает карусели для Инстаграм, решая задачу пользователя напрямую."
 requiredVisualBlock: ":::mockup"
@@ -45,7 +45,7 @@ finalPriorityScore: 60
 priorityTier: "P2"
 productCapabilityIds: ["instagramCarouselGeneration"]
 intentId: "ru:karusel-dlya-instagram"
-clusterId: "ru:instagram-carousel"
+clusterId: "ru:instagram-carousel-overview"
 articleRole: "pillar"
 hubSlug: "neyroset-dlya-postov"
 quickAnswerTitle: "Краткий ответ"
@@ -53,7 +53,8 @@ finalCta:
   title: "Создайте первый пост"
   text: "Используйте ИИ, чтобы сделать пост"
   buttonText: "Попробовать бесплатно"
-  buttonHref: "/ru/ii-generator-karuseley"
+  primaryHref: "/ru/generator-karuselej-instagram"
+  buttonHref: "/ru/generator-karuselej-instagram"
   secondaryText: "Хуки для карусели Instagram →"
   secondaryHref: "/ru/blog/huki-dlya-karuseli-instagram"
 
@@ -102,7 +103,7 @@ __Карусель для Инстаграм__ — это формат публ�
 
 Создание карусели вручную — это копирайтинг, дизайн и верстка, которые могут занимать несколько часов. Чтобы сократить время на подготовку контента, маркетологи используют профильные инструменты.
 
-[Генератор каруселей GoToFlow](/ru/ii-generator-karuseley) берет на себя самую рутинную часть процесса: создание структуры и упаковку в дизайн. Вы можете вставить исходный текст, ссылку на статью или просто идею — а система:
+[Генератор каруселей для Instagram GoToFlow](/ru/generator-karuselej-instagram) берет на себя самую рутинную часть процесса: создание структуры и упаковку в дизайн. Вы можете вставить исходный текст, ссылку на статью или просто идею — а система:
 1. Разобьет контент на логичные слайды.
 2. Распределит текст по профессиональным шаблонам.
 3. Выдаст готовый архив изображений для загрузки в Инстаграм.
@@ -115,7 +116,7 @@ __Карусель для Инстаграм__ — это формат публ�
 
 Карусели — это ваш инструмент для создания экспертности и вовлечения аудитории. Начните с четкой структуры (Хук → Решение → CTA), не перегружайте слайды текстом и оптимизируйте процесс подготовки.
 
-Создайте свою первую профессиональную карусель с помощью [GoToFlow](/ru/ii-generator-karuseley) — от исходного текста до готового дизайна в несколько кликов.
+Создайте свою первую профессиональную Instagram-карусель с помощью [GoToFlow](/ru/generator-karuselej-instagram) — от исходного текста до готового дизайна в несколько кликов.
 
 | Структура | Что писать | Роль в воронке |
 |---|---|---|

@@ -65,6 +65,7 @@ finalCta:
   title: "Создайте карусель от идеи до готовых слайдов"
   text: "Используйте GoToFlow, чтобы собрать сценарий, структуру, текст, визуальную подачу и CTA в одном workflow."
   buttonText: "Создать карусель с ИИ"
+  primaryHref: "/ru/ii-generator-karuseley"
   buttonHref: "/ru/ii-generator-karuseley"
   secondaryText: "Хуки для карусели Instagram →"
   secondaryHref: "/ru/blog/huki-dlya-karuseli-instagram"

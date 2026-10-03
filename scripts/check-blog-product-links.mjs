@@ -32,6 +32,25 @@ const PRODUCT_LED_TYPES = [
   'prompts',
 ];
 
+const OWNERSHIP_GUARDRAILS = {
+  'kak-vylozhit-karusel-v-instagram': {
+    requiredDestinations: ['/ru/generator-karuselej-instagram'],
+    forbiddenDestinations: ['/ru/generator-postov-instagram'],
+  },
+  'karusel-dlya-instagram': {
+    requiredDestinations: ['/ru/generator-karuselej-instagram'],
+    forbiddenDestinations: ['/ru/ii-generator-karuseley'],
+  },
+  'luchshie-ai-generatory-karuselej': {
+    requiredDestinations: ['/ru/ii-generator-karuseley'],
+    forbiddenDestinations: ['/ru/generator-karuselej-linkedin'],
+  },
+  'ii-dlya-karuseley': {
+    requiredDestinations: ['/ru/ii-generator-karuseley'],
+    forbiddenDestinations: [],
+  },
+};
+
 const extractFrontmatter = (content) => {
   const match = content.match(/^---\s*\n([\s\S]*?)\n---\s*\n?/);
   return match ? match[1] : '';
@@ -104,6 +123,22 @@ for (const file of articleFiles) {
 
   const slug = getYamlValue(frontmatter, 'slug') || file.replace(/\.md$/, '');
   if (slug.startsWith('test-') || slug.includes('seo-template')) continue;
+
+  const ownershipGuardrail = OWNERSHIP_GUARDRAILS[slug];
+  if (ownershipGuardrail) {
+    for (const destination of ownershipGuardrail.requiredDestinations) {
+      if (!content.includes(destination)) {
+        conflicts.push(`${file}: ownership guardrail requires a bridge to '${destination}'.`);
+        hasP0Error = true;
+      }
+    }
+    for (const destination of ownershipGuardrail.forbiddenDestinations) {
+      if (content.includes(destination)) {
+        conflicts.push(`${file}: ownership guardrail forbids the competing creation destination '${destination}'.`);
+        hasP0Error = true;
+      }
+    }
+  }
 
   const language = getYamlValue(frontmatter, 'language') || 'en';
   const articleType = getYamlValue(frontmatter, 'articleType');
