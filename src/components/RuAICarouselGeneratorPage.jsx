@@ -123,7 +123,7 @@ const heroCopy = {
     eyebrow: 'ИИ для каруселей',
     heading: (
       <>
-        ИИ-генератор каруселей онлайн <br className="hidden md:block" /> <span className="text-gradient-brand">для любых соцсетей</span>
+        ИИ-генератор каруселей онлайн <br className="hidden md:block" /> <span className="text-gradient-brand">для Инстаграма, ВК, LinkedIn и других соцсетей</span>
       </>
     ),
     subtitle: 'GoToFlow создаёт готовую карусель от идеи до финального результата: помогает найти тему, собрать сценарий и структуру, написать текст, оформить визуальную подачу, сделать слайды и CTA — за пару минут.',
