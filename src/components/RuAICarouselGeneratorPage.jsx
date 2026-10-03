@@ -123,7 +123,7 @@ const heroCopy = {
     eyebrow: 'ИИ для каруселей',
     heading: (
       <>
-        ИИ-генератор каруселей для Instagram, <br className="hidden md:block" /> LinkedIn <span className="text-gradient-brand">и соцсетей</span>
+        ИИ-генератор каруселей онлайн <br className="hidden md:block" /> <span className="text-gradient-brand">для Инстаграма, ВК, LinkedIn и других соцсетей</span>
       </>
     ),
     subtitle: 'GoToFlow создаёт готовую карусель от идеи до финального результата: помогает найти тему, собрать сценарий и структуру, написать текст, оформить визуальную подачу, сделать слайды и CTA — за пару минут.',
@@ -195,7 +195,7 @@ const carouselCardsByRoute = {
 
 const showcaseCopyByRoute = {
   ai: {
-    title: <>Разные сценарии, <span className="text-gradient-brand">собранные с ИИ</span></>,
+    title: <>Создавайте карусели онлайн <span className="text-gradient-brand">с помощью ИИ</span></>,
     badge: 'Карусель',
   },
   instagram: {
@@ -297,6 +297,7 @@ const RuCarouselProblem = () => {
 /* ── Comparison ── */
 const RuCarouselComparison = () => {
   const isMobile = useIsMobile();
+  const ctaLabel = isInstagramCarouselPath() ? 'Создать Instagram-карусель' : 'Создать карусель с ИИ';
   return (
     <section className="py-24 md:py-32 px-6 relative z-10 w-full bg-[#050505]">
       <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[250vw] max-w-[2000px] h-[1200px] pointer-events-none -z-0 opacity-100 flex justify-center">
@@ -344,7 +345,7 @@ const RuCarouselComparison = () => {
               </div>
               <div className="flex flex-col items-center justify-center gap-3 w-full">
                 <button onClick={()=>window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
-                  Создать карусель с ИИ <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform"/>
+                  {ctaLabel} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform"/>
                 </button>
                 <p className="text-sm text-zinc-500 text-center">Первая карусель за 60 секунд</p>
               </div>
@@ -673,6 +674,7 @@ const RuCarouselBottomCTA = () => {
   const ref = useRef(null);
   const isMobile = useIsMobile();
   const inView = useInView(ref, { once: true, margin: isMobile ? '0px' : '-100px' });
+  const isInstagram = isInstagramCarouselPath();
   return (
     <section ref={ref} className="relative w-full overflow-hidden isolate" style={{background:'#050505'}}>
       <div className="absolute inset-0 pointer-events-none bg-[#050505]"/>
@@ -686,12 +688,12 @@ const RuCarouselBottomCTA = () => {
                 <span className="text-[10px] font-semibold text-zinc-500 tracking-[0.1em] uppercase">Попробуйте бесплатно</span>
               </div>
               <h2 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-6 max-w-2xl">
-                Хватит тратить часы на<br/>создание <span className="text-gradient-brand">каруселей.</span><br/><span className="text-zinc-400 font-semibold" style={{fontSize:'0.78em'}}>Создайте первую.</span>
+                Хватит тратить часы на<br/>создание <span className="text-gradient-brand">{isInstagram ? 'Instagram-каруселей.' : 'каруселей.'}</span><br/><span className="text-zinc-400 font-semibold" style={{fontSize:'0.78em'}}>Создайте первую.</span>
               </h2>
               <p className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg leading-[1.75] font-medium mb-12">Тысячи креаторов уже создают карусели в GoToFlow за пару минут.</p>
               <div className="relative group mb-5">
                 <button onClick={()=>window.location.href = getAppUrlWithRef(CTA_URL)} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="relative z-10 flex items-center justify-center gap-2.5 px-9 py-3.5 rounded-[14px] font-semibold text-white text-[15px] overflow-hidden cursor-pointer" style={{background:'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',border:'1px solid rgba(255,255,255,0.18)',boxShadow:hover?'0 14px 55px rgba(236,72,153,0.5), inset 0 1px 0 rgba(255,255,255,0.25)':'0 8px 35px rgba(236,72,153,0.25), inset 0 1px 0 rgba(255,255,255,0.15)',transform:hover?'translateY(-2px) scale(1.04)':'translateY(0) scale(1)',transition:'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)'}}>
-                  <span className="relative z-30 tracking-[0.01em]">Создать карусель с ИИ</span>
+                  <span className="relative z-30 tracking-[0.01em]">{isInstagram ? 'Создать Instagram-карусель' : 'Создать карусель с ИИ'}</span>
                   <ArrowRight className="relative z-30 w-[17px] h-[17px]" style={{opacity:hover?1:0.65,transform:hover?'translateX(3px)':'translateX(0)',transition:'all 0.3s'}}/>
                 </button>
               </div>

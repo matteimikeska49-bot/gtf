@@ -24,9 +24,9 @@ createdAt: "2026-06-21"
 updatedAt: "2026-06-21"
 explore:
   tools:
-    - title: "ИИ-генератор постов для Инстаграм"
-      href: "/ru/generator-postov-instagram"
-      description: "Создайте готовый визуальный пост или карусель с помощью ИИ."
+    - title: "Генератор каруселей для Инстаграм"
+      href: "/ru/generator-karuselej-instagram"
+      description: "Подготовьте готовые слайды карусели с помощью ИИ перед публикацией."
   guides:
     - title: "Размер карусели в Инстаграм: требования и форматы"
       href: "/ru/blog/razmer-karuseli-v-instagram"
@@ -46,7 +46,8 @@ finalCta:
   title: "Устали делать слайды вручную?"
   text: "Создайте готовую карусель для Инстаграм за пару минут с помощью GoToFlow."
   buttonText: "Создать карусель бесплатно"
-  href: "/ru/generator-postov-instagram"
+  primaryHref: "/ru/generator-karuselej-instagram"
+  href: "/ru/generator-karuselej-instagram"
   microcopy: "Бесплатно — карта не нужна"
   secondaryText: "Смотреть гайд по размеру карусели →"
   secondaryHref: "/ru/blog/razmer-karuseli-v-instagram"
@@ -66,7 +67,7 @@ finalCta:
 
 > **Сначала создание, потом публикация**
 > Инстаграм — это площадка для размещения, а не для создания сложных слайдов. GoToFlow позволяет мгновенно превратить ваши исходные тексты в готовую стильную карусель нужного формата.
-> [Попробовать ИИ-генератор](/ru/generator-postov-instagram)
+> [Создать Instagram-карусель с ИИ](/ru/generator-karuselej-instagram)
 
 ## Где карусель в Инстаграме и как её создать: пошаговый процесс
 

@@ -1068,6 +1068,8 @@ const FaqBlock = ({ faq, isRu }) => {
 const FinalCta = ({ cta, isRu }) => {
   if (!cta) return null;
 
+  const primaryHref = cta.primaryHref || getAppUrlWithRef(CTA_URL);
+
   return (
     <section className="text-center">
       <div className="relative my-16 overflow-hidden rounded-[32px] border border-pink-300/15 bg-gradient-to-br from-pink-500/[0.12] via-white/[0.035] to-orange-500/[0.10] p-7 shadow-[0_30px_140px_rgba(236,72,153,0.12)] md:p-10">
@@ -1075,10 +1077,10 @@ const FinalCta = ({ cta, isRu }) => {
         <div className="relative z-10 mx-auto max-w-2xl">
           <h2 className="mb-4 text-2xl font-bold tracking-tight text-white md:text-4xl text-balance">{cta.title}</h2>
           <p className="mx-auto mb-7 max-w-xl text-base leading-relaxed text-zinc-300">{cta.text || cta.description}</p>
-          <a href={getAppUrlWithRef(CTA_URL)} className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 px-7 py-3.5 text-[15px] font-bold text-white shadow-[0_0_40px_rgba(236,72,153,0.35)] transition-all hover:scale-105 active:scale-[0.98] sm:w-auto">
+          <ArticleLink href={primaryHref} className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 px-7 py-3.5 text-[15px] font-bold text-white shadow-[0_0_40px_rgba(236,72,153,0.35)] transition-all hover:scale-105 active:scale-[0.98] sm:w-auto">
             {cta.buttonText}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          </ArticleLink>
           {cta.microcopy && <p className="mt-4 text-xs text-zinc-500">{cta.microcopy}</p>}
         </div>
       </div>
