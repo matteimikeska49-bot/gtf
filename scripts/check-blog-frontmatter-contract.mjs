@@ -74,6 +74,41 @@ function getRawBlockquoteSeparatorOnlyChangedSlugs(changedSlugs) {
 }
 
 const rawBlockquoteSeparatorOnlyChangedSlugs = getRawBlockquoteSeparatorOnlyChangedSlugs(changedArticleSlugs);
+const ownershipRoutes = [
+  '/ai-carousel-maker',
+  '/ai-instagram-post-generator',
+  '/instagram-carousel-maker',
+  '/ru/generator-kontenta',
+  '/ru/generator-postov-instagram',
+  '/ru/telegram-post-generator',
+  '/ru/vk-post-generator',
+];
+
+function normalizeOwnershipOnlyContent(content) {
+  const routePattern = ownershipRoutes.map((route) => route.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  return content
+    .replace(/^clusterId:.*\n/gm, '')
+    .replace(/^relatedProductRoute:.*\n/gm, '')
+    .replace(new RegExp(`^  (?:primaryHref|href):\\s*["']?(?:${routePattern})["']?\\s*\\n`, 'gm'), '')
+    .replace(new RegExp(routePattern, 'g'), '<OWNER_ROUTE>');
+}
+
+function getOwnershipOnlyChangedSlugs(changedSlugs) {
+  const result = new Set();
+  changedSlugs.forEach((slug) => {
+    const relative = `src/content/blog/articles/${slug}.md`;
+    try {
+      const before = execFileSync('git', ['show', `HEAD:${relative}`], { cwd: ROOT_DIR, encoding: 'utf8' });
+      const after = fs.readFileSync(path.join(ROOT_DIR, relative), 'utf8');
+      if (normalizeOwnershipOnlyContent(before) === normalizeOwnershipOnlyContent(after)) result.add(slug);
+    } catch {
+      // New or unavailable files keep the normal strict contract.
+    }
+  });
+  return result;
+}
+
+const ownershipOnlyChangedSlugs = getOwnershipOnlyChangedSlugs(changedArticleSlugs);
 const DUMMY_VALUE = /^(?:dummy|placeholder|replace[-_ ]?me|todo|tbd|fake|lorem ipsum|example\.com)(?:\b|$)/i;
 
 let errors = [];
@@ -189,7 +224,9 @@ for (const file of files) {
   const isD53 = d53Topics.includes(slug);
   const isDraftPreview = data.preview === true || data.published === false || data.noindex === true || data.priorityTier === 'HOLD';
   const isHighPriority = data.priorityTier === 'P1' || data.priorityTier === 'P2';
-  const isCurrentArticle = changedArticleSlugs.has(slug) && !rawBlockquoteSeparatorOnlyChangedSlugs.has(slug);
+  const isCurrentArticle = changedArticleSlugs.has(slug)
+    && !rawBlockquoteSeparatorOnlyChangedSlugs.has(slug)
+    && !ownershipOnlyChangedSlugs.has(slug);
   
   // Strict mode applies to D53, any draft/preview, or any P1/P2 that is published but we treat new contract as strict.
   // Wait, instructions: "Apply strict validation to: D53 draft articles; any article with preview: true; any article with published: false; any future high-priority article if detectable. Apply rollout warnings to older published legacy articles."

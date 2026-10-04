@@ -13,7 +13,7 @@ intentId: "ru:generator-karuseley-dlya-vk"
 clusterId: "ru:vk-content"
 articleRole: "how_to"
 hubSlug: "neyroset-dlya-postov"
-relatedProductRoute: "/ru/generator-kontenta"
+relatedProductRoute: "/ru/vk-post-generator"
 secondaryKeywords:
   - "карточки для вк"
   - "визуальные посты вк"
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "AI-генератор контента"
-      href: "/ru/generator-kontenta"
+      href: "/ru/vk-post-generator"
       description: "Подготовьте структуру и визуальные материалы для соцсетей."
   guides:
     - title: "Как написать пост в ВК с помощью ИИ"
@@ -69,6 +69,7 @@ finalCta:
   title: "Соберите визуальный пост для ВК"
   text: "GoToFlow помогает превратить идею, текст или источник в структурированные карточки с визуальной подачей и понятным CTA."
   buttonText: "Создать контент"
+  primaryHref: "/ru/vk-post-generator"
   microcopy: "Проверьте формат перед загрузкой"
   secondaryText: "Прочитать про посты ВК →"
   secondaryHref: "/ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii"
@@ -109,7 +110,7 @@ type: examples
 :::mockup{slot="style-choice"}
 :::
 
-## Как использовать [GoToFlow](/ru/generator-kontenta)
+## Как использовать [GoToFlow](/ru/vk-post-generator)
 
 В GoToFlow можно начать с темы, текста, ссылки, видео, PDF, изображения или скриншота. Система помогает выделить смысл, собрать структуру слайдов, написать короткие формулировки, подобрать визуальную подачу и добавить CTA.
 

@@ -16,7 +16,7 @@ clusterId: "ru:instagram-content"
 cluster: "Instagram Content"
 articleRole: "supporting"
 hubSlug: "neyroset-dlya-postov"
-relatedProductRoute: "/ru/generator-kontenta"
+relatedProductRoute: "/ru/generator-postov-instagram"
 articleType: "how_to"
 category: "Instagram Content"
 productFit: "PARTIAL"
@@ -55,7 +55,7 @@ faq:
 explore:
   tools:
     - title: "Генератор контента"
-      href: "/ru/generator-kontenta"
+      href: "/ru/generator-postov-instagram"
       description: "Соберите структуру поста или карусели из своей темы и исходных материалов."
   guides:
     - title: "Нейросеть для постов"
@@ -68,7 +68,7 @@ finalCta:
   title: "Соберите пост-знакомство вокруг своей реальной истории"
   text: "Передайте GoToFlow тему и факты о себе, выберите подходящую структуру и отредактируйте результат под свой голос."
   buttonText: "Создать материал"
-  href: "/ru/generator-kontenta"
+  primaryHref: "/ru/generator-postov-instagram"
   microcopy: "Контроль фактов и финальной формулировки остается у вас"
   secondaryText: "Посмотреть руководство по постам →"
   secondaryHref: "/ru/blog/neyroset-dlya-postov"
@@ -157,7 +157,7 @@ type: workflow
 
 Обычный текст подходит для короткой истории с одним поворотом. Карусель полезна, если знакомство состоит из нескольких самостоятельных смыслов: проблема, путь, принципы, кейс, темы блога и приглашение к диалогу. Один слайд тогда отвечает за одну мысль.
 
-В [генераторе контента GoToFlow](/ru/generator-kontenta) можно передать тему, заметки или ссылку на исходный материал и собрать структуру поста либо последовательность слайдов. Перед публикацией проверьте биографические факты, уберите чужие формулировки и убедитесь, что призыв соответствует цели профиля.
+В [генераторе контента GoToFlow](/ru/generator-postov-instagram) можно передать тему, заметки или ссылку на исходный материал и собрать структуру поста либо последовательность слайдов. Перед публикацией проверьте биографические факты, уберите чужие формулировки и убедитесь, что призыв соответствует цели профиля.
 
 ## Ошибки, из-за которых знакомство выглядит шаблонным
 

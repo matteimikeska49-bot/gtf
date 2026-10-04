@@ -20,7 +20,7 @@ intentId: "ru:vk-group-post-ideas"
 clusterId: "ru:vk-content"
 articleRole: "supporting"
 hubSlug: "neyroset-dlya-postov"
-relatedProductRoute: "/ru/generator-kontenta"
+relatedProductRoute: "/ru/vk-post-generator"
 productFit: "YES"
 productFitExplanation: "GoToFlow помогает превратить идею поста в контент-пакет: карточки, структуру и сопроводительный текст."
 requiredVisualBlock: "none"
@@ -57,7 +57,7 @@ faq:
 explore:
   tools:
     - title: "Генератор контента"
-      href: "/ru/generator-kontenta"
+      href: "/ru/vk-post-generator"
       description: "Превратите тему в карточки и текст поста."
   guides:
     - title: "Нейросеть для постов"
@@ -70,7 +70,7 @@ finalCta:
   title: "Превратите тему в материал для публикации"
   text: "GoToFlow помогает собрать из идеи структуру, карточки и сопроводительный текст для соцсетей."
   buttonText: "Создать пост по теме"
-  href: "/ru/generator-kontenta"
+  primaryHref: "/ru/vk-post-generator"
   microcopy: "Подходит для идей, текста и исходных материалов"
   secondaryText: "Нейросеть для постов →"
   secondaryHref: "/ru/blog/neyroset-dlya-postov"
@@ -105,7 +105,7 @@ type: examples
 Соберите инструменты, книги, сервисы, идеи, примеры или материалы, которые помогают вашей аудитории быстрее разобраться в теме.
 :::
 
-Если идея уже есть, но непонятно, как развернуть ее в публикацию, используйте [генератор контента](/ru/generator-kontenta): задайте тему, исходный текст или ссылку, а затем адаптируйте структуру под голос сообщества.
+Если идея уже есть, но непонятно, как развернуть ее в публикацию, используйте [генератор контента](/ru/vk-post-generator): задайте тему, исходный текст или ссылку, а затем адаптируйте структуру под голос сообщества.
 
 ## Вовлекающие форматы для сообщества
 

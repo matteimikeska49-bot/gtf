@@ -118,7 +118,7 @@
     "targetSlug": "how-to-make-an-instagram-carousel-with-ai",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "notes": "Currently in draft.",
     "requiredMockupSlots": [
       "topic-input",
@@ -133,7 +133,8 @@
     "doNotCover": "Generic fluff, unrelated tools.",
     "intentBoundaries": "Keep strictly to the primary keyword intent.",
     "productAngle": "Educational how-to that naturally leads to our AI generator.",
-    "contentQualityNotes": ""
+    "contentQualityNotes": "",
+    "relatedProductRoute": "/instagram-carousel-maker"
   },
   {
     "cluster": "Instagram carousel",
@@ -389,7 +390,7 @@
     "targetSlug": "how-to-make-linkedin-carousel-with-ai",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "notes": "Need to ensure it doesn't cannibalize linkedin-carousel-generator.",
     "requiredMockupSlots": [
       "topic-input",
@@ -422,7 +423,7 @@
     "targetSlug": "kak-sdelat-karusel-linkedin-s-ai",
     "canonicalRisk": "low",
     "cannibalizationRisk": "medium",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "notes": "Need to ensure it doesn't cannibalize generator-karuseley-linkedin-ai.",
     "requiredMockupSlots": [
       "topic-input",
@@ -454,7 +455,7 @@
     "targetSlug": "linkedin-carousel-prompts",
     "canonicalRisk": "low",
     "cannibalizationRisk": "low",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "notes": "In draft.",
     "requiredMockupSlots": [
       "topic-input",
@@ -777,7 +778,7 @@
     "language": "en",
     "decision": "approve",
     "targetWave": "wave-2",
-    "generationStatus": "draft_created",
+    "generationStatus": "published",
     "demandConfidence": "high",
     "demandSource": "serp_ai_synthesis",
     "exactVolumeKnown": false,
@@ -798,7 +799,8 @@
     "serpEvidenceSummary": "Listicles, templates, and strategic tear-downs.",
     "mockupPurpose": "Show how easily an example can become a generated carousel.",
     "mockupPlacement": "Under the transition section from inspiration to execution.",
-    "decisionReason": "Clear intent gap in our examples cluster with strong product fit."
+    "decisionReason": "Clear intent gap in our examples cluster with strong product fit.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "primery-karuseley-linkedin",
@@ -807,7 +809,7 @@
     "language": "ru",
     "decision": "approve",
     "targetWave": "wave-2",
-    "generationStatus": "draft_created",
+    "generationStatus": "published",
     "demandConfidence": "medium",
     "demandSource": "serp_ai_synthesis",
     "exactVolumeKnown": false,
@@ -828,7 +830,8 @@
     "serpEvidenceSummary": "Listicles and how-to guides.",
     "mockupPurpose": "Demonstrate the tool creating a professional slider.",
     "mockupPlacement": "After the examples.",
-    "decisionReason": "Matches EN gap and maintains RU parity."
+    "decisionReason": "Matches EN gap and maintains RU parity.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "youtube-to-linkedin-carousel-ai",
@@ -837,7 +840,7 @@
     "language": "en",
     "decision": "approve",
     "targetWave": "wave-2",
-    "generationStatus": "draft_created",
+    "generationStatus": "published",
     "demandConfidence": "medium-high",
     "demandSource": "serp_ai_synthesis",
     "exactVolumeKnown": false,
@@ -860,7 +863,8 @@
     "serpEvidenceSummary": "Workflow guides and tool reviews.",
     "mockupPurpose": "Visually prove the tool accepts YouTube URLs.",
     "mockupPlacement": "Throughout the step-by-step guide.",
-    "decisionReason": "Highly actionable BOFU topic that directly showcases a core product feature."
+    "decisionReason": "Highly actionable BOFU topic that directly showcases a core product feature.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "kak-peredelat-youtube-v-karusel-linkedin",
@@ -869,7 +873,7 @@
     "language": "ru",
     "decision": "approve",
     "targetWave": "wave-2",
-    "generationStatus": "draft_created",
+    "generationStatus": "published",
     "demandConfidence": "medium",
     "demandSource": "serp_ai_synthesis",
     "exactVolumeKnown": false,
@@ -891,7 +895,8 @@
     "serpEvidenceSummary": "Workflow guides.",
     "mockupPurpose": "Demonstrate the RU interface processing a YouTube URL.",
     "mockupPlacement": "Throughout the step-by-step guide.",
-    "decisionReason": "Maintains RU parity for the YouTube-to-Carousel workflow."
+    "decisionReason": "Maintains RU parity for the YouTube-to-Carousel workflow.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "linkedin-carousel-hooks",
@@ -900,7 +905,7 @@
     "language": "en",
     "decision": "approve",
     "targetWave": "wave-2",
-    "generationStatus": "draft_created",
+    "generationStatus": "published",
     "demandConfidence": "high",
     "demandSource": "serp_ai_synthesis",
     "exactVolumeKnown": false,
@@ -921,7 +926,8 @@
     "serpEvidenceSummary": "Listicles of hooks, how-to guides.",
     "mockupPurpose": "Show that the AI tool nails the hook automatically.",
     "mockupPlacement": "In the section explaining how to automate hook creation.",
-    "decisionReason": "Fills high-intent query related to core capability."
+    "decisionReason": "Fills high-intent query related to core capability.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "best-ai-instagram-post-generators",
@@ -969,7 +975,7 @@
     "language": "en",
     "decision": "approve",
     "targetWave": "wave-3",
-    "generationStatus": "hold",
+    "generationStatus": "published",
     "demandConfidence": "medium",
     "productRealityStatus": "supported",
     "cannibalizationRisk": "low",
@@ -980,7 +986,8 @@
     "articleType": "listicle",
     "funnelStage": "TOFU/MOFU",
     "relatedProductRoute": "/linkedin-carousel-maker",
-    "decisionReason": "Fills missing examples intent safely."
+    "decisionReason": "Fills missing examples intent safely.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "text-to-carousel-ai",
@@ -989,7 +996,7 @@
     "language": "en",
     "decision": "approve",
     "targetWave": "wave-3",
-    "generationStatus": "hold",
+    "generationStatus": "published",
     "demandConfidence": "high",
     "productRealityStatus": "supported",
     "cannibalizationRisk": "low",
@@ -1003,7 +1010,8 @@
     "articleType": "how-to",
     "funnelStage": "MOFU/BOFU",
     "relatedProductRoute": "/ai-carousel-maker",
-    "decisionReason": "Core use case, no direct cannibalization."
+    "decisionReason": "Core use case, no direct cannibalization.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "instagram-carousel-hooks",
@@ -1012,7 +1020,7 @@
     "language": "en",
     "decision": "approve",
     "targetWave": "wave-3",
-    "generationStatus": "hold",
+    "generationStatus": "published",
     "demandConfidence": "high",
     "productRealityStatus": "supported",
     "cannibalizationRisk": "low",
@@ -1022,8 +1030,9 @@
     "searchIntent": "informational",
     "articleType": "listicle",
     "funnelStage": "TOFU/MOFU",
-    "relatedProductRoute": "/ai-carousel-maker",
-    "decisionReason": "Strong demand, naturally complements linkedin hooks article."
+    "relatedProductRoute": "/instagram-carousel-maker",
+    "decisionReason": "Strong demand, naturally complements linkedin hooks article.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "best-carousel-cta-examples",
@@ -1032,7 +1041,7 @@
     "language": "en",
     "decision": "approve",
     "targetWave": "wave-3",
-    "generationStatus": "hold",
+    "generationStatus": "published",
     "demandConfidence": "medium",
     "productRealityStatus": "supported",
     "cannibalizationRisk": "low",
@@ -1043,7 +1052,8 @@
     "articleType": "listicle",
     "funnelStage": "TOFU/MOFU",
     "relatedProductRoute": "/ai-carousel-maker",
-    "decisionReason": "Focuses entirely on CTA slide, distinct from general design."
+    "decisionReason": "Focuses entirely on CTA slide, distinct from general design.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "linkedin-content-strategy-for-founders",
@@ -1052,7 +1062,7 @@
     "language": "en",
     "decision": "approve",
     "targetWave": "wave-3",
-    "generationStatus": "hold",
+    "generationStatus": "published",
     "demandConfidence": "high",
     "productRealityStatus": "supported",
     "cannibalizationRisk": "low",
@@ -1063,7 +1073,8 @@
     "articleType": "guide",
     "funnelStage": "TOFU",
     "relatedProductRoute": "/linkedin-carousel-maker",
-    "decisionReason": "Targets founder persona specifically."
+    "decisionReason": "Targets founder persona specifically.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "b2b-case-study-linkedin-carousel",
@@ -1072,7 +1083,7 @@
     "language": "en",
     "decision": "approve",
     "targetWave": "wave-3",
-    "generationStatus": "hold",
+    "generationStatus": "published",
     "demandConfidence": "medium",
     "productRealityStatus": "supported",
     "cannibalizationRisk": "low",
@@ -1083,7 +1094,8 @@
     "articleType": "how-to",
     "funnelStage": "MOFU",
     "relatedProductRoute": "/linkedin-carousel-maker",
-    "decisionReason": "Specific repurposing intent."
+    "decisionReason": "Specific repurposing intent.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "content-calendar-to-carousel",
@@ -1092,7 +1104,7 @@
     "language": "en",
     "decision": "approve",
     "targetWave": "wave-3",
-    "generationStatus": "hold",
+    "generationStatus": "published",
     "demandConfidence": "medium",
     "productRealityStatus": "supported",
     "cannibalizationRisk": "low",
@@ -1103,7 +1115,8 @@
     "articleType": "how-to",
     "funnelStage": "TOFU/MOFU",
     "relatedProductRoute": "/ai-content-generator",
-    "decisionReason": "Workflow level content."
+    "decisionReason": "Workflow level content.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "huki-dlya-karuseli-instagram",
@@ -1112,7 +1125,7 @@
     "language": "ru",
     "decision": "approve",
     "targetWave": "wave-3",
-    "generationStatus": "hold",
+    "generationStatus": "published",
     "demandConfidence": "medium",
     "productRealityStatus": "supported",
     "cannibalizationRisk": "low",
@@ -1123,7 +1136,8 @@
     "articleType": "listicle",
     "funnelStage": "TOFU",
     "relatedProductRoute": "/ru/ii-generator-karuseley",
-    "decisionReason": "RU equivalent of safe hook article."
+    "decisionReason": "RU equivalent of safe hook article.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "tekst-v-karusel-neyroset",
@@ -1132,7 +1146,7 @@
     "language": "ru",
     "decision": "approve",
     "targetWave": "wave-3",
-    "generationStatus": "hold",
+    "generationStatus": "published",
     "demandConfidence": "high",
     "productRealityStatus": "supported",
     "cannibalizationRisk": "low",
@@ -1145,7 +1159,8 @@
     "articleType": "how-to",
     "funnelStage": "MOFU/BOFU",
     "relatedProductRoute": "/ru/ii-generator-karuseley",
-    "decisionReason": "Core RU use case, safe from existing RU generators which focus on general generation."
+    "decisionReason": "Core RU use case, safe from existing RU generators which focus on general generation.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "b2b-keysy-v-linkedin-karusel",
@@ -1154,7 +1169,7 @@
     "language": "ru",
     "decision": "approve",
     "targetWave": "wave-3",
-    "generationStatus": "hold",
+    "generationStatus": "published",
     "demandConfidence": "medium",
     "productRealityStatus": "supported",
     "cannibalizationRisk": "low",
@@ -1165,7 +1180,8 @@
     "articleType": "how-to",
     "funnelStage": "MOFU",
     "relatedProductRoute": "/ru/generator-karuselej-linkedin",
-    "decisionReason": "Specific B2B intent RU."
+    "decisionReason": "Specific B2B intent RU.",
+    "publishStatus": "published"
   },
   {
     "targetSlug": "ii-tekst-dlya-posta",
@@ -1222,7 +1238,7 @@
     "searchIntent": "find current Instagram post and carousel dimensions",
     "articleType": "workflow_article",
     "funnelStage": "TOFU/MOFU",
-    "relatedProductRoute": "/ai-instagram-post-generator",
+    "relatedProductRoute": "/instagram-carousel-maker",
     "demandEvidenceSummary": "No exact primary-keyword volume; parent query \"instagram post size\" appears in Google Trends as breakout.",
     "serpEvidenceSummary": "Needs fresh SERP/manual demand refresh before using as a source pattern for a new batch.",
     "mockupPurpose": "Published article hygiene backfill; existing article already contains visual/mockup references.",
@@ -1300,9 +1316,9 @@
     "title": "Размер поста в ВК: форматы фото и картинок",
     "primaryKeyword": "размер поста в вк",
     "language": "ru",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "decision": "approved",
-    "generationStatus": "draft_preview",
+    "generationStatus": "published",
     "demandConfidence": "low",
     "demandSource": "ru-vk-instagram-batch-1",
     "exactVolumeKnown": false,
@@ -1316,7 +1332,7 @@
     "searchIntent": "VK post image sizes and formats",
     "articleType": "technical_guide",
     "funnelStage": "TOFU",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/vk-post-generator",
     "demandEvidenceSummary": "Gemini package approved by Prompt 1 audit; exact demand data needs future refresh.",
     "serpEvidenceSummary": "No fresh SERP check in implementation prompt; draft mode only.",
     "mockupPurpose": "No asset required for draft mode.",
@@ -1330,9 +1346,9 @@
     "title": "Темы постов для группы ВК: идеи для сообщества",
     "primaryKeyword": "темы постов для вк",
     "language": "ru",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "decision": "approved",
-    "generationStatus": "draft_preview",
+    "generationStatus": "published",
     "demandConfidence": "low",
     "demandSource": "ru-vk-instagram-batch-1",
     "exactVolumeKnown": false,
@@ -1346,7 +1362,7 @@
     "searchIntent": "VK community post ideas",
     "articleType": "ideas_article",
     "funnelStage": "TOFU",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/vk-post-generator",
     "demandEvidenceSummary": "Gemini package approved by Prompt 1 audit; exact demand data needs future refresh.",
     "serpEvidenceSummary": "No fresh SERP check in implementation prompt; draft mode only.",
     "mockupPurpose": "No asset required for draft mode.",
@@ -1360,9 +1376,9 @@
     "title": "Красивые посты для ВК: оформление текста и визуала",
     "primaryKeyword": "красивые посты для вк",
     "language": "ru",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "decision": "approved",
-    "generationStatus": "draft_preview",
+    "generationStatus": "published",
     "demandConfidence": "low",
     "demandSource": "ru-vk-instagram-batch-1",
     "exactVolumeKnown": false,
@@ -1376,7 +1392,7 @@
     "searchIntent": "VK post design and readability",
     "articleType": "guide",
     "funnelStage": "MOFU",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/vk-post-generator",
     "demandEvidenceSummary": "Gemini package approved by Prompt 1 audit; exact demand data needs future refresh.",
     "serpEvidenceSummary": "No fresh SERP check in implementation prompt; draft mode only.",
     "mockupPurpose": "No asset required for draft mode.",
@@ -1390,9 +1406,9 @@
     "title": "Как сделать пост в Instagram с помощью ИИ: текст и визуал",
     "primaryKeyword": "как сделать пост в инстаграм",
     "language": "ru",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "decision": "approved",
-    "generationStatus": "draft_preview",
+    "generationStatus": "published",
     "demandConfidence": "low",
     "demandSource": "ru-vk-instagram-batch-1",
     "exactVolumeKnown": false,
@@ -1406,7 +1422,7 @@
     "searchIntent": "create a complete Instagram post package with AI",
     "articleType": "guide",
     "funnelStage": "MOFU",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
     "demandEvidenceSummary": "Gemini package approved by Prompt 1 audit; exact demand data needs future refresh.",
     "serpEvidenceSummary": "No fresh SERP check in implementation prompt; draft mode only.",
     "mockupPurpose": "No asset required for draft mode.",
@@ -1420,9 +1436,9 @@
     "title": "Размер поста в Instagram: форматы и разрешения фото",
     "primaryKeyword": "размер поста в инстаграм",
     "language": "ru",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "decision": "approved",
-    "generationStatus": "draft_preview",
+    "generationStatus": "published",
     "demandConfidence": "low",
     "demandSource": "ru-vk-instagram-batch-1",
     "exactVolumeKnown": false,
@@ -1436,7 +1452,7 @@
     "searchIntent": "Instagram feed post image sizes and formats",
     "articleType": "technical_guide",
     "funnelStage": "TOFU",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
     "demandEvidenceSummary": "Gemini package approved by Prompt 1 audit; exact demand data needs future refresh.",
     "serpEvidenceSummary": "No fresh SERP check in implementation prompt; draft mode only.",
     "mockupPurpose": "No asset required for draft mode.",
@@ -1450,9 +1466,9 @@
     "title": "Какие посты делать в Instagram: идеи и форматы",
     "primaryKeyword": "какие посты в инстаграм",
     "language": "ru",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "decision": "approved",
-    "generationStatus": "draft_preview",
+    "generationStatus": "published",
     "demandConfidence": "low",
     "demandSource": "ru-vk-instagram-batch-1",
     "exactVolumeKnown": false,
@@ -1466,7 +1482,7 @@
     "searchIntent": "broad Instagram post ideas and formats",
     "articleType": "ideas_article",
     "funnelStage": "TOFU",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
     "demandEvidenceSummary": "Gemini package approved by Prompt 1 audit; exact demand data needs future refresh.",
     "serpEvidenceSummary": "No fresh SERP check in implementation prompt; draft mode only.",
     "mockupPurpose": "No asset required for draft mode.",
@@ -1480,9 +1496,9 @@
     "title": "Фото для поста в Instagram: подготовка визуала и слайдов",
     "primaryKeyword": "фото пост инстаграм",
     "language": "ru",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "decision": "approved",
-    "generationStatus": "draft_preview",
+    "generationStatus": "published",
     "demandConfidence": "low",
     "demandSource": "ru-vk-instagram-batch-1",
     "exactVolumeKnown": false,
@@ -1496,7 +1512,7 @@
     "searchIntent": "Instagram post visual options and preparation",
     "articleType": "guide",
     "funnelStage": "MOFU",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
     "demandEvidenceSummary": "Gemini package approved by Prompt 1 audit; exact demand data needs future refresh.",
     "serpEvidenceSummary": "No fresh SERP check in implementation prompt; draft mode only.",
     "mockupPurpose": "No asset required for draft mode.",
@@ -1510,9 +1526,9 @@
     "title": "Текст и фото для поста в Instagram: как связать подпись и визуал",
     "primaryKeyword": "текст и фото для поста в инстаграм",
     "language": "ru",
-    "publishStatus": "draft",
+    "publishStatus": "published",
     "decision": "approved",
-    "generationStatus": "draft_preview",
+    "generationStatus": "published",
     "demandConfidence": "low",
     "demandSource": "ru-vk-instagram-batch-1",
     "exactVolumeKnown": false,
@@ -1526,7 +1542,7 @@
     "searchIntent": "connect Instagram caption, visual, and CTA",
     "articleType": "guide",
     "funnelStage": "MOFU",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
     "demandEvidenceSummary": "Gemini package approved by Prompt 1 audit; exact demand data needs future refresh.",
     "serpEvidenceSummary": "No fresh SERP check in implementation prompt; draft mode only.",
     "mockupPurpose": "No asset required for draft mode.",
@@ -1622,7 +1638,7 @@
     "searchIntent": "create VK visual cards from text with AI",
     "articleType": "how_to",
     "funnelStage": "MOFU",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/vk-post-generator",
     "demandEvidenceSummary": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; exact demand data still queued for refresh.",
     "serpEvidenceSummary": "Published after internal QA and release checks; live SERP refresh remains post-publish work.",
     "mockupPurpose": "Visual block and existing mockup slots planned in markdown body.",
@@ -1942,7 +1958,7 @@
     "searchIntent": "write and structure the first VK community post with AI",
     "articleType": "how_to",
     "funnelStage": "TOFU",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/vk-post-generator",
     "demandEvidenceSummary": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; exact demand data still queued for refresh.",
     "serpEvidenceSummary": "Published after internal QA and release checks; live SERP refresh remains post-publish work.",
     "mockupPurpose": "Visual block and existing mockup slots planned in markdown body.",
@@ -1975,7 +1991,7 @@
     "clusterId": "ru:instagram-content",
     "cluster": "Instagram content",
     "articleRole": "supporting",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/generator-postov-instagram",
     "productCapabilityIds": [
       "finishedOutputPositioning"
     ],
@@ -2126,7 +2142,7 @@
     "clusterId": "ru:vk-content",
     "cluster": "VK content",
     "articleRole": "supporting",
-    "relatedProductRoute": "/ru/generator-kontenta",
+    "relatedProductRoute": "/ru/vk-post-generator",
     "productCapabilityIds": [
       "finishedOutputPositioning"
     ],

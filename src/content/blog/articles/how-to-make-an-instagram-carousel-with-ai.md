@@ -13,7 +13,7 @@ intentId: "en:how-to-make-instagram-carousel"
 clusterId: "en:instagram-carousel"
 articleRole: "hub"
 hubSlug: "how-to-make-an-instagram-carousel-with-ai"
-relatedProductRoute: "/ai-carousel-maker"
+relatedProductRoute: "/instagram-carousel-maker"
 mockupStatus: "present"
 searchIntent: "user wants a practical step-by-step workflow for creating Instagram carousel posts with AI."
 cluster: "AI content workflow"
@@ -70,7 +70,7 @@ faq:
 explore:
   tools:
     - title: "AI Carousel Maker"
-      href: "/ai-carousel-maker"
+      href: "/instagram-carousel-maker"
       description: "Turn your raw ideas into fully designed carousels in seconds."
   guides:
     - title: "Instagram Carousel Prompts"
@@ -80,6 +80,7 @@ finalCta:
   title: "Stop struggling with manual design"
   text: "Create professional, structured Instagram carousels in seconds. No design skills required."
   buttonText: "Create a Carousel Free"
+  primaryHref: "/instagram-carousel-maker"
   secondaryText: "Explore Instagram carousel hooks →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 
@@ -96,7 +97,7 @@ In this guide, we'll walk you through the most efficient workflow to make an Ins
 ## The Old Way vs The AI Way
 
 
-[Try the AI carousel maker](/ai-carousel-maker)
+[Try the AI carousel maker](/instagram-carousel-maker)
 
 Before dedicated AI tools existed, creators had to use a fragmented workflow.
 

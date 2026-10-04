@@ -1652,6 +1652,7 @@ export const commercialBatchSpecs = [
     "id": "ru-use-case-foto-v-karusel",
     "sourceFile": "src/content/seoPages/handoffs/content_design_contract_foto_v_karusel.md",
     "path": "/ru/use-cases/foto-v-karusel",
+    "indexationDisposition": "noindex_review",
     "language": "ru",
     "pageType": "useCase",
     "slug": "foto-v-karusel",

@@ -37,7 +37,7 @@
         "role": "supporting",
         "intentId": "en:ai-linkedin-post-generator",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "how-to-post-a-carousel-on-linkedin",
@@ -45,7 +45,7 @@
         "role": "supporting",
         "intentId": "en:how-to-post-a-carousel-on-linkedin",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "ai-linkedin-carousel-strategy-for-b2b-founders",
@@ -53,7 +53,7 @@
         "role": "supporting",
         "intentId": "en:ai-linkedin-carousel-strategy-for-b2b-founders",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "how-to-schedule-linkedin-carousel",
@@ -106,7 +106,7 @@
         "role": "hub",
         "intentId": "en:text-to-carousel",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "content-calendar-to-carousel",
@@ -114,7 +114,7 @@
         "role": "supporting",
         "intentId": "en:content-calendar-to-carousel",
         "priorityTier": "P2",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "ai-carousel-generator",
@@ -140,7 +140,7 @@
         "role": "supporting",
         "intentId": "en:ai-carousel-content-strategy",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "ai-carousel-workflow",
@@ -148,7 +148,7 @@
         "role": "supporting",
         "intentId": "en:ai-carousel-workflow",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "carousel-post-mistakes",
@@ -156,7 +156,7 @@
         "role": "supporting",
         "intentId": "en:carousel-post-mistakes",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "how-to-brainstorm-carousel-topics-with-ai",
@@ -164,7 +164,7 @@
         "role": "supporting",
         "intentId": "en:how-to-brainstorm-carousel-topics-with-ai",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "how-to-repurpose-podcasts-into-ai-carousels",
@@ -172,7 +172,7 @@
         "role": "supporting",
         "intentId": "en:how-to-repurpose-podcasts-into-ai-carousels",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "turn-video-into-carousel-with-ai",
@@ -180,7 +180,7 @@
         "role": "supporting",
         "intentId": "en:turn-video-into-carousel-with-ai",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       }
     ],
     "supportingArticles": [
@@ -213,7 +213,7 @@
     "clusterId": "en:instagram-carousel",
     "clusterName": "EN Instagram Carousel",
     "language": "en",
-    "productRoute": "/ai-carousel-maker",
+    "productRoute": "/instagram-carousel-maker",
     "hubArticle": "how-to-make-an-instagram-carousel-with-ai",
     "hubSlug": "how-to-make-an-instagram-carousel-with-ai",
     "articleRoles": [
@@ -231,7 +231,7 @@
         "role": "supporting",
         "intentId": "en:instagram-carousel-hooks",
         "priorityTier": "P2",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "instagram-post-size-guide",
@@ -257,11 +257,12 @@
       "sameLanguageOnly": true,
       "recommendedLinks": [
         "/blog/how-to-make-an-instagram-carousel-with-ai",
-        "/ai-carousel-maker"
+        "/instagram-carousel-maker"
       ]
     },
     "notes": "Instagram carousel cluster",
-    "lastReviewed": "2026-06-23"
+    "lastReviewed": "2026-06-23",
+    "ownershipValidation": "required"
   },
   {
     "clusterId": "ru:ai-carousel-generator",
@@ -277,13 +278,14 @@
         "role": "hub",
         "intentId": "ru:tekst-v-karusel",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "ii-dlya-karuseley",
         "url": "/ru/blog/ii-dlya-karuseley",
         "role": "support",
-        "canonicalRisk": "low"
+        "canonicalRisk": "low",
+        "status": "published"
       },
       {
         "slug": "kak-napisat-tekst-dlya-karuseli-s-ii",
@@ -324,7 +326,7 @@
         "role": "supporting",
         "intentId": "ru:b2b-linkedin-carousel",
         "priorityTier": "P2",
-        "status": "draft_preview"
+        "status": "published"
       }
     ],
     "supportingArticles": [
@@ -357,7 +359,7 @@
         "role": "hub",
         "intentId": "en:ai-instagram-post-generator",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "instagram-carousel-post",
@@ -365,7 +367,7 @@
         "role": "supporting",
         "intentId": "en:instagram-carousel-post",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       }
     ],
     "supportingArticles": [
@@ -396,13 +398,15 @@
         "slug": "besshovnaya-karusel-v-instagram",
         "url": "/ru/blog/besshovnaya-karusel-v-instagram",
         "role": "guide",
-        "canonicalRisk": "low"
+        "canonicalRisk": "low",
+        "status": "published"
       },
       {
         "slug": "razmer-karuseli-v-instagram",
         "url": "/ru/blog/razmer-karuseli-v-instagram",
         "role": "support",
-        "canonicalRisk": "low"
+        "canonicalRisk": "low",
+        "status": "published"
       },
       {
         "slug": "algoritm-instagram-karuseli",
@@ -498,7 +502,8 @@
         "slug": "karusel-dlya-instagram",
         "url": "/ru/blog/karusel-dlya-instagram",
         "role": "pillar",
-        "canonicalRisk": "low"
+        "canonicalRisk": "low",
+        "status": "published"
       }
     ],
     "supportingArticles": [],
@@ -517,7 +522,8 @@
         "slug": "neyroset-dlya-postov",
         "url": "/ru/blog/neyroset-dlya-postov",
         "role": "hub",
-        "canonicalRisk": "low"
+        "canonicalRisk": "low",
+        "status": "published"
       },
       {
         "slug": "ii-post-dlya-socsetej",
@@ -614,7 +620,7 @@
         "role": "supporting",
         "intentId": "ru:kak-pridumat-temu-dlya-karuseli-s-ii",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "kak-sdelat-karusel-iz-video-s-ii",
@@ -622,7 +628,7 @@
         "role": "supporting",
         "intentId": "ru:kak-sdelat-karusel-iz-video-s-ii",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "kak-uvelichit-sohraneniya-karuseley",
@@ -630,7 +636,7 @@
         "role": "supporting",
         "intentId": "ru:kak-uvelichit-sohraneniya-karuseley",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "karusel-dlya-lichnogo-brenda-s-ii",
@@ -638,7 +644,7 @@
         "role": "supporting",
         "intentId": "ru:karusel-dlya-lichnogo-brenda-s-ii",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "karusel-dlya-otzyvov-s-ii",
@@ -646,7 +652,7 @@
         "role": "supporting",
         "intentId": "ru:karusel-dlya-otzyvov-s-ii",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "karusel-dlya-zapuska-produkta-s-ii",
@@ -654,7 +660,7 @@
         "role": "supporting",
         "intentId": "ru:karusel-dlya-zapuska-produkta-s-ii",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "karuseli-dlya-ekspertov-s-ii",
@@ -662,7 +668,7 @@
         "role": "supporting",
         "intentId": "ru:karuseli-dlya-ekspertov-s-ii",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "karuseli-dlya-onlayn-shkol-s-ii",
@@ -670,7 +676,7 @@
         "role": "supporting",
         "intentId": "ru:karuseli-dlya-onlayn-shkol-s-ii",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "karuseli-dlya-smm-agentstva-s-ii",
@@ -678,7 +684,7 @@
         "role": "supporting",
         "intentId": "ru:karuseli-dlya-smm-agentstva-s-ii",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "psihologiya-karuseley-kak-uderzhat-vnimanie",
@@ -686,7 +692,7 @@
         "role": "supporting",
         "intentId": "ru:psihologiya-karuseley-kak-uderzhat-vnimanie",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "cta-dlya-karuseley-instagram-s-ii",
@@ -694,7 +700,7 @@
         "role": "supporting",
         "intentId": "ru:cta-dlya-karuseley-instagram-s-ii",
         "priorityTier": "P1",
-        "status": "draft_preview"
+        "status": "published"
       },
       {
         "slug": "kakoy-ii-sozdast-post-karusel",
@@ -857,7 +863,7 @@
     "clusterId": "ru:vk-content",
     "clusterName": "RU VK Content",
     "language": "ru",
-    "productRoute": "/ru/generator-kontenta",
+    "productRoute": "/ru/vk-post-generator",
     "hubArticle": "neyroset-dlya-postov",
     "hubSlug": "neyroset-dlya-postov",
     "articleRoles": [
@@ -867,7 +873,7 @@
         "role": "format-guide",
         "intentId": "ru:vk-post-size-format",
         "priorityTier": "P3",
-        "status": "draft_preview",
+        "status": "published",
         "canonicalRisk": "low",
         "notes": "Draft from ru-vk-instagram-batch-1"
       },
@@ -877,7 +883,7 @@
         "role": "supporting",
         "intentId": "ru:vk-group-post-ideas",
         "priorityTier": "P3",
-        "status": "draft_preview",
+        "status": "published",
         "canonicalRisk": "medium",
         "notes": "Draft from ru-vk-instagram-batch-1"
       },
@@ -887,7 +893,7 @@
         "role": "supporting",
         "intentId": "ru:vk-beautiful-posts",
         "priorityTier": "P3",
-        "status": "draft_preview",
+        "status": "published",
         "canonicalRisk": "medium",
         "notes": "Draft from ru-vk-instagram-batch-1"
       },
@@ -934,19 +940,20 @@
       "mustLinkToProductRoute": true,
       "sameLanguageOnly": true,
       "recommendedLinks": [
-        "/ru/generator-kontenta",
         "/ru/blog/neyroset-dlya-postov",
-        "/ru/blog/ii-tekst-dlya-posta"
+        "/ru/blog/ii-tekst-dlya-posta",
+        "/ru/vk-post-generator"
       ]
     },
     "notes": "Draft cluster registration for ru-vk-instagram-batch-1.",
-    "lastReviewed": "2026-07-04"
+    "lastReviewed": "2026-07-04",
+    "ownershipValidation": "required"
   },
   {
     "clusterId": "ru:instagram-content",
     "clusterName": "RU Instagram Content",
     "language": "ru",
-    "productRoute": "/ru/generator-kontenta",
+    "productRoute": "/ru/generator-postov-instagram",
     "hubArticle": "neyroset-dlya-postov",
     "hubSlug": "neyroset-dlya-postov",
     "articleRoles": [
@@ -956,7 +963,7 @@
         "role": "supporting",
         "intentId": "ru:instagram-ai-post",
         "priorityTier": "P3",
-        "status": "draft_preview",
+        "status": "published",
         "canonicalRisk": "medium",
         "notes": "Draft from ru-vk-instagram-batch-1"
       },
@@ -966,7 +973,7 @@
         "role": "format-guide",
         "intentId": "ru:instagram-post-size-format",
         "priorityTier": "P3",
-        "status": "draft_preview",
+        "status": "published",
         "canonicalRisk": "medium",
         "notes": "Draft from ru-vk-instagram-batch-1"
       },
@@ -976,7 +983,7 @@
         "role": "supporting",
         "intentId": "ru:instagram-post-ideas",
         "priorityTier": "P3",
-        "status": "draft_preview",
+        "status": "published",
         "canonicalRisk": "medium",
         "notes": "Draft from ru-vk-instagram-batch-1"
       },
@@ -986,7 +993,7 @@
         "role": "supporting",
         "intentId": "ru:instagram-post-visual",
         "priorityTier": "P3",
-        "status": "draft_preview",
+        "status": "published",
         "canonicalRisk": "low",
         "notes": "Draft from ru-vk-instagram-batch-1"
       },
@@ -996,7 +1003,7 @@
         "role": "supporting",
         "intentId": "ru:instagram-post-text-visual",
         "priorityTier": "P3",
-        "status": "draft_preview",
+        "status": "published",
         "canonicalRisk": "medium",
         "notes": "Draft from ru-vk-instagram-batch-1"
       },
@@ -1023,12 +1030,53 @@
       "mustLinkToProductRoute": true,
       "sameLanguageOnly": true,
       "recommendedLinks": [
-        "/ru/generator-kontenta",
         "/ru/blog/neyroset-dlya-postov",
-        "/ru/blog/ii-tekst-dlya-posta"
+        "/ru/blog/ii-tekst-dlya-posta",
+        "/ru/generator-postov-instagram"
       ]
     },
     "notes": "Draft cluster registration for ru-vk-instagram-batch-1.",
-    "lastReviewed": "2026-07-03"
+    "lastReviewed": "2026-07-03",
+    "ownershipValidation": "required"
+  },
+  {
+    "clusterId": "ru:telegram-content",
+    "clusterName": "RU Telegram Content",
+    "language": "ru",
+    "productRoute": "/ru/telegram-post-generator",
+    "hubArticle": "kak-vesti-telegram-kanal-biznesu",
+    "hubSlug": "kak-vesti-telegram-kanal-biznesu",
+    "articleRoles": [
+      {
+        "slug": "kak-vesti-telegram-kanal-biznesu",
+        "url": "/ru/blog/kak-vesti-telegram-kanal-biznesu",
+        "role": "hub",
+        "priorityTier": "P2",
+        "status": "published"
+      },
+      {
+        "slug": "struktura-prodayuschego-posta-v-telegram",
+        "url": "/ru/blog/struktura-prodayuschego-posta-v-telegram",
+        "role": "supporting",
+        "priorityTier": "P2",
+        "status": "published"
+      }
+    ],
+    "supportingArticles": [
+      "struktura-prodayuschego-posta-v-telegram"
+    ],
+    "missingTopics": [],
+    "internalLinkingRules": {
+      "mustLinkToHub": true,
+      "mustLinkToProductRoute": true,
+      "sameLanguageOnly": true,
+      "recommendedLinks": [
+        "/ru/blog/kak-vesti-telegram-kanal-biznesu",
+        "/ru/telegram-post-generator"
+      ]
+    },
+    "notes": "Telegram articles support the dedicated Telegram product owner.",
+    "lastReviewed": "2026-10-04",
+    "ownershipValidation": "required"
   }
 ]

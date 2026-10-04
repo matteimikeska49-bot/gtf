@@ -20,7 +20,7 @@ intentId: "ru:instagram-ai-post"
 clusterId: "ru:instagram-content"
 articleRole: "supporting"
 hubSlug: "neyroset-dlya-postov"
-relatedProductRoute: "/ru/generator-kontenta"
+relatedProductRoute: "/ru/generator-postov-instagram"
 productFit: "YES"
 productFitExplanation: "GoToFlow помогает превратить тему, ссылку или исходный материал в карусель и текст поста."
 requiredVisualBlock: "none"
@@ -57,7 +57,7 @@ faq:
 explore:
   tools:
     - title: "Генератор контента"
-      href: "/ru/generator-kontenta"
+      href: "/ru/generator-postov-instagram"
       description: "Соберите карточки и текст поста из темы или исходного материала."
   guides:
     - title: "Как сделать карусель для Инстаграм с ИИ"
@@ -67,7 +67,7 @@ finalCta:
   title: "Соберите пост как контент-пакет"
   text: "GoToFlow помогает превратить тему, ссылку или исходный материал в карточки и текст для соцсетей."
   buttonText: "Открыть генератор контента"
-  href: "/ru/generator-kontenta"
+  primaryHref: "/ru/generator-postov-instagram"
   microcopy: "Проверьте факты и тон перед публикацией"
   secondaryText: "Гайд по Instagram-карусели →"
   secondaryHref: "/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii"
@@ -112,7 +112,7 @@ type: workflow
 CTA может быть вопросом, предложением сохранить материал, перейти к инструменту или применить шаг. Не обещайте эффект, который не зависит только от поста.
 :::
 
-В [генераторе контента](/ru/generator-kontenta) можно начать с темы, ссылки, текста или другого исходного материала и получить основу для карточек и подписи. После генерации важно вычитать текст и убрать все, что звучит слишком общо.
+В [генераторе контента](/ru/generator-postov-instagram) можно начать с темы, ссылки, текста или другого исходного материала и получить основу для карточек и подписи. После генерации важно вычитать текст и убрать все, что звучит слишком общо.
 
 ## Пример: информационный пост
 

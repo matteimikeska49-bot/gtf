@@ -1,0 +1,247 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parseFrontmatter } from '../../src/lib/blog/frontmatter.js';
+import {
+  getPublishedSeoPages,
+  getSeoPagesForPrerender,
+} from '../../src/content/seoPages/index.js';
+import {
+  DYNAMIC_ROUTE_PATTERNS,
+  RUNTIME_ONLY_ROUTE_PATHS,
+  STATIC_SEO_ROUTES,
+} from '../../src/seo/projectSeoState.js';
+import { APP_ROUTE_ALIASES } from '../../src/routes/routeAliases.js';
+
+export const PUBLIC_ORIGIN = 'https://gotoflow.io';
+
+export const ROBOTS_BY_LIFECYCLE = Object.freeze({
+  current_indexable: 'index, follow',
+  noindex: 'noindex, nofollow',
+  noindex_review: 'noindex, nofollow',
+  redirect: 'noindex, follow',
+});
+
+const moduleDir = path.dirname(fileURLToPath(import.meta.url));
+export const DEFAULT_PROJECT_ROOT = path.resolve(moduleDir, '../..');
+
+export const normalizeRoutePath = (value) => {
+  if (!value || value === '/') return '/';
+  return `/${String(value).replace(/^\/+/, '').replace(/\/+$/, '')}`;
+};
+
+export const canonicalUrl = (routePath) => (
+  `${PUBLIC_ORIGIN}${normalizeRoutePath(routePath) === '/' ? '/' : normalizeRoutePath(routePath)}`
+);
+
+const routeFromUrl = (value, fallbackPath) => {
+  if (!value) return normalizeRoutePath(fallbackPath);
+  try {
+    const url = new URL(value, PUBLIC_ORIGIN);
+    if (url.origin !== PUBLIC_ORIGIN) return normalizeRoutePath(fallbackPath);
+    return normalizeRoutePath(url.pathname);
+  } catch {
+    return normalizeRoutePath(fallbackPath);
+  }
+};
+
+const normalizedDate = (value) => {
+  if (typeof value !== 'string') return null;
+  const match = value.trim().match(/^(\d{4}-\d{2}-\d{2})(?:T.*)?$/);
+  return match?.[1] || null;
+};
+
+const robotsForLifecycle = (lifecycle) => {
+  const robots = ROBOTS_BY_LIFECYCLE[lifecycle];
+  if (!robots) throw new Error(`Unsupported SEO lifecycle: ${lifecycle}.`);
+  return robots;
+};
+
+const articleLastmod = (article, sourcePath) => {
+  const value = [article.updatedAt, article.lastReviewed, article.publishedAt, article.createdAt]
+    .map(normalizedDate)
+    .find(Boolean);
+  if (!value) throw new Error(`${sourcePath}: public article has no authoritative full update date.`);
+  return value;
+};
+
+const normalizeHreflang = (items = []) => items.map((item) => ({
+  lang: item.lang,
+  path: routeFromUrl(item.href || item.path, item.path),
+}));
+
+const readArticles = (projectRoot) => {
+  const articleDir = path.join(projectRoot, 'src/content/blog/articles');
+  return fs.readdirSync(articleDir)
+    .filter((file) => file.endsWith('.md') && !file.startsWith('_'))
+    .sort()
+    .map((file) => {
+      const sourcePath = `src/content/blog/articles/${file}`;
+      const source = fs.readFileSync(path.join(projectRoot, sourcePath), 'utf8');
+      const { data, body } = parseFrontmatter(source);
+      const slug = data.slug || file.replace(/\.md$/, '');
+      const language = data.language || 'en';
+      const routePath = normalizeRoutePath(`${language === 'ru' ? '/ru' : ''}/blog/${slug}`);
+      const indexable = data.published === true && data.noindex !== true;
+      const lifecycle = indexable ? 'current_indexable' : 'noindex';
+      return {
+        path: routePath,
+        canonicalPath: routeFromUrl(data.canonical, routePath),
+        sourceType: 'article',
+        sourcePath,
+        lifecycle,
+        robots: robotsForLifecycle(lifecycle),
+        indexable,
+        sitemapEligible: indexable,
+        prerender: indexable,
+        lastmod: indexable ? articleLastmod(data, sourcePath) : null,
+        priority: 0.7,
+        changefreq: 'monthly',
+        hreflang: normalizeHreflang(data.hreflang),
+        article: { ...data, body, slug, language },
+      };
+    });
+};
+
+const staticEntries = () => STATIC_SEO_ROUTES.map((entry) => ({
+  ...entry,
+  canonicalPath: entry.path,
+  sourceType: 'static',
+  sourcePath: 'src/seo/projectSeoState.js',
+  lifecycle: 'current_indexable',
+  robots: robotsForLifecycle('current_indexable'),
+  indexable: true,
+  sitemapEligible: true,
+  prerender: true,
+  hreflang: normalizeHreflang(entry.hreflang),
+}));
+
+const seoPageEntries = () => {
+  const prerenderPaths = new Set(getSeoPagesForPrerender().map((page) => page.path));
+  return getPublishedSeoPages().map((page) => {
+    const indexable = page.state === 'indexable_approved' && page.noindex !== true;
+    const lifecycle = indexable ? 'current_indexable' : page.state;
+    return {
+      path: normalizeRoutePath(page.path),
+      canonicalPath: normalizeRoutePath(page.path),
+      sourceType: 'seo_registry',
+      sourcePath: 'src/content/seoPages/index.js',
+      lifecycle,
+      robots: robotsForLifecycle(lifecycle),
+      indexable,
+      sitemapEligible: indexable && page.sitemapEligible === true,
+      prerender: prerenderPaths.has(page.path),
+      lastmod: indexable ? normalizedDate(page.lastUpdated) : null,
+      priority: page.priority || 0.6,
+      changefreq: 'monthly',
+      hreflang: normalizeHreflang(page.hreflang),
+      seoPage: page,
+    };
+  });
+};
+
+const redirectEntries = () => Object.entries(APP_ROUTE_ALIASES).map(([source, target]) => ({
+  path: normalizeRoutePath(source),
+  canonicalPath: normalizeRoutePath(target),
+  redirectTarget: normalizeRoutePath(target),
+  sourceType: 'redirect',
+  sourcePath: 'src/routes/routeAliases.js',
+  lifecycle: 'redirect',
+  robots: robotsForLifecycle('redirect'),
+  indexable: false,
+  sitemapEligible: false,
+  prerender: true,
+  lastmod: null,
+  priority: null,
+  changefreq: null,
+  hreflang: [],
+}));
+
+const assertUniqueEntries = (entries) => {
+  const byPath = new Map();
+  for (const entry of entries) {
+    const prior = byPath.get(entry.path);
+    if (prior) {
+      throw new Error(`${entry.path}: duplicate SEO state owners ${prior.sourceType} and ${entry.sourceType}.`);
+    }
+    byPath.set(entry.path, entry);
+  }
+};
+
+const assertLifecycleContracts = (entries) => {
+  for (const entry of entries) {
+    const expectedRobots = robotsForLifecycle(entry.lifecycle);
+    if (entry.robots !== expectedRobots) {
+      throw new Error(`${entry.path}: lifecycle ${entry.lifecycle} must resolve robots=${expectedRobots}.`);
+    }
+
+    if (entry.lifecycle === 'current_indexable') {
+      if (!entry.indexable) throw new Error(`${entry.path}: current_indexable route must be indexable.`);
+      if (!entry.sitemapEligible) throw new Error(`${entry.path}: current_indexable route must be sitemap eligible.`);
+      continue;
+    }
+
+    if (entry.indexable || entry.sitemapEligible) {
+      throw new Error(`${entry.path}: ${entry.lifecycle} route cannot be indexable or sitemap eligible.`);
+    }
+  }
+};
+
+export function resolveProjectSeoState(projectRoot = DEFAULT_PROJECT_ROOT) {
+  const entries = [
+    ...staticEntries(),
+    ...seoPageEntries(),
+    ...readArticles(projectRoot),
+    ...redirectEntries(),
+  ].sort((left, right) => left.path.localeCompare(right.path));
+  assertUniqueEntries(entries);
+  assertLifecycleContracts(entries);
+
+  const byPath = new Map(entries.map((entry) => [entry.path, entry]));
+  return {
+    entries,
+    byPath,
+    indexableEntries: entries.filter((entry) => entry.indexable),
+    sitemapEntries: entries.filter((entry) => entry.sitemapEligible),
+    prerenderEntries: entries.filter((entry) => entry.prerender),
+    redirectEntries: entries.filter((entry) => entry.lifecycle === 'redirect'),
+    noindexEntries: entries.filter((entry) => entry.lifecycle !== 'current_indexable' && entry.lifecycle !== 'redirect'),
+    runtimeOnlyPaths: [...RUNTIME_ONLY_ROUTE_PATHS],
+    dynamicRoutePatterns: [...DYNAMIC_ROUTE_PATTERNS],
+  };
+}
+
+const xmlEscape = (value) => String(value)
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;')
+  .replaceAll("'", '&apos;');
+
+export function renderSitemap(state) {
+  const urls = state.sitemapEntries.map((entry) => {
+    if (!entry.lastmod) throw new Error(`${entry.path}: sitemap entry has no authoritative lastmod.`);
+    const alternateLines = entry.hreflang.map((alternate) => (
+      `    <xhtml:link rel="alternate" hreflang="${xmlEscape(alternate.lang)}" href="${xmlEscape(canonicalUrl(alternate.path))}" />`
+    ));
+    return [
+      '  <url>',
+      `    <loc>${xmlEscape(canonicalUrl(entry.path))}</loc>`,
+      `    <lastmod>${xmlEscape(entry.lastmod)}</lastmod>`,
+      `    <changefreq>${xmlEscape(entry.changefreq)}</changefreq>`,
+      `    <priority>${xmlEscape(entry.priority)}</priority>`,
+      ...alternateLines,
+      '  </url>',
+    ].join('\n');
+  });
+
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+    '        xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+    '',
+    ...urls.flatMap((url) => [url, '']),
+    '</urlset>',
+    '',
+  ].join('\n');
+}

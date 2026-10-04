@@ -20,7 +20,7 @@ intentId: "ru:instagram-post-text-visual"
 clusterId: "ru:instagram-content"
 articleRole: "supporting"
 hubSlug: "neyroset-dlya-postov"
-relatedProductRoute: "/ru/generator-kontenta"
+relatedProductRoute: "/ru/generator-postov-instagram"
 productFit: "YES"
 productFitExplanation: "GoToFlow помогает собрать единый контент-пакет: карточки и сопроводительный текст."
 requiredVisualBlock: "none"
@@ -57,7 +57,7 @@ faq:
 explore:
   tools:
     - title: "Генератор контента"
-      href: "/ru/generator-kontenta"
+      href: "/ru/generator-postov-instagram"
       description: "Соберите карточки и подпись как единый материал."
   guides:
     - title: "ИИ текст для поста"
@@ -70,7 +70,7 @@ finalCta:
   title: "Соберите пост как единую историю"
   text: "GoToFlow помогает превратить тему, ссылку или исходный материал в карточки и сопроводительный текст."
   buttonText: "Создать пост"
-  href: "/ru/generator-kontenta"
+  primaryHref: "/ru/generator-postov-instagram"
   microcopy: "Редактируйте итог под свой тон"
   secondaryText: "ИИ текст для поста →"
   secondaryHref: "/ru/blog/ii-tekst-dlya-posta"
@@ -106,7 +106,7 @@ type: workflow
 Завершите вопросом, предложением применить шаг, перейти к материалу или сохранить структуру. Не обещайте эффект, который зависит от множества факторов.
 :::
 
-В [генераторе контента](/ru/generator-kontenta) можно начать с темы, готового текста или ссылки и собрать основу карточек вместе с подписью. После этого проверьте, что слайды и текст не дублируют друг друга.
+В [генераторе контента](/ru/generator-postov-instagram) можно начать с темы, готового текста или ссылки и собрать основу карточек вместе с подписью. После этого проверьте, что слайды и текст не дублируют друг друга.
 
 ## Пример связки
 

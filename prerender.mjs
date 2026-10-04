@@ -15,10 +15,8 @@ import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import puppeteer from 'puppeteer';
-import { readdir, readFile } from 'fs/promises';
 import http from 'http';
-import { getSeoPagesForPrerender, getSeoPagesForSitemap } from './src/content/seoPages/index.js';
-import { getRouteAliasTarget, getRouteCanonicalPath } from './src/routes/routeAliases.js';
+import { canonicalUrl, renderSitemap, resolveProjectSeoState } from './scripts/lib/project-seo-state.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = process.env.PRERENDER_DIST_DIR
@@ -42,9 +40,11 @@ const canonicalUrlForPath = (routePath) => {
   return `${PUBLIC_ORIGIN}${normalized === '/' ? '/' : normalized}`;
 };
 
-const classifyRoute = (route, seoPageByPath) => {
+const classifyRoute = (route, stateByPath) => {
   const normalizedRoute = normalizeRoutePath(route);
-  const seoPage = seoPageByPath.get(normalizedRoute);
+  const entry = stateByPath.get(normalizedRoute);
+  if (!entry) throw new Error(`${normalizedRoute}: missing resolved project SEO state.`);
+  const seoPage = entry.seoPage;
 
   if (seoPage) {
     return {
@@ -54,46 +54,30 @@ const classifyRoute = (route, seoPageByPath) => {
       expectedCanonical: canonicalUrlForPath(seoPage.path),
       expectedTitle: seoPage.title,
       expectedH1: seoPage.h1,
-      expectedRobots: seoPage.noindex === true ? 'noindex, nofollow' : 'index, follow',
+      expectedRobots: entry.robots,
       page: seoPage,
+      entry,
     };
   }
 
-  const aliasTarget = getRouteAliasTarget(normalizedRoute);
-  if (aliasTarget) {
+  if (entry.lifecycle === 'redirect') {
     return {
       type: 'alias',
       route: normalizedRoute,
-      expectedPath: normalizeRoutePath(aliasTarget),
-      expectedCanonical: canonicalUrlForPath(getRouteCanonicalPath(normalizedRoute)),
+      expectedPath: entry.redirectTarget,
+      expectedCanonical: canonicalUrl(entry.canonicalPath),
+      expectedRobots: entry.robots,
+      entry,
     };
   }
 
-  const canonicalPath = getRouteCanonicalPath(normalizedRoute);
-  const isStaticContentRoute = (
-    normalizedRoute === '/' ||
-    normalizedRoute === '/ru' ||
-    normalizedRoute === '/blog' ||
-    normalizedRoute === '/ru/blog' ||
-    normalizedRoute.startsWith('/blog/') ||
-    normalizedRoute.startsWith('/ru/blog/') ||
-    [
-      '/privacy-policy',
-      '/ru/politika',
-      '/refund-policy',
-      '/terms-of-service',
-      '/personal-data-consent',
-      '/ru/polzovatelskoe-soglashenie',
-      '/ru/soglasie-na-obrabotku-personalnyh-dannyh',
-      '/ru/ugc-creator-terms',
-    ].includes(normalizedRoute)
-  );
-
   return {
-    type: isStaticContentRoute ? 'static' : 'application',
+    type: entry.sourceType,
     route: normalizedRoute,
     expectedPath: normalizedRoute,
-    expectedCanonical: canonicalUrlForPath(canonicalPath),
+    expectedCanonical: canonicalUrl(entry.canonicalPath),
+    expectedRobots: entry.robots,
+    entry,
   };
 };
 
@@ -147,6 +131,9 @@ const getReadinessErrors = (state, contract) => {
   }
 
   if (contract.type === 'seo') {
+    if (state.robots.toLowerCase() !== contract.expectedRobots) {
+      errors.push(`robots mismatch: expected ${contract.expectedRobots}, got "${state.robots || 'missing'}"`);
+    }
     if (state.h1Count !== 1) errors.push(`expected exactly one H1, got ${state.h1Count}`);
     if (state.h1Texts[0] !== contract.expectedH1) {
       errors.push(`H1 mismatch: expected "${contract.expectedH1}", got "${state.h1Texts[0] || ''}"`);
@@ -156,13 +143,6 @@ const getReadinessErrors = (state, contract) => {
     }
     if (contract.page.language && state.htmlLang !== contract.page.language) {
       errors.push(`html lang mismatch: expected ${contract.page.language}, got ${state.htmlLang || 'missing'}`);
-    }
-    if (contract.page.noindex === true) {
-      if (!/noindex/i.test(state.robots) || !/nofollow/i.test(state.robots)) {
-        errors.push(`robots mismatch: expected noindex, nofollow, got "${state.robots || 'missing'}"`);
-      }
-    } else if (!/index,\s*follow/i.test(state.robots) || /noindex/i.test(state.robots)) {
-      errors.push(`robots mismatch: expected index, follow, got "${state.robots || 'missing'}"`);
     }
   }
 
@@ -202,47 +182,6 @@ const waitForRouteReady = async (page, contract, timeoutMs = 15000) => {
     ].join('; ')
   );
 };
-
-/* ── Routes to prerender ── */
-const ROUTES = [
-  '/',
-  '/ru',
-  '/ai-carousel-maker',
-  '/carousel-maker',
-  '/ru/ii-generator-karuseley',
-  '/ai-content-generator',
-  '/ru/generator-kontenta',
-  '/ai-instagram-post-generator',
-  '/instagram-carousel-maker',
-  '/ai-post-maker',
-  '/ru/generator-postov-instagram',
-  '/ru/generator-karuselej-instagram',
-  '/linkedin-carousel-maker',
-  '/ru/generator-karuselej-linkedin',
-  '/ru/ii-generator-postov-dlya-linkedin',
-  '/blog',
-  '/ru/blog',
-  '/blog/linkedin-carousel-ideas',
-  '/blog/best-ai-carousel-generators',
-  '/blog/how-to-make-linkedin-carousel-with-ai',
-  '/blog/ai-instagram-carousel-generator',
-  '/ru/blog/idei-karuselej-linkedin',
-  '/ru/blog/luchshie-ai-generatory-karuselej',
-  '/ru/blog/kak-sdelat-karusel-linkedin-s-ai',
-  '/ru/blog/prompty-dlya-karuseley-v-instagram',
-  '/blog/instagram-carousel-ideas',
-  '/privacy-policy',
-  '/ru/politika',
-  '/politika',
-  '/ru/polzovatelskoe-soglashenie',
-  '/ru/soglasie-na-obrabotku-personalnyh-dannyh',
-  '/ru/ugc-creator-terms',
-  '/refund-policy',
-  '/terms-of-service',
-  '/personal-data-consent',
-  '/pricing',
-  '/carousel/create',
-];
 
 /* ── Find a free port ── */
 function getFreePort() {
@@ -333,47 +272,8 @@ async function writeHtml(route, html) {
   const dir = path.join(DIST, ...parts);
   await mkdir(dir, { recursive: true });
   const filePath = path.join(dir, 'index.html');
-  await writeFile(filePath, html, 'utf-8');
+  await writeFile(filePath, html.replace(/[ \t]+$/gm, ''), 'utf-8');
   return filePath;
-}
-
-/* ── Find dynamic markdown articles ── */
-async function getDynamicMarkdownRoutes() {
-  const articlesDir = path.join(__dirname, 'src', 'content', 'blog', 'articles');
-  const dynamicRoutes = [];
-  try {
-    const files = await readdir(articlesDir);
-    for (const file of files) {
-      if (!file.endsWith('.md') || file.startsWith('_')) continue;
-      
-      const content = await readFile(path.join(articlesDir, file), 'utf-8');
-      
-      // Simple frontmatter parsing
-      const isPublished = /^published:\s*true\b/m.test(content);
-      const isNoindex = /^noindex:\s*true\b/m.test(content);
-      const isPreview = /^preview:\s*true\b/m.test(content);
-      
-      if (isPublished && !isNoindex) {
-        // Extract slug, fallback to filename
-        const slugMatch = content.match(/^slug:\s*["']?([^"'\n]+)["']?/m);
-        const slug = slugMatch ? slugMatch[1].trim() : file.replace(/\.md$/, '');
-        
-        // Extract language, fallback to 'en'
-        const langMatch = content.match(/^language:\s*["']?([^"'\n]+)["']?/m);
-        const language = langMatch ? langMatch[1].trim() : 'en';
-
-        const route = language === 'ru' ? `/ru/blog/${slug}` : `/blog/${slug}`;
-        
-        // We only add to sitemap if it's actually published and indexable
-        const addToSitemap = isPublished && !isNoindex;
-        
-        dynamicRoutes.push({ route, addToSitemap });
-      }
-    }
-  } catch (err) {
-    console.log(`⚠️  Could not read articles dir: ${err.message}`);
-  }
-  return dynamicRoutes;
 }
 
 async function launchBrowser() {
@@ -445,10 +345,25 @@ async function preparePage(page, baseHostname) {
   });
 }
 
-async function prerenderRoute(browser, route, baseUrl, seoPageByPath) {
+const applyResolvedSeoHead = (html, entry) => {
+  const output = html
+    .replace(/\s*<link\b[^>]*rel=["']alternate["'][^>]*>/gi, '')
+    .replace(/\s*<link\b[^>]*rel=["']canonical["'][^>]*>/gi, '')
+    .replace(/\s*<meta\b[^>]*name=["']robots["'][^>]*>/gi, '')
+    .replace(/\s*<meta\b[^>]*http-equiv=["']refresh["'][^>]*>/gi, '');
+  const headTags = [
+    `<link rel="canonical" href="${canonicalUrl(entry.canonicalPath)}">`,
+    `<meta name="robots" content="${entry.robots}">`,
+    ...entry.hreflang.map((alternate) => `<link rel="alternate" hreflang="${alternate.lang}" href="${canonicalUrl(alternate.path)}">`),
+  ];
+  if (entry.lifecycle === 'redirect') headTags.push(`<meta http-equiv="refresh" content="0; url=${entry.redirectTarget}">`);
+  return output.replace('<head>', `<head>\n    ${headTags.join('\n    ')}`);
+};
+
+async function prerenderRoute(browser, route, baseUrl, stateByPath) {
   const url = `${baseUrl}${route}`;
   let page = null;
-  const contract = classifyRoute(route, seoPageByPath);
+  const contract = classifyRoute(route, stateByPath);
 
   try {
     page = await browser.newPage();
@@ -466,12 +381,7 @@ async function prerenderRoute(browser, route, baseUrl, seoPageByPath) {
         .forEach((script) => script.remove());
     });
 
-    let html = await page.content();
-
-    const aliasTarget = getRouteAliasTarget(contract.route);
-    if (aliasTarget) {
-      html = html.replace('<head>', `<head>\n    <meta http-equiv="refresh" content="0; url=${aliasTarget}">`);
-    }
+    const html = applyResolvedSeoHead(await page.content(), contract.entry);
 
     const filePath = await writeHtml(route, html);
     const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '(no title)';
@@ -488,26 +398,9 @@ async function prerenderRoute(browser, route, baseUrl, seoPageByPath) {
 /* ── Main ── */
 (async () => {
   console.log('🚀  Starting prerender…\n');
-
-  const dynamicRoutes = await getDynamicMarkdownRoutes();
-  const routesToPrerender = dynamicRoutes.map(r => r.route);
-  const routesToSitemap = dynamicRoutes.filter(r => r.addToSitemap).map(r => r.route);
-  const seoPagesToPrerender = getSeoPagesForPrerender();
-  const seoPagesToSitemap = getSeoPagesForSitemap();
-  const seoRoutesToPrerender = seoPagesToPrerender.map((page) => page.path);
-  const seoPageByPath = new Map(seoPagesToPrerender.map((page) => [page.path, page]));
-
-  if (routesToPrerender.length > 0) {
-    console.log(`📚  Found ${routesToPrerender.length} dynamic markdown articles: ${routesToPrerender.join(', ')}`);
-    ROUTES.push(...routesToPrerender);
-  }
-
-  if (seoRoutesToPrerender.length > 0) {
-    console.log(`🧭  Found ${seoRoutesToPrerender.length} routable SEO pages: ${seoRoutesToPrerender.join(', ')}`);
-    ROUTES.push(...seoRoutesToPrerender);
-  }
-
-  const uniqueRoutes = [...new Set(ROUTES)];
+  const projectSeoState = resolveProjectSeoState(__dirname);
+  const uniqueRoutes = projectSeoState.prerenderEntries.map((entry) => entry.path);
+  console.log(`🧭  Resolved ${uniqueRoutes.length} prerender routes from canonical project SEO state.`);
 
   let server = null;
   let browser = null;
@@ -535,7 +428,7 @@ async function prerenderRoute(browser, route, baseUrl, seoPageByPath) {
           }
 
           if (attempt > 1) console.log(`  ↻  Retrying ${route} (attempt ${attempt}/${NAVIGATION_ATTEMPTS})...`);
-          const result = await prerenderRoute(browser, route, BASE, seoPageByPath);
+          const result = await prerenderRoute(browser, route, BASE, projectSeoState.byPath);
 
           results.push(result);
           console.log(`  ✅  ${route}\n      title: ${result.title}\n      canonical: ${result.canonical}\n      → ${result.filePath}`);
@@ -584,49 +477,14 @@ async function prerenderRoute(browser, route, baseUrl, seoPageByPath) {
     }
   }
 
-  /* ── Append dynamic routes to Sitemap ── */
+  /* ── Generate the complete sitemap from resolved project SEO state ── */
   try {
     const sitemapPath = path.join(DIST, 'sitemap.xml');
-    let sitemap = await readFile(sitemapPath, 'utf-8');
-    
-    if ((routesToSitemap.length > 0 || seoPagesToSitemap.length > 0) && sitemap.includes('</urlset>')) {
-      const today = new Date().toISOString().split('T')[0];
-      let newUrls = '';
-      
-      for (const route of routesToSitemap) {
-        // Ensure it's not already in the sitemap manually
-        if (!sitemap.includes(`<loc>https://gotoflow.io${route}</loc>`)) {
-          newUrls += `
-  <url>
-    <loc>https://gotoflow.io${route}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>`;
-        }
-      }
-
-      for (const page of seoPagesToSitemap) {
-        if (!sitemap.includes(`<loc>https://gotoflow.io${page.path}</loc>`)) {
-          const lastmod = page.lastUpdated || today;
-          newUrls += `
-  <url>
-    <loc>https://gotoflow.io${page.path}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>${page.priority || 0.6}</priority>
-  </url>`;
-        }
-      }
-      
-      if (newUrls) {
-        sitemap = sitemap.replace('</urlset>', `${newUrls}\n</urlset>`);
-        await writeFile(sitemapPath, sitemap, 'utf-8');
-        console.log(`\n🗺️  Added ${routesToSitemap.length + seoPagesToSitemap.length} dynamic routes to sitemap.xml`);
-      }
-    }
+    await writeFile(sitemapPath, renderSitemap(projectSeoState), 'utf-8');
+    console.log(`\n🗺️  Wrote ${projectSeoState.sitemapEntries.length} authoritative sitemap URLs.`);
   } catch (err) {
-    console.log(`\n⚠️  Could not update sitemap.xml: ${err.message}`);
+    console.error(`\n❌  Could not generate sitemap.xml: ${err.message}`);
+    exitCode = 1;
   }
 
   process.exit(exitCode);
