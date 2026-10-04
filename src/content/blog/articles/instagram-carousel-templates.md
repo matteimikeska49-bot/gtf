@@ -18,7 +18,7 @@ intentId: "en:instagram-carousel-templates"
 clusterId: "en:instagram-carousel"
 articleRole: "supporting"
 hubSlug: "how-to-make-an-instagram-carousel-with-ai"
-relatedProductRoute: "/ai-carousel-maker"
+relatedProductRoute: "/instagram-carousel-maker"
 quickAnswerTitle: "Quick Answer"
 mockupStatus: "not_available"
 published: true
@@ -64,7 +64,7 @@ faq:
 explore:
   tools:
     - title: "Instagram Carousel Maker"
-      href: "/ai-carousel-maker"
+      href: "/instagram-carousel-maker"
       description: "Create ready-made carousels using proven templates with AI."
   guides:
     - title: "Carousel Prompts"
@@ -74,7 +74,7 @@ finalCta:
   title: "Stop wasting hours on design"
   description: "GoToFlow has dozens of ready-made templates built in. Just enter a topic, and AI will assemble the perfect carousel."
   buttonText: "Create a carousel for free"
-  href: "/ai-carousel-maker"
+  primaryHref: "/instagram-carousel-maker"
   microcopy: "No credit card required — Ready in 60 seconds"
   secondaryText: "Learn more about prompts →"
   secondaryHref: "/blog/instagram-carousel-prompts"
@@ -84,7 +84,7 @@ finalCta:
 
 Carousels are the most engaging content format on Instagram. But creating them often turns into a routine: you need to come up with text, break it down into slides, choose fonts, and lay everything out in an editor. 
 
-Using **ready-made carousel templates** helps solve this problem. In this article, we'll break down the perfect carousel structure, template types, and ways to automate them with an [AI carousel maker](/ai-carousel-maker).
+Using **ready-made carousel templates** helps solve this problem. In this article, we'll break down the perfect carousel structure, template types, and ways to automate them with an [AI carousel maker](/instagram-carousel-maker).
 
 ## The Perfect Carousel Template Structure
 
@@ -169,7 +169,7 @@ Before using a template, write the slide outline in plain text. If the outline i
 
 ## Using Templates With GoToFlow
 
-GoToFlow is useful when you already have a topic, URL, note or source material and need to turn it into a carousel structure. The [AI carousel maker](/ai-carousel-maker) can help split the idea into slides, suggest a hook, prepare supporting copy and keep the visual flow coherent.
+GoToFlow is useful when you already have a topic, URL, note or source material and need to turn it into a carousel structure. The [AI carousel maker](/instagram-carousel-maker) can help split the idea into slides, suggest a hook, prepare supporting copy and keep the visual flow coherent.
 
 You still need a final editorial pass. Check whether the hook is specific, whether the middle slides add new information, and whether the CTA follows naturally from the topic. Replace vague claims with examples from your niche, remove repeated points and make sure the final slide does not feel like an afterthought.
 

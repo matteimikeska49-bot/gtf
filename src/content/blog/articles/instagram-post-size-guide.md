@@ -12,6 +12,8 @@ slug: "instagram-post-size-guide"
 primaryKeyword: "instagram post size guide"
 canonical: "https://gotoflow.io/blog/instagram-post-size-guide"
 language: "en"
+clusterId: "en:instagram-carousel"
+relatedProductRoute: "/instagram-carousel-maker"
 published: true
 noindex: false
 articleType: "workflow_article"
@@ -26,10 +28,10 @@ updatedAt: "2026-06-21"
 explore:
   tools:
     - title: "AI Instagram Post Generator"
-      href: "/ai-instagram-post-generator"
+      href: "/instagram-carousel-maker"
       description: "Create correctly sized Instagram visual content with AI."
     - title: "AI Carousel Generator"
-      href: "/ai-carousel-maker"
+      href: "/instagram-carousel-maker"
       description: "Turn an idea or source into a complete carousel workflow."
 faq:
   - question: "What is the best Instagram post size?"
@@ -46,10 +48,10 @@ finalCta:
   title: "Stop struggling with Instagram dimensions"
   text: "Use GoToFlow to generate correctly sized, ready-to-publish Instagram carousels in minutes."
   buttonText: "Create Instagram Carousel"
-  href: "/ai-instagram-post-generator"
+  primaryHref: "/instagram-carousel-maker"
   microcopy: "Free — No credit card required"
   secondaryText: "Create an Instagram post with AI →"
-  secondaryHref: "/ai-instagram-post-generator"
+  secondaryHref: "/instagram-carousel-maker"
 ---
 
 Using the exact Instagram post size is critical for both visual quality and algorithm engagement. If your image is too small, it will look pixelated when compressed. If the aspect ratio is wrong, Instagram will aggressively crop out crucial parts of your photo or text, ruining your design. 
@@ -66,7 +68,7 @@ For creators and brands publishing multi-slide carousels or text-heavy graphics,
 
 > **Don't waste time formatting slides manually**
 > GoToFlow automatically generates educational carousels in the perfect 4:5 aspect ratio for Instagram, so you never have to worry about pixels, safe zones, or awkward cropping.
-> [Try Instagram Carousel Maker](/ai-instagram-post-generator)
+> [Try Instagram Carousel Maker](/instagram-carousel-maker)
 
 ## The 3 Main Instagram Post Sizes
 

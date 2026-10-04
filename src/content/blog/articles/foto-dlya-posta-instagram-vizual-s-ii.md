@@ -20,7 +20,7 @@ intentId: "ru:instagram-post-visual"
 clusterId: "ru:instagram-content"
 articleRole: "supporting"
 hubSlug: "neyroset-dlya-postov"
-relatedProductRoute: "/ru/generator-kontenta"
+relatedProductRoute: "/ru/generator-postov-instagram"
 productFit: "YES"
 productFitExplanation: "GoToFlow помогает перейти от идеи к визуальным карточкам и тексту поста."
 requiredVisualBlock: "none"
@@ -57,7 +57,7 @@ faq:
 explore:
   tools:
     - title: "Генератор контента"
-      href: "/ru/generator-kontenta"
+      href: "/ru/generator-postov-instagram"
       description: "Соберите визуальные карточки и текст поста."
   guides:
     - title: "Обложка для карусели Instagram"
@@ -70,7 +70,7 @@ finalCta:
   title: "Соберите визуал вокруг главной идеи"
   text: "GoToFlow помогает превратить тему или исходный материал в карточки и текст поста."
   buttonText: "Создать визуал"
-  href: "/ru/generator-kontenta"
+  primaryHref: "/ru/generator-postov-instagram"
   microcopy: "Проверяйте читаемость перед публикацией"
   secondaryText: "Примеры каруселей Instagram →"
   secondaryHref: "/ru/blog/primery-karuseley-instagram"
@@ -107,7 +107,7 @@ type: examples
 Нужна, когда одну мысль нужно раскрыть по шагам или примерам.
 :::
 
-Чтобы быстро перейти от идеи к визуальной структуре, можно использовать [генератор контента](/ru/generator-kontenta). Он помогает собрать карточки и текст, а затем вы можете адаптировать стиль под аккаунт.
+Чтобы быстро перейти от идеи к визуальной структуре, можно использовать [генератор контента](/ru/generator-postov-instagram). Он помогает собрать карточки и текст, а затем вы можете адаптировать стиль под аккаунт.
 
 ## Как оформить визуал аккуратно
 

@@ -20,7 +20,7 @@ intentId: "ru:instagram-post-ideas"
 clusterId: "ru:instagram-content"
 articleRole: "supporting"
 hubSlug: "neyroset-dlya-postov"
-relatedProductRoute: "/ru/generator-kontenta"
+relatedProductRoute: "/ru/generator-postov-instagram"
 productFit: "YES"
 productFitExplanation: "GoToFlow помогает развернуть идею в карточки и текст поста."
 requiredVisualBlock: "none"
@@ -57,7 +57,7 @@ faq:
 explore:
   tools:
     - title: "Генератор контента"
-      href: "/ru/generator-kontenta"
+      href: "/ru/generator-postov-instagram"
       description: "Разверните идею в карточки и подпись."
   guides:
     - title: "Идеи для карусели в Инстаграм"
@@ -70,7 +70,7 @@ finalCta:
   title: "Перейдите от идеи к структуре поста"
   text: "GoToFlow помогает превратить тему или исходный материал в карточки и сопроводительный текст."
   buttonText: "Создать пост по теме"
-  href: "/ru/generator-kontenta"
+  primaryHref: "/ru/generator-postov-instagram"
   microcopy: "Сначала выберите идею, затем формат"
   secondaryText: "Идеи для каруселей Instagram →"
   secondaryHref: "/ru/blog/idei-dlya-karuseli-instagram"
@@ -103,7 +103,7 @@ type: examples
 Соберите инструменты, вопросы, идеи, книги, сервисы или примеры. Подборки хорошо работают, когда они не случайные, а связаны одной задачей.
 :::
 
-Если идея уже выбрана, [генератор контента](/ru/generator-kontenta) помогает превратить ее в структуру карточек и подпись. Это особенно удобно, когда тема есть, но непонятно, как ее разложить.
+Если идея уже выбрана, [генератор контента](/ru/generator-postov-instagram) помогает превратить ее в структуру карточек и подпись. Это особенно удобно, когда тема есть, но непонятно, как ее разложить.
 
 ## Когда карусель подходит лучше
 

@@ -13,7 +13,7 @@ intentId: "en:instagram-carousel-hooks"
 clusterId: "en:instagram-carousel"
 articleRole: "supporting"
 hubSlug: "how-to-make-an-instagram-carousel-with-ai"
-relatedProductRoute: "/ai-carousel-maker"
+relatedProductRoute: "/instagram-carousel-maker"
 published: true
 noindex: false
 preview: false
@@ -44,7 +44,7 @@ faq:
 finalCta:
   title: "Generate Carousels with Built-in Hooks"
   text: "Use GoToFlow to turn a topic or source into a hook, structure, slide copy, visual design, CTA, and a ready-to-publish Instagram carousel for export."
-  href: "/ai-carousel-maker"
+  primaryHref: "/instagram-carousel-maker"
   buttonText: "Create a Carousel Free"
   secondaryText: "See Instagram carousel examples →"
   secondaryHref: "/blog/best-instagram-carousel-examples"
@@ -64,7 +64,7 @@ explore:
 
 Your first slide dictates the success of your entire post. If the hook fails, the rest of the carousel doesn't matter.
 
-When using an [AI Carousel Maker](/ai-carousel-maker) to generate content, the AI automatically applies proven hook formulas, but it's important to understand why they work.
+When using an [AI Carousel Maker](/instagram-carousel-maker) to generate content, the AI automatically applies proven hook formulas, but it's important to understand why they work.
 
 ## 15 Instagram carousel hooks you can use
 
@@ -118,7 +118,7 @@ Promise a practical reference the reader can return to.
 > [!workflow]
 > **Turn the hook into a finished carousel**
 > GoToFlow takes the selected hook, topic, link, video, text, or other source and builds the structure, slide copy, visual design, CTA, and a ready-to-publish carousel export in one workflow.
-> [Create a carousel with GoToFlow](/ai-carousel-maker)
+> [Create a carousel with GoToFlow](/instagram-carousel-maker)
 
 ### Applying Hooks with AI
 

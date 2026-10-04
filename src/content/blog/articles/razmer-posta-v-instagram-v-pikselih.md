@@ -20,7 +20,7 @@ intentId: "ru:instagram-post-size-format"
 clusterId: "ru:instagram-content"
 articleRole: "format-guide"
 hubSlug: "neyroset-dlya-postov"
-relatedProductRoute: "/ru/generator-kontenta"
+relatedProductRoute: "/ru/generator-postov-instagram"
 productFit: "PARTIAL"
 productFitExplanation: "GoToFlow помогает собрать карточки и текст, но актуальные требования Instagram перед публикацией нужно сверять отдельно."
 requiredVisualBlock: "none"
@@ -57,7 +57,7 @@ faq:
 explore:
   tools:
     - title: "Генератор контента"
-      href: "/ru/generator-kontenta"
+      href: "/ru/generator-postov-instagram"
       description: "Собирайте карточки и подпись из темы или исходного материала."
   guides:
     - title: "Размер карусели в Инстаграм"
@@ -67,7 +67,7 @@ finalCta:
   title: "Подготовьте карточки и подпись вместе"
   text: "GoToFlow помогает собрать структуру визуальных карточек и сопроводительный текст для соцсетей."
   buttonText: "Открыть генератор контента"
-  href: "/ru/generator-kontenta"
+  primaryHref: "/ru/generator-postov-instagram"
   microcopy: "Финальный формат сверяйте перед загрузкой"
   secondaryText: "Размер карусели в Инстаграм →"
   secondaryHref: "/ru/blog/razmer-karuseli-v-instagram"
@@ -118,7 +118,7 @@ type: workflow
 Перед загрузкой проверьте, какие размеры и форматы сейчас рекомендует площадка.
 :::
 
-[Генератор контента](/ru/generator-kontenta) может помочь собрать карточки и подпись из одной идеи. Но финальный экспорт и предпросмотр все равно стоит проверять в контексте конкретной площадки.
+[Генератор контента](/ru/generator-postov-instagram) может помочь собрать карточки и подпись из одной идеи. Но финальный экспорт и предпросмотр все равно стоит проверять в контексте конкретной площадки.
 
 GoToFlow помогает подготовить структуру визуальных карточек и текст поста, а не заменяет финальную сверку с требованиями Instagram. Перед загрузкой проверьте текущие рекомендации площадки и то, как макет выглядит на телефоне.
 

@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { resolveProjectSeoState } from './lib/project-seo-state.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, '..');
@@ -25,16 +26,7 @@ let warnings = [];
 let errors = [];
 
 const d53Topics = ['text-to-carousel-ai', 'instagram-carousel-hooks', 'tekst-v-karusel-neyroset', 'content-calendar-to-carousel', 'b2b-keysy-v-linkedin-karusel'];
-const validPublicRoutes = new Set([
-  '/', '/ru', '/ai-carousel-maker', '/ru/ii-generator-karuseley', '/ru/ii-generator-karuseley',
-  '/ai-content-generator', '/ru/generator-kontenta', 
-  '/ai-instagram-post-generator', '/ai-post-maker', '/ru/generator-postov-instagram', 
-  '/linkedin-carousel-maker', '/ru/generator-karuselej-linkedin', 
-  '/blog', '/ru/blog', '/privacy-policy', '/ru/politika', '/politika', 
-  '/ru/polzovatelskoe-soglashenie', '/ru/soglasie-na-obrabotku-personalnyh-dannyh', 
-  '/ru/ugc-creator-terms', '/refund-policy', '/terms-of-service', 
-  '/personal-data-consent', '/pricing', '/carousel/create'
-]);
+const validPublicRoutes = new Set(resolveProjectSeoState(ROOT_DIR).entries.map((entry) => entry.path));
 
 const appRoutesSource = fs.readFileSync(appRoutesPath, 'utf8');
 for (const match of appRoutesSource.matchAll(/<Route\s+path=["']([^"']+)["']/g)) {

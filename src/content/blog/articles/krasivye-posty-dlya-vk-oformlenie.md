@@ -20,7 +20,7 @@ intentId: "ru:vk-beautiful-posts"
 clusterId: "ru:vk-content"
 articleRole: "supporting"
 hubSlug: "neyroset-dlya-postov"
-relatedProductRoute: "/ru/generator-kontenta"
+relatedProductRoute: "/ru/vk-post-generator"
 productFit: "YES"
 productFitExplanation: "GoToFlow помогает связать текст, тезисы и визуальные карточки в один материал для соцсетей."
 requiredVisualBlock: "none"
@@ -57,7 +57,7 @@ faq:
 explore:
   tools:
     - title: "Генератор контента"
-      href: "/ru/generator-kontenta"
+      href: "/ru/vk-post-generator"
       description: "Собирайте текст и визуальные карточки из идеи."
   guides:
     - title: "Как написать пост в ВК с помощью ИИ"
@@ -67,7 +67,7 @@ finalCta:
   title: "Соберите аккуратный пост из одной идеи"
   text: "GoToFlow помогает подготовить структуру текста и визуальные карточки для соцсетей."
   buttonText: "Создать пост"
-  href: "/ru/generator-kontenta"
+  primaryHref: "/ru/vk-post-generator"
   microcopy: "Сначала проверьте смысл, затем оформление"
   secondaryText: "Как написать пост в ВК с ИИ →"
   secondaryHref: "/ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii"
@@ -115,7 +115,7 @@ type: tips
 Одинаковые отступы, цвет заголовков и логика расположения элементов делают серию карточек цельной.
 :::
 
-Когда исходная идея уже есть, [генератор контента](/ru/generator-kontenta) помогает разложить ее на текст и визуальные карточки. После этого важно пройтись редакторским взглядом: убрать лишнее, проверить тон и убедиться, что визуал не перегружен.
+Когда исходная идея уже есть, [генератор контента](/ru/vk-post-generator) помогает разложить ее на текст и визуальные карточки. После этого важно пройтись редакторским взглядом: убрать лишнее, проверить тон и убедиться, что визуал не перегружен.
 
 ## Частые ошибки оформления
 

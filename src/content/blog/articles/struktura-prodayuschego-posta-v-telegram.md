@@ -3,7 +3,8 @@ title: 'Структура продающего поста в Telegram: Прим
 description: Как написать продающий пост в Телеграм-канал. Готовая структура текста, примеры прогревов и советы по копирайтингу для продаж в мессенджере.
 primaryKeyword: продающий пост в телеграм
 canonical: "https://gotoflow.io/ru/blog/struktura-prodayuschego-posta-v-telegram"
-relatedProductRoute: "/ru/generator-kontenta"
+clusterId: "ru:telegram-content"
+relatedProductRoute: "/ru/telegram-post-generator"
 createdAt: '2026-06-12'
 updatedAt: '2026-06-13'
 published: true
@@ -32,6 +33,7 @@ finalCta:
   title: "Создавайте карусели быстрее и аккуратнее"
   description: "GoToFlow помогает собрать структуру, текст и визуальную подачу без ручной сборки с нуля."
   buttonText: Сгенерировать пост
+  primaryHref: "/ru/telegram-post-generator"
   secondaryText: Как написать пост для ВКонтакте с помощью ИИ →
   secondaryHref: /ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii
 quickAnswerTitle: Главное
@@ -101,7 +103,7 @@ updatedAt: '2026-06-13'
 > [!takeaway]
 > Успех в соцсетях требует системности и качественного визуального оформления. Тестируйте разные форматы, чтобы найти лучший для вашей аудитории.
 
-Собрать такую структуру под свою тему помогает [генератор контента GoToFlow](/ru/generator-kontenta): от исходного материала до готового текста и CTA.
+Собрать такую структуру под свою тему помогает [генератор контента GoToFlow](/ru/telegram-post-generator): от исходного материала до готового текста и CTA.
 
 ## Пример идеального поста (Шаблон)
 
@@ -117,6 +119,6 @@ updatedAt: '2026-06-13'
 3️⃣ Эмодзи: используйте их как структуру, а не как украшение.
 
 Устали писать тексты сами? 
-В [генераторе контента GoToFlow](/ru/generator-kontenta) можно превратить идею, голосовое сообщение или исходный текст в структурированный пост с текстом и CTA.
+В [генераторе контента GoToFlow](/ru/telegram-post-generator) можно превратить идею, голосовое сообщение или исходный текст в структурированный пост с текстом и CTA.
 
 👉 **Попробуйте GoToFlow и соберите готовый контентный workflow.**

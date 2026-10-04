@@ -1,12 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { resolveProjectSeoState } from './lib/project-seo-state.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const ARTICLES_DIR = path.join(ROOT, 'src/content/blog/articles');
 const TOPIC_MAP_PATH = path.join(ROOT, 'src/content/blog/topic-map.json');
-const APP_ROUTES_PATH = path.join(ROOT, 'src/App.jsx');
 
 console.log('🧭 Starting product-led route/link guardrail check...\n');
 
@@ -98,20 +98,9 @@ const routeLanguageMatchesArticle = (route, language) => {
   return !route.startsWith('/ru/');
 };
 
-const readExistingRoutes = () => {
-  const routes = new Set();
-  const appContent = fs.readFileSync(APP_ROUTES_PATH, 'utf-8');
-  const routeMatches = appContent.matchAll(/<Route\s+path=["']([^"']+)["']/g);
-  for (const match of routeMatches) {
-    const route = match[1];
-    if (!route.includes(':') && route !== '*') routes.add(route);
-  }
-  return routes;
-};
-
 const topicMap = JSON.parse(fs.readFileSync(TOPIC_MAP_PATH, 'utf-8'));
 const topicBySlug = new Map(topicMap.map(topic => [topic.targetSlug, topic]));
-const existingRoutes = readExistingRoutes();
+const existingRoutes = new Set(resolveProjectSeoState(ROOT).entries.map((entry) => entry.path));
 
 const articleFiles = fs.readdirSync(ARTICLES_DIR)
   .filter(file => file.endsWith('.md') && !file.startsWith('_'));
@@ -217,7 +206,8 @@ for (const file of articleFiles) {
     hasP0Error = true;
   }
 
-  if (!hasMarkdownLinkTo(finalSection, relatedProductRoute)) {
+  const finalCtaUsesProductRoute = new RegExp(`^\\s+(?:primaryHref|href):\\s*["']?${escapeRegex(relatedProductRoute)}["']?\\s*$`, 'm').test(frontmatter);
+  if (!hasMarkdownLinkTo(finalSection, relatedProductRoute) && !finalCtaUsesProductRoute) {
     conflicts.push(`${file}: final CTA/final section must contain a markdown link to '${relatedProductRoute}'.`);
     hasP0Error = true;
   }

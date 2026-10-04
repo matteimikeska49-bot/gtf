@@ -79,6 +79,7 @@ function App() {
         <Route path="/carousel-maker" element={<Navigate to={getRouteAliasTarget('/carousel-maker')} replace />} />
         <Route path="/ai-instagram-post-generator" element={<InstagramPostPage />} />
         <Route path="/linkedin-post-generator" element={<SeoPageRoute pageType="commercial" language="en" slug="linkedin-post-generator" />} />
+        <Route path="/ai-linkedin-post-generator" element={<Navigate to={getRouteAliasTarget('/ai-linkedin-post-generator')} replace />} />
         <Route path="/instagram-carousel-maker" element={<CarouselPage />} />
         
         {/* RU Tool Pages (200 OK SEO structure) */}
