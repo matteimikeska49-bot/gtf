@@ -1,12 +1,21 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { canonicalUrl, normalizeRoutePath, resolveProjectSeoState } from './lib/project-seo-state.mjs';
+import {
+  canonicalUrl,
+  normalizeRoutePath,
+  resolveProjectSeoState,
+  ROBOTS_BY_LIFECYCLE,
+} from './lib/project-seo-state.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const state = resolveProjectSeoState(root);
 const errors = [];
+let noindexSitemapHits = 0;
+let redirectSitemapHits = 0;
+let sitemapParityMatches = 0;
+let renderedLifecycleMatches = 0;
 
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 const attr = (tag, name) => tag.match(new RegExp(`${name}=["']([^"']+)["']`, 'i'))?.[1] || '';
@@ -32,6 +41,18 @@ for (const entry of state.redirectEntries) {
   if (!target?.indexable) errors.push(`${entry.path}: redirect target is not an indexable owner: ${entry.redirectTarget}`);
 }
 
+for (const entry of state.entries) {
+  const expectedRobots = ROBOTS_BY_LIFECYCLE[entry.lifecycle];
+  if (!expectedRobots) errors.push(`${entry.path}: unsupported lifecycle ${entry.lifecycle}.`);
+  if (entry.lifecycle === 'current_indexable') {
+    if (!entry.indexable) errors.push(`${entry.path}: current_indexable route is not indexable.`);
+    if (!entry.sitemapEligible) errors.push(`${entry.path}: current_indexable route is not sitemap eligible.`);
+    continue;
+  }
+  if (entry.indexable) errors.push(`${entry.path}: ${entry.lifecycle} route is unexpectedly indexable.`);
+  if (entry.sitemapEligible) errors.push(`${entry.path}: ${entry.lifecycle} route is unexpectedly sitemap eligible.`);
+}
+
 const sitemapPath = path.join(dist, 'sitemap.xml');
 if (!fs.existsSync(sitemapPath)) {
   errors.push('dist/sitemap.xml is missing.');
@@ -46,14 +67,23 @@ if (!fs.existsSync(sitemapPath)) {
     seen.set(routePath, (seen.get(routePath) || 0) + 1);
     const expected = state.byPath.get(routePath);
     if (!expected?.sitemapEligible) errors.push(`${routePath}: unexpected or ineligible sitemap route.`);
+    if (expected && !expected.indexable && expected.lifecycle !== 'redirect') noindexSitemapHits += 1;
+    if (expected?.lifecycle === 'redirect') redirectSitemapHits += 1;
     const lastmod = block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] || '';
     if (expected && lastmod !== expected.lastmod) errors.push(`${routePath}: sitemap lastmod ${lastmod} != ${expected.lastmod}.`);
   }
   for (const entry of state.sitemapEntries) {
-    if ((seen.get(entry.path) || 0) !== 1) errors.push(`${entry.path}: expected exactly once in sitemap, got ${seen.get(entry.path) || 0}.`);
+    if ((seen.get(entry.path) || 0) !== 1) {
+      errors.push(`${entry.path}: expected exactly once in sitemap, got ${seen.get(entry.path) || 0}.`);
+    } else {
+      sitemapParityMatches += 1;
+    }
   }
   if (blocks.length !== state.sitemapEntries.length) errors.push(`Sitemap count ${blocks.length} != resolved count ${state.sitemapEntries.length}.`);
 }
+
+if (noindexSitemapHits !== 0) errors.push(`Noindex routes found in sitemap: ${noindexSitemapHits}.`);
+if (redirectSitemapHits !== 0) errors.push(`Redirect routes found in sitemap: ${redirectSitemapHits}.`);
 
 const actualHtml = [];
 if (fs.existsSync(dist)) {
@@ -80,9 +110,11 @@ for (const entry of state.prerenderEntries) {
     errors.push(`${entry.path}: rendered canonical does not match resolved owner.`);
   }
   const robotsTags = metas.filter((tag) => attr(tag, 'name').toLowerCase() === 'robots');
-  const expectedRobots = entry.lifecycle === 'redirect' ? 'noindex, follow' : 'index, follow';
+  const expectedRobots = ROBOTS_BY_LIFECYCLE[entry.lifecycle];
   if (robotsTags.length !== 1 || attr(robotsTags[0] || '', 'content').toLowerCase() !== expectedRobots) {
     errors.push(`${entry.path}: rendered robots must be exactly "${expectedRobots}".`);
+  } else {
+    renderedLifecycleMatches += 1;
   }
   const actualAlternates = links
     .filter((tag) => attr(tag, 'rel').toLowerCase() === 'alternate')
@@ -136,6 +168,10 @@ console.log('Project SEO state contract');
 console.log(`- resolved routes: ${state.entries.length}`);
 console.log(`- indexable/sitemap routes: ${state.indexableEntries.length}/${state.sitemapEntries.length}`);
 console.log(`- prerender/redirect/noindex: ${state.prerenderEntries.length}/${state.redirectEntries.length}/${state.noindexEntries.length}`);
+console.log(`- noindex sitemap hits: ${noindexSitemapHits}`);
+console.log(`- redirect sitemap hits: ${redirectSitemapHits}`);
+console.log(`- indexable sitemap parity: ${sitemapParityMatches}/${state.indexableEntries.length}`);
+console.log(`- rendered lifecycle parity: ${renderedLifecycleMatches}/${state.prerenderEntries.length}`);
 if (errors.length) {
   console.error(`\nProject SEO state contract failed (${errors.length}):`);
   errors.forEach((error) => console.error(`- ${error}`));

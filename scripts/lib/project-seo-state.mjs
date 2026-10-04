@@ -15,6 +15,13 @@ import { APP_ROUTE_ALIASES } from '../../src/routes/routeAliases.js';
 
 export const PUBLIC_ORIGIN = 'https://gotoflow.io';
 
+export const ROBOTS_BY_LIFECYCLE = Object.freeze({
+  current_indexable: 'index, follow',
+  noindex: 'noindex, nofollow',
+  noindex_review: 'noindex, nofollow',
+  redirect: 'noindex, follow',
+});
+
 const moduleDir = path.dirname(fileURLToPath(import.meta.url));
 export const DEFAULT_PROJECT_ROOT = path.resolve(moduleDir, '../..');
 
@@ -44,6 +51,12 @@ const normalizedDate = (value) => {
   return match?.[1] || null;
 };
 
+const robotsForLifecycle = (lifecycle) => {
+  const robots = ROBOTS_BY_LIFECYCLE[lifecycle];
+  if (!robots) throw new Error(`Unsupported SEO lifecycle: ${lifecycle}.`);
+  return robots;
+};
+
 const articleLastmod = (article, sourcePath) => {
   const value = [article.updatedAt, article.lastReviewed, article.publishedAt, article.createdAt]
     .map(normalizedDate)
@@ -70,12 +83,14 @@ const readArticles = (projectRoot) => {
       const language = data.language || 'en';
       const routePath = normalizeRoutePath(`${language === 'ru' ? '/ru' : ''}/blog/${slug}`);
       const indexable = data.published === true && data.noindex !== true;
+      const lifecycle = indexable ? 'current_indexable' : 'noindex';
       return {
         path: routePath,
         canonicalPath: routeFromUrl(data.canonical, routePath),
         sourceType: 'article',
         sourcePath,
-        lifecycle: indexable ? 'current_indexable' : 'noindex',
+        lifecycle,
+        robots: robotsForLifecycle(lifecycle),
         indexable,
         sitemapEligible: indexable,
         prerender: indexable,
@@ -94,6 +109,7 @@ const staticEntries = () => STATIC_SEO_ROUTES.map((entry) => ({
   sourceType: 'static',
   sourcePath: 'src/seo/projectSeoState.js',
   lifecycle: 'current_indexable',
+  robots: robotsForLifecycle('current_indexable'),
   indexable: true,
   sitemapEligible: true,
   prerender: true,
@@ -104,12 +120,14 @@ const seoPageEntries = () => {
   const prerenderPaths = new Set(getSeoPagesForPrerender().map((page) => page.path));
   return getPublishedSeoPages().map((page) => {
     const indexable = page.state === 'indexable_approved' && page.noindex !== true;
+    const lifecycle = indexable ? 'current_indexable' : page.state;
     return {
       path: normalizeRoutePath(page.path),
       canonicalPath: normalizeRoutePath(page.path),
       sourceType: 'seo_registry',
       sourcePath: 'src/content/seoPages/index.js',
-      lifecycle: indexable ? 'current_indexable' : 'noindex',
+      lifecycle,
+      robots: robotsForLifecycle(lifecycle),
       indexable,
       sitemapEligible: indexable && page.sitemapEligible === true,
       prerender: prerenderPaths.has(page.path),
@@ -129,6 +147,7 @@ const redirectEntries = () => Object.entries(APP_ROUTE_ALIASES).map(([source, ta
   sourceType: 'redirect',
   sourcePath: 'src/routes/routeAliases.js',
   lifecycle: 'redirect',
+  robots: robotsForLifecycle('redirect'),
   indexable: false,
   sitemapEligible: false,
   prerender: true,
@@ -149,6 +168,25 @@ const assertUniqueEntries = (entries) => {
   }
 };
 
+const assertLifecycleContracts = (entries) => {
+  for (const entry of entries) {
+    const expectedRobots = robotsForLifecycle(entry.lifecycle);
+    if (entry.robots !== expectedRobots) {
+      throw new Error(`${entry.path}: lifecycle ${entry.lifecycle} must resolve robots=${expectedRobots}.`);
+    }
+
+    if (entry.lifecycle === 'current_indexable') {
+      if (!entry.indexable) throw new Error(`${entry.path}: current_indexable route must be indexable.`);
+      if (!entry.sitemapEligible) throw new Error(`${entry.path}: current_indexable route must be sitemap eligible.`);
+      continue;
+    }
+
+    if (entry.indexable || entry.sitemapEligible) {
+      throw new Error(`${entry.path}: ${entry.lifecycle} route cannot be indexable or sitemap eligible.`);
+    }
+  }
+};
+
 export function resolveProjectSeoState(projectRoot = DEFAULT_PROJECT_ROOT) {
   const entries = [
     ...staticEntries(),
@@ -157,6 +195,7 @@ export function resolveProjectSeoState(projectRoot = DEFAULT_PROJECT_ROOT) {
     ...redirectEntries(),
   ].sort((left, right) => left.path.localeCompare(right.path));
   assertUniqueEntries(entries);
+  assertLifecycleContracts(entries);
 
   const byPath = new Map(entries.map((entry) => [entry.path, entry]));
   return {
@@ -166,7 +205,7 @@ export function resolveProjectSeoState(projectRoot = DEFAULT_PROJECT_ROOT) {
     sitemapEntries: entries.filter((entry) => entry.sitemapEligible),
     prerenderEntries: entries.filter((entry) => entry.prerender),
     redirectEntries: entries.filter((entry) => entry.lifecycle === 'redirect'),
-    noindexEntries: entries.filter((entry) => entry.lifecycle === 'noindex'),
+    noindexEntries: entries.filter((entry) => entry.lifecycle !== 'current_indexable' && entry.lifecycle !== 'redirect'),
     runtimeOnlyPaths: [...RUNTIME_ONLY_ROUTE_PATHS],
     dynamicRoutePatterns: [...DYNAMIC_ROUTE_PATTERNS],
   };

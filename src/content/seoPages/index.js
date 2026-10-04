@@ -1618,11 +1618,16 @@ const photoToCarouselContractSpec = {
   },
 };
 
-const contractDraftPreviewSpecs = [photoToCarouselContractSpec]
-  .filter((spec) => !commercialBatchSpecs.some((candidate) => candidate.path === spec.path));
+const isNoindexReviewSpec = (spec) => spec.indexationDisposition === 'noindex_review';
+
+const contractDraftPreviewSpecs = [
+  ...commercialBatchSpecs.filter(isNoindexReviewSpec),
+  ...[photoToCarouselContractSpec]
+    .filter((spec) => !commercialBatchSpecs.some((candidate) => candidate.path === spec.path)),
+];
 
 const contractApprovedReleaseSpecs = [
-  ...commercialBatchSpecs,
+  ...commercialBatchSpecs.filter((spec) => !isNoindexReviewSpec(spec)),
   canvaContractSpec,
   {
     id: "ru-use-case-carousels-for-beauty",

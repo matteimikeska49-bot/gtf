@@ -54,7 +54,7 @@ const classifyRoute = (route, stateByPath) => {
       expectedCanonical: canonicalUrlForPath(seoPage.path),
       expectedTitle: seoPage.title,
       expectedH1: seoPage.h1,
-      expectedRobots: seoPage.noindex === true ? 'noindex, nofollow' : 'index, follow',
+      expectedRobots: entry.robots,
       page: seoPage,
       entry,
     };
@@ -66,6 +66,7 @@ const classifyRoute = (route, stateByPath) => {
       route: normalizedRoute,
       expectedPath: entry.redirectTarget,
       expectedCanonical: canonicalUrl(entry.canonicalPath),
+      expectedRobots: entry.robots,
       entry,
     };
   }
@@ -75,6 +76,7 @@ const classifyRoute = (route, stateByPath) => {
     route: normalizedRoute,
     expectedPath: normalizedRoute,
     expectedCanonical: canonicalUrl(entry.canonicalPath),
+    expectedRobots: entry.robots,
     entry,
   };
 };
@@ -129,6 +131,9 @@ const getReadinessErrors = (state, contract) => {
   }
 
   if (contract.type === 'seo') {
+    if (state.robots.toLowerCase() !== contract.expectedRobots) {
+      errors.push(`robots mismatch: expected ${contract.expectedRobots}, got "${state.robots || 'missing'}"`);
+    }
     if (state.h1Count !== 1) errors.push(`expected exactly one H1, got ${state.h1Count}`);
     if (state.h1Texts[0] !== contract.expectedH1) {
       errors.push(`H1 mismatch: expected "${contract.expectedH1}", got "${state.h1Texts[0] || ''}"`);
@@ -138,13 +143,6 @@ const getReadinessErrors = (state, contract) => {
     }
     if (contract.page.language && state.htmlLang !== contract.page.language) {
       errors.push(`html lang mismatch: expected ${contract.page.language}, got ${state.htmlLang || 'missing'}`);
-    }
-    if (contract.page.noindex === true) {
-      if (!/noindex/i.test(state.robots) || !/nofollow/i.test(state.robots)) {
-        errors.push(`robots mismatch: expected noindex, nofollow, got "${state.robots || 'missing'}"`);
-      }
-    } else if (!/index,\s*follow/i.test(state.robots) || /noindex/i.test(state.robots)) {
-      errors.push(`robots mismatch: expected index, follow, got "${state.robots || 'missing'}"`);
     }
   }
 
@@ -355,7 +353,7 @@ const applyResolvedSeoHead = (html, entry) => {
     .replace(/\s*<meta\b[^>]*http-equiv=["']refresh["'][^>]*>/gi, '');
   const headTags = [
     `<link rel="canonical" href="${canonicalUrl(entry.canonicalPath)}">`,
-    `<meta name="robots" content="${entry.lifecycle === 'redirect' ? 'noindex, follow' : 'index, follow'}">`,
+    `<meta name="robots" content="${entry.robots}">`,
     ...entry.hreflang.map((alternate) => `<link rel="alternate" hreflang="${alternate.lang}" href="${canonicalUrl(alternate.path)}">`),
   ];
   if (entry.lifecycle === 'redirect') headTags.push(`<meta http-equiv="refresh" content="0; url=${entry.redirectTarget}">`);
