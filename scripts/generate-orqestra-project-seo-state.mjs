@@ -36,6 +36,15 @@ const assertRoute = (routePath, expected) => {
   }
 };
 
+const assertOwners = (routePath, expectedOwners) => {
+  const actual = route(routePath);
+  if (!actual) return;
+  const actualOwners = new Set(actual.owners.map((owner) => `${owner.role}:${owner.file}:${owner.writable}`));
+  for (const owner of expectedOwners) {
+    if (!actualOwners.has(owner)) errors.push(`${routePath}: missing resolved owner ${owner}.`);
+  }
+};
+
 if (Object.hasOwn(manifest, 'revision')) errors.push('Manifest must not contain a self-referential revision field.');
 if (serialized.includes('"body"')) errors.push('Manifest must not export article bodies.');
 if (manifest.seo_state.routes.length !== state.entries.length) errors.push('Every resolved route must be projected exactly once.');
@@ -52,11 +61,33 @@ assertRoute('/ru/use-cases/foto-v-karusel', {
   lifecycle: 'CURRENT_NON_INDEXABLE',
   sitemap_disposition: 'EXCLUDE',
 });
+assertOwners('/ru/use-cases/foto-v-karusel', [
+  'REGISTRY:src/content/seoPages/index.js:true',
+  'COMPONENT:src/components/seo/SeoPageRoute.jsx:false',
+]);
 assertRoute('/ai-linkedin-post-generator', {
   canonical_url: canonicalUrl('/linkedin-post-generator'),
   lifecycle: 'RETIRED_REDIRECT',
   sitemap_disposition: 'EXCLUDE',
 });
+assertOwners('/ai-linkedin-post-generator', [
+  'ROUTE:src/routes/routeAliases.js:true',
+  'ROUTE:src/App.jsx:true',
+]);
+assertOwners('/instagram-carousel-maker', [
+  'REGISTRY:src/seo/projectSeoState.js:true',
+  'ROUTE:src/App.jsx:true',
+  'COMPONENT:src/components/CarouselPage.jsx:true',
+  'COMPONENT:src/components/carousel/CarouselSections.jsx:true',
+]);
+assertOwners('/linkedin-post-generator', [
+  'REGISTRY:src/content/seoPages/index.js:true',
+  'COMPONENT:src/components/seo/SeoPageRoute.jsx:false',
+]);
+assertOwners('/ru/blog/karusel-dlya-instagram', [
+  'CONTENT:src/content/blog/articles/karusel-dlya-instagram.md:true',
+  'COMPONENT:src/components/blog/MarkdownBlogArticlePage.jsx:false',
+]);
 for (const routePath of [
   '/instagram-carousel-maker',
   '/linkedin-post-generator',

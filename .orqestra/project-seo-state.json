@@ -36,6 +36,11 @@
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
           }
         ]
       },
@@ -50,6 +55,26 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/CarouselPage.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/carousel/CarouselSections.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/carousel/CarouselSections2.jsx",
             "writable": true
           }
         ]
@@ -66,6 +91,16 @@
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/AIContentPage.jsx",
+            "writable": true
           }
         ]
       },
@@ -80,6 +115,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/InstagramPostPage.jsx",
             "writable": true
           }
         ]
@@ -96,6 +141,11 @@
             "role": "ROUTE",
             "file": "src/routes/routeAliases.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
           }
         ]
       },
@@ -110,6 +160,11 @@
           {
             "role": "ROUTE",
             "file": "src/routes/routeAliases.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
             "writable": true
           }
         ]
@@ -126,6 +181,16 @@
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/BlogPage.jsx",
+            "writable": true
           }
         ]
       },
@@ -141,6 +206,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-carousel-content-strategy.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -156,6 +226,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-carousel-generator.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -171,6 +246,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-carousel-maker-vs-manual-design.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -186,6 +266,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-carousel-workflow.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -201,6 +286,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-content-creation.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -216,6 +306,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-content-marketing-strategy.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -231,6 +326,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-content-writing.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -246,6 +346,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-facebook-post-generator.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -261,6 +366,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-instagram-carousel-generator.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -276,6 +386,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-instagram-post-generator.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -291,6 +406,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-linkedin-carousel-strategy-for-b2b-founders.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -306,6 +426,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-linkedin-post-generator.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -321,6 +446,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ai-social-media-manager.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -336,6 +466,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/b2b-case-study-linkedin-carousel.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -351,6 +486,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/b2b-social-media-post-ideas.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -366,6 +506,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/best-ai-carousel-generators.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -381,6 +526,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/best-carousel-cta-examples.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -396,6 +546,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/best-free-ai-post-generators.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -411,6 +566,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/best-instagram-carousel-examples.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -426,6 +586,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/best-linkedin-carousel-examples.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -441,6 +606,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/best-time-to-post-on-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -456,6 +626,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/carousel-post-mistakes.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -471,6 +646,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/chatgpt-for-social-media-marketing.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -486,6 +666,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/content-calendar-to-carousel.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -501,6 +686,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/facebook-post-ideas-for-small-business.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -516,6 +706,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/guide-to-ai-social-media-post-generators.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -531,6 +726,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/how-to-brainstorm-carousel-topics-with-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -546,6 +746,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/how-to-build-a-personal-brand-on-linkedin-with-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -561,6 +766,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/how-to-increase-instagram-engagement-with-carousels.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -576,6 +786,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/how-to-make-an-instagram-carousel-with-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -591,6 +806,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/how-to-make-linkedin-carousel-with-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -606,6 +826,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/how-to-post-a-carousel-on-linkedin.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -621,6 +846,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/how-to-repurpose-podcasts-into-ai-carousels.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -636,6 +866,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/how-to-scale-your-smm-agency-with-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -651,6 +886,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/how-to-schedule-linkedin-carousel.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -666,6 +906,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/how-to-write-a-b2b-linkedin-post.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -681,6 +926,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/how-to-write-carousel-copy-with-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -696,6 +946,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/instagram-carousel-cover-ideas.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -711,6 +966,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/instagram-carousel-hooks.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -726,6 +986,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/instagram-carousel-ideas.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -741,6 +1006,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/instagram-carousel-post.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -756,6 +1026,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/instagram-carousel-prompts.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -771,6 +1046,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/instagram-carousel-storytelling.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -786,6 +1066,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/instagram-carousel-templates.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -801,6 +1086,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/instagram-post-size-guide.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -816,6 +1106,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/linkedin-carousel-ads.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -831,6 +1126,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/linkedin-carousel-from-pdf-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -846,6 +1146,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/linkedin-carousel-hooks.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -861,6 +1166,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/linkedin-carousel-ideas.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -876,6 +1186,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/linkedin-carousel-prompts.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -891,6 +1206,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/linkedin-carousel-size-and-specs.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -906,6 +1226,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/linkedin-content-strategy-for-founders.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -921,6 +1246,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/linkedin-creator-tools-guide.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -936,6 +1266,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/linkedin-document-post-examples.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -951,6 +1286,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/linkedin-pdf-carousel.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -966,6 +1306,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/repurpose-blog-post-linkedin-carousel-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -981,6 +1326,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/social-media-post-ideas-for-business.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -996,6 +1346,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/test-seo-template-v2.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1011,6 +1366,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/text-to-carousel-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1026,6 +1386,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/turn-video-into-carousel-with-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1041,6 +1406,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/viral-linkedin-post-examples.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1056,6 +1426,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/youtube-to-linkedin-carousel-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1070,6 +1445,11 @@
           {
             "role": "ROUTE",
             "file": "src/routes/routeAliases.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
             "writable": true
           }
         ]
@@ -1086,6 +1466,11 @@
             "role": "ROUTE",
             "file": "src/routes/routeAliases.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
           }
         ]
       },
@@ -1100,6 +1485,26 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/CarouselPage.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/carousel/CarouselSections.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/carousel/CarouselSections2.jsx",
             "writable": true
           }
         ]
@@ -1116,6 +1521,16 @@
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/LinkedInCarouselPage.jsx",
+            "writable": true
           }
         ]
       },
@@ -1131,6 +1546,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -1145,6 +1570,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/PersonalDataConsentPage.jsx",
             "writable": true
           }
         ]
@@ -1161,6 +1596,11 @@
             "role": "ROUTE",
             "file": "src/routes/routeAliases.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
           }
         ]
       },
@@ -1175,6 +1615,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/PricingPage.jsx",
             "writable": true
           }
         ]
@@ -1191,6 +1641,16 @@
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/PrivacyPolicyPage.jsx",
+            "writable": true
           }
         ]
       },
@@ -1205,6 +1665,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/RefundPolicyPage.jsx",
             "writable": true
           }
         ]
@@ -1221,6 +1691,11 @@
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
           }
         ]
       },
@@ -1235,6 +1710,11 @@
           {
             "role": "ROUTE",
             "file": "src/routes/routeAliases.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
             "writable": true
           }
         ]
@@ -1251,6 +1731,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -1266,6 +1756,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -1280,6 +1780,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/BlogPageRu.jsx",
             "writable": true
           }
         ]
@@ -1296,6 +1806,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/algoritm-instagram-karuseli.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1311,6 +1826,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/analiz-kontenta-konkurentov-v-socsetyah.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1326,6 +1846,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/animaciya-v-karuselyah-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1341,6 +1866,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/audit-kontenta-dlya-socsetey.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1356,6 +1886,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/avtovoronka-v-instagram-cherez-karuseli.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1371,6 +1906,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/b2b-keysy-v-linkedin-karusel.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1386,6 +1926,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/b2b-kontent-dlya-socsetey.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1401,6 +1946,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/besshovnaya-karusel-v-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1416,6 +1966,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/chatgpt-prompty-dlya-kopirajtera.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1431,6 +1986,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/chitabelnost-teksta-v-karuselyah.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1446,6 +2006,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/chto-takoe-karusel-v-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1461,6 +2026,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/cta-dlya-karuseley-instagram-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1476,6 +2046,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/dizayn-karuseley-neyroset-vs-canva.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1491,6 +2066,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/foto-dlya-posta-instagram-vizual-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1506,6 +2086,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/gde-delat-posty-karuseli-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1521,6 +2106,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/generaciya-postov-karuseley.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1536,6 +2126,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/generator-karuseley-dlya-vk.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1551,6 +2146,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/generator-vizualnyh-postov-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1566,6 +2166,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/gorizontalnye-i-vertikalnye-foto-v-karuseli.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1581,6 +2186,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/huki-dlya-karuseli-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1596,6 +2206,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/idei-dlya-karuseli-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1611,6 +2226,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/idei-karuselej-linkedin.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1626,6 +2246,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ii-dlya-karuseley.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1641,6 +2266,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ii-post-dlya-socsetej.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1656,6 +2286,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/ii-tekst-dlya-posta.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1671,6 +2306,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/infografika-dlya-socsetey.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1686,6 +2326,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-ispolzovat-midjourney-dlya-postov.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1701,6 +2346,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-napisat-ekspertnyj-post.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1716,6 +2366,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-napisat-post-v-vk-s-pomoshyu-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1731,6 +2386,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-napisat-tekst-dlya-karuseli-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1746,6 +2406,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-narezat-foto-dlya-karuseli.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1761,6 +2426,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-oformit-keys-v-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1776,6 +2446,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-peredelat-statyu-v-karusel-linkedin.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1791,6 +2466,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-peredelat-youtube-v-karusel-linkedin.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1806,6 +2486,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-pisat-prodayushchie-posty-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1821,6 +2506,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-povisit-ohvaty-v-instagram-s-pomoshyu-karuseley.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1836,6 +2526,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-pridumat-temu-dlya-karuseli-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1851,6 +2546,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-sdelat-karusel-dlya-instagram-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1866,6 +2566,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-sdelat-karusel-iz-video-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1881,6 +2586,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-sdelat-karusel-linkedin-s-ai.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1896,6 +2606,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-sdelat-post-v-instagram-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1911,6 +2626,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-sdelat-shablon-dlya-postov-v-canva.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1926,6 +2646,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-sostavit-kontent-plan-s-pomoshyu-chatgpt.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1941,6 +2666,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-sozdat-karusel-s-chatgpt.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1956,6 +2686,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-uvelichit-sohraneniya-karuseley.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1971,6 +2706,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-vesti-linkedin-v-2026.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -1986,6 +2726,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-vesti-telegram-kanal-biznesu.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2001,6 +2746,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-vylozhit-karusel-v-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2016,6 +2766,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kak-zarabatyvat-na-sozdanii-karuseley.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2031,6 +2786,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kakie-posty-delat-v-instagram-idei.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2046,6 +2806,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kakoy-ii-sozdast-post-karusel.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2061,6 +2826,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/karusel-dlya-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2076,6 +2846,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/karusel-dlya-lichnogo-brenda-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2091,6 +2866,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/karusel-dlya-otzyvov-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2106,6 +2886,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/karusel-dlya-zapuska-produkta-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2121,6 +2906,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/karusel-ili-setka-v-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2136,6 +2926,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/karuseli-dlya-ekspertov-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2151,6 +2946,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/karuseli-dlya-onlayn-shkol-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2166,6 +2966,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/karuseli-dlya-smm-agentstva-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2181,6 +2986,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/konstruktor-karuseley-onlayn.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2196,6 +3006,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kontent-dlya-lichnogo-brenda.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2211,6 +3026,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kontent-plan-dlya-vk.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2226,6 +3046,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/kontent-voronka-dlya-socsetey.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2241,6 +3066,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/krasivye-posty-dlya-vk-oformlenie.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2256,6 +3086,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/luchshie-ai-generatory-karuselej.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2271,6 +3106,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/massovoe-sozdanie-karuseley-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2286,6 +3126,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/mnogostranichnye-karuseli-prezentacii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2301,6 +3146,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/neyroset-dlya-napisaniya-postov-obzor.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2316,6 +3166,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/neyroset-dlya-postov.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2331,6 +3186,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/oblozhka-dlya-karuseli-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2346,6 +3206,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/oshibki-v-karuselyah-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2361,6 +3226,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/pererabotka-kontenta-dlya-socsetey.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2376,6 +3246,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/pervyy-post-vkontakte-s-ii.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2391,6 +3266,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/pochemu-instagram-obrezaet-foto-v-karuseli.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2406,6 +3286,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/post-znakomstvo-v-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2421,6 +3306,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/primery-karuseley-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2436,6 +3326,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/primery-karuseley-linkedin.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2451,6 +3346,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/prompty-dlya-karuseley-linkedin.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2466,6 +3366,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/prompty-dlya-karuseley-v-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2481,6 +3386,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/psihologiya-karuseley-kak-uderzhat-vnimanie.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2496,6 +3406,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/razmer-foto-dlya-posta-vk-formaty.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2511,6 +3426,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/razmer-karuseli-v-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2526,6 +3446,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/razmer-posta-v-instagram-v-pikselih.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2541,6 +3466,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/reels-ili-karuseli-chto-vybrat.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2556,6 +3486,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/rubriki-dlya-socsetey.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2571,6 +3506,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/shablony-karuseley-v-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2586,6 +3526,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/struktura-prodayuschego-posta-v-telegram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2601,6 +3546,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/tekst-i-foto-dlya-posta-instagram.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2616,6 +3566,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/tekst-v-karusel-neyroset.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2631,6 +3586,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/temy-dlya-postov-v-linkedin.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2646,6 +3606,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/temy-postov-dlya-gruppy-vkontakte.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2661,6 +3626,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/test-ru-seo-template.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2676,6 +3646,11 @@
             "role": "CONTENT",
             "file": "src/content/blog/articles/trendovye-shrifty-dlya-karuseley.md",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/blog/MarkdownBlogArticlePage.jsx",
+            "writable": false
           }
         ]
       },
@@ -2691,6 +3666,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -2706,6 +3691,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -2720,6 +3715,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/RuAICarouselGeneratorPage.jsx",
             "writable": true
           }
         ]
@@ -2736,6 +3741,16 @@
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/LinkedInCarouselPageRu.jsx",
+            "writable": true
           }
         ]
       },
@@ -2751,6 +3766,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -2766,6 +3791,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -2780,6 +3815,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/AIContentPageRu.jsx",
             "writable": true
           }
         ]
@@ -2796,6 +3841,16 @@
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/InstagramPostPageRu.jsx",
+            "writable": true
           }
         ]
       },
@@ -2811,6 +3866,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -2826,6 +3891,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -2841,6 +3916,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -2855,6 +3940,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/RuAICarouselGeneratorPage.jsx",
             "writable": true
           }
         ]
@@ -2871,6 +3966,11 @@
             "role": "ROUTE",
             "file": "src/routes/routeAliases.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
           }
         ]
       },
@@ -2885,6 +3985,11 @@
           {
             "role": "ROUTE",
             "file": "src/routes/routeAliases.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
             "writable": true
           }
         ]
@@ -2901,6 +4006,16 @@
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/LinkedInPostPageRu.jsx",
+            "writable": true
           }
         ]
       },
@@ -2915,6 +4030,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/PrivacyPolicyPage.jsx",
             "writable": true
           }
         ]
@@ -2931,6 +4056,16 @@
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
             "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/RuTermsOfServicePage.jsx",
+            "writable": true
           }
         ]
       },
@@ -2946,6 +4081,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -2960,6 +4105,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/RuPersonalDataConsentPage.jsx",
             "writable": true
           }
         ]
@@ -2976,6 +4131,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -2991,6 +4156,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3006,6 +4181,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3020,6 +4205,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/UgcCreatorTermsRu.jsx",
             "writable": true
           }
         ]
@@ -3036,6 +4231,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3051,6 +4256,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3066,6 +4281,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3081,6 +4306,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3096,6 +4331,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3111,6 +4356,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3126,6 +4381,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3141,6 +4406,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3156,6 +4431,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3171,6 +4456,16 @@
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
             "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageRoute.jsx",
+            "writable": false
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/seo/SeoPageTemplate.jsx",
+            "writable": false
           }
         ]
       },
@@ -3185,6 +4480,16 @@
           {
             "role": "REGISTRY",
             "file": "src/seo/projectSeoState.js",
+            "writable": true
+          },
+          {
+            "role": "ROUTE",
+            "file": "src/App.jsx",
+            "writable": true
+          },
+          {
+            "role": "COMPONENT",
+            "file": "src/components/TermsOfServicePage.jsx",
             "writable": true
           }
         ]

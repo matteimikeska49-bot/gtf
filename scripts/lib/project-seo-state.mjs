@@ -98,6 +98,10 @@ const readArticles = (projectRoot) => {
         priority: 0.7,
         changefreq: 'monthly',
         hreflang: normalizeHreflang(data.hreflang),
+        owners: [
+          { role: 'CONTENT', file: sourcePath, writable: true },
+          { role: 'COMPONENT', file: 'src/components/blog/MarkdownBlogArticlePage.jsx', writable: false },
+        ],
         article: { ...data, body, slug, language },
       };
     });
@@ -135,6 +139,11 @@ const seoPageEntries = () => {
       priority: page.priority || 0.6,
       changefreq: 'monthly',
       hreflang: normalizeHreflang(page.hreflang),
+      owners: [
+        { role: 'REGISTRY', file: 'src/content/seoPages/index.js', writable: true },
+        { role: 'COMPONENT', file: 'src/components/seo/SeoPageRoute.jsx', writable: false },
+        { role: 'COMPONENT', file: 'src/components/seo/SeoPageTemplate.jsx', writable: false },
+      ],
       seoPage: page,
     };
   });
@@ -155,6 +164,10 @@ const redirectEntries = () => Object.entries(APP_ROUTE_ALIASES).map(([source, ta
   priority: null,
   changefreq: null,
   hreflang: [],
+  owners: [
+    { role: 'ROUTE', file: 'src/routes/routeAliases.js', writable: true },
+    { role: 'ROUTE', file: 'src/App.jsx', writable: true },
+  ],
 }));
 
 const assertUniqueEntries = (entries) => {
@@ -187,6 +200,40 @@ const assertLifecycleContracts = (entries) => {
   }
 };
 
+const ORQESTRA_OWNER_ROLES = new Set([
+  'ROUTE',
+  'CONTENT',
+  'COMPONENT',
+  'REGISTRY',
+  'SITEMAP_SOURCE',
+  'BUILD_INTEGRATION',
+  'GENERATED_ARTIFACT',
+]);
+
+const assertOwnershipContracts = (entries, projectRoot) => {
+  for (const entry of entries) {
+    if (!Array.isArray(entry.owners) || entry.owners.length === 0) {
+      throw new Error(`${entry.path}: resolved route/file ownership is missing.`);
+    }
+    if (!entry.owners.some((owner) => owner.writable === true)) {
+      throw new Error(`${entry.path}: resolved ownership has no writable remediation source.`);
+    }
+    for (const owner of entry.owners) {
+      if (!ORQESTRA_OWNER_ROLES.has(owner.role) || typeof owner.file !== 'string'
+        || path.isAbsolute(owner.file) || owner.file.includes('..')
+        || typeof owner.writable !== 'boolean') {
+        throw new Error(`${entry.path}: invalid resolved owner ${JSON.stringify(owner)}.`);
+      }
+      if (!fs.existsSync(path.join(projectRoot, owner.file))) {
+        throw new Error(`${entry.path}: resolved owner file does not exist: ${owner.file}.`);
+      }
+      if (owner.role === 'GENERATED_ARTIFACT' && owner.writable) {
+        throw new Error(`${entry.path}: generated artifacts cannot be writable remediation sources.`);
+      }
+    }
+  }
+};
+
 export function resolveProjectSeoState(projectRoot = DEFAULT_PROJECT_ROOT) {
   const entries = [
     ...staticEntries(),
@@ -196,6 +243,7 @@ export function resolveProjectSeoState(projectRoot = DEFAULT_PROJECT_ROOT) {
   ].sort((left, right) => left.path.localeCompare(right.path));
   assertUniqueEntries(entries);
   assertLifecycleContracts(entries);
+  assertOwnershipContracts(entries, projectRoot);
 
   const byPath = new Map(entries.map((entry) => [entry.path, entry]));
   return {
@@ -221,12 +269,6 @@ const orqestraLifecycle = (entry) => {
   return 'CURRENT_NON_INDEXABLE';
 };
 
-const orqestraOwnerRole = (entry) => {
-  if (entry.sourceType === 'article') return 'CONTENT';
-  if (entry.sourceType === 'redirect') return 'ROUTE';
-  return 'REGISTRY';
-};
-
 const orqestraSitemapReason = (entry) => {
   if (entry.sitemapEligible) return 'PROJECT_RESOLVED_SITEMAP_ELIGIBLE';
   if (entry.lifecycle === 'redirect') return 'PROJECT_RESOLVED_REDIRECT_EXCLUSION';
@@ -246,11 +288,7 @@ export function toOrqestraSeoState(state) {
       sitemap_disposition: entry.sitemapEligible ? 'INCLUDE' : 'EXCLUDE',
       sitemap_source_state: entry.sitemapEligible ? 'GENERATED_ELIGIBLE' : 'EXCLUDED',
       sitemap_reason: orqestraSitemapReason(entry),
-      owners: [{
-        role: orqestraOwnerRole(entry),
-        file: entry.sourcePath,
-        writable: true,
-      }],
+      owners: entry.owners.map((owner) => ({ ...owner })),
     })),
   };
 }
