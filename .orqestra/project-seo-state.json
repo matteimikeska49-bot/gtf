@@ -1,0 +1,3188 @@
+{
+  "contract_version": "orqestra-project-seo-state.v1",
+  "repository": {
+    "slug": "matteimikeska49-bot/gtf",
+    "default_branch": "main"
+  },
+  "validation": {
+    "status": "PASSED",
+    "results": {
+      "validator": "scripts/check-project-seo-state.mjs",
+      "resolved_routes": 211,
+      "indexable_routes": 195,
+      "sitemap_routes": 195,
+      "prerender_routes": 204,
+      "redirect_routes": 8,
+      "noindex_routes": 8
+    }
+  },
+  "seo_state": {
+    "routes": [
+      {
+        "path": "/",
+        "canonical_url": "https://gotoflow.io/",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ai-carousel-maker",
+        "canonical_url": "https://gotoflow.io/ai-carousel-maker",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ai-content-generator",
+        "canonical_url": "https://gotoflow.io/ai-content-generator",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ai-instagram-post-generator",
+        "canonical_url": "https://gotoflow.io/ai-instagram-post-generator",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ai-linkedin-post-generator",
+        "canonical_url": "https://gotoflow.io/linkedin-post-generator",
+        "lifecycle": "RETIRED_REDIRECT",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_REDIRECT_EXCLUSION",
+        "owners": [
+          {
+            "role": "ROUTE",
+            "file": "src/routes/routeAliases.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ai-post-maker",
+        "canonical_url": "https://gotoflow.io/ai-instagram-post-generator",
+        "lifecycle": "RETIRED_REDIRECT",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_REDIRECT_EXCLUSION",
+        "owners": [
+          {
+            "role": "ROUTE",
+            "file": "src/routes/routeAliases.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog",
+        "canonical_url": "https://gotoflow.io/blog",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-carousel-content-strategy",
+        "canonical_url": "https://gotoflow.io/blog/ai-carousel-content-strategy",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-carousel-content-strategy.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-carousel-generator",
+        "canonical_url": "https://gotoflow.io/blog/ai-carousel-generator",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-carousel-generator.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-carousel-maker-vs-manual-design",
+        "canonical_url": "https://gotoflow.io/blog/ai-carousel-maker-vs-manual-design",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-carousel-maker-vs-manual-design.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-carousel-workflow",
+        "canonical_url": "https://gotoflow.io/blog/ai-carousel-workflow",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-carousel-workflow.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-content-creation",
+        "canonical_url": "https://gotoflow.io/blog/ai-content-creation",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-content-creation.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-content-marketing-strategy",
+        "canonical_url": "https://gotoflow.io/blog/ai-content-marketing-strategy",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-content-marketing-strategy.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-content-writing",
+        "canonical_url": "https://gotoflow.io/blog/ai-content-writing",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-content-writing.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-facebook-post-generator",
+        "canonical_url": "https://gotoflow.io/blog/ai-facebook-post-generator",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-facebook-post-generator.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-instagram-carousel-generator",
+        "canonical_url": "https://gotoflow.io/blog/ai-instagram-carousel-generator",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-instagram-carousel-generator.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-instagram-post-generator",
+        "canonical_url": "https://gotoflow.io/blog/ai-instagram-post-generator",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-instagram-post-generator.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-linkedin-carousel-strategy-for-b2b-founders",
+        "canonical_url": "https://gotoflow.io/blog/ai-linkedin-carousel-strategy-for-b2b-founders",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-linkedin-carousel-strategy-for-b2b-founders.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-linkedin-post-generator",
+        "canonical_url": "https://gotoflow.io/blog/ai-linkedin-post-generator",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-linkedin-post-generator.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/ai-social-media-manager",
+        "canonical_url": "https://gotoflow.io/blog/ai-social-media-manager",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ai-social-media-manager.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/b2b-case-study-linkedin-carousel",
+        "canonical_url": "https://gotoflow.io/blog/b2b-case-study-linkedin-carousel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/b2b-case-study-linkedin-carousel.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/b2b-social-media-post-ideas",
+        "canonical_url": "https://gotoflow.io/blog/b2b-social-media-post-ideas",
+        "lifecycle": "CURRENT_NON_INDEXABLE",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_NOINDEX_EXCLUSION",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/b2b-social-media-post-ideas.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/best-ai-carousel-generators",
+        "canonical_url": "https://gotoflow.io/blog/best-ai-carousel-generators",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/best-ai-carousel-generators.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/best-carousel-cta-examples",
+        "canonical_url": "https://gotoflow.io/blog/best-carousel-cta-examples",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/best-carousel-cta-examples.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/best-free-ai-post-generators",
+        "canonical_url": "https://gotoflow.io/blog/best-free-ai-post-generators",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/best-free-ai-post-generators.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/best-instagram-carousel-examples",
+        "canonical_url": "https://gotoflow.io/blog/best-instagram-carousel-examples",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/best-instagram-carousel-examples.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/best-linkedin-carousel-examples",
+        "canonical_url": "https://gotoflow.io/blog/best-linkedin-carousel-examples",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/best-linkedin-carousel-examples.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/best-time-to-post-on-instagram",
+        "canonical_url": "https://gotoflow.io/blog/best-time-to-post-on-instagram",
+        "lifecycle": "CURRENT_NON_INDEXABLE",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_NOINDEX_EXCLUSION",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/best-time-to-post-on-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/carousel-post-mistakes",
+        "canonical_url": "https://gotoflow.io/blog/carousel-post-mistakes",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/carousel-post-mistakes.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/chatgpt-for-social-media-marketing",
+        "canonical_url": "https://gotoflow.io/blog/chatgpt-for-social-media-marketing",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/chatgpt-for-social-media-marketing.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/content-calendar-to-carousel",
+        "canonical_url": "https://gotoflow.io/blog/content-calendar-to-carousel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/content-calendar-to-carousel.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/facebook-post-ideas-for-small-business",
+        "canonical_url": "https://gotoflow.io/blog/facebook-post-ideas-for-small-business",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/facebook-post-ideas-for-small-business.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/guide-to-ai-social-media-post-generators",
+        "canonical_url": "https://gotoflow.io/blog/guide-to-ai-social-media-post-generators",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/guide-to-ai-social-media-post-generators.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/how-to-brainstorm-carousel-topics-with-ai",
+        "canonical_url": "https://gotoflow.io/blog/how-to-brainstorm-carousel-topics-with-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/how-to-brainstorm-carousel-topics-with-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/how-to-build-a-personal-brand-on-linkedin-with-ai",
+        "canonical_url": "https://gotoflow.io/blog/how-to-build-a-personal-brand-on-linkedin-with-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/how-to-build-a-personal-brand-on-linkedin-with-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/how-to-increase-instagram-engagement-with-carousels",
+        "canonical_url": "https://gotoflow.io/blog/how-to-increase-instagram-engagement-with-carousels",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/how-to-increase-instagram-engagement-with-carousels.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/how-to-make-an-instagram-carousel-with-ai",
+        "canonical_url": "https://gotoflow.io/blog/how-to-make-an-instagram-carousel-with-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/how-to-make-an-instagram-carousel-with-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/how-to-make-linkedin-carousel-with-ai",
+        "canonical_url": "https://gotoflow.io/blog/how-to-make-linkedin-carousel-with-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/how-to-make-linkedin-carousel-with-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/how-to-post-a-carousel-on-linkedin",
+        "canonical_url": "https://gotoflow.io/blog/how-to-post-a-carousel-on-linkedin",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/how-to-post-a-carousel-on-linkedin.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/how-to-repurpose-podcasts-into-ai-carousels",
+        "canonical_url": "https://gotoflow.io/blog/how-to-repurpose-podcasts-into-ai-carousels",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/how-to-repurpose-podcasts-into-ai-carousels.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/how-to-scale-your-smm-agency-with-ai",
+        "canonical_url": "https://gotoflow.io/blog/how-to-scale-your-smm-agency-with-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/how-to-scale-your-smm-agency-with-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/how-to-schedule-linkedin-carousel",
+        "canonical_url": "https://gotoflow.io/blog/how-to-schedule-linkedin-carousel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/how-to-schedule-linkedin-carousel.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/how-to-write-a-b2b-linkedin-post",
+        "canonical_url": "https://gotoflow.io/blog/how-to-write-a-b2b-linkedin-post",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/how-to-write-a-b2b-linkedin-post.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/how-to-write-carousel-copy-with-ai",
+        "canonical_url": "https://gotoflow.io/blog/how-to-write-carousel-copy-with-ai",
+        "lifecycle": "CURRENT_NON_INDEXABLE",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_NOINDEX_EXCLUSION",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/how-to-write-carousel-copy-with-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/instagram-carousel-cover-ideas",
+        "canonical_url": "https://gotoflow.io/blog/instagram-carousel-cover-ideas",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/instagram-carousel-cover-ideas.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/instagram-carousel-hooks",
+        "canonical_url": "https://gotoflow.io/blog/instagram-carousel-hooks",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/instagram-carousel-hooks.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/instagram-carousel-ideas",
+        "canonical_url": "https://gotoflow.io/blog/instagram-carousel-ideas",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/instagram-carousel-ideas.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/instagram-carousel-post",
+        "canonical_url": "https://gotoflow.io/blog/instagram-carousel-post",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/instagram-carousel-post.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/instagram-carousel-prompts",
+        "canonical_url": "https://gotoflow.io/blog/instagram-carousel-prompts",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/instagram-carousel-prompts.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/instagram-carousel-storytelling",
+        "canonical_url": "https://gotoflow.io/blog/instagram-carousel-storytelling",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/instagram-carousel-storytelling.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/instagram-carousel-templates",
+        "canonical_url": "https://gotoflow.io/blog/instagram-carousel-templates",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/instagram-carousel-templates.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/instagram-post-size-guide",
+        "canonical_url": "https://gotoflow.io/blog/instagram-post-size-guide",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/instagram-post-size-guide.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/linkedin-carousel-ads",
+        "canonical_url": "https://gotoflow.io/blog/linkedin-carousel-ads",
+        "lifecycle": "CURRENT_NON_INDEXABLE",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_NOINDEX_EXCLUSION",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/linkedin-carousel-ads.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/linkedin-carousel-from-pdf-ai",
+        "canonical_url": "https://gotoflow.io/blog/linkedin-carousel-from-pdf-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/linkedin-carousel-from-pdf-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/linkedin-carousel-hooks",
+        "canonical_url": "https://gotoflow.io/blog/linkedin-carousel-hooks",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/linkedin-carousel-hooks.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/linkedin-carousel-ideas",
+        "canonical_url": "https://gotoflow.io/blog/linkedin-carousel-ideas",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/linkedin-carousel-ideas.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/linkedin-carousel-prompts",
+        "canonical_url": "https://gotoflow.io/blog/linkedin-carousel-prompts",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/linkedin-carousel-prompts.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/linkedin-carousel-size-and-specs",
+        "canonical_url": "https://gotoflow.io/blog/linkedin-carousel-size-and-specs",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/linkedin-carousel-size-and-specs.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/linkedin-content-strategy-for-founders",
+        "canonical_url": "https://gotoflow.io/blog/linkedin-content-strategy-for-founders",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/linkedin-content-strategy-for-founders.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/linkedin-creator-tools-guide",
+        "canonical_url": "https://gotoflow.io/blog/linkedin-creator-tools-guide",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/linkedin-creator-tools-guide.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/linkedin-document-post-examples",
+        "canonical_url": "https://gotoflow.io/blog/linkedin-document-post-examples",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/linkedin-document-post-examples.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/linkedin-pdf-carousel",
+        "canonical_url": "https://gotoflow.io/blog/linkedin-pdf-carousel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/linkedin-pdf-carousel.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/repurpose-blog-post-linkedin-carousel-ai",
+        "canonical_url": "https://gotoflow.io/blog/repurpose-blog-post-linkedin-carousel-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/repurpose-blog-post-linkedin-carousel-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/social-media-post-ideas-for-business",
+        "canonical_url": "https://gotoflow.io/blog/social-media-post-ideas-for-business",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/social-media-post-ideas-for-business.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/test-seo-template-v2",
+        "canonical_url": "https://gotoflow.io/blog/test-seo-template-v2",
+        "lifecycle": "CURRENT_NON_INDEXABLE",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_NOINDEX_EXCLUSION",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/test-seo-template-v2.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/text-to-carousel-ai",
+        "canonical_url": "https://gotoflow.io/blog/text-to-carousel-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/text-to-carousel-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/turn-video-into-carousel-with-ai",
+        "canonical_url": "https://gotoflow.io/blog/turn-video-into-carousel-with-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/turn-video-into-carousel-with-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/viral-linkedin-post-examples",
+        "canonical_url": "https://gotoflow.io/blog/viral-linkedin-post-examples",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/viral-linkedin-post-examples.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/blog/youtube-to-linkedin-carousel-ai",
+        "canonical_url": "https://gotoflow.io/blog/youtube-to-linkedin-carousel-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/youtube-to-linkedin-carousel-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/carousel-maker",
+        "canonical_url": "https://gotoflow.io/ai-carousel-maker",
+        "lifecycle": "RETIRED_REDIRECT",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_REDIRECT_EXCLUSION",
+        "owners": [
+          {
+            "role": "ROUTE",
+            "file": "src/routes/routeAliases.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/carousel/create",
+        "canonical_url": "https://gotoflow.io/ai-carousel-maker",
+        "lifecycle": "RETIRED_REDIRECT",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_REDIRECT_EXCLUSION",
+        "owners": [
+          {
+            "role": "ROUTE",
+            "file": "src/routes/routeAliases.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/instagram-carousel-maker",
+        "canonical_url": "https://gotoflow.io/instagram-carousel-maker",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/linkedin-carousel-maker",
+        "canonical_url": "https://gotoflow.io/linkedin-carousel-maker",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/linkedin-post-generator",
+        "canonical_url": "https://gotoflow.io/linkedin-post-generator",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/personal-data-consent",
+        "canonical_url": "https://gotoflow.io/personal-data-consent",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/politika",
+        "canonical_url": "https://gotoflow.io/ru/politika",
+        "lifecycle": "RETIRED_REDIRECT",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_REDIRECT_EXCLUSION",
+        "owners": [
+          {
+            "role": "ROUTE",
+            "file": "src/routes/routeAliases.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/pricing",
+        "canonical_url": "https://gotoflow.io/pricing",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/privacy-policy",
+        "canonical_url": "https://gotoflow.io/privacy-policy",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/refund-policy",
+        "canonical_url": "https://gotoflow.io/refund-policy",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru",
+        "canonical_url": "https://gotoflow.io/ru",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/ai-generator-karuselej",
+        "canonical_url": "https://gotoflow.io/ru/ii-generator-karuseley",
+        "lifecycle": "RETIRED_REDIRECT",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_REDIRECT_EXCLUSION",
+        "owners": [
+          {
+            "role": "ROUTE",
+            "file": "src/routes/routeAliases.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/alternatives/canva-dlya-karuseley",
+        "canonical_url": "https://gotoflow.io/ru/alternatives/canva-dlya-karuseley",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/alternatives/chatgpt-dlya-karuseley",
+        "canonical_url": "https://gotoflow.io/ru/alternatives/chatgpt-dlya-karuseley",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog",
+        "canonical_url": "https://gotoflow.io/ru/blog",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/algoritm-instagram-karuseli",
+        "canonical_url": "https://gotoflow.io/ru/blog/algoritm-instagram-karuseli",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/algoritm-instagram-karuseli.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/analiz-kontenta-konkurentov-v-socsetyah",
+        "canonical_url": "https://gotoflow.io/ru/blog/analiz-kontenta-konkurentov-v-socsetyah",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/analiz-kontenta-konkurentov-v-socsetyah.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/animaciya-v-karuselyah-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/animaciya-v-karuselyah-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/animaciya-v-karuselyah-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/audit-kontenta-dlya-socsetey",
+        "canonical_url": "https://gotoflow.io/ru/blog/audit-kontenta-dlya-socsetey",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/audit-kontenta-dlya-socsetey.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/avtovoronka-v-instagram-cherez-karuseli",
+        "canonical_url": "https://gotoflow.io/ru/blog/avtovoronka-v-instagram-cherez-karuseli",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/avtovoronka-v-instagram-cherez-karuseli.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/b2b-keysy-v-linkedin-karusel",
+        "canonical_url": "https://gotoflow.io/ru/blog/b2b-keysy-v-linkedin-karusel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/b2b-keysy-v-linkedin-karusel.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/b2b-kontent-dlya-socsetey",
+        "canonical_url": "https://gotoflow.io/ru/blog/b2b-kontent-dlya-socsetey",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/b2b-kontent-dlya-socsetey.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/besshovnaya-karusel-v-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/besshovnaya-karusel-v-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/besshovnaya-karusel-v-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/chatgpt-prompty-dlya-kopirajtera",
+        "canonical_url": "https://gotoflow.io/ru/blog/chatgpt-prompty-dlya-kopirajtera",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/chatgpt-prompty-dlya-kopirajtera.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/chitabelnost-teksta-v-karuselyah",
+        "canonical_url": "https://gotoflow.io/ru/blog/chitabelnost-teksta-v-karuselyah",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/chitabelnost-teksta-v-karuselyah.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/chto-takoe-karusel-v-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/chto-takoe-karusel-v-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/chto-takoe-karusel-v-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/cta-dlya-karuseley-instagram-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/cta-dlya-karuseley-instagram-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/cta-dlya-karuseley-instagram-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/dizayn-karuseley-neyroset-vs-canva",
+        "canonical_url": "https://gotoflow.io/ru/blog/dizayn-karuseley-neyroset-vs-canva",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/dizayn-karuseley-neyroset-vs-canva.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/foto-dlya-posta-instagram-vizual-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/foto-dlya-posta-instagram-vizual-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/foto-dlya-posta-instagram-vizual-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/gde-delat-posty-karuseli-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/gde-delat-posty-karuseli-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/gde-delat-posty-karuseli-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/generaciya-postov-karuseley",
+        "canonical_url": "https://gotoflow.io/ru/blog/generaciya-postov-karuseley",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/generaciya-postov-karuseley.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/generator-karuseley-dlya-vk",
+        "canonical_url": "https://gotoflow.io/ru/blog/generator-karuseley-dlya-vk",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/generator-karuseley-dlya-vk.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/generator-vizualnyh-postov-ai",
+        "canonical_url": "https://gotoflow.io/ru/blog/generator-vizualnyh-postov-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/generator-vizualnyh-postov-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/gorizontalnye-i-vertikalnye-foto-v-karuseli",
+        "canonical_url": "https://gotoflow.io/ru/blog/gorizontalnye-i-vertikalnye-foto-v-karuseli",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/gorizontalnye-i-vertikalnye-foto-v-karuseli.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/huki-dlya-karuseli-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/huki-dlya-karuseli-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/huki-dlya-karuseli-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/idei-dlya-karuseli-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/idei-dlya-karuseli-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/idei-dlya-karuseli-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/idei-karuselej-linkedin",
+        "canonical_url": "https://gotoflow.io/ru/blog/idei-karuselej-linkedin",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/idei-karuselej-linkedin.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/ii-dlya-karuseley",
+        "canonical_url": "https://gotoflow.io/ru/blog/ii-dlya-karuseley",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ii-dlya-karuseley.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/ii-post-dlya-socsetej",
+        "canonical_url": "https://gotoflow.io/ru/blog/ii-post-dlya-socsetej",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ii-post-dlya-socsetej.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/ii-tekst-dlya-posta",
+        "canonical_url": "https://gotoflow.io/ru/blog/ii-tekst-dlya-posta",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/ii-tekst-dlya-posta.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/infografika-dlya-socsetey",
+        "canonical_url": "https://gotoflow.io/ru/blog/infografika-dlya-socsetey",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/infografika-dlya-socsetey.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-ispolzovat-midjourney-dlya-postov",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-ispolzovat-midjourney-dlya-postov",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-ispolzovat-midjourney-dlya-postov.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-napisat-ekspertnyj-post",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-napisat-ekspertnyj-post",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-napisat-ekspertnyj-post.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-napisat-post-v-vk-s-pomoshyu-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-napisat-tekst-dlya-karuseli-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-napisat-tekst-dlya-karuseli-s-ii",
+        "lifecycle": "CURRENT_NON_INDEXABLE",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_NOINDEX_EXCLUSION",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-napisat-tekst-dlya-karuseli-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-narezat-foto-dlya-karuseli",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-narezat-foto-dlya-karuseli",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-narezat-foto-dlya-karuseli.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-oformit-keys-v-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-oformit-keys-v-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-oformit-keys-v-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-peredelat-statyu-v-karusel-linkedin",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-peredelat-statyu-v-karusel-linkedin",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-peredelat-statyu-v-karusel-linkedin.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-peredelat-youtube-v-karusel-linkedin",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-peredelat-youtube-v-karusel-linkedin",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-peredelat-youtube-v-karusel-linkedin.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-pisat-prodayushchie-posty-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-pisat-prodayushchie-posty-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-pisat-prodayushchie-posty-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-povisit-ohvaty-v-instagram-s-pomoshyu-karuseley",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-povisit-ohvaty-v-instagram-s-pomoshyu-karuseley",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-povisit-ohvaty-v-instagram-s-pomoshyu-karuseley.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-pridumat-temu-dlya-karuseli-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-pridumat-temu-dlya-karuseli-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-pridumat-temu-dlya-karuseli-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-sdelat-karusel-dlya-instagram-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-sdelat-karusel-iz-video-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-sdelat-karusel-iz-video-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-sdelat-karusel-iz-video-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-sdelat-karusel-linkedin-s-ai",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-sdelat-karusel-linkedin-s-ai",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-sdelat-karusel-linkedin-s-ai.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-sdelat-post-v-instagram-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-sdelat-post-v-instagram-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-sdelat-post-v-instagram-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-sdelat-shablon-dlya-postov-v-canva",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-sdelat-shablon-dlya-postov-v-canva",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-sdelat-shablon-dlya-postov-v-canva.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-sostavit-kontent-plan-s-pomoshyu-chatgpt",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-sostavit-kontent-plan-s-pomoshyu-chatgpt",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-sostavit-kontent-plan-s-pomoshyu-chatgpt.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-sozdat-karusel-s-chatgpt",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-sozdat-karusel-s-chatgpt",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-sozdat-karusel-s-chatgpt.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-uvelichit-sohraneniya-karuseley",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-uvelichit-sohraneniya-karuseley",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-uvelichit-sohraneniya-karuseley.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-vesti-linkedin-v-2026",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-vesti-linkedin-v-2026",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-vesti-linkedin-v-2026.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-vesti-telegram-kanal-biznesu",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-vesti-telegram-kanal-biznesu",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-vesti-telegram-kanal-biznesu.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-vylozhit-karusel-v-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-vylozhit-karusel-v-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-vylozhit-karusel-v-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kak-zarabatyvat-na-sozdanii-karuseley",
+        "canonical_url": "https://gotoflow.io/ru/blog/kak-zarabatyvat-na-sozdanii-karuseley",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kak-zarabatyvat-na-sozdanii-karuseley.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kakie-posty-delat-v-instagram-idei",
+        "canonical_url": "https://gotoflow.io/ru/blog/kakie-posty-delat-v-instagram-idei",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kakie-posty-delat-v-instagram-idei.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kakoy-ii-sozdast-post-karusel",
+        "canonical_url": "https://gotoflow.io/ru/blog/kakoy-ii-sozdast-post-karusel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kakoy-ii-sozdast-post-karusel.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/karusel-dlya-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/karusel-dlya-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/karusel-dlya-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/karusel-dlya-lichnogo-brenda-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/karusel-dlya-lichnogo-brenda-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/karusel-dlya-lichnogo-brenda-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/karusel-dlya-otzyvov-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/karusel-dlya-otzyvov-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/karusel-dlya-otzyvov-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/karusel-dlya-zapuska-produkta-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/karusel-dlya-zapuska-produkta-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/karusel-dlya-zapuska-produkta-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/karusel-ili-setka-v-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/karusel-ili-setka-v-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/karusel-ili-setka-v-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/karuseli-dlya-ekspertov-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/karuseli-dlya-ekspertov-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/karuseli-dlya-ekspertov-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/karuseli-dlya-onlayn-shkol-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/karuseli-dlya-onlayn-shkol-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/karuseli-dlya-onlayn-shkol-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/karuseli-dlya-smm-agentstva-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/karuseli-dlya-smm-agentstva-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/karuseli-dlya-smm-agentstva-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/konstruktor-karuseley-onlayn",
+        "canonical_url": "https://gotoflow.io/ru/blog/konstruktor-karuseley-onlayn",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/konstruktor-karuseley-onlayn.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kontent-dlya-lichnogo-brenda",
+        "canonical_url": "https://gotoflow.io/ru/blog/kontent-dlya-lichnogo-brenda",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kontent-dlya-lichnogo-brenda.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kontent-plan-dlya-vk",
+        "canonical_url": "https://gotoflow.io/ru/blog/kontent-plan-dlya-vk",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kontent-plan-dlya-vk.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/kontent-voronka-dlya-socsetey",
+        "canonical_url": "https://gotoflow.io/ru/blog/kontent-voronka-dlya-socsetey",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/kontent-voronka-dlya-socsetey.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/krasivye-posty-dlya-vk-oformlenie",
+        "canonical_url": "https://gotoflow.io/ru/blog/krasivye-posty-dlya-vk-oformlenie",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/krasivye-posty-dlya-vk-oformlenie.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/luchshie-ai-generatory-karuselej",
+        "canonical_url": "https://gotoflow.io/ru/blog/luchshie-ai-generatory-karuselej",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/luchshie-ai-generatory-karuselej.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/massovoe-sozdanie-karuseley-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/massovoe-sozdanie-karuseley-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/massovoe-sozdanie-karuseley-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/mnogostranichnye-karuseli-prezentacii",
+        "canonical_url": "https://gotoflow.io/ru/blog/mnogostranichnye-karuseli-prezentacii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/mnogostranichnye-karuseli-prezentacii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/neyroset-dlya-napisaniya-postov-obzor",
+        "canonical_url": "https://gotoflow.io/ru/blog/neyroset-dlya-napisaniya-postov-obzor",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/neyroset-dlya-napisaniya-postov-obzor.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/neyroset-dlya-postov",
+        "canonical_url": "https://gotoflow.io/ru/blog/neyroset-dlya-postov",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/neyroset-dlya-postov.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/oblozhka-dlya-karuseli-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/oblozhka-dlya-karuseli-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/oblozhka-dlya-karuseli-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/oshibki-v-karuselyah-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/oshibki-v-karuselyah-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/oshibki-v-karuselyah-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/pererabotka-kontenta-dlya-socsetey",
+        "canonical_url": "https://gotoflow.io/ru/blog/pererabotka-kontenta-dlya-socsetey",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/pererabotka-kontenta-dlya-socsetey.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/pervyy-post-vkontakte-s-ii",
+        "canonical_url": "https://gotoflow.io/ru/blog/pervyy-post-vkontakte-s-ii",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/pervyy-post-vkontakte-s-ii.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/pochemu-instagram-obrezaet-foto-v-karuseli",
+        "canonical_url": "https://gotoflow.io/ru/blog/pochemu-instagram-obrezaet-foto-v-karuseli",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/pochemu-instagram-obrezaet-foto-v-karuseli.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/post-znakomstvo-v-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/post-znakomstvo-v-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/post-znakomstvo-v-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/primery-karuseley-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/primery-karuseley-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/primery-karuseley-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/primery-karuseley-linkedin",
+        "canonical_url": "https://gotoflow.io/ru/blog/primery-karuseley-linkedin",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/primery-karuseley-linkedin.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/prompty-dlya-karuseley-linkedin",
+        "canonical_url": "https://gotoflow.io/ru/blog/prompty-dlya-karuseley-linkedin",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/prompty-dlya-karuseley-linkedin.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/prompty-dlya-karuseley-v-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/prompty-dlya-karuseley-v-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/prompty-dlya-karuseley-v-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie",
+        "canonical_url": "https://gotoflow.io/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/psihologiya-karuseley-kak-uderzhat-vnimanie.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/razmer-foto-dlya-posta-vk-formaty",
+        "canonical_url": "https://gotoflow.io/ru/blog/razmer-foto-dlya-posta-vk-formaty",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/razmer-foto-dlya-posta-vk-formaty.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/razmer-karuseli-v-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/razmer-karuseli-v-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/razmer-karuseli-v-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/razmer-posta-v-instagram-v-pikselih",
+        "canonical_url": "https://gotoflow.io/ru/blog/razmer-posta-v-instagram-v-pikselih",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/razmer-posta-v-instagram-v-pikselih.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/reels-ili-karuseli-chto-vybrat",
+        "canonical_url": "https://gotoflow.io/ru/blog/reels-ili-karuseli-chto-vybrat",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/reels-ili-karuseli-chto-vybrat.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/rubriki-dlya-socsetey",
+        "canonical_url": "https://gotoflow.io/ru/blog/rubriki-dlya-socsetey",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/rubriki-dlya-socsetey.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/shablony-karuseley-v-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/shablony-karuseley-v-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/shablony-karuseley-v-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/struktura-prodayuschego-posta-v-telegram",
+        "canonical_url": "https://gotoflow.io/ru/blog/struktura-prodayuschego-posta-v-telegram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/struktura-prodayuschego-posta-v-telegram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/tekst-i-foto-dlya-posta-instagram",
+        "canonical_url": "https://gotoflow.io/ru/blog/tekst-i-foto-dlya-posta-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/tekst-i-foto-dlya-posta-instagram.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/tekst-v-karusel-neyroset",
+        "canonical_url": "https://gotoflow.io/ru/blog/tekst-v-karusel-neyroset",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/tekst-v-karusel-neyroset.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/temy-dlya-postov-v-linkedin",
+        "canonical_url": "https://gotoflow.io/ru/blog/temy-dlya-postov-v-linkedin",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/temy-dlya-postov-v-linkedin.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/temy-postov-dlya-gruppy-vkontakte",
+        "canonical_url": "https://gotoflow.io/ru/blog/temy-postov-dlya-gruppy-vkontakte",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/temy-postov-dlya-gruppy-vkontakte.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/test-ru-seo-template",
+        "canonical_url": "https://gotoflow.io/ru/blog/test-ru-seo-template",
+        "lifecycle": "CURRENT_NON_INDEXABLE",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_NOINDEX_EXCLUSION",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/test-ru-seo-template.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/blog/trendovye-shrifty-dlya-karuseley",
+        "canonical_url": "https://gotoflow.io/ru/blog/trendovye-shrifty-dlya-karuseley",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "CONTENT",
+            "file": "src/content/blog/articles/trendovye-shrifty-dlya-karuseley.md",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/examples/instagram-carousel",
+        "canonical_url": "https://gotoflow.io/ru/examples/instagram-carousel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/generator-kartinok-dlya-karuseli",
+        "canonical_url": "https://gotoflow.io/ru/generator-kartinok-dlya-karuseli",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/generator-karuselej-instagram",
+        "canonical_url": "https://gotoflow.io/ru/generator-karuselej-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/generator-karuselej-linkedin",
+        "canonical_url": "https://gotoflow.io/ru/generator-karuselej-linkedin",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/generator-karuselej-telegram",
+        "canonical_url": "https://gotoflow.io/ru/generator-karuselej-telegram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/generator-karuselej-vk",
+        "canonical_url": "https://gotoflow.io/ru/generator-karuselej-vk",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/generator-kontenta",
+        "canonical_url": "https://gotoflow.io/ru/generator-kontenta",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/generator-postov-instagram",
+        "canonical_url": "https://gotoflow.io/ru/generator-postov-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/generator-prodayushchih-postov",
+        "canonical_url": "https://gotoflow.io/ru/generator-prodayushchih-postov",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/generator-reklamnyh-postov",
+        "canonical_url": "https://gotoflow.io/ru/generator-reklamnyh-postov",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/generator-teksta-dlya-posta",
+        "canonical_url": "https://gotoflow.io/ru/generator-teksta-dlya-posta",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/ii-generator-karuseley",
+        "canonical_url": "https://gotoflow.io/ru/ii-generator-karuseley",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/ii-generator-kontenta",
+        "canonical_url": "https://gotoflow.io/ru/generator-kontenta",
+        "lifecycle": "RETIRED_REDIRECT",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_REDIRECT_EXCLUSION",
+        "owners": [
+          {
+            "role": "ROUTE",
+            "file": "src/routes/routeAliases.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/ii-generator-postov-dlya-instagram",
+        "canonical_url": "https://gotoflow.io/ru/generator-postov-instagram",
+        "lifecycle": "RETIRED_REDIRECT",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_REDIRECT_EXCLUSION",
+        "owners": [
+          {
+            "role": "ROUTE",
+            "file": "src/routes/routeAliases.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/ii-generator-postov-dlya-linkedin",
+        "canonical_url": "https://gotoflow.io/ru/ii-generator-postov-dlya-linkedin",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/politika",
+        "canonical_url": "https://gotoflow.io/ru/politika",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/polzovatelskoe-soglashenie",
+        "canonical_url": "https://gotoflow.io/ru/polzovatelskoe-soglashenie",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/prompts/instagram-carousel",
+        "canonical_url": "https://gotoflow.io/ru/prompts/instagram-carousel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/soglasie-na-obrabotku-personalnyh-dannyh",
+        "canonical_url": "https://gotoflow.io/ru/soglasie-na-obrabotku-personalnyh-dannyh",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/telegram-post-generator",
+        "canonical_url": "https://gotoflow.io/ru/telegram-post-generator",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/templates/instagram-carousel",
+        "canonical_url": "https://gotoflow.io/ru/templates/instagram-carousel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/tools/luchshie-servisy-dlya-karuseley",
+        "canonical_url": "https://gotoflow.io/ru/tools/luchshie-servisy-dlya-karuseley",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/ugc-creator-terms",
+        "canonical_url": "https://gotoflow.io/ru/ugc-creator-terms",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/use-cases/besshovnaya-karusel-instagram",
+        "canonical_url": "https://gotoflow.io/ru/use-cases/besshovnaya-karusel-instagram",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/use-cases/carousels-for-beauty",
+        "canonical_url": "https://gotoflow.io/ru/use-cases/carousels-for-beauty",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/use-cases/carousels-for-experts",
+        "canonical_url": "https://gotoflow.io/ru/use-cases/carousels-for-experts",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/use-cases/carousels-for-smm",
+        "canonical_url": "https://gotoflow.io/ru/use-cases/carousels-for-smm",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/use-cases/foto-v-karusel",
+        "canonical_url": "https://gotoflow.io/ru/use-cases/foto-v-karusel",
+        "lifecycle": "CURRENT_NON_INDEXABLE",
+        "sitemap_disposition": "EXCLUDE",
+        "sitemap_source_state": "EXCLUDED",
+        "sitemap_reason": "PROJECT_RESOLVED_NOINDEX_EXCLUSION",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/use-cases/pdf-v-karusel",
+        "canonical_url": "https://gotoflow.io/ru/use-cases/pdf-v-karusel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/use-cases/social-content-for-business",
+        "canonical_url": "https://gotoflow.io/ru/use-cases/social-content-for-business",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/use-cases/tekst-v-karusel",
+        "canonical_url": "https://gotoflow.io/ru/use-cases/tekst-v-karusel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/use-cases/video-v-karusel",
+        "canonical_url": "https://gotoflow.io/ru/use-cases/video-v-karusel",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/ru/vk-post-generator",
+        "canonical_url": "https://gotoflow.io/ru/vk-post-generator",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/content/seoPages/index.js",
+            "writable": true
+          }
+        ]
+      },
+      {
+        "path": "/terms-of-service",
+        "canonical_url": "https://gotoflow.io/terms-of-service",
+        "lifecycle": "CURRENT",
+        "sitemap_disposition": "INCLUDE",
+        "sitemap_source_state": "GENERATED_ELIGIBLE",
+        "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
+        "owners": [
+          {
+            "role": "REGISTRY",
+            "file": "src/seo/projectSeoState.js",
+            "writable": true
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -211,6 +211,73 @@ export function resolveProjectSeoState(projectRoot = DEFAULT_PROJECT_ROOT) {
   };
 }
 
+export const ORQESTRA_PROJECT_SEO_STATE_CONTRACT = 'orqestra-project-seo-state.v1';
+export const ORQESTRA_REPOSITORY_SLUG = 'matteimikeska49-bot/gtf';
+export const ORQESTRA_DEFAULT_BRANCH = 'main';
+
+const orqestraLifecycle = (entry) => {
+  if (entry.lifecycle === 'current_indexable') return 'CURRENT';
+  if (entry.lifecycle === 'redirect') return 'RETIRED_REDIRECT';
+  return 'CURRENT_NON_INDEXABLE';
+};
+
+const orqestraOwnerRole = (entry) => {
+  if (entry.sourceType === 'article') return 'CONTENT';
+  if (entry.sourceType === 'redirect') return 'ROUTE';
+  return 'REGISTRY';
+};
+
+const orqestraSitemapReason = (entry) => {
+  if (entry.sitemapEligible) return 'PROJECT_RESOLVED_SITEMAP_ELIGIBLE';
+  if (entry.lifecycle === 'redirect') return 'PROJECT_RESOLVED_REDIRECT_EXCLUSION';
+  return 'PROJECT_RESOLVED_NOINDEX_EXCLUSION';
+};
+
+/**
+ * Projects own route-level SEO truth. This is the deliberately small adapter
+ * projection consumed by Orqestra; it must never become a second registry.
+ */
+export function toOrqestraSeoState(state) {
+  return {
+    routes: state.entries.map((entry) => ({
+      path: entry.path,
+      canonical_url: canonicalUrl(entry.canonicalPath),
+      lifecycle: orqestraLifecycle(entry),
+      sitemap_disposition: entry.sitemapEligible ? 'INCLUDE' : 'EXCLUDE',
+      sitemap_source_state: entry.sitemapEligible ? 'GENERATED_ELIGIBLE' : 'EXCLUDED',
+      sitemap_reason: orqestraSitemapReason(entry),
+      owners: [{
+        role: orqestraOwnerRole(entry),
+        file: entry.sourcePath,
+        writable: true,
+      }],
+    })),
+  };
+}
+
+export function buildOrqestraProjectSeoManifest(state) {
+  return {
+    contract_version: ORQESTRA_PROJECT_SEO_STATE_CONTRACT,
+    repository: {
+      slug: ORQESTRA_REPOSITORY_SLUG,
+      default_branch: ORQESTRA_DEFAULT_BRANCH,
+    },
+    validation: {
+      status: 'PASSED',
+      results: {
+        validator: 'scripts/check-project-seo-state.mjs',
+        resolved_routes: state.entries.length,
+        indexable_routes: state.indexableEntries.length,
+        sitemap_routes: state.sitemapEntries.length,
+        prerender_routes: state.prerenderEntries.length,
+        redirect_routes: state.redirectEntries.length,
+        noindex_routes: state.noindexEntries.length,
+      },
+    },
+    seo_state: toOrqestraSeoState(state),
+  };
+}
+
 const xmlEscape = (value) => String(value)
   .replaceAll('&', '&amp;')
   .replaceAll('<', '&lt;')
