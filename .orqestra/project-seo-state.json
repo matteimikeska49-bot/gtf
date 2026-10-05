@@ -13,7 +13,13 @@
       "sitemap_routes": 195,
       "prerender_routes": 204,
       "redirect_routes": 8,
-      "noindex_routes": 8
+      "noindex_routes": 8,
+      "noindex_sitemap_hits": 0,
+      "redirect_sitemap_hits": 0,
+      "indexable_sitemap_parity": "195/195",
+      "rendered_lifecycle_parity": "204/204",
+      "canonical_hreflang_routes_checked": 204,
+      "route_ownership_routes_checked": 211
     }
   },
   "seo_state": {
