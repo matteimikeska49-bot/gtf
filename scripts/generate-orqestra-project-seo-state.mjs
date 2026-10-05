@@ -62,7 +62,8 @@ assertRoute('/ru/use-cases/foto-v-karusel', {
   sitemap_disposition: 'EXCLUDE',
 });
 assertOwners('/ru/use-cases/foto-v-karusel', [
-  'REGISTRY:src/content/seoPages/index.js:true',
+  'CONTENT:src/content/seoPages/commercialBatchSpecs.js:true',
+  'REGISTRY:src/content/seoPages/index.js:false',
   'COMPONENT:src/components/seo/SeoPageRoute.jsx:false',
 ]);
 assertRoute('/ai-linkedin-post-generator', {
@@ -81,8 +82,16 @@ assertOwners('/instagram-carousel-maker', [
   'COMPONENT:src/components/carousel/CarouselSections.jsx:true',
 ]);
 assertOwners('/linkedin-post-generator', [
-  'REGISTRY:src/content/seoPages/index.js:true',
+  'CONTENT:src/content/seoPages/commercialBatchSpecs.js:true',
+  'REGISTRY:src/content/seoPages/index.js:false',
   'COMPONENT:src/components/seo/SeoPageRoute.jsx:false',
+]);
+assertOwners('/ru/generator-teksta-dlya-posta', [
+  'CONTENT:src/content/seoPages/commercialBatchSpecs.js:true',
+  'REGISTRY:src/content/seoPages/index.js:false',
+]);
+assertOwners('/ru/use-cases/carousels-for-beauty', [
+  'REGISTRY:src/content/seoPages/index.js:true',
 ]);
 assertOwners('/ru/blog/karusel-dlya-instagram', [
   'CONTENT:src/content/blog/articles/karusel-dlya-instagram.md:true',

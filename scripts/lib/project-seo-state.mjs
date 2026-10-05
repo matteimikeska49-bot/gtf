@@ -7,6 +7,10 @@ import {
   getSeoPagesForPrerender,
 } from '../../src/content/seoPages/index.js';
 import {
+  COMMERCIAL_BATCH_SPECS_SOURCE_FILE,
+  isCommercialBatchSpecPage,
+} from '../../src/content/seoPages/commercialBatchSpecs.js';
+import {
   DYNAMIC_ROUTE_PATTERNS,
   RUNTIME_ONLY_ROUTE_PATHS,
   STATIC_SEO_ROUTES,
@@ -120,16 +124,27 @@ const staticEntries = () => STATIC_SEO_ROUTES.map((entry) => ({
   hreflang: normalizeHreflang(entry.hreflang),
 }));
 
+const SEO_PAGE_REGISTRY_FILE = 'src/content/seoPages/index.js';
+
 const seoPageEntries = () => {
   const prerenderPaths = new Set(getSeoPagesForPrerender().map((page) => page.path));
   return getPublishedSeoPages().map((page) => {
     const indexable = page.state === 'indexable_approved' && page.noindex !== true;
     const lifecycle = indexable ? 'current_indexable' : page.state;
+    const contentSourceFile = isCommercialBatchSpecPage(page)
+      ? COMMERCIAL_BATCH_SPECS_SOURCE_FILE
+      : SEO_PAGE_REGISTRY_FILE;
+    const owners = contentSourceFile === SEO_PAGE_REGISTRY_FILE
+      ? [{ role: 'REGISTRY', file: SEO_PAGE_REGISTRY_FILE, writable: true }]
+      : [
+        { role: 'CONTENT', file: contentSourceFile, writable: true },
+        { role: 'REGISTRY', file: SEO_PAGE_REGISTRY_FILE, writable: false },
+      ];
     return {
       path: normalizeRoutePath(page.path),
       canonicalPath: normalizeRoutePath(page.path),
       sourceType: 'seo_registry',
-      sourcePath: 'src/content/seoPages/index.js',
+      sourcePath: SEO_PAGE_REGISTRY_FILE,
       lifecycle,
       robots: robotsForLifecycle(lifecycle),
       indexable,
@@ -140,7 +155,7 @@ const seoPageEntries = () => {
       changefreq: 'monthly',
       hreflang: normalizeHreflang(page.hreflang),
       owners: [
-        { role: 'REGISTRY', file: 'src/content/seoPages/index.js', writable: true },
+        ...owners,
         { role: 'COMPONENT', file: 'src/components/seo/SeoPageRoute.jsx', writable: false },
         { role: 'COMPONENT', file: 'src/components/seo/SeoPageTemplate.jsx', writable: false },
       ],

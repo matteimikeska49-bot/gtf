@@ -1543,9 +1543,14 @@
         "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
         "owners": [
           {
+            "role": "CONTENT",
+            "file": "src/content/seoPages/commercialBatchSpecs.js",
+            "writable": true
+          },
+          {
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
-            "writable": true
+            "writable": false
           },
           {
             "role": "COMPONENT",
@@ -3688,9 +3693,14 @@
         "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
         "owners": [
           {
+            "role": "CONTENT",
+            "file": "src/content/seoPages/commercialBatchSpecs.js",
+            "writable": true
+          },
+          {
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
-            "writable": true
+            "writable": false
           },
           {
             "role": "COMPONENT",
@@ -3763,9 +3773,14 @@
         "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
         "owners": [
           {
+            "role": "CONTENT",
+            "file": "src/content/seoPages/commercialBatchSpecs.js",
+            "writable": true
+          },
+          {
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
-            "writable": true
+            "writable": false
           },
           {
             "role": "COMPONENT",
@@ -3788,9 +3803,14 @@
         "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
         "owners": [
           {
+            "role": "CONTENT",
+            "file": "src/content/seoPages/commercialBatchSpecs.js",
+            "writable": true
+          },
+          {
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
-            "writable": true
+            "writable": false
           },
           {
             "role": "COMPONENT",
@@ -3863,9 +3883,14 @@
         "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
         "owners": [
           {
+            "role": "CONTENT",
+            "file": "src/content/seoPages/commercialBatchSpecs.js",
+            "writable": true
+          },
+          {
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
-            "writable": true
+            "writable": false
           },
           {
             "role": "COMPONENT",
@@ -3888,9 +3913,14 @@
         "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
         "owners": [
           {
+            "role": "CONTENT",
+            "file": "src/content/seoPages/commercialBatchSpecs.js",
+            "writable": true
+          },
+          {
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
-            "writable": true
+            "writable": false
           },
           {
             "role": "COMPONENT",
@@ -3913,9 +3943,14 @@
         "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
         "owners": [
           {
+            "role": "CONTENT",
+            "file": "src/content/seoPages/commercialBatchSpecs.js",
+            "writable": true
+          },
+          {
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
-            "writable": true
+            "writable": false
           },
           {
             "role": "COMPONENT",
@@ -4328,9 +4363,14 @@
         "sitemap_reason": "PROJECT_RESOLVED_NOINDEX_EXCLUSION",
         "owners": [
           {
+            "role": "CONTENT",
+            "file": "src/content/seoPages/commercialBatchSpecs.js",
+            "writable": true
+          },
+          {
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
-            "writable": true
+            "writable": false
           },
           {
             "role": "COMPONENT",
@@ -4353,9 +4393,14 @@
         "sitemap_reason": "PROJECT_RESOLVED_SITEMAP_ELIGIBLE",
         "owners": [
           {
+            "role": "CONTENT",
+            "file": "src/content/seoPages/commercialBatchSpecs.js",
+            "writable": true
+          },
+          {
             "role": "REGISTRY",
             "file": "src/content/seoPages/index.js",
-            "writable": true
+            "writable": false
           },
           {
             "role": "COMPONENT",
