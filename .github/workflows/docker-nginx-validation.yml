@@ -11,7 +11,12 @@ on:
       - "package-lock.json"
       - "src/**"
       - "public/**"
+      - "dist/**"
       - "prerender.mjs"
+      - "scripts/check-project-seo-state.mjs"
+      - "scripts/generate-orqestra-project-seo-state.mjs"
+      - "scripts/lib/project-seo-state.mjs"
+      - ".orqestra/project-seo-state.json"
       - ".github/workflows/docker-nginx-validation.yml"
 
   push:
@@ -20,6 +25,16 @@ on:
     paths:
       - "Dockerfile"
       - "nginx.conf"
+      - "package.json"
+      - "package-lock.json"
+      - "src/**"
+      - "public/**"
+      - "dist/**"
+      - "prerender.mjs"
+      - "scripts/check-project-seo-state.mjs"
+      - "scripts/generate-orqestra-project-seo-state.mjs"
+      - "scripts/lib/project-seo-state.mjs"
+      - ".orqestra/project-seo-state.json"
       - ".github/workflows/docker-nginx-validation.yml"
 
   workflow_dispatch:
@@ -45,6 +60,9 @@ jobs:
           ls -la
           test -f Dockerfile
           test -f nginx.conf
+
+      - name: Validate committed project SEO state manifest
+        run: npm run check:orqestra-seo-manifest
 
       - name: Build production Docker image
         run: |

@@ -1,6 +1,12 @@
 // Generated once from the nine CODEX_VALIDATED_AFTER_GEMINI contracts.
 // Runtime imports this static registry data; handoff Markdown is not parsed in production.
 
+export const COMMERCIAL_BATCH_SPECS_SOURCE_FILE = 'src/content/seoPages/commercialBatchSpecs.js';
+
+export function isCommercialBatchSpecPage(page) {
+  return commercialBatchSpecs.some((spec) => spec.id === page?.id);
+}
+
 export const commercialBatchSpecs = [
   {
     "id": "ru-commercial-generator-teksta-dlya-posta",

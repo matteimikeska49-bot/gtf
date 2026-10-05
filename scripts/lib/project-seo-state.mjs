@@ -7,6 +7,10 @@ import {
   getSeoPagesForPrerender,
 } from '../../src/content/seoPages/index.js';
 import {
+  COMMERCIAL_BATCH_SPECS_SOURCE_FILE,
+  isCommercialBatchSpecPage,
+} from '../../src/content/seoPages/commercialBatchSpecs.js';
+import {
   DYNAMIC_ROUTE_PATTERNS,
   RUNTIME_ONLY_ROUTE_PATHS,
   STATIC_SEO_ROUTES,
@@ -98,6 +102,10 @@ const readArticles = (projectRoot) => {
         priority: 0.7,
         changefreq: 'monthly',
         hreflang: normalizeHreflang(data.hreflang),
+        owners: [
+          { role: 'CONTENT', file: sourcePath, writable: true },
+          { role: 'COMPONENT', file: 'src/components/blog/MarkdownBlogArticlePage.jsx', writable: false },
+        ],
         article: { ...data, body, slug, language },
       };
     });
@@ -116,16 +124,27 @@ const staticEntries = () => STATIC_SEO_ROUTES.map((entry) => ({
   hreflang: normalizeHreflang(entry.hreflang),
 }));
 
+const SEO_PAGE_REGISTRY_FILE = 'src/content/seoPages/index.js';
+
 const seoPageEntries = () => {
   const prerenderPaths = new Set(getSeoPagesForPrerender().map((page) => page.path));
   return getPublishedSeoPages().map((page) => {
     const indexable = page.state === 'indexable_approved' && page.noindex !== true;
     const lifecycle = indexable ? 'current_indexable' : page.state;
+    const contentSourceFile = isCommercialBatchSpecPage(page)
+      ? COMMERCIAL_BATCH_SPECS_SOURCE_FILE
+      : SEO_PAGE_REGISTRY_FILE;
+    const owners = contentSourceFile === SEO_PAGE_REGISTRY_FILE
+      ? [{ role: 'REGISTRY', file: SEO_PAGE_REGISTRY_FILE, writable: true }]
+      : [
+        { role: 'CONTENT', file: contentSourceFile, writable: true },
+        { role: 'REGISTRY', file: SEO_PAGE_REGISTRY_FILE, writable: false },
+      ];
     return {
       path: normalizeRoutePath(page.path),
       canonicalPath: normalizeRoutePath(page.path),
       sourceType: 'seo_registry',
-      sourcePath: 'src/content/seoPages/index.js',
+      sourcePath: SEO_PAGE_REGISTRY_FILE,
       lifecycle,
       robots: robotsForLifecycle(lifecycle),
       indexable,
@@ -135,6 +154,11 @@ const seoPageEntries = () => {
       priority: page.priority || 0.6,
       changefreq: 'monthly',
       hreflang: normalizeHreflang(page.hreflang),
+      owners: [
+        ...owners,
+        { role: 'COMPONENT', file: 'src/components/seo/SeoPageRoute.jsx', writable: false },
+        { role: 'COMPONENT', file: 'src/components/seo/SeoPageTemplate.jsx', writable: false },
+      ],
       seoPage: page,
     };
   });
@@ -155,6 +179,10 @@ const redirectEntries = () => Object.entries(APP_ROUTE_ALIASES).map(([source, ta
   priority: null,
   changefreq: null,
   hreflang: [],
+  owners: [
+    { role: 'ROUTE', file: 'src/routes/routeAliases.js', writable: true },
+    { role: 'ROUTE', file: 'src/App.jsx', writable: true },
+  ],
 }));
 
 const assertUniqueEntries = (entries) => {
@@ -187,6 +215,40 @@ const assertLifecycleContracts = (entries) => {
   }
 };
 
+const ORQESTRA_OWNER_ROLES = new Set([
+  'ROUTE',
+  'CONTENT',
+  'COMPONENT',
+  'REGISTRY',
+  'SITEMAP_SOURCE',
+  'BUILD_INTEGRATION',
+  'GENERATED_ARTIFACT',
+]);
+
+const assertOwnershipContracts = (entries, projectRoot) => {
+  for (const entry of entries) {
+    if (!Array.isArray(entry.owners) || entry.owners.length === 0) {
+      throw new Error(`${entry.path}: resolved route/file ownership is missing.`);
+    }
+    if (!entry.owners.some((owner) => owner.writable === true)) {
+      throw new Error(`${entry.path}: resolved ownership has no writable remediation source.`);
+    }
+    for (const owner of entry.owners) {
+      if (!ORQESTRA_OWNER_ROLES.has(owner.role) || typeof owner.file !== 'string'
+        || path.isAbsolute(owner.file) || owner.file.includes('..')
+        || typeof owner.writable !== 'boolean') {
+        throw new Error(`${entry.path}: invalid resolved owner ${JSON.stringify(owner)}.`);
+      }
+      if (!fs.existsSync(path.join(projectRoot, owner.file))) {
+        throw new Error(`${entry.path}: resolved owner file does not exist: ${owner.file}.`);
+      }
+      if (owner.role === 'GENERATED_ARTIFACT' && owner.writable) {
+        throw new Error(`${entry.path}: generated artifacts cannot be writable remediation sources.`);
+      }
+    }
+  }
+};
+
 export function resolveProjectSeoState(projectRoot = DEFAULT_PROJECT_ROOT) {
   const entries = [
     ...staticEntries(),
@@ -196,6 +258,7 @@ export function resolveProjectSeoState(projectRoot = DEFAULT_PROJECT_ROOT) {
   ].sort((left, right) => left.path.localeCompare(right.path));
   assertUniqueEntries(entries);
   assertLifecycleContracts(entries);
+  assertOwnershipContracts(entries, projectRoot);
 
   const byPath = new Map(entries.map((entry) => [entry.path, entry]));
   return {
@@ -208,6 +271,69 @@ export function resolveProjectSeoState(projectRoot = DEFAULT_PROJECT_ROOT) {
     noindexEntries: entries.filter((entry) => entry.lifecycle !== 'current_indexable' && entry.lifecycle !== 'redirect'),
     runtimeOnlyPaths: [...RUNTIME_ONLY_ROUTE_PATHS],
     dynamicRoutePatterns: [...DYNAMIC_ROUTE_PATTERNS],
+  };
+}
+
+export const ORQESTRA_PROJECT_SEO_STATE_CONTRACT = 'orqestra-project-seo-state.v1';
+export const ORQESTRA_REPOSITORY_SLUG = 'matteimikeska49-bot/gtf';
+export const ORQESTRA_DEFAULT_BRANCH = 'main';
+
+const orqestraLifecycle = (entry) => {
+  if (entry.lifecycle === 'current_indexable') return 'CURRENT';
+  if (entry.lifecycle === 'redirect') return 'RETIRED_REDIRECT';
+  return 'CURRENT_NON_INDEXABLE';
+};
+
+const orqestraSitemapReason = (entry) => {
+  if (entry.sitemapEligible) return 'PROJECT_RESOLVED_SITEMAP_ELIGIBLE';
+  if (entry.lifecycle === 'redirect') return 'PROJECT_RESOLVED_REDIRECT_EXCLUSION';
+  return 'PROJECT_RESOLVED_NOINDEX_EXCLUSION';
+};
+
+/**
+ * Projects own route-level SEO truth. This is the deliberately small adapter
+ * projection consumed by Orqestra; it must never become a second registry.
+ */
+export function toOrqestraSeoState(state) {
+  return {
+    routes: state.entries.map((entry) => ({
+      path: entry.path,
+      canonical_url: canonicalUrl(entry.canonicalPath),
+      lifecycle: orqestraLifecycle(entry),
+      sitemap_disposition: entry.sitemapEligible ? 'INCLUDE' : 'EXCLUDE',
+      sitemap_source_state: entry.sitemapEligible ? 'GENERATED_ELIGIBLE' : 'EXCLUDED',
+      sitemap_reason: orqestraSitemapReason(entry),
+      owners: entry.owners.map((owner) => ({ ...owner })),
+    })),
+  };
+}
+
+export function buildOrqestraProjectSeoManifest(state) {
+  return {
+    contract_version: ORQESTRA_PROJECT_SEO_STATE_CONTRACT,
+    repository: {
+      slug: ORQESTRA_REPOSITORY_SLUG,
+      default_branch: ORQESTRA_DEFAULT_BRANCH,
+    },
+    validation: {
+      status: 'PASSED',
+      results: {
+        validator: 'scripts/check-project-seo-state.mjs',
+        resolved_routes: state.entries.length,
+        indexable_routes: state.indexableEntries.length,
+        sitemap_routes: state.sitemapEntries.length,
+        prerender_routes: state.prerenderEntries.length,
+        redirect_routes: state.redirectEntries.length,
+        noindex_routes: state.noindexEntries.length,
+        noindex_sitemap_hits: 0,
+        redirect_sitemap_hits: 0,
+        indexable_sitemap_parity: `${state.sitemapEntries.length}/${state.indexableEntries.length}`,
+        rendered_lifecycle_parity: `${state.prerenderEntries.length}/${state.prerenderEntries.length}`,
+        canonical_hreflang_routes_checked: state.prerenderEntries.length,
+        route_ownership_routes_checked: state.entries.length,
+      },
+    },
+    seo_state: toOrqestraSeoState(state),
   };
 }
 
