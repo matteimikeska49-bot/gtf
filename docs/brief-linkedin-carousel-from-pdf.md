@@ -24,14 +24,14 @@
 
 ## 4. Article structure
 - Hero promise: How to transform a dense PDF report or whitepaper into an engaging, swipeable LinkedIn carousel in minutes using AI.
-- Quick answer: You can convert a PDF into a LinkedIn carousel by copying the core text from your PDF into an AI carousel generator, letting the AI structure the slides, and exporting the result as a ready-to-post PDF document for LinkedIn.
+- Quick answer: You can convert a PDF into a LinkedIn carousel by uploading the PDF/file directly to GoToFlow as source input, letting the AI structure the slides, and exporting the result as a ready-to-post PDF document for LinkedIn.
 - Main H2 sections:
   1. Why repurpose PDFs for LinkedIn?
   2. How to extract the best points from your PDF
-  3. Step-by-step: Converting PDF text to a carousel with AI
+  3. Step-by-step: Converting a PDF to a carousel with AI
   4. Best practices for whitepaper carousels
 - FAQ: 5 questions about PDF limits, formatting, and document posts.
-- Final CTA: "Stop wasting hours manually redesigning PDFs. Let GoToFlow's AI turn your text into a carousel instantly."
+- Final CTA: "Stop wasting hours manually redesigning PDFs. Upload your PDF/file directly as source input and let GoToFlow create a carousel instantly."
 
 ## 5. Visual / mockup needs
 - Needs mockup: yes

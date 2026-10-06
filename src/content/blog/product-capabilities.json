@@ -6,7 +6,7 @@
     "description": "GoToFlow creates full-cycle carousel workflows from source inputs into structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.",
     "allowedClaims": [
       "GoToFlow can generate carousel content and visuals with AI",
-      "GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, manually copied text from a PDF, image, screenshot, or user photo into a carousel workflow",
+      "GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, directly uploaded PDF/file, image, screenshot, or user materials into a carousel workflow",
       "create Instagram carousel-style content",
       "create LinkedIn carousel/document-style content"
     ],
@@ -24,7 +24,7 @@
     "relatedKeywords": ["carousel generator", "ai carousel"],
     "evidence": {
       "source": "Core value proposition",
-      "notes": "Verified visually on platform"
+      "notes": "Verified visually on platform; direct PDF/file source input confirmed by Owner Product Truth correction, 2026-10-07."
     },
     "lastVerified": "2026-06-08",
     "reviewRequiredBeforeClaiming": false
@@ -116,30 +116,30 @@
     "capabilityId": "pdfToCarousel",
     "label": "PDF to Carousel",
     "status": "supported",
-    "description": "GoToFlow can use text manually copied or extracted by the user from a PDF as input for a carousel workflow.",
+    "description": "GoToFlow accepts directly uploaded PDF/file as source input for creating a carousel. Manual copying of text from the PDF is not required.",
     "allowedClaims": [
-      "turn manually copied text from a PDF into a carousel workflow",
-      "use manually copied text from a PDF as source material for a carousel"
+      "turn a directly uploaded PDF/file into a carousel workflow",
+      "use a directly uploaded PDF/file as source material for a carousel"
     ],
     "forbiddenClaims": [
-      "direct PDF file upload",
-      "automatic PDF parsing or extraction",
       "perfect PDF extraction",
       "guaranteed PDF extraction accuracy",
+      "guaranteed PDF parsing accuracy",
+      "guaranteed OCR accuracy",
       "unlimited PDF input size"
     ],
     "saferAlternatives": [
-      "use manually copied text from a PDF as source material for a carousel workflow"
+      "upload a PDF/file directly and use it as source material for a carousel workflow"
     ],
     "relatedRoutes": ["/"],
     "relatedArticleTypes": ["how-to"],
     "relatedKeywords": ["pdf to carousel"],
     "evidence": {
-      "source": "Manual extraction",
-      "notes": "Direct PDF file upload, parsing, OCR, and automatic extraction are not supported"
+      "source": "Owner Product Truth correction, 2026-10-07",
+      "notes": "Direct PDF/file source input is supported. This confirms the user-facing input capability, not internal processing details, extraction/OCR accuracy, or unlimited file size."
     },
-    "lastVerified": "2026-06-08",
-    "reviewRequiredBeforeClaiming": true
+    "lastVerified": "2026-10-07",
+    "reviewRequiredBeforeClaiming": false
   },
   {
     "capabilityId": "youtubeVideoToCarousel",

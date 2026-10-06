@@ -2298,7 +2298,7 @@
       "textToCarousel",
       "finishedOutputPositioning"
     ],
-    "productAngle": "Turn a topic, text, link, video, audio, screenshot or manually copied PDF text into a finished carousel workflow.",
+    "productAngle": "Turn a topic, text, link, video, audio, screenshot or directly uploaded PDF/file into a finished carousel workflow.",
     "decisionReason": "A strategy hub for cross-format reuse; existing source-specific articles remain supporting spokes.",
     "intentBoundaries": "Explain the decision system across source types; route source-specific procedures to their existing owners.",
     "doNotCover": "Detailed video-to-carousel, article-to-LinkedIn, YouTube-to-LinkedIn or PDF instructions.",

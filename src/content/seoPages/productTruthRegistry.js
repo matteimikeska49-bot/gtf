@@ -11,7 +11,6 @@ export const SEO_PRODUCT_TRUTH_REGISTRY = {
     video: { status: 'available', evidence: 'docs/product/gotoflow-capabilities.md section 2.1.' },
     pdf: {
       status: 'available',
-      inputMode: 'manually_copied_text_only',
       evidence: 'docs/product/gotoflow-capabilities.md section 2.1.',
     },
     voice: { status: 'available', evidence: 'docs/product/gotoflow-capabilities.md section 2.1.' },
@@ -57,7 +56,7 @@ export const SEO_CANONICAL_PRODUCT_CAPABILITIES = [
   {
     id: 'content-sources',
     title: 'Источники контента',
-    body: 'Начните с темы или готового текста, ссылки, видео, текста из PDF, голосового сообщения, изображения, скриншота или своих фото.',
+    body: 'Начните с темы, сценария, текста, ссылки, видео, аудио, напрямую загруженного PDF/файла, изображения, скриншота или пользовательских материалов.',
     capabilityIds: ['topicText', 'link', 'video', 'pdf', 'voice', 'image', 'screenshot', 'userPhoto'],
   },
   {

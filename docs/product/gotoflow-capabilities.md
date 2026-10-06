@@ -67,16 +67,19 @@ GoToFlow can create carousel workflows from:
 4. Link, including Reels, YouTube, or TikTok source links.
 5. Video, including Reels, YouTube, or TikTok video.
 6. Audio / voice.
-7. Text manually copied or extracted from PDF.
-8. Images / screenshots.
-9. User photos.
+7. Directly uploaded PDF/file.
+8. Image.
+9. Screenshot.
+10. User materials, including user photos.
+
+Owner Product Truth correction, 2026-10-07: GoToFlow accepts PDF/file directly as source input for creating a carousel. Users do not need to manually copy text from the PDF first. This confirms the user-facing input capability only, not an internal parsing or OCR implementation, perfect extraction, guaranteed parsing/OCR accuracy, or unlimited file size.
 
 GoToFlow is a full-cycle carousel creation system: it can turn the input into structure, slide copy, visual direction, CTA and a ready-to-publish carousel.
 
-Dashboard source phrases:
+Supported source-input positioning:
 
 ```text
-VIDEO / REELS / AUDIO / MANUALLY COPIED TEXT FROM PDF
+VIDEO / REELS / AUDIO / PDF / FILE
 ```
 
 ```text
@@ -90,13 +93,13 @@ AI сам посмотрит видео, сделает транскрипцию
 Correct EN positioning:
 
 ```text
-GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, manually copied text from a PDF, image, screenshot, or user photo into a carousel workflow: structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.
+GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, directly uploaded PDF/file, image, screenshot, or user materials into a carousel workflow: structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.
 ```
 
 Correct RU positioning:
 
 ```text
-GoToFlow помогает превратить тему, сценарий, текст, ссылку, Reels, видео из YouTube или TikTok, аудио, вручную скопированный текст из PDF, изображение, скриншот или свои фото в карусель: структура, текст по слайдам, визуальная логика, CTA и готовая к публикации карусель.
+GoToFlow помогает превратить тему, сценарий, текст, ссылку, Reels, видео из YouTube или TikTok, аудио, напрямую загруженный PDF/файл, изображение, скриншот или пользовательские материалы в карусель: структура, текст по слайдам, визуальная логика, CTA и готовая к публикации карусель.
 ```
 
 Нельзя описывать GoToFlow как:
@@ -123,10 +126,6 @@ tool that only creates drafts
 
 ```text
 tool where user must first transcribe video somewhere else
-```
-
-```text
-tool that automatically parses or extracts content from a PDF file
 ```
 
 ---
