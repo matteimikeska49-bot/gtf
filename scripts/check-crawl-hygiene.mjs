@@ -1,13 +1,46 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 import { resolveProjectSeoState } from './lib/project-seo-state.mjs';
 import { isRuCarouselCluster, validateCarouselOwnership } from './lib/carousel-ownership.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const attribution = 'ref partner referral utm_source utm_medium utm_campaign utm_content utm_term utm_id yclid gclid fbclid _openstat'.split(' ');
+const attribution = 'ref utm_source utm_medium utm_campaign utm_content utm_term utm_id yclid gclid fbclid _openstat'.split(' ');
 const residue = '_ym_debug need_sec_link sec_link_scene'.split(' ');
 const payment = 'OutSum InvId SignatureValue IsTest Culture Shp_intent_id Shp_product_code Shp_provider Shp_purchase_type'.split(' ');
+
+export function validateTopLevelFrontmatterKeys(text) {
+  const frontmatter = text.match(/^\uFEFF?---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1];
+  if (frontmatter === undefined) return [];
+  const errors = [];
+  const seen = new Map();
+  for (const [index, line] of frontmatter.split(/\r?\n/).entries()) {
+    // Column-zero keys only: repeated fields within FAQ/CTA objects are valid.
+    const match = line.match(/^(?:([A-Za-z_][\w-]*)|"([^"]+)"|'([^']+)')\s*:/);
+    if (!match) continue;
+    const key = match[1] ?? match[2] ?? match[3];
+    const lineNumber = index + 2;
+    if (seen.has(key)) errors.push(`duplicate top-level frontmatter key ${key} (lines ${seen.get(key)} and ${lineNumber})`);
+    else seen.set(key, lineNumber);
+  }
+  return errors;
+}
+
+export function checkChangedArticleFrontmatter(projectRoot = root, baseRef = process.env.BLOG_RELEASE_BASE_REF || 'origin/main') {
+  const git = args => execFileSync('git', args, { cwd: projectRoot, encoding: 'utf8' }).trim();
+  // Include committed PR changes as well as staged/working/untracked articles.
+  // HEAD-only diffs would silently lose the regression guard after a commit.
+  const base = git(['merge-base', 'HEAD', baseRef]);
+  const paths = ['src/content/blog/articles'];
+  const changed = git(['diff', '--name-only', '--diff-filter=ACMR', '-z', base, '--', ...paths]);
+  const untracked = git(['ls-files', '--others', '--exclude-standard', '-z', '--', ...paths]);
+  const files = [...new Set([...changed.split('\0'), ...untracked.split('\0')])]
+    .filter(file => file.endsWith('.md') && fs.existsSync(path.join(projectRoot, file))).sort();
+  const errors = files.flatMap(file => validateTopLevelFrontmatterKeys(fs.readFileSync(path.join(projectRoot, file), 'utf8'))
+    .map(error => `${file}: ${error}`));
+  return { errors, articles: files.length };
+}
 
 export function validateRobotsPolicy(source, generated = source) {
   const errors = [];
@@ -66,6 +99,14 @@ export function validateNginx404Contract(config) {
 
 export function checkCrawlHygiene(projectRoot = root) {
   const errors = validateRobotsPolicy(fs.readFileSync(path.join(projectRoot, 'public/robots.txt'), 'utf8'), fs.readFileSync(path.join(projectRoot, 'dist/robots.txt'), 'utf8'));
+  let changedArticles = 0;
+  try {
+    const frontmatter = checkChangedArticleFrontmatter(projectRoot);
+    changedArticles = frontmatter.articles;
+    errors.push(...frontmatter.errors);
+  } catch (error) {
+    errors.push(`cannot establish changed-article frontmatter scope: ${error.message}`);
+  }
   errors.push(...validateNginx404Contract(fs.readFileSync(path.join(projectRoot, 'nginx.conf'), 'utf8')));
   const state = resolveProjectSeoState(projectRoot);
   const routes = new Map(state.entries.map(entry => [entry.path, entry]));
@@ -106,12 +147,12 @@ export function checkCrawlHygiene(projectRoot = root) {
     const renderedPrimary = finalSection.match(/<a\b[^>]*href="([^"]+)"/)?.[1];
     if (renderedPrimary !== cluster.productRoute) errors.push(`${role.slug}: rendered final CTA ${renderedPrimary} differs from ${cluster.productRoute}`);
   }
-  return { errors, links, carouselPages };
+  return { errors, links, carouselPages, changedArticles };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const { errors, links, carouselPages } = checkCrawlHygiene();
-  console.log(`Crawl hygiene: ${links} rendered navigation links, ${carouselPages} current RU carousel ownership/CTA pages checked, ${errors.length} errors.`);
+  const { errors, links, carouselPages, changedArticles } = checkCrawlHygiene();
+  console.log(`Crawl hygiene: ${links} rendered navigation links, ${carouselPages} current RU carousel ownership/CTA pages, ${changedArticles} changed articles checked for duplicate frontmatter keys, ${errors.length} errors.`);
   errors.forEach(error => console.error(error));
   if (errors.length) process.exit(1);
 }

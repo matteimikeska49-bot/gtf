@@ -4,7 +4,7 @@ import path from 'path';
 import { spawnSync } from 'child_process';
 import { validateSeoIntentRecords } from './check-seo-route-intent-ownership.mjs';
 import { scanProductTruthText } from './check-seo-cross-system-product-truth.mjs';
-import { validateRobotsPolicy, validateNavigationTarget, validatePublishedFacts, validateNginx404Contract } from './check-crawl-hygiene.mjs';
+import { validateRobotsPolicy, validateNavigationTarget, validatePublishedFacts, validateNginx404Contract, validateTopLevelFrontmatterKeys, checkChangedArticleFrontmatter } from './check-crawl-hygiene.mjs';
 import { validateCarouselOwnership } from './lib/carousel-ownership.mjs';
 import { getAppUrlWithRef } from '../src/utils/url.js';
 
@@ -258,7 +258,10 @@ const crawlFixture = (name, errors, blocked = true) => cases.push({
 });
 const robots = fs.readFileSync(path.join(rootDir, 'public/robots.txt'), 'utf8');
 crawlFixture('valid explicit Clean-param policy', validateRobotsPolicy(robots), false);
-crawlFixture('content-affecting lang must not be cleaned', validateRobotsPolicy(robots.replace('ref&partner', 'lang&ref&partner')));
+crawlFixture('content-affecting lang must not be cleaned', validateRobotsPolicy(robots.replace('ref&utm_source', 'lang&ref&utm_source')));
+for (const name of ['partner', 'referral']) {
+  crawlFixture(`unverified ${name} must not be cleaned`, validateRobotsPolicy(robots.replace('ref&utm_source', `ref&${name}&utm_source`)));
+}
 crawlFixture('no wildcard callback parameters', validateRobotsPolicy(robots.replace('Shp_intent_id', 'Shp_*')));
 crawlFixture('payment normalization must retain /ru scope', validateRobotsPolicy(robots.replace('Shp_purchase_type /ru', 'Shp_purchase_type')));
 crawlFixture('source/generated robots drift', validateRobotsPolicy(robots, robots + '\n'));
@@ -291,6 +294,11 @@ crawlFixture('href alone is not a rendered primary CTA', bridge(article.replace(
 crawlFixture('competing generic bridge in Instagram supporting content', bridge(article + '\n[Create](/ru/ii-generator-karuseley)'));
 crawlFixture('intent-map drift is independently blocked', validateCarouselOwnership(article, { slug: 'fixture', cluster: igCluster, intent: { cluster: igCluster.clusterId, relatedProductRoute: '/ru/ii-generator-karuseley' } }));
 crawlFixture('draft/noindex editorial role is not treated as a current rendered page', bridge(article.replace('clusterId:', 'published: false\nnoindex: true\nclusterId:').replace('primaryHref: "/ru/generator-karuselej-instagram"', 'primaryHref: "/ru/generator-postov-instagram"')), false);
+crawlFixture('all PR-changed articles have unique top-level frontmatter keys', checkChangedArticleFrontmatter(rootDir).errors, false);
+crawlFixture('duplicate updatedAt cannot silently overwrite maintenance date', validateTopLevelFrontmatterKeys('---\nupdatedAt: "2026-10-06"\nupdatedAt: "2026-06-13"\n---\nBody'));
+crawlFixture('duplicate non-date top-level keys are blocked', validateTopLevelFrontmatterKeys('---\ntitle: First\ntitle: Second\n---\nBody'));
+crawlFixture('quoted duplicate keys and CRLF are blocked', validateTopLevelFrontmatterKeys('---\r\nupdatedAt: "2026-10-06"\r\n"updatedAt": "2026-06-13"\r\n---\r\nBody'));
+crawlFixture('repeated nested keys and body text are not frontmatter duplicates', validateTopLevelFrontmatterKeys('---\ntitle: Example\nfaq:\n  - question: First\n    answer: One\n  - question: Second\n    answer: Two\n---\ntitle: Body\ntitle: More body'), false);
 const failed = cases.filter((item) => !item.passed);
 
 cases.forEach((item) => {

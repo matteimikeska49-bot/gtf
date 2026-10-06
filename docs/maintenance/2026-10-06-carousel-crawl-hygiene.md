@@ -28,7 +28,7 @@ Official syntax reference: [Yandex Clean-param](https://yandex.ru/support/webmas
 
 Three explicit rules in the existing Yandex group; no wildcard parameter names, blanket cleanup, new disallow or URL-specific redirects:
 
-1. Sitewide attribution: `ref`, `partner`, `referral`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `utm_id`, `yclid`, `gclid`, `fbclid`, `_openstat`. These do not select landing-page SEO content. Ref storage and app attribution are preserved.
+1. Sitewide attribution: `ref`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `utm_id`, `yclid`, `gclid`, `fbclid`, `_openstat`. These do not select landing-page SEO content. Ref storage and app attribution are preserved. `partner` and `referral` are excluded: current production code and observed URL evidence do not establish them as parameter names; fixture values such as `utm_source=partner` are not parameter names.
 2. Sitewide observed debug/security residue: `_ym_debug`, `need_sec_link`, `sec_link_scene`. No production content selector consumes them.
 3. Observed payment-return names, scoped to `/ru`: `OutSum`, `InvId`, `SignatureValue`, `IsTest`, `Culture`, `Shp_intent_id`, `Shp_product_code`, `Shp_provider`, `Shp_purchase_type`. These are crawler document normalization only, not browser/callback mutation. Names were obtained from existing authorized indexing evidence without publishing sensitive query values.
 
@@ -66,7 +66,9 @@ Unknown paths retain HTTP 404 even though the fallback body inherits homepage `i
 - Rendered lifecycle/canonical/hreflang: 204/204 PASS.
 - Base-to-head indexation: 204 existing rendered routes unchanged; unintended transitions 0.
 - Crawl/navigation and rendered commercial ownership: 5,510 anchors, 47 current carousel pages, errors 0.
-- SEO fixtures: 48/48 PASS, including wrong owner, inert href-only CTA, map drift, non-content-only Clean-param, junk targets, preservation of attribution/payment, 404 status and draft lifecycle cases.
+- SEO fixtures: 55/55 PASS, including wrong owner, inert href-only CTA, map drift, non-content-only Clean-param, exclusion of unverified `partner`/`referral` keys, junk targets, preservation of attribution/payment, 404 status, draft lifecycle and duplicate top-level frontmatter cases.
+- Corrective review scanned all 48 PR-changed Markdown files (46 articles and two documents): removed four duplicate `updatedAt` keys (animation, funnel, Reels comparison and fonts), keeping the single declared maintenance value `2026-10-06`; remaining duplicates: 0. The crawl/release guard includes committed PR changes plus staged/working/untracked articles; duplicate detection runs on raw frontmatter before parsing can overwrite a key. Nested FAQ/CTA fields and body text are not treated as top-level keys. Unrelated historical articles are outside this corrective scope.
+- Corrective head comparison: all 204 rendered routes retain title/H1, description, robots, canonical, hreflang and anchor destinations. RU blog card ordering changes only as derived from the four restored maintenance dates by the existing `BlogHubLayout` sort; no new or removed links.
 - Blog links, strict product-led links, internal link flow, intent ownership, cluster map, product claims, rendered HTML and schema: PASS (existing legacy warnings remain).
 - Source robots equals generated robots: PASS.
 - Changed JavaScript ESLint / syntax checks and `git diff --check`: PASS.
