@@ -13,7 +13,7 @@ intentId: "ru:chitabelnost-teksta-v-karuselyah"
 clusterId: "ru:instagram-carousel"
 articleRole: "guide"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 secondaryKeywords:
   - "читабельность текста в карусели"
   - "текст на слайдах инстаграм"
@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/chitabelnost-teksta-v-karuselyah"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-04"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-04"
 productFit: "YES"
 productFitExplanation: "GoToFlow помогает собирать слайды с учетом структуры, короткого текста и визуальной подачи, но автору всё равно нужно проверить читаемость под свою аудиторию."
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Соберите слайды с коротким текстом и визуальной логикой."
   guides:
     - title: "Трендовые шрифты для каруселей"
@@ -66,6 +66,7 @@ explore:
       href: "/ru/blog/shablony-karuseley-v-instagram"
       description: "Как использовать готовые структуры."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Соберите читаемые слайды"
   text: "GoToFlow помогает превратить тему или текст в карусель со структурой, визуальной подачей и CTA, которую удобно проверить перед публикацией."
   buttonText: "Создать карусель"
@@ -113,7 +114,7 @@ type: tips
 - Было: "В этой статье мы подробно рассмотрим основные ошибки, которые часто допускают начинающие авторы при создании каруселей"; Лучше: "5 ошибок, из-за которых карусель не читают"
 - Было: "Необходимо обратить внимание на то, что слишком маленький размер шрифта снижает удобство чтения"; Лучше: "Мелкий шрифт убивает дочитывание"
 
-## Где помогает [GoToFlow](/ru/ii-generator-karuseley)
+## Где помогает [GoToFlow](/ru/generator-karuselej-instagram)
 
 GoToFlow помогает разложить тему на короткие слайды, подобрать визуальную подачу и собрать карусельный результат. Это особенно полезно, когда исходник длинный: статья, PDF, заметка, видео или сценарий. Но финальную проверку всё равно стоит сделать глазами: открыть результат на телефоне и прочитать как обычный пользователь.
 

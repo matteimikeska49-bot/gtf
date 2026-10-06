@@ -201,7 +201,7 @@
     "contentQualityNotes": ""
   },
   {
-    "cluster": "Instagram carousel ideas",
+    "cluster": "Instagram carousel",
     "language": "ru",
     "primaryKeyword": "идеи для карусели инстаграм",
     "secondaryKeywords": [
@@ -262,7 +262,7 @@
     "contentQualityNotes": ""
   },
   {
-    "cluster": "Instagram carousel prompts",
+    "cluster": "Instagram carousel",
     "language": "ru",
     "primaryKeyword": "промпты для карусели инстаграм",
     "secondaryKeywords": [
@@ -743,7 +743,7 @@
     "contentQualityNotes": ""
   },
   {
-    "cluster": "Carousel design / carousel examples",
+    "cluster": "Instagram carousel",
     "language": "ru",
     "primaryKeyword": "примеры каруселей инстаграм",
     "secondaryKeywords": [
@@ -1131,11 +1131,11 @@
     "cannibalizationRisk": "low",
     "mockupRequired": false,
     "mockupSlots": [],
-    "cluster": "Instagram carousel ideas",
+    "cluster": "Instagram carousel",
     "searchIntent": "informational",
     "articleType": "listicle",
     "funnelStage": "TOFU",
-    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "relatedProductRoute": "/ru/generator-karuselej-instagram",
     "decisionReason": "RU equivalent of safe hook article.",
     "publishStatus": "published"
   },
@@ -1702,7 +1702,7 @@
     "searchIntent": "understand possible Instagram carousel ranking signals cautiously",
     "articleType": "guide",
     "funnelStage": "TOFU",
-    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "relatedProductRoute": "/ru/generator-karuselej-instagram",
     "demandEvidenceSummary": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; exact demand data still queued for refresh.",
     "serpEvidenceSummary": "Published after internal QA and release checks; live SERP refresh remains post-publish work.",
     "mockupPurpose": "Visual block and existing mockup slots planned in markdown body.",
@@ -1734,7 +1734,7 @@
     "searchIntent": "make carousel slide text readable on mobile",
     "articleType": "guide",
     "funnelStage": "MOFU",
-    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "relatedProductRoute": "/ru/generator-karuselej-instagram",
     "demandEvidenceSummary": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; exact demand data still queued for refresh.",
     "serpEvidenceSummary": "Published after internal QA and release checks; live SERP refresh remains post-publish work.",
     "mockupPurpose": "Visual block and existing mockup slots planned in markdown body.",
@@ -1766,7 +1766,7 @@
     "searchIntent": "compare single Instagram image and carousel by content task",
     "articleType": "comparison",
     "funnelStage": "TOFU",
-    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "relatedProductRoute": "/ru/generator-karuselej-instagram",
     "demandEvidenceSummary": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; exact demand data still queued for refresh.",
     "serpEvidenceSummary": "Published after internal QA and release checks; live SERP refresh remains post-publish work.",
     "mockupPurpose": "Visual block and existing mockup slots planned in markdown body.",
@@ -1798,7 +1798,7 @@
     "searchIntent": "slice an image into equal carousel slides",
     "articleType": "technical_guide",
     "funnelStage": "BOFU",
-    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "relatedProductRoute": "/ru/generator-karuselej-instagram",
     "demandEvidenceSummary": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; exact demand data still queued for refresh.",
     "serpEvidenceSummary": "Published after internal QA and release checks; live SERP refresh remains post-publish work.",
     "mockupPurpose": "Visual block and existing mockup slots planned in markdown body.",
@@ -1830,7 +1830,7 @@
     "searchIntent": "combine horizontal and vertical photos in one carousel",
     "articleType": "technical_guide",
     "funnelStage": "BOFU",
-    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "relatedProductRoute": "/ru/generator-karuselej-instagram",
     "demandEvidenceSummary": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; exact demand data still queued for refresh.",
     "serpEvidenceSummary": "Published after internal QA and release checks; live SERP refresh remains post-publish work.",
     "mockupPurpose": "Visual block and existing mockup slots planned in markdown body.",
@@ -1862,7 +1862,7 @@
     "searchIntent": "fix Instagram carousel photo cropping issues",
     "articleType": "technical_guide",
     "funnelStage": "BOFU",
-    "relatedProductRoute": "/ru/ii-generator-karuseley",
+    "relatedProductRoute": "/ru/generator-karuselej-instagram",
     "demandEvidenceSummary": "Published from ru-seo-batch-3-new-articles-full-22 after draft QA; exact demand data still queued for refresh.",
     "serpEvidenceSummary": "Published after internal QA and release checks; live SERP refresh remains post-publish work.",
     "mockupPurpose": "Visual block and existing mockup slots planned in markdown body.",
@@ -1922,7 +1922,7 @@
     "mockupSlots": [
       "result-preview"
     ],
-    "cluster": "Instagram carousel",
+    "cluster": "AI carousel",
     "searchIntent": "turn presentations, PDFs, and long documents into carousels",
     "articleType": "how_to",
     "funnelStage": "MOFU",

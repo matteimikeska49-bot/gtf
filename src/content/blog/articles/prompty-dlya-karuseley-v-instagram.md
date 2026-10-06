@@ -2,6 +2,7 @@
 title: "Промпты для каруселей в Инстаграм: готовые шаблоны для постов"
 slug: "prompty-dlya-karuseley-v-instagram"
 language: "ru"
+clusterId: "ru:instagram-carousel"
 description: "Готовые промпты для ChatGPT и GoToFlow, чтобы создать вовлекающую Инстаграм-карусель. Шаблоны для экспертов, SMM и брендов."
 primaryKeyword: "промпты для каруселей в Инстаграм"
 searchIntent: "пользователь хочет готовые промпты и шаблоны, чтобы быстро создавать карусели для Instagram без долгого придумывания структуры."
@@ -14,7 +15,7 @@ noindex: false
 preview: false
 canonical: "https://gotoflow.io/ru/blog/prompty-dlya-karuseley-v-instagram"
 createdAt: "2026-06-02"
-updatedAt: "2026-06-03"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-03"
 quickAnswer:
   - "Лучшие промпты для каруселей должны задавать четкую структуру: тему, аудиторию, количество слайдов и tone of voice."
@@ -60,7 +61,7 @@ faq:
 explore:
   tools:
     - title: "AI Генератор Каруселей"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Превратите идею в готовую карусель за секунды без написания сложных промптов."
   guides:
     - title: "Как создать карусель с помощью AI"
@@ -70,13 +71,14 @@ explore:
       href: "/ru/blog/shablony-karuseley-v-instagram"
       description: "Готовые структуры и примеры оформления каруселей."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Устали придумывать промпты?"
   description: "В GoToFlow все системные промпты уже настроены под идеальную карусель. Просто введите тему и получите готовый дизайн."
   buttonText: "Создать карусель бесплатно"
-  href: "/ru/ii-generator-karuseley"
+  href: "/ru/generator-karuselej-instagram"
   microcopy: "Без привязки карты — Готово за секунды"
   secondaryText: "Посмотреть примеры →"
-  secondaryHref: "/ru/ii-generator-karuseley"
+  secondaryHref: "/ru/generator-karuselej-instagram"
 ---
 
 # Промпты для каруселей в Инстаграм: готовые шаблоны для постов

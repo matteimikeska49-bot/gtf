@@ -2,6 +2,7 @@
 title: "Лучшие примеры каруселей в Инстаграм для вдохновения"
 slug: "primery-karuseley-instagram"
 language: "ru"
+clusterId: "ru:instagram-carousel"
 description: "Ищете идеи для дизайна? Разбираем лучшие примеры каруселей в Инстаграм. Узнайте, какие форматы приносят больше всего сохранений и охватов."
 primaryKeyword: "примеры каруселей инстаграм"
 searchIntent: "поиск визуального вдохновения и структурных шаблонов для постов"
@@ -15,7 +16,7 @@ noindex: false
 preview: false
 canonical: "https://gotoflow.io/ru/blog/primery-karuseley-instagram"
 createdAt: "2026-06-03"
-updatedAt: "2026-06-03"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-03"
 quickAnswer:
   - "Самые успешные примеры каруселей объединяет одно: легко читаемый текст, много свободного пространства и мощный крючок на первом слайде."
@@ -52,20 +53,21 @@ faq:
 explore:
   tools:
     - title: "AI Генератор каруселей"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Создавайте стильные карусели автоматически."
   guides:
     - title: "Идеи для каруселей"
       href: "/ru/blog/idei-dlya-karuseli-instagram"
       description: "О чем писать в следующих постах."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Создайте свою карусель в GoToFlow"
   text: "Возьмите идею из примеров и превратите её в структуру, текст по слайдам, визуальный дизайн, CTA и готовую карусель для экспорта."
   buttonText: "Попробовать бесплатно"
-  href: "/ru/ii-generator-karuseley"
+  href: "/ru/generator-karuselej-instagram"
   microcopy: "Навыки дизайна не нужны"
   secondaryText: "Узнать больше →"
-  secondaryHref: "/ru/ii-generator-karuseley"
+  secondaryHref: "/ru/generator-karuselej-instagram"
 ---
 
 # Лучшие примеры каруселей в Инстаграм для вдохновения

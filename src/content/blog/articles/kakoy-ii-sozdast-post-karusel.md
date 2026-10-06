@@ -51,8 +51,8 @@ faq:
     answer: "Обратите внимание на три вещи: сильный заголовок на первом слайде (Hook), читабельность текста (крупный шрифт, контрастность) и наличие четкого призыва к действию (CTA) на последнем слайде."
 explore:
   tools:
-    - title: "AI Генератор постов для Instagram"
-      href: "/ru/generator-postov-instagram"
+    - title: "Генератор каруселей для Instagram"
+      href: "/ru/generator-karuselej-instagram"
     - title: "Генератор каруселей для LinkedIn"
       href: "/ru/generator-karuselej-linkedin"
   guides:

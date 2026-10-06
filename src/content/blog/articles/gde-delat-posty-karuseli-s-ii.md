@@ -35,7 +35,7 @@ finalCta:
   title: "Создайте профессиональную карусель в GoToFlow"
   text: "Хватит тратить часы на перенос текста в дизайн-редакторы. Попробуйте инструмент, который делает все от начала до конца."
   buttonText: "Сделать пост-карусель"
-  primaryHref: "/ru/generator-kontenta"
+  primaryHref: "/ru/ii-generator-karuseley"
   secondaryText: "Как написать текст для карусели →"
   secondaryHref: "/ru/blog/tekst-v-karusel-neyroset"
 faq:
@@ -51,8 +51,8 @@ faq:
     answer: "Для LinkedIn удобнее выбирать платформы, которые поддерживают прямой экспорт в многостраничный PDF-файл высокого разрешения, например, GoToFlow."
 explore:
   tools:
-    - title: "Генератор контента для соцсетей"
-      href: "/ru/generator-kontenta"
+    - title: "ИИ-генератор каруселей"
+      href: "/ru/ii-generator-karuseley"
     - title: "Генератор каруселей для LinkedIn"
       href: "/ru/generator-karuselej-linkedin"
   guides:

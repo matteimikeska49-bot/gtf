@@ -9,6 +9,12 @@ Allow: /
 
 User-agent: Yandex
 Allow: /
+# Attribution changes neither page content nor canonical. Browser attribution is preserved.
+Clean-param: ref&partner&referral&utm_source&utm_medium&utm_campaign&utm_content&utm_term&utm_id&yclid&gclid&fbclid&_openstat
+# Observed security/debug residue is not a separate document.
+Clean-param: _ym_debug&need_sec_link&sec_link_scene
+# Exact observed payment-return names; no wildcard and no change to the return flow.
+Clean-param: OutSum&InvId&SignatureValue&IsTest&Culture&Shp_intent_id&Shp_product_code&Shp_provider&Shp_purchase_type /ru
 
 User-agent: OAI-SearchBot
 Allow: /

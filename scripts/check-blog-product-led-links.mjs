@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { resolveProjectSeoState } from './lib/project-seo-state.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -9,7 +10,6 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const articlesDir = path.join(ROOT_DIR, 'src/content/blog/articles');
 const capabilitiesPath = path.join(ROOT_DIR, 'src/content/blog/product-capabilities.json');
 const clusterMapPath = path.join(ROOT_DIR, 'src/content/blog/cluster-authority-map.json');
-const appRoutesPath = path.join(ROOT_DIR, 'src/App.jsx');
 
 const capabilities = JSON.parse(fs.readFileSync(capabilitiesPath, 'utf8'));
 const clusters = JSON.parse(fs.readFileSync(clusterMapPath, 'utf8'));
@@ -21,18 +21,8 @@ let warnings = [];
 let scannedCount = 0;
 let strictCount = 0;
 
-// Read existing routes from App.jsx
-function readExistingRoutes() {
-  const routes = new Set();
-  const appContent = fs.readFileSync(appRoutesPath, 'utf-8');
-  const routeMatches = appContent.matchAll(/<Route\s+path=["']([^"']+)["']/g);
-  for (const match of routeMatches) {
-    const route = match[1];
-    if (!route.includes(':') && route !== '*') routes.add(route);
-  }
-  return routes;
-}
-const existingRoutes = readExistingRoutes();
+// JSX-only scanning misses pages assembled from the authoritative SEO registry.
+const existingRoutes = new Set(resolveProjectSeoState(ROOT_DIR).entries.map(entry => entry.path));
 
 const files = fs.readdirSync(articlesDir).filter(f => f.endsWith('.md') && f !== '_template.md');
 

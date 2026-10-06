@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/karusel-dlya-otzyvov-s-ii"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -71,6 +71,7 @@ explore:
       href: "/ru/blog/karusel-dlya-zapuska-produkta-s-ii"
       description: "Как прогреть аудиторию через карусель."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Устали оформлять скриншоты?"
   text: "Превратите текстовые отзывы клиентов в красивые, структурированные слайды за пару кликов с помощью ИИ."
   buttonText: "Создать карусель с отзывами"

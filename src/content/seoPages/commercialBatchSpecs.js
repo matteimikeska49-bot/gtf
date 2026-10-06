@@ -2578,7 +2578,7 @@ export const commercialBatchSpecs = [
       },
       {
         "question": "Which English URL currently owns this intent?",
-        "answer": "/ai-linkedin-post-generator remains the current EN route until a separate migration and redirect decision is approved."
+        "answer": "/linkedin-post-generator is the current canonical English route. The legacy /ai-linkedin-post-generator URL redirects to it."
       }
     ],
     "relatedEyebrow": "Related workflows",

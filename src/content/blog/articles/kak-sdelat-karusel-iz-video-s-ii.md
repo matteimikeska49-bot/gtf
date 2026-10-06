@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/kak-sdelat-karusel-iz-video-s-ii"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-17"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -71,6 +71,7 @@ explore:
       href: "/ru/blog/razmer-karuseli-v-instagram"
       description: "Правильные габариты для постов."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Не хотите писать посты с нуля?"
   text: "Используйте то, что уже сняли. Превратите Reels, видео, аудио, сценарий или тему в готовую карусель со структурой, текстом по слайдам и CTA."
   buttonText: "Переупаковать контент с ИИ"

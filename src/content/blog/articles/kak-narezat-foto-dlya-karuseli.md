@@ -13,7 +13,7 @@ intentId: "ru:kak-narezat-foto-dlya-karuseli"
 clusterId: "ru:instagram-carousel"
 articleRole: "technical_guide"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 secondaryKeywords:
   - "нарезать фото для инстаграм карусели"
   - "разделить изображение на слайды"
@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/kak-narezat-foto-dlya-karuseli"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-04"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-04"
 productFit: "PARTIAL"
 productFitExplanation: "GoToFlow помогает сразу создавать карусель как набор отдельных слайдов. Для точной нарезки одной панорамы могут понадобиться отдельные crop-инструменты."
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Создавайте отдельные слайды без ручной нарезки панорамы."
   guides:
     - title: "Бесшовная карусель в Инстаграм"
@@ -66,6 +66,7 @@ explore:
       href: "/ru/blog/razmer-karuseli-v-instagram"
       description: "Форматы, пропорции и безопасные зоны."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Создавайте слайды без ручной нарезки"
   text: "GoToFlow помогает превратить тему, текст или источник в отдельные слайды с визуальной логикой, текстом и CTA."
   buttonText: "Создать карусель"
@@ -141,7 +142,7 @@ type: mistakes
 
 Для обучающих, экспертных и продающих каруселей бесшовная панорама не всегда нужна. Часто лучше сделать отдельные слайды: хук, проблема, шаги, пример, вывод и CTA.
 
-[GoToFlow](/ru/ii-generator-karuseley) помогает собрать такой результат из темы, текста, ссылки, видео, PDF, изображения или скриншота. Система формирует структуру, текст по слайдам, визуальную подачу и CTA, а вы проверяете содержание и читаемость.
+[GoToFlow](/ru/generator-karuselej-instagram) помогает собрать такой результат из темы, текста, ссылки, видео, PDF, изображения или скриншота. Система формирует структуру, текст по слайдам, визуальную подачу и CTA, а вы проверяете содержание и читаемость.
 
 :::mockup{slot="result-preview"}
 :::

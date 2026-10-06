@@ -4,6 +4,9 @@ import path from 'path';
 import { spawnSync } from 'child_process';
 import { validateSeoIntentRecords } from './check-seo-route-intent-ownership.mjs';
 import { scanProductTruthText } from './check-seo-cross-system-product-truth.mjs';
+import { validateRobotsPolicy, validateNavigationTarget, validatePublishedFacts, validateNginx404Contract } from './check-crawl-hygiene.mjs';
+import { validateCarouselOwnership } from './lib/carousel-ownership.mjs';
+import { getAppUrlWithRef } from '../src/utils/url.js';
 
 const rootDir = process.cwd();
 const sourceDist = path.join(rootDir, 'dist');
@@ -249,6 +252,45 @@ runIntentFixture('allowed topical cluster with shared Product Truth claims', [
   }),
 ], 'zero');
 
+const crawlFixture = (name, errors, blocked = true) => cases.push({
+  name, expected: blocked ? 'non-zero' : 'zero', actual: errors.length ? 'non-zero' : 'zero',
+  passed: Boolean(errors.length) === blocked, realCheckerUsed: 'crawl/ownership production validators', output: errors.join(' | '),
+});
+const robots = fs.readFileSync(path.join(rootDir, 'public/robots.txt'), 'utf8');
+crawlFixture('valid explicit Clean-param policy', validateRobotsPolicy(robots), false);
+crawlFixture('content-affecting lang must not be cleaned', validateRobotsPolicy(robots.replace('ref&partner', 'lang&ref&partner')));
+crawlFixture('no wildcard callback parameters', validateRobotsPolicy(robots.replace('Shp_intent_id', 'Shp_*')));
+crawlFixture('payment normalization must retain /ru scope', validateRobotsPolicy(robots.replace('Shp_purchase_type /ru', 'Shp_purchase_type')));
+crawlFixture('source/generated robots drift', validateRobotsPolicy(robots, robots + '\n'));
+const nginx = fs.readFileSync(path.join(rootDir, 'nginx.conf'), 'utf8');
+crawlFixture('unchanged nginx preserves unknown-path 404', validateNginx404Contract(nginx), false);
+crawlFixture('SPA status rewrite to 200 is blocked', validateNginx404Contract(nginx.replace('error_page 404 /index.html;', 'error_page 404 =200 /index.html;')));
+for (const href of ['/?ref=test123', 'https://app.gotoflow.io/?ref=partner_test', '/ru/blog/NOCLICK_', '/api/health', '/ru/blog/title%7C', '/ru/blog/title|', '/blog/test-seo-template-v2', '/ru?OutSum=1', '/ru?need_sec_link=1', '/blog/10-best-instagram-carousel-examples-to-inspire-old']) {
+  crawlFixture(`block junk navigation ${href}`, validateNavigationTarget(href));
+}
+crawlFixture('real referral attribution remains valid', validateNavigationTarget('/ru?ref=real_partner&utm_source=partner'), false);
+const previousWindow = globalThis.window;
+try {
+  globalThis.window = { location: { search: '?ref=real_partner&utm_source=partner&OutSum=42&InvId=7&Shp_provider=return' }, localStorage: { getItem: () => null } };
+  const appUrl = new URL(getAppUrlWithRef('https://app.gotoflow.io'));
+  crawlFixture('crawler normalization does not strip referral/payment browser flow',
+    ['ref', 'utm_source', 'OutSum', 'InvId', 'Shp_provider'].filter(name => appUrl.searchParams.get(name) !== new URLSearchParams(globalThis.window.location.search).get(name)), false);
+} finally {
+  if (previousWindow === undefined) delete globalThis.window;
+  else globalThis.window = previousWindow;
+}
+crawlFixture('Instagram platform limit is not product limit', validatePublishedFacts('Instagram supports up to 10 photos.'));
+crawlFixture('valid platform/product distinction and 10-slide examples', validatePublishedFacts('Instagram supports up to 20 photos. GoToFlow supports up to 10 slides. A recommended 10-slide Instagram example.'), false);
+crawlFixture('stale LinkedIn owner wording', validatePublishedFacts('/ai-linkedin-post-generator remains the current EN route'));
+const igCluster = { clusterId: 'ru:instagram-carousel', productRoute: '/ru/generator-karuselej-instagram' };
+const article = '---\nclusterId: "ru:instagram-carousel"\nrelatedProductRoute: "/ru/generator-karuselej-instagram"\nfinalCta:\n  primaryHref: "/ru/generator-karuselej-instagram"\n---\n[Создать](/ru/generator-karuselej-instagram)';
+const bridge = content => validateCarouselOwnership(content, { slug: 'fixture', cluster: igCluster });
+crawlFixture('correct Instagram commercial bridge', bridge(article), false);
+crawlFixture('wrong Instagram post CTA', bridge(article.replace('primaryHref: "/ru/generator-karuselej-instagram"', 'primaryHref: "/ru/generator-postov-instagram"')));
+crawlFixture('href alone is not a rendered primary CTA', bridge(article.replace('primaryHref:', 'href:')));
+crawlFixture('competing generic bridge in Instagram supporting content', bridge(article + '\n[Create](/ru/ii-generator-karuseley)'));
+crawlFixture('intent-map drift is independently blocked', validateCarouselOwnership(article, { slug: 'fixture', cluster: igCluster, intent: { cluster: igCluster.clusterId, relatedProductRoute: '/ru/ii-generator-karuseley' } }));
+crawlFixture('draft/noindex editorial role is not treated as a current rendered page', bridge(article.replace('clusterId:', 'published: false\nnoindex: true\nclusterId:').replace('primaryHref: "/ru/generator-karuselej-instagram"', 'primaryHref: "/ru/generator-postov-instagram"')), false);
 const failed = cases.filter((item) => !item.passed);
 
 cases.forEach((item) => {

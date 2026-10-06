@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -71,6 +71,7 @@ explore:
       href: "/ru/blog/cta-dlya-karuseley-instagram-s-ii"
       description: "Как правильно завершать пост."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Не знаете, как сбалансировать слайды?"
   text: "GoToFlow автоматически разбивает текст так, чтобы каждый слайд было комфортно читать. Удерживайте внимание аудитории без усилий."
   buttonText: "Создать комфортную карусель"

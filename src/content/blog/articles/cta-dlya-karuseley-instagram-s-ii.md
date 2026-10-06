@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/cta-dlya-karuseley-instagram-s-ii"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -31,10 +31,10 @@ finalPriorityScore: 80
 priorityTier: "P1"
 productCapabilityIds: ["textToCarousel"]
 intentId: "ru:cta-dlya-karuseley-instagram-s-ii"
-clusterId: "ru:ii-carousel-generator"
+clusterId: "ru:instagram-carousel"
 articleRole: "supporting"
 hubSlug: "tekst-v-karusel-neyroset"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 productFit: "YES"
 productFitExplanation: "GoToFlow automatically suggests and formats the final CTA slide."
 requiredVisualBlock: "none"
@@ -61,7 +61,7 @@ faq:
 explore:
   tools:
     - title: "ИИ-генератор каруселей"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Создавайте структурированные карусели из текста и идей."
   guides:
     - title: "Как написать текст для карусели"
@@ -71,10 +71,11 @@ explore:
       href: "/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie"
       description: "Как удерживать внимание читателя."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Не знаете, как красиво завершить пост?"
   text: "GoToFlow автоматически добавляет сильный CTA-слайд к вашей карусели на основе текста."
   buttonText: "Создать карусель бесплатно"
-  href: "/ru/ii-generator-karuseley"
+  href: "/ru/generator-karuselej-instagram"
   microcopy: "Попробуйте без привязки карты"
   secondaryText: "Ошибки в каруселях Инстаграм →"
   secondaryHref: "/ru/blog/oshibki-v-karuselyah-instagram"
@@ -128,7 +129,7 @@ type: takeaways
 > [!tip]
 > **Автоматический финальный слайд**
 > GoToFlow переупаковывает любой исходник (видео, текст, аудио, Reels) в готовую карусель, включая профессионально сверстанный финальный CTA-слайд.
-> [Попробовать ИИ-генератор](/ru/ii-generator-karuseley)
+> [Попробовать ИИ-генератор](/ru/generator-karuselej-instagram)
 
 ## Как ИИ помогает создавать CTA
 

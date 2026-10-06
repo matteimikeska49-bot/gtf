@@ -2,12 +2,13 @@
 title: "Как повысить охваты с помощью каруселей"
 slug: "kak-povisit-ohvaty-v-instagram-s-pomoshyu-karuseley"
 language: "ru"
+clusterId: "ru:instagram-carousel"
 description: "Хотите больше просмотров? Узнайте рабочие стратегии, как повысить охваты в Инстаграм с помощью формата каруселей и умного алгоритма."
 primaryKeyword: "как повысить охваты в инстаграм"
 secondaryKeywords: ["карусели для охватов", "как поднять охваты", "алгоритмы инстаграм карусель"]
 canonical: "https://gotoflow.io/ru/blog/kak-povisit-ohvaty-v-instagram-s-pomoshyu-karuseley"
 createdAt: 2026-06-12
-updatedAt: 2026-06-13
+updatedAt: "2026-10-06"
 published: true
 noindex: false
 quickAnswer:
@@ -29,17 +30,18 @@ faq:
 explore:
   tools:
     - title: "Создать Карусель"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Увеличьте свои охваты, создавая трендовые карусели."
   guides:
     - title: "Ошибки в каруселях"
       href: "/ru/blog/oshibki-v-karuselyah-instagram"
       description: "Узнайте, что режет ваши охваты."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Взломайте алгоритмы Инстаграм"
   description: "Начните делать контент, который платформа любит продвигать. Создайте свою первую вовлекающую карусель."
   buttonText: "Создать Карусель"
-  href: "/ru/ii-generator-karuseley"
+  href: "/ru/generator-karuselej-instagram"
   microcopy: "Это займет 2 минуты"
   secondaryText: "Смотреть ошибки дизайна →"
   secondaryHref: "/ru/blog/oshibki-v-karuselyah-instagram"
@@ -79,7 +81,7 @@ type: tips
 
 > [!workflow]
 > **Консистентность и Дизайн**
-> Алгоритм любит тех, кто публикует контент регулярно. Но делать сложный дизайн каждый день тяжело. Используйте [Генератор Каруселей](/ru/ii-generator-karuseley). Вы сможете генерировать стильные, легко читаемые карточки за пару минут, что позволит вам публиковать качественный контент 3-4 раза в неделю без выгорания.
+> Алгоритм любит тех, кто публикует контент регулярно. Но делать сложный дизайн каждый день тяжело. Используйте [Генератор Каруселей](/ru/generator-karuselej-instagram). Вы сможете генерировать стильные, легко читаемые карточки за пару минут, что позволит вам публиковать качественный контент 3-4 раза в неделю без выгорания.
 
 ## Анализируйте и масштабируйте
 

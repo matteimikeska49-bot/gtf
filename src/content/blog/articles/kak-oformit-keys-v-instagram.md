@@ -2,12 +2,13 @@
 title: "Как оформить кейс в Инстаграм: Пошаговый гайд"
 slug: "kak-oformit-keys-v-instagram"
 language: "ru"
+clusterId: "ru:instagram-carousel"
 description: "Подробное руководство, как правильно оформить кейс в Инстаграм. Узнайте структуру продающего кейса и как упаковать его в формат карусели."
 primaryKeyword: "как оформить кейс в инстаграм"
 secondaryKeywords: ["пример кейса в инстаграм", "дизайн кейса", "как написать кейс"]
 canonical: "https://gotoflow.io/ru/blog/kak-oformit-keys-v-instagram"
 createdAt: 2026-06-12
-updatedAt: 2026-06-13
+updatedAt: "2026-10-06"
 published: true
 noindex: false
 quickAnswer:
@@ -29,17 +30,18 @@ faq:
 explore:
   tools:
     - title: "Шаблоны для Кейсов"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Создайте стильную карусель с кейсом за пару кликов."
   guides:
     - title: "Идеи для каруселей"
       href: "/ru/blog/idei-dlya-karuseli-instagram"
       description: "Узнайте, какие еще форматы привлекают клиентов."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Упакуйте свой опыт красиво"
   text: "Добавьте историю проекта в GoToFlow и получите структуру кейса, текст по слайдам, визуальный дизайн, CTA и готовую карусель для экспорта."
   buttonText: "Создать Кейс"
-  href: "/ru/ii-generator-karuseley"
+  href: "/ru/generator-karuselej-instagram"
   microcopy: "Просто введите текст"
   secondaryText: "Как делать обложки →"
   secondaryHref: "/ru/blog/oblozhka-dlya-karuseli-instagram"
@@ -90,6 +92,6 @@ type: tips
 
 > [!workflow]
 > **Секрет быстрого оформления**
-> Самая частая проблема: у эксперта есть классные результаты, но нет времени их красиво верстать в Photoshop. Используйте [Генератор Каруселей](/ru/ii-generator-karuseley). Вам достаточно вписать структуру кейса в текстовое поле, и нейросеть сама сверстает идеальную карусель с правильными отступами и иконками.
+> Самая частая проблема: у эксперта есть классные результаты, но нет времени их красиво верстать в Photoshop. Используйте [Генератор Каруселей](/ru/generator-karuselej-instagram). Вам достаточно вписать структуру кейса в текстовое поле, и нейросеть сама сверстает идеальную карусель с правильными отступами и иконками.
 
 Завершайте каждый кейс четким призывом к действию (CTA). Напишите на последнем слайде: «Хотите такой же результат в своем бизнесе? Пишите 'АУДИТ' в директ». Правильно оформленный кейс работает как ваш лучший менеджер по продажам 24/7.

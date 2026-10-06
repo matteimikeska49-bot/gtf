@@ -13,7 +13,7 @@ intentId: "ru:gorizontalnye-i-vertikalnye-foto-v-karuseli"
 clusterId: "ru:instagram-carousel"
 articleRole: "technical_guide"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 secondaryKeywords:
   - "фото разного формата в карусели"
   - "как не обрезать фото в карусели"
@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/gorizontalnye-i-vertikalnye-foto-v-karuseli"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-04"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-04"
 productFit: "PARTIAL"
 productFitExplanation: "GoToFlow помогает оформлять изображения внутри единой визуальной логики, но исходные фото разной ориентации всё равно нужно проверять по рамке и безопасным зонам."
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Соберите слайды с единой визуальной логикой."
   guides:
     - title: "Почему Инстаграм обрезает фото"
@@ -66,6 +66,7 @@ explore:
       href: "/ru/blog/razmer-karuseli-v-instagram"
       description: "Основные форматы и safe zones."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Соберите фото в единую карусель"
   text: "GoToFlow помогает превратить фото, текст или источник в визуально согласованные слайды с понятной структурой и CTA."
   buttonText: "Создать карусель"
@@ -125,7 +126,7 @@ type: checklist
 Слайды должны выглядеть как серия, а не случайная галерея.
 :::
 
-## Где помогает [GoToFlow](/ru/ii-generator-karuseley)
+## Где помогает [GoToFlow](/ru/generator-karuselej-instagram)
 
 GoToFlow можно использовать, когда фото нужно не просто загрузить, а встроить в карусельную историю: добавить структуру, подписи, визуальную подачу и CTA. В систему можно принести изображения, скриншоты, тему или текст, а затем проверить, как они работают в слайдах.
 
@@ -168,7 +169,7 @@ type: examples
 
 ## Где помогает GoToFlow
 
-[GoToFlow](/ru/ii-generator-karuseley) полезен, когда фотографии нужно встроить в смысловую карусель: добавить хук, подписи, порядок, визуальную подачу и CTA. Это не просто загрузка галереи, а превращение материалов в историю.
+[GoToFlow](/ru/generator-karuselej-instagram) полезен, когда фотографии нужно встроить в смысловую карусель: добавить хук, подписи, порядок, визуальную подачу и CTA. Это не просто загрузка галереи, а превращение материалов в историю.
 
 Например, у вас есть набор фото с процесса работы. Система может помочь разложить их по логике: проблема, подготовка, шаги, результат, вывод. После этого вы проверяете, какие кадры лучше вписать в единый холст, где добавить поля, а где использовать подпись.
 

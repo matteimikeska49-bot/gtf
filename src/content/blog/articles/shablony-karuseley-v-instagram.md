@@ -18,7 +18,7 @@ intentId: "ru:instagram-carousel-templates"
 clusterId: "ru:instagram-carousel"
 articleRole: "supporting"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 quickAnswerTitle: "Короткий ответ"
 mockupStatus: "not_available"
 published: true
@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/shablony-karuseley-v-instagram"
 createdAt: "2026-06-27"
-updatedAt: "2026-07-04"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-04"
 quickAnswer:
   - "Идеальный шаблон карусели состоит из 3 элементов: цепляющая обложка, полезная середина (тезис + раскрытие) и финальный слайд с призывом к действию (CTA)."
@@ -64,17 +64,18 @@ faq:
 explore:
   tools:
     - title: "ИИ-генератор каруселей"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Создавайте готовые карусели по проверенным шаблонам с помощью ИИ."
   guides:
     - title: "Промпты для каруселей"
       href: "/ru/blog/prompty-dlya-karuseley-v-instagram"
       description: "Готовые шаблоны текстовых запросов для нейросетей."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Не тратьте часы на дизайн"
   description: "В GoToFlow встроены десятки готовых шаблонов. Просто введите тему, и ИИ соберет идеальную карусель."
   buttonText: "Создать карусель бесплатно"
-  href: "/ru/ii-generator-karuseley"
+  href: "/ru/generator-karuselej-instagram"
   microcopy: "Без привязки карты — Готово за 60 секунд"
   secondaryText: "Узнать больше о промптах →"
   secondaryHref: "/ru/blog/prompty-dlya-karuseley-v-instagram"
@@ -84,7 +85,7 @@ finalCta:
 
 Карусели — это самый вовлекающий формат контента в Instagram. Но их создание часто превращается в рутину: нужно придумать текст, разбить его на слайды, подобрать шрифты и сверстать всё в редакторе. 
 
-Использование **готовых шаблонов каруселей** помогает решить эту проблему. В этой статье мы разберем идеальную структуру карусели, типы шаблонов и способы их автоматизации через [ИИ-генератор каруселей](/ru/ii-generator-karuseley).
+Использование **готовых шаблонов каруселей** помогает решить эту проблему. В этой статье мы разберем идеальную структуру карусели, типы шаблонов и способы их автоматизации через [ИИ-генератор каруселей](/ru/generator-karuselej-instagram).
 
 ## Идеальная структура шаблона карусели
 
@@ -185,7 +186,7 @@ Figma хорошо подходит, когда у команды есть ди�
 
 ## Как использовать шаблоны с GoToFlow
 
-GoToFlow полезен, когда у вас уже есть тема, ссылка, заметка или исходный материал, но нужно превратить его в карусель. [ИИ-генератор каруселей](/ru/ii-generator-karuseley) помогает разложить идею по слайдам, предложить хук, подготовить подпись и сохранить связную логику визуального ряда.
+GoToFlow полезен, когда у вас уже есть тема, ссылка, заметка или исходный материал, но нужно превратить его в карусель. [ИИ-генератор каруселей](/ru/generator-karuselej-instagram) помогает разложить идею по слайдам, предложить хук, подготовить подпись и сохранить связную логику визуального ряда.
 
 Финальная редактура все равно остается за автором. Проверьте, конкретен ли хук, добавляет ли каждый слайд новый смысл и естественно ли финальный CTA следует из темы. Замените общие обещания примерами из вашей ниши, уберите повторы и убедитесь, что последний слайд не выглядит случайной заглушкой.
 

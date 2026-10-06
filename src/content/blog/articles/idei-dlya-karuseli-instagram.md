@@ -2,6 +2,7 @@
 title: "Идеи для карусели в Инстаграм: 15 форматов постов, которые работают"
 slug: "idei-dlya-karuseli-instagram"
 language: "ru"
+clusterId: "ru:instagram-carousel"
 description: "Где брать идеи для карусели в Инстаграм? Разбираем рабочие форматы постов, которые приносят охваты и сохранения. Готовые идеи для контент-плана."
 primaryKeyword: "идеи для карусели инстаграм"
 searchIntent: "поиск идей и готовых форматов для постов-каруселей"
@@ -15,7 +16,7 @@ noindex: false
 preview: false
 canonical: "https://gotoflow.io/ru/blog/idei-dlya-karuseli-instagram"
 createdAt: "2026-06-03"
-updatedAt: "2026-06-03"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-03"
 quickAnswer:
   - "Лучшие идеи для каруселей строятся на проверенных форматах: образовательные гайды, разбор ошибок, мифы против реальности и закулисье."
@@ -59,19 +60,20 @@ faq:
 explore:
   tools:
     - title: "AI Генератор каруселей"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Создавайте красивые готовые карусели из исходного текста за пару минут."
   guides:
     - title: "Промпты для каруселей в Инстаграм"
       href: "/ru/blog/prompty-dlya-karuseley-v-instagram"
       description: "Готовые запросы к нейросетям для создания контента."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Превратите идеи в готовые посты"
   description: "Не оставляйте хорошие идеи в заметках. Используйте GoToFlow, чтобы моментально генерировать красивые карусели."
   buttonText: "Создать карусель"
   microcopy: "Попробуйте бесплатно — Навыки дизайна не нужны"
   secondaryText: "Смотреть функции →"
-  secondaryHref: "/ru/ii-generator-karuseley"
+  secondaryHref: "/ru/generator-karuselej-instagram"
 ---
 
 # Идеи для карусели в Инстаграм: Форматы, которые работают
