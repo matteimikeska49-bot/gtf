@@ -19,7 +19,7 @@ Remote GoToFlow main and Orqestra approved/deployed/resolved source matched this
 - `karusel-dlya-instagram`: corrected three Instagram technical-limit statements to up to 20 photos/videos, with account/region availability caveat. Kept GoToFlow's confirmed product limit at 10. Ten-slide examples and recommendations are not mechanically converted.
 - `commercialBatchSpecs.js`: the LinkedIn FAQ now identifies `/linkedin-post-generator` as current and `/ai-linkedin-post-generator` as its legacy redirect. Redirect implementation is untouched.
 - `animaciya-v-karuselyah-instagram`: animated/seamless modes are live according to current Product Truth, not roadmap.
-- The Instagram AI how-to and presentation adaptation article now distinguish manually copied PDF text from unsupported direct PDF source upload. PDF export remains supported and unchanged.
+- Owner Product Truth correction: GoToFlow supports direct PDF/file upload as source input, alongside video, audio, image/screenshot, links, text/topic and other current inputs. The Instagram AI how-to and presentation adaptation article reflect this; neither requires manual copying from PDF. PDF export remains supported and unchanged.
 - An old “10 is the Instagram limit” sentence in a historical planning handoff is not imported into runtime; no historical plan is rewritten.
 
 ## Query policy and discovery sources
