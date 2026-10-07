@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/blog/ai-carousel-content-strategy"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-07"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -117,6 +117,8 @@ Use AI to brainstorm 10 specific topics for each pillar. Review the list and sel
 Pick 2-3 topics. Write the core knowledge in a simple text document. Do not worry about slide numbers, formatting, or design. Just get the raw value, the frameworks, and the insights out of your head and onto the page.
 
 ### Phase 3: AI Formatting & Structure (Weekly)
+Use the [text-to-carousel production steps](/blog/text-to-carousel-ai) to turn each selected source into a slide sequence; the strategy here determines which sources enter that process.
+
 This is where you save hours. 
 
 > [!tip]

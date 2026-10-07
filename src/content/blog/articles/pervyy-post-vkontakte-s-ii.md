@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/pervyy-post-vkontakte-s-ii"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-04"
+updatedAt: "2026-10-07"
 lastReviewed: "2026-07-04"
 productFit: "PARTIAL"
 productFitExplanation: "GoToFlow помогает оформить приветственную идею в визуальные карточки или карусель, а текстовый тон и факты о сообществе нужно проверять вручную."
@@ -98,6 +98,8 @@ type: workflow
 :::
 
 ## Промпт для первого варианта
+Общий [процесс подготовки поста с нейросетью](/ru/blog/neyroset-dlya-postov) помогает задать цель и проверить результат; для приветствия дополните его реальными фактами о новом сообществе.
+
 
 :::prompts
 ### Приветственный пост для группы ВК

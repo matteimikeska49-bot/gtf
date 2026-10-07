@@ -2,13 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync } from 'child_process';
+import { resolveProjectSeoState } from './lib/project-seo-state.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '..');
 const ARTICLES_DIR = path.join(ROOT, 'src/content/blog/articles');
 const DIST_DIR = path.join(ROOT, 'dist');
-const APP_PATH = path.join(ROOT, 'src/App.jsx');
 
 const STRICT_SLUGS = new Set([
   'best-linkedin-carousel-examples',
@@ -258,20 +258,11 @@ function normalizeInternalRoute(href) {
 }
 
 function buildRouteRegistry(files) {
-  const registry = new Map([
-    ['/', { live: true, language: 'neutral' }],
-    ['/ru', { live: true, language: 'ru' }],
-    ['/blog', { live: true, language: 'en' }],
-    ['/ru/blog', { live: true, language: 'ru' }]
-  ]);
-
-  const appSource = fs.readFileSync(APP_PATH, 'utf8');
-  for (const match of appSource.matchAll(/<Route\s+path=["']([^"']+)["']/g)) {
-    if (!match[1].includes(':') && !match[1].includes('*')) {
-      const route = normalizeInternalRoute(match[1]);
-      registry.set(route, { live: true, language: route.startsWith('/ru') ? 'ru' : 'en' });
-    }
-  }
+  const registry = new Map(resolveProjectSeoState(ROOT).entries.map((entry) => [
+    entry.path,
+    { live: entry.indexable || entry.lifecycle === 'redirect',
+      language: entry.path === '/' ? 'neutral' : entry.path.startsWith('/ru') ? 'ru' : 'en' },
+  ]));
 
   for (const file of files) {
     const content = fs.readFileSync(path.join(ARTICLES_DIR, file), 'utf8');

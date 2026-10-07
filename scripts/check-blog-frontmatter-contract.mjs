@@ -100,7 +100,9 @@ function getOwnershipOnlyChangedSlugs(changedSlugs) {
     try {
       const before = execFileSync('git', ['show', `HEAD:${relative}`], { cwd: ROOT_DIR, encoding: 'utf8' });
       const after = fs.readFileSync(path.join(ROOT_DIR, relative), 'utf8');
-      if (normalizeOwnershipOnlyContent(before) === normalizeOwnershipOnlyContent(after)) result.add(slug);
+      // An explicitly scoped but unchanged article is not an ownership-only edit.
+      // This also keeps clean-base comparisons under the same strict contract.
+      if (before !== after && normalizeOwnershipOnlyContent(before) === normalizeOwnershipOnlyContent(after)) result.add(slug);
     } catch {
       // New or unavailable files keep the normal strict contract.
     }

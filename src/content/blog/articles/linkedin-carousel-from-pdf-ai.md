@@ -18,7 +18,7 @@ noindex: false
 preview: false
 approvedForPublish: true
 createdAt: "2026-06-07T00:00:00.000Z"
-updatedAt: "2026-06-07T00:00:00.000Z"
+updatedAt: "2026-10-07"
 lastReviewed: "2026-06-07T00:00:00.000Z"
 quickAnswerTitle: "How to convert a PDF into a LinkedIn carousel"
 quickAnswer:
@@ -76,6 +76,8 @@ Once you have identified a micro-topic, upload the PDF/file directly and describ
 Creating a 10-slide document post manually in Canva or Illustrator can take hours. With GoToFlow, you can skip the blank page and let the AI structure your PDF insights instantly.
 
 ### 1. Upload your PDF/file directly
+For the full source-to-slide sequence, follow the [guide to making a LinkedIn carousel with AI](/blog/how-to-make-linkedin-carousel-with-ai); here we focus on adapting an existing PDF.
+
 Upload the PDF/file directly to GoToFlow as source input. Add a simple instruction like: *"Turn this executive summary into an engaging 8-slide LinkedIn carousel. Focus on the problem and the 3 main solutions."*
 
 ### 2. Review the slide breakdown

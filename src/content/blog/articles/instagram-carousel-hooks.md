@@ -22,7 +22,7 @@ mockupStatus: "not_available"
 mockupReason: "No perfectly matching mockup is available for this exact topic visual intent."
 author: "GoToFlow Team"
 createdAt: "2026-06-07"
-updatedAt: "2026-06-21T00:00:00.000Z"
+updatedAt: "2026-10-07"
 canonical: "https://gotoflow.io/blog/instagram-carousel-hooks"
 
 quickAnswerTitle: "What is a good hook for an Instagram carousel?"
@@ -121,5 +121,7 @@ Promise a practical reference the reader can return to.
 > [Create a carousel with GoToFlow](/instagram-carousel-maker)
 
 ### Applying Hooks with AI
+After choosing the opening, the [Instagram carousel creation guide](/blog/how-to-make-an-instagram-carousel-with-ai) shows how to carry that promise through the remaining slides and final CTA.
+
 
 Instead of staring at a blank page, use these examples as starting points and test several versions against the actual carousel content. GoToFlow can generate hook options and develop the selected one into the complete carousel workflow.

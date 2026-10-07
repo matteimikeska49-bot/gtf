@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/blog/ai-linkedin-carousel-strategy-for-b2b-founders"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-07"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -33,7 +33,7 @@ productCapabilityIds: ["textToCarousel"]
 intentId: "en:ai-linkedin-carousel-strategy-for-b2b-founders"
 clusterId: "en:linkedin-carousel"
 articleRole: "supporting"
-hubSlug: "text-to-carousel-ai"
+hubSlug: "how-to-make-linkedin-carousel-with-ai"
 relatedProductRoute: "/linkedin-carousel-maker"
 productFit: "YES"
 productFitExplanation: "GoToFlow enables busy founders to quickly convert their notes into professional LinkedIn documents."
@@ -123,6 +123,7 @@ Focus your carousels on these three pillars:
 ## The AI Workflow for Busy Executives
 
 You do not need a massive marketing team to execute this strategy. You just need a smart AI workflow.
+The [step-by-step LinkedIn carousel workflow](/blog/how-to-make-linkedin-carousel-with-ai) covers the production sequence; the founder framework here helps you decide what to put into it.
 
 :::cards
 type: workflow

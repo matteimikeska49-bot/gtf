@@ -189,7 +189,7 @@
     "cluster": "ru:linkedin-carousel",
     "searchIntent": "B2B case studies in LinkedIn carousels",
     "intentType": "examples",
-    "ownerUrl": "/blog/b2b-keysy-v-linkedin-karusel",
+    "ownerUrl": "/ru/blog/b2b-keysy-v-linkedin-karusel",
     "ownerSlug": "b2b-keysy-v-linkedin-karusel",
     "ownerRole": "supporting",
     "supportingUrls": [],
@@ -197,8 +197,8 @@
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
-    "relatedProductRoute": "/linkedin-carousel-maker",
-    "notes": "Niche B2B RU support",
+    "relatedProductRoute": "/ru/generator-karuselej-linkedin",
+    "notes": "Niche B2B RU support for /ru/generator-karuselej-linkedin",
     "lastReviewed": "2026-06-08"
   },
   {
@@ -236,11 +236,11 @@
     "lastReviewed": "2026-06-23"
   },
   {
-    "intentId": "en:ai-instagram-post-generator",
+    "intentId": "en:best-ai-instagram-post-generators",
     "language": "en",
     "cluster": "en:instagram-post-generator",
-    "searchIntent": "Find the best AI instagram post generator tools",
-    "intentType": "commercial",
+    "searchIntent": "Compare the best AI Instagram post generators by output and workflow",
+    "intentType": "comparison",
     "ownerUrl": "/blog/ai-instagram-post-generator",
     "ownerSlug": "ai-instagram-post-generator",
     "ownerRole": "hub",
@@ -250,26 +250,26 @@
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
     "relatedProductRoute": "/ai-instagram-post-generator",
-    "notes": "Added via D80",
-    "lastReviewed": "2026-06-09"
+    "notes": "Plural comparison owner; singular commercial intent belongs to /ai-instagram-post-generator.",
+    "lastReviewed": "2026-10-07"
   },
   {
-    "intentId": "en:ai-linkedin-post-generator",
+    "intentId": "en:best-ai-linkedin-post-generators",
     "language": "en",
-    "cluster": "en:linkedin-carousel",
-    "searchIntent": "Find the best AI linkedin post generator tools",
-    "intentType": "commercial",
+    "cluster": "en:linkedin-post-generator",
+    "searchIntent": "Compare the best AI LinkedIn post generators for text posts and document carousels",
+    "intentType": "comparison",
     "ownerUrl": "/blog/ai-linkedin-post-generator",
     "ownerSlug": "ai-linkedin-post-generator",
-    "ownerRole": "supporting",
+    "ownerRole": "hub",
     "supportingUrls": [],
     "supportingSlugs": [],
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
-    "relatedProductRoute": "/linkedin-carousel-maker",
-    "notes": "Added via D80",
-    "lastReviewed": "2026-06-09"
+    "relatedProductRoute": "/linkedin-post-generator",
+    "notes": "Plural comparison owner; singular commercial intent belongs to /linkedin-post-generator. Document-carousel workflow remains /linkedin-carousel-maker.",
+    "lastReviewed": "2026-10-07"
   },
   {
     "intentId": "en:how-to-post-a-carousel-on-linkedin",
@@ -916,8 +916,8 @@
     "forbiddenNearDuplicates": [],
     "allowedSupportingAngles": [],
     "updateInsteadOfCreateRules": [],
-    "relatedProductRoute": "/ru/generator-kontenta",
-    "notes": "Draft topic from ru-vk-instagram-batch-1; publish requires demand and final QA refresh.",
+    "relatedProductRoute": "/ru/vk-post-generator",
+    "notes": "Published VK size guide; product relation matches the dedicated VK owner.",
     "lastReviewed": "2026-07-03"
   },
   {
