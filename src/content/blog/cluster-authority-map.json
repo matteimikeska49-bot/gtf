@@ -32,14 +32,6 @@
         "status": "published"
       },
       {
-        "slug": "ai-linkedin-post-generator",
-        "url": "/blog/ai-linkedin-post-generator",
-        "role": "supporting",
-        "intentId": "en:ai-linkedin-post-generator",
-        "priorityTier": "P1",
-        "status": "published"
-      },
-      {
         "slug": "how-to-post-a-carousel-on-linkedin",
         "url": "/blog/how-to-post-a-carousel-on-linkedin",
         "role": "supporting",
@@ -69,7 +61,6 @@
     "supportingArticles": [
       "linkedin-carousel-ideas",
       "linkedin-carousel-from-pdf-ai",
-      "ai-linkedin-post-generator",
       "how-to-post-a-carousel-on-linkedin",
       "ai-linkedin-carousel-strategy-for-b2b-founders",
       "how-to-schedule-linkedin-carousel"
@@ -91,6 +82,34 @@
     },
     "notes": "Main LinkedIn EN cluster",
     "lastReviewed": "2026-06-23"
+  },
+  {
+    "clusterId": "en:linkedin-post-generator",
+    "clusterName": "EN LinkedIn Post Generator Comparison",
+    "language": "en",
+    "productRoute": "/linkedin-post-generator",
+    "hubArticle": "ai-linkedin-post-generator",
+    "hubSlug": "ai-linkedin-post-generator",
+    "articleRoles": [
+      {
+        "slug": "ai-linkedin-post-generator",
+        "url": "/blog/ai-linkedin-post-generator",
+        "role": "hub",
+        "intentId": "en:best-ai-linkedin-post-generators",
+        "priorityTier": "P1",
+        "status": "published"
+      }
+    ],
+    "supportingArticles": [],
+    "missingTopics": [],
+    "internalLinkingRules": {
+      "mustLinkToHub": true,
+      "mustLinkToProductRoute": true,
+      "sameLanguageOnly": true,
+      "recommendedLinks": ["/linkedin-post-generator", "/linkedin-carousel-maker"]
+    },
+    "notes": "Only the existing comparison article is reassigned. Singular text-post commercial intent belongs to /linkedin-post-generator; document carousels remain in en:linkedin-carousel.",
+    "lastReviewed": "2026-10-07"
   },
   {
     "clusterId": "en:ai-carousel-generator",
@@ -322,7 +341,7 @@
     "articleRoles": [
       {
         "slug": "b2b-keysy-v-linkedin-karusel",
-        "url": "/blog/b2b-keysy-v-linkedin-karusel",
+        "url": "/ru/blog/b2b-keysy-v-linkedin-karusel",
         "role": "supporting",
         "intentId": "ru:b2b-linkedin-carousel",
         "priorityTier": "P2",
@@ -357,7 +376,7 @@
         "slug": "ai-instagram-post-generator",
         "url": "/blog/ai-instagram-post-generator",
         "role": "hub",
-        "intentId": "en:ai-instagram-post-generator",
+        "intentId": "en:best-ai-instagram-post-generators",
         "priorityTier": "P1",
         "status": "published"
       },
@@ -383,7 +402,7 @@
         "/blog/ai-instagram-post-generator"
       ]
     },
-    "notes": "Instagram Post Generator cluster created during D80 Recovery",
+    "notes": "Comparison hub owns best AI Instagram post generators; singular commercial intent remains on /ai-instagram-post-generator.",
     "lastReviewed": "2026-06-09"
   },
   {

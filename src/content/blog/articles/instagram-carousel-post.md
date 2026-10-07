@@ -3,6 +3,7 @@ title: "The Anatomy of a High-Converting Instagram Carousel Post"
 slug: "instagram-carousel-post"
 description: "Master the structure of a viral Instagram carousel post. Learn the 3-part formula for hooks, value delivery, and calls to action that drive engagement."
 language: "en"
+updatedAt: "2026-10-07"
 primaryKeyword: "instagram carousel post"
 keywordRecord: "instagram carousel post"
 topicScoreId: "en:instagram carousel post"
@@ -96,6 +97,8 @@ Never use landscape or standard 1:1 squares if you can avoid it. Use the 4:5 por
 Mobile screens are small, and users often browse outdoors or in low light. Ensure your text has extremely high contrast against the background. Use thick, sans-serif fonts for headings, and avoid placing critical text near the very edges where the Instagram UI overlays (like the heart and comment buttons) might obscure it.
 
 ## Creating Your Post in Seconds with GoToFlow
+To choose between generation tools before building the slides, read the [comparison of AI Instagram post generators](/blog/ai-instagram-post-generator); this article focuses on the structure of the resulting carousel post.
+
 
 Applying all these rules manually—formatting the 4:5 ratio, balancing text across 10 slides, and ensuring high contrast—can take hours in standard design software.
 

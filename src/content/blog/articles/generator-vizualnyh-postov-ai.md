@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/generator-vizualnyh-postov-ai"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-04"
+updatedAt: "2026-10-07"
 lastReviewed: "2026-07-04"
 productFit: "YES"
 productFitExplanation: "GoToFlow помогает создавать визуальные карусели и карточки из темы, текста, ссылок, видео, PDF, изображений и других источников."
@@ -95,6 +95,8 @@ type: workflow
 :::
 
 ## Текстовый генератор vs визуальный workflow
+Общий процесс подготовки исходника и проверки текста разобран в [гайде по нейросетям для постов](/ru/blog/neyroset-dlya-postov); здесь сравним его текстовую и визуальную части.
+
 
 - Критерий: Идеи; Генератор текста: Да; Визуальный AI-workflow: Да
 - Критерий: Текст поста; Генератор текста: Да; Визуальный AI-workflow: Да

@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/blog/turn-video-into-carousel-with-ai"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-07"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -116,6 +116,8 @@ Start with a Reels link, video, ready script, plain text, or a quick idea. GoToF
 Decide whether the carousel should become a checklist, a short tutorial, a mistake breakdown, or a deeper explanation of the original video idea.
 
 ### Step 3: Automate the Structure
+For the slide sequence and text pacing after selecting the video angle, follow the [text-to-carousel workflow](/blog/text-to-carousel-ai).
+
 This is where you save hours of design time.
 
 > [!tip]

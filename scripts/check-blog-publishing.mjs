@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { VALID_MOCKUP_SLOTS } from '../src/lib/blog/mockupSlots.js';
+import { resolveProjectSeoState } from './lib/project-seo-state.mjs';
 import {
   findVisiblePlatformFootnoteMarkers,
   findRawJsxLikeTags,
@@ -17,23 +18,11 @@ const MOCKUP_REGISTRY_PATH = path.join(ROOT, 'src/content/blog/mockups/registry.
 const TEMPLATE_PATH = path.join(ROOT, 'src/components/blog/templates/MarkdownSeoArticleTemplateV2.jsx');
 const FOOTER_PATH = path.join(ROOT, 'src/components/Footer.jsx');
 
-// Static allowed routes (old JSX pages, tools, root)
-const ALLOWLIST_ROUTES = [
-  '/', '/ru', '/ai-carousel-maker', '/ru/ii-generator-karuseley', '/ru/ii-generator-karuseley',
-  '/ai-content-generator', '/ru/generator-kontenta',
-  '/ai-instagram-post-generator', '/ai-post-maker', '/ru/generator-postov-instagram',
-  '/linkedin-carousel-maker', '/ru/generator-karuselej-linkedin',
-  '/blog', '/ru/blog',
-  '/blog/ai-instagram-carousel-generator',
-  '/blog/how-to-make-linkedin-carousel-with-ai',
-  '/blog/best-ai-carousel-generators',
-  '/blog/linkedin-carousel-ideas',
-  '/ru/blog/idei-karuselej-linkedin',
-  '/ru/blog/luchshie-ai-generatory-karuselej',
-  '/ru/blog/kak-sdelat-karusel-linkedin-s-ai',
-  '/pricing', '/privacy-policy', '/terms-of-service', '/personal-data-consent', '/refund-policy',
-  '/ru/politika', '/politika', '/ru/polzovatelskoe-soglashenie', '/ru/soglasie-na-obrabotku-personalnyh-dannyh'
-];
+// Use the same source as runtime/prerender instead of a second stale route map.
+// Article publication/draft checks below remain independent.
+const ALLOWLIST_ROUTES = resolveProjectSeoState(ROOT).entries
+  .filter((entry) => entry.indexable || entry.lifecycle === 'redirect')
+  .map((entry) => entry.path);
 
 // Helper to extract frontmatter block
 function extractFrontmatter(content) {

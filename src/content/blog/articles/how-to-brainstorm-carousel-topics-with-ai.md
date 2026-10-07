@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/blog/how-to-brainstorm-carousel-topics-with-ai"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-07"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -144,6 +144,7 @@ They should be under 10 words and make the reader want to swipe.
 ## From Topic to Structured Carousel
 
 Having a great topic is only the starting point. The next challenge is structuring that idea into a readable, engaging 10-slide presentation.
+Once you have selected an angle, use the [text-to-carousel guide](/blog/text-to-carousel-ai) to develop the source message into a slide sequence rather than treating the topic list as finished copy.
 
 Many creators drop the ball here. They take a great topic but dump all the information onto three crowded slides. 
 

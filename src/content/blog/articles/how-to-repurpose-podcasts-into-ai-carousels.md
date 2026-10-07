@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/blog/how-to-repurpose-podcasts-into-ai-carousels"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
+updatedAt: "2026-10-07"
 lastReviewed: "2026-06-17"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -110,6 +110,7 @@ Spoken language is messy. Remove filler words, tangents, and conversational back
 ## Turning Notes into Slides
 
 Once you have your clean takeaways, it is time to format them for a social media audience.
+The [text-to-carousel guide](/blog/text-to-carousel-ai) covers the next step: turning those selected takeaways into a coherent visual sequence.
 
 If your guest shared a 5-step process for hiring developers, that naturally maps to a 7-slide carousel (Hook -> 5 Steps -> CTA).
 

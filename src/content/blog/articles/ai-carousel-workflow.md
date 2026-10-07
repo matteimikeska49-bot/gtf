@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/blog/ai-carousel-workflow"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
+updatedAt: "2026-10-07"
 lastReviewed: "2026-06-17"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -101,6 +101,7 @@ The goal here is purely to capture the "meat" of your expertise.
 Raw source material is hard to read. The workflow needs to find the core idea, remove the noise, and turn the message into a sequence.
 
 GoToFlow can analyze the input, extract the main point, suggest a strong hook, and organize the carousel flow.
+For a text-first source, the [guide to turning text into an AI carousel](/blog/text-to-carousel-ai) explains how to select and divide the material before layout.
 
 :::prompts
 ### The Structure Prompt

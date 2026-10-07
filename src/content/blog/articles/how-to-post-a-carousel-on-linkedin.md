@@ -3,6 +3,7 @@ title: "How to Post a Carousel on LinkedIn: The Ultimate PDF Guide"
 slug: "how-to-post-a-carousel-on-linkedin"
 description: "Learn exactly how to post a carousel on LinkedIn. Follow this simple 3-step guide to uploading your PDF document to create a swipeable carousel post."
 language: "en"
+updatedAt: "2026-10-07"
 primaryKeyword: "how to post a carousel on linkedin"
 keywordRecord: "how to post a carousel on linkedin"
 topicScoreId: "en:how to post a carousel on linkedin"
@@ -83,6 +84,8 @@ When you upload a document to LinkedIn, the platform automatically renders each 
 Once you understand the PDF rule, the actual upload process is simple.
 
 ### 1. Export Your Design as a PDF
+If you still need to build the slides, start with the [LinkedIn carousel creation workflow](/blog/how-to-make-linkedin-carousel-with-ai), then return here for the upload steps.
+
 Whether you designed your carousel manually or used an automated generator, ensure you export the final file as a Standard PDF. Do not use interactive PDFs or excessively large print-quality files, as they may fail to process on LinkedIn.
 
 ### 2. Click "Add a Document" on LinkedIn

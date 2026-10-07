@@ -24,7 +24,7 @@ faqFormat: "structured"
 qualityGateStatus: "passed"
 lastReviewed: "2026-06-21"
 createdAt: "2026-06-21"
-updatedAt: "2026-06-21"
+updatedAt: "2026-10-07"
 explore:
   tools:
     - title: "AI Instagram Post Generator"
@@ -126,6 +126,8 @@ type: examples
 type: tips
 
 ### Design for the swipe
+When these dimensions are used for a multi-slide post, follow the [Instagram carousel workflow](/blog/how-to-make-an-instagram-carousel-with-ai) to organize the slide sequence as well as the canvas size.
+
 Since carousels are interactive, consider adding visual cues (like an arrow, a page number, or a continuous graphic that spans across the edge of the slide) to encourage the user to swipe to the next image.
 
 ### Use portrait for text
