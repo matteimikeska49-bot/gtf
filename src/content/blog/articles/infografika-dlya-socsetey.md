@@ -32,7 +32,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/infografika-dlya-socsetey"
 createdAt: "2026-08-13"
-updatedAt: "2026-08-13"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-08-13"
 quickAnswerTitle: "Короткий ответ"
 quickAnswer:
@@ -65,6 +65,7 @@ explore:
       href: "/ru/blog/kak-pridumat-temu-dlya-karuseli-s-ii"
       description: "Как выбрать один полезный вопрос до работы над дизайном."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Соберите сложное объяснение в последовательность слайдов"
   text: "Передайте GoToFlow проверенный текст и задачу, затем отредактируйте иерархию, факты и визуальные акценты."
   buttonText: "Создать карусель"

@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/karuseli-dlya-onlayn-shkol-s-ii"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -71,6 +71,7 @@ explore:
       href: "/ru/blog/kak-sdelat-karusel-iz-video-s-ii"
       description: "Превращение вебинаров в текстовые слайды."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Тратите часы на производство контента для школы?"
   text: "Масштабируйте контент-маркетинг: превращайте конспекты уроков и вебинаров в десятки вовлекающих каруселей за минуты."
   buttonText: "Автоматизировать контент с ИИ"

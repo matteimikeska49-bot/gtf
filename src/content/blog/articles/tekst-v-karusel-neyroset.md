@@ -22,7 +22,7 @@ mockupStatus: "not_available"
 mockupReason: "No perfectly matching mockup is available for this exact topic visual intent."
 author: "GoToFlow Team"
 createdAt: "2026-06-07"
-updatedAt: "2026-06-07T19:12:00.860Z"
+updatedAt: "2026-10-06"
 canonical: "https://gotoflow.io/ru/blog/tekst-v-karusel-neyroset"
 
 quickAnswerTitle: "Как перевести текст в карусель?"
@@ -59,6 +59,7 @@ explore:
       description: "Пошаговое руководство по превращению кейса в вовлекающую карусель."
 
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Создать карусель из текста"
   text: "Хватит тратить часы на дизайн в Canva. Вставьте текст, и нейросеть сделает всю работу за вас."
   buttonHref: "/ru/ii-generator-karuseley"
@@ -89,5 +90,3 @@ finalCta:
 - Проверьте призыв к действию на последнем слайде.
 
 Таким образом, вы экономите время и получаете профессиональный контент, готовый к публикации.
-
-

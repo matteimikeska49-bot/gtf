@@ -10,7 +10,7 @@ cluster: "instagram_carousel"
 articleType: "technical_guide"
 pageType: "blog_post"
 funnelStage: "TOFU"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 productFit: "PARTIAL"
 productFitExplanation: "GoToFlow автоматически подбирает нужные размеры холста для каруселей, что избавляет от необходимости настраивать их вручную."
 requiredVisualBlock: "technical_table"
@@ -23,7 +23,7 @@ approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/razmer-karuseli-v-instagram"
 audience: "creators_and_marketers"
 createdAt: "2026-06-09T00:00:00.000Z"
-updatedAt: "2026-07-04T00:00:00.000Z"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-04T00:00:00.000Z"
 mockupStatus: "not_needed"
 quickAnswer:
@@ -55,10 +55,11 @@ articleRole: "support"
 hubSlug: "neyroset-dlya-postov"
 quickAnswerTitle: "Краткий ответ"
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Создайте первый пост"
   text: "Используйте ИИ, чтобы сделать пост"
   buttonText: "Попробовать бесплатно"
-  buttonHref: "/ru/ii-generator-karuseley"
+  buttonHref: "/ru/generator-karuselej-instagram"
   secondaryText: "Хуки для карусели Instagram →"
   secondaryHref: "/ru/blog/huki-dlya-karuseli-instagram"
 
@@ -109,7 +110,7 @@ Instagram технически позволяет добавить в карус
 :::mockup{slot="format-settings"}
 :::
 
-Не хотите разбираться с пикселями? [AI-генератор каруселей GoToFlow](/ru/ii-generator-karuseley) создаст дизайн в отличном размере автоматически, чтобы ваш пост выглядел безупречно.
+Не хотите разбираться с пикселями? [AI-генератор каруселей GoToFlow](/ru/generator-karuselej-instagram) создаст дизайн в отличном размере автоматически, чтобы ваш пост выглядел безупречно.
 
 ## Видео в карусели: что проверять перед публикацией
 

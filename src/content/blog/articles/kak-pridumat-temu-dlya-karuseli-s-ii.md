@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/kak-pridumat-temu-dlya-karuseli-s-ii"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -71,6 +71,7 @@ explore:
       href: "/ru/blog/prompty-dlya-karuseley-v-instagram"
       description: "Готовые шаблоны и промпты для генерации постов."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Устали придумывать идеи с нуля?"
   text: "Превратите одну мысль, заметку или ссылку в структурированную карусель с помощью ИИ за пару минут."
   buttonText: "Создать карусель с ИИ"

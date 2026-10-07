@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { resolveProjectSeoState } from './lib/project-seo-state.mjs';
+import { isRuCarouselCluster, validateCarouselOwnership } from './lib/carousel-ownership.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -101,6 +102,22 @@ const routeLanguageMatchesArticle = (route, language) => {
 const topicMap = JSON.parse(fs.readFileSync(TOPIC_MAP_PATH, 'utf-8'));
 const topicBySlug = new Map(topicMap.map(topic => [topic.targetSlug, topic]));
 const existingRoutes = new Set(resolveProjectSeoState(ROOT).entries.map((entry) => entry.path));
+const carouselClusters = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/content/blog/cluster-authority-map.json'), 'utf8')).filter(isRuCarouselCluster);
+const intents = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/content/blog/intent-map.json'), 'utf8'));
+
+for (const cluster of carouselClusters) {
+  for (const role of cluster.articleRoles) {
+    const file = path.join(ARTICLES_DIR, `${role.slug}.md`);
+    if (!fs.existsSync(file)) { conflicts.push(`${role.slug}: missing cluster article`); continue; }
+    const content = fs.readFileSync(file, 'utf8');
+    conflicts.push(...validateCarouselOwnership(content, {
+      slug: role.slug, cluster,
+      intent: intents.find(intent => intent.ownerUrl === role.url),
+      topic: topicBySlug.get(role.slug),
+    }));
+  }
+}
+if (conflicts.length) hasP0Error = true;
 
 const articleFiles = fs.readdirSync(ARTICLES_DIR)
   .filter(file => file.endsWith('.md') && !file.startsWith('_'));

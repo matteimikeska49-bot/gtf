@@ -13,7 +13,7 @@ intentId: "ru:pochemu-instagram-obrezaet-foto-v-karuseli"
 clusterId: "ru:instagram-carousel"
 articleRole: "technical_guide"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 secondaryKeywords:
   - "инстаграм обрезает фото в карусели"
   - "как загрузить карусель без обрезки"
@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/pochemu-instagram-obrezaet-foto-v-karuseli"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-04"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-04"
 productFit: "PARTIAL"
 productFitExplanation: "GoToFlow помогает заранее готовить слайды в едином формате, но финальную загрузку и проверку предпросмотра нужно делать на стороне платформы."
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Соберите слайды в едином формате."
   guides:
     - title: "Фото разного формата в карусели"
@@ -66,6 +66,7 @@ explore:
       href: "/ru/blog/razmer-karuseli-v-instagram"
       description: "Форматы и безопасные зоны."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Подготовьте слайды до загрузки"
   text: "GoToFlow помогает собрать карусель в едином визуальном формате, чтобы перед публикацией было проще проверить текст, края и порядок слайдов."
   buttonText: "Создать карусель"
@@ -127,7 +128,7 @@ type: checklist
 
 Подробнее про такой сценарий: [как совместить горизонтальные и вертикальные фото в карусели](/ru/blog/gorizontalnye-i-vertikalnye-foto-v-karuseli).
 
-## Как [GoToFlow](/ru/ii-generator-karuseley) помогает
+## Как [GoToFlow](/ru/generator-karuselej-instagram) помогает
 
 GoToFlow помогает создавать карусель как последовательность слайдов с единой визуальной логикой. Это полезно, когда вы хотите не просто загрузить набор фото, а добавить текст, структуру, визуальную подачу и CTA.
 

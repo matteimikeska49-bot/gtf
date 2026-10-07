@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/karuseli-dlya-smm-agentstva-s-ii"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-17"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-17"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -71,6 +71,7 @@ explore:
       href: "/ru/blog/trendovye-shrifty-dlya-karuseley"
       description: "Подборка качественных шрифтовых пар."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Дизайнеры перегружены правками?"
   text: "Оптимизируйте процесс: превращайте текст, видео, Reels, аудио или PDF клиентов в готовые карусели за минуты, снижая затраты на ручную верстку."
   buttonText: "Автоматизировать создание каруселей"

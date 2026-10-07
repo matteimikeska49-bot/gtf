@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/kak-sozdat-karusel-s-chatgpt"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-05"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-05"
 productFit: "PARTIAL"
 productFitExplanation: "ChatGPT помогает с текстом и структурой, а GoToFlow закрывает следующий этап: карусельный workflow с визуальной подачей, слайдами и CTA."
@@ -68,6 +68,7 @@ explore:
       href: "/ru/blog/prompty-dlya-karuseley-v-instagram"
       description: "Готовые формулы для слайдов и хуков."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Превратите текст в карусель"
   text: "GoToFlow помогает взять тему, готовый текст или источник и собрать структуру, слайды, визуальную подачу и CTA в одном процессе."
   buttonText: "Создать карусель"

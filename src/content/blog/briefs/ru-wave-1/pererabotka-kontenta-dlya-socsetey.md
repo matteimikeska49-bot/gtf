@@ -8,7 +8,7 @@
 - Search intent: переиспользовать один содержательный источник в нескольких новых форматах
 - Audience: эксперты, создатели, маркетологи и небольшие команды
 - Product Fit: YES
-- Product Fit Explanation: GoToFlow принимает тему, сценарий, текст, ссылку, видео, аудио, вручную скопированный текст PDF, изображение, скриншот или фото и создаёт готовую карусель.
+- Product Fit Explanation: GoToFlow принимает тему, сценарий, текст, ссылку, видео, аудио, напрямую загруженный PDF/файл, изображение, скриншот или фото и создаёт готовую карусель.
 - Required Visual Block: source_to_format_map
 - FAQ Format: structured
 - Quality Gate Status: approved
@@ -33,8 +33,8 @@
 ## Stage 3: Product Reality Claims
 - Product Capability IDs Used: aiCarouselGeneration; textToCarousel; finishedOutputPositioning
 - Allowed Claims: supported inputs and finished carousel output.
-- Forbidden Claims: direct PDF upload, automatic PDF extraction, direct social publishing.
-- Safer Wording: вручную скопируйте или извлеките текст из PDF и вставьте его как источник.
+- Forbidden Claims: guaranteed PDF extraction/parsing/OCR accuracy, unlimited file size, direct social publishing.
+- Safer Wording: загрузите PDF/файл напрямую как источник для карусели; проверьте результат по исходному документу.
 
 ## Stage 4: Intent Ownership
 - Intent ID: ru:pererabotka-kontenta-dlya-socsetey

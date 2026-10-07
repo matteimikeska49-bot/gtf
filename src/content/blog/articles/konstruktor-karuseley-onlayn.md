@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/konstruktor-karuseley-onlayn"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-04"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-04"
 productFit: "YES"
 productFitExplanation: "GoToFlow закрывает задачу создания карусели онлайн, но отличается от ручных редакторов тем, что помогает пройти путь от темы или источника до структуры, текста, визуального стиля, слайдов и CTA."
@@ -66,6 +66,7 @@ explore:
       href: "/ru/blog/shablony-karuseley-v-instagram"
       description: "Как использовать шаблоны без однотипного визуала."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Соберите карусель онлайн быстрее"
   text: "GoToFlow помогает превратить тему, текст, ссылку или другой источник в структуру, слайды, визуальную подачу и CTA без долгой ручной сборки."
   buttonText: "Попробовать GoToFlow"

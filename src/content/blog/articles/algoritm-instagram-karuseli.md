@@ -13,7 +13,7 @@ intentId: "ru:algoritm-instagram-karuseli"
 clusterId: "ru:instagram-carousel"
 articleRole: "guide"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 secondaryKeywords:
   - "алгоритм инстаграм карусели"
   - "карусели в рекомендациях"
@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/algoritm-instagram-karuseli"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-04"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-04"
 productFit: "PARTIAL"
 productFitExplanation: "GoToFlow помогает чаще и быстрее готовить качественные карусели, но видимость публикаций зависит от темы, качества, аудитории и поведения пользователей."
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Соберите структуру, слайды и визуальную подачу."
   guides:
     - title: "Как повысить охваты с помощью каруселей"
@@ -66,6 +66,7 @@ explore:
       href: "/ru/blog/huki-dlya-karuseli-instagram"
       description: "Как сделать первый слайд понятнее."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Готовьте карусели с понятной логикой"
   text: "GoToFlow помогает превратить тему или источник в структуру, текст по слайдам, визуальную подачу и CTA, которые удобно проверить перед публикацией."
   buttonText: "Создать карусель"
@@ -112,7 +113,7 @@ type: takeaways
 - Элемент: Длина текста; Почему важен: Влияет на читаемость с телефона
 - Элемент: CTA; Почему важен: Подсказывает, что сделать после просмотра
 
-[GoToFlow](/ru/ii-generator-karuseley) помогает быстрее собрать такую структуру: от темы, текста, ссылки, видео, PDF или изображения к слайдам, визуальной подаче и CTA. Дальше важно проверить смысл и убрать всё, что не помогает читателю.
+[GoToFlow](/ru/generator-karuselej-instagram) помогает быстрее собрать такую структуру: от темы, текста, ссылки, видео, PDF или изображения к слайдам, визуальной подаче и CTA. Дальше важно проверить смысл и убрать всё, что не помогает читателю.
 
 ## Ошибки в разговоре про алгоритмы
 

@@ -32,7 +32,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/analiz-kontenta-konkurentov-v-socsetyah"
 createdAt: "2026-08-13"
-updatedAt: "2026-08-13"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-08-13"
 quickAnswerTitle: "Короткий ответ"
 quickAnswer:
@@ -65,6 +65,7 @@ explore:
       href: "/ru/blog/primery-karuseley-instagram"
       description: "Разбор композиции и подачи в опубликованных форматах."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Превратите исследовательский вывод в собственную карусель"
   text: "Сформулируйте незакрытый вопрос аудитории, добавьте свой опыт и соберите в GoToFlow последовательный материал."
   buttonText: "Создать карусель"

@@ -2,12 +2,13 @@
 title: "Что такое карусель в Инстаграм и как она работает"
 slug: "chto-takoe-karusel-v-instagram"
 language: "ru"
+clusterId: "ru:instagram-carousel"
 description: "Что такое карусель в Инстаграм? Подробный разбор формата, его преимуществ для охватов и пошаговая инструкция по созданию."
 primaryKeyword: "что такое карусель в инстаграм"
 secondaryKeywords: ["формат карусели", "карусель инстаграм это", "что значит карусель"]
 canonical: "https://gotoflow.io/ru/blog/chto-takoe-karusel-v-instagram"
 createdAt: 2026-06-12
-updatedAt: 2026-06-13
+updatedAt: "2026-10-06"
 published: true
 noindex: false
 quickAnswer:
@@ -29,17 +30,18 @@ faq:
 explore:
   tools:
     - title: "Сделать Карусель"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Создайте свою первую профессиональную карусель онлайн."
   guides:
     - title: "Примеры каруселей"
       href: "/ru/blog/primery-karuseley-instagram"
       description: "Посмотрите, как используют карусели лидеры рынка."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Готовы создать свою первую карусель?"
   text: "GoToFlow превращает тему или источник в структуру, текст по слайдам, визуальный дизайн, CTA и готовую карусель для экспорта в одном workflow."
   buttonText: "Попробовать Бесплатно"
-  href: "/ru/ii-generator-karuseley"
+  href: "/ru/generator-karuselej-instagram"
   microcopy: "Никаких сложных программ"
   secondaryText: "Узнать, как работает ИИ →"
   secondaryHref: "/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii"
@@ -79,6 +81,6 @@ type: tips
 
 > [!workflow]
 > **Как сделать карусель, если вы не умеете рисовать?**
-> Раньше для создания красивых инфо-каруселей нужен был дизайнер или навыки работы в Photoshop. Сегодня вы можете использовать [ИИ Генератор Каруселей](/ru/ii-generator-karuseley). Вы просто вводите текст или тему, и нейросеть сама разбивает его на слайды, добавляет фон, шрифты и иконки.
+> Раньше для создания красивых инфо-каруселей нужен был дизайнер или навыки работы в Photoshop. Сегодня вы можете использовать [ИИ Генератор Каруселей](/ru/generator-karuselej-instagram). Вы просто вводите текст или тему, и нейросеть сама разбивает его на слайды, добавляет фон, шрифты и иконки.
 
 Теперь вы знаете, что такое карусель в Инстаграм. Если вы до сих пор публикуете только одиночные фотографии, вы теряете огромный потенциал для роста вашего блога.

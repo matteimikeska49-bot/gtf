@@ -10,7 +10,7 @@ finalPriorityScore: 61
 priorityTier: "P3"
 productCapabilityIds: ["pdfToCarousel", "textToCarousel"]
 intentId: "ru:mnogostranichnye-karuseli-prezentacii"
-clusterId: "ru:instagram-carousel"
+clusterId: "ru:ii-carousel-generator"
 articleRole: "how_to"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
 relatedProductRoute: "/ru/ii-generator-karuseley"
@@ -27,10 +27,10 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/mnogostranichnye-karuseli-prezentacii"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-04"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-04"
 productFit: "YES"
-productFitExplanation: "GoToFlow поддерживает работу с PDF, текстами, ссылками, видео и другими источниками, помогая превращать длинные материалы в структуру, слайды, визуальную подачу и CTA."
+productFitExplanation: "GoToFlow поддерживает прямую загрузку PDF/файла, а также работу с текстом, ссылками, видео и другими источниками, помогая превращать длинные материалы в структуру, слайды, визуальную подачу и CTA."
 requiredVisualBlock: "workflow_cards"
 faqFormat: "structured"
 qualityGateStatus: "passed"
@@ -52,11 +52,11 @@ faq:
   - question: "Какая главная ошибка при адаптации?"
     answer: "Пытаться уместить весь исходный материал. Карусель должна быть самостоятельной короткой историей."
   - question: "Как GoToFlow помогает?"
-    answer: "GoToFlow помогает превратить PDF, текст, ссылку, видео или другую основу в структуру, текст по слайдам, визуальную подачу и CTA."
+    answer: "GoToFlow помогает превратить PDF, текст, ссылку, видео или другую основу в структуру, текст по слайдам, визуальную подачу и CTA. PDF/файл можно загрузить напрямую как исходник."
 explore:
   tools:
-    - title: "AI-генератор контента"
-      href: "/ru/generator-kontenta"
+    - title: "ИИ-генератор каруселей"
+      href: "/ru/ii-generator-karuseley"
       description: "Переработайте длинный материал в визуальный формат."
   guides:
     - title: "Идеи для карусели Instagram"
@@ -66,9 +66,11 @@ explore:
       href: "/ru/blog/chitabelnost-teksta-v-karuselyah"
       description: "Как не перегрузить слайды."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Превратите длинный материал в карусель"
   text: "GoToFlow помогает взять презентацию, PDF, текст, ссылку или видео и собрать структуру, слайды, визуальную подачу и CTA."
   buttonText: "Создать карусель"
+  href: "/ru/ii-generator-karuseley"
   microcopy: "Сокращайте материал до главной идеи"
   secondaryText: "Посмотреть идеи форматов →"
   secondaryHref: "/ru/blog/idei-dlya-karuseli-instagram"
@@ -108,7 +110,7 @@ type: workflow
 
 ## Где помогает [GoToFlow](/ru/ii-generator-karuseley)
 
-GoToFlow можно использовать, если у вас есть PDF, текст, ссылка, видео, изображение, скриншот или заметки. Система помогает выделить смысл, собрать структуру, написать короткий текст по слайдам, сформировать визуальную подачу и добавить CTA.
+GoToFlow можно использовать, если у вас есть PDF, текст, ссылка, видео, изображение, скриншот или заметки. PDF/файл можно загрузить напрямую как исходник. Система помогает выделить смысл, собрать структуру, написать короткий текст по слайдам, сформировать визуальную подачу и добавить CTA.
 
 :::mockup{slot="topic-input"}
 :::

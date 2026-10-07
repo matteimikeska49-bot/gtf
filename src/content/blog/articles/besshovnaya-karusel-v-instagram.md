@@ -10,7 +10,7 @@ cluster: "instagram_carousel"
 articleType: "technical_guide"
 pageType: "blog_post"
 funnelStage: "TOFU/MOFU"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 productFit: "PARTIAL"
 productFitExplanation: "GoToFlow предлагает готовые шаблоны каруселей, которые являются альтернативой сложной ручной верстке бесшовных панорам."
 requiredVisualBlock: "comparison_table"
@@ -23,7 +23,7 @@ approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/besshovnaya-karusel-v-instagram"
 audience: "creators_and_marketers"
 createdAt: "2026-06-09T00:00:00.000Z"
-updatedAt: "2026-06-09T00:00:00.000Z"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-09T00:00:00.000Z"
 mockupStatus: "not_needed"
 quickAnswer:
@@ -50,10 +50,11 @@ articleRole: "guide"
 hubSlug: "neyroset-dlya-postov"
 quickAnswerTitle: "Краткий ответ"
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Создайте готовую карусель в GoToFlow"
   text: "Начните с идеи или источника — GoToFlow соберёт структуру, текст по слайдам, визуальный стиль, CTA и готовую карусель для экспорта."
   buttonText: "Создать карусель"
-  href: "/ru/ii-generator-karuseley"
+  href: "/ru/generator-karuselej-instagram"
   secondaryText: "Хуки для карусели Instagram →"
   secondaryHref: "/ru/blog/huki-dlya-karuseli-instagram"
 
@@ -98,7 +99,7 @@ finalCta:
 
 Создание бесшовной карусели вручную — трудоемкий процесс. Выравнивание элементов часто приводит к пиксельным сдвигам.
 
-[Генератор каруселей GoToFlow](/ru/ii-generator-karuseley) подходит для быстрого создания экспертных каруселей от идеи или источника до готового результата: структура, текст по слайдам, визуальная логика, CTA и экспорт. Бесшовные панорамные форматы — отдельный дизайнерский сценарий: их можно собирать вручную, но для регулярного контент-потока быстрее использовать GoToFlow как end-to-end workflow.
+[Генератор каруселей GoToFlow](/ru/generator-karuselej-instagram) подходит для быстрого создания экспертных каруселей от идеи или источника до готового результата: структура, текст по слайдам, визуальная логика, CTA и экспорт. Бесшовные панорамные форматы — отдельный дизайнерский сценарий: их можно собирать вручную, но для регулярного контент-потока быстрее использовать GoToFlow как end-to-end workflow.
 
 Как это экономит время:
 1. Вы добавляете идею, текст или другой источник.
@@ -112,7 +113,7 @@ finalCta:
 :::mockup{slot="format-settings"}
 :::
 
-Попробуйте [генератор от GoToFlow](/ru/ii-generator-karuseley), чтобы пройти путь от идеи или источника до готовой карусели с текстом, визуальной подачей, CTA и экспортом в одном workflow.
+Попробуйте [генератор от GoToFlow](/ru/generator-karuselej-instagram), чтобы пройти путь от идеи или источника до готовой карусели с текстом, визуальной подачей, CTA и экспортом в одном workflow.
 
 ### Как выбрать workflow
 

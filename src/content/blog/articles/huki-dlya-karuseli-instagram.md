@@ -2,6 +2,7 @@
 title: "Хуки для карусели в Инстаграм: 20 цепляющих заголовков"
 slug: "huki-dlya-karuseli-instagram"
 language: "ru"
+clusterId: "ru:instagram-carousel"
 description: "Узнайте, как писать хуки для карусели в Инстаграм. Подборка 20 готовых заголовков для ошибок, боли, результата, планов, мифов и личного опыта."
 primaryKeyword: "хуки для карусели инстаграм"
 secondaryKeywords: ["заголовки для инстаграм", "идеи для карусели"]
@@ -10,7 +11,7 @@ cluster: "Instagram carousel ideas"
 articleType: "listicle/how-to"
 pageType: "blog_post"
 funnelStage: "TOFU"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 canonical: "https://gotoflow.io/ru/blog/huki-dlya-karuseli-instagram"
 audience: "creators_and_marketers"
 published: true
@@ -19,7 +20,7 @@ preview: false
 approvedForPublish: true
 ru_meta_disclaimer: true
 createdAt: "2026-06-11T00:00:00.000Z"
-updatedAt: "2026-06-20T00:00:00.000Z"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-20T00:00:00.000Z"
 mockupStatus: "present"
 quickAnswerTitle: "Что такое хук в карусели?"
@@ -42,17 +43,18 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей для Instagram"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Превращайте хук в структуру, текст по слайдам, визуальную подачу, CTA и готовую карусель."
   guides:
     - title: "Как сделать бесшовную карусель"
       href: "/ru/blog/besshovnaya-karusel-v-instagram"
       description: "Руководство по созданию идеального перехода между слайдами."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Готовы создать свою первую карусель?"
   text: "Выберите хук или добавьте свою тему — GoToFlow соберёт структуру, текст по слайдам, визуальную подачу, CTA и готовую карусель для экспорта."
   buttonText: "Создать карусель бесплатно"
-  href: "/ru/ii-generator-karuseley"
+  href: "/ru/generator-karuselej-instagram"
   secondaryText: "Смотреть идеи для карусели Instagram →"
   secondaryHref: "/ru/blog/idei-dlya-karuseli-instagram"
 
@@ -166,7 +168,7 @@ finalCta:
 > [!workflow]
 > **От хука до готовой карусели**
 > В GoToFlow можно не просто придумать хук, а сразу превратить его в структуру карусели, текст по слайдам, визуальную подачу, CTA и готовый результат для экспорта. Добавьте тему, текст, ссылку, видео, аудио, PDF, изображение или свои материалы — и соберите весь workflow в одном месте.
-> [Создать карусель в GoToFlow](/ru/ii-generator-karuseley)
+> [Создать карусель в GoToFlow](/ru/generator-karuselej-instagram)
 
 ## Как тестировать хуки
 

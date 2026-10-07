@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { SEO_PRODUCT_TRUTH_REGISTRY } from '../src/content/seoPages/productTruthRegistry.js';
 import {
   extractFrontmatterAndBody,
   getYamlBlock,
@@ -13,13 +14,47 @@ const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '..');
 const ARTICLES_DIR = path.join(ROOT, 'src/content/blog/articles');
 const SOURCE_OF_TRUTH = path.join(ROOT, 'docs/product/gotoflow-capabilities.md');
+const CAPABILITIES = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/content/blog/product-capabilities.json'), 'utf8'));
+const PDF_INPUT_POLICY_ROOTS = [
+  'src/content/seoPages',
+  'src/content/blog/articles',
+  'src/content/blog/briefs',
+  'src/content/blog/product-capabilities.json',
+  'src/content/blog/topic-map.json',
+  'src/i18n',
+  'docs/product/gotoflow-capabilities.md',
+  'docs/product-reality-claims.md',
+  'docs/brief-linkedin-carousel-from-pdf.md',
+];
+
+function findPdfInputRestrictions(text) {
+  return text.split('\n').flatMap((line, index) => {
+    if (!/PDF/i.test(line)) return [];
+    const manualOnly = /manually\s+copied[^.\n]{0,100}PDF|вручную\s+скопир[\p{L}]*[^.\n]{0,100}PDF|PDF[-\s]*(?:текст|text)[^.\n]{0,30}(?:нужно|must)[^.\n]{0,30}(?:скопир|copy)/iu.test(line);
+    const denied = /(?:прям[\p{L}]*|direct)[^.\n]{0,50}(?:загрузк|upload)[^.\n]{0,70}(?:не поддерж|not supported|нельзя|unsupported)|(?:automatic PDF parsing|OCR PDF)[^.\n]{0,80}(?:not supported|не поддерж)/iu.test(line)
+      || /^\s*(?:"|[-]\s*)(?:direct PDF file upload|Прямая загрузка PDF-файлов)(?:",?|\.)\s*$/i.test(line);
+    const optionalTextInput = /optionally|optional alternative|необязательн|можно также/iu.test(line)
+      && /(?:upload[^.\n]{0,50}PDF[^.\n]{0,50}direct|PDF[^.\n]{0,50}upload[^.\n]{0,50}direct|PDF[^.\n]{0,50}загруз[^.\n]{0,50}напрямую)/iu.test(line);
+    const restricted = denied || (manualOnly && !optionalTextInput);
+    return restricted ? [`line ${index + 1}: obsolete PDF/file input restriction`] : [];
+  });
+}
+
+function listPdfInputPolicyFiles(target) {
+  if (fs.statSync(target).isFile()) return [target];
+  return fs.readdirSync(target, { withFileTypes: true }).flatMap((entry) => {
+    const entryPath = path.join(target, entry.name);
+    if (entry.isDirectory()) return listPdfInputPolicyFiles(entryPath);
+    return /\.(?:js|jsx|json|md)$/.test(entry.name) ? [entryPath] : [];
+  });
+}
 
 const REQUIRED_SOURCE_PHRASES = [
   'GoToFlow — это end-to-end система создания каруселей',
   'GoToFlow input capabilities',
-  'VIDEO / REELS / AUDIO / MANUALLY COPIED TEXT FROM PDF',
+  'VIDEO / REELS / AUDIO / PDF / FILE',
   'AI сам посмотрит видео, сделает транскрипцию и выделит суть',
-  'GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, manually copied text from a PDF, image, screenshot, or user photo',
+  'GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, directly uploaded PDF/file, image, screenshot, or user materials',
   'GoToFlow product-positive comparison rule',
   'Do not position GoToFlow outputs as drafts.',
   'Нельзя писать',
@@ -189,6 +224,31 @@ const RULES = [
   }
 ];
 
+function findPdfSourceTruthIssues(capabilities, registry) {
+  const issues = [];
+  const pdf = capabilities.find((capability) => capability.capabilityId === 'pdfToCarousel');
+  if (pdf?.status !== 'supported' || registry.supportedInputTypes?.pdf?.status !== 'available') {
+    issues.push('PDF/file must remain a supported source input in both Product Truth registries.');
+  }
+  if (registry.supportedInputTypes?.pdf?.inputMode === 'manually_copied_text_only'
+    || /manually copied|manual extraction|(?:direct PDF|PDF\/file)[^."\n]{0,100}(?:not supported|unsupported)/i.test(JSON.stringify([
+      pdf?.description, pdf?.allowedClaims, pdf?.saferAlternatives, pdf?.evidence,
+      capabilities.find((capability) => capability.capabilityId === 'aiCarouselGeneration')?.allowedClaims,
+    ]))) {
+    issues.push('PDF/file must not be downgraded to manual-copy-only input.');
+  }
+  if (!pdf?.allowedClaims?.some((claim) => /directly uploaded PDF\/file/i.test(claim))
+    || pdf?.forbiddenClaims?.some((claim) => /^(?:direct PDF file upload|automatic PDF parsing or extraction)$/i.test(claim))) {
+    issues.push('Direct PDF/file source input must be allowed, not forbidden.');
+  }
+  for (const forbiddenClaim of ['perfect PDF extraction', 'guaranteed PDF extraction accuracy', 'guaranteed PDF parsing accuracy', 'guaranteed OCR accuracy', 'unlimited PDF input size']) {
+    if (!pdf?.forbiddenClaims?.includes(forbiddenClaim)) {
+      issues.push(`PDF input must not imply an unsupported guarantee: ${forbiddenClaim}.`);
+    }
+  }
+  return issues;
+}
+
 function assertSourceOfTruth() {
   if (!fs.existsSync(SOURCE_OF_TRUTH)) {
     console.error(`❌ Missing product source of truth: ${path.relative(ROOT, SOURCE_OF_TRUTH)}`);
@@ -201,6 +261,20 @@ function assertSourceOfTruth() {
     console.error(`❌ Product source of truth is missing required phrases: ${missing.join('; ')}`);
     process.exit(1);
   }
+  const pdfIssues = findPdfSourceTruthIssues(CAPABILITIES, SEO_PRODUCT_TRUTH_REGISTRY);
+  if (/manually copied text from a PDF|manually_copied_text_only|tool that automatically parses or extracts content from a PDF file/i.test(text)) {
+    pdfIssues.push('Product source-of-truth document contains an obsolete PDF input restriction.');
+  }
+  const pdfPolicyFiles = [...new Set(PDF_INPUT_POLICY_ROOTS.flatMap((relative) => listPdfInputPolicyFiles(path.join(ROOT, relative))))];
+  for (const file of pdfPolicyFiles) {
+    pdfIssues.push(...findPdfInputRestrictions(fs.readFileSync(file, 'utf8'))
+      .map((issue) => `${path.relative(ROOT, file)}:${issue}`));
+  }
+  if (pdfIssues.length > 0) {
+    console.error(`❌ PDF/file Product Truth contradiction: ${pdfIssues.join('; ')}`);
+    process.exit(1);
+  }
+  console.log(`✅ PDF/file Product Truth: ${pdfPolicyFiles.length} active source/policy files checked; obsolete input restrictions = 0.`);
 }
 
 function normalizeText(text) {
@@ -329,6 +403,43 @@ function findComparisonBridgeWarning(frontmatter, body) {
 }
 
 function runSmokeTest() {
+  for (const restriction of [
+    'Use manually copied text from a PDF as the source.',
+    'Use text manually copied from a PDF.',
+    'Вручную скопируйте текст из PDF.',
+    'PDF-текст нужно скопировать вручную.',
+    'Direct PDF file upload is NOT supported.',
+    'Прямая загрузка PDF-файлов не поддерживается.',
+  ]) {
+    if (findPdfInputRestrictions(restriction).length === 0) {
+      throw new Error('Active PDF-only copy regression was not blocked.');
+    }
+  }
+  for (const supported of [
+    'Upload the PDF/file directly. Manual copying is not required.',
+    'PDF/файл можно загрузить напрямую; вручную копировать текст из него не требуется.',
+    'Download the PDF and post manually.',
+    'Проверьте PDF вручную перед публикацией.',
+    'Perfect PDF extraction and guaranteed OCR accuracy must not be promised.',
+    'Upload the PDF/file directly; optionally use manually copied text from a PDF as an alternative.',
+  ]) {
+    if (findPdfInputRestrictions(supported).length > 0) {
+      throw new Error('Supported PDF input or result-review safeguard was incorrectly blocked.');
+    }
+  }
+  for (const mutate of [
+    (caps) => { caps.find((cap) => cap.capabilityId === 'pdfToCarousel').allowedClaims = ['turn manually copied text from a PDF into a carousel workflow']; },
+    (caps) => { caps.find((cap) => cap.capabilityId === 'pdfToCarousel').forbiddenClaims.push('direct PDF file upload'); },
+    (_caps, registry) => { registry.supportedInputTypes.pdf.inputMode = 'manually_copied_text_only'; },
+    (caps) => { caps.find((cap) => cap.capabilityId === 'pdfToCarousel').forbiddenClaims = []; },
+  ]) {
+    const caps = structuredClone(CAPABILITIES);
+    const registry = structuredClone(SEO_PRODUCT_TRUTH_REGISTRY);
+    mutate(caps, registry);
+    if (findPdfSourceTruthIssues(caps, registry).length === 0) {
+      throw new Error('PDF/file Product Truth regression was not blocked.');
+    }
+  }
   const bad = [
     'Canva делает дизайн, а GoToFlow только структуру.',
     'You first need to convert the audio into text using a transcription tool before using GoToFlow.',
@@ -370,6 +481,8 @@ function runSmokeTest() {
   console.log(`- Bad example blocked by: ${[...badIssues, ...badDraftIssues].map((issue) => issue.ruleId).join(', ')}`);
   console.log('- Good Canva comparison accepted.');
   console.log('- Missing GoToFlow product bridge warning detected; strong bridge accepted.');
+  console.log('- PDF/file input: supported truth accepted; four restriction/guarantee regressions blocked.');
+  console.log('- Active PDF policy: six obsolete input restrictions blocked; result review/export and accuracy safeguards accepted.');
 }
 
 function scanArticles() {

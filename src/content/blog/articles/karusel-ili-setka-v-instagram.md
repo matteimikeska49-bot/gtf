@@ -13,7 +13,7 @@ intentId: "ru:karusel-ili-setka-v-instagram"
 clusterId: "ru:instagram-carousel"
 articleRole: "comparison"
 hubSlug: "kak-sdelat-karusel-dlya-instagram-s-ii"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 secondaryKeywords:
   - "карусель или одно фото"
   - "какой формат поста выбрать"
@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/karusel-ili-setka-v-instagram"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-04"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-04"
 productFit: "PARTIAL"
 productFitExplanation: "GoToFlow помогает быстрее создать карусель, если формат подходит задаче. Выбор между одиночным фото и серией слайдов зависит от цели публикации."
@@ -56,7 +56,7 @@ faq:
 explore:
   tools:
     - title: "Генератор каруселей Instagram"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Создайте серию слайдов из темы или источника."
   guides:
     - title: "Как повысить охваты с помощью каруселей"
@@ -66,6 +66,7 @@ explore:
       href: "/ru/blog/huki-dlya-karuseli-instagram"
       description: "Как сделать первый слайд сильнее."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Проверьте идею в формате карусели"
   text: "GoToFlow помогает превратить тему, текст или источник в структуру, слайды, визуальную подачу и CTA, если серия слайдов подходит вашей задаче."
   buttonText: "Создать карусель"
@@ -105,7 +106,7 @@ type: best-for
 
 Карусель раскрывает тему постепенно. Она подходит для инструкций, экспертных разборов, мини-презентаций, подборок, ошибок и сравнений. Читатель не получает всю информацию сразу, а проходит по логике слайдов.
 
-[GoToFlow](/ru/ii-generator-karuseley) помогает быстро собрать такую последовательность: из темы, текста, ссылки, видео, PDF или изображения можно получить структуру, текст по слайдам, визуальную подачу и CTA.
+[GoToFlow](/ru/generator-karuselej-instagram) помогает быстро собрать такую последовательность: из темы, текста, ссылки, видео, PDF или изображения можно получить структуру, текст по слайдам, визуальную подачу и CTA.
 
 :::mockup{slot="result-preview"}
 :::

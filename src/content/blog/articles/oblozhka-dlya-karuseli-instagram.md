@@ -2,12 +2,13 @@
 title: "Обложка для карусели Инстаграм: Примеры и дизайн"
 slug: "oblozhka-dlya-karuseli-instagram"
 language: "ru"
+clusterId: "ru:instagram-carousel"
 description: "Узнайте, как создать идеальную обложку для карусели в Инстаграм. Примеры дизайна, правила композиции и секреты кликабельных заголовков."
 primaryKeyword: "обложка для карусели инстаграм"
 secondaryKeywords: ["первый слайд карусели", "дизайн обложки инстаграм", "заголовок для карусели"]
 canonical: "https://gotoflow.io/ru/blog/oblozhka-dlya-karuseli-instagram"
 createdAt: 2026-06-12
-updatedAt: 2026-06-13
+updatedAt: "2026-10-06"
 published: true
 noindex: false
 quickAnswer:
@@ -29,17 +30,18 @@ faq:
 explore:
   tools:
     - title: "ИИ Генератор Каруселей"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Соберите карусель с обложкой и слайдами с помощью ИИ."
   guides:
     - title: "Хуки для карусели"
       href: "/ru/blog/huki-dlya-karuseli-instagram"
       description: "Узнайте, как писать цепляющие заголовки."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Перестаньте терять охваты из-за плохой обложки"
   description: "Создайте контрастную, стильную и кликабельную обложку для вашей следующей карусели прямо сейчас."
   buttonText: "Создать Карусель"
-  href: "/ru/ii-generator-karuseley"
+  href: "/ru/generator-karuselej-instagram"
   microcopy: "Готовые шаблоны внутри"
   secondaryText: "Как сделать карусель целиком →"
   secondaryHref: "/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii"
@@ -79,7 +81,7 @@ type: tips
 
 > [!workflow]
 > **Автоматизация дизайна обложек**
-> Если вы устали двигать текстовые блоки в редакторах, попробуйте [ИИ Генератор Каруселей](/ru/ii-generator-karuseley). Он помогает быстро собрать варианты обложек и подобрать структуру карусели, но финальную читаемость и контрастность лучше проверить вручную на экране телефона.
+> Если вы устали двигать текстовые блоки в редакторах, попробуйте [ИИ Генератор Каруселей](/ru/generator-karuselej-instagram). Он помогает быстро собрать варианты обложек и подобрать структуру карусели, но финальную читаемость и контрастность лучше проверить вручную на экране телефона.
 
 ## Копирайтинг — это тоже дизайн
 

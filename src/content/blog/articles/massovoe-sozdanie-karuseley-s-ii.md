@@ -27,7 +27,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/massovoe-sozdanie-karuseley-s-ii"
 createdAt: "2026-07-04"
-updatedAt: "2026-07-05"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-07-05"
 productFit: "PARTIAL"
 productFitExplanation: "GoToFlow помогает быстрее создавать серии карусельных материалов, но финальное планирование публикаций, редактура и распределение по каналам остаются отдельной задачей команды."
@@ -55,8 +55,8 @@ faq:
     answer: "GoToFlow помогает превращать темы и источники в структуру, текст по слайдам, визуальную подачу, слайды и CTA, чтобы команда быстрее готовила серию материалов."
 explore:
   tools:
-    - title: "AI-генератор контента"
-      href: "/ru/generator-kontenta"
+    - title: "ИИ-генератор каруселей"
+      href: "/ru/ii-generator-karuseley"
       description: "Готовьте материалы для регулярного контента."
   guides:
     - title: "Контент-план с помощью ChatGPT"
@@ -66,9 +66,11 @@ explore:
       href: "/ru/blog/shablony-karuseley-v-instagram"
       description: "Шаблонные структуры для повторяемых форматов."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Готовьте серии каруселей быстрее"
   text: "GoToFlow помогает превращать темы, тексты и источники в структурированные карусели с визуальной подачей и CTA для дальнейшей проверки."
   buttonText: "Попробовать workflow"
+  href: "/ru/ii-generator-karuseley"
   microcopy: "Контроль качества всё равно важен"
   secondaryText: "Собрать контент-план →"
   secondaryHref: "/ru/blog/kak-sostavit-kontent-plan-s-pomoshyu-chatgpt"

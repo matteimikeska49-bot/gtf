@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/karusel-dlya-lichnogo-brenda-s-ii"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -71,6 +71,7 @@ explore:
       href: "/ru/blog/kak-pridumat-temu-dlya-karuseli-s-ii"
       description: "Матрица контента для поиска идей."
 finalCta:
+  primaryHref: "/ru/ii-generator-karuseley"
   title: "Нет времени на дизайн экспертного контента?"
   text: "Оставьте смыслы себе, а верстку и структуру доверьте ИИ. Превращайте заметки в профессиональные карусели за пару минут."
   buttonText: "Упаковать знания в карусель"

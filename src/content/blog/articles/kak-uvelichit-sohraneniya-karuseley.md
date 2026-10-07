@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/ru/blog/kak-uvelichit-sohraneniya-karuseley"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-06"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -31,10 +31,10 @@ finalPriorityScore: 82
 priorityTier: "P1"
 productCapabilityIds: ["textToCarousel"]
 intentId: "ru:kak-uvelichit-sohraneniya-karuseley"
-clusterId: "ru:ii-carousel-generator"
+clusterId: "ru:instagram-carousel"
 articleRole: "supporting"
 hubSlug: "tekst-v-karusel-neyroset"
-relatedProductRoute: "/ru/ii-generator-karuseley"
+relatedProductRoute: "/ru/generator-karuselej-instagram"
 productFit: "YES"
 productFitExplanation: "GoToFlow creates structured, highly readable carousels that encourage saves."
 requiredVisualBlock: "none"
@@ -61,7 +61,7 @@ faq:
 explore:
   tools:
     - title: "ИИ-генератор каруселей"
-      href: "/ru/ii-generator-karuseley"
+      href: "/ru/generator-karuselej-instagram"
       description: "Создавайте структурированные карусели из текста и идей."
   guides:
     - title: "Трендовые шрифты для каруселей"
@@ -71,10 +71,11 @@ explore:
       href: "/ru/blog/oshibki-v-karuselyah-instagram"
       description: "7 главных ошибок, которые убивают охваты."
 finalCta:
+  primaryHref: "/ru/generator-karuselej-instagram"
   title: "Ваши карусели всё ещё никто не сохраняет?"
   text: "Оберните ваши идеи в структурированный и понятный формат, который хочется сохранить. ИИ поможет разбить текст по слайдам."
   buttonText: "Создать карусель бесплатно"
-  href: "/ru/ii-generator-karuseley"
+  href: "/ru/generator-karuselej-instagram"
   microcopy: "Бесплатно — привязка карты не требуется"
   secondaryText: "Психология каруселей →"
   secondaryHref: "/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie"
@@ -116,7 +117,7 @@ type: takeaways
 > [!tip]
 > **Автоматизируйте упаковку**
 > Переведите ваши чек-листы и инструкции в слайды за пару кликов. GoToFlow помогает переупаковать любой текст, видео, аудио, PDF или ссылку в структурированную и готовую к публикации карусель.
-> [Создать карусель с ИИ](/ru/ii-generator-karuseley)
+> [Создать карусель с ИИ](/ru/generator-karuselej-instagram)
 
 ## 3 правила оформления для высоких сохранений
 

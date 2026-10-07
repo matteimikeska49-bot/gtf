@@ -274,7 +274,7 @@
     "articleRoles": [
       {
         "slug": "tekst-v-karusel-neyroset",
-        "url": "/blog/tekst-v-karusel-neyroset",
+        "url": "/ru/blog/tekst-v-karusel-neyroset",
         "role": "hub",
         "intentId": "ru:tekst-v-karusel",
         "priorityTier": "P1",
@@ -390,7 +390,7 @@
     "clusterId": "ru:instagram-carousel",
     "clusterName": "RU Instagram Carousel",
     "language": "ru",
-    "productRoute": "/ru/ii-generator-karuseley",
+    "productRoute": "/ru/generator-karuselej-instagram",
     "hubArticle": "kak-sdelat-karusel-dlya-instagram-s-ii",
     "hubSlug": "kak-sdelat-karusel-dlya-instagram-s-ii",
     "articleRoles": [
@@ -469,14 +469,116 @@
         "notes": "Published from ru-seo-batch-3-new-articles-full-22"
       },
       {
-        "slug": "mnogostranichnye-karuseli-prezentacii",
-        "url": "/ru/blog/mnogostranichnye-karuseli-prezentacii",
-        "role": "how_to",
-        "intentId": "ru:mnogostranichnye-karuseli-prezentacii",
-        "priorityTier": "P3",
-        "status": "published",
-        "canonicalRisk": "low",
-        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
+        "slug": "kak-uvelichit-sohraneniya-karuseley",
+        "url": "/ru/blog/kak-uvelichit-sohraneniya-karuseley",
+        "role": "supporting",
+        "intentId": "ru:kak-uvelichit-sohraneniya-karuseley",
+        "priorityTier": "P1",
+        "status": "published"
+      },
+      {
+        "slug": "cta-dlya-karuseley-instagram-s-ii",
+        "url": "/ru/blog/cta-dlya-karuseley-instagram-s-ii",
+        "role": "supporting",
+        "intentId": "ru:cta-dlya-karuseley-instagram-s-ii",
+        "priorityTier": "P1",
+        "status": "published"
+      },
+      {
+        "slug": "kak-ispolzovat-midjourney-dlya-postov",
+        "url": "/ru/blog/kak-ispolzovat-midjourney-dlya-postov",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "shablony-karuseley-v-instagram",
+        "url": "/ru/blog/shablony-karuseley-v-instagram",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "animaciya-v-karuselyah-instagram",
+        "url": "/ru/blog/animaciya-v-karuselyah-instagram",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "avtovoronka-v-instagram-cherez-karuseli",
+        "url": "/ru/blog/avtovoronka-v-instagram-cherez-karuseli",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "chto-takoe-karusel-v-instagram",
+        "url": "/ru/blog/chto-takoe-karusel-v-instagram",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "huki-dlya-karuseli-instagram",
+        "url": "/ru/blog/huki-dlya-karuseli-instagram",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "idei-dlya-karuseli-instagram",
+        "url": "/ru/blog/idei-dlya-karuseli-instagram",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "kak-povisit-ohvaty-v-instagram-s-pomoshyu-karuseley",
+        "url": "/ru/blog/kak-povisit-ohvaty-v-instagram-s-pomoshyu-karuseley",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "kak-sdelat-karusel-dlya-instagram-s-ii",
+        "url": "/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii",
+        "role": "hub",
+        "status": "published"
+      },
+      {
+        "slug": "oblozhka-dlya-karuseli-instagram",
+        "url": "/ru/blog/oblozhka-dlya-karuseli-instagram",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "oshibki-v-karuselyah-instagram",
+        "url": "/ru/blog/oshibki-v-karuselyah-instagram",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "primery-karuseley-instagram",
+        "url": "/ru/blog/primery-karuseley-instagram",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "prompty-dlya-karuseley-v-instagram",
+        "url": "/ru/blog/prompty-dlya-karuseley-v-instagram",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "reels-ili-karuseli-chto-vybrat",
+        "url": "/ru/blog/reels-ili-karuseli-chto-vybrat",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "trendovye-shrifty-dlya-karuseley",
+        "url": "/ru/blog/trendovye-shrifty-dlya-karuseley",
+        "role": "supporting",
+        "status": "published"
+      },
+      {
+        "slug": "kak-oformit-keys-v-instagram",
+        "url": "/ru/blog/kak-oformit-keys-v-instagram",
+        "role": "supporting",
+        "status": "published"
       }
     ],
     "supportingArticles": [
@@ -486,7 +588,25 @@
       "kak-narezat-foto-dlya-karuseli",
       "gorizontalnye-i-vertikalnye-foto-v-karuseli",
       "pochemu-instagram-obrezaet-foto-v-karuseli",
-      "mnogostranichnye-karuseli-prezentacii"
+      "besshovnaya-karusel-v-instagram",
+      "razmer-karuseli-v-instagram",
+      "kak-uvelichit-sohraneniya-karuseley",
+      "cta-dlya-karuseley-instagram-s-ii",
+      "kak-ispolzovat-midjourney-dlya-postov",
+      "shablony-karuseley-v-instagram",
+      "animaciya-v-karuselyah-instagram",
+      "avtovoronka-v-instagram-cherez-karuseli",
+      "chto-takoe-karusel-v-instagram",
+      "huki-dlya-karuseli-instagram",
+      "idei-dlya-karuseli-instagram",
+      "kak-povisit-ohvaty-v-instagram-s-pomoshyu-karuseley",
+      "oblozhka-dlya-karuseli-instagram",
+      "oshibki-v-karuselyah-instagram",
+      "primery-karuseley-instagram",
+      "prompty-dlya-karuseley-v-instagram",
+      "reels-ili-karuseli-chto-vybrat",
+      "trendovye-shrifty-dlya-karuseley",
+      "kak-oformit-keys-v-instagram"
     ],
     "lastReviewed": "2026-07-04"
   },
@@ -631,14 +751,6 @@
         "status": "published"
       },
       {
-        "slug": "kak-uvelichit-sohraneniya-karuseley",
-        "url": "/ru/blog/kak-uvelichit-sohraneniya-karuseley",
-        "role": "supporting",
-        "intentId": "ru:kak-uvelichit-sohraneniya-karuseley",
-        "priorityTier": "P1",
-        "status": "published"
-      },
-      {
         "slug": "karusel-dlya-lichnogo-brenda-s-ii",
         "url": "/ru/blog/karusel-dlya-lichnogo-brenda-s-ii",
         "role": "supporting",
@@ -691,14 +803,6 @@
         "url": "/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie",
         "role": "supporting",
         "intentId": "ru:psihologiya-karuseley-kak-uderzhat-vnimanie",
-        "priorityTier": "P1",
-        "status": "published"
-      },
-      {
-        "slug": "cta-dlya-karuseley-instagram-s-ii",
-        "url": "/ru/blog/cta-dlya-karuseley-instagram-s-ii",
-        "role": "supporting",
-        "intentId": "ru:cta-dlya-karuseley-instagram-s-ii",
         "priorityTier": "P1",
         "status": "published"
       },
@@ -771,12 +875,21 @@
         "intentId": "ru:infografika-dlya-socsetey",
         "priorityTier": "P1",
         "status": "published"
+      },
+      {
+        "slug": "mnogostranichnye-karuseli-prezentacii",
+        "url": "/ru/blog/mnogostranichnye-karuseli-prezentacii",
+        "role": "how_to",
+        "intentId": "ru:mnogostranichnye-karuseli-prezentacii",
+        "priorityTier": "P3",
+        "status": "published",
+        "canonicalRisk": "low",
+        "notes": "Published from ru-seo-batch-3-new-articles-full-22"
       }
     ],
     "supportingArticles": [
       "kak-pridumat-temu-dlya-karuseli-s-ii",
       "kak-sdelat-karusel-iz-video-s-ii",
-      "kak-uvelichit-sohraneniya-karuseley",
       "karusel-dlya-lichnogo-brenda-s-ii",
       "karusel-dlya-otzyvov-s-ii",
       "karusel-dlya-zapuska-produkta-s-ii",
@@ -784,7 +897,6 @@
       "karuseli-dlya-onlayn-shkol-s-ii",
       "karuseli-dlya-smm-agentstva-s-ii",
       "psihologiya-karuseley-kak-uderzhat-vnimanie",
-      "cta-dlya-karuseley-instagram-s-ii",
       "kakoy-ii-sozdast-post-karusel",
       "gde-delat-posty-karuseli-s-ii",
       "konstruktor-karuseley-onlayn",
@@ -792,7 +904,8 @@
       "massovoe-sozdanie-karuseley-s-ii",
       "analiz-kontenta-konkurentov-v-socsetyah",
       "pererabotka-kontenta-dlya-socsetey",
-      "infografika-dlya-socsetey"
+      "infografika-dlya-socsetey",
+      "mnogostranichnye-karuseli-prezentacii"
     ],
     "missingTopics": [],
     "internalLinkingRules": {
