@@ -7,6 +7,7 @@ import { Footer } from '../Footer';
 import { MainLayout } from '../MainLayout';
 import { CookieBanner } from '../CookieBanner';
 import { getPublicMarkdownArticlesByLanguage } from '../../lib/blog/markdownArticles';
+import { CONTENT_DATE_LABELS, formatContentDate, resolveContentDates } from '../../utils/contentDates.js';
 
 const CTA_URL = 'https://app.gotoflow.io';
 
@@ -297,6 +298,7 @@ const BlogHero = ({ isRu }) => {
 };
 
 const ArticleCard = ({ article, featured = false, isRu }) => {
+  const modified = resolveContentDates(article).modified;
   return (
     <Link to={article.href} className="group flex flex-col bg-white/[0.02] border border-white/[0.05] hover:border-pink-500/30 rounded-2xl p-5 transition-all hover:bg-white/[0.04] relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -304,10 +306,10 @@ const ArticleCard = ({ article, featured = false, isRu }) => {
         <span className="text-[11px] font-medium px-2 py-1 rounded-md bg-white/5 text-pink-300 border border-white/10">
           {article.categoryName}
         </span>
-        {article.updatedAt && (
+        {modified && (
           <span className="text-[11px] text-zinc-500 flex items-center gap-1">
             <Clock className="w-3 h-3" />
-            {new Date(article.updatedAt).toLocaleDateString(isRu ? 'ru-RU' : 'en-US', { month: 'short', year: 'numeric' })}
+            {CONTENT_DATE_LABELS[isRu ? 'ru' : 'en'].modified}: <time dateTime={modified}>{formatContentDate(modified, isRu ? 'ru' : 'en', 'short')}</time>
           </span>
         )}
       </div>

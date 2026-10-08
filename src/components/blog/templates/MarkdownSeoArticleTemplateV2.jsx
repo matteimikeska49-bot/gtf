@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { CONTENT_DATE_LABELS, formatContentDate, resolveContentDates } from '../../../utils/contentDates.js';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, ChevronDown, ChevronRight, ExternalLink, Layers3, Sparkles } from 'lucide-react';
 import { getAppUrlWithRef } from '../../../utils/url';
@@ -9,12 +10,6 @@ const CTA_URL = 'https://app.gotoflow.io';
 
 const ARTICLE_TEMPLATE_COPY = {
   en: {
-    lastReviewedLabel: 'Last reviewed',
-    publishedLabel: 'Published',
-    updatedLabel: 'Updated',
-    updatedBlockLabel: 'UPDATED',
-    reviewedPrefix: 'Reviewed',
-    reviewedSuffix: 'this guide is kept up to date for current AI content workflow practices.',
     quickAnswerLabel: 'Quick Answer',
     quickAnswerTitle: 'What you need to know',
     relatedLabel: 'Explore more',
@@ -45,12 +40,6 @@ const ARTICLE_TEMPLATE_COPY = {
     note: 'Note'
   },
   ru: {
-    lastReviewedLabel: 'Последнее обновление',
-    publishedLabel: 'Опубликовано',
-    updatedLabel: 'Обновлено',
-    updatedBlockLabel: 'ОБНОВЛЕНО',
-    reviewedPrefix: 'Проверено',
-    reviewedSuffix: 'материал актуален для текущих сценариев создания контента с ИИ.',
     quickAnswerLabel: 'Короткий ответ',
     quickAnswerTitle: 'Главное',
     relatedLabel: 'Смотрите также',
@@ -84,35 +73,18 @@ const ARTICLE_TEMPLATE_COPY = {
 
 const getArticleCopy = (language) => ARTICLE_TEMPLATE_COPY[language === 'ru' ? 'ru' : 'en'];
 
-const formatMonthYear = (dateString, isRu = false) => {
-  if (!dateString) return null;
-  try {
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) return null;
-    return date.toLocaleDateString(isRu ? 'ru-RU' : 'en-US', { month: 'long', year: 'numeric' });
-  } catch (e) {
-    return null;
-  }
+const getArticleDateMeta = (article) => {
+  const language = article.language === 'ru' ? 'ru' : 'en';
+  const dates = resolveContentDates(article);
+  return ['published', 'modified', 'reviewed'].filter((role) => dates[role]).map((role) => ({
+    role, date: dates[role], label: CONTENT_DATE_LABELS[language][role],
+    formatted: formatContentDate(dates[role], language),
+  }));
 };
 
-const getArticleFreshnessMeta = (article) => {
-  const isRu = article.language === 'ru';
-  const copy = getArticleCopy(article.language);
-
-  if (article.lastReviewed) {
-    const formatted = formatMonthYear(article.lastReviewed, isRu);
-    return formatted ? { source: "lastReviewed", label: copy.lastReviewedLabel, blockLabel: copy.lastReviewedLabel.toUpperCase(), formattedDate: formatted, displayText: `${copy.reviewedPrefix}: ${formatted}` } : null;
-  }
-  if (article.updatedAt) {
-    const formatted = formatMonthYear(article.updatedAt, isRu);
-    return formatted ? { source: "updatedAt", label: copy.updatedLabel, blockLabel: copy.updatedBlockLabel, formattedDate: formatted, displayText: `${copy.updatedLabel}: ${formatted}` } : null;
-  }
-  if (article.createdAt) {
-    const formatted = formatMonthYear(article.createdAt, isRu);
-    return formatted ? { source: "createdAt", label: copy.publishedLabel, blockLabel: copy.publishedLabel.toUpperCase(), formattedDate: formatted, displayText: `${copy.publishedLabel}: ${formatted}` } : null;
-  }
-  return null;
-};
+const ArticleDate = ({ item }) => (
+  <span>{item.label}: <time dateTime={item.date} data-content-date={item.role}>{item.formatted}</time></span>
+);
 
 const isExternalHref = (href) => /^https?:\/\//.test(href);
 
@@ -1094,7 +1066,7 @@ const FinalCta = ({ cta, isRu }) => {
 };
 
 const ArticleHero = ({ article, isRu }) => {
-  const freshness = getArticleFreshnessMeta(article);
+  const dates = getArticleDateMeta(article);
   return (
     <section className="relative overflow-hidden bg-[#050505] px-4 pb-12 pt-28 sm:px-6 md:pb-20">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-full max-w-5xl -translate-x-1/2 rounded-full bg-pink-500/[0.08] blur-[120px]" />
@@ -1126,11 +1098,11 @@ const ArticleHero = ({ article, isRu }) => {
               {formatArticleTypeBadge(article.articleType, isRu)}
             </span>
           )}
-          {freshness && (
-            <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">
-              {freshness.displayText}
+          {dates.map((item) => (
+            <span key={item.role} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">
+              <ArticleDate item={item} />
             </span>
-          )}
+          ))}
         </div>
       </div>
     </section>
@@ -1153,18 +1125,18 @@ const formatArticleTypeBadge = (type, isRu) => {
 };
 
 const ArticleFreshnessBlock = ({ article }) => {
-  const freshness = getArticleFreshnessMeta(article);
-  if (!freshness) return null;
-  const copy = getArticleCopy(article.language);
+  const dates = getArticleDateMeta(article);
+  if (!dates.length) return null;
   
   return (
     <div className="mb-2 -mt-4 flex items-start gap-4 rounded-[20px] border border-white/[0.08] bg-[#0a0a0a] p-5 shadow-lg max-w-[800px]">
       <div className="mt-1.5 w-2 h-2 shrink-0 rounded-full bg-gradient-to-r from-pink-400 to-orange-400 shadow-[0_0_8px_rgba(236,72,153,0.6)]" />
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-pink-200/80 mb-1.5">{freshness.blockLabel}</p>
-        <p className="text-[14px] leading-relaxed text-zinc-300">
-          <strong className="text-white font-semibold">{freshness.displayText}</strong> — {copy.reviewedSuffix}
-        </p>
+        {dates.map((item) => (
+          <p key={item.role} className="text-[14px] leading-relaxed text-zinc-300">
+            <ArticleDate item={item} />
+          </p>
+        ))}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { normalizeContentDate } from '../src/utils/contentDates.js';
 import { PRODUCTION_ARTIFACT_MARKERS, findRawMarkdownTextMarkers, findVisiblePlatformFootnoteMarkers, hasStarredHref } from './blog-template-guardrails.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -176,8 +177,8 @@ function checkHtmlFile(filePath, data, isD53) {
         }
     }
     // Check Meta/Date block
-    if (data.lastReviewed || data.updatedAt) {
-        if (!lowerHtml.includes('последнее обновление') && !lowerHtml.includes('last reviewed') && !lowerHtml.includes('updated') && !lowerHtml.includes('обновлено')) {
+    if (normalizeContentDate(data.lastReviewed) || normalizeContentDate(data.updatedAt) || normalizeContentDate(data.publishedAt)) {
+        if (!lowerHtml.includes('редакционная проверка') && !lowerHtml.includes('last reviewed') && !lowerHtml.includes('updated') && !lowerHtml.includes('обновлено') && !lowerHtml.includes('published') && !lowerHtml.includes('опубликовано')) {
              errors.push(`[P0] Meta/Date block is not rendered in HTML (missing date labels)`);
         }
     }
@@ -250,6 +251,7 @@ for (const file of files) {
     hasExplore: /^explore:/m.test(frontmatter),
     hasQuickAnswer: /^quickAnswer:/m.test(frontmatter),
     lastReviewed: getYamlValue(frontmatter, 'lastReviewed'),
+    publishedAt: getYamlValue(frontmatter, 'publishedAt'),
     updatedAt: getYamlValue(frontmatter, 'updatedAt'),
     isV2Test: slug.startsWith('test-')
   };

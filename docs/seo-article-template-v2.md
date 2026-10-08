@@ -344,8 +344,8 @@ secondaryHref: `/ru/blog/razmer-karuseli-v-instagram`
 
 ## Article freshness block
 
-Использовать `lastReviewed`, `updatedAt`, `createdAt` в frontmatter.
-Hero показывает `Reviewed/Updated/Published Month YYYY`.
+Даты: `publishedAt` — подтверждённая первая публикация, `updatedAt` — содержательное обновление, `lastReviewed` — редакционная проверка. `createdAt` остаётся legacy authoring/import metadata и не доказывает публикацию.
+Hero и freshness block показывают известные события раздельно, с точной датой и семантически верными RU/EN подписями; проверка не подменяет обновление. Неизвестные события не показываются. Политика и evidence gaps: `docs/maintenance/2026-10-08-publication-freshness-dates.md`.
 Для fresh topics `lastReviewed` обязателен.
 Также генерируется `ArticleFreshnessBlock` перед началом контента, который объясняет пользователю актуальность информации.
 

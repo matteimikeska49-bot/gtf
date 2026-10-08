@@ -70,7 +70,7 @@ if (!fs.existsSync(sitemapPath)) {
     if (expected && !expected.indexable && expected.lifecycle !== 'redirect') noindexSitemapHits += 1;
     if (expected?.lifecycle === 'redirect') redirectSitemapHits += 1;
     const lastmod = block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] || '';
-    if (expected && lastmod !== expected.lastmod) errors.push(`${routePath}: sitemap lastmod ${lastmod} != ${expected.lastmod}.`);
+    if (expected && (lastmod || null) !== expected.lastmod) errors.push(`${routePath}: sitemap lastmod ${lastmod || '(unknown)'} != ${expected.lastmod}.`);
   }
   for (const entry of state.sitemapEntries) {
     if ((seen.get(entry.path) || 0) !== 1) {
