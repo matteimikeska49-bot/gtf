@@ -21,7 +21,7 @@ faqFormat: "structured"
 qualityGateStatus: "passed"
 lastReviewed: "2026-06-21"
 createdAt: "2026-06-21"
-updatedAt: "2026-06-21"
+updatedAt: "2026-06-24"
 explore:
   tools:
     - title: "Генератор каруселей для Инстаграм"

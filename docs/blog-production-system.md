@@ -1078,6 +1078,8 @@ curl -L https://gotoflow.io/blog/slug
 - lastReviewed
 - reviewFrequency
 
+Publication/freshness contract: `publishedAt` is optional until the actual first publication is evidenced; `createdAt`/legacy `date` must not be promoted to it. `updatedAt` records a substantive editorial update, not an automatic build/review date. `lastReviewed` records only review. Known events render separately using exact full dates. Article JSON-LD receives only confirmed `publishedAt` and valid declared `updatedAt`; sitemap lastmod uses that same modification event, then confirmed publication, or is omitted. A review never advances lastmod. Full calendar dates and timezone-bearing ISO timestamps are supported; month-only dates are not padded with an invented day. See `src/utils/contentDates.js` and `npm run check:seo:dates` (also a postbuild gate). Metadata uncertainty is explicitly reported, not fabricated.
+
 Чаще обновлять:
 - best tools
 - pricing

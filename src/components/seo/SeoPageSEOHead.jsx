@@ -53,7 +53,7 @@ const buildStructuredDataItems = (page, canonical) => {
   const items = [
     getOrganizationSchema(),
     getWebSiteSchema(page.language),
-    getWebPageSchema(page.path, page.title, page.description, page.language),
+    getWebPageSchema(page.path, page.title, page.description, page.language, { updatedAt: page.lastUpdated }),
   ];
 
   if (page.schemaType === 'SoftwareApplication') {

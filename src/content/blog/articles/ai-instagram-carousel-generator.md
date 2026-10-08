@@ -8,7 +8,7 @@ noindex: false
 preview: false
 canonical: "https://gotoflow.io/blog/ai-instagram-carousel-generator"
 createdAt: "2024-01-01"
-updatedAt: "2026-06"
+updatedAt: "2026-06-11"
 slug: "ai-instagram-carousel-generator"
 articleType: "comparison_article"
 primaryKeyword: "ai instagram carousel generator"

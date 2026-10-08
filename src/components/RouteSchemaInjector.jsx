@@ -12,6 +12,7 @@ import {
 } from '../utils/schemaGenerator';
 import { faqSchemaData } from '../data/faqSchemaData';
 import { getSeoPageByPath } from '../content/seoPages';
+import { getMarkdownArticleBySlug } from '../lib/blog/markdownArticles';
 
 const ROUTES_CONFIG = {
   '/': {
@@ -175,7 +176,8 @@ export const RouteSchemaInjector = () => {
       items.push(getWebPageSchema(path, config.title, config.desc, config.lang));
       items.push(getSoftwareSchema(path, config.title, config.desc, config.lang));
     } else if (config.type === 'article') {
-      items.push(getArticleSchema(path, config.title, config.desc, config.lang));
+      const article = getMarkdownArticleBySlug(path.split('/').pop(), { publicOnly: true });
+      items.push(getArticleSchema(path, config.title, config.desc, config.lang, article || {}));
     } else if (config.type === 'blog') {
       items.push(getWebPageSchema(path, config.title, config.desc, config.lang));
     }

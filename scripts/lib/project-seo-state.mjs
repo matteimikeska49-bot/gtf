@@ -16,6 +16,7 @@ import {
   STATIC_SEO_ROUTES,
 } from '../../src/seo/projectSeoState.js';
 import { APP_ROUTE_ALIASES } from '../../src/routes/routeAliases.js';
+import { normalizeContentDate, resolveContentDates } from '../../src/utils/contentDates.js';
 
 export const PUBLIC_ORIGIN = 'https://gotoflow.io';
 
@@ -49,24 +50,10 @@ const routeFromUrl = (value, fallbackPath) => {
   }
 };
 
-const normalizedDate = (value) => {
-  if (typeof value !== 'string') return null;
-  const match = value.trim().match(/^(\d{4}-\d{2}-\d{2})(?:T.*)?$/);
-  return match?.[1] || null;
-};
-
 const robotsForLifecycle = (lifecycle) => {
   const robots = ROBOTS_BY_LIFECYCLE[lifecycle];
   if (!robots) throw new Error(`Unsupported SEO lifecycle: ${lifecycle}.`);
   return robots;
-};
-
-const articleLastmod = (article, sourcePath) => {
-  const value = [article.updatedAt, article.lastReviewed, article.publishedAt, article.createdAt]
-    .map(normalizedDate)
-    .find(Boolean);
-  if (!value) throw new Error(`${sourcePath}: public article has no authoritative full update date.`);
-  return value;
 };
 
 const normalizeHreflang = (items = []) => items.map((item) => ({
@@ -98,7 +85,7 @@ const readArticles = (projectRoot) => {
         indexable,
         sitemapEligible: indexable,
         prerender: indexable,
-        lastmod: indexable ? articleLastmod(data, sourcePath) : null,
+        lastmod: indexable ? resolveContentDates(data).lastmod : null,
         priority: 0.7,
         changefreq: 'monthly',
         hreflang: normalizeHreflang(data.hreflang),
@@ -150,7 +137,7 @@ const seoPageEntries = () => {
       indexable,
       sitemapEligible: indexable && page.sitemapEligible === true,
       prerender: prerenderPaths.has(page.path),
-      lastmod: indexable ? normalizedDate(page.lastUpdated) : null,
+      lastmod: indexable ? normalizeContentDate(page.lastUpdated) : null,
       priority: page.priority || 0.6,
       changefreq: 'monthly',
       hreflang: normalizeHreflang(page.hreflang),
@@ -346,14 +333,13 @@ const xmlEscape = (value) => String(value)
 
 export function renderSitemap(state) {
   const urls = state.sitemapEntries.map((entry) => {
-    if (!entry.lastmod) throw new Error(`${entry.path}: sitemap entry has no authoritative lastmod.`);
     const alternateLines = entry.hreflang.map((alternate) => (
       `    <xhtml:link rel="alternate" hreflang="${xmlEscape(alternate.lang)}" href="${xmlEscape(canonicalUrl(alternate.path))}" />`
     ));
     return [
       '  <url>',
       `    <loc>${xmlEscape(canonicalUrl(entry.path))}</loc>`,
-      `    <lastmod>${xmlEscape(entry.lastmod)}</lastmod>`,
+      ...(entry.lastmod ? [`    <lastmod>${xmlEscape(entry.lastmod)}</lastmod>`] : []),
       `    <changefreq>${xmlEscape(entry.changefreq)}</changefreq>`,
       `    <priority>${xmlEscape(entry.priority)}</priority>`,
       ...alternateLines,

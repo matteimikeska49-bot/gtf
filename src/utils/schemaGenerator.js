@@ -1,3 +1,5 @@
+import { resolveContentDates } from './contentDates.js';
+
 export const getOrganizationSchema = () => ({
   "@type": "Organization",
   "@id": "https://gotoflow.io/#organization",
@@ -16,14 +18,23 @@ export const getWebSiteSchema = (lang = 'en') => ({
   "inLanguage": lang
 });
 
-export const getWebPageSchema = (path, name, desc, lang = 'en') => ({
+const schemaDates = (metadata) => {
+  const { published, modified } = resolveContentDates(metadata);
+  return {
+    ...(published ? { datePublished: published } : {}),
+    ...(modified ? { dateModified: modified } : {}),
+  };
+};
+
+export const getWebPageSchema = (path, name, desc, lang = 'en', metadata = {}) => ({
   "@type": "WebPage",
   "@id": `https://gotoflow.io${path}#webpage`,
   "url": `https://gotoflow.io${path}`,
   "name": name,
   "description": desc,
   "inLanguage": lang,
-  "isPartOf": { "@id": "https://gotoflow.io/#website" }
+  "isPartOf": { "@id": "https://gotoflow.io/#website" },
+  ...schemaDates(metadata),
 });
 
 export const getSoftwareSchema = (path, name, desc, lang = 'en') => ({
@@ -52,7 +63,7 @@ export const getWebApplicationSchema = (path, name, desc, lang = 'en') => ({
   "publisher": { "@id": "https://gotoflow.io/#organization" }
 });
 
-export const getArticleSchema = (path, title, desc, lang = 'en') => ({
+export const getArticleSchema = (path, title, desc, lang = 'en', metadata = {}) => ({
   "@type": "Article",
   "@id": `https://gotoflow.io${path}#article`,
   "headline": title,
@@ -60,7 +71,8 @@ export const getArticleSchema = (path, title, desc, lang = 'en') => ({
   "inLanguage": lang,
   "mainEntityOfPage": `https://gotoflow.io${path}`,
   "author": { "@type": "Organization", "@id": "https://gotoflow.io/#organization", "name": "GoToFlow", "url": "https://gotoflow.io/" },
-  "publisher": { "@id": "https://gotoflow.io/#organization" }
+  "publisher": { "@id": "https://gotoflow.io/#organization" },
+  ...schemaDates(metadata),
 });
 
 export const getBreadcrumbSchema = (crumbs, path) => ({

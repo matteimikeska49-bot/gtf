@@ -85,7 +85,7 @@ const MarkdownArticleSEOHead = ({ article }) => {
     const items = [
       getOrganizationSchema(),
       getWebSiteSchema(article.language || 'en'),
-      getArticleSchema(path, title, description, article.language || 'en')
+      getArticleSchema(path, title, description, article.language || 'en', article)
     ];
 
     const blogLabel = article.language === 'ru' ? 'Блог' : 'Blog';
