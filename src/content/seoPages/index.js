@@ -6333,7 +6333,6 @@ const rawSeoPages = [
     pageType: 'template',
     slug: 'instagram-carousel',
     path: '/ru/templates/instagram-carousel',
-    state: 'indexable_approved',
     templateVariant: 'template_page',
     title: 'Шаблоны каруселей Instagram: структуры и примеры | GoToFlow',
     description: 'Выберите структуру карусели Instagram: чек-лист, гайд, кейс, AIDA/PAS и другие форматы. Создайте и отредактируйте карусель в GoToFlow.',

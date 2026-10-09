@@ -11,18 +11,18 @@ priorityTier: "P1"
 productCapabilityIds: ["textToCarousel"]
 intentId: "en:ai-carousel-generator"
 clusterId: "en:ai-carousel-generator"
-articleRole: "supporting"
-hubSlug: "text-to-carousel-ai"
+articleRole: "hub"
+hubSlug: "ai-carousel-generator"
 canonical: "https://gotoflow.io/blog/ai-carousel-generator"
 createdAt: "2026-06-09"
 updatedAt: "2026-10-09"
 targetKeyword: "ai carousel generator"
 secondaryKeywords: "ai carousel maker, free carousel generator, text to carousel ai"
 relatedProductRoute: "/ai-carousel-maker"
-articleType: "how-to"
+articleType: "primary product hub"
 demandEvidence: "100 rising 10% / 15 imp"
-canonicalRisk: "Self-canonical supporting workflow; commercial owner is /ai-carousel-maker."
-differentiationRule: "Explain source preparation, manual versus AI assembly, review and export. The commercial owner remains /ai-carousel-maker; the cluster hub remains text-to-carousel-ai."
+canonicalRisk: "Self-canonical informational hub; commercial owner remains /ai-carousel-maker."
+differentiationRule: "Hub-level guide to AI carousel generation: source preparation, manual versus AI assembly, review and export for Instagram and LinkedIn. The commercial action remains on /ai-carousel-maker."
 published: true
 noindex: false
 preview: false

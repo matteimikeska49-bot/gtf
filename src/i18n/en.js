@@ -6,7 +6,7 @@ export const en = {
     started: 'Launch for free',
     logo: 'GoToFlow',
     noCardRequired: 'No credit card required',
-    firstResult60s: 'First result in 60 seconds',
+    firstResult60s: 'Review and export your result',
   },
   
   hero: {
@@ -60,7 +60,7 @@ export const en = {
     subtitle: 'Spending hours editing, but the result still looks like AI generated it',
     cards: [
       {
-        title: "Spend 3 hours → get garbage",
+        title: "Time spent rewriting drafts",
         text: "AI seems to help, but the output is still raw and requires manual rewriting and tweaking."
       },
       {
@@ -80,9 +80,9 @@ export const en = {
   
   unified: {
     metrics: [
-      "Save up to 10 hours a week",
-      "Ready carousel in ~60 seconds",
-      "One process instead of 5 tools"
+      "Structure, copy, and design in one workflow",
+      "Create a carousel from your source material",
+      "Review and export before publishing"
     ],
     oldWay: [
       "Manually hunting for viral Reels or using disconnected tools",
@@ -92,9 +92,9 @@ export const en = {
       "Cookie-cutter design and 'plastic' sounding copy"
     ],
     newWay: [
-      "Find ideas in minutes and instantly turn them into content",
+      "Find ideas and use them as source material",
       "Immediately see what works and adopt it to your style",
-      "Get a ready-to-post carousel in one flow in ~60 seconds",
+      "Build, review, and export a carousel in one workflow",
       "Instantly get structured copy tailored to the format",
       "Content in your style: your photos, your prompts, your voice"
     ],
@@ -119,7 +119,7 @@ export const en = {
       },
       {
         title: "From Idea to Carousel",
-        desc: "Build a ready-to-post carousel from a topic, idea, a directly uploaded PDF/file, link, or video — in 60 seconds."
+        desc: "Build a carousel from a topic, idea, a directly uploaded PDF/file, link, or video, then review and export it."
       },
       {
         title: "Strong Reels Search",
@@ -396,7 +396,7 @@ export const en = {
     microTrust: 'Free • No credit card required',
     trustList: [
       'Tone of Voice is preserved',
-      'Ready in 60 seconds',
+      'Review and export your result',
       'Works for any niche',
     ]
   },

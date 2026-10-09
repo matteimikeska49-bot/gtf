@@ -487,9 +487,9 @@
     ],
     "evidence": {
       "source": "docs/product/gotoflow-capabilities.md §9; src/content/seoPages/productTruthRegistry.js",
-      "notes": "Existing Owner-confirmed product truth dated 2026-07-11: seamless formats are available. No output-quality or performance guarantee is implied."
+      "notes": "Owner-confirmed product decision dated 2026-07-11: seamless formats are available. This is decision provenance, not a runtime capability test on 2026-10-09. No output-quality or performance guarantee is implied."
     },
-    "lastVerified": "2026-10-09",
+    "lastVerified": "2026-07-11",
     "reviewRequiredBeforeClaiming": false
   },
   {
@@ -520,9 +520,9 @@
     ],
     "evidence": {
       "source": "docs/product/gotoflow-capabilities.md §9; src/content/seoPages/productTruthRegistry.js",
-      "notes": "Existing Owner-confirmed product truth dated 2026-07-11: animated formats are available. No performance or universal export-format guarantee is implied."
+      "notes": "Owner-confirmed product decision dated 2026-07-11: animated formats are available. This is decision provenance, not a runtime capability test on 2026-10-09. No performance or universal export-format guarantee is implied."
     },
-    "lastVerified": "2026-10-09",
+    "lastVerified": "2026-07-11",
     "reviewRequiredBeforeClaiming": false
   },
   {

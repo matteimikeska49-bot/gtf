@@ -9,14 +9,15 @@ const RotatingBadge = () => {
   const [index, setIndex] = useState(0);
   const { t } = useLanguage();
   const badges = t('hero.badges') || [];
+  const badgeCount = badges.length;
 
   useEffect(() => {
-    if (!badges || badges.length === 0) return;
+    if (badgeCount === 0) return;
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % badges.length);
+      setIndex((prev) => (prev + 1) % badgeCount);
     }, 3500);
     return () => clearInterval(timer);
-  }, [badges.length]);
+  }, [badgeCount]);
 
   return (
     <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm overflow-hidden">
@@ -364,7 +365,6 @@ const AbstractUIMockup = () => {
 
 export const HeroSection = () => {
   const { t } = useLanguage();
-  const isMobile = useIsMobile();
   return (
     <section className="pt-32 pb-16 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
       {/* Isometric grid background layer */}

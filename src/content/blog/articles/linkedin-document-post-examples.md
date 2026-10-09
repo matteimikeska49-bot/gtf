@@ -11,13 +11,13 @@ updatedAt: "2026-10-09"
 published: true
 noindex: false
 quickAnswer:
-  - "LinkedIn document posts are PDF files uploaded natively to create a swipeable carousel experience."
+  - "LinkedIn document posts accept PDF, PPT, PPTX, DOC, and DOCX files uploaded natively and displayed as pages in the feed."
   - "The best document posts use high contrast, large fonts, and a clear step-by-step structure."
   - "The five illustrative formats below cover frameworks, tear-downs, tool stacks, cheat sheets, and personal lessons."
   - "Always end your document with a clear Call to Action on the final slide."
 faq:
   - question: "What is a LinkedIn document post?"
-    answer: "A LinkedIn document post is a feature that allows users to upload PDF, PPT, or DOC files natively. LinkedIn displays these as a swipeable, carousel-like experience directly in the feed."
+    answer: "A LinkedIn document post lets users upload PDF, PPT, PPTX, DOC, or DOCX files natively. LinkedIn displays the document as pages in the feed."
   - question: "What file format is best for document posts?"
     answer: "PDF preserves the intended page layout. Check the exported file and the platform preview for font rendering, legibility, and cropping before publishing."
   - question: "How many pages should a document post be?"
@@ -47,6 +47,8 @@ finalCta:
 # 5 LinkedIn Document Post Examples: Illustrative Formats
 
 A LinkedIn document post presents a document as a sequence of pages in the feed. Below are five illustrative formats you can adapt to your own material. These are editorial examples, not screenshots of customer posts or measured performance case studies.
+
+[LinkedIn's document-upload instructions](https://www.linkedin.com/help/linkedin/answer/a519831) list PDF, PPT, PPTX, DOC, and DOCX as supported formats. The examples below use PDF-style page outlines; PDF is not the only document type LinkedIn accepts.
 
 Choose a format that answers a specific reader question. A framework explains a process; a tear-down examines evidence; a tool stack documents choices; a cheat sheet offers a reference; a personal lesson explains a decision. A format alone does not establish how widely a post will be distributed.
 
