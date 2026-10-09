@@ -29,14 +29,13 @@ faq:
   - question: "How long should a hook be?"
     answer: "Keep it under 15 words if possible. Large, legible text is essential for mobile readers, so brevity is your best friend."
   - question: "Do numbers in hooks actually work?"
-    answer: "Absolutely. Odd numbers and exact data points (like '17.5%') tend to perform exceptionally well because they appear more authentic and specific."
+    answer: "Use numbers when they describe the real material: a checklist count or a sourced result with context. Do not invent precise statistics or assume odd numbers guarantee performance."
   - question: "Should I include a subtitle on the first slide?"
     answer: "Yes. A short subtitle below the main hook adds context and gives the reader one more reason to swipe to the next slide."
 finalCta:
   title: "Ready to Test Your Hooks?"
-  description: "Take these hooks and turn them into a ready carousel you can review, adjust, and export."
+  text: "Take these hooks and turn them into a ready carousel you can review, adjust, and export."
   buttonText: "Create a Carousel"
-  href: "/linkedin-carousel-maker"
   secondaryText: "See LinkedIn carousel examples →"
   secondaryHref: "/blog/best-linkedin-carousel-examples"
 
@@ -71,7 +70,7 @@ A strong LinkedIn carousel hook usually falls into one of three categories:
 
 ## Why the First Slide is Everything
 
-LinkedIn's algorithm heavily favors dwell time. When a user pauses on your post and clicks the arrow to view the second slide, it signals to LinkedIn that your content is engaging. Your hook is entirely responsible for earning that first click.
+A hook tells readers what the following slides will explain. Make that promise specific and deliver it in the document; the first slide alone cannot guarantee a click or platform distribution.
 
 ## 15 Hooks You Can Steal Today
 
@@ -81,7 +80,7 @@ Show the reader the exact journey you are about to take them on.
 
 ### Hook 2: The "Mistakes You're Making" Warning
 Fear of missing out (or doing something wrong) is a powerful motivator.
-* **Example:** "99% of B2B marketers are writing terrible cold emails. Here are the 3 mistakes you're making."
+* **Illustrative example:** "Three cold-email mistakes to check before your next campaign." Only add a percentage when you can identify its source and scope.
 
 ### Hook 3: The Curated Resource List
 Save people time by doing the heavy lifting for them.

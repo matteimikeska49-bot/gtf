@@ -31,8 +31,8 @@ export const en = {
   
   showcase: {
     tabs: ['Marketing', 'Personal Brand', 'E-commerce', 'Beauty', 'Education'],
-    trustBadgePart1: '+10k',
-    trustBadgePart2: 'Already generating content in GoToFlow',
+    trustBadgePart1: 'Source → slides',
+    trustBadgePart2: 'Structure, copy, design, and export in GoToFlow',
     titlePart1: 'Create content for',
     titleHighlight: 'any niche',
     tags: {
@@ -391,7 +391,7 @@ export const en = {
     titlePart2: 'your',
     titleHighlight: 'AI.',
     titleSub: 'Start creating.',
-    subtitle: 'Join thousands of creators and entrepreneurs who are already making content faster and without the grind.',
+    subtitle: 'Turn your source material into carousel structure, copy, and design, then review and export the result.',
     button: 'Create a carousel',
     microTrust: 'Free • No credit card required',
     trustList: [

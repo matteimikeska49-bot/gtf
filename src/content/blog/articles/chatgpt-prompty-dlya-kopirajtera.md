@@ -32,7 +32,6 @@ finalCta:
   title: "Превратите идею в готовую карусель"
   text: "Используйте ChatGPT как необязательный инструмент для идей, а GoToFlow — как основной workflow: структура, текст по слайдам, визуальная подача, CTA и готовая карусель для экспорта."
   buttonText: Создать карусель в GoToFlow
-  href: /ru/ii-generator-karuseley
   secondaryText: Посмотреть обзор лучших текстовых нейросетей →
   secondaryHref: /ru/blog/neyroset-dlya-napisaniya-postov-obzor
 quickAnswerTitle: Главное
@@ -42,7 +41,6 @@ quickAnswer:
   - '" 3. Format: "Используй структуру AIDA, короткие абзацы, без эмодзи.'
   - '"  Никогда не пишите просто "напиши пост про маркетинг" — вы получите воду.'
 lastReviewed: '2026-06-13'
-updatedAt: '2026-06-13'
 ---
 
 

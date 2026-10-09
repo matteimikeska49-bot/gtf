@@ -44,9 +44,8 @@ faq:
     answer: "The limit depends on the PDF file size (LinkedIn allows up to 100MB and 300 pages). However, for maximum engagement, it is recommended to keep carousels between 5 and 15 slides."
 finalCta:
   title: "Stop designing slides manually"
-  text: "GoToFlow turns your ideas, links, and text into a ready-to-publish LinkedIn PDF carousel in seconds."
+  text: "GoToFlow turns your ideas, links, and text into a LinkedIn PDF carousel you can review and export. Publishing or scheduling is a separate step."
   buttonText: "Create LinkedIn Carousel"
-  href: "/linkedin-carousel-maker"
   microcopy: "Free — No credit card required"
   secondaryText: "Read the LinkedIn carousel posting guide →"
   secondaryHref: "/blog/how-to-post-a-carousel-on-linkedin"
@@ -119,10 +118,10 @@ type: examples
 type: tips
 
 ### Engage Immediately After Publishing
-Scheduling a post doesn't mean you can completely ignore it. The LinkedIn algorithm heavily weights early engagement. Try to be online when the scheduled post goes live. Replying to comments in the first 30-60 minutes significantly boosts the post's total reach.
+Check that the scheduled post published correctly and respond to relevant questions when you are available. A particular reply window does not establish a distribution benefit.
 
 ### Optimize for Mobile
-Over 60% of LinkedIn traffic is mobile. Always preview how the first slide of your PDF will look on a small screen. Ensure the title font is large, legible, and clearly contrasts with the background.
+Readers may view your document on a phone. Always preview how the first slide of your PDF will look on a small screen. Ensure the title font is large, legible, and clearly contrasts with the background.
 
 ### Tag Strategically in the Caption
 If you mention other professionals, tools, or companies in your carousel, tag them in the caption before you schedule it. This alerts them to the post and increases the chances of them engaging with it or re-sharing it to their audience.

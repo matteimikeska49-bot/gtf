@@ -72,9 +72,8 @@ explore:
       description: "Create carousels from text instantly."
 finalCta:
   title: "Sitting on hours of recorded content?"
-  text: "Don't let your webinars and podcasts go to waste. Turn audio, video, notes, or one topic into structured carousels in minutes."
+  text: "Don't let your webinars and podcasts go to waste. Turn audio, video, notes, or one topic into structured carousels, then review and export."
   buttonText: "Repurpose Your Content"
-  href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
   secondaryText: "Explore more repurposing tools →"
   secondaryHref: "/blog"

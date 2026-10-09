@@ -135,7 +135,7 @@ You should transition your AI writing from a text post into a visual carousel wh
 * **Comparisons:** Visually contrasting "Old Way vs. New Way."
 * **Data Breakdowns:** Presenting statistics with visual hierarchy.
 
-Carousels work because they force interaction. Every swipe is a micro-commitment from the user, signaling to the algorithm that the content is highly engaging.
+Carousels can organise a multi-part explanation into readable steps. They do not force interaction or guarantee a distribution boost; check whether the sequence actually helps your audience.
 
 ## Bridging the Gap: From Text to Visual Design
 

@@ -37,10 +37,9 @@ explore:
       description: "A list of the best no-cost tools to get started."
 finalCta:
   title: "Ready to upgrade your workflow?"
-  description: "Experience the difference of a tool built specifically for high-converting social media content."
+  text: "Use GoToFlow to turn a source into structured copy, carousel design, and an export you can review."
   buttonText: "Try It Now"
-  href: "/ai-content-generator"
-  microcopy: "See the results in seconds"
+  microcopy: "Review before export"
   secondaryText: "Read our AI content strategy →"
   secondaryHref: "/blog/ai-content-marketing-strategy"
 ---

@@ -72,9 +72,8 @@ explore:
       description: "Breakdown of 10 viral hooks."
 finalCta:
   title: "Have a great topic but no time to design?"
-  text: "Stop wrestling with blank slides. Turn your rough topic into a structured, ready-to-publish ready-to-publish carousel in minutes."
+  text: "Stop wrestling with blank slides. Turn your rough topic into a structured carousel, then review and export."
   buttonText: "Create a Carousel with AI"
-  href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
   secondaryText: "AI Content Marketing Strategy →"
   secondaryHref: "/blog/ai-content-marketing-strategy"
@@ -109,7 +108,7 @@ Combine them. "Typography" + "Mistakes" = *5 Typography Mistakes That Make Your 
 
 > [!tip]
 > **Don't go too broad**
-> A broad topic ("How to design a website") is boring. A specific micro-topic ("How to design a hero section that converts at 5%") gets saved and shared.
+> Narrow a broad topic (“How to design a website”) to a question you can answer (“What should a hero section explain before signup?”). Do not invent a conversion percentage to make the hook specific.
 
 ## Generating Topics with AI Prompts
 
@@ -176,6 +175,6 @@ Every topic must align with a business goal. If you brainstorm a topic but can't
 
 ## Conclusion
 
-Brainstorming shouldn't be a daily struggle. By utilizing AI to map out your content matrix, you can generate a month's worth of highly relevant carousel topics in just 20 minutes. 
+Brainstorming shouldn't be a daily struggle. By utilizing AI to map out your content matrix, you can organise candidate topics for your next planning cycle, then check their sources and usefulness before production.
 
 Once you have your winning topics, stop doing the heavy lifting of design and layout manually. Use smart workflow tools to transform those ideas into publish-ready carousels, allowing you to focus on strategy and engaging with your audience.

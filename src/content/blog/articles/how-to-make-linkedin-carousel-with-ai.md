@@ -68,6 +68,8 @@ In this guide, you’ll learn how to make a LinkedIn carousel with AI step by st
 
 ## What is a LinkedIn carousel?
 
+The [document-post format examples](/blog/linkedin-document-post-examples) show five ways to organise a PDF, from a framework to a personal lesson. Choose a format because it suits your material, not because it promises reach.
+
 A LinkedIn carousel is a swipeable document post. You create several slides, export them as a PDF or supported document file, and upload that file to LinkedIn.
 
 LinkedIn then displays the document as a carousel that people can swipe through.
@@ -90,6 +92,10 @@ LinkedIn carousels are useful for:
 A strong carousel is not just a blog post split into slides. It needs pacing. Each slide should make the next one feel natural.
 
 ## How to post a carousel on LinkedIn
+
+If you need to publish later, follow the [LinkedIn document scheduling workflow](/blog/how-to-schedule-linkedin-carousel) after exporting the file; creating slides and scheduling a post are separate jobs.
+
+For the file-preparation stage, the [LinkedIn PDF carousel guide](/blog/linkedin-pdf-carousel) separates document export from the manual upload to LinkedIn.
 
 To publish a carousel on LinkedIn, you usually create a document post.
 
@@ -116,6 +122,10 @@ A few practical tips:
 This is why it helps to build the carousel structure before designing. If the logic is weak, the PDF will not save it.
 
 ## Where AI helps in carousel creation
+
+For audio source material, the [podcast-to-carousel workflow](/blog/how-to-repurpose-podcasts-into-ai-carousels) explains how to select a useful passage and review the slide narrative before export.
+
+Keep creation, publishing, and measurement separate. The [LinkedIn creator-tools guide](/blog/linkedin-creator-tools-guide) explains which parts belong to the platform and which belong to your content workflow.
 
 AI can help with almost every part of the LinkedIn carousel workflow.
 
@@ -169,6 +179,8 @@ Use [GoToFlow’s LinkedIn carousel maker](/linkedin-carousel-maker) when you wa
 
 ### 1. Choose one clear topic
 
+If the source is a video rather than an article, the [YouTube-to-LinkedIn workflow](/blog/youtube-to-linkedin-carousel-ai) explains how to choose an excerpt, turn it into slide copy, and review the result.
+
 Do not start with a broad topic like:
 
 ```text
@@ -214,6 +226,8 @@ The more specific the audience, the sharper the carousel.
 
 ### 3. Pick the carousel format
 
+Before committing to a layout, check the [carousel size and file-preparation guide](/blog/linkedin-carousel-size-and-specs) and test the exported document on a phone.
+
 Different formats create different reading experiences. Common LinkedIn carousel formats:
 
 * **How-to guide:** teaches a process.
@@ -237,6 +251,8 @@ Use the “mistakes and fixes” format.
 Without a format, AI often creates generic slides. With a format, it creates a sequence.
 
 ### 4. Generate several hook options
+
+Use the [15 LinkedIn hook patterns](/blog/linkedin-carousel-hooks) to compare openings for the same message rather than changing the message to fit a catchy headline.
 
 Slide 1 is the most important slide. If the hook is weak, the rest of the carousel will not matter.
 

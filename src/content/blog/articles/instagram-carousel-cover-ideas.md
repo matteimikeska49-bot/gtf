@@ -37,9 +37,8 @@ explore:
       description: "Learn the psychology behind writing great cover copy."
 finalCta:
   title: "Design your covers faster"
-  description: "Use our AI carousel maker to quickly generate cover layouts and full slide decks, then fine-tune them before publishing."
+  text: "Use our AI carousel maker to quickly generate cover layouts and full slide decks, then fine-tune them before publishing."
   buttonText: "Create a Carousel"
-  href: "/ai-carousel-maker"
   microcopy: "Ready-to-use templates"
   secondaryText: "See the best carousel examples →"
   secondaryHref: "/blog/best-instagram-carousel-examples"

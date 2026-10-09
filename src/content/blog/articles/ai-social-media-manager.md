@@ -31,8 +31,7 @@ explore:
 finalCta:
   title: "Create carousels faster and cleaner"
   text: "Use GoToFlow as the end-to-end carousel workflow: source analysis, structure, slide copy, visual design, CTA, and a ready-to-publish carousel for export."
-  buttonText: Start Automating Your Content
-  href: /ai-carousel-maker
+  buttonText: Create Carousel Content
   secondaryText: Learn how to scale your agency using AI tools →
   secondaryHref: /blog/how-to-scale-your-smm-agency-with-ai
 quickAnswerTitle: Quick Answer
@@ -41,7 +40,6 @@ quickAnswer:
   - They no longer write every post from scratch or manually design graphics.
   - Instead, they act as the Strategic Director, feeding data into the AI, ensuring the brand voice is accurate, and analyzing the results to adjust the overarching strategy.
 lastReviewed: '2026-06-13'
-updatedAt: '2026-06-13'
 ---
 
 

@@ -72,9 +72,8 @@ explore:
       description: "Convert ideas into slide formats."
 finalCta:
   title: "Stop making formatting mistakes"
-  text: "Let AI handle the slide constraints, text limits, and layout. Turn your text into a beautifully structured ready-to-publish carousel in minutes."
+  text: "Let AI handle the slide constraints, text limits, and layout. Turn your text into structured slides, then check the copy and layout before export."
   buttonText: "Create a Carousel"
-  href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
   secondaryText: "Instagram Post Size Guide →"
   secondaryHref: "/blog/instagram-post-size-guide"

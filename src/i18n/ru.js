@@ -31,8 +31,8 @@ export const ru = {
   
   showcase: {
     tabs: ['Маркетинг', 'Личный бренд', 'E-commerce', 'Бьюти', 'Образование'],
-    trustBadgePart1: '+10k',
-    trustBadgePart2: 'Уже генерируют контент в GoToFlow',
+    trustBadgePart1: 'Источник → слайды',
+    trustBadgePart2: 'Структура, текст, дизайн и экспорт в GoToFlow',
     titlePart1: 'Создавайте контент для',
     titleHighlight: 'любой ниши',
     tags: {
@@ -385,7 +385,7 @@ export const ru = {
     titlePart2: 'на контент.',
     titleHighlight: 'Создавайте быстрее с GoToFlow.',
     titleSub: '',
-    subtitle: 'Присоединяйтесь к тысячам креаторов и предпринимателей, которые уже делают контент быстрее и без лишней рутины.',
+    subtitle: 'Превратите исходные материалы в структуру, текст и дизайн карусели, затем проверьте и экспортируйте результат.',
     button: 'Создать карусель',
     microTrust: 'Бесплатно • Без привязки карты',
     trustList: [

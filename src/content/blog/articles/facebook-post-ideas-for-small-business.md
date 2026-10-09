@@ -37,9 +37,8 @@ explore:
       description: "Broader ideas applicable across multiple platforms."
 finalCta:
   title: "Create your next month of Facebook posts"
-  description: "Use our AI tools to structure and create engaging community-focused content."
+  text: "Use our AI tools to structure and create engaging community-focused content."
   buttonText: "Create Posts Now"
-  href: "/ai-content-generator"
   microcopy: "Brainstorming made simple"
   secondaryText: "Explore more content strategies →"
   secondaryHref: "/blog/content-calendar-to-carousel"
@@ -53,7 +52,7 @@ But keeping that page active can feel like a chore. If you find yourself posting
 
 ## Community and Conversation Starters
 
-The Facebook algorithm heavily rewards posts that generate comments and back-and-forth discussion.
+Use questions that invite a useful conversation about your business. Evaluate the responses from your own audience instead of assuming an algorithm reward.
 
 :::cards
 type: tips

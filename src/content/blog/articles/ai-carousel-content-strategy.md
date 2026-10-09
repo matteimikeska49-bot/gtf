@@ -72,9 +72,8 @@ explore:
       description: "How to position yourself as an authority."
 finalCta:
   title: "Ready to scale your content production?"
-  text: "Stop designing carousels one by one. Build a scalable pipeline and turn your source materials into ready-to-publish slides in minutes."
+  text: "Stop designing carousels one by one. Turn your source materials into slide structure, copy, and design, then review each carousel before export."
   buttonText: "Start Building Carousels"
-  href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
   secondaryText: "AI Content Marketing Strategy →"
   secondaryHref: "/blog/ai-content-marketing-strategy"
@@ -157,5 +156,7 @@ Social media is ephemeral. Value and readability matter infinitely more than cus
 > Ensure your carousels are actually readable by learning how to avoid [Carousel Post Mistakes](/blog/carousel-post-mistakes).
 
 ## Conclusion
+
+Once the recurring themes are chosen, the [illustrative monthly carousel calendar](/blog/content-calendar-to-carousel) shows how to assign a source, slide angle, review task, and publication slot to each item.
 
 An AI carousel content strategy is not about having a robot write your thoughts for you. It is about building a system where your unique human expertise is amplified and packaged at scale. By batching your work and utilizing AI to handle the tedious aspects of formatting and slide design, you can maintain long-term consistency without burning out.

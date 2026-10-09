@@ -38,7 +38,7 @@ export const CarouselPage = () => (
         ]
       }
     ]} />
-    <TestimonialsSection />
+    <TestimonialsSection enabled={false} />
     <CarouselFAQ />
     <CarouselBottomCTA />
     <Footer />

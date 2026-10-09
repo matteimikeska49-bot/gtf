@@ -37,9 +37,8 @@ explore:
       description: "More specific ideas for Instagram growth."
 finalCta:
   title: "Stop staring at a blank screen"
-  description: "Turn your ideas into fully designed posts using our AI content generator."
+  text: "Turn your ideas into fully designed posts using our AI content generator."
   buttonText: "Create a Post Now"
-  href: "/ai-content-generator"
   secondaryText: "Explore Instagram carousel hooks →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 
@@ -110,7 +109,7 @@ You need to sell, but you shouldn't be spammy. Lead with value, close with the o
 
 ## Community and Engagement Posts (Ideas 21–25)
 
-These posts are designed to start conversations and boost your algorithmic reach.
+These posts give readers a concrete question to discuss. Evaluate the quality of the responses rather than assuming wider distribution.
 
 * **21. This or That Poll:** Ask your audience to choose between two options related to your niche (e.g., "Morning workouts or evening workouts?").
 * **22. "Caption This" Photo:** Post a funny or interesting photo and ask followers to write the caption.

@@ -55,7 +55,7 @@ const LandingPage = () => (
     <HowItWorksSection />
     <DifferentiationSection />
     <FAQSection />
-    <TestimonialsSection />
+    <TestimonialsSection enabled={false} />
     <PricingSection />
     <BottomCTA />
     <Footer />

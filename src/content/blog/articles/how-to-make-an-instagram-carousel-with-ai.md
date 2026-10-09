@@ -125,18 +125,26 @@ This process still took 30-40 minutes per post. Today, the workflow is much simp
 Here is how you can generate a complete carousel from scratch using **GoToFlow**.
 
 ### Step 1: Input your topic
+
+For a subject you can actually develop, start with the [Instagram carousel idea library](/blog/instagram-carousel-ideas) and adapt one idea to your audience and source material.
 You don't need a perfectly structured prompt. Just type in your raw idea, a rough concept, or even copy-paste a section from a blog post you wrote. 
 
 :::mockup{slot="topic-input"}
 :::
 
 ### Step 2: Choose your brand style
+
+Compare the [15 cover approaches](/blog/instagram-carousel-cover-ideas) when choosing the visual opening. A cover should preview the message the following slides deliver.
 A good carousel needs to look professional. Instead of manually adjusting colors, you can select a cohesive visual style that matches your brand identity.
 
 :::mockup{slot="style-choice"}
 :::
 
 ### Step 3: Generate and review
+
+For input examples, prompts, and a longer review checklist, use the [detailed Instagram AI creation guide](/blog/ai-instagram-carousel-generator).
+
+The [carousel storytelling framework](/blog/instagram-carousel-storytelling) is useful for checking whether the middle slides form a sequence rather than an unrelated list.
 The AI will instantly analyze your input, structure it into a logical flow (Hook → Value → CTA), and apply the design.
 
 :::mockup{slot="result-preview"}
@@ -147,6 +155,8 @@ The AI will instantly analyze your input, structure it into a logical flow (Hook
 > The AI will do 90% of the work, but always double-check the first slide (the hook) to ensure it's compelling, and the last slide (the CTA) to ensure it directs your audience to the right action.
 
 ## Why this approach wins
+
+Treat engagement as something to measure, not a promised outcome. The [engagement review guide](/blog/how-to-increase-instagram-engagement-with-carousels) helps you connect the slide structure to a testable reader action.
 
 Using a dedicated AI carousel maker removes the friction from content creation.
 

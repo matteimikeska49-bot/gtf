@@ -74,7 +74,6 @@ finalCta:
   title: "Stop doing the manual work"
   text: "Upgrade your workflow. Let AI handle source analysis, structure, slide copy, visual direction, and layout while you focus on the idea. Create a ready-to-publish carousel today."
   buttonText: "Try the Workflow"
-  href: "/ai-carousel-maker"
   microcopy: "Free — No credit card required"
   secondaryText: "Explore more productivity guides →"
   secondaryHref: "/blog"
@@ -89,6 +88,8 @@ This manual process is the reason most creators are inconsistent.
 A modern AI carousel workflow changes the equation. It does not replace human creativity; it removes the mechanical friction of formatting. Here is the exact step-by-step workflow to go from a raw idea to a published carousel in under 30 minutes.
 
 ## Step 1: Add the Source
+
+When you have no clear angle yet, use the [topic-brainstorming prompts](/blog/how-to-brainstorm-carousel-topics-with-ai) to narrow the subject before submitting it for generation.
 
 AI cannot invent your personal experience. The workflow starts with you. 
 
@@ -152,7 +153,7 @@ If a slide feels too text-heavy, edit it down.
 
 Different platforms require different file formats. 
 
-*   **LinkedIn:** Export your carousel as a single PDF document. This triggers LinkedIn's document viewer, which is highly favored by the algorithm.
+*   **LinkedIn:** Export your carousel as a single PDF document. This opens the document viewer; it is a presentation format, not evidence of a distribution benefit.
 *   **Instagram:** Export your carousel as a series of high-resolution images (JPG or PNG) and upload them as a multi-image post.
 
 > [!related]

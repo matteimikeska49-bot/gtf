@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getAppUrlWithRef } from '../../utils/url';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Sparkles, CornerDownLeft, Download, ChevronDown, Heart, Eye, Star, X, Check, Clock, Zap, Target, Fingerprint, Settings2, Layers, ImageIcon } from 'lucide-react';
+import { ArrowRight, Sparkles, CornerDownLeft, Download, ChevronDown, Heart, Eye, X, Check, Clock, Zap, Target, Fingerprint, Settings2, Layers, ImageIcon } from 'lucide-react';
 import { useIsMobile } from '../../hooks/useIsMobile';
 
 const CTA_URL = 'https://app.gotoflow.io';
@@ -105,8 +105,8 @@ const SlideCard = ({ card }) => (
       <div className="h-2.5 w-3/4 rounded-full bg-white/[0.06]" />
       <div className="h-2 w-1/2 rounded-full bg-white/[0.04]" />
       <div className="flex items-center gap-3 mt-1">
-        <div className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-pink-500/70" /><span className="text-xs text-zinc-500 font-medium">{card.likes}</span></div>
-        <div className="flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-zinc-400/50" /><span className="text-xs text-zinc-500 font-medium">{card.views}</span></div>
+        <div className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-pink-500/70" /><span className="text-xs text-zinc-500 font-medium">{"Example"}</span></div>
+        <div className="flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-zinc-400/50" /><span className="text-xs text-zinc-500 font-medium">{"Not performance data"}</span></div>
       </div>
     </div>
   </div>
@@ -118,13 +118,7 @@ export const CarouselShowcase = () => (
     <div className="relative z-10">
       <div className="flex justify-center mb-6">
         <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-lg shadow-black/20">
-          <div className="flex -space-x-2">
-            {["https://randomuser.me/api/portraits/men/32.jpg","https://randomuser.me/api/portraits/women/44.jpg","https://randomuser.me/api/portraits/men/46.jpg","https://randomuser.me/api/portraits/women/68.jpg"].map((src,i)=>(
-              <img key={i} src={src} alt="GoToFlow user" className="w-6 h-6 rounded-full border-2 border-[#121212] object-cover bg-zinc-800" style={{zIndex:4-i}} />
-            ))}
-          </div>
-          <div className="flex gap-0.5">{[...Array(5)].map((_,i)=>(<Star key={i} className="w-3.5 h-3.5 fill-yellow-500 text-yellow-500 drop-shadow-sm" />))}</div>
-          <span className="text-sm text-zinc-300 font-medium tracking-tight"><span className="text-white font-semibold">+10k</span> already creating carousels</span>
+          <span className="text-sm text-zinc-300 font-medium tracking-tight">Source → structure, copy, design, and export</span>
         </div>
       </div>
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-16 px-6">
@@ -192,15 +186,16 @@ export const CarouselComparison = () => {
           Old carousel workflow vs <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">GoToFlow</span>
         </h2>
         <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-medium">Idea sourcing, hook writing, slide structuring, and copywriting usually happen in 4+ different tools. In GoToFlow, it's one seamless carousel creation flow.</p>
+        <p className="text-base text-zinc-400 max-w-3xl mx-auto mt-5 leading-relaxed">If you are choosing between manual layout and generation, read the <a href="/blog/ai-carousel-generator" className="text-pink-400 underline">AI carousel workflow guide</a> to see where source preparation, review, and export fit.</p>
       </motion.div>
       <motion.div initial={{ opacity:0,y:56 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ duration: isMobile ? 0.6 : 0.9 }} className="relative">
         <div className="relative rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 lg:p-14">
           <div className="absolute inset-0 bg-zinc-950/40 backdrop-blur-3xl rounded-[2rem] md:rounded-[2.5rem] border border-white/[0.05] pointer-events-none -z-30" style={{ boxShadow:'0 50px 100px -20px rgba(0,0,0,1)' }} />
           <div className="relative z-10 flex flex-col">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto w-full">
-              {[{ icon:<Clock className="w-6 h-6"/>, color:'text-amber-400', ring:'bg-amber-500/10 border-amber-500/20', text:'Save 5+ hours per week on carousels' },
+              {[{ icon:<Clock className="w-6 h-6"/>, color:'text-amber-400', ring:'bg-amber-500/10 border-amber-500/20', text:'Reduce manual carousel assembly' },
                 { icon:<Zap className="w-6 h-6"/>, color:'text-violet-400', ring:'bg-violet-500/10 border-violet-500/20', text:'Ready carousel in ~60 seconds' },
-                { icon:<Target className="w-6 h-6"/>, color:'text-rose-400', ring:'bg-rose-500/10 border-rose-500/20', text:'One flow instead of 4 tools' }
+                { icon:<Target className="w-6 h-6"/>, color:'text-rose-400', ring:'bg-rose-500/10 border-rose-500/20', text:'Source, copy, and design in one flow' }
               ].map((m,i)=>(
                 <div key={i} className="flex flex-col items-center justify-center bg-white/[0.04] border border-white/10 backdrop-blur-3xl rounded-2xl py-4 px-6 text-center hover:bg-white/[0.06] transition-all duration-300">
                   <div className={`p-2.5 rounded-xl border mb-3 ${m.ring}`}><span className={m.color}>{m.icon}</span></div>

@@ -37,9 +37,8 @@ explore:
       description: "A step-by-step guide to the uploading process."
 finalCta:
   title: "Stop struggling with dimensions"
-  description: "Create perfectly sized LinkedIn carousels instantly without wrestling with complex design software."
+  text: "Create a LinkedIn carousel from your source, then check readability, page size, and the export before uploading."
   buttonText: "Create a Carousel Now"
-  href: "/linkedin-carousel-maker"
   microcopy: "Optimized for mobile and desktop"
   secondaryText: "See how to post it →"
   secondaryHref: "/blog/how-to-post-a-carousel-on-linkedin"

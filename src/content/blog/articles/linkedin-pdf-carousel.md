@@ -37,9 +37,8 @@ explore:
       description: "Detailed breakdown of safe zones and dimensions."
 finalCta:
   title: "Create LinkedIn PDFs without the hassle"
-  description: "Skip the complex design tools. Generate perfectly sized, high-converting PDF carousels instantly."
+  text: "Skip the complex design tools. Create slide structure, copy, and design, then review the PDF and its upload preview."
   buttonText: "Create a PDF Carousel"
-  href: "/linkedin-carousel-maker"
   microcopy: "Fast and easy export"
   secondaryText: "Read the full guide →"
   secondaryHref: "/blog/how-to-make-linkedin-carousel-with-ai"

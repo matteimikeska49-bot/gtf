@@ -28,9 +28,8 @@ faq:
     answer: "A 4:5 portrait format is commonly used because it gives more vertical space in the feed and improves mobile readability. Still, Instagram previews and publishing flows can vary, so the safest approach is to design mobile-first, keep key text centered, and preview the final carousel before publishing."
 finalCta:
   title: "Still creating carousels manually?"
-  description: "Turn a topic, link, video, or rough note into a structured Instagram carousel with angle, hook, slide flow, copy, and visual direction."
+  text: "Turn a topic, link, video, or rough note into a structured Instagram carousel with angle, hook, slide flow, copy, and visual direction."
   buttonText: "Try GoToFlow For Free"
-  href: "/ai-carousel-maker"
   secondaryText: "Explore Instagram carousel hooks →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 

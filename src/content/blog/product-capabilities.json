@@ -460,57 +460,70 @@
   {
     "capabilityId": "seamlessPanoramicCarousel",
     "label": "Seamless / Panoramic Carousel",
-    "status": "partially_supported",
-    "description": "GoToFlow can help structure multi-slide carousel content, but seamless panoramic visual effects should be claimed carefully unless a specific generated mockup proves it.",
+    "status": "supported",
+    "description": "GoToFlow supports seamless / panoramic carousel formats.",
     "allowedClaims": [
-      "plan a seamless carousel structure",
-      "create a multi-slide carousel workflow"
+      "create seamless carousels",
+      "create panoramic carousels"
     ],
     "forbiddenClaims": [
-      "automatic seamless panoramic carousel",
-      "one-click seamless carousel",
-      "perfect seamless carousel"
+      "perfect seamless carousel",
+      "guaranteed seamless transitions without review"
     ],
     "saferAlternatives": [
-      "plan and refine a multi-slide carousel layout"
+      "create a seamless carousel and review the transitions before export"
     ],
-    "relatedRoutes": ["/ai-carousel-maker", "/ru/ii-generator-karuseley"],
-    "relatedArticleTypes": ["how-to", "workflow_article"],
-    "relatedKeywords": ["seamless carousel", "panoramic carousel"],
+    "relatedRoutes": [
+      "/ai-carousel-maker",
+      "/ru/ii-generator-karuseley"
+    ],
+    "relatedArticleTypes": [
+      "how-to",
+      "workflow_article"
+    ],
+    "relatedKeywords": [
+      "seamless carousel",
+      "panoramic carousel"
+    ],
     "evidence": {
-      "source": "Product review needed",
-      "notes": "Treat seamless/panoramic claims as partial unless verified by a specific UI path and mockup."
+      "source": "docs/product/gotoflow-capabilities.md §9; src/content/seoPages/productTruthRegistry.js",
+      "notes": "Existing Owner-confirmed product truth dated 2026-07-11: seamless formats are available. No output-quality or performance guarantee is implied."
     },
-    "lastVerified": "2026-06-23",
-    "reviewRequiredBeforeClaiming": true
+    "lastVerified": "2026-10-09",
+    "reviewRequiredBeforeClaiming": false
   },
   {
     "capabilityId": "animatedCarousel",
     "label": "Animated Carousel / Animated First Slide",
-    "status": "roadmap",
-    "description": "Animated carousel output is not a live capability in the current SEO source of truth.",
+    "status": "supported",
+    "description": "GoToFlow supports animated carousel formats, including an animated first slide.",
     "allowedClaims": [
-      "animated carousel support is a roadmap idea",
-      "animated first-slide experiments are not a live feature"
+      "create animated carousels",
+      "create an animated first slide"
     ],
     "forbiddenClaims": [
-      "animated carousel generator",
-      "generate animated carousels",
-      "animated first slide",
-      "motion carousel export"
+      "guaranteed engagement from animation",
+      "every animated export format"
     ],
     "saferAlternatives": [
-      "create static carousel slides and export them for social platforms"
+      "choose an animated carousel format and review the export for the intended platform"
     ],
     "relatedRoutes": [],
-    "relatedArticleTypes": ["how-to", "comparison", "workflow_article"],
-    "relatedKeywords": ["animated carousel", "animated first slide"],
+    "relatedArticleTypes": [
+      "how-to",
+      "comparison",
+      "workflow_article"
+    ],
+    "relatedKeywords": [
+      "animated carousel",
+      "animated first slide"
+    ],
     "evidence": {
-      "source": "Product source of truth",
-      "notes": "Do not describe animation as live unless product status changes."
+      "source": "docs/product/gotoflow-capabilities.md §9; src/content/seoPages/productTruthRegistry.js",
+      "notes": "Existing Owner-confirmed product truth dated 2026-07-11: animated formats are available. No performance or universal export-format guarantee is implied."
     },
-    "lastVerified": "2026-06-23",
-    "reviewRequiredBeforeClaiming": true
+    "lastVerified": "2026-10-09",
+    "reviewRequiredBeforeClaiming": false
   },
   {
     "capabilityId": "analyticsInsights",

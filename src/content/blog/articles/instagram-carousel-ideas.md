@@ -65,10 +65,9 @@ explore:
       href: "/blog/instagram-carousel-prompts"
       description: "Ready-to-use prompts for turning ideas into structured carousel results."
 finalCta:
-  title: "Turn your ideas into posts instantly"
+  title: "Turn your idea into a carousel"
   text: "Use GoToFlow to turn an idea, link, or source into structure, slide copy, visual design, CTA, and a ready-to-publish Instagram carousel for export."
   buttonText: "Start Creating"
-  href: "/ai-carousel-maker"
   microcopy: "Free to try — No design skills needed"
   secondaryText: "Explore features →"
   secondaryHref: "/ai-carousel-maker"
@@ -125,7 +124,7 @@ If you are still stuck, you can use AI to brainstorm. A simple prompt like *"Wha
 
 ## Turning Ideas into Content
 
-Having an idea is only 10% of the work. The real challenge is turning that concept into a structured, well-designed carousel. 
+Choosing an idea is the starting point, not the finished post. The real challenge is turning that concept into a structured, well-designed carousel.
 
 If you try to write the copy from scratch and then design the slides in Canva, a single idea might take you an hour to execute. 
 

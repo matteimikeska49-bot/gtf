@@ -68,7 +68,6 @@ finalCta:
   title: "Ready to turn your articles into carousels?"
   text: "Let GoToFlow transform your existing blog posts, links, and notes into structured, design-ready LinkedIn carousels."
   buttonText: "Create a LinkedIn carousel"
-  href: "/linkedin-carousel-maker"
   secondaryText: "See LinkedIn carousel examples →"
   secondaryHref: "/blog/best-linkedin-carousel-examples"
 

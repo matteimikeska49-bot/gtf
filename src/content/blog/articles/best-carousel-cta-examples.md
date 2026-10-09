@@ -23,7 +23,7 @@ faq:
   - question: "Does 'Link in Bio' still work as a CTA?"
     answer: "Yes, 'Link in Bio' is still effective on Instagram, but it works best when you offer a specific lead magnet or resource rather than a generic website link."
   - question: "How can I use CTAs to generate leads directly?"
-    answer: "Using a 'Comment a specific word' CTA is currently one of the best ways to generate leads. It boosts algorithmic engagement and allows you to use automation tools to DM the resource."
+    answer: "A 'Comment a specific word' CTA fits a resource you actually provide. Plan the delivery separately and only promise a reply you can fulfil. GoToFlow handles content creation and export; comment replies and resource delivery belong to your publishing workflow."
   - question: "Are LinkedIn CTAs different from Instagram CTAs?"
     answer: "Yes. On LinkedIn, links in comments or asking users to 'Ring the bell on my profile' are more common. LinkedIn's audience also responds better to professional newsletter subscriptions or event registrations."
 explore:
@@ -37,9 +37,8 @@ explore:
       description: "See how top creators structure their posts and CTAs."
 finalCta:
   title: "Stop struggling with carousel design"
-  description: "Create professional, high-converting carousels with built-in CTAs directly in your browser."
+  text: "Create slide structure, copy, design, and a final CTA in your browser, then review and export."
   buttonText: "Try Carousel Maker Free"
-  href: "/ai-carousel-maker"
   secondaryText: "Explore Instagram carousel hooks →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 
@@ -71,7 +70,7 @@ Saying "Click here" without explaining what the user will get on the other side.
 ## 5 Best Carousel CTA Examples You Can Use Today
 
 ### 1. The "Save for Later" Value Play
-This is the most effective CTA for highly educational content. When users save your post, algorithms on both LinkedIn and Instagram interpret it as high-value content, pushing it to more people.
+A save CTA suits content someone may need again, such as a checklist. It gives a useful next action, but does not guarantee wider distribution.
 * **The Copy:** "Don't lose these frameworks. Save this post for your next project."
 * **Best used for:** Step-by-step guides, cheat sheets, and tool lists.
 
