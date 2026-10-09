@@ -18,7 +18,7 @@ noindex: false
 preview: false
 approvedForPublish: true
 createdAt: "2026-06-05T00:00:00.000Z"
-updatedAt: "2026-06-05T00:00:00.000Z"
+updatedAt: "2026-10-09"
 lastReviewed: "2026-06-05T00:00:00.000Z"
 mockupStatus: "present"
 faq:
@@ -73,6 +73,8 @@ A strong LinkedIn carousel hook usually falls into one of three categories:
 A hook tells readers what the following slides will explain. Make that promise specific and deliver it in the document; the first slide alone cannot guarantee a click or platform distribution.
 
 ## 15 Hooks You Can Steal Today
+
+Treat the examples as wording patterns, not verified personal stories or results. Replace any number, revenue claim, tool-testing count, or time saving with facts you can document; otherwise choose a non-numeric opening. For an illustrative onboarding checklist, “What to check before handing a project to a new teammate” promises a bounded task. The following slides can cover the brief, access, and acceptance criteria, with a final request to save the checklist. In GoToFlow, use your checklist as the source, review the generated sequence and hook together, and export only after the opening accurately describes the slides. Do not attach an invented client result to that workflow.
 
 ### Hook 1: The "X to Y" Transformation
 Show the reader the exact journey you are about to take them on.

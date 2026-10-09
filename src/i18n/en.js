@@ -60,7 +60,7 @@ export const en = {
     subtitle: 'Spending hours editing, but the result still looks like AI generated it',
     cards: [
       {
-        title: "Time spent rewriting drafts",
+        title: "Rewriting instead of publishing",
         text: "AI seems to help, but the output is still raw and requires manual rewriting and tweaking."
       },
       {

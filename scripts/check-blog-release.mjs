@@ -1,45 +1,20 @@
-import { execFileSync, spawnSync } from 'child_process';
-import path from 'path';
+import { spawnSync } from 'child_process';
+import fs from 'node:fs';
+import { resolveReleaseScope } from './lib/release-scope.mjs';
 
 const ROOT = process.cwd();
-const ARTICLE_PREFIX = 'src/content/blog/articles/';
 const legacyOnly = process.argv.includes('--legacy-debt');
 
-function gitLines(args) {
-  try {
-    return execFileSync('git', args, { cwd: ROOT, encoding: 'utf8' })
-      .split('\n')
-      .map((line) => line.trim())
-      .filter(Boolean);
-  } catch {
-    return [];
-  }
-}
-
-function getChangedPaths() {
-  const working = gitLines(['diff', '--name-only', 'HEAD', '--']);
-  const untracked = gitLines(['ls-files', '--others', '--exclude-standard']).filter((file) =>
-    file === 'package.json'
-    || file.startsWith('docs/')
-    || file.startsWith('scripts/')
-    || file.startsWith('src/content/blog/')
-  );
-  return [...new Set([...working, ...untracked])];
-}
-
-function articleSlug(file) {
-  return path.basename(file, '.md');
-}
-
-const changedPaths = getChangedPaths();
-const changedArticles = changedPaths
-  .filter((file) => file.startsWith(ARTICLE_PREFIX) && file.endsWith('.md'))
-  .map(articleSlug)
-  .filter((slug) => slug !== '_template' && !slug.startsWith('test-'));
+const baseIndex = process.argv.indexOf('--base-ref');
+if (baseIndex !== -1 && !process.argv[baseIndex + 1]) throw new Error('--base-ref requires a Git ref.');
+const scope = resolveReleaseScope(ROOT, baseIndex === -1 ? undefined : process.argv[baseIndex + 1]);
+const changedPaths = scope.paths;
+const changedArticles = scope.articles;
 
 const childEnv = {
   ...process.env,
   BLOG_RELEASE_MODE: '1',
+  BLOG_RELEASE_BASE_REF: scope.base,
   BLOG_RELEASE_ARTICLE_SLUGS: changedArticles.join(','),
   BLOG_RELEASE_CHANGED_PATHS: changedPaths.join(',')
 };
@@ -57,6 +32,18 @@ function run(label, command, args, { blocking = true } = {}) {
   return { label, passed, blocking };
 }
 
+const packageScripts = JSON.parse(fs.readFileSync('package.json', 'utf8')).scripts;
+function group(label, script) {
+  // These diagnostic groups must not hide later failures behind shell &&.
+  const commands = packageScripts[script].split(' && ');
+  const results = commands.map((command) => {
+    const match = command.match(/^npm run ([a-z0-9:-]+)$/);
+    if (!match) throw new Error(`Unsupported source check group command: ${command}`);
+    return run(`${label}: ${match[1]}`, 'npm', ['run', match[1]]);
+  });
+  return { label, passed: results.every((result) => result.passed), blocking: true };
+}
+
 const legacyStages = [
   ['Legacy SEO meta hardening', 'npm', ['run', 'check:blog:seo-meta-hardening']],
   ['Legacy SEO metadata', 'npm', ['run', 'check:blog:seo-meta']],
@@ -72,16 +59,16 @@ if (legacyOnly) {
 console.log('\nCanonical SEO Release Gate');
 console.log(`- Changed paths: ${changedPaths.length}`);
 console.log(`- Current article scope: ${changedArticles.length > 0 ? changedArticles.join(', ') : '(no changed articles; system-only release)'}`);
-console.log('- Scope source: tracked diff plus untracked article files');
+console.log(`- Scope source: ${scope.base} → ${scope.head} + index/working tree/untracked files`);
 
 const stages = [
-  run('Task scope safety', 'node', ['scripts/check-task-scope.mjs', '--changed-only']),
   run('Topic and demand research', 'npm', ['run', 'check:blog:topics']),
   run('Intent ownership', 'npm', ['run', 'check:blog:intent-ownership']),
   run('Current-scope anti-cannibalization', 'npm', ['run', 'check:blog:cannibalization']),
   run('Current-scope batch workflow', 'npm', ['run', 'check:blog:batch-workflow']),
-  run('Fast source safety checks', 'npm', ['run', 'check:blog:fast']),
-  run('Content and template checks', 'npm', ['run', 'check:blog:content']),
+  group('Fast source safety checks', 'check:blog:fast'),
+  group('Content and template checks', 'check:blog:content'),
+  run('Lint', 'npm', ['run', 'lint']),
   run('Schema source hardening', 'npm', ['run', 'check:blog:schema-hardening'])
 ];
 
@@ -89,7 +76,13 @@ const legacyResults = legacyStages.slice(0, 2).map(([label, command, args]) =>
   run(label, command, args, { blocking: false })
 );
 
-stages.push(run('Build, prerender, rendered HTML, and sitemap', 'npm', ['run', 'check:blog:build-render']));
+const buildStage = run('Build, prerender, rendered HTML, and sitemap', 'npm', ['run', 'check:blog:build-render']);
+stages.push(buildStage);
+// Evaluate the final artifacts, not the obsolete pre-build dist. No boolean
+// waiver: this invokes an independent production build and compares artifacts.
+stages.push(buildStage.passed ? run('Task scope and reproducible production artifacts', 'node', [
+  'scripts/check-task-scope.mjs', '--changed-only', '--production-artifacts',
+]) : { label: 'Task scope and reproducible production artifacts (blocked by failed build)', passed: false, blocking: true });
 
 const blockingFailures = stages.filter((stage) => stage.blocking && !stage.passed);
 const legacyFailures = legacyResults.filter((stage) => !stage.passed);

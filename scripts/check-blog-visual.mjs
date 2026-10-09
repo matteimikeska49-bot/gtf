@@ -2,6 +2,9 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { resolveProjectSeoState } from './lib/project-seo-state.mjs';
+import { resolveReleaseScope } from './lib/release-scope.mjs';
+import { sha256 } from './lib/production-artifact-parity.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -34,23 +37,29 @@ async function checkRoutes() {
   
   const files = fs.readdirSync(ARTICLES_DIR).filter(f => f.endsWith('.md') && f !== '_template.md');
   const routesToCheck = [];
+  const prScope = process.argv.includes('--pr-scope') ? resolveReleaseScope(ROOT) : null;
+  const resolved = resolveProjectSeoState(ROOT);
   
   for (const file of files) {
     const filePath = path.join(ARTICLES_DIR, file);
     const content = fs.readFileSync(filePath, 'utf-8');
+    if (prScope && !prScope.paths.includes(`src/content/blog/articles/${file}`)) continue;
     const frontmatter = extractFrontmatter(content);
     if (!frontmatter) continue;
     
-    const slug = getYamlValue(frontmatter, 'slug');
+    const entry = resolved.entries.find((item) => item.sourcePath === `src/content/blog/articles/${file}` && item.prerender);
+    if (prScope && !entry) throw new Error(`Changed article has no resolved prerender route: ${file}`);
+    const slug = entry ? path.basename(entry.path) : getYamlValue(frontmatter, 'slug');
     const language = getYamlValue(frontmatter, 'language') || 'en';
     const title = getYamlValue(frontmatter, 'title');
     const published = getYamlValue(frontmatter, 'published');
     
     if (slug) {
-      const route = language === 'ru' ? `/ru/blog/${slug}/` : `/blog/${slug}/`;
+      const route = entry ? `${entry.path}/` : language === 'ru' ? `/ru/blog/${slug}/` : `/blog/${slug}/`;
       routesToCheck.push({ route, file, slug, language, title, published });
     }
   }
+  if (prScope && routesToCheck.length !== prScope.articles.length) throw new Error('Incomplete PR browser scope.');
 
   const baseUrl = process.env.BLOG_QA_BASE_URL || 'http://localhost:4173';
   console.log(`Found ${routesToCheck.length} articles to check.`);
@@ -70,6 +79,9 @@ async function checkRoutes() {
       language: item.language,
       title: item.title,
       published: item.published,
+      sourceSha256: sha256(fs.readFileSync(path.join(ARTICLES_DIR, item.file))),
+      renderedSha256: sha256(fs.readFileSync(path.join(ROOT, 'dist', item.route.replace(/^\//, ''), 'index.html'))),
+      failedRequests: [],
       desktopScreenshot: null,
       mobileScreenshot: null,
       status: null,
@@ -102,6 +114,7 @@ async function checkRoutes() {
       });
 
       page.on('requestfailed', request => {
+        pageReport.failedRequests.push({ url: request.url(), resourceType: request.resourceType(), error: request.failure()?.errorText });
         if (request.resourceType() === 'image') {
           pageReport.warnings.push(`Broken image request: ${request.url()}`);
         }

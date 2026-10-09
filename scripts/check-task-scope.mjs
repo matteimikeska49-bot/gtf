@@ -1,5 +1,6 @@
 import path from 'path';
 import { execFileSync } from 'child_process';
+import { resolveReleaseScope } from './lib/release-scope.mjs';
 
 const ROOT = process.cwd();
 
@@ -18,7 +19,8 @@ function normalizeFile(file) {
 
 const args = process.argv.slice(2);
 const changedOnly = args.includes('--changed-only');
-const allowedArgs = args.filter((arg) => arg !== '--changed-only');
+const productionArtifacts = args.includes('--production-artifacts');
+const allowedArgs = args.filter((arg) => !['--changed-only', '--production-artifacts'].includes(arg));
 if (allowedArgs.length === 0 && !changedOnly) {
   console.error('Usage: node scripts/check-task-scope.mjs <allowed-file> [allowed-file ...]');
   process.exit(1);
@@ -32,7 +34,8 @@ try {
   process.exit(1);
 }
 
-const trackedChanged = runGit(['diff', '--name-only', '--diff-filter=ACDMRTUXB', 'HEAD', '--'])
+const releaseScope = resolveReleaseScope(ROOT);
+const trackedChanged = runGit(['diff', '--name-only', '--diff-filter=ACDMRTUXB', releaseScope.base, '--'])
   .split('\n')
   .map((file) => file.trim())
   .filter(Boolean);
@@ -41,10 +44,10 @@ const untracked = runGit(['ls-files', '--others', '--exclude-standard'])
   .map((file) => file.trim())
   .filter(Boolean);
 
-const forbiddenTracked = trackedChanged.filter((file) =>
-  file.startsWith('dist/')
+const forbiddenTracked = [...new Set([...trackedChanged, ...untracked])].filter((file) =>
+  (file.startsWith('dist/') && !productionArtifacts)
   || file.startsWith('scratch/')
-  || /(?:^|\/)sitemap(?:-index)?\.xml$/i.test(file)
+  || (/(?:^|\/)sitemap(?:-index)?\.xml$/i.test(file) && !(productionArtifacts && file.startsWith('dist/')))
   || /(?:^|\/)(?:temp|tmp)[^/]*$/i.test(file)
   || /\.zip$/i.test(file)
 );
@@ -56,6 +59,7 @@ console.log('\nTask Scope Check');
 console.log(`- Mode: ${changedOnly ? 'changed files safety' : 'explicit allowlist'}`);
 console.log(`- Allowed files: ${allowed.size}`);
 console.log(`- Changed tracked files: ${trackedChanged.length}`);
+console.log(`- Base: ${releaseScope.base}`);
 console.log(`- Allowed untracked files: ${allowedUntracked.length}`);
 console.log(`- Other untracked files (warning only): ${otherUntracked.length}`);
 
@@ -91,6 +95,21 @@ if (forbiddenTracked.length > 0 || outsideScope.length > 0) {
   process.exit(1);
 }
 
-console.log(changedOnly
+if (productionArtifacts) {
+  // Fixture override environment must NEVER authorize a production artifact.
+  const env = { ...process.env };
+  for (const key of Object.keys(env)) if (key.startsWith('SEO_DIST_SYNC_')) delete env[key];
+  env.SEO_DIST_SYNC_FULL_ARTIFACTS = '1';
+  try {
+    execFileSync('node', ['scripts/check-seo-dist-sync.mjs'], { cwd: ROOT, env, stdio: 'inherit' });
+  } catch {
+    console.error('FAIL: independent production artifact parity is required.');
+    process.exit(1);
+  }
+}
+
+console.log(productionArtifacts
+  ? '\nPASS: source scope safety and independently reproduced production artifacts.'
+  : changedOnly
   ? '\nPASS: tracked diff contains no generated or forbidden files.'
   : '\nPASS: tracked diff is limited to the declared task scope.');
