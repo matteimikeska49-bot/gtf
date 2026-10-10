@@ -17,7 +17,7 @@ import { fileURLToPath } from 'url';
 import puppeteer from 'puppeteer';
 import http from 'http';
 import { canonicalUrl, renderSitemap, resolveProjectSeoState } from './scripts/lib/project-seo-state.mjs';
-import { installPrerenderEnvironment } from './scripts/lib/prerender-environment.mjs';
+import { installPrerenderEnvironment, applyPrerenderReferralState } from './scripts/lib/prerender-environment.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = process.env.PRERENDER_DIST_DIR
@@ -373,6 +373,7 @@ async function prerenderRoute(browser, route, baseUrl, stateByPath) {
 
     await page.goto(url, { waitUntil: 'networkidle2', timeout: NAVIGATION_TIMEOUT_MS });
     await waitForRouteReady(page, contract);
+    await page.evaluate(applyPrerenderReferralState);
 
     await page.evaluate(() => {
       document

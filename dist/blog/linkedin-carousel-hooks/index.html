@@ -76,7 +76,7 @@
       trackLinks:true
     });
     </script>
-    <script type="module" crossorigin="" src="/assets/index-Dh9yW6JN.js"></script>
+    <script type="module" crossorigin="" src="/assets/index-C_o4HAHu.js"></script>
     <link rel="stylesheet" crossorigin="" href="/assets/index-B4q7i5uz.css">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="15 LinkedIn Carousel Hook Examples for Your First Slide | GoToFlow"><meta name="twitter:description" content="Explore 15 LinkedIn carousel hook patterns, adapt them to source-backed material, and check that your first slide delivers the promise of the document."><meta name="twitter:url" content="https://gotoflow.io/blog/linkedin-carousel-hooks"><script type="application/ld+json" id="article-ld-json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gotoflow.io/#organization","name":"GoToFlow","url":"https://gotoflow.io/","logo":"https://gotoflow.io/favicon-96x96.png","sameAs":[]},{"@type":"WebSite","@id":"https://gotoflow.io/#website","url":"https://gotoflow.io/","name":"GoToFlow","publisher":{"@id":"https://gotoflow.io/#organization"},"inLanguage":"en"},{"@type":"Article","@id":"https://gotoflow.io/blog/linkedin-carousel-hooks#article","headline":"15 LinkedIn Carousel Hook Examples for Your First Slide | GoToFlow","description":"Explore 15 LinkedIn carousel hook patterns, adapt them to source-backed material, and check that your first slide delivers the promise of the document.","inLanguage":"en","mainEntityOfPage":"https://gotoflow.io/blog/linkedin-carousel-hooks","author":{"@type":"Organization","@id":"https://gotoflow.io/#organization","name":"GoToFlow","url":"https://gotoflow.io/"},"publisher":{"@id":"https://gotoflow.io/#organization"},"dateModified":"2026-10-10"},{"@type":"BreadcrumbList","@id":"https://gotoflow.io/blog/linkedin-carousel-hooks#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoflow.io/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gotoflow.io/blog"},{"@type":"ListItem","position":3,"name":"15 LinkedIn Carousel Hook Examples for Your First Slide | GoToFlow","item":"https://gotoflow.io/blog/linkedin-carousel-hooks"}]},{"@type":"FAQPage","@id":"https://gotoflow.io/blog/linkedin-carousel-hooks#faq","mainEntity":[{"@type":"Question","name":"Should my hook be a question or a statement?","acceptedAnswer":{"@type":"Answer","text":"Choose the form that describes your material clearly. A question can introduce a reader's problem; a statement can name the checklist or lesson. Compare responses to your own posts instead of assuming either form performs better."}},{"@type":"Question","name":"Can I use emojis on the first slide?","acceptedAnswer":{"@type":"Answer","text":"Yes, but use them sparingly. One or two relevant emojis can break up text and add visual interest, but too many can look unprofessional."}},{"@type":"Question","name":"How long should a hook be?","acceptedAnswer":{"@type":"Answer","text":"Keep it under 15 words if possible. Large, legible text is essential for mobile readers, so brevity is your best friend."}},{"@type":"Question","name":"Do numbers in hooks actually work?","acceptedAnswer":{"@type":"Answer","text":"Use numbers when they describe the real material: a checklist count or a sourced result with context. Do not invent precise statistics or assume odd numbers guarantee performance."}},{"@type":"Question","name":"Should I include a subtitle on the first slide?","acceptedAnswer":{"@type":"Answer","text":"Yes. A short subtitle below the main hook adds context and gives the reader one more reason to swipe to the next slide."}}]}]}</script></head>
   <body>
@@ -213,6 +213,12 @@
 
       function applyRef() {
         appendRefToAppLinks(activeRef);
+      }
+
+      // The build browser invokes this same referral pass after React is ready.
+      // Visitors retain the existing immediate/DOMContentLoaded/timer behaviour.
+      if (typeof window.__GTF_PRERENDER_ROUTE === 'string') {
+        window.__GTF_PRERENDER_APPLY_REF = applyRef;
       }
 
       applyRef();

@@ -218,6 +218,12 @@
         appendRefToAppLinks(activeRef);
       }
 
+      // The build browser invokes this same referral pass after React is ready.
+      // Visitors retain the existing immediate/DOMContentLoaded/timer behaviour.
+      if (typeof window.__GTF_PRERENDER_ROUTE === 'string') {
+        window.__GTF_PRERENDER_APPLY_REF = applyRef;
+      }
+
       applyRef();
 
       if (document.readyState === 'loading') {

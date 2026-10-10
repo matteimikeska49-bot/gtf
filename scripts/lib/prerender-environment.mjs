@@ -5,3 +5,13 @@ export function installPrerenderEnvironment(route) {
   window.__GTF_PRERENDER_ROUTE = route;
   window.setInterval = () => 0;
 }
+
+// Run the production referral operation on the ready DOM before capturing it.
+// This is not an HTML transform; URL/query/ref handling stays in index.html.
+export function applyPrerenderReferralState() {
+  if (typeof window.__GTF_PRERENDER_ROUTE !== 'string'
+    || typeof window.__GTF_PRERENDER_APPLY_REF !== 'function') {
+    throw new Error('Prerender referral readiness hook is missing.');
+  }
+  window.__GTF_PRERENDER_APPLY_REF();
+}

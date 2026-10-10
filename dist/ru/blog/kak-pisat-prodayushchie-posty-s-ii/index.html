@@ -76,7 +76,7 @@
       trackLinks:true
     });
     </script>
-    <script type="module" crossorigin="" src="/assets/index-Dh9yW6JN.js"></script>
+    <script type="module" crossorigin="" src="/assets/index-C_o4HAHu.js"></script>
     <link rel="stylesheet" crossorigin="" href="/assets/index-B4q7i5uz.css">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Как писать продающие посты с помощью ИИ за минуты | GoToFlow"><meta name="twitter:description" content="Гайд по копирайтингу: как заставить нейросеть писать конверсионные продающие посты. Разбор фреймворков и промптов для продаж в социальных сетях."><meta name="twitter:url" content="https://gotoflow.io/ru/blog/kak-pisat-prodayushchie-posty-s-ii"><script type="application/ld+json" id="article-ld-json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gotoflow.io/#organization","name":"GoToFlow","url":"https://gotoflow.io/","logo":"https://gotoflow.io/favicon-96x96.png","sameAs":[]},{"@type":"WebSite","@id":"https://gotoflow.io/#website","url":"https://gotoflow.io/","name":"GoToFlow","publisher":{"@id":"https://gotoflow.io/#organization"},"inLanguage":"ru"},{"@type":"Article","@id":"https://gotoflow.io/ru/blog/kak-pisat-prodayushchie-posty-s-ii#article","headline":"Как писать продающие посты с помощью ИИ за минуты | GoToFlow","description":"Гайд по копирайтингу: как заставить нейросеть писать конверсионные продающие посты. Разбор фреймворков и промптов для продаж в социальных сетях.","inLanguage":"ru","mainEntityOfPage":"https://gotoflow.io/ru/blog/kak-pisat-prodayushchie-posty-s-ii","author":{"@type":"Organization","@id":"https://gotoflow.io/#organization","name":"GoToFlow","url":"https://gotoflow.io/"},"publisher":{"@id":"https://gotoflow.io/#organization"},"dateModified":"2026-10-10"},{"@type":"BreadcrumbList","@id":"https://gotoflow.io/ru/blog/kak-pisat-prodayushchie-posty-s-ii#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://gotoflow.io/ru"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://gotoflow.io/ru/blog"},{"@type":"ListItem","position":3,"name":"Как писать продающие посты с помощью ИИ за минуты | GoToFlow","item":"https://gotoflow.io/ru/blog/kak-pisat-prodayushchie-posty-s-ii"}]},{"@type":"FAQPage","@id":"https://gotoflow.io/ru/blog/kak-pisat-prodayushchie-posty-s-ii#faq","mainEntity":[{"@type":"Question","name":"Можно ли постить только продающие тексты?","acceptedAnswer":{"@type":"Answer","text":"Нет. Вы выжжете аудиторию. Чередуйте объяснения, примеры и предложения продукта. Долю продаж выбирайте по задаче сообщества и реакции аудитории, а не по универсальному проценту."}},{"@type":"Question","name":"Какой размер идеального продающего поста?","acceptedAnswer":{"@type":"Answer","text":"Размер зависит от предложения и необходимых условий. Сохраните факты, цену или способ её узнать, ограничения и следующий шаг. Проверьте текущие лимиты площадки и читаемость preview; здесь нет универсальной идеальной длины или лимита Telegram в 1500 символов."}},{"@type":"Question","name":"Что делать, если ИИ написал неправду (галлюцинации)?","acceptedAnswer":{"@type":"Answer","text":"Продающий копирайтинг — это про факты. Всегда вычитывайте цены, гарантии и сроки, которые сгенерировала нейросеть. ИИ не знает нюансов вашего ценообразования."}},{"@type":"Question","name":"Как сделать заголовок более кликабельным?","acceptedAnswer":{"@type":"Answer","text":"Попросите ИИ: \"Сгенерируй 10 вариантов заголовка для этого поста, используя цифры, противоречия или шок-факты\"."}},{"@type":"Question","name":"Обязательно ли указывать цену в продающем посте?","acceptedAnswer":{"@type":"Answer","text":"Сделайте условия покупки понятными. Если цена фиксирована, укажите её; если зависит от задачи, объясните, как получить расчёт. Формат \"Цена в Директ\" сам по себе не доказывает падение конверсии."}}]}]}</script></head>
   <body>
@@ -213,6 +213,12 @@
 
       function applyRef() {
         appendRefToAppLinks(activeRef);
+      }
+
+      // The build browser invokes this same referral pass after React is ready.
+      // Visitors retain the existing immediate/DOMContentLoaded/timer behaviour.
+      if (typeof window.__GTF_PRERENDER_ROUTE === 'string') {
+        window.__GTF_PRERENDER_APPLY_REF = applyRef;
       }
 
       applyRef();
