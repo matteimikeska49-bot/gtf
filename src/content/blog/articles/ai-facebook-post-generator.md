@@ -87,14 +87,14 @@ Feed the generator the raw facts. Never rely on AI to hallucinate your business 
 Instruct the AI on how to format the text. For Facebook, the best practice is to request short paragraphs, strategic use of emojis (but not overly spammy), and a clear hook in the first sentence. Tell the AI explicitly: "Use a conversational tone, keep sentences short, and use bullet points for the main features."
 
 ### Phase 4. Generate Visuals (The Missing Link)
-A plain text post won't stop the scroll in a crowded Facebook feed. Once you have your text, you need a visual element. Instead of manually designing graphics in complex software, use a platform like GoToFlow that can automatically turn your generated text into a multi-slide carousel, an infographic, or a branded quote card.
+Choose a visual when it helps explain the material, rather than assuming every text post needs one. GoToFlow can turn source material into a carousel with copy and design. Review the slides against your source and inspect the export before publishing.
 
 > [!related]
 > Need to adapt this for other professional networks? Read our guide to [AI LinkedIn Post Generators](/blog/ai-linkedin-post-generator).
 
 ## Examples of AI Facebook Posts
 
-Here are practical use cases where an AI post generator can save hours of manual work while maintaining high quality.
+Here are practical use cases for preparing copy and visuals with an AI post generator. Review the result against your source; any time savings or quality improvement require your own measurements.
 
 :::cards
 type: examples
@@ -152,7 +152,7 @@ Unlike Instagram or X, Facebook is not heavily driven by hashtags. Using 15 hash
 Use a link preview when the linked material is the point of the post. Use images or a carousel when the post itself explains the material. In either case, make the next step easy to find instead of hiding it to chase an assumed algorithm advantage.
 
 ### Sounding Like a Bot
-If your post starts with "In today's fast-paced digital world..." or "Delve into...", your audience will instantly know it was written by AI. Always edit the generated text to match your personal brand voice and remove cliché AI phrases.
+Openings such as "In today's fast-paced digital world..." or "Delve into..." are generic, but do not prove how a text was written. Replace empty phrases with the reader's concrete question and check the tone against your brief.
 :::
 
-A plain text update is rarely the best format for modern social media. Whether you are sharing a tutorial, a case study, or a product announcement, turning that information into a structured, visual format can make a multi-part explanation easier to follow. GoToFlow helps you bypass the blank page by automatically generating both the copy and the finished visual slides. Instead of piecing together text from ChatGPT and images from Canva, you get a complete, publish-ready carousel in minutes.
+For a tutorial, case study, or product announcement, choose the format that explains the material. A carousel can present a multi-part sequence; a text post may suit a short update. GoToFlow generates carousel copy and visual slides from your source. Check factual accuracy, readability, and the export before publishing; record any time savings rather than assuming them.

@@ -155,7 +155,7 @@ The AI understands the psychology behind what makes people stop scrolling on Lin
 Even the best text can fail if the design is poor. Keep these design rules in mind for your first slide:
 * **Massive Typography:** The main text should be large and easy to read on mobile.
 * **Include a Subtitle:** Add a smaller line of text below the main hook to provide extra context.
-* **Add a "Swipe" Indicator:** Visually instruct the user to click or swipe to see more. It sounds simple, but it significantly increases conversion rates.
+* **Add a "Swipe" Indicator:** An arrow or short instruction can identify how to continue the sequence. Check that it does not cover useful content; this guide provides no measured conversion increase from adding it.
 
 ## Turn a hook into a finished carousel
 

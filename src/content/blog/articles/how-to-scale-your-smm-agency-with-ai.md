@@ -13,7 +13,7 @@ faq:
   - question: Will clients be mad if they know we use AI?
     answer: 'Agree on tool use, source permissions, review responsibilities, and deliverables with each client. Do not assume acceptance or promise better results from AI use. Explain the actual workflow and provide a manual review or escalation path where the agreement requires it.'
   - question: Does AI-generated design look cheap?
-    answer: Inspect the actual slides against the client's approved visual references and the destination preview. GoToFlow generates carousel copy and design, but generation alone does not prove a brand match or that the result is indistinguishable from an agency template.
+    answer: GoToFlow generates carousel copy and design. Inspect the actual slides against the client's approved visual references, check the destination preview, and record whether the export meets the agreed requirements.
   - question: How do we maintain a client's unique brand voice?
     answer: You must train your AI tools. Don't use generic prompts. Build "Custom Instructions" or system prompts for each client that include their specific vocabulary, tone, and formatting preferences.
   - question: Is it safe to put client data into AI tools?
@@ -39,6 +39,7 @@ quickAnswer:
   - AI-assisted production changes the workflow; client capacity and costs still depend on measured work, review, and the agreed deliverables.
   - Separate source preparation, creation, and review. Measure the time each stage takes in your own team instead of assuming a fixed time saving.
   - Choose client capacity from actual workload and review requirements. Tool adoption alone does not establish staffing capacity or profit margins.
+  - Cost each package using recorded hours and role rates, allocated tool costs and revision work; the example worksheet below is illustrative, not agency performance evidence.
 lastReviewed: '2026-06-13'
 ---
 

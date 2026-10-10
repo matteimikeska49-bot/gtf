@@ -18,7 +18,7 @@ approvedForPublish: true
 canonical: "https://gotoflow.io/blog/how-to-make-linkedin-carousel-with-ai"
 audience: "creators_and_marketers"
 createdAt: "2026-06-06T00:00:00.000Z"
-updatedAt: "2026-06-06T00:00:00.000Z"
+updatedAt: "2026-10-10"
 lastReviewed: "2026-06-06T00:00:00.000Z"
 mockupStatus: "present"
 quickAnswer:
@@ -33,7 +33,7 @@ faq:
   - question: "Can I create a LinkedIn carousel from a video or link?"
     answer: "Yes. With the right workflow, you can use a video, article, or competitor example as input, then turn it into a new carousel structure with your own angle."
   - question: "How many slides should a LinkedIn carousel have?"
-    answer: "Most LinkedIn carousels work well with 7–10 slides. Shorter carousels can work if the idea is simple. Longer carousels need stronger pacing."
+    answer: "Use enough pages to explain the idea, show the necessary examples and include a relevant next step. Remove repeated pages and check the full sequence; no universally effective 7–10-slide range is established here."
   - question: "What format should I use for a LinkedIn carousel?"
     answer: "PDF is usually the simplest format for a LinkedIn carousel because it keeps the slide layout consistent. Create one page per slide and check the file before uploading."
   - question: "What is the best AI tool for LinkedIn carousels?"

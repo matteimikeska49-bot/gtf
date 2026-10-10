@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/blog/how-to-repurpose-podcasts-into-ai-carousels"
 createdAt: "2026-06-17"
-updatedAt: "2026-10-07"
+updatedAt: "2026-10-10"
 lastReviewed: "2026-06-17"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -53,9 +53,9 @@ faq:
   - question: "How much text should I extract for one carousel?"
     answer: "Focus on one specific lesson or framework per carousel. If the podcast covered 5 different topics, that is 5 separate carousels, not one massive 50-slide presentation."
   - question: "Should I quote the podcast guest directly?"
-    answer: "Yes, quoting guests adds immense authority. Use one slide to highlight a powerful quote, and use the following slides to break down what it means in practice."
+    answer: "Quote a guest only with accurate wording, context, attribution, and any necessary permission. A quote can introduce an explanation; it is not proof of authority or audience results."
   - question: "Why not just post short video clips (Shorts/Reels)?"
-    answer: "Video clips are great for reach, but carousels are better for retention and saves. People save carousels as reference material. A smart strategy uses both formats to promote the same podcast episode."
+    answer: "Choose a clip when the speaker's demonstration or delivery matters, and a carousel when a readable sequence suits the lesson. Compare your own measured results; this guide does not establish a retention, saves, or reach advantage for either format."
   - question: "How does AI speed up this process?"
     answer: "AI can analyze long-form source material, surface the strongest angles, and turn one selected idea into a slide-by-slide structure with readable formatting."
 explore:
@@ -69,7 +69,7 @@ explore:
       description: "Scale your content production."
     - title: "AI Carousel Maker"
       href: "/ai-carousel-maker"
-      description: "Create carousels from text instantly."
+      description: "Create carousels from text, then review and export."
 finalCta:
   title: "Sitting on hours of recorded content?"
   text: "Don't let your webinars and podcasts go to waste. Turn audio, video, notes, or one topic into structured carousels, then review and export."
@@ -83,11 +83,7 @@ finalCta:
 
 You just hosted a brilliant 60-minute webinar or recorded a deeply insightful podcast interview. The content is packed with value. You upload it to YouTube or Spotify, share the link on LinkedIn, and wait. 
 
-The result? Very few clicks. 
-
-The harsh reality of social media is that users are rarely in the mindset to leave the platform to consume a 60-minute piece of content. To maximize the ROI of your long-form efforts, you must bring the value directly to the feed. 
-
-Carousels are the perfect vehicle for this. They allow you to distill complex discussions into digestible, highly-saveable visual documents.
+If your goal is to explain one part of that recording in the feed, choose a self-contained argument and retain its context. A carousel can present the explanation in sequence; it does not establish superior saves, retention, or return on investment without measurements.
 
 ## The Repurposing Pipeline
 
@@ -100,7 +96,7 @@ type: workflow
 Start with the podcast audio, webinar video, transcript, show notes, or a clear topic. GoToFlow can process the source, make a transcript when needed, and identify usable carousel angles.
 
 ### 2. Identify 'Aha Moments'
-Choose the strongest framework, contrarian opinion, or step-by-step process discussed by the guest. One episode should yield 3 to 5 distinct "aha moments."
+Choose a supported framework, opinion, or step-by-step process discussed by the guest. Select only angles that the recording actually supports; there is no required yield per episode. Check quotations against the recording and obtain any necessary permission, attribution, or approval before using a guest's material.
 
 ### 3. Clean and Structure
 Spoken language is messy. Remove filler words, tangents, and conversational back-and-forth. Rewrite the core idea into a structured list or a logical sequence.

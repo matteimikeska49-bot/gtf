@@ -62,9 +62,9 @@ faq:
   - question: "Do AI carousels perform well on Instagram?"
     answer: "Yes, if the content is structured correctly. Carousels can increase engagement and time spent on the post when the first AI-assisted version is reviewed for clarity, accuracy, and visual flow."
   - question: "What is the best format for an Instagram carousel?"
-    answer: "A 4:5 vertical format (1080x1350) works best because it takes up more vertical space in the mobile feed, capturing more attention."
+    answer: "A 4:5 portrait layout such as 1080x1350 gives vertical room for an explanation; square is another layout choice. Inspect the actual upload preview and text readability. This guide provides no evidence that one layout captures more attention for every post."
   - question: "How many slides should my Instagram carousel have?"
-    answer: "Most high-performing carousels have between 6 and 10 slides. Keep each slide focused on a single point to maintain readability."
+    answer: "Use the slides needed to explain one idea without repetition or missing context. Preview the sequence and keep each slide focused; this guide does not establish a universally optimal or high-performing slide count."
   - question: "Should I use photos or graphics in AI carousels?"
     answer: "Both work, but clean graphic-based carousels with large typography are generally easier to read on mobile devices."
 explore:
@@ -145,7 +145,7 @@ A good carousel needs to look professional. Instead of manually adjusting colors
 For input examples, prompts, and a longer review checklist, use the [detailed Instagram AI creation guide](/blog/ai-instagram-carousel-generator).
 
 The [carousel storytelling framework](/blog/instagram-carousel-storytelling) is useful for checking whether the middle slides form a sequence rather than an unrelated list.
-The AI will instantly analyze your input, structure it into a logical flow (Hook → Value → CTA), and apply the design.
+The AI analyzes your input, proposes a sequence (Hook → Value → CTA), and generates the slide design. Compare the result with the source and check the export; processing time is not guaranteed here.
 
 :::mockup{slot="result-preview"}
 :::

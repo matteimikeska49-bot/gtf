@@ -31,7 +31,7 @@ quickAnswer:
   - "**Map sections to slides:** Turn your subheadings (H2s) into individual slides."
   - "**Rewrite for mobile:** Compress each point to 15–25 words maximum per slide."
   - "**Add a strong hook:** Your first slide must create an immediate curiosity gap, not just state the title."
-  - "**Automate the structure:** Use tools like GoToFlow to instantly convert long-form text into a structured, ready carousel."
+  - "**Generate and review:** Use GoToFlow to turn long-form text into carousel structure, copy, and design. Check the result against the source before export."
 faq:
   - question: "Can I just paste my whole blog post into ChatGPT?"
     answer: "Yes, but the result will likely be a dense, unreadable wall of text. It is better to extract the key points or use a dedicated workflow tool."
@@ -110,7 +110,7 @@ Identify one specific angle from your blog post. If your post covers "10 ways to
 Pull out the exact paragraphs, bullet points, and data that support your chosen angle. Deliberately exclude introductions, long transitions, and concluding thoughts from the prompt. Feed the AI only the raw, valuable information.
 
 ### 3. Turn sections into slides
-Map your extracted information to a slide structure. A standard, high-performing 8-slide structure looks like this:
+Map your extracted information to a slide structure. The following eight-slide outline is an illustrative starting point, not a measured high-performing pattern:
 - **Slide 1:** The Hook (Curiosity gap)
 - **Slide 2:** The Problem (Why they should care)
 - **Slides 3-6:** The Solution (Steps or insights)
@@ -162,7 +162,7 @@ When repurposing content, you have two primary approaches depending on how much 
 **The GoToFlow Workflow:**
 1. Paste your blog post text or link directly into the platform.
 2. GoToFlow generates a carousel structure, copy, and visual layout from that source. Check that the sequence preserves the original meaning and that each slide is readable.
-3. Review and edit the text directly within the visual interface without copying and pasting between tools.
+3. Review the script and generated slides against your source, revise or regenerate parts as needed, and inspect the export. Script revision with regeneration differs from editing individual text boxes in a generated image. Check the actual workspace controls before planning those edits.
 
 ## Common mistakes when repurposing content
 

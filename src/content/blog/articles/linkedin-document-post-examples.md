@@ -7,7 +7,7 @@ primaryKeyword: "linkedin document post examples"
 secondaryKeywords: ["li document examples", "pdf posts linkedin", "document carousel linkedin"]
 canonical: "https://gotoflow.io/blog/linkedin-document-post-examples"
 createdAt: 2026-06-12
-updatedAt: "2026-10-09"
+updatedAt: "2026-10-10"
 published: true
 noindex: false
 quickAnswer:
@@ -30,7 +30,7 @@ explore:
   tools:
     - title: "LinkedIn Carousel Maker"
       href: "/linkedin-carousel-maker"
-      description: "Instantly create professional LinkedIn document posts."
+      description: "Create LinkedIn document posts, then check the source, slides, and export."
   guides:
     - title: "Best LinkedIn Carousel Examples"
       href: "/blog/best-linkedin-carousel-examples"

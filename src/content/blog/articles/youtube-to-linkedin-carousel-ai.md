@@ -35,9 +35,9 @@ faq:
   - question: "How long does it take to process a video?"
     answer: "Processing and review time depend on the video, source quality, and changes needed. This guide has no measured processing benchmark. Check the extracted points against the video before exporting."
   - question: "Can I edit the text after the AI generates it?"
-    answer: "Yes, you have full control. You can review, adjust, and edit the slides before exporting."
+    answer: "Review the script and slides against the video, correct or regenerate parts of the result and inspect the export. Script revision with regeneration differs from editing an individual text box in a generated image; check the actual workspace controls before planning those edits."
   - question: "What format does it export in?"
-    answer: "It exports as a high-quality PDF, which is the native format LinkedIn prefers for document carousels."
+    answer: "GoToFlow can export a PDF for this document workflow. LinkedIn also supports PPT, PPTX, DOC and DOCX; accepting PDF does not establish a platform ranking preference. Check the upload preview before publishing."
 explore:
   tools:
     - title: "LinkedIn Carousel Maker"
@@ -61,7 +61,7 @@ finalCta:
 
 Creating a high-quality YouTube video takes hours of research, filming, and editing. But once you hit publish, you shouldn't let that content sit in a silo. Repurposing your video content is the secret to scaling your presence across multiple platforms.
 
-In this guide, we'll show you exactly **how to turn a youtube video into a linkedin carousel with ai** in just a few clicks.
+This guide explains **how to turn a youtube video into a linkedin carousel with ai** through source selection, generation, review, and export. It does not establish a measured click count or processing time.
 
 ## Quick Answer
 
@@ -96,7 +96,7 @@ The AI will process the video, helping extract key ideas, lists, and actionable 
 
 ### Step 2: Configure Your Settings
 
-Once the content is extracted, you have full control over how it looks. You can adjust the tone of voice to match your LinkedIn persona and choose a design template that fits your brand.
+After extraction, review the script's facts and tone against the recording. Specify the visual direction and inspect the generated slides for brand consistency; generation does not guarantee a match or imply direct editing controls for every text box.
 
 :::mockup{slot="format-settings"}
 :::
@@ -110,7 +110,7 @@ With your settings locked in, the AI goes to work. It structures the hook, break
 :::mockup{slot="result-preview"}
 :::
 
-You can review the generated slides, make any final tweaks to the text, and export the finished product as a high-resolution PDF ready for LinkedIn.
+Review the script and generated slides against the video, correct or regenerate parts as needed, and inspect the exported PDF before uploading it to LinkedIn.
 
 ## Best Practices for Video-to-Carousel Repurposing
 

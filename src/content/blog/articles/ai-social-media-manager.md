@@ -39,6 +39,7 @@ quickAnswer:
   - An AI social media manager uses AI tools within an agreed content workflow; the title alone does not define the job or its responsibilities.
   - Generation can cover ideas, copy, and carousel design. Source checking, publication approval, customer replies, and result interpretation need explicit responsibility.
   - Choose tools for the deliverable, review the output against the source, and measure actual production and audience results rather than assuming savings or career replacement.
+  - Use an explicit handoff from verified source materials to reviewed slides, an accountable approver and a separate publishing step, as in the workshop scenario below.
 lastReviewed: '2026-06-13'
 ---
 

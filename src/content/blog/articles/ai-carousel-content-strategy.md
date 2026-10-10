@@ -49,13 +49,13 @@ quickAnswer:
   - "Integrate GoToFlow into your pipeline to eliminate the bottleneck of manual slide design."
 faq:
   - question: "How many carousels should I publish a week?"
-    answer: "Quality beats quantity. Publishing 1 to 2 highly valuable, well-structured carousels a week will outperform 5 low-effort posts."
+    answer: "Choose a cadence your team can sustain with source checks, slide review and replies. One or two posts a week can be a starting planning example, not a promise to outperform five. Compare your own results before changing frequency."
   - question: "What is batching and why is it important?"
     answer: "Batching means doing the same task for multiple posts at once. Brainstorm 10 topics on Monday. Write 5 first versions on Tuesday. Format them all with AI on Wednesday. Context-switching kills productivity."
   - question: "Can I use AI to write the entire content strategy?"
     answer: "AI can suggest pillars and topics based on your inputs, but the overarching strategy and business goals must come from you. AI is the execution engine, not the CEO."
   - question: "How do I ensure all my carousels look like they belong to the same brand?"
-    answer: "Define a strict visual identity (2 fonts, 3 brand colors) and stick to it. By using a consistent AI generation tool, your layouts will maintain a professional and unified aesthetic."
+    answer: "Specify your fonts, colours and visual references in the brief, then compare each generated slide with those requirements. Using the same tool does not guarantee consistent brand execution; review the export before publishing."
   - question: "Where should my carousels lead users?"
     answer: "Every piece of content must have a job. Your strategy should dictate the CTA. Some carousels drive newsletter signups, some drive product demos, and others exist purely to build follower trust."
 explore:
@@ -118,7 +118,7 @@ Pick 2-3 topics. Write the core knowledge in a simple text document. Do not worr
 ### Phase 3: AI Formatting & Structure (Weekly)
 Use the [text-to-carousel production steps](/blog/text-to-carousel-ai) to turn each selected source into a slide sequence; the strategy here determines which sources enter that process.
 
-This is where you save hours. 
+Record the time spent on generation, corrections and export to see whether this phase reduces work for your material.
 
 > [!tip]
 > **Eliminate the design phase**

@@ -30,7 +30,7 @@ explore:
   tools:
     - title: "LinkedIn Carousel Maker"
       href: "/linkedin-carousel-maker"
-      description: "Turn your founder insights into professional carousels in minutes."
+      description: "Turn founder insights into carousels, review the slides, and export."
   guides:
     - title: "Best LinkedIn Carousel Examples"
       href: "/blog/best-linkedin-carousel-examples"
@@ -56,7 +56,7 @@ A founder strategy starts with a recognisable point of view. The [personal-brand
 
 In 2026, B2B buyers are skeptical of polished corporate marketing. They want raw, authentic insights from the people actually building the product. 
 
-When a company page posts, it feels like an advertisement. When a founder posts, it feels like a conversation. A strong founder content strategy lowers customer acquisition costs (CAC) and creates a moat that competitors cannot easily copy.
+A founder can explain decisions and experience in their own voice; a company Page can communicate official updates. Assess how readers respond to each source. Measure qualified enquiries, attributable acquisition costs and production work before claiming an economic advantage from a founder strategy.
 
 ## The 3 Pillars of Founder Content
 

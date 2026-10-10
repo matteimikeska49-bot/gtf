@@ -4,12 +4,6 @@ import { Cookie } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 
-// Legacy key — used for RU to stay backward-compatible
-const LEGACY_KEY = 'cookiesAccepted';
-// New structured key — used for EN
-const CONSENT_KEY = 'gtf_cookie_consent';
-const CONSENT_DATE = '2026-02-19';
-
 export const CookieBanner = () => {
   const { t, lang } = useLanguage();
   const isEN = lang === 'EN';
@@ -19,12 +13,7 @@ export const CookieBanner = () => {
     // Consent is interactive client state, not a time-dependent build artifact.
     // Do not set consent: the normal visitor effect below still runs unchanged.
     if (typeof window.__GTF_PRERENDER_ROUTE === 'string') return;
-    let alreadySet = false;
-    if (isEN) {
-      alreadySet = !!localStorage.getItem(CONSENT_KEY);
-    } else {
-      alreadySet = !!localStorage.getItem(LEGACY_KEY);
-    }
+    const alreadySet = window.gtfAnalytics?.readChoice() !== null && Boolean(window.gtfAnalytics);
     if (!alreadySet) {
       const timer = setTimeout(() => setVisible(true), 1200);
       return () => clearTimeout(timer);
@@ -33,25 +22,19 @@ export const CookieBanner = () => {
 
   // EN: Accept all
   const handleAcceptAll = () => {
-    localStorage.setItem(
-      CONSENT_KEY,
-      JSON.stringify({ necessary: true, optional: true, updatedAt: CONSENT_DATE })
-    );
+    window.gtfAnalytics?.setConsent(true);
     setVisible(false);
   };
 
   // EN: Reject optional
   const handleReject = () => {
-    localStorage.setItem(
-      CONSENT_KEY,
-      JSON.stringify({ necessary: true, optional: false, updatedAt: CONSENT_DATE })
-    );
+    window.gtfAnalytics?.setConsent(false);
     setVisible(false);
   };
 
   // RU: legacy single accept
   const handleAcceptLegacy = () => {
-    localStorage.setItem(LEGACY_KEY, 'true');
+    window.gtfAnalytics?.setConsent(true);
     setVisible(false);
   };
 
@@ -119,13 +102,14 @@ export const CookieBanner = () => {
                   >
                     {t('cookie.accept')}
                   </button>
-                  <button
+                  <Link
                     id="cookie-learn-more-ru"
-                    onClick={handleAcceptLegacy}
+                    to="/ru/politika"
+                    onClick={() => setVisible(false)}
                     className="inline-flex min-h-11 items-center justify-center rounded-md px-3 py-2 text-[11px] text-zinc-500 transition-colors duration-200 hover:text-zinc-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400/60"
                   >
                     {t('cookie.learnMore')}
-                  </button>
+                  </Link>
                 </div>
               )}
             </div>

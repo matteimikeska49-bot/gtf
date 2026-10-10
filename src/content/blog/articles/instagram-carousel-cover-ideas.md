@@ -23,7 +23,7 @@ faq:
   - question: "What is the best font size for a carousel cover?"
     answer: "Your main headline should be massive—often taking up 30-50% of the slide. If you have to squint to read it on your phone, it is too small."
   - question: "Do photos of faces work better on covers?"
-    answer: "Yes, data shows that covers featuring a human face—especially one showing emotion or making eye contact—tend to have higher click-through and swipe rates."
+    answer: "A portrait may fit a first-person story or introduce its author. Use a photo with permission and compare your own covers; this article provides no dataset proving higher click-through or swipe rates from faces."
   - question: "How many words should be on the cover slide?"
     answer: "Keep it under 10 words if possible. The headline should be punchy and direct. You can explain the details on the following slides."
 explore:
@@ -141,7 +141,7 @@ Design the cover to look like a blueprint, wireframe, or fillable template previ
 
 ### 15. The Founder / Personality Cover
 A candid, authentic photo of you at work — not a polished headshot — with a short, relatable statement overlaid.
-* **Why it works:** Personal authenticity outperforms corporate polish. It builds a parasocial connection.
+* **When to use it:** A personal photo can identify the author of a first-person account. Match the image to the actual story; it does not establish a performance advantage over a corporate layout.
 * **Example headline:** "I almost quit last month. Here's why I didn't."
 
 > [!workflow]

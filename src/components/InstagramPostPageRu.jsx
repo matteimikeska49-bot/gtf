@@ -34,7 +34,7 @@ const defaultPostPageConfig = {
   h1: <>Генератор постов для Instagram* <br className="hidden md:block" /> <span className="text-gradient-brand">с помощью ИИ</span></>,
   h1Text: 'Генератор постов для Instagram* с помощью ИИ',
   heroEyebrow: 'Генератор постов для Instagram',
-  heroSubtitle: <>GoToFlow помогает превратить тему или черновик в пост для Instagram: придумать хук, собрать основной текст, визуальную подачу и CTA, а затем отредактировать материал перед ручной публикацией.</>,
+  heroSubtitle: <>GoToFlow помогает превратить тему или исходные материалы в пост для Instagram: придумать хук, собрать основной текст, визуальную подачу и CTA, а затем отредактировать материал перед ручной публикацией.</>,
   heroCta: 'Создать пост',
   secondaryCta: 'Примеры постов',
   proofTitle: <>Примеры визуальной подачи <span className="text-gradient-brand">для постов Instagram*</span></>,
@@ -42,7 +42,7 @@ const defaultPostPageConfig = {
   quickAnswer: null,
   productBridgeTitle: 'Что такое генератор постов с ИИ',
   productBridge: [
-    <>Генератор постов с ИИ помогает перейти от темы или черновика к понятной публикации для Instagram*: сформулировать <strong className="text-zinc-200">хук, основную мысль и CTA</strong>, а также продумать визуальную подачу.</>,
+    <>Генератор постов с ИИ помогает перейти от темы или исходного текста к понятной публикации для Instagram*: сформулировать <strong className="text-zinc-200">хук, основную мысль и CTA</strong>, а также продумать визуальную подачу.</>,
     <>GoToFlow учитывает цель поста и контекст исходного материала. Результат можно проверить, отредактировать и адаптировать под голос автора или бренда до публикации.</>,
     'Эта страница отвечает за обычный Instagram-пост. Для последовательности из нескольких карточек используется отдельный генератор каруселей Instagram.',
   ],
@@ -62,9 +62,9 @@ const defaultPostPageConfig = {
     { href: '/ru/generator-kontenta', title: 'Генератор контента' },
   ],
   faqItems: [
-    { q: 'Что делает генератор постов для Instagram?', a: 'Он помогает превратить тему или черновик в основу публикации: хук, основной текст, визуальную подачу и CTA.' },
+    { q: 'Что делает генератор постов для Instagram?', a: 'Он помогает превратить тему или исходные материалы в готовый пост: хук, основной текст, визуальную подачу и CTA.' },
     { q: 'Можно ли начать с одной идеи?', a: 'Да. Опишите тему, аудиторию и цель поста, чтобы ИИ предложил связный вариант для дальнейшей редакции.' },
-    { q: 'Можно ли использовать свой черновик?', a: 'Да. Вставьте готовый текст или заметки, затем проверьте структуру и отредактируйте формулировки под свой стиль.' },
+    { q: 'Можно ли использовать свой исходный текст?', a: 'Да. Вставьте готовый текст или заметки, затем проверьте структуру и отредактируйте формулировки под свой стиль.' },
     { q: 'Можно ли начать со ссылки на источник?', a: 'Да. Ссылка может быть исходным материалом, но факты и итоговые формулировки нужно проверить перед публикацией.' },
     { q: 'Можно ли сохранить свой tone of voice?', a: 'Можно задать желаемую подачу и вручную отредактировать результат, чтобы он звучал естественно для вашего аккаунта.' },
     { q: 'Помогает ли ИИ с первым предложением?', a: 'Да. GoToFlow помогает сформулировать хук, который сразу обозначает тему и пользу публикации.' },
@@ -437,7 +437,7 @@ export const CarouselComparisonRu = () => {
               <div className="rounded-2xl p-6 md:p-8 flex flex-col h-full" style={{ background:'rgba(5,5,5,0.6)', border:'1px solid rgba(255,255,255,0.03)', boxShadow:'inset 0 4px 24px rgba(0,0,0,0.4)' }}>
                 <p className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-600 mb-8 text-center">Обычный путь</p>
                 <div className="flex flex-col gap-5 flex-1">
-                  {['Пишете хук отдельно от основного текста','Храните черновик и визуальные идеи в разных местах','Каждый раз собираете оформление с нуля','Получаете сырой AI-текст и полностью переписываете его','Нет системы — каждый пост начинается с нуля'].map((t,i)=>(
+                  {['Пишете хук отдельно от основного текста','Храните исходный текст и визуальные идеи в разных местах','Каждый раз собираете оформление с нуля','Получаете сырой AI-текст и полностью переписываете его','Нет системы — каждый пост начинается с нуля'].map((t,i)=>(
                     <div key={i} className="flex items-start gap-4"><div className="shrink-0 mt-1 w-5 h-5 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center"><X className="w-3 h-3 text-zinc-600"/></div><p className="text-sm md:text-base text-zinc-500 leading-relaxed">{t}</p></div>
                   ))}
                 </div>
@@ -445,7 +445,7 @@ export const CarouselComparisonRu = () => {
               <div className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-colors duration-500" style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', boxShadow:'0 20px 40px -10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)', backdropFilter:'blur(16px)' }}>
                 <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-10">GoToFlow</p>
                 <div className="flex flex-col gap-5 flex-1 relative z-10">
-                  {['Введите тему, черновик или ссылку на источник','ИИ помогает собрать хук, основную мысль и CTA','Проверьте текст и визуальную подачу в одном процессе','Отредактируйте результат под задачу публикации','Сохраните свой tone of voice перед скачиванием'].map((t,i)=>(
+                  {['Введите тему, исходный текст или ссылку на источник','ИИ помогает собрать хук, основную мысль и CTA','Проверьте текст и визуальную подачу в одном процессе','Отредактируйте результат под задачу публикации','Сохраните свой tone of voice перед скачиванием'].map((t,i)=>(
                     <div key={i} className="flex items-start gap-4"><div className="shrink-0 mt-1 w-5 h-5 rounded-full border border-pink-500/30 bg-[rgba(244,63,94,0.1)] flex items-center justify-center"><Check className="w-3 h-3 text-pink-400" strokeWidth={3}/></div><p className="text-sm md:text-base text-white font-medium leading-relaxed">{t}</p></div>
                   ))}
                 </div>

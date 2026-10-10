@@ -11,6 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const ARTICLES_DIR = path.join(ROOT, 'src/content/blog/articles');
 const OUT_DIR = path.join(ROOT, 'tmp', 'blog-visual-qa');
+const captureScreenshots = !process.argv.includes('--no-screenshots');
 
 if (!fs.existsSync(OUT_DIR)) {
   fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -149,8 +150,10 @@ async function checkRoutes() {
 
       const safeName = `${item.language}-blog-${item.slug}`;
       const desktopPath = path.join(OUT_DIR, `${safeName}-desktop.png`);
-      await page.screenshot({ path: desktopPath, fullPage: true });
-      pageReport.desktopScreenshot = `${safeName}-desktop.png`;
+      if (captureScreenshots) {
+        await page.screenshot({ path: desktopPath, fullPage: true });
+        pageReport.desktopScreenshot = `${safeName}-desktop.png`;
+      }
       
       let evalDataDesktop = await page.evaluate(() => {
         let offendingElements = [];
@@ -203,8 +206,10 @@ async function checkRoutes() {
       }
       
       const mobilePath = path.join(OUT_DIR, `${safeName}-mobile.png`);
-      await page.screenshot({ path: mobilePath, fullPage: true });
-      pageReport.mobileScreenshot = `${safeName}-mobile.png`;
+      if (captureScreenshots) {
+        await page.screenshot({ path: mobilePath, fullPage: true });
+        pageReport.mobileScreenshot = `${safeName}-mobile.png`;
+      }
 
       let evalDataMobile = await page.evaluate(() => {
         let offendingElements = [];

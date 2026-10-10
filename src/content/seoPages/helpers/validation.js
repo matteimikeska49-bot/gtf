@@ -52,7 +52,6 @@ export const REQUIRED_SEO_PAGE_FIELDS = [
 
 const hasText = (value) => typeof value === 'string' && value.trim().length > 0;
 const hasItems = (value) => Array.isArray(value) && value.length > 0;
-const hasCta = (cta) => Boolean(cta?.label && cta?.href);
 const RAW_HTML_PATTERN = /<[^>]+>/u;
 const findSection = (page, names) => (
   (page.sections || []).some((section) => names.includes(section.id)) ||

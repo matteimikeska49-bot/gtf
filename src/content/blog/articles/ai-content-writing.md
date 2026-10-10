@@ -148,7 +148,7 @@ Traditionally, the next step involves opening a graphic design tool like Figma o
 
 While tools like Canva and Figma are powerful for custom design, they are not optimized for rapid, automated content production based on text. They require significant manual effort to bridge the gap between your AI-generated script and the final visual asset.
 
-### The Product-Positive Next Step: GoToFlow
+### Turn Reviewed Copy into a GoToFlow Carousel
 
 To reduce manual design friction, use an end-to-end platform like [GoToFlow](/ai-content-generator) for the full carousel workflow.
 

@@ -1,0 +1,1 @@
+import{g as e,w as t}from"./Footer-Bc4nCZID.js";import{t as n}from"./BlogHubLayout-YFUwuYNL.js";t();var r=e(),i=()=>(0,r.jsx)(n,{isRu:!1});export{i as BlogPage};

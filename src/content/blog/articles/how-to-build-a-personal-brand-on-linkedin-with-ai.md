@@ -71,7 +71,7 @@ This prompt helps keep your content anchored in the problems and language of the
 
 ## 3. The "Voice Cloning" Workflow
 
-If your posts start with "In today's fast-paced digital landscape...", your audience will instantly know an AI wrote it, and your personal brand will suffer. **Your brand must sound like you.**
+An opening such as "In today's fast-paced digital landscape..." is generic, but does not prove who or what wrote it. Replace clichés with a concrete question and check the tone against your own writing. **Your brand should sound like you.**
 
 **The Workflow:**
 1. Pick a topic from your ideation list.

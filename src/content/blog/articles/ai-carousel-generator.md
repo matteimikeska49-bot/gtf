@@ -15,7 +15,7 @@ articleRole: "hub"
 hubSlug: "ai-carousel-generator"
 canonical: "https://gotoflow.io/blog/ai-carousel-generator"
 createdAt: "2026-06-09"
-updatedAt: "2026-10-09"
+updatedAt: "2026-10-10"
 targetKeyword: "ai carousel generator"
 secondaryKeywords: "ai carousel maker, free carousel generator, text to carousel ai"
 relatedProductRoute: "/ai-carousel-maker"
@@ -45,7 +45,7 @@ faq:
   - question: "How is an AI carousel maker different from Canva?"
     answer: "Compare the actual workflow rather than assuming a design editor only has static templates. GoToFlow connects source analysis, slide structure, copy and design in one carousel creation process; review the result before export."
   - question: "Is it possible to edit the text on the slides after generation?"
-    answer: "Absolutely. You can edit any slide, change colors, or rewrite hooks before the final export."
+    answer: "Review the script and slide text, revise or regenerate parts of the result, and choose visual direction before export. Script revision and regeneration are distinct from directly editing individual text boxes in a generated image. Check the actual workspace controls before planning font or layout changes."
   - question: "Does the AI automatically split long text into slides?"
     answer: "GoToFlow analyses the source and proposes a slide sequence. Check that the chosen number of slides fits the message and that each slide remains readable; a slide count does not guarantee engagement."
 
@@ -88,7 +88,7 @@ Switching to an automated workflow is simple. Here is how you can use [GoToFlow]
 Start by providing the AI with your core message. You can paste a full article, a list of tips, or even just a brief topic prompt. The AI acts as your editor, understanding the core value and distilling it into slide-sized bites.
 
 ### 2. Customize the Theme and Layout
-Once the AI generates the first complete version, you retain full control. You can adjust the color scheme, swap fonts, or modify the layout style to match your brand identity. The heavy lifting is done, leaving you to make minor aesthetic tweaks.
+Specify the colour palette, font direction and visual references you want the generation to follow. Review the script, generated slides and export against that brief; revise or regenerate a part that misses the intended meaning or style. This is not a promise of a particular font-swapping control, freely editable text boxes, or automatic brand matching on every slide.
 
 ### 3. Export for LinkedIn and Instagram
 When you are satisfied with the result, it’s time to export. You can download the carousel as a high-quality PDF document (ideal for LinkedIn) or as a sequence of PNG/JPG images (perfect for Instagram).
