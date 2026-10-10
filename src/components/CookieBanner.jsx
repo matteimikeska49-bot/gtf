@@ -16,6 +16,9 @@ export const CookieBanner = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Consent is interactive client state, not a time-dependent build artifact.
+    // Do not set consent: the normal visitor effect below still runs unchanged.
+    if (typeof window.__GTF_PRERENDER_ROUTE === 'string') return;
     let alreadySet = false;
     if (isEN) {
       alreadySet = !!localStorage.getItem(CONSENT_KEY);

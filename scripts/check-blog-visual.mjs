@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import { resolveProjectSeoState } from './lib/project-seo-state.mjs';
 import { resolveReleaseScope } from './lib/release-scope.mjs';
 import { sha256 } from './lib/production-artifact-parity.mjs';
+import { checkBrowserImages, isAnalyticsDependency } from './lib/browser-image-qa.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -86,6 +87,8 @@ async function checkRoutes() {
       mobileScreenshot: null,
       status: null,
       consoleErrors: [],
+      consoleErrorDetails: [],
+      images: {},
       pageErrors: [],
       hasViteOverlay: false,
       hasRawDirectives: false,
@@ -110,6 +113,7 @@ async function checkRoutes() {
       page.on('console', msg => {
         if (msg.type() === 'error') {
           pageReport.consoleErrors.push(msg.text());
+          pageReport.consoleErrorDetails.push({ text: msg.text(), url: msg.location().url || '' });
         }
       });
 
@@ -135,6 +139,7 @@ async function checkRoutes() {
       }
       
       pageReport.status = response.status();
+      pageReport.images.desktop = await checkBrowserImages(page);
       
       // hide vite overlay for screenshot if exists
       await page.evaluate(() => {
@@ -192,6 +197,10 @@ async function checkRoutes() {
       // Mobile test & screenshot
       await page.setViewport({ width: 390, height: 844, isMobile: true, hasTouch: true });
       await page.reload({ waitUntil: 'networkidle2', timeout: 30000 });
+      pageReport.images.mobile = await checkBrowserImages(page);
+      for (const image of [...pageReport.images.desktop, ...pageReport.images.mobile]) {
+        if (!image.passed) pageReport.pageErrors.push(`Image decode failed: ${image.url}: ${image.error}`);
+      }
       
       const mobilePath = path.join(OUT_DIR, `${safeName}-mobile.png`);
       await page.screenshot({ path: mobilePath, fullPage: true });
@@ -391,6 +400,12 @@ async function checkRoutes() {
       }
 
       const filteredConsole = pageReport.consoleErrors.filter(e => !e.toLowerCase().includes('favicon'));
+      pageReport.analyticsFailures = pageReport.failedRequests.filter((request) => isAnalyticsDependency(request.url));
+      pageReport.applicationPassed = pageReport.status === 200 && pageReport.pageErrors.length === 0 &&
+        !Object.keys(pageReport).some((key) => key.startsWith('has') && pageReport[key] === true) &&
+        !pageReport.failedRequests.some((request) => !isAnalyticsDependency(request.url)) &&
+        !pageReport.consoleErrorDetails.some((error) => !error.text.toLowerCase().includes('favicon') &&
+          !(error.text.startsWith('Failed to load resource: net::') && isAnalyticsDependency(error.url)));
       if (filteredConsole.length > 0) {
         pageReport.passed = false;
         hasP0Errors = true;
