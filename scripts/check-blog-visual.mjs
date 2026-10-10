@@ -2,11 +2,16 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { resolveProjectSeoState } from './lib/project-seo-state.mjs';
+import { resolveReleaseScope } from './lib/release-scope.mjs';
+import { sha256 } from './lib/production-artifact-parity.mjs';
+import { checkBrowserImages, isAnalyticsDependency } from './lib/browser-image-qa.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const ARTICLES_DIR = path.join(ROOT, 'src/content/blog/articles');
 const OUT_DIR = path.join(ROOT, 'tmp', 'blog-visual-qa');
+const captureScreenshots = !process.argv.includes('--no-screenshots');
 
 if (!fs.existsSync(OUT_DIR)) {
   fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -34,23 +39,29 @@ async function checkRoutes() {
   
   const files = fs.readdirSync(ARTICLES_DIR).filter(f => f.endsWith('.md') && f !== '_template.md');
   const routesToCheck = [];
+  const prScope = process.argv.includes('--pr-scope') ? resolveReleaseScope(ROOT) : null;
+  const resolved = resolveProjectSeoState(ROOT);
   
   for (const file of files) {
     const filePath = path.join(ARTICLES_DIR, file);
     const content = fs.readFileSync(filePath, 'utf-8');
+    if (prScope && !prScope.paths.includes(`src/content/blog/articles/${file}`)) continue;
     const frontmatter = extractFrontmatter(content);
     if (!frontmatter) continue;
     
-    const slug = getYamlValue(frontmatter, 'slug');
+    const entry = resolved.entries.find((item) => item.sourcePath === `src/content/blog/articles/${file}` && item.prerender);
+    if (prScope && !entry) throw new Error(`Changed article has no resolved prerender route: ${file}`);
+    const slug = entry ? path.basename(entry.path) : getYamlValue(frontmatter, 'slug');
     const language = getYamlValue(frontmatter, 'language') || 'en';
     const title = getYamlValue(frontmatter, 'title');
     const published = getYamlValue(frontmatter, 'published');
     
     if (slug) {
-      const route = language === 'ru' ? `/ru/blog/${slug}/` : `/blog/${slug}/`;
+      const route = entry ? `${entry.path}/` : language === 'ru' ? `/ru/blog/${slug}/` : `/blog/${slug}/`;
       routesToCheck.push({ route, file, slug, language, title, published });
     }
   }
+  if (prScope && routesToCheck.length !== prScope.articles.length) throw new Error('Incomplete PR browser scope.');
 
   const baseUrl = process.env.BLOG_QA_BASE_URL || 'http://localhost:4173';
   console.log(`Found ${routesToCheck.length} articles to check.`);
@@ -70,10 +81,15 @@ async function checkRoutes() {
       language: item.language,
       title: item.title,
       published: item.published,
+      sourceSha256: sha256(fs.readFileSync(path.join(ARTICLES_DIR, item.file))),
+      renderedSha256: sha256(fs.readFileSync(path.join(ROOT, 'dist', item.route.replace(/^\//, ''), 'index.html'))),
+      failedRequests: [],
       desktopScreenshot: null,
       mobileScreenshot: null,
       status: null,
       consoleErrors: [],
+      consoleErrorDetails: [],
+      images: {},
       pageErrors: [],
       hasViteOverlay: false,
       hasRawDirectives: false,
@@ -98,10 +114,12 @@ async function checkRoutes() {
       page.on('console', msg => {
         if (msg.type() === 'error') {
           pageReport.consoleErrors.push(msg.text());
+          pageReport.consoleErrorDetails.push({ text: msg.text(), url: msg.location().url || '' });
         }
       });
 
       page.on('requestfailed', request => {
+        pageReport.failedRequests.push({ url: request.url(), resourceType: request.resourceType(), error: request.failure()?.errorText });
         if (request.resourceType() === 'image') {
           pageReport.warnings.push(`Broken image request: ${request.url()}`);
         }
@@ -122,6 +140,7 @@ async function checkRoutes() {
       }
       
       pageReport.status = response.status();
+      pageReport.images.desktop = await checkBrowserImages(page);
       
       // hide vite overlay for screenshot if exists
       await page.evaluate(() => {
@@ -131,8 +150,10 @@ async function checkRoutes() {
 
       const safeName = `${item.language}-blog-${item.slug}`;
       const desktopPath = path.join(OUT_DIR, `${safeName}-desktop.png`);
-      await page.screenshot({ path: desktopPath, fullPage: true });
-      pageReport.desktopScreenshot = `${safeName}-desktop.png`;
+      if (captureScreenshots) {
+        await page.screenshot({ path: desktopPath, fullPage: true });
+        pageReport.desktopScreenshot = `${safeName}-desktop.png`;
+      }
       
       let evalDataDesktop = await page.evaluate(() => {
         let offendingElements = [];
@@ -179,10 +200,16 @@ async function checkRoutes() {
       // Mobile test & screenshot
       await page.setViewport({ width: 390, height: 844, isMobile: true, hasTouch: true });
       await page.reload({ waitUntil: 'networkidle2', timeout: 30000 });
+      pageReport.images.mobile = await checkBrowserImages(page);
+      for (const image of [...pageReport.images.desktop, ...pageReport.images.mobile]) {
+        if (!image.passed) pageReport.pageErrors.push(`Image decode failed: ${image.url}: ${image.error}`);
+      }
       
       const mobilePath = path.join(OUT_DIR, `${safeName}-mobile.png`);
-      await page.screenshot({ path: mobilePath, fullPage: true });
-      pageReport.mobileScreenshot = `${safeName}-mobile.png`;
+      if (captureScreenshots) {
+        await page.screenshot({ path: mobilePath, fullPage: true });
+        pageReport.mobileScreenshot = `${safeName}-mobile.png`;
+      }
 
       let evalDataMobile = await page.evaluate(() => {
         let offendingElements = [];
@@ -378,6 +405,12 @@ async function checkRoutes() {
       }
 
       const filteredConsole = pageReport.consoleErrors.filter(e => !e.toLowerCase().includes('favicon'));
+      pageReport.analyticsFailures = pageReport.failedRequests.filter((request) => isAnalyticsDependency(request.url));
+      pageReport.applicationPassed = pageReport.status === 200 && pageReport.pageErrors.length === 0 &&
+        !Object.keys(pageReport).some((key) => key.startsWith('has') && pageReport[key] === true) &&
+        !pageReport.failedRequests.some((request) => !isAnalyticsDependency(request.url)) &&
+        !pageReport.consoleErrorDetails.some((error) => !error.text.toLowerCase().includes('favicon') &&
+          !(error.text.startsWith('Failed to load resource: net::') && isAnalyticsDependency(error.url)));
       if (filteredConsole.length > 0) {
         pageReport.passed = false;
         hasP0Errors = true;

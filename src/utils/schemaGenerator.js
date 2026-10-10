@@ -37,7 +37,7 @@ export const getWebPageSchema = (path, name, desc, lang = 'en', metadata = {}) =
   ...schemaDates(metadata),
 });
 
-export const getSoftwareSchema = (path, name, desc, lang = 'en') => ({
+export const getSoftwareSchema = (path, name, desc) => ({
   "@type": "SoftwareApplication",
   "@id": `https://gotoflow.io${path}#software`,
   "name": "GoToFlow",

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import { MainLayout } from './components/MainLayout';
@@ -16,33 +16,30 @@ import { PricingSection } from './components/PricingSection';
 import { BottomCTA } from './components/BottomCTA';
 import { Footer } from './components/Footer';
 import { CookieBanner } from './components/CookieBanner';
-import { CarouselPage } from './components/CarouselPage';
-import { CarouselPageRu } from './components/CarouselPageRu';
-import { RuAICarouselGeneratorPage } from './components/RuAICarouselGeneratorPage';
-import { AIContentPage } from './components/AIContentPage';
-import { InstagramPostPage } from './components/InstagramPostPage';
-import { AIContentPageRu } from './components/AIContentPageRu';
-import { InstagramPostPageRu } from './components/InstagramPostPageRu';
-import { LinkedInCarouselPage } from './components/LinkedInCarouselPage';
-import { LinkedInCarouselPageRu } from './components/LinkedInCarouselPageRu';
-import { LinkedInPostPageRu } from './components/LinkedInPostPageRu';
-import { BlogPage } from './components/BlogPage';
-import { BlogPageRu } from './components/BlogPageRu';
-
-
-
-import { MarkdownBlogArticlePage } from './components/blog/MarkdownBlogArticlePage';
-import { SeoHubPage } from './components/seo/SeoHubPage';
-import { SeoPageRoute } from './components/seo/SeoPageRoute';
-import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
-import { RefundPolicyPage } from './components/RefundPolicyPage';
-import { TermsOfServicePage } from './components/TermsOfServicePage';
-import { PersonalDataConsentPage } from './components/PersonalDataConsentPage';
-import { NotFoundPage } from './components/NotFoundPage';
-import { PricingPage } from './components/PricingPage';
-import { RuTermsOfServicePage } from './components/RuTermsOfServicePage';
-import { RuPersonalDataConsentPage } from './components/RuPersonalDataConsentPage';
-import { UgcCreatorTermsRu } from './components/UgcCreatorTermsRu';
+// Keep unrelated page templates and the Markdown corpus off the landing path.
+const CarouselPage = lazy(() => import('./components/CarouselPage').then(m => ({ default: m.CarouselPage })));
+const RuAICarouselGeneratorPage = lazy(() => import('./components/RuAICarouselGeneratorPage').then(m => ({ default: m.RuAICarouselGeneratorPage })));
+const AIContentPage = lazy(() => import('./components/AIContentPage').then(m => ({ default: m.AIContentPage })));
+const InstagramPostPage = lazy(() => import('./components/InstagramPostPage').then(m => ({ default: m.InstagramPostPage })));
+const AIContentPageRu = lazy(() => import('./components/AIContentPageRu').then(m => ({ default: m.AIContentPageRu })));
+const InstagramPostPageRu = lazy(() => import('./components/InstagramPostPageRu').then(m => ({ default: m.InstagramPostPageRu })));
+const LinkedInCarouselPage = lazy(() => import('./components/LinkedInCarouselPage').then(m => ({ default: m.LinkedInCarouselPage })));
+const LinkedInCarouselPageRu = lazy(() => import('./components/LinkedInCarouselPageRu').then(m => ({ default: m.LinkedInCarouselPageRu })));
+const LinkedInPostPageRu = lazy(() => import('./components/LinkedInPostPageRu').then(m => ({ default: m.LinkedInPostPageRu })));
+const BlogPage = lazy(() => import('./components/BlogPage').then(m => ({ default: m.BlogPage })));
+const BlogPageRu = lazy(() => import('./components/BlogPageRu').then(m => ({ default: m.BlogPageRu })));
+const MarkdownBlogArticlePage = lazy(() => import('./components/blog/MarkdownBlogArticlePage').then(m => ({ default: m.MarkdownBlogArticlePage })));
+const SeoHubPage = lazy(() => import('./components/seo/SeoHubPage').then(m => ({ default: m.SeoHubPage })));
+const SeoPageRoute = lazy(() => import('./components/seo/SeoPageRoute').then(m => ({ default: m.SeoPageRoute })));
+const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage').then(m => ({ default: m.PrivacyPolicyPage })));
+const RefundPolicyPage = lazy(() => import('./components/RefundPolicyPage').then(m => ({ default: m.RefundPolicyPage })));
+const TermsOfServicePage = lazy(() => import('./components/TermsOfServicePage').then(m => ({ default: m.TermsOfServicePage })));
+const PersonalDataConsentPage = lazy(() => import('./components/PersonalDataConsentPage').then(m => ({ default: m.PersonalDataConsentPage })));
+const NotFoundPage = lazy(() => import('./components/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
+const PricingPage = lazy(() => import('./components/PricingPage').then(m => ({ default: m.PricingPage })));
+const RuTermsOfServicePage = lazy(() => import('./components/RuTermsOfServicePage').then(m => ({ default: m.RuTermsOfServicePage })));
+const RuPersonalDataConsentPage = lazy(() => import('./components/RuPersonalDataConsentPage').then(m => ({ default: m.RuPersonalDataConsentPage })));
+const UgcCreatorTermsRu = lazy(() => import('./components/UgcCreatorTermsRu').then(m => ({ default: m.UgcCreatorTermsRu })));
 
 const LandingPage = () => (
   <MainLayout>
@@ -55,7 +52,7 @@ const LandingPage = () => (
     <HowItWorksSection />
     <DifferentiationSection />
     <FAQSection />
-    <TestimonialsSection />
+    <TestimonialsSection enabled={false} />
     <PricingSection />
     <BottomCTA />
     <Footer />
@@ -72,6 +69,7 @@ function App() {
     <LanguageProvider>
       <ScrollToTop />
       <RouteSchemaInjector />
+      <Suspense fallback={<div role="status" className="min-h-screen bg-[#050505]" aria-label="Loading page" />}>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/ru" element={<LandingPage />} />
@@ -136,6 +134,7 @@ function App() {
         <Route path="/ru/blog/:slug" element={<MarkdownBlogArticlePage langPrefix="ru" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      </Suspense>
     </LanguageProvider>
   );
 }

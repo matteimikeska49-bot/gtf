@@ -1,7 +1,7 @@
 import React, { useRef, useCallback } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-export const TestimonialsSection = () => {
+export const TestimonialsSection = ({ enabled = true }) => {
   const { t, lang } = useLanguage();
   const rawTestimonials = t('testimonials.items') || [];
   const sliderRef = useRef(null);
@@ -64,6 +64,10 @@ export const TestimonialsSection = () => {
   const authorClass = isRu
     ? "flex items-center gap-3 mt-auto pt-2"
     : "flex items-center gap-3 mt-4";
+
+  // Keep attribution intact, but do not publish unverified testimonials/results.
+  // Re-enabling requires evidence for the exact quotes and statistics.
+  if (!enabled) return null;
 
   return (
     <section className="relative z-10 py-16 md:py-24 w-full flex flex-col items-center overflow-hidden">

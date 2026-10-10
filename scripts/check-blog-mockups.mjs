@@ -6,6 +6,10 @@ import { MOCKUP_SLOT_MAP, VALID_MOCKUP_SLOTS } from '../src/lib/blog/mockupSlots
 import { MOCKUP_POLICY } from '../src/lib/blog/mockupPolicy.js';
 
 function getActiveArticleFiles() {
+  if (process.env.BLOG_RELEASE_MODE === '1') {
+    return (process.env.BLOG_RELEASE_ARTICLE_SLUGS || '').split(',').filter(Boolean)
+      .map((slug) => path.resolve('src/content/blog/articles', `${slug}.md`));
+  }
   const activeFiles = new Set();
   const args = process.argv.slice(2);
   args.forEach(arg => {

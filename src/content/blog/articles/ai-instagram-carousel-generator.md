@@ -8,7 +8,7 @@ noindex: false
 preview: false
 canonical: "https://gotoflow.io/blog/ai-instagram-carousel-generator"
 createdAt: "2024-01-01"
-updatedAt: "2026-06-11"
+updatedAt: "2026-10-10"
 slug: "ai-instagram-carousel-generator"
 articleType: "comparison_article"
 primaryKeyword: "ai instagram carousel generator"
@@ -28,9 +28,8 @@ faq:
     answer: "A 4:5 portrait format is commonly used because it gives more vertical space in the feed and improves mobile readability. Still, Instagram previews and publishing flows can vary, so the safest approach is to design mobile-first, keep key text centered, and preview the final carousel before publishing."
 finalCta:
   title: "Still creating carousels manually?"
-  description: "Turn a topic, link, video, or rough note into a structured Instagram carousel with angle, hook, slide flow, copy, and visual direction."
+  text: "Turn a topic, link, video, or rough note into a structured Instagram carousel with angle, hook, slide flow, copy, and visual direction."
   buttonText: "Try GoToFlow For Free"
-  href: "/ai-carousel-maker"
   secondaryText: "Explore Instagram carousel hooks →"
   secondaryHref: "/blog/instagram-carousel-hooks"
 
@@ -43,7 +42,7 @@ explore:
   tools:
     - title: "AI Carousel Maker"
       href: "/ai-carousel-maker"
-      description: "Generate professional Instagram carousels in seconds."
+      description: "Create an Instagram carousel from your source, review the slides, and export."
   guides:
     - title: "Instagram Carousel Prompts"
       href: "/blog/instagram-carousel-prompts"

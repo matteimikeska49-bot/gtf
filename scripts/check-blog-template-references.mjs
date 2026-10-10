@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { isMaintenanceEvidenceDatum, forbiddenEvidenceTemplateAssertions } from './lib/reference-evidence.mjs';
 
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 const SCAN_ROOTS = ['docs', 'scripts'];
@@ -40,6 +41,14 @@ for (const file of files) {
   const relative = path.relative(ROOT, file);
   if (relative === 'scripts/check-blog-template-references.mjs') continue;
   const content = fs.readFileSync(file, 'utf8');
+  if (relative.startsWith('docs/maintenance/') && relative.endsWith('.json')) {
+    let data;
+    try { data = JSON.parse(content); }
+    catch { failures.push(`${relative}: invalid maintenance JSON evidence`); }
+    for (const location of forbiddenEvidenceTemplateAssertions(data)) {
+      failures.push(`${relative}:${location}: evidence must not designate a live article as template source`);
+    }
+  }
   const lines = content.split('\n');
 
   lines.forEach((line, index) => {
@@ -47,7 +56,8 @@ for (const file of files) {
       failures.push(`${relative}:${index + 1}: markdown articles must not be labeled legacy JSX`);
     }
 
-    if (hasLiveArticle(line) && hasReferenceLanguage(line) && !isNegated(line)) {
+    if (hasLiveArticle(line) && hasReferenceLanguage(line) && !isNegated(line)
+      && !isMaintenanceEvidenceDatum(relative, line)) {
       failures.push(`${relative}:${index + 1}: live article route must not be described as canonical/template/reference source`);
     }
 

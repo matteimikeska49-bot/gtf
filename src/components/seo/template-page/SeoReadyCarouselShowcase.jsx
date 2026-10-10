@@ -10,7 +10,7 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
   const isTextDraft = page.resultType === 'editable_draft';
   const isEnglish = page.language === 'en';
   const showcaseCta = page.readyCarouselShowcaseCta || {
-    label: isEnglish ? 'Prepare a draft' : 'Подготовить результат',
+    label: isEnglish ? 'Create a finished post' : 'Подготовить результат',
     href: 'https://app.gotoflow.io',
     action: 'open_app',
     note: 'Перед публикацией результат можно проверить и отредактировать.',
@@ -90,7 +90,7 @@ export const SeoReadyCarouselShowcase = ({ page }) => {
                 className="relative min-h-[210px] border-b border-white/[0.06] bg-gradient-to-br from-zinc-950 via-black to-fuchsia-950/40 p-5"
               >
                 <span className="inline-flex rounded-full border border-emerald-300/15 bg-emerald-300/10 px-3 py-1 text-[11px] font-semibold text-emerald-100">
-                  {isEnglish ? 'Editable draft' : 'Редактируемый черновик'}
+                  {isEnglish ? 'Post for review' : 'Пост для проверки'}
                 </span>
                 <p className="mt-5 text-lg font-bold leading-snug text-white">{item.title}</p>
                 <div className="mt-4 space-y-2" aria-hidden="true">

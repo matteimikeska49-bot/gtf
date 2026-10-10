@@ -1,19 +1,13 @@
 import React from 'react';
-import { Heart, Star, Eye } from 'lucide-react';
+import { Heart, Eye } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 /* ─── Карточки-плейсхолдеры: чередующий ритм Reels + Post ─── */
+// Illustrative layouts only: no invented customer results or performance claims.
 const cards = [
-  { id: 1, format: 'reel',   ruFormat: 'reel', tag: 'post',     likes: '4.2K', views: '12K', labelKey: 'personalBrand', microLabelKey: 'speed', image: '/images/niches/en/content-en-1.webp', ruImage: '/images/niches/ru/content-ru-1.webp' },
-  { id: 2, format: 'reel',   ruFormat: 'square', tag: 'carousel', likes: '8.1K', views: '20K', labelKey: 'marketing', microLabelKey: 'trend', image: '/images/niches/en/content-en-2.webp', ruImage: '/images/niches/ru/content-ru-2.webp' },
-  { id: 3, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '1.8K', views: '5K',  labelKey: 'promotion', microLabelKey: 'ready', image: '/images/niches/en/content-en-3.webp', ruImage: '/images/niches/ru/content-ru-3.webp' },
-  { id: 4, format: 'reel',   ruFormat: 'square', tag: 'post',     likes: '3.1K', views: '9K',  labelKey: 'ecommerce', microLabelKey: 'style', image: '/images/niches/en/content-en-4.webp', ruImage: '/images/niches/ru/content-ru-4.webp' },
-  { id: 5, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '6.7K', views: '18K', labelKey: 'beauty', microLabelKey: 'speed', image: '/images/niches/en/content-en-5.webp', ruImage: '/images/niches/ru/content-ru-5.webp' },
-  { id: 6, format: 'reel',   ruFormat: 'square', tag: 'carousel', likes: '5.9K', views: '14K', labelKey: 'fitness', microLabelKey: 'trend', image: '/images/niches/en/content-en-6.webp', ruImage: '/images/niches/ru/content-ru-6.webp' },
-  { id: 7, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '2.4K', views: '7K',  labelKey: 'education', microLabelKey: 'ready', image: '/images/niches/en/content-en-7.webp', ruImage: '/images/niches/ru/content-ru-7.webp' },
-  { id: 8, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '980',  views: '3.2K',labelKey: 'travel', microLabelKey: 'style', image: '/images/niches/en/content-en-8.webp', ruImage: '/images/niches/ru/content-ru-8.webp' },
-  { id: 9, format: 'reel',   ruFormat: 'reel', tag: 'carousel', likes: '10K',  views: '25K', labelKey: 'lifestyle', microLabelKey: 'speed', image: '/images/niches/en/content-en-9.webp', ruImage: '/images/niches/ru/content-ru-9.webp' },
-  { id: 10, format: 'reel',  ruFormat: 'reel', tag: 'carousel', likes: '7.2K', views: '15K', labelKey: 'it', microLabelKey: 'trend', image: '/images/niches/en/content-en-10.webp', ruImage: '/images/niches/ru/content-ru-10.webp' },
+  { id: 1, format: 'reel', ruFormat: 'reel', tag: 'post', labelKey: 'personalBrand', image: '/images/niches/en/content-en-4.webp', ruImage: '/images/niches/ru/content-ru-9.webp' },
+  { id: 3, format: 'reel', ruFormat: 'reel', tag: 'carousel', labelKey: 'promotion', image: '/images/niches/en/content-en-3.webp', ruImage: '/images/niches/ru/content-ru-3.webp' },
+  { id: 6, format: 'reel', ruFormat: 'reel', tag: 'carousel', labelKey: 'education', image: '/images/niches/en/content-en-6.webp', ruImage: '/images/niches/ru/content-ru-10.webp' },
 ];
 
 /* Пропорции плейсхолдеров (aspect-ratio) */
@@ -43,7 +37,7 @@ const SlideCard = ({ card }) => {
         {/* Изображение (нижний слой) */}
         <img
           src={imageSrc}
-          alt={`AI generated social media carousel example for ${t('showcase.labels.' + card.labelKey)}`}
+          alt={`${isRu ? 'Иллюстративный макет' : 'Illustrative layout'}: ${t('showcase.labels.' + card.labelKey)}`}
           className="absolute inset-0 w-full h-full z-0 object-cover"
           loading="lazy"
           decoding="async"
@@ -70,11 +64,11 @@ const SlideCard = ({ card }) => {
         <div className="flex items-center gap-3 mt-1">
           <div className="flex items-center gap-1.5">
             <Heart className="w-3.5 h-3.5 text-pink-500/70" />
-            <span className="text-xs text-zinc-500 font-medium">{card.likes}</span>
+            <span className="text-xs text-zinc-500 font-medium">{isRu ? 'Пример' : 'Example'}</span>
           </div>
           <div className="flex items-center gap-1.5">
             <Eye className="w-3.5 h-3.5 text-zinc-400/50" />
-            <span className="text-xs text-zinc-500 font-medium">{card.views}</span>
+            <span className="text-xs text-zinc-500 font-medium">{isRu ? 'Не данные об эффективности' : 'Not performance data'}</span>
           </div>
         </div>
       </div>
@@ -113,33 +107,6 @@ export const ShowcaseSlider = () => {
         {/* ─── Траст-бейдж ─── */}
         <div className="flex justify-center mb-6">
           <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-lg shadow-black/20">
-            {/* Аватарки */}
-            <div className="flex -space-x-2">
-              {[
-                "https://randomuser.me/api/portraits/men/32.jpg",
-                "https://randomuser.me/api/portraits/women/44.jpg",
-                "https://randomuser.me/api/portraits/men/46.jpg",
-                "https://randomuser.me/api/portraits/women/68.jpg"
-              ].map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt="GoToFlow carousel maker user profile"
-                  loading="lazy"
-                  decoding="async"
-                  width="24"
-                  height="24"
-                  className="w-6 h-6 rounded-full border-2 border-[#121212] object-cover bg-zinc-800"
-                  style={{ zIndex: 4 - i }}
-                />
-              ))}
-            </div>
-            {/* Звёзды */}
-            <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-yellow-500 text-yellow-500 drop-shadow-sm" />
-              ))}
-            </div>
             <span className="text-sm text-zinc-300 font-medium tracking-tight">
               <span className="text-white font-semibold">{t('showcase.trustBadgePart1')}</span> {t('showcase.trustBadgePart2')}
             </span>

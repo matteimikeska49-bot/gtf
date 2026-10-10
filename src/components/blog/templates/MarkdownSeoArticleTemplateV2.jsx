@@ -753,7 +753,7 @@ const MarkdownBody = ({ markdown, title, article, isRu }) => {
   );
 };
 
-const renderFormattedTitle = (title, isRu = false) => {
+const renderFormattedTitle = (title) => {
   if (!title) return null;
   const words = title.split(' ');
   if (words.length >= 2) {
@@ -1037,7 +1037,7 @@ const FaqBlock = ({ faq, isRu }) => {
   );
 };
 
-const FinalCta = ({ cta, isRu }) => {
+const FinalCta = ({ cta }) => {
   if (!cta) return null;
 
   const primaryHref = cta.primaryHref || getAppUrlWithRef(CTA_URL);
@@ -1152,7 +1152,7 @@ const typeToSuitableFor = {
   'custom-style': ['custom-style', 'style-prompt']
 };
 
-const MarkdownCardsBlock = ({ variant, items, isRu }) => {
+const MarkdownCardsBlock = ({ items, isRu }) => {
   if (!items || items.length === 0) return null;
   
   return (

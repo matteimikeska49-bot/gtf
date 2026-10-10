@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { getAppUrlWithRef } from '../utils/url';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, Sparkles, CornerDownLeft, Download, ChevronDown, Heart, Eye, Star, X, Check, Clock, Zap, Target, Fingerprint, Settings2, Layers, ImageIcon } from 'lucide-react';
+import { ArrowRight, Sparkles, CornerDownLeft, Download, ChevronDown, Heart, Eye, X, Check, Clock, Zap, Target, Fingerprint, Settings2, Layers, ImageIcon } from 'lucide-react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { MainLayout } from './MainLayout';
@@ -34,7 +34,7 @@ const defaultPostPageConfig = {
   h1: <>Генератор постов для Instagram* <br className="hidden md:block" /> <span className="text-gradient-brand">с помощью ИИ</span></>,
   h1Text: 'Генератор постов для Instagram* с помощью ИИ',
   heroEyebrow: 'Генератор постов для Instagram',
-  heroSubtitle: <>GoToFlow помогает превратить тему или черновик в пост для Instagram: придумать хук, собрать основной текст, визуальную подачу и CTA, а затем отредактировать материал перед ручной публикацией.</>,
+  heroSubtitle: <>GoToFlow помогает превратить тему или исходные материалы в пост для Instagram: придумать хук, собрать основной текст, визуальную подачу и CTA, а затем отредактировать материал перед ручной публикацией.</>,
   heroCta: 'Создать пост',
   secondaryCta: 'Примеры постов',
   proofTitle: <>Примеры визуальной подачи <span className="text-gradient-brand">для постов Instagram*</span></>,
@@ -42,7 +42,7 @@ const defaultPostPageConfig = {
   quickAnswer: null,
   productBridgeTitle: 'Что такое генератор постов с ИИ',
   productBridge: [
-    <>Генератор постов с ИИ помогает перейти от темы или черновика к понятной публикации для Instagram*: сформулировать <strong className="text-zinc-200">хук, основную мысль и CTA</strong>, а также продумать визуальную подачу.</>,
+    <>Генератор постов с ИИ помогает перейти от темы или исходного текста к понятной публикации для Instagram*: сформулировать <strong className="text-zinc-200">хук, основную мысль и CTA</strong>, а также продумать визуальную подачу.</>,
     <>GoToFlow учитывает цель поста и контекст исходного материала. Результат можно проверить, отредактировать и адаптировать под голос автора или бренда до публикации.</>,
     'Эта страница отвечает за обычный Instagram-пост. Для последовательности из нескольких карточек используется отдельный генератор каруселей Instagram.',
   ],
@@ -62,9 +62,9 @@ const defaultPostPageConfig = {
     { href: '/ru/generator-kontenta', title: 'Генератор контента' },
   ],
   faqItems: [
-    { q: 'Что делает генератор постов для Instagram?', a: 'Он помогает превратить тему или черновик в основу публикации: хук, основной текст, визуальную подачу и CTA.' },
+    { q: 'Что делает генератор постов для Instagram?', a: 'Он помогает превратить тему или исходные материалы в готовый пост: хук, основной текст, визуальную подачу и CTA.' },
     { q: 'Можно ли начать с одной идеи?', a: 'Да. Опишите тему, аудиторию и цель поста, чтобы ИИ предложил связный вариант для дальнейшей редакции.' },
-    { q: 'Можно ли использовать свой черновик?', a: 'Да. Вставьте готовый текст или заметки, затем проверьте структуру и отредактируйте формулировки под свой стиль.' },
+    { q: 'Можно ли использовать свой исходный текст?', a: 'Да. Вставьте готовый текст или заметки, затем проверьте структуру и отредактируйте формулировки под свой стиль.' },
     { q: 'Можно ли начать со ссылки на источник?', a: 'Да. Ссылка может быть исходным материалом, но факты и итоговые формулировки нужно проверить перед публикацией.' },
     { q: 'Можно ли сохранить свой tone of voice?', a: 'Можно задать желаемую подачу и вручную отредактировать результат, чтобы он звучал естественно для вашего аккаунта.' },
     { q: 'Помогает ли ИИ с первым предложением?', a: 'Да. GoToFlow помогает сформулировать хук, который сразу обозначает тему и пользу публикации.' },
@@ -303,8 +303,8 @@ const SlideCard = ({ card }) => (
       <div className="h-2.5 w-3/4 rounded-full bg-white/[0.06]" />
       <div className="h-2 w-1/2 rounded-full bg-white/[0.04]" />
       <div className="flex items-center gap-3 mt-1">
-        <div className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-pink-500/70" /><span className="text-xs text-zinc-500 font-medium">{card.likes}</span></div>
-        <div className="flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-zinc-400/50" /><span className="text-xs text-zinc-500 font-medium">{card.views}</span></div>
+        <div className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-pink-500/70" /><span className="text-xs text-zinc-500 font-medium">{"Пример"}</span></div>
+        <div className="flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-zinc-400/50" /><span className="text-xs text-zinc-500 font-medium">{"Не статистика"}</span></div>
       </div>
     </div>
   </div>
@@ -344,13 +344,7 @@ export const CarouselShowcaseRu = ({ config = defaultPostPageConfig }) => (
     <div className="relative z-10">
       <div className="flex justify-center mb-6">
         <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-lg shadow-black/20">
-          <div className="flex -space-x-2">
-            {["https://randomuser.me/api/portraits/men/32.jpg","https://randomuser.me/api/portraits/women/44.jpg","https://randomuser.me/api/portraits/men/46.jpg","https://randomuser.me/api/portraits/women/68.jpg"].map((src,i)=>(
-              <img key={i} src={src} alt="Пользователь GoToFlow" className="w-6 h-6 rounded-full border-2 border-[#121212] object-cover bg-zinc-800" style={{zIndex:4-i}} />
-            ))}
-          </div>
-          <div className="flex gap-0.5">{[...Array(5)].map((_,i)=>(<Star key={i} className="w-3.5 h-3.5 fill-yellow-500 text-yellow-500 drop-shadow-sm" />))}</div>
-          <span className="text-sm text-zinc-300 font-medium tracking-tight"><span className="text-white font-semibold">+10k</span> уже создают посты</span>
+          <span className="text-sm text-zinc-300 font-medium tracking-tight">Источник → структура, текст, дизайн и экспорт</span>
         </div>
       </div>
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-5 px-6">
@@ -429,9 +423,9 @@ export const CarouselComparisonRu = () => {
           <div className="absolute inset-0 bg-zinc-950/40 backdrop-blur-3xl rounded-[2rem] md:rounded-[2.5rem] border border-white/[0.05] pointer-events-none -z-30" style={{ boxShadow:'0 50px 100px -20px rgba(0,0,0,1)' }} />
           <div className="relative z-10 flex flex-col">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto w-full">
-              {[{ icon:<Clock className="w-6 h-6"/>, color:'text-amber-400', ring:'bg-amber-500/10 border-amber-500/20', text:'Экономьте 5+ часов в неделю' },
+              {[{ icon:<Clock className="w-6 h-6"/>, color:'text-amber-400', ring:'bg-amber-500/10 border-amber-500/20', text:'Меньше ручной сборки' },
                 { icon:<Zap className="w-6 h-6"/>, color:'text-violet-400', ring:'bg-violet-500/10 border-violet-500/20', text:'Готовый пост за ~60 секунд' },
-                { icon:<Target className="w-6 h-6"/>, color:'text-rose-400', ring:'bg-rose-500/10 border-rose-500/20', text:'Один процесс вместо 4 инструментов' }
+                { icon:<Target className="w-6 h-6"/>, color:'text-rose-400', ring:'bg-rose-500/10 border-rose-500/20', text:'Источник, текст и дизайн в одном процессе' }
               ].map((m,i)=>(
                 <div key={i} className="flex flex-col items-center justify-center bg-white/[0.04] border border-white/10 backdrop-blur-3xl rounded-2xl py-4 px-6 text-center hover:bg-white/[0.06] transition-colors duration-300">
                   <div className={`p-2.5 rounded-xl border mb-3 ${m.ring}`}><span className={m.color}>{m.icon}</span></div>
@@ -443,7 +437,7 @@ export const CarouselComparisonRu = () => {
               <div className="rounded-2xl p-6 md:p-8 flex flex-col h-full" style={{ background:'rgba(5,5,5,0.6)', border:'1px solid rgba(255,255,255,0.03)', boxShadow:'inset 0 4px 24px rgba(0,0,0,0.4)' }}>
                 <p className="text-xs uppercase tracking-[0.2em] font-bold text-zinc-600 mb-8 text-center">Обычный путь</p>
                 <div className="flex flex-col gap-5 flex-1">
-                  {['Пишете хук отдельно от основного текста','Храните черновик и визуальные идеи в разных местах','Каждый раз собираете оформление с нуля','Получаете сырой AI-текст и полностью переписываете его','Нет системы — каждый пост начинается с нуля'].map((t,i)=>(
+                  {['Пишете хук отдельно от основного текста','Храните исходный текст и визуальные идеи в разных местах','Каждый раз собираете оформление с нуля','Получаете сырой AI-текст и полностью переписываете его','Нет системы — каждый пост начинается с нуля'].map((t,i)=>(
                     <div key={i} className="flex items-start gap-4"><div className="shrink-0 mt-1 w-5 h-5 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center"><X className="w-3 h-3 text-zinc-600"/></div><p className="text-sm md:text-base text-zinc-500 leading-relaxed">{t}</p></div>
                   ))}
                 </div>
@@ -451,7 +445,7 @@ export const CarouselComparisonRu = () => {
               <div className="rounded-2xl p-6 md:p-8 flex flex-col h-full relative group transition-colors duration-500" style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', boxShadow:'0 20px 40px -10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)', backdropFilter:'blur(16px)' }}>
                 <p className="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent relative z-10">GoToFlow</p>
                 <div className="flex flex-col gap-5 flex-1 relative z-10">
-                  {['Введите тему, черновик или ссылку на источник','ИИ помогает собрать хук, основную мысль и CTA','Проверьте текст и визуальную подачу в одном процессе','Отредактируйте результат под задачу публикации','Сохраните свой tone of voice перед скачиванием'].map((t,i)=>(
+                  {['Введите тему, исходный текст или ссылку на источник','ИИ помогает собрать хук, основную мысль и CTA','Проверьте текст и визуальную подачу в одном процессе','Отредактируйте результат под задачу публикации','Сохраните свой tone of voice перед скачиванием'].map((t,i)=>(
                     <div key={i} className="flex items-start gap-4"><div className="shrink-0 mt-1 w-5 h-5 rounded-full border border-pink-500/30 bg-[rgba(244,63,94,0.1)] flex items-center justify-center"><Check className="w-3 h-3 text-pink-400" strokeWidth={3}/></div><p className="text-sm md:text-base text-white font-medium leading-relaxed">{t}</p></div>
                   ))}
                 </div>
@@ -733,7 +727,7 @@ export const InstagramPostPageRu = ({ pagePath }) => {
           </ul>
         </div>
       </section>
-      <TestimonialsSection />
+      <TestimonialsSection enabled={false} />
       <CarouselFAQRu config={config} />
       <CarouselBottomCTARu config={config} />
       <Footer />
