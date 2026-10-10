@@ -11,6 +11,7 @@ approvedForPublish: true
 articleType: "guide"
 author: "GoToFlow Team"
 createdAt: "2026-06-21"
+updatedAt: "2026-10-10"
 lastReviewed: "2026-06-22"
 category: "AI Content Strategy"
 primaryKeyword: "ai content writing"
@@ -161,7 +162,7 @@ GoToFlow is designed specifically to solve the text-to-design bottleneck. Instea
 
 :::mockup{slot="result-preview"}
 
-4. **Publish-Ready Output:** Within seconds, you have a high-resolution PDF for LinkedIn or a sequence of images for Instagram, ready to post.
+4. **Publish-Ready Output:** Export the finished carousel as a PDF for LinkedIn or images for Instagram. Check the copy, page order, and readability before uploading; generation and review time vary with the source.
 
 By utilizing a dedicated carousel generator, you transform AI content writing from a simple text-generation exercise into a complete, automated production pipeline. You spend your time on the high-value tasks—strategy, insights, and engaging with your audience—while the platform handles the execution and formatting.
 

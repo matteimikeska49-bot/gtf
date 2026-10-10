@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/blog/ai-carousel-content-strategy"
 createdAt: "2026-06-17"
-updatedAt: "2026-10-07"
+updatedAt: "2026-10-10"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -89,7 +89,7 @@ To win on platforms like LinkedIn and Instagram, you need a strategy—a repeata
 
 ## The Core Principles of a Scalable Strategy
 
-A strategy is a system that produces predictable results. Your carousel strategy must follow three core principles.
+A strategy makes the production process repeatable; audience results still need to be measured. Use these three principles to organise your carousel workflow.
 
 :::cards
 type: takeaways

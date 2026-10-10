@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/blog/carousel-post-mistakes"
 createdAt: "2026-06-17"
-updatedAt: "2026-06-18"
+updatedAt: "2026-10-10"
 lastReviewed: "2026-06-18"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -51,13 +51,13 @@ faq:
   - question: "Why do my carousels get impressions but no saves or likes?"
     answer: "You likely have a good hook (which drives the initial impression) but weak inner content. If your solution is generic or presented as a massive wall of text, people will abandon the post without saving."
   - question: "Is 10 slides too long for a carousel?"
-    answer: "No, 10 slides is actually the optimal length for high engagement, provided the content is well-paced. The problem isn't the number of slides, it's how much effort is required to read them."
+    answer: "Ten slides can fit some explanations, but this guide has no evidence that ten is an optimal engagement count. Remove repetition, preserve necessary context, and use the pages needed to deliver the opening promise."
   - question: "Should I number my slides?"
     answer: "Yes. Not numbering your slides (e.g., '3/10') is a common mistake. People need to know how long the journey is. Uncertainty leads to drop-offs."
   - question: "How can I fix a boring design without hiring a designer?"
     answer: "Focus on typography and whitespace. A clean, minimal layout with large headings and bullet points performs better than a heavily designed but cluttered graphic."
   - question: "How can AI help prevent these mistakes?"
-    answer: "AI carousel generators are programmed with best practices. They automatically enforce word limits per slide, ensure clear hierarchy, and prompt you for a CTA, saving you from structural errors."
+    answer: "A generator can propose slide structure, copy, design, and a CTA from your source. Check the resulting word density, hierarchy, and next step yourself; generation does not prevent every structural error."
 explore:
   tools:
     - title: "AI Carousel Maker"
@@ -97,7 +97,7 @@ If your title is "Marketing Strategies for 2026," you will lose. It's boring and
 type: tips
 
 ### The Fix: Promise specific value
-Change generic titles to curiosity-driven hooks. For example: "3 Marketing Strategies I Used to 5x My Agency in 2026."
+Change generic titles to specific hooks. For an illustrative example: "3 checks before sending a client brief." Only use a growth result in a hook when you have a real record supporting the number, period, and conditions.
 
 ### The Fix: High Contrast
 The text on slide one must be massive. It needs to be readable on a 6-inch phone screen while the user is scrolling rapidly.

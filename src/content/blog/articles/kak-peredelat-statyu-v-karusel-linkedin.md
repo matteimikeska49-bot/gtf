@@ -16,7 +16,7 @@ preview: false
 ru_meta_disclaimer: true
 canonical: "https://gotoflow.io/ru/blog/kak-peredelat-statyu-v-karusel-linkedin"
 createdAt: "2026-06-03"
-updatedAt: "2026-10-09"
+updatedAt: "2026-10-10"
 lastReviewed: "2026-06-03"
 quickAnswer:
   - "Переупаковка (repurposing) статей из блога в карусели — лучший способ получить дополнительный охват в LinkedIn без создания нового контента."
@@ -123,7 +123,7 @@ type: tips
 :::mockup{slot="topic-input"}
 :::
 
-Вам остается только просмотреть результат, при необходимости поправить пару слов и скачать готовый PDF файл, идеально подходящий для LinkedIn.
+Сверьте факты и условия с исходной статьёй, проверьте последовательность и читаемость слайдов, затем откройте экспортированный PDF и preview загрузки в LinkedIn. Объём правок зависит от материала; формат файла сам по себе не гарантирует идеальное отображение.
 
 :::mockup{slot="result-preview"}
 :::

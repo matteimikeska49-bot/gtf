@@ -2,24 +2,24 @@
 title: "LinkedIn Carousel Size and Specs Guide (2026)"
 slug: "linkedin-carousel-size-and-specs"
 language: "en"
-description: "Everything you need to know about LinkedIn carousel size, dimensions, and specifications. Ensure your document posts look perfect on every device."
+description: "Check LinkedIn document file limits, compare portrait and square carousel layouts, and inspect text, margins, and image quality before uploading."
 primaryKeyword: "linkedin carousel size"
 secondaryKeywords: ["linkedin carousel dimensions", "linkedin document specs", "linkedin pdf size"]
 canonical: "https://gotoflow.io/blog/linkedin-carousel-size-and-specs"
 createdAt: 2026-06-12
-updatedAt: 2026-06-13
+updatedAt: "2026-10-10"
 published: true
 noindex: false
 quickAnswer:
   - "The ideal LinkedIn carousel size is 1080 x 1350 pixels (portrait) or 1080 x 1080 pixels (square)."
   - "You must upload your carousel as a document file, with PDF being the most reliable format."
   - "The maximum file size allowed by LinkedIn is 100MB."
-  - "Keep your document under 300 pages, though 5 to 12 pages is recommended for optimal engagement."
+  - "LinkedIn accepts up to 300 pages. Use only the pages needed to explain the topic; this limit is not an optimal engagement count."
 faq:
   - question: "Should I use portrait or square dimensions for LinkedIn?"
     answer: "Portrait (1080 x 1350 px, a 4:5 aspect ratio) is generally preferred. It takes up significantly more vertical space on mobile devices, capturing more attention as users scroll through the feed."
   - question: "Can I upload images directly as a carousel on LinkedIn?"
-    answer: "No. If you upload multiple images to a standard post, LinkedIn will display them in a grid layout. To get the seamless 'swipeable' carousel experience, you must combine your images into a single PDF document and upload it as a Document Post."
+    answer: "An image post and a document post are different publishing formats. For a document post, prepare one supported file: PDF, PPT, PPTX, DOC, or DOCX. PDF is the export used in this guide, not the only document type LinkedIn accepts."
   - question: "What is the file size limit for LinkedIn carousels?"
     answer: "The absolute maximum file size is 100MB. However, for fast loading and optimal user experience, try to keep your exported PDF under 10MB."
   - question: "Are there safe zones I need to worry about?"
@@ -30,7 +30,7 @@ explore:
   tools:
     - title: "LinkedIn Carousel Maker"
       href: "/linkedin-carousel-maker"
-      description: "Automatically format your carousels to the perfect LinkedIn dimensions."
+      description: "Create carousel structure, copy, and design, then check the exported document."
   guides:
     - title: "How to Create a LinkedIn PDF"
       href: "/blog/linkedin-pdf-carousel"
@@ -48,9 +48,9 @@ finalCta:
 
 Creating a brilliant carousel only to find out the text is cut off or the images are pixelated when you upload it is incredibly frustrating. 
 
-LinkedIn document posts (carousels) have specific technical requirements. If you want your content to look professional and perform well in the algorithm, you need to follow the exact **LinkedIn carousel size** and specifications.
+Separate [LinkedIn's document-upload limits](https://www.linkedin.com/help/linkedin/answer/a519831) from your layout choices. Following file limits enables upload; it does not establish algorithmic performance. Check **LinkedIn carousel size**, readability, and the upload preview together.
 
-## The Optimal Dimensions
+## Two Starting Layouts
 
 When designing your slides, you have two primary choices for dimensions.
 
@@ -59,7 +59,7 @@ type: tips
 
 ### 1. Portrait (Recommended)
 **Size:** 1080 x 1350 pixels (4:5 Aspect Ratio)
-**Why use it:** Over 60% of LinkedIn traffic is mobile. Portrait dimensions take up the maximum amount of vertical screen real estate, forcing users to stop and look at your post.
+**Why try it:** A portrait layout gives you vertical room for the explanation. Inspect its readability on a phone; no traffic percentage or attention guarantee is established here.
 
 ### 2. Square (Standard)
 **Size:** 1080 x 1080 pixels (1:1 Aspect Ratio)
@@ -71,9 +71,9 @@ type: tips
 Beyond just the width and height, you must adhere to LinkedIn's file constraints to ensure a successful upload.
 
 * **Supported File Types:** PDF, PPT, PPTX, DOC, DOCX. 
-* **The Best File Type:** Always export and upload as a **PDF**. It compresses well and prevents fonts or layouts from shifting.
+* **File Choice:** This workflow uses **PDF**. Open the export and inspect the upload preview rather than assuming the format prevents every layout problem.
 * **Maximum File Size:** 100MB. (Aim for under 10MB for faster loading).
-* **Page Limits:** Maximum of 300 pages. (For best engagement, keep it between 5 and 12 pages).
+* **Page Limits:** Maximum of 300 pages. Use the pages needed for your explanation, without an assumed engagement optimum.
 
 ## Designing for the "Safe Zones"
 
@@ -85,7 +85,7 @@ LinkedIn's native document viewer overlays several UI elements on top of your PD
 
 > [!workflow]
 > **The Easiest Way to Handle Specs**
-> If you don't want to memorize aspect ratios, safe zones, and PDF export settings, use a dedicated [LinkedIn Carousel Maker](/linkedin-carousel-maker). The software automatically sets the correct canvas size, enforces safe zones, and exports a LinkedIn-optimized PDF with one click.
+> A [LinkedIn Carousel Maker](/linkedin-carousel-maker) connects source analysis, slide copy, visual design, and PDF export. Inspect the generated margins, page order, and text in the actual export and LinkedIn preview; automatic layout does not guarantee safe zones on every device.
 
 ## A Note on Image Quality
 

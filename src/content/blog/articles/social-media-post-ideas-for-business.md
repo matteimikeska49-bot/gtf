@@ -7,7 +7,7 @@ primaryKeyword: "social media post ideas for business"
 secondaryKeywords: ["b2b post ideas", "smb content calendar", "what to post on social media"]
 canonical: "https://gotoflow.io/blog/social-media-post-ideas-for-business"
 createdAt: 2026-06-12
-updatedAt: 2026-06-13
+updatedAt: "2026-10-10"
 published: true
 noindex: false
 quickAnswer:
@@ -30,7 +30,7 @@ explore:
   tools:
     - title: "AI Content Generator"
       href: "/ai-content-generator"
-      description: "Turn these ideas into ready-to-publish posts in seconds."
+      description: "Turn a selected idea into carousel copy and design, then review and export."
   guides:
     - title: "Instagram Carousel Ideas"
       href: "/blog/instagram-carousel-ideas"

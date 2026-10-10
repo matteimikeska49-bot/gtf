@@ -21,7 +21,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/blog/ai-carousel-workflow"
 createdAt: "2026-06-17"
-updatedAt: "2026-10-07"
+updatedAt: "2026-10-10"
 lastReviewed: "2026-06-17"
 mockupStatus: "not_available"
 mockupReason: "No exact asset provided in brief"
@@ -53,9 +53,9 @@ faq:
   - question: "Can I just use ChatGPT to write the whole carousel?"
     answer: "You can, but the result will likely be generic and lack your personal voice. The best workflow uses AI to structure your ideas, not to invent them."
   - question: "How much time does this workflow actually save?"
-    answer: "Historically, writing and designing a 10-slide carousel takes 2-3 hours. With an AI-assisted workflow, you can reduce this to 15-30 minutes, primarily spent on ideation and final review."
+    answer: "AI can combine source analysis, slide copy, and layout in one workflow. Time saved depends on the source, the number of slides, and the review needed. Compare your own time from input to checked export; this guide does not establish a universal time saving."
   - question: "What formats do I need for different platforms?"
-    answer: "LinkedIn requires a PDF document for carousels. Instagram requires high-resolution square (1:1) or portrait (4:5) image files (JPG/PNG). A good workflow tool exports both."
+    answer: "LinkedIn document posts accept PDF, PPT, PPTX, DOC, and DOCX. PDF is the export used in this workflow, not the only format LinkedIn accepts. For an Instagram image carousel, export JPG or PNG slides and check their crop and order before posting."
   - question: "How do I ensure the AI output sounds like me?"
     answer: "The AI's output is strongest when the input carries your real point of view. Add your own topic, script, notes, voice memo, video, or examples so the carousel keeps your perspective."
 explore:
@@ -85,7 +85,7 @@ Creating high-performing carousels for LinkedIn and Instagram usually involves a
 
 This manual process is the reason most creators are inconsistent. 
 
-A modern AI carousel workflow changes the equation. It does not replace human creativity; it removes the mechanical friction of formatting. Here is the exact step-by-step workflow to go from a raw idea to a published carousel in under 30 minutes.
+A modern AI carousel workflow changes the equation. It combines source analysis, writing, and design without replacing human review. Here is the step-by-step workflow from a raw idea to a checked carousel export, followed by publishing on your chosen platform.
 
 ## Step 1: Add the Source
 
@@ -119,11 +119,11 @@ Review the output. Ensure the AI didn't remove any of your unique tone of voice 
 
 This is the phase that traditionally takes the longest: turning text into well-designed slides. 
 
-You no longer need to spend an hour nudging text boxes in Figma.
+Instead of moving each text box manually, generate the slide layout and review the result against your source.
 
 > [!tip]
 > **Automate the slide design**
-> Add your topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo to GoToFlow. The AI engine will analyze the source, distribute the message across 5 to 10 slides to prevent cognitive overload, and apply professional typography and layout rules.
+> Add your topic, script, text, Reels link, video, audio, PDF, image, screenshot, or user photo to GoToFlow. It can analyze the source and generate structure, slide copy, and visual design. Review the slide count and text density against the explanation you need to deliver; a fixed count is not evidence of readability.
 > [Try the AI Carousel Workflow](/ai-carousel-maker)
 
 :::cards
@@ -153,12 +153,20 @@ If a slide feels too text-heavy, edit it down.
 
 Different platforms require different file formats. 
 
-*   **LinkedIn:** Export your carousel as a single PDF document. This opens the document viewer; it is a presentation format, not evidence of a distribution benefit.
+*   **LinkedIn:** Export your carousel as a single PDF document. [LinkedIn also accepts PPT, PPTX, DOC, and DOCX](https://www.linkedin.com/help/linkedin/answer/a519831). PDF is the choice for this workflow; the format does not establish a distribution benefit.
 *   **Instagram:** Export your carousel as a series of high-resolution images (JPG or PNG) and upload them as a multi-image post.
 
 > [!related]
 > **Read next**
 > Looking for ways to apply this workflow? Learn [How to Repurpose Podcasts into AI Carousels](/blog/how-to-repurpose-podcasts-into-ai-carousels).
+
+## Practical Example: One Source Through the Workflow
+
+Consider this fictional workshop brief: “Participants bring a laptop, install the listed software before arrival, and use the supplied practice files. The session ends with a reviewed exercise.” This is an editorial example, not a measured customer case or an actual generated output.
+
+Give the brief to GoToFlow as the source and ask for a preparation checklist for first-time participants. A possible sequence is: cover (“Prepare for your first workshop”); equipment; software preparation; practice files; final check and the actual booking-instructions link. Five slides comes from this source, not an optimal-count rule.
+
+Compare each proposed slide with the brief. Reject an invented download link, fee, software version, or promise that participants will master the subject in one session. Supply the real details before exporting. Open the PDF or images, check text and page order on a phone, and then inspect the destination platform's upload preview. Record your actual input, review, and export time if you want to evaluate efficiency; the example itself supplies no timing benchmark.
 
 ## Conclusion
 

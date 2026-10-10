@@ -7,7 +7,7 @@ primaryKeyword: "best carousel CTA examples"
 secondaryKeywords: ["carousel call to action", "instagram carousel cta", "linkedin carousel cta"]
 canonical: "https://gotoflow.io/blog/best-carousel-cta-examples"
 createdAt: 2026-06-12
-updatedAt: "2026-10-09"
+updatedAt: "2026-10-10"
 published: true
 noindex: false
 quickAnswer:
@@ -30,7 +30,7 @@ explore:
   tools:
     - title: "AI Carousel Maker"
       href: "/ai-carousel-maker"
-      description: "Generate complete carousels, including proven CTAs, in seconds."
+      description: "Create complete carousels with a CTA you can check against your actual offer."
   guides:
     - title: "Best LinkedIn Carousel Examples"
       href: "/blog/best-linkedin-carousel-examples"
