@@ -3,6 +3,7 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import { jsxUsagePlugin } from './scripts/lib/release-check-precision.mjs'
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -23,7 +24,9 @@ export default defineConfig([
       },
     },
     rules: {
+      'jsx-usage/used-vars': 'error',
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
+    plugins: { 'jsx-usage': jsxUsagePlugin },
   },
 ])
