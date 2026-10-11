@@ -368,13 +368,6 @@ const seamlessItemsFromSlots = (sectionId, limit = Infinity) => {
   }));
 };
 
-const seamlessGuideItems = seamlessCopyList('pageRelevantFormats', 'items.task').map((task, index) => ({
-  id: `seamless-guide-${index + 1}`,
-  task,
-  template: seamlessCopyList('pageRelevantFormats', 'items.template')[index],
-  structure: seamlessCopyList('pageRelevantFormats', 'items.structure')[index],
-}));
-
 const seamlessRelatedCards = seamlessCopyList('related', 'relatedCard.title').map((title, index) => ({
   href: seamlessInstagramCarouselHandoff.relatedLinks[index]?.route,
   title,
@@ -4809,15 +4802,12 @@ const buildPostGeneratorDraftPage = ({
   readyExamplesBody,
   workflowDescription,
   productBridge,
-  workflowTitle,
   workflowSteps,
-  formatsTitle,
   formats,
   visualProofTitle,
   visualProofInputLabel,
   visualProofInputCopy,
   visualProofDescription,
-  finalCtaTitle,
   finalCtaDescription,
   finalCtaLabel,
   faq,

@@ -45,6 +45,7 @@ for (const [kind, script] of [['content', 'scripts/check-blog-content-template.m
   const complete = (previous.status === 0 || before.length > 0) && (current.status === 0 || after.length > 0)
     && before.length === declaredCount(beforeOutput) && after.length === declaredCount(afterOutput);
   receipt.checks.push({ kind, beforeStatus: previous.status, afterStatus: current.status, complete,
+    checkerAfterSha256: hash(fs.readFileSync(path.join(root, script))),
     sameEditorialRules: sameRules, beforeOutput, afterOutput, findings });
   console.log(`${kind}: ${before.length} → ${after.length}; same editorial predicates=${sameRules}; ${complete ? 'captured' : 'UNRESOLVED'}`);
   const counts = {};
@@ -81,6 +82,7 @@ const lintFindings = classifyFindings(lintIssues(baseline, lintBefore.stdout), l
   return finding;
 });
 receipt.checks.push({ kind: 'lint', beforeStatus: lintBefore.status, afterStatus: lintAfter.status,
+  checkerAfterSha256: hash(fs.readFileSync(path.join(root, 'eslint.config.js'))),
   complete: true, beforeOutput: lintBefore.stdout, afterOutput: lintAfter.stdout, findings: lintFindings });
 console.log(`lint: ${lintFindings.filter((item) => item.blocking).length} current errors; exact rule/message/source-line comparison captured (no waiver).`);
 fs.mkdirSync(path.join(root, 'tmp'), { recursive: true });

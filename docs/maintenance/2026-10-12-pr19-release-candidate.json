@@ -1,0 +1,521 @@
+{
+  "type": "PR19_RELEASE_CANDIDATE_NOT_APPROVAL",
+  "date": "2026-10-12",
+  "repository": "matteimikeska49-bot/gtf",
+  "base": "a8aa8530c2f4e2b684239eb43c5b142ba10c005f",
+  "parent": "1f6fe48b7182caae01f3d39d13e76569b43be1d4",
+  "branch": "codex/google-indexation-quality-recovery",
+  "verdict": "NO_GO",
+  "retainedEvidence": {
+    "file": "docs/maintenance/2026-10-10-pr19-final-test-receipt.json",
+    "sha256": "f39eb7c112e53dd449d1f3cd2396f5c58a7c29745ac7f73aeb438c1a549def00",
+    "immutable": true,
+    "individualDecisions": "docs/maintenance/2026-10-11-pr19-maintenance-decisions.json",
+    "individualDecisionsSha256": "68707f1c4bee4af1a8ab6a103360fc6f345c60380cd82cb230ac6be1d59c3b5f",
+    "aiReview": "EXISTING_AUXILIARY_NOT_HUMAN_APPROVAL",
+    "all52CurrentHumanDecisions": "MISSING"
+  },
+  "maintenance": {
+    "command": "npm run check:blog:release -- --maintenance-review <clean-base-worktree>",
+    "exitCode": 1,
+    "stages": [
+      {
+        "label": "Topic and demand research",
+        "passed": true,
+        "blocking": true,
+        "held": false
+      },
+      {
+        "label": "Intent ownership",
+        "passed": true,
+        "blocking": true,
+        "held": false
+      },
+      {
+        "label": "Current-scope anti-cannibalization",
+        "passed": true,
+        "blocking": true,
+        "held": false
+      },
+      {
+        "label": "Current-scope batch workflow",
+        "passed": true,
+        "blocking": true,
+        "held": false
+      },
+      {
+        "label": "Fast source safety checks",
+        "passed": false,
+        "held": true,
+        "blocking": true
+      },
+      {
+        "label": "Content and template checks",
+        "passed": false,
+        "held": true,
+        "blocking": true
+      },
+      {
+        "label": "Lint",
+        "passed": false,
+        "blocking": true,
+        "held": true
+      },
+      {
+        "label": "Schema source hardening",
+        "passed": true,
+        "blocking": true,
+        "held": false
+      },
+      {
+        "label": "Prepared rendered HTML and sitemap (independent build required next)",
+        "passed": true,
+        "blocking": true,
+        "held": false
+      },
+      {
+        "label": "Task scope and reproducible production artifacts",
+        "passed": true,
+        "blocking": true,
+        "held": false
+      },
+      {
+        "label": "Final exact maintenance source/rule binding",
+        "passed": true,
+        "blocking": true
+      }
+    ],
+    "newOrUnresolvedBlockingFailures": 0,
+    "contentHolds": 56,
+    "frontmatterHolds": 36,
+    "lintBefore": 19,
+    "lintAfter": 9,
+    "lintRepairs": 10,
+    "articleFindingReferences": "Individual decision request: exact unchanged sources/rules/occurrences; no new article review or fictional historical records",
+    "lintRemaining": [
+      {
+        "source": "src/components/carousel/CarouselSectionsRu.jsx",
+        "rule": "no-unused-vars",
+        "line": 1,
+        "sourceSha256": "3e7c08506641974f45b537a0c82857612b9d63f7f1f32a4495307078fce1ef69"
+      },
+      {
+        "source": "src/components/pricing/PlanCard.jsx",
+        "rule": "react-refresh/only-export-components",
+        "line": 7,
+        "sourceSha256": "9b697bc1c386cf39da488631ff3450fa767d78fe977162a910dd365ecfb39a5f"
+      },
+      {
+        "source": "src/components/pricing/PriceDisplay.jsx",
+        "rule": "react-refresh/only-export-components",
+        "line": 5,
+        "sourceSha256": "248990b1c9205cfcbb7e1ee014f68aace84eb6b1c004a88fa41f30c1444799dc"
+      },
+      {
+        "source": "src/components/seo/SeoSectionHeading.jsx",
+        "rule": "react-refresh/only-export-components",
+        "line": 1,
+        "sourceSha256": "c9f1b8d28108920477c1985f0dfae5392ea77a2b1b7ac71363725377dc885615"
+      },
+      {
+        "source": "src/components/seo/SeoSectionHeading.jsx",
+        "rule": "react-refresh/only-export-components",
+        "line": 11,
+        "sourceSha256": "c9f1b8d28108920477c1985f0dfae5392ea77a2b1b7ac71363725377dc885615"
+      },
+      {
+        "source": "src/context/LanguageContext.jsx",
+        "rule": "react-hooks/set-state-in-effect",
+        "line": 68,
+        "sourceSha256": "069ed06fb168283d085a9b63484e68f70f6ee1a0711fa8b7e240936d4d87b852"
+      },
+      {
+        "source": "src/context/LanguageContext.jsx",
+        "rule": "react-hooks/set-state-in-effect",
+        "line": 86,
+        "sourceSha256": "069ed06fb168283d085a9b63484e68f70f6ee1a0711fa8b7e240936d4d87b852"
+      },
+      {
+        "source": "src/context/LanguageContext.jsx",
+        "rule": "react-refresh/only-export-components",
+        "line": 218,
+        "sourceSha256": "069ed06fb168283d085a9b63484e68f70f6ee1a0711fa8b7e240936d4d87b852"
+      },
+      {
+        "source": "src/hooks/useIsMobile.js",
+        "rule": "react-hooks/set-state-in-effect",
+        "line": 23,
+        "sourceSha256": "b5650e2cb624b6e765a42829e154c814386c22f4c1d278336cc138fa009b7931"
+      }
+    ],
+    "defaultFutureRulesUnchanged": true,
+    "thresholdsChanged": false,
+    "fabricatedApprovals": false
+  },
+  "reproduction": {
+    "html": 204,
+    "artifacts": 494,
+    "differences": 0,
+    "sourceInputsSha256": "06f924a8e9d0e36b6ea5497ee966e5daf979b844200ba4afa2e88c20fb8d0583",
+    "fullInventoryOrderedSha256": "138a64955161d5f95458d0b25977684e3bdf23a238b1e32da4ebd2d1b54e2403",
+    "independentReceiptSha256": "23595b432af64eaef66a299e25c5f1a9a603c69fdf56b2e8db582bae2060bc60",
+    "marker": "build.json (validated schema, not revision evidence)",
+    "noNormalization": true,
+    "noAdditionalExclusions": true
+  },
+  "preservation": {
+    "comparisonParent": "1f6fe48b7182caae01f3d39d13e76569b43be1d4",
+    "rawHtmlEqual": 0,
+    "rawBodyEqual": 204,
+    "orderedSeoHeadProjectionEqual": 204,
+    "rawHtmlDifference": "Content-hashed assets only; not claiming full HTML equality to parent",
+    "frozenPrimarySourcesEqual": 50,
+    "frozenWritableOwnersEqualToParent": 51,
+    "frozenRawAppRootSlashDecisionUnchanged": true,
+    "all52SourceSha256MatchIndependentAiReceipt": true,
+    "directAppCta": 37,
+    "ctaProof": "Exact all204 body/all52 source preservation and unchanged URL utility",
+    "sitemapParity": "195/195",
+    "lifecycleParity": "204/204",
+    "noindexSitemapHits": 0,
+    "redirectSitemapHits": 0,
+    "unintendedIndexationTransitions": 0
+  },
+  "tests": {
+    "unit": "55/55 PASS",
+    "seoFixtures": "55/55 PASS",
+    "typecheck": "NO_CONFIGURED_SCRIPT_NOT_APPLICABLE",
+    "gitDiffCheck": "PASS",
+    "secretPatternHits": 0
+  },
+  "browser": {
+    "routes": 52,
+    "desktopAndMobile": true,
+    "passed": 52,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "imageChecks": 176,
+    "brokenImages": 0,
+    "screenshots": 0,
+    "reportSha256": "efc4a3a5cec1cddcd16cf715183f9d32f6cb20bd314159dd926b5f1d3d59293a",
+    "homepage": "Existing unchanged body/CSS/media visual evidence reused; no new design"
+  },
+  "analytics": {
+    "consentCases": "8/8 PASS",
+    "reportSha256": "35452a0ffd06605d7ec3f216c0fa1f491521a4ca91186e0a67fe9da198ce876e",
+    "preConsentAndRejectOptionalRequests": 0,
+    "acceptBootstrap": "One of each provider per document; repeat Accept does not initialize twice",
+    "googleScriptProbe": "TLS_SSL_ERROR_SYSCALL_HTTP000",
+    "accountDelivery": "NOT_VERIFIED",
+    "accountDuplicateEvents": "NOT_VERIFIED",
+    "runtimeChanged": false
+  },
+  "performance": {
+    "newRuns": 0,
+    "currentFullScope": "NOT_COMPLETE_NOT_PASS",
+    "retainedSourceInputsSha256": "79876611158c80925e56b73b7d0b096d25318cd31ebd689deb7fd5d9c55a6fd4",
+    "mobileSamples": [
+      {
+        "route": "/blog/ai-carousel-content-strategy",
+        "score": 0.85,
+        "lcpMs": 3772.7677249999997,
+        "cls": 0,
+        "reportSha256": "7c807f79ec0eaab948c04ea5d77757d765a425df3f7296b20d8c07200217d62b",
+        "currentCandidateMeasurement": false
+      },
+      {
+        "route": "/ru/blog/neyroset-dlya-postov",
+        "score": 0.87,
+        "lcpMs": 3487.1864,
+        "cls": 0,
+        "reportSha256": "2345fed735e971e5ce221468cf3e10c13325fdf0215c88f51f0c6e61d8de6fd7",
+        "currentCandidateMeasurement": false
+      }
+    ],
+    "requiredLcpMs": 2500,
+    "decision": "OWNER_EXACT_ONE_RELEASE_RISK_DECISION_OR_REQUIRED_GATE_REMEDIATION;no automatic waiver"
+  },
+  "dockerNginx": {
+    "associatedHead": "1f6fe48b7182caae01f3d39d13e76569b43be1d4",
+    "run": 38165247526,
+    "job": 114546350946,
+    "conclusion": "SUCCESS",
+    "url": "https://github.com/matteimikeska49-bot/gtf/actions/runs/38165247526/job/114546350946",
+    "scope": "Docker/nginx/root/RU/logo/language/query smoke;404 observed informationally",
+    "configUnchanged": true,
+    "newCandidateCi": "NOT_QUERIED_NOT_WAITED",
+    "dockerInstallationRequired": false
+  },
+  "bindings": [
+    {
+      "route": "/blog/ai-carousel-content-strategy",
+      "sourceSha256": "19948ae1ae5a51e760fb12d08434600b1a3b03a9b6f1d1b82a037f0460878592",
+      "renderSha256": "aa73f1ce1419d811b7c1a4fedd87c39bf32b00354c4353ed38ce91c322ae52a9"
+    },
+    {
+      "route": "/blog/ai-carousel-generator",
+      "sourceSha256": "5605d28d788b3380b667539c799ac33922835b245f57949f3040e4713479674b",
+      "renderSha256": "8d855a663a857bf0b97d02d1f2788584099e4c6152cff42f230d09eacd212687"
+    },
+    {
+      "route": "/blog/ai-carousel-workflow",
+      "sourceSha256": "b7ebfeb2e2ae2d866b0567bf8a9f048c294f3b250a602fe15b26006e28d8d6e6",
+      "renderSha256": "b533267cd38cc745630704c1bee24ec8ae7680342f481b60de71dabcc48ee67e"
+    },
+    {
+      "route": "/blog/ai-content-creation",
+      "sourceSha256": "f688bc9c56a25b3d563fb41e957b3796b29f42a2ab36269889b0d938df0f854e",
+      "renderSha256": "ebf116fb444631c929ffa0d93f49a2217fada2c87147ec21ad4b00c9dc746b0e"
+    },
+    {
+      "route": "/blog/ai-content-writing",
+      "sourceSha256": "7a5a97ec38f86a15c4531b841e371f2c1439ac8dd3c0fdc1ec5f87cf101e728d",
+      "renderSha256": "79a8fb20bcb48efc1bbaee04612fbbd707d6bf1242b16d9f747b1a80f09c0444"
+    },
+    {
+      "route": "/blog/ai-facebook-post-generator",
+      "sourceSha256": "db0f8da2f2661e42e63217894159b4ed774f1013cc12732611a255ed910f061d",
+      "renderSha256": "6f6d28a95631fdfa8b618df51a7a666c7f2ebd6748d53e103012857d96561f46"
+    },
+    {
+      "route": "/blog/ai-instagram-carousel-generator",
+      "sourceSha256": "d46d113eb084e3e20b8c7299488e658bfb22f9a7c4bc30902bec94150247504f",
+      "renderSha256": "7bc7d82a406ea0ff03238d211cc66d697b9df16fe4849ea65bca005cf5f8a7ec"
+    },
+    {
+      "route": "/blog/ai-social-media-manager",
+      "sourceSha256": "1ea65956094bddf2baaac5f29b6654b19e595b6bd7c07ecd89836b8371362b54",
+      "renderSha256": "2d2bca7481b0789fb5622243a9b75a5c3196875bfed43fab78cb5762ce06d4a6"
+    },
+    {
+      "route": "/blog/best-carousel-cta-examples",
+      "sourceSha256": "9094db5c88ba68b11099d7f9cdc8d0196f9473594c97224e62f12cbd88e1479c",
+      "renderSha256": "40db3f3242aa74f53800e9261136fb01a26d68cd1f0d5205bc85c87bb8015dfc"
+    },
+    {
+      "route": "/blog/carousel-post-mistakes",
+      "sourceSha256": "70c2201465a84ffdc27246a6479f63ca5e1e86b39851b8d6956feee9abbfd23f",
+      "renderSha256": "e58514ebe1ccc384ec049b1abb050d48dd11a148d0e714f3a9ac0c129e7ca118"
+    },
+    {
+      "route": "/blog/chatgpt-for-social-media-marketing",
+      "sourceSha256": "9287c11b5f0d747a786b8b4ccf13e04043c291c7b6ce6aa96ec523b68a6efec2",
+      "renderSha256": "ae06371e0defe8dc2a1eee954814c163bd8747f00bde76ab17b5a3eed8876171"
+    },
+    {
+      "route": "/ru/blog/chatgpt-prompty-dlya-kopirajtera",
+      "sourceSha256": "b3a39b14d44c762467cdfd69c3a4697766a5d0df4ba468a4b6d680382788b231",
+      "renderSha256": "7cdeebe135106681ca74869f282a2de72238c901beab9fd49d3ee053e87408ae"
+    },
+    {
+      "route": "/blog/content-calendar-to-carousel",
+      "sourceSha256": "271e3a93e12ecc7f5cb2c03207e76d547050a965dd8acc91d53496ba227a5783",
+      "renderSha256": "6f65684edba94fc14d02ae802f2d55b18c3851d5ca1b11ae29ede2101530c549"
+    },
+    {
+      "route": "/ru/blog/dizayn-karuseley-neyroset-vs-canva",
+      "sourceSha256": "297394583541eda916e4083bb844f8296751febd9b9896daa78fb71151717777",
+      "renderSha256": "610bb6e825945117983e5e07dec790f8cb4310f895a57e0427e73e93de327c35"
+    },
+    {
+      "route": "/blog/facebook-post-ideas-for-small-business",
+      "sourceSha256": "8a619061aa3912c4bed178256e1b88d5b233122d32272dae2847632f70c322be",
+      "renderSha256": "3a1c75c2b49db96591b0dd3a8e6e7d389de7faabe3d1f72069c600c32d9886d1"
+    },
+    {
+      "route": "/ru/blog/foto-dlya-posta-instagram-vizual-s-ii",
+      "sourceSha256": "31255f18234ec7bde59347409d4d1355bc7340cab93d3f74d1c74991e1c61677",
+      "renderSha256": "fee3c09cbd43eb2665994d73891bbcee6582577f2b3f85fda143b54e07c60981"
+    },
+    {
+      "route": "/ru/blog/generaciya-postov-karuseley",
+      "sourceSha256": "1387cf7ed66840dd625115c88f023f7ef13f61f2b0e4e79a18ba844365db5790",
+      "renderSha256": "6a090aad4727d3301fcab9c511128744f7f6a780acc327c739b4253a4fef215b"
+    },
+    {
+      "route": "/blog/guide-to-ai-social-media-post-generators",
+      "sourceSha256": "595664f298be52125c981559bd0c479f35234c7747124e941208413d2567b382",
+      "renderSha256": "17e5478fe02464c2fd2c8216bad55ebbdfd860d9c3825b1b660eb917230fefb4"
+    },
+    {
+      "route": "/blog/how-to-brainstorm-carousel-topics-with-ai",
+      "sourceSha256": "668cfeb70e195a44e12390dc1d1e6c61ae7dcfc139e90f0f3eb6a73cb9ca03fb",
+      "renderSha256": "9065ca3a92bb33e95dbcb318f3695009e8f618d5bba73045e25d46253a3159d5"
+    },
+    {
+      "route": "/blog/how-to-build-a-personal-brand-on-linkedin-with-ai",
+      "sourceSha256": "22b736f0150211eb9b33250a327161a17cc24aba43c7cf2207829c76e22a9b10",
+      "renderSha256": "8662885ee2ebdf6689dff0d06f9e21533a7c245121a0e09465ab008c94020541"
+    },
+    {
+      "route": "/blog/how-to-increase-instagram-engagement-with-carousels",
+      "sourceSha256": "185ae410cbba69d989aec243e6b8c7dd738063bdd132ae446deff34f8c0fef9b",
+      "renderSha256": "7ec7fc4eed8baa2fb390a886592ca446c50f3f647de86f6b8ae76b021099a21f"
+    },
+    {
+      "route": "/blog/how-to-make-an-instagram-carousel-with-ai",
+      "sourceSha256": "c56a6d34b9047687de10377c778defe03524b934347e5a5e093a5818cd4f805a",
+      "renderSha256": "d9e750579038cd4465dfeb383c69153b1407f031c220191f786c8388bbf88d24"
+    },
+    {
+      "route": "/blog/how-to-make-linkedin-carousel-with-ai",
+      "sourceSha256": "dd854c774c700123b66e74ed86df554179d2bd6b0fab989dd158e84e7c72b504",
+      "renderSha256": "1f480d34eb807db1363460201eeab2fe65c3b38a896566c521176837b6dd9259"
+    },
+    {
+      "route": "/blog/how-to-repurpose-podcasts-into-ai-carousels",
+      "sourceSha256": "fe09ca3f8c00967588b6c33253a5a419f7d2371dc81000887b3934c26209b985",
+      "renderSha256": "d3615ef75bd4800f1c0ff45bf90db64acd3c07db4d63e028cbfeb1c933f55334"
+    },
+    {
+      "route": "/blog/how-to-scale-your-smm-agency-with-ai",
+      "sourceSha256": "b77617a3513b7949f3db9cb48963d49c061e0d31291b0d65a285c2444a980072",
+      "renderSha256": "8bf83c412ee7fd8a40d5ee2205c88d6dbf51772eb0173d9405c5c75d4a1ddf67"
+    },
+    {
+      "route": "/blog/how-to-schedule-linkedin-carousel",
+      "sourceSha256": "697913c6287a0130defa542ca9755bb29d9cd0f4e6cfca0a7bf4abe9fa950bd1",
+      "renderSha256": "8958dc468d2a8df89f7fc49875d0b662d5ddd277aa9e79a8689877705e3cf0a3"
+    },
+    {
+      "route": "/ru/blog/ii-post-dlya-socsetej",
+      "sourceSha256": "466d65dcd7278cd7eab1e8f1feb3005e36ceb1492d75d8b39ca1be51b35be78c",
+      "renderSha256": "492e8c25d256de4c0c58a0d1d623f12be55c068839929946b88dae39972d84a9"
+    },
+    {
+      "route": "/blog/instagram-carousel-cover-ideas",
+      "sourceSha256": "da987e3d4e720f894e206525dd2f0a3fabcd8a8e62d7f0127e3da76682771fe2",
+      "renderSha256": "ea5113dcfc7f86832e01bdbe47be36001b7f2c52a5d62a4379d4c4b058b094a2"
+    },
+    {
+      "route": "/blog/instagram-carousel-ideas",
+      "sourceSha256": "aba15967fa62c9d038816743da8aeff674acfce75ee6e5d2452cb2898f36964d",
+      "renderSha256": "ed4243a10eb0f6347a5312fa3c04dc7db4b6ecf00834a39e82721029f68d04a4"
+    },
+    {
+      "route": "/blog/instagram-carousel-storytelling",
+      "sourceSha256": "89697c81a79e7e7481a01b75618c8f5190c4cb50af27be08541843fa2f5ccec7",
+      "renderSha256": "d16722059e1bdfed1cde685c461680eef95a876eed7e98939feba88b362f6f10"
+    },
+    {
+      "route": "/ru/blog/kak-napisat-ekspertnyj-post",
+      "sourceSha256": "58cef8a78d56daf54b566bef091705aa5c4a61d9e7e516ed95a418d5eddbabae",
+      "renderSha256": "774a4e9c41b98d9c595822d0f638622068ef54ff3e837cb4c6e6363a73e3ef47"
+    },
+    {
+      "route": "/ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii",
+      "sourceSha256": "022e2f90444aae8d15b271f7a1577560455ece43a41d590d7362ba7466a44092",
+      "renderSha256": "8f9bf078b82ed3bd37bfcea4c0cb2bb179d22d96d8823ba400a2554a02c03296"
+    },
+    {
+      "route": "/ru/blog/kak-peredelat-statyu-v-karusel-linkedin",
+      "sourceSha256": "8804326e0a06c1a908ccc9254735a74b9bfb7c28af08421ea8977c5947b84d35",
+      "renderSha256": "a80f10c92b742b12fc3ed627c0d1b3c4f99a71c82e280aae5e294789de3e8cc3"
+    },
+    {
+      "route": "/ru/blog/kak-pisat-prodayushchie-posty-s-ii",
+      "sourceSha256": "0a2df63bc2748d2b2881c4983fe0c67b33dcdd4618ca9e015c075b24efe509ef",
+      "renderSha256": "76e8e150a30efdcf39168db3185d97e7ec4e1ea2c090a4aa5624cecd7bb26c5b"
+    },
+    {
+      "route": "/ru/blog/kak-sdelat-karusel-linkedin-s-ai",
+      "sourceSha256": "6788a5aededa737970d653620aa949f43bc39908fe039c168403c53dcd37e85a",
+      "renderSha256": "75f4e36505d00f479de740b09e43063d7efb828177d3258f0c422b1fabedf2e9"
+    },
+    {
+      "route": "/ru/blog/kak-sdelat-post-v-instagram-s-ii",
+      "sourceSha256": "7bd9e4c3b8c1d255161b7b7e37e9be739f9922ca41aef52229965affaba0de83",
+      "renderSha256": "71842f502b21cf2e9886ce52535e121bd97c3aec6b4aa600d8d8a2bab577deae"
+    },
+    {
+      "route": "/ru/blog/kak-sdelat-shablon-dlya-postov-v-canva",
+      "sourceSha256": "9171a88769c8fca031c62f9a3aa1f9cc689d4f5a9b80ee0253c3aa905f2c5286",
+      "renderSha256": "cae0949b1cf8f3cd22ab90f6250e58ae57593e47ce77eb5932f49b33b8646f53"
+    },
+    {
+      "route": "/ru/blog/kontent-plan-dlya-vk",
+      "sourceSha256": "4b328cc4f70a8bcd947fafede03f8d997015cbf9d4c0cb8c6631637854eb8cf6",
+      "renderSha256": "bc40436b9bf973790db23849bf69421975c7cbd4ee65b1ff0a54994b952697ba"
+    },
+    {
+      "route": "/blog/linkedin-carousel-hooks",
+      "sourceSha256": "6b93af6e739f8f82572e4a4fc1d86956de47ec1d74dc925ddf6cdde437aa5aae",
+      "renderSha256": "7fb4b6b868936f41c54a1cec89cd9b5e34c06f6de2722356fbf936bbc8fb94ce"
+    },
+    {
+      "route": "/blog/linkedin-carousel-ideas",
+      "sourceSha256": "87fce36eff2fcc3cd21f4b90731b6d8ab904f17d0b81ed2cb44efd4b0554ee3c",
+      "renderSha256": "85988120cafd0f9fc63c95c3cb65bc16ceb8859f792dab35be9eb47b05b8c592"
+    },
+    {
+      "route": "/blog/linkedin-carousel-size-and-specs",
+      "sourceSha256": "cb081d4cd6898727037cfbe35918c8af85169295b3f0698403af52cdd5f98654",
+      "renderSha256": "8af89d9f6c0c1f45f98eea2c4ea2080aec4a085c073357cb45c6c463538af7fa"
+    },
+    {
+      "route": "/blog/linkedin-content-strategy-for-founders",
+      "sourceSha256": "4f19a8ab001dc37442a9f1556ca296a0d576ac4e52bc40dbc7b0f69161e46f2e",
+      "renderSha256": "2e83c247612fe10d1b0b92bb7e7b2253891ee1151b100cccbcc916e9b078dc54"
+    },
+    {
+      "route": "/blog/linkedin-creator-tools-guide",
+      "sourceSha256": "182aa0819c73dba50472703134f240e1449b13b7cdb4719eaf82689861d5c433",
+      "renderSha256": "d4baede4249b45cd5051b8637577b4e79e035f4a44f3f5f6ae29d5bad6c50440"
+    },
+    {
+      "route": "/blog/linkedin-document-post-examples",
+      "sourceSha256": "c078bd6fe5cdd2a7613b942a52aa3ca7bb8216805affbed5943ea0c157060fe2",
+      "renderSha256": "6294134936324c33952fb6d97a75258a1538f29eba55e5593cc29c85dffe3c2c"
+    },
+    {
+      "route": "/blog/linkedin-pdf-carousel",
+      "sourceSha256": "f8bd14a9e855a1adc9d8b9f61bae0bbd5ef8e4fb9dbf06f74b4c8b4c37f3e030",
+      "renderSha256": "12c0816e98b1c7e8a02f3570217c2ae25d39d480787c2cc2b6a08bbbed679310"
+    },
+    {
+      "route": "/ru/blog/neyroset-dlya-postov",
+      "sourceSha256": "b3dd992c7f0e6551b6b3a0442e6a42561a6c726c4b104d82ed97e0bbf9332164",
+      "renderSha256": "1c9ae82f860e8a0222e14af6b9ec4869c2e9d6907efd50ea34892ca8227e37bf"
+    },
+    {
+      "route": "/blog/repurpose-blog-post-linkedin-carousel-ai",
+      "sourceSha256": "1ba1c501a543640afbf62ba3a961d479a56ac909831641d5631fdc08d9ce9d62",
+      "renderSha256": "5be2da771bbec6822a1f1865d6bf08ef45f18c2c7c3072ae98baf3ad676d2d83"
+    },
+    {
+      "route": "/blog/social-media-post-ideas-for-business",
+      "sourceSha256": "ccd9bf6c2d17b9ef03fb5f174b3ddebb161be7b7ae904394f75325434c8af1ad",
+      "renderSha256": "e352f4d1f383f8e84f6639ccacda54ae44a09f5667d31d971f8cb31a62a0fd49"
+    },
+    {
+      "route": "/ru/blog/temy-dlya-postov-v-linkedin",
+      "sourceSha256": "182e46af7998ad568cdfdd376dd510f76d4551e4ed96d4952c0c674078f1b3b0",
+      "renderSha256": "81c94d8f2e6fe3f5cb629e8a5da898bb2f65989a9cae041fb14c6391ca787ce6"
+    },
+    {
+      "route": "/blog/text-to-carousel-ai",
+      "sourceSha256": "faed9b55a45e9d0bee77fb60de5ea6723523aee7ffa56dc0c420aee20bc17b29",
+      "renderSha256": "bae88125164e8f3988e3d31aac4a08eaa8b2e5c4db9055822e76402055a3ed21"
+    },
+    {
+      "route": "/blog/viral-linkedin-post-examples",
+      "sourceSha256": "d2f113d9d03977bd50dddbb9aa9f5bf0961a8849f77c527b9c65db88b67ca7e3",
+      "renderSha256": "5f56d0bf39e87a5748c69e5a7c09678c50deb0cf81d27e75510462d538bb6aff"
+    },
+    {
+      "route": "/blog/youtube-to-linkedin-carousel-ai",
+      "sourceSha256": "6a5675c8bd30d0ec3fab59ea9ab6f0654ff0ceb30ce11f94772070d966d50e47",
+      "renderSha256": "6a839c473f14aa06beedf8ada783532a21ad34ba87c5141e2e15b734625af4a3"
+    }
+  ],
+  "bindingPaths": "Source/render paths in individual decision request; this table supersedes only its render hash; source unchanged",
+  "humanAcceptance": "2026-10-12-pr19-human-acceptance.md",
+  "boundaries": {
+    "draft": true,
+    "newPr": false,
+    "ready": false,
+    "merge": false,
+    "deploy": false,
+    "sourceTransition": false
+  }
+}

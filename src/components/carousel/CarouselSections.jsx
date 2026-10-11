@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { getAppUrlWithRef } from '../../utils/url';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Sparkles, CornerDownLeft, Download, ChevronDown, Heart, Eye, X, Check, Clock, Zap, Target, Fingerprint, Settings2, Layers, ImageIcon } from 'lucide-react';

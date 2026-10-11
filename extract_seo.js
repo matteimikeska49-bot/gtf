@@ -1,5 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const sourceDirectory = path.dirname(fileURLToPath(import.meta.url));
 
 const files = [
   'src/components/MainPage.jsx', // Main page might be in LanguageContext or App.jsx? I'll check App.jsx
@@ -24,7 +27,7 @@ const files = [
 
 files.forEach(file => {
   try {
-    const content = fs.readFileSync(path.join(__dirname, file), 'utf8');
+    const content = fs.readFileSync(path.join(sourceDirectory, file), 'utf8');
     console.log(`\n--- ${file} ---`);
     
     // Extract document.title
@@ -51,5 +54,8 @@ files.forEach(file => {
     const h1Match = content.match(/<h1[^>]*>(.*?)<\/h1>/gs);
     if (h1Match) console.log('H1:', h1Match.map(h => h.replace(/<[^>]+>/g, '').trim()));
 
-  } catch (e) {}
+  } catch (error) {
+    // This diagnostic inventory includes optional/retired files; skip missing inputs.
+    if (error.code !== 'ENOENT') throw error;
+  }
 });
