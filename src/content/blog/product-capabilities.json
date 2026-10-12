@@ -6,6 +6,9 @@
     "description": "GoToFlow creates full-cycle carousel workflows from source inputs into structure, slide copy, visual direction, CTA, and a ready-to-publish carousel.",
     "allowedClaims": [
       "GoToFlow can generate carousel content and visuals with AI",
+      "GoToFlow automatically creates a finished carousel in a couple of minutes from a topic or idea",
+      "GoToFlow automatically adapts slide layout to the content without manual slide assembly",
+      "GoToFlow works in Russia and a subscription can be paid for with a Russian bank card",
       "GoToFlow helps turn a topic, script, text, link, Reels, YouTube or TikTok video, audio, directly uploaded PDF/file, image, screenshot, or user materials into a carousel workflow",
       "create Instagram carousel-style content",
       "create LinkedIn carousel/document-style content"
@@ -24,7 +27,7 @@
     "relatedKeywords": ["carousel generator", "ai carousel"],
     "evidence": {
       "source": "Core value proposition",
-      "notes": "Verified visually on platform; direct PDF/file source input confirmed by Owner Product Truth correction, 2026-10-07."
+      "notes": "Verified visually on platform; direct PDF/file source input confirmed by Owner Product Truth correction, 2026-10-07. Full-cycle automated generation in a couple of minutes, adaptive slide layout, Russia availability and Russian bank card subscription payment separately confirmed by Owner in the PR #19 commercial-value restoration request, 2026-10-12; not a new platform test or a universal timing/payment guarantee."
     },
     "lastVerified": "2026-06-08",
     "reviewRequiredBeforeClaiming": false

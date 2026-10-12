@@ -25,7 +25,7 @@ preview: false
 approvedForPublish: true
 canonical: "https://gotoflow.io/blog/how-to-make-an-instagram-carousel-with-ai"
 createdAt: "2026-06-02"
-updatedAt: "2026-10-10"
+updatedAt: "2026-10-12"
 lastReviewed: "2026-06-02"
 quickAnswerTitle: "Quick Answer"
 quickAnswer:
@@ -71,14 +71,14 @@ explore:
   tools:
     - title: "AI Carousel Maker"
       href: "/instagram-carousel-maker"
-      description: "Turn your ideas into carousel structure, copy, and design for review and export."
+      description: "Create a finished carousel from an idea in a couple of minutes, with AI-generated copy and design."
   guides:
     - title: "Instagram Carousel Prompts"
       href: "/blog/instagram-carousel-prompts"
       description: "Get the exact prompts to generate high-converting content."
 finalCta:
   title: "Stop struggling with manual design"
-  text: "Create an Instagram carousel from your source, review the copy and design, and export the slides."
+  text: "Start with an idea and get a finished Instagram carousel in a couple of minutes. AI creates the copy, design, and slides — no design skills required."
   buttonText: "Create a Carousel Free"
   primaryHref: "/instagram-carousel-maker"
   secondaryText: "Explore Instagram carousel hooks →"

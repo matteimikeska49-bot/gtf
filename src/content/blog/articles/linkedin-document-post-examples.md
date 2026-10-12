@@ -7,7 +7,7 @@ primaryKeyword: "linkedin document post examples"
 secondaryKeywords: ["li document examples", "pdf posts linkedin", "document carousel linkedin"]
 canonical: "https://gotoflow.io/blog/linkedin-document-post-examples"
 createdAt: 2026-06-12
-updatedAt: "2026-10-10"
+updatedAt: "2026-10-12"
 published: true
 noindex: false
 quickAnswer:
@@ -37,7 +37,7 @@ explore:
       description: "See how top creators structure their carousels."
 finalCta:
   title: "Create a document post from your source"
-  text: "Choose one of these formats and turn your source material into slide copy, design, and a finished carousel."
+  text: "Choose one of these formats and create a finished carousel in a couple of minutes. GoToFlow generates the copy and design from your idea or source."
   buttonText: "Try for Free"
   microcopy: "No design skills needed"
   secondaryText: "Learn how to make a LinkedIn carousel →"
@@ -114,7 +114,7 @@ A narrative-driven document detailing a specific struggle and how you overcame i
 > **How to Replicate These Examples**
 > 1. Pick a format from the list above that matches your material.
 > 2. Outline your content, ensuring you have 1 intro slide, 3-7 content slides, and 1 CTA slide.
-> 3. Use an [AI Carousel Maker](/linkedin-carousel-maker) to create slide copy and design, review the result, and export a PDF.
+> 3. Use an [AI Carousel Maker](/linkedin-carousel-maker) to automatically create finished slides with copy and design adapted to your content. GoToFlow generates the carousel in a couple of minutes; check the result and export a PDF for the document post.
 > 4. Upload the PDF natively to LinkedIn.
 
 ## Start Creating Better Documents Today

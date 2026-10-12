@@ -31,12 +31,12 @@ export const SEOHead = () => {
     };
     
     setMeta('title', 'AI Content Generator for Social Media | GoToFlow');
-    setMeta('description', 'Generate posts, captions, and content ideas with AI in seconds.');
+    setMeta('description', 'Create finished carousels from an idea in a couple of minutes with AI-generated copy and adaptive slide design.');
     setMeta('og:title', 'AI Content Generator for Social Media | GoToFlow', true);
-    setMeta('og:description', 'Generate posts, captions, and content ideas with AI in seconds.', true);
+    setMeta('og:description', 'Create finished carousels from an idea in a couple of minutes with AI-generated copy and adaptive slide design.', true);
     setMeta('og:url', 'https://gotoflow.io/ai-content-generator', true);
     setMeta('twitter:title', 'AI Content Generator for Social Media | GoToFlow', true);
-    setMeta('twitter:description', 'Generate posts, captions, and content ideas with AI in seconds.', true);
+    setMeta('twitter:description', 'Create finished carousels from an idea in a couple of minutes with AI-generated copy and adaptive slide design.', true);
     setMeta('twitter:url', 'https://gotoflow.io/ai-content-generator', true);
     
     setLink('canonical', 'https://gotoflow.io/ai-content-generator');
@@ -68,13 +68,13 @@ export const ContentHero = () => {
         </h1>
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance">
-        Generate a complete Instagram or LinkedIn content in seconds — from idea to final slides.<br className="hidden md:block" /> No design skills, no team, no templates.
+        Create a finished Instagram or LinkedIn carousel in a couple of minutes — from idea to copy, design, and slides.<br className="hidden md:block" /> No design skills, no team, no templates.
       </motion.p>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }} className="flex flex-col items-center gap-4 w-full sm:w-auto">
         <button onClick={() => window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
           Create Your Content <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
-        <p className="text-sm text-zinc-500 flex flex-wrap justify-center gap-x-3 gap-y-1"><span>✓ No credit card required</span><span className="text-zinc-700">•</span><span>✓ First content in 60 seconds</span></p>
+        <p className="text-sm text-zinc-500 flex flex-wrap justify-center gap-x-3 gap-y-1"><span>✓ No credit card required</span><span className="text-zinc-700">•</span><span>✓ Finished carousel in a couple of minutes</span></p>
       </motion.div>
     </div>
   </section>
@@ -117,7 +117,7 @@ export const ContentShowcase = () => (
     <div className="relative z-10">
       <div className="flex justify-center mb-6">
         <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-lg shadow-black/20">
-          <span className="text-sm text-zinc-300 font-medium tracking-tight">Source → structure, copy, design, and export</span>
+          <span className="text-sm text-zinc-300 font-medium tracking-tight">Idea → finished carousel with AI-generated copy and design</span>
         </div>
       </div>
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-16 px-6">
@@ -192,7 +192,7 @@ export const ContentComparison = () => {
           <div className="relative z-10 flex flex-col">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto w-full">
               {[{ icon:<Clock className="w-6 h-6"/>, color:'text-amber-400', ring:'bg-amber-500/10 border-amber-500/20', text:'Reduce manual assembly for posts and content' },
-                { icon:<Zap className="w-6 h-6"/>, color:'text-violet-400', ring:'bg-violet-500/10 border-violet-500/20', text:'Ready content in ~60 seconds' },
+                { icon:<Zap className="w-6 h-6"/>, color:'text-violet-400', ring:'bg-violet-500/10 border-violet-500/20', text:'Finished carousel in a couple of minutes' },
                 { icon:<Target className="w-6 h-6"/>, color:'text-rose-400', ring:'bg-rose-500/10 border-rose-500/20', text:'Source, copy, and design in one flow' }
               ].map((m,i)=>(
                 <div key={i} className="flex flex-col items-center justify-center bg-white/[0.04] border border-white/10 backdrop-blur-3xl rounded-2xl py-4 px-6 text-center hover:bg-white/[0.06] transition-colors duration-300">
@@ -223,7 +223,7 @@ export const ContentComparison = () => {
               <button onClick={()=>window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
                 Create Your Content <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform"/>
               </button>
-              <p className="text-sm text-zinc-500 text-center">First content in 60 seconds</p>
+              <p className="text-sm text-zinc-500 text-center">Finished carousel in a couple of minutes</p>
             </div>
           </div>
         </div>
@@ -278,7 +278,7 @@ const ExportMockup = () => (
 
 const hiwSteps = [
   { icon: CornerDownLeft, number: 1, title: 'Enter idea or paste link', desc: 'Drop a topic, URL, video, or raw idea. GoToFlow reads the context and preps your content.', micro: <InputMockup/> },
-  { icon: Sparkles, number: 2, title: 'AI builds your content', desc: 'The AI writes a scroll-stopping hook, structures every slide, and fills in the copy — in seconds.', micro: <ProgressMockup/> },
+  { icon: Sparkles, number: 2, title: 'AI builds your content', desc: 'AI writes the hook and slide copy, then automatically adapts the design to the content — without manual slide assembly.', micro: <ProgressMockup/> },
   { icon: Download, number: 3, title: 'Get a ready content', desc: 'Review, tweak in the built-in editor, and download your ready-to-publish content.', micro: <ExportMockup/> },
 ];
 
@@ -395,13 +395,13 @@ export const ContentSEOBlock = () => (
 );
 
 const faqItems = [
-  { q: 'Is GoToFlow an AI content generator?', a: 'Yes. GoToFlow is an end-to-end AI content generator that goes beyond raw text. It takes your topic and generates full ready-to-use carousel structures, engaging hooks, slide-by-slide copy, and clear CTAs.' },
-  { q: 'What is an AI content generator?', a: 'An AI content generator is a tool that automatically generates multi-slide social media posts using artificial intelligence. You provide a topic, and the AI writes the hook, structures the slides, and fills each one with content — in seconds.' },
-  { q: 'What is the difference between an AI post generator and an AI content generator?', a: 'They serve a similar purpose but vary in scope. A post generator might just write a text caption, whereas a full AI content generator (like GoToFlow) helps you structure entire content formats, including carousels, slides, and long-form threads.' },
-  { q: 'Can I use GoToFlow as an AI content generator for social media?', a: 'Yes! GoToFlow is specifically built to be an AI content generator for social media platforms like LinkedIn and Instagram, turning simple ideas into ready-to-publish content structures.' },
+  { q: 'Is GoToFlow an AI content generator?', a: 'Yes. GoToFlow creates a finished carousel from a topic or idea in a couple of minutes, with AI-generated structure, slide copy, adaptive design, and CTA. You do not have to assemble the slides in a separate design editor.' },
+  { q: 'What is an AI content generator?', a: 'An AI content generator is a tool that automatically generates multi-slide social media posts using artificial intelligence. Start with just a topic: AI creates the structure, slide copy, and adaptive design of a finished carousel in a couple of minutes.' },
+  { q: 'What is the difference between an AI post generator and an AI content generator?', a: 'Compare the actual output, not just the label. Some tools generate a caption; GoToFlow automatically creates a finished carousel with structure, slide copy, design adapted to the content, and CTA in one workflow.' },
+  { q: 'Can I use GoToFlow as an AI content generator for social media?', a: 'Yes. Start with an idea or source material and GoToFlow creates a finished carousel for platforms such as LinkedIn and Instagram, including the text and visual design. Upload the exported result to your chosen platform; generation is not automatic social publishing.' },
   { q: 'Can AI create Instagram posts and content?', a: 'Yes. GoToFlow generates content optimized for Instagram, LinkedIn, and Telegram. The AI builds the hook, structure, copy, visual direction, and CTA so the result is a complete content workflow.' },
   { q: 'Is GoToFlow better than Canva for posts and content?', a: 'They solve different problems. Canva is a manual design editor. GoToFlow is an end-to-end content workflow: idea, structure, copy, visual direction, ready output, and CTA. Some users still use Canva for manual edits, but GoToFlow is not just a text layer.' },
-  { q: 'How long does it take to generate a content?', a: 'Under 60 seconds. Input your idea or paste a URL, and GoToFlow delivers a full content structure with copy for every slide.' }
+  { q: 'How long does it take to generate a content?', a: 'In a couple of minutes. Start with an idea or source and GoToFlow automatically creates the structure, slide copy, design, and finished carousel. No manual slide assembly is needed.' }
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
@@ -456,7 +456,7 @@ export const ContentBottomCTA = () => {
               <h2 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-6 max-w-2xl">
                 Stop struggling with<br/>content <span className="text-gradient-brand">content.</span><br/><span className="text-zinc-400 font-semibold" style={{fontSize:'0.78em'}}>Start creating.</span>
               </h2>
-              <p className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg leading-[1.75] font-medium mb-12">Join thousands of creators and entrepreneurs who create scroll-stopping posts and content in seconds with GoToFlow AI.</p>
+              <p className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg leading-[1.75] font-medium mb-12">Turn your idea into a finished carousel in a couple of minutes. GoToFlow creates the copy and design together — no manual slide assembly needed.</p>
               <div className="relative group mb-5">
                 <button onClick={()=>window.location.href = getAppUrlWithRef(CTA_URL)} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="relative z-10 flex items-center justify-center gap-2.5 px-9 py-3.5 rounded-[14px] font-semibold text-white text-[15px] overflow-hidden cursor-pointer" style={{background:'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',border:'1px solid rgba(255,255,255,0.18)',boxShadow:hover?'0 14px 55px rgba(236,72,153,0.5), inset 0 1px 0 rgba(255,255,255,0.25)':'0 8px 35px rgba(236,72,153,0.25), inset 0 1px 0 rgba(255,255,255,0.15)',transform:hover?'translateY(-2px) scale(1.04)':'translateY(0) scale(1)',transition:'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)'}}>
                   <span className="relative z-30 tracking-[0.01em]">Create Your Content</span>
@@ -465,7 +465,7 @@ export const ContentBottomCTA = () => {
               </div>
               <p className="text-xs text-zinc-500 font-medium tracking-[0.06em] mb-12">Free • No credit card required</p>
               <div className="flex flex-wrap justify-center gap-2.5">
-                {['Tone of Voice preserved','Ready in 60 seconds','Works for any niche'].map(t=>(
+                {['Tone of Voice preserved','Ready in a couple of minutes','Works for any niche'].map(t=>(
                   <div key={t} className="flex items-center gap-1.5 px-3.5 py-[6px] rounded-full border border-white/[0.05] bg-white/[0.02] hover:border-pink-500/15 transition-all duration-300">
                     <Check className="w-3 h-3 text-pink-500/50 shrink-0"/><span className="text-[10px] sm:text-[11px] text-zinc-600 font-medium whitespace-nowrap">{t}</span>
                   </div>

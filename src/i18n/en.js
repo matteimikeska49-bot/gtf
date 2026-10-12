@@ -6,7 +6,7 @@ export const en = {
     started: 'Launch for free',
     logo: 'GoToFlow',
     noCardRequired: 'No credit card required',
-    firstResult60s: 'Review and export your result',
+    firstResult60s: 'Ready carousel in a couple of minutes',
   },
   
   hero: {
@@ -14,11 +14,11 @@ export const en = {
       "For creators, experts, and content teams",
       "Create content even without ideas",
     ],
-    titlePart1: 'AI Content Generator for Social Media',
-    titlePart2: 'That Drives',
-    titleHighlight: 'Real Growth',
-    subtitlePart1: 'Create social media content and carousels with AI.',
-    subtitlePart2: 'Analyze competitors and automate content creation in your own style.',
+    titlePart1: 'Find viral ideas',
+    titlePart2: 'and turn them into carousels',
+    titleHighlight: 'with AI',
+    subtitlePart1: 'Start with an idea — AI creates the copy, design, and slides.',
+    subtitlePart2: 'Get a finished carousel in a couple of minutes, without building every slide by hand.',
     mockup: {
       createContent: 'Create content',
       myProjects: 'My Projects',
@@ -81,8 +81,8 @@ export const en = {
   unified: {
     metrics: [
       "Structure, copy, and design in one workflow",
-      "Create a carousel from your source material",
-      "Review and export before publishing"
+      "Ready carousel in a couple of minutes",
+      "No design skills or manual slide assembly needed"
     ],
     oldWay: [
       "Manually hunting for viral Reels or using disconnected tools",
@@ -92,9 +92,9 @@ export const en = {
       "Cookie-cutter design and 'plastic' sounding copy"
     ],
     newWay: [
-      "Find ideas and use them as source material",
+      "Find an idea and turn it into a finished carousel",
       "Immediately see what works and adopt it to your style",
-      "Build, review, and export a carousel in one workflow",
+      "AI creates the copy, design, and slides in one workflow",
       "Instantly get structured copy tailored to the format",
       "Content in your style: your photos, your prompts, your voice"
     ],
@@ -119,7 +119,7 @@ export const en = {
       },
       {
         title: "From Idea to Carousel",
-        desc: "Build a carousel from a topic, idea, a directly uploaded PDF/file, link, or video, then review and export it."
+        desc: "Start with an idea, topic, directly uploaded PDF/file, link, or video. AI creates the structure, copy, and design of a finished carousel in a couple of minutes."
       },
       {
         title: "Strong Reels Search",
@@ -391,12 +391,12 @@ export const en = {
     titlePart2: 'your',
     titleHighlight: 'AI.',
     titleSub: 'Start creating.',
-    subtitle: 'Turn your source material into carousel structure, copy, and design, then review and export the result.',
+    subtitle: 'Turn your idea into a finished carousel in a couple of minutes. AI creates the copy and adapts the slide design to your content — no manual layout needed.',
     button: 'Create a carousel',
     microTrust: 'Free • No credit card required',
     trustList: [
       'Tone of Voice is preserved',
-      'Review and export your result',
+      'Ready carousel in a couple of minutes',
       'Works for any niche',
     ]
   },
