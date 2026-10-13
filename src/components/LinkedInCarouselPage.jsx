@@ -512,7 +512,7 @@ export const LinkedInCarouselPage = () => (
         ]
       }
     ]} />
-    <TestimonialsSection enabled={false} />
+    <TestimonialsSection />
     <LICarouselFAQ />
     <LICarouselBottomCTA />
     <Footer />

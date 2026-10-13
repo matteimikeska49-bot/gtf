@@ -533,7 +533,7 @@ export const LinkedInPostPageRu = () => (
         </ul>
       </div>
     </section>
-      <TestimonialsSection enabled={false} />
+      <TestimonialsSection />
     <CarouselFAQRu />
     <CarouselBottomCTARu />
     

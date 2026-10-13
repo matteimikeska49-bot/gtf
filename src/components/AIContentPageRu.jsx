@@ -547,7 +547,7 @@ export const AIContentPageRu = () => {
           ]
         }
       ]} />
-      <TestimonialsSection enabled={false} />
+      <TestimonialsSection />
       <CarouselFAQRu />
       <CarouselBottomCTARu />
       <Footer />

@@ -1,0 +1,1919 @@
+{
+  "type": "PR19_OWNER_CONFIRMED_TESTIMONIAL_RESTORATION_NOT_PUBLICATION_APPROVAL",
+  "repository": "matteimikeska49-bot/gtf",
+  "pr": "https://github.com/matteimikeska49-bot/gtf/pull/19",
+  "base": "a8aa8530c2f4e2b684239eb43c5b142ba10c005f",
+  "parent": "14714d65f90f092949ed6bf9957608fd90de9807",
+  "verifiedAtUtc": "2026-10-13 11:07:11 UTC",
+  "ownerConfirmation": {
+    "source": "Direct human user task: GOTOFLOW — PR #19 — ВОССТАНОВЛЕНИЕ ПОДТВЕРЖДЁННЫХ ОТЗЫВОВ",
+    "quote": "Владелец GoToFlow подтвердил, что все 20 существующих отзывов (10 RU и 10 EN) являются реальными, и разрешил публиковать их с существующими именами, фотографиями и текстами.",
+    "attribution": "OWNER_FACTUAL_CONFIRMATION_NOT_CODEX_EXTERNAL_VERIFICATION",
+    "permission": "Publish exact existing20 quote/name/photo/text records; retain user results per task §2",
+    "doesNotConfirm": [
+      "3 000+ users",
+      "84% publish without edits",
+      "average60 seconds",
+      "numeric/star rating not present in source records",
+      "publication readiness",
+      "Merge/Deploy authorization"
+    ]
+  },
+  "recordBindings": [
+    {
+      "language": "EN",
+      "source": "src/i18n/en.js",
+      "sourceSha256": "9ec4024cd54a4699f219a8697e6d1302ef284382fe690cadef81fbdc836d50cf",
+      "records": [
+        {
+          "index": 0,
+          "name": "Sarah",
+          "role": "Social Media Manager",
+          "avatar": "/images/avatars/en/sarah.png",
+          "type": "named_quote",
+          "recordSha256": "1f1c6862b7e7fc978d6eabea47a22f29fafa8fbd6b7eccfd012060a539cb9fc7",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 1,
+          "name": "Jake",
+          "role": "Content Creator",
+          "avatar": "/images/avatars/en/jake.png",
+          "type": "named_quote",
+          "recordSha256": "778fdfaa64754ee7420a720cafceb996e0bf837ef044a0000bb99a119d2b6112",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 2,
+          "name": "Emma",
+          "role": "Marketing Consultant",
+          "avatar": "/images/avatars/en/emma.png",
+          "type": "named_quote",
+          "recordSha256": "be6c3465ab95e04b31f48120c6b1a16976f61cb4bbb625e0b3c98430e28515cd",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 3,
+          "type": "stat",
+          "recordSha256": "7634ea003391e7ab0346a1878795d4541e386ab669aca94b052e0285cf1acca7",
+          "status": "UNCONFIRMED_AGGREGATE_RETAINED_NOT_RENDERED"
+        },
+        {
+          "index": 4,
+          "name": "Mark",
+          "role": "Agency Owner",
+          "avatar": "/images/avatars/en/mark.png",
+          "type": "named_quote",
+          "recordSha256": "a5e17fe9dd4cb707e93c007497c24022059682cfae0b44824755af75db29022e",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 5,
+          "name": "Lina",
+          "role": "Founder",
+          "avatar": "/images/avatars/en/lina.png",
+          "type": "named_quote",
+          "recordSha256": "270d2df5996c0ba25be19cfb1c1a0d41d729cbd04608e969b1043133522fe97e",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 6,
+          "name": "Noah",
+          "role": "LinkedIn Creator",
+          "avatar": "/images/avatars/en/noah.png",
+          "type": "named_quote",
+          "recordSha256": "8510a802795c0e43affac76ce52c8b864095963d1a153837f026581b7dc6b1fe",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 7,
+          "type": "stat",
+          "recordSha256": "e670bececb8d0f81f2cce4ff99728f3360c1ecd84a4096ba518f9d27115b1733",
+          "status": "UNCONFIRMED_AGGREGATE_RETAINED_NOT_RENDERED"
+        },
+        {
+          "index": 8,
+          "name": "Sophia",
+          "role": "Growth Marketer",
+          "avatar": "/images/avatars/en/sophia.png",
+          "type": "named_quote",
+          "recordSha256": "b87634c84205003155da17499f6dc748c750f92fb8f0a66894f9d4d4b28d6643",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 9,
+          "name": "Daniel",
+          "role": "Freelance Designer",
+          "avatar": "/images/avatars/en/daniel.png",
+          "type": "named_quote",
+          "recordSha256": "1e86668394baed2d281619b07ef7e7672cca869d2e702ff43df9dc2e7529f6aa",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 10,
+          "name": "Mia",
+          "role": "Creator",
+          "avatar": "/images/avatars/en/mia.png",
+          "type": "named_quote",
+          "recordSha256": "7fa42181c66beb372358c9bc9de6792dac746ba88c34d1e76bbb8111ae7f8408",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 11,
+          "type": "stat",
+          "recordSha256": "8496ffaff4417a41815372f5414963d911fcce01c745a94c66a3fe323913d93c",
+          "status": "UNCONFIRMED_AGGREGATE_RETAINED_NOT_RENDERED"
+        },
+        {
+          "index": 12,
+          "name": "Oliver",
+          "role": "Solo Founder",
+          "avatar": "/images/avatars/en/oliver.png",
+          "type": "named_quote",
+          "recordSha256": "7f2f83e67fe340acbdf77995ed138c2bb061af8de9c85f45031fd5df8c598088",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        }
+      ]
+    },
+    {
+      "language": "RU",
+      "source": "src/i18n/ru.js",
+      "sourceSha256": "d7e99003570068f029608c88f968f8b3c0ecc8a95feae9bc65f1b646d819eac7",
+      "records": [
+        {
+          "index": 0,
+          "name": "Алина",
+          "role": "SMM-специалист",
+          "avatar": "/images/avatars/ru/alina.png",
+          "type": "named_quote",
+          "recordSha256": "7352202b111758741879fceee952660443144ba05462d192bfc796aaa4e13ec1",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 1,
+          "name": "Илья",
+          "role": "блогер",
+          "avatar": "/images/avatars/ru/ilya.png",
+          "type": "named_quote",
+          "recordSha256": "118174ab8ea776b31dc340fb8a71465ff8f93b5bd4162bc3b7811ec59dbb6113",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 2,
+          "name": "Мария",
+          "role": "эксперт",
+          "avatar": "/images/avatars/ru/maria1.png",
+          "type": "named_quote",
+          "recordSha256": "aea31f1f7910e965279837a742f66bcb67a28f1ea44bb61208e7e0888311b10a",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 3,
+          "type": "stat",
+          "recordSha256": "fe609724975693862c6fd1299c66429f73947b17fd70557e80557c1055110c19",
+          "status": "UNCONFIRMED_AGGREGATE_RETAINED_NOT_RENDERED"
+        },
+        {
+          "index": 4,
+          "name": "Андрей",
+          "role": "основатель агентства",
+          "avatar": "/images/avatars/ru/andrey.png",
+          "type": "named_quote",
+          "recordSha256": "73c6fafde2f6fd1765159a782ade73114284ba143c271cb709ad61ea326ea8b2",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 5,
+          "name": "Олег",
+          "role": "предприниматель",
+          "avatar": "/images/avatars/ru/oleg.png",
+          "type": "named_quote",
+          "recordSha256": "33d42213d88cfb7845e044fc4edc5ee822b42b0adf83445861be1dda325bd2e5",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 6,
+          "name": "Екатерина",
+          "role": "контент-специалист",
+          "avatar": "/images/avatars/ru/ekaterina.png",
+          "type": "named_quote",
+          "recordSha256": "effeee00e89a85753fb0003922c4e30884b2f8350fa8811348cbb2d59db04aff",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 7,
+          "type": "stat",
+          "recordSha256": "26f07b07aff4a431bacac871ecee00463ef4ff0a82aee4e69f3e601603053ea0",
+          "status": "UNCONFIRMED_AGGREGATE_RETAINED_NOT_RENDERED"
+        },
+        {
+          "index": 8,
+          "name": "Дмитрий",
+          "role": "маркетолог",
+          "avatar": "/images/avatars/ru/dmitry.png",
+          "type": "named_quote",
+          "recordSha256": "0da43ec74226ae4378f1a4abe2b30220375227d9418a2fd33249c108715212a6",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 9,
+          "name": "Анна",
+          "role": "фрилансер",
+          "avatar": "/images/avatars/ru/anna.png",
+          "type": "named_quote",
+          "recordSha256": "788d30817cdde8e838c37c63bee7d9225e5eab0ec1bf80852cf35bbabd19c15f",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 10,
+          "name": "Никита",
+          "role": "блогер",
+          "avatar": "/images/avatars/ru/nikita.png",
+          "type": "named_quote",
+          "recordSha256": "f3358425cc838ad45f48a62f317db3f48e8602532b76fbd28112a92416d09a86",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        },
+        {
+          "index": 11,
+          "type": "stat",
+          "recordSha256": "ef3c93afcd29f5e82c02cacca7cd8ec179446f4a31ffbc984627d83507fa2ff7",
+          "status": "UNCONFIRMED_AGGREGATE_RETAINED_NOT_RENDERED"
+        },
+        {
+          "index": 12,
+          "name": "Мария",
+          "role": "эксперт",
+          "avatar": "/images/avatars/ru/maria2.png",
+          "type": "named_quote",
+          "recordSha256": "d502f3bbbd756340761c31c242ffe5464035180cc0b0eaa291f2408bf7d46ae8",
+          "status": "OWNER_CONFIRMED_REAL_PUBLICATION_PERMITTED"
+        }
+      ]
+    }
+  ],
+  "changedSourceBindings": [
+    {
+      "source": "src/App.jsx",
+      "sha256": "16d2f34cf4a628d50cc3a4513a4e4dd759891d9d9e5073f6bff7536dd6dc8422"
+    },
+    {
+      "source": "src/components/AIContentPage.jsx",
+      "sha256": "9090da1d573af458c6ee60d8ed1fc81620e89b3bf846b8bc6dda7109add346db"
+    },
+    {
+      "source": "src/components/AIContentPageRu.jsx",
+      "sha256": "13f3367c045d5b4ff6804b16421b3c8ec5816ccf0a9fe1819354018ca8538dfe"
+    },
+    {
+      "source": "src/components/CarouselPage.jsx",
+      "sha256": "d3ae6df67da804417e3a4daf87a9e8e2608904b91c68fabb032673bede6dbc5b"
+    },
+    {
+      "source": "src/components/InstagramPostPage.jsx",
+      "sha256": "b54d756f9a7a62d69b8169906c1f905e2e47ba004fae5e40d8077c0853aa6255"
+    },
+    {
+      "source": "src/components/InstagramPostPageRu.jsx",
+      "sha256": "1d4d50df4af4a447c1da73b23f671d88a3caccdab04df055992bd7bd0f2c3bec"
+    },
+    {
+      "source": "src/components/LinkedInCarouselPage.jsx",
+      "sha256": "e47d476416b820b3457edd5024c8f15b204ab735863deb287ac8f1b0a9396373"
+    },
+    {
+      "source": "src/components/LinkedInCarouselPageRu.jsx",
+      "sha256": "60426cbaf3733cf86e59587c013cd75ad0beb5daf3b2e65e7e222adf83a2768d"
+    },
+    {
+      "source": "src/components/LinkedInPostPage.jsx",
+      "sha256": "875d2bfbd473cf82f5f65a8744ad2355496fe628c95b94ef538e12ef3b8a444d"
+    },
+    {
+      "source": "src/components/LinkedInPostPageRu.jsx",
+      "sha256": "aef1fe764eead519aff3c40fc119094b4d86aeedd25a0cd48a9f7b623ed89df9"
+    },
+    {
+      "source": "src/components/TestimonialsSection.jsx",
+      "sha256": "b3ff0b7d5e376a2cfdf496d8d3984b4888f151369c36857dc15e1986d5826e97"
+    }
+  ],
+  "restoredRoutes": [
+    "/",
+    "/ru",
+    "/ai-carousel-maker",
+    "/instagram-carousel-maker",
+    "/ai-instagram-post-generator",
+    "/ai-content-generator",
+    "/ru/generator-kontenta",
+    "/ru/generator-postov-instagram",
+    "/linkedin-carousel-maker",
+    "/ru/generator-karuselej-linkedin",
+    "/ru/ii-generator-postov-dlya-linkedin"
+  ],
+  "alreadyVisibleAffectedByAggregateFiltering": [
+    "/ru/ii-generator-karuseley",
+    "/ru/generator-karuselej-instagram"
+  ],
+  "sourceOnlyRestoration": "src/components/LinkedInPostPage.jsx also re-enabled, but not mounted by current App routing; legacy aliases/SEO registry mapping unchanged",
+  "presentation": {
+    "design": "Existing section/card sizes, colors, typography, rounded borders, background, gradients, shadows, avatars, animation and RU pause/resume retained; no invented replacement testimonials.",
+    "aggregateRecords": "3 per language retained byte-exact in i18n; renderer filters type=stat instead of disabling entire section",
+    "ratings": "No t.rating fields exist; five stars no longer fabricated for every quote. Numeric rating displayed only if an actual1–5 record is present; current cards contain no rating.",
+    "noRewriting": true,
+    "h1": {
+      "route": "/ai-content-generator",
+      "before": "AI Content Generator — Create Social Media Content in Seconds",
+      "after": "AI Content Generator — Create Social Media Content with AI",
+      "explicitOwnerAuthorized": true,
+      "otherH1Unchanged": true
+    }
+  },
+  "currentBindings": [
+    {
+      "route": "/blog/ai-carousel-content-strategy",
+      "source": "src/content/blog/articles/ai-carousel-content-strategy.md",
+      "render": "dist/blog/ai-carousel-content-strategy/index.html",
+      "sourceSha256": "19948ae1ae5a51e760fb12d08434600b1a3b03a9b6f1d1b82a037f0460878592",
+      "renderSha256": "e9aabcff367392e0bdc3d647537ce56b0f66a684bf19d3ec3b2c4a8fcb2bd94e",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/ai-carousel-generator",
+      "source": "src/content/blog/articles/ai-carousel-generator.md",
+      "render": "dist/blog/ai-carousel-generator/index.html",
+      "sourceSha256": "5ed11a8c2be5edd0015bd9e60711eac1d9a69c6a16a67908c52e9d7065cf7f84",
+      "renderSha256": "414ac2612df8b1520b9a672aef8667fc5a1ecd32fc73970e2bd31e6bd12b202e",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/ai-carousel-workflow",
+      "source": "src/content/blog/articles/ai-carousel-workflow.md",
+      "render": "dist/blog/ai-carousel-workflow/index.html",
+      "sourceSha256": "02e42833d4b3c85ceadf730ca60be9a5f57dee58407e44c53c307c688700c539",
+      "renderSha256": "34e7882f6ab04075d1e3500509eecd35fb6fd4fd6f989d4d570905ce90a3556c",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/ai-content-creation",
+      "source": "src/content/blog/articles/ai-content-creation.md",
+      "render": "dist/blog/ai-content-creation/index.html",
+      "sourceSha256": "753733124ef82e516fef81c1beabc26ada53f240310669400bd6e561e29fd229",
+      "renderSha256": "aa7dcb1a2b89b5c89959ef4119af26b3a0a9779448f1ea5e11cd348465e67114",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/ai-content-writing",
+      "source": "src/content/blog/articles/ai-content-writing.md",
+      "render": "dist/blog/ai-content-writing/index.html",
+      "sourceSha256": "7a5a97ec38f86a15c4531b841e371f2c1439ac8dd3c0fdc1ec5f87cf101e728d",
+      "renderSha256": "60920517fed65b73b6c60d24bfb1c27517b4a4d8f5165bf4cfc5ea8ffed448ce",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/ai-facebook-post-generator",
+      "source": "src/content/blog/articles/ai-facebook-post-generator.md",
+      "render": "dist/blog/ai-facebook-post-generator/index.html",
+      "sourceSha256": "db0f8da2f2661e42e63217894159b4ed774f1013cc12732611a255ed910f061d",
+      "renderSha256": "a829d225de4ab27b98f9b56b67c7897243196dd529a442ef5d4ffeb0c6efb8a8",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/ai-instagram-carousel-generator",
+      "source": "src/content/blog/articles/ai-instagram-carousel-generator.md",
+      "render": "dist/blog/ai-instagram-carousel-generator/index.html",
+      "sourceSha256": "ebdd810cbecf784ff147e67147361c57f8d249aff6def201266e3647bd4ec0a8",
+      "renderSha256": "a967bb3751f5c145fb056adf7828149a490f08a693e339aa41da82f314268c10",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/ai-social-media-manager",
+      "source": "src/content/blog/articles/ai-social-media-manager.md",
+      "render": "dist/blog/ai-social-media-manager/index.html",
+      "sourceSha256": "1ea65956094bddf2baaac5f29b6654b19e595b6bd7c07ecd89836b8371362b54",
+      "renderSha256": "188f471bde1d401d52135e571748661f561d99a2794a923a97b86810e3a972f6",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/best-carousel-cta-examples",
+      "source": "src/content/blog/articles/best-carousel-cta-examples.md",
+      "render": "dist/blog/best-carousel-cta-examples/index.html",
+      "sourceSha256": "9094db5c88ba68b11099d7f9cdc8d0196f9473594c97224e62f12cbd88e1479c",
+      "renderSha256": "2613493fe0fe601e06b5734e6028fbeac81bdb0d908d41115ea66330e79f55cc",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/carousel-post-mistakes",
+      "source": "src/content/blog/articles/carousel-post-mistakes.md",
+      "render": "dist/blog/carousel-post-mistakes/index.html",
+      "sourceSha256": "70c2201465a84ffdc27246a6479f63ca5e1e86b39851b8d6956feee9abbfd23f",
+      "renderSha256": "699969a1b7798ee9ba2f0d41e15ca96e51de00b72c5f726339d8a4d39d007adf",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/chatgpt-for-social-media-marketing",
+      "source": "src/content/blog/articles/chatgpt-for-social-media-marketing.md",
+      "render": "dist/blog/chatgpt-for-social-media-marketing/index.html",
+      "sourceSha256": "9287c11b5f0d747a786b8b4ccf13e04043c291c7b6ce6aa96ec523b68a6efec2",
+      "renderSha256": "ff8b9a93c5e1331911eefcdcd8a3f65bf4d463ba30ac9bd15477c2415845e314",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/chatgpt-prompty-dlya-kopirajtera",
+      "source": "src/content/blog/articles/chatgpt-prompty-dlya-kopirajtera.md",
+      "render": "dist/ru/blog/chatgpt-prompty-dlya-kopirajtera/index.html",
+      "sourceSha256": "b3a39b14d44c762467cdfd69c3a4697766a5d0df4ba468a4b6d680382788b231",
+      "renderSha256": "29357a737e4d0bda6775d0822d4541cd4657ac6511f4e8cdfe2e1e8f284afc30",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/content-calendar-to-carousel",
+      "source": "src/content/blog/articles/content-calendar-to-carousel.md",
+      "render": "dist/blog/content-calendar-to-carousel/index.html",
+      "sourceSha256": "edbb6fefc3449851193b2d4ad62f56e0ab3c1fb132b22a5c80931e68e08ed5c0",
+      "renderSha256": "d207dc70b9d25c2b9b52994da6588187eccf3ed5be742130077433eb3a240f66",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/dizayn-karuseley-neyroset-vs-canva",
+      "source": "src/content/blog/articles/dizayn-karuseley-neyroset-vs-canva.md",
+      "render": "dist/ru/blog/dizayn-karuseley-neyroset-vs-canva/index.html",
+      "sourceSha256": "883010ca3554cf1669d46ed896f682af6bcae6baa1dab0954b7b5c926362987f",
+      "renderSha256": "5cc939aeafef3457d2020caf48e343208689ac62e9c17db65af071e1a38e0ab8",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/facebook-post-ideas-for-small-business",
+      "source": "src/content/blog/articles/facebook-post-ideas-for-small-business.md",
+      "render": "dist/blog/facebook-post-ideas-for-small-business/index.html",
+      "sourceSha256": "8a619061aa3912c4bed178256e1b88d5b233122d32272dae2847632f70c322be",
+      "renderSha256": "f71ba5cd245e34edf70bdb44f0850dda3431842c7176a792f0e49bce085c40e0",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/foto-dlya-posta-instagram-vizual-s-ii",
+      "source": "src/content/blog/articles/foto-dlya-posta-instagram-vizual-s-ii.md",
+      "render": "dist/ru/blog/foto-dlya-posta-instagram-vizual-s-ii/index.html",
+      "sourceSha256": "31255f18234ec7bde59347409d4d1355bc7340cab93d3f74d1c74991e1c61677",
+      "renderSha256": "415bdab993951737ca170eb5b8579af0634ba8fee54c1697dac714680c077dc9",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/generaciya-postov-karuseley",
+      "source": "src/content/blog/articles/generaciya-postov-karuseley.md",
+      "render": "dist/ru/blog/generaciya-postov-karuseley/index.html",
+      "sourceSha256": "228f47ff628f421854c9c33f8c2c3178289d81acff17e105d1b6c0d141d40088",
+      "renderSha256": "0cf2e12ca6c66c82fbeded9c0d57ed46216ee5302c540a4c4f67a3c98798ceb9",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/guide-to-ai-social-media-post-generators",
+      "source": "src/content/blog/articles/guide-to-ai-social-media-post-generators.md",
+      "render": "dist/blog/guide-to-ai-social-media-post-generators/index.html",
+      "sourceSha256": "886b1aa884fb752697696e7c36fe571430d332da29ce980fec5b6eb626844c66",
+      "renderSha256": "cd8c2f28ada1427fb0ed848cc4cc4af941c8bdbbd0c0d395ae365e737021ffd8",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/how-to-brainstorm-carousel-topics-with-ai",
+      "source": "src/content/blog/articles/how-to-brainstorm-carousel-topics-with-ai.md",
+      "render": "dist/blog/how-to-brainstorm-carousel-topics-with-ai/index.html",
+      "sourceSha256": "668cfeb70e195a44e12390dc1d1e6c61ae7dcfc139e90f0f3eb6a73cb9ca03fb",
+      "renderSha256": "aa2505c956aa95b908d67fcb9eca20a37fd4041f11b60d15f057937ef262a0fb",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/how-to-build-a-personal-brand-on-linkedin-with-ai",
+      "source": "src/content/blog/articles/how-to-build-a-personal-brand-on-linkedin-with-ai.md",
+      "render": "dist/blog/how-to-build-a-personal-brand-on-linkedin-with-ai/index.html",
+      "sourceSha256": "22b736f0150211eb9b33250a327161a17cc24aba43c7cf2207829c76e22a9b10",
+      "renderSha256": "5ac23b68663ac5eba4f3d58cac65351e608cc0f0a96f997fafb8629971065ec8",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/how-to-increase-instagram-engagement-with-carousels",
+      "source": "src/content/blog/articles/how-to-increase-instagram-engagement-with-carousels.md",
+      "render": "dist/blog/how-to-increase-instagram-engagement-with-carousels/index.html",
+      "sourceSha256": "185ae410cbba69d989aec243e6b8c7dd738063bdd132ae446deff34f8c0fef9b",
+      "renderSha256": "7ad8ba3ec5af0df5dc296cd31fa5adf8d3bddefec13b2359f9a6954a2cb01e43",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/how-to-make-an-instagram-carousel-with-ai",
+      "source": "src/content/blog/articles/how-to-make-an-instagram-carousel-with-ai.md",
+      "render": "dist/blog/how-to-make-an-instagram-carousel-with-ai/index.html",
+      "sourceSha256": "87d697f88b21ddb7430c25c6e1c917d1f1b9279e17c30eed3070babcd4b284de",
+      "renderSha256": "4a6bc205b2e8d91ba9d6fbcc04cf6f0070dc217cff516562db6a8c81b99d3a59",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/how-to-make-linkedin-carousel-with-ai",
+      "source": "src/content/blog/articles/how-to-make-linkedin-carousel-with-ai.md",
+      "render": "dist/blog/how-to-make-linkedin-carousel-with-ai/index.html",
+      "sourceSha256": "dd854c774c700123b66e74ed86df554179d2bd6b0fab989dd158e84e7c72b504",
+      "renderSha256": "dafa5444bd90e5aba9108e34f35cbe75ad1a899437456aa36b1ddf58496ce52c",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/how-to-repurpose-podcasts-into-ai-carousels",
+      "source": "src/content/blog/articles/how-to-repurpose-podcasts-into-ai-carousels.md",
+      "render": "dist/blog/how-to-repurpose-podcasts-into-ai-carousels/index.html",
+      "sourceSha256": "fe09ca3f8c00967588b6c33253a5a419f7d2371dc81000887b3934c26209b985",
+      "renderSha256": "1f8f7e9507bcdf20c2fff78fc32dcc336d8dd32cbf584f04c95952f385ace419",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/how-to-scale-your-smm-agency-with-ai",
+      "source": "src/content/blog/articles/how-to-scale-your-smm-agency-with-ai.md",
+      "render": "dist/blog/how-to-scale-your-smm-agency-with-ai/index.html",
+      "sourceSha256": "b77617a3513b7949f3db9cb48963d49c061e0d31291b0d65a285c2444a980072",
+      "renderSha256": "16114fce27ba87f25102f385abad38a963167528e30dc429199635e91527b446",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/how-to-schedule-linkedin-carousel",
+      "source": "src/content/blog/articles/how-to-schedule-linkedin-carousel.md",
+      "render": "dist/blog/how-to-schedule-linkedin-carousel/index.html",
+      "sourceSha256": "697913c6287a0130defa542ca9755bb29d9cd0f4e6cfca0a7bf4abe9fa950bd1",
+      "renderSha256": "d42dc0bdb6e0e845d512719b7b4f61a183d5e201d1aa41aef2a6dcf1e3dbf87b",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/ii-post-dlya-socsetej",
+      "source": "src/content/blog/articles/ii-post-dlya-socsetej.md",
+      "render": "dist/ru/blog/ii-post-dlya-socsetej/index.html",
+      "sourceSha256": "6e7b37e93431449444bd68af7559583db9285c5c76501cf06746551ccffaf16d",
+      "renderSha256": "f2054263c0f630cc2b72b9ab040556dca1da485002616c15431bacf647ca6bd6",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/instagram-carousel-cover-ideas",
+      "source": "src/content/blog/articles/instagram-carousel-cover-ideas.md",
+      "render": "dist/blog/instagram-carousel-cover-ideas/index.html",
+      "sourceSha256": "da987e3d4e720f894e206525dd2f0a3fabcd8a8e62d7f0127e3da76682771fe2",
+      "renderSha256": "fbab46c9efbab64e65a0c62495e410195b18aa1dfcb2dceb95dfb728b645a6c2",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/instagram-carousel-ideas",
+      "source": "src/content/blog/articles/instagram-carousel-ideas.md",
+      "render": "dist/blog/instagram-carousel-ideas/index.html",
+      "sourceSha256": "14f83b6336d9e45f747da86994f6063b90795c1272abddfee245a12144a9858d",
+      "renderSha256": "7df3bda75d6d86fbf2ca91ebe202adce602ad06ba5a900e4c5f7f5dd9ca61c1c",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/instagram-carousel-storytelling",
+      "source": "src/content/blog/articles/instagram-carousel-storytelling.md",
+      "render": "dist/blog/instagram-carousel-storytelling/index.html",
+      "sourceSha256": "89697c81a79e7e7481a01b75618c8f5190c4cb50af27be08541843fa2f5ccec7",
+      "renderSha256": "97bfde187b1f031d6520ffef309d3a751d3aaceb9e241fcac9d2445a0e2cdf36",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/kak-napisat-ekspertnyj-post",
+      "source": "src/content/blog/articles/kak-napisat-ekspertnyj-post.md",
+      "render": "dist/ru/blog/kak-napisat-ekspertnyj-post/index.html",
+      "sourceSha256": "58cef8a78d56daf54b566bef091705aa5c4a61d9e7e516ed95a418d5eddbabae",
+      "renderSha256": "ac318f3c427c1bf070a4b16e0213ded44eb1608d6e279239e1f2c935fbf0c5a7",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii",
+      "source": "src/content/blog/articles/kak-napisat-post-v-vk-s-pomoshyu-ii.md",
+      "render": "dist/ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii/index.html",
+      "sourceSha256": "022e2f90444aae8d15b271f7a1577560455ece43a41d590d7362ba7466a44092",
+      "renderSha256": "eab08aec183b841b7c30c6dbdca7fbe48587f6c3c1a70b21e544450fd84330fe",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/kak-peredelat-statyu-v-karusel-linkedin",
+      "source": "src/content/blog/articles/kak-peredelat-statyu-v-karusel-linkedin.md",
+      "render": "dist/ru/blog/kak-peredelat-statyu-v-karusel-linkedin/index.html",
+      "sourceSha256": "8804326e0a06c1a908ccc9254735a74b9bfb7c28af08421ea8977c5947b84d35",
+      "renderSha256": "e11d022389db6200ada62c6edab8f9e8889a949688abd5add6865c5581b982c6",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/kak-pisat-prodayushchie-posty-s-ii",
+      "source": "src/content/blog/articles/kak-pisat-prodayushchie-posty-s-ii.md",
+      "render": "dist/ru/blog/kak-pisat-prodayushchie-posty-s-ii/index.html",
+      "sourceSha256": "0a2df63bc2748d2b2881c4983fe0c67b33dcdd4618ca9e015c075b24efe509ef",
+      "renderSha256": "5235f8c285d7b7aa1c520c57981d049405b257b07d73addbe75f9d3d4dbc76fa",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/kak-sdelat-karusel-linkedin-s-ai",
+      "source": "src/content/blog/articles/kak-sdelat-karusel-linkedin-s-ai.md",
+      "render": "dist/ru/blog/kak-sdelat-karusel-linkedin-s-ai/index.html",
+      "sourceSha256": "6788a5aededa737970d653620aa949f43bc39908fe039c168403c53dcd37e85a",
+      "renderSha256": "5d71752c7bcceffa5bfa274e2a3109b707ac4ff15cfdc94298f187d91c9ebff8",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/kak-sdelat-post-v-instagram-s-ii",
+      "source": "src/content/blog/articles/kak-sdelat-post-v-instagram-s-ii.md",
+      "render": "dist/ru/blog/kak-sdelat-post-v-instagram-s-ii/index.html",
+      "sourceSha256": "7bd9e4c3b8c1d255161b7b7e37e9be739f9922ca41aef52229965affaba0de83",
+      "renderSha256": "784dbd7d82781b10fa9be25f2e80366f2fbf1ffd2df4074260908dbe5d48f2c3",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/kak-sdelat-shablon-dlya-postov-v-canva",
+      "source": "src/content/blog/articles/kak-sdelat-shablon-dlya-postov-v-canva.md",
+      "render": "dist/ru/blog/kak-sdelat-shablon-dlya-postov-v-canva/index.html",
+      "sourceSha256": "9171a88769c8fca031c62f9a3aa1f9cc689d4f5a9b80ee0253c3aa905f2c5286",
+      "renderSha256": "ebefe2e5ea5a9e11e72633209eb62ab427e2373052f94964c1cbd6e334092c1c",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/kontent-plan-dlya-vk",
+      "source": "src/content/blog/articles/kontent-plan-dlya-vk.md",
+      "render": "dist/ru/blog/kontent-plan-dlya-vk/index.html",
+      "sourceSha256": "4b328cc4f70a8bcd947fafede03f8d997015cbf9d4c0cb8c6631637854eb8cf6",
+      "renderSha256": "de9e290f34025a69aad381cc6274e7aba98f9c2d4a50332c9f40efb9a94b3ee8",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/linkedin-carousel-hooks",
+      "source": "src/content/blog/articles/linkedin-carousel-hooks.md",
+      "render": "dist/blog/linkedin-carousel-hooks/index.html",
+      "sourceSha256": "6b93af6e739f8f82572e4a4fc1d86956de47ec1d74dc925ddf6cdde437aa5aae",
+      "renderSha256": "a84299bfe48f6091a2dabb93946e4199a97d2d05fe9d8f0c21b10b49ecd1970d",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/linkedin-carousel-ideas",
+      "source": "src/content/blog/articles/linkedin-carousel-ideas.md",
+      "render": "dist/blog/linkedin-carousel-ideas/index.html",
+      "sourceSha256": "87fce36eff2fcc3cd21f4b90731b6d8ab904f17d0b81ed2cb44efd4b0554ee3c",
+      "renderSha256": "1ac16f51a7aee508771c4641f63b21f928bfa57ac97679f1ca22e4a86b10ac02",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/linkedin-carousel-size-and-specs",
+      "source": "src/content/blog/articles/linkedin-carousel-size-and-specs.md",
+      "render": "dist/blog/linkedin-carousel-size-and-specs/index.html",
+      "sourceSha256": "cb081d4cd6898727037cfbe35918c8af85169295b3f0698403af52cdd5f98654",
+      "renderSha256": "1f010553a69eb737ad98412cff87077da3846e686fa743fd60c4582c77066616",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/linkedin-content-strategy-for-founders",
+      "source": "src/content/blog/articles/linkedin-content-strategy-for-founders.md",
+      "render": "dist/blog/linkedin-content-strategy-for-founders/index.html",
+      "sourceSha256": "4f19a8ab001dc37442a9f1556ca296a0d576ac4e52bc40dbc7b0f69161e46f2e",
+      "renderSha256": "7ddf340328cfab02a50b4e7522b756995cf94d10c59ac403058245b41100cf9d",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/linkedin-creator-tools-guide",
+      "source": "src/content/blog/articles/linkedin-creator-tools-guide.md",
+      "render": "dist/blog/linkedin-creator-tools-guide/index.html",
+      "sourceSha256": "182aa0819c73dba50472703134f240e1449b13b7cdb4719eaf82689861d5c433",
+      "renderSha256": "4470bc336ff4bca5ce2f4a167b55dec6ee933ab8deecf419b87abc03b74ac704",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/linkedin-document-post-examples",
+      "source": "src/content/blog/articles/linkedin-document-post-examples.md",
+      "render": "dist/blog/linkedin-document-post-examples/index.html",
+      "sourceSha256": "289e137d91f11552b9c4b9d6070552728cf53952cca1cafbafcac04a3750eff1",
+      "renderSha256": "02ad7d142ce4e436b4c73bccc27e46e6bd02cf992d17cf783673bd2863e8749e",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/linkedin-pdf-carousel",
+      "source": "src/content/blog/articles/linkedin-pdf-carousel.md",
+      "render": "dist/blog/linkedin-pdf-carousel/index.html",
+      "sourceSha256": "0031dd386c922d67a34751180e3b6f0203d2c8d980e9a74169ad147f87aa0d61",
+      "renderSha256": "a9c43667d10ee6f62fc0fc6b67affbd9853e5d1d467b2b9bd69b454084d50dd2",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/neyroset-dlya-postov",
+      "source": "src/content/blog/articles/neyroset-dlya-postov.md",
+      "render": "dist/ru/blog/neyroset-dlya-postov/index.html",
+      "sourceSha256": "2675d1c0c00979448dbce94b6bbbd13ce1257b672e17f0c68ebf94b7f08eceb2",
+      "renderSha256": "ebfb11214bce3c48a3708ae8b7c785d71f7626fdd0e6e731b4f68a8440ff9870",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/repurpose-blog-post-linkedin-carousel-ai",
+      "source": "src/content/blog/articles/repurpose-blog-post-linkedin-carousel-ai.md",
+      "render": "dist/blog/repurpose-blog-post-linkedin-carousel-ai/index.html",
+      "sourceSha256": "1ba1c501a543640afbf62ba3a961d479a56ac909831641d5631fdc08d9ce9d62",
+      "renderSha256": "1216681625298622e470d74dc100063c9ebbafcc8d75bdd8b2e263690676d244",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/social-media-post-ideas-for-business",
+      "source": "src/content/blog/articles/social-media-post-ideas-for-business.md",
+      "render": "dist/blog/social-media-post-ideas-for-business/index.html",
+      "sourceSha256": "ccd9bf6c2d17b9ef03fb5f174b3ddebb161be7b7ae904394f75325434c8af1ad",
+      "renderSha256": "80024043e54cc2ad22b41a662267ccb4cf2a5a25baf9e21f30fcbf400a82fea3",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/ru/blog/temy-dlya-postov-v-linkedin",
+      "source": "src/content/blog/articles/temy-dlya-postov-v-linkedin.md",
+      "render": "dist/ru/blog/temy-dlya-postov-v-linkedin/index.html",
+      "sourceSha256": "182e46af7998ad568cdfdd376dd510f76d4551e4ed96d4952c0c674078f1b3b0",
+      "renderSha256": "4c9fffac13d135e00c5f268935676f6b381eb44774eb591dc609c05f1d25dbc9",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/text-to-carousel-ai",
+      "source": "src/content/blog/articles/text-to-carousel-ai.md",
+      "render": "dist/blog/text-to-carousel-ai/index.html",
+      "sourceSha256": "f0d0b0fd038876bd183d9eda3d0599360fc9fea6e1c25f419d3b04f052b3ce16",
+      "renderSha256": "80fcbb38249a8d8614764dbd3c9dfba36658c146972ad5fa842cd72bc6c5c905",
+      "independentAiEvidence": "PRIOR_SOURCE_ONLY_NOT_CURRENT_APPROVAL",
+      "producerCommercialDeltaChecked": true,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/viral-linkedin-post-examples",
+      "source": "src/content/blog/articles/viral-linkedin-post-examples.md",
+      "render": "dist/blog/viral-linkedin-post-examples/index.html",
+      "sourceSha256": "d2f113d9d03977bd50dddbb9aa9f5bf0961a8849f77c527b9c65db88b67ca7e3",
+      "renderSha256": "6de867e9e1c547e718b10f2f15551eceeeae89c742636ca1922a914a540e234d",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    },
+    {
+      "route": "/blog/youtube-to-linkedin-carousel-ai",
+      "source": "src/content/blog/articles/youtube-to-linkedin-carousel-ai.md",
+      "render": "dist/blog/youtube-to-linkedin-carousel-ai/index.html",
+      "sourceSha256": "6a5675c8bd30d0ec3fab59ea9ab6f0654ff0ceb30ce11f94772070d966d50e47",
+      "renderSha256": "9544b1b3ad89b636fa70fcd5f0c727e38852c61e1d4b0013e6a7576a8f232134",
+      "independentAiEvidence": "EXACT_SOURCE_RETAINED",
+      "producerCommercialDeltaChecked": false,
+      "currentPassSourceUnchanged": true
+    }
+  ],
+  "technicalComparison": {
+    "technicalDrift": [],
+    "h1Changes": [
+      "/ai-content-generator"
+    ],
+    "linkDrift": [],
+    "articleBodyDrift": [],
+    "articleSourceDrift": [],
+    "frozen": [
+      {
+        "route": "/ru/blog/tekst-v-karusel-neyroset",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/ii-dlya-karuseley",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/kak-napisat-tekst-dlya-karuseli-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": false,
+        "bodyUnchanged": null,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": null
+      },
+      {
+        "route": "/ru/blog/besshovnaya-karusel-v-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/razmer-karuseli-v-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/algoritm-instagram-karuseli",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/chitabelnost-teksta-v-karuselyah",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/karusel-ili-setka-v-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/kak-narezat-foto-dlya-karuseli",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/gorizontalnye-i-vertikalnye-foto-v-karuseli",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/pochemu-instagram-obrezaet-foto-v-karuseli",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/kak-uvelichit-sohraneniya-karuseley",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/cta-dlya-karuseley-instagram-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/kak-ispolzovat-midjourney-dlya-postov",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/shablony-karuseley-v-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/animaciya-v-karuselyah-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/avtovoronka-v-instagram-cherez-karuseli",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/chto-takoe-karusel-v-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/huki-dlya-karuseli-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/idei-dlya-karuseli-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/kak-povisit-ohvaty-v-instagram-s-pomoshyu-karuseley",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/kak-sdelat-karusel-dlya-instagram-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/oblozhka-dlya-karuseli-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/oshibki-v-karuselyah-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/primery-karuseley-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/prompty-dlya-karuseley-v-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/reels-ili-karuseli-chto-vybrat",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/trendovye-shrifty-dlya-karuseley",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/kak-oformit-keys-v-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/karusel-dlya-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/kak-pridumat-temu-dlya-karuseli-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/kak-sdelat-karusel-iz-video-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/karusel-dlya-lichnogo-brenda-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/karusel-dlya-otzyvov-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/karusel-dlya-zapuska-produkta-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/karuseli-dlya-ekspertov-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/karuseli-dlya-onlayn-shkol-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/karuseli-dlya-smm-agentstva-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/psihologiya-karuseley-kak-uderzhat-vnimanie",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/kakoy-ii-sozdast-post-karusel",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/gde-delat-posty-karuseli-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/konstruktor-karuseley-onlayn",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/kak-sozdat-karusel-s-chatgpt",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/massovoe-sozdanie-karuseley-s-ii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/analiz-kontenta-konkurentov-v-socsetyah",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/pererabotka-kontenta-dlya-socsetey",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/infografika-dlya-socsetey",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/blog/mnogostranichnye-karuseli-prezentacii",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": true,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/ii-generator-karuseley",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": false,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      },
+      {
+        "route": "/ru/generator-karuselej-instagram",
+        "sourceUnchanged": true,
+        "standaloneArtifact": true,
+        "bodyUnchanged": false,
+        "bodyOutsideApprovedSharedTestimonialsUnchanged": true
+      }
+    ],
+    "sitemapExactParentParity": true,
+    "robotsExactParentParity": true,
+    "projectManifestExactParentParity": true
+  },
+  "verification": {
+    "build": "PASS",
+    "unit": "55/55 PASS",
+    "targetedLint": "11 changed JSX files PASS",
+    "projectSeoState": "211routes/195sitemap/204rendered lifecycle PASS",
+    "manifest": "VALID/CURRENT; exact parent parity",
+    "indexation": "204/204 approved main dispositions;0unintended transitions",
+    "crawlHygiene": "5600links/47carousel ownership CTA pages/52duplicate frontmatter checked/0errors",
+    "seoFixtures": "55/55 PASS",
+    "renderedBlogHtml": "PASS",
+    "independentParity": {
+      "mode": "independent-full-byte-production-parity",
+      "sourceInputsSha256": "c1180d333c1a6df36b1ca5bb8b6915bd7b4f487fd48276ff9aa468584c28dafe",
+      "routes": 204,
+      "passed": true,
+      "differences": [],
+      "artifactCount": 494,
+      "inventorySha256": "bc08ae1b59ecea4a773794b2f753f9b2bd102b6ddd4bc3a9392243e8793876fc",
+      "reportSha256": "f707280abe7b44a2837c5864b6a8e5647d6842b12173ee63d99aba1094413cf0"
+    },
+    "blogBrowser": {
+      "rows": 52,
+      "passed": 52,
+      "applicationPassed": 52,
+      "images": 176,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "reportSha256": "60b1e31b1071accfd1bad6e65ccc0e39ab412f98f844d98cbae83742923a9cd3"
+    },
+    "actualRendererSsr": {
+      "languages": 2,
+      "namedRecordsPerLanguage": 10,
+      "loopCardsPerLanguage": 20,
+      "quoteAvatarParity": true,
+      "aggregateCards": 0,
+      "inventedRatings": 0,
+      "animation": "slide40s infinite",
+      "context": "Actual JSX/Oxc/React SSR + unchanged project i18n context; producer diagnostic, not independent/HUMAN approval"
+    },
+    "testimonialBrowser": {
+      "scenarios": 26,
+      "allPassed": true,
+      "method": "Actual local production preview,26 desktop/mobile scenarios; existing carousel animation + exact named records;4 screenshots only for homepage section;producer technical QA, not HUMAN review",
+      "rows": [
+        {
+          "route": "/",
+          "device": "desktop",
+          "status": 200,
+          "h1": "Find viral ideas\nand turn them into carousels\nwith AI",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 580,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": "6151afd4dbc1c0b8a4fb41384a685d70d1daa0c40e2d936a8dcae1b374eee4d5",
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": "/private/tmp/gtf-pr19-testimonials-qa-DKYThF/en-desktop.png"
+        },
+        {
+          "route": "/",
+          "device": "mobile",
+          "status": 200,
+          "h1": "Find viral ideas and turn them into carousels with AI",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 584,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": "b6aa672cb88cc8a8592b45db470e0aa910128238240e2a9d8dd538ad33c0fce0",
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": "/private/tmp/gtf-pr19-testimonials-qa-DKYThF/en-mobile.png"
+        },
+        {
+          "route": "/ru",
+          "device": "desktop",
+          "status": 200,
+          "h1": "Находите вирусные идеи\nи превращайте их в карусели\nс помощью ИИ",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 597.25,
+          "pageErrors": [],
+          "interaction": {
+            "paused": true,
+            "resumed": true
+          },
+          "screenshotSha256": "a0d397ba0a8be65c2673825c0004d8ff7a399ad56b902378f2f157e94245e78c",
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": "/private/tmp/gtf-pr19-testimonials-qa-DKYThF/ru-desktop.png"
+        },
+        {
+          "route": "/ru",
+          "device": "mobile",
+          "status": 200,
+          "h1": "Находите вирусные идеи и превращайте их в карусели с помощью ИИ",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 552,
+          "pageErrors": [],
+          "interaction": {
+            "paused": true,
+            "resumed": true
+          },
+          "screenshotSha256": "18f5b4cbd4bad8971f045f3c567f465b0a4911ad2a302ad081c8191f9f81f96c",
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": "/private/tmp/gtf-pr19-testimonials-qa-DKYThF/ru-mobile.png"
+        },
+        {
+          "route": "/ai-carousel-maker",
+          "device": "desktop",
+          "status": 200,
+          "h1": "AI Carousel Maker —\nCreate Ready-to-Publish\nCarousels in 60 Seconds",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 580,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ai-carousel-maker",
+          "device": "mobile",
+          "status": 200,
+          "h1": "AI Carousel Maker — Create Ready-to-Publish Carousels in 60 Seconds",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 584,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/instagram-carousel-maker",
+          "device": "desktop",
+          "status": 200,
+          "h1": "Instagram Carousel Maker —\nCreate Ready-to-Publish\nCarousels in 60 Seconds",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 580,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/instagram-carousel-maker",
+          "device": "mobile",
+          "status": 200,
+          "h1": "Instagram Carousel Maker — Create Ready-to-Publish Carousels in 60 Seconds",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 584,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ai-instagram-post-generator",
+          "device": "desktop",
+          "status": 200,
+          "h1": "AI Instagram Post Generator —\nCreate Posts in\n60 Seconds",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 580,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ai-instagram-post-generator",
+          "device": "mobile",
+          "status": 200,
+          "h1": "AI Instagram Post Generator — Create Posts in 60 Seconds",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 584,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ai-content-generator",
+          "device": "desktop",
+          "status": 200,
+          "h1": "AI Content Generator —\nCreate Social Media Content\nwith AI",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 580,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ai-content-generator",
+          "device": "mobile",
+          "status": 200,
+          "h1": "AI Content Generator — Create Social Media Content with AI",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 584,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/generator-kontenta",
+          "device": "desktop",
+          "status": 200,
+          "h1": "ИИ-генератор контента\nдля социальных сетей",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 597.25,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/generator-kontenta",
+          "device": "mobile",
+          "status": 200,
+          "h1": "ИИ-генератор контента для социальных сетей",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 552,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/generator-postov-instagram",
+          "device": "desktop",
+          "status": 200,
+          "h1": "Генератор постов для Instagram*\nс помощью ИИ",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 597.25,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/generator-postov-instagram",
+          "device": "mobile",
+          "status": 200,
+          "h1": "Генератор постов для Instagram* с помощью ИИ",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 552,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/linkedin-carousel-maker",
+          "device": "desktop",
+          "status": 200,
+          "h1": "LinkedIn Carousel Maker —\nCreate Ready-to-Publish\nCarousels in 60 Seconds",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 580,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/linkedin-carousel-maker",
+          "device": "mobile",
+          "status": 200,
+          "h1": "LinkedIn Carousel Maker — Create Ready-to-Publish Carousels in 60 Seconds",
+          "lang": "en",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "What creators say",
+          "animationHeight": 584,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/generator-karuselej-linkedin",
+          "device": "desktop",
+          "status": 200,
+          "h1": "Генератор каруселей для LinkedIn —\nготовая карусель за 60 секунд",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 597.25,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/generator-karuselej-linkedin",
+          "device": "mobile",
+          "status": 200,
+          "h1": "Генератор каруселей для LinkedIn — готовая карусель за 60 секунд",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 552,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/ii-generator-postov-dlya-linkedin",
+          "device": "desktop",
+          "status": 200,
+          "h1": "Генератор постов для LinkedIn с ИИ —\nготовый пост за 60 секунд",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 597.25,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/ii-generator-postov-dlya-linkedin",
+          "device": "mobile",
+          "status": 200,
+          "h1": "Генератор постов для LinkedIn с ИИ — готовый пост за 60 секунд",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 552,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/ii-generator-karuseley",
+          "device": "desktop",
+          "status": 200,
+          "h1": "ИИ-генератор каруселей онлайн\nдля Инстаграма, ВК, LinkedIn и других соцсетей",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 597.25,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/ii-generator-karuseley",
+          "device": "mobile",
+          "status": 200,
+          "h1": "ИИ-генератор каруселей онлайн для Инстаграма, ВК, LinkedIn и других соцсетей",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 552,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/generator-karuselej-instagram",
+          "device": "desktop",
+          "status": 200,
+          "h1": "Генератор каруселей для Instagram\nс ИИ",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 597.25,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        },
+        {
+          "route": "/ru/generator-karuselej-instagram",
+          "device": "mobile",
+          "status": 200,
+          "h1": "Генератор каруселей для Instagram с ИИ",
+          "lang": "ru",
+          "cardCount": 20,
+          "quoteAttributionResultsParity": true,
+          "stars": 0,
+          "aggregateCards": 0,
+          "animationName": "slide",
+          "animationDuration": "40s",
+          "animationRunning": true,
+          "animationMoved": true,
+          "bodyOverflow": false,
+          "sectionTitle": "Что говорят креаторы",
+          "animationHeight": 552,
+          "pageErrors": [],
+          "interaction": null,
+          "screenshotSha256": null,
+          "imagesDecoded": 10,
+          "imageFailures": [],
+          "localScreenshot": null
+        }
+      ],
+      "screenshots": 4,
+      "visualInspection": "Four screenshots inspected by producer; no HUMAN approval manufactured"
+    }
+  },
+  "remaining": {
+    "testimonials": "CLOSED_BY_DIRECT_OWNER_CONFIRMATION_AND_RUNTIME_QA",
+    "protectedEnH1": "CLOSED_BY_EXPLICIT_OWNER_DECISION",
+    "contentFrontmatterLint": "Existing56CT/36FM/9lint legacy dispositions remain unaccepted; articles/validators unchanged this pass; no blanket exemption or fabricated provenance",
+    "performance": "Retained measured LCP FAIL from earlier candidate; restored section changes content/images/animation cost. No new Lighthouse measurement or full performance PASS; owner risk decision still required.",
+    "analytics": "Delivery/duplicates NOT VERIFIED; code unchanged; existing controlled post-deploy operator/receive/rollback plan requires Owner decision",
+    "publication": "NO Ready/Merge/Deploy/source transition authorized; required exact-head CI remains Owner-controlled; not polled"
+  },
+  "boundaries": {
+    "articleSourceChanges": 0,
+    "productTruthChanges": 0,
+    "analyticsConsentChanges": 0,
+    "canonicalSitemapLifecycleOwnerChanges": 0,
+    "validatorChanges": 0,
+    "fabricatedHistoricalApprovals": 0,
+    "newPr": 0,
+    "paidCalls": 0,
+    "externalAnalyticsAccounts": 0,
+    "merge": 0,
+    "deploy": 0,
+    "sourceTransition": 0,
+    "ciPolling": 0
+  }
+}

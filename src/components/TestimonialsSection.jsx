@@ -8,10 +8,9 @@ export const TestimonialsSection = ({ enabled = true }) => {
   const touchTimerRef = useRef(null);
   const isRu = lang === 'RU';
   
-  // Provide fallbacks to avoid map over undefined
-  const testimonials = rawTestimonials.length > 0 ? rawTestimonials : [
-    { type: "stat", value: "0", label: "Loading..." }
-  ];
+  // Owner confirmed the existing named quotes, not aggregate product statistics.
+  // Keep stat records in i18n, but do not publish them as verified social proof.
+  const testimonials = rawTestimonials.filter((item) => item.type !== 'stat');
 
   // Дублируем элементы для непрерывного бесконечного потока
   const duplicatedTestimonials = [...testimonials, ...testimonials];
@@ -45,10 +44,6 @@ export const TestimonialsSection = ({ enabled = true }) => {
   );
 
   /* ── Card size classes: compact for RU, original for EN ── */
-  const statCardClass = isRu
-    ? "flex-shrink-0 w-[260px] md:w-[300px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl px-5 py-6 flex flex-col items-center justify-center"
-    : "flex-shrink-0 w-[280px] md:w-[350px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 flex flex-col items-center justify-center h-auto min-h-[250px]";
-
   const testimonialCardClass = isRu
     ? "flex-shrink-0 w-[300px] md:w-[340px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl px-5 py-5 flex flex-col justify-between"
     : "flex-shrink-0 w-[300px] md:w-[400px] bg-white/[0.02] border border-white/[0.08] backdrop-blur-2xl rounded-2xl p-6 flex flex-col justify-between h-auto min-h-[250px]";
@@ -65,9 +60,8 @@ export const TestimonialsSection = ({ enabled = true }) => {
     ? "flex items-center gap-3 mt-auto pt-2"
     : "flex items-center gap-3 mt-4";
 
-  // Keep attribution intact, but do not publish unverified testimonials/results.
-  // Re-enabling requires evidence for the exact quotes and statistics.
-  if (!enabled) return null;
+  // Exact 20 existing quotes/attributions/results authorised by Owner for PR #19.
+  if (!enabled || testimonials.length === 0) return null;
 
   return (
     <section className="relative z-10 py-16 md:py-24 w-full flex flex-col items-center overflow-hidden">
@@ -108,23 +102,6 @@ export const TestimonialsSection = ({ enabled = true }) => {
           onTouchEnd={handleTouchEnd}
         >
           {duplicatedTestimonials.map((t, idx) => {
-            /* ── Stat accent card ── */
-            if (t.type === 'stat') {
-              return (
-                <div 
-                  key={idx}
-                  className={statCardClass}
-                >
-                  <span className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-3 tracking-tight">
-                    {t.value}
-                  </span>
-                  <span className="text-zinc-400 text-sm md:text-base text-center font-medium leading-snug">
-                    {t.label}
-                  </span>
-                </div>
-              );
-            }
-
             /* ── Testimonial card ── */
             return (
               <div 
@@ -134,9 +111,11 @@ export const TestimonialsSection = ({ enabled = true }) => {
                 onMouseLeave={resumeSlider}
               >
                 <div>
-                  <div className={`flex gap-1 ${isRu ? 'mb-3' : 'mb-4'}`}>
-                    {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
-                  </div>
+                  {Number.isInteger(t.rating) && t.rating >= 1 && t.rating <= 5 && (
+                    <div className={`flex gap-1 ${isRu ? 'mb-3' : 'mb-4'}`} aria-label={`${t.rating} / 5`}>
+                      {Array.from({ length: t.rating }, (_, i) => <StarIcon key={i} />)}
+                    </div>
+                  )}
                   <p className={textClass}>
                     "{t.text}"
                   </p>

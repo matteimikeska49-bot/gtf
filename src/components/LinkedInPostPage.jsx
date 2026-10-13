@@ -503,7 +503,7 @@ export const LinkedInPostPage = () => (
         </ul>
       </div>
     </section>
-    <TestimonialsSection enabled={false} />
+    <TestimonialsSection />
     <PostFAQ />
     <PostBottomCTA />
     <Footer />

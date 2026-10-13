@@ -727,7 +727,7 @@ export const InstagramPostPageRu = ({ pagePath }) => {
           </ul>
         </div>
       </section>
-      <TestimonialsSection enabled={false} />
+      <TestimonialsSection />
       <CarouselFAQRu config={config} />
       <CarouselBottomCTARu config={config} />
       <Footer />

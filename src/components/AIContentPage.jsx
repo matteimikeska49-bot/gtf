@@ -64,7 +64,7 @@ export const ContentHero = () => {
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.1 }} className="max-w-3xl mx-auto w-full">
         <h1 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-8 text-balance">
-          AI Content Generator —<br className="hidden md:block" /> Create Social Media Content<br className="hidden md:block" /> <span className="text-gradient-brand">in Seconds</span>
+          AI Content Generator —<br className="hidden md:block" /> Create Social Media Content<br className="hidden md:block" /> <span className="text-gradient-brand">with AI</span>
         </h1>
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance">
@@ -500,7 +500,7 @@ export const AIContentPage = () => (
         ]
       }
     ]} />
-    <TestimonialsSection enabled={false} />
+    <TestimonialsSection />
     <ContentFAQ />
     <ContentBottomCTA />
     <Footer />
