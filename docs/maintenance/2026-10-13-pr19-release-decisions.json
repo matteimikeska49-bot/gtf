@@ -1,0 +1,89 @@
+{
+  "type": "PR19_EXPLICIT_OWNER_RELEASE_DECISIONS_NOT_MERGE_OR_DEPLOY_PERMISSION",
+  "repository": "matteimikeska49-bot/gtf",
+  "pr": "https://github.com/matteimikeska49-bot/gtf/pull/19",
+  "recordedOnLocalDate": "2026-10-13",
+  "timezone": "Europe/Moscow",
+  "ownerAuthority": {
+    "source": "Direct human task: GOTOFLOW — PR #19 — FINAL RELEASE CLOSURE, sections 1–2",
+    "inputSha256": "da318e82f0141fc7af5ba70a28b054d9cb40d9e07e91c9e9b9616e5ec1a09f5f",
+    "provenance": "Explicit Owner acceptance; not Codex independent factual certification or fabricated historical approval",
+    "signedAt": null
+  },
+  "scope": {
+    "base": "a8aa8530c2f4e2b684239eb43c5b142ba10c005f",
+    "verifiedImplementationHead": "d70e5b6516743642aee79eeeede477becb4d4080",
+    "branch": "codex/google-indexation-quality-recovery",
+    "receipt": "docs/maintenance/2026-10-13-pr19-testimonial-restoration-evidence.json",
+    "receiptSha256": "9cf410e9fa3d3dc5cf14715b67b65879f9ffb45045b579acb95ea3b3f1b4f491",
+    "priorClosureAtVerifiedHead": "docs/maintenance/2026-10-12-pr19-release-closure.md",
+    "priorClosureSha256": "92ce7aea1613264ca263a5dd252c83a7679b23736de07b50501fddee5de843db",
+    "articleBindings": { "count": 52, "receiptField": "currentBindings", "jsonStringifySha256": "ef1308265358bb2a83ec6b5caa3a8e7ce51c8bfc81cb5577babd534164434d0d" },
+    "componentBindings": { "count": 11, "receiptField": "changedSourceBindings" },
+    "testimonialBindings": { "languages": 2, "confirmedQuotes": 20, "unconfirmedStatRecordsRetainedNotRendered": 6, "receiptField": "recordBindings" },
+    "productionInputFingerprint": "c1180d333c1a6df36b1ca5bb8b6915bd7b4f487fd48276ff9aa468584c28dafe",
+    "inventoryDigest": "bc08ae1b59ecea4a773794b2f753f9b2bd102b6ddd4bc3a9392243e8793876fc",
+    "documentationOnlySuccessor": "Authorized only when production input/artifact bytes and exact bindings remain unchanged; a new implementation invalidates this acceptance"
+  },
+  "decisions": {
+    "E1": { "status": "PREVIOUSLY_AUTHORIZED_PR19_ONLY", "humanReview": "NOT_PERFORMED", "fakeHumanAccept": false },
+    "M": {
+      "status": "OWNER_ACCEPTED_THIS_RELEASE_ONLY",
+      "individualDispositions": "Exact H01–H52 route/rule/source/render findings and L01–L09 in priorClosureAtVerifiedHead, with current receipt bindings",
+      "contentTemplateFindings": 56,
+      "frontmatterFindings": 36,
+      "baselineLintFindings": 9,
+      "commercialAmendments": 15,
+      "handoff": "One bounded nonzero maintenance handoff; not checker PASS",
+      "legacyFixture": "Old receipt remains nonzero with 15 SOURCE_DRIFT / 22 NEW_WORSE_OR_UNRESOLVED labels; disclosed binding mismatch, not silently rewritten or blessed for future drift",
+      "newOrWorsenedFindings": "BLOCKING",
+      "historicalMissingRecords": "REMAIN_MISSING",
+      "futureRulesThresholdsValidators": "UNCHANGED"
+    },
+    "P": {
+      "status": "OWNER_ACCEPTED_ONE_RELEASE_RESIDUAL_RISK",
+      "measurementScope": "Historical pre-correction local mobile samples, not current final artifacts or full production scope",
+      "lcpSeconds": [3.437879, 3.493692],
+      "lcpThresholdSeconds": 2.5,
+      "formalMeasurementStatus": "FAIL",
+      "currentFullProductionPerformance": "UNKNOWN",
+      "condition": "Post-deploy verification, observation and available human-authorized rollback on confirmed substantial regression; thresholds unchanged"
+    },
+    "T": { "status": "CLOSED", "basis": "Owner factual confirmation and immutable testimonial receipt; no aggregate metric certification" },
+    "A": {
+      "status": "OWNER_AUTHORIZED_CONTROLLED_ROLLOUT_CONDITIONALLY",
+      "deliveryAccountReceive": "NOT_VERIFIED",
+      "providerDuplicatesAndMappings": "NOT_VERIFIED",
+      "operator": null,
+      "accountAccessConfirmed": false,
+      "currentDeployedRevision": null,
+      "retainedCompatibleRollbackImage": null,
+      "runbook": "docs/maintenance/2026-10-12-pr19-release-closure.md sections 4–6",
+      "proposedWindow": "Critical smoke 15min; consent/event correlation 30min; receive deadline 60min unless documented provider window requires a concrete pre-agreed alternative; scoped performance 24h. Proposed, not a provider SLA or already confirmed operator commitment."
+    },
+    "R": { "status": "NOT_AUTHORIZED", "ready": false, "merge": false, "deploy": false, "orqestraSourceTransition": false }
+  },
+  "operationalEvidence": {
+    "ownerPreviouslyConfirmedCoolify": { "repository": "matteimikeska49-bot/gtf", "productionBranch": "main", "autoDeploy": "Deploy on push (webhooks)", "previewDeployments": "DISABLED", "domain": "gotoflow.io", "ownerCoolifyAccess": "Previously demonstrated by direct Owner inspection; current rollback target not inspected" },
+    "githubWorkflow": { "path": ".github/workflows/docker-nginx-validation.yml", "deploymentAction": false, "dockerfileAndWorkflowUnchangedFromMain": true },
+    "ciObservedOnce": { "head": "d70e5b6516743642aee79eeeede477becb4d4080", "name": "Build Docker image and validate nginx", "conclusion": "SUCCESS", "startedAt": "2026-10-13T11:11:06Z", "completedAt": "2026-10-13T11:11:26Z", "url": "https://github.com/matteimikeska49-bot/gtf/actions/runs/38388456088/job/115265958318", "successorHeadCi": "NOT_OBSERVED_NO_POLLING" },
+    "latestAvailableGithubDeployment": { "id": 5010423908, "createdAt": "2026-06-10T20:00:07Z", "sha": "d13422f7fb1fdf192c3a8b35fe5514270549c36e", "status": "STALE_NOT_CURRENT_PRODUCTION_PROOF" },
+    "rollbackReference": "https://coolify.io/docs/applications/deployments/rollbacks",
+    "rollbackCapability": "Documented retained-image mechanism; actual instance target/retention/compatibility unverified. No rollback executed.",
+    "buildJson": "Not exact deployed revision proof; Dockerfile copies committed dist, marker may report pre-commit SHA",
+    "analyticsCode": { "gtm": "GTM-W5R5NBH8", "ga4": "G-7T87G1XGHL", "yandexCounter": 108772587, "customTransport": "consented dataLayer push and seo-analytics CustomEvent", "customProviderMapping": "UNKNOWN; no repo gtag-event/reachGoal listener proves account mapping" }
+  },
+  "targetedVerification": {
+    "exactArticleSourceRenderBindings": "52/52 CURRENT",
+    "componentSourceBindings": "11/11 CURRENT",
+    "i18nSourceBindings": "2/2 CURRENT",
+    "bindingDrift": 0,
+    "broadSuites": "Not rerun; immutable successful d70 build, SEO, HTML, images, frozen and byte-parity evidence reused unchanged",
+    "productionActions": 0,
+    "externalAccountAccess": 0,
+    "coolifyUiAccess": 0
+  },
+  "verdict": "CODE READY — ONE OPERATIONAL GATE REMAINING",
+  "oneRemainingOperationalAction": "Before manual Merge Owner confirms one controlled-rollout handoff: named authorized account-side analytics operator/access, actual successful deployed SHA/image and retained compatible rollback target with responsible rollback human, and agreed verification window. No new SEO/code/governance acceptance required.",
+  "historyPolicy": "Previous receipts unchanged. This real current Owner decision supersedes only their pending release-disposition statuses, not their test/provenance facts."
+}
