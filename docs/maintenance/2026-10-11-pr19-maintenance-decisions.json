@@ -1,0 +1,1517 @@
+{
+  "type": "PR19_MAINTENANCE_DECISION_REQUEST_NOT_APPROVAL",
+  "date": "2026-10-11",
+  "repository": "matteimikeska49-bot/gtf",
+  "pr": 19,
+  "base": "a8aa8530c2f4e2b684239eb43c5b142ba10c005f",
+  "parent": "1d41b9ca49c3abe8b8bb94683c49172a9e20d0da",
+  "ownerAuthorization": "OWNER DECISION — PR #19 FINAL RELEASE CLOSURE; exact precision repairs and individual proposals; review-only push; no publication approval",
+  "verdict": "BLOCKED",
+  "evidence": {
+    "file": "docs/maintenance/2026-10-10-pr19-final-test-receipt.json",
+    "sha256": "f39eb7c112e53dd449d1f3cd2396f5c58a7c29745ac7f73aeb438c1a549def00",
+    "immutable": true,
+    "aiReview": "AUXILIARY_NOT_HUMAN_APPROVAL"
+  },
+  "scope": {
+    "articles": 52,
+    "artifacts": 494,
+    "allCurrentHashesMatch": true,
+    "runtimeChanged": false,
+    "distChanged": false,
+    "thresholdsChanged": false,
+    "approvalRecordsChanged": false,
+    "ready": false,
+    "merge": false,
+    "deploy": false,
+    "sourceTransition": false
+  },
+  "repairs": {
+    "v2": "Standalone separators checked, valid table delimiters/inline/code examples not separators",
+    "quality": "Only adjacent explicit negation excluded; subsequent positive claims still blocked",
+    "positioning": "Only comparison string operands masked by AST; visible JSX/i18n/string outputs inspected; parse failure blocks",
+    "lint": "Actual JSX references marked;33 false positives resolved;unused variables/props remain blocking"
+  },
+  "checkerHashes": {
+    "scripts/check-blog-v2-layout-contract.mjs": "d5c9beb764fd5af7f2521ad0c2e2d54bc062b4af4225d206e2cd4318d43fb666",
+    "scripts/check-blog-quality-contract.mjs": "cef67490511a305b71a04692efe040b06a3defdc50a3504a3ec27c65b2b7560a",
+    "scripts/check-blog-product-positioning.mjs": "867e39625aae2e786eeacf0c60b13a25f529310d6f1040a68b4660f08918a09c",
+    "scripts/lib/release-check-precision.mjs": "71d8d69bec4c631bd641baa1d8e92242d626798b286f21dbeffbdb1ea78e8630",
+    "scripts/tests/release-check-precision.test.mjs": "399021328dadd1b20aec13e64b3d3dfd61a8295c5d573040d99faddb351812c5",
+    "eslint.config.js": "782cf0dbd055e76c064e6bb5f3912b14d43d05fd3ca9a9b8c06aa68cb3066cac"
+  },
+  "verification": {
+    "precisionConsentReferral": "17/17 PASS",
+    "v2": "82 strict targets PASS",
+    "quality": "62 articles PASS",
+    "positioning": "148 articles +84 copy files PASS;3 unchanged warnings",
+    "content": "56 FAIL:39 improved legacy,17 unchanged;rules not changed",
+    "frontmatter": "36 unchanged FAIL;historical records not fabricated",
+    "lint": "19 FAIL;exact baseline rule/message/source-line evidence retained",
+    "seoState": "211 routes;195/195 sitemap;204/204 rendered lifecycle PASS",
+    "indexation": "204 base dispositions unchanged;0 unintended transitions",
+    "retainedBuildBrowser": "Exact artifacts/source/render match immutable receipt;no build/runtime input changed by this checker-only pass;no fresh full build/browser/Lighthouse claimed",
+    "fullRelease": "Last full run FAIL7/10;affected checks rerun;no blanket PASS",
+    "frozen": "50 source files unchanged;48/49 strict rendered projections equal +1 previously authorized app-root slash;1 runtime-only N/A",
+    "cta": "37 direct-app CTA unchanged",
+    "typecheck": "NO_CONFIGURED_SCRIPT_NOT_APPLICABLE"
+  },
+  "analytics": {
+    "consent": "Existing eight browser cases apply to unchanged runtime;13 existing unit tests rerun PASS",
+    "googleTransport": "GTM and gtag HTTPS probes failed SSL_ERROR_SYSCALL",
+    "accountDelivery": "NOT_VERIFIED",
+    "accountDuplicateEvents": "NOT_VERIFIED;single local bootstrap is not account proof",
+    "ownerAction": "Verify one accepted visit/event via existing working network and GTM preview/GA4 DebugView/Yandex account. Reject must show0 optional events. No credentials in chat, no guessed result."
+  },
+  "performance": {
+    "decision": "PENDING_OWNER_NOT_PERFORMANCE_PASS",
+    "finalMobileSamples": [
+      {
+        "route": "/blog/ai-carousel-content-strategy",
+        "score": 85,
+        "lcpMs": 3772.77,
+        "cls": 0
+      },
+      {
+        "route": "/ru/blog/neyroset-dlya-postov",
+        "score": 87,
+        "lcpMs": 3487.19,
+        "cls": 0
+      }
+    ],
+    "requiredLcpMs": 2500,
+    "fullScope": "NOT_COMPLETE;retained27 reports not current full52 PASS",
+    "options": [
+      "HOLD until current contract is satisfied",
+      "Explicit exact-artifact one-release risk/measurement-scope Owner decision;preserve measured FAIL/incomplete scope;do not lower threshold or relabel PASS"
+    ]
+  },
+  "productionLike": {
+    "docker": "Daemon/socket absent;not started",
+    "nginxSmoke": "NOT_VERIFIED",
+    "ownerAction": "Provide already running isolated Docker/nginx URL at exact candidate, or explicitly start it;no Vite substitution"
+  },
+  "articles": [
+    {
+      "route": "/blog/ai-carousel-content-strategy",
+      "source": "src/content/blog/articles/ai-carousel-content-strategy.md",
+      "sourceSha256": "19948ae1ae5a51e760fb12d08434600b1a3b03a9b6f1d1b82a037f0460878592",
+      "render": "dist/blog/ai-carousel-content-strategy/index.html",
+      "renderSha256": "04059a930cac2f4467aa0d8f470710e3e053f8b92e47d2f654214d26f5c763f2",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 0,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4695,
+          "minimum": 8000,
+          "baseActual": 4354,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        }
+      ]
+    },
+    {
+      "route": "/blog/ai-carousel-generator",
+      "source": "src/content/blog/articles/ai-carousel-generator.md",
+      "sourceSha256": "5605d28d788b3380b667539c799ac33922835b245f57949f3040e4713479674b",
+      "render": "dist/blog/ai-carousel-generator/index.html",
+      "renderSha256": "e493f7897966343b2547cd57d86115bcdee4b13da0080b617808a4bd233d3cd7",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 1,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 3980,
+          "minimum": 6000,
+          "baseActual": 3508,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        }
+      ]
+    },
+    {
+      "route": "/blog/ai-carousel-workflow",
+      "source": "src/content/blog/articles/ai-carousel-workflow.md",
+      "sourceSha256": "b7ebfeb2e2ae2d866b0567bf8a9f048c294f3b250a602fe15b26006e28d8d6e6",
+      "render": "dist/blog/ai-carousel-workflow/index.html",
+      "renderSha256": "c48da15593d55f4a05f47e859a239cef40613a78170a12be356a4528648c7dca",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 2,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5695,
+          "minimum": 6000,
+          "baseActual": 4146,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        }
+      ]
+    },
+    {
+      "route": "/blog/ai-content-creation",
+      "source": "src/content/blog/articles/ai-content-creation.md",
+      "sourceSha256": "f688bc9c56a25b3d563fb41e957b3796b29f42a2ab36269889b0d938df0f854e",
+      "render": "dist/blog/ai-content-creation/index.html",
+      "renderSha256": "2a451501833c1f2298f68d0b89a40fe7280451672c179d90fd472af6bef326cb",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": []
+    },
+    {
+      "route": "/blog/ai-content-writing",
+      "source": "src/content/blog/articles/ai-content-writing.md",
+      "sourceSha256": "7a5a97ec38f86a15c4531b841e371f2c1439ac8dd3c0fdc1ec5f87cf101e728d",
+      "render": "dist/blog/ai-content-writing/index.html",
+      "renderSha256": "f4d8e8e16c3d55543014443763a1e8d16f5b3a8f7b0435d2161a8bfe27cf1559",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": []
+    },
+    {
+      "route": "/blog/ai-facebook-post-generator",
+      "source": "src/content/blog/articles/ai-facebook-post-generator.md",
+      "sourceSha256": "db0f8da2f2661e42e63217894159b4ed774f1013cc12732611a255ed910f061d",
+      "render": "dist/blog/ai-facebook-post-generator/index.html",
+      "renderSha256": "aa9ae53b53752ba2bdc1c5e84e2dfacef91414e86c1eac4b0a629500c416e545",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 0,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/ai-instagram-carousel-generator",
+      "source": "src/content/blog/articles/ai-instagram-carousel-generator.md",
+      "sourceSha256": "d46d113eb084e3e20b8c7299488e658bfb22f9a7c4bc30902bec94150247504f",
+      "render": "dist/blog/ai-instagram-carousel-generator/index.html",
+      "renderSha256": "84151d44c99e9dd3477b86a28e12917888620cdfa8f0293443c16e5113219b7d",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 1,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/ai-social-media-manager",
+      "source": "src/content/blog/articles/ai-social-media-manager.md",
+      "sourceSha256": "1ea65956094bddf2baaac5f29b6654b19e595b6bd7c07ecd89836b8371362b54",
+      "render": "dist/blog/ai-social-media-manager/index.html",
+      "renderSha256": "b5b940fad3085917791f7100ddd8784c70913ca4035e9c4c0a081bae01b7170c",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 3,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5732,
+          "minimum": 8000,
+          "baseActual": 4285,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 2,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/best-carousel-cta-examples",
+      "source": "src/content/blog/articles/best-carousel-cta-examples.md",
+      "sourceSha256": "9094db5c88ba68b11099d7f9cdc8d0196f9473594c97224e62f12cbd88e1479c",
+      "render": "dist/blog/best-carousel-cta-examples/index.html",
+      "renderSha256": "31e5b50de163b1910723754e9e3c18c509317a9721ddde9aa82c058b495464a8",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 4,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4452,
+          "minimum": 8000,
+          "baseActual": 3800,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 3,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/carousel-post-mistakes",
+      "source": "src/content/blog/articles/carousel-post-mistakes.md",
+      "sourceSha256": "70c2201465a84ffdc27246a6479f63ca5e1e86b39851b8d6956feee9abbfd23f",
+      "render": "dist/blog/carousel-post-mistakes/index.html",
+      "renderSha256": "aa5a114aa834a8d4061183e8d1aea36c7024f83310e4fdcaa2bd29004adfbdd8",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 5,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4406,
+          "minimum": 8000,
+          "baseActual": 4303,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        }
+      ]
+    },
+    {
+      "route": "/blog/chatgpt-for-social-media-marketing",
+      "source": "src/content/blog/articles/chatgpt-for-social-media-marketing.md",
+      "sourceSha256": "9287c11b5f0d747a786b8b4ccf13e04043c291c7b6ce6aa96ec523b68a6efec2",
+      "render": "dist/blog/chatgpt-for-social-media-marketing/index.html",
+      "renderSha256": "812060fecabe7ba871145ebfa13ad8a3b698785c5340aa779638b462b944aa8c",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 6,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5145,
+          "minimum": 8000,
+          "baseActual": 4819,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 7,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "actual": 2,
+          "minimum": 4,
+          "baseActual": 2,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 4,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/chatgpt-prompty-dlya-kopirajtera",
+      "source": "src/content/blog/articles/chatgpt-prompty-dlya-kopirajtera.md",
+      "sourceSha256": "b3a39b14d44c762467cdfd69c3a4697766a5d0df4ba468a4b6d680382788b231",
+      "render": "dist/ru/blog/chatgpt-prompty-dlya-kopirajtera/index.html",
+      "renderSha256": "9ee9cb8ba9c03bbf4aa58685033173e480fffb3ef301f5c8d2de0f6a1ed95151",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 8,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5779,
+          "minimum": 8000,
+          "baseActual": 5698,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 5,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/content-calendar-to-carousel",
+      "source": "src/content/blog/articles/content-calendar-to-carousel.md",
+      "sourceSha256": "271e3a93e12ecc7f5cb2c03207e76d547050a965dd8acc91d53496ba227a5783",
+      "render": "dist/blog/content-calendar-to-carousel/index.html",
+      "renderSha256": "57e4ae2d6fca56454b3908d661764d05196e422df4cd4e808457a835d9ee387c",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 9,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5461,
+          "minimum": 8000,
+          "baseActual": 1171,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/dizayn-karuseley-neyroset-vs-canva",
+      "source": "src/content/blog/articles/dizayn-karuseley-neyroset-vs-canva.md",
+      "sourceSha256": "297394583541eda916e4083bb844f8296751febd9b9896daa78fb71151717777",
+      "render": "dist/ru/blog/dizayn-karuseley-neyroset-vs-canva/index.html",
+      "renderSha256": "f6a6e072f240704d609a2c041e6736557430baea93b9bfb052e743fb2977da8a",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 10,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 3884,
+          "minimum": 6000,
+          "baseActual": 3640,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 6,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/facebook-post-ideas-for-small-business",
+      "source": "src/content/blog/articles/facebook-post-ideas-for-small-business.md",
+      "sourceSha256": "8a619061aa3912c4bed178256e1b88d5b233122d32272dae2847632f70c322be",
+      "render": "dist/blog/facebook-post-ideas-for-small-business/index.html",
+      "renderSha256": "8fcca6b403faf3a131d43d53dbdee684e2559cbfbb04fce6ff1d0d3c55b9cfe9",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 11,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4107,
+          "minimum": 8000,
+          "baseActual": 3186,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 7,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/foto-dlya-posta-instagram-vizual-s-ii",
+      "source": "src/content/blog/articles/foto-dlya-posta-instagram-vizual-s-ii.md",
+      "sourceSha256": "31255f18234ec7bde59347409d4d1355bc7340cab93d3f74d1c74991e1c61677",
+      "render": "dist/ru/blog/foto-dlya-posta-instagram-vizual-s-ii/index.html",
+      "renderSha256": "68da29424728e124b994a6e5b08d472c4628909baa9182081f818e96b573149c",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": []
+    },
+    {
+      "route": "/ru/blog/generaciya-postov-karuseley",
+      "source": "src/content/blog/articles/generaciya-postov-karuseley.md",
+      "sourceSha256": "1387cf7ed66840dd625115c88f023f7ef13f61f2b0e4e79a18ba844365db5790",
+      "render": "dist/ru/blog/generaciya-postov-karuseley/index.html",
+      "renderSha256": "509e3d3a23cd76d3e619083864763b53b5aab610d50584cd7fa1c4feb49c90f7",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 8,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/guide-to-ai-social-media-post-generators",
+      "source": "src/content/blog/articles/guide-to-ai-social-media-post-generators.md",
+      "sourceSha256": "595664f298be52125c981559bd0c479f35234c7747124e941208413d2567b382",
+      "render": "dist/blog/guide-to-ai-social-media-post-generators/index.html",
+      "renderSha256": "caacd38bd9bf9a541e9d3a5791111fb9f1a270d7ec110ca95ed225ec70ad7dfe",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 12,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 6591,
+          "minimum": 8000,
+          "baseActual": 2822,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 9,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/how-to-brainstorm-carousel-topics-with-ai",
+      "source": "src/content/blog/articles/how-to-brainstorm-carousel-topics-with-ai.md",
+      "sourceSha256": "668cfeb70e195a44e12390dc1d1e6c61ae7dcfc139e90f0f3eb6a73cb9ca03fb",
+      "render": "dist/blog/how-to-brainstorm-carousel-topics-with-ai/index.html",
+      "renderSha256": "93f606d3bab090291ab63d6f6a5aa1fba7fcafb607781887178bb1821e8aed95",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 13,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4603,
+          "minimum": 6000,
+          "baseActual": 4523,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        }
+      ]
+    },
+    {
+      "route": "/blog/how-to-build-a-personal-brand-on-linkedin-with-ai",
+      "source": "src/content/blog/articles/how-to-build-a-personal-brand-on-linkedin-with-ai.md",
+      "sourceSha256": "22b736f0150211eb9b33250a327161a17cc24aba43c7cf2207829c76e22a9b10",
+      "render": "dist/blog/how-to-build-a-personal-brand-on-linkedin-with-ai/index.html",
+      "renderSha256": "6e32474ee7345a953d8122180a969efbd99233244d72ad76aaedbea3edb9116c",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 14,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5319,
+          "minimum": 8000,
+          "baseActual": 3991,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 10,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/how-to-increase-instagram-engagement-with-carousels",
+      "source": "src/content/blog/articles/how-to-increase-instagram-engagement-with-carousels.md",
+      "sourceSha256": "185ae410cbba69d989aec243e6b8c7dd738063bdd132ae446deff34f8c0fef9b",
+      "render": "dist/blog/how-to-increase-instagram-engagement-with-carousels/index.html",
+      "renderSha256": "00155be36ff6a47678b911c9429029fec404bea64f56342eb3f97be4f73f4377",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 15,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4619,
+          "minimum": 8000,
+          "baseActual": 3976,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 16,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "HUMAN review this exact structural finding;retain only by individual decision or request bounded substantive correction"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 11,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/how-to-make-an-instagram-carousel-with-ai",
+      "source": "src/content/blog/articles/how-to-make-an-instagram-carousel-with-ai.md",
+      "sourceSha256": "c56a6d34b9047687de10377c778defe03524b934347e5a5e093a5818cd4f805a",
+      "render": "dist/blog/how-to-make-an-instagram-carousel-with-ai/index.html",
+      "renderSha256": "0b4889651b72d9f40dd09624cc041181ce167a5c2ceb9cf9d56d6f3b2e475d88",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 17,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4375,
+          "minimum": 6000,
+          "baseActual": 3250,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 18,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "HUMAN review this exact structural finding;retain only by individual decision or request bounded substantive correction"
+        }
+      ]
+    },
+    {
+      "route": "/blog/how-to-make-linkedin-carousel-with-ai",
+      "source": "src/content/blog/articles/how-to-make-linkedin-carousel-with-ai.md",
+      "sourceSha256": "dd854c774c700123b66e74ed86df554179d2bd6b0fab989dd158e84e7c72b504",
+      "render": "dist/blog/how-to-make-linkedin-carousel-with-ai/index.html",
+      "renderSha256": "3be5709495a2596cbcfc1537c9868110ac548d7b5455d13fae10204fb85a3bb1",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 19,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "HUMAN review this exact structural finding;retain only by individual decision or request bounded substantive correction"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 12,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/how-to-repurpose-podcasts-into-ai-carousels",
+      "source": "src/content/blog/articles/how-to-repurpose-podcasts-into-ai-carousels.md",
+      "sourceSha256": "fe09ca3f8c00967588b6c33253a5a419f7d2371dc81000887b3934c26209b985",
+      "render": "dist/blog/how-to-repurpose-podcasts-into-ai-carousels/index.html",
+      "renderSha256": "18abdd014d79d7096ab527c0368f9f352dbc312a875df1308753f9f315b3d3b9",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 20,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4008,
+          "minimum": 6000,
+          "baseActual": 3980,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        }
+      ]
+    },
+    {
+      "route": "/blog/how-to-scale-your-smm-agency-with-ai",
+      "source": "src/content/blog/articles/how-to-scale-your-smm-agency-with-ai.md",
+      "sourceSha256": "b77617a3513b7949f3db9cb48963d49c061e0d31291b0d65a285c2444a980072",
+      "render": "dist/blog/how-to-scale-your-smm-agency-with-ai/index.html",
+      "renderSha256": "7679ca54aace04f3c580ad72a0fa79b5ca47b4df9616af2137790ea3a43aa57e",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 21,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5368,
+          "minimum": 8000,
+          "baseActual": 3602,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 13,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/how-to-schedule-linkedin-carousel",
+      "source": "src/content/blog/articles/how-to-schedule-linkedin-carousel.md",
+      "sourceSha256": "697913c6287a0130defa542ca9755bb29d9cd0f4e6cfca0a7bf4abe9fa950bd1",
+      "render": "dist/blog/how-to-schedule-linkedin-carousel/index.html",
+      "renderSha256": "1b8c2cacf06d17ccbb6baf8c22ba7522f0c351d2956d03175e2ee92b4a8262ca",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 14,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/ii-post-dlya-socsetej",
+      "source": "src/content/blog/articles/ii-post-dlya-socsetej.md",
+      "sourceSha256": "466d65dcd7278cd7eab1e8f1feb3005e36ceb1492d75d8b39ca1be51b35be78c",
+      "render": "dist/ru/blog/ii-post-dlya-socsetej/index.html",
+      "renderSha256": "b5224d4a369964de012c74e688e762ed732649fe3e9b130575941fd77504493c",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": []
+    },
+    {
+      "route": "/blog/instagram-carousel-cover-ideas",
+      "source": "src/content/blog/articles/instagram-carousel-cover-ideas.md",
+      "sourceSha256": "da987e3d4e720f894e206525dd2f0a3fabcd8a8e62d7f0127e3da76682771fe2",
+      "render": "dist/blog/instagram-carousel-cover-ideas/index.html",
+      "renderSha256": "a5d2d949b1f4caf302039de32a9e8549b00632d4e181f6f2950decd17e918c4c",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 22,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 6843,
+          "minimum": 8000,
+          "baseActual": 6550,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 23,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "actual": 3,
+          "minimum": 4,
+          "baseActual": 3,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 15,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/instagram-carousel-ideas",
+      "source": "src/content/blog/articles/instagram-carousel-ideas.md",
+      "sourceSha256": "aba15967fa62c9d038816743da8aeff674acfce75ee6e5d2452cb2898f36964d",
+      "render": "dist/blog/instagram-carousel-ideas/index.html",
+      "renderSha256": "f85c17682a5bbd5b2c9b02d680f54211d210e72b4797f1bfcaa58f0df5c8d9e8",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 24,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5186,
+          "minimum": 6000,
+          "baseActual": 4910,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 25,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "HUMAN review this exact structural finding;retain only by individual decision or request bounded substantive correction"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 16,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/instagram-carousel-storytelling",
+      "source": "src/content/blog/articles/instagram-carousel-storytelling.md",
+      "sourceSha256": "89697c81a79e7e7481a01b75618c8f5190c4cb50af27be08541843fa2f5ccec7",
+      "render": "dist/blog/instagram-carousel-storytelling/index.html",
+      "renderSha256": "e518d79825fc990aa9df2cafa83c7902c2d2783a27004315c4b3d07a2d628714",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 26,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4885,
+          "minimum": 8000,
+          "baseActual": 4469,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 17,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/kak-napisat-ekspertnyj-post",
+      "source": "src/content/blog/articles/kak-napisat-ekspertnyj-post.md",
+      "sourceSha256": "58cef8a78d56daf54b566bef091705aa5c4a61d9e7e516ed95a418d5eddbabae",
+      "render": "dist/ru/blog/kak-napisat-ekspertnyj-post/index.html",
+      "renderSha256": "7a8ebaf58e0b8cb4757764327437cec7422d96c82b5502a66142c47f41706445",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 27,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 3862,
+          "minimum": 8000,
+          "baseActual": 2506,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 28,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "actual": 3,
+          "minimum": 4,
+          "baseActual": 3,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 18,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii",
+      "source": "src/content/blog/articles/kak-napisat-post-v-vk-s-pomoshyu-ii.md",
+      "sourceSha256": "022e2f90444aae8d15b271f7a1577560455ece43a41d590d7362ba7466a44092",
+      "render": "dist/ru/blog/kak-napisat-post-v-vk-s-pomoshyu-ii/index.html",
+      "renderSha256": "90b54acf7f7d6f15a0f3f0e3f0caff199b39032f0722a6842eea28167d3ba966",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 29,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 3207,
+          "minimum": 8000,
+          "baseActual": 2603,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 30,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "actual": 3,
+          "minimum": 4,
+          "baseActual": 3,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 19,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/kak-peredelat-statyu-v-karusel-linkedin",
+      "source": "src/content/blog/articles/kak-peredelat-statyu-v-karusel-linkedin.md",
+      "sourceSha256": "8804326e0a06c1a908ccc9254735a74b9bfb7c28af08421ea8977c5947b84d35",
+      "render": "dist/ru/blog/kak-peredelat-statyu-v-karusel-linkedin/index.html",
+      "renderSha256": "a3e596d2b1fb49077ebe1ccdd8cada499ccdef5ae971478e58c390c136c3a425",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 31,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 3478,
+          "minimum": 6000,
+          "baseActual": 3313,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 32,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "HUMAN review this exact structural finding;retain only by individual decision or request bounded substantive correction"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 20,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/kak-pisat-prodayushchie-posty-s-ii",
+      "source": "src/content/blog/articles/kak-pisat-prodayushchie-posty-s-ii.md",
+      "sourceSha256": "0a2df63bc2748d2b2881c4983fe0c67b33dcdd4618ca9e015c075b24efe509ef",
+      "render": "dist/ru/blog/kak-pisat-prodayushchie-posty-s-ii/index.html",
+      "renderSha256": "6cd5913fad371f7ee23827356beadfe7fcf59895cc16ce8dfacc2f7f86ab2448",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 33,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4404,
+          "minimum": 8000,
+          "baseActual": 3308,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 34,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "HUMAN review this exact structural finding;retain only by individual decision or request bounded substantive correction"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 21,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/kak-sdelat-karusel-linkedin-s-ai",
+      "source": "src/content/blog/articles/kak-sdelat-karusel-linkedin-s-ai.md",
+      "sourceSha256": "6788a5aededa737970d653620aa949f43bc39908fe039c168403c53dcd37e85a",
+      "render": "dist/ru/blog/kak-sdelat-karusel-linkedin-s-ai/index.html",
+      "renderSha256": "a5594fb383a304a258c26b848b7921dadac8c74488432681c927fa1e4b0912ea",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 35,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "HUMAN review this exact structural finding;retain only by individual decision or request bounded substantive correction"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 22,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/kak-sdelat-post-v-instagram-s-ii",
+      "source": "src/content/blog/articles/kak-sdelat-post-v-instagram-s-ii.md",
+      "sourceSha256": "7bd9e4c3b8c1d255161b7b7e37e9be739f9922ca41aef52229965affaba0de83",
+      "render": "dist/ru/blog/kak-sdelat-post-v-instagram-s-ii/index.html",
+      "renderSha256": "126609330659e7a8646d20307cc9ad1c07df0207806c5299f9291c5937574050",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": []
+    },
+    {
+      "route": "/ru/blog/kak-sdelat-shablon-dlya-postov-v-canva",
+      "source": "src/content/blog/articles/kak-sdelat-shablon-dlya-postov-v-canva.md",
+      "sourceSha256": "9171a88769c8fca031c62f9a3aa1f9cc689d4f5a9b80ee0253c3aa905f2c5286",
+      "render": "dist/ru/blog/kak-sdelat-shablon-dlya-postov-v-canva/index.html",
+      "renderSha256": "4c4eca4cb4553a1cdfb49367d4398d21219f8f955618c91769a2133aa0a7a46e",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 36,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4209,
+          "minimum": 8000,
+          "baseActual": 3166,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 37,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "HUMAN review this exact structural finding;retain only by individual decision or request bounded substantive correction"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 23,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/kontent-plan-dlya-vk",
+      "source": "src/content/blog/articles/kontent-plan-dlya-vk.md",
+      "sourceSha256": "4b328cc4f70a8bcd947fafede03f8d997015cbf9d4c0cb8c6631637854eb8cf6",
+      "render": "dist/ru/blog/kontent-plan-dlya-vk/index.html",
+      "renderSha256": "ab110549acf30b36999ee3397894e4bc5372ce9549ffd4427576e0380eb85eb1",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": []
+    },
+    {
+      "route": "/blog/linkedin-carousel-hooks",
+      "source": "src/content/blog/articles/linkedin-carousel-hooks.md",
+      "sourceSha256": "6b93af6e739f8f82572e4a4fc1d86956de47ec1d74dc925ddf6cdde437aa5aae",
+      "render": "dist/blog/linkedin-carousel-hooks/index.html",
+      "renderSha256": "a96f0a452cbd3f58bdd51be992f645ea2bcb9cb879bfa68a972ee5b7726523bf",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 38,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5783,
+          "minimum": 6000,
+          "baseActual": 4893,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 24,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/linkedin-carousel-ideas",
+      "source": "src/content/blog/articles/linkedin-carousel-ideas.md",
+      "sourceSha256": "87fce36eff2fcc3cd21f4b90731b6d8ab904f17d0b81ed2cb44efd4b0554ee3c",
+      "render": "dist/blog/linkedin-carousel-ideas/index.html",
+      "renderSha256": "564d0c12762ee2773b1c1399bf1db66254bf4ee547ce4d8431dc845b017cdea2",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 39,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "HUMAN review this exact structural finding;retain only by individual decision or request bounded substantive correction"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 25,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/linkedin-carousel-size-and-specs",
+      "source": "src/content/blog/articles/linkedin-carousel-size-and-specs.md",
+      "sourceSha256": "cb081d4cd6898727037cfbe35918c8af85169295b3f0698403af52cdd5f98654",
+      "render": "dist/blog/linkedin-carousel-size-and-specs/index.html",
+      "renderSha256": "e091b411529cc7ba68772b837a184a037bbc0d1151399a60006be27fd70aaff3",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 40,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 3910,
+          "minimum": 8000,
+          "baseActual": 2965,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 26,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/linkedin-content-strategy-for-founders",
+      "source": "src/content/blog/articles/linkedin-content-strategy-for-founders.md",
+      "sourceSha256": "4f19a8ab001dc37442a9f1556ca296a0d576ac4e52bc40dbc7b0f69161e46f2e",
+      "render": "dist/blog/linkedin-content-strategy-for-founders/index.html",
+      "renderSha256": "a652d3cbbc8adbddf6fb76cc8d824e0e677afff0c6b1e7d8ad02e545f0900c57",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 41,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4701,
+          "minimum": 8000,
+          "baseActual": 4135,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 27,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/linkedin-creator-tools-guide",
+      "source": "src/content/blog/articles/linkedin-creator-tools-guide.md",
+      "sourceSha256": "182aa0819c73dba50472703134f240e1449b13b7cdb4719eaf82689861d5c433",
+      "render": "dist/blog/linkedin-creator-tools-guide/index.html",
+      "renderSha256": "8b39ac60a53abe5309878bc91a4cfdde7d4182181942efa7c843aa8e8e2102de",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 42,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4647,
+          "minimum": 8000,
+          "baseActual": 4373,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 28,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/linkedin-document-post-examples",
+      "source": "src/content/blog/articles/linkedin-document-post-examples.md",
+      "sourceSha256": "c078bd6fe5cdd2a7613b942a52aa3ca7bb8216805affbed5943ea0c157060fe2",
+      "render": "dist/blog/linkedin-document-post-examples/index.html",
+      "renderSha256": "fc0ad2519def2d6137359b4f7b7605e24a9647370dd606939fdab473e20de105",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 43,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5055,
+          "minimum": 8000,
+          "baseActual": 3185,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 44,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "actual": 3,
+          "minimum": 4,
+          "baseActual": 3,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 29,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/linkedin-pdf-carousel",
+      "source": "src/content/blog/articles/linkedin-pdf-carousel.md",
+      "sourceSha256": "f8bd14a9e855a1adc9d8b9f61bae0bbd5ef8e4fb9dbf06f74b4c8b4c37f3e030",
+      "render": "dist/blog/linkedin-pdf-carousel/index.html",
+      "renderSha256": "dbf20e9145f6b000456e86b44c57e682a63833f61f0fb646543907790cc76c06",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 45,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 3198,
+          "minimum": 8000,
+          "baseActual": 2732,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 46,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "actual": 3,
+          "minimum": 4,
+          "baseActual": 3,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 30,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/neyroset-dlya-postov",
+      "source": "src/content/blog/articles/neyroset-dlya-postov.md",
+      "sourceSha256": "b3dd992c7f0e6551b6b3a0442e6a42561a6c726c4b104d82ed97e0bbf9332164",
+      "render": "dist/ru/blog/neyroset-dlya-postov/index.html",
+      "renderSha256": "24de5cf44d4c6be7b018411cb5770007dc13714eacb1a5cc8cca9101e6c01091",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": []
+    },
+    {
+      "route": "/blog/repurpose-blog-post-linkedin-carousel-ai",
+      "source": "src/content/blog/articles/repurpose-blog-post-linkedin-carousel-ai.md",
+      "sourceSha256": "1ba1c501a543640afbf62ba3a961d479a56ac909831641d5631fdc08d9ce9d62",
+      "render": "dist/blog/repurpose-blog-post-linkedin-carousel-ai/index.html",
+      "renderSha256": "dc0e480f6aefcd4e27eca74b1c621f9a32c7c7a9fc1d5c5ceb8a0ec4ee7fe468",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 47,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 7884,
+          "minimum": 8000,
+          "baseActual": 7467,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 31,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/social-media-post-ideas-for-business",
+      "source": "src/content/blog/articles/social-media-post-ideas-for-business.md",
+      "sourceSha256": "ccd9bf6c2d17b9ef03fb5f174b3ddebb161be7b7ae904394f75325434c8af1ad",
+      "render": "dist/blog/social-media-post-ideas-for-business/index.html",
+      "renderSha256": "b3b154e7acb71c606411ef36c55412b3622fa70aff46085fdfef3dfbed36a5bb",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 48,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5901,
+          "minimum": 8000,
+          "baseActual": 5847,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 32,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/ru/blog/temy-dlya-postov-v-linkedin",
+      "source": "src/content/blog/articles/temy-dlya-postov-v-linkedin.md",
+      "sourceSha256": "182e46af7998ad568cdfdd376dd510f76d4551e4ed96d4952c0c674078f1b3b0",
+      "render": "dist/ru/blog/temy-dlya-postov-v-linkedin/index.html",
+      "renderSha256": "1bc3ef72fdbebaa1f441a0e1dd79b9aa385aa72674c8fa98fea64f968b64729b",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 49,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 7320,
+          "minimum": 8000,
+          "baseActual": 6954,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 33,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/text-to-carousel-ai",
+      "source": "src/content/blog/articles/text-to-carousel-ai.md",
+      "sourceSha256": "faed9b55a45e9d0bee77fb60de5ea6723523aee7ffa56dc0c420aee20bc17b29",
+      "render": "dist/blog/text-to-carousel-ai/index.html",
+      "renderSha256": "862d11a4f8ebd92ba178d16f88f817c99b179c597889ed1ede19a8a3a3a499f6",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 50,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 3590,
+          "minimum": 8000,
+          "baseActual": 1022,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 51,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 3,
+          "minimum": 4,
+          "baseActual": 1,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        }
+      ]
+    },
+    {
+      "route": "/blog/viral-linkedin-post-examples",
+      "source": "src/content/blog/articles/viral-linkedin-post-examples.md",
+      "sourceSha256": "d2f113d9d03977bd50dddbb9aa9f5bf0961a8849f77c527b9c65db88b67ca7e3",
+      "render": "dist/blog/viral-linkedin-post-examples/index.html",
+      "renderSha256": "bdeb2b4fa9c5d0228437d52c695637720f02e74a64498a90c415b5c7a9532a1d",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 52,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 5269,
+          "minimum": 8000,
+          "baseActual": 5033,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 53,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "actual": 2,
+          "minimum": 4,
+          "baseActual": 2,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "content",
+          "receiptFinding": 54,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "HUMAN review this exact structural finding;retain only by individual decision or request bounded substantive correction"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 34,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    },
+    {
+      "route": "/blog/youtube-to-linkedin-carousel-ai",
+      "source": "src/content/blog/articles/youtube-to-linkedin-carousel-ai.md",
+      "sourceSha256": "6a5675c8bd30d0ec3fab59ea9ab6f0654ff0ceb30ce11f94772070d966d50e47",
+      "render": "dist/blog/youtube-to-linkedin-carousel-ai/index.html",
+      "renderSha256": "fd97caa4044808c52c1ed8638fe98ca5ee009a6b323ba291a707a71c6a78d3c5",
+      "humanDecision": "PENDING_NOT_APPROVED",
+      "findings": [
+        {
+          "kind": "content",
+          "receiptFinding": 55,
+          "classification": "IMPROVED_LEGACY_STILL_BLOCKING",
+          "actual": 4729,
+          "minimum": 6000,
+          "baseActual": 3607,
+          "proposal": "Retain exact substantive artifact only if HUMAN confirms intent despite this specific floor"
+        },
+        {
+          "kind": "frontmatter",
+          "receiptFinding": 35,
+          "classification": "UNCHANGED_DIAGNOSTIC_BLOCKING",
+          "proposal": "Current maintenance amendment only;do not invent historical research/approval"
+        }
+      ]
+    }
+  ],
+  "legacyLint": [
+    {
+      "source": "extract_seo.js",
+      "rule": "no-undef",
+      "line": 1,
+      "messageSha256": "7763576c0fb274a93e18f52dd100b14d397fe6e3e700ef7525f0512cb1c3eda0",
+      "sourceSha256": "823788f8850150b5b4af0fbcacdfe92891908038f7d64d1daf437a2b20fc5806",
+      "baseSourceSha256": "823788f8850150b5b4af0fbcacdfe92891908038f7d64d1daf437a2b20fc5806",
+      "receiptFinding": 0,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "extract_seo.js",
+      "rule": "no-undef",
+      "line": 2,
+      "messageSha256": "7763576c0fb274a93e18f52dd100b14d397fe6e3e700ef7525f0512cb1c3eda0",
+      "sourceSha256": "823788f8850150b5b4af0fbcacdfe92891908038f7d64d1daf437a2b20fc5806",
+      "baseSourceSha256": "823788f8850150b5b4af0fbcacdfe92891908038f7d64d1daf437a2b20fc5806",
+      "receiptFinding": 1,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "extract_seo.js",
+      "rule": "no-undef",
+      "line": 27,
+      "messageSha256": "5f5cc8fae5108196f1df68708a907064b5badcbe4253fc12bb22270c8204c096",
+      "sourceSha256": "823788f8850150b5b4af0fbcacdfe92891908038f7d64d1daf437a2b20fc5806",
+      "baseSourceSha256": "823788f8850150b5b4af0fbcacdfe92891908038f7d64d1daf437a2b20fc5806",
+      "receiptFinding": 2,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "extract_seo.js",
+      "rule": "no-unused-vars",
+      "line": 54,
+      "messageSha256": "68015e2aa2f0ae25e93f3161b1f93221f9138db974a98205a11c1d37f87ad467",
+      "sourceSha256": "823788f8850150b5b4af0fbcacdfe92891908038f7d64d1daf437a2b20fc5806",
+      "baseSourceSha256": "823788f8850150b5b4af0fbcacdfe92891908038f7d64d1daf437a2b20fc5806",
+      "receiptFinding": 3,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "extract_seo.js",
+      "rule": "no-empty",
+      "line": 54,
+      "messageSha256": "1c2f748a1f2ec1a5856489b6c9e8f114a446e93dbec6bd61a2b70fb835e12b97",
+      "sourceSha256": "823788f8850150b5b4af0fbcacdfe92891908038f7d64d1daf437a2b20fc5806",
+      "baseSourceSha256": "823788f8850150b5b4af0fbcacdfe92891908038f7d64d1daf437a2b20fc5806",
+      "receiptFinding": 4,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/components/carousel/CarouselSections.jsx",
+      "rule": "no-unused-vars",
+      "line": 1,
+      "messageSha256": "9d676930fa29515276f74359752d3980d2bc09d9a19c02b4be699a6b54b8fe58",
+      "sourceSha256": "12c7cbcafbd59ca99a612b2bf62b996b98ec04ebe0646ea7bfde6b8880264ce2",
+      "baseSourceSha256": "5de3ab744de28c057a0d12c893fdd097fa4bf1c4a97f597f8b7e45ec56f4e9c0",
+      "receiptFinding": 30,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/components/carousel/CarouselSectionsRu.jsx",
+      "rule": "no-unused-vars",
+      "line": 1,
+      "messageSha256": "9d676930fa29515276f74359752d3980d2bc09d9a19c02b4be699a6b54b8fe58",
+      "sourceSha256": "3e7c08506641974f45b537a0c82857612b9d63f7f1f32a4495307078fce1ef69",
+      "baseSourceSha256": "3e7c08506641974f45b537a0c82857612b9d63f7f1f32a4495307078fce1ef69",
+      "receiptFinding": 34,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/components/pricing/PlanCard.jsx",
+      "rule": "react-refresh/only-export-components",
+      "line": 7,
+      "messageSha256": "2349ab0476664e17598da159731d5387fc8aee13486a18409df554d5ff826474",
+      "sourceSha256": "9b697bc1c386cf39da488631ff3450fa767d78fe977162a910dd365ecfb39a5f",
+      "baseSourceSha256": "9b697bc1c386cf39da488631ff3450fa767d78fe977162a910dd365ecfb39a5f",
+      "receiptFinding": 38,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/components/pricing/PriceDisplay.jsx",
+      "rule": "react-refresh/only-export-components",
+      "line": 5,
+      "messageSha256": "2349ab0476664e17598da159731d5387fc8aee13486a18409df554d5ff826474",
+      "sourceSha256": "248990b1c9205cfcbb7e1ee014f68aace84eb6b1c004a88fa41f30c1444799dc",
+      "baseSourceSha256": "248990b1c9205cfcbb7e1ee014f68aace84eb6b1c004a88fa41f30c1444799dc",
+      "receiptFinding": 40,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/components/seo/SeoSectionHeading.jsx",
+      "rule": "react-refresh/only-export-components",
+      "line": 1,
+      "messageSha256": "2349ab0476664e17598da159731d5387fc8aee13486a18409df554d5ff826474",
+      "sourceSha256": "c9f1b8d28108920477c1985f0dfae5392ea77a2b1b7ac71363725377dc885615",
+      "baseSourceSha256": "c9f1b8d28108920477c1985f0dfae5392ea77a2b1b7ac71363725377dc885615",
+      "receiptFinding": 41,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/components/seo/SeoSectionHeading.jsx",
+      "rule": "react-refresh/only-export-components",
+      "line": 11,
+      "messageSha256": "2349ab0476664e17598da159731d5387fc8aee13486a18409df554d5ff826474",
+      "sourceSha256": "c9f1b8d28108920477c1985f0dfae5392ea77a2b1b7ac71363725377dc885615",
+      "baseSourceSha256": "c9f1b8d28108920477c1985f0dfae5392ea77a2b1b7ac71363725377dc885615",
+      "receiptFinding": 42,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/content/seoPages/index.js",
+      "rule": "no-unused-vars",
+      "line": 371,
+      "messageSha256": "087d98a84c28e71c41cd567d8a695e6f4ecf3cfcab4efcc41a60cee20b14248f",
+      "sourceSha256": "9da8cc026d0c195cd6149e2bd91ef540f7a6db2f47849489f71a87b68dedda9b",
+      "baseSourceSha256": "d75c957ba739fb5bc5513075f1105de56e231df7082ffbabb4f18ffc8d44aaaf",
+      "receiptFinding": 44,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/content/seoPages/index.js",
+      "rule": "no-unused-vars",
+      "line": 4812,
+      "messageSha256": "6aed318cd1967889d608c84190d443ebe6dd4ec08fda55f1d038e6c7bd7c1eaf",
+      "sourceSha256": "9da8cc026d0c195cd6149e2bd91ef540f7a6db2f47849489f71a87b68dedda9b",
+      "baseSourceSha256": "d75c957ba739fb5bc5513075f1105de56e231df7082ffbabb4f18ffc8d44aaaf",
+      "receiptFinding": 45,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/content/seoPages/index.js",
+      "rule": "no-unused-vars",
+      "line": 4814,
+      "messageSha256": "75f874ac123581551d8e52cd0edd8ce7fa8d1d8cbe4d41ef98a96cb659cdec2e",
+      "sourceSha256": "9da8cc026d0c195cd6149e2bd91ef540f7a6db2f47849489f71a87b68dedda9b",
+      "baseSourceSha256": "d75c957ba739fb5bc5513075f1105de56e231df7082ffbabb4f18ffc8d44aaaf",
+      "receiptFinding": 46,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/content/seoPages/index.js",
+      "rule": "no-unused-vars",
+      "line": 4820,
+      "messageSha256": "7a44fabc4ad1780214a8edc3cc0c61d6f4d8033b653ba2aa168c8e74bb089303",
+      "sourceSha256": "9da8cc026d0c195cd6149e2bd91ef540f7a6db2f47849489f71a87b68dedda9b",
+      "baseSourceSha256": "d75c957ba739fb5bc5513075f1105de56e231df7082ffbabb4f18ffc8d44aaaf",
+      "receiptFinding": 47,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/context/LanguageContext.jsx",
+      "rule": "react-hooks/set-state-in-effect",
+      "line": 68,
+      "messageSha256": "d9a50c6eba4cd77b0d4cc7a6ae1ef46a34d0dfed3617317e4a7c73d143122362",
+      "sourceSha256": "069ed06fb168283d085a9b63484e68f70f6ee1a0711fa8b7e240936d4d87b852",
+      "baseSourceSha256": "069ed06fb168283d085a9b63484e68f70f6ee1a0711fa8b7e240936d4d87b852",
+      "receiptFinding": 48,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/context/LanguageContext.jsx",
+      "rule": "react-hooks/set-state-in-effect",
+      "line": 86,
+      "messageSha256": "9fed53ee6d10bce2cdde54cfbca605cf58ece8257bdccf5fac18ea771e917e3d",
+      "sourceSha256": "069ed06fb168283d085a9b63484e68f70f6ee1a0711fa8b7e240936d4d87b852",
+      "baseSourceSha256": "069ed06fb168283d085a9b63484e68f70f6ee1a0711fa8b7e240936d4d87b852",
+      "receiptFinding": 49,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/context/LanguageContext.jsx",
+      "rule": "react-refresh/only-export-components",
+      "line": 218,
+      "messageSha256": "2349ab0476664e17598da159731d5387fc8aee13486a18409df554d5ff826474",
+      "sourceSha256": "069ed06fb168283d085a9b63484e68f70f6ee1a0711fa8b7e240936d4d87b852",
+      "baseSourceSha256": "069ed06fb168283d085a9b63484e68f70f6ee1a0711fa8b7e240936d4d87b852",
+      "receiptFinding": 50,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    },
+    {
+      "source": "src/hooks/useIsMobile.js",
+      "rule": "react-hooks/set-state-in-effect",
+      "line": 23,
+      "messageSha256": "fd87333319ebcb99a21468e9b21c6dd1a528d47f26890a3b6aca80394b8362a6",
+      "sourceSha256": "b5650e2cb624b6e765a42829e154c814386c22f4c1d278336cc138fa009b7931",
+      "baseSourceSha256": "b5650e2cb624b6e765a42829e154c814386c22f4c1d278336cc138fa009b7931",
+      "receiptFinding": 51,
+      "sameOffendingSourceLine": true,
+      "decision": "PENDING_OWNER_NOT_WAIVED"
+    }
+  ],
+  "ownerActions": [
+    "Issue current HUMAN verdict and individual artifact/rule maintenance decisions for52 rows;no blanket exception",
+    "Resolve19 exact legacy lint findings by bounded decision or authorize specific fixes",
+    "Complete real analytics delivery and duplicate-event evidence",
+    "Decide measured performance risk/scope and provide Docker/nginx smoke evidence"
+  ],
+  "stopBoundary": "Existing DraftPR19 only;Ready/merge/deploy/source transition require separate permission"
+}

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { getAppUrlWithRef } from '../utils/url';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, Sparkles, CornerDownLeft, Download, ChevronDown, Heart, Eye, Star, X, Check, Clock, Zap, Target, Fingerprint, Settings2, Layers, ImageIcon } from 'lucide-react';
+import { ArrowRight, Sparkles, CornerDownLeft, Download, ChevronDown, Heart, Eye, X, Check, Clock, Zap, Target, Fingerprint, Settings2, Layers, ImageIcon } from 'lucide-react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { MainLayout } from './MainLayout';
@@ -102,13 +102,13 @@ export const CarouselHeroRu = () => {
         </h1>
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.2 }} className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg mx-auto mb-12 leading-[1.75] font-medium text-balance">
-        Начните с идеи, темы или исходного материала. GoToFlow помогает собрать структуру, текст и визуальную подачу для постов и каруселей, а затем отредактировать результат перед публикацией.
+        Начните с одной идеи — GoToFlow автоматически создаст готовую карусель за пару минут. ИИ подготовит структуру, текст и дизайн, адаптируя слайды под содержание. Без ручной вёрстки и специальных дизайнерских навыков.
       </motion.p>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.3 }} className="flex flex-col items-center gap-4 w-full sm:w-auto">
         <button onClick={() => window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
           Создать контент <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
-        <p className="text-sm text-zinc-500 flex flex-wrap justify-center gap-x-3 gap-y-1"><span>✓ Без привязки карты</span><span className="text-zinc-700">•</span><span>✓ Первый материал за 60 секунд</span></p>
+        <p className="text-sm text-zinc-500 flex flex-wrap justify-center gap-x-3 gap-y-1"><span>✓ Без привязки карты</span><span className="text-zinc-700">•</span><span>✓ Готовая карусель за пару минут</span></p>
       </motion.div>
     </div>
   </section>
@@ -138,8 +138,8 @@ const SlideCard = ({ card }) => (
       <div className="h-2.5 w-3/4 rounded-full bg-white/[0.06]" />
       <div className="h-2 w-1/2 rounded-full bg-white/[0.04]" />
       <div className="flex items-center gap-3 mt-1">
-        <div className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-pink-500/70" /><span className="text-xs text-zinc-500 font-medium">{card.likes}</span></div>
-        <div className="flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-zinc-400/50" /><span className="text-xs text-zinc-500 font-medium">{card.views}</span></div>
+        <div className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-pink-500/70" /><span className="text-xs text-zinc-500 font-medium">{"Пример"}</span></div>
+        <div className="flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-zinc-400/50" /><span className="text-xs text-zinc-500 font-medium">{"Не статистика"}</span></div>
       </div>
     </div>
   </div>
@@ -151,13 +151,7 @@ export const CarouselShowcaseRu = () => (
     <div className="relative z-10">
       <div className="flex justify-center mb-6">
         <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-lg shadow-black/20">
-          <div className="flex -space-x-2">
-            {["https://randomuser.me/api/portraits/men/32.jpg","https://randomuser.me/api/portraits/women/44.jpg","https://randomuser.me/api/portraits/men/46.jpg","https://randomuser.me/api/portraits/women/68.jpg"].map((src,i)=>(
-              <img key={i} src={src} alt="Пользователь GoToFlow" className="w-6 h-6 rounded-full border-2 border-[#121212] object-cover bg-zinc-800" style={{zIndex:4-i}} />
-            ))}
-          </div>
-          <div className="flex gap-0.5">{[...Array(5)].map((_,i)=>(<Star key={i} className="w-3.5 h-3.5 fill-yellow-500 text-yellow-500 drop-shadow-sm" />))}</div>
-          <span className="text-sm text-zinc-300 font-medium tracking-tight"><span className="text-white font-semibold">+10k</span> уже создают контент</span>
+          <span className="text-sm text-zinc-300 font-medium tracking-tight">Идея → готовая карусель с AI-текстом и дизайном</span>
         </div>
       </div>
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-16 px-6">
@@ -225,15 +219,16 @@ export const CarouselComparisonRu = () => {
           Старый процесс vs <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400">GoToFlow</span>
         </h2>
         <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-medium">Поиск идей, написание хуков, структура слайдов и копирайтинг обычно живут в 4+ разных инструментах. В GoToFlow это один процесс создания контента.</p>
+        <p className="text-base text-zinc-400 max-w-3xl mx-auto mt-5 leading-relaxed">Для публикаций компании посмотрите <a className="text-pink-400 underline" href="/ru/use-cases/social-content-for-business">сценарий подготовки контента для бизнеса</a>. Если выбираете способ сборки слайдов, сравните <a className="text-pink-400 underline" href="/ru/tools/luchshie-servisy-dlya-karuseley">подходы к созданию каруселей</a> и <a className="text-pink-400 underline" href="/ru/alternatives/canva-dlya-karuseley">GoToFlow как альтернативу ручной работе в Canva</a>.</p>
       </motion.div>
       <motion.div initial={{ opacity:0,y:56 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ duration: isMobile ? 0.6 : 0.9 }} className="relative">
         <div className="relative rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 lg:p-14">
           <div className="absolute inset-0 bg-zinc-950/40 backdrop-blur-3xl rounded-[2rem] md:rounded-[2.5rem] border border-white/[0.05] pointer-events-none -z-30" style={{ boxShadow:'0 50px 100px -20px rgba(0,0,0,1)' }} />
           <div className="relative z-10 flex flex-col">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto w-full">
-              {[{ icon:<Clock className="w-6 h-6"/>, color:'text-amber-400', ring:'bg-amber-500/10 border-amber-500/20', text:'Экономьте 5+ часов в неделю' },
-                { icon:<Zap className="w-6 h-6"/>, color:'text-violet-400', ring:'bg-violet-500/10 border-violet-500/20', text:'Готовый материал за ~60 секунд' },
-                { icon:<Target className="w-6 h-6"/>, color:'text-rose-400', ring:'bg-rose-500/10 border-rose-500/20', text:'Один процесс вместо 4 инструментов' }
+              {[{ icon:<Clock className="w-6 h-6"/>, color:'text-amber-400', ring:'bg-amber-500/10 border-amber-500/20', text:'Меньше ручной сборки' },
+                { icon:<Zap className="w-6 h-6"/>, color:'text-violet-400', ring:'bg-violet-500/10 border-violet-500/20', text:'Готовая карусель за пару минут' },
+                { icon:<Target className="w-6 h-6"/>, color:'text-rose-400', ring:'bg-rose-500/10 border-rose-500/20', text:'Источник, текст и дизайн в одном процессе' }
               ].map((m,i)=>(
                 <div key={i} className="flex flex-col items-center justify-center bg-white/[0.04] border border-white/10 backdrop-blur-3xl rounded-2xl py-4 px-6 text-center hover:bg-white/[0.06] transition-colors duration-300">
                   <div className={`p-2.5 rounded-xl border mb-3 ${m.ring}`}><span className={m.color}>{m.icon}</span></div>
@@ -263,7 +258,7 @@ export const CarouselComparisonRu = () => {
               <button onClick={()=>window.location.href = getAppUrlWithRef(CTA_URL)} className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-500 transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(236,72,153,0.5)] active:scale-[0.98] shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center justify-center gap-2 group text-base border border-pink-400/20 z-20 relative">
                 Создать контент <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform"/>
               </button>
-              <p className="text-sm text-zinc-500 text-center">Первый материал за 60 секунд</p>
+              <p className="text-sm text-zinc-500 text-center">Готовая карусель за пару минут</p>
             </div>
           </div>
         </div>
@@ -436,13 +431,13 @@ export const CarouselSEOBlockRu = () => (
 
 /* ── FAQ (RU) ── */
 const faqItems = [
-  { q: 'Что такое AI-генератор контента?', a: 'Это инструмент, который автоматически создает многоформатный контент для соцсетей с помощью ИИ. Вы задаете тему, а ИИ пишет хук, продумывает структуру и заполняет текст для постов, каруселей и сценариев — за секунды.' },
+  { q: 'Что такое AI-генератор контента?', a: 'Это инструмент, который автоматически создает многоформатный контент для соцсетей с помощью ИИ. Начните с темы: ИИ создаст структуру, текст и адаптивный дизайн готовой карусели за пару минут.' },
   { q: 'В чем разница между генератором постов и AI-генератором контента?', a: 'Генератор постов часто пишет только текст для картинки. Полноценный AI-генератор контента (как GoToFlow) помогает структурировать сложные форматы: карусели, презентации и длинные треды.' },
-  { q: 'Работает ли GoToFlow как генератор постов?', a: 'Да, но он делает больше, чем обычный генератор постов. Вместо одного абзаца текста вы получаете готовую структуру для карусели, виральный хук, логическое разделение на слайды и финальный CTA. Это полноценный процесс генерации постов.' },
+  { q: 'Работает ли GoToFlow как генератор постов?', a: 'Да. GoToFlow создаёт готовую карусель, а не только текст или структуру: ИИ формирует текст слайдов, автоматически адаптирует дизайн под содержание и добавляет CTA. Начать можно с одной темы или идеи, без ручной сборки слайдов.' },
   { q: 'Могу ли я использовать GoToFlow как генератор контента для соцсетей?', a: 'Да! GoToFlow специально создан как AI-генератор контента для таких соцсетей как LinkedIn, Telegram и Instagram, превращая простые идеи в готовые к публикации форматы.' },
   { q: 'Умеет ли ИИ создавать контент для Instagram?', a: 'Да. GoToFlow генерирует контент, оптимизированный для Instagram и других платформ. ИИ пишет цепляющие тексты, логично выстраивает подачу и делает всё, чтобы ваш контент сохраняли.' },
   { q: 'Чем это лучше Canva?', a: 'Они решают разные задачи. Canva — ручной дизайн-редактор. GoToFlow закрывает workflow контента: идея, структура, текст, визуальная подача, готовый результат и CTA.' },
-  { q: 'Сколько времени занимает создание контента?', a: 'Менее 60 секунд. Вы даете ссылку или тему, и GoToFlow выдает полную структуру с готовым копирайтом.' }
+  { q: 'Сколько времени занимает создание контента?', a: 'За пару минут. Начните с темы или исходных материалов — GoToFlow автоматически создаст структуру, текст, дизайн и готовую карусель. Не нужно вручную собирать слайды.' }
 ];
 
 const FAQItem = ({ item, isOpen, onClick }) => (
@@ -495,9 +490,9 @@ export const CarouselBottomCTARu = () => {
                 <span className="text-[10px] font-semibold text-zinc-500 tracking-[0.1em] uppercase">Начать бесплатно</span>
               </div>
               <h2 className="text-[1.6rem] sm:text-[2rem] md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white tracking-[-0.035em] leading-[1.12] mb-6 max-w-2xl">
-                Готовый материал за 60 секунд. <span className="text-gradient-brand">Без дизайна.</span><br/><span className="text-zinc-400 font-semibold" style={{fontSize:'0.78em'}}>Без команды.</span>
+                Готовая карусель за пару минут. <span className="text-gradient-brand">Без ручной вёрстки.</span><br/><span className="text-zinc-400 font-semibold" style={{fontSize:'0.78em'}}>Без команды.</span>
               </h2>
-              <p className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg leading-[1.75] font-medium mb-12">Присоединяйтесь к тысячам креаторов и предпринимателей, которые создают вовлекающий контент за секунды с помощью ИИ GoToFlow.</p>
+              <p className="text-sm md:text-[0.92rem] text-zinc-500 max-w-lg leading-[1.75] font-medium mb-12">Превратите свою идею в готовую карусель за пару минут. GoToFlow создаст текст и дизайн в одном процессе — без ручной сборки слайдов.</p>
               <div className="relative group mb-5">
                 <button onClick={()=>window.location.href = getAppUrlWithRef(CTA_URL)} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="relative z-10 flex items-center justify-center gap-2.5 px-9 py-3.5 rounded-[14px] font-semibold text-white text-[15px] overflow-hidden cursor-pointer" style={{background:'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',border:'1px solid rgba(255,255,255,0.18)',boxShadow:hover?'0 14px 55px rgba(236,72,153,0.5), inset 0 1px 0 rgba(255,255,255,0.25)':'0 8px 35px rgba(236,72,153,0.25), inset 0 1px 0 rgba(255,255,255,0.15)',transform:hover?'translateY(-2px) scale(1.04)':'translateY(0) scale(1)',transition:'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)'}}>
                   <span className="relative z-30 tracking-[0.01em]">Создать контент &rarr;</span>
@@ -506,7 +501,7 @@ export const CarouselBottomCTARu = () => {
               </div>
               <p className="text-xs text-zinc-500 font-medium tracking-[0.06em] mb-12">Бесплатно • Без привязки карты</p>
               <div className="flex flex-wrap justify-center gap-2.5">
-                {['Ваш Tone of Voice','Готово за 60 секунд','Для любой ниши'].map(t=>(
+                {['Ваш Tone of Voice','Готово за пару минут','Для любой ниши'].map(t=>(
                   <div key={t} className="flex items-center gap-1.5 px-3.5 py-[6px] rounded-full border border-white/[0.05] bg-white/[0.02] hover:border-pink-500/15 transition-all duration-300">
                     <Check className="w-3 h-3 text-pink-500/50 shrink-0"/><span className="text-[10px] sm:text-[11px] text-zinc-600 font-medium whitespace-nowrap">{t}</span>
                   </div>

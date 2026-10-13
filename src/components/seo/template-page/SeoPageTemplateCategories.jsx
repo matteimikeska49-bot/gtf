@@ -8,7 +8,7 @@ import { SeoSectionHeading } from '../SeoSectionHeading';
 const ChecklistPreview = ({ isEnglish }) => (
   <div className="absolute inset-0 rounded-xl border border-white/10 bg-gradient-to-b from-emerald-500/[0.08] to-transparent p-4 backdrop-blur transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
     <div className="mb-3 text-[11px] font-bold text-emerald-300 uppercase tracking-wider">{isEnglish ? 'Checklist' : 'Чек-лист'}</div>
-    {(isEnglish ? ['Define the post goal', 'Draft a clear hook', 'Add verified details'] : ['Определить цель карусели', 'Написать хук для обложки', 'Добавить 5 практических пунктов']).map((text, i) => (
+    {(isEnglish ? ['Define the post goal', 'Write a clear hook', 'Add verified details'] : ['Определить цель карусели', 'Написать хук для обложки', 'Добавить 5 практических пунктов']).map((text, i) => (
       <div key={i} className="mb-2.5 flex items-center gap-2">
         <div className="h-3.5 w-3.5 shrink-0 rounded border border-emerald-400/50 bg-emerald-500/10 flex items-center justify-center">
           {i === 0 && <div className="h-1.5 w-1.5 rounded-sm bg-emerald-400" />}
@@ -26,7 +26,7 @@ const ProblemSolutionPreview = ({ isEnglish }) => (
       <div className="text-[10px] text-zinc-400 leading-snug">{isEnglish ? 'The source notes need a clear professional angle' : 'Клиенты не читают карусели дальше 2-го слайда'}</div>
     </div>
     <div className="h-1/2 w-full bg-emerald-500/[0.08] p-3">
-      <div className="text-[10px] font-bold text-emerald-300 uppercase tracking-wider mb-1">{isEnglish ? 'Draft' : 'Решение'}</div>
+      <div className="text-[10px] font-bold text-emerald-300 uppercase tracking-wider mb-1">{isEnglish ? 'Result' : 'Решение'}</div>
       <div className="text-[10px] text-zinc-400 leading-snug">{isEnglish ? 'A structured text post ready for manual review' : 'Каждый слайд содержит микро-ценность и ведёт к следующему'}</div>
     </div>
   </div>
@@ -61,7 +61,7 @@ const CaseStudyPreview = ({ isEnglish }) => (
       <ArrowRight className="h-3 w-3 text-pink-400/60" />
     </div>
     <div className="flex h-[80%] w-[42%] flex-col justify-end rounded-lg border border-pink-500/20 bg-gradient-to-t from-pink-500/15 to-transparent p-2">
-      <div className="text-[9px] font-bold text-pink-300 uppercase mb-1">{isEnglish ? 'Draft' : 'После'}</div>
+      <div className="text-[9px] font-bold text-pink-300 uppercase mb-1">{isEnglish ? 'Result' : 'После'}</div>
       <div className="h-12 w-full rounded bg-pink-500/15" />
       <div className="mt-1 h-1 w-full rounded bg-pink-500/20" />
     </div>

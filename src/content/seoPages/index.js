@@ -368,13 +368,6 @@ const seamlessItemsFromSlots = (sectionId, limit = Infinity) => {
   }));
 };
 
-const seamlessGuideItems = seamlessCopyList('pageRelevantFormats', 'items.task').map((task, index) => ({
-  id: `seamless-guide-${index + 1}`,
-  task,
-  template: seamlessCopyList('pageRelevantFormats', 'items.template')[index],
-  structure: seamlessCopyList('pageRelevantFormats', 'items.structure')[index],
-}));
-
 const seamlessRelatedCards = seamlessCopyList('related', 'relatedCard.title').map((title, index) => ({
   href: seamlessInstagramCarouselHandoff.relatedLinks[index]?.route,
   title,
@@ -4766,7 +4759,7 @@ const vkPostGeneratorFaq = [
   { question: 'Можно ли использовать хэштеги?', answer: 'По запросу ИИ подберет и добавит популярные хэштеги для увеличения охватов во ВКонтакте.' },
   { question: 'Что делать, если мне не понравился сгенерированный вариант?', answer: 'Вы можете перегенерировать текст одним кликом или внести ручные правки во встроенном редакторе.' },
   { question: 'Можно ли вставить свой черновик для улучшения?', answer: 'Да, вставьте сырой текст, и система отредактирует его, исправит ошибки и улучшит структуру.' },
-  { question: 'Уникален ли генерируемый текст?', answer: 'ИИ каждый раз создает уникальный контент. Вам не нужно переживать о плагиате или снижении охватов из-за неуникального текста.' },
+  { question: 'Как проверить генерируемый текст?', answer: 'Сверьте факты, формулировки и примеры со своим исходником. GoToFlow помогает подготовить текст и визуальную подачу, но оригинальность и результат публикации нельзя гарантировать без проверки.' },
   { question: 'Сколько постов можно сгенерировать за один раз?', answer: 'Вы генерируете посты по одному, чтобы максимально точно настроить параметры каждого конкретного материала.' },
   { question: 'Какого размера получаются картинки?', answer: 'Готовый визуал адаптирован для публикации во ВКонтакте и хорошо смотрится в ленте как с мобильного, так и с компьютера.' },
   { question: 'Нужно ли мне разбираться в промптах?', answer: 'Нет, интерфейс интуитивно понятен. Вам не нужно быть специалистом по нейросетям, чтобы получить отличный результат.' },
@@ -4809,15 +4802,12 @@ const buildPostGeneratorDraftPage = ({
   readyExamplesBody,
   workflowDescription,
   productBridge,
-  workflowTitle,
   workflowSteps,
-  formatsTitle,
   formats,
   visualProofTitle,
   visualProofInputLabel,
   visualProofInputCopy,
   visualProofDescription,
-  finalCtaTitle,
   finalCtaDescription,
   finalCtaLabel,
   faq,
@@ -5205,7 +5195,7 @@ const vkPostGeneratorDraftPage = buildPostGeneratorDraftPage({
   description: 'Сгенерируйте вовлекающий пост для ВКонтакте с помощью ИИ. Создавайте продающие, экспертные посты и новости с картинками за пару кликов.',
   h1: 'ИИ-генератор постов для ВКонтакте',
   heroEyebrow: 'Генератор постов ВКонтакте',
-  heroSubtitle: 'Забудьте про страх чистого листа. Опишите свою идею или дайте ссылку на исходник, и GoToFlow сгенерирует идеальный пост для ВКонтакте с цепляющим заголовком, правильной структурой и готовым визуалом.',
+  heroSubtitle: 'Опишите свою идею или дайте исходник, и GoToFlow поможет собрать заголовок, структуру, текст и визуальную подачу поста для ВКонтакте. Проверьте материал перед публикацией.',
   ctaLabel: 'Сгенерировать пост',
   secondaryCtaLabel: 'Примеры постов',
   quickAnswerTitle: 'Как работает генератор постов для ВКонтакте?',
@@ -6333,7 +6323,6 @@ const rawSeoPages = [
     pageType: 'template',
     slug: 'instagram-carousel',
     path: '/ru/templates/instagram-carousel',
-    state: 'indexable_approved',
     templateVariant: 'template_page',
     title: 'Шаблоны каруселей Instagram: структуры и примеры | GoToFlow',
     description: 'Выберите структуру карусели Instagram: чек-лист, гайд, кейс, AIDA/PAS и другие форматы. Создайте и отредактируйте карусель в GoToFlow.',

@@ -39,10 +39,9 @@ faq:
   - question: "Can I reuse these carousel ideas for other platforms?"
     answer: "Yes. Many ideas can become text posts, newsletters, short videos, or Instagram carousels. Adjust the pacing and examples for each platform."
 finalCta:
-  title: "Create LinkedIn carousels in minutes"
-  description: "Turn an idea, topic, link, or outline into a structured LinkedIn carousel you can review, adjust, and export."
+  title: "Create a LinkedIn carousel from your idea"
+  text: "Turn an idea, topic, link, or outline into a structured LinkedIn carousel you can review, adjust, and export."
   buttonText: "Create a LinkedIn carousel"
-  href: "/linkedin-carousel-maker"
   microcopy: "Free to try - No design skills needed"
   secondaryText: "Explore LinkedIn prompts →"
   secondaryHref: "/blog/linkedin-carousel-prompts"

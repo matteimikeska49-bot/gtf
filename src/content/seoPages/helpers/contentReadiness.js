@@ -1,7 +1,6 @@
 import {
   CAROUSEL_PRODUCT_SEO_SECTION_ORDER,
   getAllTemplateSectionIds,
-  getTemplateSectionOrder,
   getTemplateVariant,
   isCarouselProductSeoPage,
   resolveTemplateSectionOrder,
@@ -193,20 +192,6 @@ export const getStructuredItemsForRequirement = (page, requirement) => {
   }
 
   return [];
-};
-
-const getRequirementText = (page, requirement) => {
-  if (requirement === 'hero') return [page.h1 || page.title, page.heroSubtitle || page.description].join(' ');
-  if (requirement === 'faq') return textFrom(page.faq);
-  if (requirement === 'related') return textFrom([page.relatedBlogSlugs, page.relatedSeoPaths, page.relatedProductToolPaths, page.contextualLinks]);
-  if (requirement === 'finalCta') return textFrom(page.finalCta);
-  if (requirement === 'pageRelevantFormats') return textFrom([page.templateCategories, page.templates, page.templateChoiceGuide]);
-  if (requirement === 'pageSpecificVisualProof') return textFrom(page.pageSpecificVisualProof);
-  if (requirement === 'examples') return textFrom(page.examples);
-  if (requirement === 'benefits') return textFrom(page.benefits || getSectionsForRequirement(page, requirement));
-  if (requirement === 'productWorkflow') return textFrom(page.productWorkflow);
-  if (requirement === 'productCapabilities') return textFrom(page.productCapabilities);
-  return textFrom([getStructuredItemsForRequirement(page, requirement), getSectionsForRequirement(page, requirement)]);
 };
 
 const isProductSeoPage = (page) => (

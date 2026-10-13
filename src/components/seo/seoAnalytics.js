@@ -12,7 +12,7 @@ const getPagePayload = (page) => ({
 });
 
 export const trackSeoEvent = (eventName, page, params = {}) => {
-  if (typeof window === 'undefined' || !eventName) return;
+  if (typeof window === 'undefined' || !eventName || !window.gtfAnalytics?.hasConsent()) return;
 
   const payload = {
     event: eventName,

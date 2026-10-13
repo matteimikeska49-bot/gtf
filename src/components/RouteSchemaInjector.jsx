@@ -11,8 +11,6 @@ import {
   buildSchema
 } from '../utils/schemaGenerator';
 import { faqSchemaData } from '../data/faqSchemaData';
-import { getSeoPageByPath } from '../content/seoPages';
-import { getMarkdownArticleBySlug } from '../lib/blog/markdownArticles';
 
 const ROUTES_CONFIG = {
   '/': {
@@ -151,7 +149,23 @@ export const RouteSchemaInjector = () => {
   const path = location.pathname;
   
   useEffect(() => {
-    if (getSeoPageByPath(path)) {
+    let cancelled = false;
+    let script;
+    const inject = async () => {
+    // A route with no legacy schema configuration never produces this script.
+    // Do not fetch the commercial registry just to reach the same empty result.
+    const config = ROUTES_CONFIG[path];
+    if (!config) {
+      document.getElementById('dynamic-ld-json')?.remove();
+      return;
+    }
+    // Home schemas need neither the registry nor the entire article corpus.
+    const isHome = path === '/' || path === '/ru' || path === '/ru/';
+    // Article routes are resolved from their own Markdown, not the commercial
+    // registry or full metadata catalog. Preserve the same schema fields.
+    const registryPage = !isHome && config.type !== 'article' && (await import('../content/seoPages')).getSeoPageByPath(path);
+    if (cancelled) return;
+    if (registryPage) {
       const existing = document.getElementById('dynamic-ld-json');
       if (existing) {
         existing.remove();
@@ -159,14 +173,6 @@ export const RouteSchemaInjector = () => {
       return;
     }
 
-    const config = ROUTES_CONFIG[path];
-    if (!config) {
-      const existing = document.getElementById('dynamic-ld-json');
-      if (existing) {
-        existing.remove();
-      }
-      return;
-    }
     const items = [
       getOrganizationSchema(),
       getWebSiteSchema(config.lang)
@@ -176,7 +182,12 @@ export const RouteSchemaInjector = () => {
       items.push(getWebPageSchema(path, config.title, config.desc, config.lang));
       items.push(getSoftwareSchema(path, config.title, config.desc, config.lang));
     } else if (config.type === 'article') {
-      const article = getMarkdownArticleBySlug(path.split('/').pop(), { publicOnly: true });
+      const [{ loadMarkdownArticleBySlug }, { isPublicMarkdownArticle }] = await Promise.all([
+        import('../lib/blog/loadMarkdownArticle.js'), import('../lib/blog/articleRecord.js'),
+      ]);
+      const resolvedArticle = await loadMarkdownArticleBySlug(path.split('/').pop());
+      if (cancelled) return;
+      const article = isPublicMarkdownArticle(resolvedArticle) ? resolvedArticle : null;
       items.push(getArticleSchema(path, config.title, config.desc, config.lang, article || {}));
     } else if (config.type === 'blog') {
       items.push(getWebPageSchema(path, config.title, config.desc, config.lang));
@@ -193,7 +204,7 @@ export const RouteSchemaInjector = () => {
     const schema = buildSchema(items);
     
     // We create a script tag to inject the schema
-    const script = document.createElement('script');
+    script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'dynamic-ld-json';
     script.text = JSON.stringify(schema);
@@ -205,9 +216,11 @@ export const RouteSchemaInjector = () => {
     }
     
     document.head.appendChild(script);
-    
+    };
+    void inject().catch(error => { if (!cancelled) console.error('Route schema resolution failed', error); });
     return () => {
-      if (script.parentNode) {
+      cancelled = true;
+      if (script?.parentNode) {
         script.parentNode.removeChild(script);
       }
     };

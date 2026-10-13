@@ -6,7 +6,7 @@ export const en = {
     started: 'Launch for free',
     logo: 'GoToFlow',
     noCardRequired: 'No credit card required',
-    firstResult60s: 'First result in 60 seconds',
+    firstResult60s: 'Ready carousel in a couple of minutes',
   },
   
   hero: {
@@ -14,11 +14,11 @@ export const en = {
       "For creators, experts, and content teams",
       "Create content even without ideas",
     ],
-    titlePart1: 'AI Content Generator for Social Media',
-    titlePart2: 'That Drives',
-    titleHighlight: 'Real Growth',
-    subtitlePart1: 'Create social media content and carousels with AI.',
-    subtitlePart2: 'Analyze competitors and automate content creation in your own style.',
+    titlePart1: 'Find viral ideas',
+    titlePart2: 'and turn them into carousels',
+    titleHighlight: 'with AI',
+    subtitlePart1: 'Start with an idea — AI creates the copy, design, and slides.',
+    subtitlePart2: 'Get a finished carousel in a couple of minutes, without building every slide by hand.',
     mockup: {
       createContent: 'Create content',
       myProjects: 'My Projects',
@@ -31,8 +31,8 @@ export const en = {
   
   showcase: {
     tabs: ['Marketing', 'Personal Brand', 'E-commerce', 'Beauty', 'Education'],
-    trustBadgePart1: '+10k',
-    trustBadgePart2: 'Already generating content in GoToFlow',
+    trustBadgePart1: 'Source → slides',
+    trustBadgePart2: 'Structure, copy, design, and export in GoToFlow',
     titlePart1: 'Create content for',
     titleHighlight: 'any niche',
     tags: {
@@ -60,7 +60,7 @@ export const en = {
     subtitle: 'Spending hours editing, but the result still looks like AI generated it',
     cards: [
       {
-        title: "Spend 3 hours → get garbage",
+        title: "Rewriting instead of publishing",
         text: "AI seems to help, but the output is still raw and requires manual rewriting and tweaking."
       },
       {
@@ -80,9 +80,9 @@ export const en = {
   
   unified: {
     metrics: [
-      "Save up to 10 hours a week",
-      "Ready carousel in ~60 seconds",
-      "One process instead of 5 tools"
+      "Structure, copy, and design in one workflow",
+      "Ready carousel in a couple of minutes",
+      "No design skills or manual slide assembly needed"
     ],
     oldWay: [
       "Manually hunting for viral Reels or using disconnected tools",
@@ -92,9 +92,9 @@ export const en = {
       "Cookie-cutter design and 'plastic' sounding copy"
     ],
     newWay: [
-      "Find ideas in minutes and instantly turn them into content",
+      "Find an idea and turn it into a finished carousel",
       "Immediately see what works and adopt it to your style",
-      "Get a ready-to-post carousel in one flow in ~60 seconds",
+      "AI creates the copy, design, and slides in one workflow",
       "Instantly get structured copy tailored to the format",
       "Content in your style: your photos, your prompts, your voice"
     ],
@@ -119,7 +119,7 @@ export const en = {
       },
       {
         title: "From Idea to Carousel",
-        desc: "Build a ready-to-post carousel from a topic, idea, a directly uploaded PDF/file, link, or video — in 60 seconds."
+        desc: "Start with an idea, topic, directly uploaded PDF/file, link, or video. AI creates the structure, copy, and design of a finished carousel in a couple of minutes."
       },
       {
         title: "Strong Reels Search",
@@ -391,12 +391,12 @@ export const en = {
     titlePart2: 'your',
     titleHighlight: 'AI.',
     titleSub: 'Start creating.',
-    subtitle: 'Join thousands of creators and entrepreneurs who are already making content faster and without the grind.',
+    subtitle: 'Turn your idea into a finished carousel in a couple of minutes. AI creates the copy and adapts the slide design to your content — no manual layout needed.',
     button: 'Create a carousel',
     microTrust: 'Free • No credit card required',
     trustList: [
       'Tone of Voice is preserved',
-      'Ready in 60 seconds',
+      'Ready carousel in a couple of minutes',
       'Works for any niche',
     ]
   },

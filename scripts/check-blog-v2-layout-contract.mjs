@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { hasStandaloneDashSeparator } from './lib/release-check-precision.mjs';
 import {
   extractFrontmatterAndBody,
   getYamlValue,
@@ -148,7 +149,7 @@ for (const file of files) {
 
   // 5. Check Body for Forbidden tags/patterns
   const cleanBody = body.replace(/`[^`]*`/g, ''); // strip inline code blocks for basic search
-  if (cleanBody.includes('---')) {
+  if (hasStandaloneDashSeparator(body)) {
       errors.push(`Article "${slug}": body contains standalone '---' which is forbidden.`);
   }
   if (cleanBody.match(/href=["'][^"']*\*[^"']*["']/i) || cleanBody.match(/\]\([^)]*\*[^)]*\)/)) {

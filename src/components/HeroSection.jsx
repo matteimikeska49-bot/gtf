@@ -9,14 +9,15 @@ const RotatingBadge = () => {
   const [index, setIndex] = useState(0);
   const { t } = useLanguage();
   const badges = t('hero.badges') || [];
+  const badgeCount = badges.length;
 
   useEffect(() => {
-    if (!badges || badges.length === 0) return;
+    if (badgeCount === 0) return;
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % badges.length);
+      setIndex((prev) => (prev + 1) % badgeCount);
     }, 3500);
     return () => clearInterval(timer);
-  }, [badges.length]);
+  }, [badgeCount]);
 
   return (
     <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm overflow-hidden">
@@ -233,7 +234,8 @@ const AbstractUIMockup = () => {
                   <BarChart3 className="w-5 h-5 text-zinc-500" />
                   <div className="h-2.5 w-20 bg-zinc-800 rounded-full" />
                 </div>
-                <div className="text-4xl font-light text-white tracking-tighter">84.2%</div>
+                <div className="text-2xl font-light text-white tracking-tight">{isRu ? 'Иллюстрация' : 'Illustration'}</div>
+                <p className="text-xs text-zinc-400 mt-2">{isRu ? 'Не данные продукта или клиента' : 'Not product or customer data'}</p>
                 <div className="h-1.5 w-16 bg-emerald-400/80 rounded-full mt-3 shadow-[0_0_10px_rgba(52,211,153,0.3)]" />
               </div>
               <div className="flex items-end gap-2 w-full h-20 mt-8 relative z-10">
@@ -363,7 +365,6 @@ const AbstractUIMockup = () => {
 
 export const HeroSection = () => {
   const { t } = useLanguage();
-  const isMobile = useIsMobile();
   return (
     <section className="pt-32 pb-16 px-6 relative z-10 w-full bg-[#050505] min-h-screen overflow-hidden flex flex-col items-center justify-center">
       {/* Isometric grid background layer */}

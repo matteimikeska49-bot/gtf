@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { findPositiveMisleadingClaims } from './lib/release-check-precision.mjs';
 
 const CONTENT_DIR = path.join(process.cwd(), 'src/content/blog/articles');
 
@@ -162,13 +163,8 @@ function checkArticleQualityContract() {
     }
 
     // Misleading claims
-    const misleading = ["гарантирует", "идеально", "без ошибок", "автоматически создаёт бесшовную карусель", "seamless guaranteed"];
-    for (const m of misleading) {
-      if (markdownBody.toLowerCase().includes(m)) {
-         // allow "идеально" if followed by "подходит", but let's just flag the strict ones for now
-         if (m === 'идеально' && markdownBody.toLowerCase().includes('идеально подходит')) continue;
-         articleErrors.push(`Misleading claim detected: '${m}'`);
-      }
+    for (const claim of findPositiveMisleadingClaims(markdownBody)) {
+      articleErrors.push(`Misleading claim detected: '${claim}'`);
     }
 
     if (articleErrors.length > 0) {

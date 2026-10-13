@@ -52,7 +52,7 @@ function getRawBlockquoteSeparatorOnlyChangedSlugs(changedSlugs) {
     const filePath = path.join('src/content/blog/articles', `${slug}.md`);
     let diff = '';
     try {
-      diff = execFileSync('git', ['diff', '--unified=0', 'HEAD', '--', filePath], { cwd: ROOT, encoding: 'utf8' });
+      diff = execFileSync('git', ['diff', '--unified=0', process.env.BLOG_RELEASE_BASE_REF || 'HEAD', '--', filePath], { cwd: ROOT, encoding: 'utf8' });
     } catch {
       return;
     }

@@ -44,7 +44,7 @@ function getRawBlockquoteSeparatorOnlyChangedSlugs(changedSlugs) {
     const filePath = path.join('src/content/blog/articles', `${slug}.md`);
     let diff = '';
     try {
-      diff = execFileSync('git', ['diff', '--unified=0', 'HEAD', '--', filePath], { cwd: ROOT_DIR, encoding: 'utf8' });
+      diff = execFileSync('git', ['diff', '--unified=0', process.env.BLOG_RELEASE_BASE_REF || 'HEAD', '--', filePath], { cwd: ROOT_DIR, encoding: 'utf8' });
     } catch {
       return;
     }
@@ -98,7 +98,7 @@ function getOwnershipOnlyChangedSlugs(changedSlugs) {
   changedSlugs.forEach((slug) => {
     const relative = `src/content/blog/articles/${slug}.md`;
     try {
-      const before = execFileSync('git', ['show', `HEAD:${relative}`], { cwd: ROOT_DIR, encoding: 'utf8' });
+      const before = execFileSync('git', ['show', `${process.env.BLOG_RELEASE_BASE_REF || 'HEAD'}:${relative}`], { cwd: ROOT_DIR, encoding: 'utf8' });
       const after = fs.readFileSync(path.join(ROOT_DIR, relative), 'utf8');
       // An explicitly scoped but unchanged article is not an ownership-only edit.
       // This also keeps clean-base comparisons under the same strict contract.

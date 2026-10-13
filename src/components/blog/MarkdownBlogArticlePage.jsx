@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { use, useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { CookieBanner } from '../CookieBanner';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
 import { MainLayout } from '../MainLayout';
-import { getMarkdownArticleBySlug } from '../../lib/blog/markdownArticles';
+import { loadMarkdownArticleBySlug } from '../../lib/blog/loadMarkdownArticle.js';
 import { MarkdownSeoArticleTemplateV2 } from './templates/MarkdownSeoArticleTemplateV2';
 import { NotFoundPage } from '../NotFoundPage';
 import {
@@ -141,7 +141,7 @@ const MarkdownArticleSEOHead = ({ article }) => {
 export const MarkdownBlogArticlePage = ({ slug: propSlug, langPrefix = 'en' }) => {
   const params = useParams();
   const slug = propSlug || params.slug;
-  const article = getMarkdownArticleBySlug(slug);
+  const article = use(loadMarkdownArticleBySlug(slug));
 
   const isLocalPreview = typeof window !== 'undefined' && 
     (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');

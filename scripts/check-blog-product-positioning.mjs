@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { SEO_PRODUCT_TRUTH_REGISTRY } from '../src/content/seoPages/productTruthRegistry.js';
+import { maskInternalComparisonLiterals } from './lib/release-check-precision.mjs';
 import {
   extractFrontmatterAndBody,
   getYamlBlock,
@@ -365,7 +366,7 @@ function scanProductCopy() {
 
   for (const filePath of files) {
     const content = fs.readFileSync(filePath, 'utf8');
-    for (const issue of findDraftOutputIssues(content)) {
+    for (const issue of findDraftOutputIssues(maskInternalComparisonLiterals(content))) {
       errors.push(`[P0] ${path.relative(ROOT, filePath)}:${issue.line} positions a product output as unfinished (${issue.ruleId}). ${issue.reason} Snippet: "${issue.snippet}"`);
     }
   }

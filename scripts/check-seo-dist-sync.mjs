@@ -2,6 +2,8 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { execFileSync } from 'child_process';
+import { resolveProjectSeoState } from './lib/project-seo-state.mjs';
+import { artifactInventory, compareProductionArtifacts, sha256 } from './lib/production-artifact-parity.mjs';
 import {
   getAllSeoPages,
   getSeoPageRouteCollision,
@@ -23,6 +25,54 @@ const cleanupTemp = process.env.SEO_DIST_SYNC_KEEP_TMP !== '1' && !providedTempD
 
 const errors = [];
 const warnings = [];
+const fullArtifacts = process.env.SEO_DIST_SYNC_FULL_ARTIFACTS === '1';
+if (fullArtifacts && (skipBuild || providedTempDist || process.env.SEO_DIST_SYNC_COMMITTED_DIST)) {
+  throw new Error('Production artifact verification cannot use fixture overrides.');
+}
+
+function productionSourceFingerprint() {
+  const files = execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], { cwd: rootDir, encoding: 'utf8' })
+    .split('\0').filter((file) => /^(?:src\/|public\/|scripts\/|index\.html$|package(?:-lock)?\.json$|prerender\.mjs$|(?:vite|postcss|tailwind)\.config\.)/.test(file));
+  return sha256([...new Set(files)].sort().map((file) => `${file}:${fs.existsSync(path.join(rootDir, file))
+    ? sha256(fs.readFileSync(path.join(rootDir, file))) : 'DELETED'}`).join('\n'));
+}
+const sourceFingerprint = fullArtifacts ? productionSourceFingerprint() : null;
+
+function assertFullArtifactParity() {
+  const comparison = compareProductionArtifacts(committedDistDir, tmpDistDir);
+  errors.push(...comparison.errors);
+  if (productionSourceFingerprint() !== sourceFingerprint) errors.push('Production source changed during independent build; evidence is invalid.');
+  const fresh = artifactInventory(tmpDistDir);
+  // The marker is an operational timestamp, not SEO content or exact source
+  // evidence. Validate its narrow schema; it is the sole non-reproducible file.
+  const marker = JSON.parse(readUtf8(path.join(committedDistDir, 'build.json')));
+  if (Object.keys(marker).sort().join(',') !== 'branch,buildTime,commit'
+    || !/^[a-f0-9]{40}$/.test(marker.commit) || typeof marker.branch !== 'string'
+    || !marker.branch || !/^\d{4}-\d{2}-\d{2}T/.test(marker.buildTime)
+    || !Number.isFinite(Date.parse(marker.buildTime))) errors.push('Invalid production build marker.');
+  else {
+    const branch = execFileSync('git', ['branch', '--show-current'], { cwd: rootDir, encoding: 'utf8' }).trim();
+    if (marker.branch !== branch) errors.push('Operational build marker branch differs from current branch.');
+    try { execFileSync('git', ['merge-base', '--is-ancestor', marker.commit, 'HEAD'], { cwd: rootDir, stdio: 'pipe' }); }
+    catch { errors.push('Operational build marker commit is not in the current source history.'); }
+  }
+  const routes = resolveProjectSeoState(rootDir).prerenderEntries;
+  for (const entry of routes) if (!fresh.includes(path.relative(tmpDistDir, routeToHtmlPath(tmpDistDir, entry.path)))) {
+    errors.push(`${entry.path}: resolved prerender route missing from fresh inventory.`);
+  }
+  const receipt = {
+    mode: 'independent-full-byte-production-parity',
+    sourceInputsSha256: sourceFingerprint,
+    routes: routes.length,
+    passed: errors.length === 0,
+    differences: comparison.differences,
+    operationalMarkerExcluded: 'build.json (validated schema, not revision evidence)',
+    artifacts: comparison.artifacts,
+  };
+  fs.mkdirSync(path.join(rootDir, 'tmp'), { recursive: true });
+  fs.writeFileSync(path.join(rootDir, 'tmp/production-artifact-parity.json'), JSON.stringify(receipt, null, 2) + '\n');
+  console.log(`- full byte parity: ${routes.length} routes, ${fresh.length} artifacts (including body/schema/assets/robots/exact lastmod)`);
+}
 
 const routeToHtmlPath = (distDir, routePath) => path.join(distDir, routePath.replace(/^\//, ''), 'index.html');
 const readUtf8 = (filePath) => fs.readFileSync(filePath, 'utf8');
@@ -322,6 +372,7 @@ try {
         errors.push('Committed sitemap differs from fresh production build sitemap after lastmod normalization.');
       }
     }
+    if (fullArtifacts) assertFullArtifactParity();
   }
 } catch (error) {
   errors.push(`Temporary production build failed: ${error.stderr?.toString() || error.message}`);

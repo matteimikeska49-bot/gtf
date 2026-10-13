@@ -130,6 +130,19 @@ tool where user must first transcribe video somewhere else
 
 ---
 
+## 2.2. Owner-confirmed commercial positioning — PR #19
+
+Owner confirmation in the PR #19 commercial-value restoration request, 2026-10-12 (product facts, not a fabricated platform test or customer review):
+
+* GoToFlow automatically creates a finished carousel in a couple of minutes, starting from a topic or idea without requiring a prepared text.
+* AI generates the structure, slide copy, visual design and slides, adapting the layout to the content and text placement. Users do not have to build each slide manually or have specialist design skills.
+* GoToFlow works in Russia. A subscription can be paid for with a Russian bank card. This is not an unrestricted-access or universal payment-success guarantee.
+* Automated design generation is a current capability; a separate editable template-based editor remains roadmap. Do not promise freely editable text boxes inside an already generated image.
+
+This confirmation does not establish a universal 60-second guarantee, quantified time savings, audience growth, testimonials, customer results, user counts or perfect output. An ordinary final review is compatible with a finished carousel and must not redefine the product as an outline-only assistant.
+
+---
+
 ## 3. GoToFlow — не рандомная генерация
 
 GoToFlow нельзя описывать как сервис, который просто случайно генерирует карусели.

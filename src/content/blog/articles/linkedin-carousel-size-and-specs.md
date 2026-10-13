@@ -2,44 +2,43 @@
 title: "LinkedIn Carousel Size and Specs Guide (2026)"
 slug: "linkedin-carousel-size-and-specs"
 language: "en"
-description: "Everything you need to know about LinkedIn carousel size, dimensions, and specifications. Ensure your document posts look perfect on every device."
+description: "Check LinkedIn document file limits, compare portrait and square carousel layouts, and inspect text, margins, and image quality before uploading."
 primaryKeyword: "linkedin carousel size"
 secondaryKeywords: ["linkedin carousel dimensions", "linkedin document specs", "linkedin pdf size"]
 canonical: "https://gotoflow.io/blog/linkedin-carousel-size-and-specs"
 createdAt: 2026-06-12
-updatedAt: 2026-06-13
+updatedAt: "2026-10-10"
 published: true
 noindex: false
 quickAnswer:
-  - "The ideal LinkedIn carousel size is 1080 x 1350 pixels (portrait) or 1080 x 1080 pixels (square)."
-  - "You must upload your carousel as a document file, with PDF being the most reliable format."
+  - "1080 x 1350 pixels (portrait) and 1080 x 1080 pixels (square) are starting layouts to inspect, not mandatory LinkedIn dimensions."
+  - "LinkedIn document posts accept PDF, PPT, PPTX, DOC, and DOCX. This guide uses a PDF export."
   - "The maximum file size allowed by LinkedIn is 100MB."
-  - "Keep your document under 300 pages, though 5 to 12 pages is recommended for optimal engagement."
+  - "LinkedIn accepts up to 300 pages. Use only the pages needed to explain the topic; this limit is not an optimal engagement count."
 faq:
   - question: "Should I use portrait or square dimensions for LinkedIn?"
-    answer: "Portrait (1080 x 1350 px, a 4:5 aspect ratio) is generally preferred. It takes up significantly more vertical space on mobile devices, capturing more attention as users scroll through the feed."
+    answer: "Try portrait for a vertical explanation and square when reusing a square layout. Open both at phone size and choose the one that keeps the text readable; neither shape guarantees more attention."
   - question: "Can I upload images directly as a carousel on LinkedIn?"
-    answer: "No. If you upload multiple images to a standard post, LinkedIn will display them in a grid layout. To get the seamless 'swipeable' carousel experience, you must combine your images into a single PDF document and upload it as a Document Post."
+    answer: "An image post and a document post are different publishing formats. For a document post, prepare one supported file: PDF, PPT, PPTX, DOC, or DOCX. PDF is the export used in this guide, not the only document type LinkedIn accepts."
   - question: "What is the file size limit for LinkedIn carousels?"
-    answer: "The absolute maximum file size is 100MB. However, for fast loading and optimal user experience, try to keep your exported PDF under 10MB."
+    answer: "LinkedIn specifies a maximum of 100MB. Reduce unnecessary image weight while checking that the exported text and diagrams stay readable; there is no measured ideal file size in this guide."
   - question: "Are there safe zones I need to worry about?"
-    answer: "Yes. Leave a margin of at least 50-80 pixels around all edges of your design. LinkedIn's UI overlays navigation arrows and page counts on the sides and bottom of the document, which can cover your text if it is placed too close to the edge."
+    answer: "Keep important text away from the edges and inspect the actual upload preview on the devices you use. Margins in this guide are layout choices, not an official fixed LinkedIn safe-zone specification."
   - question: "What DPI should I use for exporting?"
-    answer: "Since LinkedIn is a digital platform, 72 DPI to 96 DPI is perfectly fine. Exporting at a higher DPI (like 300 for print) will only bloat your file size unnecessarily."
+    answer: "Check the actual exported document rather than relying on a DPI label. Preserve readable text, inspect raster images at normal viewing size, and compare exports before choosing compression settings."
 explore:
   tools:
     - title: "LinkedIn Carousel Maker"
       href: "/linkedin-carousel-maker"
-      description: "Automatically format your carousels to the perfect LinkedIn dimensions."
+      description: "Create carousel structure, copy, and design, then check the exported document."
   guides:
     - title: "How to Create a LinkedIn PDF"
       href: "/blog/linkedin-pdf-carousel"
       description: "A step-by-step guide to the uploading process."
 finalCta:
   title: "Stop struggling with dimensions"
-  description: "Create perfectly sized LinkedIn carousels instantly without wrestling with complex design software."
+  text: "Create a LinkedIn carousel from your source, then check readability, page size, and the export before uploading."
   buttonText: "Create a Carousel Now"
-  href: "/linkedin-carousel-maker"
   microcopy: "Optimized for mobile and desktop"
   secondaryText: "See how to post it →"
   secondaryHref: "/blog/how-to-post-a-carousel-on-linkedin"
@@ -49,18 +48,18 @@ finalCta:
 
 Creating a brilliant carousel only to find out the text is cut off or the images are pixelated when you upload it is incredibly frustrating. 
 
-LinkedIn document posts (carousels) have specific technical requirements. If you want your content to look professional and perform well in the algorithm, you need to follow the exact **LinkedIn carousel size** and specifications.
+Separate [LinkedIn's document-upload limits](https://www.linkedin.com/help/linkedin/answer/a519831) from your layout choices. Following file limits enables upload; it does not establish algorithmic performance. Check **LinkedIn carousel size**, readability, and the upload preview together.
 
-## The Optimal Dimensions
+## Two Starting Layouts
 
 When designing your slides, you have two primary choices for dimensions.
 
 :::cards
 type: tips
 
-### 1. Portrait (Recommended)
+### 1. Portrait
 **Size:** 1080 x 1350 pixels (4:5 Aspect Ratio)
-**Why use it:** Over 60% of LinkedIn traffic is mobile. Portrait dimensions take up the maximum amount of vertical screen real estate, forcing users to stop and look at your post.
+**Why try it:** A portrait layout gives you vertical room for the explanation. Inspect its readability on a phone; no traffic percentage or attention guarantee is established here.
 
 ### 2. Square (Standard)
 **Size:** 1080 x 1080 pixels (1:1 Aspect Ratio)
@@ -72,22 +71,30 @@ type: tips
 Beyond just the width and height, you must adhere to LinkedIn's file constraints to ensure a successful upload.
 
 * **Supported File Types:** PDF, PPT, PPTX, DOC, DOCX. 
-* **The Best File Type:** Always export and upload as a **PDF**. It compresses well and prevents fonts or layouts from shifting.
-* **Maximum File Size:** 100MB. (Aim for under 10MB for faster loading).
-* **Page Limits:** Maximum of 300 pages. (For best engagement, keep it between 5 and 12 pages).
+* **File Choice:** This workflow uses **PDF**. Open the export and inspect the upload preview rather than assuming the format prevents every layout problem.
+* **Maximum File Size:** 100MB. Reduce unnecessary weight without making text or images unreadable.
+* **Page Limits:** Maximum of 300 pages. Use the pages needed for your explanation, without an assumed engagement optimum.
 
 ## Designing for the "Safe Zones"
 
-LinkedIn's native document viewer overlays several UI elements on top of your PDF. If you place important text or logos in these areas, they will be hidden.
+Do not treat a fixed pixel margin as an official platform guarantee. Check whether the exported pages remain readable in the actual document viewer, including its controls.
 
-1. **The Navigation Arrows:** On desktop, LinkedIn places semi-transparent "next" and "previous" arrows on the middle-left and middle-right edges of your slides. Leave a 50px padding on the sides.
-2. **The Page Counter:** In the bottom right corner, LinkedIn displays a page counter (e.g., "1 of 8"). Never put your logo or CTA text in the extreme bottom right corner.
-3. **The Top Bar:** Keep the top 40px clear of dense text, as the document title bar can sometimes cast a slight shadow or overlay depending on the device.
+1. **Edges:** Keep the essential sentence and diagram labels inside the page rather than against its edges.
+2. **Controls:** Inspect navigation and page-count controls in the upload preview. Move essential content if it overlaps them.
+3. **Consistency:** Check every page, not only the cover. Mixed page sizes or crowded final slides can make a document awkward to use.
+
+### Worked Layout Check: An Illustrative Five-Page Guide
+
+Suppose your source explains a handoff checklist. Use five pages for the question, required inputs, assigned roles, review step, and final checklist. This is a teaching example, not a tested engagement formula.
+
+Export the same content in square and portrait layouts. Open each PDF at phone viewing size without zooming: can you read the role labels and the checklist? If not, shorten the sentence or split the crowded page rather than merely increasing export resolution. Check that page order matches the explanation and that the final instruction remains visible.
+
+Next, inspect the LinkedIn upload preview before publishing. If an image looks blurred, compare the source image with the exported PDF to locate where quality was lost. If the export is clear but the preview differs, inspect another device before changing the source. Keep the readable export below the upload limits; choosing PDF does not guarantee parsing, display, or audience results.
 
 > [!workflow]
 > **The Easiest Way to Handle Specs**
-> If you don't want to memorize aspect ratios, safe zones, and PDF export settings, use a dedicated [LinkedIn Carousel Maker](/linkedin-carousel-maker). The software automatically sets the correct canvas size, enforces safe zones, and exports a LinkedIn-optimized PDF with one click.
+> A [LinkedIn Carousel Maker](/linkedin-carousel-maker) connects source analysis, slide copy, visual design, and PDF export. Inspect the generated margins, page order, and text in the actual export and LinkedIn preview; automatic layout does not guarantee safe zones on every device.
 
 ## A Note on Image Quality
 
-While you want to keep the file size reasonable, you must maintain image quality. When exporting your PDF from Canva, Figma, or Photoshop, ensure you are not compressing images so heavily that text becomes blurry. A crisp, easy-to-read document signals professionalism and increases the likelihood that a user will read to the final slide.
+While keeping the file size within the upload limit, maintain readable text and diagrams. When exporting your PDF from Canva, Figma, or Photoshop, compare the compressed export with the source. Readability is a publication check, not proof that readers will reach the final slide.

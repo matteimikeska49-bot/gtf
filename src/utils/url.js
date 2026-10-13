@@ -10,7 +10,7 @@ export function normalizeRef(value) {
 export function getSavedRef() {
   try {
     return normalizeRef(window.localStorage.getItem('gtf_ref'));
-  } catch (error) {
+  } catch {
     return '';
   }
 }
@@ -36,7 +36,7 @@ export function getAppUrlWithRef(baseUrl) {
     // Remove the trailing '?' if search params are empty
     const urlString = url.toString();
     return urlString.endsWith('?') ? urlString.slice(0, -1) : urlString;
-  } catch (error) {
+  } catch {
     return baseUrl;
   }
 }
