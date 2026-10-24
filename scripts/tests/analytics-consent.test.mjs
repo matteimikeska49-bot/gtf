@@ -2,7 +2,6 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
-import { parseCounts, reconcile } from '../reconcile-analytics-registrations.mjs';
 
 const source = fs.readFileSync(new URL('../../public/analytics-consent.js', import.meta.url), 'utf8');
 const html = fs.readFileSync(new URL('../../index.html', import.meta.url), 'utf8');
@@ -17,8 +16,8 @@ const runtime = (saved = {}, options = {}) => {
     addEventListener: (name, fn) => listeners.set(name, fn), dispatchEvent: e => events.push(e),
     ...(options.prerender ? { __GTF_PRERENDER_ROUTE: '/test' } : {}) };
   for (const method of ['pushState', 'replaceState']) window.history[method] = (_a, _b, url) => { window.location = Object.assign(new URL(url, window.location.href), { reload: location.reload }); };
-  const document = { referrer: '', title: 'Test page', createElement: () => ({}), head: { appendChild: s => scripts.push(s) }, addEventListener() {} };
-  Object.defineProperty(document, 'cookie', { get: () => [...jar].map(([k,v]) => k+'='+v).join('; '), set: line => { const pair = line.split(';')[0]; const i = pair.indexOf('='); const key = pair.slice(0,i); if (line.includes('Max-Age=0;')) jar.delete(key); else jar.set(key,pair.slice(i+1)); } });
+  const document = { referrer: options.referrer || '', title: 'Test page', createElement: () => ({}), head: { appendChild: s => scripts.push(s) }, addEventListener() {} };
+  Object.defineProperty(document, 'cookie', { get: () => { if(options.cookieThrows) throw new Error('restricted'); return [...jar].map(([k,v]) => k+'='+v).join('; '); }, set: line => { if(options.cookieThrows) throw new Error('restricted'); if(options.ignoreWrites) return; const pair = line.split(';')[0]; const i = pair.indexOf('='); const key = pair.slice(0,i); if (line.includes('Max-Age=0;')) jar.delete(key); else jar.set(key,pair.slice(i+1)); } });
   const context = vm.createContext({ window, document, URL, URLSearchParams, Date, CustomEvent: class { constructor(type, init) { this.type=type; this.detail=init.detail; } } });
   const load = () => vm.runInContext(source, context); load();
   return { window, document, scripts, values, session, jar, events, load, flush: () => { while(timers.length) timers.shift()(); }, reloads: () => reloads };
@@ -67,8 +66,28 @@ test('malformed/expired shared choices and prerender never grant or manufacture 
   const r=runtime({}, {prerender:true});r.window.gtfAnalytics.setConsent(true);assert.equal(r.scripts.length,0);assert.equal(r.jar.size,0);
   assert.doesNotMatch(html, /(?:src|href)=["'][^"']*(?:googletagmanager|mc\.yandex)/);
 });
-test('registration reconciliation accepts aggregates only, preserves missing dates, and does not infer consent', () => {
-  const b=parseCounts('date,new_registrations\n2026-10-14,5\n2026-10-15,4');const g=parseCounts('date,new_registrations\n2026-10-14,2');
-  const rows=reconcile(b,g,new Map());assert.equal(rows[0].ga4Difference,3);assert.equal(rows[1].ga4Difference,null);
-  assert.throws(()=>parseCounts('date,new_registrations,email\n2026-10-14,5,a@b.com'));assert.throws(()=>parseCounts('date,new_registrations\n2026-10-14,5\n2026-10-14,2'));
+test('numeric UTM and Yandex/Google click IDs survive SDK startup, late consent and reload', () => {
+  const tags='utm_source=yandex&utm_campaign=1234567890123&utm_id=9876543210&yclid=1234567890123456789&ysclid=m123test&gclid=Test_123-abc&gbraid=Test-123&_openstat=direct;12345678;ad;search';
+  const r=runtime({}, {url:'https://gotoflow.io/ru?'+tags, referrer:'https://yandex.ru/search/?text=private&ysclid=m123test'});
+  r.window.history.pushState({},'', '/ru/politika');r.flush();assert.equal(r.session.size,0);
+  r.window.gtfAnalytics.setConsent(true);r.flush();
+  const url=new URL(r.window.location.href);assert.equal(url.searchParams.get('yclid'),'1234567890123456789');assert.equal(url.searchParams.get('utm_id'),'9876543210');
+  const hit=r.window.ym.a.find(a=>a[1]==='hit');assert.equal(new URL(hit[2]).searchParams.get('gclid'),'Test_123-abc');
+  assert.equal(hit[3].referer,'https://yandex.ru/search/?ysclid=m123test');
+  assert.equal(r.window.ym.a.filter(a=>a[1]==='hit').length,1);
+  r.window.history.pushState({},'', '/ru?ysclid=newsearch&token=secret');r.flush();
+  assert.equal(new URL(r.window.ym.a.at(-1)[2]).searchParams.get('ysclid'),'newsearch');assert.equal(r.window.ym.a.at(-1)[3].referer,hit[2]);
+});
+test('refusal survives ignored writes over an existing grant and cookie getter failures fail closed', () => {
+  const first=runtime();first.window.gtfAnalytics.setConsent(true);
+  const r=runtime({}, {jar:first.jar,ignoreWrites:true});assert.equal(r.window.gtfAnalytics.hasConsent(),true);
+  r.window.gtfAnalytics.setConsent(false);assert.equal(r.window.gtfAnalytics.hasConsent(),false);r.window.tick();assert.equal(r.reloads(),1);
+  const reload=runtime(Object.fromEntries(r.values),{jar:first.jar,ignoreWrites:true});assert.equal(reload.scripts.length,0);assert.equal(reload.window.gtfAnalytics.readChoice(),false);
+  const blocked=runtime({}, {cookieThrows:true});assert.equal(blocked.scripts.length,0);blocked.window.gtfAnalytics.setConsent(false);assert.equal(blocked.window.gtfAnalytics.hasConsent(),false);
+});
+
+test('duplicate marketing query cannot smuggle an unvalidated second value into native GA', () => {
+  const r=runtime({}, {url:'https://gotoflow.io/ru?utm_source=yandex&utm_source=user%40example.test&yclid=1234567890&yclid=secret%40example.test'});
+  r.window.gtfAnalytics.setConsent(true);assert.equal(new URL(r.window.location.href).searchParams.getAll('utm_source').length,1);
+  assert.ok(!decodeURIComponent(r.window.location.href).includes('@'));assert.equal(r.window.ym.a.filter(a=>a[1]==='hit').length,1);
 });

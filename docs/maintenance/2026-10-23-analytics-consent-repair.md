@@ -1,4 +1,6 @@
-# Analytics repair — landing candidate; application integration BLOCKED
+# Analytics repair — historical receipt, 23 October 2026
+
+> The current landing-only scope and subsequent PR corrections are documented in [24 October recovery](2026-10-24-landing-analytics-recovery.md). The application/registration blockers below belong to the earlier broader scope; they are not prerequisites for the current landing release.
 
 Based on `matteimikeska49-bot/gtf` main `531567bab47692b08e81586d5274553e25375dcc`, following the 2026-10-23 read-only audit. This is a Draft PR, not deployment or account-side certification.
 
@@ -26,19 +28,9 @@ Once source/deployment are established, the actual app must read the same v2 coo
 
 Integrate settings in the real app, validate its authorized SPA routes, and coordinate deployment of both repositories. The browser test's app page is explicitly a local cookie-contract fixture, not the product or a substitute for its implementation. Existing production app tracking after landing Reject remains a production blocker outside this PR's available source.
 
-## Independent registration reconciliation
+## Independent registration reconciliation — superseded scope
 
-`scripts/reconcile-analytics-registrations.mjs` performs offline aggregate comparison only:
-
-```
-node scripts/reconcile-analytics-registrations.mjs \
-  --backend backend-daily.csv --ga4 ga4-daily.csv --metrica metrica-daily.csv \
-  --timezone Europe/Moscow
-```
-
-Each CSV must contain ONLY `date,new_registrations`, followed by ISO day and a nonnegative integer. Extra columns and duplicate dates are rejected. Missing dates remain null, never zero. No network calls, backend credentials, user identifiers or historical event uploads are involved.
-
-Producer requirements: backend counts unique successfully created accounts, excluding existing logins, tests and duplicates; analytics counts the corresponding consented new-account completions, not all `auth_success`, pageviews or users. Current GTM's auth_success goal does not itself distinguish new registrations. Align hostname scope, timezone and filters before supplying aggregates. Differences measure coverage/disagreement; they do not identify refused users or authorize backfill. Backend extraction and verified analytics exports remain BLOCKED without the app/backend source and read-only reports. Fixture test numbers are synthetic, not business metrics.
+The earlier candidate included an offline aggregate comparison helper. It was removed from PR #20 on 24 October because the Owner explicitly excluded registrations from the landing recovery scope. No backend or registration behavior was changed.
 
 ## Validation and remaining production work
 
