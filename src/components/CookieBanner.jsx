@@ -8,6 +8,7 @@ export const CookieBanner = () => {
   const { t, lang } = useLanguage();
   const isEN = lang === 'EN';
   const [visible, setVisible] = useState(false);
+  const ready = typeof window !== 'undefined' && typeof window.__GTF_PRERENDER_ROUTE !== 'string';
 
   useEffect(() => {
     // Consent is interactive client state, not a time-dependent build artifact.
@@ -32,13 +33,20 @@ export const CookieBanner = () => {
     setVisible(false);
   };
 
-  // RU: legacy single accept
+  // RU: affirmative choice uses the same versioned record
   const handleAcceptLegacy = () => {
     window.gtfAnalytics?.setConsent(true);
     setVisible(false);
   };
 
   return (
+    <>
+    {ready && !visible && (
+      <button id="cookie-settings" onClick={() => setVisible(true)}
+        className="fixed bottom-3 left-3 z-[180] rounded-md border border-white/10 bg-[#0d0d0d] px-3 py-2 text-[11px] text-zinc-400">
+        {isEN ? 'Cookie settings' : 'Настройки cookies'}
+      </button>
+    )}
     <AnimatePresence>
       {visible && (
         <motion.div
@@ -102,6 +110,10 @@ export const CookieBanner = () => {
                   >
                     {t('cookie.accept')}
                   </button>
+                  <button id="cookie-reject-ru" onClick={handleReject}
+                    className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/[0.08] px-3 py-2 text-[11px] font-medium text-zinc-400">
+                    Отклонить
+                  </button>
                   <Link
                     id="cookie-learn-more-ru"
                     to="/ru/politika"
@@ -117,5 +129,6 @@ export const CookieBanner = () => {
         </motion.div>
       )}
     </AnimatePresence>
+    </>
   );
 };

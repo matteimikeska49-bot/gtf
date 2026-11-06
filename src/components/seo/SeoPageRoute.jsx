@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { CookieBanner } from '../CookieBanner';
 import { Footer } from '../Footer';
@@ -8,8 +8,6 @@ import { NotFoundPage } from '../NotFoundPage';
 import { getSeoPageByRoute } from '../../content/seoPages';
 import { SeoPageHead } from './SeoPageHead';
 import { SeoPageTemplate } from './SeoPageTemplate';
-import { SEO_ANALYTICS_EVENTS } from '../../content/seoPages/releaseContracts';
-import { trackSeoEvent } from './seoAnalytics';
 
 export const SeoPageRoute = ({ pageType, pageTypes, slug: propSlug, language = 'ru' }) => {
   const { slug: routeSlug } = useParams();
@@ -21,12 +19,8 @@ export const SeoPageRoute = ({ pageType, pageTypes, slug: propSlug, language = '
     .map((type) => getSeoPageByRoute({ language, pageType: type, slug, path: location.pathname }))
     .find(Boolean);
 
-  useEffect(() => {
-    if (!page) return;
-    trackSeoEvent(SEO_ANALYTICS_EVENTS.pageView, page, {
-      route_path: location.pathname,
-    });
-  }, [location.pathname, page]);
+  // Native GA4 and the consent bootstrap own page views on all routes.
+  // Do not emit an unmapped seo_page_view alongside those provider views.
 
   if (!page) {
     return <NotFoundPage />;

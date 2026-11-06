@@ -134,11 +134,8 @@
 
             if (url.origin !== appOrigin) continue;
 
-            if (window.location.search) {
-              var currentParams = new URLSearchParams(window.location.search);
-              currentParams.forEach(function(value, key) {
-                url.searchParams.set(key, value);
-              });
+            if (window.gtfAnalytics) {
+              url = new URL(window.gtfAnalytics.decorateAppUrl(url.toString()));
             }
 
             if (ref && !url.searchParams.has(REF_PARAM)) {
@@ -174,6 +171,7 @@
         window.__GTF_PRERENDER_APPLY_REF = applyRef;
       }
 
+      window.addEventListener('gtf:consent-change', applyRef);
       applyRef();
 
       if (document.readyState === 'loading') {

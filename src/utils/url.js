@@ -20,12 +20,9 @@ export function getAppUrlWithRef(baseUrl) {
     const url = new URL(baseUrl);
     const ref = getSavedRef();
 
-    // Preserve all existing query parameters from the current page URL
-    if (typeof window !== 'undefined' && window.location && window.location.search) {
-      const currentParams = new URLSearchParams(window.location.search);
-      currentParams.forEach((value, key) => {
-        url.searchParams.set(key, value);
-      });
+    if (typeof window !== 'undefined' && window.gtfAnalytics?.decorateAppUrl) {
+      const decorated = new URL(window.gtfAnalytics.decorateAppUrl(url.toString()));
+      url.search = decorated.search;
     }
 
     // Ensure the saved ref is applied if no ref is in the URL
